@@ -360,9 +360,10 @@
 // ---- comparison slider ----
 (function(){
   const cmp=document.getElementById('cmp1'); if(!cmp) return;
-  const top=cmp.querySelector('.top'), topImg=top.querySelector('img'),
+  const top=cmp.querySelector('.top'),
         bar=cmp.querySelector('.bar'), knob=cmp.querySelector('.knob');
-  function size(){ topImg.style.width=cmp.clientWidth+'px'; }
+  // top image width is handled purely in CSS (height:100% + equal aspect ratios),
+  // so the slider works regardless of when layout happens.
   function setP(p){ p=Math.max(0.02,Math.min(0.98,p));
     top.style.width=(p*100)+'%'; bar.style.left=(p*100)+'%'; knob.style.left=(p*100)+'%'; }
   function fromEvent(e){ const r=cmp.getBoundingClientRect();
@@ -372,9 +373,7 @@
   cmp.addEventListener('pointermove',e=>{if(drag)fromEvent(e);});
   cmp.addEventListener('pointerup',()=>drag=false);
   cmp.addEventListener('pointercancel',()=>drag=false);
-  window.addEventListener('resize',()=>{size();});
-  const img=cmp.querySelector('img');
-  if(img.complete){size();setP(0.5);} else img.onload=()=>{size();setP(0.5);};
+  setP(0.5);
 })();
 // ---- click-to-load demo iframe ----
 (function(){
