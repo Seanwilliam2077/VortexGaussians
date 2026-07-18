@@ -1,0 +1,1502 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>路线1 · Emissive-Gaussian HDR (WebGL2) — 火焰/烟雾 GS 原型 (UE5 风格)</title>
+<style>
+  /* ============ UE5 Editor palette ============ */
+  :root{
+    --vp:#0b0c0e; --vp2:#141518;
+    --panel:#242424; --panel2:#2b2b2b;
+    --cat:#303030; --cath:#383838;
+    --line:#1b1b1b; --line2:#141414;
+    --txt:#d6d6d6; --label:#a6a6a6; --dim:#7c7c7c;
+    --acc:#1a9fff; --acc2:#37b6ff;
+    --field:#141414; --ok:#2bb36b; --stat:#9be37a;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%;background:var(--vp);color:var(--txt);
+    font-family:"Segoe UI",system-ui,-apple-system,"Microsoft YaHei",sans-serif;font-size:12px;overflow:hidden}
+  #app{display:flex;height:100vh;width:100vw}
+  #stage{flex:1;position:relative;min-width:0;background:#000}
+  canvas{display:block;width:100%;height:100%;cursor:crosshair}
+
+  #vptop{position:absolute;top:0;left:0;right:0;height:30px;display:flex;align-items:center;gap:10px;
+    padding:0 12px;background:linear-gradient(#202225,#1a1c1f);border-bottom:1px solid #0c0d0f;
+    pointer-events:none;user-select:none;font-size:11px;color:var(--dim)}
+  #vptop .tt{color:#cfd3da;font-weight:600;letter-spacing:.2px}
+  #vptop .pill{border:1px solid #34373d;border-radius:3px;padding:1px 7px;color:#aeb3bd}
+  #vptop .pill b{color:var(--acc2);font-weight:600}
+  #vptop .hdr{border:1px solid #2a5a2a;border-radius:3px;padding:1px 7px;color:var(--stat)}
+
+  #hud{position:absolute;top:40px;left:12px;font-family:Consolas,"Courier New",monospace;
+    font-size:12px;line-height:1.5;color:var(--stat);text-shadow:0 1px 2px #000;
+    pointer-events:none;user-select:none}
+  #hud .g{color:var(--stat);font-weight:700} #hud .b{color:var(--acc2)} #hud .d{color:#7f8893} #hud .e{color:#ff6b4a}
+  #pipeline{position:absolute;bottom:10px;left:12px;right:12px;font-size:10.5px;
+    color:#6f7680;text-shadow:0 1px 2px #000;pointer-events:none;user-select:none}
+  #pipeline .step{color:#aeb3bd} #pipeline .arr{color:var(--acc)}
+
+  #panel{width:316px;flex:none;background:var(--panel);border-left:1px solid #000;
+    display:flex;flex-direction:column;overflow:hidden}
+  .titlebar{height:30px;display:flex;align-items:center;gap:8px;padding:0 11px;
+    background:linear-gradient(#2e2e2e,#272727);border-bottom:1px solid #000;
+    font-size:11px;font-weight:700;letter-spacing:.4px;color:#c8c8c8;text-transform:uppercase}
+  .titlebar .sq{width:11px;height:11px;border-radius:2px;background:var(--acc);box-shadow:0 0 6px rgba(26,159,255,.6)}
+  #scroll{overflow-y:auto;flex:1}
+  #scroll::-webkit-scrollbar{width:11px}
+  #scroll::-webkit-scrollbar-track{background:#1e1e1e}
+  #scroll::-webkit-scrollbar-thumb{background:#3a3a3a;border:3px solid #1e1e1e;border-radius:6px}
+
+  .cat{border-bottom:1px solid var(--line2)}
+  .cathead{height:25px;display:flex;align-items:center;gap:6px;padding:0 10px;cursor:pointer;
+    background:linear-gradient(var(--cat),#2b2b2b);color:#c4c4c4;font-size:11px;font-weight:600;
+    letter-spacing:.3px;border-top:1px solid #383838;user-select:none}
+  .cathead:hover{background:var(--cath)}
+  .cathead .tri{font-size:9px;color:#8a8a8a;transition:transform .12s;width:9px}
+  .cat.collapsed .tri{transform:rotate(-90deg)}
+  .cat.collapsed .catbody{display:none}
+  .catbody{padding:7px 11px 10px;background:var(--panel)}
+
+  .prow{display:flex;align-items:center;height:24px;margin:3px 0}
+  .prow>label{width:108px;flex:none;color:var(--label);font-size:11.5px;
+    white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  input[type=range]{-webkit-appearance:none;appearance:none;flex:1;height:4px;border-radius:2px;
+    background:#3a3a3a;outline:none;cursor:pointer;margin:0 8px 0 0}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:11px;height:11px;border-radius:50%;
+    background:#e8e8e8;border:1px solid #0a0a0a;cursor:pointer;box-shadow:0 0 0 1px #2a2a2a}
+  input[type=range]:hover::-webkit-slider-thumb{background:#fff;box-shadow:0 0 0 1px var(--acc)}
+  .pval{width:50px;flex:none;text-align:right;font-family:Consolas,monospace;font-size:11px;
+    color:var(--acc2);background:var(--field);border:1px solid #0c0c0c;border-radius:2px;
+    padding:2px 5px;font-variant-numeric:tabular-nums}
+
+  .seg{display:flex;gap:4px;margin:2px 0 4px}
+  .seg button{flex:1;background:#2b2b2b;color:#9b9b9b;border:1px solid #161616;border-radius:3px;
+    padding:6px 4px;font-size:11px;cursor:pointer;transition:.1s}
+  .seg button:hover{background:#333;color:#d6d6d6}
+  .seg button.on{background:rgba(26,159,255,.16);color:#eaf4ff;border-color:var(--acc);
+    box-shadow:inset 0 0 0 1px rgba(26,159,255,.35)}
+
+  .crow{display:flex;align-items:center;gap:9px;height:23px;margin:2px 0;cursor:pointer;color:var(--label);font-size:11.5px}
+  .crow:hover{color:#d6d6d6}
+  .cb{width:15px;height:15px;flex:none;border-radius:2px;background:#161616;border:1px solid #4a4a4a;
+    position:relative;transition:.1s}
+  .crow:hover .cb{border-color:#6a6a6a}
+  .cb.on{background:var(--acc);border-color:var(--acc2)}
+  .cb.on::after{content:"";position:absolute;left:4px;top:1px;width:4px;height:8px;
+    border:solid #fff;border-width:0 2px 2px 0;transform:rotate(42deg)}
+
+  .hint{font-size:10px;color:var(--dim);line-height:1.5;margin:7px 0 2px;
+    border-left:2px solid #3a3a3a;padding-left:8px}
+  .hint.b{border-left-color:var(--acc)}
+  .hint code{color:var(--acc2);font-size:9.5px}
+  .hint b{color:#bdbdbd}
+
+  .footer{display:flex;gap:7px;padding:9px 11px;background:#222;border-top:1px solid #000}
+  .footer button{flex:1;background:#2c2c2c;color:#cfcfcf;border:1px solid #161616;border-radius:3px;
+    padding:7px;font-size:11.5px;cursor:pointer}
+  .footer button:hover{border-color:var(--acc);color:#fff}
+  #glerr{position:absolute;inset:0;display:none;align-items:center;justify-content:center;
+    color:#ff6b4a;font-size:13px;text-align:center;padding:40px;line-height:1.7}
+</style>
+</head>
+<body>
+<div id="app">
+  <div id="stage">
+    <div id="vptop">
+      <span class="tt">Flame / Smoke — GS Viewport</span>
+      <span class="pill">路线 <b id="vpRoute">1</b></span>
+      <span class="pill" id="vpMode">Fire</span>
+      <span class="hdr">HDR · WebGL2</span>
+    </div>
+    <canvas id="cv"></canvas>
+    <div id="hud"></div>
+    <div id="pipeline"></div>
+    <div id="glerr"></div>
+  </div>
+
+  <div id="panel">
+    <div class="titlebar"><span class="sq"></span> Details</div>
+    <div id="scroll">
+
+      <div class="cat" id="catSource">
+        <div class="cathead"><span class="tri">▾</span> Emitter Source · 粒子来源</div>
+        <div class="catbody">
+          <div class="seg" id="mode">
+            <button data-m="fire" class="on">火焰 Fire</button>
+            <button data-m="smoke">烟雾 Smoke</button>
+          </div>
+          <div class="prow"><label>仿真层 Sim Layers</label><input type="range" id="simLayers" min="0" max="16" step="1" value="9"><span class="pval" id="simLayersV"></span></div>
+          <div class="hint b">§7.1 解耦接口 <code>Layer.step(dt)→Particle[]{pos2D,T,density,velocity}</code>。
+            拖 <b>Sim Layers</b> 把前 k 层从<b>程序化</b>逐步换成<b>真 2D 涡粒子 (路线2)</b>，渲染端零改动。</div>
+        </div>
+      </div>
+
+      <div class="cat" id="grpProc">
+        <div class="cathead"><span class="tri">▾</span> Plume · 程序化羽流 (路线 1)</div>
+        <div class="catbody">
+          <div class="prow"><label>上升速度</label><input type="range" id="riseV" min="0.2" max="2.5" step="0.02" value="1.15"><span class="pval" id="riseVV"></span></div>
+          <div class="prow"><label>湍流</label><input type="range" id="sway" min="0" max="2" step="0.02" value="0.9"><span class="pval" id="swayV"></span></div>
+          <div class="prow"><label>发射量</label><input type="range" id="rate" min="200" max="2400" step="40" value="700"><span class="pval" id="rateV"></span></div>
+          <div class="prow"><label>冷却</label><input type="range" id="coolP" min="0.1" max="3" step="0.02" value="0.8"><span class="pval" id="coolPV"></span></div>
+        </div>
+      </div>
+
+      <div class="cat" id="grpSim" style="display:none">
+        <div class="cathead"><span class="tri">▾</span> Vortex Sim · 涡粒子 (路线 2)</div>
+        <div class="catbody">
+          <div class="prow"><label>浮力 β</label><input type="range" id="buoy" min="0" max="3" step="0.02" value="0.9"><span class="pval" id="buoyV"></span></div>
+          <div class="prow"><label>斜压涡量 ∂T/∂x</label><input type="range" id="baro" min="0" max="4" step="0.02" value="1.4"><span class="pval" id="baroV"></span></div>
+          <div class="prow"><label>涡核半径 ε</label><input type="range" id="eps" min="0.01" max="0.3" step="0.005" value="0.07"><span class="pval" id="epsV"></span></div>
+          <div class="prow"><label>冷却</label><input type="range" id="cool" min="0.1" max="3" step="0.02" value="1.2"><span class="pval" id="coolV"></span></div>
+          <div class="prow"><label>全局驱动 (ILM 两级)</label><input type="range" id="couple" min="0" max="1" step="0.02" value="0.5"><span class="pval" id="coupleV"></span></div>
+          <div class="hint b"><b>VIC 解算</b>:温度场半拉格朗日<b>平流</b> → 斜压涡量 <code>Γ+=Δt·β·∂T/∂x</code> → P2G → <b>Poisson 解 ψ</b> → <code>u=∇×ψ</code> → 平流粒子。O(N+网格)。
+            <b>全局驱动</b>=ILM 两级:一个 16×24 粗解算驱动所有层、各层再加细节(0 各自为政 / 1 同一团火)。</div>
+        </div>
+      </div>
+
+      <div class="cat" id="catRender">
+        <div class="cathead"><span class="tri">▾</span> Representation · 表示 + 3D 相机</div>
+        <div class="catbody">
+          <div class="seg r1" id="dim">
+            <button data-dm="layer" class="on">2.5D 分层 (VIC)</button>
+            <button data-dm="vol">真 3D 体 (Tier1)</button>
+          </div>
+          <div class="prow" id="vol3DTurbRow" style="display:none"><label>3D 湍流</label><input type="range" id="vol3DTurb" min="0" max="1.5" step="0.02" value="0.6"><span class="pval" id="vol3DTurbV"></span></div>
+          <div class="seg" id="slice">
+            <button data-sm="view" class="on">视图对齐切片 (ILM)</button>
+            <button data-sm="world">世界固定层</button>
+          </div>
+          <div class="prow"><label>层数 N</label><input type="range" id="layers" min="1" max="16" step="1" value="9"><span class="pval" id="layersV"></span></div>
+          <div class="prow"><label>切片深度</label><input type="range" id="sliceDepth" min="0.1" max="1.6" step="0.02" value="0.7"><span class="pval" id="sliceDepthV"></span></div>
+          <div class="prow"><label>方位角</label><input type="range" id="yaw" min="-3.14" max="3.14" step="0.02" value="0"><span class="pval" id="yawV"></span></div>
+          <div class="prow"><label>相机距离</label><input type="range" id="camDist" min="2.2" max="6" step="0.05" value="3.4"><span class="pval" id="camDistV"></span></div>
+          <div class="prow"><label>高斯半径</label><input type="range" id="rad" min="6" max="60" step="1" value="36"><span class="pval" id="radV"></span></div>
+          <div class="prow"><label>协方差形变 ∇u</label><input type="range" id="covStretch" min="0" max="3" step="0.02" value="1.3"><span class="pval" id="covStretchV"></span></div>
+          <div class="hint b"><b>协方差形变(Tier2)</b>:每个高斯带形变梯度 F,按涡流速度梯度 ∇u 演化(`Σ̇=LΣ+ΣLᵀ`)→ blob 被流场<b>剪切/旋转成丝</b>(气态版 PhysGaussian)。0=圆球,大=强丝状。需开 Motion Stretch。
+            <br><b>真 3D 相机</b>绕火(拖动/Auto Orbit);<b>视图对齐(ILM)</b>无边缘退化 / <b>世界固定</b>侧看见层边缘(§8 取舍)。</div>
+        </div>
+      </div>
+
+      <div class="cat" id="catPost">
+        <div class="cathead"><span class="tri">▾</span> Post · HDR 后期</div>
+        <div class="catbody">
+          <div class="prow"><label>曝光 Exposure</label><input type="range" id="exposure" min="0.2" max="3" step="0.02" value="1.0"><span class="pval" id="exposureV"></span></div>
+          <div class="prow"><label>发光强度 Emission</label><input type="range" id="emis" min="0.1" max="3" step="0.02" value="1.4"><span class="pval" id="emisV"></span></div>
+          <div class="prow"><label>Bloom 强度</label><input type="range" id="bloom" min="0" max="2.5" step="0.02" value="1.0"><span class="pval" id="bloomV"></span></div>
+          <div class="prow"><label>Bloom 阈值</label><input type="range" id="thresh" min="0.2" max="2.5" step="0.02" value="0.95"><span class="pval" id="threshV"></span></div>
+          <div class="hint b">发光 splat → <b>RGBA16F 浮点 buffer</b> → bright-pass → 多次高斯 bloom → <b>ACES filmic tonemap</b> + gamma + 暗角。
+            这就是报告 §4/§5 的 emissive-Gaussian 正确做法。</div>
+        </div>
+      </div>
+
+      <div class="cat" id="catScene">
+        <div class="cathead"><span class="tri">▾</span> Scene · 场景 (暗 3DGS 背景)</div>
+        <div class="catbody">
+          <div class="crow" id="box"><span class="cb on"></span><span>3DGS 暗背景（高斯场景）</span></div>
+          <div class="crow" id="embers"><span class="cb on"></span><span>Embers 火星</span></div>
+          <div class="prow"><label>火 → 场景光</label><input type="range" id="boxLight" min="0" max="2.5" step="0.02" value="0.85"><span class="pval" id="boxLightV"></span></div>
+          <div class="prow"><label>地面倒影</label><input type="range" id="reflect" min="0" max="1" step="0.01" value="0.4"><span class="pval" id="reflectV"></span></div>
+          <div class="prow"><label>热浪扰动</label><input type="range" id="haze" min="0" max="1.5" step="0.02" value="0.6"><span class="pval" id="hazeV"></span></div>
+          <div class="hint b">程序化暗 GS 背景（地面 + 环境）。载入真 `.ply` 场景后自动关闭。</div>
+        </div>
+      </div>
+
+      <div class="cat r1" id="catPly">
+        <div class="cathead"><span class="tri">▾</span> Real GS Scene · 载入 .ply (Inria 3DGS)</div>
+        <div class="catbody">
+          <div class="btns"><button id="plyBtn">📂 载入 .ply / .splat …</button></div>
+          <input type="file" id="plyFile" accept=".ply,.splat" style="display:none">
+          <div class="note" id="plyStatus">未载入。把 Inria `point_cloud.ply` 拖到画面上，或点上面按钮。</div>
+          <div class="prow"><label>场景缩放</label><input type="range" id="sceneScale" min="0.05" max="6" step="0.01" value="1"><span class="pval" id="sceneScaleV"></span></div>
+          <div class="prow"><label>绕 Y 旋转</label><input type="range" id="sceneYaw" min="-3.14" max="3.14" step="0.02" value="0"><span class="pval" id="sceneYawV"></span></div>
+          <div class="prow"><label>俯仰(正上轴)</label><input type="range" id="scenePitch" min="-3.14" max="3.14" step="0.02" value="0"><span class="pval" id="scenePitchV"></span></div>
+          <div class="prow"><label>抬升</label><input type="range" id="sceneLift" min="-2" max="2" step="0.02" value="0"><span class="pval" id="sceneLiftV"></span></div>
+          <div class="prow"><label>场景亮度</label><input type="range" id="sceneLight" min="0.1" max="3" step="0.02" value="1.0"><span class="pval" id="sceneLightV"></span></div>
+          <div class="prow"><label>高斯上限(万)</label><input type="range" id="sceneMax" min="2" max="40" step="1" value="12"><span class="pval" id="sceneMaxV"></span></div>
+          <div class="crow" id="sceneOn"><span class="cb"></span><span>显示 .ply 场景</span></div>
+          <div class="hint b">解析 Inria 标准 `.ply`（位置·scale=exp·四元数·opacity=sigmoid·SH 直流→色），
+            每高斯取两根主轴当扁平 splat（近似），火坐落其中、火光在前遮挡场景。用上面滑杆把场景<b>对齐/缩放/正上轴</b>。</div>
+        </div>
+      </div>
+
+      <div class="cat" id="catShow">
+        <div class="cathead"><span class="tri">▾</span> Show Flags · 显示</div>
+        <div class="catbody">
+          <div class="crow" id="orbit"><span class="cb on"></span><span>Auto Orbit（验证视差体积感）</span></div>
+          <div class="crow" id="stretch"><span class="cb on"></span><span>Motion Stretch / 协方差形变（Tier2）</span></div>
+          <div class="crow" id="flicker"><span class="cb on"></span><span>Flicker（火焰呼吸）</span></div>
+          <div class="crow r1" id="filament"><span class="cb"></span><span>涡丝 Filament（沿轨迹拉丝，Tier3）</span></div>
+          <div class="prow" id="filLenRow" style="display:none"><label>涡丝长度</label><input type="range" id="filLen" min="0" max="1" step="0.02" value="0.5"><span class="pval" id="filLenV"></span></div>
+          <div class="hint">拖动画面=绕火旋转相机 · <b>空格</b>暂停 · <b>R</b>重置 · <b>F/S</b>火/烟 · <b>1/2</b>切路线。
+            <b>涡丝</b>=把每个高斯沿其最近轨迹拉成丝(path-integrated trail),得到连续火焰 wisp(报告涡丝/filament 思路);与协方差形变(瞬时剪切)互补。</div>
+        </div>
+      </div>
+
+    </div>
+    <div class="footer">
+      <button id="pause">⏸ 暂停</button>
+      <button id="reset">↻ 重置</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ============================================================================
+//  火焰/烟雾 · GS 原型 — 路线 1 优先 · WebGL2 HDR emissive-splat 渲染器
+//  仿真/源 (stepProc 路线1 · stepSim 路线2 · §7.1 Sources 接口) 保持不变;
+//  渲染管线全新:  实例化发光高斯 → RGBA16F → bright-pass → 高斯 bloom → ACES tonemap
+//  片元内程序化 fbm 细节去"球感", 各向异性协方差做运动条纹, 黑体色带 + 曝光控制。
+// ============================================================================
+(()=>{
+"use strict";
+const cv = document.getElementById('cv');
+const gl = cv.getContext('webgl2', {alpha:false, antialias:false, premultipliedAlpha:false});
+function fatal(msg){ const e=document.getElementById('glerr'); e.style.display='flex';
+  e.innerHTML=msg; throw new Error(msg); }
+if(!gl) fatal('此浏览器不支持 WebGL2。请用 Chrome / Edge / Firefox 打开。');
+// HDR 浮点 RT
+const extCBF = gl.getExtension('EXT_color_buffer_float');
+const HDR_TYPE = gl.HALF_FLOAT;
+const HDR_IFMT = extCBF ? gl.RGBA16F : gl.RGBA8;   // 无浮点扩展则降级 8-bit (仍可 bloom)
+
+const WX = 2.0, WY = 3.0;                 // world: x∈[-Wx/2,Wx/2], y∈[0,Wy] (y up)
+const VK = 0.58, VOFF = -0.74;            // world→NDC: ndcy=VOFF+y*VK (火基 y=0 落在地面 uv.y≈0.13)
+let DPR = Math.min(devicePixelRatio||1, 2);
+
+// ---------------------------------------------------------------------------
+//  WebGL helpers
+// ---------------------------------------------------------------------------
+function sh(type, src){
+  const s=gl.createShader(type); gl.shaderSource(s,src); gl.compileShader(s);
+  if(!gl.getShaderParameter(s,gl.COMPILE_STATUS)) fatal('Shader 编译失败:<br>'+gl.getShaderInfoLog(s));
+  return s;
+}
+function prog(vs, fs){
+  const p=gl.createProgram(); gl.attachShader(p,sh(gl.VERTEX_SHADER,vs)); gl.attachShader(p,sh(gl.FRAGMENT_SHADER,fs));
+  gl.linkProgram(p);
+  if(!gl.getProgramParameter(p,gl.LINK_STATUS)) fatal('Program 链接失败:<br>'+gl.getProgramInfoLog(p));
+  return p;
+}
+// ---- mat4 (列主序, 直接喂 uniformMatrix4fv) ----
+function m4Perspective(fov,aspect,near,far){ const f=1/Math.tan(fov/2), nf=1/(near-far);
+  return [f/aspect,0,0,0, 0,f,0,0, 0,0,(far+near)*nf,-1, 0,0,2*far*near*nf,0]; }
+function m4LookAt(e,c,up){
+  let zx=e[0]-c[0],zy=e[1]-c[1],zz=e[2]-c[2]; let zl=Math.hypot(zx,zy,zz)||1; zx/=zl;zy/=zl;zz/=zl;
+  let xx=up[1]*zz-up[2]*zy, xy=up[2]*zx-up[0]*zz, xz=up[0]*zy-up[1]*zx; let xl=Math.hypot(xx,xy,xz)||1; xx/=xl;xy/=xl;xz/=xl;
+  let yx=zy*xz-zz*xy, yy=zz*xx-zx*xz, yz=zx*xy-zy*xx;
+  return [xx,yx,zx,0, xy,yy,zy,0, xz,yz,zz,0,
+          -(xx*e[0]+xy*e[1]+xz*e[2]), -(yx*e[0]+yy*e[1]+yz*e[2]), -(zx*e[0]+zy*e[1]+zz*e[2]), 1]; }
+function m4Mul(a,b){ const o=new Array(16);
+  for(let c=0;c<4;c++)for(let r=0;r<4;r++){ let s=0; for(let k=0;k<4;k++) s+=a[k*4+r]*b[c*4+k]; o[c*4+r]=s; } return o; }
+function m4Apply(m,x,y,z){ const w=m[3]*x+m[7]*y+m[11]*z+m[15];   // 返回 NDC (x,y) 与 w
+  return [(m[0]*x+m[4]*y+m[8]*z+m[12])/w, (m[1]*x+m[5]*y+m[9]*z+m[13])/w, w]; }
+function tex(w,h,ifmt,type){
+  const t=gl.createTexture(); gl.bindTexture(gl.TEXTURE_2D,t);
+  const fmt=gl.RGBA;
+  gl.texImage2D(gl.TEXTURE_2D,0,ifmt,w,h,0,fmt,type,null);
+  gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);
+  gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);
+  gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);
+  gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);
+  return t;
+}
+function fbo(t){ const f=gl.createFramebuffer(); gl.bindFramebuffer(gl.FRAMEBUFFER,f);
+  gl.framebufferTexture2D(gl.FRAMEBUFFER,gl.COLOR_ATTACHMENT0,gl.TEXTURE_2D,t,0); return f; }
+
+// ---------------------------------------------------------------------------
+//  Shaders
+// ---------------------------------------------------------------------------
+const COMMON_NOISE = `
+float hash(vec2 p){ p=fract(p*vec2(123.34,456.21)); p+=dot(p,p+45.32); return fract(p.x*p.y); }
+float vnoise(vec2 p){ vec2 i=floor(p),f=fract(p); f=f*f*(3.0-2.0*f);
+  float a=hash(i),b=hash(i+vec2(1,0)),c=hash(i+vec2(0,1)),d=hash(i+vec2(1,1));
+  return mix(mix(a,b,f.x),mix(c,d,f.x),f.y); }
+float fbm(vec2 p){ float s=0.0,a=0.5; for(int i=0;i<4;i++){ s+=a*vnoise(p); p*=2.02; a*=0.5;} return s; }`;
+
+// ---- 粒子 (发光高斯) — 真 3D 相机投影 ----
+const VS_PARTICLE = `#version 300 es
+layout(location=0) in vec2 aCorner;     // unit quad [-1,1]
+layout(location=1) in vec3 aPos;        // 3D world center
+layout(location=2) in vec3 aMajor;      // 3D world half-axis // velocity (在切片面内)
+layout(location=3) in vec3 aMinor;      // 3D world half-axis ⟂
+layout(location=4) in float aFade;      // 深度淡化系数
+layout(location=5) in float aTemp;
+layout(location=6) in float aDens;
+layout(location=7) in float aSeed;
+layout(location=8) in float aType;      // 0 splat · 1 ember · 2 背景高斯
+uniform mat4 uViewProj;
+out vec2 v_uv; out float v_temp, v_dens, v_seed, v_fade, v_type;
+void main(){
+  vec3 wp = aPos + aCorner.x*aMajor + aCorner.y*aMinor;
+  gl_Position = uViewProj * vec4(wp, 1.0);
+  v_uv=aCorner; v_temp=aTemp; v_dens=aDens; v_seed=aSeed; v_fade=aFade; v_type=aType;
+}`;
+const FS_PARTICLE = `#version 300 es
+precision highp float;
+in vec2 v_uv; in float v_temp, v_dens, v_seed, v_fade, v_type;
+uniform float uTime, uEmis, uMode, uFlick, uFireI;
+uniform vec2 uFire, uRes;
+out vec4 o;
+${COMMON_NOISE}
+vec3 fireRamp(float t){
+  vec3 c0=vec3(0.05,0.012,0.0), c1=vec3(0.6,0.05,0.012), c2=vec3(1.0,0.32,0.04),
+       c3=vec3(1.0,0.72,0.22), c4=vec3(1.0,0.96,0.86);
+  vec3 c=mix(c0,c1,smoothstep(0.0,0.28,t));
+  c=mix(c,c2,smoothstep(0.22,0.5,t));
+  c=mix(c,c3,smoothstep(0.46,0.74,t));
+  c=mix(c,c4,smoothstep(0.7,1.0,t));
+  return c;
+}
+// 统一 3DGS 前向合成: 每个高斯输出 premultiplied (color·α, α);
+//  外层用 front-to-back (blendFunc ONE_MINUS_DST_ALPHA, ONE) 做发光-吸收体渲染。
+//  α = 不透明度·exp(高斯衰减); 火 α 低(发光为主), 背景 α 高(遮挡)。
+void main(){
+  float r2=dot(v_uv,v_uv);
+  // ---- 背景 3DGS: 暗色高斯, 被火光局部照亮 (有遮挡 α) ----
+  if(v_type>1.5){
+    float gg=exp(-r2*2.4); if(gg<0.004) discard;
+    vec2 suv=gl_FragCoord.xy/uRes;
+    vec2 dd=(suv-uFire); dd.x*=uRes.x/uRes.y;
+    float fl=uFireI*exp(-dot(dd,dd)*9.0); fl*=mix(1.0,1.9,smoothstep(0.5,0.04,suv.y));
+    vec3 col=(vec3(0.012,0.015,0.024) + vec3(1.0,0.46,0.16)*fl)*v_temp;
+    float a=gg*clamp(v_dens,0.0,0.9);
+    o=vec4(col*a, a); return;
+  }
+  // ---- 火星 ember: 清亮闪烁的小发光高斯 ----
+  if(v_type>0.5){
+    float core=exp(-r2*4.5); if(core<0.01) discard;
+    float tw=0.55+0.45*sin(uTime*22.0+v_seed*12.0);
+    vec3 col=mix(vec3(1.0,0.55,0.16), vec3(1.0,0.92,0.72), v_temp)*uEmis*6.0*v_dens*tw;
+    float a=core*0.28;
+    o=vec4(col*a, a); return;
+  }
+  // ---- 火/烟 高斯 ----
+  float g=exp(-r2*3.0); if(g<0.004) discard;
+  float detail=mix(0.5,1.25, fbm(v_uv*1.7 + vec2(v_seed*5.3, v_seed*2.0 - uTime*0.4)));
+  float depthFade=v_fade;
+  if(uMode<0.5){                                   // 火: 低光学厚度的发光体 (α 小, 自遮挡弱)
+    float T=clamp(v_temp,0.0,1.0);
+    float a=clamp((0.03+0.2*v_dens)*T*detail, 0.0, 0.34)*depthFade;
+    vec3 emit=fireRamp(T)*uEmis*(0.25+0.85*T)*uFlick;
+    o=vec4(emit*a, a);
+  } else {                                         // 烟: 吸收为主
+    float a=clamp(0.12+0.6*v_dens, 0.0, 0.85)*g*detail*depthFade;
+    vec3 base=mix(vec3(0.02,0.02,0.026), vec3(0.17,0.17,0.19), v_dens) + vec3(0.5,0.16,0.02)*v_temp*0.6;
+    o=vec4(base*a, a);
+  }
+}`;
+
+const VS_FULL = `#version 300 es
+layout(location=0) in vec2 aPos;        // big triangle
+out vec2 v_uv;
+void main(){ v_uv=aPos*0.5+0.5; gl_Position=vec4(aPos,0.0,1.0); }`;
+
+const FS_PREFILTER = `#version 300 es
+precision highp float; in vec2 v_uv; out vec4 o;
+uniform sampler2D uTex; uniform float uThreshold;
+void main(){ vec3 c=texture(uTex,v_uv).rgb;
+  float l=max(c.r,max(c.g,c.b));
+  float f=max(0.0,l-uThreshold)/max(l,1e-4);
+  o=vec4(c*f,1.0); }`;
+
+const FS_BLUR = `#version 300 es
+precision highp float; in vec2 v_uv; out vec4 o;
+uniform sampler2D uTex; uniform vec2 uDir;
+void main(){
+  vec3 s=texture(uTex,v_uv).rgb*0.227027;
+  s+=texture(uTex,v_uv+uDir*1.3846).rgb*0.316216;
+  s+=texture(uTex,v_uv-uDir*1.3846).rgb*0.316216;
+  s+=texture(uTex,v_uv+uDir*3.2308).rgb*0.070270;
+  s+=texture(uTex,v_uv-uDir*3.2308).rgb*0.070270;
+  o=vec4(s,1.0); }`;
+
+const FS_COMPOSITE = `#version 300 es
+precision highp float; in vec2 v_uv; out vec4 o;
+uniform sampler2D uScene, uBloom; uniform float uExposure, uBloomAmt, uTime, uReflect, uHaze, uFireI;
+uniform vec2 uFire;
+${COMMON_NOISE}
+vec3 aces(vec3 x){ const float a=2.51,b=0.03,c=2.43,d=0.59,e=0.14;
+  return clamp((x*(a*x+b))/(x*(c*x+d)+e),0.0,1.0); }
+void main(){
+  vec2 uv=v_uv;
+  // 热浪: 火上方按强度位移采样 (折射后面的墙) ----
+  float above=smoothstep(uFire.y, uFire.y+0.55, uv.y);
+  float colmask=exp(-pow((uv.x-uFire.x)*3.0,2.0));
+  float hz=uHaze*uFireI*above*colmask;
+  vec2 disp=vec2(fbm(vec2(uv.x*18.0, uv.y*11.0-uTime*1.6))-0.5,
+                 fbm(vec2(uv.x*15.0+7.0, uv.y*9.0-uTime*1.35))-0.5)*0.014*hz;
+  vec3 scene=texture(uScene, uv+disp).rgb;
+  // 地面倒影: 火源平面以下, 取镜像场景叠加 (地面反光 + ground glow) ----
+  float yFloor=uFire.y+0.03;
+  if(uv.y<yFloor){
+    vec2 ruv=vec2(uv.x, 2.0*yFloor-uv.y);
+    float fade=smoothstep(yFloor-0.24, yFloor, uv.y);
+    scene+=texture(uScene,ruv).rgb*uReflect*fade;
+  }
+  vec3 hdr=scene + texture(uBloom,uv).rgb*uBloomAmt;
+  hdr*=uExposure;
+  vec3 m=aces(hdr);
+  m=pow(m, vec3(1.0/2.2));
+  vec2 q=uv-0.5; float vig=smoothstep(0.95,0.35,dot(q,q)*1.7);
+  m*=mix(0.82,1.0,vig);
+  // 轻微 dither 去带状
+  float dz=fract(sin(dot(uv,vec2(12.9898,78.233)))*43758.5453);
+  m+=(dz-0.5)/255.0;
+  o=vec4(m,1.0); }`;
+
+// ---- 真 .ply 场景高斯 (Inria 3DGS): 3D world 位置 + 两根世界轴 + 颜色 + 不透明度 ----
+const VS_SCENE = `#version 300 es
+layout(location=0) in vec2 aCorner;
+layout(location=1) in vec3 aPos;
+layout(location=2) in vec3 aMajor;
+layout(location=3) in vec3 aMinor;
+layout(location=4) in vec3 aColor;
+layout(location=5) in float aOpa;
+uniform mat4 uViewProj; uniform float uSceneLight;
+out vec2 v_uv; out vec3 v_color; out float v_opa;
+void main(){
+  vec3 wp = aPos + aCorner.x*aMajor + aCorner.y*aMinor;
+  gl_Position = uViewProj * vec4(wp,1.0);
+  v_uv=aCorner; v_color=aColor*uSceneLight; v_opa=aOpa;
+}`;
+const FS_SCENE = `#version 300 es
+precision highp float; in vec2 v_uv; in vec3 v_color; in float v_opa; out vec4 o;
+void main(){ float g=exp(-dot(v_uv,v_uv)*4.0); if(g<0.004) discard;
+  float a=clamp(v_opa,0.0,1.0)*g;
+  o=vec4(v_color*a, a); }`;                          // premultiplied, front-to-back
+
+const pPart = prog(VS_PARTICLE, FS_PARTICLE);
+const pScene= prog(VS_SCENE, FS_SCENE);
+const pPre  = prog(VS_FULL, FS_PREFILTER);
+const pBlur = prog(VS_FULL, FS_BLUR);
+const pComp = prog(VS_FULL, FS_COMPOSITE);
+
+// uniform 位置缓存
+const U = (p,n)=>gl.getUniformLocation(p,n);
+const uPart={ VP:U(pPart,'uViewProj'),
+              Time:U(pPart,'uTime'),Emis:U(pPart,'uEmis'),Mode:U(pPart,'uMode'),Flick:U(pPart,'uFlick'),
+              Fire:U(pPart,'uFire'),FireI:U(pPart,'uFireI'),Res:U(pPart,'uRes') };
+const uScene={ VP:U(pScene,'uViewProj'), Light:U(pScene,'uSceneLight') };
+const uPre={ Tex:U(pPre,'uTex'),Threshold:U(pPre,'uThreshold') };
+const uBlur={ Tex:U(pBlur,'uTex'),Dir:U(pBlur,'uDir') };
+const uComp={ Scene:U(pComp,'uScene'),Bloom:U(pComp,'uBloom'),Exposure:U(pComp,'uExposure'),BloomAmt:U(pComp,'uBloomAmt'),
+              Time:U(pComp,'uTime'),Reflect:U(pComp,'uReflect'),Haze:U(pComp,'uHaze'),FireI:U(pComp,'uFireI'),Fire:U(pComp,'uFire') };
+
+// ---- 几何: 单位四边形(实例) + 全屏大三角 ----
+const quadVBO=gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER,quadVBO);
+gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1, 1,-1, -1,1, 1,1]),gl.STATIC_DRAW);
+const triVBO=gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER,triVBO);
+gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1, 3,-1, -1,3]),gl.STATIC_DRAW);
+
+// 每实例: aPos(3) aMajor(3) aMinor(3) aFade(1) aTemp(1) aDens(1) aSeed(1) aType(1) = 14
+const STRIDE_F=14, STRIDE_B=STRIDE_F*4;
+const instVBO=gl.createBuffer();
+let instData=new Float32Array(0);
+
+function setupInstanceVAO(vao, vbo){
+  gl.bindVertexArray(vao);
+  gl.bindBuffer(gl.ARRAY_BUFFER,quadVBO);
+  gl.enableVertexAttribArray(0); gl.vertexAttribPointer(0,2,gl.FLOAT,false,0,0); gl.vertexAttribDivisor(0,0);
+  gl.bindBuffer(gl.ARRAY_BUFFER,vbo);
+  const ia=(loc,size,off)=>{ gl.enableVertexAttribArray(loc);
+    gl.vertexAttribPointer(loc,size,gl.FLOAT,false,STRIDE_B,off*4); gl.vertexAttribDivisor(loc,1); };
+  ia(1,3,0); ia(2,3,3); ia(3,3,6); ia(4,1,9); ia(5,1,10); ia(6,1,11); ia(7,1,12); ia(8,1,13);
+  gl.bindVertexArray(null);
+}
+// 粒子 VAO
+const vaoPart=gl.createVertexArray(); setupInstanceVAO(vaoPart, instVBO);
+
+// ---- 场景高斯 VAO (.ply 载入): pos3 major3 minor3 color3 opa1 = 13 floats ----
+const SC_STRIDE_F=13, SC_STRIDE_B=SC_STRIDE_F*4;
+const sceneVBO=gl.createBuffer();
+const vaoScene=gl.createVertexArray(); gl.bindVertexArray(vaoScene);
+gl.bindBuffer(gl.ARRAY_BUFFER,quadVBO);
+gl.enableVertexAttribArray(0); gl.vertexAttribPointer(0,2,gl.FLOAT,false,0,0); gl.vertexAttribDivisor(0,0);
+gl.bindBuffer(gl.ARRAY_BUFFER,sceneVBO);
+(function(){ const ia=(loc,size,off)=>{ gl.enableVertexAttribArray(loc);
+  gl.vertexAttribPointer(loc,size,gl.FLOAT,false,SC_STRIDE_B,off*4); gl.vertexAttribDivisor(loc,1); };
+  ia(1,3,0); ia(2,3,3); ia(3,3,6); ia(4,3,9); ia(5,1,12); })();
+gl.bindVertexArray(null);
+
+// ---- 背景 3DGS: 一组静态暗色高斯 (地面 + 环境), 与火共用同一光栅器 ----
+const bgInstVBO=gl.createBuffer();
+const vaoBG=gl.createVertexArray(); setupInstanceVAO(vaoBG, bgInstVBO);
+let bgCount=0;
+function mulberry32(a){ return function(){ a|=0;a=a+0x6D2B79F5|0; let t=Math.imul(a^a>>>15,1|a);
+  t=t+Math.imul(t^t>>>7,61|t)^t; return ((t^t>>>14)>>>0)/4294967296; }; }
+let bgGauss=[];                       // 静态 3D 暗高斯 (环境), 每个 {x,y,z,sx,sy,tone,a}
+function buildBG(){
+  const rnd=mulberry32(20260625); bgGauss=[];
+  // 地面: 贴 y≈0 的扁平高斯, x/z 铺开成真 3D 地面 (火坐落其上)
+  for(let i=0;i<420;i++){ const x=(rnd()*2-1)*1.4, y=Math.pow(rnd(),1.7)*0.45, z=(rnd()*2-1)*1.4;
+    const s=0.06+rnd()*0.12; bgGauss.push({x,y,z, sx:s*(1.3+rnd()*0.8), sy:s*(0.8+rnd()*0.5), tone:0.7+rnd()*0.7, a:0.5+rnd()*0.4}); }
+  // 环境体: 大而极暗的高斯填 x/y/z → 体积感的暗 3DGS 场景
+  for(let i=0;i<220;i++){ const x=(rnd()*2-1)*1.6, y=rnd()*2.7, z=(rnd()*2-1)*1.6;
+    const s=0.18+rnd()*0.36; bgGauss.push({x,y,z, sx:s, sy:s*(0.8+rnd()*0.5), tone:0.42+rnd()*0.45, a:0.30+rnd()*0.30}); }
+  bgCount=bgGauss.length;
+}
+// 每帧重组背景高斯为"面向相机"的 billboard (3D 固定位置, 轴随相机)
+let bgData=new Float32Array(0);
+function gatherBG(){
+  const n=bgGauss.length; if(bgData.length<n*STRIDE_F) bgData=new Float32Array(n*STRIDE_F);
+  const arr=bgData; let o=0; const bx=cam.bx, by=cam.by;
+  for(const g of bgGauss){
+    arr[o++]=g.x; arr[o++]=g.y; arr[o++]=g.z;
+    arr[o++]=bx[0]*g.sx; arr[o++]=bx[1]*g.sx; arr[o++]=bx[2]*g.sx;   // major = 相机右
+    arr[o++]=by[0]*g.sy; arr[o++]=by[1]*g.sy; arr[o++]=by[2]*g.sy;   // minor = 相机上
+    arr[o++]=1.0; arr[o++]=g.tone; arr[o++]=g.a; arr[o++]=0; arr[o++]=2; // fade,temp=tone,dens=a,seed,type2
+  }
+  gl.bindBuffer(gl.ARRAY_BUFFER,bgInstVBO);
+  gl.bufferData(gl.ARRAY_BUFFER, bgData.subarray(0,n*STRIDE_F), gl.DYNAMIC_DRAW);
+  return n;
+}
+
+// ===========================================================================
+//  真 .ply 场景 (Inria 3DGS 预训练格式) 载入 + 渲染
+//   解析 binary_little_endian; 每高斯: 位置 · scale=exp · 四元数 rot · opacity=sigmoid
+//   · 颜色 = SH 直流项 (0.5 + 0.2821·f_dc)。取两根最大主轴当扁平 splat (近似 EWA)。
+// ===========================================================================
+let sceneGauss=[];                       // {p:[x,y,z], a0:[..], a1:[..], c:[r,g,b], o}
+let sceneInfo={center:[0,0,0], extent:1};
+function parsePLY(buf){
+  const bytes=new Uint8Array(buf), sig='end_header\n';
+  let he=-1; for(let i=0;i<bytes.length-sig.length;i++){ let ok=true;
+    for(let j=0;j<sig.length;j++) if(bytes[i+j]!==sig.charCodeAt(j)){ok=false;break;} if(ok){he=i+sig.length;break;} }
+  if(he<0) throw new Error('.ply: 缺 end_header');
+  const header=new TextDecoder().decode(bytes.subarray(0,he));
+  if(!/binary_little_endian/.test(header)) throw new Error('.ply: 仅支持 binary_little_endian (Inria 标准)');
+  const N=(header.match(/element vertex (\d+)/)||[])[1]|0;
+  const props=[]; header.split('\n').forEach(l=>{ const m=l.match(/^property\s+(\w+)\s+([\w]+)/); if(m) props.push({t:m[1],n:m[2]}); });
+  const sz={char:1,uchar:1,uint8:1,int8:1,short:2,ushort:2,int:4,uint:4,float:4,float32:4,double:8};
+  let stride=0; const off={}; for(const p of props){ off[p.n]=stride; stride+=sz[p.t]||4; }
+  for(const k of ['x','y','z','opacity','scale_0','rot_0','f_dc_0']) if(off[k]===undefined) throw new Error('.ply: 缺字段 '+k+' (不是 3DGS .ply?)');
+  const dv=new DataView(buf, he), C0=0.28209479177387814, sg=x=>1/(1+Math.exp(-x));
+  const F=(i,n)=>dv.getFloat32(i*stride+off[n], true);
+  // 子采样到上限
+  const keepAll = N<=P.sceneMax; const step = keepAll?1:N/P.sceneMax;
+  const out=[]; let cx=0,cy=0,cz=0;
+  for(let f=0; f<N; f+= step){ const i=f|0;
+    const x=F(i,'x'),y=F(i,'y'),z=F(i,'z');
+    const s0=Math.exp(F(i,'scale_0')),s1=Math.exp(F(i,'scale_1')),s2=Math.exp(F(i,'scale_2'));
+    let qw=F(i,'rot_0'),qx=F(i,'rot_1'),qy=F(i,'rot_2'),qz=F(i,'rot_3');
+    const ql=Math.hypot(qw,qx,qy,qz)||1; qw/=ql;qx/=ql;qy/=ql;qz/=ql;
+    const R=[[1-2*(qy*qy+qz*qz),2*(qx*qy-qw*qz),2*(qx*qz+qw*qy)],
+             [2*(qx*qy+qw*qz),1-2*(qx*qx+qz*qz),2*(qy*qz-qw*qx)],
+             [2*(qx*qz-qw*qy),2*(qy*qz+qw*qx),1-2*(qx*qx+qy*qy)]];
+    const sc=[s0,s1,s2], ord=[0,1,2].sort((a,b)=>sc[b]-sc[a]);
+    const ax=k=>[R[0][k]*sc[k]*2.2, R[1][k]*sc[k]*2.2, R[2][k]*sc[k]*2.2];   // ~2σ 半轴
+    const cl=v=>Math.max(0,Math.min(1,v));
+    out.push({ p:[x,y,z], a0:ax(ord[0]), a1:ax(ord[1]),
+      c:[cl(0.5+C0*F(i,'f_dc_0')),cl(0.5+C0*F(i,'f_dc_1')),cl(0.5+C0*F(i,'f_dc_2'))], o:sg(F(i,'opacity')) });
+    cx+=x;cy+=y;cz+=z;
+  }
+  const n=out.length; cx/=n;cy/=n;cz/=n;
+  let ext=0; for(const g of out){ const d=Math.max(Math.abs(g.p[0]-cx),Math.abs(g.p[1]-cy),Math.abs(g.p[2]-cz)); if(d>ext)ext=d; }
+  return { gauss:out, center:[cx,cy,cz], extent:ext||1, total:N };
+}
+function loadPLY(buf){
+  const r=parsePLY(buf); sceneGauss=r.gauss; sceneInfo={center:r.center, extent:r.extent};
+  P.sceneScale = 1.6 / (r.extent||1);      // 自动缩放到 ~3.2 单位跨度
+  P.sceneOn=true; P.box=false;             // 载入真场景 → 关掉程序化背景
+  applyScene(); return { kept:sceneGauss.length, total:r.total };
+}
+// 每帧: 应用场景变换(缩放/绕Y/俯仰/抬升, 自动去中心) → 世界 splat →
+//   按到相机距离² 计数分桶 (O(n+K), 近→远桶序) 写 sceneVBO。
+//   桶边界 (sceneDMin/DMax, SCENE_BUCKETS) 与动态流共享 → render() 逐桶交错两条流,
+//   火与 .ply 场景获得全局 front-to-back 顺序 (逐基元互遮挡, 桶内近似)。
+//   P.sceneSorted=false 退回旧行为 (未排序、火后绘制) 作对照。
+const SCENE_BUCKETS=96;
+let sceneData=new Float32Array(0), sceneRaw=new Float32Array(0), sceneKey=new Float32Array(0), sceneBIdx=new Int32Array(0);
+let sceneBucketOfs=new Int32Array(SCENE_BUCKETS+1), sceneDMin=0, sceneDMax=1;
+function gatherScene(){
+  const n=sceneGauss.length; if(!n) return 0;
+  if(sceneRaw.length<n*SC_STRIDE_F){ sceneRaw=new Float32Array(n*SC_STRIDE_F);
+    sceneData=new Float32Array(n*SC_STRIDE_F); sceneKey=new Float32Array(n); sceneBIdx=new Int32Array(n); }
+  const arr=sceneRaw; let o=0, gi=0;
+  const S=P.sceneScale, cy=Math.cos(P.sceneYaw), sy=Math.sin(P.sceneYaw),
+        cp=Math.cos(P.scenePitch), sp=Math.sin(P.scenePitch), C=sceneInfo.center, lift=P.sceneLift;
+  const eye=cam.eye;
+  // 旋转: 先俯仰(绕X)再绕Y, 乘缩放
+  function tf(v){ let x=(v[0]-C[0]), y=(v[1]-C[1]), z=(v[2]-C[2]);   // 去中心 (位置才去中心, 轴不去)
+    let y2=y*cp - z*sp, z2=y*sp + z*cp;                              // pitch X
+    let x3=x*cy + z2*sy, z3=-x*sy + z2*cy;                           // yaw Y
+    return [x3*S, y2*S, z3*S]; }
+  function tfv(v){ let x=v[0],y=v[1],z=v[2];                          // 轴: 只旋转+缩放
+    let y2=y*cp - z*sp, z2=y*sp + z*cp; let x3=x*cy + z2*sy, z3=-x*sy + z2*cy;
+    return [x3*S, y2*S, z3*S]; }
+  let dmin=Infinity, dmax=-Infinity;
+  for(const g of sceneGauss){
+    const p=tf(g.p), a0=tfv(g.a0), a1=tfv(g.a1);
+    const wx=p[0], wy=p[1]+lift, wz=p[2];
+    arr[o++]=wx; arr[o++]=wy; arr[o++]=wz;
+    arr[o++]=a0[0]; arr[o++]=a0[1]; arr[o++]=a0[2];
+    arr[o++]=a1[0]; arr[o++]=a1[1]; arr[o++]=a1[2];
+    arr[o++]=g.c[0]; arr[o++]=g.c[1]; arr[o++]=g.c[2]; arr[o++]=g.o;
+    const ex=wx-eye[0], ey=wy-eye[1], ez=wz-eye[2];
+    const d=ex*ex+ey*ey+ez*ez; sceneKey[gi++]=d;
+    if(d<dmin)dmin=d; if(d>dmax)dmax=d;
+  }
+  if(!P.sceneSorted){                       // 旧路径: 原顺序直接上传 (对照)
+    gl.bindBuffer(gl.ARRAY_BUFFER,sceneVBO);
+    gl.bufferData(gl.ARRAY_BUFFER, sceneRaw.subarray(0,n*SC_STRIDE_F), gl.DYNAMIC_DRAW);
+    return n;
+  }
+  sceneDMin=dmin; sceneDMax=(dmax>dmin)?dmax:dmin+1;
+  const K=SCENE_BUCKETS, inv=K/(sceneDMax-sceneDMin);
+  const cnt=new Int32Array(K);
+  for(let i=0;i<n;i++){ let b=((sceneKey[i]-sceneDMin)*inv)|0; if(b<0)b=0; if(b>=K)b=K-1;
+    sceneBIdx[i]=b; cnt[b]++; }
+  sceneBucketOfs[0]=0;
+  for(let k=0;k<K;k++) sceneBucketOfs[k+1]=sceneBucketOfs[k]+cnt[k];
+  const cursor=Int32Array.from(sceneBucketOfs.subarray(0,K));
+  for(let i=0;i<n;i++){ const d=cursor[sceneBIdx[i]]++;
+    let s=i*SC_STRIDE_F, t=d*SC_STRIDE_F;
+    for(let j=0;j<SC_STRIDE_F;j++) sceneData[t+j]=sceneRaw[s+j]; }
+  gl.bindBuffer(gl.ARRAY_BUFFER,sceneVBO);
+  gl.bufferData(gl.ARRAY_BUFFER, sceneData.subarray(0,n*SC_STRIDE_F), gl.DYNAMIC_DRAW);
+  return n;
+}
+
+// 全屏 VAO
+const vaoTri=gl.createVertexArray(); gl.bindVertexArray(vaoTri);
+gl.bindBuffer(gl.ARRAY_BUFFER,triVBO);
+gl.enableVertexAttribArray(0); gl.vertexAttribPointer(0,2,gl.FLOAT,false,0,0);
+gl.bindVertexArray(null);
+
+// ---- FBOs (scene 全分辨率 HDR, bloom 半分辨率 ping-pong) ----
+let sceneTex,sceneFBO, bloomA,bloomAF, bloomB,bloomBF, FBW=2,FBH=2,BW=1,BH=1;
+function makeTargets(){
+  FBW=cv.width; FBH=cv.height; BW=Math.max(1,FBW>>1); BH=Math.max(1,FBH>>1);
+  [sceneTex,bloomA,bloomB].forEach(t=>t&&gl.deleteTexture(t));
+  [sceneFBO,bloomAF,bloomBF].forEach(f=>f&&gl.deleteFramebuffer(f));
+  sceneTex=tex(FBW,FBH,HDR_IFMT,HDR_TYPE); sceneFBO=fbo(sceneTex);
+  bloomA=tex(BW,BH,HDR_IFMT,HDR_TYPE); bloomAF=fbo(bloomA);
+  bloomB=tex(BW,BH,HDR_IFMT,HDR_TYPE); bloomBF=fbo(bloomB);
+  gl.bindFramebuffer(gl.FRAMEBUFFER,null);
+}
+function resize(){
+  const r=cv.getBoundingClientRect();
+  cv.width=Math.max(1,r.width*DPR); cv.height=Math.max(1,r.height*DPR);
+  makeTargets();
+}
+window.addEventListener('resize', resize);
+
+// ---- 真 3D 相机 (绕火环绕) + 切片基向量 ----
+const cam={ VP:m4Perspective(0.85,1,0.05,50), bx:[1,0,0], by:[0,1,0], fh:[0,0,1], eye:[0,1,3], fireUV:[0.5,0.13] };
+function updateCam(aspect){
+  const az=P.yaw*Math.PI + (P.orbit? orbitPhase*0.6 : 0);
+  const el=P.camElev, dist=P.camDist, tgt=[0,1.05,0];
+  const eye=[ tgt[0]+dist*Math.cos(el)*Math.sin(az), tgt[1]+dist*Math.sin(el), tgt[2]+dist*Math.cos(el)*Math.cos(az) ];
+  cam.eye=eye;
+  const view=m4LookAt(eye,tgt,[0,1,0]);
+  const proj=m4Perspective(P.fov, aspect, 0.05, 50);
+  cam.VP=m4Mul(proj,view);
+  // 基向量: bz=后向, bx=右(水平), by=相机上; fh=水平前向(切片深度轴)
+  let bz0=eye[0]-tgt[0],bz1=eye[1]-tgt[1],bz2=eye[2]-tgt[2]; const bl=Math.hypot(bz0,bz1,bz2)||1; bz0/=bl;bz1/=bl;bz2/=bl;
+  let bxx=bz2, bxz=-bz0; const bxl=Math.hypot(bxx,bxz)||1; bxx/=bxl; bxz/=bxl;   // bx = up×bz (水平右)
+  cam.bx=[bxx,0,bxz];
+  // 相机上 by = bz × bx
+  let byx=bz1*bxz, byy=bz2*bxx-bz0*bxz, byz=-bz1*bxx; const byl=Math.hypot(byx,byy,byz)||1;
+  cam.by=[byx/byl,byy/byl,byz/byl];
+  const fhl=Math.hypot(bz0,bz2)||1; cam.fh=[-bz0/fhl, 0, -bz2/fhl];              // 水平前向(切片深度轴)
+  // 火源底部屏幕 uv
+  const f=m4Apply(cam.VP,0,0.06,0); cam.fireUV=[f[0]*0.5+0.5, f[1]*0.5+0.5];
+}
+
+// ===========================================================================
+//  参数
+// ===========================================================================
+const P = {
+  mode:'fire', simLayers:9,        // 默认: 每层都跑涡粒子(VIC) — 对齐导师"每层 vortex particles"
+  riseV:1.15, sway:0.9, rate:700, coolP:0.8, spread:0.7,
+  buoy:0.9, baro:1.4, eps:0.07, cool:1.2, gam:1.0, turb:0.55, couple:0.5, interZ:0.0,
+  layers:9, yaw:0.0, rad:36, ppl:600, wind:0,
+  camDist:3.4, camElev:0.16, fov:0.85, sliceMode:'view', sliceDepth:0.7,
+  covStretch:1.3, covMax:3.6, covRelax:1.0,        // Tier2: 高斯协方差随 ∇u 形变
+  dimMode:'layer', vol3DTurb:0.6, vol3DScale:2.4,  // Tier1: 'layer'=2.5D 分层 | 'vol'=真 3D 体
+  filament:false, filLen:0.5, filGain:3.0,         // Tier3: 沿轨迹把高斯拉成"涡丝"
+  exposure:1.0, emis:1.4, bloom:1.0, thresh:0.95, blurIters:5,
+  box:true, boxLight:0.85, embers:true, reflect:0.4, haze:0.6, emberRate:16, emberMax:160,
+  sceneOn:false, sceneMax:120000, sceneScale:1, sceneYaw:0, scenePitch:0, sceneLift:0, sceneLight:1.0,
+  sceneSorted:true,                 // true=场景与火按深度桶交错(全局排序, 互遮挡) | false=旧行为(未排序,火后绘制)
+  orbit:true, stretch:true, flicker:true, paused:false
+};
+
+// ===========================================================================
+//  仿真背景网格 (∂T/∂x, 仅路线2)
+// ===========================================================================
+const GX=20, GY=30;
+function newGrid(){ return {T:new Float32Array(GX*GY), W:new Float32Array(GX*GY)}; }
+function gridIndex(x,y){
+  let gx=Math.floor((x+WX/2)/WX*GX), gy=Math.floor(y/WY*GY);
+  gx=Math.max(0,Math.min(GX-1,gx)); gy=Math.max(0,Math.min(GY-1,gy)); return gy*GX+gx;
+}
+function splatT(grid,x,y,T){ const i=gridIndex(x,y); grid.T[i]+=T; grid.W[i]+=1; }
+function fieldT(grid,gx,gy){ const i=gy*GX+gx; return grid.W[i]>0? grid.T[i]/grid.W[i]:0; }
+function dTdx(grid,x,y){
+  let gx=Math.floor((x+WX/2)/WX*GX), gy=Math.floor(y/WY*GY);
+  gx=Math.max(1,Math.min(GX-2,gx)); gy=Math.max(0,Math.min(GY-1,gy));
+  return (fieldT(grid,gx+1,gy)-fieldT(grid,gx-1,gy))/(WX/GX)/2;
+}
+function makeLayer(seed){ return {ps:[], grid:newGrid(), vic:newVIC(), seed:seed, t:0, acc:0}; }
+let layers=[];
+function rebuildLayers(){ layers=[]; for(let k=0;k<P.layers;k++){ const L=makeLayer(k*97.13+0.5); L.idx=k; layers.push(L); } }
+function curl(x,y,t,seed){
+  const a=Math.sin(x*3.1+seed+t*0.7)*Math.cos(y*2.7-seed*0.5+t*0.5);
+  const b=Math.cos(x*2.3-seed*0.3-t*0.6)*Math.sin(y*3.5+seed+t*0.4);
+  return [a-b, b*0.6+a*0.4];
+}
+// 3D curl-noise: 取一个正弦势场 A 的旋度 u=∇×A → 解析无散度(∇·u=0), Tier1 真三维湍流
+function curl3(x,y,z,t){
+  const ux=-1.6*Math.sin(y*1.6-t*0.45) - 1.5*Math.cos(z*1.5-t*0.5);
+  const uy=-1.3*Math.sin(z*1.3-t*0.4)  - 1.4*Math.cos(x*1.4+t*0.55);
+  const uz=-1.9*Math.sin(x*1.9+t*0.3)  - 1.7*Math.cos(y*1.7+t*0.6);
+  // 叠一层高频
+  const u2x=-1.0*Math.sin(y*3.3+t*0.9)-1.0*Math.cos(z*2.9-t*0.7);
+  const u2y=-1.0*Math.sin(z*3.1-t*0.8)-1.0*Math.cos(x*3.5+t*0.6);
+  const u2z=-1.0*Math.sin(x*3.7+t*0.5)-1.0*Math.cos(y*3.0-t*0.85);
+  return [ux+u2x*0.5, uy+u2y*0.5, uz+u2z*0.5];
+}
+let source={x:0,y:0.04,w:0.22,vx:0,px:0,py:0};
+let pointer={active:false,x:0,y:0,px:0,py:0};
+let emberAcc=0;
+
+// ===== 火星 ember: 稀疏、清亮、长寿命, 随火上飘并闪烁 =====
+let embers=[];
+function stepEmbers(dt){
+  if(P.embers && P.mode==='fire' && !P.paused){
+    emberAcc += P.emberRate*dt*(pointer.active?1.7:1.0);
+    while(emberAcc>=1 && embers.length<P.emberMax){
+      emberAcc-=1;
+      embers.push({ x:source.x+(Math.random()-0.5)*source.w*0.8, y:source.y+0.02,
+        vx:(Math.random()-0.5)*0.25+source.vx*0.3, vy:0.55+Math.random()*1.0,
+        T:0.8+Math.random()*0.2, life:0, ttl:1.1+Math.random()*1.8, seed:Math.random()*99 });
+    }
+  }
+  const out=[];
+  for(const e of embers){
+    e.life+=dt;
+    const c=curl(e.x*3.0, e.y*2.0+e.seed, e.life, e.seed);
+    e.vx += c[0]*0.5*dt*Math.max(0.4,P.sway);
+    e.vy += (-0.12 + c[1]*0.3)*dt;                 // 轻微重力
+    e.vx*=(1-dt*0.5);
+    e.x+=dt*e.vx; e.y+=dt*e.vy;
+    e.T-=dt*0.22*e.T;
+    if(e.life<e.ttl && e.y<WY && Math.abs(e.x)<WX*0.7 && e.T>0.06) out.push(e);
+  }
+  embers=out;
+}
+
+// ===========================================================================
+//  Tier 1 — 真三维"体"模式: 一团 3D 拉格朗日粒子, 被浮力 + 3D curl-noise 驱动。
+//   抛弃分层切片(2.5D 的诚实软肋); 粒子有真 (x,y,z), 绕火能看到不同侧面;
+//   3D curl-noise 的速度梯度含真三维拉伸项(2D 严格为 0 的那个)。与分层模式可切换对比(§6.3)。
+// ===========================================================================
+let cloud=[], cloudAcc=0, vol_t=0;
+function step3D(dt){
+  vol_t += dt;
+  if(pointer.active){ source.x=pointer.x; source.y=Math.max(0.02,pointer.y); }
+  else { source.x*=0.96; if(Math.abs(source.x)<0.005)source.x=0; source.y=0.04; }
+  const cap=P.ppl*P.layers;                       // 总预算 ≈ 分层模式
+  cloudAcc += P.rate*P.layers*dt*(pointer.active?1.8:1.0)/3;
+  while(cloudAcc>=1 && cloud.length<cap){ cloudAcc-=1;
+    const a=Math.random()*6.283, rr=Math.sqrt(Math.random())*source.w*0.7;
+    cloud.push({ x:source.x+Math.cos(a)*rr, y:source.y+Math.random()*0.05, z:Math.sin(a)*rr,
+      vx:0,vy:0,vz:0, T:0.92+Math.random()*0.08, d:0.85+Math.random()*0.15, life:0, seedp:Math.random()*99 });
+  }
+  const out=[], S=P.vol3DScale;
+  for(const p of cloud){
+    const tf=Math.max(0.15,p.T);
+    const c=curl3(p.x*S, p.y*S, p.z*S, vol_t);
+    const turb=P.vol3DTurb*0.5;                      // curl3 幅度大, 收一档
+    const pull=1.2/(1+p.y*1.1);                      // 向轴心夹带(plume entrainment): 底部强、上部松→锥形
+    let vx=P.wind+source.vx*0.3 + c[0]*turb - pull*p.x;
+    let vy=P.buoy*tf*1.7 + c[1]*turb*0.5;            // 浮力主导上升 + 湍流细节
+    let vz=c[2]*turb - pull*p.z;
+    p.vx=vx; p.vy=vy; p.vz=vz;
+    p.x+=dt*vx; p.y+=dt*vy; p.z+=dt*vz; p.life+=dt;
+    p.T-=dt*P.cool*p.T*p.T; p.d*=(1-dt*0.3);
+    if(p.T>0.04 && p.y<WY && Math.hypot(p.x,p.z)<WX*0.55 && p.d>0.03) out.push(p);
+  }
+  cloud=out;
+}
+
+// ===== 路线1: 程序化羽流 (kinematic, curl-noise 平流, 无 N 体) =====
+function stepProc(layer, dt){
+  layer.t+=dt;
+  const cap=P.ppl;
+  layer.acc += P.rate*dt*(pointer.active?1.8:1.0)/Math.max(1,P.layers);
+  while(layer.acc>=1 && layer.ps.length<cap){
+    layer.acc-=1; const r=(Math.random()*2-1);
+    layer.ps.push({ x:source.x+r*source.w*0.5+(Math.random()-0.5)*0.02, y:source.y+Math.random()*0.05,
+      G:0, T:0.92+Math.random()*0.08, d:0.85+Math.random()*0.15,
+      vx:source.vx*0.5, vy:0, seedp:Math.random()*99, life:0, sxx:1,sxy:0,syy:1 });
+  }
+  const out=[];
+  const he=0.02;
+  for(const p of layer.ps){
+    const tf=Math.max(0.15,p.T);
+    let vx=P.wind+source.vx*0.3;
+    let vy=P.riseV*(0.5+0.9*tf);
+    const c=curl(p.x*2.4, p.y*1.8+layer.t*0.6, layer.t, p.seedp);
+    const widen=1+p.life*P.spread;
+    vx+=c[0]*P.sway*widen*0.5; vy+=c[1]*P.sway*0.35;
+    p.G=c[0]; p.vx=vx; p.vy=vy;
+    // 协方差形变: 由 curl 速度场的梯度 ∇u 演化 F  (Tier 2, gaseous PhysGaussian)
+    if(P.covStretch>0){
+      const cR=curl((p.x+he)*2.4,p.y*1.8+layer.t*0.6,layer.t,p.seedp), cL=curl((p.x-he)*2.4,p.y*1.8+layer.t*0.6,layer.t,p.seedp);
+      const cU=curl(p.x*2.4,(p.y+he)*1.8+layer.t*0.6,layer.t,p.seedp), cD=curl(p.x*2.4,(p.y-he)*1.8+layer.t*0.6,layer.t,p.seedp);
+      const S=P.sway*widen*0.5;
+      evolveF(p, (cR[0]-cL[0])/(2*he)*S, (cU[0]-cD[0])/(2*he)*S, (cR[1]-cL[1])/(2*he)*P.sway*0.35, (cU[1]-cD[1])/(2*he)*P.sway*0.35, dt);
+    }
+    p.x+=dt*vx; p.y+=dt*vy; p.life+=dt;
+    p.T-=dt*P.coolP*p.T*p.T; p.d*=(1-dt*0.32);
+    if(p.T>0.03 && p.y<WY && Math.abs(p.x)<WX*0.75 && p.d>0.03) out.push(p);
+  }
+  layer.ps=out;
+}
+// 协方差演化: Σ̇ = L·Σ + Σ·Lᵀ (对称, 只 3 个数) → 向 I 松弛 → 特征值钳制(det=1 面积守恒,
+//  aspect≤covMax²)。直接演化 Σ 避免了演化 F 时的数值发散。L=[[Lxx,Lxy],[Lyx,Lyy]]=∇u。
+function evolveF(p, Lxx,Lxy,Lyx,Lyy, dt){
+  let xx=p.sxx, xy=p.sxy, yy=p.syy, k=dt*P.covStretch;
+  xx += k*2*(Lxx*xx+Lxy*xy);
+  const nxy = p.sxy + k*(Lyx*p.sxx+(Lxx+Lyy)*p.sxy+Lxy*p.syy);
+  yy += k*2*(Lyx*p.sxy+Lyy*yy);
+  xy = nxy;
+  const rr=1-dt*P.covRelax; xx=1+(xx-1)*rr; xy*=rr; yy=1+(yy-1)*rr;     // 向圆松弛
+  // 特征分解 (2×2 对称)
+  const tr=xx+yy, ds=Math.sqrt(Math.max(0, tr*tr*0.25-(xx*yy-xy*xy)));
+  let l0=tr*0.5+ds, l1=tr*0.5-ds;
+  let ex=xy, ey=l0-xx; const el=Math.hypot(ex,ey); if(el<1e-6){ex=1;ey=0;}else{ex/=el;ey/=el;}
+  const g=1/Math.sqrt(Math.max(1e-4,l0*l1)); l0*=g; l1*=g;             // det=1 (不可压面积守恒)
+  if(l0>P.covMax)l0=P.covMax; if(l0<1)l0=1; l1=1/l0;                   // 轴比 = l0 ≤ covMax
+  p.sxx=l0*ex*ex+l1*ey*ey; p.sxy=(l0-l1)*ex*ey; p.syy=l0*ey*ey+l1*ex*ex;
+}
+
+// ===== 路线2: 2D 涡粒子 + Biot–Savart =====
+function emitSim(layer, dt){
+  const cap=P.ppl; if(layer.ps.length>=cap) return;
+  const n=Math.min(cap-layer.ps.length, 6+(pointer.active?6:0));
+  for(let i=0;i<n;i++){ const r=(Math.random()*2-1);
+    layer.ps.push({ x:source.x+r*source.w*0.5+(Math.random()-0.5)*0.02, y:source.y+Math.random()*0.05,
+      G:(Math.random()-0.5)*0.6+Math.sin(layer.seed+layer.t)*0.1,
+      T:0.92+Math.random()*0.08, d:0.85+Math.random()*0.15, vx:source.vx*0.5, vy:0, seedp:Math.random()*99, life:0, sxx:1,sxy:0,syy:1 });
+  }
+}
+function biotSavart(ps,px,py,eps2,gscale){ let ux=0,uy=0;
+  for(let j=0;j<ps.length;j++){ const q=ps[j]; const rx=px-q.x,ry=py-q.y;
+    const denom=2*Math.PI*(rx*rx+ry*ry+eps2); const c=q.G*gscale/denom; ux+=-ry*c; uy+=rx*c; }
+  return [ux,uy]; }
+function stepSim(layer,dt,neigh){
+  const ps=layer.ps; layer.t+=dt;
+  layer.grid.T.fill(0); layer.grid.W.fill(0);
+  for(const p of ps) splatT(layer.grid,p.x,p.y,p.T);
+  for(const p of ps){ const g=dTdx(layer.grid,p.x,p.y); p.G+=dt*P.baro*g; p.G*=(1-dt*0.15); }
+  const eps2=P.eps*P.eps;
+  for(const p of ps){
+    let [ux,uy]=biotSavart(ps,p.x,p.y,eps2,P.gam);
+    uy+=P.buoy*(p.T);
+    if(P.turb>0){ const c=curl(p.x,p.y,layer.t,layer.seed); ux+=c[0]*P.turb*0.5; uy+=c[1]*P.turb*0.5; }
+    ux+=P.wind+source.vx*0.3;
+    if(neigh&&P.couple>0){ ux=ux*(1-P.couple)+neigh.ux*P.couple; uy=uy*(1-P.couple)+neigh.uy*P.couple; }
+    p.vx=ux; p.vy=uy;
+  }
+  const out=[];
+  for(let i=0;i<ps.length;i++){ const p=ps[i];
+    p.x+=dt*p.vx; p.y+=dt*p.vy; p.life+=dt;
+    p.T-=dt*P.cool*p.T*p.T; p.d*=(1-dt*0.35);
+    if(p.T>0.03 && p.y<WY && Math.abs(p.x)<WX*0.75 && p.d>0.03) out.push(p);
+  }
+  layer.ps=out;
+}
+function layerMeanVel(layer){ let ux=0,uy=0,n=layer.ps.length||1;
+  for(const p of layer.ps){ ux+=p.vx; uy+=p.vy; } return {ux:ux/n,uy:uy/n}; }
+
+// ===========================================================================
+//  路线2 升级: Vortex-In-Cell (VIC) + Eulerian 温度场平流 —— 每层一个真 2D 流体解算
+//   关闭 Biot–Savart 的 O(N²); 改: 粒子涡量 P2G → Poisson 解 ψ → u=curl ψ → G2P。
+//   温度是真正在网格上半拉格朗日平流(对流 temperature) + 浮力源 + 斜压涡量。
+//   这就是导师路线图「每层跑涡粒子 + 对流温度」的实现, O(N + 网格) 实时。
+// ===========================================================================
+const NX=32, NY=48, HX=WX/NX, HY=WY/NY;
+function newVIC(){ return { w:new Float32Array(NX*NY), psi:new Float32Array(NX*NY),
+  ux:new Float32Array(NX*NY), uy:new Float32Array(NX*NY), T:new Float32Array(NX*NY), Tb:new Float32Array(NX*NY),
+  wPrev:new Float32Array(NX*NY) }; }   // 上一帧涡量快照 (切片间耦合用)
+function gX(x){ return (x+WX/2)/WX*NX-0.5; }   // world→网格(单元中心)坐标
+function gY(y){ return y/WY*NY-0.5; }
+function smp(f,gx,gy){                          // 双线性采样
+  let i=Math.floor(gx), j=Math.floor(gy); let fx=gx-i, fy=gy-j;
+  if(i<0){i=0;fx=0;} else if(i>NX-2){i=NX-2;fx=1;}
+  if(j<0){j=0;fy=0;} else if(j>NY-2){j=NY-2;fy=1;}
+  const a=f[j*NX+i],b=f[j*NX+i+1],c=f[(j+1)*NX+i],d=f[(j+1)*NX+i+1];
+  return (a*(1-fx)+b*fx)*(1-fy)+(c*(1-fx)+d*fx)*fy;
+}
+function splat(f,gx,gy,val){                     // 双线性 P2G
+  let i=Math.floor(gx), j=Math.floor(gy);
+  if(i<0||i>NX-2||j<0||j>NY-2){ const ii=Math.max(0,Math.min(NX-1,Math.round(gx))),
+    jj=Math.max(0,Math.min(NY-1,Math.round(gy))); f[jj*NX+ii]+=val; return; }
+  const fx=gx-i, fy=gy-j;
+  f[j*NX+i]+=val*(1-fx)*(1-fy); f[j*NX+i+1]+=val*fx*(1-fy);
+  f[(j+1)*NX+i]+=val*(1-fx)*fy; f[(j+1)*NX+i+1]+=val*fx*fy;
+}
+
+// ===========================================================================
+//  ILM 两级结构 (Horvath & Geiger 2009): 粗粒度全局解算驱动所有层 + 每层细化
+//   Level-1: 一个低分辨率 (16×24) 全局 2D 流体场, 提供"可导演"的整体运动;
+//   Level-2: 每层各自 32×48 VIC 加细节, 并被 P.couple 比例 nudge 向全局场 → 层间相干。
+//   c=0 各层独立; c=1 各层完全跟随全局(读作一团火); 中间=ILM 风格的相干叠层。
+// ===========================================================================
+const CX=16, CY=24, CHX=WX/CX, CHY=WY/CY;
+const coarse={ T:new Float32Array(CX*CY), Tb:new Float32Array(CX*CY), w:new Float32Array(CX*CY),
+  psi:new Float32Array(CX*CY), ux:new Float32Array(CX*CY), uy:new Float32Array(CX*CY) };
+function cgX(x){ return (x+WX/2)/WX*CX-0.5; }
+function cgY(y){ return y/WY*CY-0.5; }
+function smpC(f,x,y){                              // world → 粗网格 双线性
+  let gx=cgX(x), gy=cgY(y), i=Math.floor(gx), j=Math.floor(gy), fx=gx-i, fy=gy-j;
+  if(i<0){i=0;fx=0;}else if(i>CX-2){i=CX-2;fx=1;}
+  if(j<0){j=0;fy=0;}else if(j>CY-2){j=CY-2;fy=1;}
+  const a=f[j*CX+i],b=f[j*CX+i+1],c=f[(j+1)*CX+i],d=f[(j+1)*CX+i+1];
+  return (a*(1-fx)+b*fx)*(1-fy)+(c*(1-fx)+d*fx)*fy;
+}
+function stepCoarse(dt){                            // Level-1 全局驱动 (grid-only)
+  const T=coarse.T,Tb=coarse.Tb,ux=coarse.ux,uy=coarse.uy,w=coarse.w,psi=coarse.psi;
+  // 温度场平流
+  for(let j=0;j<CY;j++)for(let i=0;i<CX;i++){ const id=j*CX+i;
+    const wx=(i+0.5)/CX*WX-WX/2, wy=(j+0.5)/CY*WY;
+    Tb[id]=smpC(T, wx-dt*ux[id], wy-dt*uy[id]); }
+  T.set(Tb);
+  // 火源加热 + 冷却
+  for(let j=0;j<CY;j++)for(let i=0;i<CX;i++){ const id=j*CX+i;
+    const wx=(i+0.5)/CX*WX-WX/2, wy=(j+0.5)/CY*WY;
+    if(wy<source.y+0.22){ const dx=(wx-source.x)/Math.max(0.06,source.w);
+      T[id]+=dt*4.5*Math.exp(-dx*dx*1.8)*(pointer.active?1.4:1.0); }
+    T[id]*=(1-dt*P.cool*0.4); if(T[id]>1.6)T[id]=1.6; else if(T[id]<0)T[id]=0; }
+  // 斜压涡量 (准静态) ω=β·∂T/∂x
+  w.fill(0);
+  for(let j=1;j<CY-1;j++)for(let i=1;i<CX-1;i++){ const id=j*CX+i;
+    w[id]=P.baro*(T[id+1]-T[id-1])/(2*CHX); }
+  // Poisson ∇²ψ=−ω
+  const a=1/(CHX*CHX), b=1/(CHY*CHY), inv=1/(2*a+2*b);
+  for(let it=0;it<30;it++)for(let j=1;j<CY-1;j++)for(let i=1;i<CX-1;i++){ const id=j*CX+i;
+    psi[id]=(a*(psi[id+1]+psi[id-1])+b*(psi[id+CX]+psi[id-CX])+w[id])*inv; }
+  // 速度 = curl ψ + 全局浮力上升
+  for(let j=1;j<CY-1;j++)for(let i=1;i<CX-1;i++){ const id=j*CX+i;
+    ux[id]=(psi[id+CX]-psi[id-CX])/(2*CHY);
+    uy[id]=-(psi[id+1]-psi[id-1])/(2*CHX) + P.buoy*T[id]; }
+}
+
+function stepSimVIC(layer, dt){
+  const v=layer.vic, ps=layer.ps; layer.t+=dt;
+  const T=v.T, Tb=v.Tb, ux=v.ux, uy=v.uy, w=v.w, psi=v.psi;
+  // 1) 温度场半拉格朗日平流 (用上一帧速度回溯)
+  for(let j=0;j<NY;j++)for(let i=0;i<NX;i++){ const id=j*NX+i;
+    const wx=(i+0.5)/NX*WX-WX/2, wy=(j+0.5)/NY*WY, idv=id;
+    Tb[id]=smp(T, gX(wx-dt*ux[idv]), gY(wy-dt*uy[idv]));
+  }
+  T.set(Tb);
+  // 2) 浮力源(底部火源加热) + 冷却
+  for(let j=0;j<NY;j++)for(let i=0;i<NX;i++){ const id=j*NX+i;
+    const wx=(i+0.5)/NX*WX-WX/2, wy=(j+0.5)/NY*WY;
+    if(wy < source.y+0.20){ const dx=(wx-source.x)/Math.max(0.05,source.w);
+      T[id]+= dt*4.5*Math.exp(-dx*dx*2.0)*(pointer.active?1.5:1.0); }
+    T[id]*=(1-dt*P.cool*0.5); if(T[id]>1.6)T[id]=1.6; else if(T[id]<0)T[id]=0;
+  }
+  // 3) 涡量场 ω: 粒子斜压更新 Γ += dt·β·∂T/∂x, 再 P2G 沉积
+  w.fill(0);
+  for(const p of ps){
+    const gx=gX(p.x), gy=gY(p.y);
+    const dTx=(smp(T,gX(p.x+HX*0.5),gy)-smp(T,gX(p.x-HX*0.5),gy))/HX;   // 斜压源
+    p.G += dt*P.baro*dTx; p.G*=(1-dt*0.1);
+    splat(w, gx, gy, p.G*P.gam);
+  }
+  // 3b) 切片间涡量耦合 (双向、守恒环量): 用上一帧相邻切片涡量的 z-Laplacian 注入对称源,
+  //     重建 stacked-2D 结构性丢弃的 out-of-plane 二阶耦合 ∂²ω/∂z² → 涡结构跨切片相干,
+  //     使层栈作为一个 3D 体而非 N 张独立薄片演化。端层零通量(Neumann)保证 Σ 环量守恒。
+  //     (H&G 2009 的切片间"无通信"是其列明局限; 此为分层发光火焰的首个切片间涡量交换算子。)
+  if(P.interZ>0 && layer.idx!==undefined){
+    const k=layer.idx, La=layers[k-1], Lb=layers[k+1];
+    const wa=(La&&La.vic)?La.vic.wPrev:v.wPrev, wb=(Lb&&Lb.vic)?Lb.vic.wPrev:v.wPrev;
+    const ws=v.wPrev, kz=P.interZ, n=NX*NY;
+    for(let id=0; id<n; id++) w[id] += dt*kz*(wa[id]+wb[id]-2*ws[id]);
+  }
+  v.wPrev.set(w);                       // 快照本帧涡量, 供下一帧相邻切片耦合
+  // 4) Poisson ∇²ψ = -ω  (Jacobi, Dirichlet ψ=0 边界)
+  const a=1/(HX*HX), b=1/(HY*HY), inv=1/(2*a+2*b);
+  for(let it=0; it<26; it++)
+    for(let j=1;j<NY-1;j++)for(let i=1;i<NX-1;i++){ const id=j*NX+i;
+      psi[id]=(a*(psi[id+1]+psi[id-1])+b*(psi[id+NX]+psi[id-NX])+w[id])*inv; }
+  // 5) 速度 u=∂ψ/∂y, v=−∂ψ/∂x  (满足 ∇·u=0、ω=−∇²ψ)
+  for(let j=1;j<NY-1;j++)for(let i=1;i<NX-1;i++){ const id=j*NX+i;
+    ux[id]=(psi[id+NX]-psi[id-NX])/(2*HY);
+    uy[id]=-(psi[id+1]-psi[id-1])/(2*HX);
+  }
+  // 6) G2P: 粒子按网格速度平流 (+直接浮力稳定上升 +湍流 +风), 颜色温度从场采样
+  const out=[];
+  const cpl=P.couple;
+  for(const p of ps){
+    const gx=gX(p.x), gy=gY(p.y);
+    let vx=smp(ux,gx,gy), vy=smp(uy,gx,gy);     // Level-2 本层细化速度
+    const Tloc=smp(T,gx,gy);
+    vy += P.buoy*Tloc;
+    if(cpl>0){                                   // ILM 两级: nudge 向 Level-1 全局场 → 层间相干
+      vx += cpl*(smpC(coarse.ux,p.x,p.y)-vx);
+      vy += cpl*(smpC(coarse.uy,p.x,p.y)-vy);
+    }
+    if(P.turb>0){ const c=curl(p.x,p.y,layer.t,layer.seed); vx+=c[0]*P.turb*0.4; vy+=c[1]*P.turb*0.4; }
+    vx += P.wind+source.vx*0.3;
+    p.vx=vx; p.vy=vy;
+    // 协方差形变: 由网格速度梯度 ∇u 演化 F (Tier 2, gaseous PhysGaussian)
+    if(P.covStretch>0){ const hw=HX*0.7;
+      const Lxx=(smp(ux,gX(p.x+hw),gy)-smp(ux,gX(p.x-hw),gy))/(2*hw);
+      const Lxy=(smp(ux,gx,gY(p.y+hw))-smp(ux,gx,gY(p.y-hw)))/(2*hw);
+      const Lyx=(smp(uy,gX(p.x+hw),gy)-smp(uy,gX(p.x-hw),gy))/(2*hw);
+      const Lyy=(smp(uy,gx,gY(p.y+hw))-smp(uy,gx,gY(p.y-hw)))/(2*hw);
+      evolveF(p, Lxx,Lxy,Lyx,Lyy, dt);
+    }
+    p.x+=dt*vx; p.y+=dt*vy; p.life+=dt;
+    p.T -= dt*P.cool*p.T*p.T;            // 颜色温度: 粒子携带 + 非线性冷却 (亮度梯度)
+    p.d*=(1-dt*0.3);
+    if(p.T>0.04 && p.y<WY && Math.abs(p.x)<WX*0.7 && p.d>0.03) out.push(p);
+  }
+  layer.ps=out;
+}
+
+// §7.1 接口: 两源同契约 step(layer,dt,ctx) → 就地更新 layer.ps {x,y,T,d,vx,vy}
+const Sources={
+  proc:{ label:'程序化羽流·路线1', step:(layer,dt)=>stepProc(layer,dt) },
+  sim:{  label:'2D涡粒子·VIC·路线2', step:(layer,dt)=>{ emitSim(layer,dt); stepSimVIC(layer,dt); } }
+};
+function evenMask(N,k){ const m=new Array(N).fill(false);
+  if(k<=0) return m; if(k>=N){ m.fill(true); return m; }
+  for(let i=0;i<N;i++){ if(Math.floor((i+1)*k/N)>Math.floor(i*k/N)) m[i]=true; } return m; }
+
+function stepAll(dt){
+  if(pointer.active){
+    source.x=pointer.x; source.y=Math.max(0.02,pointer.y);
+    source.vx=(pointer.x-pointer.px)*8; source.px=pointer.x; source.py=pointer.y;
+  } else { source.x*=0.96; source.vx*=0.9; if(Math.abs(source.x)<0.005)source.x=0; source.y=0.04; }
+  if(P.dimMode==='vol'){ step3D(dt); stepEmbers(dt); if(P.filament)updateTrails(); return; }   // Tier1: 真三维体模式
+  const N=layers.length, sc=Math.min(P.simLayers,N);
+  if(sc>0) stepCoarse(dt);          // ILM Level-1: 全局粗解算先跑一次, 驱动所有仿真层
+  const useSim=evenMask(N,sc), means=layers.map(layerMeanVel);
+  for(let k=0;k<N;k++){
+    if(useSim[k]) Sources.sim.step(layers[k],dt,{neigh:N>1?means[(k+1)%N]:null});
+    else          Sources.proc.step(layers[k],dt);
+  }
+  stepEmbers(dt);
+  if(P.filament) updateTrails();
+}
+// Tier3: 每个粒子记一个滞后位置 (px,py,pz), 用指数滞后追当前位置 → (current−lagged)=最近轨迹
+function updateTrails(){
+  const al=0.4*(1-P.filLen)+0.05;
+  if(P.dimMode==='vol'){ for(const p of cloud){ if(p.px===undefined){p.px=p.x;p.py=p.y;p.pz=p.z;}
+    p.px+=(p.x-p.px)*al; p.py+=(p.y-p.py)*al; p.pz+=(p.z-p.pz)*al; } }
+  else { for(const l of layers) for(const p of l.ps){ if(p.px===undefined){p.px=p.x;p.py=p.y;}
+    p.px+=(p.x-p.px)*al; p.py+=(p.y-p.py)*al; } }
+}
+
+// ===========================================================================
+//  渲染: 收集粒子 → 实例化发光 splat → HDR → bloom → tonemap
+// ===========================================================================
+let orbitPhase=0, simTime=0;
+// 把一个粒子(切片内 2D 坐标 s=x, y; 速度 dx,dy)放到 3D world + 切片面内的 major/minor 轴
+//  view-aligned: 切片面=(相机右 bx, 世界上), 沿水平前向 fh 错开深度 → 随相机重排朝向
+//  world-fixed:  切片面=(世界X, 世界Y), 沿世界Z 错开深度 → 相机绕到侧面会看到层"边缘"
+// 写一个 3D 高斯到 arr[o..]，并把它到相机的距离²写进 depths[gi] (供排序)
+function emit3D(arr,o, depths,gi, sx,sy, dx,dy, M,m, dep, va, bx,fh,eye, fade, temp,dens,seed,type){
+  let cx,cy,cz;
+  if(va){ cx=bx[0]*sx+fh[0]*dep; cy=sy; cz=bx[2]*sx+fh[2]*dep;
+    arr[o++]=cx;arr[o++]=cy;arr[o++]=cz;
+    arr[o++]=dx*bx[0]*M; arr[o++]=dy*M; arr[o++]=dx*bx[2]*M;
+    arr[o++]=-dy*bx[0]*m; arr[o++]=dx*m; arr[o++]=-dy*bx[2]*m;
+  } else { cx=sx; cy=sy; cz=dep;
+    arr[o++]=cx;arr[o++]=cy;arr[o++]=cz;
+    arr[o++]=dx*M;arr[o++]=dy*M;arr[o++]=0;
+    arr[o++]=-dy*m;arr[o++]=dx*m;arr[o++]=0;
+  }
+  arr[o++]=fade;arr[o++]=temp;arr[o++]=dens;arr[o++]=seed;arr[o++]=type;
+  const ex=cx-eye[0],ey=cy-eye[1],ez=cz-eye[2]; depths[gi]=ex*ex+ey*ey+ez*ez;
+  return o;
+}
+// 收集所有高斯 (火+烟+火星+背景) → 计算深度 → front-to-back 排序 → 写 instData
+let rawData=new Float32Array(0), depths=new Float32Array(0), order=[];
+function gather(){
+  const vol=(P.dimMode==='vol');
+  let total=0; if(vol) total=cloud.length; else for(const l of layers) total+=l.ps.length;
+  const ne=(P.embers&&P.mode==='fire')? embers.length:0;
+  const nbg=(P.box? bgGauss.length:0);
+  const cap=total+ne+nbg;
+  if(rawData.length<cap*STRIDE_F){ rawData=new Float32Array(Math.ceil(cap*STRIDE_F*1.3)); depths=new Float32Array(Math.ceil(cap*1.3)); }
+  if(instData.length<cap*STRIDE_F) instData=new Float32Array(Math.ceil(cap*STRIDE_F*1.3));
+  const arr=rawData; let o=0, gi=0;
+  const N=layers.length, radW=P.rad/360, D=P.sliceDepth, va=(P.sliceMode==='view'), bx=cam.bx, by=cam.by, fh=cam.fh, eye=cam.eye;
+  if(vol){
+    // Tier1 真三维: 相机朝向 billboard 在真 (x,y,z); Tier3 涡丝则沿 3D 轨迹拉成丝
+    let F3x=0-eye[0],F3y=1.05-eye[1],F3z=0-eye[2]; const F3l=Math.hypot(F3x,F3y,F3z)||1; F3x/=F3l;F3y/=F3l;F3z/=F3l;
+    const fil=P.filament;
+    for(const p of cloud){
+      const sz=radW*(0.6+0.7*p.d);
+      let mjx,mjy,mjz, mnx,mny,mnz;
+      if(fil && p.px!==undefined){                 // 沿 3D 轨迹拉丝
+        let dX=p.x-p.px,dY=p.y-p.py,dZ=p.z-p.pz, len=Math.hypot(dX,dY,dZ);
+        let ux,uy,uz; if(len>1e-4){ux=dX/len;uy=dY/len;uz=dZ/len;}else{ux=0;uy=1;uz=0;}
+        const M=sz+len*P.filGain, m=sz*0.55;
+        let nx=uy*F3z-uz*F3y, ny=uz*F3x-ux*F3z, nz=ux*F3y-uy*F3x; const nl=Math.hypot(nx,ny,nz)||1; // ⟂轨迹且面向相机
+        mjx=ux*M;mjy=uy*M;mjz=uz*M; mnx=nx/nl*m;mny=ny/nl*m;mnz=nz/nl*m;
+      } else {
+        const vsx=p.vx*bx[0]+p.vy*bx[1]+p.vz*bx[2], vsy=p.vx*by[0]+p.vy*by[1]+p.vz*by[2];
+        let sp=Math.hypot(vsx,vsy), dx,dy; if(sp>1e-4){dx=vsx/sp;dy=vsy/sp;}else{dx=0;dy=1;}
+        const an=P.stretch?Math.min(2.3,1+sp*0.45):1, M=sz*an, m=sz/an;
+        mjx=(dx*bx[0]+dy*by[0])*M; mjy=(dx*bx[1]+dy*by[1])*M; mjz=(dx*bx[2]+dy*by[2])*M;
+        mnx=(-dy*bx[0]+dx*by[0])*m; mny=(-dy*bx[1]+dx*by[1])*m; mnz=(-dy*bx[2]+dx*by[2])*m;
+      }
+      arr[o++]=p.x;arr[o++]=p.y;arr[o++]=p.z;
+      arr[o++]=mjx;arr[o++]=mjy;arr[o++]=mjz;
+      arr[o++]=mnx;arr[o++]=mny;arr[o++]=mnz;
+      arr[o++]=1.0;arr[o++]=p.T;arr[o++]=p.d;arr[o++]=p.seedp||0;arr[o++]=0;
+      const ex=p.x-eye[0],ey=p.y-eye[1],ez=p.z-eye[2]; depths[gi++]=ex*ex+ey*ey+ez*ez;
+    }
+  } else
+  for(let k=0;k<N;k++){
+    const layer=layers[k]; const z=N>1?(k/(N-1)-0.5):0, dep=z*D, fade=1-Math.abs(z)*0.3;
+    for(const p of layer.ps){
+      const sz=radW*(0.55+0.7*p.d);
+      let dx,dy,M,m;
+      if(P.filament && p.px!==undefined){     // Tier3: 沿(切片内)轨迹拉成涡丝
+        const ddx=p.x-p.px, ddy=p.y-p.py; let len=Math.hypot(ddx,ddy);
+        if(len>1e-4){dx=ddx/len;dy=ddy/len;}else{dx=0;dy=1;}
+        M=sz+len*P.filGain; m=sz*0.55;
+      } else if(P.stretch){                   // 由形变后协方差 Σ 取主轴 (已在 evolveF 钳过)
+        const A=p.sxx, B=p.sxy, C=p.syy;
+        const tr=A+C, disc=Math.sqrt(Math.max(0,tr*tr*0.25-(A*C-B*B)));
+        let l0=tr*0.5+disc, l1=tr*0.5-disc;
+        let exx=B, eyy=l0-A; const el=Math.hypot(exx,eyy); if(el<1e-6){exx=1;eyy=0;}else{exx/=el;eyy/=el;}
+        dx=exx; dy=eyy; M=sz*Math.sqrt(Math.max(1e-4,l0)); m=sz*Math.sqrt(Math.max(1e-4,l1));
+      } else { dx=0; dy=1; M=sz; m=sz; }
+      o=emit3D(arr,o,depths,gi++, p.x,p.y, dx,dy, M, m, dep, va,bx,fh,eye, fade, p.T,p.d,p.seedp||0, 0);
+    }
+  }
+  if(ne){ const esz=radW*0.22;
+    for(const e of embers){ const sp=Math.hypot(e.vx,e.vy); let dx=0,dy=1; if(sp>1e-4){dx=e.vx/sp;dy=e.vy/sp;}
+      const fade=Math.max(0,1-e.life/e.ttl);
+      o=emit3D(arr,o,depths,gi++, e.x,e.y, dx,dy, esz*1.7,esz, 0, va,bx,fh,eye, fade, Math.min(1,e.T*1.1+0.25),1, e.seed, 1);
+    }
+  }
+  if(nbg){ const by=cam.by;
+    for(const g of bgGauss){
+      arr[o++]=g.x;arr[o++]=g.y;arr[o++]=g.z;
+      arr[o++]=bx[0]*g.sx;arr[o++]=bx[1]*g.sx;arr[o++]=bx[2]*g.sx;
+      arr[o++]=by[0]*g.sy;arr[o++]=by[1]*g.sy;arr[o++]=by[2]*g.sy;
+      arr[o++]=1.0;arr[o++]=g.tone;arr[o++]=g.a;arr[o++]=0;arr[o++]=2;
+      const ex=g.x-eye[0],ey=g.y-eye[1],ez=g.z-eye[2]; depths[gi++]=ex*ex+ey*ey+ez*ez;
+    }
+  }
+  const cnt=gi;
+  if(order.length!==cnt){ order=new Array(cnt); }
+  for(let i=0;i<cnt;i++) order[i]=i;
+  order.sort((a,b)=>depths[a]-depths[b]);              // 近→远 (front-to-back)
+  const dst=instData;
+  for(let i=0;i<cnt;i++){ let s=order[i]*STRIDE_F, d=i*STRIDE_F;
+    for(let j=0;j<STRIDE_F;j++) dst[d+j]=arr[s+j]; }
+  return cnt;
+}
+
+function drawFull(){ gl.bindVertexArray(vaoTri); gl.drawArrays(gl.TRIANGLES,0,3); gl.bindVertexArray(null); }
+
+// ---- 子区间实例绘制 (WebGL2 无 baseInstance: 重设实例属性指针的字节偏移模拟) ----
+function drawPartRange(start,count){ if(count<=0) return;
+  gl.bindVertexArray(vaoPart);
+  gl.bindBuffer(gl.ARRAY_BUFFER,instVBO);
+  const base=start*STRIDE_B;
+  const ia=(loc,size,off)=>gl.vertexAttribPointer(loc,size,gl.FLOAT,false,STRIDE_B,base+off*4);
+  ia(1,3,0); ia(2,3,3); ia(3,3,6); ia(4,1,9); ia(5,1,10); ia(6,1,11); ia(7,1,12); ia(8,1,13);
+  gl.drawArraysInstanced(gl.TRIANGLE_STRIP,0,4,count);
+}
+function drawSceneRange(start,count){ if(count<=0) return;
+  gl.bindVertexArray(vaoScene);
+  gl.bindBuffer(gl.ARRAY_BUFFER,sceneVBO);
+  const base=start*SC_STRIDE_B;
+  const ia=(loc,size,off)=>gl.vertexAttribPointer(loc,size,gl.FLOAT,false,SC_STRIDE_B,base+off*4);
+  ia(1,3,0); ia(2,3,3); ia(3,3,6); ia(4,3,9); ia(5,1,12);
+  gl.drawArraysInstanced(gl.TRIANGLE_STRIP,0,4,count);
+}
+
+// ---- 深度桶交错: 动态流(已精确排序)与场景流(桶序)按同一深度映射逐桶交错绘制 ----
+//   桶内先动态后场景 (桶内歧义时让发光体占优); 相邻同流区间合并, 减少 program 切换。
+function drawInterleaved(nDyn, nScene){
+  const K=SCENE_BUCKETS, inv=K/(sceneDMax-sceneDMin);
+  // 动态流: order/depths 已按近→远; 桶号单调不减 → 一次遍历得到每桶起点
+  const dynStart=new Int32Array(K+1);
+  { let k=0;
+    for(let i=0;i<nDyn;i++){ let b=((depths[order[i]]-sceneDMin)*inv)|0; if(b<0)b=0; if(b>=K)b=K-1;
+      while(k<=b){ dynStart[k++]=i; } }
+    while(k<=K){ dynStart[k++]=nDyn; } }
+  // 逐桶发射 {流, 起点, 数量}, 合并相邻同流
+  let curStream=-1, curStart=0, curCount=0;
+  const flush=()=>{ if(curCount<=0) return;
+    if(curStream===0){ gl.useProgram(pPart); drawPartRange(curStart,curCount); }
+    else             { gl.useProgram(pScene); drawSceneRange(curStart,curCount); }
+    curCount=0; };
+  const emit=(stream,start,count)=>{ if(count<=0) return;
+    if(stream===curStream && start===curStart+curCount){ curCount+=count; return; }
+    flush(); curStream=stream; curStart=start; curCount=count; };
+  for(let k=0;k<K;k++){
+    emit(0, dynStart[k], dynStart[k+1]-dynStart[k]);                       // 动态 (火/烟/火星/程序化背景)
+    emit(1, sceneBucketOfs[k], sceneBucketOfs[k+1]-sceneBucketOfs[k]);     // .ply 场景
+  }
+  flush();
+  gl.bindVertexArray(null);
+}
+
+function render(){
+  const aspect=cv.width/cv.height;
+  updateCam(aspect);                       // 真 3D 相机 (绕火环绕)
+  const fuv=cam.fireUV;
+  const count=gather();                     // 含背景, 已 front-to-back 排序
+  gl.bindBuffer(gl.ARRAY_BUFFER,instVBO);
+  gl.bufferData(gl.ARRAY_BUFFER, instData.subarray(0,count*STRIDE_F), gl.DYNAMIC_DRAW);
+
+  const flick=P.flicker ? (0.82+0.18*(0.5+0.5*Math.sin(simTime*9.1)+0.5*Math.sin(simTime*23.0))*0.7+0.06) : 1.0;
+  const fireI=(P.mode==='fire'?1.0:0.35)*P.boxLight*flick;
+
+  // ---- 1) scene: 统一 3DGS 前向合成 (front-to-back, 发光-吸收) ----
+  gl.bindFramebuffer(gl.FRAMEBUFFER,sceneFBO);
+  gl.viewport(0,0,FBW,FBH);
+  gl.clearColor(0.0,0.0,0.0,0.0); gl.clear(gl.COLOR_BUFFER_BIT);          // 清 α=0 (transmittance=1)
+  gl.useProgram(pPart);
+  gl.uniformMatrix4fv(uPart.VP, false, cam.VP);
+  gl.uniform1f(uPart.Time,simTime); gl.uniform1f(uPart.Emis,P.emis);
+  gl.uniform1f(uPart.Flick,flick); gl.uniform1f(uPart.Mode,P.mode==='fire'?0.0:1.0);
+  gl.uniform2f(uPart.Fire,fuv[0],fuv[1]); gl.uniform1f(uPart.FireI,fireI);
+  gl.uniform2f(uPart.Res,FBW,FBH);
+  gl.enable(gl.BLEND);
+  gl.blendFunc(gl.ONE_MINUS_DST_ALPHA, gl.ONE);          // front-to-back premultiplied
+  if(P.sceneOn && sceneGauss.length){
+    // ---- 1b) 动态流 + .ply 场景流: 全局 front-to-back 深度桶交错 (逐基元互遮挡) ----
+    const ns=gatherScene();
+    gl.useProgram(pScene);
+    gl.uniformMatrix4fv(uScene.VP, false, cam.VP); gl.uniform1f(uScene.Light, P.sceneLight);
+    if(P.sceneSorted){
+      drawInterleaved(count, ns);
+    } else {                                             // 旧行为对照: 火先画, 场景未排序垫后
+      gl.useProgram(pPart); drawPartRange(0,count);
+      gl.useProgram(pScene); drawSceneRange(0,ns);
+      gl.bindVertexArray(null);
+    }
+  } else if(count>0){
+    drawPartRange(0,count); gl.bindVertexArray(null);
+  }
+  gl.disable(gl.BLEND);
+
+  // ---- 2) bloom: prefilter → 半分辨率高斯 ping-pong ----
+  gl.viewport(0,0,BW,BH);
+  gl.bindFramebuffer(gl.FRAMEBUFFER,bloomAF);
+  gl.useProgram(pPre); gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D,sceneTex);
+  gl.uniform1i(uPre.Tex,0); gl.uniform1f(uPre.Threshold,P.thresh); drawFull();
+  gl.useProgram(pBlur); gl.uniform1i(uBlur.Tex,0);
+  for(let i=0;i<P.blurIters;i++){
+    // horizontal: A→B
+    gl.bindFramebuffer(gl.FRAMEBUFFER,bloomBF); gl.bindTexture(gl.TEXTURE_2D,bloomA);
+    gl.uniform2f(uBlur.Dir,1.0/BW,0.0); drawFull();
+    // vertical: B→A
+    gl.bindFramebuffer(gl.FRAMEBUFFER,bloomAF); gl.bindTexture(gl.TEXTURE_2D,bloomB);
+    gl.uniform2f(uBlur.Dir,0.0,1.0/BH); drawFull();
+  }
+
+  // ---- 3) composite + ACES tonemap → 屏幕 ----
+  gl.bindFramebuffer(gl.FRAMEBUFFER,null);
+  gl.viewport(0,0,cv.width,cv.height);
+  gl.useProgram(pComp);
+  gl.activeTexture(gl.TEXTURE0); gl.bindTexture(gl.TEXTURE_2D,sceneTex); gl.uniform1i(uComp.Scene,0);
+  gl.activeTexture(gl.TEXTURE1); gl.bindTexture(gl.TEXTURE_2D,bloomA); gl.uniform1i(uComp.Bloom,1);
+  gl.uniform1f(uComp.Exposure,P.exposure); gl.uniform1f(uComp.BloomAmt,P.bloom);
+  gl.uniform1f(uComp.Time,simTime); gl.uniform1f(uComp.Reflect,P.reflect);
+  gl.uniform1f(uComp.Haze,P.haze); gl.uniform1f(uComp.FireI,fireI);
+  gl.uniform2f(uComp.Fire,fuv[0],fuv[1]);
+  drawFull();
+  gl.activeTexture(gl.TEXTURE0);
+  return count;
+}
+
+// ===========================================================================
+//  主循环
+// ===========================================================================
+let last=performance.now(), fps=60, lastCount=0;
+function loop(now){
+  const rawdt=(now-last)/1000; last=now;
+  const dt=Math.min(0.033,rawdt);
+  fps=fps*0.9+(1/Math.max(1e-3,rawdt))*0.1;
+  if(!P.paused){ orbitPhase+=dt*0.32; simTime+=dt; stepAll(dt); }
+  lastCount=render();
+  const Ntot=layers.length, scN=Math.min(P.simLayers,Ntot);
+  document.getElementById('hud').innerHTML =
+    `FPS <span class="g">${fps.toFixed(0)}</span> <span class="d">·</span> ${(1000/Math.max(1,fps)).toFixed(1)} ms<br>`+
+    `Gaussians <span class="g">${lastCount}</span> <span class="d">·</span> Layers <span class="b">${Ntot}</span> <span class="d">·</span> <span class="e">HDR</span> ${extCBF?'16F':'8bit'}<br>`+
+    `Source <span class="b">${scN}</span>/${Ntot} Sim <span class="d">·</span> <span class="b">${Ntot-scN}</span>/${Ntot} Proc <span class="d">·</span> ${P.mode==='fire'?'Fire · additive':'Smoke · over'}`;
+  requestAnimationFrame(loop);
+}
+
+function updatePipeline(){
+  document.getElementById('pipeline').innerHTML =
+    `<span class="step">温度场平流 + 斜压涡量</span> <span class="arr">→</span> `+
+    `<span class="step">VIC: Poisson ψ → u=∇×ψ</span> <span class="arr">→</span> `+
+    `<span class="step">§7.1 Particle[]{pos2D,T,density,velocity}</span> <span class="arr">→</span> `+
+    `<span class="step">实例化发光高斯 → RGBA16F</span> <span class="arr">→</span> `+
+    `<span class="step">bloom + ACES tonemap</span>`;
+}
+
+// ===========================================================================
+//  控件
+// ===========================================================================
+function bindSlider(id,key,fmt){
+  const el=document.getElementById(id), v=document.getElementById(id+'V'); if(!el) return;
+  const upd=()=>{ P[key]=parseFloat(el.value); if(v) v.textContent=fmt?fmt(P[key]):P[key];
+    const pct=(el.value-el.min)/(el.max-el.min)*100;
+    el.style.background=`linear-gradient(to right, var(--acc) ${pct}%, #3a3a3a ${pct}%)`;
+    if(key==='layers'){ rebuildLayers(); applySources(); } };
+  el.addEventListener('input',upd); upd();
+}
+bindSlider('riseV','riseV',x=>x.toFixed(2)); bindSlider('sway','sway',x=>x.toFixed(2));
+bindSlider('rate','rate',x=>x|0); bindSlider('coolP','coolP',x=>x.toFixed(2));
+bindSlider('buoy','buoy',x=>x.toFixed(2)); bindSlider('baro','baro',x=>x.toFixed(2));
+bindSlider('eps','eps',x=>x.toFixed(3)); bindSlider('cool','cool',x=>x.toFixed(2));
+bindSlider('couple','couple',x=>x.toFixed(2));
+bindSlider('layers','layers',x=>x|0); bindSlider('yaw','yaw',x=>x.toFixed(2));
+bindSlider('rad','rad',x=>x|0); bindSlider('sliceDepth','sliceDepth',x=>x.toFixed(2));
+bindSlider('camDist','camDist',x=>x.toFixed(2)); bindSlider('covStretch','covStretch',x=>x.toFixed(2));
+function applySlice(){ document.querySelectorAll('#slice button').forEach(b=>b.classList.toggle('on',b.dataset.sm===P.sliceMode)); }
+document.querySelectorAll('#slice button').forEach(b=>b.addEventListener('click',()=>{ P.sliceMode=b.dataset.sm; applySlice(); }));
+bindSlider('vol3DTurb','vol3DTurb',x=>x.toFixed(2));
+function applyDim(){ const vol=(P.dimMode==='vol');
+  document.querySelectorAll('#dim button').forEach(b=>b.classList.toggle('on',b.dataset.dm===P.dimMode));
+  document.getElementById('vol3DTurbRow').style.display=vol?'':'none';
+  document.getElementById('slice').style.display=vol?'none':'';   // 3D 体无切片概念
+  document.getElementById('vpRoute').textContent = vol?'3D':(Math.min(P.simLayers,P.layers)===0?'1':'2'); }
+document.querySelectorAll('#dim button').forEach(b=>b.addEventListener('click',()=>{ P.dimMode=b.dataset.dm; if(P.dimMode==='vol')cloud=[]; applyDim(); }));
+bindSlider('exposure','exposure',x=>x.toFixed(2)); bindSlider('emis','emis',x=>x.toFixed(2));
+bindSlider('bloom','bloom',x=>x.toFixed(2)); bindSlider('thresh','thresh',x=>x.toFixed(2));
+bindSlider('boxLight','boxLight',x=>x.toFixed(2)); bindSlider('reflect','reflect',x=>x.toFixed(2));
+bindSlider('haze','haze',x=>x.toFixed(2));
+
+function applySources(){
+  const N=P.layers, sc=Math.min(P.simLayers,N);
+  document.getElementById('grpProc').style.display=(sc<N)?'':'none';
+  document.getElementById('grpSim').style.display=(sc>0)?'':'none';
+  const sv=document.getElementById('simLayersV'); if(sv) sv.textContent=`${sc} / ${N}`;
+  document.getElementById('vpRoute').textContent=sc===0?'1':(sc>=N?'2':'1+2');
+}
+(function bindSimLayers(){
+  const el=document.getElementById('simLayers');
+  const upd=()=>{ P.simLayers=parseInt(el.value);
+    const pct=(el.value-el.min)/(el.max-el.min)*100;
+    el.style.background=`linear-gradient(to right, var(--acc) ${pct}%, #3a3a3a ${pct}%)`; applySources(); };
+  el.addEventListener('input',upd); upd();
+})();
+function setSimLayers(v){ const el=document.getElementById('simLayers');
+  el.value=Math.max(0,Math.min(parseInt(el.max),v)); el.dispatchEvent(new Event('input')); }
+
+function applyMode(){
+  document.querySelectorAll('#mode button').forEach(b=>b.classList.toggle('on',b.dataset.m===P.mode));
+  document.getElementById('vpMode').textContent=P.mode==='fire'?'Fire':'Smoke';
+}
+document.querySelectorAll('#mode button').forEach(b=>b.addEventListener('click',()=>{ P.mode=b.dataset.m; applyMode(); }));
+
+function bindCheck(id,key){ const row=document.getElementById(id), cb=row.querySelector('.cb');
+  row.addEventListener('click',()=>{ P[key]=!P[key]; cb.classList.toggle('on',P[key]); }); }
+bindCheck('orbit','orbit'); bindCheck('stretch','stretch'); bindCheck('flicker','flicker');
+bindCheck('box','box'); bindCheck('embers','embers');
+bindSlider('filLen','filLen',x=>x.toFixed(2));
+(function(){ const row=document.getElementById('filament'), cb=row.querySelector('.cb');
+  row.addEventListener('click',()=>{ P.filament=!P.filament; cb.classList.toggle('on',P.filament);
+    document.getElementById('filLenRow').style.display=P.filament?'':'none'; }); })();
+
+// ---- 真 .ply 场景: 滑杆 + 载入 + 拖拽 ----
+bindSlider('sceneScale','sceneScale',x=>x.toFixed(2)); bindSlider('sceneYaw','sceneYaw',x=>x.toFixed(2));
+bindSlider('scenePitch','scenePitch',x=>x.toFixed(2)); bindSlider('sceneLift','sceneLift',x=>x.toFixed(2));
+bindSlider('sceneLight','sceneLight',x=>x.toFixed(2));
+(function(){ const el=document.getElementById('sceneMax');
+  const upd=()=>{ P.sceneMax=parseInt(el.value)*10000; const v=document.getElementById('sceneMaxV'); if(v)v.textContent=el.value;
+    const pct=(el.value-el.min)/(el.max-el.min)*100; el.style.background=`linear-gradient(to right, var(--acc) ${pct}%, #3a3a3a ${pct}%)`; };
+  el.addEventListener('input',upd); upd(); })();
+function applyScene(){
+  document.getElementById('sceneOn').querySelector('.cb').classList.toggle('on', P.sceneOn);
+  document.getElementById('box').querySelector('.cb').classList.toggle('on', P.box);
+  const sc=document.getElementById('sceneScale'); if(sc){ sc.value=P.sceneScale; sc.dispatchEvent(new Event('input')); }
+}
+bindCheck('sceneOn','sceneOn');
+function readPLYFile(file){
+  const st=document.getElementById('plyStatus'); st.textContent='解析中… '+file.name;
+  file.arrayBuffer().then(buf=>{ try{ const r=loadPLY(buf);
+      st.innerHTML=`✅ ${file.name}<br>载入 <b>${r.kept.toLocaleString()}</b> / ${r.total.toLocaleString()} 高斯。用滑杆对齐(缩放/旋转/正上轴)。`;
+    }catch(e){ st.textContent='❌ '+e.message; } })
+   .catch(e=>{ st.textContent='❌ 读取失败: '+e.message; });
+}
+document.getElementById('plyBtn').addEventListener('click',()=>document.getElementById('plyFile').click());
+document.getElementById('plyFile').addEventListener('change',e=>{ if(e.target.files[0]) readPLYFile(e.target.files[0]); });
+cv.addEventListener('dragover',e=>{ e.preventDefault(); });
+cv.addEventListener('drop',e=>{ e.preventDefault(); if(e.dataTransfer.files[0]) readPLYFile(e.dataTransfer.files[0]); });
+
+document.querySelectorAll('.cathead').forEach(h=>h.parentElement&&h.addEventListener('click',()=>h.parentElement.classList.toggle('collapsed')));
+document.getElementById('pause').addEventListener('click',e=>{ P.paused=!P.paused; e.target.textContent=P.paused?'▶ 继续':'⏸ 暂停'; });
+document.getElementById('reset').addEventListener('click',()=>rebuildLayers());
+
+// 指针
+// 指针拖动 = 绕火旋转相机 (横向→方位角 yaw, 纵向→俯仰 elev)
+let drag={on:false, px:0, py:0};
+cv.addEventListener('pointerdown',e=>{ drag.on=true; drag.px=e.clientX; drag.py=e.clientY; cv.setPointerCapture(e.pointerId); });
+cv.addEventListener('pointermove',e=>{ if(!drag.on) return;
+  P.yaw -= (e.clientX-drag.px)/200; P.camElev=Math.max(-0.4,Math.min(0.8, P.camElev+(e.clientY-drag.py)/300));
+  drag.px=e.clientX; drag.py=e.clientY;
+  const yv=document.getElementById('yawV'); if(yv) yv.textContent=P.yaw.toFixed(2); });
+cv.addEventListener('pointerup',()=>{ drag.on=false; });
+cv.addEventListener('pointercancel',()=>{ drag.on=false; });
+window.addEventListener('keydown',e=>{
+  if(e.code==='Space'){ document.getElementById('pause').click(); e.preventDefault(); }
+  else if(e.key==='r'||e.key==='R') rebuildLayers();
+  else if(e.key==='f'||e.key==='F'){ P.mode='fire'; applyMode(); }
+  else if(e.key==='s'||e.key==='S'){ P.mode='smoke'; applyMode(); }
+  else if(e.key==='1') setSimLayers(0);
+  else if(e.key==='2') setSimLayers(P.layers);
+});
+
+// 无头验证钩子 (预览截图不可用时, 用 eval+readPixels 检验)
+window.__demo = {
+  gl, P, get count(){ return lastCount; },
+  forceSize(w,h){ cv.width=w; cv.height=h; makeTargets(); },   // 无头测试: 绕过 0 宽布局
+  render(){ return render(); }, rebuild(){ rebuildLayers(); },
+  warm(frames){ frames=frames||120; for(let i=0;i<frames;i++) stepAll(0.016); },
+  loadPLY(buf){ return loadPLY(buf); }, get sceneN(){ return sceneGauss.length; },
+  get cloudN(){ return cloud.length; },
+  cloudExtent(){ let mnz=1e9,mxz=-1e9,mny=1e9,mxy=-1e9; for(const p of cloud){ if(p.z<mnz)mnz=p.z;if(p.z>mxz)mxz=p.z;if(p.y<mny)mny=p.y;if(p.y>mxy)mxy=p.y; }
+    return cloud.length?{zSpan:+(mxz-mnz).toFixed(3), ySpan:+(mxy-mny).toFixed(3), n:cloud.length}:{n:0}; },
+  dbg(){ const L=layers[0]; const T=L?L.vic.T:[]; let tmax=0,tmin=1e9,umax=0;
+    for(let k=0;k<T.length;k++){ if(T[k]>tmax)tmax=T[k]; if(T[k]<tmin)tmin=T[k]; }
+    if(L){ for(let k=0;k<L.vic.ux.length;k++){ const m=Math.hypot(L.vic.ux[k],L.vic.uy[k]); if(m>umax)umax=m; } }
+    const ps=L?L.ps:[]; let py=0,pT=0,nan=0, aniso=0,an=0, trail=0,tn=0;
+    for(const p of ps){ if(p.px!==undefined){ trail+=Math.hypot(p.x-p.px,p.y-p.py); tn++; } }
+    for(const p of ps){ py+=p.y; pT+=p.T; if(!isFinite(p.x)||!isFinite(p.y))nan++;
+      if(p.sxx!==undefined){ const A=p.sxx,B=p.sxy,C=p.syy;
+        const tr=A+C, ds=Math.sqrt(Math.max(0,tr*tr*0.25-(A*C-B*B)));
+        const r=Math.sqrt((tr*0.5+ds)/Math.max(1e-4,tr*0.5-ds)); if(isFinite(r)){aniso+=r;an++;} } }
+    return { nLayer0:ps.length, nan, Tmax:+tmax.toFixed(3), Tmin:+tmin.toFixed(3),
+             uMax:+umax.toFixed(3), avgY:ps.length?+(py/ps.length).toFixed(3):0, avgT:ps.length?+(pT/ps.length).toFixed(3):0,
+             avgAniso:an?+(aniso/an).toFixed(3):1, trailLen:tn?+(trail/tn).toFixed(4):0 }; },
+  probe(){ render();
+    const w=cv.width,h=cv.height, n=12, out=new Uint8Array(4*n*n);
+    let lit=0,maxv=0;
+    for(let yy=0;yy<n;yy++){ const py=Math.floor(h*0.25+(h*0.7)*yy/n);
+      const px=new Uint8Array(4*n);
+      gl.readPixels(Math.floor(w*0.5-w*0.12),py,n,1,gl.RGBA,gl.UNSIGNED_BYTE,px);
+      for(let xx=0;xx<n;xx++){ const v=px[xx*4]+px[xx*4+1]+px[xx*4+2]; if(v>24)lit++; if(v>maxv)maxv=v; } }
+    return { samples:n*n, lit, maxv, glError:gl.getError() }; }
+};
+
+// ---- go ----
+resize(); buildBG(); rebuildLayers(); applyMode(); applySlice(); applyDim(); applyScene(); updatePipeline(); applySources();
+requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>

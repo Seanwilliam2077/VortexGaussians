@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vortex Gaussians: Real-Time Simulation-Driven Fire and Smoke as Native Gaussian-Splatting Content</title>
+<meta name="description" content="Project page for Vortex Gaussians: real-time, forward-simulated fire and smoke rendered as native Gaussian-splatting content, depth-interleaved with reconstructed 3DGS scenes.">
+<style>
+  :root{
+    --ink:#1c1e21; --sub:#5b6068; --accent:#d84e12; --accent2:#8a2d05;
+    --bg:#ffffff; --panel:#f6f6f8; --line:#e4e5ea; --btn:#2b2f36;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--bg);color:var(--ink);
+       font-family:"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif;
+       line-height:1.62;font-size:17px}
+  .wrap{max-width:980px;margin:0 auto;padding:0 22px}
+  .narrow{max-width:820px;margin:0 auto}
+  header{padding:64px 0 26px;text-align:center}
+  h1{font-size:2.05rem;line-height:1.28;margin:0 0 6px;font-weight:700}
+  h1 .flame{color:var(--accent)}
+  .venue{display:inline-block;margin:10px 0 2px;padding:3px 14px;border-radius:999px;
+         background:#fdeade;color:var(--accent2);font-weight:600;font-size:.92rem}
+  .authors{margin:14px 0 2px;font-size:1.06rem}
+  .authors a{color:var(--ink);text-decoration:none;border-bottom:1px dotted #9aa}
+  .affil{color:var(--sub);font-size:.95rem;margin:2px 0 0}
+  .anon-note{color:#a33;font-size:.85rem;margin-top:8px}
+  .btns{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin:26px 0 8px}
+  .btn{display:inline-flex;align-items:center;gap:8px;background:var(--btn);color:#fff;
+       border-radius:999px;padding:9px 20px;font-size:.95rem;text-decoration:none;
+       transition:transform .12s ease, background .12s ease}
+  .btn:hover{background:#000;transform:translateY(-1px)}
+  .btn.primary{background:var(--accent)}
+  .btn.primary:hover{background:var(--accent2)}
+  .btn.disabled{background:#b8bcc4;cursor:default;pointer-events:none}
+  .btn svg{width:16px;height:16px;fill:currentColor}
+  section{padding:34px 0}
+  section.alt{background:var(--panel)}
+  h2{font-size:1.5rem;text-align:center;margin:0 0 18px}
+  h3{font-size:1.13rem;margin:26px 0 8px;color:var(--accent2)}
+  p{margin:0 0 14px}
+  .muted{color:var(--sub)}
+  .imgrow{display:flex;gap:10px;margin:14px 0}
+  .imgrow>div{flex:1;min-width:0}
+  .imgrow img{width:100%;display:block;border-radius:10px}
+  figure{margin:14px 0}
+  figcaption{font-size:.9rem;color:var(--sub);margin-top:8px;text-align:center}
+  img.solo{width:100%;display:block;border-radius:10px}
+  .lbl{display:inline-block;background:rgba(0,0,0,.55);color:#fff;font-size:.8rem;
+       padding:2px 10px;border-radius:6px;margin-top:6px}
+  /* comparison slider */
+  .cmp{position:relative;overflow:hidden;border-radius:12px;user-select:none;touch-action:none;cursor:ew-resize}
+  .cmp img{width:100%;display:block;pointer-events:none}
+  .cmp .top{position:absolute;inset:0;overflow:hidden}
+  .cmp .top img{position:absolute;left:0;top:0;height:100%;width:auto;max-width:none}
+  .cmp .bar{position:absolute;top:0;bottom:0;width:3px;background:#fff;box-shadow:0 0 6px rgba(0,0,0,.6)}
+  .cmp .knob{position:absolute;top:50%;transform:translate(-50%,-50%);width:38px;height:38px;
+             border-radius:50%;background:#fff;box-shadow:0 1px 8px rgba(0,0,0,.45);
+             display:flex;align-items:center;justify-content:center;font-weight:700;color:#333}
+  .cmp .tag{position:absolute;top:10px;background:rgba(0,0,0,.55);color:#fff;font-size:.82rem;
+            padding:3px 10px;border-radius:6px}
+  .cmp .tag.l{left:10px}.cmp .tag.r{right:10px}
+  /* stats */
+  .stats{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:20px 0 6px}
+  .stat{background:#fff;border:1px solid var(--line);border-radius:12px;padding:14px 22px;text-align:center;min-width:150px}
+  section.alt .stat{background:#fff}
+  .stat b{display:block;font-size:1.45rem;color:var(--accent);font-weight:700}
+  .stat span{font-size:.85rem;color:var(--sub)}
+  /* table */
+  table{border-collapse:collapse;margin:16px auto;font-size:.92rem}
+  th,td{padding:7px 13px;border-bottom:1px solid var(--line);text-align:center}
+  th:first-child,td:first-child{text-align:left}
+  thead th{border-bottom:2px solid var(--ink);font-weight:600}
+  tr.ours{background:#fdeade;font-weight:600}
+  .ok{color:#1c7d2f;font-weight:700}.no{color:#b9bdc4}
+  /* demo embed */
+  .demo-shell{position:relative;border-radius:12px;overflow:hidden;background:#0a0a0d;aspect-ratio:16/10}
+  .demo-shell iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .demo-poster{position:absolute;inset:0;display:flex;flex-direction:column;gap:14px;
+               align-items:center;justify-content:center;cursor:pointer;
+               background:radial-gradient(ellipse at 50% 68%, #4a1c05 0%, #17090a 55%, #0a0a0d 100%)}
+  .demo-poster:hover .play{transform:scale(1.06)}
+  .demo-poster .play{width:78px;height:78px;border-radius:50%;background:var(--accent);
+        display:flex;align-items:center;justify-content:center;transition:transform .15s ease;
+        box-shadow:0 4px 24px rgba(216,78,18,.5)}
+  .demo-poster .play svg{width:30px;height:30px;fill:#fff;margin-left:5px}
+  .demo-poster span{color:#f4d9c8;font-size:1rem}
+  pre.bibtex{background:#14161a;color:#dfe3ea;border-radius:12px;padding:20px;overflow-x:auto;
+             font-size:.85rem;line-height:1.5}
+  footer{padding:36px 0 46px;color:var(--sub);font-size:.88rem;text-align:center}
+  footer a{color:var(--sub)}
+  @media (max-width:640px){
+    body{font-size:16px} h1{font-size:1.5rem}
+    .imgrow{flex-direction:column}
+  }
+</style>
+</head>
+<body>
+
+<!-- ======================= header ======================= -->
+<header class="wrap">
+  <h1><span class="flame">Vortex Gaussians</span>: Real-Time Simulation-Driven Fire and Smoke<br>as Native Gaussian-Splatting Content</h1>
+  <div class="venue">Preprint &middot; under review</div>
+  <p class="authors">Anonymous Author(s)</p>
+  <p class="affil">Anonymous Institution(s)</p>
+  <p class="anon-note">Author names withheld while the paper is under double-blind review; this page will be de-anonymized upon acceptance.</p>
+
+  <div class="btns">
+    <a class="btn" href="static/vortex_gaussians_paper.pdf">
+      <svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zm8 1.5V8h4.5L14 3.5zM8 12h8v1.6H8V12zm0 3.4h8V17H8v-1.6zm0-6.8h4v1.6H8V8.6z"/></svg>
+      Paper (PDF)</a>
+    <a class="btn disabled" href="#">arXiv (soon)</a>
+    <a class="btn primary" href="demo/">
+      <svg viewBox="0 0 24 24"><path d="M13.5 0.7c0.6 3.6-0.9 5.4-2.6 7.2-1.9 2-4 4.2-4 8.1 0 4.4 3.6 8 8.1 8 4.5 0 8.1-3.6 8.1-8 0-6.6-6.2-8.4-4.4-15.3-2.3 0.9-4.1-0.9-5.2 0zM15 21.4c-2.2 0-4-1.7-4-3.9 0-1.9 1-2.9 2-4 0.9-1 1.8-2 2.2-3.6 1.3 1.8 3.8 3.9 3.8 7.6 0 2.2-1.8 3.9-4 3.9z"/></svg>
+      Live Demo</a>
+    <a class="btn" href="https://github.com/YOUR_GITHUB_USER/VortexGaussians">
+      <svg viewBox="0 0 24 24"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.9 10.9c.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0C18.2 4.9 19.2 5.2 19.2 5.2c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.6.8.5A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>
+      Code</a>
+    <a class="btn disabled" href="#">Video (soon)</a>
+  </div>
+</header>
+
+<!-- ======================= teaser ======================= -->
+<section class="wrap" style="padding-top:8px">
+  <div class="imgrow">
+    <div><img src="static/images/fig_teaser_v3.jpg" alt="Flame driven by layered vortex-in-cell simulation"></div>
+    <div><img src="static/images/fig_parallax_34view.jpg" alt="Orbiting view with correct parallax against a 3DGS background"></div>
+    <div><img src="static/images/fig_smoke_over.jpg" alt="The same particle state re-shaded as smoke"></div>
+  </div>
+  <figure><figcaption>
+    Real-time, forward-simulated fire and smoke rendered as <b>native Gaussian-splatting content</b>.
+    Left: a flame driven by nine layered 2D vortex-in-cell simulations, in which every vortex particle
+    <i>is</i> an emissive anisotropic Gaussian. Middle: an orbiting camera; view-aligned slices and
+    per-primitive depth sorting give correct parallax against a dark 3DGS environment the fire locally
+    illuminates. Right: the identical particle state re-shaded as smoke. All results run in real time
+    in a browser &mdash; <a href="demo/">try it live</a>.
+  </figcaption></figure>
+
+  <p class="narrow" style="margin-top:18px">
+    Using nothing but a set of Lagrangian vortex particles, <b>Vortex Gaussians</b> generates fire and
+    smoke by forward physical simulation in real time and renders them as native Gaussian-splatting
+    content: the fire's Gaussians share one global depth order and one emission&ndash;absorption blend
+    state with a Gaussian-splat environment, so a foreground scene object correctly occludes the flame
+    and the flame occludes the scene behind it.
+  </p>
+</section>
+
+<!-- ======================= abstract ======================= -->
+<section class="alt">
+  <div class="wrap narrow">
+    <h2>Abstract</h2>
+    <p class="muted" style="text-align:justify">
+      Fire and smoke remain conspicuously absent from Gaussian-splatting (GS) scenes: existing
+      physics-integrated GS methods target solids and liquids, GS fire methods reconstruct flames from
+      video rather than simulating them, and the one system that couples forward combustion simulation
+      with GS scenes composites ray-marched volumes over an opaque backdrop at seconds per frame.
+      We present the first system that generates fire and smoke by forward physical simulation in real
+      time and renders them as <i>native</i> Gaussian-splatting content. Our key insight is a structural
+      isomorphism: Lagrangian vortex particles and 3D Gaussians are the same class of point primitive.
+      We therefore let one particle set serve simultaneously as simulation state and render
+      primitive&mdash;position maps to the Gaussian mean, temperature to emissive blackbody color,
+      density to opacity, and local velocity gradient to an anisotropic covariance evolved in closed
+      form&mdash;eliminating voxelization, meshing, and any simulation-to-renderer conversion.
+      Dynamics come from a two-level layered vortex solver recast entirely in
+      vorticity&ndash;streamfunction form with no pressure variable: each view-aligned slice runs a 2D
+      vortex-in-cell simulation with a baroclinic temperature&ndash;buoyancy&ndash;vorticity loop, a
+      coarse global solver supplies bulk coherence, and&mdash;new to layered fire&mdash;a bidirectional
+      inter-slice vorticity-coupling operator reintroduces the out-of-plane transport that stacking
+      drops. All flame, smoke, ember, and scene Gaussians share one depth-sorted emission&ndash;absorption
+      rasterizer with HDR blackbody shading; loaded reconstructions are merged into the single global
+      depth order by an asymmetric exact/bucketed two-stream interleave at no measured overhead.
+      Our single-file WebGL2 prototype sustains real-time rates on a consumer laptop and supports
+      interactive in-scene ignition and control of wind and coupling.
+    </p>
+  </div>
+</section>
+
+<!-- ======================= pipeline ======================= -->
+<section class="wrap">
+  <h2>How it works: one particle set, zero conversion</h2>
+  <p class="narrow">
+    A coarse global vortex solver drives <i>N</i> per-slice 2D vortex-in-cell simulations. Each slice
+    exposes its particles through a minimal contract {x, T, d, u}; the renderer lifts every particle
+    <i>directly</i> into an emissive anisotropic Gaussian and rasterizes all Gaussians &mdash; fire,
+    smoke, embers, and the background 3DGS scene &mdash; in one depth-sorted emission&ndash;absorption
+    pass with HDR post-processing. There is no voxelization or resampling anywhere in the pipeline.
+  </p>
+  <figure>
+    <img class="solo" src="static/images/pipeline.jpg" alt="System pipeline diagram" style="background:#fff;border:1px solid var(--line)">
+    <figcaption>System overview: simulation state <i>is</i> the render primitive.</figcaption>
+  </figure>
+  <div class="stats">
+    <div class="stat"><b>1 : 1</b><span>vortex particle &rarr; Gaussian<br>(no voxelization, no meshing)</span></div>
+    <div class="stat"><b>0</b><span>pressure variables<br>(pure vorticity&ndash;streamfunction)</span></div>
+    <div class="stat"><b>O(N<sub>p</sub>+G)</b><span>velocity reconstruction<br>(vs O(N<sub>p</sub>&sup2;) Biot&ndash;Savart)</span></div>
+    <div class="stat"><b>60 FPS</b><span>single-threaded CPU sim,<br>consumer laptop</span></div>
+  </div>
+</section>
+
+<!-- ======================= occlusion slider ======================= -->
+<section class="alt">
+  <div class="wrap">
+    <h2>GS-native composition: the fire lives <i>inside</i> the scene</h2>
+    <p class="narrow">
+      Loaded 3DGS reconstructions are merged into the same global depth order as the fire by an
+      asymmetric two-stream interleave: the small dynamic set is sorted exactly, the scene is
+      counting-sorted into 96 view-depth buckets in O(m+K), and the two pre-ordered streams are
+      interleaved near-to-far under one blend state &mdash; at <b>no measured overhead</b>
+      (3.5 vs 3.6 ms/frame at 3.2k scene splats; 13.0 vs 13.3 ms at 79k).
+      Drag the slider: with the interleave (left), the front pillar correctly <b>occludes the
+      flame</b>; with naive draw-after compositing (right, the analogue of backdrop compositing),
+      the flame floats in front of everything and the foreground pillars are swallowed entirely.
+    </p>
+    <div class="narrow">
+      <div class="cmp" id="cmp1">
+        <img src="static/images/fig_scene_occlusion_naive.jpg" alt="Naive draw-after compositing">
+        <div class="top"><img src="static/images/fig_scene_occlusion_sorted.jpg" alt="Depth-interleaved compositing"></div>
+        <div class="bar"></div><div class="knob">&#8596;</div>
+        <div class="tag l">Ours: depth-interleaved</div><div class="tag r">Naive: draw-after</div>
+      </div>
+      <figure><figcaption>Synthetic test reconstruction (ground, back wall, two pillars &mdash; one in
+      front of the flame, one behind). Same simulation state on both sides.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= simulation ======================= -->
+<section class="wrap">
+  <h2>A pressure-free two-level vortex solver &mdash; with inter-slice coupling</h2>
+
+  <h3>Real physics per slice, not procedural noise</h3>
+  <p>Each slice closes the temperature &rarr; buoyancy &rarr; vorticity loop through the baroclinic
+     source &Gamma;&#775; = &beta;&middot;&part;T/&part;x. Hot-swapping a slice between a kinematic
+     curl-noise plume (left) and the vortex-in-cell solver (right) through the same particle contract
+     shows what the physics buys: baroclinic vorticity rolls the plume edges into the characteristic
+     unsteady flame silhouette.</p>
+  <div class="imgrow narrow">
+    <div><img src="static/images/fig_source_proc.jpg" alt="Procedural curl-noise source"><span class="lbl">procedural curl-noise</span></div>
+    <div><img src="static/images/fig_source_vic.jpg" alt="Vortex-in-cell simulation source"><span class="lbl">vortex-in-cell (ours)</span></div>
+  </div>
+
+  <h3>Two orthogonal coupling mechanisms</h3>
+  <p>A coarse global field nudges every slice toward one bulk motion (tunable c &isin; [0,1]);
+     a new <b>bidirectional inter-slice vorticity exchange</b>
+     &omega;<sub>k</sub> += &Delta;t&middot;&kappa;<sub>z</sub>(&omega;<sub>k&minus;1</sub>+&omega;<sub>k+1</sub>&minus;2&omega;<sub>k</sub>)
+     reconstructs the out-of-plane transport &part;&sup2;&omega;/&part;z&sup2; that stacked-2D models
+     structurally drop &mdash; circulation-conserving, and the first slice-to-slice communication in
+     layered fire (production layered fire has none). Isolated at c = 0, the cross-slice velocity
+     correlation rises monotonically with operator strength:</p>
+  <div class="stats">
+    <div class="stat"><b>0.21</b><span>&kappa;<sub>z</sub> = 0<br>(uncoupled)</span></div>
+    <div class="stat"><b>0.39</b><span>&kappa;<sub>z</sub> = 0.3</span></div>
+    <div class="stat"><b>0.61</b><span>&kappa;<sub>z</sub> = 0.6</span></div>
+  </div>
+  <div class="imgrow narrow">
+    <div><img src="static/images/fig_couple_off.jpg" alt="Coupling off"><span class="lbl">c = 0 &mdash; independent slices</span></div>
+    <div><img src="static/images/fig_couple_full.jpg" alt="Coupling full"><span class="lbl">c = 1 &mdash; slaved to coarse solve</span></div>
+  </div>
+
+  <h3>View-aligned slices survive any viewpoint</h3>
+  <p>Because simulation state lives on particles &mdash; not slice rasters &mdash; slices re-orient with
+     the camera at zero re-simulation cost. A headless probe confirms viewpoint isotropy
+     (peak brightness 758/758 side/front); pinning slices to the world instead collapses the volume
+     into stripes when seen edge-on (531).</p>
+  <div class="imgrow narrow">
+    <div><img src="static/images/fig_slice_view_side.jpg" alt="View-aligned slices, side view"><span class="lbl">view-aligned (ours), 90&deg; orbit</span></div>
+    <div><img src="static/images/fig_slice_world_side.jpg" alt="World-fixed slices, side view"><span class="lbl">world-fixed, 90&deg; orbit</span></div>
+  </div>
+</section>
+
+<!-- ======================= appearance ======================= -->
+<section class="alt">
+  <div class="wrap">
+    <h2>Flow-driven Gaussians: the fluid shears the splats</h2>
+    <p class="narrow">Each Gaussian's covariance is evolved by the local velocity gradient,
+      &Sigma;&#775; = L&Sigma; + &Sigma;L<sup>&#8868;</sup>, with determinant renormalization and an
+      aspect clamp acting on the rendered quantity itself &mdash; the rest-configuration-free
+      counterpart of PhysGaussian's F&Sigma;&#8320;F<sup>&#8868;</sup>, immune to the classic
+      "sliver" blow-up under sustained shear. An optional trajectory-filament stretch elongates fast
+      particles into path-aligned streaks.</p>
+    <div class="imgrow">
+      <div><img src="static/images/fig_cov_iso.jpg" alt="Isotropic splats"><span class="lbl">isotropic</span></div>
+      <div><img src="static/images/fig_cov_aniso.jpg" alt="Flow-driven covariance"><span class="lbl">flow-driven &Sigma;</span></div>
+      <div><img src="static/images/fig_filament.jpg" alt="Filament stretch"><span class="lbl">+ filament stretch</span></div>
+    </div>
+    <div class="imgrow">
+      <div><img src="static/images/fig_post_nobloom.jpg" alt="No bloom"><span class="lbl">HDR, bloom off</span></div>
+      <div><img src="static/images/fig_post_bloom.jpg" alt="With bloom"><span class="lbl">HDR, bloom + ACES</span></div>
+      <div><img src="static/images/fig_vol3d.jpg" alt="Matched-budget 3D volume mode"><span class="lbl">matched-budget 3D ablation</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= comparison table ======================= -->
+<section class="wrap">
+  <h2>Positioning</h2>
+  <p class="narrow">"GS-native" means the phenomenon is rendered as Gaussian primitives depth-interleaved
+     with the scene &mdash; not composited over it.</p>
+  <div style="overflow-x:auto">
+  <table>
+    <thead><tr><th>Method</th><th>gaseous emissive</th><th>forward physics</th><th>real-time</th><th>GS-native</th><th>scene composed</th></tr></thead>
+    <tbody>
+      <tr><td>Horvath &amp; Geiger 2009 (ILM layered fire)</td><td class="ok">&#10003;</td><td class="ok">&#10003;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td>matte</td></tr>
+      <tr><td>PhysGaussian (CVPR 2024)</td><td class="no">&mdash;</td><td class="ok">&#10003;</td><td class="no">&mdash;</td><td class="ok">&#10003;</td><td class="ok">&#10003;</td></tr>
+      <tr><td>Gaussian Splashing (CVPR 2025)</td><td class="no">&mdash;</td><td class="ok">&#10003;</td><td class="no">&mdash;</td><td class="ok">&#10003;</td><td class="ok">&#10003;</td></tr>
+      <tr><td>Gaussian Fluids (SIGGRAPH 2025)</td><td class="no">&mdash;</td><td class="ok">&#10003;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td class="no">&mdash;</td></tr>
+      <tr><td>Gaussians on Fire (2025, reconstruction)</td><td class="ok">&#10003;</td><td class="no">&mdash;</td><td>(render)</td><td class="ok">&#10003;</td><td class="no">&mdash;</td></tr>
+      <tr><td>FieryGS (ICLR 2026)</td><td class="ok">&#10003;</td><td class="ok">&#10003;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td>backdrop</td></tr>
+      <tr class="ours"><td>Vortex Gaussians (ours)</td><td class="ok">&#10003;</td><td class="ok">&#10003;</td><td class="ok">&#10003;</td><td class="ok">&#10003;</td><td class="ok">&#10003;</td></tr>
+    </tbody>
+  </table>
+  </div>
+  <p class="narrow muted" style="font-size:.9rem">For calibration: FieryGS reports 2.37 s/frame
+     (0.84 s of which is the fire/smoke ray march, RTX 4090D); Gaussian Fluids reports 38&ndash;228 s per
+     <i>time step</i> (RTX 4090); production layered fire required ~20 s per slice per frame on a GPU
+     farm. Our prototype runs the full loop in real time on a consumer laptop &mdash; in a browser.</p>
+</section>
+
+<!-- ======================= live demo ======================= -->
+<section class="alt">
+  <div class="wrap">
+    <h2>Interactive demo &mdash; runs in your browser</h2>
+    <p class="narrow">The entire system is a single dependency-free HTML file (CPU JavaScript
+      simulation + WebGL2 rendering). Drag to orbit, drag the source, add wind, sweep the coupling,
+      toggle fire&#8596;smoke, hot-swap solvers per slice &mdash; or load your own Inria-format
+      <code>.ply</code> reconstruction and light a fire inside it.</p>
+    <div class="narrow">
+      <div class="demo-shell" id="demoShell">
+        <div class="demo-poster" id="demoPoster">
+          <div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          <span>Click to launch the live WebGL2 demo (~80 KB)</span>
+        </div>
+      </div>
+      <figure><figcaption>If the embed does not start, open the demo
+        <a href="demo/" target="_blank" rel="noopener">in its own tab</a>.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= bibtex ======================= -->
+<section class="wrap narrow">
+  <h2>BibTeX</h2>
+  <pre class="bibtex">@misc{vortexgaussians2026,
+  title   = {Vortex Gaussians: Real-Time Simulation-Driven Fire and Smoke
+             as Native Gaussian-Splatting Content},
+  author  = {Anonymous Author(s)},
+  year    = {2026},
+  note    = {Preprint, under review}
+}</pre>
+</section>
+
+<footer class="wrap">
+  <p>Page design inspired by the <a href="https://nerfies.github.io/" rel="noopener">Nerfies</a> /
+     <a href="https://pku-vcl-geometry.github.io/FieryGS/" rel="noopener">FieryGS</a> project pages.
+     Figures are unedited real-time captures from the released prototype.</p>
+</footer>
+
+<script>
+// ---- comparison slider ----
+(function(){
+  const cmp=document.getElementById('cmp1'); if(!cmp) return;
+  const top=cmp.querySelector('.top'), topImg=top.querySelector('img'),
+        bar=cmp.querySelector('.bar'), knob=cmp.querySelector('.knob');
+  function size(){ topImg.style.width=cmp.clientWidth+'px'; }
+  function setP(p){ p=Math.max(0.02,Math.min(0.98,p));
+    top.style.width=(p*100)+'%'; bar.style.left=(p*100)+'%'; knob.style.left=(p*100)+'%'; }
+  function fromEvent(e){ const r=cmp.getBoundingClientRect();
+    const x=(e.touches?e.touches[0].clientX:e.clientX)-r.left; setP(x/r.width); }
+  let drag=false;
+  cmp.addEventListener('pointerdown',e=>{drag=true;fromEvent(e);cmp.setPointerCapture(e.pointerId);});
+  cmp.addEventListener('pointermove',e=>{if(drag)fromEvent(e);});
+  cmp.addEventListener('pointerup',()=>drag=false);
+  cmp.addEventListener('pointercancel',()=>drag=false);
+  window.addEventListener('resize',()=>{size();});
+  const img=cmp.querySelector('img');
+  if(img.complete){size();setP(0.5);} else img.onload=()=>{size();setP(0.5);};
+})();
+// ---- click-to-load demo iframe ----
+(function(){
+  const shell=document.getElementById('demoShell'), poster=document.getElementById('demoPoster');
+  if(!shell||!poster) return;
+  poster.addEventListener('click',()=>{
+    const f=document.createElement('iframe');
+    f.src='demo/'; f.allow='fullscreen';
+    shell.appendChild(f); poster.remove();
+  });
+})();
+</script>
+</body>
+</html>
