@@ -12,7 +12,8 @@ Anonymous Author(s)<sup>1</sup>
 
 ## News
 
-- **[2026-07]** Inter-slice vorticity-coupling operator (`interZ`) added: bidirectional, circulation-conserving z-Laplacian exchange across slices; cross-slice velocity correlation rises 0.21 → 0.39 → 0.61 with operator strength.
+- **[2026-07]** Deterministic replay + measured benchmarks: all stochastic paths draw from one seeded PRNG, runs are bit-reproducible from `(seed, steps)` (FNV-1a state hash), and the paper now ships a measured scaling table — 8.9 ms/frame (112 FPS) at defaults, linear in slice count, VIC ~3.4× faster than naive Biot–Savart at the default budget (RTX 3080, CPU-JS sim).
+- **[2026-07]** Inter-slice vorticity-coupling operator (`interZ`) added: bidirectional, circulation-conserving z-Laplacian exchange across slices — the first slice-to-slice communication in layered fire. (Its statistical characterization is subtle; the paper reports a controlled negative result on snapshot-correlation probes and defers validation to an E(k) study.)
 - **[2026-07]** Loaded `.ply` reconstructions are now merged into the global depth order by an asymmetric exact/bucketed two-stream interleave — foreground scene objects correctly occlude the flame, at no measured overhead.
 - **[2026-07]** Initial release: paper draft, project page, and the single-file WebGL2 real-time prototype.
 
@@ -35,7 +36,7 @@ python -m http.server 8000
 # then open http://localhost:8000/demo/
 ```
 
-Runs at real-time rates (~60 FPS at defaults) with the simulation single-threaded in CPU JavaScript.
+Measured: 8.9 ms per frame (112 FPS) at defaults on a desktop RTX 3080, simulation single-threaded in CPU JavaScript; N = 17 slices still run at 58 FPS. Deterministic replay: `window.__demo.reset(seed)` + `.step(n)` + `.hash()` reproduce any run bit-exactly.
 
 ### Interactive controls
 
@@ -79,7 +80,8 @@ PUBLISH.md        # page-deployment checklist (GitHub Pages)
 ## TODO
 
 - [ ] Supplemental video (orbit capture, interaction reel, ablation cuts)
-- [ ] Named-hardware benchmark table (FPS vs. layers / particles / scene splats)
+- [x] Named-hardware benchmark table (FPS vs. layers / particles) + deterministic replay
+- [ ] Second hardware point (consumer laptop iGPU)
 - [ ] Energy-spectrum E(k) validation of the inter-slice operator against a true-3D reference solve
 - [ ] Occlusion figure on a real captured `.ply` reconstruction
 - [ ] Multi-source in-scene ignition

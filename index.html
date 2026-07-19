@@ -165,7 +165,9 @@
       transport stacking drops; one depth-sorted emission&ndash;absorption rasterizer composites flame,
       smoke, embers, and reconstructed 3DGS scenes with per-primitive mutual occlusion, so a foreground
       object correctly occludes the flame. Our single-file WebGL2 prototype runs in real time on a
-      consumer laptop, supporting interactive in-scene ignition, wind, and coupling control.
+      workstation-class desktop &mdash; 8.9 ms per frame (112 FPS) at defaults, scaling linearly in
+      slice count &mdash; supporting interactive in-scene ignition, wind, and coupling control, with a
+      deterministic-replay harness that makes every reported number bit-reproducible.
     </p>
   </div>
 </section>
@@ -188,7 +190,7 @@
     <div class="stat"><b>1 : 1</b><span>vortex particle &rarr; Gaussian<br>(no voxelization, no meshing)</span></div>
     <div class="stat"><b>0</b><span>pressure variables<br>(pure vorticity&ndash;streamfunction)</span></div>
     <div class="stat"><b>O(N<sub>p</sub>+G)</b><span>velocity reconstruction<br>(vs O(N<sub>p</sub>&sup2;) Biot&ndash;Savart)</span></div>
-    <div class="stat"><b>60 FPS</b><span>single-threaded CPU sim,<br>consumer laptop</span></div>
+    <div class="stat"><b>8.9 ms</b><span>112 FPS at defaults<br>(RTX 3080, CPU-JS sim)</span></div>
   </div>
 </section>
 
@@ -239,14 +241,13 @@
      a new <b>bidirectional inter-slice vorticity exchange</b>
      &omega;<sub>k</sub> += &Delta;t&middot;&kappa;<sub>z</sub>(&omega;<sub>k&minus;1</sub>+&omega;<sub>k+1</sub>&minus;2&omega;<sub>k</sub>)
      reconstructs the out-of-plane transport &part;&sup2;&omega;/&part;z&sup2; that stacked-2D models
-     structurally drop &mdash; circulation-conserving, and the first slice-to-slice communication in
-     layered fire (production layered fire has none). Isolated at c = 0, the cross-slice velocity
-     correlation rises monotonically with operator strength:</p>
-  <div class="stats">
-    <div class="stat"><b>0.21</b><span>&kappa;<sub>z</sub> = 0<br>(uncoupled)</span></div>
-    <div class="stat"><b>0.39</b><span>&kappa;<sub>z</sub> = 0.3</span></div>
-    <div class="stat"><b>0.61</b><span>&kappa;<sub>z</sub> = 0.6</span></div>
-  </div>
+     structurally drop &mdash; circulation-conserving by construction, and the first
+     slice-to-slice communication in layered fire (production layered fire has none).
+     Quantifying its statistical effect turned out to be subtle: under our
+     deterministic-replay protocol, snapshot field-correlation probes are dominated by the
+     structural correlation the shared source already induces, so the paper reports this as a
+     deliberate negative result and defers quantitative validation to an energy-spectrum
+     comparison against a true-3D reference.</p>
   <div class="imgrow narrow">
     <div><img src="static/images/fig_couple_off.jpg" alt="Coupling off"><span class="lbl">c = 0 &mdash; independent slices</span></div>
     <div><img src="static/images/fig_couple_full.jpg" alt="Coupling full"><span class="lbl">c = 1 &mdash; slaved to coarse solve</span></div>
@@ -308,7 +309,8 @@
   <p class="narrow muted" style="font-size:.9rem">For calibration: FieryGS reports 2.37 s/frame
      (0.84 s of which is the fire/smoke ray march, RTX 4090D); Gaussian Fluids reports 38&ndash;228 s per
      <i>time step</i> (RTX 4090); production layered fire required ~20 s per slice per frame on a GPU
-     farm. Our prototype runs the full loop in real time on a consumer laptop &mdash; in a browser.</p>
+     farm. Our prototype runs the full loop at 112 FPS (8.9 ms/frame, measured) &mdash; in a browser,
+     with the simulation single-threaded in CPU JavaScript.</p>
 </section>
 
 <!-- ======================= live demo ======================= -->

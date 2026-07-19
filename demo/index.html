@@ -725,6 +725,20 @@ const P = {
 };
 
 // ===========================================================================
+//  确定性回放: 所有仿真路径的随机数走 srand; seedSim(s) 切换到种子化流。
+//  配合固定步长 stepAll(1/60) → 同种子同步数 ⇒ 逐位可复现 (见 __demo.hash)。
+// ===========================================================================
+let simSeed=0, srand=Math.random;              // 默认非确定 (交互模式)
+function seedSim(s){ simSeed=s>>>0; srand=mulberry32(simSeed); }
+function resetSim(seed){                        // 确定性重置: 种子 + 全部仿真状态归零
+  if(seed!==undefined) seedSim(seed);
+  rebuildLayers(); embers=[]; emberAcc=0; cloud=[]; cloudAcc=0; vol_t=0;
+  coarse.T.fill(0); coarse.Tb.fill(0); coarse.w.fill(0); coarse.psi.fill(0);
+  coarse.ux.fill(0); coarse.uy.fill(0);
+  source={x:0,y:0.04,w:0.22,vx:0,px:0,py:0}; simTime=0;
+}
+
+// ===========================================================================
 //  仿真背景网格 (∂T/∂x, 仅路线2)
 // ===========================================================================
 const GX=20, GY=30;
@@ -770,9 +784,9 @@ function stepEmbers(dt){
     emberAcc += P.emberRate*dt*(pointer.active?1.7:1.0);
     while(emberAcc>=1 && embers.length<P.emberMax){
       emberAcc-=1;
-      embers.push({ x:source.x+(Math.random()-0.5)*source.w*0.8, y:source.y+0.02,
-        vx:(Math.random()-0.5)*0.25+source.vx*0.3, vy:0.55+Math.random()*1.0,
-        T:0.8+Math.random()*0.2, life:0, ttl:1.1+Math.random()*1.8, seed:Math.random()*99 });
+      embers.push({ x:source.x+(srand()-0.5)*source.w*0.8, y:source.y+0.02,
+        vx:(srand()-0.5)*0.25+source.vx*0.3, vy:0.55+srand()*1.0,
+        T:0.8+srand()*0.2, life:0, ttl:1.1+srand()*1.8, seed:srand()*99 });
     }
   }
   const out=[];
@@ -802,9 +816,9 @@ function step3D(dt){
   const cap=P.ppl*P.layers;                       // 总预算 ≈ 分层模式
   cloudAcc += P.rate*P.layers*dt*(pointer.active?1.8:1.0)/3;
   while(cloudAcc>=1 && cloud.length<cap){ cloudAcc-=1;
-    const a=Math.random()*6.283, rr=Math.sqrt(Math.random())*source.w*0.7;
-    cloud.push({ x:source.x+Math.cos(a)*rr, y:source.y+Math.random()*0.05, z:Math.sin(a)*rr,
-      vx:0,vy:0,vz:0, T:0.92+Math.random()*0.08, d:0.85+Math.random()*0.15, life:0, seedp:Math.random()*99 });
+    const a=srand()*6.283, rr=Math.sqrt(srand())*source.w*0.7;
+    cloud.push({ x:source.x+Math.cos(a)*rr, y:source.y+srand()*0.05, z:Math.sin(a)*rr,
+      vx:0,vy:0,vz:0, T:0.92+srand()*0.08, d:0.85+srand()*0.15, life:0, seedp:srand()*99 });
   }
   const out=[], S=P.vol3DScale;
   for(const p of cloud){
@@ -829,10 +843,10 @@ function stepProc(layer, dt){
   const cap=P.ppl;
   layer.acc += P.rate*dt*(pointer.active?1.8:1.0)/Math.max(1,P.layers);
   while(layer.acc>=1 && layer.ps.length<cap){
-    layer.acc-=1; const r=(Math.random()*2-1);
-    layer.ps.push({ x:source.x+r*source.w*0.5+(Math.random()-0.5)*0.02, y:source.y+Math.random()*0.05,
-      G:0, T:0.92+Math.random()*0.08, d:0.85+Math.random()*0.15,
-      vx:source.vx*0.5, vy:0, seedp:Math.random()*99, life:0, sxx:1,sxy:0,syy:1 });
+    layer.acc-=1; const r=(srand()*2-1);
+    layer.ps.push({ x:source.x+r*source.w*0.5+(srand()-0.5)*0.02, y:source.y+srand()*0.05,
+      G:0, T:0.92+srand()*0.08, d:0.85+srand()*0.15,
+      vx:source.vx*0.5, vy:0, seedp:srand()*99, life:0, sxx:1,sxy:0,syy:1 });
   }
   const out=[];
   const he=0.02;
@@ -879,10 +893,10 @@ function evolveF(p, Lxx,Lxy,Lyx,Lyy, dt){
 function emitSim(layer, dt){
   const cap=P.ppl; if(layer.ps.length>=cap) return;
   const n=Math.min(cap-layer.ps.length, 6+(pointer.active?6:0));
-  for(let i=0;i<n;i++){ const r=(Math.random()*2-1);
-    layer.ps.push({ x:source.x+r*source.w*0.5+(Math.random()-0.5)*0.02, y:source.y+Math.random()*0.05,
-      G:(Math.random()-0.5)*0.6+Math.sin(layer.seed+layer.t)*0.1,
-      T:0.92+Math.random()*0.08, d:0.85+Math.random()*0.15, vx:source.vx*0.5, vy:0, seedp:Math.random()*99, life:0, sxx:1,sxy:0,syy:1 });
+  for(let i=0;i<n;i++){ const r=(srand()*2-1);
+    layer.ps.push({ x:source.x+r*source.w*0.5+(srand()-0.5)*0.02, y:source.y+srand()*0.05,
+      G:(srand()-0.5)*0.6+Math.sin(layer.seed+layer.t)*0.1,
+      T:0.92+srand()*0.08, d:0.85+srand()*0.15, vx:source.vx*0.5, vy:0, seedp:srand()*99, life:0, sxx:1,sxy:0,syy:1 });
   }
 }
 function biotSavart(ps,px,py,eps2,gscale){ let ux=0,uy=0;
@@ -1482,6 +1496,19 @@ window.__demo = {
   forceSize(w,h){ cv.width=w; cv.height=h; makeTargets(); },   // 无头测试: 绕过 0 宽布局
   render(){ return render(); }, rebuild(){ rebuildLayers(); },
   warm(frames){ frames=frames||120; for(let i=0;i<frames;i++) stepAll(0.016); },
+  // ---- 确定性回放: reset(seed) + 固定步长 step + hash ⇒ 逐位可复现 ----
+  reset(seed){ resetSim(seed===undefined?12345:seed); },
+  step(n,dt){ dt=dt||1/60; for(let i=0;i<(n||1);i++){ simTime+=dt; stepAll(dt); } },
+  hash(){ const f32=new Float32Array(1), u8=new Uint8Array(f32.buffer);
+    let h=0x811c9dc5>>>0;
+    const mix=v=>{ f32[0]=v; h=(h^u8[0])>>>0; h=Math.imul(h,16777619)>>>0;
+      h=(h^u8[1])>>>0; h=Math.imul(h,16777619)>>>0; h=(h^u8[2])>>>0; h=Math.imul(h,16777619)>>>0;
+      h=(h^u8[3])>>>0; h=Math.imul(h,16777619)>>>0; };
+    for(const L of layers){ mix(L.ps.length);
+      for(const p of L.ps){ mix(p.x);mix(p.y);mix(p.T);mix(p.d);mix(p.vx);mix(p.vy);mix(p.G||0); } }
+    mix(embers.length); for(const e of embers){ mix(e.x);mix(e.y);mix(e.T); }
+    for(let i=0;i<coarse.T.length;i++) mix(coarse.T[i]);
+    return ('00000000'+h.toString(16)).slice(-8); },
   loadPLY(buf){ return loadPLY(buf); }, get sceneN(){ return sceneGauss.length; },
   get cloudN(){ return cloud.length; },
   cloudExtent(){ let mnz=1e9,mxz=-1e9,mny=1e9,mxy=-1e9; for(const p of cloud){ if(p.z<mnz)mnz=p.z;if(p.z>mxz)mxz=p.z;if(p.y<mny)mny=p.y;if(p.y>mxy)mxy=p.y; }
