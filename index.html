@@ -221,6 +221,26 @@
   </div>
 </section>
 
+<!-- ======================= fire spread ======================= -->
+<section class="wrap">
+  <h2>The scene itself burns: fire spread on the splats</h2>
+  <p class="narrow">
+    Combustion state &mdash; heat, fuel, char, glow &mdash; lives <b>directly on the reconstruction's
+    splats</b>. The simulated flame ignites nearby geometry; fire spreads splat-to-splat with
+    conventional heat-threshold physics (after Pirk et&nbsp;al. 2017, H&auml;drich et&nbsp;al. 2021);
+    charring is written straight into the splats' albedo and opacity; and burning geometry
+    <b>re-seeds the solver with new plumes</b> &mdash; a real-time, bidirectional
+    simulation&harr;scene loop. Below: one ignition at the front pillar's base climbs and consumes
+    the pillar, and the plumes it emits carry heat across a gap far beyond the spread radius,
+    igniting the <i>rear</i> pillar through the simulation itself.
+  </p>
+  <div class="imgrow">
+    <div><img src="static/images/fig_spread_t1.jpg" alt="Ignition climbing the front pillar"><span class="lbl">t &asymp; 2.5 s &mdash; ignition climbs</span></div>
+    <div><img src="static/images/fig_spread_t2.jpg" alt="Pillar engulfed in fire"><span class="lbl">t &asymp; 7.5 s &mdash; engulfed, shedding embers</span></div>
+    <div><img src="static/images/fig_spread_t3.jpg" alt="Charred pillar, fire jumped to rear pillar"><span class="lbl">t &asymp; 16.5 s &mdash; charred; fire jumped to the rear pillar</span></div>
+  </div>
+</section>
+
 <!-- ======================= simulation ======================= -->
 <section class="wrap">
   <h2>A pressure-free two-level vortex solver &mdash; with inter-slice coupling</h2>

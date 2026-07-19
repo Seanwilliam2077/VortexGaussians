@@ -12,6 +12,7 @@ Anonymous Author(s)<sup>1</sup>
 
 ## News
 
+- **[2026-07]** Splat-graph fire spread: combustion state (heat/fuel/char/glow) now lives directly on the loaded scene's splats — the simulated flame ignites the reconstruction, fire spreads with conventional heat-threshold physics (Pirk 2017, Hädrich 2021 lineage), charring writes into splat albedo/opacity, and burning geometry re-seeds the solver with new plumes (bidirectional sim↔scene loop; in the demo the fire jumps a ~1.7-unit gap between pillars through the simulated flame alone). `P.spreadOn` + `__demo.ignite(x,y,z,r)`.
 - **[2026-07]** E(k) spectral validation landed: the layered approximation is now measured against a matched true-3D Boussinesq reference (same domain/source/Δt, solver in `supplemental/ref3d.py`) — the stack concentrates 83–92% of in-plane energy in the largest-scale bin vs 48% for 3D (the predicted missing-vortex-stretching signature), coupling narrows the spectral distance only modestly, and adjacent-plane coherence is 0.13–0.19 vs 0.93 in 3D. The paper's honesty section is now quantitative (new Fig. "spectral comparison").
 - **[2026-07]** Deterministic replay + measured benchmarks: all stochastic paths draw from one seeded PRNG, runs are bit-reproducible from `(seed, steps)` (FNV-1a state hash), and the paper now ships a measured scaling table — 8.9 ms/frame (112 FPS) at defaults, linear in slice count, VIC ~3.4× faster than naive Biot–Savart at the default budget (RTX 3080, CPU-JS sim).
 - **[2026-07]** Inter-slice vorticity-coupling operator (`interZ`) added: bidirectional, circulation-conserving z-Laplacian exchange across slices — the first slice-to-slice communication in layered fire. (Its statistical characterization is subtle; the paper reports a controlled negative result on snapshot-correlation probes and defers validation to an E(k) study.)
@@ -84,8 +85,8 @@ PUBLISH.md        # page-deployment checklist (GitHub Pages)
 - [x] Named-hardware benchmark table (FPS vs. layers / particles) + deterministic replay
 - [ ] Second hardware point (consumer laptop iGPU)
 - [x] Energy-spectrum E(k) validation against a true-3D reference solve (negative-leaning result, reported honestly)
-- [ ] Occlusion figure on a real captured `.ply` reconstruction
-- [ ] Multi-source in-scene ignition
+- [ ] Occlusion + fire-spread figures on a real captured `.ply` reconstruction
+- [x] Multi-source in-scene ignition (delivered by the fire-spread loop: burning splats feed multiple slices concurrently)
 
 ## Citation
 
