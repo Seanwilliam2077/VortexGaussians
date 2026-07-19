@@ -12,6 +12,7 @@ Anonymous Author(s)<sup>1</sup>
 
 ## News
 
+- **[2026-07]** E(k) spectral validation landed: the layered approximation is now measured against a matched true-3D Boussinesq reference (same domain/source/Δt, solver in `supplemental/ref3d.py`) — the stack concentrates 83–92% of in-plane energy in the largest-scale bin vs 48% for 3D (the predicted missing-vortex-stretching signature), coupling narrows the spectral distance only modestly, and adjacent-plane coherence is 0.13–0.19 vs 0.93 in 3D. The paper's honesty section is now quantitative (new Fig. "spectral comparison").
 - **[2026-07]** Deterministic replay + measured benchmarks: all stochastic paths draw from one seeded PRNG, runs are bit-reproducible from `(seed, steps)` (FNV-1a state hash), and the paper now ships a measured scaling table — 8.9 ms/frame (112 FPS) at defaults, linear in slice count, VIC ~3.4× faster than naive Biot–Savart at the default budget (RTX 3080, CPU-JS sim).
 - **[2026-07]** Inter-slice vorticity-coupling operator (`interZ`) added: bidirectional, circulation-conserving z-Laplacian exchange across slices — the first slice-to-slice communication in layered fire. (Its statistical characterization is subtle; the paper reports a controlled negative result on snapshot-correlation probes and defers validation to an E(k) study.)
 - **[2026-07]** Loaded `.ply` reconstructions are now merged into the global depth order by an asymmetric exact/bucketed two-stream interleave — foreground scene objects correctly occlude the flame, at no measured overhead.
@@ -82,7 +83,7 @@ PUBLISH.md        # page-deployment checklist (GitHub Pages)
 - [ ] Supplemental video (orbit capture, interaction reel, ablation cuts)
 - [x] Named-hardware benchmark table (FPS vs. layers / particles) + deterministic replay
 - [ ] Second hardware point (consumer laptop iGPU)
-- [ ] Energy-spectrum E(k) validation of the inter-slice operator against a true-3D reference solve
+- [x] Energy-spectrum E(k) validation against a true-3D reference solve (negative-leaning result, reported honestly)
 - [ ] Occlusion figure on a real captured `.ply` reconstruction
 - [ ] Multi-source in-scene ignition
 
