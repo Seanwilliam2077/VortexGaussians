@@ -1445,13 +1445,28 @@ document.getElementById('reset').addEventListener('click',()=>rebuildLayers());
 // 指针
 // 指针拖动 = 绕火旋转相机 (横向→方位角 yaw, 纵向→俯仰 elev)
 let drag={on:false, px:0, py:0};
-cv.addEventListener('pointerdown',e=>{ drag.on=true; drag.px=e.clientX; drag.py=e.clientY; cv.setPointerCapture(e.pointerId); });
-cv.addEventListener('pointermove',e=>{ if(!drag.on) return;
+// Shift+拖拽: 移动火源 (屏幕 NDC → 视图对齐切片的面内坐标; 源位于切片中心平面)
+// 布局折叠时 (rect 0×0, 如隐藏页/嵌入初始化) 退回 canvas 像素尺寸, 保证映射不退化
+function setSrcFromEvent(e){
+  const r=cv.getBoundingClientRect();
+  const W=(r.width>2)?r.width:cv.width, H=(r.height>2)?r.height:cv.height;
+  const nx=(e.clientX-r.left)/Math.max(1,W)*2-1, ny=1-(e.clientY-r.top)/Math.max(1,H)*2;
+  const t=Math.tan(P.fov*0.5)*P.camDist, aspect=W/Math.max(1,H);
+  pointer.px=pointer.x; pointer.py=pointer.y;
+  pointer.x=Math.max(-0.9,Math.min(0.9, nx*t*aspect));
+  pointer.y=Math.max(0.02,Math.min(0.8, 1.05+ny*t));
+}
+cv.addEventListener('pointerdown',e=>{
+  if(e.shiftKey){ pointer.active=true; setSrcFromEvent(e); cv.setPointerCapture(e.pointerId); return; }
+  drag.on=true; drag.px=e.clientX; drag.py=e.clientY; cv.setPointerCapture(e.pointerId); });
+cv.addEventListener('pointermove',e=>{
+  if(pointer.active){ setSrcFromEvent(e); return; }
+  if(!drag.on) return;
   P.yaw -= (e.clientX-drag.px)/200; P.camElev=Math.max(-0.4,Math.min(0.8, P.camElev+(e.clientY-drag.py)/300));
   drag.px=e.clientX; drag.py=e.clientY;
   const yv=document.getElementById('yawV'); if(yv) yv.textContent=P.yaw.toFixed(2); });
-cv.addEventListener('pointerup',()=>{ drag.on=false; });
-cv.addEventListener('pointercancel',()=>{ drag.on=false; });
+cv.addEventListener('pointerup',()=>{ drag.on=false; pointer.active=false; });
+cv.addEventListener('pointercancel',()=>{ drag.on=false; pointer.active=false; });
 window.addEventListener('keydown',e=>{
   if(e.code==='Space'){ document.getElementById('pause').click(); e.preventDefault(); }
   else if(e.key==='r'||e.key==='R') rebuildLayers();

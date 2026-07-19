@@ -151,27 +151,21 @@
   <div class="wrap narrow">
     <h2>Abstract</h2>
     <p class="muted" style="text-align:justify">
-      Fire and smoke remain conspicuously absent from Gaussian-splatting (GS) scenes: existing
-      physics-integrated GS methods target solids and liquids, GS fire methods reconstruct flames from
-      video rather than simulating them, and the one system that couples forward combustion simulation
-      with GS scenes composites ray-marched volumes over an opaque backdrop at seconds per frame.
+      Fire and smoke remain absent from Gaussian-splatting (GS) scenes: physics-integrated GS handles
+      solids and liquids, GS fire methods only reconstruct observed flames, and the one system that
+      simulates new fire composites ray-marched volumes over an opaque backdrop at seconds per frame.
       We present the first system that generates fire and smoke by forward physical simulation in real
-      time and renders them as <i>native</i> Gaussian-splatting content. Our key insight is a structural
-      isomorphism: Lagrangian vortex particles and 3D Gaussians are the same class of point primitive.
-      We therefore let one particle set serve simultaneously as simulation state and render
-      primitive&mdash;position maps to the Gaussian mean, temperature to emissive blackbody color,
-      density to opacity, and local velocity gradient to an anisotropic covariance evolved in closed
-      form&mdash;eliminating voxelization, meshing, and any simulation-to-renderer conversion.
-      Dynamics come from a two-level layered vortex solver recast entirely in
-      vorticity&ndash;streamfunction form with no pressure variable: each view-aligned slice runs a 2D
-      vortex-in-cell simulation with a baroclinic temperature&ndash;buoyancy&ndash;vorticity loop, a
-      coarse global solver supplies bulk coherence, and&mdash;new to layered fire&mdash;a bidirectional
-      inter-slice vorticity-coupling operator reintroduces the out-of-plane transport that stacking
-      drops. All flame, smoke, ember, and scene Gaussians share one depth-sorted emission&ndash;absorption
-      rasterizer with HDR blackbody shading; loaded reconstructions are merged into the single global
-      depth order by an asymmetric exact/bucketed two-stream interleave at no measured overhead.
-      Our single-file WebGL2 prototype sustains real-time rates on a consumer laptop and supports
-      interactive in-scene ignition and control of wind and coupling.
+      time and renders them as <i>native</i> Gaussian-splatting content. Our key insight is that
+      Lagrangian vortex particles and 3D Gaussians are the same class of point primitive: one particle
+      set serves simultaneously as simulation state and render primitive&mdash;position to Gaussian
+      mean, temperature to emissive blackbody color, density to opacity, velocity gradient to
+      anisotropic covariance&mdash;with no voxelization, meshing, or simulation-to-renderer conversion
+      anywhere. A pressure-free two-level layered vortex-in-cell solver drives the particles, with a
+      new bidirectional inter-slice vorticity-coupling operator that restores the out-of-plane
+      transport stacking drops; one depth-sorted emission&ndash;absorption rasterizer composites flame,
+      smoke, embers, and reconstructed 3DGS scenes with per-primitive mutual occlusion, so a foreground
+      object correctly occludes the flame. Our single-file WebGL2 prototype runs in real time on a
+      consumer laptop, supporting interactive in-scene ignition, wind, and coupling control.
     </p>
   </div>
 </section>
@@ -322,9 +316,9 @@
   <div class="wrap">
     <h2>Interactive demo &mdash; runs in your browser</h2>
     <p class="narrow">The entire system is a single dependency-free HTML file (CPU JavaScript
-      simulation + WebGL2 rendering). Drag to orbit, drag the source, add wind, sweep the coupling,
-      toggle fire&#8596;smoke, hot-swap solvers per slice &mdash; or load your own Inria-format
-      <code>.ply</code> reconstruction and light a fire inside it.</p>
+      simulation + WebGL2 rendering). Drag to orbit, <b>Shift-drag to move the fire source</b>, add
+      wind, sweep the coupling, toggle fire&#8596;smoke, hot-swap solvers per slice &mdash; or load
+      your own Inria-format <code>.ply</code> reconstruction and light a fire inside it.</p>
     <div class="narrow">
       <div class="demo-shell" id="demoShell">
         <div class="demo-poster" id="demoPoster">
