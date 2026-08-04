@@ -117,7 +117,9 @@
     <a class="btn" href="https://github.com/Seanwilliam2077/VortexGaussians">
       <svg viewBox="0 0 24 24"><path d="M12 .5A11.5 11.5 0 0 0 .5 12a11.5 11.5 0 0 0 7.9 10.9c.6.1.8-.2.8-.5v-2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.7-1.3-1.7-1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1 1.8 2.7 1.3 3.4 1 .1-.8.4-1.3.7-1.6-2.6-.3-5.3-1.3-5.3-5.7 0-1.3.4-2.3 1.2-3.1-.1-.3-.5-1.5.1-3.1 0 0 1-.3 3.2 1.2a11 11 0 0 1 5.8 0C18.2 4.9 19.2 5.2 19.2 5.2c.6 1.6.2 2.8.1 3.1.8.8 1.2 1.8 1.2 3.1 0 4.4-2.7 5.4-5.3 5.7.4.4.8 1.1.8 2.2v3.2c0 .3.2.6.8.5A11.5 11.5 0 0 0 23.5 12 11.5 11.5 0 0 0 12 .5z"/></svg>
       Code</a>
-    <a class="btn disabled" href="#">Video (soon)</a>
+    <a class="btn" href="static/video/vortex_gaussians_supplemental.mp4">
+      <svg viewBox="0 0 24 24"><path d="M4 4h16a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1zm6 4.5v7l6-3.5-6-3.5z"/></svg>
+      Video</a>
   </div>
 </header>
 
@@ -217,6 +219,26 @@
       </div>
       <figure><figcaption>Synthetic test reconstruction (ground, back wall, two pillars &mdash; one in
       front of the flame, one behind). Same simulation state on both sides.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+
+<!-- ======================= video ======================= -->
+<section class="alt">
+  <div class="wrap">
+    <h2>Supplemental video</h2>
+    <p class="narrow">Six single-take sequences, unedited &mdash; including the
+      <b>failure case</b> (fast azimuth change), shown rather than cut around. Frames are rendered
+      deterministically at &Delta;t = 1/60&nbsp;s and encoded at 60&nbsp;fps, so playback speed equals
+      simulation speed; the on-screen counter is the rate measured live on the same machine
+      (18.4&nbsp;ms, 54&nbsp;FPS).</p>
+    <div class="narrow">
+      <video controls preload="metadata" playsinline
+             style="width:100%;border-radius:12px;display:block;background:#0a0a0d"
+             poster="static/images/fig_teaser_v3.jpg">
+        <source src="static/video/vortex_gaussians_supplemental.mp4" type="video/mp4">
+      </video>
     </div>
   </div>
 </section>

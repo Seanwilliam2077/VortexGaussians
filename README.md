@@ -1,6 +1,6 @@
 # Vortex Gaussians: Real-Time Simulation-Driven Fire and Smoke as Native Gaussian-Splatting Content
 
-### [[Project Page](https://seanwilliam2077.github.io/VortexGaussians/)] [[Paper (PDF)](static/vortex_gaussians_paper.pdf)] [[Live Demo](https://seanwilliam2077.github.io/VortexGaussians/demo/)] [[Video (soon)]()]
+### [[Project Page](https://seanwilliam2077.github.io/VortexGaussians/)] [[Paper (PDF)](static/vortex_gaussians_paper.pdf)] [[Live Demo](https://seanwilliam2077.github.io/VortexGaussians/demo/)] [[Video](static/video/vortex_gaussians_supplemental.mp4)]
 
 Anonymous Author(s)<sup>1</sup>
 
@@ -12,6 +12,7 @@ Anonymous Author(s)<sup>1</sup>
 
 ## News
 
+- **[2026-08]** Supplemental video (95 s, six single-take sequences including the fast-azimuth **failure case**, shown not cut around). Frames rendered deterministically at Δt=1/60 s and encoded at 60 fps so playback speed equals simulation speed; the on-screen counter is the live-measured rate (18.4 ms / 54 FPS) on the same machine. Paper now carries **zero TODO markers** — remaining gaps are stated as prose in a "what this evaluation does not yet cover" paragraph.
 - **[2026-07]** Rendering + claims overhaul after an adversarial review pass: fire fragments now carry a true Gaussian footprint (previously `exp(-3r²)` was only a discard mask, so fire splats had constant alpha and visible quad corners), a single footprint constant is shared by flame/smoke/embers/scene, and the pedestal is subtracted so alpha reaches exactly zero at the quad edge. Default particle budget raised to 1300/layer (12.4k Gaussians, 17.8 ms / 56 FPS on an RTX 3080 at 1280×800). All figures re-shot; overstated claims (pressure-free advection, inter-slice operator, saturated brightness metric, cross-system timing) corrected or withdrawn.
 
 - **[2026-07]** Splat-graph fire spread: combustion state (heat/fuel/char/glow) now lives directly on the loaded scene's splats — the simulated flame ignites the reconstruction, fire spreads with conventional heat-threshold physics (Pirk 2017, Hädrich 2021 lineage), charring writes into splat albedo/opacity, and burning geometry re-seeds the solver with new plumes (bidirectional sim↔scene loop; in the demo the fire jumps a ~1.7-unit gap between pillars through the simulated flame alone). `P.spreadOn` + `__demo.ignite(x,y,z,r)`.
@@ -83,7 +84,7 @@ PUBLISH.md        # page-deployment checklist (GitHub Pages)
 
 ## TODO
 
-- [ ] Supplemental video (orbit capture, interaction reel, ablation cuts)
+- [x] Supplemental video (95 s: real-time, orbit, failure case, interaction, coupling sweep, fire spread)
 - [x] Named-hardware benchmark table (FPS vs. layers / particles) + deterministic replay
 - [ ] Second hardware point (consumer laptop iGPU)
 - [x] Energy-spectrum E(k) validation against a true-3D reference solve (negative-leaning result, reported honestly)
