@@ -460,21 +460,50 @@ void main(){
 const VS_SCENE = `#version 300 es
 layout(location=0) in vec2 aCorner;
 layout(location=1) in vec3 aPos;
-layout(location=2) in vec3 aMajor;
-layout(location=3) in vec3 aMinor;
+layout(location=2) in vec3 aCovA;      // Σ 的 (xx, xy, xz)
+layout(location=3) in vec3 aCovB;      // Σ 的 (yy, yz, zz)
 layout(location=4) in vec3 aColor;
 layout(location=5) in float aOpa;
 layout(location=6) in float aGlow;
 layout(location=7) in float aChar;
-uniform mat4 uViewProj; uniform float uSceneLight;
+uniform mat4 uViewProj; uniform mat4 uView;
+uniform vec2 uFocal; uniform vec2 uViewport; uniform float uSceneLight;
 out vec2 v_uv; out vec3 v_color; out float v_opa; out float v_glow;
+// EWA volume splatting (Zwicker 2001; 3DGS 前向过程): 把 3D 协方差经透视变换的
+// 雅可比投影成屏幕空间 2D 协方差, 再取其特征向量作四边形的两根半轴。
+//   Σ₂ = J W Σ₃ Wᵀ Jᵀ,  J = ∂(u,v)/∂(x,y,z)|_view
+// 这样高斯随深度与离轴角度正确形变 —— 旧路径取两根最大主轴画世界四边形, 两者都没有。
 void main(){
-  vec3 wp = aPos + aCorner.x*aMajor + aCorner.y*aMinor;
-  gl_Position = uViewProj * vec4(wp,1.0);
-  v_uv=aCorner;
-  v_color=aColor*uSceneLight*(1.0-0.88*aChar);       // 炭化: 反照率压向黑
-  v_opa=aOpa*(1.0-0.30*aChar);                       // 炭化: 轻微降不透明度
-  v_glow=aGlow;
+  vec4 pv = uView * vec4(aPos, 1.0);
+  float d = -pv.z;                                   // 正深度 (OpenGL 朝 -z 看)
+  if(d < 0.05){ gl_Position = vec4(2.0,2.0,2.0,1.0); v_uv=vec2(0.0);
+                v_color=vec3(0.0); v_opa=0.0; v_glow=0.0; return; }   // 相机后方: 剔除
+  float fx = uFocal.x, fy = uFocal.y, d2 = d*d;
+  // 列主序: 第 c 列 = ∂(u,v)/∂(view 第 c 轴)
+  mat3 J = mat3(fx/d,             0.0,               0.0,
+                0.0,              fy/d,              0.0,
+                fx*pv.x/d2,       fy*pv.y/d2,        0.0);
+  mat3 W = mat3(uView);                              // 视图旋转 (无平移)
+  mat3 T = J * W;
+  mat3 S3 = mat3(aCovA.x, aCovA.y, aCovA.z,
+                 aCovA.y, aCovB.x, aCovB.y,
+                 aCovA.z, aCovB.y, aCovB.z);
+  mat3 C2 = T * S3 * transpose(T);
+  // 低通/抗锯齿膨胀: 保证屏幕足迹不小于约一个像素, 否则远处 splat 会闪烁
+  float a = C2[0][0] + 0.3, b = C2[0][1], c = C2[1][1] + 0.3;
+  float mid = 0.5*(a + c);
+  float rad = sqrt(max(0.01, mid*mid - (a*c - b*b)));
+  float l1 = mid + rad, l2 = max(0.01, mid - rad);   // 特征值 = 沿两根主轴的方差 (px²)
+  vec2 e1 = normalize(abs(b) > 1e-6 ? vec2(b, l1 - a) : vec2(1.0, 0.0));
+  vec2 e2 = vec2(-e1.y, e1.x);
+  float r1 = 3.0*sqrt(l1), r2 = 3.0*sqrt(l2);        // 3σ 半轴 (像素)
+  vec2 offPx = aCorner.x*r1*e1 + aCorner.y*r2*e2;
+  vec4 clip = uViewProj * vec4(aPos, 1.0);
+  gl_Position = clip + vec4(2.0*offPx/uViewport*clip.w, 0.0, 0.0);
+  v_uv = aCorner;
+  v_color = aColor*uSceneLight*(1.0-0.88*aChar);     // 炭化: 反照率压向黑
+  v_opa = aOpa*(1.0-0.30*aChar);                     // 炭化: 轻微降不透明度
+  v_glow = aGlow;
 }`;
 const FS_SCENE = `#version 300 es
 precision highp float; in vec2 v_uv; in vec3 v_color; in float v_opa; in float v_glow; out vec4 o;
@@ -482,8 +511,8 @@ uniform float uTime;
 // 与 FS_PARTICLE 同一足迹形式: 高斯 - 基座后重归一, 角点恰好归零 (无硬 discard 台阶)。
 // 常数 2.42 而非 3.0: 场景 splat 的四边形半宽是 2.2σ (见 parsePLY 的 ax()),
 // 故四边形坐标 u 处的世界偏移为 2.2σ·u, 指数 = -(2.2u)²/2 = -2.42u²。
-const float KS  = 2.42;
-const float PES = 0.007907054;                     // = exp(-KS*2.0), 角点 (r²=2) 处的值
+const float KS  = 4.5;                             // = 0.5·3², 四边形半轴为 3σ
+const float PES = 0.0001234098;                    // = exp(-KS*2.0), 角点 (r²=2) 处的值
 void main(){ float r2=dot(v_uv,v_uv);
   float g=(exp(-KS*r2)-PES)/(1.0-PES); if(g<=0.0) discard;
   float a=clamp(v_opa,0.0,1.0)*g;
@@ -502,7 +531,8 @@ const U = (p,n)=>gl.getUniformLocation(p,n);
 const uPart={ VP:U(pPart,'uViewProj'),
               Time:U(pPart,'uTime'),Emis:U(pPart,'uEmis'),Mode:U(pPart,'uMode'),Flick:U(pPart,'uFlick'),
               Fire:U(pPart,'uFire'),FireI:U(pPart,'uFireI'),Res:U(pPart,'uRes') };
-const uScene={ VP:U(pScene,'uViewProj'), Light:U(pScene,'uSceneLight'), Time:U(pScene,'uTime') };
+const uScene={ VP:U(pScene,'uViewProj'), Light:U(pScene,'uSceneLight'), Time:U(pScene,'uTime'),
+  V:U(pScene,'uView'), Focal:U(pScene,'uFocal'), Viewport:U(pScene,'uViewport') };
 const uPre={ Tex:U(pPre,'uTex'),Threshold:U(pPre,'uThreshold') };
 const uBlur={ Tex:U(pBlur,'uTex'),Dir:U(pBlur,'uDir') };
 const uComp={ Scene:U(pComp,'uScene'),Bloom:U(pComp,'uBloom'),Exposure:U(pComp,'uExposure'),BloomAmt:U(pComp,'uBloomAmt'),
@@ -609,11 +639,14 @@ function parsePLY(buf){
     const R=[[1-2*(qy*qy+qz*qz),2*(qx*qy-qw*qz),2*(qx*qz+qw*qy)],
              [2*(qx*qy+qw*qz),1-2*(qx*qx+qz*qz),2*(qy*qz-qw*qx)],
              [2*(qx*qz-qw*qy),2*(qy*qz+qw*qx),1-2*(qx*qx+qy*qy)]];
-    const sc=[s0,s1,s2], ord=[0,1,2].sort((a,b)=>sc[b]-sc[a]);
-    const ax=k=>[R[0][k]*sc[k]*2.2, R[1][k]*sc[k]*2.2, R[2][k]*sc[k]*2.2];   // ~2σ 半轴
+    // EWA: 保留完整 3D 协方差 Σ = R diag(s²) Rᵀ (6 个独立分量), 由顶点着色器
+    // 经透视雅可比投影成屏幕空间 2D 协方差。旧路径只取两根最大主轴画世界四边形,
+    // 既丢了第三根轴, 也没有透视形变 —— 那是 3DGS 前向过程的近似而非实现。
+    const sc=[s0*s0, s1*s1, s2*s2];
+    const cv3=(i,j)=>R[i][0]*sc[0]*R[j][0] + R[i][1]*sc[1]*R[j][1] + R[i][2]*sc[2]*R[j][2];
     // 只截负值: 上截到 1 会在进入 RGBA16F/bloom/ACES 链之前就砍掉高光。
     const cl=v=>Math.max(0,v);
-    out.push({ p:[x,y,z], a0:ax(ord[0]), a1:ax(ord[1]),
+    out.push({ p:[x,y,z], cov:[cv3(0,0),cv3(0,1),cv3(0,2),cv3(1,1),cv3(1,2),cv3(2,2)],
       c:[cl(0.5+C0*F(i,'f_dc_0')),cl(0.5+C0*F(i,'f_dc_1')),cl(0.5+C0*F(i,'f_dc_2'))], o:sg(F(i,'opacity')) });
     cx+=x;cy+=y;cz+=z;
   }
@@ -653,18 +686,29 @@ function gatherScene(){
     let y2=y*cp - z*sp, z2=y*sp + z*cp;                              // pitch X
     let x3=x*cy + z2*sy, z3=-x*sy + z2*cy;                           // yaw Y
     return [x3*S, y2*S, z3*S]; }
-  function tfv(v){ let x=v[0],y=v[1],z=v[2];                          // 轴: 只旋转+缩放
-    let y2=y*cp - z*sp, z2=y*sp + z*cp; let x3=x*cy + z2*sy, z3=-x*sy + z2*cy;
-    return [x3*S, y2*S, z3*S]; }
+  // 场景变换的 3x3 线性部分 M = S·Ry(yaw)·Rx(pitch); 协方差按 Σ' = M Σ Mᵀ 变换
+  const M=[[S*cy, S*sy*sp, S*sy*cp],
+           [0,    S*cp,   -S*sp   ],
+           [-S*sy, S*cy*sp, S*cy*cp]];
+  function tfcov(c){                     // c = [xx,xy,xz,yy,yz,zz]
+    const A=[[c[0],c[1],c[2]],[c[1],c[3],c[4]],[c[2],c[4],c[5]]];
+    const T=[[0,0,0],[0,0,0],[0,0,0]];
+    for(let i=0;i<3;i++)for(let j=0;j<3;j++){ let v=0;
+      for(let k=0;k<3;k++) v+=M[i][k]*A[k][j]; T[i][j]=v; }
+    const O=[[0,0,0],[0,0,0],[0,0,0]];
+    for(let i=0;i<3;i++)for(let j=0;j<3;j++){ let v=0;
+      for(let k=0;k<3;k++) v+=T[i][k]*M[j][k]; O[i][j]=v; }
+    return [O[0][0],O[0][1],O[0][2],O[1][1],O[1][2],O[2][2]];
+  }
   let dmin=Infinity, dmax=-Infinity;
   const sb=sceneBurnState;                              // 燃烧状态 (可为 null)
   let bi=0;
   for(const g of sceneGauss){
-    const p=tf(g.p), a0=tfv(g.a0), a1=tfv(g.a1);
+    const p=tf(g.p), cvv=tfcov(g.cov);
     const wx=p[0], wy=p[1]+lift, wz=p[2];
     arr[o++]=wx; arr[o++]=wy; arr[o++]=wz;
-    arr[o++]=a0[0]; arr[o++]=a0[1]; arr[o++]=a0[2];
-    arr[o++]=a1[0]; arr[o++]=a1[1]; arr[o++]=a1[2];
+    arr[o++]=cvv[0]; arr[o++]=cvv[1]; arr[o++]=cvv[2];
+    arr[o++]=cvv[3]; arr[o++]=cvv[4]; arr[o++]=cvv[5];
     arr[o++]=g.c[0]; arr[o++]=g.c[1]; arr[o++]=g.c[2]; arr[o++]=g.o;
     if(sb){ arr[o++]=sb.glow[bi]; arr[o++]=sb.char_[bi]; } else { arr[o++]=0; arr[o++]=0; }
     bi++;
@@ -852,7 +896,9 @@ function updateCam(aspect){
   cam.eye=eye;
   const view=m4LookAt(eye,tgt,[0,1,0]);
   const proj=m4Perspective(P.fov, aspect, 0.05, 50);
-  cam.VP=m4Mul(proj,view);
+  cam.VP=m4Mul(proj,view); cam.V=view;
+  // EWA 需要像素焦距: m4Perspective 的 fov 是竖直半角全角 -> fy=H/2/tan(fov/2), fx=fy (aspect 已在 proj 里)
+  const _t=Math.tan(P.fov*0.5); cam.focal=[ (cv.height*0.5)/_t, (cv.height*0.5)/_t ];
   // 基向量: bz=后向, bx=右(水平), by=相机上; fh=水平前向(切片深度轴)
   let bz0=eye[0]-tgt[0],bz1=eye[1]-tgt[1],bz2=eye[2]-tgt[2]; const bl=Math.hypot(bz0,bz1,bz2)||1; bz0/=bl;bz1/=bl;bz2/=bl;
   let bxx=bz2, bxz=-bz0; const bxl=Math.hypot(bxx,bxz)||1; bxx/=bxl; bxz/=bxl;   // bx = up×bz (水平右)
@@ -1596,6 +1642,9 @@ function render(){
     gl.useProgram(pScene);
     gl.uniformMatrix4fv(uScene.VP, false, cam.VP); gl.uniform1f(uScene.Light, P.sceneLight);
     gl.uniform1f(uScene.Time, simTime);
+    gl.uniformMatrix4fv(uScene.V, false, cam.V);            // EWA: 需要视图矩阵与像素焦距
+    gl.uniform2f(uScene.Focal, cam.focal[0], cam.focal[1]);
+    gl.uniform2f(uScene.Viewport, cv.width, cv.height);
     if(P.sceneSorted && !P.sceneBackdrop){
       drawInterleaved(count, ns);
     } else if(P.sceneBackdrop){
