@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>路线1 · Emissive-Gaussian HDR (WebGL2) — 火焰/烟雾 GS 原型 (UE5 风格)</title>
+<title>Route 1 · Emissive-Gaussian HDR (WebGL2) — Flame / Smoke GS Prototype</title>
 <style>
   /* ============ UE5 Editor palette ============ */
   :root{
@@ -106,7 +106,7 @@
   <div id="stage">
     <div id="vptop">
       <span class="tt">Flame / Smoke — GS Viewport</span>
-      <span class="pill">路线 <b id="vpRoute">1</b></span>
+      <span class="pill">Route <b id="vpRoute">1</b></span>
       <span class="pill" id="vpMode">Fire</span>
       <span class="hdr">HDR · WebGL2</span>
     </div>
@@ -121,123 +121,123 @@
     <div id="scroll">
 
       <div class="cat" id="catSource">
-        <div class="cathead"><span class="tri">▾</span> Emitter Source · 粒子来源</div>
+        <div class="cathead"><span class="tri">▾</span> Emitter Source</div>
         <div class="catbody">
           <div class="seg" id="mode">
-            <button data-m="fire" class="on">火焰 Fire</button>
-            <button data-m="smoke">烟雾 Smoke</button>
+            <button data-m="fire" class="on">Fire</button>
+            <button data-m="smoke">Smoke</button>
           </div>
-          <div class="prow"><label>仿真层 Sim Layers</label><input type="range" id="simLayers" min="0" max="16" step="1" value="9"><span class="pval" id="simLayersV"></span></div>
-          <div class="hint b">§7.1 解耦接口 <code>Layer.step(dt)→Particle[]{pos2D,T,density,velocity}</code>。
-            拖 <b>Sim Layers</b> 把前 k 层从<b>程序化</b>逐步换成<b>真 2D 涡粒子 (路线2)</b>，渲染端零改动。</div>
+          <div class="prow"><label>Sim layers</label><input type="range" id="simLayers" min="0" max="16" step="1" value="9"><span class="pval" id="simLayersV"></span></div>
+          <div class="hint b">§7.1 decoupled interface <code>Layer.step(dt)→Particle[]{pos2D,T,density,velocity}</code>.
+            <b>Sim layers</b> swaps the first k layers from <b>procedural</b> to <b>2D vortex particles (Route 2)</b>; the renderer is unchanged.</div>
         </div>
       </div>
 
       <div class="cat" id="grpProc">
-        <div class="cathead"><span class="tri">▾</span> Plume · 程序化羽流 (路线 1)</div>
+        <div class="cathead"><span class="tri">▾</span> Plume · Procedural (Route 1)</div>
         <div class="catbody">
-          <div class="prow"><label>上升速度</label><input type="range" id="riseV" min="0.2" max="2.5" step="0.02" value="1.15"><span class="pval" id="riseVV"></span></div>
-          <div class="prow"><label>湍流</label><input type="range" id="sway" min="0" max="2" step="0.02" value="0.9"><span class="pval" id="swayV"></span></div>
-          <div class="prow"><label>发射量</label><input type="range" id="rate" min="200" max="2400" step="40" value="700"><span class="pval" id="rateV"></span></div>
-          <div class="prow"><label>冷却</label><input type="range" id="coolP" min="0.1" max="3" step="0.02" value="0.8"><span class="pval" id="coolPV"></span></div>
+          <div class="prow"><label>Rise speed</label><input type="range" id="riseV" min="0.2" max="2.5" step="0.02" value="1.15"><span class="pval" id="riseVV"></span></div>
+          <div class="prow"><label>Turbulence</label><input type="range" id="sway" min="0" max="2" step="0.02" value="0.9"><span class="pval" id="swayV"></span></div>
+          <div class="prow"><label>Emission rate</label><input type="range" id="rate" min="200" max="2400" step="40" value="700"><span class="pval" id="rateV"></span></div>
+          <div class="prow"><label>Cooling</label><input type="range" id="coolP" min="0.1" max="3" step="0.02" value="0.8"><span class="pval" id="coolPV"></span></div>
         </div>
       </div>
 
       <div class="cat" id="grpSim" style="display:none">
-        <div class="cathead"><span class="tri">▾</span> Vortex Sim · 涡粒子 (路线 2)</div>
+        <div class="cathead"><span class="tri">▾</span> Vortex Sim · VIC (Route 2)</div>
         <div class="catbody">
-          <div class="prow"><label>浮力 β</label><input type="range" id="buoy" min="0" max="3" step="0.02" value="0.9"><span class="pval" id="buoyV"></span></div>
-          <div class="prow"><label>斜压涡量 ∂T/∂x</label><input type="range" id="baro" min="0" max="4" step="0.02" value="1.4"><span class="pval" id="baroV"></span></div>
-          <div class="prow"><label>涡核半径 ε</label><input type="range" id="eps" min="0.01" max="0.3" step="0.005" value="0.07"><span class="pval" id="epsV"></span></div>
-          <div class="prow"><label>冷却</label><input type="range" id="cool" min="0.1" max="3" step="0.02" value="1.2"><span class="pval" id="coolV"></span></div>
-          <div class="prow"><label>全局驱动 (ILM 两级)</label><input type="range" id="couple" min="0" max="1" step="0.02" value="0.5"><span class="pval" id="coupleV"></span></div>
-          <div class="hint b"><b>VIC 解算</b>:温度场半拉格朗日<b>平流</b> → 斜压涡量 <code>Γ+=Δt·β·∂T/∂x</code> → P2G → <b>Poisson 解 ψ</b> → <code>u=∇×ψ</code> → 平流粒子。O(N+网格)。
-            <b>全局驱动</b>=ILM 两级:一个 16×24 粗解算驱动所有层、各层再加细节(0 各自为政 / 1 同一团火)。</div>
+          <div class="prow"><label>Buoyancy β</label><input type="range" id="buoy" min="0" max="3" step="0.02" value="0.9"><span class="pval" id="buoyV"></span></div>
+          <div class="prow"><label>Baroclinic ∂T/∂x</label><input type="range" id="baro" min="0" max="4" step="0.02" value="1.4"><span class="pval" id="baroV"></span></div>
+          <div class="prow"><label>Core radius ε</label><input type="range" id="eps" min="0.01" max="0.3" step="0.005" value="0.07"><span class="pval" id="epsV"></span></div>
+          <div class="prow"><label>Cooling</label><input type="range" id="cool" min="0.1" max="3" step="0.02" value="1.2"><span class="pval" id="coolV"></span></div>
+          <div class="prow"><label>Coarse coupling c</label><input type="range" id="couple" min="0" max="1" step="0.02" value="0.5"><span class="pval" id="coupleV"></span></div>
+          <div class="hint b"><b>Per-slice 2D vortex-in-cell</b>: semi-Lagrangian T <b>advection</b> → baroclinic <code>Γ+=Δt·β·∂T/∂x</code> → P2G → <b>Poisson ψ</b> → <code>u=∇×ψ</code> → advect. O(N+grid).
+            <b>Coarse coupling c</b> blends each slice toward one 16×24 global solve (0 = independent, 1 = fully coherent).</div>
         </div>
       </div>
 
       <div class="cat" id="catRender">
-        <div class="cathead"><span class="tri">▾</span> Representation · 表示 + 3D 相机</div>
+        <div class="cathead"><span class="tri">▾</span> Representation · 3D Camera</div>
         <div class="catbody">
           <div class="seg r1" id="dim">
-            <button data-dm="layer" class="on">2.5D 分层 (VIC)</button>
-            <button data-dm="vol">真 3D 体 (Tier1)</button>
+            <button data-dm="layer" class="on">2.5D slices (VIC)</button>
+            <button data-dm="vol">True 3D volume (Tier1)</button>
           </div>
-          <div class="prow" id="vol3DTurbRow" style="display:none"><label>3D 湍流</label><input type="range" id="vol3DTurb" min="0" max="1.5" step="0.02" value="0.6"><span class="pval" id="vol3DTurbV"></span></div>
+          <div class="prow" id="vol3DTurbRow" style="display:none"><label>3D turbulence</label><input type="range" id="vol3DTurb" min="0" max="1.5" step="0.02" value="0.6"><span class="pval" id="vol3DTurbV"></span></div>
           <div class="seg" id="slice">
-            <button data-sm="view" class="on">视图对齐切片 (ILM)</button>
-            <button data-sm="world">世界固定层</button>
+            <button data-sm="view" class="on">View-aligned (ILM)</button>
+            <button data-sm="world">World-fixed</button>
           </div>
-          <div class="prow"><label>层数 N</label><input type="range" id="layers" min="1" max="16" step="1" value="9"><span class="pval" id="layersV"></span></div>
-          <div class="prow"><label>切片深度</label><input type="range" id="sliceDepth" min="0.1" max="1.6" step="0.02" value="0.7"><span class="pval" id="sliceDepthV"></span></div>
-          <div class="prow"><label>方位角</label><input type="range" id="yaw" min="-3.14" max="3.14" step="0.02" value="0"><span class="pval" id="yawV"></span></div>
-          <div class="prow"><label>相机距离</label><input type="range" id="camDist" min="2.2" max="6" step="0.05" value="3.4"><span class="pval" id="camDistV"></span></div>
-          <div class="prow"><label>高斯半径</label><input type="range" id="rad" min="6" max="60" step="1" value="36"><span class="pval" id="radV"></span></div>
-          <div class="prow"><label>协方差形变 ∇u</label><input type="range" id="covStretch" min="0" max="3" step="0.02" value="1.3"><span class="pval" id="covStretchV"></span></div>
-          <div class="hint b"><b>协方差形变(Tier2)</b>:每个高斯带形变梯度 F,按涡流速度梯度 ∇u 演化(`Σ̇=LΣ+ΣLᵀ`)→ blob 被流场<b>剪切/旋转成丝</b>(气态版 PhysGaussian)。0=圆球,大=强丝状。需开 Motion Stretch。
-            <br><b>真 3D 相机</b>绕火(拖动/Auto Orbit);<b>视图对齐(ILM)</b>无边缘退化 / <b>世界固定</b>侧看见层边缘(§8 取舍)。</div>
+          <div class="prow"><label>Layers N</label><input type="range" id="layers" min="1" max="16" step="1" value="9"><span class="pval" id="layersV"></span></div>
+          <div class="prow"><label>Slice depth</label><input type="range" id="sliceDepth" min="0.1" max="1.6" step="0.02" value="0.7"><span class="pval" id="sliceDepthV"></span></div>
+          <div class="prow"><label>Yaw</label><input type="range" id="yaw" min="-3.14" max="3.14" step="0.02" value="0"><span class="pval" id="yawV"></span></div>
+          <div class="prow"><label>Camera distance</label><input type="range" id="camDist" min="2.2" max="6" step="0.05" value="3.4"><span class="pval" id="camDistV"></span></div>
+          <div class="prow"><label>Gaussian radius</label><input type="range" id="rad" min="6" max="60" step="1" value="36"><span class="pval" id="radV"></span></div>
+          <div class="prow"><label>Covariance strain ∇u</label><input type="range" id="covStretch" min="0" max="3" step="0.02" value="1.3"><span class="pval" id="covStretchV"></span></div>
+          <div class="hint b"><b>Covariance strain (Tier2)</b>: each Gaussian carries a deformation gradient F evolved by the velocity gradient ∇u (`Σ̇=LΣ+ΣLᵀ`), so blobs are <b>sheared and rotated into filaments</b> (gaseous PhysGaussian). 0 = spheres, high = strongly filamentary. Requires Motion Stretch.
+            <br>Drag or Auto Orbit to move the <b>3D camera</b>. <b>View-aligned (ILM)</b> never degenerates; <b>world-fixed</b> reveals slice edges from the side (§8 trade-off).</div>
         </div>
       </div>
 
       <div class="cat" id="catPost">
-        <div class="cathead"><span class="tri">▾</span> Post · HDR 后期</div>
+        <div class="cathead"><span class="tri">▾</span> Post · HDR</div>
         <div class="catbody">
-          <div class="prow"><label>曝光 Exposure</label><input type="range" id="exposure" min="0.2" max="3" step="0.02" value="1.0"><span class="pval" id="exposureV"></span></div>
-          <div class="prow"><label>发光强度 Emission</label><input type="range" id="emis" min="0.1" max="3" step="0.02" value="1.4"><span class="pval" id="emisV"></span></div>
-          <div class="prow"><label>Bloom 强度</label><input type="range" id="bloom" min="0" max="2.5" step="0.02" value="1.0"><span class="pval" id="bloomV"></span></div>
-          <div class="prow"><label>Bloom 阈值</label><input type="range" id="thresh" min="0.2" max="2.5" step="0.02" value="0.95"><span class="pval" id="threshV"></span></div>
-          <div class="hint b">发光 splat → <b>RGBA16F 浮点 buffer</b> → bright-pass → 多次高斯 bloom → <b>ACES filmic tonemap</b> + gamma + 暗角。
-            这就是报告 §4/§5 的 emissive-Gaussian 正确做法。</div>
+          <div class="prow"><label>Exposure</label><input type="range" id="exposure" min="0.2" max="3" step="0.02" value="1.0"><span class="pval" id="exposureV"></span></div>
+          <div class="prow"><label>Emission</label><input type="range" id="emis" min="0.1" max="3" step="0.02" value="1.4"><span class="pval" id="emisV"></span></div>
+          <div class="prow"><label>Bloom intensity</label><input type="range" id="bloom" min="0" max="2.5" step="0.02" value="1.0"><span class="pval" id="bloomV"></span></div>
+          <div class="prow"><label>Bloom threshold</label><input type="range" id="thresh" min="0.2" max="2.5" step="0.02" value="0.95"><span class="pval" id="threshV"></span></div>
+          <div class="hint b">Emissive splats → <b>RGBA16F float buffer</b> → bright-pass → multi-tap Gaussian bloom → <b>ACES filmic tonemap</b> + gamma + vignette.
+            This is the emissive-Gaussian path from report §4/§5.</div>
         </div>
       </div>
 
       <div class="cat" id="catScene">
-        <div class="cathead"><span class="tri">▾</span> Scene · 场景 (暗 3DGS 背景)</div>
+        <div class="cathead"><span class="tri">▾</span> Scene · Dark 3DGS Background</div>
         <div class="catbody">
-          <div class="crow" id="box"><span class="cb on"></span><span>3DGS 暗背景（高斯场景）</span></div>
-          <div class="crow" id="embers"><span class="cb on"></span><span>Embers 火星</span></div>
-          <div class="prow"><label>火 → 场景光</label><input type="range" id="boxLight" min="0" max="2.5" step="0.02" value="0.85"><span class="pval" id="boxLightV"></span></div>
-          <div class="prow"><label>地面倒影</label><input type="range" id="reflect" min="0" max="1" step="0.01" value="0.4"><span class="pval" id="reflectV"></span></div>
-          <div class="prow"><label>热浪扰动</label><input type="range" id="haze" min="0" max="1.5" step="0.02" value="0.6"><span class="pval" id="hazeV"></span></div>
-          <div class="hint b">程序化暗 GS 背景（地面 + 环境）。载入真 `.ply` 场景后自动关闭。</div>
+          <div class="crow" id="box"><span class="cb on"></span><span>Dark 3DGS background</span></div>
+          <div class="crow" id="embers"><span class="cb on"></span><span>Embers</span></div>
+          <div class="prow"><label>Fire → scene light</label><input type="range" id="boxLight" min="0" max="2.5" step="0.02" value="0.85"><span class="pval" id="boxLightV"></span></div>
+          <div class="prow"><label>Ground reflection</label><input type="range" id="reflect" min="0" max="1" step="0.01" value="0.4"><span class="pval" id="reflectV"></span></div>
+          <div class="prow"><label>Heat haze</label><input type="range" id="haze" min="0" max="1.5" step="0.02" value="0.6"><span class="pval" id="hazeV"></span></div>
+          <div class="hint b">Procedural dark GS background (ground + environment). Disabled automatically once a real `.ply` scene loads.</div>
         </div>
       </div>
 
       <div class="cat r1" id="catPly">
-        <div class="cathead"><span class="tri">▾</span> Real GS Scene · 载入 .ply (Inria 3DGS)</div>
+        <div class="cathead"><span class="tri">▾</span> Real GS Scene · .ply (Inria 3DGS)</div>
         <div class="catbody">
-          <div class="btns"><button id="plyBtn">📂 载入 .ply / .splat …</button></div>
+          <div class="btns"><button id="plyBtn">📂 Load .ply / .splat …</button></div>
           <input type="file" id="plyFile" accept=".ply,.splat" style="display:none">
-          <div class="note" id="plyStatus">未载入。把 Inria `point_cloud.ply` 拖到画面上，或点上面按钮。</div>
-          <div class="prow"><label>场景缩放</label><input type="range" id="sceneScale" min="0.05" max="6" step="0.01" value="1"><span class="pval" id="sceneScaleV"></span></div>
-          <div class="prow"><label>绕 Y 旋转</label><input type="range" id="sceneYaw" min="-3.14" max="3.14" step="0.02" value="0"><span class="pval" id="sceneYawV"></span></div>
-          <div class="prow"><label>俯仰(正上轴)</label><input type="range" id="scenePitch" min="-3.14" max="3.14" step="0.02" value="0"><span class="pval" id="scenePitchV"></span></div>
-          <div class="prow"><label>抬升</label><input type="range" id="sceneLift" min="-2" max="2" step="0.02" value="0"><span class="pval" id="sceneLiftV"></span></div>
-          <div class="prow"><label>场景亮度</label><input type="range" id="sceneLight" min="0.1" max="3" step="0.02" value="1.0"><span class="pval" id="sceneLightV"></span></div>
-          <div class="prow"><label>高斯上限(万)</label><input type="range" id="sceneMax" min="2" max="40" step="1" value="12"><span class="pval" id="sceneMaxV"></span></div>
-          <div class="crow" id="sceneOn"><span class="cb"></span><span>显示 .ply 场景</span></div>
-          <div class="hint b">解析 Inria 标准 `.ply`（位置·scale=exp·四元数·opacity=sigmoid·SH 直流→色），
-            每高斯取两根主轴当扁平 splat（近似），火坐落其中、火光在前遮挡场景。用上面滑杆把场景<b>对齐/缩放/正上轴</b>。</div>
+          <div class="note" id="plyStatus">No scene loaded. Drop an Inria `point_cloud.ply` onto the canvas, or use the button above.</div>
+          <div class="prow"><label>Scene scale</label><input type="range" id="sceneScale" min="0.05" max="6" step="0.01" value="1"><span class="pval" id="sceneScaleV"></span></div>
+          <div class="prow"><label>Scene yaw</label><input type="range" id="sceneYaw" min="-3.14" max="3.14" step="0.02" value="0"><span class="pval" id="sceneYawV"></span></div>
+          <div class="prow"><label>Pitch (up axis)</label><input type="range" id="scenePitch" min="-3.14" max="3.14" step="0.02" value="0"><span class="pval" id="scenePitchV"></span></div>
+          <div class="prow"><label>Lift</label><input type="range" id="sceneLift" min="-2" max="2" step="0.02" value="0"><span class="pval" id="sceneLiftV"></span></div>
+          <div class="prow"><label>Scene brightness</label><input type="range" id="sceneLight" min="0.1" max="3" step="0.02" value="1.0"><span class="pval" id="sceneLightV"></span></div>
+          <div class="prow"><label>Gaussian cap (×10k)</label><input type="range" id="sceneMax" min="2" max="40" step="1" value="12"><span class="pval" id="sceneMaxV"></span></div>
+          <div class="crow" id="sceneOn"><span class="cb"></span><span>Show .ply scene</span></div>
+          <div class="hint b">Parses the standard Inria `.ply` (position · scale=exp · quaternion · opacity=sigmoid · SH DC→color);
+            each Gaussian becomes a flat splat from its two major axes. The fire sits inside the scene and occludes it from the front. Use the sliders above to <b>align, scale and level</b> it.</div>
         </div>
       </div>
 
       <div class="cat" id="catShow">
-        <div class="cathead"><span class="tri">▾</span> Show Flags · 显示</div>
+        <div class="cathead"><span class="tri">▾</span> Show Flags</div>
         <div class="catbody">
-          <div class="crow" id="orbit"><span class="cb on"></span><span>Auto Orbit（验证视差体积感）</span></div>
-          <div class="crow" id="stretch"><span class="cb on"></span><span>Motion Stretch / 协方差形变（Tier2）</span></div>
-          <div class="crow" id="flicker"><span class="cb on"></span><span>Flicker（火焰呼吸）</span></div>
-          <div class="crow r1" id="filament"><span class="cb"></span><span>涡丝 Filament（沿轨迹拉丝，Tier3）</span></div>
-          <div class="prow" id="filLenRow" style="display:none"><label>涡丝长度</label><input type="range" id="filLen" min="0" max="1" step="0.02" value="0.5"><span class="pval" id="filLenV"></span></div>
-          <div class="hint">拖动画面=绕火旋转相机 · <b>空格</b>暂停 · <b>R</b>重置 · <b>F/S</b>火/烟 · <b>1/2</b>切路线。
-            <b>涡丝</b>=把每个高斯沿其最近轨迹拉成丝(path-integrated trail),得到连续火焰 wisp(报告涡丝/filament 思路);与协方差形变(瞬时剪切)互补。</div>
+          <div class="crow" id="orbit"><span class="cb on"></span><span>Auto Orbit (parallax check)</span></div>
+          <div class="crow" id="stretch"><span class="cb on"></span><span>Motion Stretch / covariance strain (Tier2)</span></div>
+          <div class="crow" id="flicker"><span class="cb on"></span><span>Flicker (fire breathing)</span></div>
+          <div class="crow r1" id="filament"><span class="cb"></span><span>Filament (stretch along trajectory, Tier3)</span></div>
+          <div class="prow" id="filLenRow" style="display:none"><label>Filament length</label><input type="range" id="filLen" min="0" max="1" step="0.02" value="0.5"><span class="pval" id="filLenV"></span></div>
+          <div class="hint">Drag = orbit camera · <b>Space</b> pause · <b>R</b> reset · <b>F/S</b> fire/smoke · <b>1/2</b> switch route.
+            <b>Filament</b> stretches each Gaussian along its recent trajectory (path-integrated trail) into continuous wisps — complementary to covariance strain, which is instantaneous shear.</div>
         </div>
       </div>
 
     </div>
     <div class="footer">
-      <button id="pause">⏸ 暂停</button>
-      <button id="reset">↻ 重置</button>
+      <button id="pause">⏸ Pause</button>
+      <button id="reset">↻ Reset</button>
     </div>
   </div>
 </div>
@@ -255,7 +255,7 @@ const cv = document.getElementById('cv');
 const gl = cv.getContext('webgl2', {alpha:false, antialias:false, premultipliedAlpha:false});
 function fatal(msg){ const e=document.getElementById('glerr'); e.style.display='flex';
   e.innerHTML=msg; throw new Error(msg); }
-if(!gl) fatal('此浏览器不支持 WebGL2。请用 Chrome / Edge / Firefox 打开。');
+if(!gl) fatal('WebGL2 is not available in this browser. Please open it in Chrome, Edge or Firefox.');
 // HDR 浮点 RT
 const extCBF = gl.getExtension('EXT_color_buffer_float');
 const HDR_TYPE = gl.HALF_FLOAT;
@@ -270,13 +270,13 @@ let DPR = Math.min(devicePixelRatio||1, 2);
 // ---------------------------------------------------------------------------
 function sh(type, src){
   const s=gl.createShader(type); gl.shaderSource(s,src); gl.compileShader(s);
-  if(!gl.getShaderParameter(s,gl.COMPILE_STATUS)) fatal('Shader 编译失败:<br>'+gl.getShaderInfoLog(s));
+  if(!gl.getShaderParameter(s,gl.COMPILE_STATUS)) fatal('Shader compile failed:<br>'+gl.getShaderInfoLog(s));
   return s;
 }
 function prog(vs, fs){
   const p=gl.createProgram(); gl.attachShader(p,sh(gl.VERTEX_SHADER,vs)); gl.attachShader(p,sh(gl.FRAGMENT_SHADER,fs));
   gl.linkProgram(p);
-  if(!gl.getProgramParameter(p,gl.LINK_STATUS)) fatal('Program 链接失败:<br>'+gl.getProgramInfoLog(p));
+  if(!gl.getProgramParameter(p,gl.LINK_STATUS)) fatal('Program link failed:<br>'+gl.getProgramInfoLog(p));
   return p;
 }
 // ---- mat4 (列主序, 直接喂 uniformMatrix4fv) ----
@@ -576,14 +576,14 @@ function parsePLY(buf){
   const bytes=new Uint8Array(buf), sig='end_header\n';
   let he=-1; for(let i=0;i<bytes.length-sig.length;i++){ let ok=true;
     for(let j=0;j<sig.length;j++) if(bytes[i+j]!==sig.charCodeAt(j)){ok=false;break;} if(ok){he=i+sig.length;break;} }
-  if(he<0) throw new Error('.ply: 缺 end_header');
+  if(he<0) throw new Error('.ply: missing end_header');
   const header=new TextDecoder().decode(bytes.subarray(0,he));
-  if(!/binary_little_endian/.test(header)) throw new Error('.ply: 仅支持 binary_little_endian (Inria 标准)');
+  if(!/binary_little_endian/.test(header)) throw new Error('.ply: only binary_little_endian is supported (Inria format)');
   const N=(header.match(/element vertex (\d+)/)||[])[1]|0;
   const props=[]; header.split('\n').forEach(l=>{ const m=l.match(/^property\s+(\w+)\s+([\w]+)/); if(m) props.push({t:m[1],n:m[2]}); });
   const sz={char:1,uchar:1,uint8:1,int8:1,short:2,ushort:2,int:4,uint:4,float:4,float32:4,double:8};
   let stride=0; const off={}; for(const p of props){ off[p.n]=stride; stride+=sz[p.t]||4; }
-  for(const k of ['x','y','z','opacity','scale_0','rot_0','f_dc_0']) if(off[k]===undefined) throw new Error('.ply: 缺字段 '+k+' (不是 3DGS .ply?)');
+  for(const k of ['x','y','z','opacity','scale_0','rot_0','f_dc_0']) if(off[k]===undefined) throw new Error('.ply: missing field '+k+' (not a 3DGS .ply?)');
   const dv=new DataView(buf, he), C0=0.28209479177387814, sg=x=>1/(1+Math.exp(-x));
   const F=(i,n)=>dv.getFloat32(i*stride+off[n], true);
   // 子采样到上限
@@ -1227,8 +1227,8 @@ function stepSimVIC(layer, dt){
 
 // §7.1 接口: 两源同契约 step(layer,dt,ctx) → 就地更新 layer.ps {x,y,T,d,vx,vy}
 const Sources={
-  proc:{ label:'程序化羽流·路线1', step:(layer,dt)=>stepProc(layer,dt) },
-  sim:{  label:'2D涡粒子·VIC·路线2', step:(layer,dt)=>{ emitSim(layer,dt); stepSimVIC(layer,dt); } }
+  proc:{ label:'Procedural plume · Route 1', step:(layer,dt)=>stepProc(layer,dt) },
+  sim:{  label:'2D vortex particles · VIC · Route 2', step:(layer,dt)=>{ emitSim(layer,dt); stepSimVIC(layer,dt); } }
 };
 function evenMask(N,k){ const m=new Array(N).fill(false);
   if(k<=0) return m; if(k>=N){ m.fill(true); return m; }
@@ -1504,10 +1504,10 @@ function loop(now){
 
 function updatePipeline(){
   document.getElementById('pipeline').innerHTML =
-    `<span class="step">温度场平流 + 斜压涡量</span> <span class="arr">→</span> `+
+    `<span class="step">T advection + baroclinic vorticity</span> <span class="arr">→</span> `+
     `<span class="step">VIC: Poisson ψ → u=∇×ψ</span> <span class="arr">→</span> `+
     `<span class="step">§7.1 Particle[]{pos2D,T,density,velocity}</span> <span class="arr">→</span> `+
-    `<span class="step">实例化发光高斯 → RGBA16F</span> <span class="arr">→</span> `+
+    `<span class="step">Instanced emissive Gaussians → RGBA16F</span> <span class="arr">→</span> `+
     `<span class="step">bloom + ACES tonemap</span>`;
 }
 
@@ -1591,11 +1591,11 @@ function applyScene(){
 }
 bindCheck('sceneOn','sceneOn');
 function readPLYFile(file){
-  const st=document.getElementById('plyStatus'); st.textContent='解析中… '+file.name;
+  const st=document.getElementById('plyStatus'); st.textContent='Parsing… '+file.name;
   file.arrayBuffer().then(buf=>{ try{ const r=loadPLY(buf);
-      st.innerHTML=`✅ ${file.name}<br>载入 <b>${r.kept.toLocaleString()}</b> / ${r.total.toLocaleString()} 高斯。用滑杆对齐(缩放/旋转/正上轴)。`;
+      st.innerHTML=`✅ ${file.name}<br>Loaded <b>${r.kept.toLocaleString()}</b> / ${r.total.toLocaleString()} Gaussians. Use the sliders to align (scale / rotate / level).`;
     }catch(e){ st.textContent='❌ '+e.message; } })
-   .catch(e=>{ st.textContent='❌ 读取失败: '+e.message; });
+   .catch(e=>{ st.textContent='❌ Read failed: '+e.message; });
 }
 document.getElementById('plyBtn').addEventListener('click',()=>document.getElementById('plyFile').click());
 document.getElementById('plyFile').addEventListener('change',e=>{ if(e.target.files[0]) readPLYFile(e.target.files[0]); });
@@ -1603,7 +1603,7 @@ cv.addEventListener('dragover',e=>{ e.preventDefault(); });
 cv.addEventListener('drop',e=>{ e.preventDefault(); if(e.dataTransfer.files[0]) readPLYFile(e.dataTransfer.files[0]); });
 
 document.querySelectorAll('.cathead').forEach(h=>h.parentElement&&h.addEventListener('click',()=>h.parentElement.classList.toggle('collapsed')));
-document.getElementById('pause').addEventListener('click',e=>{ P.paused=!P.paused; e.target.textContent=P.paused?'▶ 继续':'⏸ 暂停'; });
+document.getElementById('pause').addEventListener('click',e=>{ P.paused=!P.paused; e.target.textContent=P.paused?'▶ Resume':'⏸ Pause'; });
 document.getElementById('reset').addEventListener('click',()=>rebuildLayers());
 
 // 指针

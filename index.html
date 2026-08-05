@@ -206,9 +206,7 @@
       counting-sorted into 96 view-depth buckets in O(m+K), and the two pre-ordered streams are
       interleaved near-to-far under one blend state &mdash; at <b>no measured overhead</b>
       (3.5 vs 3.6 ms/frame at 3.2k scene splats; 13.0 vs 13.3 ms at 79k).
-      Drag the slider: with the interleave (left), the front pillar correctly <b>occludes the
-      flame</b>; with naive draw-after compositing (right, the analogue of backdrop compositing),
-      the flame floats in front of everything and the foreground pillars are swallowed entirely.
+      Drag the slider: with the interleave (left), the fallen log correctly <b>occludes the flame</b>; with naive draw-after compositing (right, the analogue of backdrop compositing), the flame floats in front of everything and the log, fire ring and rear post are swallowed entirely.
     </p>
     <div class="narrow">
       <div class="cmp" id="cmp1">
@@ -217,8 +215,7 @@
         <div class="bar"></div><div class="knob">&#8596;</div>
         <div class="tag l">Ours: depth-interleaved</div><div class="tag r">Naive: draw-after</div>
       </div>
-      <figure><figcaption>Synthetic test reconstruction (ground, back wall, two pillars &mdash; one in
-      front of the flame, one behind). Same simulation state on both sides.</figcaption></figure>
+      <figure><figcaption>Synthetic test reconstruction (46k splats: plank floor, stone wall, stone fire ring, rear post, and a fallen log across the front). Same simulation state on both sides.</figcaption></figure>
     </div>
   </div>
 </section>
@@ -252,14 +249,12 @@
     conventional heat-threshold physics (after Pirk et&nbsp;al. 2017, H&auml;drich et&nbsp;al. 2021);
     charring is written straight into the splats' albedo and opacity; and burning geometry
     <b>re-seeds the solver with new plumes</b> &mdash; a real-time, bidirectional
-    simulation&harr;scene loop. Below: one ignition at the front pillar's base climbs and consumes
-    the pillar, and the plumes it emits carry heat across a gap far beyond the spread radius,
-    igniting the <i>rear</i> pillar through the simulation itself.
+    simulation&harr;scene loop. Below: a single ignition inside the fire ring spreads through the fuel, the splats themselves glow and char, and the plume above the fire is fed by the burning <i>scene</i> rather than only by the original emitter.
   </p>
   <div class="imgrow">
-    <div><img src="static/images/fig_spread_t1.jpg" alt="Ignition climbing the front pillar"><span class="lbl">t &asymp; 2.5 s &mdash; ignition climbs</span></div>
-    <div><img src="static/images/fig_spread_t2.jpg" alt="Pillar engulfed in fire"><span class="lbl">t &asymp; 7.5 s &mdash; engulfed, shedding embers</span></div>
-    <div><img src="static/images/fig_spread_t3.jpg" alt="Charred pillar, fire jumped to rear pillar"><span class="lbl">t &asymp; 16.5 s &mdash; charred; fire jumped to the rear pillar</span></div>
+    <div><img src="static/images/fig_spread_t1.jpg" alt="Ignition inside the fire ring"><span class="lbl">t &asymp; 3 s &mdash; ignition in the ring</span></div>
+    <div><img src="static/images/fig_spread_t2.jpg" alt="Pillar engulfed in fire"><span class="lbl">t &asymp; 10 s &mdash; fuel burning, feeding the solver</span></div>
+    <div><img src="static/images/fig_spread_t3.jpg" alt="Fuel consumed, char written into splat albedo"><span class="lbl">t &asymp; 22 s &mdash; consumed, char in splat albedo</span></div>
   </div>
 </section>
 
