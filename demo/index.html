@@ -161,7 +161,8 @@
         <div class="catbody">
           <div class="seg r1" id="dim">
             <button data-dm="layer" class="on">2.5D slices (VIC)</button>
-            <button data-dm="vol">True 3D volume (Tier1)</button>
+            <button data-dm="vol">3D curl-noise cloud</button>
+            <button data-dm="vic3">3D VIC (baseline)</button>
           </div>
           <div class="prow" id="vol3DTurbRow" style="display:none"><label>3D turbulence</label><input type="range" id="vol3DTurb" min="0" max="1.5" step="0.02" value="0.6"><span class="pval" id="vol3DTurbV"></span></div>
           <div class="seg" id="slice">
@@ -869,7 +870,7 @@ const P = {
   layers:9, yaw:0.0, rad:36, ppl:1300, wind:0,
   camDist:3.4, camElev:0.16, fov:0.85, sliceMode:'view', sliceDepth:0.7,
   covStretch:1.3, covMax:3.6, covRelax:1.0,        // Tier2: 高斯协方差随 ∇u 形变
-  dimMode:'layer', vol3DTurb:0.6, vol3DScale:2.4,  // Tier1: 'layer'=2.5D 分层 | 'vol'=真 3D 体
+  dimMode:'layer', vol3DTurb:0.6, vol3DScale:2.4, stretch3:1,  // 'layer'=分层 | 'vol'=运动学 3D 云 | 'vic3'=真 3D VIC 基线 (stretch3=0 关涡拉伸)
   filament:false, filLen:0.5, filGain:3.0,         // Tier3: 沿轨迹把高斯拉成"涡丝"
   exposure:1.0, emis:2.6, bloom:1.0, thresh:0.95, blurIters:5,
   box:true, boxLight:0.85, embers:true, reflect:0.4, haze:0.6, emberRate:16, emberMax:160,
@@ -891,7 +892,7 @@ let simSeed=0, srand=Math.random;              // 默认非确定 (交互模式)
 function seedSim(s){ simSeed=s>>>0; srand=mulberry32(simSeed); }
 function resetSim(seed){                        // 确定性重置: 种子 + 全部仿真状态归零
   if(seed!==undefined) seedSim(seed);
-  rebuildLayers(); embers=[]; emberAcc=0; cloud=[]; cloudAcc=0; vol_t=0;
+  rebuildLayers(); embers=[]; emberAcc=0; cloud=[]; cloudAcc=0; cloudAcc3=0; vic3=null; vol_t=0;
   coarse.T.fill(0); coarse.Tb.fill(0); coarse.w.fill(0); coarse.psi.fill(0);
   coarse.ux.fill(0); coarse.uy.fill(0);
   source={x:0,y:0.04,w:0.22,vx:0,px:0,py:0}; simTime=0;
@@ -1237,6 +1238,141 @@ function stepSimVIC(layer, dt){
   layer.ps=out;
 }
 
+// ===========================================================================
+//  基线对照: 真 3D vortex-in-cell (dimMode='vic3')
+//  存在的唯一目的是把「分层分解」这一个变量单独隔离出来度量。因此逐项与分层求解器
+//  对齐: 同世界域 (x,y 全域, z∈[-D/2,D/2] 即层栈占据的同一层厚)、同面内分辨率
+//  NX×NY、同 Jacobi 次数、同粒子预算、同斜压系数/浮力/冷却、同粒子→高斯映射、
+//  同排序与同一个 rasterizer。默认 NZ3=P.layers, 网格单元数与层栈**逐格相等**。
+//  差别只有两处, 而这两处正是「3D」的定义:
+//    (1) 涡量是三分量矢量, Poisson 解三次 (∇²ψ_c = −ω_c), u = ∇×ψ;
+//    (2) 带涡拉伸 (ω·∇)u —— 层栈在结构上没有这一项 (见 §Limitations)。
+// ===========================================================================
+let NZ3=9, vic3=null, cloudAcc3=0;
+function newVIC3(nz){
+  NZ3=nz; const n=NX*NY*nz; const F=()=>new Float32Array(n);
+  return { wx:F(),wy:F(),wz:F(), sx:F(),sy:F(),sz:F(),           // ω 与 ψ 各三分量
+           ux:F(),uy:F(),uz:F(), T:F(), Tb:F(), nz:nz };
+}
+function DZ3(){ return P.sliceDepth; }
+function gZ3(z){ return (z+DZ3()/2)/DZ3()*NZ3-0.5; }
+function smp3(f,gx,gy,gz){                        // 三线性采样
+  let i=Math.floor(gx), j=Math.floor(gy), k=Math.floor(gz);
+  let fx=gx-i, fy=gy-j, fz=gz-k;
+  if(i<0){i=0;fx=0;} else if(i>NX-2){i=NX-2;fx=1;}
+  if(j<0){j=0;fy=0;} else if(j>NY-2){j=NY-2;fy=1;}
+  if(NZ3<2){ k=0; fz=0; } else if(k<0){k=0;fz=0;} else if(k>NZ3-2){k=NZ3-2;fz=1;}
+  const sj=NX, sk=NX*NY, b=k*sk+j*sj+i, b2=(NZ3<2)?b:b+sk;
+  const c00=f[b]*(1-fx)+f[b+1]*fx,        c01=f[b+sj]*(1-fx)+f[b+sj+1]*fx;
+  const c10=f[b2]*(1-fx)+f[b2+1]*fx,      c11=f[b2+sj]*(1-fx)+f[b2+sj+1]*fx;
+  return ((c00*(1-fy)+c01*fy)*(1-fz) + (c10*(1-fy)+c11*fy)*fz);
+}
+function splat3(f,gx,gy,gz,val){                  // 三线性 P2G
+  let i=Math.floor(gx), j=Math.floor(gy), k=Math.floor(gz);
+  if(i<0||i>NX-2||j<0||j>NY-2||k<0||k>NZ3-2){
+    const ii=Math.max(0,Math.min(NX-1,Math.round(gx))), jj=Math.max(0,Math.min(NY-1,Math.round(gy)));
+    const kk=Math.max(0,Math.min(NZ3-1,Math.round(gz)));
+    f[kk*NX*NY+jj*NX+ii]+=val; return;
+  }
+  const fx=gx-i, fy=gy-j, fz=gz-k, sj=NX, sk=NX*NY, b=k*sk+j*sj+i;
+  const w0=(1-fz), w1=fz;
+  f[b]        +=val*(1-fx)*(1-fy)*w0;  f[b+1]        +=val*fx*(1-fy)*w0;
+  f[b+sj]     +=val*(1-fx)*fy*w0;      f[b+sj+1]     +=val*fx*fy*w0;
+  f[b+sk]     +=val*(1-fx)*(1-fy)*w1;  f[b+sk+1]     +=val*fx*(1-fy)*w1;
+  f[b+sk+sj]  +=val*(1-fx)*fy*w1;      f[b+sk+sj+1]  +=val*fx*fy*w1;
+}
+// 三分量 Poisson: ∇²ψ_c = −ω_c, Jacobi, 六面 Dirichlet ψ=0 (与 2D 的 ψ=0 边界同精神)
+function poisson3(psi, w, iters, HZ){
+  const a=1/(HX*HX), b=1/(HY*HY), c=1/(HZ*HZ), inv=1/(2*(a+b+c));
+  const sj=NX, sk=NX*NY;
+  for(let it=0; it<iters; it++)
+    for(let k=1;k<NZ3-1;k++) for(let j=1;j<NY-1;j++){ const rb=k*sk+j*sj;
+      for(let i=1;i<NX-1;i++){ const id=rb+i;
+        psi[id]=(a*(psi[id+1]+psi[id-1]) + b*(psi[id+sj]+psi[id-sj])
+               + c*(psi[id+sk]+psi[id-sk]) + w[id])*inv; } }
+}
+function emitSim3(dt){
+  const cap=P.ppl*P.layers; if(cloud.length>=cap) return;
+  cloudAcc3 += P.rate*P.layers*dt*(pointer.active?1.8:1.0)/3;
+  const D=DZ3();
+  while(cloudAcc3>=1 && cloud.length<cap){ cloudAcc3-=1;
+    const a=srand()*6.283, rr=Math.sqrt(srand())*source.w*0.5;
+    cloud.push({ x:source.x+Math.cos(a)*rr, y:source.y+srand()*0.05, z:Math.max(-D/2,Math.min(D/2,Math.sin(a)*rr)),
+      vx:source.vx*0.5, vy:0, vz:0,
+      Gx:(srand()-0.5)*0.3, Gy:(srand()-0.5)*0.3, Gz:(srand()-0.5)*0.6,   // 矢量环量
+      T:0.92+srand()*0.08, d:0.85+srand()*0.15, seedp:srand()*99, life:0 });
+  }
+}
+function stepSimVIC3(dt){
+  if(!vic3 || vic3.nz!==Math.max(2,P.layers)) { vic3=newVIC3(Math.max(2,P.layers)); cloud=[]; }
+  const v=vic3, D=DZ3(), HZ=D/NZ3, sj=NX, sk=NX*NY, n=NX*NY*NZ3;
+  const T=v.T, Tb=v.Tb, ux=v.ux, uy=v.uy, uz=v.uz;
+  vol_t+=dt;
+  // 1) 温度场半拉格朗日平流 (三维回溯)
+  for(let k=0;k<NZ3;k++){ const wz=(k+0.5)/NZ3*D-D/2;
+    for(let j=0;j<NY;j++){ const wy=(j+0.5)/NY*WY;
+      for(let i=0;i<NX;i++){ const id=k*sk+j*sj+i, wx=(i+0.5)/NX*WX-WX/2;
+        Tb[id]=smp3(T, gX(wx-dt*ux[id]), gY(wy-dt*uy[id]), gZ3(wz-dt*uz[id])); } } }
+  T.set(Tb);
+  // 2) 火源加热 + 冷却 (与 2D 逐项同参数)
+  for(let k=0;k<NZ3;k++){ const wz=(k+0.5)/NZ3*D-D/2;
+    for(let j=0;j<NY;j++){ const wy=(j+0.5)/NY*WY;
+      for(let i=0;i<NX;i++){ const id=k*sk+j*sj+i, wx=(i+0.5)/NX*WX-WX/2;
+        if(wy < source.y+0.20){ const dx=(wx-source.x)/Math.max(0.05,source.w), dz=wz/Math.max(0.05,source.w);
+          T[id]+= dt*4.5*Math.exp(-(dx*dx+dz*dz)*2.0)*(pointer.active?1.5:1.0); }
+        T[id]*=(1-dt*P.cool*0.5); if(T[id]>1.6)T[id]=1.6; else if(T[id]<0)T[id]=0; } } }
+  // 3) 粒子: 斜压 ω̇ = β ∇T × ŷ = β(−∂T/∂z, 0, ∂T/∂x)  (z 分量与 2D 逐项一致)
+  //    + 涡拉伸 (Γ·∇)u —— 层栈没有的项
+  v.wx.fill(0); v.wy.fill(0); v.wz.fill(0);
+  const hw=HX*0.7, hz=HZ*0.7;
+  for(const p of cloud){
+    const gx=gX(p.x), gy=gY(p.y), gz=gZ3(p.z);
+    const dTx=(smp3(T,gX(p.x+HX*0.5),gy,gz)-smp3(T,gX(p.x-HX*0.5),gy,gz))/HX;
+    const dTz=(smp3(T,gx,gy,gZ3(p.z+HZ*0.5))-smp3(T,gx,gy,gZ3(p.z-HZ*0.5)))/HZ;
+    p.Gx += dt*P.baro*(-dTz);  p.Gz += dt*P.baro*dTx;
+    // 涡拉伸: 用上一帧网格速度的梯度 (显式, 与协方差演化同阶)
+    const uxx=(smp3(ux,gX(p.x+hw),gy,gz)-smp3(ux,gX(p.x-hw),gy,gz))/(2*hw);
+    const uxy=(smp3(ux,gx,gY(p.y+hw),gz)-smp3(ux,gx,gY(p.y-hw),gz))/(2*hw);
+    const uxz=(smp3(ux,gx,gy,gZ3(p.z+hz))-smp3(ux,gx,gy,gZ3(p.z-hz)))/(2*hz);
+    const uyx=(smp3(uy,gX(p.x+hw),gy,gz)-smp3(uy,gX(p.x-hw),gy,gz))/(2*hw);
+    const uyy=(smp3(uy,gx,gY(p.y+hw),gz)-smp3(uy,gx,gY(p.y-hw),gz))/(2*hw);
+    const uyz=(smp3(uy,gx,gy,gZ3(p.z+hz))-smp3(uy,gx,gy,gZ3(p.z-hz)))/(2*hz);
+    const uzx=(smp3(uz,gX(p.x+hw),gy,gz)-smp3(uz,gX(p.x-hw),gy,gz))/(2*hw);
+    const uzy=(smp3(uz,gx,gY(p.y+hw),gz)-smp3(uz,gx,gY(p.y-hw),gz))/(2*hw);
+    const uzz=(smp3(uz,gx,gy,gZ3(p.z+hz))-smp3(uz,gx,gy,gZ3(p.z-hz)))/(2*hz);
+    const sX=p.Gx*uxx+p.Gy*uxy+p.Gz*uxz, sY=p.Gx*uyx+p.Gy*uyy+p.Gz*uyz, sZ=p.Gx*uzx+p.Gy*uzy+p.Gz*uzz;
+    const ST=P.stretch3!==undefined?P.stretch3:1;      // =0 可关掉拉伸做消融
+    p.Gx+=dt*ST*sX; p.Gy+=dt*ST*sY; p.Gz+=dt*ST*sZ;
+    const damp=(1-dt*0.1); p.Gx*=damp; p.Gy*=damp; p.Gz*=damp;
+    const cap=6.0, gm=Math.hypot(p.Gx,p.Gy,p.Gz);      // 显式拉伸会指数增长, 与 2D 的 clamp 同精神
+    if(gm>cap){ const s=cap/gm; p.Gx*=s;p.Gy*=s;p.Gz*=s; }
+    splat3(v.wx,gx,gy,gz,p.Gx*P.gam); splat3(v.wy,gx,gy,gz,p.Gy*P.gam); splat3(v.wz,gx,gy,gz,p.Gz*P.gam);
+  }
+  // 4) 三次 Poisson (与分层同 26 次 Jacobi)
+  poisson3(v.sx,v.wx,26,HZ); poisson3(v.sy,v.wy,26,HZ); poisson3(v.sz,v.wz,26,HZ);
+  // 5) u = ∇×ψ  (构造上无散)
+  for(let k=1;k<NZ3-1;k++) for(let j=1;j<NY-1;j++) for(let i=1;i<NX-1;i++){ const id=k*sk+j*sj+i;
+    ux[id]=(v.sz[id+sj]-v.sz[id-sj])/(2*HY) - (v.sy[id+sk]-v.sy[id-sk])/(2*HZ);
+    uy[id]=(v.sx[id+sk]-v.sx[id-sk])/(2*HZ) - (v.sz[id+1]-v.sz[id-1])/(2*HX);
+    uz[id]=(v.sy[id+1]-v.sy[id-1])/(2*HX)   - (v.sx[id+sj]-v.sx[id-sj])/(2*HY); }
+  // 6) G2P (与 2D 同: 场速度 + 直接浮力 + 湍流 + 风)
+  const out=[];
+  for(const p of cloud){
+    const gx=gX(p.x), gy=gY(p.y), gz=gZ3(p.z);
+    let vx=smp3(ux,gx,gy,gz), vy=smp3(uy,gx,gy,gz), vz=smp3(uz,gx,gy,gz);
+    vy += P.buoy*smp3(T,gx,gy,gz);
+    if(P.turb>0){ const c=curl3(p.x*2.4,p.y*2.4,p.z*2.4,vol_t);
+      vx+=c[0]*P.turb*0.2; vy+=c[1]*P.turb*0.2; vz+=c[2]*P.turb*0.2; }
+    vx += P.wind+source.vx*0.3;
+    p.vx=vx; p.vy=vy; p.vz=vz;
+    p.x+=dt*vx; p.y+=dt*vy; p.z+=dt*vz; p.life+=dt;
+    p.T-=dt*P.cool*p.T*p.T; p.d*=(1-dt*0.3);
+    if(p.z>D/2)p.z=D/2; else if(p.z<-D/2)p.z=-D/2;
+    if(p.T>0.04 && p.y<WY && Math.abs(p.x)<WX*0.7 && p.d>0.03) out.push(p);
+  }
+  cloud=out;
+}
+
 // §7.1 接口: 两源同契约 step(layer,dt,ctx) → 就地更新 layer.ps {x,y,T,d,vx,vy}
 const Sources={
   proc:{ label:'Procedural plume · Route 1', step:(layer,dt)=>stepProc(layer,dt) },
@@ -1252,6 +1388,7 @@ function stepAll(dt){
     source.vx=(pointer.x-pointer.px)*8; source.px=pointer.x; source.py=pointer.y;
   } else { source.x*=0.96; source.vx*=0.9; if(Math.abs(source.x)<0.005)source.x=0; source.y=0.04; }
   if(P.dimMode==='vol'){ step3D(dt); stepEmbers(dt); if(P.filament)updateTrails(); return; }   // Tier1: 真三维体模式
+  if(P.dimMode==='vic3'){ emitSim3(dt); stepSimVIC3(dt); stepEmbers(dt); if(P.filament)updateTrails(); return; }  // 基线: 真 3D VIC
   const N=layers.length, sc=Math.min(P.simLayers,N);
   if(sc>0) stepCoarse(dt);          // ILM Level-1: 全局粗解算先跑一次, 驱动所有仿真层
   const useSim=evenMask(N,sc), means=layers.map(layerMeanVel);
@@ -1266,7 +1403,7 @@ function stepAll(dt){
 // Tier3: 每个粒子记一个滞后位置 (px,py,pz), 用指数滞后追当前位置 → (current−lagged)=最近轨迹
 function updateTrails(){
   const al=0.4*(1-P.filLen)+0.05;
-  if(P.dimMode==='vol'){ for(const p of cloud){ if(p.px===undefined){p.px=p.x;p.py=p.y;p.pz=p.z;}
+  if(P.dimMode==='vol'||P.dimMode==='vic3'){ for(const p of cloud){ if(p.px===undefined){p.px=p.x;p.py=p.y;p.pz=p.z;}
     p.px+=(p.x-p.px)*al; p.py+=(p.y-p.py)*al; p.pz+=(p.z-p.pz)*al; } }
   else { for(const l of layers) for(const p of l.ps){ if(p.px===undefined){p.px=p.x;p.py=p.y;}
     p.px+=(p.x-p.px)*al; p.py+=(p.y-p.py)*al; } }
@@ -1298,7 +1435,7 @@ function emit3D(arr,o, depths,gi, sx,sy, dx,dy, M,m, dep, va, bx,fh,eye, fade, t
 // 收集所有高斯 (火+烟+火星+背景) → 计算深度 → front-to-back 排序 → 写 instData
 let rawData=new Float32Array(0), depths=new Float32Array(0), order=[];
 function gather(){
-  const vol=(P.dimMode==='vol');
+  const vol=(P.dimMode==='vol'||P.dimMode==='vic3');   // 两种 3D 粒子云走同一渲染路径
   let total=0; if(vol) total=cloud.length; else for(const l of layers) total+=l.ps.length;
   const ne=(P.embers&&P.mode==='fire')? embers.length:0;
   const nbg=(P.box? bgGauss.length:0);
@@ -1553,12 +1690,12 @@ bindSlider('camDist','camDist',x=>x.toFixed(2)); bindSlider('covStretch','covStr
 function applySlice(){ document.querySelectorAll('#slice button').forEach(b=>b.classList.toggle('on',b.dataset.sm===P.sliceMode)); }
 document.querySelectorAll('#slice button').forEach(b=>b.addEventListener('click',()=>{ P.sliceMode=b.dataset.sm; applySlice(); }));
 bindSlider('vol3DTurb','vol3DTurb',x=>x.toFixed(2));
-function applyDim(){ const vol=(P.dimMode==='vol');
+function applyDim(){ const vol=(P.dimMode==='vol'||P.dimMode==='vic3');
   document.querySelectorAll('#dim button').forEach(b=>b.classList.toggle('on',b.dataset.dm===P.dimMode));
   document.getElementById('vol3DTurbRow').style.display=vol?'':'none';
   document.getElementById('slice').style.display=vol?'none':'';   // 3D 体无切片概念
   document.getElementById('vpRoute').textContent = vol?'3D':(Math.min(P.simLayers,P.layers)===0?'1':'2'); }
-document.querySelectorAll('#dim button').forEach(b=>b.addEventListener('click',()=>{ P.dimMode=b.dataset.dm; if(P.dimMode==='vol')cloud=[]; applyDim(); }));
+document.querySelectorAll('#dim button').forEach(b=>b.addEventListener('click',()=>{ P.dimMode=b.dataset.dm; if(P.dimMode==='vol'||P.dimMode==='vic3'){cloud=[];vic3=null;} applyDim(); }));
 bindSlider('exposure','exposure',x=>x.toFixed(2)); bindSlider('emis','emis',x=>x.toFixed(2));
 bindSlider('bloom','bloom',x=>x.toFixed(2)); bindSlider('thresh','thresh',x=>x.toFixed(2));
 bindSlider('boxLight','boxLight',x=>x.toFixed(2)); bindSlider('reflect','reflect',x=>x.toFixed(2));
