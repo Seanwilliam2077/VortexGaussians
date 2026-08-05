@@ -473,7 +473,13 @@ void main(){
 const FS_SCENE = `#version 300 es
 precision highp float; in vec2 v_uv; in vec3 v_color; in float v_opa; in float v_glow; out vec4 o;
 uniform float uTime;
-void main(){ float g=exp(-dot(v_uv,v_uv)*4.0); if(g<0.004) discard;
+// 与 FS_PARTICLE 同一足迹形式: 高斯 - 基座后重归一, 角点恰好归零 (无硬 discard 台阶)。
+// 常数 2.42 而非 3.0: 场景 splat 的四边形半宽是 2.2σ (见 parsePLY 的 ax()),
+// 故四边形坐标 u 处的世界偏移为 2.2σ·u, 指数 = -(2.2u)²/2 = -2.42u²。
+const float KS  = 2.42;
+const float PES = 0.007907054;                     // = exp(-KS*2.0), 角点 (r²=2) 处的值
+void main(){ float r2=dot(v_uv,v_uv);
+  float g=(exp(-KS*r2)-PES)/(1.0-PES); if(g<=0.0) discard;
   float a=clamp(v_opa,0.0,1.0)*g;
   float fl=0.82+0.18*sin(uTime*17.0+v_uv.x*9.0+v_uv.y*7.0);   // 火线闪烁
   vec3 ember=vec3(1.0,0.38,0.08)*v_glow*2.6*fl*g;             // 燃烧: 发光叠加 (HDR)
@@ -599,7 +605,8 @@ function parsePLY(buf){
              [2*(qx*qz-qw*qy),2*(qy*qz+qw*qx),1-2*(qx*qx+qy*qy)]];
     const sc=[s0,s1,s2], ord=[0,1,2].sort((a,b)=>sc[b]-sc[a]);
     const ax=k=>[R[0][k]*sc[k]*2.2, R[1][k]*sc[k]*2.2, R[2][k]*sc[k]*2.2];   // ~2σ 半轴
-    const cl=v=>Math.max(0,Math.min(1,v));
+    // 只截负值: 上截到 1 会在进入 RGBA16F/bloom/ACES 链之前就砍掉高光。
+    const cl=v=>Math.max(0,v);
     out.push({ p:[x,y,z], a0:ax(ord[0]), a1:ax(ord[1]),
       c:[cl(0.5+C0*F(i,'f_dc_0')),cl(0.5+C0*F(i,'f_dc_1')),cl(0.5+C0*F(i,'f_dc_2'))], o:sg(F(i,'opacity')) });
     cx+=x;cy+=y;cz+=z;
@@ -619,7 +626,11 @@ function loadPLY(buf){
 //   按到相机距离² 计数分桶 (O(n+K), 近→远桶序) 写 sceneVBO。
 //   桶边界 (sceneDMin/DMax, SCENE_BUCKETS) 与动态流共享 → render() 逐桶交错两条流,
 //   火与 .ply 场景获得全局 front-to-back 顺序 (逐基元互遮挡, 桶内近似)。
-//   P.sceneSorted=false 退回旧行为 (未排序、火后绘制) 作对照。
+//   两档对照:
+//     P.sceneBackdrop=true  公平基线: 场景内部**排序正确**, 但不与火交错 —— 火整体
+//                           叠在场景之上 (backdrop 合成的结构)。与我们的差别只剩交错。
+//     P.sceneSorted=false   朴素基线: 连场景自身排序也去掉 (火先画, 场景按文件序垫后)。
+//                           只用于把「未交错」和「未排序」两种失效分开看。
 const SCENE_BUCKETS=96;
 let sceneData=new Float32Array(0), sceneRaw=new Float32Array(0), sceneKey=new Float32Array(0), sceneBIdx=new Int32Array(0);
 let sceneBucketOfs=new Int32Array(SCENE_BUCKETS+1), sceneDMin=0, sceneDMax=1;
@@ -864,6 +875,7 @@ const P = {
   box:true, boxLight:0.85, embers:true, reflect:0.4, haze:0.6, emberRate:16, emberMax:160,
   sceneOn:false, sceneMax:120000, sceneScale:1, sceneYaw:0, scenePitch:0, sceneLift:0, sceneLight:1.0,
   sceneSorted:true,                 // true=场景与火按深度桶交错(全局排序, 互遮挡) | false=旧行为(未排序,火后绘制)
+  sceneBackdrop:false,              // true=公平对照: 场景内部排序正确但整体先画, 火叠在其上 (backdrop 合成)
   spreadOn:false,                   // splat-graph 火蔓延 (燃烧状态住在场景 splats 上)
   spreadIgnR:0.14, spreadHeat:2.2, spreadIgnH:1.0,   // 火焰→splat 点燃: 半径/加热率/阈值
   spreadR:0.11, spreadRate:3.0, spreadBurnT:6.0,     // splat→splat 蔓延半径/速率, 燃烧时长(s)
@@ -1442,8 +1454,16 @@ function render(){
     gl.useProgram(pScene);
     gl.uniformMatrix4fv(uScene.VP, false, cam.VP); gl.uniform1f(uScene.Light, P.sceneLight);
     gl.uniform1f(uScene.Time, simTime);
-    if(P.sceneSorted){
+    if(P.sceneSorted && !P.sceneBackdrop){
       drawInterleaved(count, ns);
+    } else if(P.sceneBackdrop){
+      // 公平对照 (backdrop 合成类比, 即 FieryGS 的结构): 体积火合成"在场景之上",
+      // 故火先累积、场景作不透明背景垫在后面 —— 但场景**内部排序是正确的**
+      // (gatherScene 已分桶)。与下面的朴素路径唯一的差别就是这一点: 不把
+      // 「场景未排序」这个实现 bug 算到对照方法头上, 差异只剩两条流是否交错。
+      gl.useProgram(pPart);  drawPartRange(0,count);
+      gl.useProgram(pScene); drawSceneRange(0,ns);
+      gl.bindVertexArray(null);
     } else {                                             // 旧行为对照: 火先画, 场景未排序垫后
       gl.useProgram(pPart); drawPartRange(0,count);
       gl.useProgram(pScene); drawSceneRange(0,ns);
