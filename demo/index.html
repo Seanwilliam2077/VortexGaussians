@@ -111,6 +111,7 @@
       <span class="hdr">HDR · WebGL2</span>
     </div>
     <canvas id="cv"></canvas>
+<div id="introHint" style="display:none;position:absolute;left:50%;bottom:22px;transform:translateX(-50%);z-index:9;padding:7px 14px;border-radius:999px;background:rgba(0,0,0,.55);color:#e8e8e8;font:12px/1.2 system-ui,sans-serif;letter-spacing:.02em;pointer-events:none;backdrop-filter:blur(4px)">auto-playing &mdash; click or press any key to take control</div>
     <div id="hud"></div>
     <div id="pipeline"></div>
     <div id="glerr"></div>
@@ -159,6 +160,10 @@
       <div class="cat" id="catRender">
         <div class="cathead"><span class="tri">▾</span> Representation · 3D Camera</div>
         <div class="catbody">
+          <div class="seg r1" id="look">
+            <button data-lk="cinematic" class="on">Cinematic</button>
+            <button data-lk="analysis">Analysis</button>
+          </div>
           <div class="seg r1" id="dim">
             <button data-dm="layer" class="on">2.5D slices (VIC)</button>
             <button data-dm="vol">3D curl-noise cloud</button>
@@ -868,12 +873,12 @@ const P = {
   riseV:1.15, sway:0.9, rate:1500, coolP:0.8, spread:0.7,
   buoy:0.9, baro:1.4, eps:0.07, cool:1.2, gam:1.0, turb:0.55, couple:0.5, interZ:0.0,
   layers:9, yaw:0.0, rad:36, ppl:1300, wind:0,
-  camDist:3.4, camElev:0.16, fov:0.85, sliceMode:'view', sliceDepth:0.7,
+  camDist:3.5, camElev:0.12, fov:0.85, sliceMode:'view', sliceDepth:0.7,
   covStretch:1.3, covMax:3.6, covRelax:1.0,        // Tier2: 高斯协方差随 ∇u 形变
   dimMode:'layer', vol3DTurb:0.6, vol3DScale:2.4, stretch3:1,  // 'layer'=分层 | 'vol'=运动学 3D 云 | 'vic3'=真 3D VIC 基线 (stretch3=0 关涡拉伸)
   filament:false, filLen:0.5, filGain:3.0,         // Tier3: 沿轨迹把高斯拉成"涡丝"
-  exposure:1.0, emis:2.6, bloom:1.0, thresh:0.95, blurIters:5,
-  box:true, boxLight:0.85, embers:true, reflect:0.4, haze:0.6, emberRate:16, emberMax:160,
+  exposure:1.0, emis:2.2, bloom:1.0, thresh:0.985, blurIters:5, look:'cinematic',
+  box:false, boxLight:0.10, embers:true, reflect:0.05, haze:0.05, emberRate:16, emberMax:160,
   sceneOn:false, sceneMax:120000, sceneScale:1, sceneYaw:0, scenePitch:0, sceneLift:0, sceneLight:1.0,
   sceneSorted:true,                 // true=场景与火按深度桶交错(全局排序, 互遮挡) | false=旧行为(未排序,火后绘制)
   sceneBackdrop:false,              // true=公平对照: 场景内部排序正确但整体先画, 火叠在其上 (backdrop 合成)
@@ -1645,10 +1650,60 @@ function render(){
 //  主循环
 // ===========================================================================
 let last=performance.now(), fps=60, lastCount=0;
+// ===========================================================================
+//  外观预设 (二档)。同一份仿真状态, 两套渲染/相机参数:
+//   cinematic — 减法拿对比度: 关掉程序化地面、把雾/反射压到近零、相机拉近、
+//               bloom 阈值抬高到只有真正的核心过阈。这是打开时的默认,
+//               因为第一眼决定别人要不要继续玩。
+//   analysis  — 地面与雾都开着, 相机拉远: 雾帮助读出体积结构和火对环境的照明,
+//               是看物理而不是看效果时该用的那套。
+//  只改渲染与相机, 不动任何仿真参数 → 切换不影响确定性回放与基准数字。
+// ===========================================================================
+const LOOKS = {
+  cinematic: { box:false, boxLight:0.10, reflect:0.05, haze:0.05, emis:2.2,
+               thresh:0.985, camDist:3.5, camElev:0.12 },
+  analysis:  { box:true,  boxLight:0.85, reflect:0.40, haze:0.60, emis:2.6,
+               thresh:0.95,  camDist:4.6, camElev:0.18 },
+};
+function applyLook(name){
+  const L=LOOKS[name]; if(!L) return;
+  P.look=name; for(const k in L) P[k]=L[k];
+  document.querySelectorAll('#look button').forEach(b=>b.classList.toggle('on',b.dataset.lk===name));
+  if(typeof syncUI==='function') syncUI();
+}
+
+// ===========================================================================
+//  开场自动演示 (三档)。打开页面后自动跑一遍, 让人在碰任何控件之前就看到
+//  系统会做什么; 任何输入 (指针/键盘/滑块) 立刻交还控制权。
+//  载入了 .ply 场景时演"点火→蔓延→炭化+绕行", 否则演"火焰发展→火⇄烟→绕行"。
+// ===========================================================================
+let introT=-1, introDone=false;
+function introCancel(){ if(introT>=0){ introT=-1; introDone=true;
+  const h=document.getElementById('introHint'); if(h) h.style.display='none'; } }
+function introStart(){ if(introDone) return; introT=0;
+  const h=document.getElementById('introHint'); if(h) h.style.display=''; }
+function introStep(dt){
+  if(introT<0) return;
+  const t0=introT; introT+=dt; const t=introT;
+  const hasScene = (typeof sceneGauss!=='undefined' && sceneGauss.length>0);
+  P.orbit=true;
+  if(hasScene){
+    if(t0<0.5 && t>=0.5){ P.spreadOn=true;
+      if(typeof setFuelBelow==='function') setFuelBelow(1.4,1);
+      if(typeof igniteAt==='function') igniteAt(0,0.05,0,0.30); }
+  } else {
+    // 无场景: 用 fire⇄smoke 连续统展示"同一套粒子两种着色"
+    if(t0<4.2 && t>=4.2){ P.mode='smoke'; if(typeof applyMode==='function') applyMode(); }
+    if(t0<6.6 && t>=6.6){ P.mode='fire';  if(typeof applyMode==='function') applyMode(); }
+  }
+  if(t>=9.0) introCancel();
+}
+
 function loop(now){
   const rawdt=(now-last)/1000; last=now;
   const dt=Math.min(0.033,rawdt);
   fps=fps*0.9+(1/Math.max(1e-3,rawdt))*0.1;
+  if(introT>=0) introStep(dt);
   if(!P.paused){ orbitPhase+=dt*0.32; simTime+=dt; stepAll(dt); }
   lastCount=render();
   const Ntot=layers.length, scN=Math.min(P.simLayers,Ntot);
@@ -1695,6 +1750,13 @@ function applyDim(){ const vol=(P.dimMode==='vol'||P.dimMode==='vic3');
   document.getElementById('vol3DTurbRow').style.display=vol?'':'none';
   document.getElementById('slice').style.display=vol?'none':'';   // 3D 体无切片概念
   document.getElementById('vpRoute').textContent = vol?'3D':(Math.min(P.simLayers,P.layers)===0?'1':'2'); }
+document.querySelectorAll('#look button').forEach(b=>b.addEventListener('click',()=>{ applyLook(b.dataset.lk); }));
+applyLook(P.look); introStart();
+// 任何**真实**输入都立刻结束开场并交还控制权。必须查 isTrusted: syncUI()
+// 会程序化派发 input 事件同步滑块, 否则开场在第一帧就被自己取消掉。
+['pointerdown','keydown','wheel','input'].forEach(ev=>
+  window.addEventListener(ev, e=>{ if(e && e.isTrusted) introCancel(); },
+    {capture:true, passive:true}));
 document.querySelectorAll('#dim button').forEach(b=>b.addEventListener('click',()=>{ P.dimMode=b.dataset.dm; if(P.dimMode==='vol'||P.dimMode==='vic3'){cloud=[];vic3=null;} applyDim(); }));
 bindSlider('exposure','exposure',x=>x.toFixed(2)); bindSlider('emis','emis',x=>x.toFixed(2));
 bindSlider('bloom','bloom',x=>x.toFixed(2)); bindSlider('thresh','thresh',x=>x.toFixed(2));
