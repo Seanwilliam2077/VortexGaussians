@@ -466,8 +466,12 @@ layout(location=4) in vec3 aColor;
 layout(location=5) in float aOpa;
 layout(location=6) in float aGlow;
 layout(location=7) in float aChar;
+layout(location=8) in vec3 aShR;       // 各通道 1 阶球谐的 3 个系数
+layout(location=9) in vec3 aShG;
+layout(location=10) in vec3 aShB;
 uniform mat4 uViewProj; uniform mat4 uView;
 uniform vec2 uFocal; uniform vec2 uViewport; uniform float uSceneLight;
+uniform mat3 uSceneRotInv; uniform vec3 uEye;
 out vec2 v_uv; out vec3 v_color; out float v_opa; out float v_glow;
 // EWA volume splatting (Zwicker 2001; 3DGS 前向过程): 把 3D 协方差经透视变换的
 // 雅可比投影成屏幕空间 2D 协方差, 再取其特征向量作四边形的两根半轴。
@@ -501,7 +505,16 @@ void main(){
   vec4 clip = uViewProj * vec4(aPos, 1.0);
   gl_Position = clip + vec4(2.0*offPx/uViewport*clip.w, 0.0, 0.0);
   v_uv = aCorner;
-  v_color = aColor*uSceneLight*(1.0-0.88*aChar);     // 炭化: 反照率压向黑
+  // 1 阶球谐: 视相关外观。DC 已烘进 aColor, 这里只加方向项。
+  // 视方向转回 .ply 自身坐标系, 于是系数不必随场景摆放旋转。
+  vec3 dir = normalize(uSceneRotInv * (aPos - uEye));
+  const float C1 = 0.4886025119029199;
+  vec3 shTerm = vec3(
+    -C1*dir.y*aShR.x + C1*dir.z*aShR.y - C1*dir.x*aShR.z,
+    -C1*dir.y*aShG.x + C1*dir.z*aShG.y - C1*dir.x*aShG.z,
+    -C1*dir.y*aShB.x + C1*dir.z*aShB.y - C1*dir.x*aShB.z);
+  vec3 base = max(aColor + shTerm, vec3(0.0));
+  v_color = base*uSceneLight*(1.0-0.88*aChar);       // 炭化: 反照率压向黑
   v_opa = aOpa*(1.0-0.30*aChar);                     // 炭化: 轻微降不透明度
   v_glow = aGlow;
 }`;
@@ -532,7 +545,8 @@ const uPart={ VP:U(pPart,'uViewProj'),
               Time:U(pPart,'uTime'),Emis:U(pPart,'uEmis'),Mode:U(pPart,'uMode'),Flick:U(pPart,'uFlick'),
               Fire:U(pPart,'uFire'),FireI:U(pPart,'uFireI'),Res:U(pPart,'uRes') };
 const uScene={ VP:U(pScene,'uViewProj'), Light:U(pScene,'uSceneLight'), Time:U(pScene,'uTime'),
-  V:U(pScene,'uView'), Focal:U(pScene,'uFocal'), Viewport:U(pScene,'uViewport') };
+  V:U(pScene,'uView'), Focal:U(pScene,'uFocal'), Viewport:U(pScene,'uViewport'),
+  RotInv:U(pScene,'uSceneRotInv'), Eye:U(pScene,'uEye') };
 const uPre={ Tex:U(pPre,'uTex'),Threshold:U(pPre,'uThreshold') };
 const uBlur={ Tex:U(pBlur,'uTex'),Dir:U(pBlur,'uDir') };
 const uComp={ Scene:U(pComp,'uScene'),Bloom:U(pComp,'uBloom'),Exposure:U(pComp,'uExposure'),BloomAmt:U(pComp,'uBloomAmt'),
@@ -562,8 +576,10 @@ function setupInstanceVAO(vao, vbo){
 // 粒子 VAO
 const vaoPart=gl.createVertexArray(); setupInstanceVAO(vaoPart, instVBO);
 
-// ---- 场景高斯 VAO (.ply 载入): pos3 major3 minor3 color3 opa1 glow1 char1 = 15 floats ----
-const SC_STRIDE_F=15, SC_STRIDE_B=SC_STRIDE_F*4;
+// ---- 场景高斯 VAO (.ply 载入):
+//   pos3 covA3 covB3 color3 opa1 glow1 char1 shR3 shG3 shB3 = 24 floats
+//   shR/G/B = 各通道 1 阶球谐的 3 个系数 (视相关外观; DC 已烘进 color)
+const SC_STRIDE_F=24, SC_STRIDE_B=SC_STRIDE_F*4;
 const sceneVBO=gl.createBuffer();
 const vaoScene=gl.createVertexArray(); gl.bindVertexArray(vaoScene);
 gl.bindBuffer(gl.ARRAY_BUFFER,quadVBO);
@@ -571,7 +587,8 @@ gl.enableVertexAttribArray(0); gl.vertexAttribPointer(0,2,gl.FLOAT,false,0,0); g
 gl.bindBuffer(gl.ARRAY_BUFFER,sceneVBO);
 (function(){ const ia=(loc,size,off)=>{ gl.enableVertexAttribArray(loc);
   gl.vertexAttribPointer(loc,size,gl.FLOAT,false,SC_STRIDE_B,off*4); gl.vertexAttribDivisor(loc,1); };
-  ia(1,3,0); ia(2,3,3); ia(3,3,6); ia(4,3,9); ia(5,1,12); ia(6,1,13); ia(7,1,14); })();
+  ia(1,3,0); ia(2,3,3); ia(3,3,6); ia(4,3,9); ia(5,1,12); ia(6,1,13); ia(7,1,14);
+  ia(8,3,15); ia(9,3,18); ia(10,3,21); })();
 gl.bindVertexArray(null);
 
 // ---- 背景 3DGS: 一组静态暗色高斯 (地面 + 环境), 与火共用同一光栅器 ----
@@ -627,7 +644,9 @@ function parsePLY(buf){
   let stride=0; const off={}; for(const p of props){ off[p.n]=stride; stride+=sz[p.t]||4; }
   for(const k of ['x','y','z','opacity','scale_0','rot_0','f_dc_0']) if(off[k]===undefined) throw new Error('.ply: missing field '+k+' (not a 3DGS .ply?)');
   const dv=new DataView(buf, he), C0=0.28209479177387814, sg=x=>1/(1+Math.exp(-x));
-  const F=(i,n)=>dv.getFloat32(i*stride+off[n], true);
+  const F=(i,n)=>{ const o2=off[n]; return o2===undefined?0:dv.getFloat32(i*stride+o2, true); };
+  // f_rest 的数量决定球谐阶数: 每通道 nPer 个 (1阶=3, 2阶=8, 3阶=15)
+  const nRest=props.filter(q=>q.n.startsWith('f_rest_')).length, nPer=nRest/3;
   // 子采样到上限
   const keepAll = N<=P.sceneMax; const step = keepAll?1:N/P.sceneMax;
   const out=[]; let cx=0,cy=0,cz=0;
@@ -646,7 +665,13 @@ function parsePLY(buf){
     const cv3=(i,j)=>R[i][0]*sc[0]*R[j][0] + R[i][1]*sc[1]*R[j][1] + R[i][2]*sc[2]*R[j][2];
     // 只截负值: 上截到 1 会在进入 RGBA16F/bloom/ACES 链之前就砍掉高光。
     const cl=v=>Math.max(0,v);
+    // 1 阶球谐 (视相关外观)。INRIA .ply 把 f_rest 按"通道优先"展平:
+    // 每通道 nPer 个系数, 通道 ch 的第 k 个 = f_rest_(ch*nPer + k)。只取前 3 个 (1 阶);
+    // 更高阶存在也读得出来, 只是这里不用 —— 加高阶只需扩 stride 与着色器基函数。
+    const SHc=(idx,ch)=>{ if(!nRest) return [0,0,0];
+      const b=ch*nPer; return [F(idx,'f_rest_'+b), F(idx,'f_rest_'+(b+1)), F(idx,'f_rest_'+(b+2))]; };
     out.push({ p:[x,y,z], cov:[cv3(0,0),cv3(0,1),cv3(0,2),cv3(1,1),cv3(1,2),cv3(2,2)],
+      sh:[SHc(i,0),SHc(i,1),SHc(i,2)],
       c:[cl(0.5+C0*F(i,'f_dc_0')),cl(0.5+C0*F(i,'f_dc_1')),cl(0.5+C0*F(i,'f_dc_2'))], o:sg(F(i,'opacity')) });
     cx+=x;cy+=y;cz+=z;
   }
@@ -711,6 +736,12 @@ function gatherScene(){
     arr[o++]=cvv[3]; arr[o++]=cvv[4]; arr[o++]=cvv[5];
     arr[o++]=g.c[0]; arr[o++]=g.c[1]; arr[o++]=g.c[2]; arr[o++]=g.o;
     if(sb){ arr[o++]=sb.glow[bi]; arr[o++]=sb.char_[bi]; } else { arr[o++]=0; arr[o++]=0; }
+    // 1 阶球谐系数原样传下去; 视方向在着色器里被转回 .ply 自身坐标系再求值,
+    // 这样场景的旋转/缩放摆放不需要旋转系数本身 (等价但更省且更不易出错)。
+    const sh=g.sh;
+    arr[o++]=sh[0][0]; arr[o++]=sh[0][1]; arr[o++]=sh[0][2];
+    arr[o++]=sh[1][0]; arr[o++]=sh[1][1]; arr[o++]=sh[1][2];
+    arr[o++]=sh[2][0]; arr[o++]=sh[2][1]; arr[o++]=sh[2][2];
     bi++;
     const ex=wx-eye[0], ey=wy-eye[1], ez=wz-eye[2];
     const d=ex*ex+ey*ey+ez*ez; sceneKey[gi++]=d;
@@ -1645,6 +1676,13 @@ function render(){
     gl.uniformMatrix4fv(uScene.V, false, cam.V);            // EWA: 需要视图矩阵与像素焦距
     gl.uniform2f(uScene.Focal, cam.focal[0], cam.focal[1]);
     gl.uniform2f(uScene.Viewport, cv.width, cv.height);
+    { const cyj=Math.cos(P.sceneYaw), syj=Math.sin(P.sceneYaw),
+            cpj=Math.cos(P.scenePitch), spj=Math.sin(P.scenePitch);
+      // R = Ry(yaw)·Rx(pitch) 的转置 (=逆, 正交); 列主序上传
+      const r=[cyj, syj*spj, syj*cpj, 0, cpj, -spj, -syj, cyj*spj, cyj*cpj];
+      gl.uniformMatrix3fv(uScene.RotInv, false,
+        new Float32Array([r[0],r[1],r[2], r[3],r[4],r[5], r[6],r[7],r[8]]));
+      gl.uniform3f(uScene.Eye, cam.eye[0], cam.eye[1], cam.eye[2]); }
     if(P.sceneSorted && !P.sceneBackdrop){
       drawInterleaved(count, ns);
     } else if(P.sceneBackdrop){
