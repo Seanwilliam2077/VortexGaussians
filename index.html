@@ -43,7 +43,8 @@
   .muted{color:var(--sub)}
   .imgrow{display:flex;gap:10px;margin:14px 0}
   .imgrow>div{flex:1;min-width:0}
-  .imgrow img{width:100%;display:block;border-radius:10px}
+  /* 固定 16:10 并 cover 裁切: 以后换任意长宽比的图, 这一行都不会再排歪 */
+  .imgrow img{width:100%;display:block;border-radius:10px;aspect-ratio:16/10;object-fit:cover;background:#000}
   figure{margin:14px 0}
   figcaption{font-size:.9rem;color:var(--sub);margin-top:8px;text-align:center}
   img.solo{width:100%;display:block;border-radius:10px}
@@ -126,17 +127,12 @@
 <!-- ======================= teaser ======================= -->
 <section class="wrap" style="padding-top:8px">
   <div class="imgrow">
-    <div><img src="static/images/fig_teaser_v4.jpg" alt="Flame driven by layered vortex-in-cell simulation"></div>
-    <div><img src="static/images/fig_teaser_scene.jpg" alt="The same solver burning inside a loaded 3DGS scene: the post occludes the flame per primitive and consumed geometry is charred in place"></div>
-    <div><img src="static/images/fig_smoke_over.jpg" alt="The same particle state re-shaded as smoke"></div>
+    <div><img src="static/images/fig_teaser_flame.jpg" alt="Flame driven by layered vortex-in-cell simulation"></div>
+    <div><img src="static/images/fig_teaser_scene.jpg" alt="The same solver burning inside a loaded 3DGS scene: flame and scene splats share one depth order and occlude each other per primitive, and consumed fuel is charred in place"></div>
+    <div><img src="static/images/fig_teaser_smoke.jpg" alt="The same particle state re-shaded as smoke"></div>
   </div>
   <figure><figcaption>
-    Real-time, forward-simulated fire and smoke rendered as <b>native Gaussian-splatting content</b>.
-    Left: a flame driven by nine layered 2D vortex-in-cell simulations, in which every vortex particle
-    <i>is</i> an emissive anisotropic Gaussian. Middle: an orbiting camera; view-aligned slices and
-    per-primitive depth sorting give correct parallax against a dark 3DGS environment the fire locally
-    illuminates. Right: the identical particle state re-shaded as smoke. All results run in real time
-    in a browser &mdash; <a href="demo/">try it live</a>.
+    Real-time, forward-simulated fire and smoke rendered as <b>native Gaussian-splatting content</b>. <b>Left:</b> a flame driven by nine layered 2D vortex-in-cell simulations, in which every vortex particle <i>is</i> an emissive anisotropic Gaussian &mdash; white-hot core, orange body, dark-red turbulent tips, with embers. <b>Middle:</b> the same solver burning inside a loaded 3DGS scene from a three-quarter view. The flame and the scene's splats share one depth order, so each occludes the other per primitive, and combustion state lives on the scene's own splats &mdash; the fuel it has already consumed is charred in place and the plume above is fed by the burning geometry. <b>Right:</b> the identical particle state re-shaded as smoke (absorption-dominated compositing with warm underlighting). All results run in real time in a browser &mdash; <a href="demo/">try it live</a>.
   </figcaption></figure>
 
   <p class="narrow" style="margin-top:18px">
@@ -241,7 +237,7 @@
     <div class="narrow">
       <video controls preload="metadata" playsinline
              style="width:100%;border-radius:12px;display:block;background:#0a0a0d"
-             poster="static/images/fig_teaser_v4.jpg">
+             poster="static/images/fig_teaser_flame.jpg">
         <source src="static/video/vortex_gaussians_supplemental.mp4" type="video/mp4">
       </video>
     </div>
