@@ -218,8 +218,11 @@
       </div>
       <figure><figcaption>Synthetic test reconstruction (45,808 splats: plank floor, stone wall, stone fire
         ring, fuel logs, rear post). Identical simulation state, camera and shading on both sides &mdash; only the
-        composition order differs. Dropping the intra-scene sort as well makes the scene's own geometry
-        disappear; that third case is reported separately in the paper rather than used as the baseline.</figcaption></figure>
+        composition order differs. The paper compares against a ladder of three baselines: this backdrop
+        composite, a stronger <b>depth-aware</b> one in which scene splats write a depth buffer and fire
+        fragments are z-tested against it, and a fully unsorted case. The depth-aware baseline handles opaque
+        occluders; what it cannot express is partial transmittance through a semi-transparent splat, so every
+        soft boundary collapses into a binary, aliased silhouette.</figcaption></figure>
     </div>
   </div>
 </section>
@@ -366,7 +369,7 @@
       <div class="demo-shell" id="demoShell">
         <div class="demo-poster" id="demoPoster">
           <div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-          <span>Click to launch the live WebGL2 demo (~80 KB)</span>
+          <span>Click to launch the live WebGL2 demo (~160 KB, 57 KB gzipped)</span>
         </div>
       </div>
       <figure><figcaption>If the embed does not start, open the demo

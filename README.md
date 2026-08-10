@@ -72,7 +72,7 @@ Interactive default: N=9 × 600 particles/layer at treecode θ=0.9 — ~60 FPS o
 
 Load your own Gaussian-splatting reconstruction and light a fire inside it:
 
-1. Train a scene with [Inria 3DGS](https://github.com/graphdeco-inria/gaussian-splatting) (or use any binary little-endian `.ply` in its format).
+1. Train a scene with [Inria 3DGS](https://github.com/graphdeco-inria/gaussian-splatting) (or use any binary little-endian `.ply` in its format). To try it immediately, use the campfire scene from the paper: [`static/test_scene.ply`](static/test_scene.ply) (45,808 splats).
 2. In the demo panel, open **Scene** and load the `.ply` (subsampled to a configurable budget, default 120k splats).
 3. The scene is merged into the same global depth order as the fire — foreground geometry occludes the flame per primitive (`sceneSorted` toggles the naive draw-after baseline for comparison).
 4. Adjust `sceneScale` / `sceneYaw` / `sceneLift` to place the fire where you want it.
@@ -81,8 +81,8 @@ Load your own Gaussian-splatting reconstruction and light a fire inside it:
 
 ```
 index.html        # project page (self-contained; occlusion comparison slider, embedded demo)
-demo/index.html   # the complete system: single-file WebGL2 prototype (~83 KB)
-static/           # paper PDF + compressed figures
+demo/index.html   # the complete system: single-file WebGL2 prototype (~160 KB, 57 KB gzipped)
+static/           # paper PDF, compressed figures, supplemental video, sample .ply scene
 PUBLISH.md        # page-deployment checklist (GitHub Pages)
 ```
 
