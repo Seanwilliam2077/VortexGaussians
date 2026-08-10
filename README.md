@@ -8,9 +8,11 @@ Anonymous Author(s)<sup>1</sup>
 
 [![teaser](static/images/teaser.jpg)](https://seanwilliam2077.github.io/VortexGaussians/)
 
-*We present the first system that generates fire and smoke by forward physical simulation in real time and renders them as native Gaussian-splatting content. Our key insight is a structural isomorphism: Lagrangian vortex particles and 3D Gaussians are the same class of point primitive, so one particle set serves simultaneously as simulation state and render primitive — position maps to the Gaussian mean, temperature to emissive blackbody color, density to opacity, and velocity gradient to an anisotropic covariance — with no voxelization, meshing, or simulation-to-renderer conversion anywhere. A two-level layered vortex-in-cell solver in vorticity–streamfunction form, needing no pressure solve, drives the particles; one depth-sorted emission–absorption rasterizer composites flame, smoke, embers, and reconstructed 3DGS scenes with per-primitive mutual occlusion.*
+*We present the first system that generates fire and smoke by forward physical simulation in real time and renders them as native Gaussian-splatting content. Our key insight is a structural isomorphism: Lagrangian vortex particles and 3D Gaussians are the same class of point primitive, so one particle set serves simultaneously as simulation state and render primitive — position maps to the Gaussian mean, temperature to emissive blackbody color, density to opacity, and velocity gradient to an anisotropic covariance — with no voxelization, meshing, or simulation-to-renderer conversion anywhere. A grid-free Gaussian vortex-particle solver drives them — each splat *is* a Lamb–Oseen vortex element, velocity, its analytic gradient and temperature are closed-form evaluations of the rendered Gaussian mixture under a Barnes–Hut treecode, with no Poisson solve, no linear solve, and no grid anywhere; one depth-sorted emission–absorption rasterizer composites flame, smoke, embers, and reconstructed 3DGS scenes with per-primitive mutual occlusion.*
 
 ## News
+- **[2026-08]** **Full experiment redo on the grid-free solver — the headline numbers changed, in our favor.** In-plane spectra vs. a matched 3D Boussinesq reference: the grid-free stack holds 52-60% largest-bin energy (VIC-era stack: 83-92%; reference: 48%) with 20-26% mid-band -- the mid-band rolling the grid's Nyquist suppressed is actually simulated now. The particle-strength-exchange inter-slice operator raises adjacent-slice coherence 0.20 -> 0.68 (0.77 with coarse coupling; 3D control: 0.80) where its grid form had measured an inconclusive 0.13-0.19. New matched 3D baseline is a 3D Gaussian VPM (vector vortons, erf-form kernel, analytic stretching): 2.8x the stack's sim step at matched budget; ablating stretching moves its spectrum by only 0.06 -- under the grid-free pair the layered gap is mostly three-component transport, not the stretching cascade (the attribution is discretization-dependent). Treecode vs exact Biot-Savart: no crossover anywhere (faster from Np=150 up; 7.8x at 2400). All paper figures re-shot seed-pinned through the revived capture harness (`Research/capture-harness/`).
+- **[2026-08]** **The solver is now grid-free — "Gaussian-native" holds on the simulation side too.** Route 2's default solver is a Gaussian vortex-particle method: each splat is a Lamb–Oseen vortex element; velocity, its analytic gradient (feeding the rendered covariance) and the Shepard-mixture temperature (moment-renormalized SPH gradient for the baroclinic source) are closed-form evaluations of the rendered mixture, accelerated by a Barnes–Hut treecode over moment-matched super-Gaussians whose merged top levels + ground mirror vortices replace the coarse grid solver as the directable field. No Poisson, no grid, no linear solve. The VIC solver is retained as a toggleable baseline; the exact O(N²) Biot–Savart sum is retained as the treecode's error reference (~1.5% rel. L2 at θ=0.7). Grid freedom costs ~3.5× the VIC sim step at matched counts (still real-time end to end).
 - **[2026-08]** Added the baseline the paper was missing: a **true 3D vortex-in-cell solver inside the demo** (`3D VIC (baseline)` in the dimension segment), sharing the world domain, in-plane resolution, Jacobi count, particle scheme, source terms, timestep, particle-to-Gaussian mapping and renderer with the slice stack. At matched cell count it runs at **1.81x** the layered simulation step (sort and render unchanged). Ablating vortex stretching inside it accounts for **70%** of the in-plane spectral gap to the stack, turning the paper's attribution from an argument into a measurement. `P.stretch3=0` toggles the ablation.
 
 - **[2026-08]** Corrected the scene footprint to the Gaussian the file declares (`exp(-2.42 r^2)` against a 2.2-sigma quad half-axis, was `exp(-4.0 r^2)` with a hard discard step), so flame, smoke, embers and scene now share one footprint; stopped clamping DC colour to 1 before the HDR chain. Occlusion comparison now uses a **fair baseline** — scene sorted correctly among itself, only the two-stream interleave removed — instead of a strawman that also destroyed the scene's own ordering. Re-ran the E(k) measurement at 4.3x particle density: the spectral gap does not close, so it is not a sampling artifact. Demo UI is fully in English.
@@ -43,7 +45,7 @@ python -m http.server 8000
 # then open http://localhost:8000/demo/
 ```
 
-Measured: 17.8 ms per frame (56 FPS) at defaults (N=9, 1300 particles/layer → 12.4k Gaussians) on a desktop RTX 3080 at 1280×800, simulation single-threaded in CPU JavaScript; a lighter 600/layer preset runs at 92 FPS. Deterministic replay: `window.__demo.reset(seed)` + `.step(n)` + `.hash()` reproduce any run bit-exactly.
+Interactive default: N=9 × 600 particles/layer at treecode θ=0.9 — ~60 FPS on a desktop RTX 3080 at 1280×800, simulation single-threaded in CPU JavaScript (grid-free VPM sim ~10 ms/step). Quality/benchmark preset: 1300/layer (set via `__demo.bench` or the console); VIC-era full matrix in the paper is being re-measured for the VPM solver. Deterministic replay: `window.__demo.reset(seed)` + `.step(n)` + `.hash()` reproduce any run bit-exactly.
 
 ### Interactive controls
 
@@ -51,7 +53,7 @@ Measured: 17.8 ms per frame (56 FPS) at defaults (N=9, 1300 particles/layer → 
 | --- | --- |
 | **drag canvas** | orbit the 3D camera (auto-orbit resumes on release) |
 | **Shift + drag** | move the fire source; the plume follows with vortical lag |
-| **`1` / `2`** | all layers procedural / all layers vortex-in-cell (hot-swap, same renderer) |
+| **`1` / `2` / `3`** | all layers procedural / VIC baseline / grid-free Gaussian VPM (hot-swap, same renderer) |
 | **`F` / `S`** | fire / smoke shading of the same particle state |
 | **`Space` / `R`** | pause / reset |
 | **`Sim Layers` slider** | per-layer solver hot-swap (0 … N) |
@@ -60,7 +62,7 @@ Measured: 17.8 ms per frame (56 FPS) at defaults (N=9, 1300 particles/layer → 
 
 ### Key simulation parameters
 
-- `layers` (N = 9) × `ppl` (1300): view-aligned slices × particles each; every slice runs an independent 32×48 vortex-in-cell solve.
+- `layers` (N = 9) × `ppl` (600 interactive / 1300 quality): view-aligned slices × particles each; every slice runs an independent grid-free Gaussian vortex-particle solve (a 32×48 vortex-in-cell baseline is retained for A/B, `Solver` toggle; keys `2`/`3` switch).
 - `couple` (c = 0.5): velocity nudge toward the 16×24 coarse global solver — 0 = independent slices, 1 = slaved to bulk motion.
 - `interZ` (κz = 0, off by default): inter-slice vorticity exchange `ω_k += Δt·κz·(ω_{k−1}+ω_{k+1}−2ω_k)`; conserves total circulation. Exchange rate, not a diffusivity (no 1/Δz²), so not comparable across slice counts.
 - `baro` (β = 1.4): baroclinic source Γ̇ = β·∂T/∂x — the temperature → buoyancy → vorticity loop that rolls plume edges.

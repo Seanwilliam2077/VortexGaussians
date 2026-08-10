@@ -127,12 +127,12 @@
 <!-- ======================= teaser ======================= -->
 <section class="wrap" style="padding-top:8px">
   <div class="imgrow">
-    <div><img src="static/images/fig_teaser_flame.jpg" alt="Flame driven by layered vortex-in-cell simulation"></div>
+    <div><img src="static/images/fig_teaser_flame.jpg" alt="Flame driven by layered grid-free Gaussian vortex-particle simulation"></div>
     <div><img src="static/images/fig_teaser_scene.jpg" alt="The same solver burning inside a loaded 3DGS scene: flame and scene splats share one depth order and occlude each other per primitive, and consumed fuel is charred in place"></div>
     <div><img src="static/images/fig_teaser_smoke.jpg" alt="The same particle state re-shaded as smoke"></div>
   </div>
   <figure><figcaption>
-    Real-time, forward-simulated fire and smoke rendered as <b>native Gaussian-splatting content</b>. <b>Left:</b> a flame driven by nine layered 2D vortex-in-cell simulations, in which every vortex particle <i>is</i> an emissive anisotropic Gaussian &mdash; white-hot core, orange body, dark-red turbulent tips, with embers. <b>Middle:</b> the same solver burning inside a loaded 3DGS scene from a three-quarter view. The flame and the scene's splats share one depth order, so each occludes the other per primitive, and combustion state lives on the scene's own splats &mdash; the fuel it has already consumed is charred in place and the plume above is fed by the burning geometry. <b>Right:</b> the identical particle state re-shaded as smoke (absorption-dominated compositing with warm underlighting). All results run in real time in a browser &mdash; <a href="demo/">try it live</a>.
+    Real-time, forward-simulated fire and smoke rendered as <b>native Gaussian-splatting content</b>. <b>Left:</b> a flame driven by nine layered 2D grid-free Gaussian vortex-particle simulations, in which every vortex element <i>is</i> an emissive anisotropic Gaussian &mdash; white-hot core, orange body, dark-red turbulent tips, with embers. <b>Middle:</b> the same solver burning inside a loaded 3DGS scene from a three-quarter view. The flame and the scene's splats share one depth order, so each occludes the other per primitive, and combustion state lives on the scene's own splats &mdash; the fuel it has already consumed is charred in place and the plume above is fed by the burning geometry. <b>Right:</b> the identical particle state re-shaded as smoke (absorption-dominated compositing with warm underlighting). All results run in real time in a browser &mdash; <a href="demo/">try it live</a>.
   </figcaption></figure>
 
   <p class="narrow" style="margin-top:18px">
@@ -158,7 +158,7 @@
       set serves simultaneously as simulation state and render primitive&mdash;position to Gaussian
       mean, temperature to emissive blackbody color, density to opacity, velocity gradient to
       anisotropic covariance&mdash;with no voxelization, meshing, or simulation-to-renderer conversion
-      anywhere. A pressure-free two-level layered vortex-in-cell solver drives the particles, with a
+      anywhere. A grid-free Gaussian vortex-particle solver drives them &mdash; each splat <i>is</i> a Lamb&ndash;Oseen vortex element, velocity and temperature are closed-form evaluations of the rendered mixture under a Barnes&ndash;Hut treecode, with no Poisson solve and no grid anywhere &mdash; with a
       new bidirectional inter-slice vorticity-coupling operator that restores the out-of-plane
       transport stacking drops; one depth-sorted emission&ndash;absorption rasterizer composites flame,
       smoke, embers, and reconstructed 3DGS scenes with per-primitive mutual occlusion, so a foreground
@@ -174,7 +174,7 @@
 <section class="wrap">
   <h2>How it works: one particle set, zero conversion</h2>
   <p class="narrow">
-    A coarse global vortex solver drives <i>N</i> per-slice 2D vortex-in-cell simulations. Each slice
+    A directable coarse field &mdash; the top levels of the solver’s own Barnes&ndash;Hut tree &mdash; drives <i>N</i> per-slice 2D grid-free Gaussian vortex-particle simulations. Each slice
     exposes its particles through a minimal contract {x, T, d, u}; the renderer lifts every particle
     <i>directly</i> into an emissive anisotropic Gaussian and rasterizes all Gaussians &mdash; fire,
     smoke, embers, and the background 3DGS scene &mdash; in one depth-sorted emission&ndash;absorption
@@ -269,12 +269,12 @@
   <h3>Real physics per slice, not procedural noise</h3>
   <p>Each slice closes the temperature &rarr; buoyancy &rarr; vorticity loop through the baroclinic
      source &Gamma;&#775; = &beta;&middot;&part;T/&part;x. Hot-swapping a slice between a kinematic
-     curl-noise plume (left) and the vortex-in-cell solver (right) through the same particle contract
+     curl-noise plume (left) and the Gaussian vortex solver (right) through the same particle contract
      shows what the physics buys: baroclinic vorticity rolls the plume edges into the characteristic
      unsteady flame silhouette.</p>
   <div class="imgrow narrow">
     <div><img src="static/images/fig_source_proc.jpg" alt="Procedural curl-noise source"><span class="lbl">procedural curl-noise</span></div>
-    <div><img src="static/images/fig_source_vic.jpg" alt="Vortex-in-cell simulation source"><span class="lbl">vortex-in-cell (ours)</span></div>
+    <div><img src="static/images/fig_source_vic.jpg" alt="Vortex-in-cell simulation source"><span class="lbl">Gaussian VPM (ours)</span></div>
   </div>
 
   <h3>Two orthogonal coupling mechanisms</h3>

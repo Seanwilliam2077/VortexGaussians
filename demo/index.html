@@ -145,15 +145,20 @@
       </div>
 
       <div class="cat" id="grpSim" style="display:none">
-        <div class="cathead"><span class="tri">▾</span> Vortex Sim · VIC (Route 2)</div>
+        <div class="cathead"><span class="tri">▾</span> <span id="grpSimTitle">Vortex Sim · VIC (Route 2)</span></div>
         <div class="catbody">
+          <div class="seg" id="solver">
+            <button data-sv="vic">VIC (grid)</button>
+            <button data-sv="vpm" class="on">VPM (grid-free)</button>
+          </div>
           <div class="prow"><label>Buoyancy β</label><input type="range" id="buoy" min="0" max="3" step="0.02" value="0.9"><span class="pval" id="buoyV"></span></div>
           <div class="prow"><label>Baroclinic ∂T/∂x</label><input type="range" id="baro" min="0" max="4" step="0.02" value="1.4"><span class="pval" id="baroV"></span></div>
-          <div class="prow"><label>Core radius ε</label><input type="range" id="eps" min="0.01" max="0.3" step="0.005" value="0.07"><span class="pval" id="epsV"></span></div>
+          <div class="prow"><label>Core radius σ₀/ε</label><input type="range" id="eps" min="0.01" max="0.3" step="0.005" value="0.07"><span class="pval" id="epsV"></span></div>
           <div class="prow"><label>Cooling</label><input type="range" id="cool" min="0.1" max="3" step="0.02" value="1.2"><span class="pval" id="coolV"></span></div>
           <div class="prow"><label>Coarse coupling c</label><input type="range" id="couple" min="0" max="1" step="0.02" value="0.5"><span class="pval" id="coupleV"></span></div>
-          <div class="hint b"><b>Per-slice 2D vortex-in-cell</b>: semi-Lagrangian T <b>advection</b> → baroclinic <code>Γ+=Δt·β·∂T/∂x</code> → P2G → <b>Poisson ψ</b> → <code>u=∇×ψ</code> → advect. O(N+grid).
-            <b>Coarse coupling c</b> blends each slice toward one 16×24 global solve (0 = independent, 1 = fully coherent).</div>
+          <div class="prow" id="thetaRow" style="display:none"><label>Tree θ</label><input type="range" id="theta" min="0.3" max="1.4" step="0.02" value="0.9"><span class="pval" id="thetaV"></span></div>
+          <div class="prow" id="viscRow" style="display:none"><label>Core spread ν</label><input type="range" id="vpmVisc" min="0" max="0.01" step="0.0002" value="0"><span class="pval" id="vpmViscV"></span></div>
+          <div class="hint b" id="simHint"></div>
         </div>
       </div>
 
@@ -165,9 +170,10 @@
             <button data-lk="analysis">Analysis</button>
           </div>
           <div class="seg r1" id="dim">
-            <button data-dm="layer" class="on">2.5D slices (VIC)</button>
+            <button data-dm="layer" class="on">2.5D slices</button>
             <button data-dm="vol">3D curl-noise cloud</button>
             <button data-dm="vic3">3D VIC (baseline)</button>
+            <button data-dm="vpm3">3D VPM (baseline)</button>
           </div>
           <div class="prow" id="vol3DTurbRow" style="display:none"><label>3D turbulence</label><input type="range" id="vol3DTurb" min="0" max="1.5" step="0.02" value="0.6"><span class="pval" id="vol3DTurbV"></span></div>
           <div class="seg" id="slice">
@@ -178,7 +184,7 @@
           <div class="prow"><label>Slice depth</label><input type="range" id="sliceDepth" min="0.1" max="1.6" step="0.02" value="0.7"><span class="pval" id="sliceDepthV"></span></div>
           <div class="prow"><label>Yaw</label><input type="range" id="yaw" min="-3.14" max="3.14" step="0.02" value="0"><span class="pval" id="yawV"></span></div>
           <div class="prow"><label>Camera distance</label><input type="range" id="camDist" min="2.2" max="6" step="0.05" value="3.4"><span class="pval" id="camDistV"></span></div>
-          <div class="prow"><label>Gaussian radius</label><input type="range" id="rad" min="6" max="60" step="1" value="36"><span class="pval" id="radV"></span></div>
+          <div class="prow"><label>Gaussian radius</label><input type="range" id="rad" min="6" max="60" step="1" value="42"><span class="pval" id="radV"></span></div>
           <div class="prow"><label>Covariance strain ∇u</label><input type="range" id="covStretch" min="0" max="3" step="0.02" value="1.3"><span class="pval" id="covStretchV"></span></div>
           <div class="hint b"><b>Covariance strain (Tier2)</b>: each Gaussian carries a deformation gradient F evolved by the velocity gradient ∇u (`Σ̇=LΣ+ΣLᵀ`), so blobs are <b>sheared and rotated into filaments</b> (gaseous PhysGaussian). 0 = spheres, high = strongly filamentary. Requires Motion Stretch.
             <br>Drag or Auto Orbit to move the <b>3D camera</b>. <b>View-aligned (ILM)</b> never degenerates; <b>world-fixed</b> reveals slice edges from the side (§8 trade-off).</div>
@@ -235,7 +241,7 @@
           <div class="crow" id="flicker"><span class="cb on"></span><span>Flicker (fire breathing)</span></div>
           <div class="crow r1" id="filament"><span class="cb"></span><span>Filament (stretch along trajectory, Tier3)</span></div>
           <div class="prow" id="filLenRow" style="display:none"><label>Filament length</label><input type="range" id="filLen" min="0" max="1" step="0.02" value="0.5"><span class="pval" id="filLenV"></span></div>
-          <div class="hint">Drag = orbit camera · <b>Space</b> pause · <b>R</b> reset · <b>F/S</b> fire/smoke · <b>1/2</b> switch route.
+          <div class="hint">Drag = orbit camera · <b>Space</b> pause · <b>R</b> reset · <b>F/S</b> fire/smoke · <b>1/2/3</b> proc / VIC / VPM.
             <b>Filament</b> stretches each Gaussian along its recent trajectory (path-integrated trail) into continuous wisps — complementary to covariance strain, which is instantaneous shear.</div>
         </div>
       </div>
@@ -359,12 +365,14 @@ vec3 fireRamp(float t){
 //  外层用 front-to-back (blendFunc ONE_MINUS_DST_ALPHA, ONE) 做发光-吸收体渲染。
 //  α = 不透明度·exp(高斯衰减); 火 α 低(发光为主), 背景 α 高(遮挡)。
 // 单一高斯足迹: 火/烟/火星/背景全部用同一个 exp(-K·r²)。
-//  角上基座 exp(-K·2) 被减掉并重新归一, 使 α 在四边形边界恰好为 0 —— 无硬截断、无可见方角。
+//  截断在内切圆 r=1 (角区 discard), 基座 exp(-K·1) 减掉并重归一 ⇒ α 在圆边界光滑归零。
+//  (旧版减角点值 exp(-K·2), 边中点残留 ~4.7% α 直线阶跃 → 大 splat 下可见方块边界, 已修。)
 const float KG  = 3.0;
-const float PED = 0.002478752;                     // = exp(-KG*2.0), 四边形角 (r²=2) 处的值
+const float PED = 0.0497870684;                    // = exp(-KG*1.0), 内切圆 (r=1) 边界值
 void main(){
   float r2=dot(v_uv,v_uv);
-  float g=(exp(-KG*r2)-PED)/(1.0-PED); if(g<=0.0) discard;   // 统一高斯足迹
+  if(r2>=1.0) discard;                             // 内切圆截断: α 在圆边界光滑归零, 无四边形直线阶跃
+  float g=(exp(-KG*r2)-PED)/(1.0-PED);             // 统一高斯足迹 (基座在 r=1 处减到 0)
   // ---- 背景 3DGS: 暗色高斯, 被火光局部照亮 (有遮挡 α) ----
   if(v_type>1.5){
     vec2 suv=gl_FragCoord.xy/uRes;
@@ -525,9 +533,10 @@ uniform float uTime;
 // 常数 2.42 而非 3.0: 场景 splat 的四边形半宽是 2.2σ (见 parsePLY 的 ax()),
 // 故四边形坐标 u 处的世界偏移为 2.2σ·u, 指数 = -(2.2u)²/2 = -2.42u²。
 const float KS  = 4.5;                             // = 0.5·3², 四边形半轴为 3σ
-const float PES = 0.0001234098;                    // = exp(-KS*2.0), 角点 (r²=2) 处的值
+const float PES = 0.0111089965;                    // = exp(-KS*1.0), 内切圆 (r=1) 边界值
 void main(){ float r2=dot(v_uv,v_uv);
-  float g=(exp(-KS*r2)-PES)/(1.0-PES); if(g<=0.0) discard;
+  if(r2>=1.0) discard;                             // 内切圆截断 (与 FS_PARTICLE 同款, 无直线阶跃)
+  float g=(exp(-KS*r2)-PES)/(1.0-PES);
   float a=clamp(v_opa,0.0,1.0)*g;
   float fl=0.82+0.18*sin(uTime*17.0+v_uv.x*9.0+v_uv.y*7.0);   // 火线闪烁
   vec3 ember=vec3(1.0,0.38,0.08)*v_glow*2.6*fl*g;             // 燃烧: 发光叠加 (HDR)
@@ -785,7 +794,7 @@ function buildBurnState(){
   const cell=Math.max(1e-6, sceneInfo.extent/32);
   const map=new Map();
   for(let i=0;i<n;i++){ const p=sceneGauss[i].p;
-    const key=((p[0]/cell)|0)+','+((p[1]/cell)|0)+','+((p[2]/cell)|0);
+    const key=Math.floor(p[0]/cell)+','+Math.floor(p[1]/cell)+','+Math.floor(p[2]/cell);   // 与 hashQuery 的 floor 一致 (负坐标)
     let a=map.get(key); if(!a){ a=[]; map.set(key,a); } a.push(i); }
   sceneHash={cell,map};
 }
@@ -883,13 +892,17 @@ function stepSpread(dt){
     else { sx=w[0]; sy=w[1]; dep2=w[2]; }
     let k=Math.round((dep2/P.sliceDepth+0.5)*(N-1)); k=Math.max(0,Math.min(N-1,k));
     const L=layers[k]; if(!L||!L.vic) continue;
-    const gi2=Math.max(0,Math.min(NX-1,Math.round(gX(sx)))),
-          gj2=Math.max(0,Math.min(NY-1,Math.round(gY(sy))));
-    const id2=gj2*NX+gi2;
-    L.vic.T[id2]=Math.min(1.6, L.vic.T[id2]+dt*P.spreadFeed);
+    if(P.solver!=='vpm'){                 // VIC: 注入网格温度源 (VPM 无网格, 热量走热种子粒子进混合场)
+      const gi2=Math.max(0,Math.min(NX-1,Math.round(gX(sx)))),
+            gj2=Math.max(0,Math.min(NY-1,Math.round(gY(sy))));
+      const id2=gj2*NX+gi2;
+      L.vic.T[id2]=Math.min(1.6, L.vic.T[id2]+dt*P.spreadFeed);
+    }
     if(L.ps.length<P.ppl && srand()<0.5){
-      L.ps.push({ x:sx+(srand()-0.5)*0.04, y:sy+srand()*0.03, G:0,
-        T:0.85+srand()*0.15, d:0.8+srand()*0.2, vx:0, vy:0.2, seedp:srand()*99, life:0, sxx:1,sxy:0,syy:1 });
+      const sp={ x:sx+(srand()-0.5)*0.04, y:sy+srand()*0.03, G:0,
+        T:0.85+srand()*0.15, d:0.8+srand()*0.2, vx:0, vy:0.2, seedp:srand()*99, life:0, sxx:1,sxy:0,syy:1,
+        sg:P.eps*0.7071067811865476 };
+      sp.Tb=sp.T; L.ps.push(sp);
     }
   }
 }
@@ -949,7 +962,8 @@ const P = {
   mode:'fire', simLayers:9,        // 默认: 每层都跑涡粒子(VIC) — 对齐导师"每层 vortex particles"
   riseV:1.15, sway:0.9, rate:1500, coolP:0.8, spread:0.7,
   buoy:0.9, baro:1.4, eps:0.07, cool:1.2, gam:1.0, turb:0.55, couple:0.5, interZ:0.0,
-  layers:9, yaw:0.0, rad:36, ppl:1300, wind:0,
+  solver:'vpm', theta:0.9, vpmVisc:0.0, vpmNaive:false, showTiming:false,   // 默认 grid-free VPM; θ=0.9 (误差~3.3%, 换 60fps)
+  layers:9, yaw:0.0, rad:42, ppl:600, wind:0,   // 交互默认 9×600@θ0.9→60fps (sim ~10ms); 基准/质量档 1300 经 __demo.bench 显式设
   camDist:3.5, camElev:0.12, fov:0.85, sliceMode:'view', sliceDepth:0.7,
   covStretch:1.3, covMax:3.6, covRelax:1.0,        // Tier2: 高斯协方差随 ∇u 形变
   dimMode:'layer', vol3DTurb:0.6, vol3DScale:2.4, stretch3:1,  // 'layer'=分层 | 'vol'=运动学 3D 云 | 'vic3'=真 3D VIC 基线 (stretch3=0 关涡拉伸)
@@ -977,27 +991,11 @@ function resetSim(seed){                        // 确定性重置: 种子 + 全
   rebuildLayers(); embers=[]; emberAcc=0; cloud=[]; cloudAcc=0; cloudAcc3=0; vic3=null; vol_t=0;
   coarse.T.fill(0); coarse.Tb.fill(0); coarse.w.fill(0); coarse.psi.fill(0);
   coarse.ux.fill(0); coarse.uy.fill(0);
-  source={x:0,y:0.04,w:0.22,vx:0,px:0,py:0}; simTime=0;
+  source={x:0,y:0.04,w:0.22,vx:0,px:0,py:0}; simTime=0; vpmTick=0;
   if(typeof buildBurnState==='function' && sceneGauss.length) buildBurnState();  // 蔓延状态清零
 }
 
-// ===========================================================================
-//  仿真背景网格 (∂T/∂x, 仅路线2)
-// ===========================================================================
-const GX=20, GY=30;
-function newGrid(){ return {T:new Float32Array(GX*GY), W:new Float32Array(GX*GY)}; }
-function gridIndex(x,y){
-  let gx=Math.floor((x+WX/2)/WX*GX), gy=Math.floor(y/WY*GY);
-  gx=Math.max(0,Math.min(GX-1,gx)); gy=Math.max(0,Math.min(GY-1,gy)); return gy*GX+gx;
-}
-function splatT(grid,x,y,T){ const i=gridIndex(x,y); grid.T[i]+=T; grid.W[i]+=1; }
-function fieldT(grid,gx,gy){ const i=gy*GX+gx; return grid.W[i]>0? grid.T[i]/grid.W[i]:0; }
-function dTdx(grid,x,y){
-  let gx=Math.floor((x+WX/2)/WX*GX), gy=Math.floor(y/WY*GY);
-  gx=Math.max(1,Math.min(GX-2,gx)); gy=Math.max(0,Math.min(GY-1,gy));
-  return (fieldT(grid,gx+1,gy)-fieldT(grid,gx-1,gy))/(WX/GX)/2;
-}
-function makeLayer(seed){ return {ps:[], grid:newGrid(), vic:newVIC(), seed:seed, t:0, acc:0}; }
+function makeLayer(seed){ return {ps:[], vic:newVIC(), seed:seed, t:0, acc:0}; }
 let layers=[];
 function rebuildLayers(){ layers=[]; for(let k=0;k<P.layers;k++){ const L=makeLayer(k*97.13+0.5); L.idx=k; layers.push(L); } }
 function curl(x,y,t,seed){
@@ -1137,39 +1135,16 @@ function emitSim(layer, dt){
   const cap=P.ppl; if(layer.ps.length>=cap) return;
   const n=Math.min(cap-layer.ps.length, 6+(pointer.active?6:0));
   for(let i=0;i<n;i++){ const r=(srand()*2-1);
-    layer.ps.push({ x:source.x+r*source.w*0.5+(srand()-0.5)*0.02, y:source.y+srand()*0.05,
+    const p={ x:source.x+r*source.w*0.5+(srand()-0.5)*0.02, y:source.y+srand()*0.05,
       G:(srand()-0.5)*0.6+Math.sin(layer.seed+layer.t)*0.1,
-      T:0.92+srand()*0.08, d:0.85+srand()*0.15, vx:source.vx*0.5, vy:0, seedp:srand()*99, life:0, sxx:1,sxy:0,syy:1 });
+      T:0.92+srand()*0.08, d:0.85+srand()*0.15, vx:source.vx*0.5, vy:0, seedp:srand()*99, life:0, sxx:1,sxy:0,syy:1,
+      sg:P.eps*0.7071067811865476 };    // VPM 核半径 σ0 (常数, 不消耗 srand → VIC 随机流不变)
+    p.Tb=p.T;                           // VPM 动力学温度 (对应 VIC 网格 T: 线性冷却+源带加热); p.T 仅渲染
+    layer.ps.push(p);
   }
 }
-function biotSavart(ps,px,py,eps2,gscale){ let ux=0,uy=0;
-  for(let j=0;j<ps.length;j++){ const q=ps[j]; const rx=px-q.x,ry=py-q.y;
-    const denom=2*Math.PI*(rx*rx+ry*ry+eps2); const c=q.G*gscale/denom; ux+=-ry*c; uy+=rx*c; }
-  return [ux,uy]; }
-function stepSim(layer,dt,neigh){
-  const ps=layer.ps; layer.t+=dt;
-  layer.grid.T.fill(0); layer.grid.W.fill(0);
-  for(const p of ps) splatT(layer.grid,p.x,p.y,p.T);
-  for(const p of ps){ const g=dTdx(layer.grid,p.x,p.y); p.G+=dt*P.baro*g; p.G*=(1-dt*0.15); }
-  const eps2=P.eps*P.eps;
-  for(const p of ps){
-    let [ux,uy]=biotSavart(ps,p.x,p.y,eps2,P.gam);
-    uy+=P.buoy*(p.T);
-    if(P.turb>0){ const c=curl(p.x,p.y,layer.t,layer.seed); ux+=c[0]*P.turb*0.5; uy+=c[1]*P.turb*0.5; }
-    ux+=P.wind+source.vx*0.3;
-    if(neigh&&P.couple>0){ ux=ux*(1-P.couple)+neigh.ux*P.couple; uy=uy*(1-P.couple)+neigh.uy*P.couple; }
-    p.vx=ux; p.vy=uy;
-  }
-  const out=[];
-  for(let i=0;i<ps.length;i++){ const p=ps[i];
-    p.x+=dt*p.vx; p.y+=dt*p.vy; p.life+=dt;
-    p.T-=dt*P.cool*p.T*p.T; p.d*=(1-dt*0.35);
-    if(p.T>0.03 && p.y<WY && Math.abs(p.x)<WX*0.75 && p.d>0.03) out.push(p);
-  }
-  layer.ps=out;
-}
-function layerMeanVel(layer){ let ux=0,uy=0,n=layer.ps.length||1;
-  for(const p of layer.ps){ ux+=p.vx; uy+=p.vy; } return {ux:ux/n,uy:uy/n}; }
+// (历史 O(N²) biotSavart/stepSim 参考路径已移除 — grid-free 精确参考现由
+//  vpmDirectAll (P.vpmNaive / __demo.vpmErr / __demo.bench 'naive') 承担, 同核可比。)
 
 // ===========================================================================
 //  路线2 升级: Vortex-In-Cell (VIC) + Eulerian 温度场平流 —— 每层一个真 2D 流体解算
@@ -1321,6 +1296,578 @@ function stepSimVIC(layer, dt){
 }
 
 // ===========================================================================
+//  路线2 升级 II: Gaussian-VPM (grid-free) —— 高斯即涡元, 无任何场网格
+//  每个粒子是一个 Lamb–Oseen 涡: ω_i(x) = Γ_i·N(x; x_i, σ_i²I), Γ_i = G_i·gam·A_ref。
+//  速度 = 高斯正则化 Biot–Savart 闭式和 (Barnes–Hut treecode, 远场=矩匹配超级高斯+偶极);
+//  ∇u 解析闭式 (喂 evolveF, 替代网格中心差分); 温度 = Shepard 归一高斯混合,
+//  斜压源用 SPH 反对称差分梯度; 全局导演场 = 4×4 跨层超级高斯 + y=0 镜像涡
+//  (替代 stepCoarse 粗网格与 VIC 闭箱底边)。求解自由度 == 渲染基元;
+//  树/桶只是索引结构, 每帧从粒子重建, 不携带任何独立演化的场状态。
+// ===========================================================================
+const VPM_AREF=HX*HY;                  // 环量量纲: Γ_phys=G·gam·A_ref (对齐 VIC 的 P2G 语义)
+const VPM_KGAIN=0.9;                   // LO 核近中场比旧 (q+ε²) 核强 ~25%, 观感补偿
+const VPM_QX0=-1.6, VPM_QY0=-0.1, VPM_QSIDE=3.2;   // Morton 量化域 (方形, 覆盖剔除域, 固定)
+const VPM_LEAF=8, VPM_MAXD=8, VPM_MACF=1.5;   // 叶容量 · 最大深度 · MAC σc 下限系数
+let vpmInvTheta=1/0.7;                         // 建树时烘焙 MAC 阈值² (θ 每帧读一次滑条)
+function vpmSigma0(){ return P.eps*0.7071067811865476; }   // σ0=ε/√2: 核心固体旋转斜率匹配旧核
+
+// 核形状 LUT: 4096 bin 最近邻 (bin 中心采样, |误差|<1.2e-3), 热循环零 Math.exp、零插值。
+//  f0=e^-a · f1=(1-e^-a)/a · f2=(e^-a-f1)/a · f3=e^(-a/2)  (温度核 σ_T=√2σ ⇒ 指数 a/2)
+//  g=f1/(2σ²), g'=f2/(4σ⁴); a≥9 退化为点涡 g=1/q (免超越函数, 同时是温度紧支撑截断)。
+const VPM_LN=4096, VPM_LSC=VPM_LN/9;
+const vpmF0=new Float32Array(VPM_LN), vpmF1=new Float32Array(VPM_LN),
+      vpmF2=new Float32Array(VPM_LN), vpmF3=new Float32Array(VPM_LN);
+for(let i=0;i<VPM_LN;i++){ const a=(i+0.5)/VPM_LSC, e=Math.exp(-a);
+  const f1=(1-e)/a;
+  vpmF0[i]=e; vpmF1[i]=f1; vpmF2[i]=(e-f1)/a; vpmF3[i]=Math.exp(-a*0.5); }
+
+const vpmPools=[]; let vpmTick=0;
+function vpmPool(k,n){
+  let pl=vpmPools[k];
+  if(!pl || pl.cap<n){
+    let cap=256; while(cap<n) cap<<=1;
+    const nc=2*cap+64;
+    pl=vpmPools[k]={ cap, n:0, root:-1, nNodes:0,
+      X:new Float32Array(cap),Y:new Float32Array(cap),G:new Float32Array(cap),
+      T:new Float32Array(cap),SG:new Float32Array(cap),
+      UX:new Float32Array(cap),UY:new Float32Array(cap),
+      LX:new Float32Array(cap),LXY:new Float32Array(cap),LYX:new Float32Array(cap),
+      TT:new Float32Array(cap),DTX:new Float32Array(cap),DG:new Float32Array(cap),
+      code:new Uint32Array(cap),scode:new Uint32Array(cap),ord:new Uint32Array(cap),tmp:new Uint32Array(cap),cnt256:new Uint32Array(256),
+      ndF:new Float32Array(nc*11), ndI:new Int32Array(nc*6), stack:new Int32Array(1024) };
+  }
+  pl.n=n; return pl;
+}
+function vpmMorton(x,y){
+  let qx=((x-VPM_QX0)*(256/VPM_QSIDE))|0; if(qx<0)qx=0; else if(qx>255)qx=255;
+  let qy=((y-VPM_QY0)*(256/VPM_QSIDE))|0; if(qy<0)qy=0; else if(qy>255)qy=255;
+  qx=(qx|(qx<<4))&0x0F0F; qx=(qx|(qx<<2))&0x3333; qx=(qx|(qx<<1))&0x5555;
+  qy=(qy|(qy<<4))&0x0F0F; qy=(qy|(qy<<2))&0x3333; qy=(qy|(qy<<1))&0x5555;
+  return (qy<<1)|qx;
+}
+function vpmSort(pl,n){                 // 稳定两轮 8-bit 计数排序 (平局保原序 → 确定性)
+  const code=pl.code, ord=pl.ord, tmp=pl.tmp, cnt=pl.cnt256;
+  cnt.fill(0); for(let i=0;i<n;i++) cnt[code[i]&255]++;
+  let s=0; for(let b=0;b<256;b++){ const c=cnt[b]; cnt[b]=s; s+=c; }
+  for(let i=0;i<n;i++) tmp[cnt[code[i]&255]++]=i;
+  cnt.fill(0); for(let i=0;i<n;i++) cnt[(code[i]>>8)&255]++;
+  s=0; for(let b=0;b<256;b++){ const c=cnt[b]; cnt[b]=s; s+=c; }
+  for(let i=0;i<n;i++){ const o=tmp[i]; ord[cnt[(code[o]>>8)&255]++]=o; }
+}
+// 节点: ndF stride 11 = [xc,yc,side,Gc,Wc,Dx,Dy,σc²,√σc²,ΣT,cnt]; ndI stride 6 = [c0(−2=叶),c1,c2,c3,start,end)
+//  簇矩: 有符号单极 Gc + |G|(+底数)加权质心 + 有符号偶极 D + 矩匹配 σc² (含空间弥散) — 全部精确合成。
+//  打包数组已按 Morton 序物理重排 ⇒ 叶范围即连续内存, 热循环零间接寻址。
+function vpmNode(pl, lo, hi, depth, side, bitPos){
+  const id=pl.nNodes++, F=pl.ndF, I=pl.ndI, fb=id*11, ib=id*6;
+  I[ib+4]=lo; I[ib+5]=hi;
+  if(hi-lo<=VPM_LEAF || depth>=VPM_MAXD){
+    I[ib]=-2; I[ib+1]=I[ib+2]=I[ib+3]=-1;
+    let W=0,Gs=0,mx=0,my=0,Ts=0;
+    for(let j=lo;j<hi;j++){ const w=Math.abs(pl.G[j])+1e-4;
+      W+=w; mx+=w*pl.X[j]; my+=w*pl.Y[j]; Gs+=pl.G[j]; Ts+=pl.T[j]; }
+    const xc=mx/W, yc=my/W;
+    let Dx=0,Dy=0,s2=0;
+    for(let j=lo;j<hi;j++){ const w=Math.abs(pl.G[j])+1e-4;
+      const dx=pl.X[j]-xc, dy=pl.Y[j]-yc;
+      Dx+=pl.G[j]*dx; Dy+=pl.G[j]*dy; s2+=w*(pl.SG[j]*pl.SG[j]+dx*dx+dy*dy); }
+    s2/=W;
+    const thr=Math.max(side*vpmInvTheta, VPM_MACF*Math.sqrt(s2));   // MAC 阈值² 建树时烘焙
+    F[fb]=xc;F[fb+1]=yc;F[fb+2]=side;F[fb+3]=Gs;F[fb+4]=W;F[fb+5]=Dx;F[fb+6]=Dy;
+    F[fb+7]=s2;F[fb+8]=thr*thr;F[fb+9]=Ts;F[fb+10]=hi-lo;
+    return id;
+  }
+  const scode=pl.scode;
+  let b1=lo; while(b1<hi && (((scode[b1]>>bitPos)&3)<1)) b1++;
+  let b2=b1; while(b2<hi && (((scode[b2]>>bitPos)&3)<2)) b2++;
+  let b3=b2; while(b3<hi && (((scode[b3]>>bitPos)&3)<3)) b3++;
+  const half=side*0.5;
+  const k0=(b1>lo)? vpmNode(pl,lo,b1,depth+1,half,bitPos-2):-1;
+  const k1=(b2>b1)? vpmNode(pl,b1,b2,depth+1,half,bitPos-2):-1;
+  const k2=(b3>b2)? vpmNode(pl,b2,b3,depth+1,half,bitPos-2):-1;
+  const k3=(hi>b3)? vpmNode(pl,b3,hi,depth+1,half,bitPos-2):-1;
+  I[ib]=k0;I[ib+1]=k1;I[ib+2]=k2;I[ib+3]=k3;
+  let W=0,Gs=0,mx=0,my=0,Ts=0,cn=0;
+  for(let c=0;c<4;c++){ const kk=I[ib+c]; if(kk<0) continue; const cb=kk*11;
+    W+=F[cb+4]; mx+=F[cb+4]*F[cb]; my+=F[cb+4]*F[cb+1]; Gs+=F[cb+3]; Ts+=F[cb+9]; cn+=F[cb+10]; }
+  const xc=mx/W, yc=my/W;
+  let Dx=0,Dy=0,s2=0;
+  for(let c=0;c<4;c++){ const kk=I[ib+c]; if(kk<0) continue; const cb=kk*11;
+    const dx=F[cb]-xc, dy=F[cb+1]-yc;
+    Dx+=F[cb+5]+F[cb+3]*dx; Dy+=F[cb+6]+F[cb+3]*dy; s2+=F[cb+4]*(F[cb+7]+dx*dx+dy*dy); }
+  s2/=W;
+  const thr=Math.max(side*vpmInvTheta, VPM_MACF*Math.sqrt(s2));
+  F[fb]=xc;F[fb+1]=yc;F[fb+2]=side;F[fb+3]=Gs;F[fb+4]=W;F[fb+5]=Dx;F[fb+6]=Dy;
+  F[fb+7]=s2;F[fb+8]=thr*thr;F[fb+9]=Ts;F[fb+10]=cn;
+  return id;
+}
+// 单目标全量求值: 一次树遍历同时累加 u, ∇u(3 独立分量, Lyy=−Lxx), 温度三件套 (S,ΣwT,∂T 和)。
+//  MAC: q > (side/θ + 2√σc²)² → 簇 (单极+偶极速度, 单极 ∇u); 否则叶内逐对精确核。
+//  自项解析注入: 速度 0, 纯自旋 ∓C·G_i/(2σ_i²), 温度 w_ii=1 (S≥1 无除零)。
+const vpmOut={ux:0,uy:0,lxx:0,lxy:0,lyx:0,S:1,sT:0,gx:0,gxx:0};
+function vpmFieldAt(pl, px, py, Ti, tS2, invTheta, C, self){
+  const g0=(self>=0)? C*pl.G[self]/(2*tS2) : 0;   // self<0 = 离粒子求值 (场导出/探针), 无自项
+  let ux=0,uy=0,lxx=0,lxy=-g0,lyx=g0,S=1,sT=Ti,gx=0,gxx=0;
+  const F=pl.ndF, I=pl.ndI, st=pl.stack, X=pl.X,Y=pl.Y,G=pl.G,T=pl.T,SG=pl.SG;
+  const F1=vpmF1,F2=vpmF2,F3=vpmF3;
+  const uni=pl.uni, invU=pl.invU;                     // ν=0 时 σ 全同 → 零除法快路径
+  let sp=0; if(pl.root>=0) st[sp++]=pl.root;
+  while(sp>0){
+    const nd=st[--sp], fb=nd*11, ib=nd*6;
+    const dxn=px-F[fb], dyn=py-F[fb+1], qn=dxn*dxn+dyn*dyn;
+    if(qn>F[fb+8]){                                   // MAC: 阈值² 已在建树时烘焙 (max(side/θ, 1.5σc)²)
+      const inv=1/(F[fb+7]+F[fb+7]), a=qn*inv;        // 每簇仅 1 次除法
+      let f1,f2;
+      if(a<9){ const ix=(a*VPM_LSC)|0; f1=F1[ix]; f2=F2[ix]; }
+      else { f1=1/a; f2=-f1*f1; }
+      const g=f1*inv, gp=f2*inv*inv;
+      const Gc=C*F[fb+3], Dxs=C*F[fb+5], Dys=C*F[fb+6];
+      const kxx=-2*dxn*dyn*gp, kxy=-(g+2*dyn*dyn*gp), kyx=g+2*dxn*dxn*gp;
+      ux += Gc*(-dyn)*g - (Dxs*kxx+Dys*kxy);
+      uy += Gc*dxn*g   - (Dxs*kyx-Dys*kxx);
+      lxx+=Gc*kxx; lxy+=Gc*kxy; lyx+=Gc*kyx;
+    } else if(I[ib]===-2){
+      for(let j=I[ib+4];j<I[ib+5];j++){ if(j===self) continue;   // 叶 = 连续内存段
+        const rx=px-X[j], ry=py-Y[j], q=rx*rx+ry*ry;
+        const inv=uni?invU:1/(tS2+SG[j]*SG[j]), a=q*inv;
+        let f1,f2,f3;
+        if(a<9){ const ix=(a*VPM_LSC)|0; f1=F1[ix]; f2=F2[ix]; f3=F3[ix]; }
+        else { f1=1/a; f2=-f1*f1; f3=0; }
+        const g=f1*inv, gp=f2*inv*inv, Cg=C*G[j];
+        ux+=Cg*(-ry)*g; uy+=Cg*rx*g;
+        lxx+=Cg*(-2*rx*ry*gp); lxy+=Cg*(-(g+2*ry*ry*gp)); lyx+=Cg*(g+2*rx*rx*gp);
+        if(f3>0){ S+=f3; sT+=f3*T[j]; gx+=(T[j]-Ti)*(-rx)*f3; gxx+=rx*rx*f3; }
+      }
+    } else {
+      if(I[ib]>=0)st[sp++]=I[ib]; if(I[ib+1]>=0)st[sp++]=I[ib+1];
+      if(I[ib+2]>=0)st[sp++]=I[ib+2]; if(I[ib+3]>=0)st[sp++]=I[ib+3];
+    }
+  }
+  vpmOut.ux=ux; vpmOut.uy=uy; vpmOut.lxx=lxx; vpmOut.lxy=lxy; vpmOut.lyx=lyx;
+  vpmOut.S=S; vpmOut.sT=sT; vpmOut.gx=gx; vpmOut.gxx=gxx;
+}
+// O(N²) 精确参考路径 (P.vpmNaive / __demo.vpmErr / crossover 基准); 与叶内逐对完全同核。
+function vpmDirectAll(pl, px, py, Ti, tS2, C, self){
+  const g0=C*pl.G[self]/(2*tS2);
+  let ux=0,uy=0,lxx=0,lxy=-g0,lyx=g0,S=1,sT=Ti,gx=0,gxx=0;
+  const X=pl.X,Y=pl.Y,G=pl.G,T=pl.T,SG=pl.SG,n=pl.n;
+  const F1=vpmF1,F2=vpmF2,F3=vpmF3, uni=pl.uni, invU=pl.invU;
+  for(let j=0;j<n;j++){ if(j===self) continue;
+    const rx=px-X[j], ry=py-Y[j], q=rx*rx+ry*ry;
+    const inv=uni?invU:1/(tS2+SG[j]*SG[j]), a=q*inv;
+    let f1,f2,f3;
+    if(a<9){ const ix=(a*VPM_LSC)|0; f1=F1[ix]; f2=F2[ix]; f3=F3[ix]; }
+    else { f1=1/a; f2=-f1*f1; f3=0; }
+    const g=f1*inv, gp=f2*inv*inv, Cg=C*G[j];
+    ux+=Cg*(-ry)*g; uy+=Cg*rx*g;
+    lxx+=Cg*(-2*rx*ry*gp); lxy+=Cg*(-(g+2*ry*ry*gp)); lyx+=Cg*(g+2*rx*rx*gp);
+    if(f3>0){ S+=f3; sT+=f3*T[j]; gx+=(T[j]-Ti)*(-rx)*f3; gxx+=rx*rx*f3; }
+  }
+  vpmOut.ux=ux; vpmOut.uy=uy; vpmOut.lxx=lxx; vpmOut.lxy=lxy; vpmOut.lyx=lyx;
+  vpmOut.S=S; vpmOut.sT=sT; vpmOut.gx=gx; vpmOut.gxx=gxx;
+}
+// ---- 全局导演场 (替代 stepCoarse): 4×4 跨层超级高斯 + y=0 镜像涡 (地面禁穿透) ----
+//  U(x) = (1/L)·Σ簇 [单极+偶极 Biot–Savart] + (0, buoy·T̃_far);  nudge 语义与 VIC 同式。
+//  导演自由度与仿真自由度同为高斯 — "两级皆高斯"。镜像簇: (xc,−yc,−Gc,−Dx,+Dy), 不参与温度。
+const vpmDirAcc=new Float32Array(16*6), vpmDirAcc2=new Float32Array(16*3);
+const vpmDir=new Float32Array(32*8);    // [xc,yc,Gc,Dx,Dy,σc²,ΣT,cnt] × (≤16 真 + ≤16 镜像)
+let vpmDirN=0, vpmDirL=1;
+const vpmDirOut={ux:0,uy:0};
+function vpmBuildDirector(useSim){
+  vpmDirAcc.fill(0); vpmDirAcc2.fill(0); let nl=0;
+  for(let k=0;k<layers.length;k++){ if(!useSim[k]) continue; const pl=vpmPools[k]; if(!pl||pl.n===0) continue;
+    nl++;
+    for(let i=0;i<pl.n;i++){
+      let bx=((pl.X[i]-VPM_QX0)*(4/VPM_QSIDE))|0; if(bx<0)bx=0; else if(bx>3)bx=3;
+      let by=((pl.Y[i]-VPM_QY0)*(4/VPM_QSIDE))|0; if(by<0)by=0; else if(by>3)by=3;
+      const b=(by*4+bx)*6, w=Math.abs(pl.G[i])+1e-4;
+      vpmDirAcc[b]+=w; vpmDirAcc[b+1]+=w*pl.X[i]; vpmDirAcc[b+2]+=w*pl.Y[i];
+      vpmDirAcc[b+3]+=pl.G[i]; vpmDirAcc[b+4]+=pl.T[i]; vpmDirAcc[b+5]+=1;
+    }
+  }
+  vpmDirL=Math.max(1,nl);
+  for(let k=0;k<layers.length;k++){ if(!useSim[k]) continue; const pl=vpmPools[k]; if(!pl||pl.n===0) continue;
+    for(let i=0;i<pl.n;i++){
+      let bx=((pl.X[i]-VPM_QX0)*(4/VPM_QSIDE))|0; if(bx<0)bx=0; else if(bx>3)bx=3;
+      let by=((pl.Y[i]-VPM_QY0)*(4/VPM_QSIDE))|0; if(by<0)by=0; else if(by>3)by=3;
+      const bi=by*4+bx, b=bi*6, b2=bi*3, w=Math.abs(pl.G[i])+1e-4;
+      const xc=vpmDirAcc[b+1]/vpmDirAcc[b], yc=vpmDirAcc[b+2]/vpmDirAcc[b];
+      const dx=pl.X[i]-xc, dy=pl.Y[i]-yc;
+      vpmDirAcc2[b2]+=pl.G[i]*dx; vpmDirAcc2[b2+1]+=pl.G[i]*dy;
+      vpmDirAcc2[b2+2]+=w*(pl.SG[i]*pl.SG[i]+dx*dx+dy*dy);
+    }
+  }
+  let m=0;
+  for(let bi=0;bi<16;bi++){ const b=bi*6;
+    if(vpmDirAcc[b+5]<0.5) continue;
+    const W=vpmDirAcc[b], b2=bi*3, o=m*8;
+    vpmDir[o]=vpmDirAcc[b+1]/W; vpmDir[o+1]=vpmDirAcc[b+2]/W; vpmDir[o+2]=vpmDirAcc[b+3];
+    vpmDir[o+3]=vpmDirAcc2[b2]; vpmDir[o+4]=vpmDirAcc2[b2+1];
+    vpmDir[o+5]=Math.max(1e-4,vpmDirAcc2[b2+2]/W);
+    vpmDir[o+6]=vpmDirAcc[b+4]; vpmDir[o+7]=vpmDirAcc[b+5];
+    m++;
+  }
+  for(let c=0;c<m;c++){ const o=c*8, o2=(m+c)*8;
+    vpmDir[o2]=vpmDir[o]; vpmDir[o2+1]=-vpmDir[o+1]; vpmDir[o2+2]=-vpmDir[o+2];
+    vpmDir[o2+3]=-vpmDir[o+3]; vpmDir[o2+4]=vpmDir[o+4]; vpmDir[o2+5]=vpmDir[o+5];
+    vpmDir[o2+6]=0; vpmDir[o2+7]=0;
+  }
+  vpmDirN=m*2;
+}
+function vpmDirVel(px,py,C){
+  let ux=0,uy=0,ts=0,tw=1;
+  const D=vpmDir, F0=vpmF0, F1=vpmF1;
+  for(let c=0;c<vpmDirN;c++){ const o=c*8;      // 导演场只取单极 (粗糙平滑场, 偶极不值 2× 开销)
+    const dx=px-D[o], dy=py-D[o+1], q=dx*dx+dy*dy, inv=1/(D[o+5]+D[o+5]), a=q*inv;
+    let f0,f1;
+    if(a<9){ const ix=(a*VPM_LSC)|0; f0=F0[ix]; f1=F1[ix]; }
+    else { f0=0; f1=1/a; }
+    const g=f1*inv, Gc=C*D[o+2];
+    ux += Gc*(-dy)*g; uy += Gc*dx*g;
+    if(D[o+7]>0){ ts+=D[o+6]*f0; tw+=D[o+7]*f0; }
+  }
+  const inv=1/vpmDirL;
+  vpmDirOut.ux=ux*inv; vpmDirOut.uy=uy*inv + P.buoy*(ts/tw);
+}
+// ---- 层间涡量耦合 (interZ 的无网格版): 邻层逐对反对称环量交换 (PSE 离散的 ∂²ω/∂z²) ----
+//  δ = dt·kz·η_ij·(G_j−G_i), G_i+=δ, G_j−=δ ⇒ 总环量构造性守恒; 端层自动 Neumann (无邻层)。
+//  η = A_ref·e^(−a)/(2π·σ̄²) 与 VIC 网格版 w 量级对齐, kz 滑条数值沿用。快照语义: 读打包 G。
+function vpmExchangeZ(dt, useSim){
+  const kz=P.interZ, cell=0.25, inv=1/cell, norm=VPM_AREF/(2*Math.PI);
+  for(let k=0;k<layers.length-1;k++){
+    if(!useSim[k]||!useSim[k+1]) continue;
+    const A=vpmPools[k], B=vpmPools[k+1];
+    if(!A||!B||A.n===0||B.n===0||A.n!==layers[k].ps.length||B.n!==layers[k+1].ps.length) continue;
+    const map=new Map();
+    for(let j=0;j<B.n;j++){ const key=(((B.X[j]-VPM_QX0)*inv)|0)*64+(((B.Y[j]-VPM_QY0)*inv)|0);
+      let arr=map.get(key); if(!arr){ arr=[]; map.set(key,arr); } arr.push(j); }
+    A.DG.fill(0,0,A.n); B.DG.fill(0,0,B.n);
+    for(let i=0;i<A.n;i++){
+      const xi=A.X[i], yi=A.Y[i], gi=A.G[i], si2=A.SG[i]*A.SG[i];
+      const cx=((xi-VPM_QX0)*inv)|0, cy=((yi-VPM_QY0)*inv)|0;
+      for(let ox=-1;ox<=1;ox++)for(let oy=-1;oy<=1;oy++){
+        const arr=map.get((cx+ox)*64+(cy+oy)); if(!arr) continue;
+        for(let t=0;t<arr.length;t++){ const j=arr[t];
+          const rx=xi-B.X[j], ry=yi-B.Y[j], q=rx*rx+ry*ry;
+          const s2=0.5*(si2+B.SG[j]*B.SG[j]), a=q/(2*s2);
+          if(a>=9) continue;
+          const d=dt*kz*norm*Math.exp(-a)/s2*(B.G[j]-gi);
+          A.DG[i]+=d; B.DG[j]-=d;
+        }
+      }
+    }
+    const psA=layers[k].ps, psB=layers[k+1].ps;
+    for(let i=0;i<A.n;i++){ let d=A.DG[i]; const lim=0.3*Math.abs(A.G[i])+0.05;
+      if(d>lim)d=lim; else if(d<-lim)d=-lim; psA[A.ord[i]].G+=d; }     // Morton 序 → 原索引
+    for(let j=0;j<B.n;j++){ let d=B.DG[j]; const lim=0.3*Math.abs(B.G[j])+0.05;
+      if(d>lim)d=lim; else if(d<-lim)d=-lim; psB[B.ord[j]].G+=d; }
+  }
+}
+// ---- Phase A: 全部层 发射→加热→(可选核扩散)→打包 SoA→建树, 然后导演簇 + interZ ----
+//  emit 先于建树 ⇒ 新粒子进入当帧解算 (与 VIC "emit 后立刻被本帧解算" 语义一致);
+//  加热是 per-particle 的 (T 是强度量, Shepard 平均自动数密度归一, 无需通量归一)。
+function vpmPrepare(dt, useSim, doEmit){
+  vpmTick++;
+  vpmInvTheta=1/Math.max(0.15,P.theta);
+  const sig0=vpmSigma0(), nu=P.vpmVisc;
+  // 双温度结构逐项对应 VIC: Tb=动力学温度 (源带加热 + 线性冷却 0.5·κ, 即 VIC 网格 T 的粒子化);
+  //  p.T=渲染色温 (只二次冷却, 从不复热 — 与 VIC 粒子 T 完全同款)。
+  const heat=dt*4.5*(pointer.active?1.5:1.0), coolTb=(1-dt*P.cool*0.5);
+  const band=source.y+0.20, iw=1/Math.max(0.05,source.w);
+  for(let k=0;k<layers.length;k++){
+    if(!useSim[k]) continue;
+    const L=layers[k];
+    if(doEmit) emitSim(L,dt);
+    for(const p of L.ps){
+      if(p.Tb===undefined) p.Tb=p.T;
+      if(p.y<band){ const dx=(p.x-source.x)*iw; p.Tb+=heat*Math.exp(-2*dx*dx); }
+      p.Tb*=coolTb; if(p.Tb>1.6)p.Tb=1.6; else if(p.Tb<0)p.Tb=0;
+      if(p.sg===undefined) p.sg=sig0;
+      if(nu>0){ const s2=p.sg*p.sg+2*nu*dt; p.sg=Math.min(0.10,Math.sqrt(s2)); }   // core spreading (Lamb–Oseen 精确解)
+    }
+    const n=L.ps.length, pl=vpmPool(k,n);
+    for(let i=0;i<n;i++){ pl.code[i]=vpmMorton(L.ps[i].x,L.ps[i].y); }
+    vpmSort(pl,n);                            // → pl.ord: 排序序 → 原粒子索引
+    let smn=1e9, smx=-1e9;
+    for(let i=0;i<n;i++){ const p=L.ps[pl.ord[i]];   // 按 Morton 序物理重排 → 叶内存连续
+      pl.X[i]=p.x; pl.Y[i]=p.y; pl.G[i]=p.G; pl.T[i]=p.Tb; const s=p.sg; pl.SG[i]=s;   // 混合场用动力学温度 Tb
+      if(s<smn)smn=s; if(s>smx)smx=s;
+      pl.scode[i]=pl.code[pl.ord[i]]; }
+    pl.uni=(n>0 && smx-smn<1e-9)?1:0;
+    pl.invU=(n>0)?1/(2*pl.SG[0]*pl.SG[0]):1;
+    pl.nNodes=0;
+    pl.root = n>0 ? vpmNode(pl,0,n,0,VPM_QSIDE,14) : -1;
+  }
+  vpmBuildDirector(useSim);
+  if(P.interZ>0 && vpmTick%3===0) vpmExchangeZ(3*dt, useSim);   // 隔 2 帧一次, 步长 3dt (摊销)
+}
+// ---- Phase C: 单层 N-body + 更新 (顺序逐行对齐 VIC 的 G2P 段 L1296–1318) ----
+function stepSimVPM(layer, dt){
+  layer.t+=dt;
+  const k=layer.idx||0, pl=vpmPools[k], ps=layer.ps, n=ps.length;
+  if(!pl || pl.n!==n) return;                            // 防御: prepare 未跑/失配
+  const C=P.gam*VPM_KGAIN*VPM_AREF/(2*Math.PI);
+  const invTheta=1/Math.max(0.15,P.theta);
+  const cpl=P.couple, naive=P.vpmNaive;
+  for(let i=0;i<n;i++){
+    const px=pl.X[i], py=pl.Y[i], Ti=pl.T[i], tS2=pl.SG[i]*pl.SG[i];
+    if(naive) vpmDirectAll(pl,px,py,Ti,tS2,C,i); else vpmFieldAt(pl,px,py,Ti,tS2,invTheta,C,i);
+    let vx=vpmOut.ux, vy=vpmOut.uy;
+    const S=(vpmOut.S>1e-6)?vpmOut.S:1, Tl=vpmOut.sT/S;
+    // 线性一致 SPH 梯度: Σ(Tj−Ti)(−rx)w / Σrx²w — 对任意采样分布, 线性场精确 (矩重归一)
+    let dtx=(vpmOut.gxx>1e-9)?vpmOut.gx/vpmOut.gxx:0;
+    if(dtx>12)dtx=12; else if(dtx<-12)dtx=-12;
+    pl.TT[i]=Tl; pl.DTX[i]=dtx;
+    vy += P.buoy*Tl;                                     // 细层直接浮力 (双浮力结构复制 VIC 现状)
+    if(cpl>0){ vpmDirVel(px,py,C);
+      vx += cpl*(vpmDirOut.ux-vx); vy += cpl*(vpmDirOut.uy-vy); }
+    if(P.turb>0){ const c=curl(px,py,layer.t,layer.seed); vx+=c[0]*P.turb*0.4; vy+=c[1]*P.turb*0.4; }
+    vx += P.wind+source.vx*0.3;
+    const sp2=vx*vx+vy*vy; if(sp2>16){ const s=4/Math.sqrt(sp2); vx*=s; vy*=s; }   // 开域护栏 |u|≤4
+    pl.UX[i]=vx; pl.UY[i]=vy;
+    pl.LX[i]=vpmOut.lxx; pl.LXY[i]=vpmOut.lxy; pl.LYX[i]=vpmOut.lyx;
+  }
+  const out=[];
+  for(let i=0;i<n;i++){ const p=ps[pl.ord[i]];           // 打包数组是 Morton 序, 经 ord 映回原粒子
+    p.vx=pl.UX[i]; p.vy=pl.UY[i];
+    p.G += dt*P.baro*pl.DTX[i]; p.G*=(1-dt*0.1);          // 斜压更新式与 VIC 逐字同 (阻尼 0.1)
+    if(p.G>60)p.G=60; else if(p.G<-60)p.G=-60;
+    if(P.covStretch>0) evolveF(p, pl.LX[i], pl.LXY[i], pl.LYX[i], -pl.LX[i], dt);   // 解析 ∇u, 无差分截断
+    p.x+=dt*p.vx; p.y+=dt*p.vy; p.life+=dt;
+    p.T -= dt*P.cool*p.T*p.T;
+    p.d*=(1-dt*0.3);
+    if(p.T>0.04 && p.y<WY && Math.abs(p.x)<WX*0.7 && p.d>0.03) out.push(p);   // 剔除与 VIC 同款
+  }
+  layer.ps=out;
+}
+// ===========================================================================
+//  M6: 3D Gaussian VPM 基线 (dimMode='vpm3') —— 层栈的 matched control, grid-free 版
+//  矢量环量涡子 α_i = G⃗_i·gam·V_ref (Winckelmans–Leonard 高斯正则):
+//    u(x)  = (1/4π) Σ g₃(ρ)/|r|³ · (α_j × r),  ρ=|r|/σ̄,  g₃(ρ)=erf(ρ/√2)−√(2/π)·ρ·e^(−ρ²/2)
+//    涡拉伸 (α_i·∇)u 逐源直接累加: C₃[ B·(α_j×r)(r·α_i) + A·(α_j×α_i) ] —— 解析, 无差分
+//  与 2D 层栈同核族/同 σ0/同 θ/同粒子预算; 唯一差别 = 矢量涡量 + 拉伸项 (P.stretch3=0 消融)。
+//  不需实时 (基线); 八叉树 Barnes–Hut, 温度混合场与 2D 同构 (Tb 双温度)。
+// ===========================================================================
+function vpmErf(x){                     // Abramowitz–Stegun 7.1.26 (|误差|<1.5e-7)
+  const s=x<0?-1:1; x=Math.abs(x);
+  const t=1/(1+0.3275911*x);
+  const y=1-(((((1.061405429*t-1.453152027)*t)+1.421413741)*t-0.284496736)*t+0.254829592)*t*Math.exp(-x*x);
+  return s*y;
+}
+// LUT 参数化: a=q/(2σ̄²) (与 2D 共用记号), s=ρ²=2a。
+//  A(s)=g₃(√s)/s^1.5  (u 与 α×α 项);  B(s)=(g₃'(√s)·√s−3g₃(√s))/s^2.5  (梯度径向项)
+//  g₃'(ρ)=√(2/π)·ρ²·e^(−ρ²/2)。远支 a≥12.5: g₃→1 ⇒ A=1/s^1.5, B=−3/s^2.5。
+const VPM3_LN=2048, VPM3_LSC=VPM3_LN/12.5;
+const vpm3A=new Float32Array(VPM3_LN), vpm3B=new Float32Array(VPM3_LN);
+(function(){ const c=Math.sqrt(2/Math.PI);
+  for(let i=0;i<VPM3_LN;i++){ const a=(i+0.5)/VPM3_LSC, s=2*a, rho=Math.sqrt(s);
+    const g3=vpmErf(rho*0.7071067811865476)-c*rho*Math.exp(-s*0.5);
+    const g3p=c*s*Math.exp(-s*0.5);
+    vpm3A[i]=g3/(s*rho);                            // s^1.5 = s·√s
+    vpm3B[i]=(g3p*rho-3*g3)/(s*s*rho); } })();
+const vpm3Pool={ cap:0 };
+function vpm3Ensure(n){
+  if(vpm3Pool.cap>=n) return vpm3Pool;
+  let cap=1024; while(cap<n) cap<<=1;
+  const nc=2*cap+64, P3=vpm3Pool;
+  P3.cap=cap;
+  P3.X=new Float32Array(cap);P3.Y=new Float32Array(cap);P3.Z=new Float32Array(cap);
+  P3.AX=new Float32Array(cap);P3.AY=new Float32Array(cap);P3.AZ=new Float32Array(cap);
+  P3.T=new Float32Array(cap);P3.SG=new Float32Array(cap);
+  P3.UX=new Float32Array(cap);P3.UY=new Float32Array(cap);P3.UZ=new Float32Array(cap);
+  P3.SX=new Float32Array(cap);P3.SY=new Float32Array(cap);P3.SZ=new Float32Array(cap);
+  P3.TT=new Float32Array(cap);P3.DTX=new Float32Array(cap);P3.DTZ=new Float32Array(cap);
+  P3.code=new Uint32Array(cap);P3.scode=new Uint32Array(cap);P3.ord=new Uint32Array(cap);
+  P3.tmp=new Uint32Array(cap);P3.cnt256=new Uint32Array(256);
+  P3.ndF=new Float32Array(nc*12);P3.ndI=new Int32Array(nc*10);P3.stack=new Int32Array(2048);
+  return P3;
+}
+function vpm3Morton(x,y,z){
+  let qx=((x-VPM_QX0)*(256/VPM_QSIDE))|0; if(qx<0)qx=0; else if(qx>255)qx=255;
+  let qy=((y-VPM_QY0)*(256/VPM_QSIDE))|0; if(qy<0)qy=0; else if(qy>255)qy=255;
+  let qz=((z+1.6)*(256/VPM_QSIDE))|0; if(qz<0)qz=0; else if(qz>255)qz=255;
+  function sp3(v){ v=(v|(v<<16))&0x030000FF; v=(v|(v<<8))&0x0300F00F; v=(v|(v<<4))&0x030C30C3; v=(v|(v<<2))&0x09249249; return v; }
+  return sp3(qx)|(sp3(qy)<<1)|(sp3(qz)<<2);        // 24-bit octree Morton
+}
+function vpm3Sort(n){                               // 3×8bit 稳定基数排序
+  const P3=vpm3Pool, code=P3.code, ord=P3.ord, tmp=P3.tmp, cnt=P3.cnt256;
+  for(let i=0;i<n;i++) ord[i]=i;
+  for(let pass=0; pass<3; pass++){
+    const sh=pass*8, src=(pass%2===0)?ord:tmp, dst=(pass%2===0)?tmp:ord;
+    cnt.fill(0); for(let i=0;i<n;i++) cnt[(code[src[i]]>>sh)&255]++;
+    let s=0; for(let b=0;b<256;b++){ const c2=cnt[b]; cnt[b]=s; s+=c2; }
+    for(let i=0;i<n;i++){ const o=src[i]; dst[cnt[(code[o]>>sh)&255]++]=o; }
+  }
+  // 3 passes: ord→tmp→ord→tmp, 结果在 tmp; 拷回 ord
+  for(let i=0;i<n;i++) ord[i]=tmp[i];
+}
+// 节点: ndF stride 12=[xc,yc,zc,side,Ax,Ay,Az,Wc,σc²,thr²,ΣT,cnt]; ndI stride 10=[c0..c7(c0=−2叶),start,end)
+function vpm3Node(lo, hi, depth, side, bitPos){
+  const P3=vpm3Pool, id=P3.nNodes++, F=P3.ndF, I=P3.ndI, fb=id*12, ib=id*10;
+  I[ib+8]=lo; I[ib+9]=hi;
+  if(hi-lo<=VPM_LEAF || depth>=8){
+    I[ib]=-2; for(let c=1;c<8;c++) I[ib+c]=-1;
+    let W=0,mx=0,my=0,mz=0,Ax=0,Ay=0,Az=0,Ts=0;
+    for(let j=lo;j<hi;j++){ const w=Math.hypot(P3.AX[j],P3.AY[j],P3.AZ[j])+1e-4;
+      W+=w; mx+=w*P3.X[j]; my+=w*P3.Y[j]; mz+=w*P3.Z[j];
+      Ax+=P3.AX[j]; Ay+=P3.AY[j]; Az+=P3.AZ[j]; Ts+=P3.T[j]; }
+    const xc=mx/W, yc=my/W, zc=mz/W;
+    let s2=0;
+    for(let j=lo;j<hi;j++){ const w=Math.hypot(P3.AX[j],P3.AY[j],P3.AZ[j])+1e-4;
+      const dx=P3.X[j]-xc, dy=P3.Y[j]-yc, dz=P3.Z[j]-zc;
+      s2+=w*(P3.SG[j]*P3.SG[j]+dx*dx+dy*dy+dz*dz); }
+    s2/=W;
+    const thr=Math.max(side*vpmInvTheta, VPM_MACF*Math.sqrt(s2));
+    F[fb]=xc;F[fb+1]=yc;F[fb+2]=zc;F[fb+3]=side;F[fb+4]=Ax;F[fb+5]=Ay;F[fb+6]=Az;
+    F[fb+7]=W;F[fb+8]=s2;F[fb+9]=thr*thr;F[fb+10]=Ts;F[fb+11]=hi-lo;
+    return id;
+  }
+  const scode=P3.scode, half=side*0.5;
+  let b=lo;
+  const bounds=[lo];
+  for(let oct=0; oct<7; oct++){ while(b<hi && (((scode[b]>>bitPos)&7)<=oct)) b++; bounds.push(b); }
+  bounds.push(hi);
+  for(let c=0;c<8;c++){
+    I[ib+c] = (bounds[c+1]>bounds[c]) ? vpm3Node(bounds[c],bounds[c+1],depth+1,half,bitPos-3) : -1;
+  }
+  let W=0,mx=0,my=0,mz=0,Ax=0,Ay=0,Az=0,Ts=0,cn=0;
+  for(let c=0;c<8;c++){ const kk=I[ib+c]; if(kk<0) continue; const cb=kk*12;
+    W+=F[cb+7]; mx+=F[cb+7]*F[cb]; my+=F[cb+7]*F[cb+1]; mz+=F[cb+7]*F[cb+2];
+    Ax+=F[cb+4]; Ay+=F[cb+5]; Az+=F[cb+6]; Ts+=F[cb+10]; cn+=F[cb+11]; }
+  const xc=mx/W, yc=my/W, zc=mz/W;
+  let s2=0;
+  for(let c=0;c<8;c++){ const kk=I[ib+c]; if(kk<0) continue; const cb=kk*12;
+    const dx=F[cb]-xc, dy=F[cb+1]-yc, dz=F[cb+2]-zc;
+    s2+=F[cb+7]*(F[cb+8]+dx*dx+dy*dy+dz*dz); }
+  s2/=W;
+  const thr=Math.max(side*vpmInvTheta, VPM_MACF*Math.sqrt(s2));
+  F[fb]=xc;F[fb+1]=yc;F[fb+2]=zc;F[fb+3]=side;F[fb+4]=Ax;F[fb+5]=Ay;F[fb+6]=Az;
+  F[fb+7]=W;F[fb+8]=s2;F[fb+9]=thr*thr;F[fb+10]=Ts;F[fb+11]=cn;
+  return id;
+}
+// 单目标遍历: u(3) + 拉伸向量 (α_i·∇)u(3) + 温度 (S,ΣwT,双轴矩重归一梯度)。
+//  逐源拉伸: C₃[ B/σ̄⁵·(α_j×r)·(r·α_i) + A/σ̄³·(α_j×α_i) ]; 簇=同式用簇矩。
+const vpm3Out={ux:0,uy:0,uz:0,sx:0,sy:0,sz:0,S:1,sT:0,gx:0,gxx:0,gz:0,gzz:0};
+function vpm3FieldAt(px,py,pz, aix,aiy,aiz, Ti, tS2, C3, self){
+  const P3=vpm3Pool, F=P3.ndF, I=P3.ndI, st=P3.stack;
+  const X=P3.X,Y=P3.Y,Z=P3.Z,AX=P3.AX,AY=P3.AY,AZ=P3.AZ,T=P3.T,SG=P3.SG;
+  const A3=vpm3A,B3=vpm3B,F3=vpmF3;
+  let ux=0,uy=0,uz=0,sx=0,sy=0,sz=0,S=1,sT=Ti,gx=0,gxx=0,gz=0,gzz=0;
+  let sp=0; if(P3.root>=0) st[sp++]=P3.root;
+  while(sp>0){
+    const nd=st[--sp], fb=nd*12, ib=nd*10;
+    const rx=px-F[fb], ry=py-F[fb+1], rz=pz-F[fb+2], q=rx*rx+ry*ry+rz*rz;
+    if(q>F[fb+9]){
+      const s2=F[fb+8], inv=1/(s2+s2), a=q*inv;      // a=q/(2σc²), s=2a
+      let A,B;
+      if(a<12.5){ const ix=(a*VPM3_LSC)|0; A=A3[ix]; B=B3[ix]; }
+      else { const s=2*a, rs=Math.sqrt(s); A=1/(s*rs); B=-3/(s*s*rs); }
+      const sg3=Math.sqrt(s2)*s2, sg5=sg3*s2;        // σc³, σc⁵
+      const jx=F[fb+4], jy=F[fb+5], jz=F[fb+6];
+      const cxr_x=jy*rz-jz*ry, cxr_y=jz*rx-jx*rz, cxr_z=jx*ry-jy*rx;   // α_c × r
+      const kA=C3*A/sg3;
+      ux+=kA*cxr_x; uy+=kA*cxr_y; uz+=kA*cxr_z;
+      const rdai=rx*aix+ry*aiy+rz*aiz, kB=C3*B/sg5*rdai;
+      sx+=kB*cxr_x + kA*(jy*aiz-jz*aiy);
+      sy+=kB*cxr_y + kA*(jz*aix-jx*aiz);
+      sz+=kB*cxr_z + kA*(jx*aiy-jy*aix);
+    } else if(I[ib]===-2){
+      for(let j=I[ib+8];j<I[ib+9];j++){ if(j===self) continue;
+        const dx=px-X[j], dy=py-Y[j], dz=pz-Z[j], qq=dx*dx+dy*dy+dz*dz;
+        const sj=SG[j], s2=0.5*(tS2+sj*sj), inv=1/(s2+s2), a=qq*inv;
+        let A,B,f3;
+        if(a<12.5){ const ix=(a*VPM3_LSC)|0; A=A3[ix]; B=B3[ix];
+          f3=(a<9)?F3[(a*VPM_LSC)|0]:0; }
+        else { const s=2*a, rs=Math.sqrt(s); A=1/(s*rs); B=-3/(s*s*rs); f3=0; }
+        const sg3=Math.sqrt(s2)*s2, sg5=sg3*s2;
+        const jx=AX[j], jy=AY[j], jz=AZ[j];
+        const cxr_x=jy*dz-jz*dy, cxr_y=jz*dx-jx*dz, cxr_z=jx*dy-jy*dx;
+        const kA=C3*A/sg3;
+        ux+=kA*cxr_x; uy+=kA*cxr_y; uz+=kA*cxr_z;
+        const rdai=dx*aix+dy*aiy+dz*aiz, kB=C3*B/sg5*rdai;
+        sx+=kB*cxr_x + kA*(jy*aiz-jz*aiy);
+        sy+=kB*cxr_y + kA*(jz*aix-jx*aiz);
+        sz+=kB*cxr_z + kA*(jx*aiy-jy*aix);
+        if(f3>0){ S+=f3; sT+=f3*T[j];
+          gx+=(T[j]-Ti)*(-dx)*f3; gxx+=dx*dx*f3;
+          gz+=(T[j]-Ti)*(-dz)*f3; gzz+=dz*dz*f3; }
+      }
+    } else {
+      for(let c=0;c<8;c++){ const kk=I[ib+c]; if(kk>=0) st[sp++]=kk; }
+    }
+  }
+  const o=vpm3Out;
+  o.ux=ux;o.uy=uy;o.uz=uz; o.sx=sx;o.sy=sy;o.sz=sz;
+  o.S=S;o.sT=sT; o.gx=gx;o.gxx=gxx; o.gz=gz;o.gzz=gzz;
+}
+function stepSimVPM3(dt){
+  vol_t+=dt;
+  vpmInvTheta=1/Math.max(0.15,P.theta);
+  const n=cloud.length, P3=vpm3Ensure(n);
+  const sig0=vpmSigma0();
+  // Phase A: 加热 (双温度, 3D 径向源带与 VIC3 同参数) + 打包 (Morton 序) + 建树
+  const heat=dt*4.5*(pointer.active?1.5:1.0), coolTb=(1-dt*P.cool*0.5);
+  const band=source.y+0.20, iw=1/Math.max(0.05,source.w);
+  for(const p of cloud){
+    if(p.Tb===undefined) p.Tb=p.T;
+    if(p.y<band){ const dx=(p.x-source.x)*iw, dz=p.z*iw;
+      p.Tb+=heat*Math.exp(-(dx*dx+dz*dz)*2.0); }
+    p.Tb*=coolTb; if(p.Tb>1.6)p.Tb=1.6; else if(p.Tb<0)p.Tb=0;
+    if(p.sg===undefined) p.sg=sig0;
+  }
+  const nz=Math.max(2,P.layers), VREF3=HX*HY*(DZ3()/nz);
+  const C3=P.gam*VPM_KGAIN*VREF3/(4*Math.PI);
+  for(let i=0;i<n;i++){ const p=cloud[i]; P3.code[i]=vpm3Morton(p.x,p.y,p.z); }
+  vpm3Sort(n);
+  for(let i=0;i<n;i++){ const p=cloud[P3.ord[i]];
+    P3.X[i]=p.x; P3.Y[i]=p.y; P3.Z[i]=p.z;
+    P3.AX[i]=p.Gx; P3.AY[i]=p.Gy; P3.AZ[i]=p.Gz;
+    P3.T[i]=p.Tb; P3.SG[i]=p.sg;
+    P3.scode[i]=P3.code[P3.ord[i]]; }
+  P3.nNodes=0; P3.root = n>0 ? vpm3Node(0,n,0,VPM_QSIDE,21) : -1;
+  // Phase C: N-body
+  const ST=(P.stretch3!==undefined?P.stretch3:1), D=DZ3();
+  for(let i=0;i<n;i++){
+    const tS2=P3.SG[i]*P3.SG[i];
+    vpm3FieldAt(P3.X[i],P3.Y[i],P3.Z[i], P3.AX[i],P3.AY[i],P3.AZ[i], P3.T[i], tS2, C3, i);
+    const o=vpm3Out, S=(o.S>1e-6)?o.S:1;
+    P3.TT[i]=o.sT/S;
+    P3.DTX[i]=(o.gxx>1e-9)?o.gx/o.gxx:0; if(P3.DTX[i]>12)P3.DTX[i]=12; else if(P3.DTX[i]<-12)P3.DTX[i]=-12;
+    P3.DTZ[i]=(o.gzz>1e-9)?o.gz/o.gzz:0; if(P3.DTZ[i]>12)P3.DTZ[i]=12; else if(P3.DTZ[i]<-12)P3.DTZ[i]=-12;
+    P3.UX[i]=o.ux; P3.UY[i]=o.uy; P3.UZ[i]=o.uz;
+    P3.SX[i]=o.sx; P3.SY[i]=o.sy; P3.SZ[i]=o.sz;
+  }
+  // 积分 (对齐 stepSimVIC3 的 G2P 段: 斜压 ω̇=β(−∂T/∂z,0,∂T/∂x), 拉伸, 阻尼, cap, 直接浮力, 湍流, 风)
+  const out=[];
+  for(let i=0;i<n;i++){ const p=cloud[P3.ord[i]];
+    p.Gx += dt*P.baro*(-P3.DTZ[i]);  p.Gz += dt*P.baro*P3.DTX[i];
+    p.Gx += dt*ST*P3.SX[i]; p.Gy += dt*ST*P3.SY[i]; p.Gz += dt*ST*P3.SZ[i];   // (α·∇)u 解析
+    const damp=(1-dt*0.1); p.Gx*=damp; p.Gy*=damp; p.Gz*=damp;
+    const gm=Math.hypot(p.Gx,p.Gy,p.Gz);
+    if(gm>6){ const s=6/gm; p.Gx*=s;p.Gy*=s;p.Gz*=s; }
+    let vx=P3.UX[i], vy=P3.UY[i], vz=P3.UZ[i];
+    vy += P.buoy*P3.TT[i];
+    if(P.turb>0){ const c=curl3(p.x*2.4,p.y*2.4,p.z*2.4,vol_t);
+      vx+=c[0]*P.turb*0.2; vy+=c[1]*P.turb*0.2; vz+=c[2]*P.turb*0.2; }
+    vx += P.wind+source.vx*0.3;
+    const sp2=vx*vx+vy*vy+vz*vz; if(sp2>16){ const s=4/Math.sqrt(sp2); vx*=s;vy*=s;vz*=s; }
+    p.vx=vx; p.vy=vy; p.vz=vz;
+    p.x+=dt*vx; p.y+=dt*vy; p.z+=dt*vz; p.life+=dt;
+    p.T-=dt*P.cool*p.T*p.T; p.d*=(1-dt*0.3);
+    if(p.z>D/2)p.z=D/2; else if(p.z<-D/2)p.z=-D/2;               // 与 VIC3 同款层厚夹持
+    if(p.T>0.04 && p.y<WY && Math.abs(p.x)<WX*0.7 && p.d>0.03) out.push(p);
+  }
+  cloud=out;
+}
+
+// ---- 分段计时 (只读 performance.now, 不触仿真状态, 不影响确定性) ----
+const Tm={ acc:{}, t:0,
+  t0(){ this.t=performance.now(); },
+  lap(k){ const n=performance.now(), d=n-this.t; this.t=n;
+    this.acc[k]=(this.acc[k]===undefined)?d:this.acc[k]*0.95+d*0.05; },
+  reset(){ this.acc={}; },
+  snapshot(){ const o={}; for(const k in this.acc) o[k]=+this.acc[k].toFixed(2); return o; } };
+
+// ===========================================================================
 //  基线对照: 真 3D vortex-in-cell (dimMode='vic3')
 //  存在的唯一目的是把「分层分解」这一个变量单独隔离出来度量。因此逐项与分层求解器
 //  对齐: 同世界域 (x,y 全域, z∈[-D/2,D/2] 即层栈占据的同一层厚)、同面内分辨率
@@ -1379,10 +1926,12 @@ function emitSim3(dt){
   const D=DZ3();
   while(cloudAcc3>=1 && cloud.length<cap){ cloudAcc3-=1;
     const a=srand()*6.283, rr=Math.sqrt(srand())*source.w*0.5;
-    cloud.push({ x:source.x+Math.cos(a)*rr, y:source.y+srand()*0.05, z:Math.max(-D/2,Math.min(D/2,Math.sin(a)*rr)),
+    const q={ x:source.x+Math.cos(a)*rr, y:source.y+srand()*0.05, z:Math.max(-D/2,Math.min(D/2,Math.sin(a)*rr)),
       vx:source.vx*0.5, vy:0, vz:0,
       Gx:(srand()-0.5)*0.3, Gy:(srand()-0.5)*0.3, Gz:(srand()-0.5)*0.6,   // 矢量环量
-      T:0.92+srand()*0.08, d:0.85+srand()*0.15, seedp:srand()*99, life:0 });
+      T:0.92+srand()*0.08, d:0.85+srand()*0.15, seedp:srand()*99, life:0 };
+    q.sg=P.eps*0.7071067811865476; q.Tb=q.T;        // vpm3: 核半径 + 动力学温度 (常数, 不消耗 srand)
+    cloud.push(q);
   }
 }
 function stepSimVIC3(dt){
@@ -1471,21 +2020,39 @@ function stepAll(dt){
   } else { source.x*=0.96; source.vx*=0.9; if(Math.abs(source.x)<0.005)source.x=0; source.y=0.04; }
   if(P.dimMode==='vol'){ step3D(dt); stepEmbers(dt); if(P.filament)updateTrails(); return; }   // Tier1: 真三维体模式
   if(P.dimMode==='vic3'){ emitSim3(dt); stepSimVIC3(dt); stepEmbers(dt); if(P.filament)updateTrails(); return; }  // 基线: 真 3D VIC
+  if(P.dimMode==='vpm3'){ emitSim3(dt); stepSimVPM3(dt); stepEmbers(dt); if(P.filament)updateTrails(); return; }  // 基线: 真 3D Gaussian VPM (matched control)
   const N=layers.length, sc=Math.min(P.simLayers,N);
-  if(sc>0) stepCoarse(dt);          // ILM Level-1: 全局粗解算先跑一次, 驱动所有仿真层
-  const useSim=evenMask(N,sc), means=layers.map(layerMeanVel);
-  for(let k=0;k<N;k++){
-    if(useSim[k]) Sources.sim.step(layers[k],dt,{neigh:N>1?means[(k+1)%N]:null});
-    else          Sources.proc.step(layers[k],dt);
+  const useSim=evenMask(N,sc);
+  Tm.t0();
+  if(P.solver==='vpm' && sc>0){
+    // VPM: emit 全部层→打包→建树→导演簇 (pre), 再逐层 N-body。dt 大时 2 子步 (仅交互模式;
+    //  __demo.step 恒 1/60 → 恒单步, 确定性回放不受影响)。
+    const nsub=(dt>1/45)?2:1, sdt=dt/nsub;
+    for(let s=0;s<nsub;s++){
+      vpmPrepare(sdt, useSim, s===0);
+      Tm.lap('prep');
+      for(let k=0;k<N;k++) if(useSim[k]) stepSimVPM(layers[k],sdt);
+      Tm.lap('step');
+    }
+    for(let k=0;k<N;k++) if(!useSim[k]) Sources.proc.step(layers[k],dt);
+  } else {
+    if(sc>0) stepCoarse(dt);        // ILM Level-1: 全局粗解算先跑一次, 驱动所有仿真层 (仅 VIC)
+    Tm.lap('prep');
+    for(let k=0;k<N;k++){
+      if(useSim[k]) Sources.sim.step(layers[k],dt);
+      else          Sources.proc.step(layers[k],dt);
+    }
+    Tm.lap('step');
   }
   stepEmbers(dt);
   stepSpread(dt);                    // splat-graph 火蔓延 (spreadOn 时; 仿真↔场景闭环)
   if(P.filament) updateTrails();
+  Tm.lap('misc');
 }
 // Tier3: 每个粒子记一个滞后位置 (px,py,pz), 用指数滞后追当前位置 → (current−lagged)=最近轨迹
 function updateTrails(){
   const al=0.4*(1-P.filLen)+0.05;
-  if(P.dimMode==='vol'||P.dimMode==='vic3'){ for(const p of cloud){ if(p.px===undefined){p.px=p.x;p.py=p.y;p.pz=p.z;}
+  if(P.dimMode==='vol'||P.dimMode==='vic3'||P.dimMode==='vpm3'){ for(const p of cloud){ if(p.px===undefined){p.px=p.x;p.py=p.y;p.pz=p.z;}
     p.px+=(p.x-p.px)*al; p.py+=(p.y-p.py)*al; p.pz+=(p.z-p.pz)*al; } }
   else { for(const l of layers) for(const p of l.ps){ if(p.px===undefined){p.px=p.x;p.py=p.y;}
     p.px+=(p.x-p.px)*al; p.py+=(p.y-p.py)*al; } }
@@ -1517,7 +2084,7 @@ function emit3D(arr,o, depths,gi, sx,sy, dx,dy, M,m, dep, va, bx,fh,eye, fade, t
 // 收集所有高斯 (火+烟+火星+背景) → 计算深度 → front-to-back 排序 → 写 instData
 let rawData=new Float32Array(0), depths=new Float32Array(0), order=[];
 function gather(){
-  const vol=(P.dimMode==='vol'||P.dimMode==='vic3');   // 两种 3D 粒子云走同一渲染路径
+  const vol=(P.dimMode==='vol'||P.dimMode==='vic3'||P.dimMode==='vpm3');   // 3D 粒子云走同一渲染路径
   let total=0; if(vol) total=cloud.length; else for(const l of layers) total+=l.ps.length;
   const ne=(P.embers&&P.mode==='fire')? embers.length:0;
   const nbg=(P.box? bgGauss.length:0);
@@ -1756,7 +2323,14 @@ function applyLook(name){
   const L=LOOKS[name]; if(!L) return;
   P.look=name; for(const k in L) P[k]=L[k];
   document.querySelectorAll('#look button').forEach(b=>b.classList.toggle('on',b.dataset.lk===name));
-  if(typeof syncUI==='function') syncUI();
+  syncUI();
+}
+// 把 P 的当前值同步回所有滑杆显示 (applyLook 等程序化改 P 后调用; 派发的 input 非 isTrusted, 不会取消开场)
+function syncUI(){
+  document.querySelectorAll('#panel input[type=range]').forEach(el=>{
+    const key=el.id; if(!(key in P) || key==='sceneMax') return;   // sceneMax 滑杆值≠P 值 (×10000), 跳过
+    if(Math.abs(parseFloat(el.value)-P[key])>1e-9){ el.value=P[key]; el.dispatchEvent(new Event('input')); }
+  });
 }
 
 // ===========================================================================
@@ -1797,14 +2371,19 @@ function loop(now){
   document.getElementById('hud').innerHTML =
     `FPS <span class="g">${fps.toFixed(0)}</span> <span class="d">·</span> ${(1000/Math.max(1,fps)).toFixed(1)} ms<br>`+
     `Gaussians <span class="g">${lastCount}</span> <span class="d">·</span> Layers <span class="b">${Ntot}</span> <span class="d">·</span> <span class="e">HDR</span> ${extCBF?'16F':'8bit'}<br>`+
-    `Source <span class="b">${scN}</span>/${Ntot} Sim <span class="d">·</span> <span class="b">${Ntot-scN}</span>/${Ntot} Proc <span class="d">·</span> ${P.mode==='fire'?'Fire · additive':'Smoke · over'}`;
+    `Source <span class="b">${scN}</span>/${Ntot} Sim <span class="d">·</span> <span class="b">${Ntot-scN}</span>/${Ntot} Proc <span class="d">·</span> ${P.mode==='fire'?'Fire · additive':'Smoke · over'}`+
+    (scN>0?` <span class="d">·</span> <span class="b">${P.solver==='vpm'?'VPM':'VIC'}</span>`:'')+
+    (P.showTiming?(()=>{const s=Tm.snapshot();return `<br><span class="d">sim: prep ${s.prep||0} · step ${s.step||0} · misc ${s.misc||0} ms</span>`;})():'');
   requestAnimationFrame(loop);
 }
 
 function updatePipeline(){
-  document.getElementById('pipeline').innerHTML =
-    `<span class="step">T advection + baroclinic vorticity</span> <span class="arr">→</span> `+
-    `<span class="step">VIC: Poisson ψ → u=∇×ψ</span> <span class="arr">→</span> `+
+  const head = (P.solver==='vpm')
+    ? `<span class="step">Gaussian mixture T + SPH ∂T/∂x baroclinic</span> <span class="arr">→</span> `+
+      `<span class="step">treecode Biot–Savart (Lamb–Oseen) + analytic ∇u</span> <span class="arr">→</span> `
+    : `<span class="step">T advection + baroclinic vorticity</span> <span class="arr">→</span> `+
+      `<span class="step">VIC: Poisson ψ → u=∇×ψ</span> <span class="arr">→</span> `;
+  document.getElementById('pipeline').innerHTML = head+
     `<span class="step">§7.1 Particle[]{pos2D,T,density,velocity}</span> <span class="arr">→</span> `+
     `<span class="step">Instanced emissive Gaussians → RGBA16F</span> <span class="arr">→</span> `+
     `<span class="step">bloom + ACES tonemap</span>`;
@@ -1826,17 +2405,33 @@ bindSlider('rate','rate',x=>x|0); bindSlider('coolP','coolP',x=>x.toFixed(2));
 bindSlider('buoy','buoy',x=>x.toFixed(2)); bindSlider('baro','baro',x=>x.toFixed(2));
 bindSlider('eps','eps',x=>x.toFixed(3)); bindSlider('cool','cool',x=>x.toFixed(2));
 bindSlider('couple','couple',x=>x.toFixed(2));
+bindSlider('theta','theta',x=>x.toFixed(2)); bindSlider('vpmVisc','vpmVisc',x=>x.toFixed(4));
+// ---- 求解器切换 (VIC 基线 | VPM grid-free): 指针交换, VIC 路径零污染 ----
+const HINT_VIC=`<b>Per-slice 2D vortex-in-cell</b>: semi-Lagrangian T <b>advection</b> → baroclinic <code>Γ+=Δt·β·∂T/∂x</code> → P2G → <b>Poisson ψ</b> → <code>u=∇×ψ</code> → advect. O(N+grid).
+            <b>Coarse coupling c</b> blends each slice toward one 16×24 global solve (0 = independent, 1 = fully coherent).`;
+const HINT_VPM=`<b>Grid-free Gaussian VPM</b>: each splat <b>is</b> a Lamb–Oseen vortex — closed-form Biot–Savart + <b>analytic ∇u</b> via a Barnes–Hut treecode of moment-matched <b>super-Gaussians</b>; T is the rendered Gaussian mixture (Shepard value, SPH ∂T/∂x baroclinic). No Poisson, no grid anywhere — solver DOFs <b>are</b> the rendered Gaussians.
+            <b>Coarse coupling c</b> nudges toward 4×4 cross-layer super-Gaussians + ground mirror vortices (the directable global field).`;
+function applySolver(){
+  document.querySelectorAll('#solver button').forEach(b=>b.classList.toggle('on',b.dataset.sv===P.solver));
+  const vpm=(P.solver==='vpm');
+  document.getElementById('thetaRow').style.display=vpm?'':'none';
+  document.getElementById('viscRow').style.display=vpm?'':'none';
+  document.getElementById('grpSimTitle').textContent=vpm?'Vortex Sim · VPM (grid-free, Route 2)':'Vortex Sim · VIC (Route 2)';
+  document.getElementById('simHint').innerHTML=vpm?HINT_VPM:HINT_VIC;
+  updatePipeline(); applyDim(); applySources();
+}
+document.querySelectorAll('#solver button').forEach(b=>b.addEventListener('click',()=>{ P.solver=b.dataset.sv; applySolver(); }));
 bindSlider('layers','layers',x=>x|0); bindSlider('yaw','yaw',x=>x.toFixed(2));
 bindSlider('rad','rad',x=>x|0); bindSlider('sliceDepth','sliceDepth',x=>x.toFixed(2));
 bindSlider('camDist','camDist',x=>x.toFixed(2)); bindSlider('covStretch','covStretch',x=>x.toFixed(2));
 function applySlice(){ document.querySelectorAll('#slice button').forEach(b=>b.classList.toggle('on',b.dataset.sm===P.sliceMode)); }
 document.querySelectorAll('#slice button').forEach(b=>b.addEventListener('click',()=>{ P.sliceMode=b.dataset.sm; applySlice(); }));
 bindSlider('vol3DTurb','vol3DTurb',x=>x.toFixed(2));
-function applyDim(){ const vol=(P.dimMode==='vol'||P.dimMode==='vic3');
+function applyDim(){ const vol=(P.dimMode==='vol'||P.dimMode==='vic3'||P.dimMode==='vpm3');
   document.querySelectorAll('#dim button').forEach(b=>b.classList.toggle('on',b.dataset.dm===P.dimMode));
   document.getElementById('vol3DTurbRow').style.display=vol?'':'none';
   document.getElementById('slice').style.display=vol?'none':'';   // 3D 体无切片概念
-  document.getElementById('vpRoute').textContent = vol?'3D':(Math.min(P.simLayers,P.layers)===0?'1':'2'); }
+  document.getElementById('vpRoute').textContent = vol?'3D':(Math.min(P.simLayers,P.layers)===0?'1':'2·'+(P.solver==='vpm'?'VPM':'VIC')); }
 document.querySelectorAll('#look button').forEach(b=>b.addEventListener('click',()=>{ applyLook(b.dataset.lk); }));
 applyLook(P.look); introStart();
 // 任何**真实**输入都立刻结束开场并交还控制权。必须查 isTrusted: syncUI()
@@ -1844,7 +2439,7 @@ applyLook(P.look); introStart();
 ['pointerdown','keydown','wheel','input'].forEach(ev=>
   window.addEventListener(ev, e=>{ if(e && e.isTrusted) introCancel(); },
     {capture:true, passive:true}));
-document.querySelectorAll('#dim button').forEach(b=>b.addEventListener('click',()=>{ P.dimMode=b.dataset.dm; if(P.dimMode==='vol'||P.dimMode==='vic3'){cloud=[];vic3=null;} applyDim(); }));
+document.querySelectorAll('#dim button').forEach(b=>b.addEventListener('click',()=>{ P.dimMode=b.dataset.dm; if(P.dimMode==='vol'||P.dimMode==='vic3'||P.dimMode==='vpm3'){cloud=[];vic3=null;} applyDim(); }));
 bindSlider('exposure','exposure',x=>x.toFixed(2)); bindSlider('emis','emis',x=>x.toFixed(2));
 bindSlider('bloom','bloom',x=>x.toFixed(2)); bindSlider('thresh','thresh',x=>x.toFixed(2));
 bindSlider('boxLight','boxLight',x=>x.toFixed(2)); bindSlider('reflect','reflect',x=>x.toFixed(2));
@@ -1855,7 +2450,7 @@ function applySources(){
   document.getElementById('grpProc').style.display=(sc<N)?'':'none';
   document.getElementById('grpSim').style.display=(sc>0)?'':'none';
   const sv=document.getElementById('simLayersV'); if(sv) sv.textContent=`${sc} / ${N}`;
-  document.getElementById('vpRoute').textContent=sc===0?'1':(sc>=N?'2':'1+2');
+  document.getElementById('vpRoute').textContent=sc===0?'1':((sc>=N?'2':'1+2')+'·'+(P.solver==='vpm'?'VPM':'VIC'));
 }
 (function bindSimLayers(){
   const el=document.getElementById('simLayers');
@@ -1943,7 +2538,8 @@ window.addEventListener('keydown',e=>{
   else if(e.key==='f'||e.key==='F'){ P.mode='fire'; applyMode(); }
   else if(e.key==='s'||e.key==='S'){ P.mode='smoke'; applyMode(); }
   else if(e.key==='1') setSimLayers(0);
-  else if(e.key==='2') setSimLayers(P.layers);
+  else if(e.key==='2'){ P.solver='vic'; applySolver(); setSimLayers(P.layers); }
+  else if(e.key==='3'){ P.solver='vpm'; applySolver(); setSimLayers(P.layers); }
 });
 
 // 无头验证钩子 (预览截图不可用时, 用 eval+readPixels 检验)
@@ -1960,8 +2556,9 @@ window.__demo = {
     const mix=v=>{ f32[0]=v; h=(h^u8[0])>>>0; h=Math.imul(h,16777619)>>>0;
       h=(h^u8[1])>>>0; h=Math.imul(h,16777619)>>>0; h=(h^u8[2])>>>0; h=Math.imul(h,16777619)>>>0;
       h=(h^u8[3])>>>0; h=Math.imul(h,16777619)>>>0; };
+    mix(P.solver==='vpm'?2:1);                        // hash v2: solver tag + 粒子 σ (旧 v1 记录作废, 已重录)
     for(const L of layers){ mix(L.ps.length);
-      for(const p of L.ps){ mix(p.x);mix(p.y);mix(p.T);mix(p.d);mix(p.vx);mix(p.vy);mix(p.G||0); } }
+      for(const p of L.ps){ mix(p.x);mix(p.y);mix(p.T);mix(p.d);mix(p.vx);mix(p.vy);mix(p.G||0);mix(p.sg||0);mix(p.Tb||0); } }
     mix(embers.length); for(const e of embers){ mix(e.x);mix(e.y);mix(e.T); }
     for(let i=0;i<coarse.T.length;i++) mix(coarse.T[i]);
     return ('00000000'+h.toString(16)).slice(-8); },
@@ -1993,11 +2590,72 @@ window.__demo = {
       const px=new Uint8Array(4*n);
       gl.readPixels(Math.floor(w*0.5-w*0.12),py,n,1,gl.RGBA,gl.UNSIGNED_BYTE,px);
       for(let xx=0;xx<n;xx++){ const v=px[xx*4]+px[xx*4+1]+px[xx*4+2]; if(v>24)lit++; if(v>maxv)maxv=v; } }
-    return { samples:n*n, lit, maxv, glError:gl.getError() }; }
+    return { samples:n*n, lit, maxv, glError:gl.getError() }; },
+  // ---- VPM 专属钩子 ----
+  timing(){ return Tm.snapshot(); },
+  pstats(){                                  // 全层粒子统计: 校准 VPM↔VIC 动力学量级用
+    let n=0, aG=0, mG=0, aV=0, mV=0, aT=0, aY=0;
+    for(const L of layers) for(const p of L.ps){ n++;
+      const g=Math.abs(p.G||0), v=Math.hypot(p.vx,p.vy);
+      aG+=g; if(g>mG)mG=g; aV+=v; if(v>mV)mV=v; aT+=p.T; aY+=p.y; }
+    if(!n) return {n:0};
+    return { n, avgAbsG:+(aG/n).toFixed(2), maxAbsG:+mG.toFixed(2),
+             avgV:+(aV/n).toFixed(3), maxV:+mV.toFixed(3), avgT:+(aT/n).toFixed(3), avgY:+(aY/n).toFixed(3) }; },
+  vpmStats(){                                 // 树形状 + 每目标交互数 (层0, 32 个抽样目标)
+    const pl=vpmPools[0]; if(!pl||pl.n===0) return null;
+    const F=pl.ndF, I=pl.ndI; let leaves=0, maxLeaf=0;
+    for(let nd=0;nd<pl.nNodes;nd++){ if(I[nd*6]===-2){ leaves++; const c=I[nd*6+5]-I[nd*6+4]; if(c>maxLeaf)maxLeaf=c; } }
+    const st=pl.stack;
+    let sumD=0,sumC=0,K=0;
+    for(let s=0;s<pl.n;s+=Math.max(1,(pl.n>>5))){ K++;
+      const px=pl.X[s], py=pl.Y[s]; let sp=0, nD=0, nC=0;
+      if(pl.root>=0) st[sp++]=pl.root;
+      while(sp>0){ const nd=st[--sp], fb=nd*11, ib=nd*6;
+        const dx=px-F[fb], dy=py-F[fb+1], q=dx*dx+dy*dy;
+        if(q>F[fb+8]) nC++;
+        else if(I[ib]===-2) nD+=I[ib+5]-I[ib+4];
+        else { if(I[ib]>=0)st[sp++]=I[ib]; if(I[ib+1]>=0)st[sp++]=I[ib+1];
+               if(I[ib+2]>=0)st[sp++]=I[ib+2]; if(I[ib+3]>=0)st[sp++]=I[ib+3]; } }
+      sumD+=nD; sumC+=nC; }
+    return { n:pl.n, nodes:pl.nNodes, leaves, maxLeaf,
+             avgDirect:+(sumD/K).toFixed(1), avgCluster:+(sumC/K).toFixed(1) }; },
+  vpmErr(){                                   // 树 vs O(N²) 精确和: 层0 速度相对 RMS 误差
+    const pl=vpmPools[0]; if(!pl||pl.n===0||P.solver!=='vpm') return null;
+    const C=P.gam*VPM_KGAIN*VPM_AREF/(2*Math.PI), invTheta=1/Math.max(0.15,P.theta);
+    let e2=0,r2=0;
+    for(let i=0;i<pl.n;i++){ const tS2=pl.SG[i]*pl.SG[i];
+      vpmFieldAt(pl,pl.X[i],pl.Y[i],pl.T[i],tS2,invTheta,C,i); const ax=vpmOut.ux, ay=vpmOut.uy;
+      vpmDirectAll(pl,pl.X[i],pl.Y[i],pl.T[i],tS2,C,i);        const bx=vpmOut.ux, by=vpmOut.uy;
+      e2+=(ax-bx)*(ax-bx)+(ay-by)*(ay-by); r2+=bx*bx+by*by; }
+    return { relRMS:+Math.sqrt(e2/Math.max(1e-12,r2)).toFixed(6), n:pl.n, theta:P.theta }; },
+  bench(cfgs){                                // solver∈{vic,vpm,naive} × layers × ppl 计时矩阵
+    cfgs=cfgs||[{solver:'vic',layers:9,ppl:1300},{solver:'vpm',layers:9,ppl:1300}];
+    const res={ua:navigator.userAgent, configs:[]},
+          o={solver:P.solver,layers:P.layers,simLayers:P.simLayers,ppl:P.ppl,naive:P.vpmNaive};
+    for(const c of cfgs){
+      P.solver=(c.solver==='naive')?'vpm':c.solver; P.vpmNaive=(c.solver==='naive');
+      P.layers=c.layers||9; P.simLayers=P.layers; P.ppl=c.ppl||1300;
+      resetSim(c.seed===undefined?12345:c.seed);
+      const warm=c.warm||90, frames=c.frames||240;
+      for(let i=0;i<warm;i++){ simTime+=1/60; stepAll(1/60); }
+      Tm.reset();
+      let t0=performance.now();
+      for(let i=0;i<frames;i++){ simTime+=1/60; stepAll(1/60); }
+      const simMs=(performance.now()-t0)/frames;
+      t0=performance.now(); for(let i=0;i<60;i++) gather(); const gMs=(performance.now()-t0)/60;
+      t0=performance.now(); for(let i=0;i<60;i++) render(); const rMs=Math.max(0,(performance.now()-t0)/60-gMs);
+      let parts=0; for(const L of layers) parts+=L.ps.length;
+      res.configs.push({solver:c.solver, N:P.layers, Np:P.ppl, particles:parts, gaussians:lastCount,
+        simMs:+simMs.toFixed(3), stages:Tm.snapshot(), gatherSortMs:+gMs.toFixed(3),
+        renderMs:+rMs.toFixed(3), totalMs:+(simMs+gMs+rMs).toFixed(3), hash:this.hash()});
+    }
+    P.solver=o.solver; P.layers=o.layers; P.simLayers=o.simLayers; P.ppl=o.ppl; P.vpmNaive=o.naive;
+    resetSim(12345);
+    return res; }
 };
 
 // ---- go ----
-resize(); buildBG(); rebuildLayers(); applyMode(); applySlice(); applyDim(); applyScene(); updatePipeline(); applySources();
+resize(); buildBG(); rebuildLayers(); applyMode(); applySlice(); applyDim(); applyScene(); updatePipeline(); applySources(); applySolver();
 requestAnimationFrame(loop);
 })();
 </script>
