@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Grid vs Grid-Free — Vortex Gaussians solver comparison</title>
+<style>
+  :root{--bg:#101114;--panel:#17181c;--txt:#e8e8e8;--dim:#9aa0a8;--acc:#1a9fff}
+  *{box-sizing:border-box}
+  html,body{margin:0;background:var(--bg);color:var(--txt);
+    font:15px/1.55 system-ui,'Segoe UI',Roboto,Arial,sans-serif;min-height:100%}
+  header{max-width:1500px;margin:0 auto;padding:26px 20px 10px;text-align:center}
+  h1{font-size:26px;margin:0 0 6px}
+  .sub{color:var(--dim);font-size:14px;margin:0 auto;max-width:760px}
+  .sub b{color:#cfe8ff;font-weight:600}
+  #bar{display:flex;gap:10px;justify-content:center;align-items:center;flex-wrap:wrap;
+    margin:16px auto 14px;max-width:1500px;padding:0 20px}
+  button{background:#23252b;color:#e6e6e6;border:1px solid #000;border-radius:6px;
+    padding:8px 18px;font-size:14px;cursor:pointer}
+  button:hover{border-color:var(--acc);color:#fff}
+  button.pri{background:rgba(26,159,255,.14);border-color:rgba(26,159,255,.55);color:#dbeeff}
+  .ctl{display:flex;align-items:center;gap:7px;color:var(--dim);font-size:13px}
+  .ctl input[type=range]{width:120px;accent-color:var(--acc)}
+  .seg{display:flex;border:1px solid #000;border-radius:6px;overflow:hidden}
+  .seg button{border:0;border-radius:0;padding:8px 14px}
+  .seg button.on{background:rgba(26,159,255,.18);color:#eaf4ff}
+  #panes{display:flex;gap:14px;max-width:1500px;margin:0 auto;padding:0 20px 8px}
+  .pane{flex:1;min-width:0;background:var(--panel);border:1px solid #000;border-radius:10px;overflow:hidden}
+  .pane .head{display:flex;justify-content:space-between;align-items:baseline;
+    padding:10px 14px;border-bottom:1px solid #000}
+  .pane .head .name{font-weight:700;font-size:16px}
+  .pane .head .desc{color:var(--dim);font-size:12px}
+  .pane.gf .name{color:#7cc4ff}
+  .pane iframe{display:block;width:100%;aspect-ratio:4/3.1;border:0;background:#000}
+  .pane .stat{display:flex;justify-content:space-between;padding:8px 14px;
+    font:12px/1.4 Consolas,monospace;color:var(--dim);border-top:1px solid #000}
+  .pane .stat b{color:#ffd27c;font-weight:600}
+  #foot{max-width:1500px;margin:6px auto 30px;padding:0 20px;color:var(--dim);
+    font-size:12.5px;text-align:center}
+  #foot a{color:var(--acc);text-decoration:none}
+  @media(max-width:900px){ #panes{flex-direction:column} }
+</style>
+</head>
+<body>
+<header>
+  <h1>Grid&nbsp;Mode vs Grid-Free — the same fire, two solvers</h1>
+  <p class="sub">Both sides run the <b>same seed</b>, the <b>same fixed timestep</b> (1/60&nbsp;s), the same
+    particle budget and renderer, stepped in <b>lockstep</b> — the only difference is how velocity is
+    computed. <b>Grid Mode</b> deposits vorticity on a 32×48 grid per slice and solves a Poisson equation;
+    <b>Grid-Free</b> evaluates each rendered splat as a Lamb–Oseen vortex element through a treecode — no
+    grid anywhere.</p>
+</header>
+
+<div id="bar">
+  <button id="pp" class="pri">⏸ Pause</button>
+  <button id="rst">↻ Restart (same seed)</button>
+  <button id="rnd">🎲 New seed</button>
+  <div class="seg" id="mode">
+    <button data-m="fire" class="on">Fire</button>
+    <button data-m="smoke">Smoke</button>
+  </div>
+  <div class="ctl"><span>Wind</span><input type="range" id="wind" min="-1" max="1" step="0.02" value="0"><span id="windV">0.00</span></div>
+  <div class="ctl"><span id="simT">t = 0.0 s</span></div>
+</div>
+
+<div id="panes">
+  <div class="pane">
+    <div class="head"><span class="name">Grid Mode</span>
+      <span class="desc">VIC · one 32×48 velocity grid per slice · Poisson solve</span></div>
+    <iframe id="ifL" src="demo/index.html?embed=1&solver=vic" title="Grid Mode (VIC)"></iframe>
+    <div class="stat"><span>solver step: <b id="msL">–</b> ms/frame</span><span id="gL"></span></div>
+  </div>
+  <div class="pane gf">
+    <div class="head"><span class="name">Grid-Free</span>
+      <span class="desc">Gaussian VPM · every splat is a vortex element · treecode</span></div>
+    <iframe id="ifR" src="demo/index.html?embed=1&solver=vpm" title="Grid-Free (VPM)"></iframe>
+    <div class="stat"><span>solver step: <b id="msR">–</b> ms/frame</span><span id="gR"></span></div>
+  </div>
+</div>
+
+<div id="foot">
+  Playback pace is gated by the slower side so the two stay in sync frame-for-frame; the per-side cost is
+  the number that matters. Timings are EMA of the simulation step measured live on <i>your</i> machine.
+  &nbsp;·&nbsp; <a href="index.html">project page</a> &nbsp;·&nbsp; <a href="demo/">full demo with all controls</a>
+</div>
+
+<script>
+(function(){
+  const $=id=>document.getElementById(id);
+  const DT=1/60;
+  let seed=42, f=0, paused=false, curWind=0, curMode='fire';
+  const DBG=window.__cmp={boot:Date.now(),msgs:0,ticks:0,state:'init'};
+  const S={L:{el:$('ifL'),ready:false,acked:true,last:0},
+           R:{el:$('ifR'),ready:false,acked:true,last:0}};
+  const post=(s,m)=>{ try{ s.el.contentWindow.postMessage(m,'*'); }catch(e){} };
+  const both=m=>{ post(S.L,m); post(S.R,m); };
+
+  window.addEventListener('message',e=>{ DBG.msgs++;
+    const side = (S.L.el.contentWindow===e.source)?S.L : (S.R.el.contentWindow===e.source)?S.R : null;
+    if(!side) return;
+    const m=e.data||{};
+    if(m.t==='ready'){
+      if(started){ post(side,{t:'set',k:'wind',v:curWind}); post(side,{t:'set',k:'mode',v:curMode}); restart(); return; }  // 单侧重载: 重同步后从头再来
+      side.ready=true; DBG.state='ready:'+(S.L.ready?1:0)+(S.R.ready?1:0); maybeStart(); }
+    else if(m.t==='ack'){ if(m.f!==f) return;           // 陈旧拍 (restart 之前发出) 不计数
+      side.acked=true; side.last=performance.now();
+      if(side===S.L){ $('msL').textContent=m.simMs; $('gL').textContent=m.gaussians+' gaussians'; }
+      else          { $('msR').textContent=m.simMs; $('gR').textContent=m.gaussians+' gaussians'; } }
+  });
+
+  let started=false;
+  function maybeStart(){ if(started||!S.L.ready||!S.R.ready) return; started=true; DBG.state='started'; clearInterval(hello); restart(); }
+  // 握手轮询: iframe 的首个 ready 可能早于本监听器安装 (解析竞态), 主动 ping 到双侧应答为止
+  const hello=setInterval(()=>{ if(!S.L.ready) post(S.L,{t:'hello'}); if(!S.R.ready) post(S.R,{t:'hello'}); },400);
+  setTimeout(()=>{ if(started) return;
+    if(!S.L.ready) $('msL').parentElement.parentElement.innerHTML='<span style="color:#f66">Grid Mode pane failed to load — reload the page or check the console.</span>';
+    if(!S.R.ready) $('msR').parentElement.parentElement.innerHTML='<span style="color:#f66">Grid-Free pane failed to load — reload the page or check the console.</span>';
+  },8000);
+  function restart(){ f=0; S.L.acked=S.R.acked=true; both({t:'reset',seed}); }
+
+  // 锁步驱动: 双侧都回 ack 才发下一拍; 2s 看门狗防单侧卡死。
+  // rAF 打拍子 + 慢速 interval 兜底 (隐藏/后台标签 rAF 停摆, interval 只被钳到 ~1Hz 仍能推进)。
+  function pump(){
+    if(!started||paused) return;
+    const now=performance.now();
+    for(const s of [S.L,S.R]) if(!s.acked && s.last && now-s.last>2000) s.acked=true;
+    if(S.L.acked&&S.R.acked){
+      S.L.acked=S.R.acked=false; S.L.last=S.R.last=now; f++;
+      both({t:'tick',f,dt:DT}); DBG.ticks=f;
+      if(f%12===0) $('simT').textContent='t = '+(f*DT).toFixed(1)+' s';
+    }
+  }
+  (function drive(){ requestAnimationFrame(drive); pump(); })();
+  setInterval(pump,250);
+
+  $('pp').addEventListener('click',()=>{ paused=!paused;
+    $('pp').textContent=paused?'▶ Resume':'⏸ Pause'; });
+  $('rst').addEventListener('click',()=>restart());
+  $('rnd').addEventListener('click',()=>{ seed=1+((Math.random()*99998)|0); restart(); });
+  $('wind').addEventListener('input',e=>{ const v=+e.target.value; curWind=v;
+    $('windV').textContent=v.toFixed(2); both({t:'set',k:'wind',v}); });
+  document.querySelectorAll('#mode button').forEach(b=>b.addEventListener('click',()=>{
+    document.querySelectorAll('#mode button').forEach(x=>x.classList.toggle('on',x===b));
+    curMode=b.dataset.m; both({t:'set',k:'mode',v:b.dataset.m});
+  }));
+})();
+</script>
+</body>
+</html>

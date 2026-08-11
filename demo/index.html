@@ -75,6 +75,11 @@
   .seg button{flex:1;background:#2b2b2b;color:#9b9b9b;border:1px solid #161616;border-radius:3px;
     padding:6px 4px;font-size:11px;cursor:pointer;transition:.1s}
   .seg button:hover{background:#333;color:#d6d6d6}
+  .segsub{display:block;font-size:9px;font-weight:400;color:#8f8f8f;margin-top:1px}
+  .seg button.on .segsub{color:#9fd2ff}
+  #catSolver .seg button{padding:5px 0 4px}
+  #compareBtn{width:100%;background:rgba(26,159,255,.10);border:1px solid rgba(26,159,255,.4);color:#cfe8ff;border-radius:3px;padding:6px 0;cursor:pointer;font-size:11px}
+  #compareBtn:hover{background:rgba(26,159,255,.22)}
   .seg button.on{background:rgba(26,159,255,.16);color:#eaf4ff;border-color:var(--acc);
     box-shadow:inset 0 0 0 1px rgba(26,159,255,.35)}
 
@@ -121,20 +126,31 @@
     <div class="titlebar"><span class="sq"></span> Details</div>
     <div id="scroll">
 
+      <div class="cat" id="catSolver">
+        <div class="cathead"><span class="tri">▾</span> Solver</div>
+        <div class="catbody">
+          <div class="seg" id="solver">
+            <button data-sv="vic">Grid Mode<br><span class="segsub">VIC · 32×48 grid</span></button>
+            <button data-sv="vpm" class="on">Grid-Free<br><span class="segsub">Gaussian VPM</span></button>
+          </div>
+          <div class="hint b">Same fire, same particles — two solvers. <b>Grid Mode</b> solves velocity
+            on a 32×48 grid per slice; <b>Grid-Free</b> makes every rendered splat a Lamb–Oseen vortex
+            element — no grid anywhere, the picture <i>is</i> the simulation state.</div>
+          <div class="btns"><button id="compareBtn">⇆ Compare both · side by side</button></div>
+        </div>
+      </div>
+
       <div class="cat" id="catSource">
-        <div class="cathead"><span class="tri">▾</span> Emitter Source</div>
+        <div class="cathead"><span class="tri">▾</span> Emitter</div>
         <div class="catbody">
           <div class="seg" id="mode">
             <button data-m="fire" class="on">Fire</button>
             <button data-m="smoke">Smoke</button>
           </div>
-          <div class="prow"><label>Sim layers</label><input type="range" id="simLayers" min="0" max="16" step="1" value="9"><span class="pval" id="simLayersV"></span></div>
-          <div class="hint b">§7.1 decoupled interface <code>Layer.step(dt)→Particle[]{pos2D,T,density,velocity}</code>.
-            <b>Sim layers</b> swaps the first k layers from <b>procedural</b> to <b>2D vortex particles (Route 2)</b>; the renderer is unchanged.</div>
         </div>
       </div>
 
-      <div class="cat" id="grpProc">
+      <div class="cat collapsed" id="grpProc">
         <div class="cathead"><span class="tri">▾</span> Plume · Procedural (Route 1)</div>
         <div class="catbody">
           <div class="prow"><label>Rise speed</label><input type="range" id="riseV" min="0.2" max="2.5" step="0.02" value="1.15"><span class="pval" id="riseVV"></span></div>
@@ -144,13 +160,12 @@
         </div>
       </div>
 
-      <div class="cat" id="grpSim" style="display:none">
+      <div class="cat collapsed" id="grpSim" style="display:none">
         <div class="cathead"><span class="tri">▾</span> <span id="grpSimTitle">Vortex Sim · VIC (Route 2)</span></div>
         <div class="catbody">
-          <div class="seg" id="solver">
-            <button data-sv="vic">VIC (grid)</button>
-            <button data-sv="vpm" class="on">VPM (grid-free)</button>
-          </div>
+          <div class="prow"><label>Sim layers</label><input type="range" id="simLayers" min="0" max="16" step="1" value="9"><span class="pval" id="simLayersV"></span></div>
+          <div class="hint b">§7.1 decoupled interface <code>Layer.step(dt)→Particle[]{pos2D,T,density,velocity}</code>.
+            <b>Sim layers</b> swaps the first k layers from <b>procedural</b> to <b>2D vortex particles (Route 2)</b>; the renderer is unchanged.</div>
           <div class="prow"><label>Buoyancy β</label><input type="range" id="buoy" min="0" max="3" step="0.02" value="0.9"><span class="pval" id="buoyV"></span></div>
           <div class="prow"><label>Baroclinic ∂T/∂x</label><input type="range" id="baro" min="0" max="4" step="0.02" value="1.4"><span class="pval" id="baroV"></span></div>
           <div class="prow"><label>Core radius σ₀/ε</label><input type="range" id="eps" min="0.01" max="0.3" step="0.005" value="0.07"><span class="pval" id="epsV"></span></div>
@@ -162,7 +177,7 @@
         </div>
       </div>
 
-      <div class="cat" id="catRender">
+      <div class="cat collapsed" id="catRender">
         <div class="cathead"><span class="tri">▾</span> Representation · 3D Camera</div>
         <div class="catbody">
           <div class="seg r1" id="look">
@@ -191,7 +206,7 @@
         </div>
       </div>
 
-      <div class="cat" id="catPost">
+      <div class="cat collapsed" id="catPost">
         <div class="cathead"><span class="tri">▾</span> Post · HDR</div>
         <div class="catbody">
           <div class="prow"><label>Exposure</label><input type="range" id="exposure" min="0.2" max="3" step="0.02" value="1.0"><span class="pval" id="exposureV"></span></div>
@@ -203,7 +218,7 @@
         </div>
       </div>
 
-      <div class="cat" id="catScene">
+      <div class="cat collapsed" id="catScene">
         <div class="cathead"><span class="tri">▾</span> Scene · Dark 3DGS Background</div>
         <div class="catbody">
           <div class="crow" id="box"><span class="cb on"></span><span>Dark 3DGS background</span></div>
@@ -215,7 +230,7 @@
         </div>
       </div>
 
-      <div class="cat r1" id="catPly">
+      <div class="cat r1 collapsed" id="catPly">
         <div class="cathead"><span class="tri">▾</span> Real GS Scene · .ply (Inria 3DGS)</div>
         <div class="catbody">
           <div class="btns"><button id="plyBtn">📂 Load .ply / .splat …</button></div>
@@ -233,7 +248,7 @@
         </div>
       </div>
 
-      <div class="cat" id="catShow">
+      <div class="cat collapsed" id="catShow">
         <div class="cathead"><span class="tri">▾</span> Show Flags</div>
         <div class="catbody">
           <div class="crow" id="orbit"><span class="cb on"></span><span>Auto Orbit (parallax check)</span></div>
@@ -2413,6 +2428,7 @@ function introStep(dt){
 }
 
 function loop(now){
+  if(typeof EMBED!=='undefined'&&EMBED){ requestAnimationFrame(loop); return; }   // 对比模式: 出图只走 tick
   const rawdt=(now-last)/1000; last=now;
   const dt=Math.min(0.033,rawdt);
   fps=fps*0.9+(1/Math.max(1e-3,rawdt))*0.1;
@@ -2472,7 +2488,12 @@ function applySolver(){
   document.getElementById('simHint').innerHTML=vpm?HINT_VPM:HINT_VIC;
   updatePipeline(); applyDim(); applySources();
 }
-document.querySelectorAll('#solver button').forEach(b=>b.addEventListener('click',()=>{ P.solver=b.dataset.sv; applySolver(); }));
+document.querySelectorAll('#solver button').forEach(b=>b.addEventListener('click',()=>{ P.solver=b.dataset.sv;
+  if(P.simLayers===0){ setSimLayers(P.layers);         // 顶栏选择求解器 = 想看仿真; 从纯程序化自动切回
+    document.getElementById('grpSim').classList.remove('collapsed'); }
+  applySolver(); }));
+{ const cb=document.getElementById('compareBtn');
+  if(cb) cb.addEventListener('click',()=>window.open('../compare.html','_blank')); }
 bindSlider('layers','layers',x=>x|0); bindSlider('yaw','yaw',x=>x.toFixed(2));
 bindSlider('rad','rad',x=>x|0); bindSlider('sliceDepth','sliceDepth',x=>x.toFixed(2));
 bindSlider('camDist','camDist',x=>x.toFixed(2)); bindSlider('covStretch','covStretch',x=>x.toFixed(2));
@@ -2500,7 +2521,7 @@ bindSlider('haze','haze',x=>x.toFixed(2));
 function applySources(){
   const N=P.layers, sc=Math.min(P.simLayers,N);
   document.getElementById('grpProc').style.display=(sc<N)?'':'none';
-  document.getElementById('grpSim').style.display=(sc>0)?'':'none';
+  document.getElementById('grpSim').style.display='';   // 常驻: 滑到 0 也不能藏掉装着滑杆的组
   const sv=document.getElementById('simLayersV'); if(sv) sv.textContent=`${sc} / ${N}`;
   document.getElementById('vpRoute').textContent=sc===0?'1':((sc>=N?'2':'1+2')+'·'+(P.solver==='vpm'?'VPM':'VIC'));
 }
@@ -2547,6 +2568,7 @@ function readPLYFile(file){
   const st=document.getElementById('plyStatus'); st.textContent='Parsing… '+file.name;
   file.arrayBuffer().then(buf=>{ try{ const r=loadPLY(buf);
       st.innerHTML=`✅ ${file.name}<br>Loaded <b>${r.kept.toLocaleString()}</b> / ${r.total.toLocaleString()} Gaussians. Use the sliders to align (scale / rotate / level).`;
+      document.getElementById('catPly').classList.remove('collapsed');   // 载入成功 → 展开放置滑杆
     }catch(e){ st.textContent='❌ '+e.message; } })
    .catch(e=>{ st.textContent='❌ Read failed: '+e.message; });
 }
@@ -2585,6 +2607,7 @@ cv.addEventListener('pointermove',e=>{
 cv.addEventListener('pointerup',()=>{ drag.on=false; pointer.active=false; });
 cv.addEventListener('pointercancel',()=>{ drag.on=false; pointer.active=false; });
 window.addEventListener('keydown',e=>{
+  if(typeof EMBED!=='undefined'&&EMBED) return;   // 对比 iframe: 键盘会单侧改状态, 全部屏蔽
   if(e.code==='Space'){ document.getElementById('pause').click(); e.preventDefault(); }
   else if(e.key==='r'||e.key==='R') rebuildLayers();
   else if(e.key==='f'||e.key==='F'){ P.mode='fire'; applyMode(); }
@@ -2709,6 +2732,44 @@ window.__demo = {
 };
 
 // ---- go ----
+// ===========================================================================
+//  Embed / compare 协议 (?embed=1&solver=vic|vpm&orbit=0):
+//  面板与指针关闭、开场跳过、本地步进暂停 —— 仿真只由 parent 的 postMessage
+//  'tick' 驱动 (固定 dt)。两个 iframe 同种子、同 dt、同步数 ⇒ 唯一变量是求解器。
+//  协议: 入 {t:'tick',f,dt} {t:'reset',seed} {t:'set',k,v}
+//        出 {t:'ready',solver} {t:'ack',f,simMs,gaussians} {t:'resetdone'}
+//  见 ../compare.html。普通打开 (无 ?embed=1) 时此块不改变任何行为。
+// ===========================================================================
+const EMBED=(()=>{ try{ return new URLSearchParams(location.search).get('embed')==='1'; }catch(e){ return false; } })();
+if(EMBED){
+  const q=new URLSearchParams(location.search);
+  const sv=q.get('solver'); if(sv==='vic'||sv==='vpm') P.solver=sv;
+  if(q.get('orbit')==='0') P.orbit=false;
+  P.paused=true; introDone=true; introT=-1;
+  { const ih=document.getElementById('introHint'); if(ih) ih.style.display='none'; }
+  document.getElementById('panel').style.display='none';
+  document.getElementById('pipeline').style.display='none';
+  document.getElementById('hud').style.display='none';       // 计时由 parent 统一展示, 免得两侧口径不一
+  document.getElementById('vptop').style.display='none';
+  cv.style.pointerEvents='none';
+  let emaSim=0;
+  const SET_OK={wind:'number', mode:'string'};        // 白名单: compare.html 实际会发的键
+  window.addEventListener('message',ev=>{
+    if(ev.source!==window.parent) return;             // 只认宿主页
+    const m=ev.data||{};
+    if(m.t==='tick'){ const dt=(m.dt||1/60);
+      const t0=performance.now();
+      orbitPhase+=dt*0.32; simTime+=dt; stepAll(dt);
+      const ms=performance.now()-t0;
+      emaSim=emaSim?emaSim*0.92+ms*0.08:ms;
+      const g=render();
+      parent.postMessage({t:'ack', f:m.f, simMs:+emaSim.toFixed(2), gaussians:g},'*'); }
+    else if(m.t==='reset'){ window.__demo.reset(m.seed||42); emaSim=0; render(); parent.postMessage({t:'resetdone'},'*'); }
+    else if(m.t==='set'){ if(SET_OK[m.k]===typeof m.v){ P[m.k]=m.v; if(m.k==='mode') applyMode(); } }
+    else if(m.t==='hello'){ parent.postMessage({t:'ready', solver:P.solver},'*'); }   // 父页轮询握手, 免竞态
+  });
+  parent.postMessage({t:'ready', solver:P.solver},'*');
+}
 resize(); buildBG(); rebuildLayers(); applyMode(); applySlice(); applyDim(); applyScene(); updatePipeline(); applySources(); applySolver();
 requestAnimationFrame(loop);
 })();

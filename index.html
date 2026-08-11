@@ -163,8 +163,8 @@
       transport stacking drops; one depth-sorted emission&ndash;absorption rasterizer composites flame,
       smoke, embers, and reconstructed 3DGS scenes with per-primitive mutual occlusion, so a foreground
       object correctly occludes the flame. Our single-file WebGL2 prototype runs in real time on a
-      workstation-class desktop &mdash; 8.9 ms per frame (112 FPS) at defaults, scaling linearly in
-      slice count &mdash; supporting interactive in-scene ignition, wind, and coupling control, with a
+      workstation-class desktop &mdash; 17.1 ms per frame (58 FPS) at the shipping preset, scaling
+      near-linearly in slice count &mdash; supporting interactive in-scene ignition, wind, and coupling control, with a
       deterministic-replay harness that makes every reported number bit-reproducible.
     </p>
   </div>
@@ -188,7 +188,7 @@
     <div class="stat"><b>1 : 1</b><span>vortex particle &rarr; Gaussian<br>(no voxelization, no meshing)</span></div>
     <div class="stat"><b>0</b><span>pressure variables<br>(pure vorticity&ndash;streamfunction)</span></div>
     <div class="stat"><b>O(N<sub>p</sub>+G)</b><span>velocity reconstruction<br>(vs O(N<sub>p</sub>&sup2;) Biot&ndash;Savart)</span></div>
-    <div class="stat"><b>8.9 ms</b><span>112 FPS at defaults<br>(RTX 3080, CPU-JS sim)</span></div>
+    <div class="stat"><b>17.1 ms</b><span>58 FPS at the shipping preset<br>(RTX 3080, CPU-JS sim)</span></div>
   </div>
 </section>
 
@@ -232,11 +232,14 @@
 <section class="alt">
   <div class="wrap">
     <h2>Supplemental video</h2>
-    <p class="narrow">Six single-take sequences, unedited &mdash; including the
-      <b>failure case</b> (fast azimuth change), shown rather than cut around. Frames are rendered
+    <p class="narrow">Four single-take sequences, unedited. The first three are <b>side-by-side
+      solver comparisons</b> &mdash; Grid&nbsp;Mode (VIC) on the left, Grid-Free (Gaussian VPM) on the
+      right, run from the <b>same seed</b> at the same fixed timestep through the identical renderer,
+      so every visual difference is the solver: fixed camera, constant-rate orbit, and scripted
+      interaction. The finale is the fire-spread loop on a loaded scene. Frames are rendered
       deterministically at &Delta;t = 1/60&nbsp;s and encoded at 60&nbsp;fps, so playback speed equals
-      simulation speed; the on-screen counter is the rate measured live on the same machine
-      (18.4&nbsp;ms, 54&nbsp;FPS).</p>
+      simulation speed; each side's overlay shows that solver's cost on the reference machine
+      (five-seed median: 15.5&nbsp;ms/65&nbsp;FPS grid, 17.1&nbsp;ms/58&nbsp;FPS grid-free).</p>
     <div class="narrow">
       <video controls preload="metadata" playsinline
              style="width:100%;border-radius:12px;display:block;background:#0a0a0d"
@@ -353,7 +356,7 @@
   <p class="narrow muted" style="font-size:.9rem">For calibration: FieryGS reports 2.37 s/frame
      (0.84 s of which is the fire/smoke ray march, RTX 4090D); Gaussian Fluids reports 38&ndash;228 s per
      <i>time step</i> (RTX 4090); production layered fire required ~20 s per slice per frame on a GPU
-     farm. Our prototype runs the full loop at 112 FPS (8.9 ms/frame, measured) &mdash; in a browser,
+     farm. Our prototype runs the full loop at 58 FPS (17.1 ms/frame, five-seed median) &mdash; in a browser,
      with the simulation single-threaded in CPU JavaScript.</p>
 </section>
 
@@ -374,6 +377,9 @@
       </div>
       <figure><figcaption>If the embed does not start, open the demo
         <a href="demo/" target="_blank" rel="noopener">in its own tab</a>.</figcaption></figure>
+      <p style="text-align:center;margin:18px 0 0">
+        <a class="btn" href="compare.html" target="_blank" rel="noopener"
+           style="display:inline-block">&#8646; Grid&nbsp;Mode vs Grid-Free &mdash; run both solvers side by side</a></p>
     </div>
   </div>
 </section>
