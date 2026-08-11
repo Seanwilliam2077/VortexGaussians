@@ -144,6 +144,109 @@
   </p>
 </section>
 
+<!-- ======================= video ======================= -->
+<section class="alt">
+  <div class="wrap">
+    <h2>Watch: Grid&nbsp;Mode vs Grid-Free &mdash; same seed, side by side</h2>
+    <p class="narrow">Four single-take sequences, unedited. The first three are <b>side-by-side
+      solver comparisons</b> &mdash; Grid&nbsp;Mode (VIC) on the left, Grid-Free (Gaussian VPM) on the
+      right, run from the <b>same seed</b> at the same fixed timestep through the identical renderer,
+      so every visual difference is the solver: fixed camera, constant-rate orbit, and scripted
+      interaction. The finale is the fire-spread loop on a loaded scene. Frames are rendered
+      deterministically at &Delta;t = 1/60&nbsp;s and encoded at 60&nbsp;fps, so playback speed equals
+      simulation speed; each side's overlay shows that solver's cost on the reference machine
+      (five-seed median: 15.5&nbsp;ms/65&nbsp;FPS grid, 17.1&nbsp;ms/58&nbsp;FPS grid-free).</p>
+    <div class="narrow">
+      <video controls preload="metadata" playsinline
+             style="width:100%;border-radius:12px;display:block;background:#0a0a0d"
+             poster="static/images/fig_teaser_flame.jpg">
+        <source src="static/video/vortex_gaussians_supplemental.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= fire spread ======================= -->
+<section class="wrap">
+  <h2>The scene itself burns: fire spread on the splats</h2>
+  <p class="narrow">
+    Combustion state &mdash; heat, fuel, char, glow &mdash; lives <b>directly on the reconstruction's
+    splats</b>. The simulated flame ignites nearby geometry; fire spreads splat-to-splat with
+    conventional heat-threshold physics (after Pirk et&nbsp;al. 2017, H&auml;drich et&nbsp;al. 2021);
+    charring is written straight into the splats' albedo and opacity; and burning geometry
+    <b>re-seeds the solver with new plumes</b> &mdash; a real-time, bidirectional
+    simulation&harr;scene loop. Below: a single ignition inside the fire ring spreads through the fuel, the splats themselves glow and char, and the plume above the fire is fed by the burning <i>scene</i> rather than only by the original emitter.
+  </p>
+  <div class="imgrow">
+    <div><img src="static/images/fig_spread_t1.jpg" alt="Ignition inside the fire ring"><span class="lbl">t &asymp; 3 s &mdash; ignition in the ring</span></div>
+    <div><img src="static/images/fig_spread_t2.jpg" alt="Pillar engulfed in fire"><span class="lbl">t &asymp; 10 s &mdash; fuel burning, feeding the solver</span></div>
+    <div><img src="static/images/fig_spread_t3.jpg" alt="Fuel consumed, char written into splat albedo"><span class="lbl">t &asymp; 22 s &mdash; consumed, char in splat albedo</span></div>
+  </div>
+</section>
+
+<!-- ======================= live demo ======================= -->
+<section class="alt">
+  <div class="wrap">
+    <h2>Interactive demo &mdash; runs in your browser</h2>
+    <p class="narrow">The entire system is a single dependency-free HTML file (CPU JavaScript
+      simulation + WebGL2 rendering). Drag to orbit, <b>Shift-drag to move the fire source</b>, add
+      wind, sweep the coupling, toggle fire&#8596;smoke, hot-swap solvers per slice &mdash; or load
+      your own Inria-format <code>.ply</code> reconstruction and light a fire inside it.</p>
+    <div class="narrow">
+      <div class="demo-shell" id="demoShell">
+        <div class="demo-poster" id="demoPoster">
+          <div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
+          <span>Click to launch the live WebGL2 demo (~160 KB, 57 KB gzipped)</span>
+        </div>
+      </div>
+      <figure><figcaption>If the embed does not start, open the demo
+        <a href="demo/" target="_blank" rel="noopener">in its own tab</a>.</figcaption></figure>
+      <p style="text-align:center;margin:18px 0 0">
+        <a class="btn" href="compare.html" target="_blank" rel="noopener"
+           style="display:inline-block">&#8646; Grid&nbsp;Mode vs Grid-Free &mdash; run both solvers side by side</a></p>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= occlusion slider ======================= -->
+<section>
+  <div class="wrap">
+    <h2>GS-native composition: the fire lives <i>inside</i> the scene</h2>
+    <p class="narrow">
+      Loaded 3DGS reconstructions are merged into the same global depth order as the fire by an
+      asymmetric two-stream interleave: the small dynamic set is sorted exactly, the scene is
+      counting-sorted into 96 view-depth buckets in O(m+K), and the two pre-ordered streams are
+      interleaved near-to-far under one blend state &mdash; at a <b>small measured overhead</b>
+      (30.7 vs 28.3 ms median render at 45.8k scene splats over the full 9&times;1300 flame, +8%,
+      within the run-to-run spread).
+      A fire-ring stone stands directly between the camera and the white-hot core.
+      <b>Drag the slider.</b> On the left (ours) the stone's dark silhouette bites into the core through
+      a soft, correctly blended Gaussian boundary &mdash; each primitive occludes according to its own
+      depth. On the right the scene is sorted <i>correctly</i> among itself and only the interleave
+      between the two streams is removed &mdash; the structure of compositing a ray-marched volume onto
+      a reconstructed backdrop. The scene renders faithfully, yet the flame composites in front of
+      <i>every</i> primitive: the stone's silhouette vanishes from the core and smoke stops wrapping
+      the post.
+    </p>
+    <div class="narrow">
+      <div class="cmp" id="cmp1">
+        <img src="static/images/fig_scene_occlusion_backdrop.jpg" alt="Backdrop-composited baseline: scene sorted correctly, streams not interleaved">
+        <div class="top"><img src="static/images/fig_scene_occlusion_sorted.jpg" alt="Depth-interleaved compositing"></div>
+        <div class="bar"></div><div class="knob">&#8596;</div>
+        <div class="tag l">Ours: depth-interleaved</div><div class="tag r">Baseline: backdrop composite</div>
+      </div>
+      <figure><figcaption>Synthetic test reconstruction (45,808 splats: plank floor, stone wall, stone fire
+        ring, fuel logs, rear post). Identical simulation state, camera and shading on both sides &mdash; only the
+        composition order differs. The paper compares against a ladder of three baselines: this backdrop
+        composite, a stronger <b>depth-aware</b> one in which scene splats write a depth buffer and fire
+        fragments are z-tested against it, and a fully unsorted case. The depth-aware baseline handles opaque
+        occluders; what it cannot express is partial transmittance through a semi-transparent splat, so every
+        soft boundary collapses into a binary, aliased silhouette.</figcaption></figure>
+    </div>
+  </div>
+</section>
+
+
 <!-- ======================= abstract ======================= -->
 <section class="alt">
   <div class="wrap narrow">
@@ -189,85 +292,6 @@
     <div class="stat"><b>0</b><span>pressure variables<br>(pure vorticity&ndash;streamfunction)</span></div>
     <div class="stat"><b>O(N<sub>p</sub>+G)</b><span>velocity reconstruction<br>(vs O(N<sub>p</sub>&sup2;) Biot&ndash;Savart)</span></div>
     <div class="stat"><b>17.1 ms</b><span>58 FPS at the shipping preset<br>(RTX 3080, CPU-JS sim)</span></div>
-  </div>
-</section>
-
-<!-- ======================= occlusion slider ======================= -->
-<section class="alt">
-  <div class="wrap">
-    <h2>GS-native composition: the fire lives <i>inside</i> the scene</h2>
-    <p class="narrow">
-      Loaded 3DGS reconstructions are merged into the same global depth order as the fire by an
-      asymmetric two-stream interleave: the small dynamic set is sorted exactly, the scene is
-      counting-sorted into 96 view-depth buckets in O(m+K), and the two pre-ordered streams are
-      interleaved near-to-far under one blend state &mdash; at a <b>small measured overhead</b>
-      (30.7 vs 28.3 ms median render at 45.8k scene splats over the full 9&times;1300 flame, +8%,
-      within the run-to-run spread).
-      A fire-ring stone stands directly between the camera and the white-hot core.
-      <b>Drag the slider.</b> On the left (ours) the stone's dark silhouette bites into the core through
-      a soft, correctly blended Gaussian boundary &mdash; each primitive occludes according to its own
-      depth. On the right the scene is sorted <i>correctly</i> among itself and only the interleave
-      between the two streams is removed &mdash; the structure of compositing a ray-marched volume onto
-      a reconstructed backdrop. The scene renders faithfully, yet the flame composites in front of
-      <i>every</i> primitive: the stone's silhouette vanishes from the core and smoke stops wrapping
-      the post.
-    </p>
-    <div class="narrow">
-      <div class="cmp" id="cmp1">
-        <img src="static/images/fig_scene_occlusion_backdrop.jpg" alt="Backdrop-composited baseline: scene sorted correctly, streams not interleaved">
-        <div class="top"><img src="static/images/fig_scene_occlusion_sorted.jpg" alt="Depth-interleaved compositing"></div>
-        <div class="bar"></div><div class="knob">&#8596;</div>
-        <div class="tag l">Ours: depth-interleaved</div><div class="tag r">Baseline: backdrop composite</div>
-      </div>
-      <figure><figcaption>Synthetic test reconstruction (45,808 splats: plank floor, stone wall, stone fire
-        ring, fuel logs, rear post). Identical simulation state, camera and shading on both sides &mdash; only the
-        composition order differs. The paper compares against a ladder of three baselines: this backdrop
-        composite, a stronger <b>depth-aware</b> one in which scene splats write a depth buffer and fire
-        fragments are z-tested against it, and a fully unsorted case. The depth-aware baseline handles opaque
-        occluders; what it cannot express is partial transmittance through a semi-transparent splat, so every
-        soft boundary collapses into a binary, aliased silhouette.</figcaption></figure>
-    </div>
-  </div>
-</section>
-
-
-<!-- ======================= video ======================= -->
-<section class="alt">
-  <div class="wrap">
-    <h2>Supplemental video</h2>
-    <p class="narrow">Four single-take sequences, unedited. The first three are <b>side-by-side
-      solver comparisons</b> &mdash; Grid&nbsp;Mode (VIC) on the left, Grid-Free (Gaussian VPM) on the
-      right, run from the <b>same seed</b> at the same fixed timestep through the identical renderer,
-      so every visual difference is the solver: fixed camera, constant-rate orbit, and scripted
-      interaction. The finale is the fire-spread loop on a loaded scene. Frames are rendered
-      deterministically at &Delta;t = 1/60&nbsp;s and encoded at 60&nbsp;fps, so playback speed equals
-      simulation speed; each side's overlay shows that solver's cost on the reference machine
-      (five-seed median: 15.5&nbsp;ms/65&nbsp;FPS grid, 17.1&nbsp;ms/58&nbsp;FPS grid-free).</p>
-    <div class="narrow">
-      <video controls preload="metadata" playsinline
-             style="width:100%;border-radius:12px;display:block;background:#0a0a0d"
-             poster="static/images/fig_teaser_flame.jpg">
-        <source src="static/video/vortex_gaussians_supplemental.mp4" type="video/mp4">
-      </video>
-    </div>
-  </div>
-</section>
-
-<!-- ======================= fire spread ======================= -->
-<section class="wrap">
-  <h2>The scene itself burns: fire spread on the splats</h2>
-  <p class="narrow">
-    Combustion state &mdash; heat, fuel, char, glow &mdash; lives <b>directly on the reconstruction's
-    splats</b>. The simulated flame ignites nearby geometry; fire spreads splat-to-splat with
-    conventional heat-threshold physics (after Pirk et&nbsp;al. 2017, H&auml;drich et&nbsp;al. 2021);
-    charring is written straight into the splats' albedo and opacity; and burning geometry
-    <b>re-seeds the solver with new plumes</b> &mdash; a real-time, bidirectional
-    simulation&harr;scene loop. Below: a single ignition inside the fire ring spreads through the fuel, the splats themselves glow and char, and the plume above the fire is fed by the burning <i>scene</i> rather than only by the original emitter.
-  </p>
-  <div class="imgrow">
-    <div><img src="static/images/fig_spread_t1.jpg" alt="Ignition inside the fire ring"><span class="lbl">t &asymp; 3 s &mdash; ignition in the ring</span></div>
-    <div><img src="static/images/fig_spread_t2.jpg" alt="Pillar engulfed in fire"><span class="lbl">t &asymp; 10 s &mdash; fuel burning, feeding the solver</span></div>
-    <div><img src="static/images/fig_spread_t3.jpg" alt="Fuel consumed, char written into splat albedo"><span class="lbl">t &asymp; 22 s &mdash; consumed, char in splat albedo</span></div>
   </div>
 </section>
 
@@ -361,30 +385,6 @@
      <i>time step</i> (RTX 4090); production layered fire required ~20 s per slice per frame on a GPU
      farm. Our prototype runs the full loop at 58 FPS (17.1 ms/frame, five-seed median) &mdash; in a browser,
      with the simulation single-threaded in CPU JavaScript.</p>
-</section>
-
-<!-- ======================= live demo ======================= -->
-<section class="alt">
-  <div class="wrap">
-    <h2>Interactive demo &mdash; runs in your browser</h2>
-    <p class="narrow">The entire system is a single dependency-free HTML file (CPU JavaScript
-      simulation + WebGL2 rendering). Drag to orbit, <b>Shift-drag to move the fire source</b>, add
-      wind, sweep the coupling, toggle fire&#8596;smoke, hot-swap solvers per slice &mdash; or load
-      your own Inria-format <code>.ply</code> reconstruction and light a fire inside it.</p>
-    <div class="narrow">
-      <div class="demo-shell" id="demoShell">
-        <div class="demo-poster" id="demoPoster">
-          <div class="play"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></div>
-          <span>Click to launch the live WebGL2 demo (~160 KB, 57 KB gzipped)</span>
-        </div>
-      </div>
-      <figure><figcaption>If the embed does not start, open the demo
-        <a href="demo/" target="_blank" rel="noopener">in its own tab</a>.</figcaption></figure>
-      <p style="text-align:center;margin:18px 0 0">
-        <a class="btn" href="compare.html" target="_blank" rel="noopener"
-           style="display:inline-block">&#8646; Grid&nbsp;Mode vs Grid-Free &mdash; run both solvers side by side</a></p>
-    </div>
-  </div>
 </section>
 
 <!-- ======================= bibtex ======================= -->
