@@ -200,14 +200,17 @@
       Loaded 3DGS reconstructions are merged into the same global depth order as the fire by an
       asymmetric two-stream interleave: the small dynamic set is sorted exactly, the scene is
       counting-sorted into 96 view-depth buckets in O(m+K), and the two pre-ordered streams are
-      interleaved near-to-far under one blend state &mdash; at <b>no measured overhead</b>
-      (3.5 vs 3.6 ms/frame at 3.2k scene splats; 13.0 vs 13.3 ms at 79k).
-      Drag the slider to compare against a <b>fair baseline</b>: on the right the scene is sorted
-      <i>correctly</i> among itself and only the interleave between the two streams is removed &mdash; the
-      structure of compositing a ray-marched volume onto a reconstructed backdrop. The scene renders
-      faithfully, yet the flame sits in front of <i>every</i> primitive: the rear post stops occluding it
-      and its base spills past the near edge of the floor. On the left, with the interleave, each
-      primitive occludes according to its own depth.
+      interleaved near-to-far under one blend state &mdash; at a <b>small measured overhead</b>
+      (30.7 vs 28.3 ms median render at 45.8k scene splats over the full 9&times;1300 flame, +8%,
+      within the run-to-run spread).
+      A fire-ring stone stands directly between the camera and the white-hot core.
+      <b>Drag the slider.</b> On the left (ours) the stone's dark silhouette bites into the core through
+      a soft, correctly blended Gaussian boundary &mdash; each primitive occludes according to its own
+      depth. On the right the scene is sorted <i>correctly</i> among itself and only the interleave
+      between the two streams is removed &mdash; the structure of compositing a ray-marched volume onto
+      a reconstructed backdrop. The scene renders faithfully, yet the flame composites in front of
+      <i>every</i> primitive: the stone's silhouette vanishes from the core and smoke stops wrapping
+      the post.
     </p>
     <div class="narrow">
       <div class="cmp" id="cmp1">
