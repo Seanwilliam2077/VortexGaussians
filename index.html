@@ -147,12 +147,15 @@
 <!-- ======================= video ======================= -->
 <section class="alt">
   <div class="wrap">
-    <h2>Watch: Grid&nbsp;Mode vs Grid-Free &mdash; same seed, side by side</h2>
-    <p class="narrow">Four single-take sequences, unedited. The first three are <b>side-by-side
-      solver comparisons</b> &mdash; Grid&nbsp;Mode (VIC) on the left, Grid-Free (Gaussian VPM) on the
-      right, run from the <b>same seed</b> at the same fixed timestep through the identical renderer,
-      so every visual difference is the solver: fixed camera, constant-rate orbit, and scripted
-      interaction. The finale is the fire-spread loop on a loaded scene. Frames are rendered
+    <h2>Watch: fire that is simulated, rendered, and composited as one Gaussian set</h2>
+    <p class="narrow">Seven single-take sequences, unedited, results first. It opens on what the
+      system produces &mdash; a flame in close-up, the same solver burning <b>inside a loaded
+      reconstruction</b> under a slow parallax arc, and one particle state re-shaded from fire to
+      smoke &mdash; then turns to evidence. Three <b>side-by-side solver comparisons</b> follow
+      &mdash; Grid&nbsp;Mode (VIC) left, Grid-Free (Gaussian VPM) right, run from the <b>same
+      seed</b> at the same fixed timestep through the identical renderer, so every visual difference
+      is the solver: fixed camera, constant-rate orbit, scripted interaction. The finale is the
+      fire-spread loop on a loaded scene. Frames are rendered
       deterministically at &Delta;t = 1/60&nbsp;s and encoded at 60&nbsp;fps, so playback speed equals
       simulation speed; each side's overlay shows that solver's cost on the reference machine
       (five-seed median: 15.5&nbsp;ms/65&nbsp;FPS grid, 17.1&nbsp;ms/58&nbsp;FPS grid-free).</p>

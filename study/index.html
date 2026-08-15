@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Which flame looks more realistic?</title>
+<style>
+  :root{--bg:#111;--txt:#eee;--dim:#9aa0a8;--acc:#3b82f6}
+  *{box-sizing:border-box}
+  body{font-family:system-ui,'Segoe UI',Arial,sans-serif;background:var(--bg);color:var(--txt);
+       margin:0;display:flex;flex-direction:column;align-items:center;min-height:100vh}
+  h1{font-size:21px;margin:20px 0 4px;text-align:center}
+  p{max-width:730px;line-height:1.55;color:#bbb;padding:0 16px}
+  .pair{display:flex;gap:16px;margin:10px 0}
+  .pair figure{margin:0;cursor:pointer;border:3px solid transparent;border-radius:10px;
+               overflow:hidden;background:#000;transition:border-color .1s}
+  .pair figure:hover{border-color:var(--acc)}
+  .pair video{display:block;width:min(38vw,420px);height:auto;background:#000}
+  .pair figcaption{text-align:center;padding:7px;font-size:14px;color:#9ca3af;letter-spacing:.06em}
+  #progress{color:#6b7280;font-size:13px;margin:4px}
+  #bar{width:min(80vw,880px);height:4px;background:#2a2d33;border-radius:2px;overflow:hidden;margin-bottom:10px}
+  #barfill{height:100%;width:0;background:var(--acc);transition:width .2s}
+  button{background:var(--acc);color:#fff;border:0;border-radius:7px;padding:11px 24px;
+         font-size:15px;cursor:pointer;margin:14px}
+  button:hover{background:#2563eb}
+  #done{display:none;text-align:center;max-width:640px}
+  .kbd{background:#374151;border-radius:4px;padding:1px 8px;font-family:monospace}
+  .warm{color:#fbbf24}
+</style>
+</head>
+<body>
+<h1>Which flame looks more like real fire?</h1>
+
+<div id="intro">
+  <p>You will see pairs of short fire clips, side by side, looping. For each pair, click the one
+     that looks <b>more like real fire</b> — or press <span class="kbd">F</span> for left,
+     <span class="kbd">J</span> for right. Let each pair loop at least once before deciding, but
+     answer by overall impression rather than by studying details; there are no right answers.</p>
+  <p>The session is <b>18 trials, about 5 minutes</b>. It is anonymous — no personal data is
+     collected and nothing is uploaded; your answers are saved to a file on your own machine at
+     the end, which you then send back to the experimenter. You may stop at any time by closing
+     this page.</p>
+  <p class="warm">Please view in a darkened room if you can, and do not adjust your display
+     brightness during the session.</p>
+  <button onclick="start()">I understand — begin</button>
+</div>
+
+<div id="trial" style="display:none">
+  <div id="bar"><div id="barfill"></div></div>
+  <div class="pair">
+    <figure id="fL" onclick="pick(0)">
+      <video id="vidL" autoplay loop muted playsinline preload="auto"></video>
+      <figcaption>F</figcaption></figure>
+    <figure id="fR" onclick="pick(1)">
+      <video id="vidR" autoplay loop muted playsinline preload="auto"></video>
+      <figcaption>J</figcaption></figure>
+  </div>
+  <div id="progress"></div>
+</div>
+
+<div id="done">
+  <p>Done — thank you. Your responses have been downloaded as a CSV file.
+     Please send that file back to the experimenter.</p>
+  <p id="dbg" style="color:#555;font-size:12px"></p>
+</div>
+
+<script>
+// One entry per stimulus pair. A is always the paper's method / the condition ON.
+// Sides are randomised per trial; order is shuffled; each pair repeats REPEATS times.
+// Clips are 4 s, 60 fps, deterministic renders from a fixed seed — both members of a pair
+// share seed, timestep, camera and shading, so the only difference is the named variable.
+const MANIFEST = [
+  {tag:"solver", a:"stimuli/vpm_a.mp4",       b:"stimuli/vic_a.mp4"},
+  {tag:"solver", a:"stimuli/vpm_b.mp4",       b:"stimuli/vic_b.mp4"},
+  {tag:"source", a:"stimuli/sim_source.mp4",  b:"stimuli/proc_source.mp4"},
+  {tag:"interz", a:"stimuli/interz_on.mp4",   b:"stimuli/interz_off.mp4"},
+  {tag:"couple", a:"stimuli/couple_full.mp4", b:"stimuli/couple_off.mp4"},
+  {tag:"bloom",  a:"stimuli/post_bloom.mp4",  b:"stimuli/post_nobloom.mp4"},
+];
+const REPEATS = 3;
+const MIN_VIEW_MS = 1500;          // 至少看 1.5 s 才接受作答, 防手快乱点
+
+let trials=[], cur=0, t0=0;
+let rows=[["trial","tag","stimA","stimB","shownLeft","choseA","rtMs"]];
+const pid = "p" + Math.random().toString(36).slice(2,8);
+const $ = id => document.getElementById(id);
+
+function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
+
+function start(){
+  // 在用户手势内先 play() 一次两个 video, 拿到自动播放许可; 否则后续 show() 的 play() 会被策略拒绝
+  for(const v of [document.getElementById("vidL"), document.getElementById("vidR")]){
+    v.muted = true; const p = v.play(); if(p && p.catch) p.catch(()=>{});
+  }
+  for(let r=0;r<REPEATS;r++) for(const m of MANIFEST) trials.push({...m, flip: Math.random()<0.5});
+  shuffle(trials);
+  $("intro").style.display="none";
+  $("trial").style.display="block";
+  show();
+}
+function show(){
+  if(cur>=trials.length) return finish();
+  const t=trials[cur], L=$("vidL"), R=$("vidR");
+  L.src = t.flip ? t.b : t.a;
+  R.src = t.flip ? t.a : t.b;
+  // 相位锁定: 两段都 loadeddata 后再归零并同时起播。逐帧对应的是同一模拟时刻,
+  // 播放相位若漂开, 被试比较的就是两个不同时刻的火, 这个变量必须消掉。
+  let ready=0;
+  const armBoth=()=>{ if(++ready<2) return;
+    // 不要 pause(): 它会中止仍在挂起的 play() 承诺, 两段会一起停住
+    L.currentTime=0; R.currentTime=0;
+    const pl=v=>{ const q=v.play(); if(q&&q.catch) q.catch(()=>{ setTimeout(()=>v.play().catch(()=>{}),60); }); };
+    pl(L); pl(R); };
+  for(const v of [L,R]){ if(v.readyState>=2) armBoth(); else v.addEventListener('loadeddata',armBoth,{once:true}); }
+  $("progress").textContent = `${cur+1} / ${trials.length}`;
+  $("barfill").style.width = (100*cur/trials.length)+"%";
+  t0=performance.now();          // 解锁判定直接用时间差, 不用布尔量: 旧试次的计时器会提前解锁新试次
+}
+function pick(side){                                 // side: 0=left 1=right
+  if(performance.now()-t0 < MIN_VIEW_MS) return;     // 未满最短观看时长: 忽略
+  const t=trials[cur];
+  const choseA = (side===0) !== t.flip;              // 左侧放 A, 除非本试次翻转
+  rows.push([cur, t.tag, t.a, t.b, t.flip?"B":"A", choseA?1:0, Math.round(performance.now()-t0)]);
+  cur++; show();
+}
+function finish(){
+  $("trial").style.display="none";
+  $("done").style.display="block";
+  const csv = rows.map(r=>r.join(",")).join("\n");
+  const a=document.createElement("a");
+  a.href=URL.createObjectURL(new Blob([csv],{type:"text/csv"}));
+  a.download=`flame2afc_${pid}.csv`; a.click();
+  $("dbg").textContent = `id ${pid} · ${rows.length-1} trials recorded`;
+}
+window.addEventListener("keydown",e=>{
+  if($("trial").style.display==="none") return;
+  if(e.key==="f"||e.key==="F") pick(0);
+  if(e.key==="j"||e.key==="J") pick(1);
+});
+</script>
+</body>
+</html>
