@@ -460,12 +460,22 @@ void main(){
 const FS_COMPOSITE = `#version 300 es
 precision highp float; in vec2 v_uv; out vec4 o;
 uniform sampler2D uScene, uBloom; uniform float uExposure, uBloomAmt, uTime, uReflect, uHaze, uFireI;
-uniform vec2 uFire;
+uniform vec2 uFire; uniform float uFaithful;
 ${COMMON_NOISE}
 vec3 aces(vec3 x){ const float a=2.51,b=0.03,c=2.43,d=0.59,e=0.14;
   return clamp((x*(a*x+b))/(x*(c*x+d)+e),0.0,1.0); }
 void main(){
   vec2 uv=v_uv;
+  // 忠实显示通路: 3DGS 的 f_dc 存的已经是显示空间的颜色 (训练图像是 sRGB),
+  // 参考渲染器直接输出。再过一遍 ACES + 1/2.2 伽马就是双重编码 —— 发灰、低对比。
+  // 这条路径把为火设计的整套后期 (热浪/地面反射/ACES/伽马/暗角) 全部跳过,
+  // 只保留 bloom 与曝光, 让重建按它本来的样子出图。
+  if(uFaithful>0.5){
+    vec3 c=texture(uScene,uv).rgb + texture(uBloom,uv).rgb*uBloomAmt;
+    c*=uExposure;
+    float d0=fract(sin(dot(uv,vec2(12.9898,78.233)))*43758.5453);
+    o=vec4(clamp(c,0.0,1.0)+(d0-0.5)/255.0,1.0); return;
+  }
   // 热浪: 火上方按强度位移采样 (折射后面的墙) ----
   float above=smoothstep(uFire.y, uFire.y+0.55, uv.y);
   float colmask=exp(-pow((uv.x-uFire.x)*3.0,2.0));
@@ -505,10 +515,29 @@ layout(location=7) in float aChar;
 layout(location=8) in vec3 aShR;       // 各通道 1 阶球谐的 3 个系数
 layout(location=9) in vec3 aShG;
 layout(location=10) in vec3 aShB;
+layout(location=11) in float aShIdx;   // 原始下标 -> 高阶球谐纹理
+uniform sampler2D uSH; uniform int uSHW; uniform int uSHDeg; uniform float uPreComp;
 uniform mat4 uViewProj; uniform mat4 uView;
 uniform vec2 uFocal; uniform vec2 uViewport; uniform float uSceneLight;
 uniform mat3 uSceneRotInv; uniform vec3 uEye;
 out vec2 v_uv; out vec3 v_color; out float v_opa; out float v_glow;
+vec4 SHT(int k){ return texelFetch(uSH, ivec2(k % uSHW, k / uSHW), 0); }
+// 显示链的闭式逆: 让重建颜色过完 ACES+伽马后回到训练时的值。
+// 球谐是视相关的, 所以必须在球谐求值之后做, 不能只补偿 DC 项。
+// **近似的边界, 明写**: 逆变换是非线性的, 而 alpha 合成发生在它之后 —— 于是我们在
+// "逆 ACES 域"里做混合, 而 3DGS 是在显示域里混合的。单个不透明 splat 覆盖整个像素时
+// 精确; 多个半透明 splat 叠加处有残差 (下面的 scene-only A/B 给出实测上界)。
+// 曝光、暗角、bloom 邻域这三项也没被逆掉, 所以"完全还原"只在 exposure=1、画面中心、
+// 无 bloom 的条件下成立。
+vec3 acesInvV(vec3 y){
+  const float a=2.51,b=0.03,c=2.43,d=0.59,e=0.14;
+  y = min(y, vec3(0.9999));
+  vec3 A = y*c - a, B = y*d - b, C = y*e;
+  vec3 disc = max(B*B - 4.0*A*C, vec3(0.0));
+  vec3 sq = sqrt(disc);
+  vec3 x = max((-B + sq)/(2.0*A), (-B - sq)/(2.0*A));
+  return clamp(x, vec3(0.0), vec3(3.0));
+}
 // EWA volume splatting (Zwicker 2001; 3DGS 前向过程): 把 3D 协方差经透视变换的
 // 雅可比投影成屏幕空间 2D 协方差, 再取其特征向量作四边形的两根半轴。
 //   Σ₂ = J W Σ₃ Wᵀ Jᵀ,  J = ∂(u,v)/∂(x,y,z)|_view
@@ -541,15 +570,45 @@ void main(){
   vec4 clip = uViewProj * vec4(aPos, 1.0);
   gl_Position = clip + vec4(2.0*offPx/uViewport*clip.w, 0.0, 0.0);
   v_uv = aCorner;
-  // 1 阶球谐: 视相关外观。DC 已烘进 aColor, 这里只加方向项。
+  // 球谐 (视相关外观)。DC 已烘进 aColor; 1 阶在属性里, 2-3 阶在纹理里。
   // 视方向转回 .ply 自身坐标系, 于是系数不必随场景摆放旋转。
   vec3 dir = normalize(uSceneRotInv * (aPos - uEye));
   const float C1 = 0.4886025119029199;
-  vec3 shTerm = vec3(
+  vec3 shTerm = vec3(0.0);
+  if(uSHDeg >= 1) shTerm = vec3(
     -C1*dir.y*aShR.x + C1*dir.z*aShR.y - C1*dir.x*aShR.z,
     -C1*dir.y*aShG.x + C1*dir.z*aShG.y - C1*dir.x*aShG.z,
     -C1*dir.y*aShB.x + C1*dir.z*aShB.y - C1*dir.x*aShB.z);
+  if(uSHDeg >= 2){
+    // 每个 splat 占 9 个 texel: R 的系数 3..14 (3 texel), 然后 G, 然后 B。
+    int t0 = int(aShIdx)*9;
+    vec4 r0=SHT(t0),   r1=SHT(t0+1), r2=SHT(t0+2);
+    vec4 g0=SHT(t0+3), g1=SHT(t0+4), g2=SHT(t0+5);
+    vec4 b0=SHT(t0+6), b1=SHT(t0+7), b2=SHT(t0+8);
+    float x=dir.x, y=dir.y, z=dir.z;
+    float xx=x*x, yy=y*y, zz=z*z, xy=x*y, yz=y*z, xz=x*z;
+    const float D0= 1.0925484305920792, D1=-1.0925484305920792,
+                D2= 0.31539156525252005, D3=-1.0925484305920792, D4=0.5462742152960396;
+    // 纹理里存的是每通道系数 3..14 (共 12 个, 正好 3 个 texel)。
+    // 2 阶 = 系数 3..7 -> r0.xyzw, r1.x
+    vec3 k3=vec3(r0.x,g0.x,b0.x), k4=vec3(r0.y,g0.y,b0.y), k5=vec3(r0.z,g0.z,b0.z),
+         k6=vec3(r0.w,g0.w,b0.w), k7=vec3(r1.x,g1.x,b1.x);
+    shTerm += D0*xy*k3 + D1*yz*k4 + D2*(2.0*zz-xx-yy)*k5 + D3*xz*k6 + D4*(xx-yy)*k7;
+    if(uSHDeg >= 3){
+      const float E0=-0.5900435899266435, E1=2.890611442640554, E2=-0.4570457994644658,
+                  E3= 0.3731763325901154, E4=-0.4570457994644658, E5=1.445305721320277,
+                  E6=-0.5900435899266435;
+      // 3 阶 = 系数 8..14 -> r1.yzw, r2.xyzw (7 个, 全部在)
+      vec3 k8 =vec3(r1.y,g1.y,b1.y), k9 =vec3(r1.z,g1.z,b1.z), k10=vec3(r1.w,g1.w,b1.w),
+           k11=vec3(r2.x,g2.x,b2.x), k12=vec3(r2.y,g2.y,b2.y), k13=vec3(r2.z,g2.z,b2.z),
+           k14=vec3(r2.w,g2.w,b2.w);
+      shTerm += E0*y*(3.0*xx-yy)*k8 + E1*xy*z*k9 + E2*y*(4.0*zz-xx-yy)*k10
+              + E3*z*(2.0*zz-3.0*xx-3.0*yy)*k11 + E4*x*(4.0*zz-xx-yy)*k12
+              + E5*z*(xx-yy)*k13 + E6*x*(xx-3.0*yy)*k14;
+    }
+  }
   vec3 base = max(aColor + shTerm, vec3(0.0));
+  if(uPreComp > 0.5) base = acesInvV(pow(min(base, vec3(1.0)), vec3(2.2)));
   v_color = base*uSceneLight*(1.0-0.88*aChar);       // 炭化: 反照率压向黑
   v_opa = aOpa*(1.0-0.30*aChar);                     // 炭化: 轻微降不透明度
   v_glow = aGlow;
@@ -588,11 +647,13 @@ const uPart={ VP:U(pPart,'uViewProj'),
               Fire:U(pPart,'uFire'),FireI:U(pPart,'uFireI'),Res:U(pPart,'uRes') };
 const uScene={ VP:U(pScene,'uViewProj'), Light:U(pScene,'uSceneLight'), Time:U(pScene,'uTime'),
   V:U(pScene,'uView'), Focal:U(pScene,'uFocal'), Viewport:U(pScene,'uViewport'),
-  RotInv:U(pScene,'uSceneRotInv'), Eye:U(pScene,'uEye'), DepthPre:U(pScene,'uDepthPre') };
+  RotInv:U(pScene,'uSceneRotInv'), Eye:U(pScene,'uEye'), DepthPre:U(pScene,'uDepthPre'),
+  SH:U(pScene,'uSH'), SHW:U(pScene,'uSHW'), SHDeg:U(pScene,'uSHDeg'), PreComp:U(pScene,'uPreComp') };
 const uPre={ Tex:U(pPre,'uTex'),Threshold:U(pPre,'uThreshold') };
 const uBlur={ Tex:U(pBlur,'uTex'),Dir:U(pBlur,'uDir') };
 const uComp={ Scene:U(pComp,'uScene'),Bloom:U(pComp,'uBloom'),Exposure:U(pComp,'uExposure'),BloomAmt:U(pComp,'uBloomAmt'),
-              Time:U(pComp,'uTime'),Reflect:U(pComp,'uReflect'),Haze:U(pComp,'uHaze'),FireI:U(pComp,'uFireI'),Fire:U(pComp,'uFire') };
+              Time:U(pComp,'uTime'),Reflect:U(pComp,'uReflect'),Haze:U(pComp,'uHaze'),FireI:U(pComp,'uFireI'),Fire:U(pComp,'uFire'),
+              Faithful:U(pComp,'uFaithful') };
 
 // ---- 几何: 单位四边形(实例) + 全屏大三角 ----
 const quadVBO=gl.createBuffer(); gl.bindBuffer(gl.ARRAY_BUFFER,quadVBO);
@@ -619,9 +680,12 @@ function setupInstanceVAO(vao, vbo){
 const vaoPart=gl.createVertexArray(); setupInstanceVAO(vaoPart, instVBO);
 
 // ---- 场景高斯 VAO (.ply 载入):
-//   pos3 covA3 covB3 color3 opa1 glow1 char1 shR3 shG3 shB3 = 24 floats
-//   shR/G/B = 各通道 1 阶球谐的 3 个系数 (视相关外观; DC 已烘进 color)
-const SC_STRIDE_F=24, SC_STRIDE_B=SC_STRIDE_F*4;
+//   pos3 covA3 covB3 color3 opa1 glow1 char1 shR3 shG3 shB3 idx1 = 25 floats
+//   shR/G/B = 各通道 1 阶球谐的 3 个系数 (DC 已烘进 color)
+//   idx    = 该 splat 在**原始**数组中的下标。场景缓冲每帧按深度重排, 而 2-3 阶球谐
+//            存在纹理里不跟着重排, 所以必须带着原下标去取 —— gl_InstanceID 是排序后
+//            的位置, 对不上。
+const SC_STRIDE_F=25, SC_STRIDE_B=SC_STRIDE_F*4;
 const sceneVBO=gl.createBuffer();
 const vaoScene=gl.createVertexArray(); gl.bindVertexArray(vaoScene);
 gl.bindBuffer(gl.ARRAY_BUFFER,quadVBO);
@@ -630,7 +694,7 @@ gl.bindBuffer(gl.ARRAY_BUFFER,sceneVBO);
 (function(){ const ia=(loc,size,off)=>{ gl.enableVertexAttribArray(loc);
   gl.vertexAttribPointer(loc,size,gl.FLOAT,false,SC_STRIDE_B,off*4); gl.vertexAttribDivisor(loc,1); };
   ia(1,3,0); ia(2,3,3); ia(3,3,6); ia(4,3,9); ia(5,1,12); ia(6,1,13); ia(7,1,14);
-  ia(8,3,15); ia(9,3,18); ia(10,3,21); })();
+  ia(8,3,15); ia(9,3,18); ia(10,3,21); ia(11,1,24); })();
 gl.bindVertexArray(null);
 
 // ---- 背景 3DGS: 一组静态暗色高斯 (地面 + 环境), 与火共用同一光栅器 ----
@@ -686,11 +750,37 @@ function parsePLY(buf){
   let stride=0; const off={}; for(const p of props){ off[p.n]=stride; stride+=sz[p.t]||4; }
   for(const k of ['x','y','z','opacity','scale_0','rot_0','f_dc_0']) if(off[k]===undefined) throw new Error('.ply: missing field '+k+' (not a 3DGS .ply?)');
   const dv=new DataView(buf, he), C0=0.28209479177387814, sg=x=>1/(1+Math.exp(-x));
+  // ---- 显示空间预补偿 ----------------------------------------------------
+  // 3DGS 的 f_dc 存的是**显示空间**的颜色 (训练图像是 sRGB), 而我们的合成链是为火
+  // 设计的: HDR -> ACES -> 1/2.2 伽马。把显示空间颜色直接送进去等于双重编码, 整幅
+  // 发灰发白 —— 这是这套渲染器里最伤重建保真度的一处。
+  //   火和场景必须在同一趟深度交错里画, 所以不能给它们各自一条链;
+  //   改为在上传前对场景颜色施加该链的逆, 过完链正好还原成训练时的颜色, 火不受影响。
+  // Narkowicz ACES 拟合 y = x(ax+b) / (x(cx+d)+e) 是有理式, 可闭式求逆:
+  //   (yc-a)x² + (yd-b)x + ye = 0
+  const acesInv=y=>{ const a=2.51,b=0.03,c=2.43,d=0.59,e=0.14;
+    y=Math.min(y, 0.9999);
+    const A=y*c-a, B=y*d-b, C=y*e;
+    if(Math.abs(A)<1e-9) return B!==0 ? -C/B : 0;
+    const disc=B*B-4*A*C; if(disc<0) return 1e3;
+    const r1=(-B+Math.sqrt(disc))/(2*A), r2=(-B-Math.sqrt(disc))/(2*A);
+    const r=Math.max(r1,r2);
+    return r>0? r : Math.max(0, Math.min(r1,r2)); };
+  // 合成链最后还做 pow(m,1/2.2), 所以目标是 aces(x) == c^2.2
+  const pre = P.scenePreComp===false ? (v=>v)
+            : (v=>{ const x=acesInv(Math.pow(Math.min(1,Math.max(0,v)),2.2));
+                    // 上限 3.0: 对应 c≈0.97。再高的通道值在链上还原得更准, 但会被
+                    // bloom 的亮通道捡走, 在画面里变成彩色亮斑 —— 保真度收益不抵伪影。
+                    return Math.min(3.0, Math.max(0, x)); });
   const F=(i,n)=>{ const o2=off[n]; return o2===undefined?0:dv.getFloat32(i*stride+o2, true); };
   // f_rest 的数量决定球谐阶数: 每通道 nPer 个 (1阶=3, 2阶=8, 3阶=15)
-  const nRest=props.filter(q=>q.n.startsWith('f_rest_')).length, nPer=nRest/3;
+  const frNames=props.filter(q=>q.n.startsWith('f_rest_')).map(q=>q.n)
+    .sort((a,b)=>(+a.split('_').pop())-(+b.split('_').pop()));
+  const nRest=frNames.length, nPer=nRest/3;
   // 子采样到上限
   const keepAll = N<=P.sceneMax; const step = keepAll?1:N/P.sceneMax;
+  const nKeep = keepAll ? N : Math.ceil(N/step);
+  const shHi = (nPer>3) ? new Float32Array(nKeep*36) : null;   // 每 splat 36 个高阶系数
   const out=[]; let cx=0,cy=0,cz=0;
   for(let f=0; f<N; f+= step){ const i=f|0;
     const x=F(i,'x'),y=F(i,'y'),z=F(i,'z');
@@ -711,18 +801,47 @@ function parsePLY(buf){
     // 每通道 nPer 个系数, 通道 ch 的第 k 个 = f_rest_(ch*nPer + k)。只取前 3 个 (1 阶);
     // 更高阶存在也读得出来, 只是这里不用 —— 加高阶只需扩 stride 与着色器基函数。
     const SHc=(idx,ch)=>{ if(!nRest) return [0,0,0];
-      const b=ch*nPer; return [F(idx,'f_rest_'+b), F(idx,'f_rest_'+(b+1)), F(idx,'f_rest_'+(b+2))]; };
+      const b=ch*nPer; return [F(idx,frNames[b]), F(idx,frNames[b+1]), F(idx,frNames[b+2])]; };
+    // 2-3 阶: 每通道系数 3..14 (共 12 个)。属性槽不够, 走纹理。
+    const SHhi=(idx,ch,out,o)=>{ const b=ch*nPer;
+      for(let k=0;k<12;k++) out[o+k] = (3+k)<nPer ? F(idx,frNames[b+3+k]) : 0; };
     out.push({ p:[x,y,z], cov:[cv3(0,0),cv3(0,1),cv3(0,2),cv3(1,1),cv3(1,2),cv3(2,2)],
       sh:[SHc(i,0),SHc(i,1),SHc(i,2)],
-      c:[cl(0.5+C0*F(i,'f_dc_0')),cl(0.5+C0*F(i,'f_dc_1')),cl(0.5+C0*F(i,'f_dc_2'))], o:sg(F(i,'opacity')) });
+      // DC 保留符号: 钳位只在着色器里、把所有阶加完之后做一次 (与参考一致)。
+      c:[0.5+C0*F(i,'f_dc_0'), 0.5+C0*F(i,'f_dc_1'), 0.5+C0*F(i,'f_dc_2')], o:sg(F(i,'opacity')) });
+    if(shHi){ const o=(out.length-1)*36; SHhi(i,0,shHi,o); SHhi(i,1,shHi,o+12); SHhi(i,2,shHi,o+24); }
     cx+=x;cy+=y;cz+=z;
   }
   const n=out.length; cx/=n;cy/=n;cz/=n;
   let ext=0; for(const g of out){ const d=Math.max(Math.abs(g.p[0]-cx),Math.abs(g.p[1]-cy),Math.abs(g.p[2]-cz)); if(d>ext)ext=d; }
-  return { gauss:out, center:[cx,cy,cz], extent:ext||1, total:N };
+  return { gauss:out, center:[cx,cy,cz], extent:ext||1, total:N,
+           shHi:shHi?shHi.subarray(0,out.length*36):null, shDeg:(nPer>=15?3:nPer>=8?2:nPer>=3?1:0) };
+}
+const shTex=gl.createTexture(); let shTexW=0, shDegAvail=0;
+function uploadSH(shHi,n,deg){
+  shDegAvail = shHi ? (deg||3) : Math.min(1, deg===undefined?1:deg);
+  if(!shHi){ shTexW=0; return; }
+  const need=n*9, MAXT=gl.getParameter(gl.MAX_TEXTURE_SIZE);
+  const W=Math.min(16384, MAXT), H=Math.ceil(need/W);   // 每 splat 9 个 texel
+  if(H>MAXT){                                            // 放不下就诚实降级到 1 阶
+    console.warn('[sh] '+n+' splats need a '+W+'x'+H+' texture but MAX_TEXTURE_SIZE is '
+      +MAXT+'; falling back to degree 1.');
+    shTexW=0; shDegAvail=Math.min(1,deg||1); return; }
+  const data=new Float32Array(W*H*4);
+  data.set(shHi.subarray(0,Math.min(shHi.length,W*H*4)));
+  gl.bindTexture(gl.TEXTURE_2D, shTex);
+  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
+  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
+  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_S, gl.CLAMP_TO_EDGE);
+  gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
+  gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA16F,W,H,0,gl.RGBA,gl.FLOAT,data);
+  shTexW=W;
+  console.log('[sh] degree-3 texture '+W+'x'+H+' for '+n+' splats ('+(W*H*8/1e6).toFixed(0)+' MB)');
 }
 function loadPLY(buf){
   const r=parsePLY(buf); sceneGauss=r.gauss; sceneInfo={center:r.center, extent:r.extent};
+  uploadSH(r.shHi, r.gauss.length, r.shDeg);
+  if(P.sceneSH>shDegAvail) P.sceneSH=shDegAvail;
   P.sceneScale = 1.6 / (r.extent||1);      // 自动缩放到 ~3.2 单位跨度
   P.sceneOn=true; P.box=false;             // 载入真场景 → 关掉程序化背景
   buildBurnState();                        // 燃烧状态 + 源空间邻接哈希 (splat-graph 蔓延)
@@ -737,9 +856,12 @@ function loadPLY(buf){
 //                           叠在场景之上 (backdrop 合成的结构)。与我们的差别只剩交错。
 //     P.sceneSorted=false   朴素基线: 连场景自身排序也去掉 (火先画, 场景按文件序垫后)。
 //                           只用于把「未交错」和「未排序」两种失效分开看。
-const SCENE_BUCKETS=96;
+let SCENE_BUCKETS=96;                      // 可调: 场景越密、深度跨度越大, 需要的桶越多
 let sceneData=new Float32Array(0), sceneRaw=new Float32Array(0), sceneKey=new Float32Array(0), sceneBIdx=new Int32Array(0);
 let sceneBucketOfs=new Int32Array(SCENE_BUCKETS+1), sceneDMin=0, sceneDMax=1;
+function setSceneBuckets(k){ k=Math.max(16,Math.min(65536,k|0));
+  if(k===SCENE_BUCKETS) return SCENE_BUCKETS;
+  SCENE_BUCKETS=k; sceneBucketOfs=new Int32Array(k+1); return SCENE_BUCKETS; }
 function gatherScene(){
   const n=sceneGauss.length; if(!n) return 0;
   if(sceneRaw.length<n*SC_STRIDE_F){ sceneRaw=new Float32Array(n*SC_STRIDE_F);
@@ -784,9 +906,11 @@ function gatherScene(){
     arr[o++]=sh[0][0]; arr[o++]=sh[0][1]; arr[o++]=sh[0][2];
     arr[o++]=sh[1][0]; arr[o++]=sh[1][1]; arr[o++]=sh[1][2];
     arr[o++]=sh[2][0]; arr[o++]=sh[2][1]; arr[o++]=sh[2][2];
+    arr[o++]=bi;                       // 原始下标 -> 2-3 阶球谐纹理 (缓冲会被深度重排)
     bi++;
     const ex=wx-eye[0], ey=wy-eye[1], ez=wz-eye[2];
-    const d=ex*ex+ey*ey+ez*ez; sceneKey[gi++]=d;
+    const d=Math.sqrt(ex*ex+ey*ey+ez*ez); sceneKey[gi++]=d;   // 线性距离而非平方:
+    // 按 d² 均匀分桶会把最宽的桶放在离相机最近处 —— 恰好是最需要精度的地方。
     if(d<dmin)dmin=d; if(d>dmax)dmax=d;
   }
   if(!P.sceneSorted){                       // 旧路径: 原顺序直接上传 (对照)
@@ -1029,6 +1153,9 @@ const P = {
   box:true, boxLight:0.10, embers:true, reflect:0.05, haze:0.05, emberRate:16, emberMax:160,
   sceneOn:false, sceneMax:120000, sceneScale:1, sceneYaw:0, scenePitch:0, sceneLift:0,
   sceneOffX:0, sceneOffZ:0,          // 横向摆位: 把重建挪开, 好让火落在它旁边而不是正中
+  faithful:false,                    // 忠实显示: 跳过为火设计的后期链 (火会变暗, 只用于看场景本身)
+  scenePreComp:true,                 // 场景颜色预补偿 ACES+伽马 —— 让重建过完链后回到训练时的颜色
+  sceneSH:3,                         // 场景球谐阶数 0-3 (受文件里实际有多少阶限制)
   sceneLight:1.0,
   sceneSorted:true,                 // true=场景与火按深度桶交错(全局排序, 互遮挡) | false=旧行为(未排序,火后绘制)
   sceneBackdrop:false,              // true=公平对照: 场景内部排序正确但整体先画, 火叠在其上 (backdrop 合成)
@@ -2248,6 +2375,8 @@ function drawSceneRange(start,count){ if(count<=0) return;
   const base=start*SC_STRIDE_B;
   const ia=(loc,size,off)=>gl.vertexAttribPointer(loc,size,gl.FLOAT,false,SC_STRIDE_B,base+off*4);
   ia(1,3,0); ia(2,3,3); ia(3,3,6); ia(4,3,9); ia(5,1,12); ia(6,1,13); ia(7,1,14);
+  ia(8,3,15); ia(9,3,18); ia(10,3,21); ia(11,1,24);   // 这四个以前漏了: 区间起点不为 0 时
+                                                      // 球谐与索引会读到别的 splat 的值
   gl.drawArraysInstanced(gl.TRIANGLE_STRIP,0,4,count);
 }
 
@@ -2316,7 +2445,12 @@ function render(){
       const r=[cyj, syj*spj, syj*cpj, 0, cpj, -spj, -syj, cyj*spj, cyj*cpj];
       gl.uniformMatrix3fv(uScene.RotInv, false,
         new Float32Array([r[0],r[1],r[2], r[3],r[4],r[5], r[6],r[7],r[8]]));
-      gl.uniform3f(uScene.Eye, cam.eye[0], cam.eye[1], cam.eye[2]); }
+      gl.uniform3f(uScene.Eye, cam.eye[0], cam.eye[1], cam.eye[2]);
+    gl.activeTexture(gl.TEXTURE3); gl.bindTexture(gl.TEXTURE_2D, shTex);
+    gl.uniform1i(uScene.SH, 3); gl.uniform1i(uScene.SHW, shTexW||1);
+    gl.uniform1i(uScene.SHDeg, Math.min(P.sceneSH, shDegAvail));
+    // 两者同时开会把场景压死: faithful 已经跳过了 ACES+伽马, 再预补偿就是逆一次没做的变换。
+    gl.uniform1f(uScene.PreComp, (P.scenePreComp && !P.faithful)?1.0:0.0); }
     gl.uniform1f(uScene.DepthPre, 0.0);
     if(P.sceneSorted && !P.sceneBackdrop && !P.sceneDepthTest){
       drawInterleaved(count, ns);
@@ -2380,6 +2514,7 @@ function render(){
   gl.uniform1f(uComp.Exposure,P.exposure); gl.uniform1f(uComp.BloomAmt,P.bloom);
   gl.uniform1f(uComp.Time,simTime); gl.uniform1f(uComp.Reflect,P.reflect);
   gl.uniform1f(uComp.Haze,P.haze); gl.uniform1f(uComp.FireI,fireI);
+  gl.uniform1f(uComp.Faithful,P.faithful?1.0:0.0);
   gl.uniform2f(uComp.Fire,fuv[0],fuv[1]);
   drawFull();
   gl.activeTexture(gl.TEXTURE0);
@@ -2645,6 +2780,8 @@ window.__demo = {
   get hashCellDefault(){ return typeof spreadCellSrc==='function'?spreadCellSrc():null; },
   get sceneExtent(){ return sceneInfo?sceneInfo.extent:null; },
   rebuildHash(cell){ if(sceneGauss.length) buildSceneHash(cell||spreadCellSrc()); return sceneHash?sceneHash.cell:null; },
+  setSceneBuckets(k){ return setSceneBuckets(k); },
+  get sceneBuckets(){ return SCENE_BUCKETS; },
   forceSize(w,h){ cv.width=w; cv.height=h; makeTargets(); },   // 无头测试: 绕过 0 宽布局
   render(){ return render(); }, rebuild(){ rebuildLayers(); },
   warm(frames){ frames=frames||120; for(let i=0;i<frames;i++) stepAll(0.016); },
