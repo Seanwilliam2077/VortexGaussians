@@ -198,7 +198,7 @@
           <div class="prow"><label>Layers N</label><input type="range" id="layers" min="1" max="16" step="1" value="9"><span class="pval" id="layersV"></span></div>
           <div class="prow"><label>Slice depth</label><input type="range" id="sliceDepth" min="0.1" max="1.6" step="0.02" value="0.7"><span class="pval" id="sliceDepthV"></span></div>
           <div class="prow"><label>Yaw</label><input type="range" id="yaw" min="-3.14" max="3.14" step="0.02" value="0"><span class="pval" id="yawV"></span></div>
-          <div class="prow"><label>Camera distance</label><input type="range" id="camDist" min="2.2" max="6" step="0.05" value="3.4"><span class="pval" id="camDistV"></span></div>
+          <div class="prow"><label>Camera distance</label><input type="range" id="camDist" min="2.2" max="40" step="0.05" value="3.4"><span class="pval" id="camDistV"></span></div>
           <div class="prow"><label>Gaussian radius</label><input type="range" id="rad" min="6" max="60" step="1" value="42"><span class="pval" id="radV"></span></div>
           <div class="prow"><label>Covariance strain ∇u</label><input type="range" id="covStretch" min="0" max="3" step="0.02" value="1.3"><span class="pval" id="covStretchV"></span></div>
           <div class="hint b"><b>Covariance strain (Tier2)</b>: each Gaussian carries a deformation gradient F evolved by the velocity gradient ∇u (`Σ̇=LΣ+ΣLᵀ`), so blobs are <b>sheared and rotated into filaments</b> (gaseous PhysGaussian). 0 = spheres, high = strongly filamentary. Requires Motion Stretch.
@@ -236,10 +236,13 @@
           <div class="btns"><button id="plyBtn">📂 Load .ply / .splat …</button></div>
           <input type="file" id="plyFile" accept=".ply,.splat" style="display:none">
           <div class="note" id="plyStatus">No scene loaded. Drop an Inria `point_cloud.ply` onto the canvas, or use the button above.</div>
-          <div class="prow"><label>Scene scale</label><input type="range" id="sceneScale" min="0.05" max="6" step="0.01" value="1"><span class="pval" id="sceneScaleV"></span></div>
+          <div class="prow"><label>Scene scale</label><input type="range" id="sceneScale" min="0.002" max="6" step="0.001" value="1"><span class="pval" id="sceneScaleV"></span></div>
           <div class="prow"><label>Scene yaw</label><input type="range" id="sceneYaw" min="-3.14" max="3.14" step="0.02" value="0"><span class="pval" id="sceneYawV"></span></div>
           <div class="prow"><label>Pitch (up axis)</label><input type="range" id="scenePitch" min="-3.14" max="3.14" step="0.02" value="0"><span class="pval" id="scenePitchV"></span></div>
           <div class="prow"><label>Lift</label><input type="range" id="sceneLift" min="-2" max="2" step="0.02" value="0"><span class="pval" id="sceneLiftV"></span></div>
+          <div class="prow"><label>Shift X</label><input type="range" id="sceneOffX" min="-8" max="8" step="0.02" value="0"><span class="pval" id="sceneOffXV"></span></div>
+          <div class="prow"><label>Shift Z</label><input type="range" id="sceneOffZ" min="-8" max="8" step="0.02" value="0"><span class="pval" id="sceneOffZV"></span></div>
+          <div class="hint b">The fire is anchored at the world origin, so Shift X/Z is how you stand it beside the reconstruction instead of inside it.</div>
           <div class="prow"><label>Scene brightness</label><input type="range" id="sceneLight" min="0.1" max="3" step="0.02" value="1.0"><span class="pval" id="sceneLightV"></span></div>
           <div class="prow"><label>Gaussian cap (×10k)</label><input type="range" id="sceneMax" min="2" max="40" step="1" value="12"><span class="pval" id="sceneMaxV"></span></div>
           <div class="crow" id="sceneOn"><span class="cb"></span><span>Show .ply scene</span></div>
@@ -563,8 +566,10 @@ void main(){ float r2=dot(v_uv,v_uv);
   if(r2>=1.0) discard;                             // 内切圆截断 (与 FS_PARTICLE 同款, 无直线阶跃)
   float g=(exp(-KS*r2)-PES)/(1.0-PES);
   float a=clamp(v_opa,0.0,1.0)*g;
-  if(uDepthPre>0.5){                               // depth-aware 对照的深度预写: 只在
-    if(a<0.5) discard;                             // 「足够不透明」处留下深度, 不出颜色
+  if(uDepthPre>0.0){                               // depth-aware 对照的深度预写: 只在
+    if(a<uDepthPre) discard;                       // 「足够不透明」处留下深度, 不出颜色
+                                                   // 阈值即 uDepthPre 本身, 可扫 —— 用来
+                                                   // 证明该基线不是被我们卡死在某一个值上
     o=vec4(0.0); return; }
   float fl=0.82+0.18*sin(uTime*17.0+v_uv.x*9.0+v_uv.y*7.0);   // 火线闪烁
   vec3 ember=vec3(1.0,0.38,0.08)*v_glow*2.6*fl*g;             // 燃烧: 发光叠加 (HDR)
@@ -767,7 +772,7 @@ function gatherScene(){
   let bi=0;
   for(const g of sceneGauss){
     const p=tf(g.p), cvv=tfcov(g.cov);
-    const wx=p[0], wy=p[1]+lift, wz=p[2];
+    const wx=p[0]+P.sceneOffX, wy=p[1]+lift, wz=p[2]+P.sceneOffZ;
     arr[o++]=wx; arr[o++]=wy; arr[o++]=wz;
     arr[o++]=cvv[0]; arr[o++]=cvv[1]; arr[o++]=cvv[2];
     arr[o++]=cvv[3]; arr[o++]=cvv[4]; arr[o++]=cvv[5];
@@ -819,7 +824,18 @@ function buildBurnState(){
   sceneBurnState={ h:new Float32Array(n), fuel:new Float32Array(n).fill(1),
     glow:new Float32Array(n), char_:new Float32Array(n),
     state:new Uint8Array(n), burning:[], emitCursor:0 };
-  const cell=Math.max(1e-6, sceneInfo.extent/32);
+  buildSceneHash(spreadCellSrc());
+}
+// 邻接哈希的格子必须按**蔓延半径**定, 不是按场景尺寸。原来取 extent/32: 在 3.4 单位的
+// 合成场景上碰巧≈查询半径, 但在跨度上百单位的真实重建上会大一个数量级, 于是每次
+// hashQuery 要扫约千倍的候选 —— "蔓延代价由构造封顶" 那句就不成立了。
+// 哈希只是加速结构 (查询本身仍逐个校验 d²≤r²), 所以改格子不改任何结果, 只改速度。
+function spreadCellSrc(){
+  const S=P.sceneScale||1;
+  return Math.max(1e-6, Math.max(P.spreadR, P.spreadIgnR)/S);
+}
+function buildSceneHash(cell){
+  const n=sceneGauss.length; if(!n){ sceneHash=null; return; }
   const map=new Map();
   for(let i=0;i<n;i++){ const p=sceneGauss[i].p;
     const key=Math.floor(p[0]/cell)+','+Math.floor(p[1]/cell)+','+Math.floor(p[2]/cell);   // 与 hashQuery 的 floor 一致 (负坐标)
@@ -827,6 +843,8 @@ function buildBurnState(){
   sceneHash={cell,map};
 }
 function hashQuery(p,r,fn){
+  // 场景缩放是载入后才设的, 所以格子可能是按旧 scale 建的; 偏离过大就重建一次。
+  if(sceneHash && (sceneHash.cell>4*r || sceneHash.cell<0.25*r)) buildSceneHash(Math.max(1e-6,r));
   const c=sceneHash.cell, m=sceneHash.map;
   const x0=Math.floor((p[0]-r)/c), x1=Math.floor((p[0]+r)/c),
         y0=Math.floor((p[1]-r)/c), y1=Math.floor((p[1]+r)/c),
@@ -841,7 +859,7 @@ function hashQuery(p,r,fn){
 function worldToSrc(wx,wy,wz){
   const S=P.sceneScale||1, cyw=Math.cos(P.sceneYaw), syw=Math.sin(P.sceneYaw),
         cp=Math.cos(P.scenePitch), sp=Math.sin(P.scenePitch), C=sceneInfo.center;
-  const x3=wx/S, y2=(wy-P.sceneLift)/S, z3=wz/S;
+  const x3=(wx-P.sceneOffX)/S, y2=(wy-P.sceneLift)/S, z3=(wz-P.sceneOffZ)/S;
   const x=x3*cyw - z3*syw, z2=x3*syw + z3*cyw;          // yaw⁻¹
   const y=y2*cp + z2*sp, z=-y2*sp + z2*cp;              // pitch⁻¹
   return [x+C[0], y+C[1], z+C[2]];
@@ -852,7 +870,7 @@ function srcToWorld(p){
   const x=p[0]-C[0], y=p[1]-C[1], z=p[2]-C[2];
   const y2=y*cp - z*sp, z2=y*sp + z*cp;                 // pitch (与 gatherScene tf 相同)
   const x3=x*cyw + z2*syw, z3=-x*syw + z2*cyw;          // yaw
-  return [x3*S, y2*S + P.sceneLift, z3*S];
+  return [x3*S + P.sceneOffX, y2*S + P.sceneLift, z3*S + P.sceneOffZ];
 }
 function igniteAt(wx,wy,wz,r){
   const sb=sceneBurnState; if(!sb) return 0;
@@ -1009,10 +1027,12 @@ const P = {
   // 旧的 0.985 高过峰值 ⇒ 没有像素过阈 ⇒ bloom 恒为零 (滑杆看着在动其实无效)。0.40 让
   // 白热核重新过阈, 其余部分不过。改这个值只影响外观, 不进哈希。
   box:true, boxLight:0.10, embers:true, reflect:0.05, haze:0.05, emberRate:16, emberMax:160,
-  sceneOn:false, sceneMax:120000, sceneScale:1, sceneYaw:0, scenePitch:0, sceneLift:0, sceneLight:1.0,
+  sceneOn:false, sceneMax:120000, sceneScale:1, sceneYaw:0, scenePitch:0, sceneLift:0,
+  sceneOffX:0, sceneOffZ:0,          // 横向摆位: 把重建挪开, 好让火落在它旁边而不是正中
+  sceneLight:1.0,
   sceneSorted:true,                 // true=场景与火按深度桶交错(全局排序, 互遮挡) | false=旧行为(未排序,火后绘制)
   sceneBackdrop:false,              // true=公平对照: 场景内部排序正确但整体先画, 火叠在其上 (backdrop 合成)
-  sceneDepthTest:false,             // true=更强对照 (depth-aware): 场景不透明处写深度, 火逐像素 z-test
+  sceneDepthTest:false, depthTestAlpha:0.5,   // depth-aware 基线的不透明度阈值 (可扫)             // true=更强对照 (depth-aware): 场景不透明处写深度, 火逐像素 z-test
   spreadOn:false,                   // splat-graph 火蔓延 (燃烧状态住在场景 splats 上)
   spreadIgnR:0.14, spreadHeat:2.2, spreadIgnH:1.0,   // 火焰→splat 点燃: 半径/加热率/阈值
   spreadR:0.11, spreadRate:3.0, spreadBurnT:6.0,     // splat→splat 蔓延半径/速率, 燃烧时长(s)
@@ -2309,7 +2329,7 @@ function render(){
       gl.clearDepth(1.0); gl.clear(gl.DEPTH_BUFFER_BIT);
       gl.colorMask(false,false,false,false);
       gl.enable(gl.DEPTH_TEST); gl.depthFunc(gl.LESS);
-      gl.uniform1f(uScene.DepthPre, 1.0);
+      gl.uniform1f(uScene.DepthPre, P.depthTestAlpha);
       drawSceneRange(0,ns); gl.bindVertexArray(null);
       gl.uniform1f(uScene.DepthPre, 0.0);
       gl.colorMask(true,true,true,true);
@@ -2620,6 +2640,11 @@ window.addEventListener('keydown',e=>{
 // 无头验证钩子 (预览截图不可用时, 用 eval+readPixels 检验)
 window.__demo = {
   gl, P, get count(){ return lastCount; },
+  // 邻接哈希的格子尺寸: 供无头对照用 (按蔓延半径 vs 旧的按场景尺寸)
+  get hashCell(){ return sceneHash?sceneHash.cell:null; },
+  get hashCellDefault(){ return typeof spreadCellSrc==='function'?spreadCellSrc():null; },
+  get sceneExtent(){ return sceneInfo?sceneInfo.extent:null; },
+  rebuildHash(cell){ if(sceneGauss.length) buildSceneHash(cell||spreadCellSrc()); return sceneHash?sceneHash.cell:null; },
   forceSize(w,h){ cv.width=w; cv.height=h; makeTargets(); },   // 无头测试: 绕过 0 宽布局
   render(){ return render(); }, rebuild(){ rebuildLayers(); },
   warm(frames){ frames=frames||120; for(let i=0;i<frames;i++) stepAll(0.016); },
