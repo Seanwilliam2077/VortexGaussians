@@ -212,6 +212,35 @@
     <div><img src="static/images/fig_spread_t2.jpg" alt="Fire burning inside the ring, first char at its base"><span class="lbl">t &asymp; 16 s &mdash; fuel burning, feeding the solver</span></div>
     <div><img src="static/images/fig_spread_t3.jpg" alt="Fuel consumed, char written into splat albedo"><span class="lbl">t &asymp; 56 s &mdash; consumed, char in splat albedo</span></div>
   </div>
+
+  <div class="narrow">
+    <h3>&hellip;and on a scene you can download</h3>
+    <p>The loop above runs on our synthetic test scene, and the paper's other burn runs on a
+      capture we are not free to redistribute. This one runs on <code>kitchen</code> from
+      Mip-NeRF&nbsp;360 &mdash; the pre-trained 3DGS release, <b>729,826 Gaussians at degree-3
+      spherical harmonics</b>, the same file and the same placement as the teaser &mdash; so it is
+      the version of this result anyone can repeat. Fuel is a hand-drawn box in demo world
+      coordinates around the model construction loader on the table: <b>75,443 splats</b>, and not
+      one splat of the table, the mat or the runner is inside it (we checked by rendering the
+      selection and its complement, and by connected-component labelling). A single ignition of
+      <b>454 splats</b> on its flank chars the machine through &mdash; 7,000 splats at t&nbsp;=&nbsp;35&nbsp;s,
+      37,800 at 165, and at 330&nbsp;s the fire burns out with <b>75,310 charred, 99.8% of the
+      fuel</b>. Char is written into the splats' own albedo and opacity, so what darkens is the
+      reconstruction itself.</p>
+    <p class="muted" style="font-size:.9rem">Two things the pictures show that we would rather
+      state than have you find: the blade teeth stay bright yellow, because they interleave with
+      the tabletop plane and fall below the fuel box's floor &mdash; about 2% of the machine that
+      the box cannot reach without swallowing the table &mdash; and char reads as dark olive rather
+      than black, because charring also drops each splat's opacity by 30%. And the cost is the
+      honest headline: the 330&nbsp;s shown took <b>76.8 minutes of wall clock</b>. The simulation
+      substep is real-time on the fire alone; what is not real-time is one combustion state per
+      splat on three quarters of a million of them.</p>
+    <div class="imgrow">
+      <div><img src="static/images/fig_kburn_t0.jpg" alt="The captured kitchen scene with the flame behind the toy loader, before ignition"><span class="lbl">t = 0 &mdash; before ignition</span></div>
+      <div><img src="static/images/fig_kburn_t165.jpg" alt="A fire line across the toy loader, front half charred black, cab still yellow"><span class="lbl">t = 165 s &mdash; 37,800 charred, fire line across the machine</span></div>
+      <div><img src="static/images/fig_kburn_t330.jpg" alt="The toy loader fully charred"><span class="lbl">t = 330 s &mdash; burnt out, 75,310 charred</span></div>
+    </div>
+  </div>
 </section>
 
 <!-- ======================= live demo ======================= -->
