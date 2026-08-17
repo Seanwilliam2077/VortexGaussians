@@ -168,25 +168,33 @@
     </div>
 
     <div class="narrow">
-      <h3>Additional clip: the same fire inside a captured reconstruction</h3>
+      <h3>Additional clip: the reconstruction catches fire on its own</h3>
       <p>Every sequence in the video above uses the synthetic test scene. This clip, which
-        <b>ships separately</b> from it, is the shot the paper had named as the one it would add
-        first: the solver
-        burning inside <code>kitchen</code> from Mip-NeRF&nbsp;360, in the pre-trained 3DGS release,
-        loaded at <b>729,826 Gaussians with degree-3 spherical harmonics</b>. Fifteen seconds at
-        1920&times;1080, 60&nbsp;fps, one cut &mdash; ten seconds on a fixed camera, then a
-        five-second parallax arc that swings the viewpoint and swings it back. Watch the model
-        loader's lift arms and its black hydraulic linkage cut into the flame as the camera moves:
-        the fire is not composited in front of the reconstruction, it is depth-interleaved with it,
-        and every splat of the capture orders itself against every splat of the fire. The arc is
-        rendered at the framing the camera actually solves for (1544&times;1080) and pillarboxed into
-        the 16:9 delivery frame, because widening the field under camera motion walks the frame edge
-        off the end of the capture, where the reconstruction has nothing to show.</p>
+        <b>ships separately</b> from it, is the solver burning inside <code>kitchen</code> from
+        Mip-NeRF&nbsp;360, in the pre-trained 3DGS release, loaded at <b>729,826 Gaussians with
+        degree-3 spherical harmonics</b>. <b>Nothing in it is lit by hand.</b> The flame stands on
+        the table and heats whatever is near it; the placemat under the model loader is near enough
+        and starts burning within six seconds; the loader itself is not, and for twenty-four seconds
+        it simply sits in the fire and does nothing. Then it <b>catches by itself at simulated
+        t&nbsp;=&nbsp;24.40&nbsp;s</b> &mdash; 29 splats crossing the ignition threshold on
+        accumulated heat, with no <code>ignite</code> call anywhere in the recipe &mdash; and chars
+        outward from there. That wait is the result, so the clip runs it in one unbroken take rather
+        than cutting to the interesting part. The single cut is to the aftermath at
+        t&nbsp;&asymp;&nbsp;250&nbsp;s, and it is labelled on screen. Throughout, watch the loader's
+        lift arms and black hydraulic linkage cut into the flame: the fire is not composited in
+        front of the reconstruction, it is depth-interleaved with it, and every splat of the capture
+        orders itself against every splat of the fire. The camera is fixed throughout: the subject
+        here is a burn that takes four minutes of simulated time, and the previous cut's parallax
+        pass over this reconstruction is <b>not</b> in this one &mdash; the occlusion is shown
+        holding over time rather than over viewpoint.</p>
       <p class="muted" style="font-size:.9rem">Frames are exported deterministically at
-        &Delta;t&nbsp;=&nbsp;1/60&nbsp;s and encoded at 60&nbsp;fps, so playback speed equals
-        simulation speed &mdash; but this is an offline export, not a screen recording: at this splat
-        count a composited frame costs 292.4&nbsp;ms. The simulation is the same real-time one; what
-        a three-quarter-million-splat reconstruction adds is rasterization.</p>
+        &Delta;t&nbsp;=&nbsp;1/60&nbsp;s and encoded at 60&nbsp;fps, and the clip is played at
+        <b>2&times;: one second of screen time is two seconds of simulated time</b>, so the burn-in
+        clock, not the wall clock, is what the timings above refer to. This is an offline export,
+        not a screen recording: at this splat count a composited frame costs 292.4&nbsp;ms, and the
+        249.7&nbsp;s of simulation behind the aftermath cut took about 45 minutes. The simulation is
+        the same real-time one; what a three-quarter-million-splat reconstruction adds is
+        rasterization.</p>
       <video controls preload="metadata" playsinline
              style="width:100%;border-radius:12px;display:block;background:#0a0a0d"
              poster="static/images/kitchen_poster.jpg">
@@ -219,26 +227,41 @@
       capture we are not free to redistribute. This one runs on <code>kitchen</code> from
       Mip-NeRF&nbsp;360 &mdash; the pre-trained 3DGS release, <b>729,826 Gaussians at degree-3
       spherical harmonics</b>, the same file and the same placement as the teaser &mdash; so it is
-      the version of this result anyone can repeat. Fuel is a hand-drawn box in demo world
-      coordinates around the model construction loader on the table: <b>75,443 splats</b>, and not
-      one splat of the table, the mat or the runner is inside it (we checked by rendering the
-      selection and its complement, and by connected-component labelling). A single ignition of
-      <b>454 splats</b> on its flank chars the machine through &mdash; 7,000 splats at t&nbsp;=&nbsp;35&nbsp;s,
-      37,800 at 165, and at 330&nbsp;s the fire burns out with <b>75,310 charred, 99.8% of the
-      fuel</b>. Char is written into the splats' own albedo and opacity, so what darkens is the
-      reconstruction itself.</p>
-    <p class="muted" style="font-size:.9rem">Two things the pictures show that we would rather
-      state than have you find: the blade teeth stay bright yellow, because they interleave with
+      the version of this result anyone can repeat. <b>Nothing here is ignited by hand.</b> Fuel is
+      two hand-drawn boxes in demo world coordinates: the model construction loader on the table
+      (<b>75,443 splats</b>) and the strip of tabletop and placemat it stands on
+      (<b>25,430 splats</b>, 260 shared with the machine, <b>100,613</b> in the union). That second
+      box is what changed, and it is the whole result: the machine's nearest splat is
+      <b>0.5915</b> world units from the flame against a <b>0.14</b> heating radius, so the flame
+      cannot light it and never does &mdash; but the placemat's nearest splat is <b>0.0233</b>
+      away, well inside that radius. So the flame lights the mat (2,614 splats burning by
+      t&nbsp;=&nbsp;6&nbsp;s), the mat burns toward the machine, and the machine <b>catches by
+      itself at t&nbsp;=&nbsp;24.40&nbsp;s</b>, when accumulated heat on its first <b>29</b> splats
+      crosses the ignition threshold. From there it chars: 1.4% at t&nbsp;=&nbsp;60&nbsp;s, 12.5% at
+      100, 33.2% at 160, and <b>64.6% at 250&nbsp;s</b>, where we stop &mdash; the fire is still
+      burning there, so this run is halted rather than burnt out. Char is written into the splats'
+      own albedo, so what darkens is the reconstruction itself.</p>
+    <p class="muted" style="font-size:.9rem">Three things the pictures show that we would rather
+      state than have you find. The blade teeth stay bright yellow, because they interleave with
       the tabletop plane and fall below the fuel box's floor &mdash; about 2% of the machine that
-      the box cannot reach without swallowing the table &mdash; and char reads as dark olive rather
-      than black, because charring also drops each splat's opacity by 30%. And the cost is the
-      honest headline: the 330&nbsp;s shown took <b>76.8 minutes of wall clock</b>. The simulation
-      substep is real-time on the fire alone; what is not real-time is one combustion state per
-      splat on three quarters of a million of them.</p>
+      the box cannot reach without swallowing the table. <b>Char used to read as dark olive, and
+      that was our bug, not a limitation:</b> the old operator scaled albedo toward black, and a
+      pure multiply preserves hue and saturation, so dimmed yellow paint stayed yellow &mdash; and
+      dimmed yellow is called olive. Under the old operator the paint's saturation went
+      <b>0.869&nbsp;&rarr;&nbsp;0.874</b> across the entire burn: it never moved. Soot is a
+      deposited coating, so it now <i>replaces</i> albedo instead of scaling it, and over the
+      57,252 pixels that actually char the same measurement reads
+      <b>0.909&nbsp;&rarr;&nbsp;0.202</b> at sRGB(72,&nbsp;66,&nbsp;57), against FieryGS's
+      measured sRGB(70,&nbsp;66,&nbsp;61) &mdash; and charring no longer drops opacity at
+      all, because a surface deposit should not make geometry transparent. And the cost is the
+      honest headline: the <b>250&nbsp;s</b> shown took about <b>45 minutes of wall clock</b>. The
+      simulation substep is real-time on the fire alone; what is not real-time is one combustion
+      state per splat on three quarters of a million of them.</p>
     <div class="imgrow">
-      <div><img src="static/images/fig_kburn_t0.jpg" alt="The captured kitchen scene with the flame behind the toy loader, before ignition"><span class="lbl">t = 0 &mdash; before ignition</span></div>
-      <div><img src="static/images/fig_kburn_t165.jpg" alt="A fire line across the toy loader, front half charred black, cab still yellow"><span class="lbl">t = 165 s &mdash; 37,800 charred, fire line across the machine</span></div>
-      <div><img src="static/images/fig_kburn_t330.jpg" alt="The toy loader fully charred"><span class="lbl">t = 330 s &mdash; burnt out, 75,310 charred</span></div>
+      <div><img src="static/images/fig_kburn_t0.jpg" alt="The captured kitchen scene before the run: a yellow toy construction loader on a placemat on a kitchen table, no fire anywhere"><span class="lbl">t = 0 &mdash; the reconstruction, nothing lit</span></div>
+      <div><img src="static/images/fig_kburn_t24.jpg" alt="The toy loader still entirely bright yellow after twenty-four seconds in the flame, with the placemat beside it burning"><span class="lbl">t = 24.4 s &mdash; it catches. 29 splats of 75,443, so it still looks untouched &mdash; that is the induction</span></div>
+      <div><img src="static/images/fig_kburn_t100.jpg" alt="The toy loader's bucket and front section charred neutral grey, the cab and rear still yellow"><span class="lbl">t = 100 s &mdash; 12.5% charred</span></div>
+      <div><img src="static/images/fig_kburn_t250.jpg" alt="The toy loader with its front half charred neutral grey, the cab still yellow, flame rising from it"><span class="lbl">t = 250 s &mdash; 65% charred, soot not olive</span></div>
     </div>
   </div>
 </section>

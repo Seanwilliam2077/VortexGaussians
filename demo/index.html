@@ -520,6 +520,7 @@ uniform sampler2D uSH; uniform int uSHW; uniform int uSHDeg; uniform float uPreC
 uniform mat4 uViewProj; uniform mat4 uView;
 uniform vec2 uFocal; uniform vec2 uViewport; uniform float uSceneLight;
 uniform mat3 uSceneRotInv; uniform vec3 uEye;
+uniform float uCharDesat, uCharDim, uCharSootMix, uCharOpa; uniform vec3 uCharSoot;
 out vec2 v_uv; out vec3 v_color; out float v_opa; out float v_glow;
 vec4 SHT(int k){ return texelFetch(uSH, ivec2(k % uSHW, k / uSHW), 0); }
 // 显示链的闭式逆: 让重建颜色过完 ACES+伽马后回到训练时的值。
@@ -624,8 +625,19 @@ void main(){
   }
   vec3 base = max(aColor + shTerm, vec3(0.0));
   if(uPreComp > 0.5) base = acesInvV(pow(min(base, vec3(1.0)), vec3(2.2)));
-  v_color = base*uSceneLight*(1.0-0.88*aChar);       // 炭化: 反照率压向黑
-  v_opa = aOpa*(1.0-0.30*aChar);                     // 炭化: 轻微降不透明度
+  // 炭化着色 —— 纯渲染路径。sb.char_ 是仿真态, 这里一个字节都不碰, 确定性哈希不受影响。
+  // 旧式 base*(1-0.88*aChar) 是纯乘性压暗。乘法**保色度**: 黄漆压暗后仍是黄, 只是暗黄,
+  // 而暗黄的名字就叫橄榄绿 —— 这就是"炭化效果不好"的全部成因, 与不透明度项无关
+  // (实测那 0.30 的降透明反而让背景漏进来一点中性灰, 略微**降低**了饱和度)。
+  // 烟炱的物理是沉积在表面上的一层低反照率涂层: 它**替换**反照率, 而不是缩放反照率。
+  //   grey   : 去色到亮度 —— 丢掉色度, 但完整保留表面明暗起伏, 几何仍可读 (不塌成剪影)
+  //   uCharDim : 压到烟炱量级的亮度
+  //   uCharSootMix : 再向定值烟炱反照率插值 (=1 时完全压平, 会丢起伏, 默认 0)
+  // 旧行为可精确复现: desat=0, dim=0.12, sootMix=0, opa=0.30 ⇒ mix(base,base*0.12,aChar)。
+  vec3 grey   = vec3(dot(base, vec3(0.2126,0.7152,0.0722)));
+  vec3 sooted = mix(mix(base, grey, uCharDesat)*uCharDim, uCharSoot, uCharSootMix);
+  v_color = mix(base, sooted, aChar)*uSceneLight;
+  v_opa   = aOpa*(1.0-uCharOpa*aChar);               // 烟炱沉积在表面上, 不该把表面变透明
   v_glow = aGlow;
 }`;
 const FS_SCENE = `#version 300 es
@@ -664,7 +676,9 @@ const uPart={ VP:U(pPart,'uViewProj'),
 const uScene={ VP:U(pScene,'uViewProj'), Light:U(pScene,'uSceneLight'), Time:U(pScene,'uTime'),
   V:U(pScene,'uView'), Focal:U(pScene,'uFocal'), Viewport:U(pScene,'uViewport'),
   RotInv:U(pScene,'uSceneRotInv'), Eye:U(pScene,'uEye'), DepthPre:U(pScene,'uDepthPre'),
-  SH:U(pScene,'uSH'), SHW:U(pScene,'uSHW'), SHDeg:U(pScene,'uSHDeg'), PreComp:U(pScene,'uPreComp') };
+  SH:U(pScene,'uSH'), SHW:U(pScene,'uSHW'), SHDeg:U(pScene,'uSHDeg'), PreComp:U(pScene,'uPreComp'),
+  CharDesat:U(pScene,'uCharDesat'), CharDim:U(pScene,'uCharDim'),
+  CharSootMix:U(pScene,'uCharSootMix'), CharOpa:U(pScene,'uCharOpa'), CharSoot:U(pScene,'uCharSoot') };
 const uPre={ Tex:U(pPre,'uTex'),Threshold:U(pPre,'uThreshold') };
 const uBlur={ Tex:U(pBlur,'uTex'),Dir:U(pBlur,'uDir') };
 const uComp={ Scene:U(pComp,'uScene'),Bloom:U(pComp,'uBloom'),Exposure:U(pComp,'uExposure'),BloomAmt:U(pComp,'uBloomAmt'),
@@ -1208,6 +1222,12 @@ const P = {
   spreadIgnR:0.14, spreadHeat:2.2, spreadIgnH:1.0,   // 火焰→splat 点燃: 半径/加热率/阈值
   spreadR:0.11, spreadRate:3.0, spreadBurnT:6.0,     // splat→splat 蔓延半径/速率, 燃烧时长(s)
   spreadFeed:5.0,                   // 燃烧 splat→切片温度场注入率 (闭环强度)
+  // 炭化着色 (纯渲染, 不进仿真; 见 VS_SCENE 末尾)。旧发布版 = desat 0, dim 0.12, sootMix 0, opa 0.30
+  charDesat:0.85,                   // 去色强度: 丢色度、留亮度起伏 (0=保留原色 → 暗黄/橄榄)
+  charDim:0.12,                     // 去色后压到烟炱亮度量级
+  charSootMix:0.0,                  // 再向定值烟炱反照率插值; 1 会压平表面起伏, 默认不用
+  charOpa:0.0,                      // 烟炱是表面沉积物, 不降不透明度 (旧版 0.30)
+  charSootR:0.0495, charSootG:0.0459, charSootB:0.0428,   // 线性域暖中性烟炱反照率 (~4.5%)
   orbit:true, stretch:true, flicker:true, paused:false
 };
 
@@ -2504,6 +2524,9 @@ function render(){
     gl.uniformMatrix4fv(uScene.V, false, cam.V);            // EWA: 需要视图矩阵与像素焦距
     gl.uniform2f(uScene.Focal, cam.focal[0], cam.focal[1]);
     gl.uniform2f(uScene.Viewport, cv.width, cv.height);
+    gl.uniform1f(uScene.CharDesat, P.charDesat); gl.uniform1f(uScene.CharDim, P.charDim);
+    gl.uniform1f(uScene.CharSootMix, P.charSootMix); gl.uniform1f(uScene.CharOpa, P.charOpa);
+    gl.uniform3f(uScene.CharSoot, P.charSootR, P.charSootG, P.charSootB);
     { const cyj=Math.cos(P.sceneYaw), syj=Math.sin(P.sceneYaw),
             cpj=Math.cos(P.scenePitch), spj=Math.sin(P.scenePitch);
       // R = Ry(yaw)·Rx(pitch) 的转置 (=逆, 正交); 列主序上传
