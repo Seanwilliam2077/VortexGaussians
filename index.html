@@ -128,11 +128,11 @@
 <section class="wrap" style="padding-top:8px">
   <div class="imgrow">
     <div><img src="static/images/fig_teaser_flame.jpg" alt="Flame driven by layered grid-free Gaussian vortex-particle simulation"></div>
-    <div><img src="static/images/fig_teaser_scene.jpg" alt="The same solver burning inside a loaded 3DGS scene: flame and scene splats share one depth order and occlude each other per primitive, and consumed fuel is charred in place"></div>
+    <div><img src="static/images/fig_teaser_scene.jpg" alt="The same solver burning inside a captured 3DGS reconstruction of a kitchen: the model loader's lift arms occlude the flame per primitive, and the shelf behind it is veiled by the plume"></div>
     <div><img src="static/images/fig_teaser_smoke.jpg" alt="The same particle state re-shaded as smoke"></div>
   </div>
   <figure><figcaption>
-    Real-time, forward-simulated fire and smoke rendered as <b>native Gaussian-splatting content</b>. <b>Left:</b> a flame driven by nine layered 2D grid-free Gaussian vortex-particle simulations, in which every vortex element <i>is</i> an emissive anisotropic Gaussian &mdash; white-hot core, orange body, dark-red turbulent tips, with embers. <b>Middle:</b> the same solver burning inside a loaded 3DGS scene from a three-quarter view. The flame and the scene's splats share one depth order, so each occludes the other per primitive, and combustion state lives on the scene's own splats &mdash; the fuel it has already consumed is charred in place and the plume above is fed by the burning geometry. <b>Right:</b> the identical particle state re-shaded as smoke (absorption-dominated compositing with warm underlighting). All results run in real time in a browser &mdash; <a href="demo/">try it live</a>.
+    Real-time, forward-simulated fire and smoke rendered as <b>native Gaussian-splatting content</b>. <b>Left:</b> a flame driven by nine layered 2D grid-free Gaussian vortex-particle simulations, in which every vortex element <i>is</i> an emissive anisotropic Gaussian &mdash; white-hot core, orange body, dark-red turbulent tips, with embers. <b>Middle:</b> the same solver burning inside a <b>captured</b> reconstruction &mdash; <code>kitchen</code> from Mip-NeRF&nbsp;360, in the pre-trained form released by the authors of 3D Gaussian splatting, loaded here at 729,826 Gaussians with degree-3 spherical harmonics. The flame and the scene's splats share one depth order, so the model loader's lift arms and hydraulic linkage occlude the fire, and the shelf and plants behind it are veiled by the plume &mdash; per primitive, rather than the fire being composited in front of the scene as a whole. <b>Right:</b> the identical particle state re-shaded as smoke (absorption-dominated compositing with warm underlighting). The fire runs in real time in a browser &mdash; <a href="demo/">try it live</a>; the middle panel's captured scene adds 272&nbsp;ms of rasterization on top of it.
   </figcaption></figure>
 
   <p class="narrow" style="margin-top:18px">
@@ -150,8 +150,8 @@
     <h2>Watch: fire that is simulated, rendered, and composited as one Gaussian set</h2>
     <p class="narrow">Seven single-take sequences, unedited, results first. It opens on what the
       system produces &mdash; a flame in close-up, the same solver burning <b>inside a loaded
-      reconstruction</b> under a slow parallax arc, and one particle state re-shaded from fire to
-      smoke &mdash; then turns to evidence. Three <b>side-by-side solver comparisons</b> follow
+      scene</b> (the synthetic test reconstruction) under a slow parallax arc, and one particle
+      state re-shaded from fire to smoke &mdash; then turns to evidence. Three <b>side-by-side solver comparisons</b> follow
       &mdash; Grid&nbsp;Mode (VIC) left, Grid-Free (Gaussian VPM) right, run from the <b>same
       seed</b> at the same fixed timestep through the identical renderer, so every visual difference
       is the solver: fixed camera, constant-rate orbit, scripted interaction. The finale is the
@@ -164,6 +164,33 @@
              style="width:100%;border-radius:12px;display:block;background:#0a0a0d"
              poster="static/images/fig_teaser_flame.jpg">
         <source src="static/video/vortex_gaussians_supplemental.mp4" type="video/mp4">
+      </video>
+    </div>
+
+    <div class="narrow">
+      <h3>Additional clip: the same fire inside a captured reconstruction</h3>
+      <p>Every sequence in the video above uses the synthetic test scene. This clip, which
+        <b>ships separately</b> from it, is the shot the paper had named as the one it would add
+        first: the solver
+        burning inside <code>kitchen</code> from Mip-NeRF&nbsp;360, in the pre-trained 3DGS release,
+        loaded at <b>729,826 Gaussians with degree-3 spherical harmonics</b>. Fifteen seconds at
+        1920&times;1080, 60&nbsp;fps, one cut &mdash; ten seconds on a fixed camera, then a
+        five-second parallax arc that swings the viewpoint and swings it back. Watch the model
+        loader's lift arms and its black hydraulic linkage cut into the flame as the camera moves:
+        the fire is not composited in front of the reconstruction, it is depth-interleaved with it,
+        and every splat of the capture orders itself against every splat of the fire. The arc is
+        rendered at the framing the camera actually solves for (1544&times;1080) and pillarboxed into
+        the 16:9 delivery frame, because widening the field under camera motion walks the frame edge
+        off the end of the capture, where the reconstruction has nothing to show.</p>
+      <p class="muted" style="font-size:.9rem">Frames are exported deterministically at
+        &Delta;t&nbsp;=&nbsp;1/60&nbsp;s and encoded at 60&nbsp;fps, so playback speed equals
+        simulation speed &mdash; but this is an offline export, not a screen recording: at this splat
+        count a composited frame costs 292.4&nbsp;ms. The simulation is the same real-time one; what
+        a three-quarter-million-splat reconstruction adds is rasterization.</p>
+      <video controls preload="metadata" playsinline
+             style="width:100%;border-radius:12px;display:block;background:#0a0a0d"
+             poster="static/images/kitchen_poster.jpg">
+        <source src="static/video/vortex_gaussians_kitchen.mp4" type="video/mp4">
       </video>
     </div>
   </div>
@@ -215,6 +242,16 @@
 <section>
   <div class="wrap">
     <h2>GS-native composition: the fire lives <i>inside</i> the scene</h2>
+    <p class="narrow">First, what "inside" means on a real capture. Left is <code>kitchen</code>
+      from Mip-NeRF&nbsp;360 exactly as its authors released it, drawn by our rasterizer and nothing
+      else. Right is the same file, the same camera and the same frame with the solver running in
+      it. Nothing about the reconstruction was edited to make room: the flame is a second stream of
+      Gaussians merged into the scene's own depth order, which is why the loader's lift arms stay in
+      front of it and the shelf behind goes soft under the plume.</p>
+    <div class="imgrow narrow">
+      <div><img src="static/images/fig_kitchen_nofire.jpg" alt="The kitchen reconstruction as released, drawn by our rasterizer with no simulation running"><span class="lbl">the capture, as released</span></div>
+      <div><img src="static/images/fig_kitchen_fire.jpg" alt="The same reconstruction, same camera, with the vortex-particle fire simulating inside it"><span class="lbl">+ our fire, same camera and frame</span></div>
+    </div>
     <p class="narrow">
       Loaded 3DGS reconstructions are merged into the same global depth order as the fire by an
       asymmetric two-stream interleave: the small dynamic set is sorted exactly, the scene is
@@ -222,6 +259,8 @@
       interleaved near-to-far under one blend state &mdash; at a <b>small measured overhead</b>
       (30.7 vs 28.3 ms median render at 45.8k scene splats over the full 9&times;1300 flame, +8%,
       within the run-to-run spread).
+      The side-by-side below is run on the synthetic test scene &mdash; the one reconstruction we can
+      redistribute, so this comparison is reproducible end to end from the released archive.
       A fire-ring stone stands directly between the camera and the white-hot core.
       <b>Drag the slider.</b> On the left (ours) the stone's dark silhouette bites into the core through
       a soft, correctly blended Gaussian boundary &mdash; each primitive occludes according to its own

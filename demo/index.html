@@ -1146,7 +1146,7 @@ function resize(){
 window.addEventListener('resize', resize);
 
 // ---- 真 3D 相机 (绕火环绕) + 切片基向量 ----
-// V 必须在此就存在: gather() 用它算 dynKey 的桶键, 而 updateCam() 只在 render() 里跑。
+// V 必须在此就存在: gather() 用它取视前向 (排序键=桶键), 而 updateCam() 只在 render() 里跑。
 // 正常帧里 render() 先 updateCam() 再 gather(), 这个初值永远被覆盖、永不进绘制;
 // 它只保证"先单独调 gather() 再 render()"的基准路径 (benchcfg / __demo.bench) 不抛异常。
 const cam={ VP:m4Perspective(0.85,1,0.05,50), V:[1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,1],
@@ -2301,7 +2301,8 @@ let orbitPhase=0, simTime=0;
 // 把一个粒子(切片内 2D 坐标 s=x, y; 速度 dx,dy)放到 3D world + 切片面内的 major/minor 轴
 //  view-aligned: 切片面=(相机右 bx, 世界上), 沿水平前向 fh 错开深度 → 随相机重排朝向
 //  world-fixed:  切片面=(世界X, 世界Y), 沿世界Z 错开深度 → 相机绕到侧面会看到层"边缘"
-// 写一个 3D 高斯到 arr[o..]，并把它到相机的距离²写进 depths[gi] (供排序)
+// 写一个 3D 高斯到 arr[o..]，并把它的**视空间深度** dot(p-eye, forward) 写进 depths[gi]
+// (供排序 + 分桶; 视前向由 gather() 每帧写进 dFw0/1/2, 见那里的注释)
 function emit3D(arr,o, depths,gi, sx,sy, dx,dy, M,m, dep, va, bx,fh,eye, fade, temp,dens,seed,type){
   let cx,cy,cz;
   if(va){ cx=bx[0]*sx+fh[0]*dep; cy=sy; cz=bx[2]*sx+fh[2]*dep;
@@ -2314,16 +2315,27 @@ function emit3D(arr,o, depths,gi, sx,sy, dx,dy, M,m, dep, va, bx,fh,eye, fade, t
     arr[o++]=-dy*m;arr[o++]=dx*m;arr[o++]=0;
   }
   arr[o++]=fade;arr[o++]=temp;arr[o++]=dens;arr[o++]=seed;arr[o++]=type;
-  const ex=cx-eye[0],ey=cy-eye[1],ez=cz-eye[2]; depths[gi]=ex*ex+ey*ey+ez*ez;
+  const ex=cx-eye[0],ey=cy-eye[1],ez=cz-eye[2]; depths[gi]=ex*dFw0+ey*dFw1+ez*dFw2;
   return o;
 }
 // 收集所有高斯 (火+烟+火星+背景) → 计算深度 → front-to-back 排序 → 写 instData
 let rawData=new Float32Array(0), depths=new Float32Array(0), order=[];
-// dynKey: 动态流的**桶键**, 已按 order 重排, 单位与 gatherScene 的 sceneKey 相同 (线性视空间深度)。
-// depths 存的是到眼点的距离² —— 它只用于流内 front-to-back 排序 (单调等价, 排序结果不变),
-// 但深度桶交错要把两条流放进**同一个** [sceneDMin, sceneDMax] 映射, 两者必须同量纲。
-// 场景键在改成线性视空间深度后, 若这里仍拿 d² 去算桶号, 火焰会被整体钳到最远的一桶,
-// 落在全部场景桶之后 —— 前向合成里透过率已被场景耗尽, 火几乎被完全抹掉。
+// depths / dynKey: 动态流的排序键与桶键, **同一个量** —— 线性视空间深度
+// dot(p-eye, forward), 与 gatherScene 的 sceneKey 逐字相同。dynKey 只是 depths 按
+// order 重排后的副本 (dynKey[i]=depths[order[i]])。
+//   为什么必须同量: 深度桶交错把两条流放进**同一个** [sceneDMin, sceneDMax] 映射,
+//   量纲不同则桶号不可比 —— 场景键改成线性视空间深度后若这里还拿 d² 算桶号, 火焰会被
+//   整体钳到最远一桶, 落在全部场景桶之后, 前向合成里透过率已被场景耗尽, 火几乎被抹掉。
+//   为什么排序键也必须是它 (而不是到眼点的距离 r): 半径与视深度**不是单调等价的** ——
+//   r = sqrt(z²+t²) ≈ z + t²/(2z) (t = 离轴偏移), 所以按 r 排序而按 z 分桶时桶号会回落。
+//   drawInterleaved 的 dynStart 扫描把每个基元实际发射在 runmax(桶号) 上, 回落即变成
+//   "本该在近桶的火被画到远桶", 与它之间的场景 splat 全部被反序合成。在出版相机上实测:
+//   5393 个动态基元里 1666 处桶号回落 (最大 10 桶), 3826 个基元被推后 (均 3.5 桶),
+//   累计 3.3e7 对 火×场景 的相对顺序是错的 (占全部 3.94e9 对的 0.84%)。
+//   桶号也只是近似, 真正的顺序由 depths 定 —— 所以两者共用一个键才自洽。
+//   选视空间深度而非 r 的第三个理由: 参考光栅器 (Inria/gsplat) 用的就是视空间深度,
+//   场景流早已按它排序 (见 gatherScene), 两条流对齐到同一个约定。
+let dFw0=0, dFw1=0, dFw2=-1;               // 每帧从 cam.V 取的视前向 (emit3D 用)
 let dynKey=new Float32Array(0);
 function gather(){
   const vol=(P.dimMode==='vol'||P.dimMode==='vic3'||P.dimMode==='vpm3');   // 3D 粒子云走同一渲染路径
@@ -2335,6 +2347,7 @@ function gather(){
   if(instData.length<cap*STRIDE_F) instData=new Float32Array(Math.ceil(cap*STRIDE_F*1.3));
   const arr=rawData; let o=0, gi=0;
   const N=layers.length, radW=P.rad/360, D=P.sliceDepth, va=(P.sliceMode==='view'), bx=cam.bx, by=cam.by, fh=cam.fh, eye=cam.eye;
+  { const V=cam.V; dFw0=-V[2]; dFw1=-V[6]; dFw2=-V[10]; }   // 视前向: 排序键 = 桶键 = dot(p-eye, fw)
   if(vol){
     // Tier1 真三维: 相机朝向 billboard 在真 (x,y,z); Tier3 涡丝则沿 3D 轨迹拉成丝
     let F3x=0-eye[0],F3y=1.05-eye[1],F3z=0-eye[2]; const F3l=Math.hypot(F3x,F3y,F3z)||1; F3x/=F3l;F3y/=F3l;F3z/=F3l;
@@ -2359,7 +2372,7 @@ function gather(){
       arr[o++]=mjx;arr[o++]=mjy;arr[o++]=mjz;
       arr[o++]=mnx;arr[o++]=mny;arr[o++]=mnz;
       arr[o++]=1.0;arr[o++]=p.T;arr[o++]=p.d;arr[o++]=p.seedp||0;arr[o++]=0;
-      const ex=p.x-eye[0],ey=p.y-eye[1],ez=p.z-eye[2]; depths[gi++]=ex*ex+ey*ey+ez*ez;
+      const ex=p.x-eye[0],ey=p.y-eye[1],ez=p.z-eye[2]; depths[gi++]=ex*dFw0+ey*dFw1+ez*dFw2;
     }
   } else
   for(let k=0;k<N;k++){
@@ -2395,7 +2408,7 @@ function gather(){
       arr[o++]=bx[0]*g.sx;arr[o++]=bx[1]*g.sx;arr[o++]=bx[2]*g.sx;
       arr[o++]=by[0]*g.sy;arr[o++]=by[1]*g.sy;arr[o++]=by[2]*g.sy;
       arr[o++]=1.0;arr[o++]=g.tone;arr[o++]=g.a;arr[o++]=0;arr[o++]=2;
-      const ex=g.x-eye[0],ey=g.y-eye[1],ez=g.z-eye[2]; depths[gi++]=ex*ex+ey*ey+ez*ez;
+      const ex=g.x-eye[0],ey=g.y-eye[1],ez=g.z-eye[2]; depths[gi++]=ex*dFw0+ey*dFw1+ez*dFw2;
     }
   }
   const cnt=gi;
@@ -2403,11 +2416,10 @@ function gather(){
   for(let i=0;i<cnt;i++) order[i]=i;
   order.sort((a,b)=>depths[a]-depths[b]);              // 近→远 (front-to-back)
   if(dynKey.length<cnt) dynKey=new Float32Array(Math.ceil(cnt*1.3));
-  { const V=cam.V, fwx=-V[2], fwy=-V[6], fwz=-V[10], ey0=eye[0], ey1=eye[1], ey2=eye[2];
-    const dst2=instData;
+  { const dst2=instData;
     for(let i=0;i<cnt;i++){ let s=order[i]*STRIDE_F, d=i*STRIDE_F;
       for(let j=0;j<STRIDE_F;j++) dst2[d+j]=arr[s+j];
-      dynKey[i]=(arr[s]-ey0)*fwx + (arr[s+1]-ey1)*fwy + (arr[s+2]-ey2)*fwz; } }
+      dynKey[i]=depths[order[i]]; } }   // 排序键即桶键: 重排即可, 不再重算 (不可能再走样)
   return cnt;
 }
 
