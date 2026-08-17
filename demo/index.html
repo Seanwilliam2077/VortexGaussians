@@ -244,7 +244,7 @@
           <div class="prow"><label>Shift Z</label><input type="range" id="sceneOffZ" min="-8" max="8" step="0.02" value="0"><span class="pval" id="sceneOffZV"></span></div>
           <div class="hint b">The fire is anchored at the world origin, so Shift X/Z is how you stand it beside the reconstruction instead of inside it.</div>
           <div class="prow"><label>Scene brightness</label><input type="range" id="sceneLight" min="0.1" max="3" step="0.02" value="1.0"><span class="pval" id="sceneLightV"></span></div>
-          <div class="prow"><label>Gaussian cap (×10k)</label><input type="range" id="sceneMax" min="2" max="40" step="1" value="12"><span class="pval" id="sceneMaxV"></span></div>
+          <div class="prow"><label>Gaussian cap (×10k)</label><input type="range" id="sceneMax" min="2" max="200" step="1" value="80"><span class="pval" id="sceneMaxV"></span></div>
           <div class="crow" id="sceneOn"><span class="cb"></span><span>Show .ply scene</span></div>
           <div class="hint b">Parses the standard Inria `.ply` (position · scale=exp · quaternion · opacity=sigmoid · SH DC→color);
             each Gaussian becomes a flat splat from its two major axes. The fire sits inside the scene and occludes it from the front. Use the sliders above to <b>align, scale and level</b> it.</div>
@@ -524,11 +524,13 @@ out vec2 v_uv; out vec3 v_color; out float v_opa; out float v_glow;
 vec4 SHT(int k){ return texelFetch(uSH, ivec2(k % uSHW, k / uSHW), 0); }
 // 显示链的闭式逆: 让重建颜色过完 ACES+伽马后回到训练时的值。
 // 球谐是视相关的, 所以必须在球谐求值之后做, 不能只补偿 DC 项。
-// **近似的边界, 明写**: 逆变换是非线性的, 而 alpha 合成发生在它之后 —— 于是我们在
-// "逆 ACES 域"里做混合, 而 3DGS 是在显示域里混合的。单个不透明 splat 覆盖整个像素时
-// 精确; 多个半透明 splat 叠加处有残差 (下面的 scene-only A/B 给出实测上界)。
-// 曝光、暗角、bloom 邻域这三项也没被逆掉, 所以"完全还原"只在 exposure=1、画面中心、
-// 无 bloom 的条件下成立。
+// **默认关闭 (P.scenePreComp=false)**, 因为这条"只在单 splat 处成立"的近似在实拍
+// 重建上根本不成立: 逆变换是非线性的, 而 alpha 合成发生在它之后 —— 我们于是在
+// "逆 ACES 域"里混合, 而 3DGS/gsplat 的 splat 通路上压根没有任何 tonemap。
+// 对混合物它不是恒等: 3 个重叠 splat 处 +16% 亮度偏置, 20 个处 +20%; 通道比
+// (max/min) 中位数被放大 1.32×, p99 达 8.5× —— 28% 的 splat-view 因此越过 bloom
+// 阈值, 画面上就是彩虹亮斑。曝光、暗角、bloom 邻域三项也没被逆掉。
+// 代码路径保留但需显式开 uPreComp>0.5, 只作 A/B 对照, 不要在保真度截图里打开。
 vec3 acesInvV(vec3 y){
   const float a=2.51,b=0.03,c=2.43,d=0.59,e=0.14;
   y = min(y, vec3(0.9999));
@@ -545,13 +547,24 @@ vec3 acesInvV(vec3 y){
 void main(){
   vec4 pv = uView * vec4(aPos, 1.0);
   float d = -pv.z;                                   // 正深度 (OpenGL 朝 -z 看)
-  if(d < 0.05){ gl_Position = vec4(2.0,2.0,2.0,1.0); v_uv=vec2(0.0);
-                v_color=vec3(0.0); v_opa=0.0; v_glow=0.0; return; }   // 相机后方: 剔除
+  if(d < 0.2){ gl_Position = vec4(2.0,2.0,2.0,1.0); v_uv=vec2(0.0);
+               v_color=vec3(0.0); v_opa=0.0; v_glow=0.0; return; }   // 相机后方/贴脸: 剔除
+                                                     // 0.2 对齐 Inria in_frustum, 不是投影近平面:
+                                                     // 0.05 处 1/d² 已经让 J 的二阶项失控
   float fx = uFocal.x, fy = uFocal.y, d2 = d*d;
+  // 离轴钳位 (3DGS/gsplat _persp_proj): 建 J 之前先把 x/z, y/z 钳到 1.3·tan(fov/2)。
+  // 不钳的话, 视锥外的 splat 那两项 fx·x/d² 会爆掉, Σ₂ 被拉成横贯整幅的长条 —— 就是
+  // 背景上那层褐色薄纱 (少数几十个离轴 splat 就够)。
+  // tan 由 updateCam() 的定义反推, 不另加 uniform: 那里 fx=fy=H/2/tan(fovy/2) 且 aspect
+  // 只进 proj, 故 tan(fovy/2)=0.5·H/fy, tan(fovx/2)=aspect·tan(fovy/2)=0.5·W/fx。
+  float limx = 1.3 * (0.5*uViewport.x/fx);
+  float limy = 1.3 * (0.5*uViewport.y/fy);
+  float tx = d * clamp(pv.x/d, -limx, limx);
+  float ty = d * clamp(pv.y/d, -limy, limy);
   // 列主序: 第 c 列 = ∂(u,v)/∂(view 第 c 轴)
   mat3 J = mat3(fx/d,             0.0,               0.0,
                 0.0,              fy/d,              0.0,
-                fx*pv.x/d2,       fy*pv.y/d2,        0.0);
+                fx*tx/d2,         fy*ty/d2,          0.0);
   mat3 W = mat3(uView);                              // 视图旋转 (无平移)
   mat3 T = J * W;
   mat3 S3 = mat3(aCovA.x, aCovA.y, aCovA.z,
@@ -566,6 +579,8 @@ void main(){
   vec2 e1 = normalize(abs(b) > 1e-6 ? vec2(b, l1 - a) : vec2(1.0, 0.0));
   vec2 e2 = vec2(-e1.y, e1.x);
   float r1 = 3.0*sqrt(l1), r2 = 3.0*sqrt(l2);        // 3σ 半轴 (像素)
+  float rmax = 0.5*max(uViewport.x, uViewport.y);    // 硬上限: 单个 splat 不许横贯整幅。
+  r1 = min(r1, rmax); r2 = min(r2, r1);              // 离轴钳位之后的第二道保险 (退化 Σ₃/极近)
   vec2 offPx = aCorner.x*r1*e1 + aCorner.y*r2*e2;
   vec4 clip = uViewProj * vec4(aPos, 1.0);
   gl_Position = clip + vec4(2.0*offPx/uViewport*clip.w, 0.0, 0.0);
@@ -617,8 +632,9 @@ const FS_SCENE = `#version 300 es
 precision highp float; in vec2 v_uv; in vec3 v_color; in float v_opa; in float v_glow; out vec4 o;
 uniform float uTime; uniform float uDepthPre;
 // 与 FS_PARTICLE 同一足迹形式: 高斯 - 基座后重归一, 角点恰好归零 (无硬 discard 台阶)。
-// 常数 2.42 而非 3.0: 场景 splat 的四边形半宽是 2.2σ (见 parsePLY 的 ax()),
-// 故四边形坐标 u 处的世界偏移为 2.2σ·u, 指数 = -(2.2u)²/2 = -2.42u²。
+// 四边形半轴由 VS_SCENE 取 3σ (r1=3·√l1, r2=3·√l2), 故四边形坐标 u 处的偏移是 3σ·u,
+// 指数 = -(3u)²/2 = -4.5u² ⇒ KS = 4.5。基座 PES 是 r=1 处的值, 减掉再重归一后
+// 内切圆边界恰好归零 (3σ 截断的能量缺口 +0.34%, 对 47.56 dB, 可忽略)。
 const float KS  = 4.5;                             // = 0.5·3², 四边形半轴为 3σ
 const float PES = 0.0111089965;                    // = exp(-KS*1.0), 内切圆 (r=1) 边界值
 void main(){ float r2=dot(v_uv,v_uv);
@@ -750,12 +766,13 @@ function parsePLY(buf){
   let stride=0; const off={}; for(const p of props){ off[p.n]=stride; stride+=sz[p.t]||4; }
   for(const k of ['x','y','z','opacity','scale_0','rot_0','f_dc_0']) if(off[k]===undefined) throw new Error('.ply: missing field '+k+' (not a 3DGS .ply?)');
   const dv=new DataView(buf, he), C0=0.28209479177387814, sg=x=>1/(1+Math.exp(-x));
-  // ---- 显示空间预补偿 ----------------------------------------------------
+  // ---- 显示空间预补偿 (CPU 孪生, 目前未接线) --------------------------------
   // 3DGS 的 f_dc 存的是**显示空间**的颜色 (训练图像是 sRGB), 而我们的合成链是为火
-  // 设计的: HDR -> ACES -> 1/2.2 伽马。把显示空间颜色直接送进去等于双重编码, 整幅
-  // 发灰发白 —— 这是这套渲染器里最伤重建保真度的一处。
-  //   火和场景必须在同一趟深度交错里画, 所以不能给它们各自一条链;
-  //   改为在上传前对场景颜色施加该链的逆, 过完链正好还原成训练时的颜色, 火不受影响。
+  // 设计的: HDR -> ACES -> 1/2.2 伽马。想法是在上传前施加该链的逆, 过完链回到训练色。
+  // **但这条路是错的, 且这里的 pre() 已经不再被调用** (下面写 c: 时用的是原始 DC):
+  //   逆变换非线性, 而 alpha 合成在它之后 —— 对重叠 splat 不是恒等, 抬亮度并放大通道比。
+  //   真正在跑的只有着色器里的 uPreComp 分支, 且 P.scenePreComp 默认已关。
+  //   保留 acesInv/pre 只为 A/B 对照, 别把它接回颜色写入。
   // Narkowicz ACES 拟合 y = x(ax+b) / (x(cx+d)+e) 是有理式, 可闭式求逆:
   //   (yc-a)x² + (yd-b)x + ye = 0
   const acesInv=y=>{ const a=2.51,b=0.03,c=2.43,d=0.59,e=0.14;
@@ -848,7 +865,7 @@ function loadPLY(buf){
   applyScene(); return { kept:sceneGauss.length, total:r.total };
 }
 // 每帧: 应用场景变换(缩放/绕Y/俯仰/抬升, 自动去中心) → 世界 splat →
-//   按到相机距离² 计数分桶 (O(n+K), 近→远桶序) 写 sceneVBO。
+//   按视空间深度 计数分桶 (O(n+K), 近→远桶序) 写 sceneVBO。
 //   桶边界 (sceneDMin/DMax, SCENE_BUCKETS) 与动态流共享 → render() 逐桶交错两条流,
 //   火与 .ply 场景获得全局 front-to-back 顺序 (逐基元互遮挡, 桶内近似)。
 //   两档对照:
@@ -856,7 +873,21 @@ function loadPLY(buf){
 //                           叠在场景之上 (backdrop 合成的结构)。与我们的差别只剩交错。
 //     P.sceneSorted=false   朴素基线: 连场景自身排序也去掉 (火先画, 场景按文件序垫后)。
 //                           只用于把「未交错」和「未排序」两种失效分开看。
-let SCENE_BUCKETS=96;                      // 可调: 场景越密、深度跨度越大, 需要的桶越多
+let SCENE_BUCKETS=1536;                    // 可调: 场景越密、深度跨度越大, 需要的桶越多。
+// 1536 是量出来的, 不是猜的 (kitchen 700k splats, 与 gsplat 参考逐像素对比;
+// 对照口径 = faithful 通路 + bloom=0, 即绕开为火设计的后期, 只比 splat 渲染本身):
+//   ① 桶边界会在平坦表面上印出"灯芯绒"横纹, 周期恰好锁在 K 上 —— 实测 argmax 周期
+//      15.2 / 7.8 / <4 px 对应 K=96 / 192 / 384 (∝1/K, 与预测一致), 该频率上的幅度
+//      0.01200 → 0.00487 → 0.00189, 到 384 已落到参考自身纹理的水平 (0.00170)。
+//      **可见的条纹在 K=384 就死了。**
+//   ② 但桶内残余乱序还在: |Δ|>0.05 的像素占比 13.18% → 3.67% (384) → 0.67% (1536)
+//      → 0.31% (4096); 到 1536 误差图只剩轮廓边 (= 两个光栅器 eps2d 的不可约差)。
+//      PSNR(对 gsplat): 25.37 → 32.53 (384) → 38.67 (1536) → 40.68 (4096) → 41.74 (16384 饱和)。
+//   ③ 代价 (1280x800, 700k + 9x600 火, 15 次交替重测中位数): 帧时 +5.4 / +12.3 / +19.4 ms
+//      (384 / 1536 / 4096, 基线 273 ms)。机理是计数排序置换散射的并发写游标变多,
+//      70MB 重排局部性变差 —— 随 n 增长, 不随 K 增长。
+//   → 边际收益 1.33 / 0.89 / 0.28 dB per ms: 拐点在 1536 之后, 不在 384 之后。
+//   预算紧时退回 384 (仍无可见条纹, 只是桶内噪声高 5.5 倍)。
 let sceneData=new Float32Array(0), sceneRaw=new Float32Array(0), sceneKey=new Float32Array(0), sceneBIdx=new Int32Array(0);
 let sceneBucketOfs=new Int32Array(SCENE_BUCKETS+1), sceneDMin=0, sceneDMax=1;
 function setSceneBuckets(k){ k=Math.max(16,Math.min(65536,k|0));
@@ -870,6 +901,11 @@ function gatherScene(){
   const S=P.sceneScale, cy=Math.cos(P.sceneYaw), sy=Math.sin(P.sceneYaw),
         cp=Math.cos(P.scenePitch), sp=Math.sin(P.scenePitch), C=sceneInfo.center, lift=P.sceneLift;
   const eye=cam.eye;
+  // 深度键取**视空间深度**而非到眼点的径向距离: 径向距离的等值面是球面, 在离轴处会把
+  // 更远的 splat 排到更近的前面, 越靠画面边缘越错 (画面中心才恰好一致)。
+  // cam.V 列主序, 第三行 (V[2],V[6],V[10]) 是相机 +Z = 后向; OpenGL 朝 -z 看, 故前向取其负,
+  // 深度 = dot(p-eye, forward), 相机前方为正。
+  const V=cam.V, fwx=-V[2], fwy=-V[6], fwz=-V[10];
   // 旋转: 先俯仰(绕X)再绕Y, 乘缩放
   function tf(v){ let x=(v[0]-C[0]), y=(v[1]-C[1]), z=(v[2]-C[2]);   // 去中心 (位置才去中心, 轴不去)
     let y2=y*cp - z*sp, z2=y*sp + z*cp;                              // pitch X
@@ -909,7 +945,7 @@ function gatherScene(){
     arr[o++]=bi;                       // 原始下标 -> 2-3 阶球谐纹理 (缓冲会被深度重排)
     bi++;
     const ex=wx-eye[0], ey=wy-eye[1], ez=wz-eye[2];
-    const d=Math.sqrt(ex*ex+ey*ey+ez*ez); sceneKey[gi++]=d;   // 线性距离而非平方:
+    const d=ex*fwx + ey*fwy + ez*fwz; sceneKey[gi++]=d;       // 视空间深度, 线性而非平方:
     // 按 d² 均匀分桶会把最宽的桶放在离相机最近处 —— 恰好是最需要精度的地方。
     if(d<dmin)dmin=d; if(d>dmax)dmax=d;
   }
@@ -1110,7 +1146,11 @@ function resize(){
 window.addEventListener('resize', resize);
 
 // ---- 真 3D 相机 (绕火环绕) + 切片基向量 ----
-const cam={ VP:m4Perspective(0.85,1,0.05,50), bx:[1,0,0], by:[0,1,0], fh:[0,0,1], eye:[0,1,3], fireUV:[0.5,0.13] };
+// V 必须在此就存在: gather() 用它算 dynKey 的桶键, 而 updateCam() 只在 render() 里跑。
+// 正常帧里 render() 先 updateCam() 再 gather(), 这个初值永远被覆盖、永不进绘制;
+// 它只保证"先单独调 gather() 再 render()"的基准路径 (benchcfg / __demo.bench) 不抛异常。
+const cam={ VP:m4Perspective(0.85,1,0.05,50), V:[1,0,0,0, 0,1,0,0, 0,0,1,0, 0,0,0,1],
+            bx:[1,0,0], by:[0,1,0], fh:[0,0,1], eye:[0,1,3], fireUV:[0.5,0.13] };
 function updateCam(aspect){
   const az=P.yaw*Math.PI + (P.orbit? orbitPhase*0.6 : 0);
   const el=P.camElev, dist=P.camDist, tgt=[0,1.05,0];
@@ -1151,10 +1191,14 @@ const P = {
   // 旧的 0.985 高过峰值 ⇒ 没有像素过阈 ⇒ bloom 恒为零 (滑杆看着在动其实无效)。0.40 让
   // 白热核重新过阈, 其余部分不过。改这个值只影响外观, 不进哈希。
   box:true, boxLight:0.10, embers:true, reflect:0.05, haze:0.05, emberRate:16, emberMax:160,
-  sceneOn:false, sceneMax:120000, sceneScale:1, sceneYaw:0, scenePitch:0, sceneLift:0,
+  sceneOn:false, sceneMax:800000, sceneScale:1, sceneYaw:0, scenePitch:0, sceneLift:0,
+                                     // 上限按整个 .ply 走: 700k-2M 的重建被抽稀到 12 万时
+                                     // 丢掉的是高频细节, 实测 -16.2 dB。滑杆同步改到 80(×10k)。
   sceneOffX:0, sceneOffZ:0,          // 横向摆位: 把重建挪开, 好让火落在它旁边而不是正中
   faithful:false,                    // 忠实显示: 跳过为火设计的后期链 (火会变暗, 只用于看场景本身)
-  scenePreComp:true,                 // 场景颜色预补偿 ACES+伽马 —— 让重建过完链后回到训练时的颜色
+  scenePreComp:false,                // 场景颜色预补偿 ACES+伽马 (逐 splat 逆色调曲线)。默认关:
+                                     // 逆变换在 alpha 合成之前, 对重叠 splat 不是恒等 —— 抬亮度
+                                     // 并放大通道比 (彩虹亮斑)。见 VS_SCENE 里 acesInvV 上方的说明。
   sceneSH:3,                         // 场景球谐阶数 0-3 (受文件里实际有多少阶限制)
   sceneLight:1.0,
   sceneSorted:true,                 // true=场景与火按深度桶交错(全局排序, 互遮挡) | false=旧行为(未排序,火后绘制)
@@ -2275,6 +2319,12 @@ function emit3D(arr,o, depths,gi, sx,sy, dx,dy, M,m, dep, va, bx,fh,eye, fade, t
 }
 // 收集所有高斯 (火+烟+火星+背景) → 计算深度 → front-to-back 排序 → 写 instData
 let rawData=new Float32Array(0), depths=new Float32Array(0), order=[];
+// dynKey: 动态流的**桶键**, 已按 order 重排, 单位与 gatherScene 的 sceneKey 相同 (线性视空间深度)。
+// depths 存的是到眼点的距离² —— 它只用于流内 front-to-back 排序 (单调等价, 排序结果不变),
+// 但深度桶交错要把两条流放进**同一个** [sceneDMin, sceneDMax] 映射, 两者必须同量纲。
+// 场景键在改成线性视空间深度后, 若这里仍拿 d² 去算桶号, 火焰会被整体钳到最远的一桶,
+// 落在全部场景桶之后 —— 前向合成里透过率已被场景耗尽, 火几乎被完全抹掉。
+let dynKey=new Float32Array(0);
 function gather(){
   const vol=(P.dimMode==='vol'||P.dimMode==='vic3'||P.dimMode==='vpm3');   // 3D 粒子云走同一渲染路径
   let total=0; if(vol) total=cloud.length; else for(const l of layers) total+=l.ps.length;
@@ -2352,9 +2402,12 @@ function gather(){
   if(order.length!==cnt){ order=new Array(cnt); }
   for(let i=0;i<cnt;i++) order[i]=i;
   order.sort((a,b)=>depths[a]-depths[b]);              // 近→远 (front-to-back)
-  const dst=instData;
-  for(let i=0;i<cnt;i++){ let s=order[i]*STRIDE_F, d=i*STRIDE_F;
-    for(let j=0;j<STRIDE_F;j++) dst[d+j]=arr[s+j]; }
+  if(dynKey.length<cnt) dynKey=new Float32Array(Math.ceil(cnt*1.3));
+  { const V=cam.V, fwx=-V[2], fwy=-V[6], fwz=-V[10], ey0=eye[0], ey1=eye[1], ey2=eye[2];
+    const dst2=instData;
+    for(let i=0;i<cnt;i++){ let s=order[i]*STRIDE_F, d=i*STRIDE_F;
+      for(let j=0;j<STRIDE_F;j++) dst2[d+j]=arr[s+j];
+      dynKey[i]=(arr[s]-ey0)*fwx + (arr[s+1]-ey1)*fwy + (arr[s+2]-ey2)*fwz; } }
   return cnt;
 }
 
@@ -2387,7 +2440,7 @@ function drawInterleaved(nDyn, nScene){
   // 动态流: order/depths 已按近→远; 桶号单调不减 → 一次遍历得到每桶起点
   const dynStart=new Int32Array(K+1);
   { let k=0;
-    for(let i=0;i<nDyn;i++){ let b=((depths[order[i]]-sceneDMin)*inv)|0; if(b<0)b=0; if(b>=K)b=K-1;
+    for(let i=0;i<nDyn;i++){ let b=((dynKey[i]-sceneDMin)*inv)|0; if(b<0)b=0; if(b>=K)b=K-1;
       while(k<=b){ dynStart[k++]=i; } }
     while(k<=K){ dynStart[k++]=nDyn; } }
   // 逐桶发射 {流, 起点, 数量}, 合并相邻同流
