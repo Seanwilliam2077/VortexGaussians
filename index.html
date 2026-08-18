@@ -177,24 +177,31 @@
         and starts burning within six seconds; the loader itself is not, and for twenty-four seconds
         it simply sits in the fire and does nothing. Then it <b>catches by itself at simulated
         t&nbsp;=&nbsp;24.40&nbsp;s</b> &mdash; 29 splats crossing the ignition threshold on
-        accumulated heat, with no <code>ignite</code> call anywhere in the recipe &mdash; and chars
-        outward from there. That wait is the result, so the clip runs it in one unbroken take rather
-        than cutting to the interesting part. The single cut is to the aftermath at
-        t&nbsp;&asymp;&nbsp;250&nbsp;s, and it is labelled on screen. Throughout, watch the loader's
-        lift arms and black hydraulic linkage cut into the flame: the fire is not composited in
-        front of the reconstruction, it is depth-interleaved with it, and every splat of the capture
-        orders itself against every splat of the fire. The camera is fixed throughout: the subject
-        here is a burn that takes four minutes of simulated time, and the previous cut's parallax
-        pass over this reconstruction is <b>not</b> in this one &mdash; the occlusion is shown
-        holding over time rather than over viewpoint.</p>
+        accumulated heat, with no <code>ignite</code> call anywhere in the recipe. This cut stays
+        on what happens next, continuously: the scorch mark spreads across the placemat first,
+        then the char front climbs the machine itself, on screen the whole way, from first soot to
+        the <b>64.6%-charred</b> state near t&nbsp;=&nbsp;250&nbsp;s that the previous cut could
+        only jump to &mdash; <b>one unbroken 43-second take, no cuts</b>. The camera is no longer
+        fixed either: it drifts through a single slow <b>27&deg; arc</b> around the machine over
+        the whole take &mdash; the widest sweep this reconstruction supports before the viewpoint
+        leaves the region the photographs cover &mdash; so the loader's lift arms and black
+        hydraulic linkage cut into the flame from a continuously moving viewpoint. The fire is not
+        composited in front of the reconstruction, it is depth-interleaved with it: every splat of
+        the capture orders itself against every splat of the fire, and the drifting camera shows
+        that order re-solving.</p>
       <p class="muted" style="font-size:.9rem">Frames are exported deterministically at
-        &Delta;t&nbsp;=&nbsp;1/60&nbsp;s and encoded at 60&nbsp;fps, and the clip is played at
-        <b>2&times;: one second of screen time is two seconds of simulated time</b>, so the burn-in
-        clock, not the wall clock, is what the timings above refer to. This is an offline export,
-        not a screen recording: at this splat count a composited frame costs 292.4&nbsp;ms, and the
-        249.7&nbsp;s of simulation behind the aftermath cut took about 45 minutes. The simulation is
-        the same real-time one; what a three-quarter-million-splat reconstruction adds is
-        rasterization.</p>
+        &Delta;t&nbsp;=&nbsp;1/60&nbsp;s and encoded at 60&nbsp;fps, but the clip plays on a
+        <b>schedule</b>, not at one speed &mdash; the burnt-in clock is the authority. It runs in
+        <b>real time through ignition</b> (simulated t&nbsp;=&nbsp;20&ndash;29&nbsp;s plays at
+        1&times;), decelerates into that window and accelerates smoothly out of it to at most
+        15&times;, so the full four-and-a-quarter-minute burn &mdash; 257&nbsp;s of simulation,
+        15,420 substeps &mdash; plays in 43 seconds. This is an offline export, not a screen
+        recording: at this splat count a composited frame costs 292.4&nbsp;ms, and the take is
+        about 79 minutes of wall clock. The picture is the 1544&times;1080 centre crop of the
+        16:9 frame, pillarboxed &mdash; under camera motion the frame edges would leave the
+        captured region, the same aspect-ratio finding the earlier parallax pass reported. The
+        simulation is the same real-time one; what a three-quarter-million-splat reconstruction
+        adds is rasterization.</p>
       <video controls preload="metadata" playsinline
              style="width:100%;border-radius:12px;display:block;background:#0a0a0d"
              poster="static/images/kitchen_poster.jpg">
