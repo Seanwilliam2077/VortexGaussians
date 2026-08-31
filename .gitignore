@@ -1,0 +1,9 @@
+# Local A/B test assets staged under static/ during the UE-vs-web ablation.
+# These are hundreds of MB each (abtest_full.ply is 465 MB, well past GitHub's
+# 100 MB per-file hard limit) and are working files, not page assets.
+static/abtest_*.ply
+
+# 开发机残留，别依赖全局 gitignore 挡
+*.stackdump
+Thumbs.db
+.DS_Store

@@ -1,10 +1,10 @@
 # Vortex Gaussians: Real-Time Simulation-Driven Fire and Smoke as Native Gaussian-Splatting Content
 
-### [[Project Page](https://seanwilliam2077.github.io/VortexGaussians/)] [[Paper (PDF)](static/vortex_gaussians_paper.pdf)] [[Live Demo](https://seanwilliam2077.github.io/VortexGaussians/demo/)] [[Solver Comparison](https://seanwilliam2077.github.io/VortexGaussians/compare.html)] [[Video](static/video/vortex_gaussians_supplemental.mp4)] [[Captured-scene clip](static/video/vortex_gaussians_kitchen.mp4)]
+### [[Project Page](https://seanwilliam2077.github.io/VortexGaussians/)] [[Paper (PDF)](static/vortex_gaussians_paper.pdf)] [[Live Demo](https://seanwilliam2077.github.io/VortexGaussians/demo/)] [[Solver Comparison](https://seanwilliam2077.github.io/VortexGaussians/compare.html)] [[Video](static/video/vortex_gaussians_supplemental.mp4)] [[Captured-scene clip](static/video/vortex_gaussians_kitchen.mp4)] [[Omniverse clip](static/video/vortex_gaussians_farmland_ov.mp4)]
 
-Anonymous Author(s)<sup>1</sup>
+Zijun Xiao<sup>1</sup>
 
-<sup>1</sup> Anonymous Institution &mdash; author list withheld while the paper is under double-blind review.
+<sup>1</sup> Georgia Institute of Technology &mdash; [zxiao316@gatech.edu](mailto:zxiao316@gatech.edu)
 
 [![teaser](static/images/teaser.jpg)](https://seanwilliam2077.github.io/VortexGaussians/)
 
@@ -67,9 +67,9 @@ Load your own Gaussian-splatting reconstruction and light a fire inside it:
 
 ```
 index.html        # project page (self-contained; occlusion comparison slider, embedded demo)
-demo/index.html   # the complete system: single-file WebGL2 prototype (~160 KB, 57 KB gzipped)
+demo/index.html   # the complete system: single-file WebGL2 prototype (~185 KB, 68 KB gzipped)
 compare.html      # side-by-side grid vs grid-free solver comparison
-static/           # paper PDF, compressed figures, the two videos, sample .ply scene
+static/           # paper PDF, compressed figures, the three videos, sample .ply scene
 CHANGELOG.md      # development log
 PUBLISH.md        # page-deployment checklist (GitHub Pages)
 ```
@@ -81,10 +81,10 @@ Delivered: supplemental video, named-hardware benchmark table with deterministic
 ## Citation
 
 ```bibtex
-@misc{vortexgaussians2026,
+@misc{xiao2026vortexgaussians,
   title  = {Vortex Gaussians: Real-Time Simulation-Driven Fire and Smoke
             as Native Gaussian-Splatting Content},
-  author = {Anonymous Author(s)},
+  author = {Zijun Xiao},
   year   = {2026},
   note   = {Preprint, under review}
 }
