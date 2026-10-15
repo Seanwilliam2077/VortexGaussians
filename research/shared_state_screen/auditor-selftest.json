@@ -1,0 +1,793 @@
+{
+  "phase": "P7-auditor-selftest",
+  "formal": false,
+  "status": "passed",
+  "fixture": {
+    "n": 4,
+    "rate": 120,
+    "steps": 3,
+    "stateVectors": 4,
+    "nodes": 64
+  },
+  "replays": [
+    {
+      "step": 1,
+      "maxTemperatureErrorK": 0.0,
+      "edgeCount": 24
+    },
+    {
+      "step": 2,
+      "maxTemperatureErrorK": 0.0,
+      "edgeCount": 24
+    },
+    {
+      "step": 3,
+      "maxTemperatureErrorK": 0.0,
+      "edgeCount": 25
+    }
+  ],
+  "negativeControls": [
+    {
+      "name": "prestep-geometry-shifted-to-accepted-time",
+      "detected": true,
+      "checks": [
+        {
+          "name": "wrong-geometry-time:integer-time-schedule",
+          "passed": true
+        },
+        {
+          "name": "wrong-geometry-time:actual-prestep-gas-path",
+          "passed": false,
+          "maxAbsoluteError": 0.003618297197429121,
+          "absoluteTolerance": 2e-14,
+          "relativeTolerance": 0.0
+        },
+        {
+          "name": "wrong-geometry-time:actual-accepted-gas-path",
+          "passed": true,
+          "maxAbsoluteError": 0.0,
+          "absoluteTolerance": 2e-14,
+          "relativeTolerance": 0.0
+        }
+      ]
+    },
+    {
+      "name": "temperature-reset-instead-of-state-continuation",
+      "detected": true,
+      "checks": [
+        {
+          "name": "state-reset-between-steps",
+          "passed": false,
+          "maxAbsoluteError": 3.4702522541699636,
+          "absoluteTolerance": 1e-09,
+          "relativeTolerance": 0.0
+        }
+      ]
+    },
+    {
+      "name": "constant-average-replaces-bilinear-display-map",
+      "detected": true,
+      "checks": [
+        {
+          "name": "wrong-display-map:time",
+          "passed": true
+        },
+        {
+          "name": "wrong-display-map:display",
+          "passed": false,
+          "maxAbsoluteError": 1.4565797363043202,
+          "absoluteTolerance": 1e-09,
+          "relativeTolerance": 0.0
+        },
+        {
+          "name": "wrong-display-map:gasTemperatures",
+          "passed": true,
+          "maxAbsoluteError": 0.0,
+          "absoluteTolerance": 1e-09,
+          "relativeTolerance": 0.0
+        },
+        {
+          "name": "wrong-display-map:actualPeakRise",
+          "passed": true,
+          "maxAbsoluteError": 0.0,
+          "absoluteTolerance": 1e-09,
+          "relativeTolerance": 0.0
+        },
+        {
+          "name": "wrong-display-map:minimum",
+          "passed": true,
+          "maxAbsoluteError": 0.0,
+          "absoluteTolerance": 1e-09,
+          "relativeTolerance": 0.0
+        },
+        {
+          "name": "wrong-display-map:maximum",
+          "passed": true,
+          "maxAbsoluteError": 0.0,
+          "absoluteTolerance": 1e-09,
+          "relativeTolerance": 0.0
+        },
+        {
+          "name": "wrong-display-map:panelHeat",
+          "passed": true,
+          "maxAbsoluteError": 0.0,
+          "absoluteTolerance": 5.04e-10,
+          "relativeTolerance": 0.0
+        },
+        {
+          "name": "wrong-display-map:regionHeat",
+          "passed": true,
+          "maxAbsoluteError": 0.0,
+          "absoluteTolerance": 5.04e-10,
+          "relativeTolerance": 0.0
+        },
+        {
+          "name": "wrong-display-map:energy-surface",
+          "passed": true,
+          "maxAbsoluteError": 0.0,
+          "absoluteTolerance": 5.04e-10,
+          "relativeTolerance": 0.0
+        },
+        {
+          "name": "wrong-display-map:energy-gas",
+          "passed": true,
+          "maxAbsoluteError": 1.4210854715202004e-14,
+          "absoluteTolerance": 5.04e-10,
+          "relativeTolerance": 0.0
+        },
+        {
+          "name": "wrong-display-map:energy-total",
+          "passed": true,
+          "maxAbsoluteError": 0.0,
+          "absoluteTolerance": 5.04e-10,
+          "relativeTolerance": 0.0
+        }
+      ]
+    }
+  ],
+  "checks": [
+    {
+      "name": "preflight-n4-r120:case-schema",
+      "passed": true
+    },
+    {
+      "name": "preflight-n4-r120:node-ids-kinds",
+      "passed": true
+    },
+    {
+      "name": "preflight-n4-r120:authored-positions",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 2e-15,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "preflight-n4-r120:gas-origins",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 2e-15,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "preflight-n4-r120:authored-measure",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 0.0,
+      "relativeTolerance": 1e-14
+    },
+    {
+      "name": "preflight-n4-r120:authored-capacity-density",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 0.0,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "preflight-n4-r120:authored-capacity",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 0.0,
+      "relativeTolerance": 1e-14
+    },
+    {
+      "name": "preflight-n4-r120:authored-temperature",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 0.0,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "preflight-n4-r120:input-sha-before-after",
+      "passed": true
+    },
+    {
+      "name": "preflight-n4-r120:display-area-weights",
+      "passed": true
+    },
+    {
+      "name": "tiny:gzip-authentication",
+      "passed": true
+    },
+    {
+      "name": "tiny:initial-state",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 0.0,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:geometry1:integer-time-schedule",
+      "passed": true
+    },
+    {
+      "name": "tiny:geometry1:actual-prestep-gas-path",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 2e-14,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:geometry1:actual-accepted-gas-path",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 2e-14,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:full-step1",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 1e-09,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:edge-count1",
+      "passed": true
+    },
+    {
+      "name": "tiny:first-full-schema:independent-full-temperature-replay",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 1e-09,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:first-full-schema:independent-topology",
+      "passed": true
+    },
+    {
+      "name": "tiny:first-full-schema:independent-substeps",
+      "passed": true
+    },
+    {
+      "name": "tiny:first-full-schema:independent-maxRate",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 1e-12,
+      "relativeTolerance": 1e-12
+    },
+    {
+      "name": "tiny:first-full-schema:independent-maxCfl",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 1e-12,
+      "relativeTolerance": 1e-12
+    },
+    {
+      "name": "tiny:first-full-schema:independent-conductance-sum",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 1e-10,
+      "relativeTolerance": 1e-10
+    },
+    {
+      "name": "tiny:first-full-schema:independent-netSurface",
+      "passed": true,
+      "maxAbsoluteError": 6.938893903907228e-18,
+      "absoluteTolerance": 5.04e-10,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:first-full-schema:independent-netGas",
+      "passed": true,
+      "maxAbsoluteError": 6.938893903907228e-18,
+      "absoluteTolerance": 5.04e-10,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:first-full-schema:independent-boundary-count",
+      "passed": true
+    },
+    {
+      "name": "tiny:before1:surface",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 5.04e-10,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:after1:surface",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 5.04e-10,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:before1:gas",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 5.04e-10,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:after1:gas",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 5.04e-10,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:before1:total",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 5.04e-10,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:after1:total",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 5.04e-10,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:geometry2:integer-time-schedule",
+      "passed": true
+    },
+    {
+      "name": "tiny:geometry2:actual-prestep-gas-path",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 2e-14,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:geometry2:actual-accepted-gas-path",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 2e-14,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:full-step2",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 1e-09,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:edge-count2",
+      "passed": true
+    },
+    {
+      "name": "tiny:before2:surface",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 5.04e-10,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:after2:surface",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 5.04e-10,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:before2:gas",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 5.04e-10,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:after2:gas",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 5.04e-10,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:before2:total",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 5.04e-10,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:after2:total",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 5.04e-10,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:geometry3:integer-time-schedule",
+      "passed": true
+    },
+    {
+      "name": "tiny:geometry3:actual-prestep-gas-path",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 2e-14,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:geometry3:actual-accepted-gas-path",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 2e-14,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:full-step3",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 1e-09,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:edge-count3",
+      "passed": true
+    },
+    {
+      "name": "tiny:before3:surface",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 5.04e-10,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:after3:surface",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 5.04e-10,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:before3:gas",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 5.04e-10,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:after3:gas",
+      "passed": true,
+      "maxAbsoluteError": 1.4210854715202004e-14,
+      "absoluteTolerance": 5.04e-10,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:before3:total",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 5.04e-10,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:after3:total",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 5.04e-10,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:observation0:time",
+      "passed": true
+    },
+    {
+      "name": "tiny:observation0:display",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 1e-09,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:observation0:gasTemperatures",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 1e-09,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:observation0:actualPeakRise",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 1e-09,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:observation0:minimum",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 1e-09,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:observation0:maximum",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 1e-09,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:observation0:panelHeat",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 5.04e-10,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:observation0:regionHeat",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 5.04e-10,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:observation0:energy-surface",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 5.04e-10,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:observation0:energy-gas",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 5.04e-10,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:observation0:energy-total",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 5.04e-10,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:observation1:time",
+      "passed": true
+    },
+    {
+      "name": "tiny:observation1:display",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 1e-09,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:observation1:gasTemperatures",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 1e-09,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:observation1:actualPeakRise",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 1e-09,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:observation1:minimum",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 1e-09,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:observation1:maximum",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 1e-09,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:observation1:panelHeat",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 5.04e-10,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:observation1:regionHeat",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 5.04e-10,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:observation1:energy-surface",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 5.04e-10,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:observation1:energy-gas",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 5.04e-10,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:observation1:energy-total",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 5.04e-10,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:observation2:time",
+      "passed": true
+    },
+    {
+      "name": "tiny:observation2:display",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 1e-09,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:observation2:gasTemperatures",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 1e-09,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:observation2:actualPeakRise",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 1e-09,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:observation2:minimum",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 1e-09,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:observation2:maximum",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 1e-09,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:observation2:panelHeat",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 5.04e-10,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:observation2:regionHeat",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 5.04e-10,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:observation2:energy-surface",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 5.04e-10,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:observation2:energy-gas",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 5.04e-10,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:observation2:energy-total",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 5.04e-10,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:observation3:time",
+      "passed": true
+    },
+    {
+      "name": "tiny:observation3:display",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 1e-09,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:observation3:gasTemperatures",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 1e-09,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:observation3:actualPeakRise",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 1e-09,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:observation3:minimum",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 1e-09,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:observation3:maximum",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 1e-09,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:observation3:panelHeat",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 5.04e-10,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:observation3:regionHeat",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 5.04e-10,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:observation3:energy-surface",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 5.04e-10,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:observation3:energy-gas",
+      "passed": true,
+      "maxAbsoluteError": 1.4210854715202004e-14,
+      "absoluteTolerance": 5.04e-10,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:observation3:energy-total",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 5.04e-10,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:constant-bilinear-boundary",
+      "passed": true,
+      "maxAbsoluteError": 0.0,
+      "absoluteTolerance": 0.0,
+      "relativeTolerance": 0.0
+    },
+    {
+      "name": "tiny:zero-display-signal-invalid",
+      "passed": true
+    }
+  ]
+}
