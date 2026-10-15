@@ -1,5 +1,7 @@
 # P0 synthetic diagnostics
 
+For the current research overview, read [Evidence status](EVIDENCE_STATUS.md). This page documents the original P0 harness only. Later work separates [fixed-parcel 3D thermal coupling](P4B_README.md), the native thermal-query repair, the [isolated standard physical reference](physical_reference/README.md), and the [shared-state screen](shared_state_screen/README.md) with its [fixed proxy32 follow-up](proxy32_followup/README.md). These are different evidence scopes, not successive validations of the complete fire system.
+
 These experiments provide evidence of implementation behavior and identify failure modes. They are insufficient by themselves to establish physical validity, visual quality, or SIGGRAPH readiness; they are not GPU performance benchmarks. Read [PROTOCOL.md](PROTOCOL.md) for interpretation and invalid/null outcomes.
 
 Requires Node.js 20+ and Chromium/Edge with WebGL2. From this directory:
@@ -26,7 +28,7 @@ node smoke.mjs --browser-executable /path/to/browser --out runs/my-smoke
 
 Each case opens a fresh page, authors the synthetic scene, resets from the frozen complete demo defaults plus the recorded configuration, sets the camera, and ignites the fixed source once. All causal arms have the external emitter disabled from time zero. There is no warmup with different random histories. Simulator seeds remain the existing shared random stream; later arms can consume different numbers of random draws. This harness does not redesign the simulator to force agreement.
 
-The four feedback arms toggle flame-to-scene heat and scene-to-solver particle reseeding. The raised target has 9 source splats at y=.20 and 27 target splats at y=.45/.49/.53. The .25 vertical gap exceeds the default graph (.11) and heating (.14) radii. The connected strip tests ordering and duplicate-density sensitivity. Duplicate density changes the physical number of fuel/heat nodes; area weights apply **only to analysis**, and the common anchor states remain available. The 1681-site disconnected patch binds the actual 1400 frontier cap and tests fuel/char scheduling. It is a scheduler diagnostic, not a plausible scene.
+The four feedback arms toggle flame-to-scene heat and scene-to-solver particle reseeding. The raised target has 9 source splats at y=.20 and 27 target splats at y=.45/.49/.53. The .25 vertical gap exceeds the default graph (.11) and heating (.14) radii. The connected strip tests ordering and duplicate-density sensitivity. In this P0 harness, duplicate density changes the number of fuel/heat state nodes; area weights apply **only to analysis**, and the common anchor states remain available. Later measure-explicit paths are documented separately. The 1681-site disconnected patch binds the actual 1400 frontier cap and tests fuel/char scheduling. It is a scheduler diagnostic, not a plausible scene.
 
 `quick` uses one seed, 3–120 frames per case, and checks the entire pipeline cheaply. `feedback` uses 12 seconds per arm and three seeds. `sensitivity` varies frontier caps, zero/low/default/generous sample/feed caps, stable-ID order, and exact duplicate densities. Cap zeros are structural ablations, not candidate production settings. This first harness does not evaluate layered-vs-3D quality, real reconstructions, camera-motion visual quality, or physical scale invariance.
 

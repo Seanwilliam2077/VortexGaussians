@@ -1,6 +1,6 @@
 # Vortex Gaussians: Real-Time Simulation-Driven Fire and Smoke as Native Gaussian-Splatting Content
 
-### [[Project Page](https://seanwilliam2077.github.io/VortexGaussians/)] [[Paper (PDF)](static/vortex_gaussians_paper.pdf)] [[Live Demo](https://seanwilliam2077.github.io/VortexGaussians/demo/)] [[Solver Comparison](https://seanwilliam2077.github.io/VortexGaussians/compare.html)] [[Video](static/video/vortex_gaussians_supplemental.mp4)] [[Captured-scene clip](static/video/vortex_gaussians_kitchen.mp4)] [[Omniverse clip](static/video/vortex_gaussians_farmland_ov.mp4)]
+### [[Project Page](https://seanwilliam2077.github.io/VortexGaussians/)] [[Historical manuscript (PDF)](static/vortex_gaussians_paper.pdf)] [[Evidence status](research/EVIDENCE_STATUS.md)] [[Live Demo](https://seanwilliam2077.github.io/VortexGaussians/demo/)] [[Solver Comparison](https://seanwilliam2077.github.io/VortexGaussians/compare.html)] [[Video](static/video/vortex_gaussians_supplemental.mp4)] [[Captured-scene clip](static/video/vortex_gaussians_kitchen.mp4)] [[Omniverse clip](static/video/vortex_gaussians_farmland_ov.mp4)]
 
 Zijun Xiao<sup>1</sup>
 
@@ -8,11 +8,13 @@ Zijun Xiao<sup>1</sup>
 
 [![teaser](static/images/teaser.jpg)](https://seanwilliam2077.github.io/VortexGaussians/)
 
-*We present the first system that generates fire and smoke by forward physical simulation in real time and renders them as native Gaussian-splatting content. Our key insight is a structural isomorphism: Lagrangian vortex particles and 3D Gaussians are the same class of point primitive, so one particle set serves simultaneously as simulation state and render primitive — position maps to the Gaussian mean, temperature to emissive blackbody color, density to opacity, and velocity gradient to an anisotropic covariance — with no voxelization, meshing, or simulation-to-renderer conversion anywhere. Each splat is itself a Lamb–Oseen vortex element: velocity, its analytic gradient and temperature are closed-form evaluations of the rendered Gaussian mixture under a Barnes–Hut treecode, with no Poisson solve, no linear solve and no grid. One depth-sorted emission–absorption rasterizer composites flame, smoke, embers and reconstructed 3DGS scenes with per-primitive mutual occlusion.*
+*Vortex Gaussians is a browser prototype for vortex-driven fire and smoke rendered as Gaussian splats. The default layered mode maps vortex-particle positions and visual attributes to render primitives: temperature controls emissive color, density controls opacity, and velocity gradients drive an anisotropic covariance. This shared storage is an implementation choice; simulation kernels and rendering covariances are not asserted to define the same field. The layered VPM uses regularized vortex-kernel evaluations and a Barnes–Hut approximation. Depth-interleaved splat compositing combines the dynamic effects with reconstructed 3DGS scenes. Separate research paths test numerical correctness and alternative state representations; they do not establish a new method advantage or physical accuracy for the complete fire system.*
 
-- **Real time, no build step.** The whole system — simulation, sorting, rendering, UI — is one dependency-free HTML file. ~60 FPS at 9 layers × 600 particles on a desktop RTX 3080 at 1280×800, with the simulation single-threaded in CPU JavaScript.
-- **Grid-free.** A Barnes–Hut treecode (θ = 0.9) evaluates velocity, its analytic gradient and temperature directly from the Gaussian mixture — up to 15.3× faster than the exact sum at matched particle counts. A vortex-in-cell solver is retained as a live A/B baseline.
-- **Burns real captures.** Combustion state (heat / fuel / char / glow) lives on the loaded scene's own splats: the flame ignites the reconstruction, charring writes into splat albedo and opacity, and burning geometry re-seeds the solver with new plumes.
+The linked PDF and media are historical materials. Their claims and measurements predate the current audit; see [Evidence status](research/EVIDENCE_STATUS.md) for current results and limitations.
+
+- **Interactive browser demo, no build step.** Simulation, sorting, rendering and UI are in one dependency-free HTML file. The author historically reported ~60 FPS at 9 layers × 600 particles on a desktop RTX 3080 at 1280×800, with single-threaded CPU JavaScript simulation. This layered-mode measurement was not rerun in the current audit.
+- **Grid-free layered VPM mode.** This mode uses a Barnes–Hut treecode (θ = 0.9) without a fluid grid or pressure projection. The author reported up to 15.3× over exact summation at matched particle counts in the historical configuration; this was not remeasured here. The VIC comparison uses grids, and separate research paths have their own discretizations.
+- **Heuristic fire spread on captures.** Heat / fuel / char / glow states live on loaded scene splats; threshold heating changes their appearance and can re-seed layered plumes. These visual controls are not calibrated material properties. The separate fixed-parcel 3D thermal tests do not validate this combustion model.
 
 Development log: [CHANGELOG.md](CHANGELOG.md).
 
@@ -27,11 +29,13 @@ cd VortexGaussians
 python -m http.server 8000   # then open http://localhost:8000/demo/
 ```
 
-The demo panel's top section chooses the solver: **Grid Mode** (the VIC baseline, one 32×48 velocity grid per slice) or **Grid-Free** (the Gaussian VPM). [`compare.html`](https://seanwilliam2077.github.io/VortexGaussians/compare.html) runs both side by side in lockstep — same seed, timestep, renderer and control stream, differing only in the solver, with per-side cost measured live on your machine.
+The demo panel's top section chooses the solver: **Grid Mode** (the VIC baseline, one 32×48 velocity grid per slice) or **Grid-Free** (the Gaussian VPM). [`compare.html`](https://seanwilliam2077.github.io/VortexGaussians/compare.html) synchronizes the seed, timestep, renderer and control stream, with per-side cost measured live on your machine. This is an implementation comparison, not a matched-accuracy physical benchmark.
 
-Deterministic replay: `window.__demo.reset(seed)` + `.step(n)` + `.hash()` reproduce any run bit-exactly.
+Deterministic replay: `window.__demo.reset(seed)` + `.step(n)` + `.hash()` supports simulation-state comparisons for fixed code, configuration, inputs and runtime. Replay does not make wall-clock timings or results across platforms bit-reproducible.
 
 ## Coupling Research Diagnostics
+
+Start with [Evidence status](research/EVIDENCE_STATUS.md), which separates the historical demo, browser correctness repairs, the isolated standard physical reference, and the shared-state/proxy architecture screens. The following commands run the original P0 harness.
 
 The self-contained [research harness](research/README.md) runs a synthetic 2×2 coupling ablation and tests sensitivity to splat duplication, input order, and processing quotas. It requires Node.js 20+ and Playwright with Chromium or Edge; the interactive demo still has no build step. The [experiment protocol](research/PROTOCOL.md) defines the controls and the limits of these measurements.
 
@@ -68,7 +72,7 @@ The [P2 comparisons](research/P2_README.md) test explicit surface-area weights f
 | Parameter | Default | Effect |
 | --- | --- | --- |
 | `layers` × `ppl` | 9 × 600 (1300 quality) | view-aligned slices × particles per slice; every slice runs an independent grid-free solve |
-| `couple` (c) | 0.5 | velocity nudge toward the 16×24 coarse global solver — 0 = independent slices, 1 = slaved to bulk motion |
+| `couple` (c) | 0.5 | velocity blend toward a coarse guiding field: tree-derived in VPM mode, a 16×24 grid in VIC mode — 0 = independent slices, 1 = fully guided |
 | `baro` (β) | 1.4 | baroclinic source Γ̇ = β·∂T/∂x — the temperature → buoyancy → vorticity loop that rolls plume edges |
 | `covStretch` | 1.3 | flow-driven covariance Σ̇ = LΣ + ΣLᵀ, determinant-renormalized with an aspect clamp |
 | `interZ` (κz) | 0 (off) | inter-slice vorticity exchange `ω_k += Δt·κz·(ω_{k−1}+ω_{k+1}−2ω_k)`; conserves circulation. An exchange rate, not a diffusivity (no 1/Δz²), so not comparable across slice counts |
@@ -77,16 +81,16 @@ The [P2 comparisons](research/P2_README.md) test explicit surface-area weights f
 
 Load your own Gaussian-splatting reconstruction and light a fire inside it:
 
-1. Train a scene with [Inria 3DGS](https://github.com/graphdeco-inria/gaussian-splatting), or use any binary little-endian `.ply` in that format. To try it immediately: [`static/test_scene.ply`](static/test_scene.ply) (45,808 splats, the campfire scene from the paper).
-2. In the demo panel, open **Scene** and load the `.ply` (subsampled to a configurable budget, default 120k splats).
-3. The scene merges into the same global depth order as the fire, so foreground geometry occludes the flame per primitive (`sceneSorted` toggles the naive draw-after baseline).
+1. Train a scene with [Inria 3DGS](https://github.com/graphdeco-inria/gaussian-splatting), or use any binary little-endian `.ply` in that format. To try it immediately: [`static/test_scene.ply`](static/test_scene.ply) (45,808 splats, the synthetic campfire scene from the paper).
+2. In the demo panel, open **Scene** and load the `.ply` (subsampled to a configurable budget, default 800k splats).
+3. The scene and fire are depth-interleaved: the dynamic stream is exactly sorted, while scene depths are bucketed. This supports approximate per-primitive occlusion (`sceneSorted` toggles the naive draw-after baseline).
 4. Place the fire with `sceneScale` / `sceneYaw` / `sceneLift`, then ignite it: `P.spreadOn` + `__demo.ignite(x, y, z, r)`.
 
 ## Repository Structure
 
 ```
 index.html        # project page (self-contained; occlusion comparison slider, embedded demo)
-demo/index.html   # the complete system: single-file WebGL2 prototype (~185 KB, 68 KB gzipped)
+demo/index.html   # single-file WebGL2 visual prototype and browser research APIs
 compare.html      # side-by-side grid vs grid-free solver comparison
 research/         # portable coupling diagnostics, protocol, tests and browser runner
 static/           # paper PDF, compressed figures, the three videos, sample .ply scene
@@ -96,7 +100,9 @@ PUBLISH.md        # page-deployment checklist (GitHub Pages)
 
 ## Status
 
-Delivered: supplemental video, named-hardware benchmark table with deterministic replay, energy-spectrum E(k) validation against a true-3D reference (a negative-leaning result, reported as measured), occlusion and fire-spread figures on real captured `.ply` reconstructions, and multi-source in-scene ignition. Still open: a second hardware point (consumer laptop iGPU).
+Preprint. Historical materials include author-reported layered-mode timings, visual examples on captured `.ply` scenes, and a negative-leaning energy-spectrum comparison with a 3D implementation. They are not newly replicated full-system measurements.
+
+Current audits verify narrower contracts: finite-capacity 3D thermal coupling (P4b), a native thermal-query repair (P5b), and an isolated standard Gaussian-vortex reference (P5c). The P7b controlled screen found that 2048 independent thermal states could meet the same 2% response/display tolerances as 8192 shared states, with a median paired CPU-to-display-temperature-buffer time ratio of 0.2730 and lower accounted array storage. This is a prescribed-motion thermal task, not a renderer, VPM or full-frame speedup. Full-system physical accuracy, real-scene material calibration and a distinct method advantage remain unestablished. See [Evidence status](research/EVIDENCE_STATUS.md) for protocols, provenance and limitations.
 
 ## Citation
 
@@ -106,7 +112,7 @@ Delivered: supplemental video, named-hardware benchmark table with deterministic
             as Native Gaussian-Splatting Content},
   author = {Zijun Xiao},
   year   = {2026},
-  note   = {Preprint, under review}
+  note   = {Preprint}
 }
 ```
 
