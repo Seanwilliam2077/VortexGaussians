@@ -1,0 +1,142 @@
+{
+  "version": 1,
+  "archive": {
+    "filename": "VortexGaussians-P7-shared-state-screen.zip",
+    "sha256": "e09b48282f81034a724db19dfb29f4b6bd7eacdde92b3f963e90f66ae746b32d",
+    "bytes": 254696730,
+    "members": 34
+  },
+  "sourceHashes": {
+    "design.mjs": "b1ef9b83df7ccd392d8fb341dd09f3de6fa74b90c55c55ed0fc4aa523544281b",
+    "wrapper.mjs": "5e346b1cdbf5899f60ddda7fd0e46f1b078202423a386dd5c6857895eab6734f",
+    "metrics.mjs": "80335f32d46b2c1e5110dbc80cd763d1c27b14c410b8049b0acc142cba16f1a8",
+    "run.mjs": "e8a5b57445e7f88f800a4fd572ea738d03471ec27e889dd981518ec54d823629",
+    "test.mjs": "a690a8e11dc4b53570f36707f4ffbe61790f54c79c8938e830b5f331a2cd308b",
+    "p6-core.mjs": "8434987b77928c4346b73ecd9fee88cbbb4c7444d232f9cfd34c4f652019a5fc",
+    "PROTOCOL.md": "ba4afa4b0d72dac0ec38190a11b75b3c4ab18e07b92999c161a7896a2eb99211",
+    "audit.py": "8586760bb47bbce84fd35aee55e0c62873d9ad3d17d9a281df287eeecd336e20"
+  },
+  "files": [
+    {
+      "path": "formal/manifest.json",
+      "sha256": "bfa29d8c85eded47639a24122e16bd8b6aba6451f3157ada10ac86b698e20a40",
+      "bytes": 1034535
+    },
+    {
+      "path": "freeze.json",
+      "sha256": "66307756c074b71cdc8655e35f36141efc3ee3cc2d13f5663f1fe6fcc8832a54",
+      "bytes": 1933
+    },
+    {
+      "path": "independent-audit.json",
+      "sha256": "a34ed4c9ac112a03a35889e0b5f1c642ae9298c66ce93b0818aaeaaaa3ae43e4",
+      "bytes": 10406971
+    },
+    {
+      "path": "formal/dev-ref256-r480.json",
+      "sha256": "c8d1908ab6b0f3e681ce335b56ee03da8c2b887aec9541dc4676123962609fd8",
+      "bytes": 62564257
+    },
+    {
+      "path": "formal/dev-ref256-r480.temperatures.f64.gz",
+      "sha256": "c204691aa0a12d9155a2b41f52ea62af405528d21540a1805e912dd64923d532",
+      "bytes": 136475727
+    },
+    {
+      "path": "formal/dev-shared64-r120.json",
+      "sha256": "1d508d14a14f7e3faa6437934e377d7eb6c41be6dad69f92d418cd48d6995f66",
+      "bytes": 20809410
+    },
+    {
+      "path": "formal/dev-shared64-r120.temperatures.f64.gz",
+      "sha256": "8b4d8436d14b92fbcaf89879fb39335710c206da464edbade8fb6b824848bb9c",
+      "bytes": 2192268
+    },
+    {
+      "path": "VortexGaussians-P7-report.md",
+      "sha256": "02b661044decafd2b98cfdc411923f5e8fe7fd4fd6b7c1612fa3596a53c5c0da",
+      "bytes": 3416
+    }
+  ],
+  "cases": {
+    "reference": {
+      "id": "dev-ref256-r480",
+      "definition": {
+        "id": "dev-ref256-r480",
+        "n": 256,
+        "rate": 480,
+        "role": "R3",
+        "conditional": true
+      },
+      "inputSHA256": "287f2089e5fb22c9b1c47f100c46469139c9c9713c786f57c0409740e64af49b",
+      "initialEndpoint": {
+        "temperatureSHA256": "b961bbb721e8f1edcde26c0bdc7a72c75d5a5744f0adc6a7a91831ab4fc2bd38",
+        "displaySHA256": "fc23d697a9df3b3f688b5028f21eacef6180ddb9e848317b6d9897cd84275003",
+        "positionSHA256": "1a148576527881bf654bcc48ec5e069ff373b4d03266d8df887a89ac534e4cd5",
+        "step": 0,
+        "time": 0,
+        "format": "sha256 raw float64 little-endian buffers"
+      },
+      "finalEndpoint": {
+        "temperatureSHA256": "3c9bd1da73baf1e6e39a3132342cadd1a748b0536a884bf121edf88e247bbd2e",
+        "displaySHA256": "f8c2f750ae10fc7071e1a5562c4c0739accb9659b97e96c30f2e57d830ae2eea",
+        "positionSHA256": "6636b59d5590d720414f45dbcbd627a0c95dffda4e3b76aaef5e3e23d3b95a3a",
+        "step": 480,
+        "time": 1,
+        "format": "sha256 raw float64 little-endian buffers"
+      },
+      "history": {
+        "file": "dev-ref256-r480.temperatures.f64.gz",
+        "format": "float64-le",
+        "order": "surface panel/j/k ascending, then gas ix/iy/iz ascending",
+        "vectorCount": 481,
+        "vectorLength": 131104,
+        "uncompressedBytes": 504488192,
+        "uncompressedSHA256": "d198b417e09247d6e534bebff54f58549e32ccd4f19a26f3ce0b7e420095ada5",
+        "compressedBytes": 136475727,
+        "compressedSHA256": "c204691aa0a12d9155a2b41f52ea62af405528d21540a1805e912dd64923d532",
+        "gzipLevel": 1,
+        "roundtripVerified": true
+      }
+    },
+    "shared": {
+      "id": "dev-shared64-r120",
+      "definition": {
+        "id": "dev-shared64-r120",
+        "n": 64,
+        "rate": 120,
+        "role": "shared"
+      },
+      "inputSHA256": "876b9921317e4d4a0e811a1b08c543ab2559562ca771a32f1297bc54d6607823",
+      "initialEndpoint": {
+        "temperatureSHA256": "12f8c0deb56fa7c296b1bfff1e2afbbb6009517a300d66da9c8927292b863654",
+        "displaySHA256": "fc23d697a9df3b3f688b5028f21eacef6180ddb9e848317b6d9897cd84275003",
+        "positionSHA256": "149715969ebec9aca46d619d8076732952daab82e92db614d20480096b844d3b",
+        "step": 0,
+        "time": 0,
+        "format": "sha256 raw float64 little-endian buffers"
+      },
+      "finalEndpoint": {
+        "temperatureSHA256": "6b86c3d95f98aa766963bdd6aef852c793abba3e0773694524b30d6a58a1b45b",
+        "displaySHA256": "5c98d753db50ce67c73aaa886b74400cf7b2db4377d979091b535eb6afbddf34",
+        "positionSHA256": "191868cbc55a086183babcf4d7ef86273f4a308dae4507f8baf5238ac5cc4c5a",
+        "step": 120,
+        "time": 1,
+        "format": "sha256 raw float64 little-endian buffers"
+      },
+      "history": {
+        "file": "dev-shared64-r120.temperatures.f64.gz",
+        "format": "float64-le",
+        "order": "surface panel/j/k ascending, then gas ix/iy/iz ascending",
+        "vectorCount": 121,
+        "vectorLength": 8224,
+        "uncompressedBytes": 7960832,
+        "uncompressedSHA256": "c36fc0c821c48144254b609241dabd75e8992c5a5024ffc2f659245f5f1d2bc6",
+        "compressedBytes": 2192268,
+        "compressedSHA256": "8b4d8436d14b92fbcaf89879fb39335710c206da464edbade8fb6b824848bb9c",
+        "gzipLevel": 1,
+        "roundtripVerified": true
+      }
+    }
+  }
+}

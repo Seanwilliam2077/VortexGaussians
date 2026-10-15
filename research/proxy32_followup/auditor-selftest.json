@@ -1,0 +1,72 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "name": "exact-new-arm-metadata-accepts",
+      "passed": true,
+      "auditAccepted": true,
+      "expectedAcceptance": true
+    },
+    {
+      "name": "extra-budget-rejected",
+      "passed": true,
+      "auditAccepted": false,
+      "expectedAcceptance": false
+    },
+    {
+      "name": "missing-new-arm-rejected",
+      "passed": true,
+      "auditAccepted": false,
+      "expectedAcceptance": false
+    },
+    {
+      "name": "new-reference-rejected",
+      "passed": true,
+      "auditAccepted": false,
+      "expectedAcceptance": false
+    },
+    {
+      "name": "concealed-post-result-status-rejected",
+      "passed": true,
+      "auditAccepted": false,
+      "expectedAcceptance": false
+    },
+    {
+      "name": "complete-parent-dependencies-accept",
+      "passed": true,
+      "auditAccepted": true,
+      "expectedAcceptance": true
+    },
+    {
+      "name": "missing-parent-dependency-rejected",
+      "passed": true,
+      "auditAccepted": false,
+      "expectedAcceptance": false
+    },
+    {
+      "name": "changed-parent-dependency-rejected",
+      "passed": true,
+      "auditAccepted": false,
+      "expectedAcceptance": false
+    },
+    {
+      "name": "changed-parent-archive-rejected",
+      "passed": true,
+      "auditAccepted": false,
+      "expectedAcceptance": false
+    },
+    {
+      "name": "strict-cost-and-dual-memory-positive",
+      "passed": true
+    },
+    {
+      "name": "strong-alias-peak-memory-negative",
+      "passed": true
+    },
+    {
+      "name": "twenty-percent-cost-margin-negative",
+      "passed": true
+    }
+  ],
+  "scope": "Synthetic metadata and cost/memory negative controls only; no proxy32 development trajectory or parent full re-audit."
+}
