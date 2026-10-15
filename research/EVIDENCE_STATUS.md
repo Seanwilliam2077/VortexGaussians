@@ -38,6 +38,16 @@ The architectural inference is limited: this controlled material-exchange task
 does not require one thermal state per visual sample. It does not establish that
 separating every vortex and render primitive is always preferable.
 
+## Existing-system engineering update
+
+The existing layered preview now skips already-ineligible graph neighbors
+before distance evaluation. A fixed six-run comparison on the synthetic
+campfire preserved all saved public states and PNGs, while completed-frame
+medians changed from 40.8–42.2 ms to 24.2–24.5 ms on one AMD890M machine.
+This standard three-line optimization is not a new method or a modern-method
+comparison. See [the engineering record](FRONTIER_EARLY_REJECTION.md) for the
+measurement scope, separate evidence archive and old reference source.
+
 ## Reproducibility and provenance
 
 P7b source was frozen before its formal run. The producer's five unit tests and

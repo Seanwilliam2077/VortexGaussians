@@ -1098,7 +1098,7 @@ function buildSceneHash(cell){
     let a=map.get(key); if(!a){ a=[]; map.set(key,a); } a.push(i); }
   sceneHash={cell,map};
 }
-function hashQuery(p,r,fn){
+function hashQuery(p,r,fn,states=null){
   // 场景缩放是载入后才设的, 所以格子可能是按旧 scale 建的; 偏离过大就重建一次。
   if(sceneHash && (sceneHash.cell>4*r || sceneHash.cell<0.25*r)) buildSceneHash(Math.max(1e-6,r));
   const c=sceneHash.cell, m=sceneHash.map;
@@ -1107,7 +1107,7 @@ function hashQuery(p,r,fn){
         z0=Math.floor((p[2]-r)/c), z1=Math.floor((p[2]+r)/c), r2=r*r;
   for(let x=x0;x<=x1;x++)for(let y=y0;y<=y1;y++)for(let z=z0;z<=z1;z++){
     const a=m.get(x+','+y+','+z); if(!a) continue;
-    for(const i of a){ const q=sceneGauss[i].p;
+    for(const i of a){ if(states && states[i]!==0) continue; const q=sceneGauss[i].p;
       const dx=q[0]-p[0],dy=q[1]-p[1],dz=q[2]-p[2];
       const d2=dx*dx+dy*dy+dz*dz; if(d2<=r2) fn(i,Math.sqrt(d2)); } }
 }
@@ -1222,7 +1222,7 @@ function stepSpread(dt){
       const area=authoredArea(j);
       if(area!==null){ const weighted=area*deposited;
         spreadCounters.areaWeightedGraphHeatDeposited+=weighted; spreadRegion(j).areaWeightedGraphHeatDeposited+=weighted; }
-    });
+    },sb.state);
     if(!elapsed) advanceClock(i);             // legacy prefix service and arithmetic
   }
   if(areaMode) for(let j=0;j<n;j++) if(graphDelta[j]!==0){
