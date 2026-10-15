@@ -2156,6 +2156,9 @@ function vpm3Ensure(n){
   P3.code=new Uint32Array(cap);P3.scode=new Uint32Array(cap);P3.ord=new Uint32Array(cap);
   P3.tmp=new Uint32Array(cap);P3.cnt256=new Uint32Array(256);
   P3.ndF=new Float32Array(nc*12);P3.ndI=new Int32Array(nc*10);P3.stack=new Int32Array(2048);
+  // Exact thermal-support metadata from the packed source values. Keep this
+  // separate from the velocity cluster's centroid, width and opening criterion.
+  P3.thermalBounds=new Float64Array(nc*7); // min xyz, max xyz, max source sigma^2
   return P3;
 }
 function vpm3Morton(x,y,z){
@@ -2196,6 +2199,7 @@ function vpm3Node(lo, hi, depth, side, bitPos){
     const thr=Math.max(side*vpmInvTheta, VPM_MACF*Math.sqrt(s2));
     F[fb]=xc;F[fb+1]=yc;F[fb+2]=zc;F[fb+3]=side;F[fb+4]=Ax;F[fb+5]=Ay;F[fb+6]=Az;
     F[fb+7]=W;F[fb+8]=s2;F[fb+9]=thr*thr;F[fb+10]=Ts;F[fb+11]=hi-lo;
+    vpm3ThermalBounds(id);
     return id;
   }
   const scode=P3.scode, half=side*0.5;
@@ -2219,16 +2223,67 @@ function vpm3Node(lo, hi, depth, side, bitPos){
   const thr=Math.max(side*vpmInvTheta, VPM_MACF*Math.sqrt(s2));
   F[fb]=xc;F[fb+1]=yc;F[fb+2]=zc;F[fb+3]=side;F[fb+4]=Ax;F[fb+5]=Ay;F[fb+6]=Az;
   F[fb+7]=W;F[fb+8]=s2;F[fb+9]=thr*thr;F[fb+10]=Ts;F[fb+11]=cn;
+  vpm3ThermalBounds(id);
   return id;
+}
+function vpm3ThermalBounds(id){
+  const p=vpm3Pool,b=p.thermalBounds,I=p.ndI,o=id*7,ib=id*10;
+  b[o]=b[o+1]=b[o+2]=Infinity;b[o+3]=b[o+4]=b[o+5]=-Infinity;b[o+6]=0;
+  if(I[ib]===-2){
+    for(let j=I[ib+8];j<I[ib+9];j++){
+      b[o]=Math.min(b[o],p.X[j]);b[o+1]=Math.min(b[o+1],p.Y[j]);b[o+2]=Math.min(b[o+2],p.Z[j]);
+      b[o+3]=Math.max(b[o+3],p.X[j]);b[o+4]=Math.max(b[o+4],p.Y[j]);b[o+5]=Math.max(b[o+5],p.Z[j]);
+      b[o+6]=Math.max(b[o+6],p.SG[j]*p.SG[j]);
+    }
+  }else for(let c=0;c<8;c++){
+    const child=I[ib+c];if(child<0)continue;const q=child*7;
+    for(let a=0;a<3;a++){b[o+a]=Math.min(b[o+a],b[q+a]);b[o+a+3]=Math.max(b[o+a+3],b[q+a+3]);}
+    b[o+6]=Math.max(b[o+6],b[q+6]);
+  }
+}
+function vpm3ThermalAt(px,py,pz,Ti,tS2,self,stats=null){
+  const p=vpm3Pool,I=p.ndI,b=p.thermalBounds,st=p.stack;
+  let S=1,sT=Ti,gx=0,gxx=0,gz=0,gzz=0,sp=0;
+  if(stats){stats.nodesVisited=0;stats.nodesPruned=0;stats.leavesVisited=0;stats.sourceTests=0;stats.positiveContributions=0;}
+  if(p.root>=0)st[sp++]=p.root;
+  while(sp>0){
+    const nd=st[--sp],o=nd*7,ib=nd*10;
+    if(stats)stats.nodesVisited++;
+    const bx=px<b[o]?b[o]-px:px>b[o+3]?px-b[o+3]:0;
+    const by=py<b[o+1]?b[o+1]-py:py>b[o+4]?py-b[o+4]:0;
+    const bz=pz<b[o+2]?b[o+2]-pz:pz>b[o+5]?pz-b[o+5]:0;
+    const distance2=bx*bx+by*by+bz*bz,limit=9*(tS2+b[o+6]);
+    // Outward roundoff margin: uncertain boundary cases visit the leaf, where
+    // the original a<9 predicate decides support. No node-center approximation.
+    if(distance2>limit+32*Number.EPSILON*Math.max(distance2,limit,Number.MIN_VALUE)){
+      if(stats)stats.nodesPruned++;continue;
+    }
+    if(I[ib]===-2){
+      if(stats)stats.leavesVisited++;
+      for(let j=I[ib+8];j<I[ib+9];j++){
+        if(j===self)continue;if(stats)stats.sourceTests++;
+        const dx=px-p.X[j],dy=py-p.Y[j],dz=pz-p.Z[j],qq=dx*dx+dy*dy+dz*dz;
+        const sj=p.SG[j],s2=0.5*(tS2+sj*sj),inv=1/(s2+s2),a=qq*inv;
+        const f3=a<9?vpmF3[(a*VPM_LSC)|0]:0;
+        if(f3>0){
+          if(stats)stats.positiveContributions++;
+          S+=f3;sT+=f3*p.T[j];
+          gx+=(p.T[j]-Ti)*(-dx)*f3;gxx+=dx*dx*f3;
+          gz+=(p.T[j]-Ti)*(-dz)*f3;gzz+=dz*dz*f3;
+        }
+      }
+    }else for(let c=0;c<8;c++){const child=I[ib+c];if(child>=0)st[sp++]=child;}
+  }
+  const out=vpm3Out;out.S=S;out.sT=sT;out.gx=gx;out.gxx=gxx;out.gz=gz;out.gzz=gzz;
 }
 // 单目标遍历: u(3) + 拉伸向量 (α_i·∇)u(3) + 温度 (S,ΣwT,双轴矩重归一梯度)。
 //  逐源拉伸: C₃[ B/σ̄⁵·(α_j×r)·(r·α_i) + A/σ̄³·(α_j×α_i) ]; 簇=同式用簇矩。
 const vpm3Out={ux:0,uy:0,uz:0,sx:0,sy:0,sz:0,S:1,sT:0,gx:0,gxx:0,gz:0,gzz:0};
-function vpm3FieldAt(px,py,pz, aix,aiy,aiz, Ti, tS2, C3, self){
+function vpm3FieldAt(px,py,pz, aix,aiy,aiz, Ti, tS2, C3, self,thermalStats=null){
   const P3=vpm3Pool, F=P3.ndF, I=P3.ndI, st=P3.stack;
   const X=P3.X,Y=P3.Y,Z=P3.Z,AX=P3.AX,AY=P3.AY,AZ=P3.AZ,T=P3.T,SG=P3.SG;
-  const A3=vpm3A,B3=vpm3B,F3=vpmF3;
-  let ux=0,uy=0,uz=0,sx=0,sy=0,sz=0,S=1,sT=Ti,gx=0,gxx=0,gz=0,gzz=0;
+  const A3=vpm3A,B3=vpm3B;
+  let ux=0,uy=0,uz=0,sx=0,sy=0,sz=0;
   let sp=0; if(P3.root>=0) st[sp++]=P3.root;
   while(sp>0){
     const nd=st[--sp], fb=nd*12, ib=nd*10;
@@ -2251,10 +2306,10 @@ function vpm3FieldAt(px,py,pz, aix,aiy,aiz, Ti, tS2, C3, self){
       for(let j=I[ib+8];j<I[ib+9];j++){ if(j===self) continue;
         const dx=px-X[j], dy=py-Y[j], dz=pz-Z[j], qq=dx*dx+dy*dy+dz*dz;
         const sj=SG[j], s2=0.5*(tS2+sj*sj), inv=1/(s2+s2), a=qq*inv;
-        let A,B,f3;
+        let A,B;
         if(a<12.5){ const ix=(a*VPM3_LSC)|0; A=A3[ix]; B=B3[ix];
-          f3=(a<9)?F3[(a*VPM_LSC)|0]:0; }
-        else { const s=2*a, rs=Math.sqrt(s); A=1/(s*rs); B=-3/(s*s*rs); f3=0; }
+        }
+        else { const s=2*a, rs=Math.sqrt(s); A=1/(s*rs); B=-3/(s*s*rs); }
         const sg3=Math.sqrt(s2)*s2, sg5=sg3*s2;
         const jx=AX[j], jy=AY[j], jz=AZ[j];
         const cxr_x=jy*dz-jz*dy, cxr_y=jz*dx-jx*dz, cxr_z=jx*dy-jy*dx;
@@ -2264,9 +2319,6 @@ function vpm3FieldAt(px,py,pz, aix,aiy,aiz, Ti, tS2, C3, self){
         sx+=kB*cxr_x + kA*(jy*aiz-jz*aiy);
         sy+=kB*cxr_y + kA*(jz*aix-jx*aiz);
         sz+=kB*cxr_z + kA*(jx*aiy-jy*aix);
-        if(f3>0){ S+=f3; sT+=f3*T[j];
-          gx+=(T[j]-Ti)*(-dx)*f3; gxx+=dx*dx*f3;
-          gz+=(T[j]-Ti)*(-dz)*f3; gzz+=dz*dz*f3; }
       }
     } else {
       for(let c=0;c<8;c++){ const kk=I[ib+c]; if(kk>=0) st[sp++]=kk; }
@@ -2274,7 +2326,7 @@ function vpm3FieldAt(px,py,pz, aix,aiy,aiz, Ti, tS2, C3, self){
   }
   const o=vpm3Out;
   o.ux=ux;o.uy=uy;o.uz=uz; o.sx=sx;o.sy=sy;o.sz=sz;
-  o.S=S;o.sT=sT; o.gx=gx;o.gxx=gxx; o.gz=gz;o.gzz=gzz;
+  vpm3ThermalAt(px,py,pz,Ti,tS2,self,thermalStats);
 }
 function stepSimVPM3(dt,closed=null){
   vol_t+=dt;
