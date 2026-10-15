@@ -366,7 +366,7 @@ void main(){
 const FS_PARTICLE = `#version 300 es
 precision highp float;
 in vec2 v_uv; in float v_temp, v_dens, v_seed, v_fade, v_type;
-uniform float uTime, uEmis, uMode, uFlick, uFireI;
+uniform float uTime, uEmis, uMode, uFlick, uFireI, uP3, uP3Tau;
 uniform vec2 uFire, uRes;
 out vec4 o;
 ${COMMON_NOISE}
@@ -408,6 +408,15 @@ void main(){
     o=vec4(col*a, a); return;
   }
   // ---- 火/烟 高斯 ----
+  if(uP3>0.5){
+    // P3 common optical-depth mapping. Weight scales optical depth, not alpha;
+    // coincident half-weight copies therefore reproduce one full-weight splat.
+    float a=1.0-exp(-max(0.0,v_fade*uP3Tau*v_dens*g));
+    float T=clamp(v_temp,0.0,1.0);
+    vec3 c=fireRamp(T)*uEmis*(0.25+0.85*T);
+    if(uMode>0.5) c=mix(vec3(0.02,0.02,0.026),vec3(0.17,0.17,0.19),clamp(v_dens,0.0,1.0));
+    o=vec4(c*a,a); return;
+  }
   float detail=mix(0.5,1.25, fbm(v_uv*1.7 + vec2(v_seed*5.3, v_seed*2.0 - uTime*0.4)));
   float depthFade=v_fade;
   if(uMode<0.5){                                   // 火: 低光学厚度的发光体 (α 小, 自遮挡弱)
@@ -671,6 +680,7 @@ const pComp = prog(VS_FULL, FS_COMPOSITE);
 // uniform 位置缓存
 const U = (p,n)=>gl.getUniformLocation(p,n);
 const uPart={ VP:U(pPart,'uViewProj'),
+              P3:U(pPart,'uP3'),P3Tau:U(pPart,'uP3Tau'),
               Time:U(pPart,'uTime'),Emis:U(pPart,'uEmis'),Mode:U(pPart,'uMode'),Flick:U(pPart,'uFlick'),
               Fire:U(pPart,'uFire'),FireI:U(pPart,'uFireI'),Res:U(pPart,'uRes') };
 const uScene={ VP:U(pScene,'uViewProj'), Light:U(pScene,'uSceneLight'), Time:U(pScene,'uTime'),
@@ -767,6 +777,7 @@ function gatherBG(){
 // ===========================================================================
 let sceneGauss=[];                       // {p:[x,y,z], a0:[..], a1:[..], c:[r,g,b], o}
 let sceneInfo={center:[0,0,0], extent:1};
+let researchScenePoints=null;             // authored world-space fixtures; null for normal PLY loading
 function parsePLY(buf){
   const bytes=new Uint8Array(buf), sig='end_header\n';
   let he=-1; for(let i=0;i<bytes.length-sig.length;i++){ let ok=true;
@@ -870,7 +881,9 @@ function uploadSH(shHi,n,deg){
   console.log('[sh] degree-3 texture '+W+'x'+H+' for '+n+' splats ('+(W*H*8/1e6).toFixed(0)+' MB)');
 }
 function loadPLY(buf){
+  if(P.spreadMeasureMode==='area') throw new Error('area mode requires an authored research scene with explicit areaWeight');
   const r=parsePLY(buf); sceneGauss=r.gauss; sceneInfo={center:r.center, extent:r.extent};
+  researchScenePoints=null;
   uploadSH(r.shHi, r.gauss.length, r.shDeg);
   if(P.sceneSH>shDegAvail) P.sceneSH=shDegAvail;
   P.sceneScale = 1.6 / (r.extent||1);      // 自动缩放到 ~3.2 单位跨度
@@ -993,7 +1006,76 @@ function gatherScene(){
 //  一脉 (不声明为新); 新点在载体 (捕获场景的 splats)、实时、与仿真↔场景闭环。
 // ===========================================================================
 let sceneBurnState=null, sceneHash=null;
+// Observations only: preserve the shipped update order, float arithmetic and shared RNG.
+// Heat totals measure the increment actually stored in Float32 heat state, before cooling.
+const spreadCounters={flameHeatDeposited:0, graphHeatDeposited:0, sceneSeedsEmitted:0,
+  frontierProcessed:0, frontierDeferred:0, sceneFeedAttempts:0,
+  sceneFeedCapacityBlocked:0, sceneFeedRandomRejected:0, baseParticlesEmitted:0,
+  baseHeatApplied:0, flameSamplesProcessed:0, flameSampleCapHits:0,
+  clockProcessed:0, clockFuelConsumed:0, sceneSeedsRecycled:0,
+  sceneFeedRecycleCandidates:0, sceneFeedNoColdSlot:0, sceneRecycleSlotsExamined:0,
+  recycledDensitySum:0, recycledCirculationSum:0, recycledAbsCirculationSum:0,
+  recycledMaxDensity:0, recycledMaxAbsCirculation:0, recycledSmokeProxySum:0,
+  recycledHotRemoved:0, recycledMaxTemperature:0, recycledMaxDynamicTemperature:0, recycledMinAge:null,
+  areaWeightedFlameHeatDeposited:0,areaWeightedGraphHeatDeposited:0,areaWeightedFuelConsumed:0,
+  areaFeedCreditsGenerated:0,areaFeedAttempts:0,areaFeedAdmitted:0,areaFeedBlocked:0,
+  areaFeedServiceCapDropped:0,areaFeedCancelledCredits:0};
+const spreadRegionCounters=new Map();
+let areaFeedCredit=0;
+function resetSpreadCounters(){
+  for(const key of Object.keys(spreadCounters)) spreadCounters[key]=key==='recycledMinAge'?null:0;
+  spreadRegionCounters.clear();
+  areaFeedCredit=0;
+}
+function spreadRegion(index){
+  const group=researchScenePoints?researchScenePoints[index].group:'ply';
+  if(!spreadRegionCounters.has(group)) spreadRegionCounters.set(group,{flameHeatDeposited:0,
+    graphHeatDeposited:0,sceneSeedsEmitted:0,sceneSeedsRecycled:0,clockProcessed:0,clockFuelConsumed:0,
+    areaWeightedFlameHeatDeposited:0,areaWeightedGraphHeatDeposited:0,areaWeightedFuelConsumed:0});
+  return spreadRegionCounters.get(group);
+}
+function smokeProxy(p){ return p.d*(1-Math.max(0,Math.min(1,p.T))); }
+function authoredArea(i){ return researchScenePoints?researchScenePoints[i].areaWeight:null; }
+// Stable summation is useful at event-floor boundaries. No epsilon is added to
+// manufacture an event. The ledger also records dropped/cancelled credits.
+function areaSum(values){
+  values.sort((a,b)=>a-b); let sum=0,correction=0;
+  for(const value of values){ const y=value-correction, next=sum+y; correction=(next-sum)-y; sum=next; }
+  return sum;
+}
+function areaSources(sb){
+  const byPosition=new Map();
+  for(const i of sb.burning){
+    const position=srcToWorld(sceneGauss[i].p), key=position.join('|');
+    if(!byPosition.has(key)) byPosition.set(key,{position,groups:new Map()});
+    const node=byPosition.get(key), group=researchScenePoints[i].group;
+    if(!node.groups.has(group)) node.groups.set(group,{index:i,areas:[]});
+    node.groups.get(group).areas.push(authoredArea(i));
+  }
+  const nodes=[...byPosition.values()].sort((a,b)=>a.position[0]-b.position[0]||a.position[1]-b.position[1]||a.position[2]-b.position[2]);
+  for(const node of nodes){
+    node.groups=[...node.groups.entries()].sort(([a],[b])=>a<b?-1:a>b?1:0)
+      .map(([group,g])=>({group,index:g.index,area:areaSum(g.areas)}));
+    node.area=areaSum(node.groups.map(g=>g.area));
+  }
+  return {nodes,total:areaSum(nodes.map(n=>n.area))};
+}
+function pickAreaSource(sources){
+  let draw=srand()*sources.total;
+  for(let n=0;n<sources.nodes.length;n++){
+    const node=sources.nodes[n];
+    if(draw<node.area || n===sources.nodes.length-1){
+      for(let g=0;g<node.groups.length;g++){
+        const group=node.groups[g];
+        if(draw<group.area || g===node.groups.length-1) return {index:group.index,position:node.position};
+        draw-=group.area;
+      }
+    }
+    draw-=node.area;
+  }
+}
 function buildBurnState(){
+  areaFeedCredit=0;
   const n=sceneGauss.length; if(!n){ sceneBurnState=null; sceneHash=null; return; }
   sceneBurnState={ h:new Float32Array(n), fuel:new Float32Array(n).fill(1),
     glow:new Float32Array(n), char_:new Float32Array(n),
@@ -1062,22 +1144,32 @@ function setFuelBelow(yWorld,val){                 // 按世界高度赋燃料 (
 }
 function stepSpread(dt){
   const sb=sceneBurnState; if(!sb || !P.spreadOn || !sceneGauss.length) return;
-  const S=P.sceneScale||1, N=layers.length;
+  const S=P.sceneScale||1, N=layers.length, areaMode=P.spreadMeasureMode==='area';
   // 1) 火焰→场景: 采样热粒子加热邻近 splat (点燃条件由仿真温度驱动)
   const rIgn=P.spreadIgnR/S; let sampled=0;
+  if(P.spreadFlameHeat){
   outer:
   for(const L of layers){
     const k=L.idx||0, dep=(N>1?(k/(N-1)-0.5):0)*P.sliceDepth;
     for(let i=0;i<L.ps.length;i+=7){
       const p=L.ps[i]; if(p.T<0.55) continue;
-      if(++sampled>160) break outer;
+      if(++sampled>P.spreadSampleCap){ spreadCounters.flameSampleCapHits++; break outer; }
+      spreadCounters.flameSamplesProcessed++;
       let wx,wy,wz;
       if(P.sliceMode==='view'){ const bx=cam.bx, fh=cam.fh;
         wx=bx[0]*p.x+fh[0]*dep; wy=p.y; wz=bx[2]*p.x+fh[2]*dep; }
       else { wx=p.x; wy=p.y; wz=dep; }
       const s=worldToSrc(wx,wy,wz);
-      hashQuery(s,rIgn,(j,d)=>{ if(sb.state[j]===0) sb.h[j]+=dt*P.spreadHeat*p.T*(1-d/rIgn); });
+      hashQuery(s,rIgn,(j,d)=>{ if(sb.state[j]===0){ const before=sb.h[j];
+        sb.h[j]+=dt*P.spreadHeat*p.T*(1-d/rIgn);
+        const deposited=sb.h[j]-before;
+        spreadCounters.flameHeatDeposited+=deposited; spreadRegion(j).flameHeatDeposited+=deposited;
+        const area=authoredArea(j);
+        if(area!==null){ const weighted=area*deposited;
+          spreadCounters.areaWeightedFlameHeatDeposited+=weighted; spreadRegion(j).areaWeightedFlameHeatDeposited+=weighted; }
+      } });
     }
+  }
   }
   // 2) 点燃判定 + 前沿蔓延 (浮力上偏) + 燃料/发光/炭化演化
   const n=sceneGauss.length, hDecay=1-dt*0.35;
@@ -1086,44 +1178,147 @@ function stepSpread(dt){
       if(sb.state[i]===0 && sb.fuel[i]>0 && sb.h[i]>=P.spreadIgnH){ sb.state[i]=1; sb.burning.push(i); } }
   }
   const rSp=P.spreadR/S;
-  const process=Math.min(sb.burning.length, 1400);
-  for(let b=0;b<process;b++){
-    const i=sb.burning[b]; if(sb.state[i]!==1) continue;
-    const pi=sceneGauss[i].p;
-    hashQuery(pi,rSp,(j,d)=>{ if(sb.state[j]!==0) return;
-      const up=Math.max(0,(sceneGauss[j].p[1]-pi[1])/Math.max(1e-4,rSp));
-      sb.h[j]+=dt*P.spreadRate*(1-d/rSp)*(1+2.2*up);        // 上方邻居受热更快
-    });
+  const process=Math.min(sb.burning.length, P.spreadFrontierCap);
+  spreadCounters.frontierDeferred+=sb.burning.length-process;
+  // P1 elapsed mode separates cheap combustion clocks from capped neighbour work.
+  // Graph work sees all burners alive at the start of this phase (including this
+  // step's threshold crossings), even if their fuel expires at the step's end.
+  // Graph-heated recipients still wait until the NEXT ignition scan. This fixes
+  // clock starvation only: unprocessed graph sources still deposit no heat.
+  const elapsed=P.spreadClockMode==='elapsed';
+  // Area mode accumulates intensive heat increments in double precision and
+  // writes each recipient once. The legacy branch keeps its Float32 writes.
+  const graphDelta=areaMode?new Float64Array(n):null, graphCorrection=areaMode?new Float64Array(n):null;
+  const advanceClock=i=>{
+    const before=sb.fuel[i];
     sb.fuel[i]-=dt/P.spreadBurnT;
+    if(elapsed && sb.fuel[i]<0) sb.fuel[i]=0;
     sb.glow[i]=Math.min(1, sb.glow[i]+dt*3);
     sb.char_[i]=Math.min(1, sb.char_[i]+dt/(P.spreadBurnT*0.85));
     if(sb.fuel[i]<=0){ sb.state[i]=2; sb.glow[i]=0; sb.char_[i]=1; }
+    const consumed=before-sb.fuel[i], region=spreadRegion(i);
+    spreadCounters.clockProcessed++; spreadCounters.clockFuelConsumed+=consumed;
+    region.clockProcessed++; region.clockFuelConsumed+=consumed;
+    const area=authoredArea(i);
+    if(area!==null){ const weighted=area*consumed;
+      spreadCounters.areaWeightedFuelConsumed+=weighted; region.areaWeightedFuelConsumed+=weighted; }
+  };
+  for(let b=0;b<process;b++){
+    const i=sb.burning[b]; if(sb.state[i]!==1) continue;
+    spreadCounters.frontierProcessed++;
+    const pi=sceneGauss[i].p;
+    hashQuery(pi,rSp,(j,d)=>{ if(sb.state[j]!==0) return;
+      const up=Math.max(0,(sceneGauss[j].p[1]-pi[1])/Math.max(1e-4,rSp));
+      if(areaMode){
+        const delta=dt*P.spreadRate*(authoredArea(i)/P.spreadReferenceArea)*(1-d/rSp)*(1+2.2*up);
+        const y=delta-graphCorrection[j], next=graphDelta[j]+y;
+        graphCorrection[j]=(next-graphDelta[j])-y; graphDelta[j]=next;
+        return;
+      }
+      const before=sb.h[j];
+      sb.h[j]+=dt*P.spreadRate*(1-d/rSp)*(1+2.2*up);        // 上方邻居受热更快
+      const deposited=sb.h[j]-before;
+      spreadCounters.graphHeatDeposited+=deposited; spreadRegion(j).graphHeatDeposited+=deposited;
+      const area=authoredArea(j);
+      if(area!==null){ const weighted=area*deposited;
+        spreadCounters.areaWeightedGraphHeatDeposited+=weighted; spreadRegion(j).areaWeightedGraphHeatDeposited+=weighted; }
+    });
+    if(!elapsed) advanceClock(i);             // legacy prefix service and arithmetic
   }
+  if(areaMode) for(let j=0;j<n;j++) if(graphDelta[j]!==0){
+    const before=sb.h[j]; sb.h[j]+=graphDelta[j];
+    const deposited=sb.h[j]-before, weighted=authoredArea(j)*deposited, region=spreadRegion(j);
+    spreadCounters.graphHeatDeposited+=deposited; region.graphHeatDeposited+=deposited;
+    spreadCounters.areaWeightedGraphHeatDeposited+=weighted; region.areaWeightedGraphHeatDeposited+=weighted;
+  }
+  if(elapsed) for(const i of sb.burning) if(sb.state[i]===1) advanceClock(i);
   if(sb.burning.length) sb.burning=sb.burning.filter(i=>sb.state[i]===1);
   // 3) 场景→仿真: 燃烧 splat 向最近切片注入温度源 + 生成粒子 (轮转配额)
-  const M=Math.min(sb.burning.length, 48);
+  let M=P.spreadSceneFeed?Math.min(sb.burning.length, P.spreadFeedCap):0, feedSources=null;
+  if(areaMode){
+    if(!sb.burning.length){
+      spreadCounters.areaFeedCancelledCredits+=areaFeedCredit; areaFeedCredit=0; M=0;
+    } else if(P.spreadSceneFeed){
+      feedSources=areaSources(sb);
+      const generated=dt*P.spreadAreaFeedRate*(feedSources.total/P.spreadReferenceArea);
+      const credit=areaFeedCredit+generated;
+      if(!Number.isFinite(credit) || credit<0 || credit>Number.MAX_SAFE_INTEGER-1)
+        throw new RangeError('area feed event credit exceeds safe finite integer range');
+      spreadCounters.areaFeedCreditsGenerated+=generated;
+      const due=Math.floor(credit); M=Math.min(due,P.spreadFeedCap);
+      areaFeedCredit=credit-due;
+      // Service overflow is dropped, never transferred to later burners. A
+      // capacity rejection also consumes its event. Only fractions carry over.
+      spreadCounters.areaFeedServiceCapDropped+=due-M;
+    }
+  }
   for(let m=0;m<M;m++){
-    sb.emitCursor=(sb.emitCursor+1)%sb.burning.length;
-    const i=sb.burning[sb.emitCursor];
-    const w=srcToWorld(sceneGauss[i].p);
+    let i,w;
+    if(areaMode){
+      const chosen=pickAreaSource(feedSources); i=chosen.index; w=chosen.position;
+      spreadCounters.areaFeedAttempts++;
+    } else {
+      sb.emitCursor=(sb.emitCursor+1)%sb.burning.length;
+      i=sb.burning[sb.emitCursor]; w=srcToWorld(sceneGauss[i].p);
+    }
     let sx,sy,dep2;
     if(P.sliceMode==='view'){ const bx=cam.bx, fh=cam.fh;
       sx=w[0]*bx[0]+w[2]*bx[2]; sy=w[1]; dep2=w[0]*fh[0]+w[2]*fh[2]; }
     else { sx=w[0]; sy=w[1]; dep2=w[2]; }
     let k=Math.round((dep2/P.sliceDepth+0.5)*(N-1)); k=Math.max(0,Math.min(N-1,k));
-    const L=layers[k]; if(!L||!L.vic) continue;
+    const L=layers[k]; if(!L||!L.vic){ if(areaMode) spreadCounters.areaFeedBlocked++; continue; }
     if(P.solver!=='vpm'){                 // VIC: 注入网格温度源 (VPM 无网格, 热量走热种子粒子进混合场)
       const gi2=Math.max(0,Math.min(NX-1,Math.round(gX(sx)))),
             gj2=Math.max(0,Math.min(NY-1,Math.round(gY(sy))));
       const id2=gj2*NX+gi2;
       L.vic.T[id2]=Math.min(1.6, L.vic.T[id2]+dt*P.spreadFeed);
     }
-    if(L.ps.length<P.ppl && srand()<0.5){
+    spreadCounters.sceneFeedAttempts++;
+    // P1 recycling is a lossy admission policy, not a conservation operation.
+    // Only a full layer may offer a cold, sufficiently old slot. Minimize max(T,Tb)
+    // so both temperatures count; exact ties keep the lowest current array index.
+    // Discovering a slot does not remove it. The legacy 0.5 admission test must
+    // succeed first; area events already encode that rate and have no coin.
+    // Blocked legacy attempts consume no RNG, preserving the legacy path.
+    const full=L.ps.length>=P.ppl; let recycle=-1;
+    if(full && P.spreadParticlePolicy==='recycle-cold'){
+      let coldest=Infinity;
+      for(let j=0;j<L.ps.length;j++){
+        spreadCounters.sceneRecycleSlotsExamined++;
+        const q=L.ps[j];
+        if(q.T<0.55 && q.Tb<0.55 && q.life>=P.spreadRecycleMinAge){
+          const score=Math.max(q.T,q.Tb);
+          if(score<coldest){coldest=score; recycle=j;}
+        }
+      }
+      if(recycle<0) spreadCounters.sceneFeedNoColdSlot++;
+      else spreadCounters.sceneFeedRecycleCandidates++;
+    }
+    if(full && recycle<0){
+      spreadCounters.sceneFeedCapacityBlocked++;
+      if(areaMode) spreadCounters.areaFeedBlocked++;
+    } else if(areaMode || srand()<0.5){
       const sp={ x:sx+(srand()-0.5)*0.04, y:sy+srand()*0.03, G:0,
         T:0.85+srand()*0.15, d:0.8+srand()*0.2, vx:0, vy:0.2, seedp:srand()*99, life:0, sxx:1,sxy:0,syy:1,
         sg:P.eps*0.7071067811865476 };
-      sp.Tb=sp.T; L.ps.push(sp);
-    }
+      sp.Tb=sp.T;
+      if(recycle<0) L.ps.push(sp);
+      else {
+        const old=L.ps[recycle], absG=Math.abs(old.G), c=spreadCounters;
+        c.sceneSeedsRecycled++; c.recycledDensitySum+=old.d; c.recycledCirculationSum+=old.G;
+        c.recycledAbsCirculationSum+=absG; c.recycledMaxDensity=Math.max(c.recycledMaxDensity,old.d);
+        c.recycledMaxAbsCirculation=Math.max(c.recycledMaxAbsCirculation,absG);
+        c.recycledSmokeProxySum+=smokeProxy(old);
+        c.recycledHotRemoved+=+(old.T>=0.55 || old.Tb>=0.55);
+        c.recycledMaxTemperature=Math.max(c.recycledMaxTemperature,old.T);
+        c.recycledMaxDynamicTemperature=Math.max(c.recycledMaxDynamicTemperature,old.Tb);
+        c.recycledMinAge=c.recycledMinAge===null?old.life:Math.min(c.recycledMinAge,old.life);
+        spreadRegion(i).sceneSeedsRecycled++;
+        L.ps[recycle]=sp;
+      }
+      spreadCounters.sceneSeedsEmitted++; spreadRegion(i).sceneSeedsEmitted++;
+      if(areaMode) spreadCounters.areaFeedAdmitted++;
+    } else spreadCounters.sceneFeedRandomRejected++;
   }
 }
 
@@ -1141,7 +1336,16 @@ function makeTargets(){
   [sceneTex,bloomA,bloomB].forEach(t=>t&&gl.deleteTexture(t));
   [sceneFBO,bloomAF,bloomBF].forEach(f=>f&&gl.deleteFramebuffer(f));
   sceneDepthRB && gl.deleteRenderbuffer(sceneDepthRB);
-  sceneTex=tex(FBW,FBH,HDR_IFMT,HDR_TYPE); sceneFBO=fbo(sceneTex);
+  const p3Float32=researchP3State && researchP3State.precision==='rgba32f';
+  sceneTex=tex(FBW,FBH,p3Float32?gl.RGBA32F:HDR_IFMT,p3Float32?gl.FLOAT:HDR_TYPE); sceneFBO=fbo(sceneTex);
+  if(p3Float32){
+    // RGBA32F linear filtering needs a separate optional extension. P3 composites
+    // at the same full-resolution pixel centers, so NEAREST is sufficient and
+    // avoids an incomplete sampled texture (black display despite valid HDR).
+    gl.bindTexture(gl.TEXTURE_2D,sceneTex);
+    gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.NEAREST);
+    gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.NEAREST);
+  }
   sceneDepthRB=gl.createRenderbuffer();
   gl.bindRenderbuffer(gl.RENDERBUFFER,sceneDepthRB);
   gl.renderbufferStorage(gl.RENDERBUFFER,gl.DEPTH_COMPONENT24,FBW,FBH);
@@ -1190,6 +1394,8 @@ function updateCam(aspect){
 // ===========================================================================
 //  参数
 // ===========================================================================
+let researchP3State=null;                    // opt-in P3a; never changes shipped defaults
+let researchP4State=null;                    // opt-in closed thermal/3D integration only
 const P = {
   mode:'fire', simLayers:9,        // 默认: 每层都跑涡粒子(VIC) — 对齐导师"每层 vortex particles"
   riseV:1.15, sway:0.9, rate:1500, coolP:0.8, spread:0.7,
@@ -1222,6 +1428,13 @@ const P = {
   spreadIgnR:0.14, spreadHeat:2.2, spreadIgnH:1.0,   // 火焰→splat 点燃: 半径/加热率/阈值
   spreadR:0.11, spreadRate:3.0, spreadBurnT:6.0,     // splat→splat 蔓延半径/速率, 燃烧时长(s)
   spreadFeed:5.0,                   // 燃烧 splat→切片温度场注入率 (闭环强度)
+  // P0 research switches: defaults reproduce the released coupling and quotas.
+  // emitterOn is supported for layered VPM (base particles + source-band reheating).
+  spreadFlameHeat:true, spreadSceneFeed:true, emitterOn:true,
+  spreadFrontierCap:1400, spreadSampleCap:160, spreadFeedCap:48,
+  // P1 opt-in candidates. Legacy/block preserve released update order and RNG.
+  spreadClockMode:'legacy', spreadParticlePolicy:'block', spreadRecycleMinAge:0.5,
+  spreadMeasureMode:'legacy', spreadReferenceArea:0.0016, spreadAreaFeedRate:30,
   // 炭化着色 (纯渲染, 不进仿真; 见 VS_SCENE 末尾)。旧发布版 = desat 0, dim 0.12, sootMix 0, opa 0.30
   charDesat:0.85,                   // 去色强度: 丢色度、留亮度起伏 (0=保留原色 → 暗黄/橄榄)
   charDim:0.12,                     // 去色后压到烟炱亮度量级
@@ -1230,6 +1443,7 @@ const P = {
   charSootR:0.0495, charSootG:0.0459, charSootB:0.0428,   // 线性域暖中性烟炱反照率 (~4.5%)
   orbit:true, stretch:true, flicker:true, paused:false
 };
+const RESEARCH_DEFAULTS=Object.freeze({...P});
 
 // ===========================================================================
 //  确定性回放: 所有仿真路径的随机数走 srand; seedSim(s) 切换到种子化流。
@@ -1238,6 +1452,10 @@ const P = {
 let simSeed=0, srand=Math.random;              // 默认非确定 (交互模式)
 function seedSim(s){ simSeed=s>>>0; srand=mulberry32(simSeed); }
 function resetSim(seed){                        // 确定性重置: 种子 + 全部仿真状态归零
+  const wasP3=!!researchP3State;
+  researchP3State=null;
+  researchP4State=null;
+  if(wasP3) makeTargets();
   if(seed!==undefined) seedSim(seed);
   rebuildLayers(); embers=[]; emberAcc=0; cloud=[]; cloudAcc=0; cloudAcc3=0; vic3=null; vol_t=0;
   coarse.T.fill(0); coarse.Tb.fill(0); coarse.w.fill(0); coarse.psi.fill(0);
@@ -1272,7 +1490,7 @@ let emberAcc=0;
 // ===== 火星 ember: 稀疏、清亮、长寿命, 随火上飘并闪烁 =====
 let embers=[];
 function stepEmbers(dt){
-  if(P.embers && P.mode==='fire' && !P.paused){
+  if(P.emitterOn && P.embers && P.mode==='fire' && !P.paused){
     emberAcc += P.emberRate*dt*(pointer.active?1.7:1.0);
     while(emberAcc>=1 && embers.length<P.emberMax){
       emberAcc-=1;
@@ -1383,6 +1601,7 @@ function evolveF(p, Lxx,Lxy,Lyx,Lyy, dt){
 
 // ===== 路线2: 2D 涡粒子 + Biot–Savart =====
 function emitSim(layer, dt){
+  if(!P.emitterOn) return;
   const cap=P.ppl; if(layer.ps.length>=cap) return;
   const n=Math.min(cap-layer.ps.length, 6+(pointer.active?6:0));
   for(let i=0;i<n;i++){ const r=(srand()*2-1);
@@ -1392,6 +1611,7 @@ function emitSim(layer, dt){
       sg:P.eps*0.7071067811865476 };    // VPM 核半径 σ0 (常数, 不消耗 srand → VIC 随机流不变)
     p.Tb=p.T;                           // VPM 动力学温度 (对应 VIC 网格 T: 线性冷却+源带加热); p.T 仅渲染
     layer.ps.push(p);
+    spreadCounters.baseParticlesEmitted++;
   }
 }
 // (历史 O(N²) biotSavart/stepSim 参考路径已移除 — grid-free 精确参考现由
@@ -1835,7 +2055,8 @@ function vpmPrepare(dt, useSim, doEmit){
     if(doEmit) emitSim(L,dt);
     for(const p of L.ps){
       if(p.Tb===undefined) p.Tb=p.T;
-      if(p.y<band){ const dx=(p.x-source.x)*iw; p.Tb+=heat*Math.exp(-2*dx*dx); }
+      if(P.emitterOn && p.y<band){ const dx=(p.x-source.x)*iw, before=p.Tb;
+        p.Tb+=heat*Math.exp(-2*dx*dx); spreadCounters.baseHeatApplied+=p.Tb-before; }
       p.Tb*=coolTb; if(p.Tb>1.6)p.Tb=1.6; else if(p.Tb<0)p.Tb=0;
       if(p.sg===undefined) p.sg=sig0;
       if(nu>0){ const s2=p.sg*p.sg+2*nu*dt; p.sg=Math.min(0.10,Math.sqrt(s2)); }   // core spreading (Lamb–Oseen 精确解)
@@ -2055,7 +2276,7 @@ function vpm3FieldAt(px,py,pz, aix,aiy,aiz, Ti, tS2, C3, self){
   o.ux=ux;o.uy=uy;o.uz=uz; o.sx=sx;o.sy=sy;o.sz=sz;
   o.S=S;o.sT=sT; o.gx=gx;o.gxx=gxx; o.gz=gz;o.gzz=gzz;
 }
-function stepSimVPM3(dt){
+function stepSimVPM3(dt,closed=null){
   vol_t+=dt;
   vpmInvTheta=1/Math.max(0.15,P.theta);
   const n=cloud.length, P3=vpm3Ensure(n);
@@ -2064,15 +2285,19 @@ function stepSimVPM3(dt){
   const heat=dt*4.5*(pointer.active?1.5:1.0), coolTb=(1-dt*P.cool*0.5);
   const band=source.y+0.20, iw=1/Math.max(0.05,source.w);
   for(const p of cloud){
-    if(p.Tb===undefined) p.Tb=p.T;
-    if(p.y<band){ const dx=(p.x-source.x)*iw, dz=p.z*iw;
-      p.Tb+=heat*Math.exp(-(dx*dx+dz*dz)*2.0); }
-    p.Tb*=coolTb; if(p.Tb>1.6)p.Tb=1.6; else if(p.Tb<0)p.Tb=0;
+    if(!closed){
+      if(p.Tb===undefined) p.Tb=p.T;
+      if(p.y<band){ const dx=(p.x-source.x)*iw, dz=p.z*iw;
+        p.Tb+=heat*Math.exp(-(dx*dx+dz*dz)*2.0); }
+      p.Tb*=coolTb; if(p.Tb>1.6)p.Tb=1.6; else if(p.Tb<0)p.Tb=0;
+    }
     if(p.sg===undefined) p.sg=sig0;
   }
   const nz=Math.max(2,P.layers), VREF3=HX*HY*(DZ3()/nz);
   const C3=P.gam*VPM_KGAIN*VREF3/(4*Math.PI);
-  for(let i=0;i<n;i++){ const p=cloud[i]; P3.code[i]=vpm3Morton(p.x,p.y,p.z); }
+  for(let i=0;i<n;i++){ const p=cloud[i];
+    if(closed&&p4MortonOutside(p)) closed.counters.mortonOutsideBefore++;
+    P3.code[i]=vpm3Morton(p.x,p.y,p.z); }
   vpm3Sort(n);
   for(let i=0;i<n;i++){ const p=cloud[P3.ord[i]];
     P3.X[i]=p.x; P3.Y[i]=p.y; P3.Z[i]=p.z;
@@ -2091,6 +2316,15 @@ function stepSimVPM3(dt){
     P3.DTZ[i]=(o.gzz>1e-9)?o.gz/o.gzz:0; if(P3.DTZ[i]>12)P3.DTZ[i]=12; else if(P3.DTZ[i]<-12)P3.DTZ[i]=-12;
     P3.UX[i]=o.ux; P3.UY[i]=o.uy; P3.UZ[i]=o.uz;
     P3.SX[i]=o.sx; P3.SY[i]=o.sy; P3.SZ[i]=o.sz;
+    if(closed){
+      const rawDTX=(o.gxx>1e-9)?o.gx/o.gxx:0, rawDTZ=(o.gzz>1e-9)?o.gz/o.gzz:0;
+      if(Math.abs(Math.fround(rawDTX))>12) closed.counters.gradientXClamps++;
+      if(Math.abs(Math.fround(rawDTZ))>12) closed.counters.gradientZClamps++;
+      closed.fields.push({id:cloud[P3.ord[i]].p4id,sortedIndex:i,
+        packed:{position:[P3.X[i],P3.Y[i],P3.Z[i]],G:[P3.AX[i],P3.AY[i],P3.AZ[i]],Tb:P3.T[i],sg:P3.SG[i]},
+        raw:{...o,DTX:rawDTX,DTZ:rawDTZ},
+        field:{UX:P3.UX[i],UY:P3.UY[i],UZ:P3.UZ[i],TT:P3.TT[i],DTX:P3.DTX[i],DTZ:P3.DTZ[i],SX:P3.SX[i],SY:P3.SY[i],SZ:P3.SZ[i]}});
+    }
   }
   // 积分 (对齐 stepSimVIC3 的 G2P 段: 斜压 ω̇=β(−∂T/∂z,0,∂T/∂x), 拉伸, 阻尼, cap, 直接浮力, 湍流, 风)
   const out=[];
@@ -2099,18 +2333,29 @@ function stepSimVPM3(dt){
     p.Gx += dt*ST*P3.SX[i]; p.Gy += dt*ST*P3.SY[i]; p.Gz += dt*ST*P3.SZ[i];   // (α·∇)u 解析
     const damp=(1-dt*0.1); p.Gx*=damp; p.Gy*=damp; p.Gz*=damp;
     const gm=Math.hypot(p.Gx,p.Gy,p.Gz);
-    if(gm>6){ const s=6/gm; p.Gx*=s;p.Gy*=s;p.Gz*=s; }
+    if(gm>6){ if(closed)closed.counters.vorticityClamps++; const s=6/gm; p.Gx*=s;p.Gy*=s;p.Gz*=s; }
     let vx=P3.UX[i], vy=P3.UY[i], vz=P3.UZ[i];
     vy += P.buoy*P3.TT[i];
     if(P.turb>0){ const c=curl3(p.x*2.4,p.y*2.4,p.z*2.4,vol_t);
       vx+=c[0]*P.turb*0.2; vy+=c[1]*P.turb*0.2; vz+=c[2]*P.turb*0.2; }
     vx += P.wind+source.vx*0.3;
-    const sp2=vx*vx+vy*vy+vz*vz; if(sp2>16){ const s=4/Math.sqrt(sp2); vx*=s;vy*=s;vz*=s; }
+    const sp2=vx*vx+vy*vy+vz*vz; if(sp2>16){ if(closed)closed.counters.speedClamps++; const s=4/Math.sqrt(sp2); vx*=s;vy*=s;vz*=s; }
     p.vx=vx; p.vy=vy; p.vz=vz;
     p.x+=dt*vx; p.y+=dt*vy; p.z+=dt*vz; p.life+=dt;
-    p.T-=dt*P.cool*p.T*p.T; p.d*=(1-dt*0.3);
-    if(p.z>D/2)p.z=D/2; else if(p.z<-D/2)p.z=-D/2;               // 与 VIC3 同款层厚夹持
-    if(p.T>0.04 && p.y<WY && Math.abs(p.x)<WX*0.7 && p.d>0.03) out.push(p);
+    if(closed){
+      // Retain every fixed-capacity parcel. Boundary events are explicit invalid
+      // conditions, never an unrecorded removal of thermal energy.
+      if(p4MortonOutside(p))closed.counters.mortonOutsideAfter++;
+      if(p.z>D/2||p.z<-D/2)closed.counters.domainZClamps++;
+      if(p.z>D/2)p.z=D/2; else if(p.z<-D/2)p.z=-D/2;
+      if(!(p.T>0.04 && p.y<WY && Math.abs(p.x)<WX*0.7 && p.d>0.03))closed.counters.nativeWouldRetire++;
+      if(p.y>=WY||Math.abs(p.x)>=WX*0.7)closed.counters.transportDomainExits++;
+      out.push(p);
+    }else{
+      p.T-=dt*P.cool*p.T*p.T; p.d*=(1-dt*0.3);
+      if(p.z>D/2)p.z=D/2; else if(p.z<-D/2)p.z=-D/2;               // 与 VIC3 同款层厚夹持
+      if(p.T>0.04 && p.y<WY && Math.abs(p.x)<WX*0.7 && p.d>0.03) out.push(p);
+    }
   }
   cloud=out;
 }
@@ -2270,6 +2515,7 @@ function evenMask(N,k){ const m=new Array(N).fill(false);
   for(let i=0;i<N;i++){ if(Math.floor((i+1)*k/N)>Math.floor(i*k/N)) m[i]=true; } return m; }
 
 function stepAll(dt){
+  if(researchP4State)throw new Error('P4 active: use researchP4.step or reset first');
   if(pointer.active){
     source.x=pointer.x; source.y=Math.max(0.02,pointer.y);
     source.vx=(pointer.x-pointer.px)*8; source.px=pointer.x; source.py=pointer.y;
@@ -2359,7 +2605,8 @@ let dFw0=0, dFw1=0, dFw2=-1;               // 每帧从 cam.V 取的视前向 (e
 let dynKey=new Float32Array(0);
 function gather(){
   const vol=(P.dimMode==='vol'||P.dimMode==='vic3'||P.dimMode==='vpm3');   // 3D 粒子云走同一渲染路径
-  let total=0; if(vol) total=cloud.length; else for(const l of layers) total+=l.ps.length;
+  const p3=researchP3State, p3Particles=p3?(p3.override|| (p3.config.mode==='passive'?p3.tracers:cloud)):null;
+  let total=0; if(p3) total=p3Particles.length; else if(vol) total=cloud.length; else for(const l of layers) total+=l.ps.length;
   const ne=(P.embers&&P.mode==='fire')? embers.length:0;
   const nbg=(P.box? bgGauss.length:0);
   const cap=total+ne+nbg;
@@ -2368,7 +2615,17 @@ function gather(){
   const arr=rawData; let o=0, gi=0;
   const N=layers.length, radW=P.rad/360, D=P.sliceDepth, va=(P.sliceMode==='view'), bx=cam.bx, by=cam.by, fh=cam.fh, eye=cam.eye;
   { const V=cam.V; dFw0=-V[2]; dFw1=-V[6]; dFw2=-V[10]; }   // 视前向: 排序键 = 桶键 = dot(p-eye, fw)
-  if(vol){
+  if(p3){
+    const radius=p3.config.optics.radius, defaultWeight=p3.config.mode==='passive'?p3.opticalWeight:1;
+    for(const p of p3Particles){
+      arr[o++]=p.x;arr[o++]=p.y;arr[o++]=p.z;
+      arr[o++]=bx[0]*radius;arr[o++]=bx[1]*radius;arr[o++]=bx[2]*radius;
+      arr[o++]=by[0]*radius;arr[o++]=by[1]*radius;arr[o++]=by[2]*radius;
+      arr[o++]=p.weight===undefined?defaultWeight:p.weight;
+      arr[o++]=p.T;arr[o++]=p.d;arr[o++]=0;arr[o++]=0;
+      const ex=p.x-eye[0],ey=p.y-eye[1],ez=p.z-eye[2]; depths[gi++]=ex*dFw0+ey*dFw1+ez*dFw2;
+    }
+  } else if(vol){
     // Tier1 真三维: 相机朝向 billboard 在真 (x,y,z); Tier3 涡丝则沿 3D 轨迹拉成丝
     let F3x=0-eye[0],F3y=1.05-eye[1],F3z=0-eye[2]; const F3l=Math.hypot(F3x,F3y,F3z)||1; F3x/=F3l;F3y/=F3l;F3z/=F3l;
     const fil=P.filament;
@@ -2493,12 +2750,14 @@ function drawInterleaved(nDyn, nScene){
 }
 
 function render(){
+  const p3=researchP3State, p3Start=p3?performance.now():0;
   const aspect=cv.width/cv.height;
   updateCam(aspect);                       // 真 3D 相机 (绕火环绕)
   const fuv=cam.fireUV;
   const count=gather();                     // 含背景, 已 front-to-back 排序
   gl.bindBuffer(gl.ARRAY_BUFFER,instVBO);
   gl.bufferData(gl.ARRAY_BUFFER, instData.subarray(0,count*STRIDE_F), gl.DYNAMIC_DRAW);
+  const p3GatherEnd=p3?performance.now():0;
 
   const flick=P.flicker ? (0.82+0.18*(0.5+0.5*Math.sin(simTime*9.1)+0.5*Math.sin(simTime*23.0))*0.7+0.06) : 1.0;
   const fireI=(P.mode==='fire'?1.0:0.35)*P.boxLight*flick;
@@ -2508,6 +2767,7 @@ function render(){
   gl.viewport(0,0,FBW,FBH);
   gl.clearColor(0.0,0.0,0.0,0.0); gl.clear(gl.COLOR_BUFFER_BIT);          // 清 α=0 (transmittance=1)
   gl.useProgram(pPart);
+  gl.uniform1f(uPart.P3,p3?1:0); gl.uniform1f(uPart.P3Tau,p3?p3.config.optics.tau:0);
   gl.uniformMatrix4fv(uPart.VP, false, cam.VP);
   gl.uniform1f(uPart.Time,simTime); gl.uniform1f(uPart.Emis,P.emis);
   gl.uniform1f(uPart.Flick,flick); gl.uniform1f(uPart.Mode,P.mode==='fire'?0.0:1.0);
@@ -2606,6 +2866,7 @@ function render(){
   gl.uniform2f(uComp.Fire,fuv[0],fuv[1]);
   drawFull();
   gl.activeTexture(gl.TEXTURE0);
+  if(p3) p3.renderTiming={gatherSortUploadMs:p3GatherEnd-p3Start,drawSubmitMs:performance.now()-p3GatherEnd};
   return count;
 }
 
@@ -2860,8 +3121,1578 @@ window.addEventListener('keydown',e=>{
   else if(e.key==='3'){ P.solver='vpm'; applySolver(); setSimLayers(P.layers); }
 });
 
+// P0 coupling experiments. This API is opt-in; ordinary demo/compare paths retain
+// the shipped defaults and RNG sequence. Only fully simulated layered VPM is
+// supported here: emitterOn does not define an ablation for VIC/procedural/3D modes.
+// Counters are cumulative since research.reset, not rates or inferred causality.
+// A finite integer quota of 10,000,000 is the explicit fixture-scale "uncapped"
+// setting; Infinity/NaN are rejected rather than serialized ambiguously.
+let researchFrame=0, researchRandomDraws=0;
+const RESEARCH_MAX_BUDGET=10000000;
+const RESEARCH_BUDGETS=new Set(['spreadFrontierCap','spreadSampleCap','spreadFeedCap']);
+const RESEARCH_SIGNED=new Set(['yaw','wind','camElev','sceneYaw','scenePitch','sceneLift','sceneOffX','sceneOffZ']);
+const RESEARCH_STRUCTURAL=new Set(['layers','ppl','simLayers','solver','dimMode','sceneScale',
+  'sceneYaw','scenePitch','sceneLift','sceneOffX','sceneOffZ','spreadMeasureMode','spreadReferenceArea']);
+function researchNumber(value,name,min=0,max=1000000){
+  if(typeof value!=='number' || !Number.isFinite(value) || value<min || value>max)
+    throw new RangeError(name+' must be a finite number in ['+min+', '+max+']');
+  return value;
+}
+function researchParams(params,base,changing=false){
+  if(!params || typeof params!=='object' || Array.isArray(params)) throw new TypeError('params must be an object');
+  const result={...base};
+  for(const [key,value] of Object.entries(params)){
+    if(!Object.prototype.hasOwnProperty.call(RESEARCH_DEFAULTS,key)) throw new TypeError('unknown parameter: '+key);
+    if(changing && RESEARCH_STRUCTURAL.has(key)) throw new Error(key+' requires research.reset');
+    const type=typeof RESEARCH_DEFAULTS[key];
+    if(typeof value!==type) throw new TypeError(key+' must be '+type);
+    if(type==='number'){
+      researchNumber(value,key,RESEARCH_SIGNED.has(key)?-1000000:0,RESEARCH_BUDGETS.has(key)?RESEARCH_MAX_BUDGET:1000000);
+      if((RESEARCH_BUDGETS.has(key)||['layers','simLayers','ppl'].includes(key)) && !Number.isInteger(value))
+        throw new RangeError(key+' must be an integer');
+    }
+    result[key]=value;
+  }
+  if(!changing && Object.prototype.hasOwnProperty.call(params,'layers') && !Object.prototype.hasOwnProperty.call(params,'simLayers'))
+    result.simLayers=result.layers;
+  if(result.solver!=='vpm' || result.dimMode!=='layer' || result.simLayers!==result.layers)
+    throw new Error('P0 research supports solver="vpm", dimMode="layer", simLayers=layers only');
+  if(!['legacy','elapsed'].includes(result.spreadClockMode)) throw new RangeError('spreadClockMode must be legacy or elapsed');
+  if(!['block','recycle-cold'].includes(result.spreadParticlePolicy)) throw new RangeError('spreadParticlePolicy must be block or recycle-cold');
+  if(!['legacy','area'].includes(result.spreadMeasureMode)) throw new RangeError('spreadMeasureMode must be legacy or area');
+  if(result.layers<1 || result.layers>16 || result.ppl<1) throw new RangeError('layers must be 1..16 and ppl >= 1');
+  for(const key of ['eps','sliceDepth','spreadIgnR','spreadR','spreadBurnT','sceneScale','camDist','fov','spreadReferenceArea'])
+    if(result[key]<=0) throw new RangeError(key+' must be > 0');
+  if(result.spreadMeasureMode==='area'){
+    if(result.spreadClockMode!=='elapsed') throw new Error('area mode requires spreadClockMode="elapsed"');
+    if(!researchScenePoints || researchScenePoints.some(p=>p.areaWeight===null))
+      throw new Error('area mode requires explicit positive areaWeight for every authored point; PLY measures are unavailable');
+    const weight=areaSum(researchScenePoints.map(p=>p.areaWeight))/result.spreadReferenceArea;
+    // dt is at most one second in the research API. Validate the worst-case
+    // source measure before any simulation mutation; stepSpread also guards
+    // the actual accumulated event count before its bounded loop.
+    if(!Number.isFinite(weight) || !Number.isFinite(weight*result.spreadAreaFeedRate) ||
+       weight*result.spreadAreaFeedRate>Number.MAX_SAFE_INTEGER-2)
+      throw new RangeError('area feed rate and represented measure exceed safe finite event counts');
+  }
+  if(researchScenePoints && (result.sceneScale!==1 || ['sceneYaw','scenePitch','sceneLift','sceneOffX','sceneOffZ'].some(k=>result[k]!==0)))
+    throw new Error('authored research scenes use world positions and identity scene transforms');
+  return result;
+}
+function researchApplyFuel(){
+  if(researchScenePoints && sceneBurnState)
+    for(let i=0;i<researchScenePoints.length;i++) sceneBurnState.fuel[i]=researchScenePoints[i].fuel;
+}
+function researchSetScene(points){
+  if(!Array.isArray(points)) throw new TypeError('points must be an array');
+  const ids=new Set();
+  const authored=points.map((p,i)=>{
+    if(!p || typeof p!=='object') throw new TypeError('point '+i+' must be an object');
+    if(!(typeof p.id==='string' || (typeof p.id==='number' && Number.isFinite(p.id)))) throw new TypeError('point '+i+' needs a string or finite numeric id');
+    const id=String(p.id); if(!id || ids.has(id)) throw new Error('point ids must be nonempty and unique: '+id); ids.add(id);
+    if(!Array.isArray(p.position)||p.position.length!==3) throw new TypeError(id+'.position must have three coordinates');
+    const position=p.position.map((v,j)=>researchNumber(v,id+'.position['+j+']',-1000000));
+    const color=(p.color===undefined?[0.65,0.45,0.25]:p.color);
+    if(!Array.isArray(color)||color.length!==3) throw new TypeError(id+'.color must have three channels');
+    const scale=researchNumber(p.scale===undefined?0.025:p.scale,id+'.scale',Number.MIN_VALUE);
+    return {id,group:String(p.group===undefined?'default':p.group),position,
+      fuel:researchNumber(p.fuel===undefined?1:p.fuel,id+'.fuel'),
+      opacity:researchNumber(p.opacity===undefined?0.5:p.opacity,id+'.opacity',0,1),scale,
+      color:color.map((v,j)=>researchNumber(v,id+'.color['+j+']',0,1)),
+      areaWeight:p.areaWeight===undefined||p.areaWeight===null?null:
+        researchNumber(p.areaWeight,id+'.areaWeight',Number.MIN_VALUE)};
+  });
+  // Equivalent to parsed PLY data, without recentering/subsampling or hidden scale changes.
+  researchScenePoints=authored;
+  sceneGauss=authored.map(p=>{ const s2=p.scale*p.scale;
+    return {p:p.position.slice(),cov:[s2,0,0,s2,0,s2],sh:[[0,0,0],[0,0,0],[0,0,0]],c:p.color.slice(),o:p.opacity}; });
+  let extent=1; for(const p of authored) for(const v of p.position) extent=Math.max(extent,Math.abs(v));
+  sceneInfo={center:[0,0,0],extent};
+  Object.assign(P,{sceneScale:1,sceneYaw:0,scenePitch:0,sceneLift:0,sceneOffX:0,sceneOffZ:0,sceneOn:points.length>0,box:false,sceneSH:0});
+  uploadSH(null,sceneGauss.length,0); buildBurnState(); researchApplyFuel();
+  applyScene();
+  return {count:authored.length,ids:authored.map(p=>p.id)};
+}
+function researchHash(value){
+  // FNV-1a over an explicit canonical JSON state. Unlike the legacy visual hash,
+  // combustion, frontier order/cursor, covariance and RNG draw count participate.
+  const text=JSON.stringify(value); let h=0x811c9dc5;
+  for(let i=0;i<text.length;i++){ h^=text.charCodeAt(i); h=Math.imul(h,16777619)>>>0; }
+  return h.toString(16).padStart(8,'0');
+}
+function researchSnapshot(options={}){
+  const sb=sceneBurnState, detail=!!options.detail;
+  let burning=0,charred=0,heated=0,fuelRemaining=0;
+  const points=sceneGauss.map((g,i)=>{
+    const authored=researchScenePoints?researchScenePoints[i]:null;
+    const state=sb?sb.state[i]:0, heat=sb?sb.h[i]:0, fuel=sb?sb.fuel[i]:0;
+    if(state===1)burning++; if(state===2)charred++; if(heat>0.05)heated++; fuelRemaining+=fuel;
+    return {id:authored?authored.id:'ply:'+i,group:authored?authored.group:'ply',position:srcToWorld(g.p),
+      fuelInitial:authored?authored.fuel:1,fuel,heat,char:sb?sb.char_[i]:0,glow:sb?sb.glow[i]:0,state,
+      areaWeight:authored?authored.areaWeight:null};
+  });
+  points.sort((a,b)=>a.id<b.id?-1:a.id>b.id?1:0);
+  let count=0,hotCount=0,coldCount=0,smokeCount=0,temperatureSum=0,dynamicTemperatureSum=0,
+    densitySum=0,circulationSum=0,absCirculationSum=0,smokeProxySum=0;
+  const layerCounts=layers.map(L=>L.ps.length);
+  const particleState=layers.map(L=>({idx:L.idx,seed:L.seed,t:L.t,acc:L.acc,ps:L.ps.map(p=>{
+    count++; if(p.T>=0.55)hotCount++; temperatureSum+=p.T; dynamicTemperatureSum+=p.Tb||0;
+    if(p.T<0.55)smokeCount++; if(p.T<0.55 && p.Tb<0.55)coldCount++;
+    densitySum+=p.d; circulationSum+=p.G; absCirculationSum+=Math.abs(p.G); smokeProxySum+=smokeProxy(p);
+    return [p.x,p.y,p.G,p.sg,p.T,p.Tb,p.d,p.vx,p.vy,p.sxx,p.sxy,p.syy,p.life,p.seedp,p.px,p.py];
+  })}));
+  const areaMode=P.spreadMeasureMode==='area';
+  // Legacy hashes deliberately keep the exact P0/P1 schema. Area-mode hashes
+  // include authored measures and fractional event credit, which affect physics.
+  const hashPoints=areaMode?points:points.map(({areaWeight,...p})=>p);
+  const measured=points.every(p=>p.areaWeight!==null);
+  const representedArea=measured?areaSum(points.map(p=>p.areaWeight)):null;
+  const areaWeightedFuelRemaining=measured?areaSum(points.map(p=>p.areaWeight*p.fuel)):null;
+  const areaWeightedHeat=measured?areaSum(points.map(p=>p.areaWeight*p.heat)):null;
+  const areaWeightedChar=measured?areaSum(points.map(p=>p.areaWeight*p.char)):null;
+  const burningArea=measured?areaSum(points.filter(p=>p.state===1).map(p=>p.areaWeight)):null;
+  const burnHash=researchHash(hashPoints);
+  const particleStateHash=researchHash({seed:simSeed,time:simTime,frame:researchFrame,vpmTick,
+    randomDraws:researchRandomDraws,particles:particleState,embers,emberAcc,source,pointer});
+  const hash=researchHash({seed:simSeed,time:simTime,frame:researchFrame,vpmTick,randomDraws:researchRandomDraws,
+    particles:particleState,embers,emberAcc,source,pointer,
+    points:hashPoints,sceneOrder:sceneGauss.map((g,i)=>researchScenePoints?researchScenePoints[i].id:'ply:'+i),
+    frontier:sb?sb.burning:[],emitCursor:sb?sb.emitCursor:0,
+    ...(areaMode?{areaFeedCredit}: {})});
+  const countersByGroup=Object.fromEntries([...new Set(points.map(p=>p.group))].sort().map(group=>[group,
+    {...(spreadRegionCounters.get(group)||{flameHeatDeposited:0,graphHeatDeposited:0,sceneSeedsEmitted:0,
+      sceneSeedsRecycled:0,clockProcessed:0,clockFuelConsumed:0,areaWeightedFlameHeatDeposited:0,
+      areaWeightedGraphHeatDeposited:0,areaWeightedFuelConsumed:0})}]));
+  const result={version:3,frame:researchFrame,time:simTime,seed:simSeed,hash,particleStateHash,randomDraws:researchRandomDraws,
+    params:{...P},scene:{count:sceneGauss.length,burning,charred,heated,fuelRemaining,
+      frontier:sb?sb.burning.length:0,burnHash,representedArea,areaWeightedFuelRemaining,areaWeightedHeat,areaWeightedChar},
+    particles:{count,hotCount,coldCount,smokeCount,temperatureSum,dynamicTemperatureSum,
+      densitySum,circulationSum,absCirculationSum,smokeProxySum,layerCounts},
+    counters:{...spreadCounters},countersByGroup,
+    areaFeed:{creditBalance:areaFeedCredit,fractionalCredit:areaFeedCredit,wholeEventsPending:0,
+      burningArea,sourceWeightSum:burningArea===null?null:burningArea/P.spreadReferenceArea}};
+  if(detail) result.points=points;
+  return result;
+}
+function researchCamera(yaw){
+  researchNumber(yaw,'yaw',-1000000); P.yaw=yaw; P.orbit=false;
+  updateCam(cv.width/Math.max(1,cv.height));
+  return {yaw:P.yaw,bx:cam.bx.slice(),fh:cam.fh.slice(),eye:cam.eye.slice()};
+}
+const researchAPI={
+  setScene:researchSetScene,
+  reset(seed=42,params={}){
+    researchNumber(seed,'seed',0,0xffffffff); if(!Number.isInteger(seed)) throw new RangeError('seed must be an integer');
+    const next=researchParams(params,RESEARCH_DEFAULTS);
+    Object.assign(P,next,{paused:true,orbit:false});
+    if(researchScenePoints){ P.sceneOn=sceneGauss.length>0; P.box=false; P.sceneSH=0; }
+    introT=-1; introDone=true; orbitPhase=0;
+    pointer={active:false,x:0,y:0,px:0,py:0}; drag.on=false;
+    resetSim(seed); researchApplyFuel(); resetSpreadCounters();
+    vpmPools.length=0; vpmDirN=0; vpmDirL=1; vpmDir.fill(0); vpmDirAcc.fill(0); vpmDirAcc2.fill(0);
+    researchFrame=0; researchRandomDraws=0;
+    const random=srand; srand=()=>{ researchRandomDraws++; return random(); };
+    researchCamera(P.yaw);
+    return researchSnapshot();
+  },
+  setParams(params){
+    const next=researchParams(params,P,true); Object.assign(P,next,{paused:true,orbit:false});
+    researchCamera(P.yaw); return {...P};
+  },
+  camera:researchCamera,
+  step(n=1,dt=1/60){
+    researchNumber(n,'steps',0,RESEARCH_MAX_BUDGET); if(!Number.isInteger(n)) throw new RangeError('steps must be an integer');
+    researchNumber(dt,'dt',Number.MIN_VALUE,1);
+    researchParams({},P,true);                    // catch unsupported direct __demo.P edits
+    const paused=P.paused; P.paused=false;
+    try{ for(let i=0;i<n;i++){
+      updateCam(cv.width/Math.max(1,cv.height)); simTime+=dt; stepAll(dt); researchFrame++;
+    } } finally { P.paused=paused; }
+    return researchSnapshot();
+  },
+  snapshot:researchSnapshot
+};
+
+// P3a: fixed native 3D VPM physics, independently sampled passive render tracers.
+// This is a correctness/reference baseline, not a claim that per-tracer tree
+// queries are the fastest decoupled renderer. There is no scene combustion here.
+const P3_PHYS_KEYS=['layers','rate','buoy','baro','eps','cool','gam','theta','turb','wind','sliceDepth','stretch3'];
+const P3_VIEW_KEYS=['camDist','camElev','fov','emis','exposure','mode'];
+function p3Random(seed){
+  return {state:seed>>>0,draws:0,next(){
+    this.state=(this.state+0x6D2B79F5)>>>0; this.draws++;
+    let t=Math.imul(this.state^this.state>>>15,1|this.state);
+    t=t+Math.imul(t^t>>>7,61|t)^t; return ((t^t>>>14)>>>0)/4294967296;
+  }};
+}
+function p3State(){ if(!researchP3State) throw new Error('call researchP3.reset first'); return researchP3State; }
+function p3PhysicsHash(){
+  const s=p3State();
+  return researchHash({seed:simSeed,rngState:s.physicsRng.state,rngDraws:s.physicsRng.draws,
+    cloudAcc3,vol_t,simTime,source,pointer,params:s.physicsParams,cloud});
+}
+function p3Trace(physicalHash=p3PhysicsHash()){
+  // Read-only birth/physics lock for timing runs. Do not traverse or hash the
+  // dense render particles; frame() reuses the physical hash it already returns.
+  const s=p3State();
+  return {frame:s.frame,time:simTime,physicalHash,physicsRng:s.physicsRng.state,physicsDraws:s.physicsRng.draws,
+    renderRng:s.renderRng.state,renderDraws:s.renderRng.draws,physicsEmitted:s.counters.physicsEmitted,
+    tracerEmitted:s.counters.tracerEmitted,tracerPendingCredit:s.tracerCredit};
+}
+function p3RenderParticles(){ const s=p3State(); return s.override||(s.config.mode==='passive'?s.tracers:cloud); }
+function p3BuildBounds(){
+  const s=p3State(), p=vpm3Pool, size=p.nNodes*6;
+  if(s.bounds.length<size) s.bounds=new Float32Array(size);
+  const b=s.bounds, I=p.ndI; s.maxSigma=0;
+  for(let nd=p.nNodes-1;nd>=0;nd--){
+    const o=nd*6, ib=nd*10;
+    b[o]=b[o+1]=b[o+2]=Infinity; b[o+3]=b[o+4]=b[o+5]=-Infinity;
+    if(I[ib]===-2){
+      for(let j=I[ib+8];j<I[ib+9];j++){
+        b[o]=Math.min(b[o],p.X[j]); b[o+1]=Math.min(b[o+1],p.Y[j]); b[o+2]=Math.min(b[o+2],p.Z[j]);
+        b[o+3]=Math.max(b[o+3],p.X[j]); b[o+4]=Math.max(b[o+4],p.Y[j]); b[o+5]=Math.max(b[o+5],p.Z[j]);
+        s.maxSigma=Math.max(s.maxSigma,p.SG[j]);
+      }
+    } else for(let c=0;c<8;c++) if(I[ib+c]>=0){
+      const q=I[ib+c]*6;
+      for(let a=0;a<3;a++){ b[o+a]=Math.min(b[o+a],b[q+a]); b[o+a+3]=Math.max(b[o+a+3],b[q+a+3]); }
+    }
+  }
+}
+function p3FieldAt(x,y,z,diagnostic=false,raw=false){
+  // Pure query on the PRE-integration tree used by the native physics step.
+  // Velocity uses its same Barnes-Hut/LUT kernel. Temperature has no artificial
+  // self contribution: sum(w*Tb)/sum(w), with Tb=0 for empty finite support.
+  // Accepting a far velocity cluster never skips nearby thermal leaves.
+  const s=p3State(), p=vpm3Pool, F=p.ndF, I=p.ndI, b=s.bounds, stack=s.queryStack;
+  const sig=vpmSigma0(), tS2=sig*sig, R2=9*(tS2+s.maxSigma*s.maxSigma);
+  const VREF3=HX*HY*(DZ3()/Math.max(2,P.layers)),C3=P.gam*VPM_KGAIN*VREF3/(4*Math.PI);
+  let ux=0,uy=0,uz=0,weight=0,heat=0,sp=0;
+  if(p.root>=0) stack[sp++]=p.root*2+1;
+  while(sp){
+    const code=stack[--sp], nd=code>>>1, fb=nd*12, ib=nd*10, bo=nd*6;
+    let needVelocity=!!(code&1);
+    const dx=Math.max(b[bo]-x,0,x-b[bo+3]),dy=Math.max(b[bo+1]-y,0,y-b[bo+4]),dz=Math.max(b[bo+2]-z,0,z-b[bo+5]);
+    const needHeat=dx*dx+dy*dy+dz*dz<R2;
+    const rx=x-F[fb],ry=y-F[fb+1],rz=z-F[fb+2],q=rx*rx+ry*ry+rz*rz;
+    if(needVelocity && q>F[fb+9]){
+      const s2=F[fb+8],a=q/(2*s2),rho2=2*a;
+      const A=a<12.5?vpm3A[(a*VPM3_LSC)|0]:1/(rho2*Math.sqrt(rho2));
+      const k=C3*A/(Math.sqrt(s2)*s2),jx=F[fb+4],jy=F[fb+5],jz=F[fb+6];
+      ux+=k*(jy*rz-jz*ry);uy+=k*(jz*rx-jx*rz);uz+=k*(jx*ry-jy*rx);
+      if(needHeat)s.counters.thermalOverlapVelocityClusters++;
+      needVelocity=false; s.counters.velocityClusterEvaluations++;
+    }
+    if(!needVelocity && !needHeat) continue;
+    if(I[ib]===-2){
+      for(let j=I[ib+8];j<I[ib+9];j++){
+        const rx=x-p.X[j],ry=y-p.Y[j],rz=z-p.Z[j],q=rx*rx+ry*ry+rz*rz;
+        const s2=0.5*(tS2+p.SG[j]*p.SG[j]),a=q/(2*s2);
+        if(needVelocity){
+          const rho2=2*a,A=a<12.5?vpm3A[(a*VPM3_LSC)|0]:1/(rho2*Math.sqrt(rho2));
+          const k=C3*A/(Math.sqrt(s2)*s2),jx=p.AX[j],jy=p.AY[j],jz=p.AZ[j];
+          ux+=k*(jy*rz-jz*ry);uy+=k*(jz*rx-jx*rz);uz+=k*(jx*ry-jy*rx);
+          s.counters.velocityLeafEvaluations++;
+        }
+        if(needHeat && a<9){ const w=vpmF3[(a*VPM_LSC)|0];weight+=w;heat+=w*p.T[j]; s.counters.thermalContributions++; }
+      }
+    } else for(let c=0;c<8;c++) if(I[ib+c]>=0) stack[sp++]=I[ib+c]*2+(needVelocity?1:0);
+  }
+  s.counters.fieldQueries++;s.counters.fullFieldQueries++;
+  if(weight===0){s.counters.noThermalSupportQueries++;s.counters.fullNoThermalSupportQueries++;}
+  const induced=diagnostic?[ux,uy,uz]:null;
+  const Tb=weight>0?heat/weight:0;
+  if(raw)return {ux,uy,uz,Tb,thermalWeight:weight};
+  uy+=P.buoy*Tb;
+  if(P.turb>0){ const c=curl3(x*2.4,y*2.4,z*2.4,vol_t);ux+=c[0]*P.turb*0.2;uy+=c[1]*P.turb*0.2;uz+=c[2]*P.turb*0.2; }
+  ux+=P.wind+source.vx*0.3;
+  const speed2=ux*ux+uy*uy+uz*uz;
+  if(speed2>16){const k=4/Math.sqrt(speed2);ux*=k;uy*=k;uz*=k;}
+  return diagnostic?{ux,uy,uz,Tb,inducedVelocity:induced,thermalWeight:weight}:{ux,uy,uz,Tb};
+}
+function p3VelocityAtRaw(x,y,z){
+  // Component-specialized query. Removing heat-only visits leaves the velocity
+  // contribution subsequence (including child order and arithmetic) unchanged.
+  const s=p3State(),p=vpm3Pool,F=p.ndF,I=p.ndI,stack=s.queryStack;
+  const sig=vpmSigma0(),tS2=sig*sig;
+  const VREF3=HX*HY*(DZ3()/Math.max(2,P.layers)),C3=P.gam*VPM_KGAIN*VREF3/(4*Math.PI);
+  let ux=0,uy=0,uz=0,sp=0;
+  if(p.root>=0)stack[sp++]=p.root;
+  while(sp){
+    const nd=stack[--sp],fb=nd*12,ib=nd*10;
+    const rx=x-F[fb],ry=y-F[fb+1],rz=z-F[fb+2],q=rx*rx+ry*ry+rz*rz;
+    if(q>F[fb+9]){
+      const s2=F[fb+8],a=q/(2*s2),rho2=2*a;
+      const A=a<12.5?vpm3A[(a*VPM3_LSC)|0]:1/(rho2*Math.sqrt(rho2));
+      const k=C3*A/(Math.sqrt(s2)*s2),jx=F[fb+4],jy=F[fb+5],jz=F[fb+6];
+      ux+=k*(jy*rz-jz*ry);uy+=k*(jz*rx-jx*rz);uz+=k*(jx*ry-jy*rx);
+      s.counters.velocityClusterEvaluations++;continue;
+    }
+    if(I[ib]===-2){
+      for(let j=I[ib+8];j<I[ib+9];j++){
+        const rx=x-p.X[j],ry=y-p.Y[j],rz=z-p.Z[j],q=rx*rx+ry*ry+rz*rz;
+        const s2=0.5*(tS2+p.SG[j]*p.SG[j]),a=q/(2*s2);
+        const rho2=2*a,A=a<12.5?vpm3A[(a*VPM3_LSC)|0]:1/(rho2*Math.sqrt(rho2));
+        const k=C3*A/(Math.sqrt(s2)*s2),jx=p.AX[j],jy=p.AY[j],jz=p.AZ[j];
+        ux+=k*(jy*rz-jz*ry);uy+=k*(jz*rx-jx*rz);uz+=k*(jx*ry-jy*rx);
+        s.counters.velocityLeafEvaluations++;
+      }
+    }else for(let c=0;c<8;c++)if(I[ib+c]>=0)stack[sp++]=I[ib+c];
+  }
+  s.counters.fieldQueries++;s.counters.velocityOnlyFieldQueries++;
+  return {ux,uy,uz};
+}
+function p3ThermalAtRaw(x,y,z){
+  // The same finite-support test and ordered weight/heat sums as p3FieldAt.
+  // A thermal query does not evaluate a velocity cluster or Biot-Savart kernel.
+  const s=p3State(),p=vpm3Pool,I=p.ndI,b=s.bounds,stack=s.queryStack;
+  const sig=vpmSigma0(),tS2=sig*sig,R2=9*(tS2+s.maxSigma*s.maxSigma);
+  let weight=0,heat=0,sp=0;
+  if(p.root>=0)stack[sp++]=p.root;
+  while(sp){
+    const nd=stack[--sp],ib=nd*10,bo=nd*6;
+    const dx=Math.max(b[bo]-x,0,x-b[bo+3]),dy=Math.max(b[bo+1]-y,0,y-b[bo+4]),dz=Math.max(b[bo+2]-z,0,z-b[bo+5]);
+    if(!(dx*dx+dy*dy+dz*dz<R2))continue;
+    if(I[ib]===-2){
+      for(let j=I[ib+8];j<I[ib+9];j++){
+        const rx=x-p.X[j],ry=y-p.Y[j],rz=z-p.Z[j],q=rx*rx+ry*ry+rz*rz;
+        const s2=0.5*(tS2+p.SG[j]*p.SG[j]),a=q/(2*s2);
+        if(a<9){const w=vpmF3[(a*VPM_LSC)|0];weight+=w;heat+=w*p.T[j];s.counters.thermalContributions++;}
+      }
+    }else for(let c=0;c<8;c++)if(I[ib+c]>=0)stack[sp++]=I[ib+c];
+  }
+  s.counters.fieldQueries++;s.counters.thermalOnlyFieldQueries++;
+  if(weight===0){s.counters.noThermalSupportQueries++;s.counters.thermalOnlyNoThermalSupportQueries++;}
+  return {Tb:weight>0?heat/weight:0,thermalWeight:weight};
+}
+function p3GridForces(f,x,y,z,diagnostic=false){
+  // Cache only induced velocity and normalized Tb. All external terms and the
+  // single speed clamp are evaluated at the actual tracer position, as in tree.
+  let ux=f.ux,uy=f.uy,uz=f.uz;const Tb=f.Tb;
+  uy+=P.buoy*Tb;
+  if(P.turb>0){const c=curl3(x*2.4,y*2.4,z*2.4,vol_t);ux+=c[0]*P.turb*0.2;uy+=c[1]*P.turb*0.2;uz+=c[2]*P.turb*0.2;}
+  ux+=P.wind+source.vx*0.3;
+  const speed2=ux*ux+uy*uy+uz*uz;
+  const preClampVelocity=diagnostic&&diagnostic!=='clampOnly'?[ux,uy,uz]:null;
+  if(speed2>16){const k=4/Math.sqrt(speed2);ux*=k;uy*=k;uz*=k;}
+  if(diagnostic==='clampOnly')return {ux,uy,uz,Tb,speedClamped:speed2>16};
+  return diagnostic?{ux,uy,uz,Tb,preClampVelocity,preClampSpeed:Math.sqrt(speed2),speedClamped:speed2>16}:{ux,uy,uz,Tb};
+}
+function p3FieldConfig(input={}){
+  if(!input||typeof input!=='object'||Array.isArray(input))throw new TypeError('field must be an object');
+  for(const key of Object.keys(input))if(!['mode','cellSize','maxNodes','components','evaluation','affine','correction'].includes(key))throw new Error('unknown field option '+key);
+  if(input.mode==='affine'){
+    if(input.cellSize!==undefined||input.maxNodes!==undefined)throw new Error('affine mode does not use grid options');
+    if(input.components!==undefined&&input.components!=='both'||input.evaluation!==undefined&&input.evaluation!=='combined')
+      throw new Error('affine mode requires both components and combined evaluation');
+    return {mode:'affine',components:'both',evaluation:'combined',affine:p3AffineConfig(input.affine),
+      ...(input.correction!==undefined?{correction:p3CorrectionConfig(input.correction)}:{})};
+  }
+  if(input.affine!==undefined)throw new Error('field.affine requires affine mode');
+  if(input.correction!==undefined)throw new Error('field.correction requires affine mode');
+  const field={mode:'tree',cellSize:.07,maxNodes:200000,components:'both',evaluation:'combined',...input};
+  if(!['tree','grid'].includes(field.mode))throw new Error('field.mode must be tree or grid');
+  if(!['both','velocity','temperature'].includes(field.components))throw new Error('field.components must be both, velocity or temperature');
+  if(field.mode==='tree'&&field.components!=='both')throw new Error('component interventions require field.mode=grid');
+  if(!['combined','specialized'].includes(field.evaluation))throw new Error('field.evaluation must be combined or specialized');
+  if(field.evaluation==='specialized'&&(field.mode!=='grid'||field.components!=='temperature'))
+    throw new Error('specialized evaluation requires field.mode=grid and field.components=temperature');
+  researchNumber(field.cellSize,'field.cellSize',.000001,1000);
+  researchNumber(field.maxNodes,'field.maxNodes',1,2000000);
+  if(!Number.isInteger(field.maxNodes))throw new Error('field.maxNodes must be integer');
+  return field;
+}
+function p3AffineConfig(input={}){
+  if(!input||typeof input!=='object'||Array.isArray(input))throw new TypeError('affine options must be an object');
+  for(const key of Object.keys(input))if(!['maxGroups','targetGroupSize','deltaScale'].includes(key))throw new Error('unknown affine option '+key);
+  const config={maxGroups:600,targetGroupSize:16,deltaScale:.125,...input};
+  for(const key of ['maxGroups','targetGroupSize']){
+    researchNumber(config[key],'affine.'+key,1,200000);
+    if(!Number.isInteger(config[key]))throw new Error('affine.'+key+' must be integer');
+  }
+  researchNumber(config.deltaScale,'affine.deltaScale',Number.MIN_VALUE,1);
+  return config;
+}
+function p3CorrectionConfig(input){
+  if(!input||typeof input!=='object'||Array.isArray(input))throw new TypeError('correction must be an object');
+  for(const key of Object.keys(input))if(!['method','fraction','salt','memory'].includes(key))throw new Error('unknown correction option '+key);
+  const config={fraction:.1,salt:0xa511e9b3,...input};
+  if(!['curvature','hash'].includes(config.method))throw new Error('correction.method must be curvature or hash');
+  researchNumber(config.fraction,'correction.fraction',0,1);
+  researchNumber(config.salt,'correction.salt',0,0xffffffff);
+  if(!Number.isInteger(config.salt))throw new Error('correction.salt must be uint32');
+  if(input.memory!==undefined){
+    if(config.method!=='curvature')throw new Error('correction memory requires curvature selection');
+    const memory=input.memory;
+    if(!memory||typeof memory!=='object'||Array.isArray(memory)||Object.keys(memory).some(k=>k!=='ttl')||memory.ttl!==1)
+      throw new Error('correction.memory must be {ttl:1}');
+    config.memory={ttl:1};
+  }
+  return config;
+}
+const P3_CORRECTION_COUNTERS=['correctionFrames','correctionGroupsScored','correctionScoreMemberEvaluations',
+  'correctionSelectedGroups','correctionSelectedMembers','correctionDirectQueries','correctionDirectNoThermalSupportQueries'];
+const P3_MEMORY_COUNTERS=['memoryFrames','memoryModelEvaluations','memorySavedMembers','memoryReusedMembers',
+  'memoryPreviousMembers','memoryPreviousLiveMembers','memoryOverlappingMembers','memoryExpiredMissingMembers'];
+function p3MemoryEntries(memory){
+  return [...memory.values()].sort((a,b)=>a.id-b.id).map(e=>({id:e.id,frame:e.frame,residual:e.residual.slice()}));
+}
+function p3MemoryStateHash(memory){
+  // Snapshot-only: endian-explicit float bits avoid cross-language JSON number
+  // formatting differences. Only the hash wire format canonicalizes signed
+  // zero, which JSON event records cannot retain; live residual bits are intact.
+  // This cache hash is never computed inside frame().
+  const buffer=new ArrayBuffer(8),view=new DataView(buffer),bytes=new Uint8Array(buffer);
+  const encoded=p3MemoryEntries(memory).map(e=>({id:e.id,frame:e.frame,residualF64LE:e.residual.map(v=>{
+    view.setFloat64(0,v===0?0:v,true);return Array.from(bytes,b=>b.toString(16).padStart(2,'0')).join('');})}));
+  return researchHash(encoded);
+}
+function p3MemoryAffineRaw(model,point){
+  // Deliberately leave the old affine helper untouched. Selected particles need
+  // this additional, unclipped evaluation solely to create a fresh residual.
+  const dx=point.x-model.center[0],dy=point.y-model.center[1],dz=point.z-model.center[2];
+  const b=model.stencil[0].raw,J=model.Ju,g=model.gradTb;
+  const ux=b.ux+J[0]*dx+J[1]*dy+J[2]*dz,uy=b.uy+J[3]*dx+J[4]*dy+J[5]*dz,
+    uz=b.uz+J[6]*dx+J[7]*dy+J[8]*dz,TbRaw=b.Tb+g[0]*dx+g[1]*dy+g[2]*dz;
+  if(![ux,uy,uz,TbRaw].every(Number.isFinite))throw new Error('nonfinite memory affine reconstruction');
+  return {ux,uy,uz,TbRaw};
+}
+function p3MemoryClip(raw,c){
+  const {ux,uy,uz,TbRaw}=raw;
+  if(![ux,uy,uz,TbRaw].every(Number.isFinite))throw new Error('nonfinite residual-corrected field');
+  const clippedLow=TbRaw<0,clippedHigh=TbRaw>1.6,Tb=Math.max(0,Math.min(1.6,TbRaw));
+  c.affineReconstructions++;
+  if(clippedLow){c.affineTbClippedLow++;c.affineTbMaximumUndershoot=Math.max(c.affineTbMaximumUndershoot,-TbRaw);}
+  if(clippedHigh){c.affineTbClippedHigh++;c.affineTbMaximumOvershoot=Math.max(c.affineTbMaximumOvershoot,TbRaw-1.6);}
+  return {ux,uy,uz,TbRaw,Tb,clippedLow,clippedHigh};
+}
+function p3MemoryResidual(base,direct){return [direct.ux-base.ux,direct.uy-base.uy,direct.uz-base.uz,direct.Tb-base.TbRaw];}
+function p3MemoryApply(base,residual,c){
+  return p3MemoryClip({ux:base.ux+residual[0],uy:base.uy+residual[1],uz:base.uz+residual[2],TbRaw:base.TbRaw+residual[3]},c);
+}
+function p3MemoryResidualStats(){return {uSquaredSum:0,TbSquaredSum:0,uNormMax:0,TbAbsMax:0,signedTbSum:0};}
+function p3MemoryAccumulate(stats,residual){
+  if(!residual.every(Number.isFinite))throw new Error('nonfinite memory residual');
+  const u2=residual[0]*residual[0]+residual[1]*residual[1]+residual[2]*residual[2];
+  stats.uSquaredSum+=u2;stats.TbSquaredSum+=residual[3]*residual[3];
+  stats.uNormMax=Math.max(stats.uNormMax,Math.sqrt(u2));stats.TbAbsMax=Math.max(stats.TbAbsMax,Math.abs(residual[3]));
+  stats.signedTbSum+=residual[3];
+  if(!Object.values(stats).every(Number.isFinite))throw new Error('nonfinite memory residual statistics');
+}
+function p3CorrectionHash(frame,minBirthId,salt){
+  // frame is the 1-based frame being completed; the +1 terms are intentional.
+  let h=(salt^Math.imul(frame+1,0x9e3779b9)^Math.imul(minBirthId+1,0x85ebca6b))>>>0;
+  h=Math.imul(h^(h>>>16),0x7feb352d)>>>0;
+  h=Math.imul(h^(h>>>15),0x846ca68b)>>>0;
+  return (h^(h>>>16))>>>0;
+}
+const P3_AFFINE_COUNTERS=['affineGroups','affineStencilQueries','affineReconstructions','affineGroupSortCalls',
+  'affineSortedPointCount','affineTbClippedLow','affineTbClippedHigh','affineTbMaximumUndershoot','affineTbMaximumOvershoot'];
+function p3AffinePartition(points,config,c){
+  // Rebuilt from this step's old positions. These are local approximation groups,
+  // not persistent particles/carriers. The live tracer array is never reordered.
+  const groups=[],membership=new Int32Array(points.length),axes=['x','y','z'];
+  const count=points.length?Math.min(config.maxGroups,Math.ceil(points.length/config.targetGroupSize)):0;
+  const split=(indices,k)=>{
+    if(k===1){
+      indices.sort((a,b)=>points[a].id-points[b].id);c.affineGroupSortCalls++;c.affineSortedPointCount+=indices.length;
+      let x=0,y=0,z=0;
+      for(const i of indices){const p=points[i];x+=p.x;y+=p.y;z+=p.z;}
+      const center=[x/indices.length,y/indices.length,z/indices.length];let radius2=0;
+      const id=groups.length;
+      for(const i of indices){const p=points[i],dx=p.x-center[0],dy=p.y-center[1],dz=p.z-center[2];
+        radius2=Math.max(radius2,dx*dx+dy*dy+dz*dz);membership[i]=id;}
+      groups.push({id,indices,memberIds:indices.map(i=>points[i].id),center,radius:Math.sqrt(radius2)});return;
+    }
+    const lo=[Infinity,Infinity,Infinity],hi=[-Infinity,-Infinity,-Infinity];
+    for(const i of indices)for(let a=0;a<3;a++){const v=points[i][axes[a]];lo[a]=Math.min(lo[a],v);hi[a]=Math.max(hi[a],v);}
+    let axis=0;for(let a=1;a<3;a++)if(hi[a]-lo[a]>hi[axis]-lo[axis])axis=a;
+    const key=axes[axis];indices.sort((a,b)=>points[a][key]-points[b][key]||points[a].id-points[b].id);
+    c.affineGroupSortCalls++;c.affineSortedPointCount+=indices.length;
+    const leftK=Math.floor(k/2),cut=Math.floor(indices.length*leftK/k);
+    split(indices.slice(0,cut),leftK);split(indices.slice(cut),k-leftK);
+  };
+  if(count)split(Array.from({length:points.length},(_,i)=>i),count);
+  c.affineGroups+=groups.length;return {groups,membership};
+}
+function p3AffineModels(partition,delta,query,c){
+  if(!Number.isFinite(delta)||delta<=0)throw new Error('affine finite-difference delta must be positive and finite');
+  return partition.groups.map(group=>{
+    const center=group.center,positions=[center.slice()];
+    for(let a=0;a<3;a++){
+      const plus=center.slice(),minus=center.slice();plus[a]+=delta;minus[a]-=delta;
+      if(plus[a]===center[a]||minus[a]===center[a])throw new Error('affine delta is below coordinate resolution');
+      positions.push(plus,minus);
+    }
+    const stencil=positions.map(position=>{
+      const raw=query(...position);c.affineStencilQueries++;
+      if(!['ux','uy','uz','Tb','thermalWeight'].every(k=>Number.isFinite(raw[k])))throw new Error('nonfinite affine stencil');
+      return {position,raw};
+    });
+    const Ju=new Array(9),gradTb=new Array(3),keys=['ux','uy','uz'];
+    for(let a=0;a<3;a++){
+      const plus=stencil[1+2*a].raw,minus=stencil[2+2*a].raw;
+      for(let row=0;row<3;row++)Ju[row*3+a]=(plus[keys[row]]-minus[keys[row]])/(2*delta);
+      gradTb[a]=(plus.Tb-minus.Tb)/(2*delta);
+    }
+    if(![...Ju,...gradTb].every(Number.isFinite))throw new Error('nonfinite affine derivative');
+    return {id:group.id,memberIds:group.memberIds,center,radius:group.radius,stencil,Ju,gradTb};
+  });
+}
+function p3AffineReconstruct(model,point,c){
+  const [x,y,z]=model.center,dx=point.x-x,dy=point.y-y,dz=point.z-z;
+  const b=model.stencil[0].raw,J=model.Ju,g=model.gradTb;
+  const ux=b.ux+J[0]*dx+J[1]*dy+J[2]*dz,uy=b.uy+J[3]*dx+J[4]*dy+J[5]*dz,
+    uz=b.uz+J[6]*dx+J[7]*dy+J[8]*dz,TbRaw=b.Tb+g[0]*dx+g[1]*dy+g[2]*dz;
+  if(![ux,uy,uz,TbRaw].every(Number.isFinite))throw new Error('nonfinite affine reconstruction');
+  const clippedLow=TbRaw<0,clippedHigh=TbRaw>1.6,Tb=Math.max(0,Math.min(1.6,TbRaw));
+  c.affineReconstructions++;
+  if(clippedLow){c.affineTbClippedLow++;c.affineTbMaximumUndershoot=Math.max(c.affineTbMaximumUndershoot,-TbRaw);}
+  if(clippedHigh){c.affineTbClippedHigh++;c.affineTbMaximumOvershoot=Math.max(c.affineTbMaximumOvershoot,TbRaw-1.6);}
+  // There is no thermalWeight for a Taylor reconstruction. Only actual stencil
+  // and diagnostic direct queries report finite-support weights.
+  return {ux,uy,uz,TbRaw,Tb,clippedLow,clippedHigh};
+}
+function p3CorrectionSelect(partition,models,points,delta,frame,buoy,config){
+  // Both policies compute this same heuristic. It omits mixed derivatives,
+  // support discontinuities and the final clamp; it is not an error bound.
+  const delta2=delta*delta,scored=models.map((model,i)=>{
+    const q=model.stencil.map(({raw})=>[raw.ux,raw.uy+buoy*raw.Tb,raw.uz]);
+    const diagonalHessian=new Array(9);
+    for(let row=0;row<3;row++)for(let a=0;a<3;a++)
+      diagonalHessian[row*3+a]=(q[1+2*a][row]-2*q[0][row]+q[2+2*a][row])/delta2;
+    let score=0;
+    // partition leaf indices are already in ascending stable birth-ID order.
+    for(const index of partition.groups[i].indices){
+      const p=points[index],dx=p.x-model.center[0],dy=p.y-model.center[1],dz=p.z-model.center[2];
+      const x2=dx*dx,y2=dy*dy,z2=dz*dz,H=diagonalHessian;
+      const rx=.5*(H[0]*x2+H[1]*y2+H[2]*z2),ry=.5*(H[3]*x2+H[4]*y2+H[5]*z2),
+        rz=.5*(H[6]*x2+H[7]*y2+H[8]*z2);
+      score+=rx*rx+ry*ry+rz*rz;
+    }
+    if(!Number.isFinite(score)||!diagonalHessian.every(Number.isFinite))throw new Error('nonfinite correction score');
+    return {...model,diagonalHessian,score,hashRank:p3CorrectionHash(frame,model.memberIds[0],config.salt),selected:false};
+  });
+  const ranked=scored.slice().sort((a,b)=>(config.method==='curvature'?b.score-a.score:a.hashRank-b.hashRank)||a.id-b.id);
+  const selectedGroupCount=Math.ceil(config.fraction*models.length);
+  for(let i=0;i<selectedGroupCount;i++)ranked[i].selected=true;
+  const selectedGroupIds=scored.filter(m=>m.selected).map(m=>m.id);
+  const selectedMemberIds=scored.filter(m=>m.selected).flatMap(m=>m.memberIds).sort((a,b)=>a-b);
+  let scoreSum=0,selectedScoreSum=0;
+  for(const m of scored){scoreSum+=m.score;if(m.selected)selectedScoreSum+=m.score;}
+  if(!Number.isFinite(scoreSum)||!Number.isFinite(selectedScoreSum))throw new Error('nonfinite correction score sum');
+  return {models:scored,selectedMemberIds,rankedGroupIds:ranked.map(m=>m.id),summary:{frame,inputCount:points.length,
+    groupCount:models.length,selectedGroupCount,selectedMemberCount:selectedMemberIds.length,
+    stencilQueries:7*models.length,correctionQueries:selectedMemberIds.length,scoreEvaluations:points.length,
+    selectedGroupIds,selectionIDHash:researchHash(selectedMemberIds),scoreSum,selectedScoreSum}};
+}
+function p3StepCorrectedAffineTracers(dt,D,setupMs,points,partition,models,start,grouped,built,before,delta){
+  const s=p3State(),c=s.counters,config=s.config.field.correction;
+  if(config.memory){p3StepMemoryTracers(dt,D,setupMs,points,partition,models,start,grouped,built,before,delta);return;}
+  const selection=p3CorrectionSelect(partition,models,points,delta,s.frame+1,P.buoy,config),selected=performance.now();
+  c.correctionFrames++;c.correctionGroupsScored+=models.length;c.correctionScoreMemberEvaluations+=points.length;
+  c.correctionSelectedGroups+=selection.summary.selectedGroupCount;c.correctionSelectedMembers+=selection.summary.selectedMemberCount;
+  const direct=new Array(points.length),observer=s.captureInputs?.correctionDetails?[]:null;
+  const observed=observer?new Array(points.length):null;
+  for(let i=0;i<points.length;i++)if(selection.models[partition.membership[i]].selected){
+    const p=points[i],raw=p3FieldAt(p.x,p.y,p.z,false,true);direct[i]=raw;c.correctionDirectQueries++;
+    if(raw.thermalWeight===0)c.correctionDirectNoThermalSupportQueries++;
+    if(observer){const item={id:p.id,groupId:partition.membership[i],position:[p.x,p.y,p.z],raw};observer.push(item);observed[i]=item;}
+  }
+  const queried=performance.now();
+  for(let i=0;i<s.tracers.length;i++){
+    const p=s.tracers[i],raw=direct[i]||p3AffineReconstruct(models[partition.membership[i]],points[i],c);
+    c.tracerFieldQueries++;
+    const f=p3GridForces(raw,p.x,p.y,p.z);p.vx=f.ux;p.vy=f.uy;p.vz=f.uz;p.sampledTb=f.Tb;
+    if(observer&&observed[i])observed[i].velocity=[f.ux,f.uy,f.uz];
+  }
+  const sampled=performance.now(),alive=[];
+  for(const p of s.tracers){
+    p.x+=dt*p.vx;p.y+=dt*p.vy;p.z+=dt*p.vz;p.life+=dt;
+    p.T-=dt*P.cool*p.T*p.T;p.d*=(1-dt*0.3);
+    p.z=Math.max(-D/2,Math.min(D/2,p.z));
+    if(p.T>0.04 && p.y<WY && Math.abs(p.x)<WX*0.7 && p.d>0.03)alive.push(p);
+    else c.tracerRetired++;
+  }
+  const ended=performance.now();let minGroupSize=points.length,maxGroupSize=0,maximumRadius=0;
+  for(const model of models){minGroupSize=Math.min(minGroupSize,model.memberIds.length);
+    maxGroupSize=Math.max(maxGroupSize,model.memberIds.length);maximumRadius=Math.max(maximumRadius,model.radius);}
+  s.affineLast={frame:s.frame+1,inputCount:points.length,groupCount:models.length,delta,minGroupSize,maxGroupSize,maximumRadius,
+    ...Object.fromEntries(P3_AFFINE_COUNTERS.filter(k=>!k.includes('Maximum')).map(k=>[k,c[k]-before[k]]))};
+  s.correctionLast=selection.summary;
+  if(observer)s.captureInputs.correctionSelection={summary:selection.summary,config:{...config},delta,
+    fieldTime:s.fieldTime,models:selection.models,rankedGroupIds:selection.rankedGroupIds,
+    selectedMemberIds:selection.selectedMemberIds,directQueries:observer};
+  s.tracers=alive;s.tracerTiming={tracerSetupMs:setupMs,affineGroupingMs:grouped-start,affineModelBuildMs:built-grouped,
+    correctionSelectionMs:selected-built,correctionQueryMs:queried-selected,affineLookupMs:sampled-queried,
+    tracerAdvectionMs:ended-sampled,cacheBuildMs:0,cacheLookupMs:0,treeQueryAndAdvectionMs:0};
+}
+function p3StepMemoryTracers(dt,D,setupMs,points,partition,models,start,grouped,built,before,delta){
+  const s=p3State(),c=s.counters,config=s.config.field.correction,frame=s.frame+1;
+  const selection=p3CorrectionSelect(partition,models,points,delta,frame,P.buoy,config),selected=performance.now();
+  c.correctionFrames++;c.correctionGroupsScored+=models.length;c.correctionScoreMemberEvaluations+=points.length;
+  c.correctionSelectedGroups+=selection.summary.selectedGroupCount;c.correctionSelectedMembers+=selection.summary.selectedMemberCount;
+  const direct=new Array(points.length),observer=s.captureInputs?.correctionDetails?[]:null;
+  const observed=observer?new Array(points.length):null;
+  for(let i=0;i<points.length;i++)if(selection.models[partition.membership[i]].selected){
+    const p=points[i],raw=p3FieldAt(p.x,p.y,p.z,false,true);direct[i]=raw;c.correctionDirectQueries++;
+    if(raw.thermalWeight===0)c.correctionDirectNoThermalSupportQueries++;
+    if(observer){const item={id:p.id,groupId:partition.membership[i],position:[p.x,p.y,p.z],raw};observer.push(item);observed[i]=item;}
+  }
+  const queried=performance.now(),previousMap=s.memoryCache,nextMap=new Map();
+  const eventObserver=!!s.captureInputs?.memoryDetails,created=[],used=[],involved=new Set();
+  const createdStats=p3MemoryResidualStats(),reusedStats=p3MemoryResidualStats(),reusedIds=[],overlappingIds=[];
+  const previous=new Array(points.length);let previousLive=0;
+  for(let i=0;i<points.length;i++){
+    const p=points[i],old=previousMap.get(p.id);previous[i]=old;
+    if(old){if(old.frame!==frame-1)throw new Error('memory entry exceeded TTL1');previousLive++;}
+    if(!direct[i])continue;
+    if(old)overlappingIds.push(p.id);
+    const groupId=partition.membership[i],base=p3MemoryAffineRaw(models[groupId],p),raw=direct[i];
+    c.memoryModelEvaluations++;
+    const residual=p3MemoryResidual(base,raw);
+    p3MemoryAccumulate(createdStats,residual);nextMap.set(p.id,{id:p.id,frame,residual});
+    if(eventObserver){const age=s.tracers[i].life;involved.add(groupId);created.push({id:p.id,groupId,position:[p.x,p.y,p.z],age,newborn:age===0,
+      affineRaw:base,directRaw:{...raw},residual:residual.slice()});}
+  }
+  const prepared=performance.now();let finalTbClippedLow=0,finalTbClippedHigh=0,speedClamped=0;
+  for(let i=0;i<s.tracers.length;i++){
+    const p=s.tracers[i],point=points[i],groupId=partition.membership[i],old=previous[i];let raw=direct[i],event=null;
+    if(!raw){
+      if(old){
+        const base=p3MemoryAffineRaw(models[groupId],point),r=old.residual;
+        raw=p3MemoryApply(base,r,c);
+        reusedIds.push(point.id);p3MemoryAccumulate(reusedStats,r);
+        if(eventObserver){involved.add(groupId);event={id:point.id,groupId,creatorFrame:old.frame,
+          position:[p.x,p.y,p.z],age:p.life,newborn:p.life===0,affineRaw:base,storedResidual:r.slice(),finalRaw:{...raw}};used.push(event);}
+      }else raw=p3AffineReconstruct(models[groupId],point,c);
+    }
+    c.tracerFieldQueries++;
+    if(raw.clippedLow)finalTbClippedLow++;if(raw.clippedHigh)finalTbClippedHigh++;
+    const f=p3GridForces(raw,p.x,p.y,p.z,'clampOnly');if(f.speedClamped)speedClamped++;
+    p.vx=f.ux;p.vy=f.uy;p.vz=f.uz;p.sampledTb=f.Tb;
+    if(observer&&observed[i])observed[i].velocity=[f.ux,f.uy,f.uz];
+    if(event)event.velocity=[f.ux,f.uy,f.uz];
+  }
+  const sampled=performance.now(),alive=[];
+  for(const p of s.tracers){
+    p.x+=dt*p.vx;p.y+=dt*p.vy;p.z+=dt*p.vz;p.life+=dt;
+    p.T-=dt*P.cool*p.T*p.T;p.d*=(1-dt*0.3);
+    p.z=Math.max(-D/2,Math.min(D/2,p.z));
+    if(p.T>0.04 && p.y<WY && Math.abs(p.x)<WX*0.7 && p.d>0.03)alive.push(p);
+    else c.tracerRetired++;
+  }
+  const ended=performance.now();let minGroupSize=points.length,maxGroupSize=0,maximumRadius=0;
+  for(const model of models){minGroupSize=Math.min(minGroupSize,model.memberIds.length);
+    maxGroupSize=Math.max(maxGroupSize,model.memberIds.length);maximumRadius=Math.max(maximumRadius,model.radius);}
+  const previousIds=[...previousMap.keys()].sort((a,b)=>a-b),savedIds=[...nextMap.keys()].sort((a,b)=>a-b);
+  reusedIds.sort((a,b)=>a-b);overlappingIds.sort((a,b)=>a-b);
+  const missingCount=previousMap.size-previousLive;
+  c.memoryFrames++;c.memorySavedMembers+=nextMap.size;c.memoryReusedMembers+=reusedIds.length;
+  c.memoryPreviousMembers+=previousMap.size;c.memoryPreviousLiveMembers+=previousLive;
+  c.memoryOverlappingMembers+=overlappingIds.length;c.memoryExpiredMissingMembers+=missingCount;
+  const summary={frame,inputCount:points.length,unselectedMembers:points.length-nextMap.size,newSelectedMembers:nextMap.size-overlappingIds.length,
+    previousMembers:previousMap.size,previousLiveMembers:previousLive,overlappingMembers:overlappingIds.length,
+    expiredMissingMembers:missingCount,savedMembers:nextMap.size,reusedMembers:reusedIds.length,modelEvaluations:nextMap.size,
+    previousIDHash:researchHash(previousIds),savedIDHash:researchHash(savedIds),reusedIDHash:researchHash(reusedIds),
+    overlappingIDHash:researchHash(overlappingIds),createdResidual:createdStats,reusedResidual:reusedStats,
+    finalTbClippedLow,finalTbClippedHigh,speedClamped};
+  s.affineLast={frame,inputCount:points.length,groupCount:models.length,delta,minGroupSize,maxGroupSize,maximumRadius,
+    ...Object.fromEntries(P3_AFFINE_COUNTERS.filter(k=>!k.includes('Maximum')).map(k=>[k,c[k]-before[k]]))};
+  s.correctionLast=selection.summary;s.memoryLast=summary;
+  if(observer)s.captureInputs.correctionSelection={summary:selection.summary,config:{...config},delta,
+    fieldTime:s.fieldTime,models:selection.models,rankedGroupIds:selection.rankedGroupIds,
+    selectedMemberIds:selection.selectedMemberIds,directQueries:observer};
+  if(eventObserver){const live=new Set(points.map(p=>p.id));
+    s.captureInputs.memoryEvents={frame,fieldTime:s.fieldTime,config:{ttl:1},summary,inputIds:points.map(p=>p.id),cacheBefore:p3MemoryEntries(previousMap),
+      cacheAfter:p3MemoryEntries(nextMap),models:[...involved].sort((a,b)=>a-b).map(id=>models[id]),created,used,
+      overlappingIds,expiredMissingIds:previousIds.filter(id=>!live.has(id))};}
+  // Entries from reused particles are never copied into nextMap. Keeping a just
+  // retired selected ID until the next step makes its expiry explicit as missing.
+  s.memoryCache=nextMap;s.tracers=alive;const finalized=performance.now();
+  s.tracerTiming={tracerSetupMs:setupMs,affineGroupingMs:grouped-start,affineModelBuildMs:built-grouped,
+    correctionSelectionMs:selected-built,correctionQueryMs:queried-selected,memoryModelMs:prepared-queried,
+    affineLookupMs:sampled-prepared,tracerAdvectionMs:ended-sampled,memoryFinalizeMs:finalized-ended,
+    cacheBuildMs:0,cacheLookupMs:0,treeQueryAndAdvectionMs:0};
+}
+function p3StepAffineTracers(dt,D,setupMs){
+  const s=p3State(),c=s.counters,start=performance.now(),before={...c},config=s.config.field.affine;
+  const points=s.tracers.map(p=>({id:s.tracerIds.get(p),x:p.x,y:p.y,z:p.z}));
+  const partition=p3AffinePartition(points,config,c),grouped=performance.now(),delta=P.eps*config.deltaScale;
+  const models=p3AffineModels(partition,delta,(x,y,z)=>p3FieldAt(x,y,z,false,true),c),built=performance.now();
+  if(s.config.field.correction){p3StepCorrectedAffineTracers(dt,D,setupMs,points,partition,models,start,grouped,built,before,delta);return;}
+  for(let i=0;i<s.tracers.length;i++){
+    const p=s.tracers[i],raw=p3AffineReconstruct(models[partition.membership[i]],points[i],c);
+    c.tracerFieldQueries++;
+    const f=p3GridForces(raw,p.x,p.y,p.z);p.vx=f.ux;p.vy=f.uy;p.vz=f.uz;p.sampledTb=f.Tb;
+  }
+  const sampled=performance.now(),alive=[];
+  for(const p of s.tracers){
+    p.x+=dt*p.vx;p.y+=dt*p.vy;p.z+=dt*p.vz;p.life+=dt;
+    p.T-=dt*P.cool*p.T*p.T;p.d*=(1-dt*0.3);
+    p.z=Math.max(-D/2,Math.min(D/2,p.z));
+    if(p.T>0.04 && p.y<WY && Math.abs(p.x)<WX*0.7 && p.d>0.03)alive.push(p);
+    else c.tracerRetired++;
+  }
+  const ended=performance.now();
+  let minGroupSize=points.length,maxGroupSize=0,maximumRadius=0;
+  for(const model of models){minGroupSize=Math.min(minGroupSize,model.memberIds.length);
+    maxGroupSize=Math.max(maxGroupSize,model.memberIds.length);maximumRadius=Math.max(maximumRadius,model.radius);}
+  s.affineLast={frame:s.frame+1,inputCount:points.length,groupCount:models.length,delta,minGroupSize,maxGroupSize,maximumRadius,
+    ...Object.fromEntries(P3_AFFINE_COUNTERS.filter(k=>!k.includes('Maximum')).map(k=>[k,c[k]-before[k]]))};
+  s.tracers=alive;s.tracerTiming={tracerSetupMs:setupMs,affineGroupingMs:grouped-start,
+    affineModelBuildMs:built-grouped,affineLookupMs:sampled-built,tracerAdvectionMs:ended-sampled,
+    cacheBuildMs:0,cacheLookupMs:0,treeQueryAndAdvectionMs:0};
+}
+function p3CacheBuild(points,field,c,query){
+  // One transient world lattice per step, origin exactly [0,0,0]. No AABB that
+  // moves with the cloud, and no cached value survives to another time level.
+  // First collect complete stencils, then query each unique admitted node once.
+  const nodes=new Map(),stencils=[],h=field.cellSize;
+  for(const point of points){
+    const {x,y,z}=point,ix=Math.floor(x/h),iy=Math.floor(y/h),iz=Math.floor(z/h);
+    if(![x,y,z].every(Number.isFinite))throw new Error('nonfinite tracer/probe position');
+    if(![ix,iy,iz].every(i=>Number.isSafeInteger(i)&&Number.isSafeInteger(i+1))){
+      c.cacheOutsideQueries++;c.cacheFallbacks++;stencils.push(null);continue;
+    }
+    const corners=[],missing=[];
+    c.cacheStencilLookups+=8;
+    for(let k=0;k<8;k++){
+      const nx=ix+(k&1),ny=iy+((k>>1)&1),nz=iz+((k>>2)&1),key=nx+','+ny+','+nz;
+      const old=nodes.get(key);
+      if(old){corners.push(old);c.cacheHits++;}
+      else{const node={key,x:nx*h,y:ny*h,z:nz*h,value:null};corners.push(node);missing.push(node);c.cacheMisses++;}
+    }
+    if(nodes.size+missing.length>field.maxNodes){
+      c.cacheCapacityFallbacks++;c.cacheFallbacks++;stencils.push(null);continue;
+    }
+    for(const node of missing)nodes.set(node.key,node);
+    stencils.push({corners,fx:x/h-ix,fy:y/h-iy,fz:z/h-iz});
+  }
+  for(const node of nodes.values()){node.value=query(node.x,node.y,node.z);c.cacheNodeQueries++;}
+  return {stencils,nodeCount:nodes.size};
+}
+function p3CacheInterpolate(stencil){
+  let ux=0,uy=0,uz=0,Tb=0,thermalWeight=0,supportFraction=0;
+  const {fx,fy,fz}=stencil;
+  for(let k=0;k<8;k++){
+    const w=(k&1?fx:1-fx)*(k&2?fy:1-fy)*(k&4?fz:1-fz),v=stencil.corners[k].value;
+    ux+=w*v.ux;uy+=w*v.uy;uz+=w*v.uz;Tb+=w*v.Tb;thermalWeight+=w*v.thermalWeight;
+    if(v.thermalWeight>0)supportFraction+=w;
+  }
+  return {ux,uy,uz,Tb,thermalWeight,supportFraction};
+}
+function p3CacheThermalInterpolate(stencil){
+  let Tb=0,thermalWeight=0,supportFraction=0;
+  const {fx,fy,fz}=stencil;
+  for(let k=0;k<8;k++){
+    const w=(k&1?fx:1-fx)*(k&2?fy:1-fy)*(k&4?fz:1-fz),v=stencil.corners[k].value;
+    Tb+=w*v.Tb;thermalWeight+=w*v.thermalWeight;
+    if(v.thermalWeight>0)supportFraction+=w;
+  }
+  return {Tb,thermalWeight,supportFraction};
+}
+function p3StepGridTracers(dt,D,setupMs){
+  const s=p3State(),c=s.counters,start=performance.now(),before={...c};
+  const specialized=s.config.field.evaluation==='specialized';
+  const cache=p3CacheBuild(s.tracers,s.config.field,c,specialized?p3ThermalAtRaw:(x,y,z)=>p3FieldAt(x,y,z,false,true));
+  const built=performance.now();
+  for(let i=0;i<s.tracers.length;i++){
+    const p=s.tracers[i],stencil=cache.stencils[i];let f;
+    c.tracerFieldQueries++;
+    if(stencil){
+      const raw=specialized?p3CacheThermalInterpolate(stencil):p3CacheInterpolate(stencil);
+      if(raw.supportFraction===0)c.cacheNoThermalSupportQueries++;
+      else if(raw.supportFraction<1-1e-12)c.cachePartialSupportQueries++;
+      if(specialized){
+        const direct=p3VelocityAtRaw(p.x,p.y,p.z);c.componentDirectQueries++;
+        f=p3GridForces({ux:direct.ux,uy:direct.uy,uz:direct.uz,Tb:raw.Tb},p.x,p.y,p.z);
+      }else if(s.config.field.components==='both')f=p3GridForces(raw,p.x,p.y,p.z);
+      else{
+        // Causal component ablation, not an acceleration claim: a hybrid pays
+        // for a complete additional direct query at this same old position.
+        const direct=p3FieldAt(p.x,p.y,p.z,false,true);c.componentDirectQueries++;
+        if(direct.thermalWeight===0)c.componentDirectNoThermalSupportQueries++;
+        const mixed=s.config.field.components==='velocity'?{ux:raw.ux,uy:raw.uy,uz:raw.uz,Tb:direct.Tb}:
+          {ux:direct.ux,uy:direct.uy,uz:direct.uz,Tb:raw.Tb};
+        f=p3GridForces(mixed,p.x,p.y,p.z);
+      }
+    }else f=p3FieldAt(p.x,p.y,p.z);
+    p.vx=f.ux;p.vy=f.uy;p.vz=f.uz;p.sampledTb=f.Tb;
+  }
+  const sampled=performance.now(),alive=[];
+  for(const p of s.tracers){
+    p.x+=dt*p.vx;p.y+=dt*p.vy;p.z+=dt*p.vz;p.life+=dt;
+    p.T-=dt*P.cool*p.T*p.T;p.d*=(1-dt*0.3);
+    p.z=Math.max(-D/2,Math.min(D/2,p.z));
+    if(p.T>0.04 && p.y<WY && Math.abs(p.x)<WX*0.7 && p.d>0.03)alive.push(p);
+    else c.tracerRetired++;
+  }
+  const ended=performance.now();
+  s.cacheLast={frame:s.frame+1,requestedTracers:cache.stencils.length,nodeCount:cache.nodeCount,
+    ...Object.fromEntries(P3_CACHE_COUNTERS.map(k=>[k,c[k]-before[k]]))};
+  s.tracers=alive;s.tracerTiming={tracerSetupMs:setupMs,cacheBuildMs:built-start,
+    cacheLookupMs:sampled-built,tracerAdvectionMs:ended-sampled,treeQueryAndAdvectionMs:0};
+}
+const P3_CACHE_COUNTERS=['cacheStencilLookups','cacheHits','cacheMisses','cacheNodeQueries','cacheFallbacks',
+  'cacheCapacityFallbacks','cacheOutsideQueries','cacheNoThermalSupportQueries','cachePartialSupportQueries'];
+function p3StepTracers(dt){
+  const s=p3State(), c=s.counters, rnd=()=>s.renderRng.next(), D=DZ3(),setupStart=performance.now();
+  const added=s.renderRate*dt; s.tracerCredit+=added; c.tracerNominalEmissionCredit+=added;
+  const due=Math.floor(s.tracerCredit); s.tracerCredit-=due;
+  const admitted=Math.min(due,s.config.nRender-s.tracers.length);
+  c.tracerEmissionAttempts+=due; c.tracerCapacityDropped+=due-admitted;
+  for(let i=0;i<admitted;i++){
+    const a=rnd()*6.283,rr=Math.sqrt(rnd())*source.w*0.5;
+    const p={x:source.x+Math.cos(a)*rr,y:source.y+rnd()*0.05,z:Math.max(-D/2,Math.min(D/2,Math.sin(a)*rr)),
+      vx:source.vx*0.5,vy:0,vz:0,T:0.92+rnd()*0.08,d:0.85+rnd()*0.15,life:0};
+    s.tracerIds.set(p,s.nextTracerId++);
+    s.tracers.push(p);c.tracerEmitted++;c.tracerInjectedOpticalWeight+=s.opticalWeight;
+  }
+  if(s.captureInputs){
+    // Opt-in observer only: capture the exact inputs after this step's births
+    // and before any tracer velocity/position/age update. No RNG or tree query.
+    const capture=s.captureInputs;
+    for(const p of s.tracers){const id=s.tracerIds.get(p);if(id%capture.stride===0)
+      capture.inputs.push({id,position:[p.x,p.y,p.z],age:p.life,newborn:p.life===0,frame:s.frame+1,fieldTime:s.fieldTime});}
+  }
+  p3BuildBounds();
+  const setupEnd=performance.now();
+  if(s.config.field.mode==='grid'){p3StepGridTracers(dt,D,setupEnd-setupStart);return;}
+  if(s.config.field.mode==='affine'){p3StepAffineTracers(dt,D,setupEnd-setupStart);return;}
+  const alive=[];
+  for(const p of s.tracers){
+    c.tracerFieldQueries++;
+    const f=p3FieldAt(p.x,p.y,p.z);p.vx=f.ux;p.vy=f.uy;p.vz=f.uz;p.sampledTb=f.Tb;
+    p.x+=dt*p.vx;p.y+=dt*p.vy;p.z+=dt*p.vz;p.life+=dt;
+    p.T-=dt*P.cool*p.T*p.T;p.d*=(1-dt*0.3);
+    p.z=Math.max(-D/2,Math.min(D/2,p.z));
+    if(p.T>0.04 && p.y<WY && Math.abs(p.x)<WX*0.7 && p.d>0.03) alive.push(p);
+    else c.tracerRetired++;
+  }
+  s.tracers=alive;
+  s.tracerTiming={tracerSetupMs:setupEnd-setupStart,treeQueryAndAdvectionMs:performance.now()-setupEnd,
+    cacheBuildMs:0,cacheLookupMs:0,tracerAdvectionMs:0};
+}
+function p3Advance(dt){
+  const s=p3State(); researchNumber(dt,'dt',Number.MIN_VALUE,1/30);
+  for(const [key,value] of Object.entries(s.physicsParams)) if(P[key]!==value)
+    throw new Error('P3 physics parameter changed outside reset: '+key);
+  const start=performance.now(),before=cloud.length,added=s.physicsRate*dt;
+  s.counters.physicsNominalEmissionCredit+=added;
+  if(before>=s.config.nSim){s.counters.physicsFullSteps++;s.counters.physicsSuppressedEmissionCredit+=added;}
+  emitSim3(dt);
+  const emitted=cloud.length-before;s.counters.physicsEmitted+=emitted;s.counters.physicsInjectedOpticalWeight+=emitted;
+  if(cloud.length>=s.config.nSim && cloudAcc3>=1)s.counters.physicsCapacityLimitedSteps++;
+  const preCount=cloud.length;
+  simTime+=dt;
+  if(preCount) stepSimVPM3(dt);
+  else {vol_t+=dt;vpm3Ensure(1);vpm3Pool.nNodes=0;vpm3Pool.root=-1;}
+  s.counters.physicsRetired+=preCount-cloud.length;
+  const physicsEnd=performance.now();
+  s.fieldTime=simTime-dt;s.fieldSourceCount=preCount;
+  if(s.config.mode==='passive')p3StepTracers(dt);
+  s.frame++;
+  s.stepTiming={simulationMs:physicsEnd-start,tracerMs:performance.now()-physicsEnd,
+    affineGroupingMs:0,affineModelBuildMs:0,affineLookupMs:0,...s.tracerTiming};
+  return s.stepTiming;
+}
+function p3Draw(sync='finish'){
+  if(!['finish','none'].includes(sync))throw new RangeError('sync must be finish or none');
+  const s=p3State(),start=performance.now();render();const submitted=performance.now();
+  if(sync==='finish')gl.finish();
+  const end=performance.now();
+  return {...s.renderTiming,finishWaitMs:end-submitted,renderTotalMs:end-start,
+    synchronization:sync==='finish'?'gl.finish GPU-completed wall time':'CPU submission only'};
+}
+function p3SamplerDiagnostics(){
+  // A scratch tree, not a modification of physics particles. The direct oracle
+  // uses the same discretized kernel, testing traversal/normalization rather than
+  // claiming an independent validation of the underlying VPM equations or LUT.
+  const s=p3State(), savedPool={...vpm3Pool},savedTheta=vpmInvTheta;
+  const saved={bounds:s.bounds,maxSigma:s.maxSigma,queryStack:s.queryStack,counters:s.counters};
+  const before=p3PhysicsHash(), cases=[];let thermalClusterCase=null;
+  try{
+    vpm3Pool.cap=0;vpm3Ensure(16);s.bounds=new Float32Array(0);s.queryStack=[];s.counters={...s.counters};
+    const p=vpm3Pool,n=12,sig=vpmSigma0(),VREF3=HX*HY*(DZ3()/Math.max(2,P.layers));
+    const C3=P.gam*VPM_KGAIN*VREF3/(4*Math.PI);
+    vpmInvTheta=1e9; // all velocity leaves: isolate traversal from treecode error
+    for(const constant of [true,false]){
+      const sourcePoints=[];
+      for(let i=0;i<n;i++)sourcePoints.push({x:(i%3-1)*.06,y:.2+Math.floor(i/3)%2*.07,z:(Math.floor(i/6)-.5)*.06,
+        Gx:.2+i*.01,Gy:-.1+i*.003,Gz:.3-i*.007,T:constant?.75:.25+i*.07,sg:sig});
+      for(let i=0;i<n;i++)p.code[i]=vpm3Morton(sourcePoints[i].x,sourcePoints[i].y,sourcePoints[i].z);
+      vpm3Sort(n);
+      for(let i=0;i<n;i++){
+        const q=sourcePoints[p.ord[i]];p.X[i]=q.x;p.Y[i]=q.y;p.Z[i]=q.z;p.AX[i]=q.Gx;p.AY[i]=q.Gy;p.AZ[i]=q.Gz;
+        p.T[i]=q.T;p.SG[i]=q.sg;p.scode[i]=p.code[p.ord[i]];
+      }
+      p.nNodes=0;p.root=vpm3Node(0,n,0,VPM_QSIDE,21);p3BuildBounds();
+      for(const position of [[.015,.235,.01],[.15,.31,.02],[3,3,3]]){
+        const [x,y,z]=position;let ux=0,uy=0,uz=0,S=0,H=0;
+        for(let j=0;j<n;j++){
+          const rx=x-p.X[j],ry=y-p.Y[j],rz=z-p.Z[j],q=rx*rx+ry*ry+rz*rz;
+          const s2=.5*(sig*sig+p.SG[j]*p.SG[j]),a=q/(2*s2),rho2=2*a;
+          const A=a<12.5?vpm3A[(a*VPM3_LSC)|0]:1/(rho2*Math.sqrt(rho2));
+          const k=C3*A/(Math.sqrt(s2)*s2);
+          ux+=k*(p.AY[j]*rz-p.AZ[j]*ry);uy+=k*(p.AZ[j]*rx-p.AX[j]*rz);uz+=k*(p.AX[j]*ry-p.AY[j]*rx);
+          if(a<9){const w=vpmF3[(a*VPM_LSC)|0];S+=w;H+=w*p.T[j];}
+        }
+        const actual=p3FieldAt(x,y,z,true),expectedTb=S?H/S:0,velocityError=Math.hypot(actual.inducedVelocity[0]-ux,actual.inducedVelocity[1]-uy,actual.inducedVelocity[2]-uz);
+        cases.push({constant,position,sourceCount:n,treeNodes:p.nNodes,actual,expected:{inducedVelocity:[ux,uy,uz],Tb:expectedTb,thermalWeight:S},
+          velocityError,temperatureError:Math.abs(actual.Tb-expectedTb),weightError:Math.abs(actual.thermalWeight-S)});
+      }
+    }
+    // Compact 4^3 cloud reaches fine octree nodes. At the normal opening angle,
+    // a query can accept a velocity cluster while still lying in its heat support.
+    const m=64,compact=[];vpmInvTheta=1/Math.max(.15,P.theta);
+    for(let i=0;i<m;i++)compact.push({x:.30+(i%4)*.01,y:.60+(Math.floor(i/4)%4)*.01,z:.30+Math.floor(i/16)*.01});
+    for(let i=0;i<m;i++){const q=compact[i];p.code[i]=vpm3Morton(q.x,q.y,q.z);}vpm3Sort(m);
+    for(let i=0;i<m;i++){
+      const q=compact[p.ord[i]];p.X[i]=q.x;p.Y[i]=q.y;p.Z[i]=q.z;p.AX[i]=.2;p.AY[i]=-.1;p.AZ[i]=.3;
+      p.T[i]=.75;p.SG[i]=sig;p.scode[i]=p.code[p.ord[i]];
+    }
+    p.nNodes=0;p.root=vpm3Node(0,m,0,VPM_QSIDE,21);p3BuildBounds();
+    const position=[.50,.615,.315],prior={...s.counters},actual=p3FieldAt(...position,true);let S=0,H=0;
+    for(let j=0;j<m;j++){
+      const q=(position[0]-p.X[j])**2+(position[1]-p.Y[j])**2+(position[2]-p.Z[j])**2;
+      const a=q/(sig*sig+p.SG[j]*p.SG[j]);if(a<9){const w=vpmF3[(a*VPM_LSC)|0];S+=w;H+=w*p.T[j];}
+    }
+    thermalClusterCase={position,sourceCount:m,treeNodes:p.nNodes,openingAngle:P.theta,actual,
+      expected:{Tb:S?H/S:0,thermalWeight:S},temperatureError:Math.abs(actual.Tb-(S?H/S:0)),weightError:Math.abs(actual.thermalWeight-S),
+      velocityClusters:s.counters.velocityClusterEvaluations-prior.velocityClusterEvaluations,
+      overlappingVelocityClusters:s.counters.thermalOverlapVelocityClusters-prior.thermalOverlapVelocityClusters,
+      thermalContributions:s.counters.thermalContributions-prior.thermalContributions};
+  } finally {
+    for(const key of Object.keys(vpm3Pool))delete vpm3Pool[key];Object.assign(vpm3Pool,savedPool);
+    vpmInvTheta=savedTheta;Object.assign(s,saved);
+  }
+  return {physicalHashBefore:before,physicalHashAfter:p3PhysicsHash(),cases,thermalClusterCase,
+    interpretation:'Read-only finite-support interpolation/traversal diagnostic against direct sums of the same LUT kernel; not an independent physics reference.'};
+}
+function p3CacheDiagnostics(){
+  // Algebra/implementation checks use analytic synthetic fields. The real VPM
+  // field is compared at identical query points by fieldProbe, independently.
+  const before=p3PhysicsHash(),field={mode:'grid',cellSize:.07,maxNodes:200000};
+  const points=[{x:.011,y:.029,z:.013},{x:-.011,y:-.029,z:-.013},
+    {x:-.07,y:.14,z:0},{x:-.07-1e-12,y:.14+1e-12,z:0},{x:.011,y:.029,z:.013}];
+  const affine=(x,y,z)=>({ux:.2+.13*x-.21*y+.09*z,uy:-.1+.03*x+.15*y-.07*z,
+    uz:.04-.08*x+.06*y+.11*z,Tb:.6+.05*x+.02*y-.04*z,thermalWeight:1});
+  const counter=()=>Object.fromEntries(P3_CACHE_COUNTERS.map(k=>[k,0]));
+  const cases=[];
+  for(const constant of [true,false]){
+    const c=counter(),queries=new Map();
+    const sample=(x,y,z)=>{const key=x+','+y+','+z;queries.set(key,(queries.get(key)||0)+1);
+      return constant?{ux:.3,uy:-.2,uz:.1,Tb:.75,thermalWeight:1}:affine(x,y,z);};
+    const cache=p3CacheBuild(points,field,c,sample);
+    const errors=points.map((p,i)=>{const actual=p3CacheInterpolate(cache.stencils[i]);
+      const expected=constant?{ux:.3,uy:-.2,uz:.1,Tb:.75}:affine(p.x,p.y,p.z);
+      return {position:[p.x,p.y,p.z],velocityError:Math.hypot(actual.ux-expected.ux,actual.uy-expected.uy,actual.uz-expected.uz),
+        temperatureError:Math.abs(actual.Tb-expected.Tb),supportFraction:actual.supportFraction};});
+    cases.push({constant,nodeCount:cache.nodeCount,maxQueriesPerNode:Math.max(...queries.values()),counters:c,errors});
+  }
+  const capCounters=counter(),capPoints=[points[0],{x:10,y:10,z:10},points[0]],capQueries=new Map();
+  const capped=p3CacheBuild(capPoints,{...field,maxNodes:8},capCounters,(x,y,z)=>{
+    const key=x+','+y+','+z;capQueries.set(key,(capQueries.get(key)||0)+1);return affine(x,y,z);});
+  const noSupport=p3CacheBuild(points,field,counter(),()=>({ux:0,uy:0,uz:0,Tb:0,thermalWeight:0}));
+  // Two independent builds must not reuse node values from the previous step.
+  const fresh=p3CacheBuild(points,field,counter(),()=>({ux:1,uy:2,uz:3,Tb:.25,thermalWeight:1}));
+  const midpoint={x:field.cellSize/2,y:field.cellSize/2,z:field.cellSize/2};
+  const mixed=p3CacheBuild([midpoint],field,counter(),x=>({ux:0,uy:0,uz:0,Tb:x===0?.75:0,thermalWeight:x===0?1:0}));
+  const mixedActual=p3CacheInterpolate(mixed.stencils[0]);
+  // With no/ordinary external forcing, mean(9,1)=5 clamps to 4, whereas
+  // averaging already-clamped endpoints would yield mean(4,1)=2.5.
+  const clampCache=p3CacheBuild([midpoint],field,counter(),x=>({ux:x===0?9:1,uy:0,uz:0,Tb:0,thermalWeight:1}));
+  const clampRaw=p3CacheInterpolate(clampCache.stencils[0]),clampActual=p3GridForces(clampRaw,midpoint.x,midpoint.y,midpoint.z);
+  let ex=5+P.wind+source.vx*.3,ey=0,ez=0;
+  if(P.turb>0){const q=curl3(midpoint.x*2.4,midpoint.y*2.4,midpoint.z*2.4,vol_t);ex+=q[0]*P.turb*.2;ey+=q[1]*P.turb*.2;ez+=q[2]*P.turb*.2;}
+  const norm=Math.hypot(ex,ey,ez),clampScale=norm>4?4/norm:1,expectedVelocity=[ex*clampScale,ey*clampScale,ez*clampScale];
+  const premature=[0,0,0];
+  for(const node of clampCache.stencils[0].corners){const q=p3GridForces(node.value,node.x,node.y,node.z);premature[0]+=q.ux/8;premature[1]+=q.uy/8;premature[2]+=q.uz/8;}
+  return {physicalHashBefore:before,physicalHashAfter:p3PhysicsHash(),origin:[0,0,0],cellSize:field.cellSize,cases,
+    capacity:{nodeCount:capped.nodeCount,maxQueriesPerNode:Math.max(...capQueries.values()),counters:capCounters,
+      fallbackByPoint:capped.stencils.map(x=>x===null)},
+    emptySupport:noSupport.stencils.map(p3CacheInterpolate),freshStep:fresh.stencils.map(p3CacheInterpolate),
+    mixedSupport:{actual:mixedActual,expected:{Tb:.375,thermalWeight:.5,supportFraction:.5}},
+    clampOrder:{raw:clampRaw,actualVelocity:[clampActual.ux,clampActual.uy,clampActual.uz],expectedVelocity,prematureNodeClampVelocity:premature,
+      velocityError:Math.hypot(clampActual.ux-expectedVelocity[0],clampActual.uy-expectedVelocity[1],clampActual.uz-expectedVelocity[2])},
+    interpretation:'Synthetic constant/affine interpolation, negative coordinates, unique-node memoization, cap fallback, per-build invalidation, mixed support and post-interpolation clamping; not a VPM accuracy claim.'};
+}
+function p3FieldProbe(positions,options={}){
+  const s=p3State();if(s.frame===0)throw new Error('fieldProbe requires at least one completed P3 step');
+  if(!Array.isArray(positions)||positions.length>256)throw new Error('fieldProbe accepts at most 256 positions');
+  if(!options||typeof options!=='object'||Array.isArray(options))throw new Error('fieldProbe options must be an object');
+  for(const key of Object.keys(options))if(!['cellSize','maxNodes'].includes(key))throw new Error('unknown probe option '+key);
+  const probeBase=s.config.field.mode==='affine'?{mode:'grid'}:s.config.field;
+  const field=p3FieldConfig({...probeBase,...options,mode:'grid'}),points=positions.map(p=>{
+    if(!Array.isArray(p)||p.length!==3)throw new Error('probe position must have 3 coordinates');
+    const a=p.map(v=>researchNumber(v,'probe position',-1000000,1000000));return {x:a[0],y:a[1],z:a[2]};});
+  const before=p3PhysicsHash(),renderBefore={state:s.renderRng.state,draws:s.renderRng.draws},savedCounters=s.counters;
+  const savedQuery={bounds:s.bounds,maxSigma:s.maxSigma,queryStack:s.queryStack};
+  let result;
+  try{
+    s.counters=Object.fromEntries(Object.keys(savedCounters).map(k=>[k,0]));
+    s.bounds=new Float32Array(0);s.queryStack=[];p3BuildBounds();
+    const c=s.counters,cache=p3CacheBuild(points,field,c,(x,y,z)=>p3FieldAt(x,y,z,false,true));
+    const samples=points.map((p,i)=>{
+      const treeRaw=p3FieldAt(p.x,p.y,p.z,false,true),tree=p3GridForces(treeRaw,p.x,p.y,p.z),stencil=cache.stencils[i];
+      const gridRaw=stencil?p3CacheInterpolate(stencil):treeRaw,grid=p3GridForces(gridRaw,p.x,p.y,p.z);
+      const rawCombinations={DD:treeRaw,GD:{ux:gridRaw.ux,uy:gridRaw.uy,uz:gridRaw.uz,Tb:treeRaw.Tb},
+        DG:{ux:treeRaw.ux,uy:treeRaw.uy,uz:treeRaw.uz,Tb:gridRaw.Tb},GG:gridRaw};
+      const combinations=Object.fromEntries(Object.entries(rawCombinations).map(([arm,raw])=>{
+        const value=p3GridForces(raw,p.x,p.y,p.z,true);
+        return [arm,{inducedVelocity:[raw.ux,raw.uy,raw.uz],Tb:raw.Tb,velocity:[value.ux,value.uy,value.uz],
+          preClampVelocity:value.preClampVelocity,preClampSpeed:value.preClampSpeed,speedClamped:value.speedClamped}];}));
+      return {position:[p.x,p.y,p.z],fallback:!stencil,
+        tree:{inducedVelocity:[treeRaw.ux,treeRaw.uy,treeRaw.uz],velocity:[tree.ux,tree.uy,tree.uz],Tb:tree.Tb,thermalWeight:treeRaw.thermalWeight},
+        grid:{inducedVelocity:[gridRaw.ux,gridRaw.uy,gridRaw.uz],velocity:[grid.ux,grid.uy,grid.uz],Tb:grid.Tb,
+          thermalWeight:gridRaw.thermalWeight,supportFraction:stencil?gridRaw.supportFraction:(treeRaw.thermalWeight>0?1:0)},
+        combinations,transportVelocities:Object.fromEntries(Object.entries(combinations).map(([arm,value])=>[arm,value.velocity])),
+        errors:{inducedVelocitySquared:(treeRaw.ux-gridRaw.ux)**2+(treeRaw.uy-gridRaw.uy)**2+(treeRaw.uz-gridRaw.uz)**2,
+          velocitySquared:(tree.ux-grid.ux)**2+(tree.uy-grid.uy)**2+(tree.uz-grid.uz)**2,temperatureSquared:(tree.Tb-grid.Tb)**2}};
+    });
+    result={fieldTime:s.fieldTime,phase:'most recent frozen pre-integration tree; caller-supplied query positions',
+      origin:[0,0,0],cellSize:field.cellSize,maxNodes:field.maxNodes,nodeCount:cache.nodeCount,samples,counters:{...c}};
+  }finally{s.counters=savedCounters;Object.assign(s,savedQuery);}
+  return {...result,physicalHashBefore:before,physicalHashAfter:p3PhysicsHash(),renderRngBefore:renderBefore,
+    renderRngAfter:{state:s.renderRng.state,draws:s.renderRng.draws},
+    interpretation:'Scratch queries outside frame timing; production cache/counters and random streams are unchanged. Tb is interpolated after node normalization, not after interpolating numerator/denominator.'};
+}
+function p3ComponentDiagnostics(positions=[]){
+  // Compare the old full query with its two contribution subsequences. These
+  // scratch queries never populate the production cache or advance either RNG.
+  const s=p3State();
+  if(!Array.isArray(positions)||positions.length>256)throw new Error('componentDiagnostics accepts at most 256 positions');
+  const points=positions.map(p=>{
+    if(!Array.isArray(p)||p.length!==3)throw new Error('diagnostic position must have 3 coordinates');
+    return p.map(v=>researchNumber(v,'diagnostic position',-1000000,1000000));
+  });
+  if(points.length&&s.frame===0)throw new Error('live component diagnostics require a completed P3 step');
+  const savedPool={...vpm3Pool},savedTheta=vpmInvTheta;
+  const saved={bounds:s.bounds,maxSigma:s.maxSigma,queryStack:s.queryStack,counters:s.counters};
+  const traceBefore=p3Trace(),counterKeys=Object.keys(s.counters),samples=[],cases=[];
+  const workKeys=['fieldQueries','fullFieldQueries','velocityOnlyFieldQueries','thermalOnlyFieldQueries',
+    'noThermalSupportQueries','fullNoThermalSupportQueries','thermalOnlyNoThermalSupportQueries',
+    'velocityClusterEvaluations','thermalOverlapVelocityClusters','velocityLeafEvaluations','thermalContributions'];
+  const measure=fn=>{
+    s.counters=Object.fromEntries(counterKeys.map(k=>[k,0]));
+    const value=fn();return {value,counters:Object.fromEntries(workKeys.map(k=>[k,s.counters[k]]))};
+  };
+  const compare=(id,position)=>{
+    const combined=measure(()=>p3FieldAt(...position,false,true));
+    const velocity=measure(()=>p3VelocityAtRaw(...position)),thermal=measure(()=>p3ThermalAtRaw(...position));
+    return {id,position,treeNodes:vpm3Pool.nNodes,
+      combined:{inducedVelocity:[combined.value.ux,combined.value.uy,combined.value.uz],Tb:combined.value.Tb,thermalWeight:combined.value.thermalWeight},
+      specialized:{inducedVelocity:[velocity.value.ux,velocity.value.uy,velocity.value.uz],Tb:thermal.value.Tb,thermalWeight:thermal.value.thermalWeight},
+      velocityEqual:['ux','uy','uz'].every(k=>Object.is(combined.value[k],velocity.value[k])),
+      thermalEqual:['Tb','thermalWeight'].every(k=>Object.is(combined.value[k],thermal.value[k])),
+      counters:{combined:combined.counters,velocity:velocity.counters,thermal:thermal.counters}};
+  };
+  try{
+    s.bounds=new Float32Array(0);s.queryStack=[];p3BuildBounds();
+    points.forEach((p,i)=>samples.push(compare(i,p)));
+    vpm3Pool.cap=0;vpm3Ensure(64);
+    const p=vpm3Pool,sig=vpmSigma0();
+    const build=sourcePoints=>{
+      const n=sourcePoints.length;
+      for(let i=0;i<n;i++){const q=sourcePoints[i];p.code[i]=vpm3Morton(q.x,q.y,q.z);}vpm3Sort(n);
+      for(let i=0;i<n;i++){
+        const q=sourcePoints[p.ord[i]];p.X[i]=q.x;p.Y[i]=q.y;p.Z[i]=q.z;
+        p.AX[i]=q.Gx;p.AY[i]=q.Gy;p.AZ[i]=q.Gz;p.T[i]=q.T;p.SG[i]=sig;p.scode[i]=p.code[p.ord[i]];
+      }
+      p.nNodes=0;p.root=vpm3Node(0,n,0,VPM_QSIDE,21);p3BuildBounds();
+    };
+    vpmInvTheta=1e9;
+    build(Array.from({length:12},(_,i)=>({x:(i%3-1)*.06,y:.2+Math.floor(i/3)%2*.07,z:(Math.floor(i/6)-.5)*.06,
+      Gx:.2+i*.01,Gy:-.1+i*.003,Gz:.3-i*.007,T:.25+i*.03})));
+    cases.push(compare('leaf-supported',[.015,.235,.01]),compare('leaf-unsupported',[3,3,3]));
+    vpmInvTheta=1/Math.max(.15,P.theta);
+    build(Array.from({length:64},(_,i)=>({x:.30+(i%4)*.01,y:.60+(Math.floor(i/4)%4)*.01,z:.30+Math.floor(i/16)*.01,
+      Gx:.2+i*.001,Gy:-.1+i*.0003,Gz:.3-i*.0007,T:.25+i*.007})));
+    cases.push(compare('cluster-thermal-overlap',[.50,.615,.315]),compare('cluster-unsupported',[3,3,3]));
+    p.nNodes=0;p.root=-1;p3BuildBounds();cases.push(compare('empty-tree',[0,0,0]));
+  }finally{
+    for(const key of Object.keys(vpm3Pool))delete vpm3Pool[key];Object.assign(vpm3Pool,savedPool);
+    vpmInvTheta=savedTheta;Object.assign(s,saved);
+  }
+  return {fieldTime:s.fieldTime,phase:'live samples use the most recent frozen pre-integration tree',
+    samples,cases,traceBefore,traceAfter:p3Trace(),
+    interpretation:'Exact component equivalence against the unchanged combined LUT/tree query, including leaf, cluster/thermal overlap, unsupported and empty-tree cases; not a new physical accuracy reference. Diagnostic work is excluded from production counters and timing.'};
+}
+function p3AffineDiagnostics(inputs,options={}){
+  const s=p3State();if(s.frame===0)throw new Error('affineDiagnostics requires a completed P3 step');
+  if(!Array.isArray(inputs)||inputs.length>200000)throw new Error('affineDiagnostics accepts at most 200000 captured inputs');
+  if(!options||typeof options!=='object'||Array.isArray(options))throw new TypeError('affine diagnostic options must be an object');
+  const config=p3AffineConfig({...s.config.field.affine,...options}),ids=new Set();
+  const points=inputs.map(input=>{
+    if(!input||typeof input!=='object'||!Array.isArray(input.position)||input.position.length!==3)
+      throw new Error('invalid affine diagnostic input');
+    researchNumber(input.id,'input id',0,Number.MAX_SAFE_INTEGER);
+    if(!Number.isInteger(input.id)||ids.has(input.id))throw new Error('duplicate or noninteger affine input id');
+    ids.add(input.id);
+    const [x,y,z]=input.position.map(v=>researchNumber(v,'input position',-1000000,1000000));
+    researchNumber(input.age,'input age',0,1000000);
+    if(input.frame!==s.frame||input.fieldTime!==s.fieldTime||input.newborn!==(input.age===0))
+      throw new Error('affine inputs must be captured before advection of the most recent step');
+    return {id:input.id,x,y,z,age:input.age,newborn:input.newborn};
+  });
+  const traceBefore=p3Trace(),saved={bounds:s.bounds,maxSigma:s.maxSigma,queryStack:s.queryStack,counters:s.counters};
+  const delta=P.eps*config.deltaScale;let result;
+  try{
+    s.bounds=new Float32Array(0);s.queryStack=[];
+    s.counters=Object.fromEntries(Object.keys(saved.counters).map(k=>[k,0]));p3BuildBounds();
+    const c=s.counters,partition=p3AffinePartition(points,config,c);
+    const models=p3AffineModels(partition,delta,(x,y,z)=>p3FieldAt(x,y,z,false,true),c);
+    const stencilNoThermalSupport=c.noThermalSupportQueries;
+    let directNoThermalSupport=0,directUnsupportedPositivePrediction=0;
+    const forceRecord=(raw,p)=>{
+      const f=p3GridForces(raw,p.x,p.y,p.z,true);
+      return {raw,velocity:[f.ux,f.uy,f.uz],preClampVelocity:f.preClampVelocity,
+        preClampSpeed:f.preClampSpeed,speedClamped:f.speedClamped};
+    };
+    const samples=points.map((p,i)=>{
+      const groupId=partition.membership[i],direct=p3FieldAt(p.x,p.y,p.z,false,true);
+      const prediction=p3AffineReconstruct(models[groupId],p,c);
+      if(direct.thermalWeight===0){directNoThermalSupport++;if(prediction.Tb>0)directUnsupportedPositivePrediction++;}
+      return {id:p.id,groupId,position:[p.x,p.y,p.z],age:p.age,newborn:p.newborn,
+        direct:forceRecord(direct,p),prediction:forceRecord(prediction,p)};
+    });
+    result={frame:s.frame,fieldTime:s.fieldTime,config,delta,inputCount:points.length,groupCount:models.length,models,points:samples,
+      counters:{...c},support:{stencilQueries:7*models.length,stencilNoThermalSupport,
+        directQueries:points.length,directNoThermalSupport,directUnsupportedPositivePrediction}};
+  }finally{Object.assign(s,saved);}
+  return {...result,traceBefore,traceAfter:p3Trace(),
+    phase:'captured pre-advection positions; the same most recent frozen pre-integration physical tree',
+    interpretation:'Isolated full-group reconstruction and extra direct reference queries. No production cache, counters, RNG or particle state changes. Groups are rebuilt, not persistent carriers; only actual queries have thermalWeight.'};
+}
+function p3CorrectionDiagnostics(inputs,options={}){
+  if(!options||typeof options!=='object'||Array.isArray(options))throw new TypeError('correction diagnostic options must be an object');
+  for(const key of Object.keys(options))if(!['affine','correction'].includes(key))throw new Error('unknown correction diagnostic option '+key);
+  const s=p3State(),affine=p3AffineConfig(options.affine===undefined?s.config.field.affine:options.affine);
+  const correction=p3CorrectionConfig(options.correction===undefined?s.config.field.correction:options.correction);
+  if(correction.memory)throw new Error('memory correction requires production memoryEvents rather than a stateless correction oracle');
+  // The existing isolated oracle performs 7K+N queries. Selection only reuses
+  // those raw results; this diagnostic does not simulate production query cost.
+  const base=p3AffineDiagnostics(inputs,affine);
+  const points=inputs.map(p=>({id:p.id,x:p.position[0],y:p.position[1],z:p.position[2]}));
+  const privateCounters=Object.fromEntries(P3_AFFINE_COUNTERS.map(k=>[k,0]));
+  const partition=p3AffinePartition(points,affine,privateCounters);
+  const selection=p3CorrectionSelect(partition,base.models,points,base.delta,base.frame,P.buoy,correction);
+  return {...base,correction:{config:correction,summary:selection.summary,models:selection.models,
+      rankedGroupIds:selection.rankedGroupIds,selectedMemberIds:selection.selectedMemberIds},
+    points:base.points.map(p=>({...p,selected:selection.models[p.groupId].selected,
+      correctedVelocity:selection.models[p.groupId].selected?p.direct.velocity:p.prediction.velocity})),
+    interpretation:'Isolated all-point oracle and shared production selector. Extra direct truth queries remain diagnostic-only; correction.summary reports the hypothetical production budget, not this oracle cost.'};
+}
+function p3MemorySamplerDiagnostics(){
+  const traceBefore=p3Trace(),cases=[];
+  const savedBase={ux:.1,uy:-.2,uz:.3,TbRaw:-.4},direct={ux:.4,uy:.2,uz:-.1,Tb:.2};
+  const residual=p3MemoryResidual(savedBase,direct);
+  for(const [id,TbRaw]of [['unclipped-origin',.5],['upper-final-clip',1.3],['lower-final-clip',-1]]){
+    const currentBase={ux:.2,uy:.3,uz:.4,TbRaw},c=Object.fromEntries(P3_AFFINE_COUNTERS.map(k=>[k,0]));
+    const result=p3MemoryApply(currentBase,residual,c),forces=p3GridForces(result,0,.2,0,true);
+    cases.push({id,savedBase,direct,residual:residual.slice(),currentBase,result,counters:c,
+      velocity:[forces.ux,forces.uy,forces.uz],preClampVelocity:forces.preClampVelocity,speedClamped:forces.speedClamped});
+  }
+  return {cases,traceBefore,traceAfter:p3Trace(),interpretation:'Shared production residual subtraction and addition-before-clipping arithmetic. Cache age/direct-priority/expiry are verified separately from actual per-step memoryEvents.'};
+}
+function p3CorrectionSamplerDiagnostics(){
+  const traceBefore=p3Trace(),config=p3AffineConfig({maxGroups:4,targetGroupSize:8}),delta=P.eps*.125;
+  const points=Array.from({length:32},(_,i)=>({id:3*i+1,x:(i%4-1.5)*.1,y:(Math.floor(i/4)%4-1.5)*.1,z:(Math.floor(i/16)-.5)*.1}));
+  const fields={constant:()=>({ux:.25,uy:.5,uz:-.125,Tb:.75,thermalWeight:1}),
+    linear:(x,y,z)=>({ux:.2+.1*x-.2*y+.3*z,uy:.1+.3*x+.2*y-.1*z,uz:.2*x-.1*y+.4*z,Tb:.75+.1*x,thermalWeight:1}),
+    'axis-quadratic':(x,y,z)=>({ux:x*x,uy:2*y*y,uz:3*z*z,Tb:.75,thermalWeight:1}),
+    'mixed-xy':(x,y)=>({ux:x*y,uy:0,uz:0,Tb:.75,thermalWeight:1})};
+  const cases=[];
+  for(const [id,query]of Object.entries(fields)){
+    const c=Object.fromEntries(P3_AFFINE_COUNTERS.map(k=>[k,0])),partition=p3AffinePartition(points,config,c);
+    const models=p3AffineModels(partition,delta,query,c),selections={};
+    for(const method of ['curvature','hash']){
+      const correction=p3CorrectionConfig({method,fraction:.5});
+      const selection=p3CorrectionSelect(partition,models,points,delta,17,P.buoy,correction);
+      const reversed=points.slice().reverse(),rc=Object.fromEntries(P3_AFFINE_COUNTERS.map(k=>[k,0]));
+      const rp=p3AffinePartition(reversed,config,rc),rm=p3AffineModels(rp,delta,query,rc);
+      const reverse=p3CorrectionSelect(rp,rm,reversed,delta,17,P.buoy,correction);
+      selections[method]={config:correction,...selection,permutationExact:JSON.stringify(selection)===JSON.stringify(reverse)};
+    }
+    cases.push({id,points,config,delta,frame:17,buoy:P.buoy,selections,
+      expectedDiagonalHessian:id==='axis-quadratic'?[2,0,0,0,4,0,0,0,6]:new Array(9).fill(0),
+      omittedMixedPartial:id==='mixed-xy'?{component:'ux',axes:'xy',value:1}:null});
+  }
+  return {cases,traceBefore,traceAfter:p3Trace(),interpretation:'Shared grouping, seven-query models and selector on analytic fields. Mixed xy demonstrates the intentionally omitted Hessian cross terms; it is not a certified error estimator.'};
+}
+function p3AffineSamplerDiagnostics(){
+  // Implementation checks with analytic fields, sharing all production group,
+  // stencil and reconstruction functions. They are not a physical-field oracle.
+  const traceBefore=p3Trace(),config=p3AffineConfig({maxGroups:3,targetGroupSize:3}),delta=P.eps*config.deltaScale;
+  const points=[[-.3,.1,0],[.1,.2,.1],[.1,.2,.1],[0,0,0],[-.1,-.2,.1],[.2,.2,-.1],
+    [.2,-.1,0],[-.2,.3,.1],[.3,0,-.1],[.05,.05,.05]].map((p,i)=>({id:17+i*3,x:p[0],y:p[1],z:p[2]}));
+  const fresh=()=>Object.fromEntries(P3_AFFINE_COUNTERS.map(k=>[k,0]));
+  const fields={constant:()=>({ux:.3,uy:-.2,uz:.1,Tb:.75,thermalWeight:1}),
+    linear:(x,y,z)=>({ux:.2+.13*x-.21*y+.09*z,uy:-.1+.03*x+.15*y-.07*z,
+      uz:.04-.08*x+.06*y+.11*z,Tb:.6+.05*x+.02*y-.04*z,thermalWeight:1}),
+    clipping:(x,y,z)=>({ux:5+20*x,uy:.1*y,uz:.1*z,Tb:.8+10*x,thermalWeight:1})};
+  const cases=[];
+  for(const [id,query]of Object.entries(fields)){
+    const c=fresh(),partition=p3AffinePartition(points,config,c);let queryCount=0;
+    const models=p3AffineModels(partition,delta,(...p)=>{queryCount++;return query(...p);},c);
+    const samples=points.map((p,i)=>{
+      const raw=p3AffineReconstruct(models[partition.membership[i]],p,c),expectedRaw=query(p.x,p.y,p.z);
+      const actual=p3GridForces(raw,p.x,p.y,p.z),expected=p3GridForces({...expectedRaw,Tb:Math.max(0,Math.min(1.6,expectedRaw.Tb))},p.x,p.y,p.z);
+      return {id:p.id,groupId:partition.membership[i],position:[p.x,p.y,p.z],raw,expectedRaw,
+        velocity:[actual.ux,actual.uy,actual.uz],expectedVelocity:[expected.ux,expected.uy,expected.uz]};
+    });
+    const reversed=points.slice().reverse(),rc=fresh(),rp=p3AffinePartition(reversed,config,rc);
+    const rm=p3AffineModels(rp,delta,query,rc);
+    const groupById=new Map(points.map((p,i)=>[p.id,partition.membership[i]]));
+    cases.push({id,config,delta,inputCount:points.length,groupCount:models.length,queryCount,models,points:samples,counters:c,
+      permutation:{modelsExact:JSON.stringify(models)===JSON.stringify(rm),
+        groupByIdEqual:reversed.every((p,i)=>groupById.get(p.id)===rp.membership[i])}});
+  }
+  const c=fresh(),partition=p3AffinePartition([],config,c);let queries=0;
+  const models=p3AffineModels(partition,delta,()=>{queries++;return fields.constant();},c);
+  const edgeCases=[
+    {id:'singleton',points:[{id:9,x:.1,y:.2,z:.3}],config:p3AffineConfig(),expectedMembers:[[9]]},
+    {id:'equal-axis-extent-tie',points:Array.from({length:8},(_,id)=>({id,x:id&1?-1:1,y:id&2?-1:1,z:id&4?-1:1})),
+      config:p3AffineConfig({maxGroups:2,targetGroupSize:4}),expectedMembers:[[1,3,5,7],[0,2,4,6]]}
+  ].map(test=>{
+    const counters=fresh(),partition=p3AffinePartition(test.points,test.config,counters);let queryCount=0;
+    const models=p3AffineModels(partition,delta,(...p)=>{queryCount++;return fields.constant(...p);},counters);
+    return {...test,memberIds:models.map(m=>m.memberIds),queryCount,counters};
+  });
+  return {cases,edgeCases,empty:{inputCount:0,groupCount:models.length,queryCount:queries,counters:c},traceBefore,traceAfter:p3Trace(),
+    interpretation:'Constant/linear reconstruction, deterministic weighted group splitting, duplicate-coordinate stable-ID ties, input permutation, empty input, Tb clipping and reconstruction-before-forcing checks using the production functions.'};
+}
+function p3Snapshot(options={}){
+  const s=p3State(), rendered=p3RenderParticles(),weight=s.config.mode==='passive'?s.opticalWeight:1;
+  const stats=ps=>{let temperatureSum=0,densitySum=0,ageSum=0,hotCount=0;for(const p of ps){temperatureSum+=p.T;densitySum+=p.d;ageSum+=p.life||0;if(p.T>=.55)hotCount++;}return {count:ps.length,temperatureSum,densitySum,ageSum,hotCount};};
+  let opticalWeightSum=0,opticalDensitySum=0;
+  for(const p of rendered){const w=p.weight===undefined?weight:p.weight;opticalWeightSum+=w;opticalDensitySum+=w*p.d;}
+  const result={version:1,frame:s.frame,time:simTime,physicalHash:p3PhysicsHash(),
+    tracerHash:researchHash({tracerCredit:s.tracerCredit,rngState:s.renderRng.state,rngDraws:s.renderRng.draws,tracers:s.tracers}),
+    config:s.config,params:{...P},precision:s.precision,displaySampling:'nearest at full-resolution pixel centers',
+    physics:{...stats(cloud),rngState:s.physicsRng.state,randomDraws:s.physicsRng.draws,pendingEmissionCredit:cloudAcc3,sourceRate:s.physicsRate},
+    render:{...stats(rendered),rngState:s.renderRng.state,randomDraws:s.renderRng.draws,pendingEmissionCredit:s.tracerCredit,
+      sourceRate:s.config.mode==='passive'?s.renderRate:s.physicsRate,opticalWeight:weight,opticalWeightSum,opticalDensitySum,overridden:!!s.override},
+    field:{time:s.fieldTime,sourceCount:s.fieldSourceCount,phase:'pre-integration after native source heating; Euler over the same dt',
+      ...s.config.field,origin:[0,0,0],cachedQuantity:s.config.field.mode==='affine'?
+        'per-step local affine induced velocity and normalized Tb; reconstructed Tb clipped to [0,1.6]; external terms and clamp at query position':s.config.field.evaluation==='specialized'?
+        'normalized Tb only; direct induced velocity, external terms and clamp at query position':
+        'induced velocity and normalized Tb; external terms and clamp at query position',lastCache:s.cacheLast,lastAffine:s.affineLast,
+      ...(s.config.field.correction?{lastCorrection:s.correctionLast}:{}),
+      ...(s.config.field.correction?.memory?{lastMemory:s.memoryLast}:{})},
+    counters:{...s.counters}};
+  if(options.detail){result.physicsParticles=cloud.map(p=>({...p}));result.renderParticles=rendered.map(p=>({...p,id:s.tracerIds.get(p)??null}));}
+  if(s.config.field.correction?.memory){result.memoryStateHash=p3MemoryStateHash(s.memoryCache);
+    result.memoryHashFormat='fnv1a32-json-id-frame-residualF64LE-zero-canonical-v1';
+    if(options.detail)result.memoryEntries=p3MemoryEntries(s.memoryCache);}
+  return result;
+}
+const researchP3API={
+  reset(seed=11,options={}){
+    researchNumber(seed,'seed',0,0xffffffff);if(!Number.isInteger(seed))throw new RangeError('seed must be uint32');
+    if(!options||typeof options!=='object'||Array.isArray(options))throw new TypeError('options must be an object');
+    for(const key of Object.keys(options))if(!['mode','nSim','nRender','renderSeed','params','optics','field'].includes(key))throw new Error('unknown P3 option '+key);
+    const mode=options.mode||'passive',nSim=options.nSim===undefined?600:options.nSim,nRender=options.nRender===undefined?nSim:options.nRender;
+    if(!['shared3d','passive'].includes(mode))throw new Error('mode must be shared3d or passive');
+    for(const [key,value]of Object.entries({nSim,nRender})){researchNumber(value,key,1,200000);if(!Number.isInteger(value))throw new Error(key+' must be integer');}
+    if(mode==='shared3d'&&nRender!==nSim)throw new Error('shared3d requires nRender=nSim');
+    const field=p3FieldConfig(options.field);
+    if(mode==='shared3d'&&field.mode!=='tree')throw new Error('grid field requires passive tracers');
+    const renderSeed=options.renderSeed===undefined?991:options.renderSeed;
+    researchNumber(renderSeed,'renderSeed',0,0xffffffff);if(!Number.isInteger(renderSeed))throw new Error('renderSeed must be uint32');
+    const next={...RESEARCH_DEFAULTS,layers:3,simLayers:3,rate:180,turb:0,wind:0,
+      dimMode:'vpm3',solver:'vpm',sliceMode:'world',paused:true,orbit:false,yaw:0,
+      spreadOn:false,sceneOn:false,box:false,embers:false,flicker:false,filament:false,
+      bloom:0,blurIters:0,reflect:0,haze:0,boxLight:0,faithful:true};
+    for(const [key,value]of Object.entries(options.params||{})){
+      if(!P3_PHYS_KEYS.includes(key)&&!P3_VIEW_KEYS.includes(key))throw new Error('unsupported P3 parameter '+key);
+      if(key==='mode'){if(!['fire','smoke'].includes(value))throw new Error('render mode must be fire or smoke');}
+      else researchNumber(value,key,['wind','camElev'].includes(key)?-1000:0,10000);
+      next[key]=value;
+    }
+    if(!Number.isInteger(next.layers)||next.layers<1||next.layers>16||nSim%next.layers)throw new Error('nSim must be divisible by layers (1..16)');
+    for(const key of ['rate','eps','sliceDepth','camDist','fov'])if(next[key]<=0)throw new Error(key+' must be positive');
+    next.ppl=nSim/next.layers;next.simLayers=next.layers;
+    const optics={radius:.04,tau:.2,...options.optics};
+    for(const key of Object.keys(optics))if(!['radius','tau'].includes(key))throw new Error('unknown optics parameter '+key);
+    researchNumber(optics.radius,'radius',Number.MIN_VALUE,1);researchNumber(optics.tau,'tau',0,100);
+    if(!gl.getExtension('EXT_color_buffer_float')||!gl.getExtension('EXT_float_blend'))throw new Error('P3 requires RGBA32F color-buffer and float-blend extensions; no implicit lower-precision fallback');
+    Object.assign(P,next);introT=-1;introDone=true;orbitPhase=0;pointer={active:false,x:0,y:0,px:0,py:0};drag.on=false;
+    resetSim(seed);
+    const physicsRng=p3Random(seed),renderRng=p3Random(renderSeed);srand=()=>physicsRng.next();
+    const physicsRate=P.rate*P.layers/3,renderRate=physicsRate*nRender/nSim;
+    researchP3State={config:{mode,nSim,nRender,renderSeed,optics,params:{...options.params},field},precision:'rgba32f',
+      physicsRng,renderRng,physicsParams:Object.fromEntries([...P3_PHYS_KEYS,'ppl','dimMode','solver'].map(k=>[k,P[k]])),
+      physicsRate,renderRate,opticalWeight:physicsRate/renderRate,tracers:[],tracerCredit:0,frame:0,fieldTime:0,fieldSourceCount:0,
+      override:null,bounds:new Float32Array(0),queryStack:[],maxSigma:0,stepTiming:{},renderTiming:{},
+      tracerIds:new WeakMap(),nextTracerId:0,tracerTiming:{},cacheLast:null,affineLast:null,captureInputs:null,
+      ...(field.correction?{correctionLast:null}:{}),
+      ...(field.correction?.memory?{memoryCache:new Map(),memoryLast:null}:{}),
+      counters:{physicsNominalEmissionCredit:0,physicsEmitted:0,physicsInjectedOpticalWeight:0,physicsRetired:0,
+        physicsFullSteps:0,physicsCapacityLimitedSteps:0,physicsSuppressedEmissionCredit:0,
+        tracerNominalEmissionCredit:0,tracerEmissionAttempts:0,tracerEmitted:0,tracerCapacityDropped:0,
+        tracerInjectedOpticalWeight:0,tracerRetired:0,fieldQueries:0,noThermalSupportQueries:0,
+        fullFieldQueries:0,velocityOnlyFieldQueries:0,thermalOnlyFieldQueries:0,
+        fullNoThermalSupportQueries:0,thermalOnlyNoThermalSupportQueries:0,
+        velocityClusterEvaluations:0,thermalOverlapVelocityClusters:0,velocityLeafEvaluations:0,thermalContributions:0,
+        tracerFieldQueries:0,componentDirectQueries:0,componentDirectNoThermalSupportQueries:0,
+        ...Object.fromEntries(P3_AFFINE_COUNTERS.map(k=>[k,0])),
+        ...(field.correction?Object.fromEntries(P3_CORRECTION_COUNTERS.map(k=>[k,0])):{}),
+        ...(field.correction?.memory?Object.fromEntries(P3_MEMORY_COUNTERS.map(k=>[k,0])):{}),
+        ...Object.fromEntries(P3_CACHE_COUNTERS.map(k=>[k,0]))}};
+    makeTargets();researchCamera(0);return p3Snapshot();
+  },
+  step(n=1,dt=1/60){
+    researchNumber(n,'steps',0,RESEARCH_MAX_BUDGET);if(!Number.isInteger(n))throw new Error('steps must be integer');
+    researchNumber(dt,'dt',Number.MIN_VALUE,1/30);for(let i=0;i<n;i++)p3Advance(dt);
+    const s=p3State();return {frame:s.frame,time:simTime,physicalHash:p3PhysicsHash(),timing:{...s.stepTiming},
+      ...(s.config.field.correction?{correctionSummary:s.correctionLast}:{}),
+      ...(s.config.field.correction?.memory?{memorySummary:s.memoryLast}:{})};
+  },
+  stepWithInputs(dt=1/60,{stride=97,correctionDetails=false,memoryDetails=false}={}){
+    const s=p3State();researchNumber(dt,'dt',Number.MIN_VALUE,1/30);
+    researchNumber(stride,'stride',1,RESEARCH_MAX_BUDGET);if(!Number.isInteger(stride))throw new Error('stride must be integer');
+    if(s.config.mode!=='passive')throw new Error('stepWithInputs requires passive tracers');
+    if(typeof correctionDetails!=='boolean')throw new Error('correctionDetails must be boolean');
+    if(correctionDetails&&(!s.config.field.correction||stride!==1))throw new Error('correctionDetails requires correction mode and stride=1');
+    if(typeof memoryDetails!=='boolean')throw new Error('memoryDetails must be boolean');
+    if(memoryDetails&&!s.config.field.correction?.memory)throw new Error('memoryDetails requires TTL1 memory mode');
+    if(s.captureInputs)throw new Error('input observation already active');
+    const capture={stride,inputs:[],...(correctionDetails?{correctionDetails:true}:{}),...(memoryDetails?{memoryDetails:true}:{})};s.captureInputs=capture;
+    try{p3Advance(dt);}finally{s.captureInputs=null;}
+    const physicalHash=p3PhysicsHash();
+    return {frame:s.frame,time:simTime,physicalHash,trace:p3Trace(physicalHash),timing:{...s.stepTiming},
+      fieldTime:s.fieldTime,inputPhase:'after current births, before tracer advection; same frozen pre-integration physical tree',
+      stride,inputs:capture.inputs,...(correctionDetails?{correctionSelection:capture.correctionSelection}:{}),
+      ...(s.config.field.correction?{correctionSummary:s.correctionLast}:{}),
+      ...(s.config.field.correction?.memory?{memorySummary:s.memoryLast}:{}),
+      ...(memoryDetails?{memoryEvents:capture.memoryEvents}:{})};
+  },
+  camera:researchCamera,
+  physicalHash:p3PhysicsHash,
+  trace:()=>p3Trace(),
+  samplerDiagnostics:p3SamplerDiagnostics,
+  cacheDiagnostics:p3CacheDiagnostics,
+  fieldProbe:p3FieldProbe,
+  componentDiagnostics:p3ComponentDiagnostics,
+  affineDiagnostics:p3AffineDiagnostics,
+  affineSamplerDiagnostics:p3AffineSamplerDiagnostics,
+  correctionDiagnostics:p3CorrectionDiagnostics,
+  correctionSamplerDiagnostics:p3CorrectionSamplerDiagnostics,
+  memorySamplerDiagnostics:p3MemorySamplerDiagnostics,
+  snapshot:p3Snapshot,
+  render({sync='finish'}={}){
+    p3State();if(sync==='finish')gl.finish();const start=performance.now(),timing=p3Draw(sync);
+    return {frame:p3State().frame,time:simTime,timing:{...timing,totalMs:performance.now()-start},physicalHash:p3PhysicsHash()};
+  },
+  frame(dt=1/60,{sync='finish'}={}){
+    p3State();if(!['finish','none'].includes(sync))throw new Error('sync must be finish or none');
+    if(sync==='finish')gl.finish();const start=performance.now(),simulation=p3Advance(dt),drawing=p3Draw(sync),end=performance.now();
+    const s=p3State(),physicalHash=p3PhysicsHash();return {frame:s.frame,time:simTime,timing:{...simulation,...drawing,totalMs:end-start},
+      physicalHash,trace:p3Trace(physicalHash),counts:{physics:cloud.length,render:p3RenderParticles().length},
+      ...(s.config.field.correction?{correctionSummary:s.correctionLast}:{}),
+      ...(s.config.field.correction?.memory?{memorySummary:s.memoryLast}:{})};
+  },
+  setRenderParticles(points){
+    const s=p3State();if(points===null){s.override=null;return;}
+    if(!Array.isArray(points))throw new Error('render particles must be array or null');
+    s.override=points.map((p,i)=>{
+      if(!Array.isArray(p.position)||p.position.length!==3)throw new Error('position must have 3 coordinates');
+      const position=p.position.map(v=>researchNumber(v,'position',-1000,1000));
+      const T=researchNumber(p.T===undefined?1:p.T,'T',0,2),d=researchNumber(p.d===undefined?1:p.d,'d',0,2);
+      const weight=researchNumber(p.weight===undefined?1:p.weight,'weight',0,10000);
+      return {x:position[0],y:position[1],z:position[2],T,d,weight,life:0};
+    });return {count:s.override.length};
+  },
+  readHDR(){
+    p3State();const data=new Float32Array(FBW*FBH*4);
+    gl.bindFramebuffer(gl.FRAMEBUFFER,sceneFBO);gl.readPixels(0,0,FBW,FBH,gl.RGBA,gl.FLOAT,data);
+    const error=gl.getError();gl.bindFramebuffer(gl.FRAMEBUFFER,null);
+    if(error!==gl.NO_ERROR)throw new Error('P3 HDR readback GL error '+error);
+    return {width:FBW,height:FBH,data,format:'linear-hdr-rgba32f',origin:'bottom-left',alpha:'accumulated opacity; transmittance=1-alpha'};
+  }
+};
+
+// P4b: standard finite-capacity exchange coupled to the existing native 3D VPM.
+// Kelvin is the only heat state. The native closed hook only bypasses external
+// heat/cooling, emissions and parcel loss; it retains native force/query math.
+const P4_NATIVE_KEYS=['gam','theta','baro','stretch3','buoy','turb','wind','layers','sliceDepth'];
+const P4_COUNTER_KEYS=['nativeHeatApplications','nativeDynamicCoolingApplications','nativeVisualCoolingApplications',
+  'nativeBirths','nativeDeaths','nativeDensityLossApplications','gradientXClamps','gradientZClamps',
+  'vorticityClamps','speedClamps','mortonOutsideBefore','mortonOutsideAfter','domainZClamps',
+  'transportDomainExits','nativeWouldRetire','flowSteps','staticSteps','thermalEdgeEvaluations','thermalSubsteps'];
+let p4CorePromise=null;
+function p4Object(value,name,keys){
+  if(!value||typeof value!=='object'||Array.isArray(value))throw new TypeError(name+' must be an object');
+  for(const k of Object.keys(value))if(!keys.includes(k))throw new Error('unknown '+name+' field '+k);
+}
+function p4Finite(value,name,min=-Infinity,max=Infinity){
+  if(typeof value!=='number'||!Number.isFinite(value)||value<min||value>max)throw new RangeError(name+' is outside its finite range');
+  return value;
+}
+function p4Vector(value,name){
+  if(!Array.isArray(value)||value.length!==3)throw new TypeError(name+' must be a 3-vector');
+  return value.map((x,i)=>p4Finite(x,name+'['+i+']'));
+}
+function p4Copy(value){return JSON.parse(JSON.stringify(value));}
+function p4IdCompare(a,b){const x=String(a.id),y=String(b.id);return x<y?-1:x>y?1:0;}
+function p4State(){if(!researchP4State)throw new Error('call researchP4.reset first');return researchP4State;}
+function p4Counters(){return Object.fromEntries(P4_COUNTER_KEYS.map(k=>[k,0]));}
+function p4MortonOutside(p){return p.x<VPM_QX0||p.x>=VPM_QX0+VPM_QSIDE||p.y<VPM_QY0||p.y>=VPM_QY0+VPM_QSIDE||p.z< -1.6||p.z>=1.6;}
+function p4GasState(s=p4State()){
+  return s.gas.map(g=>{const p=s.byId.get(String(g.id));return {id:g.id,position:[p.x,p.y,p.z],
+    velocity:[p.vx,p.vy,p.vz],G:[p.Gx,p.Gy,p.Gz],sg:p.sg,life:p.life,mappedTb:p.Tb,displayT:p.T,density:p.d};});
+}
+function p4Constants(){const VREF3=HX*HY*(DZ3()/Math.max(2,P.layers));return {NX,NY,HX,HY,WX,WY,
+  DZ3:DZ3(),VPM_KGAIN,VREF3,C3:P.gam*VPM_KGAIN*VREF3/(4*Math.PI),
+  morton:{x0:VPM_QX0,y0:VPM_QY0,z0:-1.6,side:VPM_QSIDE},
+  dynamicTemperature:'native self-aware normalized field; not an additional heat reservoir'};}
+function p4DynamicsHash(s=p4State()){
+  return researchHash({frame:s.frame,time:simTime,vol_t,seed:simSeed,rng:{state:s.rng.state,draws:s.rng.draws},
+    source,params:s.config.transport.params,mode:s.config.transport.mode,constants:p4Constants(),
+    cloudOrder:cloud.map(p=>p.p4id),gas:p4GasState(s).map(({displayT,...p})=>p)});
+}
+function p4Snapshot(options={}){
+  p4Object(options,'snapshot options',['detail']);
+  if(options.detail!==undefined&&typeof options.detail!=='boolean')throw new TypeError('detail must be boolean');
+  const s=p4State(),gas=p4GasState(s),thermalState=p4Copy(s.thermalState),dynamicsHash=p4DynamicsHash(s);
+  const thermalStateHash=researchHash({state:thermalState,capacities:s.graph.capacities});
+  const result={version:1,phase:'P4b',frame:s.frame,time:simTime,valid:s.invalidReasons.length===0,
+    invalidReasons:[...s.invalidReasons],config:p4Copy(s.config),constants:p4Constants(),
+    dynamicsHash,thermalStateHash,
+    fullStateHash:researchHash({dynamicsHash,thermalStateHash,config:s.config,gas,counters:s.counters,invalidReasons:s.invalidReasons}),
+    thermalState,capacities:[...s.graph.capacities],energy:s.core.thermalEnergy(s.thermalState,s.graph),gas,
+    cloudOrder:cloud.map(p=>p.p4id),rng:{state:s.rng.state,draws:s.rng.draws},counters:{...s.counters},
+    fieldTime:s.last?s.last.fieldTime:null,fieldTemperatureTime:s.last?s.last.fieldTemperatureTime:null,forcingTime:s.last?s.last.forcingTime:null};
+  if(options.detail){result.surface=p4Copy(s.surface);result.graph=p4Copy(s.graph);result.last=p4Copy(s.last);}
+  return result;
+}
+function p4SceneAtCurrentPositions(s){
+  const ns=s.surface.length;
+  return {surface:s.surface.map((p,i)=>({...p,position:[...p.position],temperature:s.thermalState.temperatures[i]})),
+    gas:s.gas.map((g,i)=>{const p=s.byId.get(String(g.id));return {id:g.id,position:[p.x,p.y,p.z],
+      volume:g.volume,capacityPerVolume:g.capacityPerVolume,temperature:s.thermalState.temperatures[ns+i]};})};
+}
+function p4ApplyMapping(s){
+  const ns=s.surface.length,{ambientK,scaleK}=s.config.mapping;
+  for(let i=0;i<s.gas.length;i++){
+    const p=s.byId.get(String(s.gas[i].id)),kelvin=s.thermalState.temperatures[ns+i];
+    const dynamicalKelvin=s.config.transport.thermalFeedback?kelvin:s.initialGasTemperatures[i];
+    p.Tb=(dynamicalKelvin-ambientK)/scaleK;
+    // Display only. Never read back from T or packed Float32 Tb into Kelvin.
+    p.T=Math.max(0,Math.min(1.6,(kelvin-ambientK)/scaleK));
+    p4Finite(p.Tb,'mapped Tb',0,1.6);
+  }
+}
+function p4AssertLocked(s){
+  if(researchP3State)throw new Error('P3 and P4 cannot be active together');
+  for(const [k,v]of Object.entries(s.lockedParams))if(P[k]!==v)throw new Error('P4 parameter was changed externally: '+k);
+  if(NX!==32||NY!==48)throw new Error('P4 native scale requires NX=32, NY=48');
+  if(pointer.active||source.vx!==0)throw new Error('P4 has no interactive source');
+  if(cloud.length!==s.gas.length||cloud.some(p=>s.byId.get(String(p.p4id))!==p))throw new Error('fixed parcel identity changed');
+}
+function p4Advance(dt){
+  const s=p4State();p4AssertLocked(s);
+  const time=simTime,before={thermalState:p4Copy(s.thermalState),gas:p4GasState(s)},counters=p4Counters();
+  // Rebuild geometry, but never reset the state returned by the previous step.
+  const graph=s.core.buildThermalGraph(p4SceneAtCurrentPositions(s),{h:s.config.thermal.h,beta:s.config.thermal.beta}).graph;
+  let thermalLedger;
+  if(s.config.exchange){
+    const next=s.core.stepThermalGraph(s.thermalState,graph,dt,{safety:s.config.thermal.safety,maxSubsteps:s.config.thermal.maxSubsteps});
+    s.thermalState=next.state;thermalLedger={...next.ledger,enabled:true};
+    counters.thermalEdgeEvaluations=next.ledger.edgeEvaluations;counters.thermalSubsteps=next.ledger.substeps;
+  }else{
+    const E=s.core.thermalEnergy(s.thermalState,graph);
+    s.thermalState={...s.thermalState,ids:[...s.thermalState.ids],temperatures:[...s.thermalState.temperatures],
+      cumulative:{...s.thermalState.cumulative},time:s.thermalState.time+dt,steps:s.thermalState.steps+1};
+    thermalLedger={enabled:false,dt,safety:s.config.thermal.safety,maxRate:graph.maxRate,substeps:0,
+      substepDt:0,maxCfl:0,edgeEvaluations:0,Ebefore:E,Eafter:{...E},netSurface:0,netGas:0,
+      energyChangeSurface:0,energyChangeGas:0,energyResidual:0};
+  }
+  s.graph=graph;p4ApplyMapping(s);
+  const afterThermal={thermalState:p4Copy(s.thermalState),gas:p4GasState(s)};
+  const closed={counters,fields:[]};simTime+=dt;
+  if(s.config.transport.mode==='native-vpm3'){stepSimVPM3(dt,closed);counters.flowSteps=1;}
+  else{vol_t+=dt;counters.staticSteps=1;}
+  s.frame++;
+  for(const p of cloud)for(const key of ['x','y','z','vx','vy','vz','Gx','Gy','Gz','Tb','T','d','sg','life'])p4Finite(p[key],'gas '+String(p.p4id)+'.'+key);
+  for(const k of P4_COUNTER_KEYS)s.counters[k]+=counters[k];
+  for(const k of ['mortonOutsideBefore','mortonOutsideAfter','domainZClamps','transportDomainExits','nativeWouldRetire']){
+    if(counters[k]>0&&!s.invalidReasons.includes(k))s.invalidReasons.push(k);
+  }
+  s.last={frame:s.frame,dt,fieldTime:time,fieldTemperatureTime:s.thermalState.time,forcingTime:vol_t,
+    phase:'geometry(x^n) -> conservative thermal(dt) -> mapped Tb -> native flow(dt)',
+    before,afterThermal,afterFlow:{thermalState:p4Copy(s.thermalState),gas:p4GasState(s)},
+    graph:p4Copy(graph),thermalLedger,fields:closed.fields,counters,cloudOrder:cloud.map(p=>p.p4id)};
+}
+const researchP4API={
+  async reset(options){
+    p4Object(options,'P4 options',['surface','gas','thermal','mapping','transport','exchange','seed']);
+    p4Object(options.thermal,'thermal',['h','beta','safety','maxSubsteps']);
+    p4Object(options.mapping,'mapping',['ambientK','scaleK']);
+    p4Object(options.transport,'transport',['mode','thermalFeedback','params']);
+    p4Object(options.transport.params,'transport.params',P4_NATIVE_KEYS);
+    if(typeof options.exchange!=='boolean'||typeof options.transport.thermalFeedback!=='boolean')throw new TypeError('exchange and thermalFeedback must be explicit booleans');
+    if(!['native-vpm3','static'].includes(options.transport.mode))throw new Error('transport.mode must be native-vpm3 or static');
+    if(options.mapping.ambientK!==300||options.mapping.scaleK!==300)throw new Error('P4b mapping is fixed at (Kelvin-300)/300');
+    for(const k of P4_NATIVE_KEYS)p4Finite(options.transport.params[k],k,k==='wind'?-1000:0,10000);
+    const params=options.transport.params;
+    if(!Number.isInteger(params.layers)||params.layers<1||params.layers>16)throw new RangeError('layers must be integer 1..16');
+    if(params.theta<.15||params.sliceDepth<=0||params.sliceDepth>3.2)throw new RangeError('theta >= .15 and 0 < sliceDepth <= 3.2 required');
+    const seed=options.seed===undefined?0:options.seed;p4Finite(seed,'seed',0,0xffffffff);
+    if(!Number.isInteger(seed))throw new RangeError('seed must be uint32');
+    if(!Array.isArray(options.surface)||!Array.isArray(options.gas)||options.gas.length<1||options.gas.length>10000)throw new TypeError('surface/gas arrays required; gas count 1..10000');
+    const surface=options.surface.map(p=>{p4Object(p,'surface node',['id','position','area','capacityPerArea','temperature']);return {...p,position:p4Vector(p.position,'surface position')};}).sort(p4IdCompare);
+    const gas=options.gas.map(g=>{
+      p4Object(g,'gas node',['id','position','volume','capacityPerVolume','temperature','G','sg']);
+      const result={...g,position:p4Vector(g.position,'gas position'),G:p4Vector(g.G,'gas G')};
+      p4Finite(g.sg,'gas sg',Number.MIN_VALUE,10);
+      if(!(Math.fround(g.sg)>0)||!Number.isFinite(Math.fround(g.sg)))throw new RangeError('gas sg must remain positive finite Float32');
+      for(const v of [...result.position,...result.G])if(!Number.isFinite(Math.fround(v)))throw new RangeError('gas packed state must remain finite Float32');
+      if(p4MortonOutside({x:g.position[0],y:g.position[1],z:g.position[2]})||g.position[1]>=WY||Math.abs(g.position[0])>=WX*.7||Math.abs(g.position[2])>=params.sliceDepth/2)throw new RangeError('initial gas lies outside the strict native transport domain');
+      return result;
+    }).sort(p4IdCompare);
+    for(const p of [...surface,...gas])p4Finite(p.temperature,'Kelvin temperature',300,780);
+    const thermal={...options.thermal};
+    p4Finite(thermal.h,'thermal.h',Number.MIN_VALUE);p4Finite(thermal.beta,'thermal.beta',Number.MIN_VALUE);
+    p4Finite(thermal.safety,'thermal.safety',Number.MIN_VALUE,1);
+    p4Finite(thermal.maxSubsteps,'thermal.maxSubsteps',1,100000);
+    if(!Number.isInteger(thermal.maxSubsteps))throw new RangeError('maxSubsteps must be integer');
+    // Await and validate completely before replacing any existing experiment.
+    if(!p4CorePromise)p4CorePromise=import('../research/lib/p4-thermal.mjs');
+    const core=await p4CorePromise;
+    const built=core.buildThermalGraph({surface,gas:gas.map(({G,sg,...g})=>g)},{h:thermal.h,beta:thermal.beta});
+    const config={seed,surface:p4Copy(surface),gas:p4Copy(gas),thermal,mapping:{...options.mapping},
+      transport:{mode:options.transport.mode,thermalFeedback:options.transport.thermalFeedback,params:{...params}},exchange:options.exchange};
+    const next={...RESEARCH_DEFAULTS,...params,eps:.07,cool:0,rate:0,emitterOn:false,
+      dimMode:'vpm3',solver:'vpm',sliceMode:'world',paused:true,orbit:false,yaw:0,
+      spreadOn:false,sceneOn:false,box:false,embers:false,flicker:false,filament:false,
+      bloom:0,blurIters:0,reflect:0,haze:0,boxLight:0,faithful:true};
+    Object.assign(P,next);setVicRes(32,48);introT=-1;introDone=true;orbitPhase=0;pointer={active:false,x:0,y:0,px:0,py:0};drag.on=false;
+    resetSim(seed);const rng=p3Random(seed);srand=()=>rng.next();
+    cloud=gas.map(g=>({p4id:g.id,x:g.position[0],y:g.position[1],z:g.position[2],vx:0,vy:0,vz:0,
+      Gx:g.G[0],Gy:g.G[1],Gz:g.G[2],sg:g.sg,Tb:0,T:0,d:1,seedp:0,life:0}));
+    researchP4State={core,config,surface,gas,graph:built.graph,thermalState:built.state,
+      initialGasTemperatures:gas.map(g=>g.temperature),byId:new Map(cloud.map(p=>[String(p.p4id),p])),
+      frame:0,last:null,rng,counters:p4Counters(),invalidReasons:[],
+      lockedParams:Object.fromEntries([...P4_NATIVE_KEYS,'eps','cool','rate','emitterOn','dimMode','solver','spreadOn','embers','paused'].map(k=>[k,P[k]]))};
+    p4ApplyMapping(researchP4State);researchCamera(0);return p4Snapshot({detail:true});
+  },
+  step(n=1,dt=1/60){
+    p4Finite(n,'steps',0,100000);if(!Number.isInteger(n))throw new RangeError('steps must be integer');
+    p4Finite(dt,'dt',Number.MIN_VALUE,.1);for(let i=0;i<n;i++)p4Advance(dt);return p4Snapshot({detail:true});
+  },
+  snapshot:p4Snapshot,
+  camera(yaw){p4State();researchCamera(yaw);return {yaw:P.yaw,dynamicsHash:p4DynamicsHash()};},
+  dispose(){const s=p4State();Object.assign(P,RESEARCH_DEFAULTS);resetSim(s.config.seed);return {disposed:true};}
+};
+
 // 无头验证钩子 (预览截图不可用时, 用 eval+readPixels 检验)
 window.__demo = {
+  research:researchAPI,
+  researchP3:researchP3API,
+  researchP4:researchP4API,
   gl, P, get count(){ return lastCount; },
   // 邻接哈希的格子尺寸: 供无头对照用 (按蔓延半径 vs 旧的按场景尺寸)
   get hashCell(){ return sceneHash?sceneHash.cell:null; },
@@ -2875,7 +4706,8 @@ window.__demo = {
   warm(frames){ frames=frames||120; for(let i=0;i<frames;i++) stepAll(0.016); },
   // ---- 确定性回放: reset(seed) + 固定步长 step + hash ⇒ 逐位可复现 ----
   reset(seed){ resetSim(seed===undefined?12345:seed); },
-  step(n,dt){ dt=dt||1/60; for(let i=0;i<(n||1);i++){ simTime+=dt; stepAll(dt); } },
+  step(n,dt){ if(researchP4State)throw new Error('P4 active: use researchP4.step or reset first');
+    dt=dt||1/60; for(let i=0;i<(n||1);i++){ simTime+=dt; stepAll(dt); } },
   hash(){ const f32=new Float32Array(1), u8=new Uint8Array(f32.buffer);
     let h=0x811c9dc5>>>0;
     const mix=v=>{ f32[0]=v; h=(h^u8[0])>>>0; h=Math.imul(h,16777619)>>>0;

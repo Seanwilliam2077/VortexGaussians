@@ -1,0 +1,16 @@
+{
+  "name": "vortexgaussians-research",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Synthetic diagnostic experiments, not publication or GPU benchmark evidence",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "smoke": "node smoke.mjs",
+    "quick": "node run.mjs --suite quick",
+    "feedback": "node run.mjs --suite feedback",
+    "sensitivity": "node run.mjs --suite sensitivity"
+  },
+  "devDependencies": { "playwright": "^1.56.0" }
+}

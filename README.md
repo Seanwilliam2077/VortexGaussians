@@ -31,6 +31,25 @@ The demo panel's top section chooses the solver: **Grid Mode** (the VIC baseline
 
 Deterministic replay: `window.__demo.reset(seed)` + `.step(n)` + `.hash()` reproduce any run bit-exactly.
 
+## Coupling Research Diagnostics
+
+The self-contained [research harness](research/README.md) runs a synthetic 2×2 coupling ablation and tests sensitivity to splat duplication, input order, and processing quotas. It requires Node.js 20+ and Playwright with Chromium or Edge; the interactive demo still has no build step. The [experiment protocol](research/PROTOCOL.md) defines the controls and the limits of these measurements.
+
+```shell
+cd research
+npm install
+npx playwright install chromium
+npm test
+npm run smoke
+node run.mjs --suite all --out runs/p0
+```
+
+Each run saves the source fingerprints, browser and hardware metadata, complete configuration, per-splat combustion snapshots, and sampled CSV measurements. The experimental API adds stable scene IDs, separate flame-to-scene and scene-to-solver switches, complete external-source cutoff for layered VPM, and actual heat/emission/quota counters. The released coupling equations and default quotas are preserved. These synthetic diagnostics establish implementation behavior; they do not measure full-scene frame latency or establish physical accuracy.
+
+The subsequent [P1 comparisons](research/P1_README.md) test opt-in elapsed combustion clocks and cold-particle reuse. The original policies remain the defaults; the P1 protocol measures both their intended effects and their graph-propagation and discarded-state tradeoffs.
+
+The [P2 comparisons](research/P2_README.md) test explicit surface-area weights for graph heating and scene-to-particle feedback. They distinguish coincident-splat splitting from actual spatial refinement, with fixed-domain uniform and adaptive grids. Area mode is an opt-in synthetic research path; it requires authored measures and does not infer a physical surface area from ordinary 3DGS covariance or opacity.
+
 ## Controls
 
 | Control | Effect |
@@ -69,6 +88,7 @@ Load your own Gaussian-splatting reconstruction and light a fire inside it:
 index.html        # project page (self-contained; occlusion comparison slider, embedded demo)
 demo/index.html   # the complete system: single-file WebGL2 prototype (~185 KB, 68 KB gzipped)
 compare.html      # side-by-side grid vs grid-free solver comparison
+research/         # portable coupling diagnostics, protocol, tests and browser runner
 static/           # paper PDF, compressed figures, the three videos, sample .ply scene
 CHANGELOG.md      # development log
 PUBLISH.md        # page-deployment checklist (GitHub Pages)
