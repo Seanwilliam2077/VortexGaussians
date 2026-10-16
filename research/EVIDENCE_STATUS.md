@@ -5,6 +5,13 @@ research experiments have different scopes. This page records the current
 evidence without treating implementation checks as a new method or acceptance
 criterion.
 
+The browser's backdrop and opacity-threshold depth modes are internal ablations.
+Neither reproduces FieryGS: its [fixed original renderer](https://github.com/PKU-VCL-Geometry/FieryGS/blob/f70fbe26d22431c7acd93a745861dd47ba4307d7/gaussian_renderer/renderer_with_fire.py)
+uses PGSR plane depth to clip volume integration. A favorable result against the
+browser ablations therefore does not establish an advantage over FieryGS. The
+older changelog attribution has been explicitly withdrawn; existing measurements
+remain historical observations of their actual implementations.
+
 ## What the recent experiments establish
 
 | Experiment | Finding | Scope and limitation |

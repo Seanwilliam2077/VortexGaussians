@@ -280,7 +280,9 @@
       camera and shading on both sides &mdash; only the composition order differs. The paper also
       compares against a <b>depth-aware</b> baseline that z-tests fire fragments against a scene depth
       buffer. That particular baseline handles opaque occluders but discards partial transmittance
-      through semi-transparent splats; this is not a limitation of all volume or depth-aware renderers.</figcaption></figure>
+      through semi-transparent splats; this is not a limitation of all volume or depth-aware renderers.
+      Both comparisons are internal ablations. Neither implements FieryGS's PGSR plane-depth-clipped
+      volume integration, so these images do not establish an advantage over FieryGS.</figcaption></figure>
   </div>
 </section>
 
