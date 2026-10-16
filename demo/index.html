@@ -1177,6 +1177,9 @@ function stepSpread(dt){
     if(sb.h[i]>0){ sb.h[i]*=hDecay;                       // 热量耗散: 需持续加热才点燃
       if(sb.state[i]===0 && sb.fuel[i]>0 && sb.h[i]>=P.spreadIgnH){ sb.state[i]=1; sb.burning.push(i); } }
   }
+  // Source-space world-up = Rx(pitch)^T Ry(yaw)^T [0,1,0].
+  // Keep zero-pitch arithmetic unchanged for existing scenes.
+  const upCos=Math.cos(P.scenePitch), upSin=Math.sin(P.scenePitch);
   const rSp=P.spreadR/S;
   const process=Math.min(sb.burning.length, P.spreadFrontierCap);
   spreadCounters.frontierDeferred+=sb.burning.length-process;
@@ -1208,7 +1211,9 @@ function stepSpread(dt){
     spreadCounters.frontierProcessed++;
     const pi=sceneGauss[i].p;
     hashQuery(pi,rSp,(j,d)=>{ if(sb.state[j]!==0) return;
-      const up=Math.max(0,(sceneGauss[j].p[1]-pi[1])/Math.max(1e-4,rSp));
+      const pj=sceneGauss[j].p, dy=pj[1]-pi[1];
+      const heightDelta=P.scenePitch===0 ? dy : upCos*dy-upSin*(pj[2]-pi[2]);
+      const up=Math.max(0,heightDelta/Math.max(1e-4,rSp));
       if(areaMode){
         const delta=dt*P.spreadRate*(authoredArea(i)/P.spreadReferenceArea)*(1-d/rSp)*(1+2.2*up);
         const y=delta-graphCorrection[j], next=graphDelta[j]+y;

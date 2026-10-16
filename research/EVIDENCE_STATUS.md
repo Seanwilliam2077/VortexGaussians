@@ -1,6 +1,6 @@
 # Research evidence status
 
-Updated 2026-10-15. The released browser prototype, the archived paper, and the
+Updated 2026-10-16. The released browser prototype, the archived paper, and the
 research experiments have different scopes. This page records the current
 evidence without treating implementation checks as a new method or acceptance
 criterion.
@@ -47,6 +47,20 @@ medians changed from 40.8–42.2 ms to 24.2–24.5 ms on one AMD890M machine.
 This standard three-line optimization is not a new method or a modern-method
 comparison. See [the engineering record](FRONTIER_EARLY_REJECTION.md) for the
 measurement scope, separate evidence archive and old reference source.
+
+## Real-asset coordinate preparation
+
+The Firewoods foreground (34,687 Gaussians) has been loaded without subsampling
+and statically rendered through an isolated source-camera adapter. Full source
+and world instance arrays, sorting and camera projection were independently
+checked. The strict audit is 102/103: one GPU half coefficient differs by one
+minimum subnormal step from NumPy nearest rounding. The failure and all raw
+results are retained; no full-scene quality or FieryGS reproduction is claimed.
+
+That preparation exposed a separate runtime error: the graph's upward preference
+used unrotated source Y. [The coordinate fix](SCENE_WORLD_UP.md) now respects
+scene pitch and passes four world-coordinate regression cases. Real-asset
+dynamic behavior and strong-baseline advantage remain separate open questions.
 
 ## Reproducibility and provenance
 
