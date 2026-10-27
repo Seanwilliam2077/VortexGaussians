@@ -1,0 +1,70 @@
+{
+  "date": "2026-10-27T06:10:26.379Z",
+  "scope": "UI integration, not artistic or physical validation",
+  "checks": [
+    {
+      "name": "initially unloaded and controls disabled",
+      "passed": true
+    },
+    {
+      "name": "390px viewport no horizontal overflow",
+      "passed": true
+    },
+    {
+      "name": "synthetic scene loaded and initially paused",
+      "passed": true,
+      "points": 45808
+    },
+    {
+      "name": "visible ignition affects scene without advancing time",
+      "passed": true,
+      "ignited": 2483
+    },
+    {
+      "name": "finite 60 step advance stops at one simulated second",
+      "passed": true
+    },
+    {
+      "name": "explicit pause stops time",
+      "passed": true,
+      "stoppedTime": "模拟时间 1.45 s"
+    },
+    {
+      "name": "stage switch stops time",
+      "passed": true
+    },
+    {
+      "name": "reinitialization clears visible burn counters and preserves note",
+      "passed": true
+    },
+    {
+      "name": "angle control displays 60 degrees",
+      "passed": true
+    },
+    {
+      "name": "incomplete audience record rejected",
+      "passed": true
+    },
+    {
+      "name": "JSON export includes scene provenance, ignition and correct camera units",
+      "passed": true
+    },
+    {
+      "name": "reload preserves journal without loading simulation",
+      "passed": true
+    },
+    {
+      "name": "local PLY input loads and resets angle",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "sourceHashes": {
+    "tracks/art/index.html": "c11d4131feb6fa61f908ff1e3d057f670f8362cfee951b316514e9256f8e79eb",
+    "tracks/art/art.js": "8d404b2304d2ed0545da6eeecacb91fbb2020cc038da83168b9bbb7fa0987d8a",
+    "tracks/art/art.css": "3d2f442e2ca6d0fc1caab09d38fa1ddc7cb320fc6a2dbac6fc868a1ec3fe9bff",
+    "demo/index.html": "e9d808c434bdd8ce91482f60502f03f5d08c56b71c082eb704c53275ff9f57d0"
+  },
+  "browser": "149.0.4022.52",
+  "passed": true
+}

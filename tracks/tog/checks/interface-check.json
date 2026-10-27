@@ -1,0 +1,78 @@
+{
+  "status": "passed",
+  "scope": "CPU schema/plan/historical saved-image arithmetic only; no rollout, GPU, gradient, optimization or new qualification",
+  "checks": [
+    {
+      "name": "draft_valid_without_target",
+      "passed": true
+    },
+    {
+      "name": "draft_cannot_score_without_target",
+      "passed": true
+    },
+    {
+      "name": "out_of_image_roi",
+      "passed": true
+    },
+    {
+      "name": "overlapping_protection",
+      "passed": true
+    },
+    {
+      "name": "duplicate_time",
+      "passed": true
+    },
+    {
+      "name": "out_of_time",
+      "passed": true
+    },
+    {
+      "name": "wrong_control_shape",
+      "passed": true
+    },
+    {
+      "name": "invalid_quality_gate",
+      "passed": true
+    },
+    {
+      "name": "undeclared_target_origin",
+      "passed": true
+    },
+    {
+      "name": "machine_path",
+      "passed": true
+    },
+    {
+      "name": "holdout_used_for_tuning",
+      "passed": true
+    },
+    {
+      "name": "second_rollout_forbidden",
+      "passed": true
+    },
+    {
+      "name": "default_plan_no_numpy_no_torch",
+      "passed": true
+    },
+    {
+      "name": "initial_state_AST_unchanged",
+      "passed": true
+    },
+    {
+      "name": "r22_negative_unchanged",
+      "passed": true
+    },
+    {
+      "name": "r22_pixel_pass_does_not_override_semantic_failure",
+      "passed": true
+    },
+    {
+      "name": "torch_never_imported",
+      "passed": true
+    }
+  ],
+  "historicalMaximumUpperShift": 1.4065755548435703,
+  "historicalSemanticFrames": 0,
+  "historicalTaskQualified": false,
+  "coreSHA256": "ac750b70a86743ac858f1c53cf620ce29c63c462456115af4d0d8c93fa20bd9e"
+}

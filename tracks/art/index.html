@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>可燃的数字记忆 · 艺术排练</title>
+  <link rel="stylesheet" href="art.css">
+  <script src="art.js" defer></script>
+</head>
+<body>
+  <header class="masthead">
+    <a class="wordmark" href="../../index.html">VORTEX GAUSSIANS <span>/ ART STUDY 01</span></a>
+    <a class="quiet-link" href="../../demo/index.html" target="_blank" rel="noopener">另开原始 demo ↗</a>
+  </header>
+  <main>
+    <section class="intro" aria-labelledby="title">
+      <p class="eyebrow">一份可以改变的创作假设</p>
+      <h1 id="title">可燃的数字记忆<span>（暂定）</span></h1>
+      <p class="lead">当一个被保存的空间可以被点燃，<br class="desktop-break">“重新开始”会抹去什么，又会留下什么？</p>
+      <p class="scope">这里是作者排练工具，不是完成作品或观众研究。烧损属于视觉模型；重置是重新初始化，不是逆转真实燃烧。</p>
+    </section>
+
+    <nav class="stages" aria-label="排练的三个阶段">
+      <button type="button" class="stage active" data-stage="space" aria-current="step"><span class="number">01</span><span><strong>保存的空间</strong><small>先看见，再命名</small></span></button>
+      <button type="button" class="stage" data-stage="intervene"><span class="number">02</span><span><strong>介入燃烧</strong><small>选择一处，观察改变</small></span></button>
+      <button type="button" class="stage" data-stage="revisit"><span class="number">03</span><span><strong>重置重看</strong><small>重新初始化，保留记录</small></span></button>
+    </nav>
+
+    <div class="workbench">
+      <section class="viewer-column" aria-label="排练画面与控制">
+        <div class="viewer" id="viewer">
+          <iframe id="demo-frame" src="about:blank" title="原始 VortexGaussians 的受控排练画面" allow="fullscreen"></iframe>
+          <div class="empty-state" id="empty-state">
+            <div class="orbit-mark" aria-hidden="true"><span></span></div>
+            <p class="eyebrow">从一个空间开始</p>
+            <h2>先保存观看的理由。</h2>
+            <p>示例为合成营火，不是实拍记忆。<br>你也可以选择有权使用的本地 PLY。</p>
+            <button type="button" class="primary" id="start-example">载入合成示例</button>
+          </div>
+          <div class="viewer-caption"><span id="scene-label">尚未载入场景</span><span id="time-label">模拟时间 0.00 s</span></div>
+        </div>
+        <div class="status-line"><span class="dot" id="connection-dot"></span><span id="status" role="status" aria-live="polite">按需启动；当前没有运行仿真。</span></div>
+
+        <div class="control-card">
+          <div class="phase-panel" id="panel-space">
+            <p class="eyebrow">01 / 观看</p>
+            <h2>你想保留的，究竟是哪一部分？</h2>
+            <p>先暂停观看。给这个空间一个情境：某处实景、虚构地点，或仅是一份测试材料。进入这一阶段不会自动抹去本次痕迹。</p>
+            <div class="asset-row">
+              <button type="button" id="load-example">载入 / 重载合成示例</button>
+              <label class="file-button" for="local-ply">选择本地 PLY<input id="local-ply" type="file" accept=".ply" aria-describedby="asset-help"></label>
+            </div>
+            <p class="fine" id="asset-help">文件留在当前浏览器，不上传。每文件最多 64 MiB；兼容性由原 demo 的 PLY 读取器决定，最多保留 800,000 个点。换场景会结束本次排练状态，笔记保留。</p>
+          </div>
+          <div class="phase-panel" id="panel-intervene" hidden>
+            <p class="eyebrow">02 / 介入</p>
+            <h2>把改变放在一个具体的位置。</h2>
+            <p>下方位置使用 demo 的归一化世界坐标，不是实景米制。选择点火后再推进；本入口关闭默认外部火源。</p>
+            <div class="coordinate-grid">
+              <label>X<input id="ignite-x" type="number" min="-3" max="3" step="0.05" value="0" data-sim-control></label>
+              <label>Y<input id="ignite-y" type="number" min="-2" max="4" step="0.05" value="0.65" data-sim-control></label>
+              <label>Z<input id="ignite-z" type="number" min="-3" max="3" step="0.05" value="0" data-sim-control></label>
+              <label>半径<input id="ignite-radius" type="number" min="0.02" max="1" step="0.02" value="0.30" data-sim-control></label>
+            </div>
+            <div class="button-row">
+              <button type="button" class="primary" id="ignite" data-sim-control>在这里点火</button>
+              <button type="button" id="advance" data-sim-control>推进 1 秒</button>
+              <button type="button" id="play" data-sim-control>播放 10 秒</button>
+              <button type="button" id="pause" disabled>暂停</button>
+            </div>
+            <p class="fine">推进采用固定 1/60 s 步长；播放不是实时速度承诺。切换阶段、隐藏页面或达到选定时长就停止推进，不自动继续。</p>
+          </div>
+          <div class="phase-panel" id="panel-revisit" hidden>
+            <p class="eyebrow">03 / 重看</p>
+            <h2>痕迹可以清空，观看不能假装没有发生。</h2>
+            <p>先写下改变，再决定是否重新开始。重新初始化会清空本次火焰、热量和场景烧损；保留载入的几何及排练笔记。它不会倒放过程，也不恢复任何先前完整物理状态。</p>
+            <button type="button" id="reset" data-sim-control>重新初始化同一场景</button>
+            <p class="fine">固定种子只用于此入口重复设置。没有跨浏览器、跨平台或完整历史逐位恢复的保证。</p>
+          </div>
+          <div class="view-settings">
+            <label for="camera-yaw">观看角度 <output id="yaw-value">0°</output></label>
+            <input id="camera-yaw" type="range" min="-180" max="180" step="5" value="0" data-sim-control>
+            <span class="fine">仅暂停时可调。原模型使用随视角改变的分层路径，换视角不是物理不变性测试。</span>
+          </div>
+          <dl class="readout" aria-label="当前模型状态">
+            <div><dt>场景点</dt><dd id="scene-count">—</dd></div>
+            <div><dt>燃烧中</dt><dd id="burning-count">—</dd></div>
+            <div><dt>炭化</dt><dd id="char-count">—</dd></div>
+            <div><dt>本次排练</dt><dd id="run-count">—</dd></div>
+          </dl>
+          <p class="fine">这些是原 demo 的离散状态计数，不是热量、真实损毁程度或观众反应。</p>
+        </div>
+      </section>
+
+      <aside class="journal" aria-labelledby="journal-title">
+        <div class="journal-heading"><p class="eyebrow">创作记录 / 留在本机</p><h2 id="journal-title">为什么这样做？</h2></div>
+        <form id="note-form">
+          <label>记录性质<select id="note-kind"><option value="author-draft">作者草稿 / 尚待验证的解释</option><option value="author-observation">作者本次观察</option><option value="audience-observation">真实观众记录 / 需填写观察情境</option></select></label>
+          <label>空间与观看情境<textarea id="context" rows="3" maxlength="2500" placeholder="这是什么空间？谁在何时、何种条件下观看？"></textarea></label>
+          <label>本次设计选择<textarea id="choice" rows="3" maxlength="2500" placeholder="为什么在这里点火、停留或重置？"></textarea></label>
+          <label>看到的变化与未解决的问题<textarea id="observation" rows="4" maxlength="3500" placeholder="分开写下实际观察与自己的解释。没有观众时，不填观众结论。"></textarea></label>
+          <p class="fine" id="audience-help" hidden>只记录真实发生的观看。情境中注明时间、方式及匿名代号；未经同意不要填写姓名、联系方式或可识别引语。本工具不验证观众证据。</p>
+          <button class="primary full" type="submit">保存这条记录</button>
+          <p class="save-state" id="save-status" role="status" aria-live="polite">草稿在可用时自动保存在本浏览器。</p>
+        </form>
+        <div class="journal-actions"><span id="note-count">0 条记录</span><button type="button" id="export">导出 JSON</button></div>
+        <p class="fine">JSON 含笔记、场景指纹和操作日志，不含 PLY、图像或可续算状态。清除网站数据会丢失本地记录，请定期导出。</p>
+        <ol id="notes" class="notes"><li class="no-notes">尚无记录。你不必先点火才能写下理由。</li></ol>
+      </aside>
+    </div>
+    <footer>
+      <p><a href="ART_BRIEF.md">创作命题与未完成工作</a> · <a href="README.md">使用、数据与检查说明</a> · <a href="../../research/EVIDENCE_STATUS.md">独立的技术证据边界</a></p>
+      <p>艺术论点、作品证据与 TOG 技术主张分别建立。本页不声称艺术研究已完成或已有观众验证。</p>
+    </footer>
+  </main>
+</body>
+</html>

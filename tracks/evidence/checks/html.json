@@ -1,0 +1,75 @@
+{
+  "scope": "Headless page shell, notes and export only. GPU disabled; no demo, solver, PLY or WebGL execution.",
+  "checks": [
+    {
+      "name": "initial_iframe_blank",
+      "passed": true
+    },
+    {
+      "name": "simulation_controls_disabled",
+      "passed": true
+    },
+    {
+      "name": "note_saved_as_text",
+      "passed": true
+    },
+    {
+      "name": "note_survives_reload",
+      "passed": true
+    },
+    {
+      "name": "stage_changes_without_simulation",
+      "passed": true
+    },
+    {
+      "name": "incomplete_audience_note_rejected",
+      "passed": true
+    },
+    {
+      "name": "export_has_actual_note",
+      "passed": true
+    },
+    {
+      "name": "export_is_not_checkpoint",
+      "passed": true
+    },
+    {
+      "name": "no_demo_or_asset_request",
+      "passed": true
+    },
+    {
+      "name": "no_page_errors_or_failed_assets",
+      "passed": true
+    }
+  ],
+  "sourcesBefore": {
+    "tracks/art/index.html": "c11d4131feb6fa61f908ff1e3d057f670f8362cfee951b316514e9256f8e79eb",
+    "tracks/art/art.js": "8d404b2304d2ed0545da6eeecacb91fbb2020cc038da83168b9bbb7fa0987d8a",
+    "tracks/art/art.css": "3d2f442e2ca6d0fc1caab09d38fa1ddc7cb320fc6a2dbac6fc868a1ec3fe9bff"
+  },
+  "browserVersion": "149.0.4022.52",
+  "launchFlags": [
+    "--disable-gpu",
+    "--disable-software-rasterizer"
+  ],
+  "export": {
+    "schema": "vortex-gaussians-art-journal",
+    "notes": 1,
+    "currentSnapshot": null,
+    "hasLimitations": true
+  },
+  "requestedPaths": [
+    "/tracks/art/",
+    "/tracks/art/art.css",
+    "/tracks/art/art.js"
+  ],
+  "pageErrors": [],
+  "failedResponses": [],
+  "passed": true,
+  "sourcesAfter": {
+    "tracks/art/index.html": "c11d4131feb6fa61f908ff1e3d057f670f8362cfee951b316514e9256f8e79eb",
+    "tracks/art/art.js": "8d404b2304d2ed0545da6eeecacb91fbb2020cc038da83168b9bbb7fa0987d8a",
+    "tracks/art/art.css": "3d2f442e2ca6d0fc1caab09d38fa1ddc7cb320fc6a2dbac6fc868a1ec3fe9bff"
+  },
+  "sourcesUnchanged": true
+}

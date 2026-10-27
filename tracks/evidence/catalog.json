@@ -1,0 +1,292 @@
+{
+  "schemaVersion": 1,
+  "artifactKind": "historical_evidence_reading_catalog",
+  "scope": "R19-R22 research record, separate from current TOG CLI and artistic browser functionality",
+  "archivePathConvention": "archivePath is an identifier relative to the historical experiment workspace, not a link or path in this repository clone. No absolute host paths are needed to read this catalog.",
+  "archiveAvailability": "The complete sealed archives, original reports, manifests, source, failed runs and large arrays are not distributed in this directory. Hashes identify them but do not retrieve them. No public archive download is asserted.",
+  "migrationVerification": "Report bytes, selected original summaries, audit JSONs and every copied PNG were checked against each sealed manifest. The entire historical multi-GB archive was not re-audited during repository integration.",
+  "claimBoundary": "No TOG contribution, physical truth, artistic usability, interactive end-to-end solver, or candidate speedup is established by these records. Internal audit check counts are not research contributions.",
+  "rounds": [
+    {
+      "round": 19,
+      "sealedDate": "2026-10-22",
+      "status": "Hypothesis exploration only",
+      "supportedObservation": "Protected-shot response reuse chosen for a bounded test; no simulation, training, or performance experiment.",
+      "counterevidenceOrLimit": "No established novelty or system benefit.",
+      "report": {
+        "archivePath": "outputs/VortexGaussians-TOG-round19-hypotheses.md",
+        "location": "historical_external_archive",
+        "includedInClone": false,
+        "bytes": 7537,
+        "sha256": "68c7a0b908953c8dd4584c4693fe0280a5bcb759e247239cb70c46b51a8c8ace",
+        "verifiedAgainstSealedManifest": true
+      },
+      "manifest": {
+        "archivePath": "outputs/research-round19/evidence-manifest.json",
+        "location": "historical_external_archive",
+        "includedInClone": false,
+        "bytes": 7815,
+        "sha256": "e70f3f828b4eccf9b9f4146092f87fc59b69ca5ff227b267d45ba1fd95c9bea6",
+        "sealedFileCount": 34
+      },
+      "historicalExperimentRoot": {
+        "location": "historical_external_archive",
+        "archivePath": "work/research-round19",
+        "includedInClone": false
+      },
+      "repoAssets": []
+    },
+    {
+      "round": 20,
+      "sealedDate": "2026-10-26",
+      "status": "Local structure supported; benefit untested",
+      "supportedObservation": "Fixed rank-16 derivative approximation and fixed witness right-subspace screens passed.",
+      "counterevidenceOrLimit": "Two original FD directions failed; the smaller-step supplement is separate. Only two tasks qualified; no optimization benefit was measured.",
+      "report": {
+        "archivePath": "outputs/VortexGaussians-TOG-round20-core-hypothesis.md",
+        "location": "historical_external_archive",
+        "includedInClone": false,
+        "bytes": 7189,
+        "sha256": "338442c5089a51d4e375c2960a3c4eab6e28c73ae67f9e49b66c8584c5f98f4d",
+        "verifiedAgainstSealedManifest": true
+      },
+      "manifest": {
+        "archivePath": "outputs/research-round20/evidence-manifest.json",
+        "location": "historical_external_archive",
+        "includedInClone": false,
+        "bytes": 67095,
+        "sha256": "4c96f79fa5b5798964e4c2b1c64d12daa9f169f233a2b81696ecc348bc7339e9",
+        "sealedFileCount": 334
+      },
+      "historicalExperimentRoot": {
+        "location": "historical_external_archive",
+        "archivePath": "work/research-round20",
+        "includedInClone": false
+      },
+      "repoAssets": [
+        {
+          "path": "round20/summary.json",
+          "kind": "derived_summary",
+          "bytes": 9425,
+          "sha256": "1feb6c02cbd682e6d9d36395d8b64a7e6240d208d73aa33b40b492422d35cda5"
+        },
+        {
+          "path": "round20/scene-and-witnesses.png",
+          "kind": "byte_exact_historical_plot",
+          "bytes": 94213,
+          "sha256": "f06757ff1e2d2e9fc43c6f9207e3176469eb16daaba57cf98c9c27173c7380b4",
+          "origin": {
+            "archivePath": "work/research-round20/results-v1/scene-and-witnesses.png",
+            "location": "historical_external_archive",
+            "includedInClone": false,
+            "bytes": 94213,
+            "sha256": "f06757ff1e2d2e9fc43c6f9207e3176469eb16daaba57cf98c9c27173c7380b4",
+            "verifiedAgainstSealedManifest": true
+          }
+        },
+        {
+          "path": "round20/task-qualification.png",
+          "kind": "byte_exact_historical_plot",
+          "bytes": 146163,
+          "sha256": "9272192ed0c15e39cd734f82edccd2f48faefef4b6840113f4b0c57d727fb036",
+          "origin": {
+            "archivePath": "work/research-round20/results-v1/task-qualification.png",
+            "location": "historical_external_archive",
+            "includedInClone": false,
+            "bytes": 146163,
+            "sha256": "9272192ed0c15e39cd734f82edccd2f48faefef4b6840113f4b0c57d727fb036",
+            "verifiedAgainstSealedManifest": true
+          }
+        },
+        {
+          "path": "round20/structure-diagnostics.png",
+          "kind": "byte_exact_historical_plot",
+          "bytes": 152669,
+          "sha256": "8fec159920d5b090453cf291311f527d6c03d90c3205d027ba49d01d4f7878fa",
+          "origin": {
+            "archivePath": "work/research-round20/structure-v3/structure-diagnostics.png",
+            "location": "historical_external_archive",
+            "includedInClone": false,
+            "bytes": 152669,
+            "sha256": "8fec159920d5b090453cf291311f527d6c03d90c3205d027ba49d01d4f7878fa",
+            "verifiedAgainstSealedManifest": true
+          }
+        }
+      ],
+      "independentAuditRecords": [
+        {
+          "archivePath": "work/research-round20/qualification-audit-01.json",
+          "location": "historical_external_archive",
+          "includedInClone": false,
+          "bytes": 67431,
+          "sha256": "554b42c46cd769ee8a1f184aa89993907ef31ada7a71b19f817865557e0acc3f",
+          "verifiedAgainstSealedManifest": true
+        },
+        {
+          "archivePath": "work/research-round20/refinement-audit-01.json",
+          "location": "historical_external_archive",
+          "includedInClone": false,
+          "bytes": 7830,
+          "sha256": "8ea36ed8d36ddc044798ee0bd2703593030695d1a2604d4c628d1950b1201e48",
+          "verifiedAgainstSealedManifest": true
+        },
+        {
+          "archivePath": "work/research-round20/structure-audit-01.json",
+          "location": "historical_external_archive",
+          "includedInClone": false,
+          "bytes": 89560,
+          "sha256": "1c8f49d3d423874a5ebb9c192ee72dc5f22a74b758650fa3539f1ee8858ca4ae",
+          "verifiedAgainstSealedManifest": true
+        }
+      ]
+    },
+    {
+      "round": 21,
+      "sealedDate": "2026-10-26",
+      "status": "Do not build the historical cache for these short tasks",
+      "supportedObservation": "Ordinary full-space optimization passed all six task runs; median two-task session 17.128 s.",
+      "counterevidenceOrLimit": "Protection penalties were inactive in all logged closures; a ~53.764 s historical cache build cannot pay back in that short session even if subsequent work were free.",
+      "report": {
+        "archivePath": "outputs/VortexGaussians-TOG-round21-baseline-cost.md",
+        "location": "historical_external_archive",
+        "includedInClone": false,
+        "bytes": 7116,
+        "sha256": "34ac5e71541c34f077374d9f25d7018fdc4038734b5291cbaef89a9e1a61b581",
+        "verifiedAgainstSealedManifest": true
+      },
+      "manifest": {
+        "archivePath": "outputs/research-round21/evidence-manifest.json",
+        "location": "historical_external_archive",
+        "includedInClone": false,
+        "bytes": 7683,
+        "sha256": "5efe6bdbb338a5681e56a19273b18be1e4014b59ff632f417f3e99117b4af912",
+        "sealedFileCount": 35
+      },
+      "historicalExperimentRoot": {
+        "location": "historical_external_archive",
+        "archivePath": "work/research-round21",
+        "includedInClone": false
+      },
+      "repoAssets": [
+        {
+          "path": "round21/summary.json",
+          "kind": "derived_summary",
+          "bytes": 94407,
+          "sha256": "aadc66274d188aab6e49ae31119e33271e541e143f1e20b9577e26569b272528"
+        },
+        {
+          "path": "round21/cost-and-quality.png",
+          "kind": "byte_exact_historical_plot",
+          "bytes": 87540,
+          "sha256": "353c0bbe68e5dfaeb733b77111908b5b6a218b5ec4fcfd221506914df6ba8468",
+          "origin": {
+            "archivePath": "work/research-round21/baseline-v1/cost-and-quality.png",
+            "location": "historical_external_archive",
+            "includedInClone": false,
+            "bytes": 87540,
+            "sha256": "353c0bbe68e5dfaeb733b77111908b5b6a218b5ec4fcfd221506914df6ba8468",
+            "verifiedAgainstSealedManifest": true
+          }
+        },
+        {
+          "path": "round21/editing-results.png",
+          "kind": "byte_exact_historical_plot",
+          "bytes": 82198,
+          "sha256": "f8918cb42908f85fe0d52329f9cdeb1cd864ac132938a0db816e25bba1a71ce2",
+          "origin": {
+            "archivePath": "work/research-round21/baseline-v1/editing-results.png",
+            "location": "historical_external_archive",
+            "includedInClone": false,
+            "bytes": 82198,
+            "sha256": "f8918cb42908f85fe0d52329f9cdeb1cd864ac132938a0db816e25bba1a71ce2",
+            "verifiedAgainstSealedManifest": true
+          }
+        }
+      ],
+      "independentAuditRecords": [
+        {
+          "archivePath": "work/research-round21/baseline-audit-01.json",
+          "location": "historical_external_archive",
+          "includedInClone": false,
+          "bytes": 12371,
+          "sha256": "49022ac9407eea823925652d1a5b0896f67720a24fb5718d8d0db254498a11ff",
+          "verifiedAgainstSealedManifest": true
+        }
+      ]
+    },
+    {
+      "round": 22,
+      "sealedDate": "2026-10-26",
+      "status": "Fixed task construction stopped before optimization",
+      "supportedObservation": "The fixed curl witness changed the left plume while satisfying right-plume protection.",
+      "counterevidenceOrLimit": "Upper-region rightward shift max 1.4066 output pixels missed the fixed 2-pixel gate; semantic frames 0/25. No optimizer comparison ran.",
+      "report": {
+        "archivePath": "outputs/VortexGaussians-TOG-round22-task-screen.md",
+        "location": "historical_external_archive",
+        "includedInClone": false,
+        "bytes": 8230,
+        "sha256": "e3fa255dbbdd46a827ed9df4473c2e80b77eca613de517261174073c531eeb3f",
+        "verifiedAgainstSealedManifest": true
+      },
+      "manifest": {
+        "archivePath": "outputs/research-round22/evidence-manifest.json",
+        "location": "historical_external_archive",
+        "includedInClone": false,
+        "bytes": 5504,
+        "sha256": "4e9f998cf4cda1ef2b7616878c824ccfb46b74fca4511d71a5b51ec3b73f98b4",
+        "sealedFileCount": 22
+      },
+      "historicalExperimentRoot": {
+        "location": "historical_external_archive",
+        "archivePath": "work/research-round22",
+        "includedInClone": false
+      },
+      "repoAssets": [
+        {
+          "path": "round22/summary.json",
+          "kind": "derived_summary",
+          "bytes": 26160,
+          "sha256": "caab482b8d8b9cb35aa0c0980f9f75427ca047029dc19b06ca5483926ba82406"
+        },
+        {
+          "path": "round22/witness-frames.png",
+          "kind": "byte_exact_historical_plot",
+          "bytes": 226291,
+          "sha256": "ab1e7f4420eb42d353a5116748385d47a7fde6eb07a42425a73df6e63189c1f1",
+          "origin": {
+            "archivePath": "work/research-round22/qualification-v1/witness-frames.png",
+            "location": "historical_external_archive",
+            "includedInClone": false,
+            "bytes": 226291,
+            "sha256": "ab1e7f4420eb42d353a5116748385d47a7fde6eb07a42425a73df6e63189c1f1",
+            "verifiedAgainstSealedManifest": true
+          }
+        },
+        {
+          "path": "round22/qualification-metrics.png",
+          "kind": "byte_exact_historical_plot",
+          "bytes": 232683,
+          "sha256": "ba765a42141ee2134e51c0d27a0ba231db9d9fd4d688a95b8d622c68017a543e",
+          "origin": {
+            "archivePath": "work/research-round22/qualification-v1/qualification-metrics.png",
+            "location": "historical_external_archive",
+            "includedInClone": false,
+            "bytes": 232683,
+            "sha256": "ba765a42141ee2134e51c0d27a0ba231db9d9fd4d688a95b8d622c68017a543e",
+            "verifiedAgainstSealedManifest": true
+          }
+        }
+      ],
+      "independentAuditRecords": [
+        {
+          "archivePath": "work/research-round22/task-audit-01.json",
+          "location": "historical_external_archive",
+          "includedInClone": false,
+          "bytes": 24313,
+          "sha256": "73a8bb39c4c3f4bbaef1af25e24c9ab1089f1ad9206a743a2ac745bf62b91b42",
+          "verifiedAgainstSealedManifest": true
+        }
+      ]
+    }
+  ]
+}

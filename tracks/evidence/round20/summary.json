@@ -1,0 +1,290 @@
+{
+  "artifactKind": "derived_reading_summary_not_original_run_output",
+  "verification": "Selected values extracted from SHA-verified sealed summaries. This migration does not rerun simulation, differentiation, optimization, rendering, or timing.",
+  "modelScope": "32^3 periodic MAC passive smoke; 40 steps; Float64; 6144 force controls; one fixed 20-degree orthographic view; 32^2 optical rays upsampled to 64^2 alpha. No combustion, buoyancy, Gaussian rendering, or real captured-scene editing.",
+  "round": 20,
+  "provenance": [
+    {
+      "archivePath": "work/research-round20/results-v1/summary.json",
+      "location": "historical_external_archive",
+      "includedInClone": false,
+      "bytes": 65741,
+      "sha256": "28ea2f5f2a28a00622a1304bd2a0a4fd28975a568502920d2218ac19b2a002dc",
+      "verifiedAgainstSealedManifest": true
+    },
+    {
+      "archivePath": "work/research-round20/derivative-refinement-v1/summary.json",
+      "location": "historical_external_archive",
+      "includedInClone": false,
+      "bytes": 1603,
+      "sha256": "f33f244e48a72eeee7b53fe3446cfab1888970c417e7c94277b9dbf821c33673",
+      "verifiedAgainstSealedManifest": true
+    },
+    {
+      "archivePath": "work/research-round20/structure-v3/summary.json",
+      "location": "historical_external_archive",
+      "includedInClone": false,
+      "bytes": 335635,
+      "sha256": "5963f1e485cdaa3a90a82325587f177410567a718263744f2913e3c47e6d0c85",
+      "verifiedAgainstSealedManifest": true
+    }
+  ],
+  "numericQualification": {
+    "originalDerivativeQualified": false,
+    "originalJointQualified": false,
+    "originalDirections": [
+      {
+        "direction": 0,
+        "jvp_seconds": 1.2905370999942534,
+        "jvp_norm": 3.4471411476473723,
+        "fd_relative": [
+          0.001284133552298424,
+          0.0010939763190512405
+        ],
+        "dual_scaled": 2.3413938055759007e-18,
+        "dual_lhs": 0.044549551933895745,
+        "dual_rhs": 0.04454955193389573,
+        "pass": false
+      },
+      {
+        "direction": 1,
+        "jvp_seconds": 1.2227527999784797,
+        "jvp_norm": 3.1404061013998623,
+        "fd_relative": [
+          0.0008050700002376511,
+          0.0006512208349461544
+        ],
+        "dual_scaled": 6.172939477683613e-19,
+        "dual_lhs": 0.004518413793891899,
+        "dual_rhs": 0.004518413793891896,
+        "pass": true
+      },
+      {
+        "direction": 2,
+        "jvp_seconds": 1.2190422000130638,
+        "jvp_norm": 2.7869679244003795,
+        "fd_relative": [
+          0.0011329395612965825,
+          0.0009400321903426823
+        ],
+        "dual_scaled": 6.587172036892985e-19,
+        "dual_lhs": -0.017696601349016978,
+        "dual_rhs": -0.017696601349016974,
+        "pass": false
+      },
+      {
+        "direction": 3,
+        "jvp_seconds": 1.2230045999749564,
+        "jvp_norm": 4.186905461491785,
+        "fd_relative": [
+          0.0005978945780705863,
+          0.000607659630811425
+        ],
+        "dual_scaled": 1.0407957222452478e-18,
+        "dual_lhs": -0.05952061994254591,
+        "dual_rhs": -0.05952061994254592,
+        "pass": true
+      }
+    ],
+    "supplementalRefinement": {
+      "original_derivative_qualified": false,
+      "steps": [
+        0.0001,
+        1e-05,
+        1e-06
+      ],
+      "required_step_indices": [
+        1,
+        2
+      ],
+      "relative_gate": 0.0001,
+      "directions": [
+        {
+          "id": 0,
+          "relative_errors": [
+            0.0005093562308672716,
+            9.519779620268174e-07,
+            1.387115895992776e-07
+          ],
+          "pass": true
+        },
+        {
+          "id": 1,
+          "relative_errors": [
+            0.00022535715611844427,
+            7.309213416686448e-07,
+            4.3621636843551974e-08
+          ],
+          "pass": true
+        },
+        {
+          "id": 2,
+          "relative_errors": [
+            0.00031510589874563237,
+            1.6111080560413936e-06,
+            2.740704932869527e-07
+          ],
+          "pass": true
+        },
+        {
+          "id": 3,
+          "relative_errors": [
+            0.00027069831761657333,
+            4.391964635581545e-06,
+            2.645324311728799e-07
+          ],
+          "pass": true
+        }
+      ],
+      "passed": true
+    },
+    "originalFailureRetained": true
+  },
+  "structure": {
+    "parameterCount": 6144,
+    "outputCount": 18900,
+    "approvedGate": {
+      "valid": true,
+      "medianRelativeError": 0.21634257332473644,
+      "maxRelativeError": 0.3647658394085674,
+      "medianGate": 0.25,
+      "maxGate": 0.5,
+      "passed": true
+    },
+    "fixedWitnessOldModelStable": true,
+    "fixedWitnessRightSubspaceStable": true,
+    "jointEditingStructureSupported": false,
+    "actualOptimizationOrReuseBenefitMeasured": false,
+    "decision": "STRUCTURE_DIAGNOSTIC_ONLY_NO_JOINT_REUSE_CLAIM",
+    "counts": {
+      "vjpClosureForward": 1,
+      "vjpApplications": 32,
+      "jvpApplications": 176
+    }
+  },
+  "build": {
+    "computeSeconds": 53.28138150036102,
+    "wallSecondsIncludingRawIO": 53.764201000041794,
+    "costScope": "Wall time is the complete build including transfers, random probes, stacking and evidence IO. ComputeSeconds is the subtotal of synchronized AD/QR/SVD/compose calls, not a complete IO-free build benchmark.",
+    "svdTailEnergyFractionDiagnostic": 0.02528449200498712,
+    "persistentRank16PayloadBytes": 3205632
+  },
+  "witnesses": [
+    {
+      "id": 1,
+      "jointQualified": true,
+      "fullOldModelGate": {
+        "valid": true,
+        "medianRelativeError": 0.21556281411029454,
+        "maxRelativeError": 0.36666882317353156,
+        "medianGate": 0.25,
+        "maxGate": 0.5,
+        "passed": true
+      },
+      "rightSubspaceLeakageGate": {
+        "valid": true,
+        "medianRelativeError": 0.21680566789568595,
+        "maxRelativeError": 0.36699696297031714,
+        "medianGate": 0.25,
+        "maxGate": 0.5,
+        "passed": true
+      },
+      "basisResponseChange": {
+        "trueNorm": 3.708563088172767,
+        "errorNorm": 0.09714395992349195,
+        "relativeError": 0.02619450110834043,
+        "responseNondegenerate": true
+      }
+    },
+    {
+      "id": 2,
+      "jointQualified": true,
+      "fullOldModelGate": {
+        "valid": true,
+        "medianRelativeError": 0.22040470006864987,
+        "maxRelativeError": 0.3642396769335361,
+        "medianGate": 0.25,
+        "maxGate": 0.5,
+        "passed": true
+      },
+      "rightSubspaceLeakageGate": {
+        "valid": true,
+        "medianRelativeError": 0.2165770152323357,
+        "maxRelativeError": 0.3621165059558021,
+        "medianGate": 0.25,
+        "maxGate": 0.5,
+        "passed": true
+      },
+      "basisResponseChange": {
+        "trueNorm": 3.705226435361416,
+        "errorNorm": 0.09727143906505199,
+        "relativeError": 0.026252495161085593,
+        "responseNondegenerate": true
+      }
+    },
+    {
+      "id": 3,
+      "jointQualified": false,
+      "fullOldModelGate": {
+        "valid": true,
+        "medianRelativeError": 0.2157344246761576,
+        "maxRelativeError": 0.3656420259125899,
+        "medianGate": 0.25,
+        "maxGate": 0.5,
+        "passed": true
+      },
+      "rightSubspaceLeakageGate": {
+        "valid": true,
+        "medianRelativeError": 0.21635188895725854,
+        "maxRelativeError": 0.3653891357092226,
+        "medianGate": 0.25,
+        "maxGate": 0.5,
+        "passed": true
+      },
+      "basisResponseChange": {
+        "trueNorm": 3.708266163322658,
+        "errorNorm": 0.03876587608619339,
+        "relativeError": 0.010453908748410503,
+        "responseNondegenerate": true
+      }
+    },
+    {
+      "id": 4,
+      "jointQualified": false,
+      "fullOldModelGate": {
+        "valid": true,
+        "medianRelativeError": 0.21553404862306735,
+        "maxRelativeError": 0.36499916799543103,
+        "medianGate": 0.25,
+        "maxGate": 0.5,
+        "passed": true
+      },
+      "rightSubspaceLeakageGate": {
+        "valid": true,
+        "medianRelativeError": 0.2160240697692754,
+        "maxRelativeError": 0.36586933746483813,
+        "medianGate": 0.25,
+        "maxGate": 0.5,
+        "passed": true
+      },
+      "basisResponseChange": {
+        "trueNorm": 3.7082384519615603,
+        "errorNorm": 0.05841417593940119,
+        "relativeError": 0.015752540376280717,
+        "responseNondegenerate": true
+      }
+    }
+  ],
+  "environment": {
+    "type": "cuda",
+    "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+    "totalMemoryBytes": 8546484224
+  },
+  "limitations": [
+    "Only E1/E2 met the nontrivial task qualification; E3/E4 were perturbation diagnostics.",
+    "Rank-16 errors describe local derivatives on 16 held-out directions, not a worst-case bound or the 2% image protection tolerance.",
+    "The original coarse-step FD gate failed in two directions; an explicitly separate smaller-step supplement passed.",
+    "No optimizer, response-assisted candidate, speedup comparison, or four-edit amortization was executed.",
+    "Internal independent NumPy checks did not rerun AD, time integration, or wall-clock measurements."
+  ]
+}

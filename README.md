@@ -1,5 +1,7 @@
 # Vortex Gaussians: Real-Time Simulation-Driven Fire and Smoke as Native Gaussian-Splatting Content
 
+**Two ongoing research tracks:** [TOG-oriented smoke editing](tracks/tog/README.md) and [Combustible Digital Memory — art research](tracks/art/README.md) now share this repository. The original browser prototype remains the creative platform; the technical contribution and artistic argument are being investigated separately. Start with the [dual-track workspace](tracks/README.md), [current tasks](tracks/STATUS.md), and [compact historical evidence](tracks/evidence/README.md). Neither track currently claims publication readiness.
+
 ### [[Project Page](https://seanwilliam2077.github.io/VortexGaussians/)] [[Historical manuscript (PDF)](static/vortex_gaussians_paper.pdf)] [[Evidence status](research/EVIDENCE_STATUS.md)] [[Live Demo](https://seanwilliam2077.github.io/VortexGaussians/demo/)] [[Solver Comparison](https://seanwilliam2077.github.io/VortexGaussians/compare.html)] [[Video](static/video/vortex_gaussians_supplemental.mp4)] [[Captured-scene clip](static/video/vortex_gaussians_kitchen.mp4)] [[Omniverse clip](static/video/vortex_gaussians_farmland_ov.mp4)]
 
 Zijun Xiao<sup>1</sup>

@@ -1,0 +1,166 @@
+{
+  "schema": "tog-brief-v1",
+  "id": "artist-brief-001",
+  "artist_brief": {
+    "requested_change": "改变左烟上部的运动，使其朝画面中央弯曲。",
+    "preserve": "保留右侧已经批准的画面与时序。",
+    "validation_status": "draft_unvalidated",
+    "evidence": "研究人员提出的需求草案；尚无创作者访谈、外部委托或用户研究。",
+    "not_claimed": "像素拟合不等于创作可读性、物理真实性或 TOG 贡献。"
+  },
+  "model": {
+    "n": 32,
+    "steps": 40,
+    "dt": 0.025,
+    "image_size": 64,
+    "frame_start": 16,
+    "render_size": 32,
+    "render_samples": 64,
+    "kappa": 1.0,
+    "dtype": "float64"
+  },
+  "task": {
+    "pixel_coordinates": "lower-left-half-open",
+    "frames": [
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40
+    ],
+    "edit_roi": [
+      10,
+      12,
+      34,
+      55
+    ],
+    "protected_rois": [
+      [
+        35,
+        13,
+        53,
+        33
+      ],
+      [
+        35,
+        33,
+        53,
+        55
+      ]
+    ],
+    "quality": {
+      "protect_relative": 0.02,
+      "protect_absolute": 0.005,
+      "edit_relative": 0.05,
+      "edit_absolute": 0.01,
+      "signal_min": 0.01
+    },
+    "motion_diagnostics": {
+      "upper_roi": [
+        10,
+        33,
+        34,
+        55
+      ],
+      "lower_roi": [
+        10,
+        12,
+        34,
+        33
+      ],
+      "role": "descriptive_not_gate"
+    },
+    "semantic_gate": null
+  },
+  "control": {
+    "kind": "mac_body_acceleration",
+    "shape": [
+      4,
+      3,
+      8,
+      8,
+      8
+    ],
+    "update_knots": [
+      0,
+      13,
+      26,
+      39
+    ],
+    "coefficient_max": 0.5,
+    "coefficient_rms": 0.2,
+    "applied_force_max_component": 0.5,
+    "axis_order": "time,component,x,y,z; component is x,y,z; coarse MAC faces",
+    "mapping": "Trilinear MAC spatial extension, temporal hats, old-v advection then dt*force and full pressure projection. Force changes density transport on the following update.",
+    "interpretation": "No built-in inverse map from the word bend to a unique force; supplied controls are inspected, not optimized."
+  },
+  "target": {
+    "origin": "authored",
+    "role": "development",
+    "path": null,
+    "sha256": null,
+    "key": null,
+    "layout": "edit_roi",
+    "frame_ids": [
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40
+    ],
+    "author_or_source": "",
+    "description": "待创作者直接提供 alpha 目标；可由绘制、外部工具或有记录的观测得到，不要求用本模型见证生成。"
+  },
+  "evaluation": {
+    "phase": "development",
+    "used_for_tuning": false,
+    "frozen_before_evaluation": false,
+    "freeze_evidence": "",
+    "interpretation": "开发目标可迭代；此记录不是 holdout 证据。holdout 必须另建规格、冻结目标且未用于调参。"
+  },
+  "budget": {
+    "max_rollouts": 1,
+    "wall_seconds": 600,
+    "optimizer": "none"
+  }
+}

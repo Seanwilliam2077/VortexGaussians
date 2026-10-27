@@ -1,0 +1,60 @@
+{
+  "schema": "tog-provenance-v1",
+  "files": [
+    {
+      "path": "src/core.py",
+      "origin": "work/research-round20/core.py",
+      "bytes": 13301,
+      "sha256": "ac750b70a86743ac858f1c53cf620ce29c63c462456115af4d0d8c93fa20bd9e",
+      "relationship": "byte-identical"
+    },
+    {
+      "path": "fixtures/r20/scene.py",
+      "origin": "work/research-round20/scene.py",
+      "bytes": 3062,
+      "sha256": "441b82c0678bcb02f297166a234b90890d740e151f8554aef79a84cb2deb04d1",
+      "relationship": "byte-identical"
+    },
+    {
+      "path": "fixtures/r20/PROTOCOL.md",
+      "origin": "work/research-round20/PROTOCOL.md",
+      "bytes": 16779,
+      "sha256": "4422ef992389be1b6ddfd19ca3a662df79e2c3791281776a16ee7ba8177ce7ba",
+      "relationship": "byte-identical"
+    },
+    {
+      "path": "fixtures/r22/PROTOCOL.md",
+      "origin": "work/research-round22/PROTOCOL.md",
+      "bytes": 4407,
+      "sha256": "94b65e06f0e948e21a2ffa19610515d33bc012e686bf0a36798133851c7019f8",
+      "relationship": "byte-identical"
+    },
+    {
+      "path": "fixtures/r22/summary.json",
+      "origin": "work/research-round22/qualification-v1/summary.json",
+      "bytes": 30862,
+      "sha256": "3ad0031a0ac1dc6496a035650ef1168635fa2a27e38f33c409d6161fae7eb3da",
+      "relationship": "byte-identical"
+    },
+    {
+      "path": "fixtures/r22/approved.npz",
+      "origin": "work/research-round22/qualification-v1/approved.npz",
+      "bytes": 1868518,
+      "sha256": "9da9166a209d18cc8256d78f14f13a2a5d834ea5e9936b4d4f58440b92917f09",
+      "relationship": "byte-identical"
+    },
+    {
+      "path": "fixtures/r22/witness.npz",
+      "origin": "work/research-round22/qualification-v1/witness.npz",
+      "bytes": 3512500,
+      "sha256": "de354bb0687122c3600fb66d4faf1f3096f67f427868c5fc659cccdaee765892",
+      "relationship": "byte-identical"
+    }
+  ],
+  "sceneFork": {
+    "path": "src/scene.py",
+    "origin": "work/research-round20/scene.py",
+    "initial_state_AST_identical": true,
+    "changes": "Keep initial_state and plume_xz only; remove witnesses, optimization configuration and target-generation helpers."
+  }
+}

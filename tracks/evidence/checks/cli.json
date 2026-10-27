@@ -1,0 +1,105 @@
+{
+  "scope": "Independent CPU CLI runs only. No Torch import in tested paths, GPU, simulation, optimizer or timing benchmark.",
+  "pythonVersion": "3.12.14",
+  "priorHarnessFailure": {
+    "cause": "Parent assumed UTF-8, while the first Windows child emitted its native console encoding. Decode failed before interpreting the first plan output.",
+    "repair": "Child invoked with Python -X utf8; no application source or scientific parameters changed."
+  },
+  "sourceManifestSHA256": "3f6ade3b1fe2bbdd7b4fd65425a688b172d2ff4c54fdab826f37ca66f3ad99f7",
+  "sourceManifestUnchanged": true,
+  "planCreatedOutput": false,
+  "checks": [
+    {
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-I",
+        "-B",
+        "tracks/tog/research.py"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "passed": true,
+      "status": "validated",
+      "runtimeImported": false,
+      "rollouts": 0,
+      "targetAttached": false
+    },
+    {
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-I",
+        "-B",
+        "tracks/tog/research.py",
+        "approve",
+        "--out",
+        "tracks/tog/runs/independent-plan-only"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "passed": true,
+      "status": "planned_not_executed",
+      "runtimeImported": false,
+      "rollouts": 0,
+      "targetAttached": false
+    },
+    {
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-I",
+        "-B",
+        "tracks/tog/research.py",
+        "validate",
+        "--require-target"
+      ],
+      "exitCode": 2,
+      "expectedExitCode": 2,
+      "passed": true,
+      "status": "rejected",
+      "error": "Evaluation requires an attached target"
+    },
+    {
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-I",
+        "-B",
+        "tracks/tog/research.py",
+        "history",
+        "--execute"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "passed": true,
+      "status": "completed",
+      "negativeFixturePreserved": true,
+      "historicalTaskQualified": false,
+      "semanticFrameCount": 0,
+      "maximumUpperRightwardShift": 1.4065755548435703
+    },
+    {
+      "command": [
+        "python",
+        "-X",
+        "utf8",
+        "-I",
+        "-B",
+        "tracks/tog/check_interfaces.py"
+      ],
+      "exitCode": 0,
+      "expectedExitCode": 0,
+      "passed": true,
+      "status": "passed",
+      "interfaceCheckCount": 17,
+      "allChecksPassed": true,
+      "coreSHA256": "ac750b70a86743ac858f1c53cf620ce29c63c462456115af4d0d8c93fa20bd9e"
+    }
+  ],
+  "passed": true
+}
