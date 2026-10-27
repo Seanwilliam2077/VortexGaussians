@@ -1,0 +1,86 @@
+{
+  "schema": "t14-input-task-audit-v1",
+  "status": "completed",
+  "date": "2026-10-27",
+  "previousResearchCommit": "fc1fb8871587b95e002c65d3d7eb139ad723ed92",
+  "decision": "NO_QUALIFIED_INPUT_TASK_FOR_FURTHER_COMPUTATION",
+  "scope": "Two bounded source-family audits; current D03 branch closed pending new evidence, not a scientific impossibility claim.",
+  "families": 2,
+  "inspectionPassesPerFamily": 2,
+  "numericalWork": {
+    "trainingRuns": 0,
+    "simulationEvaluations": 0,
+    "reverseCalls": 0,
+    "GPUCalls": 0
+  },
+  "otherActivity": {
+    "dependencyInstalls": 0,
+    "outreachMessages": 0,
+    "largeAssetDownloads": 0,
+    "knownSuccessfulDirectHTTPBodyBytes": 227487,
+    "totalNetworkBytes": null,
+    "researchWallSeconds": null
+  },
+  "rootChecks": {
+    "accessJSONParsed": 2,
+    "wildsmokeMemoSHAAgreesWithLedger": true,
+    "relativeMarkdownLinksChecked": 18,
+    "scientificSourceFilesChanged": false
+  },
+  "files": {
+    "tracks/tog/tasks/t14-input-task-audit/cmes-access.json": {
+      "sha256": "5d7970e3e3a4871656de5efcfaa56649e2901d4b4a7905393686beb63eed10ae",
+      "bytes": 6743
+    },
+    "tracks/tog/tasks/t14-input-task-audit/CMES_AUDIT.md": {
+      "sha256": "9636aa05f865c1ff5e3ffd24542915c82c9e3a6ff20513976a1d813821a252c9",
+      "bytes": 5631
+    },
+    "tracks/tog/tasks/t14-input-task-audit/NEXT_HYPOTHESIS.md": {
+      "sha256": "348b9a854c47cbbd1f00a6be86dbba35dc79887c4085ceecb88fd33693ab2c0c",
+      "bytes": 3123
+    },
+    "tracks/tog/tasks/t14-input-task-audit/PROTOCOL.md": {
+      "sha256": "60b7793b34139075e78c489e0d5574829a21a16b5a34b74c07da97062bcaec93",
+      "bytes": 3811
+    },
+    "tracks/tog/tasks/t14-input-task-audit/README.md": {
+      "sha256": "7e574c7155ce493a58f0e22ef9969ccc5861e986595f33177132ee3fdf2b1828",
+      "bytes": 4458
+    },
+    "tracks/tog/tasks/t14-input-task-audit/wildsmoke-access.json": {
+      "sha256": "c7680d3fd75249944cd63ca851e544211e31becda612dc9622ed3786ff83521b",
+      "bytes": 9853
+    },
+    "tracks/tog/tasks/t14-input-task-audit/WILDSMOKE_AUDIT.md": {
+      "sha256": "ce189a8dc06535ff4e1dd0558210876a450dd62a79e95f3acf653b3d0e2e6cd0",
+      "bytes": 7681
+    },
+    "tracks/validation/t14-input-task-review.md": {
+      "sha256": "000ee1afd90c5d6d3535c4cbac1bec522db2dabdfe4d93b980a420e07505969f",
+      "bytes": 9603
+    }
+  },
+  "inheritedReportsNotBundled": {
+    "work/research-round13/INDEPENDENT_AUDIT.md": {
+      "sha256": "072c74673b049259b999365259b77959b9f8f693ccb7712e97caad9a28053ba3",
+      "bytes": 4433,
+      "scope": "existing external local report; not copied or re-executed"
+    },
+    "work/research-round13/SCHEMA_PRECEDENT.md": {
+      "sha256": "b6e46bb9abbb0710351f33e57436f186e1a848a6725e96d178b18d2b09a77c77",
+      "bytes": 7522,
+      "scope": "existing external local report; not copied or re-executed"
+    },
+    "work/research-round15/SOURCE_PHASE_REVIEW.md": {
+      "sha256": "ee6cb30f1c358bbd0cc1c9f8dff7121b1c583151601a8b4f45ad8d4ed4c171dd",
+      "bytes": 9133,
+      "scope": "existing external local report; not copied or re-executed"
+    }
+  },
+  "limitations": [
+    "Primary source facts were inspected by family agents; independent review checks recorded claims and local reports, not independent web reacquisition.",
+    "Small response fingerprints are not source-body archives. No third-party asset or implementation added.",
+    "T15 is a next-task decision only; no new core hypothesis has been selected."
+  ]
+}

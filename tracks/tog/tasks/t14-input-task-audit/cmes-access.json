@@ -1,0 +1,122 @@
+{
+  "schema": "t14-cmes-access-v1",
+  "inspectionDate": "2026-10-27",
+  "timeZone": "Asia/Shanghai",
+  "scope": "Lian et al. CMES 2024 only; two inspection passes fixed by PROTOCOL before reading",
+  "budget": {
+    "allowedPasses": 2,
+    "usedPasses": 2,
+    "additionalFamilies": 0,
+    "trainingRuns": 0,
+    "simulationRuns": 0,
+    "gpuUse": false,
+    "dependencyInstalls": 0,
+    "externalMessages": 0,
+    "largeAssetDownloads": 0
+  },
+  "paper": {
+    "title": "Uncertainty-Aware Physical Simulation of Neural Radiance Fields for Fluids",
+    "doi": "10.32604/cmes.2024.048549",
+    "published": "2024-04-16",
+    "volumeIssuePages": "140(1), 1143-1163",
+    "url": "https://www.techscience.com/CMES/v140n1/56211/html",
+    "licenseObserved": "CC BY 4.0 (article only)",
+    "licenseURL": "https://creativecommons.org/licenses/by/4.0/",
+    "readScope": ["sections 3.1-3.3", "sections 4.1-4.2", "section 5", "Availability of Data and Materials", "references 11 and 56", "article publication/license footer"],
+    "pdfDownloadedOrRead": false
+  },
+  "passes": [
+    {
+      "pass": 1,
+      "purpose": "Identify published operation, input/output and primary implementation/data/supplement links",
+      "accesses": [
+        {
+          "url": "https://www.techscience.com/CMES/v140n1/56211/html",
+          "method": "web open, positioned reads and page finds",
+          "status": "full_text_available",
+          "finds": ["Availability", "github", "supplement", "Creative Commons"],
+          "observation": "Data statement is a four-step synthetic-scene generation outline; no author code/checkpoint URL verified from this text. No matching github/supplement text in extracted page."
+        },
+        {
+          "url": "https://www.techscience.com/CMES/v140n1/56211/html",
+          "method": "follow View Full Text link",
+          "status": "same_primary_html",
+          "observation": "No distinct project or release was opened by this link."
+        },
+        {
+          "url": "https://cdn.techscience.cn/files/CMES/2024/TSP_CMES-140-1/TSP_CMES_48549/TSP_CMES_48549/Images/table-1.png",
+          "method": "follow primary Table 1 image link",
+          "status": "URL_returned",
+          "observation": "No pixel-level table inspection performed; table image is not used to establish units or downloadable states."
+        }
+      ]
+    },
+    {
+      "pass": 2,
+      "purpose": "Resolve only missing author implementation/checkpoint/supplement access and release recipe",
+      "queries": [
+        "\"Uncertainty-Aware Physical Simulation of Neural Radiance Fields for Fluids\" code data github",
+        "\"048549\" \"github\" fluid",
+        "\"Uncertainty-Aware Physical Simulation\" supplementary dataset checkpoint"
+      ],
+      "searchOutcome": "Publisher HTML/PDF, same-article mirror and bibliographic indexes returned; no author implementation or ensemble-member release verified. Unrelated recommended works were not followed. Search failure is not proof of nonexistence.",
+      "accesses": [
+        {
+          "url": "https://www.sciencedirect.com/org/science/article/pii/S1526149224001425",
+          "method": "web direct open and gap-specific finds",
+          "status": "403_Forbidden",
+          "gap": "Could the same-article mirror expose code/data/supplement links absent from primary HTML?",
+          "interpretation": "Unresolved through this route; find results on the failed fetch are not evidence of resource absence. Search-rendered text was not used as a new independent source."
+        },
+        {
+          "url": "https://www.techscience.com/CMES/v140n1/56211/html",
+          "method": "bounded stdlib urllib GET and HTMLParser link metadata; body kept in memory only",
+          "timeUTC": "2026-10-27T14:42:37.800037+00:00",
+          "status": 200,
+          "finalURL": "https://www.techscience.com/CMES/v140n1/56211/html",
+          "responseCapBytes": 2097152,
+          "receivedBodyBytes": 212392,
+          "bodySHA256": "d275b6deca7001016f6dc27c2b3d1fef417586ec8690311806319c90ba7db647",
+          "contentType": "text/html; charset=UTF-8",
+          "etag": null,
+          "lastModified": null,
+          "anchorCount": 309,
+          "uniqueAnchorURLs": 261,
+          "gap": "Check the same publisher HTML release-link inventory and record reproducible response identity without copying paper prose into Git.",
+          "limitation": "Program output for the broad URL filter was truncated; no claim of a retained exhaustive link inventory. Findings about code/data remain bounded to the inspected text and exact-family search."
+        }
+      ],
+      "identifiedButNotOpened": [
+        {
+          "url": "https://file.techscience.com/files/CMES/2024/TSP_CMES-140-1/TSP_CMES_48549/TSP_CMES_48549.pdf",
+          "kind": "official same-paper PDF",
+          "reason": "Primary HTML already exposes methods/results/data declaration; no PDF download needed."
+        }
+      ]
+    }
+  ],
+  "releaseAssessment": {
+    "article": "accessible; published CC BY 4.0",
+    "observations": "ScalarFlow is identified by paper; exact CMES experiment sequence/camera package not verified",
+    "multiInitializationRecipe": "partially documented, not executed",
+    "authorCodePath": null,
+    "authorCodeAccess": "unknown",
+    "ensembleCheckpointAccess": "unknown",
+    "codeDataCheckpointLicense": "unknown; article license does not establish these",
+    "numericalUnits": "normalized position described; physical length/time/velocity and optical-to-mass conversion not established",
+    "continuationBCAndSource": "not established",
+    "pairwiseObservationAcceptance": "not established; shared training data is documented",
+    "commonInterventionExample": "not verified in the inspected paper/release chain",
+    "concreteEditingDecisionEvidence": "not verified; engineering applications are stated as future work"
+  },
+  "decision": "NO_QUALIFIED_INPUT_TASK_FOR_FURTHER_COMPUTATION",
+  "decisionReason": "Published reconstruction ensemble is relevant prior, but this family has not established a common continued-simulation intervention and a concrete assessable editing decision. Missing ready checkpoints alone is not the rejection rule; recipe-only reproducibility can in principle qualify if the remaining task contract is supplied.",
+  "limits": [
+    "No claim that inaccessible or unlocated resources do not exist.",
+    "No third source family investigated.",
+    "No new creator testimony, thresholds, interventions or tolerances invented.",
+    "Known direct HTTP body bytes are not total network traffic; web tool transfer sizes unavailable.",
+    "No full article text, dataset or checkpoint retained in repository."
+  ],
+  "stoppedAfterPass2": true
+}

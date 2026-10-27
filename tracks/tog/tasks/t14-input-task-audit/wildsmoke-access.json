@@ -1,0 +1,250 @@
+{
+  "schema": "t14-wildsmoke-access-v1",
+  "date": "2026-10-27",
+  "status": "completed_bounded_two_pass_audit",
+  "inspectionPasses": 2,
+  "family": "WildSmoke arXiv:2509.11114v1; direct author project/data/code links only",
+  "paper": {
+    "version": "v1",
+    "submitted": "2025-09-14",
+    "url": "https://arxiv.org/html/2509.11114v1",
+    "versionHistoryURL": "https://arxiv.org/abs/2509.11114",
+    "versionsVisible": [
+      "v1"
+    ],
+    "sectionsRead": [
+      "2.1",
+      "3.2-3.5",
+      "4.1",
+      "4.3-4.5"
+    ],
+    "licenseObserved": "CC BY 4.0 for paper; not assigned to assets"
+  },
+  "passes": [
+    {
+      "id": 1,
+      "purpose": "Locate published operation, author code/data and release inventory",
+      "pages": [
+        {
+          "url": "https://arxiv.org/html/2509.11114v1",
+          "result": "HTML read; direct source for operation/model equations"
+        },
+        {
+          "url": "https://arxiv.org/abs/2509.11114",
+          "result": "Only v1 listed in submission history"
+        },
+        {
+          "url": "https://autumnyq.github.io/WildSmoke/",
+          "result": "Code coming soon -> GitHub organization; checkpoints/smoke sequence -> same HF tree"
+        },
+        {
+          "url": "https://github.com/delta-lab-ai/",
+          "result": "Organization overview read; no specific WildSmoke repository link established"
+        },
+        {
+          "url": "https://huggingface.co/datasets/delta-lab-ai/WildSmoke/tree/main",
+          "result": "Public file list; 3 files"
+        },
+        {
+          "url": "https://huggingface.co/datasets/delta-lab-ai/WildSmoke",
+          "result": "No dataset card yet"
+        },
+        {
+          "url": "https://github.com/delta-lab-ai/FluidGaussian",
+          "result": "README title identifies a different paper; disambiguation only, excluded from family and not investigated further"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "purpose": "Resolve exact editor implementation, data version/license, and observation/recipe gaps",
+      "queries": [
+        {
+          "q": "WildSmoke \"github\" \"PhiFlow\" 2509.11114",
+          "domains": [
+            "github.com",
+            "autumnyq.github.io"
+          ],
+          "result": "No specific WildSmoke editor located; generic PhiFlow hits not used as implementation evidence"
+        },
+        {
+          "q": "\"WildSmoke\" \"wind\" \"simulation\" github",
+          "domains": [
+            "github.com"
+          ],
+          "result": "No specific WildSmoke editor located; unrelated hits not followed"
+        },
+        {
+          "q": "\"WildSmoke\" github.com",
+          "domains": [
+            "github.com",
+            "autumnyq.github.io"
+          ],
+          "result": "Author/project results, no verified dedicated code URL; search snippets not used as code evidence"
+        }
+      ],
+      "pages": [
+        {
+          "url": "https://huggingface.co/datasets/delta-lab-ai/WildSmoke/commit/3e86196cf13b73c8e6a33c7c0c48b7e8d450bf9d",
+          "gap": "Fixed released checkpoint version",
+          "result": "Commit shown as ckpts of two levels of Gaussians"
+        },
+        {
+          "url": "https://huggingface.co/datasets/delta-lab-ai/WildSmoke/discussions",
+          "gap": "Missing card/license or author implementation pointer",
+          "result": "One open dataset card PR listed"
+        },
+        {
+          "url": "https://huggingface.co/datasets/delta-lab-ai/WildSmoke/discussions/1",
+          "gap": "Could pending card resolve license/recipe?",
+          "result": "HF staff proposal links paper/project and task category; not an author implementation release/license"
+        },
+        {
+          "url": "https://huggingface.co/api/datasets/delta-lab-ai/WildSmoke",
+          "gap": "Current commit, accessibility and license metadata",
+          "webToolResult": "inaccessible via tool",
+          "boundedDirectHTTP": {
+            "status": 200,
+            "bodyBytes": 448,
+            "sha256": "1fd9c7b3a6dcabf59542513a58fd1e2f0d02ae700d82282e3dd923ddd904a740",
+            "seconds": 0.471185400034301
+          },
+          "result": "public, gated=false, same fixed commit, no license/cardData field"
+        },
+        {
+          "url": "https://huggingface.co/api/datasets/delta-lab-ai/WildSmoke/tree/main",
+          "gap": "Exact inventory and asset fingerprint",
+          "webToolResult": "inaccessible via tool",
+          "boundedDirectHTTP": {
+            "status": 200,
+            "bodyBytes": 708,
+            "sha256": "73f3ea23eca62d8747626fc2d544129f3074b77e9e88c9fefc24eef19c835b84",
+            "seconds": 0.3982980999862775
+          },
+          "result": "same exact inventory/tree bytes as R13"
+        },
+        {
+          "url": "https://api.github.com/orgs/delta-lab-ai/repos?per_page=100",
+          "gap": "Organization repository inventory for dedicated release",
+          "webToolResult": "inaccessible via tool",
+          "boundedDirectHTTP": {
+            "status": 403,
+            "error": "rate limit exceeded",
+            "seconds": 0.238018199976068
+          },
+          "result": "route unresolved; not evidence that code does not exist"
+        },
+        {
+          "url": "https://autumnyq.github.io/WildSmoke/",
+          "gap": "Actual link targets and original-video/simulation-media pointers",
+          "boundedDirectHTTP": {
+            "status": 200,
+            "bodyBytes": 13939,
+            "sha256": "c0aab565a3d2b8fe7e984eb6c14d2fde527444a912cc1378aa9792f22be0f4ae",
+            "seconds": 0.9857852999703027
+          },
+          "result": "Code href is org only; city.mp4 and simulation_results.mp4 links in HTML; media not downloaded or visually evaluated"
+        }
+      ]
+    }
+  ],
+  "assets": {
+    "repository": "delta-lab-ai/WildSmoke",
+    "commit": "3e86196cf13b73c8e6a33c7c0c48b7e8d450bf9d",
+    "lastModified": "2025-08-24T15:51:03.000Z",
+    "private": false,
+    "gated": false,
+    "sameAsPriorR13CommitAndInventory": true,
+    "files": [
+      {
+        "path": ".gitattributes",
+        "bytes": 2461,
+        "gitOid": "1ef325f1b111266a6b26e0196871bd78baa8c2f3"
+      },
+      {
+        "path": "Gaussians_ckpt.zip",
+        "bytes": 102042106,
+        "sha256": "d709f4920bf6cec807ace85d742d12ad3632b1a659c42b42d7abefe12afdee11"
+      },
+      {
+        "path": "city_vdb_out.zip",
+        "bytes": 1833979888,
+        "sha256": "bda4ae101e3cabaf473efc5d870fa5e672d50315f4ad93f08aff2e772ddb1d0f"
+      }
+    ],
+    "explicitAssetLicenseVerified": false,
+    "datasetCardPresent": false,
+    "largeAssetsDownloadedThisAudit": false,
+    "archiveInternalsReopenedThisAudit": false
+  },
+  "publishedMediaPointersNotFetched": [
+    "https://autumnyq.github.io/WildSmoke/static/videos/city.mp4",
+    "https://autumnyq.github.io/WildSmoke/static/videos/simulation_results.mp4"
+  ],
+  "codeQualification": {
+    "wildsmokeImplementationCommit": null,
+    "windOrBallFunctionLines": null,
+    "status": "not located through bounded author-linked routes; not asserted nonexistent",
+    "upstreamConditionalPrecedent": {
+      "repository": "https://github.com/ueoo/FluidNexus",
+      "commit": "648dc6d922bd80f46881ba9452d24381692f240a",
+      "evidence": "Previously sealed R13/R15 static source reports, read locally; no new source fetch or execution",
+      "notClaimedIdenticalToWildSmoke": true
+    }
+  },
+  "storageEvidenceReusedNotRecomputed": {
+    "report": "work/research-round13/INDEPENDENT_AUDIT.md",
+    "frames": 240,
+    "numericNPY": 4560,
+    "JSON": 241,
+    "fieldFamilies": 19,
+    "expandedFileBytes": 167890383,
+    "physicalCountRange": [
+      33,
+      6409
+    ],
+    "visualCountRange": [
+      209,
+      6585
+    ],
+    "scaleFactor": 100.0,
+    "secs": 0.033
+  },
+  "qualification": {
+    "publishedContinuedSimulationOperation": true,
+    "publicCheckpointStorage": true,
+    "checkpointToOriginalEditorContractVerified": false,
+    "sharedObservationMultiInitRecipeVerified": false,
+    "twoIndependentCompatibleStatesVerified": false,
+    "existingPairMandatoryForGo": false,
+    "concreteEditingDecisionEvidenceVerified": false,
+    "decision": "NO_QUALIFIED_INPUT_TASK",
+    "reason": "No verified joint observation/state-to-simulation recipe and no concrete decision/evaluation beyond demonstration differences; not based solely on missing pair."
+  },
+  "unknowns": [
+    "WildSmoke simulation script/commit and exact dependency versions",
+    "Particle-to-grid kernel widths, sampling layout and velocity scaling in actual implementation",
+    "Grid dimensions/BC/dt/force order/source and solver settings",
+    "Full 3D ball center convention",
+    "Process-ready observed frames, cameras, multi-init training recipe",
+    "VDB contents/transform/velocity fields (not opened)",
+    "Asset redistribution license",
+    "Creator requirement and intervention decision ground truth"
+  ],
+  "activity": {
+    "simulationEvaluations": 0,
+    "GPUCalls": 0,
+    "trainingRuns": 0,
+    "installations": 0,
+    "outreachMessages": 0,
+    "thirdPartyAssetBytesDownloaded": 0,
+    "thirdPartyCodeStoredInRepo": false,
+    "knownSuccessfulDirectHTTPBodyBytes": 15095,
+    "totalNetworkBytes": null,
+    "networkScope": "Web tool transferred bytes unavailable; bounded direct metadata responses listed separately, errors have no counted body. No asset bodies fetched.",
+    "directRequestCapBytes": 524288,
+    "directProjectHTMLCapBytes": 131072,
+    "directTimeoutSeconds": 20
+  },
+  "memoSHA256": "ce189a8dc06535ff4e1dd0558210876a450dd62a79e95f3acf653b3d0e2e6cd0"
+}
