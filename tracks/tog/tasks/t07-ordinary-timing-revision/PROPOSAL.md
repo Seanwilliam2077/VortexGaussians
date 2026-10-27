@@ -1,0 +1,13 @@
+# T07 preparation — one ordinary solve for the fixed timing revision
+
+The input is the already generated T06 target (onset24, endpoint40, unchanged amplitude4), with all original T02 model, ROI and quality/control gates. The existing review image visibly distinguishes the delayed intermediate bend while preserving the common final target; this is research input inspection, not external artist approval or evidence of physical reachability. Do not edit T06 based on any solver outcome.
+
+Use the predeclared source selection: T05 passed all original gates, so load only its final accepted **x**. Never initialize from its final velocity/density, multipliers, rho, L-BFGS history or cached frames. Every forward restarts from the original v0/rho0; lambda resets to0, rho to1 and optimizer history is fresh. The one arm is the ordinary 76-constraint PHR/L-BFGS formulation, with Objective/acceptance/force_stats AST identical to T04. Target input changes; all numerical settings stay fixed.
+
+Because T06 changes the scalar objective, its G0 must be newly measured: the original independent random x=.12 point, two original directions, h1e−5/1e−6, all76 lambda2/rho1, nine forwards and one backward, original1e−4 FD gate. It cannot reuse T05's authenticated T02 qualification. A failure is preserved and stops the run without altering FD steps or thresholds.
+
+After G0, the paid warm-control validation is the first of at most120 solve forwards. Stop immediately if it already passes; otherwise allow the same bounded L-BFGS/AL loop with reserved validation and rollback to the last accepted state. One worker≤600 seconds includes startup, new G0, all solve/trial/validation calls and IO. No zero-start or edit-only second arm, no parameter sweep, no retry or automatic budget increase.
+
+Report T05's observed source-solution cost separately (84 solve forwards;60.4013 s solve,76.3454 s whole worker), plus the new G0 and T07 solve/total costs. Do not count old exploratory T03/T04 optimization as this edit's online latency. This is one ordinary reuse baseline, not a claim that no stronger ordinary workflow exists. A quick qualified answer weakens the case for specialized response caching on this two-edit development sequence; a slow or failed solve proves neither infeasibility nor cache benefit.
+
+Keep the complete local raw run, including failure records, in ignored `runs/`; publish final recomputable arrays, compact metrics and hashes. No GPU execution or freeze until T05's independent post-audit passes and root accepts T07's source review. Do not modify sealed T05 or other task directories.

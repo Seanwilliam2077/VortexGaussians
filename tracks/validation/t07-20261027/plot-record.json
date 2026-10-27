@@ -1,0 +1,40 @@
+{
+  "scope": "Saved-array visualization only; no simulation, new timing, artist or audience validation",
+  "scriptSHA256": "4fbccd62ea1e4f99ef9393222324b16e0e62ebf50ab3b26a7c151265700bfa1e",
+  "inputs": {
+    "approved": {
+      "path": "tracks/tog/fixtures/r22/approved.npz",
+      "sha256": "9da9166a209d18cc8256d78f14f13a2a5d834ea5e9936b4d4f58440b92917f09"
+    },
+    "target": {
+      "path": "tracks/tog/tasks/t06-authored-timing-revision/run-01/target-full.npy",
+      "sha256": "e6049a329643b8de123237c2773aeaa85f00753a4c7fc3b7355ef31fd3c09d47"
+    },
+    "T05_previous": {
+      "path": "tracks/tog/tasks/t05-framewise-cold-start/framewise_joint-final.npz",
+      "sha256": "3d1e65a0a3b7ae2a3dd21dfd6aef2034bc7c26f0cdfd3839a92066c6aace04f5"
+    },
+    "T07_joint": {
+      "path": "tracks/tog/tasks/t07-ordinary-timing-revision/framewise_joint-final.npz",
+      "sha256": "79e784b5c81cd75ff9af2d040b71164ebe56dd7fe3cb79e0b02b547b933a0830"
+    },
+    "summary": {
+      "path": "tracks/tog/tasks/t07-ordinary-timing-revision/result-summary.json",
+      "sha256": "af81223533b91e69db755fa13037c4480e7db8f8b393aece77a7b73f2873db9b"
+    }
+  },
+  "metrics": {
+    "T05_previous": {
+      "editPassingFrames": 11,
+      "protectionPassingROIFrames": 50
+    },
+    "T07_joint": {
+      "editPassingFrames": 25,
+      "protectionPassingROIFrames": 50
+    }
+  },
+  "outputs": {
+    "frames.png": "ca1108bbfdd6f1c7308b1b936d09e856fa5ba65a118ea34727bfbd1e5e5a7942",
+    "quality.png": "729ff86c7e4b5d0eb5f41f92bbb7d5866a16f863851895a89bde4dec598818e7"
+  }
+}

@@ -4,7 +4,7 @@ Started 27 October 2026. VortexGaussians remains the shared project. Its origina
 
 | Track | Question | Entry | Current claim |
 |---|---|---|---|
-| TOG technical research | Can an artist revise selected smoke motion while retaining approved imagery, with a useful capability or cost advantage over strong ordinary control? | [TOG workspace](tog/README.md) | Core contribution unestablished; task and bottleneck qualification |
+| TOG technical research | Can an artist revise selected smoke motion while retaining approved imagery, with a useful capability or cost advantage over strong ordinary control? | [Current experiments](STATUS.md) · [ordinary workflow costs](tog/WORKFLOW_COST.md) · [frozen portable interface](tog/README.md) | One development target is jointly feasible with ordinary cold-start control; core contribution and repeated-edit bottleneck unestablished |
 | Art research | How can burning and resetting a captured space become a medium for exploring digital memory? | [Art workspace](art/README.md) · [rehearsal interface](art/index.html) | “Combustible Digital Memory” is a provisional artistic proposition; no audience study or accepted paper |
 
 [Current tasks](STATUS.md) · [Exploration rules](EXPLORATION.md) · [Historical evidence](evidence/README.md) · [Original browser demo](../demo/index.html)

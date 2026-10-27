@@ -1,0 +1,108 @@
+{
+  "schema": "t07-execution-freeze-v1",
+  "createdUTC": "2026-10-27T07:18:30.349563+00:00",
+  "scope": "One fixed T06 timing-revision solve: new9-forward/1-backward G0, warm only T05 x, at most120 solve calls and600 seconds whole worker; no retry.",
+  "review": "T05 independent post-audit and T07 final source review clear accepted by root; GPU window explicitly authorized.",
+  "files": {
+    "runner.py": {
+      "path": "runner.py",
+      "bytes": 41320,
+      "sha256": "f0932a8ee6438a06ca26346104ae7d4b33c2b7a44a38c65d9ccdc691f10f5251"
+    },
+    "config.json": {
+      "path": "config.json",
+      "bytes": 5235,
+      "sha256": "7170c92e946321818fbc4806fcc305e772627af2c1da3165d802e561f3c8d800"
+    },
+    "PROTOCOL.md": {
+      "path": "PROTOCOL.md",
+      "bytes": 5571,
+      "sha256": "b254bf66e382ac5cd369aa914423fef4a62052d49abb93431a94f88f76a539c3"
+    },
+    "PROPOSAL.md": {
+      "path": "PROPOSAL.md",
+      "bytes": 2614,
+      "sha256": "4e3a47e41b3323bde21d2712445d5315515722fbd1b73f9755ca51087f2ea2f6"
+    },
+    "core.py": {
+      "path": "../../src/core.py",
+      "bytes": 13301,
+      "sha256": "ac750b70a86743ac858f1c53cf620ce29c63c462456115af4d0d8c93fa20bd9e"
+    },
+    "approved.npz": {
+      "path": "../../fixtures/r22/approved.npz",
+      "bytes": 1868518,
+      "sha256": "9da9166a209d18cc8256d78f14f13a2a5d834ea5e9936b4d4f58440b92917f09"
+    },
+    "target-edit.npy": {
+      "path": "../t06-authored-timing-revision/run-01/target-edit.npy",
+      "bytes": 206528,
+      "sha256": "fbecf29dd9e484c17cad4a5ea9423635efc84091509d47a905612065652191b3"
+    },
+    "brief.json": {
+      "path": "../t06-authored-timing-revision/run-01/brief.json",
+      "bytes": 3916,
+      "sha256": "af424c7c4daf5256541573b6a64d8b7eb62f6a8d3fed34195a3192697e1ce9d5"
+    },
+    "T06-rule": {
+      "path": "../t06-authored-timing-revision/RULE.json",
+      "bytes": 2004,
+      "sha256": "a6dc26db97872248b2fa143b749077192f625bf91432eb340dfe0e886e9371aa"
+    },
+    "T06-generator": {
+      "path": "../t06-authored-timing-revision/generate_target.py",
+      "bytes": 10745,
+      "sha256": "db1b0e7d3f9a0aac67974823ba0f563a1ee44821dced0dfa8b3a2fbd85e16eb9"
+    },
+    "T06-protocol": {
+      "path": "../t06-authored-timing-revision/PROTOCOL.md",
+      "bytes": 3502,
+      "sha256": "a221d6872476a5c8e96efa28c810806facf3c4c6e9dfc30ae6b847e5e792fb67"
+    },
+    "T06-freeze": {
+      "path": "../t06-authored-timing-revision/run-01/freeze.json",
+      "bytes": 3142,
+      "sha256": "e7ba47efe4130bdd3d0733e5402cb669e8d98bc405282b8ac2e303cc6b4c39f3"
+    },
+    "T06-evidence-manifest": {
+      "path": "../t06-authored-timing-revision/evidence-manifest.json",
+      "bytes": 2811,
+      "sha256": "c591d397e6d81269dd10bf3074eec71a5b82a1128f3597c328c81b4e8aaf687f"
+    },
+    "warm-start.npz": {
+      "path": "../t05-framewise-cold-start/framewise_joint-final.npz",
+      "bytes": 3296414,
+      "sha256": "3d1e65a0a3b7ae2a3dd21dfd6aef2034bc7c26f0cdfd3839a92066c6aace04f5"
+    },
+    "T05-result-summary.json": {
+      "path": "../t05-framewise-cold-start/result-summary.json",
+      "bytes": 53188,
+      "sha256": "2883db0d4651a0c2d7388061c3f5918a68cc155eea1ee5ec36cf10f780d0aa5c"
+    },
+    "T05-freeze.json": {
+      "path": "../t05-framewise-cold-start/freeze.json",
+      "bytes": 4927,
+      "sha256": "dccf1081da47df14eb28fbf69e659ba1ba0e264e732a2bd98fcf79381bdb7624"
+    },
+    "T04-runner.py": {
+      "path": "../t04-framewise-feasibility/runner.py",
+      "bytes": 40050,
+      "sha256": "a2a942bbc8759e6f3352a2d14a7ae2fbb4673b34189cd2a768faed6f8cf7fb44"
+    },
+    "T04-config.json": {
+      "path": "../t04-framewise-feasibility/config.json",
+      "bytes": 5088,
+      "sha256": "25eced8e01445717aeb2aa802e90fea120edc0cb33a48bb85e224b73fb849eda"
+    },
+    "static_check.py": {
+      "path": "static_check.py",
+      "bytes": 4016,
+      "sha256": "9c6c1fad28934c3a086e57fe5ef684554eabf3f6a476f1b6e2e09929996eb8d2"
+    },
+    "static-checks.json": {
+      "path": "static-checks.json",
+      "bytes": 4002,
+      "sha256": "9b6a16993322602d28573ace9591596b7d2dc67b09a118f45712151b14d16b9f"
+    }
+  }
+}
