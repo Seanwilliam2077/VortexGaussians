@@ -1,0 +1,115 @@
+{
+  "status": "frozen_before_target_generation",
+  "createdUTC": "2026-10-27T06:15:08Z",
+  "pins": {
+    "RULE.json": {
+      "bytes": 1956,
+      "sha256": "e306ee8a1e374ee90df0d325fdea1d33d36ee05e29291df177e5f84d3cadf96f"
+    },
+    "PROTOCOL.md": {
+      "bytes": 2677,
+      "sha256": "05cd505666d4cf4a1146a9934411127554e2c61f0b87174f747301a2fdb97d0d"
+    },
+    "brief.template.json": {
+      "bytes": 3747,
+      "sha256": "c56e4a7769a44b8f232a60a545cd290eb4b031c0d346027df50dde5bcabb68d8"
+    },
+    "generate_target.py": {
+      "bytes": 10745,
+      "sha256": "db1b0e7d3f9a0aac67974823ba0f563a1ee44821dced0dfa8b3a2fbd85e16eb9"
+    },
+    "D01/source-manifest.json": {
+      "bytes": 3227,
+      "sha256": "3f6ade3b1fe2bbdd7b4fd65425a688b172d2ff4c54fdab826f37ca66f3ad99f7"
+    },
+    "approved.npz": {
+      "bytes": 1868518,
+      "sha256": "9da9166a209d18cc8256d78f14f13a2a5d834ea5e9936b4d4f58440b92917f09"
+    }
+  },
+  "rule": {
+    "schema": "tog-authored-rule-v1",
+    "id": "T02",
+    "role": "development",
+    "origin": "researcher_authored_image_transformation",
+    "amplitudes_output_pixels": [
+      4.0
+    ],
+    "input": "../../fixtures/r22/approved.npz",
+    "input_sha256": "9da9166a209d18cc8256d78f14f13a2a5d834ea5e9936b4d4f58440b92917f09",
+    "input_key": "frames",
+    "shape": [
+      25,
+      64,
+      64
+    ],
+    "frame_ids": [
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40
+    ],
+    "roi": [
+      10,
+      12,
+      34,
+      55
+    ],
+    "coordinates": "pixel centers x+0.5,y+0.5; lower-left; half-open ROI",
+    "smoothstep": "S(t)=z*z*(3-2*z), z=clip(t,0,1)",
+    "displacement": "d=4*S((f-16)/24)*S((y-28)/14)*S((x-10)/8)*(1-S((x-28)/6))",
+    "time_start": 16,
+    "time_end": 40,
+    "y_start": 28.0,
+    "y_ramp": 14.0,
+    "x_left": 10.0,
+    "x_left_ramp": 8.0,
+    "x_right_start": 28.0,
+    "x_right_ramp": 6.0,
+    "sampling": "Target alpha at (x,y) = approved alpha at (x-d,y), horizontal linear interpolation (bilinear with unchanged y); no intensity renormalization, clipping or Jacobian scaling.",
+    "outside_roi": "copy approved bytes exactly",
+    "frame16": "copy approved exactly via zero displacement",
+    "seam_caveat": "No upper-y taper. At ROI top y=55 target is abruptly replaced by approved; outside equality does not prove seam continuity.",
+    "amplitude_is_not": "a measured centroid threshold, physical force, historical R22 pass criterion, or adjustable search parameter",
+    "visualization": {
+      "frames": [
+        16,
+        28,
+        40
+      ],
+      "alpha_range": [
+        0.0,
+        1.0
+      ],
+      "signed_difference_range": [
+        -0.25,
+        0.25
+      ],
+      "scale": 6
+    },
+    "no_optimization": true,
+    "no_rollout": true,
+    "no_witness_arrays": true
+  }
+}
