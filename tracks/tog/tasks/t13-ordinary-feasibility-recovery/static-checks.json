@@ -1,0 +1,28 @@
+{
+  "scope": "AST and stdlib plan only; no Torch import, solver, GPU or fitting",
+  "checks": {
+    "initial_velocity_AST_exact": true,
+    "diagnostics_AST_exact": true,
+    "advance_AST_exact": true,
+    "phr_AST_exact": true,
+    "observation_prefix_AST_exact": true,
+    "future_loop_AST_exact": true,
+    "constraint_statements_AST_exact": true,
+    "response_statements_AST_exact": true,
+    "frozen_T12_runner_SHA": true,
+    "plan_no_torch": true,
+    "not_frozen": true,
+    "max_step_budget": true,
+    "all_source_and_input_pins": true
+  },
+  "passed": true,
+  "command": [
+    "C:\\Users\\seanzjxiao\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "-I",
+    "-B",
+    "work\\VortexGaussians\\tracks\\tog\\tasks\\t13-ordinary-feasibility-recovery\\runner.py"
+  ],
+  "runnerSHA256": "0c35cd801bb4930679044b9b8490336b2de05978459b0e51d83b53fb390dcdbe",
+  "protocolSHA256": "0d68a197f4e165bb61319663d1179a69b6f5ade512bb5037e2333bdb8a08d20f",
+  "configSHA256": "ff05ce0ab91fbfb0ba91e051483615bc369343eb16d788c599eee98df14d7cc4"
+}

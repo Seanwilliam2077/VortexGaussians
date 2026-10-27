@@ -1,0 +1,178 @@
+{
+  "schema": "t13-portable-inputs-v1",
+  "status": "prepared",
+  "producerSHA256": "38e545cb65a69f2d3d53d5b2f3fabe40bd41728fa161f6669e1bd77c80a67bd1",
+  "sourceTask": "t12-ordinary-wind-response-extrema",
+  "sourceSummarySHA256": "8448f30f7a59e8a9332a714799d1f10ed1f0a1d20f23bef9bcff096fbd7cb229",
+  "originalFiles": {
+    "reference.npz": {
+      "sha256": "1f9436298078ab7a950219492e94b923e50f365226f2f80d4f7f4b311f652edb",
+      "bytes": 10469212
+    },
+    "qualification/analytic.npz": {
+      "sha256": "2d940bbf6b377443903fc32e4dbdee1b6c75e8cb705d54859044f235dd699207",
+      "bytes": 9087900
+    },
+    "qualification/direction-0.npz": {
+      "sha256": "4dc4519c54f56893bfcd0112af357973de8fb72bf7af3b6c4becae982be27e16",
+      "bytes": 12560
+    },
+    "qualification/direction-1.npz": {
+      "sha256": "76aa5f5dcd183467bef4189afe517c72f6470e2348455096f489911ed02bed9a",
+      "bytes": 12560
+    }
+  },
+  "originalEvidence": {
+    "status": "completed",
+    "sourcesUnchanged": true,
+    "runtimeInputsUnchanged": true,
+    "G0Passed": true
+  },
+  "pack": {
+    "path": "inputs.npz",
+    "sha256": "fc5a87b81aac9765d7fb886b7a5d74950d7bab9dd6ae475bad716c9dccb01470",
+    "bytes": 1130840
+  },
+  "arrays": {
+    "rho0": {
+      "shape": [
+        32,
+        32,
+        32
+      ],
+      "dtype": "<f8",
+      "rawSHA256": "fd171eab0dfe1a3d410762b1a0650eb431f8b4b7a51a7b2c405e3c8f0a17d521",
+      "sourceFile": "reference.npz",
+      "sourceKey": "rho0"
+    },
+    "seed_velocity": {
+      "shape": [
+        3,
+        32,
+        32,
+        32
+      ],
+      "dtype": "<f8",
+      "rawSHA256": "90b1a4ce4b9a64069481d5b991a87d36fd4374b9bafa1780548e5e9b7bbfb672",
+      "sourceFile": "reference.npz",
+      "sourceKey": "initial_velocity"
+    },
+    "seed_theta": {
+      "shape": [
+        3,
+        8,
+        8,
+        8
+      ],
+      "dtype": "<f8",
+      "rawSHA256": "90141e9fdcef19466a2fb52e703104bc954071437f67a4d42a5e67aa5e1c7bc4",
+      "sourceFile": "reference.npz",
+      "sourceKey": "seed_theta"
+    },
+    "wind": {
+      "shape": [
+        3,
+        32,
+        32,
+        32
+      ],
+      "dtype": "<f8",
+      "rawSHA256": "61251bee137a7c565ec70515cfa5ac74da0d3eb52898dbfa59a6180029bbe137",
+      "sourceFile": "reference.npz",
+      "sourceKey": "wind"
+    },
+    "potential": {
+      "shape": [
+        32,
+        32,
+        32
+      ],
+      "dtype": "<f8",
+      "rawSHA256": "4f7bcd1fd145520becf5215365bfe1dc64940c76376c0009abadbccab601cab7",
+      "sourceFile": "reference.npz",
+      "sourceKey": "potential"
+    },
+    "observed_uint8": {
+      "shape": [
+        20,
+        64,
+        64
+      ],
+      "dtype": "|u1",
+      "rawSHA256": "04584cdef72bdee1bade128f0675e3e9484db12cc6407cb0a7e32c3409a55033",
+      "sourceFile": "reference.npz",
+      "sourceKey": "observed_uint8"
+    },
+    "lower": {
+      "shape": [
+        20,
+        64,
+        64
+      ],
+      "dtype": "<f8",
+      "rawSHA256": "1a3c48d06419000d35bb617b1bfa4cb19144ba5afc0b958e09f79aa472dfc6e0",
+      "sourceFile": "reference.npz",
+      "sourceKey": "lower"
+    },
+    "upper": {
+      "shape": [
+        20,
+        64,
+        64
+      ],
+      "dtype": "<f8",
+      "rawSHA256": "d527b4377c2c324a8647d40714ff2de32f8cf66c4b79a196adb82999be69e370",
+      "sourceFile": "reference.npz",
+      "sourceKey": "upper"
+    },
+    "denominator": {
+      "shape": [
+        1
+      ],
+      "dtype": "<f8",
+      "rawSHA256": "cb6f8cf96b243a820d1f2444ef073ce88e205b78f1415644da0e737dabb94ae7",
+      "sourceFile": "reference.npz",
+      "sourceKey": "denominator"
+    },
+    "start_theta": {
+      "shape": [
+        3,
+        8,
+        8,
+        8
+      ],
+      "dtype": "<f8",
+      "rawSHA256": "1be7577bfdd78d5d7d2658f4d6a526ddf98c041add3fda453bd7553ab6bdc7e1",
+      "sourceFile": "qualification/analytic.npz",
+      "sourceKey": "theta"
+    },
+    "direction0": {
+      "shape": [
+        3,
+        8,
+        8,
+        8
+      ],
+      "dtype": "<f8",
+      "rawSHA256": "57a73b6c48a734db01e931237365d1461449f81f412a45a5184336f7ca9dfd46",
+      "sourceFile": "qualification/direction-0.npz",
+      "sourceKey": "direction"
+    },
+    "direction1": {
+      "shape": [
+        3,
+        8,
+        8,
+        8
+      ],
+      "dtype": "<f8",
+      "rawSHA256": "d5e14bf990a1334437d34df33cb8861a0ae29354bf30d5dfc4a5ae82d2ddf080",
+      "sourceFile": "qualification/direction-1.npz",
+      "sourceKey": "direction"
+    }
+  },
+  "sourcesUnchangedAfter": true,
+  "secondsCPUCopyIncludingIO": 0.09873539995169267,
+  "simulationEvaluations": 0,
+  "scope": "Byte-preserving selected-array copy; not a new reference or trajectory."
+}

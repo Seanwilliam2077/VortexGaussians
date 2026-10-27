@@ -1,0 +1,151 @@
+{
+  "command": [
+    "C:\\Users\\seanzjxiao\\miniconda3\\envs\\gs-sph-3d\\python.exe",
+    "-I",
+    "-B",
+    "-u",
+    "-X",
+    "utf8",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t13-ordinary-feasibility-recovery\\runner.py",
+    "--worker",
+    "--out",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t13-ordinary-feasibility-recovery\\runs\\run-01\\worker"
+  ],
+  "sourcesBefore": {
+    "runner.py": {
+      "path": "runner.py",
+      "sha256": "0c35cd801bb4930679044b9b8490336b2de05978459b0e51d83b53fb390dcdbe",
+      "bytes": 45855
+    },
+    "config.json": {
+      "path": "config.json",
+      "sha256": "ff05ce0ab91fbfb0ba91e051483615bc369343eb16d788c599eee98df14d7cc4",
+      "bytes": 4193
+    },
+    "PROTOCOL.md": {
+      "path": "PROTOCOL.md",
+      "sha256": "0d68a197f4e165bb61319663d1179a69b6f5ade512bb5037e2333bdb8a08d20f",
+      "bytes": 5778
+    },
+    "prepare_inputs.py": {
+      "path": "prepare_inputs.py",
+      "sha256": "38e545cb65a69f2d3d53d5b2f3fabe40bd41728fa161f6669e1bd77c80a67bd1",
+      "bytes": 5210
+    },
+    "inputs.npz": {
+      "path": "inputs.npz",
+      "sha256": "fc5a87b81aac9765d7fb886b7a5d74950d7bab9dd6ae475bad716c9dccb01470",
+      "bytes": 1130840
+    },
+    "inputs-manifest.json": {
+      "path": "inputs-manifest.json",
+      "sha256": "b898774c8891691ac84cc07d8c038e9373dca15ef15c8f13d86cdcc5f1e8e4e0",
+      "bytes": 4834
+    },
+    "core.py": {
+      "path": "../../src/core.py",
+      "sha256": "ac750b70a86743ac858f1c53cf620ce29c63c462456115af4d0d8c93fa20bd9e",
+      "bytes": 13301
+    },
+    "scene.py": {
+      "path": "../../src/scene.py",
+      "sha256": "ad4cc525c22419d03479eaacb31c277952f9c54945dddd1e9cadc263adef130d",
+      "bytes": 805
+    },
+    "t12_runner": {
+      "path": "../t12-ordinary-wind-response-extrema/runner.py",
+      "sha256": "258da8e8c9f16be33c84edddc5601427d7a33aa388e10ca9b5cceeae7f1d1ca4",
+      "bytes": 40463
+    },
+    "t12_config": {
+      "path": "../t12-ordinary-wind-response-extrema/config.json",
+      "sha256": "8fb935bfee4590358d12fc0fb7645bacdb337164ed7c4e67a26e72288936c3d8",
+      "bytes": 2459
+    },
+    "t12_freeze": {
+      "path": "../t12-ordinary-wind-response-extrema/freeze.json",
+      "sha256": "965af1d80493f2cd28f67d5dc82a974047f792a8817ed739405cdc5ea31d20e0",
+      "bytes": 889
+    },
+    "next_phase": {
+      "path": "../t12-ordinary-wind-response-extrema/NEXT_PHASE_I.md",
+      "sha256": "0e7af8fce84d426a3eec1665811f1392d4bbde51f6c25be4bec879b54b3321a4",
+      "bytes": 3857
+    }
+  },
+  "hardLimitSeconds": 600,
+  "environmentPolicy": {
+    "MKL_THREADING_LAYER": "SEQUENTIAL",
+    "OMP_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "1",
+    "CUDA_VISIBLE_DEVICES": "GPU-53365c2e-346d-c2a5-2c98-25c00591a721"
+  },
+  "dllDirectory": "C:\\Users\\seanzjxiao\\miniconda3\\envs\\gs-sph-3d\\Library\\bin",
+  "status": "completed",
+  "returnCode": 0,
+  "wallSeconds": 56.45397909998428,
+  "sourcesAfter": {
+    "runner.py": {
+      "path": "runner.py",
+      "sha256": "0c35cd801bb4930679044b9b8490336b2de05978459b0e51d83b53fb390dcdbe",
+      "bytes": 45855
+    },
+    "config.json": {
+      "path": "config.json",
+      "sha256": "ff05ce0ab91fbfb0ba91e051483615bc369343eb16d788c599eee98df14d7cc4",
+      "bytes": 4193
+    },
+    "PROTOCOL.md": {
+      "path": "PROTOCOL.md",
+      "sha256": "0d68a197f4e165bb61319663d1179a69b6f5ade512bb5037e2333bdb8a08d20f",
+      "bytes": 5778
+    },
+    "prepare_inputs.py": {
+      "path": "prepare_inputs.py",
+      "sha256": "38e545cb65a69f2d3d53d5b2f3fabe40bd41728fa161f6669e1bd77c80a67bd1",
+      "bytes": 5210
+    },
+    "inputs.npz": {
+      "path": "inputs.npz",
+      "sha256": "fc5a87b81aac9765d7fb886b7a5d74950d7bab9dd6ae475bad716c9dccb01470",
+      "bytes": 1130840
+    },
+    "inputs-manifest.json": {
+      "path": "inputs-manifest.json",
+      "sha256": "b898774c8891691ac84cc07d8c038e9373dca15ef15c8f13d86cdcc5f1e8e4e0",
+      "bytes": 4834
+    },
+    "core.py": {
+      "path": "../../src/core.py",
+      "sha256": "ac750b70a86743ac858f1c53cf620ce29c63c462456115af4d0d8c93fa20bd9e",
+      "bytes": 13301
+    },
+    "scene.py": {
+      "path": "../../src/scene.py",
+      "sha256": "ad4cc525c22419d03479eaacb31c277952f9c54945dddd1e9cadc263adef130d",
+      "bytes": 805
+    },
+    "t12_runner": {
+      "path": "../t12-ordinary-wind-response-extrema/runner.py",
+      "sha256": "258da8e8c9f16be33c84edddc5601427d7a33aa388e10ca9b5cceeae7f1d1ca4",
+      "bytes": 40463
+    },
+    "t12_config": {
+      "path": "../t12-ordinary-wind-response-extrema/config.json",
+      "sha256": "8fb935bfee4590358d12fc0fb7645bacdb337164ed7c4e67a26e72288936c3d8",
+      "bytes": 2459
+    },
+    "t12_freeze": {
+      "path": "../t12-ordinary-wind-response-extrema/freeze.json",
+      "sha256": "965af1d80493f2cd28f67d5dc82a974047f792a8817ed739405cdc5ea31d20e0",
+      "bytes": 889
+    },
+    "next_phase": {
+      "path": "../t12-ordinary-wind-response-extrema/NEXT_PHASE_I.md",
+      "sha256": "0e7af8fce84d426a3eec1665811f1392d4bbde51f6c25be4bec879b54b3321a4",
+      "bytes": 3857
+    }
+  },
+  "sourcesUnchanged": true
+}

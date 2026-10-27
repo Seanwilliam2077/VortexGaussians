@@ -4,6 +4,8 @@ This is the repository's working research policy, not a venue acceptance checkli
 
 The latest author instruction prioritizes continuing the technical line. D03 may test the independent R19-B observation-compatible intervention hypothesis with clearly labeled synthetic qualification and ordinary-search baselines. This does not reopen the completed two-edit cache sequence or manufacture human requirements. A known analytic construction is an implementation qualification only; any specialized method still needs an additional operation or measured advantage over strong ordinary methods. Art assets remain available without new art-production work in this cycle.
 
+After T13, the T12/T13 input contract is closed to further method development under its pre-result decision. The next finite action is a bounded source/input qualification audit, as recorded in [NEXT_DECISION.md](tog/tasks/t13-ordinary-feasibility-recovery/NEXT_DECISION.md). A failed ordinary solve does not authorize a new solver, longer search or changed gates; general R19-B remains distinct from this closed numerical contract.
+
 ## Decide before a run
 
 For each finite task, record a question, the evidence that would change the next action, a preparation/compute budget, and a stopping condition. Distinguish exploratory development from held-out confirmation. Parameters may evolve between disclosed experiments, but saved failures and their original criteria are never relabeled.

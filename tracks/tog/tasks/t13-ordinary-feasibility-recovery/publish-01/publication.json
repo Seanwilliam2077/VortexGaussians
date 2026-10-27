@@ -1,0 +1,322 @@
+{
+  "schema": "t13-publication-v1",
+  "status": "completed",
+  "createdUTC": "2026-10-27T13:52:23.631595+00:00",
+  "command": [
+    "C:\\Users\\seanzjxiao\\miniconda3\\envs\\gs-sph-3d\\python.exe",
+    "work/VortexGaussians/tracks/tog/tasks/t13-ordinary-feasibility-recovery/publish_results.py",
+    "--run",
+    "runs/run-01",
+    "--out",
+    "publish-01",
+    "--execute"
+  ],
+  "publisherSHA256": "513855bc8d22b03e968195027cd8d57acbb7bd6dd7da8c9bd7c5110f93a13511",
+  "producerStatus": "completed",
+  "producerDecision": "NO_NONSEED_FEASIBLE_POINT_FOUND_WITHIN_FIXED_SEARCH",
+  "inputPinsBefore": {
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t13-ordinary-feasibility-recovery\\runs\\run-01\\worker\\summary.json": "4110b299ce7d12ce202144132e69bd88ce95c0fb5e6cc83ea92cd9d855097b4f",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t13-ordinary-feasibility-recovery\\runs\\run-01\\supervisor.json": "07c11673b794b1a4087957aab28d3fc04f8efdf885c8d179e7861b297369bf45",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t13-ordinary-feasibility-recovery\\config.json": "ff05ce0ab91fbfb0ba91e051483615bc369343eb16d788c599eee98df14d7cc4",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t13-ordinary-feasibility-recovery\\publish_results.py": "513855bc8d22b03e968195027cd8d57acbb7bd6dd7da8c9bd7c5110f93a13511",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t13-ordinary-feasibility-recovery\\freeze.json": "7615e63bf6e4868566290423f7925d192a035ae5bc32f4157daea726f9a70b12",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t13-ordinary-feasibility-recovery\\runner.py": "0c35cd801bb4930679044b9b8490336b2de05978459b0e51d83b53fb390dcdbe",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t13-ordinary-feasibility-recovery\\PROTOCOL.md": "0d68a197f4e165bb61319663d1179a69b6f5ade512bb5037e2333bdb8a08d20f",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t13-ordinary-feasibility-recovery\\prepare_inputs.py": "38e545cb65a69f2d3d53d5b2f3fabe40bd41728fa161f6669e1bd77c80a67bd1",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t13-ordinary-feasibility-recovery\\inputs.npz": "fc5a87b81aac9765d7fb886b7a5d74950d7bab9dd6ae475bad716c9dccb01470",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t13-ordinary-feasibility-recovery\\inputs-manifest.json": "b898774c8891691ac84cc07d8c038e9373dca15ef15c8f13d86cdcc5f1e8e4e0",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\src\\core.py": "ac750b70a86743ac858f1c53cf620ce29c63c462456115af4d0d8c93fa20bd9e",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\src\\scene.py": "ad4cc525c22419d03479eaacb31c277952f9c54945dddd1e9cadc263adef130d",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t12-ordinary-wind-response-extrema\\runner.py": "258da8e8c9f16be33c84edddc5601427d7a33aa388e10ca9b5cceeae7f1d1ca4",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t12-ordinary-wind-response-extrema\\config.json": "8fb935bfee4590358d12fc0fb7645bacdb337164ed7c4e67a26e72288936c3d8",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t12-ordinary-wind-response-extrema\\freeze.json": "965af1d80493f2cd28f67d5dc82a974047f792a8817ed739405cdc5ea31d20e0",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t12-ordinary-wind-response-extrema\\NEXT_PHASE_I.md": "0e7af8fce84d426a3eec1665811f1392d4bbde51f6c25be4bec879b54b3321a4",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t12-ordinary-wind-response-extrema\\publish-01\\publication.json": "03d37b3cd144cdea2d76c3c02e675cfae3c8fa0c87a58811822829f34535615a",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t12-ordinary-wind-response-extrema\\publish-01\\compact.npz": "10e8966b88eb9ff9bcf8b0852478c6734659770721a4f72f5864012049c605c3",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t13-ordinary-feasibility-recovery\\runs\\run-01\\worker\\qualification\\analytic.npz": "e5752f9fb57ed1d9c85b0c5e325cb404d57d966d1efe0e70512bfc6b21764a64",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t13-ordinary-feasibility-recovery\\runs\\run-01\\worker\\search\\least-violating.npz": "71274fd4d3a5b29aa72f4e2b89cc9d90834b3ca8e0f812dfb7f4fe4d02973177",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t13-ordinary-feasibility-recovery\\runs\\run-01\\stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t13-ordinary-feasibility-recovery\\runs\\run-01\\stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "inputPinsAfter": {
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t13-ordinary-feasibility-recovery\\runs\\run-01\\worker\\summary.json": "4110b299ce7d12ce202144132e69bd88ce95c0fb5e6cc83ea92cd9d855097b4f",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t13-ordinary-feasibility-recovery\\runs\\run-01\\supervisor.json": "07c11673b794b1a4087957aab28d3fc04f8efdf885c8d179e7861b297369bf45",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t13-ordinary-feasibility-recovery\\config.json": "ff05ce0ab91fbfb0ba91e051483615bc369343eb16d788c599eee98df14d7cc4",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t13-ordinary-feasibility-recovery\\publish_results.py": "513855bc8d22b03e968195027cd8d57acbb7bd6dd7da8c9bd7c5110f93a13511",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t13-ordinary-feasibility-recovery\\freeze.json": "7615e63bf6e4868566290423f7925d192a035ae5bc32f4157daea726f9a70b12",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t13-ordinary-feasibility-recovery\\runner.py": "0c35cd801bb4930679044b9b8490336b2de05978459b0e51d83b53fb390dcdbe",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t13-ordinary-feasibility-recovery\\PROTOCOL.md": "0d68a197f4e165bb61319663d1179a69b6f5ade512bb5037e2333bdb8a08d20f",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t13-ordinary-feasibility-recovery\\prepare_inputs.py": "38e545cb65a69f2d3d53d5b2f3fabe40bd41728fa161f6669e1bd77c80a67bd1",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t13-ordinary-feasibility-recovery\\inputs.npz": "fc5a87b81aac9765d7fb886b7a5d74950d7bab9dd6ae475bad716c9dccb01470",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t13-ordinary-feasibility-recovery\\inputs-manifest.json": "b898774c8891691ac84cc07d8c038e9373dca15ef15c8f13d86cdcc5f1e8e4e0",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\src\\core.py": "ac750b70a86743ac858f1c53cf620ce29c63c462456115af4d0d8c93fa20bd9e",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\src\\scene.py": "ad4cc525c22419d03479eaacb31c277952f9c54945dddd1e9cadc263adef130d",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t12-ordinary-wind-response-extrema\\runner.py": "258da8e8c9f16be33c84edddc5601427d7a33aa388e10ca9b5cceeae7f1d1ca4",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t12-ordinary-wind-response-extrema\\config.json": "8fb935bfee4590358d12fc0fb7645bacdb337164ed7c4e67a26e72288936c3d8",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t12-ordinary-wind-response-extrema\\freeze.json": "965af1d80493f2cd28f67d5dc82a974047f792a8817ed739405cdc5ea31d20e0",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t12-ordinary-wind-response-extrema\\NEXT_PHASE_I.md": "0e7af8fce84d426a3eec1665811f1392d4bbde51f6c25be4bec879b54b3321a4",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t12-ordinary-wind-response-extrema\\publish-01\\publication.json": "03d37b3cd144cdea2d76c3c02e675cfae3c8fa0c87a58811822829f34535615a",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t12-ordinary-wind-response-extrema\\publish-01\\compact.npz": "10e8966b88eb9ff9bcf8b0852478c6734659770721a4f72f5864012049c605c3",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t13-ordinary-feasibility-recovery\\runs\\run-01\\worker\\qualification\\analytic.npz": "e5752f9fb57ed1d9c85b0c5e325cb404d57d966d1efe0e70512bfc6b21764a64",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t13-ordinary-feasibility-recovery\\runs\\run-01\\worker\\search\\least-violating.npz": "71274fd4d3a5b29aa72f4e2b89cc9d90834b3ca8e0f812dfb7f4fe4d02973177",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t13-ordinary-feasibility-recovery\\runs\\run-01\\stdout.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t13-ordinary-feasibility-recovery\\runs\\run-01\\stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "inputsUnchanged": true,
+  "sourceIdentityMatches": true,
+  "T12PublicationSHA256": "03d37b3cd144cdea2d76c3c02e675cfae3c8fa0c87a58811822829f34535615a",
+  "runtime": {
+    "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:36:12) [MSC v.1944 64 bit (AMD64)]",
+    "numpy": "2.4.6",
+    "matplotlib": "3.11.0",
+    "MKL_THREADING_LAYER": "SEQUENTIAL",
+    "dllDirectory": "C:\\Users\\seanzjxiao\\miniconda3\\envs\\gs-sph-3d\\Library\\bin",
+    "torchImported": false,
+    "gpuUsed": false
+  },
+  "compact": {
+    "bytes": 3496991,
+    "targetBytes": 5000000,
+    "withinTarget": true,
+    "targetIsHardGate": false,
+    "roundtripExact": true
+  },
+  "compactArrays": {
+    "reference__observation_alpha": {
+      "shape": [
+        20,
+        64,
+        64
+      ],
+      "dtype": "<f8",
+      "bytes": 655360,
+      "rawSHA256": "f6f239ec7555ddef0f8df91220bfa2477d459597074707d685a0f1e888b0ffc3"
+    },
+    "reference__theta": {
+      "shape": [
+        3,
+        8,
+        8,
+        8
+      ],
+      "dtype": "<f8",
+      "bytes": 12288,
+      "rawSHA256": "90141e9fdcef19466a2fb52e703104bc954071437f67a4d42a5e67aa5e1c7bc4"
+    },
+    "reference__observed_uint8": {
+      "shape": [
+        20,
+        64,
+        64
+      ],
+      "dtype": "|u1",
+      "bytes": 81920,
+      "rawSHA256": "04584cdef72bdee1bade128f0675e3e9484db12cc6407cb0a7e32c3409a55033"
+    },
+    "reference__lower": {
+      "shape": [
+        20,
+        64,
+        64
+      ],
+      "dtype": "<f8",
+      "bytes": 655360,
+      "rawSHA256": "1a3c48d06419000d35bb617b1bfa4cb19144ba5afc0b958e09f79aa472dfc6e0"
+    },
+    "reference__upper": {
+      "shape": [
+        20,
+        64,
+        64
+      ],
+      "dtype": "<f8",
+      "bytes": 655360,
+      "rawSHA256": "d527b4377c2c324a8647d40714ff2de32f8cf66c4b79a196adb82999be69e370"
+    },
+    "reference__denominator": {
+      "shape": [
+        1
+      ],
+      "dtype": "<f8",
+      "bytes": 8,
+      "rawSHA256": "cb6f8cf96b243a820d1f2444ef073ce88e205b78f1415644da0e737dabb94ae7"
+    },
+    "reference__initial_velocity": {
+      "shape": [
+        3,
+        32,
+        32,
+        32
+      ],
+      "dtype": "<f8",
+      "bytes": 786432,
+      "rawSHA256": "90b1a4ce4b9a64069481d5b991a87d36fd4374b9bafa1780548e5e9b7bbfb672"
+    },
+    "reference__interval_max_by_frame": {
+      "shape": [
+        20
+      ],
+      "dtype": "<f8",
+      "bytes": 160,
+      "rawSHA256": "b393978842a0fa3d3e1470196f098f473f9678e72463cb65ec4ab5581856c2e4"
+    },
+    "reference__interval_count_by_frame": {
+      "shape": [
+        20
+      ],
+      "dtype": "<i8",
+      "bytes": 160,
+      "rawSHA256": "b393978842a0fa3d3e1470196f098f473f9678e72463cb65ec4ab5581856c2e4"
+    },
+    "initial__observation_alpha": {
+      "shape": [
+        20,
+        64,
+        64
+      ],
+      "dtype": "<f8",
+      "bytes": 655360,
+      "rawSHA256": "d746fea41b6712aa14e6bee78681b0d96b58e394df21d84cb06f355b2a426ecd"
+    },
+    "initial__theta": {
+      "shape": [
+        3,
+        8,
+        8,
+        8
+      ],
+      "dtype": "<f8",
+      "bytes": 12288,
+      "rawSHA256": "1be7577bfdd78d5d7d2658f4d6a526ddf98c041add3fda453bd7553ab6bdc7e1"
+    },
+    "initial__initial_velocity": {
+      "shape": [
+        3,
+        32,
+        32,
+        32
+      ],
+      "dtype": "<f8",
+      "bytes": 786432,
+      "rawSHA256": "97fa6df6439921516b0c0a212dee6bfc07c04eb78a1863abc28fd05c6dbad0cd"
+    },
+    "initial__interval_max_by_frame": {
+      "shape": [
+        20
+      ],
+      "dtype": "<f8",
+      "bytes": 160,
+      "rawSHA256": "47032190d3cb05589a98fa9ef3adcca2d114351c3e7f09cd60b325c926713b67"
+    },
+    "initial__interval_count_by_frame": {
+      "shape": [
+        20
+      ],
+      "dtype": "<i8",
+      "bytes": 160,
+      "rawSHA256": "a7341b3b31984c755fd788e294ac580ede8c4e99402cf31f7d245ddc94b1d711"
+    },
+    "least__observation_alpha": {
+      "shape": [
+        20,
+        64,
+        64
+      ],
+      "dtype": "<f8",
+      "bytes": 655360,
+      "rawSHA256": "f8604cf4c81e3c3ed8e30f7afdbeac46b3edf271d23cb77a678f578b664290a2"
+    },
+    "least__theta": {
+      "shape": [
+        3,
+        8,
+        8,
+        8
+      ],
+      "dtype": "<f8",
+      "bytes": 12288,
+      "rawSHA256": "1fdc4e804217f07938e50b5edb1a51a4f7ceca91a2bb5e56b6db5d8ec48df69c"
+    },
+    "least__initial_velocity": {
+      "shape": [
+        3,
+        32,
+        32,
+        32
+      ],
+      "dtype": "<f8",
+      "bytes": 786432,
+      "rawSHA256": "6a34805aa6b36f4dc08905ef6972724252fd891cea6fad451c838b674b663e5e"
+    },
+    "least__interval_max_by_frame": {
+      "shape": [
+        20
+      ],
+      "dtype": "<f8",
+      "bytes": 160,
+      "rawSHA256": "b12c87f0d56828514db9217f82000be9004f8206e52385a89c1fbf8b52b99dbf"
+    },
+    "least__interval_count_by_frame": {
+      "shape": [
+        20
+      ],
+      "dtype": "<i8",
+      "bytes": 160,
+      "rawSHA256": "5438d97191dc87ab37f608fd78bb0cdc6a04d4bc28878a5624496a3849f66a50"
+    }
+  },
+  "files": {
+    "compact.npz": {
+      "bytes": 3496991,
+      "sha256": "d4a4a0151ab77e6a1179cc334d79c151cc4e7305227017a009468c98fcf943a4"
+    },
+    "config.json": {
+      "bytes": 4193,
+      "sha256": "ff05ce0ab91fbfb0ba91e051483615bc369343eb16d788c599eee98df14d7cc4"
+    },
+    "feasibility-recovery.png": {
+      "bytes": 297497,
+      "sha256": "34ecb16683a93423bc7ea651ff8b66001a4b5b1370a351632bc8f2d390e4ccf9"
+    },
+    "feasibility-recovery.svg": {
+      "bytes": 251308,
+      "sha256": "6b7547febd09842c37a3f823f1cbe654970f0be21e5fd3f5a445e1e4b7f3c206"
+    },
+    "freeze.json": {
+      "bytes": 2232,
+      "sha256": "7615e63bf6e4868566290423f7925d192a035ae5bc32f4157daea726f9a70b12"
+    },
+    "inputs-manifest.json": {
+      "bytes": 4834,
+      "sha256": "b898774c8891691ac84cc07d8c038e9373dca15ef15c8f13d86cdcc5f1e8e4e0"
+    },
+    "PROTOCOL.md": {
+      "bytes": 5778,
+      "sha256": "0d68a197f4e165bb61319663d1179a69b6f5ade512bb5037e2333bdb8a08d20f"
+    },
+    "README.md": {
+      "bytes": 2926,
+      "sha256": "8dc9be13ded89f245c632475baef39a596a844cd9729270b5dc989bf92d16ba6"
+    },
+    "result.json": {
+      "bytes": 12873,
+      "sha256": "15c99503a76436e797928f914ac101ce5b8187b3a11320c67d09f4228f56098f"
+    },
+    "stderr.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "stdout.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "summary.json": {
+      "bytes": 365135,
+      "sha256": "4110b299ce7d12ce202144132e69bd88ce95c0fb5e6cc83ea92cd9d855097b4f"
+    },
+    "supervisor.json": {
+      "bytes": 5450,
+      "sha256": "07c11673b794b1a4087957aab28d3fc04f8efdf885c8d179e7861b297369bf45"
+    }
+  }
+}
