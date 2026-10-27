@@ -1,0 +1,28 @@
+{
+  "createdAt": "2026-10-27T07:00:43.298Z",
+  "scope": "UI-only synthetic prototype validation; no audience, art-quality, physical or performance conclusion",
+  "checks": [],
+  "errors": [],
+  "sourceBefore": {
+    "tracks/art/index.html": "07c8048f3870d9462dcd8072d3f09b6115e2023227b4a75d9a69a173418ee640",
+    "tracks/art/art.js": "1ff8194561f2acb5d9a8124de68b3a39710e7e8de32d14b2a04d2615e8ccc13c",
+    "tracks/art/art.css": "2afe962cb45c40cc1ee9d007e66dd5caae8ff312d34109b24e12a413cab5cdbb",
+    "tracks/art/receipt-ui.mjs": "e6269e0decd6e14b8a003e828ef58c790109d6ad6a04a5b659a2c52840774274",
+    "demo/index.html": "e9d808c434bdd8ce91482f60502f03f5d08c56b71c082eb704c53275ff9f57d0",
+    "static/test_scene.ply": "2f7e110a4ae3cd7d9a2ea8e04537d562a37b1ddb04b2c541e961901afc7492d6"
+  },
+  "status": "failed",
+  "failure": {
+    "message": "Playwright not found. Run npm install in research/, or set PLAYWRIGHT_MODULE to the installed module. playwright: MODULE_NOT_FOUND; playwright-core: MODULE_NOT_FOUND",
+    "stack": "Error: Playwright not found. Run npm install in research/, or set PLAYWRIGHT_MODULE to the installed module. playwright: MODULE_NOT_FOUND; playwright-core: MODULE_NOT_FOUND\n    at launchBrowser (file:///C:/Users/seanzjxiao/Documents/Codex/2026-10-13/https-github-com-jiarui-liu-ideascientist/work/VortexGaussians/research/lib/runtime.mjs:43:26)\n    at file:///C:/Users/seanzjxiao/Documents/Codex/2026-10-13/https-github-com-jiarui-liu-ideascientist/work/VortexGaussians/tracks/art/receipt-ui.mjs:29:24\n    at process.processTicksAndRejections (node:internal/process/task_queues:104:5)"
+  },
+  "sourceAfter": {
+    "tracks/art/index.html": "07c8048f3870d9462dcd8072d3f09b6115e2023227b4a75d9a69a173418ee640",
+    "tracks/art/art.js": "1ff8194561f2acb5d9a8124de68b3a39710e7e8de32d14b2a04d2615e8ccc13c",
+    "tracks/art/art.css": "2afe962cb45c40cc1ee9d007e66dd5caae8ff312d34109b24e12a413cab5cdbb",
+    "tracks/art/receipt-ui.mjs": "e6269e0decd6e14b8a003e828ef58c790109d6ad6a04a5b659a2c52840774274",
+    "demo/index.html": "e9d808c434bdd8ce91482f60502f03f5d08c56b71c082eb704c53275ff9f57d0",
+    "static/test_scene.ply": "2f7e110a4ae3cd7d9a2ea8e04537d562a37b1ddb04b2c541e961901afc7492d6"
+  },
+  "sourcesUnchanged": true
+}

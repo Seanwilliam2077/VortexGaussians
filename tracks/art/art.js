@@ -22,7 +22,8 @@
   function newJournal() {
     return { schema: 'vortex-gaussians-art-journal', version: VERSION, createdAt: now(), sessionId: uid(),
       title: '可燃的数字记忆（暂定）', hypothesis: '保存、介入与重新开始之间的创作张力；尚无观众验证。',
-      notes: [], events: [], omittedEventCount: 0, draft: { kind: 'author-draft', context: '', choice: '', observation: '' } };
+      notes: [], events: [], omittedEventCount: 0, resetReceiptVisible: true,
+      draft: { kind: 'author-draft', context: '', choice: '', observation: '' } };
   }
   function readJournal() {
     const fresh = newJournal();
@@ -64,6 +65,28 @@
       state.journal.events.shift(); state.journal.omittedEventCount += 1;
     }
     persist();
+    if (type === 'reinitialize') renderReceipt();
+  }
+  function renderReceipt() {
+    // Derived from an existing public-counter snapshot. Never restores or writes simulation state.
+    const event = [...state.journal.events].reverse().find(item => item.type === 'reinitialize'
+      && item.reason === '作者选择重新开始' && item.previous);
+    $('receipt-empty').hidden = Boolean(event);
+    $('receipt-toggle').hidden = !event;
+    const visible = Boolean(event) && state.journal.resetReceiptVisible !== false;
+    $('receipt-content').hidden = !visible;
+    $('receipt-toggle').setAttribute('aria-expanded', String(visible));
+    $('receipt-toggle').textContent = visible ? '暂时收起回执' : '再次展开回执';
+    if (!event) return;
+    const previous = event.previous;
+    const count = value => Number.isFinite(value) ? value.toLocaleString() : '未记录';
+    const seconds = Number.isFinite(previous.simulatedSeconds) ? `${previous.simulatedSeconds.toFixed(2)} s` : '未记录';
+    const kind = previous.scene?.kind === 'synthetic-campfire-example' ? '合成示例，非实拍记忆' : '本地资产，来源由作者说明';
+    $('receipt-context').textContent = `${previous.scene?.name || '未命名场景'} · ${kind}`;
+    $('receipt-time').textContent = seconds;
+    $('receipt-burning').textContent = count(previous.counts?.burning);
+    $('receipt-charred').textContent = count(previous.counts?.charred);
+    $('receipt-at').textContent = `重新初始化操作时间：${event.at}。当前画面可能已经进入另一段排练。`;
   }
   function setStatus(text, kind = '') {
     $('status').textContent = text;
@@ -301,7 +324,7 @@
   $('note-kind').value = Object.hasOwn(kindNames, state.journal.draft.kind) ? state.journal.draft.kind : 'author-draft';
   fields.forEach(id => { $(id).value = String(state.journal.draft[id] || ''); });
   const kindChanged = () => { $('audience-help').hidden = $('note-kind').value !== 'audience-observation'; };
-  kindChanged(); renderNotes(); updateControls();
+  kindChanged(); renderNotes(); renderReceipt(); updateControls();
   document.querySelectorAll('[data-stage]').forEach(button => button.addEventListener('click', () => selectStage(button.dataset.stage)));
   $('start-example').addEventListener('click', () => loadScene(null));
   $('load-example').addEventListener('click', () => loadScene(null));
@@ -325,6 +348,12 @@
   $('camera-yaw').addEventListener('change', () => record('view-angle', { degrees: Number($('camera-yaw').value) }));
   $('note-form').addEventListener('submit', addNote);
   $('note-form').addEventListener('input', () => { kindChanged(); clearTimeout(saveTimer); saveTimer = setTimeout(saveDraft, 350); });
+  $('receipt-toggle').addEventListener('click', () => {
+    state.journal.resetReceiptVisible = state.journal.resetReceiptVisible === false;
+    record('receipt-visibility', { visible: state.journal.resetReceiptVisible,
+      semantics: 'Presentation only; no event deletion or simulation state change.' });
+    renderReceipt();
+  });
   $('export').addEventListener('click', exportJournal);
   document.addEventListener('visibilitychange', () => { if (document.hidden) { pause('页面已隐藏'); saveDraft(); } });
   window.addEventListener('pagehide', () => { pause('离开页面'); saveDraft(); });

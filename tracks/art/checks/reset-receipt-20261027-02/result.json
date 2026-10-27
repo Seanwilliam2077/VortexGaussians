@@ -1,0 +1,70 @@
+{
+  "createdAt": "2026-10-27T07:01:19.242Z",
+  "scope": "UI-only synthetic prototype validation; no audience, art-quality, physical or performance conclusion",
+  "checks": [
+    {
+      "name": "no fabricated receipt before scene or reset",
+      "passed": true
+    },
+    {
+      "name": "scene load does not count as author reset",
+      "passed": true
+    },
+    {
+      "name": "reset receipt matches prior visible state while current counters reset",
+      "passed": true,
+      "before": {
+        "time": "模拟时间 1.00 s",
+        "burning": "3,746",
+        "charred": "0",
+        "run": "1"
+      },
+      "after": {
+        "time": "模拟时间 0.00 s",
+        "burning": "0",
+        "charred": "0",
+        "run": "2"
+      }
+    },
+    {
+      "name": "hide and reopen only changes presentation",
+      "passed": true
+    },
+    {
+      "name": "390px receipt has no horizontal page overflow",
+      "passed": true
+    },
+    {
+      "name": "actual JSON download retains reset snapshot and presentation choices, no invented notes",
+      "passed": true
+    },
+    {
+      "name": "refresh retains receipt and hidden choice but never restores simulation",
+      "passed": true
+    },
+    {
+      "name": "no page errors",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "sourceBefore": {
+    "tracks/art/index.html": "07c8048f3870d9462dcd8072d3f09b6115e2023227b4a75d9a69a173418ee640",
+    "tracks/art/art.js": "1ff8194561f2acb5d9a8124de68b3a39710e7e8de32d14b2a04d2615e8ccc13c",
+    "tracks/art/art.css": "2afe962cb45c40cc1ee9d007e66dd5caae8ff312d34109b24e12a413cab5cdbb",
+    "tracks/art/receipt-ui.mjs": "e6269e0decd6e14b8a003e828ef58c790109d6ad6a04a5b659a2c52840774274",
+    "demo/index.html": "e9d808c434bdd8ce91482f60502f03f5d08c56b71c082eb704c53275ff9f57d0",
+    "static/test_scene.ply": "2f7e110a4ae3cd7d9a2ea8e04537d562a37b1ddb04b2c541e961901afc7492d6"
+  },
+  "browser": "149.0.4022.52",
+  "status": "completed",
+  "sourceAfter": {
+    "tracks/art/index.html": "07c8048f3870d9462dcd8072d3f09b6115e2023227b4a75d9a69a173418ee640",
+    "tracks/art/art.js": "1ff8194561f2acb5d9a8124de68b3a39710e7e8de32d14b2a04d2615e8ccc13c",
+    "tracks/art/art.css": "2afe962cb45c40cc1ee9d007e66dd5caae8ff312d34109b24e12a413cab5cdbb",
+    "tracks/art/receipt-ui.mjs": "e6269e0decd6e14b8a003e828ef58c790109d6ad6a04a5b659a2c52840774274",
+    "demo/index.html": "e9d808c434bdd8ce91482f60502f03f5d08c56b71c082eb704c53275ff9f57d0",
+    "static/test_scene.ply": "2f7e110a4ae3cd7d9a2ea8e04537d562a37b1ddb04b2c541e961901afc7492d6"
+  },
+  "sourcesUnchanged": true
+}

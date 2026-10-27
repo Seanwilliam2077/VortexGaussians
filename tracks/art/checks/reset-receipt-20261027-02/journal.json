@@ -1,0 +1,407 @@
+{
+  "schema": "vortex-gaussians-art-journal",
+  "version": 1,
+  "createdAt": "2026-10-27T07:01:21.309Z",
+  "sessionId": "c103009b-d166-4282-9d46-59003b3ac1b0",
+  "title": "可燃的数字记忆（暂定）",
+  "hypothesis": "保存、介入与重新开始之间的创作张力；尚无观众验证。",
+  "notes": [],
+  "events": [
+    {
+      "at": "2026-10-27T07:01:21.911Z",
+      "type": "reinitialize",
+      "stage": "space",
+      "runId": "839e19e1-5881-471d-a743-a7ec3f9093cc",
+      "simulationStep": 0,
+      "reason": "载入场景",
+      "previous": {
+        "scene": {
+          "name": "test_scene.ply",
+          "kind": "synthetic-campfire-example",
+          "bytes": 4214913,
+          "sha256": "2f7e110a4ae3cd7d9a2ea8e04537d562a37b1ddb04b2c541e961901afc7492d6",
+          "kept": 45808,
+          "total": 45808,
+          "authenticity": "Synthetic example, not a real captured memory."
+        },
+        "runId": null,
+        "simulationStep": 0,
+        "simulatedSeconds": 0,
+        "seed": 20261027,
+        "counts": {
+          "burning": 0,
+          "charred": 0,
+          "heated": 0,
+          "frontier": 0
+        },
+        "scenePoints": 45808,
+        "parameters": {
+          "solver": "vpm",
+          "dimMode": "layer",
+          "sliceMode": "view",
+          "layers": 9,
+          "simLayers": 9,
+          "ppl": 600,
+          "emitterOn": false,
+          "spreadOn": false,
+          "spreadClockMode": "legacy",
+          "spreadParticlePolicy": "block",
+          "spreadMeasureMode": "legacy",
+          "spreadFrontierCap": 1400,
+          "spreadSampleCap": 160,
+          "spreadFeedCap": 48,
+          "sceneScale": 0.822,
+          "sceneLift": 0.6,
+          "sceneYaw": 0,
+          "scenePitch": 0,
+          "sceneOffX": 0,
+          "sceneOffZ": 0,
+          "yaw": 0,
+          "sceneSH": 1,
+          "sceneSorted": true,
+          "sceneBackdrop": false,
+          "sceneDepthTest": false
+        },
+        "scope": "Selected public counters and parameters; not a complete checkpoint or physical measurement."
+      },
+      "semantics": "Clears current flow and scene burn state. Not reverse combustion or checkpoint restoration."
+    },
+    {
+      "at": "2026-10-27T07:01:21.913Z",
+      "type": "stage",
+      "stage": "space",
+      "runId": "839e19e1-5881-471d-a743-a7ec3f9093cc",
+      "simulationStep": 0,
+      "selected": "space"
+    },
+    {
+      "at": "2026-10-27T07:01:21.913Z",
+      "type": "load-scene",
+      "stage": "space",
+      "runId": "839e19e1-5881-471d-a743-a7ec3f9093cc",
+      "simulationStep": 0,
+      "scene": {
+        "name": "test_scene.ply",
+        "kind": "synthetic-campfire-example",
+        "bytes": 4214913,
+        "sha256": "2f7e110a4ae3cd7d9a2ea8e04537d562a37b1ddb04b2c541e961901afc7492d6",
+        "kept": 45808,
+        "total": 45808,
+        "authenticity": "Synthetic example, not a real captured memory."
+      }
+    },
+    {
+      "at": "2026-10-27T07:01:21.968Z",
+      "type": "stage",
+      "stage": "intervene",
+      "runId": "839e19e1-5881-471d-a743-a7ec3f9093cc",
+      "simulationStep": 0,
+      "selected": "intervene"
+    },
+    {
+      "at": "2026-10-27T07:01:22.014Z",
+      "type": "ignite",
+      "stage": "intervene",
+      "runId": "839e19e1-5881-471d-a743-a7ec3f9093cc",
+      "simulationStep": 0,
+      "position": [
+        0,
+        0.65,
+        0
+      ],
+      "radius": 0.3,
+      "ignitedPoints": 2483,
+      "snapshot": {
+        "scene": {
+          "name": "test_scene.ply",
+          "kind": "synthetic-campfire-example",
+          "bytes": 4214913,
+          "sha256": "2f7e110a4ae3cd7d9a2ea8e04537d562a37b1ddb04b2c541e961901afc7492d6",
+          "kept": 45808,
+          "total": 45808,
+          "authenticity": "Synthetic example, not a real captured memory."
+        },
+        "runId": "839e19e1-5881-471d-a743-a7ec3f9093cc",
+        "simulationStep": 0,
+        "simulatedSeconds": 0,
+        "seed": 20261027,
+        "counts": {
+          "burning": 2483,
+          "charred": 0,
+          "heated": 0,
+          "frontier": 2483
+        },
+        "scenePoints": 45808,
+        "parameters": {
+          "solver": "vpm",
+          "dimMode": "layer",
+          "sliceMode": "view",
+          "layers": 9,
+          "simLayers": 9,
+          "ppl": 600,
+          "emitterOn": false,
+          "spreadOn": true,
+          "spreadClockMode": "legacy",
+          "spreadParticlePolicy": "block",
+          "spreadMeasureMode": "legacy",
+          "spreadFrontierCap": 1400,
+          "spreadSampleCap": 160,
+          "spreadFeedCap": 48,
+          "sceneScale": 0.822,
+          "sceneLift": 0.6,
+          "sceneYaw": 0,
+          "scenePitch": 0,
+          "sceneOffX": 0,
+          "sceneOffZ": 0,
+          "yaw": 0,
+          "sceneSH": 1,
+          "sceneSorted": true,
+          "sceneBackdrop": false,
+          "sceneDepthTest": false
+        },
+        "scope": "Selected public counters and parameters; not a complete checkpoint or physical measurement."
+      }
+    },
+    {
+      "at": "2026-10-27T07:01:22.051Z",
+      "type": "advance-start",
+      "stage": "intervene",
+      "runId": "839e19e1-5881-471d-a743-a7ec3f9093cc",
+      "simulationStep": 0,
+      "requestedFrames": 60,
+      "dt": 0.016666666666666666
+    },
+    {
+      "at": "2026-10-27T07:01:23.376Z",
+      "type": "advance-complete",
+      "stage": "intervene",
+      "runId": "839e19e1-5881-471d-a743-a7ec3f9093cc",
+      "simulationStep": 60,
+      "snapshot": {
+        "scene": {
+          "name": "test_scene.ply",
+          "kind": "synthetic-campfire-example",
+          "bytes": 4214913,
+          "sha256": "2f7e110a4ae3cd7d9a2ea8e04537d562a37b1ddb04b2c541e961901afc7492d6",
+          "kept": 45808,
+          "total": 45808,
+          "authenticity": "Synthetic example, not a real captured memory."
+        },
+        "runId": "839e19e1-5881-471d-a743-a7ec3f9093cc",
+        "simulationStep": 60,
+        "simulatedSeconds": 1,
+        "seed": 20261027,
+        "counts": {
+          "burning": 3746,
+          "charred": 0,
+          "heated": 377,
+          "frontier": 3746
+        },
+        "scenePoints": 45808,
+        "parameters": {
+          "solver": "vpm",
+          "dimMode": "layer",
+          "sliceMode": "view",
+          "layers": 9,
+          "simLayers": 9,
+          "ppl": 600,
+          "emitterOn": false,
+          "spreadOn": true,
+          "spreadClockMode": "legacy",
+          "spreadParticlePolicy": "block",
+          "spreadMeasureMode": "legacy",
+          "spreadFrontierCap": 1400,
+          "spreadSampleCap": 160,
+          "spreadFeedCap": 48,
+          "sceneScale": 0.822,
+          "sceneLift": 0.6,
+          "sceneYaw": 0,
+          "scenePitch": 0,
+          "sceneOffX": 0,
+          "sceneOffZ": 0,
+          "yaw": 0,
+          "sceneSH": 1,
+          "sceneSorted": true,
+          "sceneBackdrop": false,
+          "sceneDepthTest": false
+        },
+        "scope": "Selected public counters and parameters; not a complete checkpoint or physical measurement."
+      }
+    },
+    {
+      "at": "2026-10-27T07:01:23.500Z",
+      "type": "stage",
+      "stage": "revisit",
+      "runId": "839e19e1-5881-471d-a743-a7ec3f9093cc",
+      "simulationStep": 60,
+      "selected": "revisit"
+    },
+    {
+      "at": "2026-10-27T07:01:23.546Z",
+      "type": "reinitialize",
+      "stage": "revisit",
+      "runId": "12510e5d-aed2-44ec-a31a-d113db6c2f90",
+      "simulationStep": 0,
+      "reason": "作者选择重新开始",
+      "previous": {
+        "scene": {
+          "name": "test_scene.ply",
+          "kind": "synthetic-campfire-example",
+          "bytes": 4214913,
+          "sha256": "2f7e110a4ae3cd7d9a2ea8e04537d562a37b1ddb04b2c541e961901afc7492d6",
+          "kept": 45808,
+          "total": 45808,
+          "authenticity": "Synthetic example, not a real captured memory."
+        },
+        "runId": "839e19e1-5881-471d-a743-a7ec3f9093cc",
+        "simulationStep": 60,
+        "simulatedSeconds": 1,
+        "seed": 20261027,
+        "counts": {
+          "burning": 3746,
+          "charred": 0,
+          "heated": 377,
+          "frontier": 3746
+        },
+        "scenePoints": 45808,
+        "parameters": {
+          "solver": "vpm",
+          "dimMode": "layer",
+          "sliceMode": "view",
+          "layers": 9,
+          "simLayers": 9,
+          "ppl": 600,
+          "emitterOn": false,
+          "spreadOn": true,
+          "spreadClockMode": "legacy",
+          "spreadParticlePolicy": "block",
+          "spreadMeasureMode": "legacy",
+          "spreadFrontierCap": 1400,
+          "spreadSampleCap": 160,
+          "spreadFeedCap": 48,
+          "sceneScale": 0.822,
+          "sceneLift": 0.6,
+          "sceneYaw": 0,
+          "scenePitch": 0,
+          "sceneOffX": 0,
+          "sceneOffZ": 0,
+          "yaw": 0,
+          "sceneSH": 1,
+          "sceneSorted": true,
+          "sceneBackdrop": false,
+          "sceneDepthTest": false
+        },
+        "scope": "Selected public counters and parameters; not a complete checkpoint or physical measurement."
+      },
+      "semantics": "Clears current flow and scene burn state. Not reverse combustion or checkpoint restoration."
+    },
+    {
+      "at": "2026-10-27T07:01:23.547Z",
+      "type": "stage",
+      "stage": "space",
+      "runId": "12510e5d-aed2-44ec-a31a-d113db6c2f90",
+      "simulationStep": 0,
+      "selected": "space"
+    },
+    {
+      "at": "2026-10-27T07:01:23.583Z",
+      "type": "receipt-visibility",
+      "stage": "space",
+      "runId": "12510e5d-aed2-44ec-a31a-d113db6c2f90",
+      "simulationStep": 0,
+      "visible": false,
+      "semantics": "Presentation only; no event deletion or simulation state change."
+    },
+    {
+      "at": "2026-10-27T07:01:23.618Z",
+      "type": "receipt-visibility",
+      "stage": "space",
+      "runId": "12510e5d-aed2-44ec-a31a-d113db6c2f90",
+      "simulationStep": 0,
+      "visible": true,
+      "semantics": "Presentation only; no event deletion or simulation state change."
+    },
+    {
+      "at": "2026-10-27T07:01:23.867Z",
+      "type": "receipt-visibility",
+      "stage": "space",
+      "runId": "12510e5d-aed2-44ec-a31a-d113db6c2f90",
+      "simulationStep": 0,
+      "visible": false,
+      "semantics": "Presentation only; no event deletion or simulation state change."
+    },
+    {
+      "at": "2026-10-27T07:01:23.901Z",
+      "type": "export",
+      "stage": "space",
+      "runId": "12510e5d-aed2-44ec-a31a-d113db6c2f90",
+      "simulationStep": 0
+    }
+  ],
+  "omittedEventCount": 0,
+  "resetReceiptVisible": false,
+  "draft": {
+    "kind": "author-draft",
+    "context": "",
+    "choice": "",
+    "observation": ""
+  },
+  "exportedAt": "2026-10-27T07:01:23.901Z",
+  "tool": "tracks/art/index.html",
+  "limitations": [
+    "Author rehearsal, not a completed artwork or validated audience study.",
+    "Notes and selected metadata only; no asset bytes, screenshots or resumable simulation checkpoint.",
+    "Reset reinitializes current flow and scene burn; it does not reverse combustion.",
+    "Artistic claims and TOG technical claims require independent evidence."
+  ],
+  "currentSnapshot": {
+    "scene": {
+      "name": "test_scene.ply",
+      "kind": "synthetic-campfire-example",
+      "bytes": 4214913,
+      "sha256": "2f7e110a4ae3cd7d9a2ea8e04537d562a37b1ddb04b2c541e961901afc7492d6",
+      "kept": 45808,
+      "total": 45808,
+      "authenticity": "Synthetic example, not a real captured memory."
+    },
+    "runId": "12510e5d-aed2-44ec-a31a-d113db6c2f90",
+    "simulationStep": 0,
+    "simulatedSeconds": 0,
+    "seed": 20261027,
+    "counts": {
+      "burning": 0,
+      "charred": 0,
+      "heated": 0,
+      "frontier": 0
+    },
+    "scenePoints": 45808,
+    "parameters": {
+      "solver": "vpm",
+      "dimMode": "layer",
+      "sliceMode": "view",
+      "layers": 9,
+      "simLayers": 9,
+      "ppl": 600,
+      "emitterOn": false,
+      "spreadOn": false,
+      "spreadClockMode": "legacy",
+      "spreadParticlePolicy": "block",
+      "spreadMeasureMode": "legacy",
+      "spreadFrontierCap": 1400,
+      "spreadSampleCap": 160,
+      "spreadFeedCap": 48,
+      "sceneScale": 0.822,
+      "sceneLift": 0.6,
+      "sceneYaw": 0,
+      "scenePitch": 0,
+      "sceneOffX": 0,
+      "sceneOffZ": 0,
+      "yaw": 0,
+      "sceneSH": 1,
+      "sceneSorted": true,
+      "sceneBackdrop": false,
+      "sceneDepthTest": false
+    },
+    "scope": "Selected public counters and parameters; not a complete checkpoint or physical measurement."
+  }
+}

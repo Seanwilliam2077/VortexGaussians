@@ -91,6 +91,22 @@
           </dl>
           <p class="fine">这些是原 demo 的离散状态计数，不是热量、真实损毁程度或观众反应。</p>
         </div>
+        <section class="reset-receipt" aria-labelledby="receipt-title">
+          <p class="eyebrow">一个可撤销的呈现试验</p>
+          <h2 id="receipt-title">画面重新开始之后</h2>
+          <p id="receipt-empty" class="fine">尚无重新开始的回执。你可以只观看，不需要为了生成记录而点火。</p>
+          <button type="button" id="receipt-toggle" aria-controls="receipt-content" aria-expanded="true" hidden>暂时收起回执</button>
+          <div id="receipt-content" hidden>
+            <p id="receipt-context"></p>
+            <dl class="readout">
+              <div><dt>重新开始前的模拟时间</dt><dd id="receipt-time">—</dd></div>
+              <div><dt>当时燃烧中</dt><dd id="receipt-burning">—</dd></div>
+              <div><dt>当时炭化</dt><dd id="receipt-charred">—</dd></div>
+            </dl>
+            <p id="receipt-at" class="fine"></p>
+            <p class="fine">这是最近保留的一次技术操作记录，不是烧损状态、记忆或观众感受。收起只隐藏此卡片，不删除日志；重新初始化仍不等于倒放。日志与回执均受本浏览器保存范围限制。</p>
+          </div>
+        </section>
       </section>
 
       <aside class="journal" aria-labelledby="journal-title">
