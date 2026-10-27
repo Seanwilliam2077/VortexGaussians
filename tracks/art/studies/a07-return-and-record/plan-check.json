@@ -1,0 +1,145 @@
+{
+  "plan": {
+    "schema": "a07-return-and-record-v1",
+    "title": "一次重新开始",
+    "footer": "合成示例 · agent剪辑草稿 · 含静帧与并置",
+    "sources": {
+      "video": {
+        "file": "../a06-char-and-reset/run-01/study.mp4",
+        "sha256": "c42b6e27b3df2cb68470cbe5b2b106e4f2cf3d81c5f8ee7021f5cdd6230a1299"
+      },
+      "result": {
+        "file": "../a06-char-and-reset/run-01/result.json",
+        "sha256": "02c93dac15a67ae87d7388c9af8eb56b25a987531c76bfc831082661dd6fff34"
+      },
+      "initial": {
+        "file": "../a06-char-and-reset/run-01/02-loaded.png",
+        "sha256": "ca189657350c5d7d5437b58223078b95408c331903d3b9543f80c183aa83d079"
+      },
+      "reset": {
+        "file": "../a06-char-and-reset/run-01/06-reset-scene.png",
+        "sha256": "de419d5557ff8a3e47a4ba6086496ce9dc1d5479a0644accb436b12a7520838d"
+      },
+      "receipt": {
+        "file": "../a06-char-and-reset/run-01/07-reset-receipt.png",
+        "sha256": "69e9ec0d7ea806fafd42b6fa9efb992006654fdf52daae1d8c1863a3b73bbb52"
+      }
+    },
+    "output": {
+      "width": 1280,
+      "height": 960,
+      "fps": 25,
+      "audio": false,
+      "colorAdjustment": false,
+      "motionInterpolation": false
+    },
+    "segments": [
+      {
+        "id": "initial",
+        "duration": 3.0,
+        "crop": [
+          40,
+          20,
+          850,
+          530
+        ],
+        "scale": [
+          1020,
+          636
+        ],
+        "position": [
+          130,
+          125
+        ],
+        "label": "01  原状"
+      },
+      {
+        "id": "burn",
+        "start": 5.1,
+        "end": 18.1,
+        "speed": 1.0,
+        "duration": 13.0,
+        "crop": [
+          40,
+          0,
+          850,
+          530
+        ],
+        "scale": [
+          1020,
+          636
+        ],
+        "position": [
+          130,
+          125
+        ],
+        "label": "02  燃烧片段，保留原片速度"
+      },
+      {
+        "id": "reset",
+        "duration": 3.5,
+        "crop": [
+          40,
+          0,
+          850,
+          530
+        ],
+        "scale": [
+          1020,
+          636
+        ],
+        "position": [
+          130,
+          125
+        ],
+        "label": "03  重新开始"
+      },
+      {
+        "id": "together",
+        "duration": 5.5,
+        "sceneCrop": [
+          40,
+          0,
+          850,
+          530
+        ],
+        "sceneScale": [
+          850,
+          530
+        ],
+        "scenePosition": [
+          215,
+          110
+        ],
+        "receiptCrop": [
+          60,
+          400,
+          800,
+          120
+        ],
+        "receiptScale": [
+          1200,
+          180
+        ],
+        "receiptPosition": [
+          40,
+          705
+        ],
+        "label": "04  恢复后的场景，与重置前的操作摘要",
+        "receiptLabel": "以下数字来自同次真实回执截图；不是当前场景状态"
+      }
+    ],
+    "inspectionSeconds": [
+      1.0,
+      15.0,
+      17.5,
+      22.0
+    ],
+    "budget": {
+      "mainEncodes": 1,
+      "layoutCorrections": 1,
+      "browserOrSimulation": 0
+    }
+  },
+  "inputHashesMatch": true
+}
