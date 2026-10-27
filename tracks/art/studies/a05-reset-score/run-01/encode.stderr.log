@@ -1,0 +1,53 @@
+-filter_complex_script is deprecated, use -/filter_complex filter.ffscript instead
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'C:\Users\seanzjxiao\Documents\Codex\2026-10-13\https-github-com-jiarui-liu-ideascientist\work\VortexGaussians\tracks\art\studies\a04-automated-score\run-02\study.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf61.7.100
+  Duration: 00:00:21.16, start: 0.000000, bitrate: 191 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1280x800, 190 kb/s, 6.16 fps, 11.67 tbr, 1000k tbn (default)
+      Metadata:
+        handler_name    : VideoHandler
+        vendor_id       : [0][0][0][0]
+        encoder         : Lavc61.19.101 libx264
+Stream mapping:
+  Stream #0:0 (h264) -> split:default
+  concat:out:v0 -> Stream #0:0 (libx264)
+[libx264 @ 0000022EFCDB3840] using SAR=1/1
+[libx264 @ 0000022EFCDB3840] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2 AVX512
+[libx264 @ 0000022EFCDB3840] profile High, level 3.1, 4:2:0, 8-bit
+[libx264 @ 0000022EFCDB3840] 264 - core 164 r3095 baee400 - H.264/MPEG-4 AVC codec - Copyleft 2003-2022 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=2 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=18.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to 'study.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf61.7.100
+  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, progressive), 1024x800 [SAR 1:1 DAR 32:25], q=2-31, 25 fps, 12800 tbn
+      Metadata:
+        encoder         : Lavc61.19.101 libx264
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+frame=  194 fps=0.0 q=23.0 size=       0KiB time=00:00:07.68 bitrate=   0.1kbits/s speed=15.3x    
+[mp4 @ 0000022EFCD6FF00] Starting second pass: moving the moov atom to the beginning of the file
+[out#0/mp4 @ 0000022EFCD3A080] video:113KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 4.605968%
+frame=  372 fps=0.0 q=-1.0 Lsize=     118KiB time=00:00:14.80 bitrate=  65.4kbits/s speed=19.1x    
+[libx264 @ 0000022EFCDB3840] frame I:2     Avg QP: 5.53  size: 43332
+[libx264 @ 0000022EFCDB3840] frame P:93    Avg QP: 8.89  size:   179
+[libx264 @ 0000022EFCDB3840] frame B:277   Avg QP: 7.74  size:    42
+[libx264 @ 0000022EFCDB3840] consecutive B-frames:  0.5%  0.0%  1.6% 97.8%
+[libx264 @ 0000022EFCDB3840] mb I  I16..4: 72.2% 15.0% 12.8%
+[libx264 @ 0000022EFCDB3840] mb P  I16..4:  0.0%  0.0%  0.0%  P16..4:  0.4%  0.0%  0.0%  0.0%  0.0%    skip:99.5%
+[libx264 @ 0000022EFCDB3840] mb B  I16..4:  0.0%  0.0%  0.0%  B16..8:  0.2%  0.0%  0.0%  direct: 0.0%  skip:99.8%  L0:47.9% L1:52.1% BI: 0.0%
+[libx264 @ 0000022EFCDB3840] 8x8 transform intra:16.0% inter:76.7%
+[libx264 @ 0000022EFCDB3840] coded y,uvDC,uvAC intra: 21.5% 18.7% 17.9% inter: 0.0% 0.0% 0.0%
+[libx264 @ 0000022EFCDB3840] i16 v,h,dc,p: 87% 10%  3%  0%
+[libx264 @ 0000022EFCDB3840] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 35% 31% 10%  4%  4%  3%  5%  3%  6%
+[libx264 @ 0000022EFCDB3840] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 29% 31% 20%  3%  3%  2%  4%  3%  5%
+[libx264 @ 0000022EFCDB3840] i8c dc,h,v,p: 80% 12%  7%  1%
+[libx264 @ 0000022EFCDB3840] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 0000022EFCDB3840] ref P L0: 96.0%  0.4%  3.3%  0.3%
+[libx264 @ 0000022EFCDB3840] ref B L0: 38.7% 61.2%  0.2%
+[libx264 @ 0000022EFCDB3840] ref B L1: 95.3%  4.7%
+[libx264 @ 0000022EFCDB3840] kb/s:61.82

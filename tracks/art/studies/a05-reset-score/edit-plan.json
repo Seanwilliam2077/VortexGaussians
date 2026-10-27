@@ -1,0 +1,16 @@
+{
+  "schema": "a05-editorial-plan-v1",
+  "source": "../a04-automated-score/run-02/study.mp4",
+  "sourceSHA256": "cea05d4248bce8350d09867b2af70e0ac4f71d74ae1dd5a3afadb3fa61d6e6ca",
+  "sourceResult": "../a04-automated-score/run-02/result.json",
+  "sourceResultSHA256": "de15b2a836c4fe86f425bc29d7cdff1918d1a7d054db8e9bfb586d6a17717465",
+  "output": {"width": 1024, "height": 800, "fps": 25, "audio": false, "motionInterpolation": false},
+  "footer": "A05 · 合成素材 · agent 自动编排 / 剪辑草稿 · 含静帧延长",
+  "segments": [
+    {"id": "fire", "start": 8.1, "end": 10.6, "duration": 5.0, "crop": [40, 0, 848, 530], "title": "01  点燃", "subtitle": "合成场景中的一次点火"},
+    {"id": "reset", "start": 11.4, "end": 13.0, "duration": 4.0, "crop": [40, 0, 848, 530], "title": "02  重新开始", "subtitle": "火焰消失，模拟时间归零"},
+    {"id": "receipt", "start": 18.3, "end": 20.8, "duration": 6.0, "crop": [40, 238, 848, 398], "title": "03  留下的是一次操作记录", "subtitle": "回执不恢复场景，也不是个人记忆"}
+  ],
+  "inspectionSeconds": [2.0, 7.0, 11.0],
+  "limit": {"mainEncodes": 1, "layoutCorrections": 1, "browserOrSimulation": 0}
+}
