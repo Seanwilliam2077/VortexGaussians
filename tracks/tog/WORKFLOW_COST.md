@@ -2,6 +2,8 @@
 
 27 October 2026. These are observed costs on one developed 32³ passive-smoke input. They are not production latency, repeated timing estimates or a speed ranking between different solver formulations and starting points.
 
+The [subsequent workflow review](ORDINARY_WORKFLOW_DECISION.md) also limits what these costs mean: T02/T06's target generator already constructs the fixed-view alpha images by ordinary 2D warping and ROI compositing. T05–T08 establish feasibility and cost inside the specified 3D control model, not that a creator needs that model. An actual fixed-view delivery must allow an applicable image workflow as a baseline; changing viewpoint alone may call for volume deformation rather than fluid re-simulation. No such external workflow has been executed or timed here.
+
 ## Qualified ordinary cold start
 
 [T05](tasks/t05-framewise-cold-start/README.md) reaches all 25 editing and 50 protection checks from x=0, using the same 76-constraint objective qualified in T04. It uses 26 returned steps and 84 complete model rollouts. [Independent saved-array review](../validation/t05-review.md) verifies the zero start, final accepted state and original gates. The source is the published `result-summary.json`, SHA256 `2883db0d4651a0c2d7388061c3f5918a68cc155eea1ee5ec36cf10f780d0aa5c`.
