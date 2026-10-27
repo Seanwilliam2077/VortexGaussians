@@ -1,0 +1,18 @@
+{
+  "scope": "Tiny new-cache contract checks only; not numerical smoke-model qualification",
+  "passed": true,
+  "checks": {
+    "exact_hit": true,
+    "no_graph_retained": true,
+    "wrong_x_miss": true,
+    "detached_clone_isolation": true,
+    "input_version_miss": true,
+    "model_version_miss": true,
+    "rollback_invalidates": true,
+    "signed_zero_miss": true,
+    "final_slot_reservation": true
+  },
+  "torch": "2.11.0+cu128",
+  "CUDAInitialized": false,
+  "cacheSourceSHA256": "c51cacc312c8cb9a556c6951708d68b2ddc189a2c0bef4d53179e9b417bc1d1e"
+}
