@@ -1,0 +1,135 @@
+{
+  "status": "passed_cpu_preparation_only",
+  "executedOptimization": false,
+  "importedTorch": false,
+  "sourcePins": {
+    "runner.py": {
+      "path": "runner.py",
+      "sha256": "13dfdefe95dfc7e911b63418abb6a163434a6cc5275d6ee3abde01a7be28adf7",
+      "bytes": 43480
+    },
+    "config.json": {
+      "path": "config.json",
+      "sha256": "e65659117ba5ed114248ced5b83c28713e058d03009b6693727c8bf622c9238a",
+      "bytes": 4565
+    },
+    "PROTOCOL.md": {
+      "path": "PROTOCOL.md",
+      "sha256": "d22b6e8c2cb060bb56e218b736c5550659f289cd695bb3d449dcf438726cac70",
+      "bytes": 6508
+    },
+    "core.py": {
+      "path": "../../src/core.py",
+      "sha256": "ac750b70a86743ac858f1c53cf620ce29c63c462456115af4d0d8c93fa20bd9e",
+      "bytes": 13301
+    },
+    "approved.npz": {
+      "path": "../../fixtures/r22/approved.npz",
+      "sha256": "9da9166a209d18cc8256d78f14f13a2a5d834ea5e9936b4d4f58440b92917f09",
+      "bytes": 1868518
+    },
+    "target-edit.npy": {
+      "path": "../t02-authored-upper-bend/run-01/target-edit.npy",
+      "sha256": "55f81cb5b5c4d88e05d773fe21210635fbf7b601b42bb9b1d10d80f559f05e96",
+      "bytes": 206528
+    },
+    "brief.json": {
+      "path": "../t02-authored-upper-bend/run-01/brief.json",
+      "sha256": "de67c8105fb11e39f26353bfa54795572871017264ea9fc316a3ac758d4da80a",
+      "bytes": 3822
+    },
+    "T04-runner.py": {
+      "path": "../t04-framewise-feasibility/runner.py",
+      "sha256": "a2a942bbc8759e6f3352a2d14a7ae2fbb4673b34189cd2a768faed6f8cf7fb44",
+      "bytes": 40050
+    },
+    "T04-config.json": {
+      "path": "../t04-framewise-feasibility/config.json",
+      "sha256": "25eced8e01445717aeb2aa802e90fea120edc0cb33a48bb85e224b73fb849eda",
+      "bytes": 5088
+    },
+    "T04-freeze.json": {
+      "path": "../t04-framewise-feasibility/freeze.json",
+      "sha256": "2714c22ab82e85555d1dd48537bb3657d48c6598ff12c16376de3e30db7784fa",
+      "bytes": 3220
+    },
+    "T04-result-summary.json": {
+      "path": "../t04-framewise-feasibility/result-summary.json",
+      "sha256": "a4dd9d7573616ffc2ac278cc927ba8e2241610e91bbea9096587b2f74774b1f6",
+      "bytes": 44940
+    },
+    "T04-raw-run-manifest.json": {
+      "path": "../t04-framewise-feasibility/raw-run-manifest.json",
+      "sha256": "da3e6edc6a4c07d8e08a63e5c0cd6311afa16d4412dec1476208b0cb9c3d75d9",
+      "bytes": 49438
+    },
+    "g0-proof.npz": {
+      "path": "g0-proof.npz",
+      "sha256": "9dedb1e13b970df50f2fdb9d009c369346a8ea6a0f33d5d6a4548e4da7ef46b6",
+      "bytes": 89109
+    },
+    "g0-proof.json": {
+      "path": "g0-proof.json",
+      "sha256": "a146bdf9e71bac78d547e93a23b145a73a1df7d67e5c3e2ee03f083a33136e8e",
+      "bytes": 13651
+    },
+    "prepare_qualification_proof.py": {
+      "path": "prepare_qualification_proof.py",
+      "sha256": "a51a6a79787aa978e3f0d159f7c40f1759891195cd5f3a1527e77cfc40994bb9",
+      "bytes": 3377
+    }
+  },
+  "qualificationProofAuthentication": {
+    "status": "reused_authenticated",
+    "passed": true,
+    "rolloutCount": 0,
+    "backwardCalls": 0,
+    "scope": "Authenticated prior T04 scalar G0, not a new AD experiment; no prior optimization arrays opened",
+    "sourceReportSHA256": "a4dd9d7573616ffc2ac278cc927ba8e2241610e91bbea9096587b2f74774b1f6",
+    "ASTExact": {
+      "Objective": true,
+      "acceptance": true,
+      "force_stats": true
+    },
+    "recomputedStoredFDErrors": [
+      3.1589473503432874e-07,
+      2.2802604998511525e-07,
+      9.546670967905249e-07,
+      6.400381335586561e-08
+    ],
+    "gate": 0.0001,
+    "compactProof": {
+      "sha256": "9dedb1e13b970df50f2fdb9d009c369346a8ea6a0f33d5d6a4548e4da7ef46b6",
+      "bytes": 89109,
+      "originalFileCount": 11,
+      "verifiedRawArrayCount": 25,
+      "rawScalarFDErrors": [
+        3.1593466581561256e-07,
+        2.2762675295326867e-07,
+        9.546851289756773e-07,
+        6.400381263454931e-08
+      ],
+      "maximumScalarRecordDifference": 3.637978807091713e-12,
+      "scope": "All 25 non-frame G0 arrays authenticated against original raw SHA. Scalar PHR recomposed from saved q/constraints and gradient-dot-direction; no new forward, AD, image-to-constraint or force evaluation. Nine original frame arrays are omitted."
+    },
+    "expectedEnvironment": {
+      "torch": "2.11.0+cu128",
+      "numpy": "2.4.6",
+      "torchBuildCUDA": "12.8",
+      "dtype": "float64",
+      "threads": 4,
+      "device": "cuda",
+      "gpuName": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "uuid": "53365c2e-346d-c2a5-2c98-25c00591a721",
+      "totalDeviceMemoryBytes": 8546484224
+    },
+    "priorCost": {
+      "rollouts": 9,
+      "backwardCalls": 1,
+      "wallSecondsIncludingEvidenceIO": 5.7131403000094,
+      "scope": "Existing development qualification; not charged as new online forward work"
+    },
+    "authenticationSeconds": 0.041765900037717074
+  },
+  "notAnExecutionFreeze": true
+}

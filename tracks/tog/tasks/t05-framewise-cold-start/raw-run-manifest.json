@@ -1,0 +1,1803 @@
+{
+  "scope": "Hashes of preserved local raw files, not embedded data or replay proof",
+  "workerSummarySHA256": "ecc02a5829a76cc47f27c096d1479137205f508bf3103c2dcf7e7e19bcded205",
+  "files": {
+    "framewise_joint/T02/accepted-000.npz": {
+      "sha256": "0f59cd37b1eefde6b82e1726a87cb7b9c6729f546e1413dbb407cc0aa6d9e21f",
+      "bytes": 921064,
+      "arrays": {
+        "x": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "2aae7dc846aaf25f1cadf55f1666862046c6db9d65d84bdc07fa039dac405606"
+        },
+        "q": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "2aae7dc846aaf25f1cadf55f1666862046c6db9d65d84bdc07fa039dac405606"
+        },
+        "frames": {
+          "shape": [
+            25,
+            64,
+            64
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "d5e91d9a6e2c069f02f347c41b78e4fc7052b8587ce1944b7d548a65e3911757"
+        },
+        "constraints": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "78ca2f7f91cd8762a2ae82e4e16603a5fdd3f75369a36fa1b3dcd36cab2c6c82"
+        },
+        "multipliers": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "4beb641f77c3df2749a5dffc0a23f4270dc4b94e1e940287fc3ebfa05b720662"
+        },
+        "penalty": {
+          "shape": [],
+          "dtype": "<f8",
+          "rawSHA256": "6c3c396ed6b5c36dcae172271f462051b1266b851e92df3deea8ac65478fd712"
+        },
+        "mask": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "830768b0a3206d794d9b5556133e89337e496b8229fbfd1052de9f698c9b8f5c"
+        }
+      }
+    },
+    "framewise_joint/T02/accepted-001.npz": {
+      "sha256": "e97c7fb42604a36cfea0fa9bb15de7aa53fec7035b375dde682e99d706e52ca4",
+      "bytes": 921064,
+      "arrays": {
+        "x": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "6b94c080c60544f7142f371fcfc73d399cf71a4a1806f9ec2fd86ff7a115ffe5"
+        },
+        "q": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "35d6f7d2e70df80262978b7c0f6c88301a2d68b307b5ab00add43aa50169b2f8"
+        },
+        "frames": {
+          "shape": [
+            25,
+            64,
+            64
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "4a4d17e4f1e7777aad30a4d8ec1beaede915c46789e06f8b04081f90399f8a71"
+        },
+        "constraints": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "30367d3fcf2a4f201db211f101db2289ba1499bd85ef4811682b7face1ff32cd"
+        },
+        "multipliers": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "4beb641f77c3df2749a5dffc0a23f4270dc4b94e1e940287fc3ebfa05b720662"
+        },
+        "penalty": {
+          "shape": [],
+          "dtype": "<f8",
+          "rawSHA256": "6c3c396ed6b5c36dcae172271f462051b1266b851e92df3deea8ac65478fd712"
+        },
+        "mask": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "830768b0a3206d794d9b5556133e89337e496b8229fbfd1052de9f698c9b8f5c"
+        }
+      }
+    },
+    "framewise_joint/T02/accepted-002.npz": {
+      "sha256": "71a05263d5702e0d8f5987ded06de98d194954e8118584cf9500fff3e41d6b9a",
+      "bytes": 921064,
+      "arrays": {
+        "x": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "7a2e4c24ce8800fa14acab30c40a4d91126f618ad0cfbc6abe1f7838c3fe1997"
+        },
+        "q": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "5c8260f08aea54b312f28ecd55e0cad6a0b02c3cf7e4ec1d55baaf5816faa968"
+        },
+        "frames": {
+          "shape": [
+            25,
+            64,
+            64
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "0ab566db15ea22e026f62c737ce61ff40463e5b6e67bb0d58f467ac555099868"
+        },
+        "constraints": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "3325de15e3bdaa07a3248703fc2ca1e4698a9ab5144010c8dd9230382c0707f4"
+        },
+        "multipliers": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "4beb641f77c3df2749a5dffc0a23f4270dc4b94e1e940287fc3ebfa05b720662"
+        },
+        "penalty": {
+          "shape": [],
+          "dtype": "<f8",
+          "rawSHA256": "6c3c396ed6b5c36dcae172271f462051b1266b851e92df3deea8ac65478fd712"
+        },
+        "mask": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "830768b0a3206d794d9b5556133e89337e496b8229fbfd1052de9f698c9b8f5c"
+        }
+      }
+    },
+    "framewise_joint/T02/accepted-003.npz": {
+      "sha256": "3b21e2569d840ba7a4324374b73033766180636f79ac4fcb8d5e9b64fa4e8e9a",
+      "bytes": 921064,
+      "arrays": {
+        "x": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "7c5fd6fb6522fd0add5b7bb770444e6576acc2656af223e75f94dad81080efa2"
+        },
+        "q": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "0dccd78b518c005510a1d506c04d189df8a0fc585d7712da927a331d613f8c49"
+        },
+        "frames": {
+          "shape": [
+            25,
+            64,
+            64
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "30ba3350d8a45e9547c85dfe0ab7a6c2088e5f78cf9d254b490c291627e0335c"
+        },
+        "constraints": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "afc548f93be3c0e6d734c977fa970ece3a17aca2a71d5a7b8eb4c73970b5cbae"
+        },
+        "multipliers": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "4beb641f77c3df2749a5dffc0a23f4270dc4b94e1e940287fc3ebfa05b720662"
+        },
+        "penalty": {
+          "shape": [],
+          "dtype": "<f8",
+          "rawSHA256": "6c3c396ed6b5c36dcae172271f462051b1266b851e92df3deea8ac65478fd712"
+        },
+        "mask": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "830768b0a3206d794d9b5556133e89337e496b8229fbfd1052de9f698c9b8f5c"
+        }
+      }
+    },
+    "framewise_joint/T02/accepted-004.npz": {
+      "sha256": "4dd33a8329a99d4186ba1492ed31c617535f2df9471746625435cfa37f45a56a",
+      "bytes": 921064,
+      "arrays": {
+        "x": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "1cb6e73a161a85a4a17c13a6b17b77b624f57bbf2bdef29c9574c1341a3dd18d"
+        },
+        "q": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "52332ec84291468f05cd340fa2b09952cc4b339faa03c49983279b240b6b404a"
+        },
+        "frames": {
+          "shape": [
+            25,
+            64,
+            64
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "91901e03ad84fffc1d5b5f90924c6a89ed5a3b97012b340b26e3227358c05291"
+        },
+        "constraints": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "332081fecd767db1a01a0f81f9f918fae6149645eea80aa9b8c6a8a7a3585f54"
+        },
+        "multipliers": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "4beb641f77c3df2749a5dffc0a23f4270dc4b94e1e940287fc3ebfa05b720662"
+        },
+        "penalty": {
+          "shape": [],
+          "dtype": "<f8",
+          "rawSHA256": "6c3c396ed6b5c36dcae172271f462051b1266b851e92df3deea8ac65478fd712"
+        },
+        "mask": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "830768b0a3206d794d9b5556133e89337e496b8229fbfd1052de9f698c9b8f5c"
+        }
+      }
+    },
+    "framewise_joint/T02/accepted-005.npz": {
+      "sha256": "7e1bf325cf96f66c1a6bd6e126d880abda73e35327934be82cf8d974439f54b7",
+      "bytes": 921064,
+      "arrays": {
+        "x": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "3deadba824c8c0cd41cc6c5ed83f7fe81467ad20f3f8d3d6fc7896fa6a7f91d6"
+        },
+        "q": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "26a10351c306b5f4d424049017d7d77fec01b88bd04b3c23bb8c5f981ae570e2"
+        },
+        "frames": {
+          "shape": [
+            25,
+            64,
+            64
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "86315d6d8bd62f96b1c691d7716ed9ba7cd35a4ad976db6351060a1025027a34"
+        },
+        "constraints": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "257e5b2796d9626880eecafc52a5fd4e9e3a0f77932962e856fe04f994de6f6f"
+        },
+        "multipliers": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "4beb641f77c3df2749a5dffc0a23f4270dc4b94e1e940287fc3ebfa05b720662"
+        },
+        "penalty": {
+          "shape": [],
+          "dtype": "<f8",
+          "rawSHA256": "6c3c396ed6b5c36dcae172271f462051b1266b851e92df3deea8ac65478fd712"
+        },
+        "mask": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "830768b0a3206d794d9b5556133e89337e496b8229fbfd1052de9f698c9b8f5c"
+        }
+      }
+    },
+    "framewise_joint/T02/accepted-006.npz": {
+      "sha256": "c48972a9015195408632388d71164bb521ed6dbb00de83c1e9cd51d8b8b10d1d",
+      "bytes": 921064,
+      "arrays": {
+        "x": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "33add13d6883507413891b41fa7765d57eb4e97b0b5dfacdf2d608f5d837eb57"
+        },
+        "q": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "016d9f584b6ae0ce1e0c9f289a8d82f68cb2e7fbdf44c5ae5cbc30f4404e548c"
+        },
+        "frames": {
+          "shape": [
+            25,
+            64,
+            64
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "188d1a5be1da9a1331b9fae11d5cbfd786606f5f41fe2fa6d5d85470152281f4"
+        },
+        "constraints": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "67b69b1910bf60673baae09fbb2e57f7eb75046f7fd8472e318f263b443a3ee1"
+        },
+        "multipliers": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "4beb641f77c3df2749a5dffc0a23f4270dc4b94e1e940287fc3ebfa05b720662"
+        },
+        "penalty": {
+          "shape": [],
+          "dtype": "<f8",
+          "rawSHA256": "6c3c396ed6b5c36dcae172271f462051b1266b851e92df3deea8ac65478fd712"
+        },
+        "mask": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "830768b0a3206d794d9b5556133e89337e496b8229fbfd1052de9f698c9b8f5c"
+        }
+      }
+    },
+    "framewise_joint/T02/accepted-007.npz": {
+      "sha256": "e94f5fdb614edc73b5e3cdf71138ad98f64934b30047735ddab43886f4e0ff23",
+      "bytes": 921064,
+      "arrays": {
+        "x": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "ca52a7f85cd39de988c13717fcb5affae3ac1330c3b492212495f2a6871c79c2"
+        },
+        "q": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "96ba379a89acee6bd9d47c7b939c15f297a5df06a8e54d962772512434f2f7ec"
+        },
+        "frames": {
+          "shape": [
+            25,
+            64,
+            64
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "8df5c4f9ad18d73d3534d64cbd2c5144f7e7f576d93987317300a0cb3a0aa390"
+        },
+        "constraints": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "3e70afefb0d32a028f767b3a5434a91e8f4fd9396fa8c71ed480b175605656d8"
+        },
+        "multipliers": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "4beb641f77c3df2749a5dffc0a23f4270dc4b94e1e940287fc3ebfa05b720662"
+        },
+        "penalty": {
+          "shape": [],
+          "dtype": "<f8",
+          "rawSHA256": "6c3c396ed6b5c36dcae172271f462051b1266b851e92df3deea8ac65478fd712"
+        },
+        "mask": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "830768b0a3206d794d9b5556133e89337e496b8229fbfd1052de9f698c9b8f5c"
+        }
+      }
+    },
+    "framewise_joint/T02/accepted-008.npz": {
+      "sha256": "8e5ccdbd76ae9a8e1f40860d79123c05081f81c270fed47f50d7d69d09c86ab3",
+      "bytes": 921064,
+      "arrays": {
+        "x": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "b14bd05168467e03c4aaebc830651015106c163bea337a30e78e5378a3769bb1"
+        },
+        "q": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "30a134116d8d7fd29c8c5a24bfbfd93ac0033b6852d4f4f251044a14482150a4"
+        },
+        "frames": {
+          "shape": [
+            25,
+            64,
+            64
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "fa585860d9faaba828d9a624ad7d2f3b3f09a8d499f0d321b983b839e7056161"
+        },
+        "constraints": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "32b95235bb972b5e0734a2f9ade8404eb4ba8fdc1f82727f01d876ddc77474f3"
+        },
+        "multipliers": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "4beb641f77c3df2749a5dffc0a23f4270dc4b94e1e940287fc3ebfa05b720662"
+        },
+        "penalty": {
+          "shape": [],
+          "dtype": "<f8",
+          "rawSHA256": "6c3c396ed6b5c36dcae172271f462051b1266b851e92df3deea8ac65478fd712"
+        },
+        "mask": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "830768b0a3206d794d9b5556133e89337e496b8229fbfd1052de9f698c9b8f5c"
+        }
+      }
+    },
+    "framewise_joint/T02/accepted-009.npz": {
+      "sha256": "9b63eb00dd4ba6f693893a8285b5e449771d72146f0cb26284b65694200961ac",
+      "bytes": 921064,
+      "arrays": {
+        "x": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "3bd4706809a8403270a23ca9cca397afd38ab729076cde2ff4f1242dcb8cc0a3"
+        },
+        "q": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "89f03c395db4dbba660ccd01bc6217761fb131f503320aa4aa7f3e9bebd97045"
+        },
+        "frames": {
+          "shape": [
+            25,
+            64,
+            64
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "f7891383add5540630bc05085c11ef957c3f4340b72840451a239c32ce940761"
+        },
+        "constraints": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "53a950f277c0b8e1b0b6a121f903c8c7f2ffffe7a043225b8a86c9fc3c1e8277"
+        },
+        "multipliers": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "4beb641f77c3df2749a5dffc0a23f4270dc4b94e1e940287fc3ebfa05b720662"
+        },
+        "penalty": {
+          "shape": [],
+          "dtype": "<f8",
+          "rawSHA256": "6c3c396ed6b5c36dcae172271f462051b1266b851e92df3deea8ac65478fd712"
+        },
+        "mask": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "830768b0a3206d794d9b5556133e89337e496b8229fbfd1052de9f698c9b8f5c"
+        }
+      }
+    },
+    "framewise_joint/T02/accepted-010.npz": {
+      "sha256": "cd0f5ce8da9496b6f9d6665afd97343be4e287877304c2c9ff86989d9cc9025c",
+      "bytes": 921064,
+      "arrays": {
+        "x": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "0e9dfa3d28aedfa4e9d6d8cfc2ded06c5eaa5dde6bf3ba420ecf657ddf9dc852"
+        },
+        "q": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "97cdd09432c17093ea4121c2d67ad1090a6d7ae274f7610a29915d66114ba999"
+        },
+        "frames": {
+          "shape": [
+            25,
+            64,
+            64
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "e4fa6ac873f1d39c621c1e0989d28f39d6fe76c2d60ada50b00a3b0f8bfdaa28"
+        },
+        "constraints": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "0b1b3c914860650ba6a6a0801d5da23f5cdcd265b43bc486300ab4bfa8b80ada"
+        },
+        "multipliers": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "4beb641f77c3df2749a5dffc0a23f4270dc4b94e1e940287fc3ebfa05b720662"
+        },
+        "penalty": {
+          "shape": [],
+          "dtype": "<f8",
+          "rawSHA256": "6c3c396ed6b5c36dcae172271f462051b1266b851e92df3deea8ac65478fd712"
+        },
+        "mask": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "830768b0a3206d794d9b5556133e89337e496b8229fbfd1052de9f698c9b8f5c"
+        }
+      }
+    },
+    "framewise_joint/T02/accepted-011.npz": {
+      "sha256": "0d4a4f8448b4d3178d4632d5f035a1d9ba3933588779d92e442bea9bc3707446",
+      "bytes": 921064,
+      "arrays": {
+        "x": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "a49e07eb8c9f0c565bd8a62b4b1ab89bde4eba85ab64dcc9c0eb6c9558e7f014"
+        },
+        "q": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "ce2c28c7f25bd745e9d9fef62aaf7e51f30e5e306a0f914cc6901c283cc58dce"
+        },
+        "frames": {
+          "shape": [
+            25,
+            64,
+            64
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "4df93a03c37a263ddbbbf501de92fb9716b2e88b5bfba7ee3b2e2269d0ec54ab"
+        },
+        "constraints": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "27fba87164fd2c0bae95a8c021be02826f2b5e4589fc791702ae6cec1296f6b3"
+        },
+        "multipliers": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "4beb641f77c3df2749a5dffc0a23f4270dc4b94e1e940287fc3ebfa05b720662"
+        },
+        "penalty": {
+          "shape": [],
+          "dtype": "<f8",
+          "rawSHA256": "6c3c396ed6b5c36dcae172271f462051b1266b851e92df3deea8ac65478fd712"
+        },
+        "mask": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "830768b0a3206d794d9b5556133e89337e496b8229fbfd1052de9f698c9b8f5c"
+        }
+      }
+    },
+    "framewise_joint/T02/accepted-012.npz": {
+      "sha256": "f198592d3e32dfeef45d9777e58574d8536a5cd3fe3df9990b2bbab7e6cd756e",
+      "bytes": 921064,
+      "arrays": {
+        "x": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "e6590d7c6c2f738534bd25bdaf59670c8406b27a84262651db4b4f8e1829987d"
+        },
+        "q": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "7d4ace570ebb60dec10956bbf6f6f519d99ba15264ccf1f06c9e97f370813a85"
+        },
+        "frames": {
+          "shape": [
+            25,
+            64,
+            64
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "f0d8f968e1181b4c2c89261205f81cd3f7afb68f826937bc829199199b230c50"
+        },
+        "constraints": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "708fe03bc132d1d81dc02a52148e2a107f210f73177640fdda65346891afc62b"
+        },
+        "multipliers": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "4beb641f77c3df2749a5dffc0a23f4270dc4b94e1e940287fc3ebfa05b720662"
+        },
+        "penalty": {
+          "shape": [],
+          "dtype": "<f8",
+          "rawSHA256": "6c3c396ed6b5c36dcae172271f462051b1266b851e92df3deea8ac65478fd712"
+        },
+        "mask": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "830768b0a3206d794d9b5556133e89337e496b8229fbfd1052de9f698c9b8f5c"
+        }
+      }
+    },
+    "framewise_joint/T02/accepted-013.npz": {
+      "sha256": "f7342c69ab09707cd13ebd503d63a8ef7667fd1966e87dcef7ba630dba40c2c9",
+      "bytes": 921064,
+      "arrays": {
+        "x": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "331b44620753cc09c23d14771bde78b90c669616a9622985edd6b717ade9e8c5"
+        },
+        "q": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "060b569bbf870db553349abf22dfb4e28365a35a477f6f009648900f83fb39e2"
+        },
+        "frames": {
+          "shape": [
+            25,
+            64,
+            64
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "b927b21cc80a49d7be167e923530b3e97de92fee3fa749aa557c35f0c6f13590"
+        },
+        "constraints": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "51ce76ca65d3092711e7ce678d58f2f9d2f6dfcefd4437ffaf84073d55bea5e8"
+        },
+        "multipliers": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "4beb641f77c3df2749a5dffc0a23f4270dc4b94e1e940287fc3ebfa05b720662"
+        },
+        "penalty": {
+          "shape": [],
+          "dtype": "<f8",
+          "rawSHA256": "6c3c396ed6b5c36dcae172271f462051b1266b851e92df3deea8ac65478fd712"
+        },
+        "mask": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "830768b0a3206d794d9b5556133e89337e496b8229fbfd1052de9f698c9b8f5c"
+        }
+      }
+    },
+    "framewise_joint/T02/accepted-014.npz": {
+      "sha256": "9fc9d0a7077df5f99b5d2f449723355f2306c40b6d82f6079d2a96dda184fc83",
+      "bytes": 921064,
+      "arrays": {
+        "x": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "1492dd9183c44b37159ec85c1b38f8ab417688606c7205184f2a9331325f2e61"
+        },
+        "q": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "882dc40e4b6c97760dfc9a2db6aeab949f799b5adc5e9a8b537b26c6bdee74d4"
+        },
+        "frames": {
+          "shape": [
+            25,
+            64,
+            64
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "cfd30473a59658ac4d1ea92e7526a7c9451f2911c129e50e9571a416a223e691"
+        },
+        "constraints": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "c162f5fab0a8578b9d55d4fbeba5cd202fcd1c0acc295a67a4812a9abe32efd3"
+        },
+        "multipliers": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "4beb641f77c3df2749a5dffc0a23f4270dc4b94e1e940287fc3ebfa05b720662"
+        },
+        "penalty": {
+          "shape": [],
+          "dtype": "<f8",
+          "rawSHA256": "6c3c396ed6b5c36dcae172271f462051b1266b851e92df3deea8ac65478fd712"
+        },
+        "mask": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "830768b0a3206d794d9b5556133e89337e496b8229fbfd1052de9f698c9b8f5c"
+        }
+      }
+    },
+    "framewise_joint/T02/accepted-015.npz": {
+      "sha256": "b83787113058b1887d8ed4ccc444de09ddb17983b2ec37e3e4e25919fb85f0c3",
+      "bytes": 921064,
+      "arrays": {
+        "x": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "7f5b4a28c6a827b0bf54e30df66ab23a176a8bf88d4584270b3c953c776bb559"
+        },
+        "q": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "0ca33939e760eee1fe51917b75fc35e56a7f744cb48298d589a738d1a0736fbf"
+        },
+        "frames": {
+          "shape": [
+            25,
+            64,
+            64
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "a281c6be1a63f3245cf05d318d4c306f0238b93b7e73cf836bd53b4e09decefe"
+        },
+        "constraints": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "c62529e0ffa1897b1881046fe9643ce77f9390214e1cf04bc297f7695aaf75c6"
+        },
+        "multipliers": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "4beb641f77c3df2749a5dffc0a23f4270dc4b94e1e940287fc3ebfa05b720662"
+        },
+        "penalty": {
+          "shape": [],
+          "dtype": "<f8",
+          "rawSHA256": "6c3c396ed6b5c36dcae172271f462051b1266b851e92df3deea8ac65478fd712"
+        },
+        "mask": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "830768b0a3206d794d9b5556133e89337e496b8229fbfd1052de9f698c9b8f5c"
+        }
+      }
+    },
+    "framewise_joint/T02/accepted-016.npz": {
+      "sha256": "552a544dd373221eb8d34dc616420682c23b52d708496cc25f6ebb4c8c4d738f",
+      "bytes": 921064,
+      "arrays": {
+        "x": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "ed8c8af007711231be627babf100ce9736a4011792e12f877a7482b7d658c42e"
+        },
+        "q": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "b956da30281990cf1ff02e4bd46b0d408476bf8dbce66e2e096ba7e0f8d2ad4c"
+        },
+        "frames": {
+          "shape": [
+            25,
+            64,
+            64
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "a4e2589a5a245017921816718e6f6c7e774c377f91e299866b4c421b0f8f53a6"
+        },
+        "constraints": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "1bcfef4e2162959ccc3e3afe6103dd9f07efa69ae8643aef95ea5ef6147039ff"
+        },
+        "multipliers": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "4beb641f77c3df2749a5dffc0a23f4270dc4b94e1e940287fc3ebfa05b720662"
+        },
+        "penalty": {
+          "shape": [],
+          "dtype": "<f8",
+          "rawSHA256": "6c3c396ed6b5c36dcae172271f462051b1266b851e92df3deea8ac65478fd712"
+        },
+        "mask": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "830768b0a3206d794d9b5556133e89337e496b8229fbfd1052de9f698c9b8f5c"
+        }
+      }
+    },
+    "framewise_joint/T02/accepted-017.npz": {
+      "sha256": "a1c3fdd07edffe52ee1814c2510126ad32108b453830eb28416b15accb479604",
+      "bytes": 921064,
+      "arrays": {
+        "x": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "7a6ca5f3878eb15b5adc55f3204e8e6368a5c6d492748d6e67970775c16ca150"
+        },
+        "q": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "9ed109e44573452f0c58f7ec660411a4e451b83deee33013c644437c66955ace"
+        },
+        "frames": {
+          "shape": [
+            25,
+            64,
+            64
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "02f1ee2ca6d7639864857d5bf104480a202dd37250cf3f6b21d2c223d8774054"
+        },
+        "constraints": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "8f0fb82f2f0017a3a39b0ceb427ab58136ab0ef69c7a3a057195e9d7d9dafb56"
+        },
+        "multipliers": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "4beb641f77c3df2749a5dffc0a23f4270dc4b94e1e940287fc3ebfa05b720662"
+        },
+        "penalty": {
+          "shape": [],
+          "dtype": "<f8",
+          "rawSHA256": "6c3c396ed6b5c36dcae172271f462051b1266b851e92df3deea8ac65478fd712"
+        },
+        "mask": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "830768b0a3206d794d9b5556133e89337e496b8229fbfd1052de9f698c9b8f5c"
+        }
+      }
+    },
+    "framewise_joint/T02/accepted-018.npz": {
+      "sha256": "c8886a15f9eafcf7b23f51cd6187c64c4aed8b8da1aa98ed176d70093dcea64f",
+      "bytes": 921064,
+      "arrays": {
+        "x": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "c1781ff1c71f4242c2eb76a1077301ffc83a537ddafc590c35d6b080a1a763f4"
+        },
+        "q": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "e759b7b496842864fd3382bd51f7e19917e5e2fa807d3d3e20613b8f3739e273"
+        },
+        "frames": {
+          "shape": [
+            25,
+            64,
+            64
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "7756a5e07590d276798094b1a33af203ea4b6f0ee186004d199834fd229056a0"
+        },
+        "constraints": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "25542cb880d0d81c8f0ebc2af340a0d7f28c975621afe92ca0f92c6766a7ea6b"
+        },
+        "multipliers": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "4beb641f77c3df2749a5dffc0a23f4270dc4b94e1e940287fc3ebfa05b720662"
+        },
+        "penalty": {
+          "shape": [],
+          "dtype": "<f8",
+          "rawSHA256": "6c3c396ed6b5c36dcae172271f462051b1266b851e92df3deea8ac65478fd712"
+        },
+        "mask": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "830768b0a3206d794d9b5556133e89337e496b8229fbfd1052de9f698c9b8f5c"
+        }
+      }
+    },
+    "framewise_joint/T02/accepted-019.npz": {
+      "sha256": "1bbed3ccee672ef77158cb4d53fd1a98f702d6ea045e91063be58047be30085b",
+      "bytes": 921064,
+      "arrays": {
+        "x": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "44d2611baf87d8629971dcfdc549cf25a8b0da4c905e7f6144678f75810f765d"
+        },
+        "q": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "386b3e686c4e64e2a1f18c4ddcb2dd58c1c3c9d44665a3a5b9fc10960cbc35df"
+        },
+        "frames": {
+          "shape": [
+            25,
+            64,
+            64
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "e29e028c38c4df984eac87600bbf71121f740365f0b38c367900668a68566a1b"
+        },
+        "constraints": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "e29127c886488d0407676353c20172981ea81baa563403a883666ad6951eea12"
+        },
+        "multipliers": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "4beb641f77c3df2749a5dffc0a23f4270dc4b94e1e940287fc3ebfa05b720662"
+        },
+        "penalty": {
+          "shape": [],
+          "dtype": "<f8",
+          "rawSHA256": "6c3c396ed6b5c36dcae172271f462051b1266b851e92df3deea8ac65478fd712"
+        },
+        "mask": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "830768b0a3206d794d9b5556133e89337e496b8229fbfd1052de9f698c9b8f5c"
+        }
+      }
+    },
+    "framewise_joint/T02/accepted-020.npz": {
+      "sha256": "e0b9e0370de27bbacdbf932f193e4a4633fccc90a8a9458a1899785510d701b5",
+      "bytes": 921064,
+      "arrays": {
+        "x": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "7526b4204406afdbaea28c925f3d3e6ffdc86a24109e6e1fe6b296ff9dc76df9"
+        },
+        "q": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "634a49b0dd05ea73d2fd02e01688b272fc7f0bcce1e99dbd5799879ff21ce518"
+        },
+        "frames": {
+          "shape": [
+            25,
+            64,
+            64
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "a93dcc969504c5851e1132b3c1cda9410770d6d22b7f5bfaf147736af111ad6c"
+        },
+        "constraints": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "45dde537958d157531060f454f2e49846a4b22f450a0801e78871c90c1801689"
+        },
+        "multipliers": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "4beb641f77c3df2749a5dffc0a23f4270dc4b94e1e940287fc3ebfa05b720662"
+        },
+        "penalty": {
+          "shape": [],
+          "dtype": "<f8",
+          "rawSHA256": "6c3c396ed6b5c36dcae172271f462051b1266b851e92df3deea8ac65478fd712"
+        },
+        "mask": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "830768b0a3206d794d9b5556133e89337e496b8229fbfd1052de9f698c9b8f5c"
+        }
+      }
+    },
+    "framewise_joint/T02/accepted-021.npz": {
+      "sha256": "0d67d779710e72324997916998cf8a6fb7075b3bff74ad9ff66d6a6ffadcd003",
+      "bytes": 921064,
+      "arrays": {
+        "x": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "d7289649ffd5324b1556161250bb1881c74787bc1e13d01196e2748b54fa85f9"
+        },
+        "q": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "737a4fc41b13bc8dd5469db601da0252d5c2e169bdf7f17d41ed5b56da03386a"
+        },
+        "frames": {
+          "shape": [
+            25,
+            64,
+            64
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "3f1f6e2786fd36da2c45760611cd50e7f271b342bc591727303567fbb3a5ab61"
+        },
+        "constraints": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "50790580ab1af80cda375781b9ded11c798721823a0c72686dfc18920703b7c1"
+        },
+        "multipliers": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "faae98ec2809354fc679b175a085ff6fc01bae7ab391bd4f3ec558a40511ffaa"
+        },
+        "penalty": {
+          "shape": [],
+          "dtype": "<f8",
+          "rawSHA256": "6c3c396ed6b5c36dcae172271f462051b1266b851e92df3deea8ac65478fd712"
+        },
+        "mask": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "830768b0a3206d794d9b5556133e89337e496b8229fbfd1052de9f698c9b8f5c"
+        }
+      }
+    },
+    "framewise_joint/T02/accepted-022.npz": {
+      "sha256": "d9e45e7211412667f01fe7a7331abdc53b528a5f69b747b0462d7b48209fe3a3",
+      "bytes": 921064,
+      "arrays": {
+        "x": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "f6423960e78c1df32a42322d6a8d30e0c85b978493fbe26361dfd23553f401cf"
+        },
+        "q": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "71571863a8fa136fa541ae5fc5711ab7951f95b97173de19efccbb0a78a935a0"
+        },
+        "frames": {
+          "shape": [
+            25,
+            64,
+            64
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "ffd12e028f472967060888c6544318fbdcd57536a286caba819a98f3b2d6d397"
+        },
+        "constraints": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "bf4cc0f46fb9fc89f8a3ed7a0391f54990177536ac9e480569705566ea50aacc"
+        },
+        "multipliers": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "faae98ec2809354fc679b175a085ff6fc01bae7ab391bd4f3ec558a40511ffaa"
+        },
+        "penalty": {
+          "shape": [],
+          "dtype": "<f8",
+          "rawSHA256": "6c3c396ed6b5c36dcae172271f462051b1266b851e92df3deea8ac65478fd712"
+        },
+        "mask": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "830768b0a3206d794d9b5556133e89337e496b8229fbfd1052de9f698c9b8f5c"
+        }
+      }
+    },
+    "framewise_joint/T02/accepted-023.npz": {
+      "sha256": "88d0b07671d2c176ffad1dde3affd9f5d7331ed107c899ed5fed7347bded230b",
+      "bytes": 921064,
+      "arrays": {
+        "x": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "bbcfe63b76d7fa24d168c2fa072fd920dc1e682950e248d6e04704b379d30465"
+        },
+        "q": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "caa2079356948d888c5c66b020aa6766ae414799d27328d23c74aa2b84c7aa61"
+        },
+        "frames": {
+          "shape": [
+            25,
+            64,
+            64
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "08d0fbaeeb41591cdda8c42179361ba7554e3c1a8aecce12288d0ac976737375"
+        },
+        "constraints": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "c55476f1712c91d8154f3554861a644ca8a66d8088194a7fe6fa84a1bd7bfe0d"
+        },
+        "multipliers": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "faae98ec2809354fc679b175a085ff6fc01bae7ab391bd4f3ec558a40511ffaa"
+        },
+        "penalty": {
+          "shape": [],
+          "dtype": "<f8",
+          "rawSHA256": "6c3c396ed6b5c36dcae172271f462051b1266b851e92df3deea8ac65478fd712"
+        },
+        "mask": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "830768b0a3206d794d9b5556133e89337e496b8229fbfd1052de9f698c9b8f5c"
+        }
+      }
+    },
+    "framewise_joint/T02/accepted-024.npz": {
+      "sha256": "e3dd335053456158a923ceb978c1be53647d62fdf50736e0461fa5ebe6a93795",
+      "bytes": 921064,
+      "arrays": {
+        "x": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "6d1fb78b8c512d9c1aff3130149b30b7315e596fc77b2657e62e23718683dcbc"
+        },
+        "q": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "626d4c0d70f00ed9ab41e68bd8d96cb8e96d0c82fa7c6f5c5f8264909159cbbb"
+        },
+        "frames": {
+          "shape": [
+            25,
+            64,
+            64
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "6c00ac33fe09019f6384a98370af3f73fc30ebd4471489107c06f9208de8052c"
+        },
+        "constraints": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "c20ab4303d1984bd6f36f898e24f44e00e0e0cb061ff2baf589db241e0310cde"
+        },
+        "multipliers": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "faae98ec2809354fc679b175a085ff6fc01bae7ab391bd4f3ec558a40511ffaa"
+        },
+        "penalty": {
+          "shape": [],
+          "dtype": "<f8",
+          "rawSHA256": "6c3c396ed6b5c36dcae172271f462051b1266b851e92df3deea8ac65478fd712"
+        },
+        "mask": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "830768b0a3206d794d9b5556133e89337e496b8229fbfd1052de9f698c9b8f5c"
+        }
+      }
+    },
+    "framewise_joint/T02/accepted-025.npz": {
+      "sha256": "b08ca3a507fee3414a25ddcce8c2481f58672db40a00d0f011179acd50bdefda",
+      "bytes": 921064,
+      "arrays": {
+        "x": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "8b220cf3946821ce2ff12dfb31f591a9620f7a2c6ec6f4b68b92e4bfa8027ae4"
+        },
+        "q": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "1dcffcfaf8105622d878d33525bda7ca6a7564b0756cf3c4d45a50d5d5407de1"
+        },
+        "frames": {
+          "shape": [
+            25,
+            64,
+            64
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "83835794f61722f0132fe6288f19a9ff346f0f3115478c07743d2c5682778056"
+        },
+        "constraints": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "73c78a9c5957796a562fe6e40494aa54fb136ab14ce5722f7d3e6ef835d8deab"
+        },
+        "multipliers": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "faae98ec2809354fc679b175a085ff6fc01bae7ab391bd4f3ec558a40511ffaa"
+        },
+        "penalty": {
+          "shape": [],
+          "dtype": "<f8",
+          "rawSHA256": "6c3c396ed6b5c36dcae172271f462051b1266b851e92df3deea8ac65478fd712"
+        },
+        "mask": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "830768b0a3206d794d9b5556133e89337e496b8229fbfd1052de9f698c9b8f5c"
+        }
+      }
+    },
+    "framewise_joint/T02/accepted-026.npz": {
+      "sha256": "b0a905415297ebcf6f0577aa8e07ef8a9743fb6aba96351b35e6b28273cb5371",
+      "bytes": 921064,
+      "arrays": {
+        "x": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "32623bd3a1c004ffe423fef1388fa86c65cc51844fb5fe0229ac2f12a400d2c6"
+        },
+        "q": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "06893953ad30c1981ffe2c53e1ff4607d28d58d7e032c4e83e59486cc679c8d2"
+        },
+        "frames": {
+          "shape": [
+            25,
+            64,
+            64
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "5bd9f0429993e2afd12d3a5c47a2efeaaf87478931b8240be89d817b69fac52f"
+        },
+        "constraints": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "99ad5da7ac46a89e43f4822a8f121c886910fd4aa19e1575282cf4ad4d7ec661"
+        },
+        "multipliers": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "faae98ec2809354fc679b175a085ff6fc01bae7ab391bd4f3ec558a40511ffaa"
+        },
+        "penalty": {
+          "shape": [],
+          "dtype": "<f8",
+          "rawSHA256": "6c3c396ed6b5c36dcae172271f462051b1266b851e92df3deea8ac65478fd712"
+        },
+        "mask": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "830768b0a3206d794d9b5556133e89337e496b8229fbfd1052de9f698c9b8f5c"
+        }
+      }
+    },
+    "framewise_joint/T02/final.npz": {
+      "sha256": "3d1e65a0a3b7ae2a3dd21dfd6aef2034bc7c26f0cdfd3839a92066c6aace04f5",
+      "bytes": 3296414,
+      "arrays": {
+        "x": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "32623bd3a1c004ffe423fef1388fa86c65cc51844fb5fe0229ac2f12a400d2c6"
+        },
+        "q": {
+          "shape": [
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "06893953ad30c1981ffe2c53e1ff4607d28d58d7e032c4e83e59486cc679c8d2"
+        },
+        "frames": {
+          "shape": [
+            25,
+            64,
+            64
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "5bd9f0429993e2afd12d3a5c47a2efeaaf87478931b8240be89d817b69fac52f"
+        },
+        "constraints": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "99ad5da7ac46a89e43f4822a8f121c886910fd4aa19e1575282cf4ad4d7ec661"
+        },
+        "accepted_q_history": {
+          "shape": [
+            27,
+            4,
+            3,
+            8,
+            8,
+            8
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "9e0535f4cb20074b8e988d5a042274d690bb8d1a07b180a3e70d6fa7c104cee9"
+        },
+        "finalMultipliers": {
+          "shape": [
+            76
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "faae98ec2809354fc679b175a085ff6fc01bae7ab391bd4f3ec558a40511ffaa"
+        },
+        "velocity": {
+          "shape": [
+            3,
+            32,
+            32,
+            32
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "cfecdc0db9c890aedf1b9ee811cf7cdae4b8c3245536790c6a3ab2a7e4a033ed"
+        },
+        "density": {
+          "shape": [
+            32,
+            32,
+            32
+          ],
+          "dtype": "<f8",
+          "rawSHA256": "0d14eb449bfea44f057ebcf8cbdebed090a3c2506791a2e0d4ab2fdbb35a4f25"
+        }
+      }
+    }
+  },
+  "logs": {
+    "stdout.log": {
+      "sha256": "7dac99dc3b955ed86cd874a7308c50166ebbc452c0e4a1c9dc375c8f7dcb0927",
+      "bytes": 2526
+    },
+    "stderr.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "supervisor.json": {
+      "sha256": "017783f0a6b374d5ed8ff2094216b48d28899802c804e0ae535db5440aa7bbff",
+      "bytes": 9932
+    }
+  }
+}
