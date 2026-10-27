@@ -29,7 +29,7 @@ Continuation is active at the author's request. An hourly thread heartbeat check
 
 ## Next scientific/creative decisions
 
-- TOG: establish an honest ordinary-solver cost, then test a coherent editing revision with the same protected regions. A feasible single task is now available; an actual repeated-edit bottleneck and new mechanism remain unestablished. The prior low-rank cache is not the default implementation task.
+- TOG: finish T08's ordinary implementation check and separate actual complete trajectory costs from redundant verification. Both authored edits are now jointly feasible; a dedicated mechanism and a production bottleneck remain unestablished. The next external input is [one sourced creative revision](tog/CREATIVE_TASK_PACKET.md); the blank packet has not been sent or filled by a creator. This technical task can be independent of the personal place used in the artwork. Do not fabricate that requirement, a third toy edit or a user latency threshold to sustain the cache proposal.
 - Art: explore one reversible interaction while the personal source is undecided. A later real-space rehearsal must record actual creative choices across saved, altered and reset phases.
 - Shared: maintain separate result and claim tables. A functional interface or a passing fixture does not close either paper's contribution gap.
 
