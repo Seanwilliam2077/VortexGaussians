@@ -1,0 +1,83 @@
+{
+  "schema": "t04-execution-freeze-v1",
+  "createdUTC": "2026-10-27T06:45:16.533683+00:00",
+  "scope": "Same-task post-hoc ordinary solver revision; one new 76-constraint G0 and <=120-rollout paid-warm solve; 600s wholeworker; no retry.",
+  "review": "Independent source review clear before execution.",
+  "files": {
+    "runner.py": {
+      "path": "runner.py",
+      "bytes": 40050,
+      "sha256": "a2a942bbc8759e6f3352a2d14a7ae2fbb4673b34189cd2a768faed6f8cf7fb44"
+    },
+    "config.json": {
+      "path": "config.json",
+      "bytes": 5088,
+      "sha256": "25eced8e01445717aeb2aa802e90fea120edc0cb33a48bb85e224b73fb849eda"
+    },
+    "PROTOCOL.md": {
+      "path": "PROTOCOL.md",
+      "bytes": 5697,
+      "sha256": "f6c4b0cf3979f5db9ac2160830f216f0be763716700428bcce310821e48e20d6"
+    },
+    "core.py": {
+      "path": "../../src/core.py",
+      "bytes": 13301,
+      "sha256": "ac750b70a86743ac858f1c53cf620ce29c63c462456115af4d0d8c93fa20bd9e"
+    },
+    "approved.npz": {
+      "path": "../../fixtures/r22/approved.npz",
+      "bytes": 1868518,
+      "sha256": "9da9166a209d18cc8256d78f14f13a2a5d834ea5e9936b4d4f58440b92917f09"
+    },
+    "target-edit.npy": {
+      "path": "../t02-authored-upper-bend/run-01/target-edit.npy",
+      "bytes": 206528,
+      "sha256": "55f81cb5b5c4d88e05d773fe21210635fbf7b601b42bb9b1d10d80f559f05e96"
+    },
+    "brief.json": {
+      "path": "../t02-authored-upper-bend/run-01/brief.json",
+      "bytes": 3822,
+      "sha256": "de67c8105fb11e39f26353bfa54795572871017264ea9fc316a3ac758d4da80a"
+    },
+    "T02-rule": {
+      "path": "../t02-authored-upper-bend/RULE.json",
+      "bytes": 1956,
+      "sha256": "e306ee8a1e374ee90df0d325fdea1d33d36ee05e29291df177e5f84d3cadf96f"
+    },
+    "T02-generator": {
+      "path": "../t02-authored-upper-bend/generate_target.py",
+      "bytes": 10745,
+      "sha256": "db1b0e7d3f9a0aac67974823ba0f563a1ee44821dced0dfa8b3a2fbd85e16eb9"
+    },
+    "T02-protocol": {
+      "path": "../t02-authored-upper-bend/PROTOCOL.md",
+      "bytes": 2677,
+      "sha256": "05cd505666d4cf4a1146a9934411127554e2c61f0b87174f747301a2fdb97d0d"
+    },
+    "T02-freeze": {
+      "path": "../t02-authored-upper-bend/run-01/freeze.json",
+      "bytes": 3094,
+      "sha256": "91906787675da0d5547d9a3670a4b0d7f4d325fcf6c0c9f2abfc564fa1dac2a9"
+    },
+    "T02-evidence-manifest": {
+      "path": "../t02-authored-upper-bend/evidence-manifest.json",
+      "bytes": 2408,
+      "sha256": "0d25beecdeef2b96fc5ce86ace4f70f431f212911da20bb9cd13cc66c6d7d387"
+    },
+    "warm-start.npz": {
+      "path": "../t03-ordinary-conflict-screen/joint-final.npz",
+      "bytes": 3689230,
+      "sha256": "9c9760fb50a07810aafd2f394d254e4a071e4cba71d8af394ece02921aad459c"
+    },
+    "T03-result-summary.json": {
+      "path": "../t03-ordinary-conflict-screen/result-summary.json",
+      "bytes": 95396,
+      "sha256": "cf5a9352404f690c54460f5947fde14a70e7d6b7714e1c0f67636412f3017f0d"
+    },
+    "T03-freeze.json": {
+      "path": "../t03-ordinary-conflict-screen/freeze.json",
+      "bytes": 2619,
+      "sha256": "2c32605e2157a9a45bf75691d6a04216ec96b9195baa60f6f7bd167fbd44c613"
+    }
+  }
+}

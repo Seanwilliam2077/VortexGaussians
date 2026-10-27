@@ -1,0 +1,40 @@
+{
+  "scope": "Saved-array visualization only; no simulation, new timing, artist or audience validation",
+  "scriptSHA256": "52547ec588743badd788c2561136defe5bd77e6fa6cb5d74619a45a57722e8dd",
+  "inputs": {
+    "approved": {
+      "path": "tracks/tog/fixtures/r22/approved.npz",
+      "sha256": "9da9166a209d18cc8256d78f14f13a2a5d834ea5e9936b4d4f58440b92917f09"
+    },
+    "target": {
+      "path": "tracks/tog/tasks/t02-authored-upper-bend/run-01/target-full.npy",
+      "sha256": "095b31d39c108b7b07d4ea51debac5dcdca35729ac0f8f4a9cd62c758b891166"
+    },
+    "T03_joint": {
+      "path": "tracks/tog/tasks/t03-ordinary-conflict-screen/joint-final.npz",
+      "sha256": "9c9760fb50a07810aafd2f394d254e4a071e4cba71d8af394ece02921aad459c"
+    },
+    "T04_joint": {
+      "path": "tracks/tog/tasks/t04-framewise-feasibility/framewise_joint-final.npz",
+      "sha256": "39ea370477f0e42b2f5d4afc5b15798f0853f940c98bcac93e2ee3b7126a1904"
+    },
+    "summary": {
+      "path": "tracks/tog/tasks/t04-framewise-feasibility/result-summary.json",
+      "sha256": "a4dd9d7573616ffc2ac278cc927ba8e2241610e91bbea9096587b2f74774b1f6"
+    }
+  },
+  "metrics": {
+    "T03_joint": {
+      "editPassingFrames": 23,
+      "protectionPassingROIFrames": 49
+    },
+    "T04_joint": {
+      "editPassingFrames": 25,
+      "protectionPassingROIFrames": 50
+    }
+  },
+  "outputs": {
+    "frames.png": "858a451b3e83ceace997586c1ad697a599c5d5b6ff221e4f2e1a39580e08a334",
+    "quality.png": "106e41d2a6247eda2753059c4fd9f91e327027872206e61ea24c4e25536798e4"
+  }
+}

@@ -1,0 +1,202 @@
+{
+  "model": {
+    "n": 32,
+    "steps": 40,
+    "dt": 0.025,
+    "frame_start": 16,
+    "image_size": 64,
+    "render_size": 32,
+    "render_samples": 64,
+    "kappa": 1.0,
+    "dtype": "float64"
+  },
+  "task": {
+    "control_shape": [
+      4,
+      3,
+      8,
+      8,
+      8
+    ],
+    "protected_rois": [
+      [
+        35,
+        13,
+        53,
+        33
+      ],
+      [
+        35,
+        33,
+        53,
+        55
+      ]
+    ],
+    "edit_roi": [
+      10,
+      12,
+      34,
+      55
+    ],
+    "roi_order": "x0,y0,x1,y1; lower-left; half-open",
+    "protect_relative": 0.02,
+    "protect_absolute": 0.005,
+    "edit_relative": 0.05,
+    "edit_absolute": 0.01,
+    "signal_min": 0.01,
+    "coefficient_max": 0.5,
+    "coefficient_rms": 0.2,
+    "applied_force_max": 0.5,
+    "ids": [
+      "T02"
+    ],
+    "accepted_steps": [
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40
+    ],
+    "force_budget_kind": "maximum component, not vector norm"
+  },
+  "baseline": {
+    "sessions": 1,
+    "max_rollouts_per_task": 120,
+    "outer_iterations": 3,
+    "steps_per_outer": 20,
+    "initial_penalty": 1.0,
+    "penalty_growth": 10.0,
+    "penalty_max": 100.0,
+    "violation_reduction_factor": 0.5,
+    "initial_multiplier": 0.0,
+    "regularizer_weight": 0.0001,
+    "regularizer_scale": 0.2,
+    "lbfgs": {
+      "lr": 1.0,
+      "max_iter": 1,
+      "max_eval": 25,
+      "history_size": 10,
+      "tolerance_grad": 1e-09,
+      "tolerance_change": 1e-12,
+      "line_search_fn": "strong_wolfe"
+    },
+    "qualification": {
+      "x_amplitude": 0.12,
+      "x_seed": 2026102701,
+      "direction_seed": 2026102702,
+      "directions": 2,
+      "steps": [
+        1e-05,
+        1e-06
+      ],
+      "relative_gate": 0.0001,
+      "denominator_floor": 1e-08,
+      "multiplier": 2.0,
+      "penalty": 1.0
+    },
+    "parameterization": "q=0.5*tanh(x); full 4x3x8x8x8 x",
+    "history_policy": "Reset history at new formulation and each AL change; no prior curvature reused.",
+    "budget_policy": "all initial/closure/line-search/acceptance rollouts count; reserve acceptance call; rollback on mid-step exhaustion",
+    "start_policy": "Only authenticated T03 last accepted x; fresh rollout from original v0/rho0. Lambda=0, rho=1, no old L-BFGS history."
+  },
+  "schema": "t04-framewise-config-v1",
+  "expected_gpu_uuid": "GPU-53365c2e-346d-c2a5-2c98-25c00591a721",
+  "scope": "Post-hoc ordinary solver revision of the same frozen T02 task; unknown joint reachability; one 76-constraint PHR solve from paid T03 accepted x.",
+  "donor": {
+    "algorithm": "R21 PHR/L-BFGS, R22 prepared two-mask fork",
+    "r21SHA256": "9a553539db83e979543317c6b31aa7ee09b07977703fc89f50081c9a74227b61",
+    "r22SHA256": "a30f7dbd01d312e7e54e1563eac33ef9f0d76b9a55856fdba8b5ff193a7e17d7",
+    "runtimeNeedsHistoricalFiles": false,
+    "t03SHA256": "4ccc3fdc7d3cd537b2718ec4fd23d18f3606b8e13c64ad999d2a4eb3ef7b1c56",
+    "change": "Add 25 edit PHR inequalities; single paid-x warm start; G0 now76 entries/one reverse derivative. R21 numerical solver settings unchanged."
+  },
+  "inputs": {
+    "approved": "../../fixtures/r22/approved.npz",
+    "target": "../t02-authored-upper-bend/run-01/target-edit.npy",
+    "brief": "../t02-authored-upper-bend/run-01/brief.json",
+    "core": "../../src/core.py",
+    "warm_x": "../t03-ordinary-conflict-screen/joint-final.npz"
+  },
+  "array_manifest": {
+    "approved": {
+      "shape": [
+        25,
+        64,
+        64
+      ],
+      "dtype": "<f8",
+      "sha256": "d5e91d9a6e2c069f02f347c41b78e4fc7052b8587ce1944b7d548a65e3911757"
+    },
+    "v0": {
+      "shape": [
+        3,
+        32,
+        32,
+        32
+      ],
+      "dtype": "<f8",
+      "sha256": "107cc11e90882cef497e764ed25d4cabed42e4b7fe6cb261a9d598d9a3b5d6db"
+    },
+    "rho0": {
+      "shape": [
+        32,
+        32,
+        32
+      ],
+      "dtype": "<f8",
+      "sha256": "fd171eab0dfe1a3d410762b1a0650eb431f8b4b7a51a7b2c405e3c8f0a17d521"
+    },
+    "target_T02": {
+      "shape": [
+        25,
+        43,
+        24
+      ],
+      "dtype": "<f8",
+      "sha256": "0bd240702513c63bf50029c4db8ff280ac1bccfcb0f13d8454a6e7b6821ab5ec"
+    },
+    "warm_x": {
+      "shape": [
+        4,
+        3,
+        8,
+        8,
+        8
+      ],
+      "dtype": "<f8",
+      "sha256": "6ed0cc03d8a3424eea15ce95a7553165680a8f3d4b93c63b74b546a443417699"
+    }
+  },
+  "constraint_order": [
+    "protection_2x25",
+    "edit_25",
+    "coefficient_RMS_1"
+  ],
+  "prior_cost": {
+    "joint_rollouts": 119,
+    "joint_seconds": 86.6583042999846,
+    "full_T03_rollouts": 187,
+    "full_T03_worker_seconds": 157.77310679998482,
+    "full_T03_supervisor_seconds": 158.74597489996813
+  }
+}
