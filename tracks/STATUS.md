@@ -16,7 +16,8 @@ The [GitHub research branch](https://github.com/Seanwilliam2077/VortexGaussians/
 ## Active cycle D02: make the creative target concrete
 
 - T02 complete: [one frozen researcher-authored upper-plume bend](tog/tasks/t02-authored-upper-bend/README.md), generated from approved images independently of optimizer controls or a successful witness. Zero control passes editing on frames 16–21 and fails on 22–40; all protection checks pass. Root image review confirms a visible upper bend. The image warp also narrows the upper plume and may leave a top-edge seam. This is development input, not external artist validation, and physical reachability is unknown. Historical R22 is unchanged.
-- T03 active: implement a bounded ordinary edit-only/joint comparison from zero, with new-objective gradient qualification and full per-frame acceptance. Each arm has 120 paid rollouts; one execution, no parameter search. If joint optimization cannot find a solution, report that budget outcome without claiming infeasibility or a proven protection bottleneck.
+- T03 complete: [one ordinary two-arm screen](tog/tasks/t03-ordinary-conflict-screen/README.md). Edit-only passes editing but only 17/50 protection checks; joint ends at its fixed budget with editing 23/25 and protection 49/50. [Independent saved-array audit](validation/t03-review.md) confirms the final rollback and that no accepted state passed every gate. [Plots](validation/t03-20261027-v2/README.md) are from these saved states. A protection conflict has been observed on one editing path; joint feasibility and a new method remain unestablished.
+- T04 design under review: the joint final mean normalized editing MSE is .568734, but frames 39/40 violate per-frame acceptance. Consider an ordinary formulation that also puts the 25 editing gates into the constraints, with the same target, model and tolerances. Any new finite feasibility attempt must be separately frozen and count the previous solve used for initialization; it must not relabel T03 or claim cold-start acceleration.
 - A02: [three first-party artistic precedents and one bounded rehearsal question](art/RELATED_PRACTICE.md) are documented. The next creative evidence requires a specific space and actual authorial choices. Automated smoke tests cannot supply those observations.
 
 Continuation is active at the author's request. An hourly thread heartbeat checks for unfinished work and continues the next finite task when execution and account limits allow. It does not buy credits or reset quotas. The research is not marked complete.
@@ -26,6 +27,8 @@ Continuation is active at the author's request. An hourly thread heartbeat check
 - TOG: turn the editable brief into a concrete authored target with independently stated protection requirements. Validate its feasibility and then ordinary optimization difficulty. The prior low-rank cache is not the default implementation task.
 - Art: rehearse one coherent intervention in a clearly identified space. Compare its saved-space, altered-space, and reset phases, record creative choices, and identify what requires a real captured scene or human response.
 - Shared: maintain separate result and claim tables. A functional interface or a passing fixture does not close either paper's contribution gap.
+
+The [direct control prior-art review](tog/PRIOR_ART_CONTROL.md) documents why weighted targets and image-based fluid editing alone are not new. It also corrects an earlier search label: the 2013 view-dependent multiscale paper concerns forward simulation, not target-image control. The [pre-result decision rules](tog/DECISIONS.md) remain the interpretation guide.
 
 ## Inherited evidence
 

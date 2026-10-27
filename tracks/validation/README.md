@@ -1,5 +1,7 @@
 # Dual-track integration checks
 
+The subsequent numerical screen has its own [T03 independent audit](t03-review.md) and [saved-result plots](t03-20261027-v2/README.md). The interface checks below do not validate that research result.
+
 27 October 2026. These checks establish software behavior, not artistic merit, physical realism, or a TOG contribution.
 
 The independent CPU/HTML audit is [recorded separately](../evidence/INTEGRATION_REVIEW.md). The root agent additionally ran [art-ui.mjs](art-ui.mjs) through the visible browser controls in headless Edge 149.0.4022.52, using the existing WebGL demo. It never injected simulator state or called `__demo` from the harness. Thirteen interaction checks passed with no page exceptions; [machine-readable result](art-ui-20261027/result.json) pins the tested sources.

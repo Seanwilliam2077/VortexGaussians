@@ -1,0 +1,29 @@
+{
+  "scope": "Saved-array visualization only; no numerical rerun, timing, artist or audience validation",
+  "inputs": {
+    "approved": {
+      "path": "tracks/tog/fixtures/r22/approved.npz",
+      "sha256": "9da9166a209d18cc8256d78f14f13a2a5d834ea5e9936b4d4f58440b92917f09"
+    },
+    "target": {
+      "path": "tracks/tog/tasks/t02-authored-upper-bend/run-01/target-full.npy",
+      "sha256": "095b31d39c108b7b07d4ea51debac5dcdca35729ac0f8f4a9cd62c758b891166"
+    },
+    "edit_only": {
+      "path": "tracks/tog/tasks/t03-ordinary-conflict-screen/edit_only-final.npz",
+      "sha256": "3063c5331ee1d859d1032899cfddb69d5ed7c420ef8354f4b83770c3a2ddcae8"
+    },
+    "joint": {
+      "path": "tracks/tog/tasks/t03-ordinary-conflict-screen/joint-final.npz",
+      "sha256": "9c9760fb50a07810aafd2f394d254e4a071e4cba71d8af394ece02921aad459c"
+    },
+    "summary": {
+      "path": "tracks/tog/tasks/t03-ordinary-conflict-screen/result-summary.json",
+      "sha256": "cf5a9352404f690c54460f5947fde14a70e7d6b7714e1c0f67636412f3017f0d"
+    }
+  },
+  "outputs": {
+    "frames.png": "d8ae681486190fdb46702d51bad850e3f29799fca084c97e53586f484831a37e",
+    "quality.png": "511037402b10e6ef6c3f3f4b88e41b4d6c23046984e588fcb186780cbb271bd5"
+  }
+}
