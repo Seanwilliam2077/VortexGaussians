@@ -2,6 +2,8 @@
 
 首个作者排练原型。它把现有 VortexGaussians demo 放在“保存的空间 → 介入燃烧 → 重置重看”的三个阶段中，并记录创作选择。它不是完成作品、观众实验或新燃烧算法。创作命题及待补证据见 [ART_BRIEF.md](ART_BRIEF.md)；技术证据另见 [research/EVIDENCE_STATUS.md](../../research/EVIDENCE_STATUS.md)。
 
+目前还没有实际作者体验记录。可先看 [A04 自动编排短片草稿](studies/a04-automated-score/run-02/study.mp4)：约21秒墙钟，包含一次点火、1秒模拟、重置及回执呈现。它使用原合成场景、保留实际加载与等待，没有填写创作笔记。[录制说明、首试失败及关键帧](studies/a04-automated-score/README.md)区分自动演示与作者/观众证据；原页面和模型均未修改。
+
 ## 启动
 
 不需要 npm 或构建。在仓库根目录运行普通本地静态服务：

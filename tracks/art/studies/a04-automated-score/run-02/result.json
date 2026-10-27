@@ -1,0 +1,1520 @@
+{
+  "schema": "a04-sampled-v1",
+  "createdUTC": "2026-10-27T08:41:42.746Z",
+  "plan": {
+    "scope": "Agent-authored synthetic demonstration draft; no artist/audience evidence",
+    "method": "timestamped page screenshots, not native recordVideo or performance measurement",
+    "viewport": {
+      "width": 1280,
+      "height": 800
+    },
+    "targetSamplingFPS": 6,
+    "wallLimitMs": 58000,
+    "supplementalRecordingAttempts": 1,
+    "ignitions": 1,
+    "simulatedSeconds": 1,
+    "resets": 1,
+    "receiptHide": 1,
+    "receiptShow": 1,
+    "notesWritten": 0,
+    "out": "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\art\\studies\\a04-automated-score\\run-02"
+  },
+  "sourceBefore": {
+    "tracks/art/index.html": "07c8048f3870d9462dcd8072d3f09b6115e2023227b4a75d9a69a173418ee640",
+    "tracks/art/art.js": "1ff8194561f2acb5d9a8124de68b3a39710e7e8de32d14b2a04d2615e8ccc13c",
+    "tracks/art/art.css": "2afe962cb45c40cc1ee9d007e66dd5caae8ff312d34109b24e12a413cab5cdbb",
+    "demo/index.html": "e9d808c434bdd8ce91482f60502f03f5d08c56b71c082eb704c53275ff9f57d0",
+    "static/test_scene.ply": "2f7e110a4ae3cd7d9a2ea8e04537d562a37b1ddb04b2c541e961901afc7492d6",
+    "research/lib/runtime.mjs": "cf540ed02429016ab2b8a50a1cd95ac14222247466a56cfbf37444234851b184",
+    "tracks/art/studies/a04-automated-score/record.mjs": "23ff140fbf23b4487f704377f5b863d53078a252896834e463a6a65ca931d3a6",
+    "tracks/art/studies/a04-automated-score/PROTOCOL.md": "896075ebadbd87faeba29f91de542cff23e4af743f76e9556d447010e3b5db02",
+    "tracks/art/studies/a04-automated-score/FOLLOWUP.md": "7fa481f7da605cc6202326b5e62981f3d05ff7a81d5bfed5dc638c6768efa45a",
+    "tracks/art/studies/a04-automated-score/record-sampled.mjs": "376b4d3002229de28c22c6544c1757b308c231931c4b32ec53e957fb69290f0c",
+    "tracks/art/studies/a04-automated-score/run-01/result.json": "ae59e108490b236a5f39be919dc18df4550745eb8b27eb3fd6469cd0f6a4c164"
+  },
+  "actions": [
+    {
+      "name": "open unchanged art page",
+      "startedWallSeconds": 2.5345288,
+      "completed": true,
+      "endedWallSeconds": 2.6076337
+    },
+    {
+      "name": "load synthetic example once",
+      "startedWallSeconds": 4.6880356,
+      "completed": true,
+      "endedWallSeconds": 4.7814653
+    },
+    {
+      "name": "switch intervene",
+      "startedWallSeconds": 7.0726445,
+      "completed": true,
+      "endedWallSeconds": 7.141352299999999
+    },
+    {
+      "name": "ignite once at existing defaults",
+      "startedWallSeconds": 7.142329,
+      "completed": true,
+      "endedWallSeconds": 7.1915437
+    },
+    {
+      "name": "request exactly one simulated second",
+      "startedWallSeconds": 8.9268464,
+      "completed": true,
+      "endedWallSeconds": 8.994165
+    },
+    {
+      "name": "switch revisit",
+      "startedWallSeconds": 13.4649202,
+      "completed": true,
+      "endedWallSeconds": 13.5152533
+    },
+    {
+      "name": "reset once",
+      "startedWallSeconds": 13.5161776,
+      "completed": true,
+      "endedWallSeconds": 13.559
+    },
+    {
+      "name": "hide receipt once",
+      "startedWallSeconds": 18.8438129,
+      "completed": true,
+      "endedWallSeconds": 18.878430599999998
+    },
+    {
+      "name": "reopen receipt once",
+      "startedWallSeconds": 20.4345964,
+      "completed": true,
+      "endedWallSeconds": 20.4773319
+    }
+  ],
+  "snapshots": [
+    {
+      "name": "01-opening",
+      "file": "01-opening.png",
+      "frameIndex": 2,
+      "sha256": "94863593bf72008086b2e85b6875f529415a97a5c86893216a2abd6a21693ba5",
+      "wallSeconds": 2.8289461000000005,
+      "visible": {
+        "status": "按需启动；当前没有运行仿真。",
+        "time": "模拟时间 0.00 s",
+        "burning": "—",
+        "charred": "—",
+        "scene": "—",
+        "notes": "0 条记录"
+      }
+    },
+    {
+      "name": "02-loaded",
+      "file": "02-loaded.png",
+      "frameIndex": 17,
+      "sha256": "ca189657350c5d7d5437b58223078b95408c331903d3b9543f80c183aa83d079",
+      "wallSeconds": 5.2273415,
+      "visible": {
+        "status": "已载入 45,808 / 45,808 个点。当前暂停；请先观察、记录情境。",
+        "time": "模拟时间 0.00 s",
+        "burning": "0",
+        "charred": "0",
+        "scene": "45,808",
+        "notes": "0 条记录"
+      }
+    },
+    {
+      "name": "03-ignited",
+      "file": "03-ignited.png",
+      "frameIndex": 30,
+      "sha256": "b9d799f8478cad4f8153a0d6af7a6979d49680228d6c4daf74c618a0c4832804",
+      "wallSeconds": 7.27466835,
+      "visible": {
+        "status": "此次点燃 2,483 个未燃点。尚未推进；可先记录选择。",
+        "time": "模拟时间 0.00 s",
+        "burning": "2,483",
+        "charred": "0",
+        "scene": "45,808",
+        "notes": "0 条记录"
+      }
+    },
+    {
+      "name": "04-after-one-second",
+      "file": "04-after-one-second.png",
+      "frameIndex": 49,
+      "sha256": "55c52053751bddd998280b3756e7c8e98c566fed53c9b43b525b32e02364d684",
+      "wallSeconds": 10.40836565,
+      "visible": {
+        "status": "本段推进完成，已暂停。请记录变化，再决定下一步。",
+        "time": "模拟时间 1.00 s",
+        "burning": "3,746",
+        "charred": "0",
+        "scene": "45,808",
+        "notes": "0 条记录"
+      }
+    },
+    {
+      "name": "05-reset-scene",
+      "file": "05-reset-scene.png",
+      "frameIndex": 69,
+      "sha256": "7f796d13e24cd8acf8937c5767b868c8f41ececb2335a5dc206872c805ae3cdc",
+      "wallSeconds": 13.69449475,
+      "visible": {
+        "status": "已重新初始化：本次烧损与流动已清空，笔记保留。这不是历史倒放。",
+        "time": "模拟时间 0.00 s",
+        "burning": "0",
+        "charred": "0",
+        "scene": "45,808",
+        "notes": "0 条记录"
+      }
+    },
+    {
+      "name": "06-receipt-expanded",
+      "file": "06-receipt-expanded.png",
+      "frameIndex": 82,
+      "sha256": "5086870eb6fd78dbafb444340b3a0666288d398227b8889d38e0ce3f00c94215",
+      "wallSeconds": 15.810487049999999,
+      "visible": {
+        "status": "已重新初始化：本次烧损与流动已清空，笔记保留。这不是历史倒放。",
+        "time": "模拟时间 0.00 s",
+        "burning": "0",
+        "charred": "0",
+        "scene": "45,808",
+        "notes": "0 条记录"
+      }
+    },
+    {
+      "name": "07-receipt-hidden",
+      "file": "07-receipt-hidden.png",
+      "frameIndex": 101,
+      "sha256": "f1f0d0d9cf4247b6bb5db1a9b7ba7561e6b950f2520c65cb791b284872515bf5",
+      "wallSeconds": 18.90005955,
+      "visible": {
+        "status": "已重新初始化：本次烧损与流动已清空，笔记保留。这不是历史倒放。",
+        "time": "模拟时间 0.00 s",
+        "burning": "0",
+        "charred": "0",
+        "scene": "45,808",
+        "notes": "0 条记录"
+      }
+    },
+    {
+      "name": "08-receipt-reopened",
+      "file": "08-receipt-reopened.png",
+      "frameIndex": 112,
+      "sha256": "5086870eb6fd78dbafb444340b3a0666288d398227b8889d38e0ce3f00c94215",
+      "wallSeconds": 20.513672749999998,
+      "visible": {
+        "status": "已重新初始化：本次烧损与流动已清空，笔记保留。这不是历史倒放。",
+        "time": "模拟时间 0.00 s",
+        "burning": "0",
+        "charred": "0",
+        "scene": "45,808",
+        "notes": "0 条记录"
+      }
+    }
+  ],
+  "frames": [
+    {
+      "index": 0,
+      "file": "frames/frame-00000.png",
+      "startedWallSeconds": 2.2770691000000003,
+      "endedWallSeconds": 2.5344137,
+      "timestampSeconds": 2.4057414,
+      "bytes": 4714,
+      "sha256": "3eab349ebf404dae5a2a20d041325042a032d46aeab4b9730d8f8962686fb9b0"
+    },
+    {
+      "index": 1,
+      "file": "frames/frame-00001.png",
+      "startedWallSeconds": 2.5346254,
+      "endedWallSeconds": 2.7982299,
+      "timestampSeconds": 2.66642765,
+      "bytes": 177195,
+      "sha256": "94863593bf72008086b2e85b6875f529415a97a5c86893216a2abd6a21693ba5"
+    },
+    {
+      "index": 2,
+      "file": "frames/frame-00002.png",
+      "startedWallSeconds": 2.7984248000000003,
+      "endedWallSeconds": 2.8594674,
+      "timestampSeconds": 2.8289461000000005,
+      "bytes": 177195,
+      "sha256": "94863593bf72008086b2e85b6875f529415a97a5c86893216a2abd6a21693ba5"
+    },
+    {
+      "index": 3,
+      "file": "frames/frame-00003.png",
+      "startedWallSeconds": 2.85976,
+      "endedWallSeconds": 2.9416571,
+      "timestampSeconds": 2.90070855,
+      "bytes": 177195,
+      "sha256": "94863593bf72008086b2e85b6875f529415a97a5c86893216a2abd6a21693ba5"
+    },
+    {
+      "index": 4,
+      "file": "frames/frame-00004.png",
+      "startedWallSeconds": 2.9699854,
+      "endedWallSeconds": 3.0476032,
+      "timestampSeconds": 3.0087943,
+      "bytes": 177195,
+      "sha256": "94863593bf72008086b2e85b6875f529415a97a5c86893216a2abd6a21693ba5"
+    },
+    {
+      "index": 5,
+      "file": "frames/frame-00005.png",
+      "startedWallSeconds": 3.1413026,
+      "endedWallSeconds": 3.2189441999999997,
+      "timestampSeconds": 3.1801234,
+      "bytes": 177195,
+      "sha256": "94863593bf72008086b2e85b6875f529415a97a5c86893216a2abd6a21693ba5"
+    },
+    {
+      "index": 6,
+      "file": "frames/frame-00006.png",
+      "startedWallSeconds": 3.3153884,
+      "endedWallSeconds": 3.3794874,
+      "timestampSeconds": 3.3474379,
+      "bytes": 177195,
+      "sha256": "94863593bf72008086b2e85b6875f529415a97a5c86893216a2abd6a21693ba5"
+    },
+    {
+      "index": 7,
+      "file": "frames/frame-00007.png",
+      "startedWallSeconds": 3.4878090000000004,
+      "endedWallSeconds": 3.5678348,
+      "timestampSeconds": 3.5278219,
+      "bytes": 177195,
+      "sha256": "94863593bf72008086b2e85b6875f529415a97a5c86893216a2abd6a21693ba5"
+    },
+    {
+      "index": 8,
+      "file": "frames/frame-00008.png",
+      "startedWallSeconds": 3.6595299,
+      "endedWallSeconds": 3.7217423,
+      "timestampSeconds": 3.6906361,
+      "bytes": 177195,
+      "sha256": "94863593bf72008086b2e85b6875f529415a97a5c86893216a2abd6a21693ba5"
+    },
+    {
+      "index": 9,
+      "file": "frames/frame-00009.png",
+      "startedWallSeconds": 3.8312976,
+      "endedWallSeconds": 3.8939106000000003,
+      "timestampSeconds": 3.8626041000000004,
+      "bytes": 177195,
+      "sha256": "94863593bf72008086b2e85b6875f529415a97a5c86893216a2abd6a21693ba5"
+    },
+    {
+      "index": 10,
+      "file": "frames/frame-00010.png",
+      "startedWallSeconds": 4.002982,
+      "endedWallSeconds": 4.082291199999999,
+      "timestampSeconds": 4.0426366,
+      "bytes": 177195,
+      "sha256": "94863593bf72008086b2e85b6875f529415a97a5c86893216a2abd6a21693ba5"
+    },
+    {
+      "index": 11,
+      "file": "frames/frame-00011.png",
+      "startedWallSeconds": 4.1745942000000005,
+      "endedWallSeconds": 4.2546981,
+      "timestampSeconds": 4.21464615,
+      "bytes": 177195,
+      "sha256": "94863593bf72008086b2e85b6875f529415a97a5c86893216a2abd6a21693ba5"
+    },
+    {
+      "index": 12,
+      "file": "frames/frame-00012.png",
+      "startedWallSeconds": 4.345483,
+      "endedWallSeconds": 4.4074095,
+      "timestampSeconds": 4.37644625,
+      "bytes": 177195,
+      "sha256": "94863593bf72008086b2e85b6875f529415a97a5c86893216a2abd6a21693ba5"
+    },
+    {
+      "index": 13,
+      "file": "frames/frame-00013.png",
+      "startedWallSeconds": 4.5166405,
+      "endedWallSeconds": 4.5807476,
+      "timestampSeconds": 4.54869405,
+      "bytes": 177195,
+      "sha256": "94863593bf72008086b2e85b6875f529415a97a5c86893216a2abd6a21693ba5"
+    },
+    {
+      "index": 14,
+      "file": "frames/frame-00014.png",
+      "startedWallSeconds": 4.6876923999999995,
+      "endedWallSeconds": 4.7758338,
+      "timestampSeconds": 4.7317631,
+      "bytes": 177195,
+      "sha256": "94863593bf72008086b2e85b6875f529415a97a5c86893216a2abd6a21693ba5"
+    },
+    {
+      "index": 15,
+      "file": "frames/frame-00015.png",
+      "startedWallSeconds": 4.8596810999999995,
+      "endedWallSeconds": 5.118456500000001,
+      "timestampSeconds": 4.9890688,
+      "bytes": 176005,
+      "sha256": "ca189657350c5d7d5437b58223078b95408c331903d3b9543f80c183aa83d079"
+    },
+    {
+      "index": 16,
+      "file": "frames/frame-00016.png",
+      "startedWallSeconds": 5.1196142,
+      "endedWallSeconds": 5.1929957,
+      "timestampSeconds": 5.15630495,
+      "bytes": 176005,
+      "sha256": "ca189657350c5d7d5437b58223078b95408c331903d3b9543f80c183aa83d079"
+    },
+    {
+      "index": 17,
+      "file": "frames/frame-00017.png",
+      "startedWallSeconds": 5.193115799999999,
+      "endedWallSeconds": 5.2615672,
+      "timestampSeconds": 5.2273415,
+      "bytes": 176005,
+      "sha256": "ca189657350c5d7d5437b58223078b95408c331903d3b9543f80c183aa83d079"
+    },
+    {
+      "index": 18,
+      "file": "frames/frame-00018.png",
+      "startedWallSeconds": 5.3002319,
+      "endedWallSeconds": 5.3554772999999996,
+      "timestampSeconds": 5.3278546,
+      "bytes": 176005,
+      "sha256": "ca189657350c5d7d5437b58223078b95408c331903d3b9543f80c183aa83d079"
+    },
+    {
+      "index": 19,
+      "file": "frames/frame-00019.png",
+      "startedWallSeconds": 5.4742582,
+      "endedWallSeconds": 5.5433778,
+      "timestampSeconds": 5.508818,
+      "bytes": 176005,
+      "sha256": "ca189657350c5d7d5437b58223078b95408c331903d3b9543f80c183aa83d079"
+    },
+    {
+      "index": 20,
+      "file": "frames/frame-00020.png",
+      "startedWallSeconds": 5.6494041,
+      "endedWallSeconds": 5.7028817,
+      "timestampSeconds": 5.6761429,
+      "bytes": 176005,
+      "sha256": "ca189657350c5d7d5437b58223078b95408c331903d3b9543f80c183aa83d079"
+    },
+    {
+      "index": 21,
+      "file": "frames/frame-00021.png",
+      "startedWallSeconds": 5.8218354,
+      "endedWallSeconds": 5.891127099999999,
+      "timestampSeconds": 5.85648125,
+      "bytes": 176005,
+      "sha256": "ca189657350c5d7d5437b58223078b95408c331903d3b9543f80c183aa83d079"
+    },
+    {
+      "index": 22,
+      "file": "frames/frame-00022.png",
+      "startedWallSeconds": 5.9941778999999995,
+      "endedWallSeconds": 6.0493288000000005,
+      "timestampSeconds": 6.02175335,
+      "bytes": 176005,
+      "sha256": "ca189657350c5d7d5437b58223078b95408c331903d3b9543f80c183aa83d079"
+    },
+    {
+      "index": 23,
+      "file": "frames/frame-00023.png",
+      "startedWallSeconds": 6.1661205,
+      "endedWallSeconds": 6.2226541,
+      "timestampSeconds": 6.1943873,
+      "bytes": 176005,
+      "sha256": "ca189657350c5d7d5437b58223078b95408c331903d3b9543f80c183aa83d079"
+    },
+    {
+      "index": 24,
+      "file": "frames/frame-00024.png",
+      "startedWallSeconds": 6.3391866,
+      "endedWallSeconds": 6.4088522999999995,
+      "timestampSeconds": 6.37401945,
+      "bytes": 176005,
+      "sha256": "ca189657350c5d7d5437b58223078b95408c331903d3b9543f80c183aa83d079"
+    },
+    {
+      "index": 25,
+      "file": "frames/frame-00025.png",
+      "startedWallSeconds": 6.5116374,
+      "endedWallSeconds": 6.565014199999999,
+      "timestampSeconds": 6.538325799999999,
+      "bytes": 176005,
+      "sha256": "ca189657350c5d7d5437b58223078b95408c331903d3b9543f80c183aa83d079"
+    },
+    {
+      "index": 26,
+      "file": "frames/frame-00026.png",
+      "startedWallSeconds": 6.6832676,
+      "endedWallSeconds": 6.741486399999999,
+      "timestampSeconds": 6.712377,
+      "bytes": 176005,
+      "sha256": "ca189657350c5d7d5437b58223078b95408c331903d3b9543f80c183aa83d079"
+    },
+    {
+      "index": 27,
+      "file": "frames/frame-00027.png",
+      "startedWallSeconds": 6.8550548,
+      "endedWallSeconds": 6.9278428000000005,
+      "timestampSeconds": 6.8914488,
+      "bytes": 176005,
+      "sha256": "ca189657350c5d7d5437b58223078b95408c331903d3b9543f80c183aa83d079"
+    },
+    {
+      "index": 28,
+      "file": "frames/frame-00028.png",
+      "startedWallSeconds": 7.0247936,
+      "endedWallSeconds": 7.0976602,
+      "timestampSeconds": 7.061226899999999,
+      "bytes": 176005,
+      "sha256": "ca189657350c5d7d5437b58223078b95408c331903d3b9543f80c183aa83d079"
+    },
+    {
+      "index": 29,
+      "file": "frames/frame-00029.png",
+      "startedWallSeconds": 7.1907993999999995,
+      "endedWallSeconds": 7.2359864,
+      "timestampSeconds": 7.2133929,
+      "bytes": 97378,
+      "sha256": "df8d171f1e8d016a226d6a9655d31de75d2312a2bbd73cb39aaa83eef5a4bb8a"
+    },
+    {
+      "index": 30,
+      "file": "frames/frame-00030.png",
+      "startedWallSeconds": 7.2360926,
+      "endedWallSeconds": 7.3132440999999995,
+      "timestampSeconds": 7.27466835,
+      "bytes": 175903,
+      "sha256": "b9d799f8478cad4f8153a0d6af7a6979d49680228d6c4daf74c618a0c4832804"
+    },
+    {
+      "index": 31,
+      "file": "frames/frame-00031.png",
+      "startedWallSeconds": 7.368166199999999,
+      "endedWallSeconds": 7.4420060999999995,
+      "timestampSeconds": 7.405086149999999,
+      "bytes": 175903,
+      "sha256": "b9d799f8478cad4f8153a0d6af7a6979d49680228d6c4daf74c618a0c4832804"
+    },
+    {
+      "index": 32,
+      "file": "frames/frame-00032.png",
+      "startedWallSeconds": 7.5395802000000005,
+      "endedWallSeconds": 7.6132417,
+      "timestampSeconds": 7.57641095,
+      "bytes": 175903,
+      "sha256": "b9d799f8478cad4f8153a0d6af7a6979d49680228d6c4daf74c618a0c4832804"
+    },
+    {
+      "index": 33,
+      "file": "frames/frame-00033.png",
+      "startedWallSeconds": 7.7133294999999995,
+      "endedWallSeconds": 7.7693392999999995,
+      "timestampSeconds": 7.7413343999999995,
+      "bytes": 175903,
+      "sha256": "b9d799f8478cad4f8153a0d6af7a6979d49680228d6c4daf74c618a0c4832804"
+    },
+    {
+      "index": 34,
+      "file": "frames/frame-00034.png",
+      "startedWallSeconds": 7.883527600000001,
+      "endedWallSeconds": 7.9572495,
+      "timestampSeconds": 7.92038855,
+      "bytes": 175903,
+      "sha256": "b9d799f8478cad4f8153a0d6af7a6979d49680228d6c4daf74c618a0c4832804"
+    },
+    {
+      "index": 35,
+      "file": "frames/frame-00035.png",
+      "startedWallSeconds": 8.0541245,
+      "endedWallSeconds": 8.127572,
+      "timestampSeconds": 8.09084825,
+      "bytes": 175903,
+      "sha256": "b9d799f8478cad4f8153a0d6af7a6979d49680228d6c4daf74c618a0c4832804"
+    },
+    {
+      "index": 36,
+      "file": "frames/frame-00036.png",
+      "startedWallSeconds": 8.226805500000001,
+      "endedWallSeconds": 8.298271699999999,
+      "timestampSeconds": 8.2625386,
+      "bytes": 175903,
+      "sha256": "b9d799f8478cad4f8153a0d6af7a6979d49680228d6c4daf74c618a0c4832804"
+    },
+    {
+      "index": 37,
+      "file": "frames/frame-00037.png",
+      "startedWallSeconds": 8.3988912,
+      "endedWallSeconds": 8.4570247,
+      "timestampSeconds": 8.42795795,
+      "bytes": 175903,
+      "sha256": "b9d799f8478cad4f8153a0d6af7a6979d49680228d6c4daf74c618a0c4832804"
+    },
+    {
+      "index": 38,
+      "file": "frames/frame-00038.png",
+      "startedWallSeconds": 8.569346600000001,
+      "endedWallSeconds": 8.642674300000001,
+      "timestampSeconds": 8.606010450000001,
+      "bytes": 175903,
+      "sha256": "b9d799f8478cad4f8153a0d6af7a6979d49680228d6c4daf74c618a0c4832804"
+    },
+    {
+      "index": 39,
+      "file": "frames/frame-00039.png",
+      "startedWallSeconds": 8.7389036,
+      "endedWallSeconds": 8.8122537,
+      "timestampSeconds": 8.77557865,
+      "bytes": 175903,
+      "sha256": "b9d799f8478cad4f8153a0d6af7a6979d49680228d6c4daf74c618a0c4832804"
+    },
+    {
+      "index": 40,
+      "file": "frames/frame-00040.png",
+      "startedWallSeconds": 8.911757600000001,
+      "endedWallSeconds": 8.9673618,
+      "timestampSeconds": 8.9395597,
+      "bytes": 175903,
+      "sha256": "b9d799f8478cad4f8153a0d6af7a6979d49680228d6c4daf74c618a0c4832804"
+    },
+    {
+      "index": 41,
+      "file": "frames/frame-00041.png",
+      "startedWallSeconds": 9.083563,
+      "endedWallSeconds": 9.2487838,
+      "timestampSeconds": 9.1661734,
+      "bytes": 176742,
+      "sha256": "2e018266d7b679336d8f2e0364a49aee7c1e19baf32da8745d75e6e1fefd8c16"
+    },
+    {
+      "index": 42,
+      "file": "frames/frame-00042.png",
+      "startedWallSeconds": 9.2569571,
+      "endedWallSeconds": 9.413621,
+      "timestampSeconds": 9.33528905,
+      "bytes": 177560,
+      "sha256": "bc6e78de6b41dfa5fec977f481c3fc3cdf6c7e20871729ab1e088928677dc933"
+    },
+    {
+      "index": 43,
+      "file": "frames/frame-00043.png",
+      "startedWallSeconds": 9.4293143,
+      "endedWallSeconds": 9.578299600000001,
+      "timestampSeconds": 9.503806950000001,
+      "bytes": 178035,
+      "sha256": "149c0319e0f4aac2d793656fa9417b17709eae57cdda8d21f8d5ae30d66949fc"
+    },
+    {
+      "index": 44,
+      "file": "frames/frame-00044.png",
+      "startedWallSeconds": 9.6008897,
+      "endedWallSeconds": 9.7692408,
+      "timestampSeconds": 9.685065250000001,
+      "bytes": 178765,
+      "sha256": "705118d198cecab5c021573ea124a2edcdc4d10eeaf8d98f61350cb10c0647d5"
+    },
+    {
+      "index": 45,
+      "file": "frames/frame-00045.png",
+      "startedWallSeconds": 9.7744448,
+      "endedWallSeconds": 9.9403471,
+      "timestampSeconds": 9.85739595,
+      "bytes": 180011,
+      "sha256": "f9ea4892361d42b43c77d77d35850ba0b091d19cc1f55c85f931c05e72c85109"
+    },
+    {
+      "index": 46,
+      "file": "frames/frame-00046.png",
+      "startedWallSeconds": 9.9489051,
+      "endedWallSeconds": 10.116719,
+      "timestampSeconds": 10.03281205,
+      "bytes": 180769,
+      "sha256": "f74d06799b713dc8570103a6301b180617a4bac992a5a0635745b81f81b3484c"
+    },
+    {
+      "index": 47,
+      "file": "frames/frame-00047.png",
+      "startedWallSeconds": 10.1189956,
+      "endedWallSeconds": 10.3010155,
+      "timestampSeconds": 10.21000555,
+      "bytes": 181987,
+      "sha256": "b19080cf2946c1e6312b6045cfd997372dd38630aadc7ea79f298b51a7a228ed"
+    },
+    {
+      "index": 48,
+      "file": "frames/frame-00048.png",
+      "startedWallSeconds": 10.3068443,
+      "endedWallSeconds": 10.376426299999999,
+      "timestampSeconds": 10.3416353,
+      "bytes": 182692,
+      "sha256": "55c52053751bddd998280b3756e7c8e98c566fed53c9b43b525b32e02364d684"
+    },
+    {
+      "index": 49,
+      "file": "frames/frame-00049.png",
+      "startedWallSeconds": 10.3765516,
+      "endedWallSeconds": 10.4401797,
+      "timestampSeconds": 10.40836565,
+      "bytes": 182692,
+      "sha256": "55c52053751bddd998280b3756e7c8e98c566fed53c9b43b525b32e02364d684"
+    },
+    {
+      "index": 50,
+      "file": "frames/frame-00050.png",
+      "startedWallSeconds": 10.479293799999999,
+      "endedWallSeconds": 10.5340911,
+      "timestampSeconds": 10.50669245,
+      "bytes": 182692,
+      "sha256": "55c52053751bddd998280b3756e7c8e98c566fed53c9b43b525b32e02364d684"
+    },
+    {
+      "index": 51,
+      "file": "frames/frame-00051.png",
+      "startedWallSeconds": 10.6505826,
+      "endedWallSeconds": 10.707629,
+      "timestampSeconds": 10.6791058,
+      "bytes": 182692,
+      "sha256": "55c52053751bddd998280b3756e7c8e98c566fed53c9b43b525b32e02364d684"
+    },
+    {
+      "index": 52,
+      "file": "frames/frame-00052.png",
+      "startedWallSeconds": 10.8253676,
+      "endedWallSeconds": 10.8966444,
+      "timestampSeconds": 10.861006,
+      "bytes": 182692,
+      "sha256": "55c52053751bddd998280b3756e7c8e98c566fed53c9b43b525b32e02364d684"
+    },
+    {
+      "index": 53,
+      "file": "frames/frame-00053.png",
+      "startedWallSeconds": 11.0001907,
+      "endedWallSeconds": 11.0560092,
+      "timestampSeconds": 11.02809995,
+      "bytes": 182692,
+      "sha256": "55c52053751bddd998280b3756e7c8e98c566fed53c9b43b525b32e02364d684"
+    },
+    {
+      "index": 54,
+      "file": "frames/frame-00054.png",
+      "startedWallSeconds": 11.1724877,
+      "endedWallSeconds": 11.2463994,
+      "timestampSeconds": 11.20944355,
+      "bytes": 182692,
+      "sha256": "55c52053751bddd998280b3756e7c8e98c566fed53c9b43b525b32e02364d684"
+    },
+    {
+      "index": 55,
+      "file": "frames/frame-00055.png",
+      "startedWallSeconds": 11.3457665,
+      "endedWallSeconds": 11.4005919,
+      "timestampSeconds": 11.3731792,
+      "bytes": 182692,
+      "sha256": "55c52053751bddd998280b3756e7c8e98c566fed53c9b43b525b32e02364d684"
+    },
+    {
+      "index": 56,
+      "file": "frames/frame-00056.png",
+      "startedWallSeconds": 11.5186484,
+      "endedWallSeconds": 11.5915371,
+      "timestampSeconds": 11.55509275,
+      "bytes": 182692,
+      "sha256": "55c52053751bddd998280b3756e7c8e98c566fed53c9b43b525b32e02364d684"
+    },
+    {
+      "index": 57,
+      "file": "frames/frame-00057.png",
+      "startedWallSeconds": 11.692069799999999,
+      "endedWallSeconds": 11.7609632,
+      "timestampSeconds": 11.726516499999999,
+      "bytes": 182692,
+      "sha256": "55c52053751bddd998280b3756e7c8e98c566fed53c9b43b525b32e02364d684"
+    },
+    {
+      "index": 58,
+      "file": "frames/frame-00058.png",
+      "startedWallSeconds": 11.866590899999998,
+      "endedWallSeconds": 11.9211965,
+      "timestampSeconds": 11.8938937,
+      "bytes": 182692,
+      "sha256": "55c52053751bddd998280b3756e7c8e98c566fed53c9b43b525b32e02364d684"
+    },
+    {
+      "index": 59,
+      "file": "frames/frame-00059.png",
+      "startedWallSeconds": 12.0381397,
+      "endedWallSeconds": 12.1092155,
+      "timestampSeconds": 12.0736776,
+      "bytes": 182692,
+      "sha256": "55c52053751bddd998280b3756e7c8e98c566fed53c9b43b525b32e02364d684"
+    },
+    {
+      "index": 60,
+      "file": "frames/frame-00060.png",
+      "startedWallSeconds": 12.2121995,
+      "endedWallSeconds": 12.2654359,
+      "timestampSeconds": 12.2388177,
+      "bytes": 182692,
+      "sha256": "55c52053751bddd998280b3756e7c8e98c566fed53c9b43b525b32e02364d684"
+    },
+    {
+      "index": 61,
+      "file": "frames/frame-00061.png",
+      "startedWallSeconds": 12.384991099999999,
+      "endedWallSeconds": 12.4564797,
+      "timestampSeconds": 12.420735399999998,
+      "bytes": 182692,
+      "sha256": "55c52053751bddd998280b3756e7c8e98c566fed53c9b43b525b32e02364d684"
+    },
+    {
+      "index": 62,
+      "file": "frames/frame-00062.png",
+      "startedWallSeconds": 12.555005699999999,
+      "endedWallSeconds": 12.6280455,
+      "timestampSeconds": 12.5915256,
+      "bytes": 182692,
+      "sha256": "55c52053751bddd998280b3756e7c8e98c566fed53c9b43b525b32e02364d684"
+    },
+    {
+      "index": 63,
+      "file": "frames/frame-00063.png",
+      "startedWallSeconds": 12.7265237,
+      "endedWallSeconds": 12.797998,
+      "timestampSeconds": 12.76226085,
+      "bytes": 182692,
+      "sha256": "55c52053751bddd998280b3756e7c8e98c566fed53c9b43b525b32e02364d684"
+    },
+    {
+      "index": 64,
+      "file": "frames/frame-00064.png",
+      "startedWallSeconds": 12.8988977,
+      "endedWallSeconds": 12.9587416,
+      "timestampSeconds": 12.92881965,
+      "bytes": 182692,
+      "sha256": "55c52053751bddd998280b3756e7c8e98c566fed53c9b43b525b32e02364d684"
+    },
+    {
+      "index": 65,
+      "file": "frames/frame-00065.png",
+      "startedWallSeconds": 13.0728791,
+      "endedWallSeconds": 13.1473057,
+      "timestampSeconds": 13.1100924,
+      "bytes": 182692,
+      "sha256": "55c52053751bddd998280b3756e7c8e98c566fed53c9b43b525b32e02364d684"
+    },
+    {
+      "index": 66,
+      "file": "frames/frame-00066.png",
+      "startedWallSeconds": 13.2454742,
+      "endedWallSeconds": 13.3016971,
+      "timestampSeconds": 13.273585650000001,
+      "bytes": 182692,
+      "sha256": "55c52053751bddd998280b3756e7c8e98c566fed53c9b43b525b32e02364d684"
+    },
+    {
+      "index": 67,
+      "file": "frames/frame-00067.png",
+      "startedWallSeconds": 13.417972599999999,
+      "endedWallSeconds": 13.475213100000001,
+      "timestampSeconds": 13.44659285,
+      "bytes": 182692,
+      "sha256": "55c52053751bddd998280b3756e7c8e98c566fed53c9b43b525b32e02364d684"
+    },
+    {
+      "index": 68,
+      "file": "frames/frame-00068.png",
+      "startedWallSeconds": 13.5885259,
+      "endedWallSeconds": 13.664588799999999,
+      "timestampSeconds": 13.626557349999999,
+      "bytes": 187021,
+      "sha256": "4f1c90fb0ec16861538d66110f37fe5e7104aa6d7b23a37df67d1e044c7104b4"
+    },
+    {
+      "index": 69,
+      "file": "frames/frame-00069.png",
+      "startedWallSeconds": 13.664715,
+      "endedWallSeconds": 13.7242745,
+      "timestampSeconds": 13.69449475,
+      "bytes": 186638,
+      "sha256": "7f796d13e24cd8acf8937c5767b868c8f41ececb2335a5dc206872c805ae3cdc"
+    },
+    {
+      "index": 70,
+      "file": "frames/frame-00070.png",
+      "startedWallSeconds": 13.7600095,
+      "endedWallSeconds": 13.8319172,
+      "timestampSeconds": 13.795963350000001,
+      "bytes": 186638,
+      "sha256": "7f796d13e24cd8acf8937c5767b868c8f41ececb2335a5dc206872c805ae3cdc"
+    },
+    {
+      "index": 71,
+      "file": "frames/frame-00071.png",
+      "startedWallSeconds": 13.9308011,
+      "endedWallSeconds": 13.987672,
+      "timestampSeconds": 13.95923655,
+      "bytes": 186638,
+      "sha256": "7f796d13e24cd8acf8937c5767b868c8f41ececb2335a5dc206872c805ae3cdc"
+    },
+    {
+      "index": 72,
+      "file": "frames/frame-00072.png",
+      "startedWallSeconds": 14.1017518,
+      "endedWallSeconds": 14.1758664,
+      "timestampSeconds": 14.1388091,
+      "bytes": 186638,
+      "sha256": "7f796d13e24cd8acf8937c5767b868c8f41ececb2335a5dc206872c805ae3cdc"
+    },
+    {
+      "index": 73,
+      "file": "frames/frame-00073.png",
+      "startedWallSeconds": 14.2750279,
+      "endedWallSeconds": 14.3466317,
+      "timestampSeconds": 14.3108298,
+      "bytes": 186638,
+      "sha256": "7f796d13e24cd8acf8937c5767b868c8f41ececb2335a5dc206872c805ae3cdc"
+    },
+    {
+      "index": 74,
+      "file": "frames/frame-00074.png",
+      "startedWallSeconds": 14.4478244,
+      "endedWallSeconds": 14.5042259,
+      "timestampSeconds": 14.47602515,
+      "bytes": 186638,
+      "sha256": "7f796d13e24cd8acf8937c5767b868c8f41ececb2335a5dc206872c805ae3cdc"
+    },
+    {
+      "index": 75,
+      "file": "frames/frame-00075.png",
+      "startedWallSeconds": 14.619537099999999,
+      "endedWallSeconds": 14.695110099999999,
+      "timestampSeconds": 14.657323599999998,
+      "bytes": 186638,
+      "sha256": "7f796d13e24cd8acf8937c5767b868c8f41ececb2335a5dc206872c805ae3cdc"
+    },
+    {
+      "index": 76,
+      "file": "frames/frame-00076.png",
+      "startedWallSeconds": 14.7922284,
+      "endedWallSeconds": 14.8660248,
+      "timestampSeconds": 14.8291266,
+      "bytes": 186638,
+      "sha256": "7f796d13e24cd8acf8937c5767b868c8f41ececb2335a5dc206872c805ae3cdc"
+    },
+    {
+      "index": 77,
+      "file": "frames/frame-00077.png",
+      "startedWallSeconds": 14.9655576,
+      "endedWallSeconds": 15.0265491,
+      "timestampSeconds": 14.99605335,
+      "bytes": 186638,
+      "sha256": "7f796d13e24cd8acf8937c5767b868c8f41ececb2335a5dc206872c805ae3cdc"
+    },
+    {
+      "index": 78,
+      "file": "frames/frame-00078.png",
+      "startedWallSeconds": 15.1376594,
+      "endedWallSeconds": 15.213404,
+      "timestampSeconds": 15.1755317,
+      "bytes": 186638,
+      "sha256": "7f796d13e24cd8acf8937c5767b868c8f41ececb2335a5dc206872c805ae3cdc"
+    },
+    {
+      "index": 79,
+      "file": "frames/frame-00079.png",
+      "startedWallSeconds": 15.310334899999999,
+      "endedWallSeconds": 15.3808428,
+      "timestampSeconds": 15.345588849999999,
+      "bytes": 186638,
+      "sha256": "7f796d13e24cd8acf8937c5767b868c8f41ececb2335a5dc206872c805ae3cdc"
+    },
+    {
+      "index": 80,
+      "file": "frames/frame-00080.png",
+      "startedWallSeconds": 15.48229,
+      "endedWallSeconds": 15.543595499999999,
+      "timestampSeconds": 15.51294275,
+      "bytes": 186638,
+      "sha256": "7f796d13e24cd8acf8937c5767b868c8f41ececb2335a5dc206872c805ae3cdc"
+    },
+    {
+      "index": 81,
+      "file": "frames/frame-00081.png",
+      "startedWallSeconds": 15.655724,
+      "endedWallSeconds": 15.7292277,
+      "timestampSeconds": 15.69247585,
+      "bytes": 186638,
+      "sha256": "7f796d13e24cd8acf8937c5767b868c8f41ececb2335a5dc206872c805ae3cdc"
+    },
+    {
+      "index": 82,
+      "file": "frames/frame-00082.png",
+      "startedWallSeconds": 15.7902641,
+      "endedWallSeconds": 15.83071,
+      "timestampSeconds": 15.810487049999999,
+      "bytes": 62445,
+      "sha256": "5086870eb6fd78dbafb444340b3a0666288d398227b8889d38e0ce3f00c94215"
+    },
+    {
+      "index": 83,
+      "file": "frames/frame-00083.png",
+      "startedWallSeconds": 15.8308372,
+      "endedWallSeconds": 15.861165699999999,
+      "timestampSeconds": 15.84600145,
+      "bytes": 62445,
+      "sha256": "5086870eb6fd78dbafb444340b3a0666288d398227b8889d38e0ce3f00c94215"
+    },
+    {
+      "index": 84,
+      "file": "frames/frame-00084.png",
+      "startedWallSeconds": 16.0029067,
+      "endedWallSeconds": 16.0366182,
+      "timestampSeconds": 16.01976245,
+      "bytes": 62445,
+      "sha256": "5086870eb6fd78dbafb444340b3a0666288d398227b8889d38e0ce3f00c94215"
+    },
+    {
+      "index": 85,
+      "file": "frames/frame-00085.png",
+      "startedWallSeconds": 16.174672,
+      "endedWallSeconds": 16.2262037,
+      "timestampSeconds": 16.20043785,
+      "bytes": 62445,
+      "sha256": "5086870eb6fd78dbafb444340b3a0666288d398227b8889d38e0ce3f00c94215"
+    },
+    {
+      "index": 86,
+      "file": "frames/frame-00086.png",
+      "startedWallSeconds": 16.3466001,
+      "endedWallSeconds": 16.377997999999998,
+      "timestampSeconds": 16.362299049999997,
+      "bytes": 62445,
+      "sha256": "5086870eb6fd78dbafb444340b3a0666288d398227b8889d38e0ce3f00c94215"
+    },
+    {
+      "index": 87,
+      "file": "frames/frame-00087.png",
+      "startedWallSeconds": 16.5185291,
+      "endedWallSeconds": 16.5664922,
+      "timestampSeconds": 16.542510649999997,
+      "bytes": 62445,
+      "sha256": "5086870eb6fd78dbafb444340b3a0666288d398227b8889d38e0ce3f00c94215"
+    },
+    {
+      "index": 88,
+      "file": "frames/frame-00088.png",
+      "startedWallSeconds": 16.6895576,
+      "endedWallSeconds": 16.7371895,
+      "timestampSeconds": 16.71337355,
+      "bytes": 62445,
+      "sha256": "5086870eb6fd78dbafb444340b3a0666288d398227b8889d38e0ce3f00c94215"
+    },
+    {
+      "index": 89,
+      "file": "frames/frame-00089.png",
+      "startedWallSeconds": 16.859449400000003,
+      "endedWallSeconds": 16.9045889,
+      "timestampSeconds": 16.88201915,
+      "bytes": 62445,
+      "sha256": "5086870eb6fd78dbafb444340b3a0666288d398227b8889d38e0ce3f00c94215"
+    },
+    {
+      "index": 90,
+      "file": "frames/frame-00090.png",
+      "startedWallSeconds": 17.0336766,
+      "endedWallSeconds": 17.0657514,
+      "timestampSeconds": 17.049714,
+      "bytes": 62445,
+      "sha256": "5086870eb6fd78dbafb444340b3a0666288d398227b8889d38e0ce3f00c94215"
+    },
+    {
+      "index": 91,
+      "file": "frames/frame-00091.png",
+      "startedWallSeconds": 17.2038993,
+      "endedWallSeconds": 17.2520441,
+      "timestampSeconds": 17.227971699999998,
+      "bytes": 62445,
+      "sha256": "5086870eb6fd78dbafb444340b3a0666288d398227b8889d38e0ce3f00c94215"
+    },
+    {
+      "index": 92,
+      "file": "frames/frame-00092.png",
+      "startedWallSeconds": 17.3737652,
+      "endedWallSeconds": 17.421621299999998,
+      "timestampSeconds": 17.39769325,
+      "bytes": 62445,
+      "sha256": "5086870eb6fd78dbafb444340b3a0666288d398227b8889d38e0ce3f00c94215"
+    },
+    {
+      "index": 93,
+      "file": "frames/frame-00093.png",
+      "startedWallSeconds": 17.5449072,
+      "endedWallSeconds": 17.5763845,
+      "timestampSeconds": 17.56064585,
+      "bytes": 62445,
+      "sha256": "5086870eb6fd78dbafb444340b3a0666288d398227b8889d38e0ce3f00c94215"
+    },
+    {
+      "index": 94,
+      "file": "frames/frame-00094.png",
+      "startedWallSeconds": 17.7179774,
+      "endedWallSeconds": 17.749735,
+      "timestampSeconds": 17.733856199999998,
+      "bytes": 62445,
+      "sha256": "5086870eb6fd78dbafb444340b3a0666288d398227b8889d38e0ce3f00c94215"
+    },
+    {
+      "index": 95,
+      "file": "frames/frame-00095.png",
+      "startedWallSeconds": 17.8874967,
+      "endedWallSeconds": 17.9364194,
+      "timestampSeconds": 17.91195805,
+      "bytes": 62445,
+      "sha256": "5086870eb6fd78dbafb444340b3a0666288d398227b8889d38e0ce3f00c94215"
+    },
+    {
+      "index": 96,
+      "file": "frames/frame-00096.png",
+      "startedWallSeconds": 18.0599407,
+      "endedWallSeconds": 18.1058761,
+      "timestampSeconds": 18.0829084,
+      "bytes": 62445,
+      "sha256": "5086870eb6fd78dbafb444340b3a0666288d398227b8889d38e0ce3f00c94215"
+    },
+    {
+      "index": 97,
+      "file": "frames/frame-00097.png",
+      "startedWallSeconds": 18.2314723,
+      "endedWallSeconds": 18.2641351,
+      "timestampSeconds": 18.2478037,
+      "bytes": 62445,
+      "sha256": "5086870eb6fd78dbafb444340b3a0666288d398227b8889d38e0ce3f00c94215"
+    },
+    {
+      "index": 98,
+      "file": "frames/frame-00098.png",
+      "startedWallSeconds": 18.4022264,
+      "endedWallSeconds": 18.4519251,
+      "timestampSeconds": 18.42707575,
+      "bytes": 62445,
+      "sha256": "5086870eb6fd78dbafb444340b3a0666288d398227b8889d38e0ce3f00c94215"
+    },
+    {
+      "index": 99,
+      "file": "frames/frame-00099.png",
+      "startedWallSeconds": 18.5748423,
+      "endedWallSeconds": 18.622520700000003,
+      "timestampSeconds": 18.5986815,
+      "bytes": 62445,
+      "sha256": "5086870eb6fd78dbafb444340b3a0666288d398227b8889d38e0ce3f00c94215"
+    },
+    {
+      "index": 100,
+      "file": "frames/frame-00100.png",
+      "startedWallSeconds": 18.7461757,
+      "endedWallSeconds": 18.7773651,
+      "timestampSeconds": 18.7617704,
+      "bytes": 62445,
+      "sha256": "5086870eb6fd78dbafb444340b3a0666288d398227b8889d38e0ce3f00c94215"
+    },
+    {
+      "index": 101,
+      "file": "frames/frame-00101.png",
+      "startedWallSeconds": 18.879390200000003,
+      "endedWallSeconds": 18.920728899999997,
+      "timestampSeconds": 18.90005955,
+      "bytes": 75464,
+      "sha256": "f1f0d0d9cf4247b6bb5db1a9b7ba7561e6b950f2520c65cb791b284872515bf5"
+    },
+    {
+      "index": 102,
+      "file": "frames/frame-00102.png",
+      "startedWallSeconds": 18.920842,
+      "endedWallSeconds": 18.9665641,
+      "timestampSeconds": 18.94370305,
+      "bytes": 75464,
+      "sha256": "f1f0d0d9cf4247b6bb5db1a9b7ba7561e6b950f2520c65cb791b284872515bf5"
+    },
+    {
+      "index": 103,
+      "file": "frames/frame-00103.png",
+      "startedWallSeconds": 19.088796600000002,
+      "endedWallSeconds": 19.141474600000002,
+      "timestampSeconds": 19.115135600000002,
+      "bytes": 75464,
+      "sha256": "f1f0d0d9cf4247b6bb5db1a9b7ba7561e6b950f2520c65cb791b284872515bf5"
+    },
+    {
+      "index": 104,
+      "file": "frames/frame-00104.png",
+      "startedWallSeconds": 19.2607,
+      "endedWallSeconds": 19.3080932,
+      "timestampSeconds": 19.2843966,
+      "bytes": 75464,
+      "sha256": "f1f0d0d9cf4247b6bb5db1a9b7ba7561e6b950f2520c65cb791b284872515bf5"
+    },
+    {
+      "index": 105,
+      "file": "frames/frame-00105.png",
+      "startedWallSeconds": 19.4311992,
+      "endedWallSeconds": 19.467541,
+      "timestampSeconds": 19.4493701,
+      "bytes": 75464,
+      "sha256": "f1f0d0d9cf4247b6bb5db1a9b7ba7561e6b950f2520c65cb791b284872515bf5"
+    },
+    {
+      "index": 106,
+      "file": "frames/frame-00106.png",
+      "startedWallSeconds": 19.6036208,
+      "endedWallSeconds": 19.6529663,
+      "timestampSeconds": 19.628293550000002,
+      "bytes": 75464,
+      "sha256": "f1f0d0d9cf4247b6bb5db1a9b7ba7561e6b950f2520c65cb791b284872515bf5"
+    },
+    {
+      "index": 107,
+      "file": "frames/frame-00107.png",
+      "startedWallSeconds": 19.775577300000002,
+      "endedWallSeconds": 19.824811399999998,
+      "timestampSeconds": 19.800194349999998,
+      "bytes": 75464,
+      "sha256": "f1f0d0d9cf4247b6bb5db1a9b7ba7561e6b950f2520c65cb791b284872515bf5"
+    },
+    {
+      "index": 108,
+      "file": "frames/frame-00108.png",
+      "startedWallSeconds": 19.949959500000002,
+      "endedWallSeconds": 19.983480800000002,
+      "timestampSeconds": 19.96672015,
+      "bytes": 75464,
+      "sha256": "f1f0d0d9cf4247b6bb5db1a9b7ba7561e6b950f2520c65cb791b284872515bf5"
+    },
+    {
+      "index": 109,
+      "file": "frames/frame-00109.png",
+      "startedWallSeconds": 20.1212978,
+      "endedWallSeconds": 20.1729474,
+      "timestampSeconds": 20.147122600000003,
+      "bytes": 75464,
+      "sha256": "f1f0d0d9cf4247b6bb5db1a9b7ba7561e6b950f2520c65cb791b284872515bf5"
+    },
+    {
+      "index": 110,
+      "file": "frames/frame-00110.png",
+      "startedWallSeconds": 20.2930226,
+      "endedWallSeconds": 20.3378838,
+      "timestampSeconds": 20.3154532,
+      "bytes": 75464,
+      "sha256": "f1f0d0d9cf4247b6bb5db1a9b7ba7561e6b950f2520c65cb791b284872515bf5"
+    },
+    {
+      "index": 111,
+      "file": "frames/frame-00111.png",
+      "startedWallSeconds": 20.4648897,
+      "endedWallSeconds": 20.4976339,
+      "timestampSeconds": 20.4812618,
+      "bytes": 75464,
+      "sha256": "f1f0d0d9cf4247b6bb5db1a9b7ba7561e6b950f2520c65cb791b284872515bf5"
+    },
+    {
+      "index": 112,
+      "file": "frames/frame-00112.png",
+      "startedWallSeconds": 20.4977225,
+      "endedWallSeconds": 20.529623,
+      "timestampSeconds": 20.513672749999998,
+      "bytes": 62445,
+      "sha256": "5086870eb6fd78dbafb444340b3a0666288d398227b8889d38e0ce3f00c94215"
+    },
+    {
+      "index": 113,
+      "file": "frames/frame-00113.png",
+      "startedWallSeconds": 20.6376932,
+      "endedWallSeconds": 20.685933300000002,
+      "timestampSeconds": 20.66181325,
+      "bytes": 62445,
+      "sha256": "5086870eb6fd78dbafb444340b3a0666288d398227b8889d38e0ce3f00c94215"
+    },
+    {
+      "index": 114,
+      "file": "frames/frame-00114.png",
+      "startedWallSeconds": 20.8119387,
+      "endedWallSeconds": 20.843014800000002,
+      "timestampSeconds": 20.827476750000002,
+      "bytes": 62445,
+      "sha256": "5086870eb6fd78dbafb444340b3a0666288d398227b8889d38e0ce3f00c94215"
+    },
+    {
+      "index": 115,
+      "file": "frames/frame-00115.png",
+      "startedWallSeconds": 20.9827284,
+      "endedWallSeconds": 21.0149825,
+      "timestampSeconds": 20.99885545,
+      "bytes": 62445,
+      "sha256": "5086870eb6fd78dbafb444340b3a0666288d398227b8889d38e0ce3f00c94215"
+    },
+    {
+      "index": 116,
+      "file": "frames/frame-00116.png",
+      "startedWallSeconds": 21.1552769,
+      "endedWallSeconds": 21.203062999999997,
+      "timestampSeconds": 21.17916995,
+      "bytes": 62445,
+      "sha256": "5086870eb6fd78dbafb444340b3a0666288d398227b8889d38e0ce3f00c94215"
+    },
+    {
+      "index": 117,
+      "file": "frames/frame-00117.png",
+      "startedWallSeconds": 21.325838,
+      "endedWallSeconds": 21.3733959,
+      "timestampSeconds": 21.349616949999998,
+      "bytes": 62445,
+      "sha256": "5086870eb6fd78dbafb444340b3a0666288d398227b8889d38e0ce3f00c94215"
+    },
+    {
+      "index": 118,
+      "file": "frames/frame-00118.png",
+      "startedWallSeconds": 21.495724600000003,
+      "endedWallSeconds": 21.5264855,
+      "timestampSeconds": 21.51110505,
+      "bytes": 62445,
+      "sha256": "5086870eb6fd78dbafb444340b3a0666288d398227b8889d38e0ce3f00c94215"
+    },
+    {
+      "index": 119,
+      "file": "frames/frame-00119.png",
+      "startedWallSeconds": 21.6678073,
+      "endedWallSeconds": 21.7012853,
+      "timestampSeconds": 21.6845463,
+      "bytes": 62445,
+      "sha256": "5086870eb6fd78dbafb444340b3a0666288d398227b8889d38e0ce3f00c94215"
+    },
+    {
+      "index": 120,
+      "file": "frames/frame-00120.png",
+      "startedWallSeconds": 21.8393142,
+      "endedWallSeconds": 21.886941999999998,
+      "timestampSeconds": 21.863128099999997,
+      "bytes": 62445,
+      "sha256": "5086870eb6fd78dbafb444340b3a0666288d398227b8889d38e0ce3f00c94215"
+    },
+    {
+      "index": 121,
+      "file": "frames/frame-00121.png",
+      "startedWallSeconds": 22.011312699999998,
+      "endedWallSeconds": 22.0437863,
+      "timestampSeconds": 22.0275495,
+      "bytes": 62445,
+      "sha256": "5086870eb6fd78dbafb444340b3a0666288d398227b8889d38e0ce3f00c94215"
+    },
+    {
+      "index": 122,
+      "file": "frames/frame-00122.png",
+      "startedWallSeconds": 22.1849322,
+      "endedWallSeconds": 22.232393499999997,
+      "timestampSeconds": 22.208662849999996,
+      "bytes": 62445,
+      "sha256": "5086870eb6fd78dbafb444340b3a0666288d398227b8889d38e0ce3f00c94215"
+    },
+    {
+      "index": 123,
+      "file": "frames/frame-00123.png",
+      "startedWallSeconds": 22.3560868,
+      "endedWallSeconds": 22.4040416,
+      "timestampSeconds": 22.3800642,
+      "bytes": 62445,
+      "sha256": "5086870eb6fd78dbafb444340b3a0666288d398227b8889d38e0ce3f00c94215"
+    },
+    {
+      "index": 124,
+      "file": "frames/frame-00124.png",
+      "startedWallSeconds": 22.5298618,
+      "endedWallSeconds": 22.5646552,
+      "timestampSeconds": 22.547258499999998,
+      "bytes": 62445,
+      "sha256": "5086870eb6fd78dbafb444340b3a0666288d398227b8889d38e0ce3f00c94215"
+    },
+    {
+      "index": 125,
+      "file": "frames/frame-00125.png",
+      "startedWallSeconds": 22.702313999999998,
+      "endedWallSeconds": 22.751215499999997,
+      "timestampSeconds": 22.726764749999997,
+      "bytes": 62445,
+      "sha256": "5086870eb6fd78dbafb444340b3a0666288d398227b8889d38e0ce3f00c94215"
+    },
+    {
+      "index": 126,
+      "file": "frames/frame-00126.png",
+      "startedWallSeconds": 22.873725299999997,
+      "endedWallSeconds": 22.9219315,
+      "timestampSeconds": 22.897828399999998,
+      "bytes": 62445,
+      "sha256": "5086870eb6fd78dbafb444340b3a0666288d398227b8889d38e0ce3f00c94215"
+    },
+    {
+      "index": 127,
+      "file": "frames/frame-00127.png",
+      "startedWallSeconds": 23.0448563,
+      "endedWallSeconds": 23.076545,
+      "timestampSeconds": 23.06070065,
+      "bytes": 62445,
+      "sha256": "5086870eb6fd78dbafb444340b3a0666288d398227b8889d38e0ce3f00c94215"
+    },
+    {
+      "index": 128,
+      "file": "frames/frame-00128.png",
+      "startedWallSeconds": 23.217174,
+      "endedWallSeconds": 23.2488936,
+      "timestampSeconds": 23.2330338,
+      "bytes": 62445,
+      "sha256": "5086870eb6fd78dbafb444340b3a0666288d398227b8889d38e0ce3f00c94215"
+    },
+    {
+      "index": 129,
+      "file": "frames/frame-00129.png",
+      "startedWallSeconds": 23.3893651,
+      "endedWallSeconds": 23.4387601,
+      "timestampSeconds": 23.4140626,
+      "bytes": 62445,
+      "sha256": "5086870eb6fd78dbafb444340b3a0666288d398227b8889d38e0ce3f00c94215"
+    }
+  ],
+  "errors": [],
+  "console": [
+    {
+      "wallSeconds": 2.6223173,
+      "type": "error",
+      "text": "Failed to load resource: the server responded with a status of 404 (Not Found)"
+    }
+  ],
+  "resourcesClosed": {
+    "context": true,
+    "browser": true,
+    "server": true
+  },
+  "runtime": {
+    "node": "v24.19.0",
+    "module": "C:/Users/seanzjxiao/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright",
+    "executable": "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe"
+  },
+  "encoder": {
+    "path": "C:/Users/seanzjxiao/miniconda3/envs/gs-sph-3d/Library/bin/ffmpeg.exe",
+    "sha256": "8fb0db0c4545e37a03baca91cbfbadfce553a8f800ad0faf2b5bd6ee2140aacf",
+    "version": "ffmpeg version 7.1.1 Copyright (c) 2000-2025 the FFmpeg developers\r"
+  },
+  "server": {
+    "url": "http://127.0.0.1:55727",
+    "scope": "fresh ephemeral loopback; user8137 untouched"
+  },
+  "browser": "149.0.4022.52",
+  "launch": {
+    "headless": true,
+    "executablePath": "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe"
+  },
+  "context": {
+    "persistent": false,
+    "storageStateProvided": false,
+    "recordVideo": false
+  },
+  "recordingStartedWallSeconds": 2.4057414,
+  "completedSimulation": {
+    "status": "本段推进完成，已暂停。请记录变化，再决定下一步。",
+    "time": "模拟时间 1.00 s",
+    "burning": "3,746",
+    "charred": "0",
+    "scene": "45,808",
+    "notes": "0 条记录"
+  },
+  "afterReset": {
+    "status": "已重新初始化：本次烧损与流动已清空，笔记保留。这不是历史倒放。",
+    "time": "模拟时间 0.00 s",
+    "burning": "0",
+    "charred": "0",
+    "scene": "45,808",
+    "notes": "0 条记录"
+  },
+  "receipt": {
+    "time": "1.00 s",
+    "burning": "3,746",
+    "charred": "0"
+  },
+  "notesUntouched": true,
+  "status": "completed",
+  "recordingEndedWallSeconds": 23.561593300000002,
+  "browserPhaseWallSeconds": 23.8502421,
+  "encoding": {
+    "startedWallSeconds": 23.8515998,
+    "command": [
+      "C:/Users/seanzjxiao/miniconda3/envs/gs-sph-3d/Library/bin/ffmpeg.exe",
+      "-hide_banner",
+      "-nostdin",
+      "-f",
+      "concat",
+      "-safe",
+      "0",
+      "-i",
+      "timeline.ffconcat",
+      "-fps_mode",
+      "vfr",
+      "-c:v",
+      "libx264",
+      "-preset",
+      "medium",
+      "-crf",
+      "20",
+      "-pix_fmt",
+      "yuv420p",
+      "-video_track_timescale",
+      "1000000",
+      "-movflags",
+      "+faststart",
+      "study.mp4"
+    ],
+    "exitCode": 0,
+    "endedWallSeconds": 25.2519778
+  },
+  "video": {
+    "file": "study.mp4",
+    "bytes": 507454,
+    "sha256": "cea05d4248bce8350d09867b2af70e0ac4f71d74ae1dd5a3afadb3fa61d6e6ca",
+    "commitEligible": true,
+    "frameCountCaptured": 130,
+    "untrimmedSamplingSpanSeconds": 21.155851900000002,
+    "probe": {
+      "programs": [],
+      "stream_groups": [],
+      "streams": [
+        {
+          "codec_name": "h264",
+          "width": 1280,
+          "height": 800,
+          "duration": "21.157000",
+          "nb_frames": "131"
+        }
+      ],
+      "format": {
+        "duration": "21.157000",
+        "size": "507454"
+      }
+    }
+  },
+  "sourceAfter": {
+    "tracks/art/index.html": "07c8048f3870d9462dcd8072d3f09b6115e2023227b4a75d9a69a173418ee640",
+    "tracks/art/art.js": "1ff8194561f2acb5d9a8124de68b3a39710e7e8de32d14b2a04d2615e8ccc13c",
+    "tracks/art/art.css": "2afe962cb45c40cc1ee9d007e66dd5caae8ff312d34109b24e12a413cab5cdbb",
+    "demo/index.html": "e9d808c434bdd8ce91482f60502f03f5d08c56b71c082eb704c53275ff9f57d0",
+    "static/test_scene.ply": "2f7e110a4ae3cd7d9a2ea8e04537d562a37b1ddb04b2c541e961901afc7492d6",
+    "research/lib/runtime.mjs": "cf540ed02429016ab2b8a50a1cd95ac14222247466a56cfbf37444234851b184",
+    "tracks/art/studies/a04-automated-score/record.mjs": "23ff140fbf23b4487f704377f5b863d53078a252896834e463a6a65ca931d3a6",
+    "tracks/art/studies/a04-automated-score/PROTOCOL.md": "896075ebadbd87faeba29f91de542cff23e4af743f76e9556d447010e3b5db02",
+    "tracks/art/studies/a04-automated-score/FOLLOWUP.md": "7fa481f7da605cc6202326b5e62981f3d05ff7a81d5bfed5dc638c6768efa45a",
+    "tracks/art/studies/a04-automated-score/record-sampled.mjs": "376b4d3002229de28c22c6544c1757b308c231931c4b32ec53e957fb69290f0c",
+    "tracks/art/studies/a04-automated-score/run-01/result.json": "ae59e108490b236a5f39be919dc18df4550745eb8b27eb3fd6469cd0f6a4c164"
+  },
+  "sourcesUnchanged": true,
+  "totalWallSeconds": 25.2552706,
+  "noFurtherRecording": true
+}
