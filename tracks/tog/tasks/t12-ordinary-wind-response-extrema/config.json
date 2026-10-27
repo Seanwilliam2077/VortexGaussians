@@ -1,0 +1,21 @@
+{
+  "schema": "t12-ordinary-extrema-v1",
+  "sources": {
+    "core.py": {"path": "../../src/core.py", "sha256": "ac750b70a86743ac858f1c53cf620ce29c63c462456115af4d0d8c93fa20bd9e"},
+    "scene.py": {"path": "../../src/scene.py", "sha256": "ad4cc525c22419d03479eaacb31c277952f9c54945dddd1e9cadc263adef130d"}
+  },
+  "model": {"n": 32, "steps": 40, "dt": 0.025, "frame_start": 16, "image_size": 64, "render_size": 32, "render_samples": 64, "kappa": 1.0},
+  "dtype": "float64",
+  "observation_steps": 20,
+  "future_steps": 20,
+  "theta_shape": [3, 8, 8, 8],
+  "reference_theta_amplitudes": [0.125, 0.10, 0.125],
+  "velocity": {"coarse_scale": 0.2, "base": [0.0, 0.12, 0.0], "initial_max_component": 0.35, "initial_component_rms": 0.18},
+  "wind": {"potential_center": [0.32, 0.45, 0.43], "sigma": 0.12, "max_component": 0.35, "active_updates": 10, "potential_lattice": "z-edge (i,j,k+0.5)/n", "curl": "(forward_y Az/h, -forward_x Az/h, 0)"},
+  "response": {"roi": [28, 26, 36, 56], "roi_order": "x0,y0,x1,y1 half-open, lower-left", "future_index": 20, "denominator": "reference observation step20 whole-image alpha sum", "objective_scale": 100.0, "order": ["min", "max"]},
+  "gates": {"interval_alpha_tolerance": 1e-10, "divergence_inf": 1e-10, "density_min": -1e-12, "alpha_min": -1e-12, "alpha_max": 1.000000000001},
+  "optimizer": {"max_evaluations_per_extreme": 80, "soft_seconds_per_extreme": 300, "outer_iterations": 3, "returned_steps_per_outer": 12, "initial_multiplier": 0.0, "initial_penalty": 1.0, "penalty_growth": 10.0, "penalty_max": 100.0, "violation_reduction_factor": 0.5, "lbfgs": {"lr": 1.0, "max_iter": 1, "max_eval": 25, "history_size": 10, "tolerance_grad": 1e-9, "tolerance_change": 1e-12, "line_search_fn": "strong_wolfe"}},
+  "qualification": {"x_perturbation": 0.01, "x_seed": 2026102712, "direction_seed": 2026102713, "distribution": "CPU Torch Rademacher", "direction_norm": "Euclidean L2=1", "directions": 2, "h": [1e-5, 1e-6], "relative_gate": 1e-4, "denominator_floor": 1e-8, "multiplier": 2.0, "penalty": 1.0, "peak_allocated_limit_bytes": 6442450944, "peak_reserved_limit_bytes": 7516192768},
+  "execution": {"threads": 4, "hard_timeout_seconds": 900, "expected_gpu_uuid": "GPU-53365c2e-346d-c2a5-2c98-25c00591a721", "expected_torch": "2.11.0+cu128"},
+  "scope": "Ordinary finite-budget search for qualified response witnesses; not global extrema, a confidence interval, a new optimizer, real reconstruction, or a benefit claim."
+}

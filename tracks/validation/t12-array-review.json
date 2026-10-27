@@ -1,0 +1,615 @@
+{
+  "stage": "final",
+  "scope": "CPU saved arrays; no Torch, producer import, simulation, rendering or AD",
+  "numpy": "2.3.5",
+  "scriptSHA256": "61b2e7ff53ab839caa1481116ac01a057780f2acc91834ee06a46e33412771ea",
+  "failures": [],
+  "files": {
+    "reference.npz": {
+      "sha256": "1f9436298078ab7a950219492e94b923e50f365226f2f80d4f7f4b311f652edb",
+      "bytes": 10469212,
+      "arrays": 20
+    },
+    "qualification/analytic.npz": {
+      "sha256": "2d940bbf6b377443903fc32e4dbdee1b6c75e8cb705d54859044f235dd699207",
+      "bytes": 9087900,
+      "arrays": 16
+    },
+    "qualification/direction-0.npz": {
+      "sha256": "4dc4519c54f56893bfcd0112af357973de8fb72bf7af3b6c4becae982be27e16",
+      "bytes": 12560,
+      "arrays": 1
+    },
+    "qualification/probe-0-0-plus.npz": {
+      "sha256": "273d97446e22644d8b3cd7ef67eda3ee7a933e730cad5398206716de54c09ef0",
+      "bytes": 7751824,
+      "arrays": 13
+    },
+    "qualification/probe-0-0-minus.npz": {
+      "sha256": "094ebee8b00ee7f0f720860a2fa943ae3f237463e0f8ac92085be25c2f14b922",
+      "bytes": 7751824,
+      "arrays": 13
+    },
+    "qualification/probe-0-1-plus.npz": {
+      "sha256": "e63e85cc33e9491118813419e7d68c024de9be982f6475f82d6cebc52b6f5558",
+      "bytes": 7751824,
+      "arrays": 13
+    },
+    "qualification/probe-0-1-minus.npz": {
+      "sha256": "8d699319cb9317b9e34facf8681b5b35c0dc9e131c9c74d61090e8c844e186b3",
+      "bytes": 7751824,
+      "arrays": 13
+    },
+    "qualification/direction-1.npz": {
+      "sha256": "76aa5f5dcd183467bef4189afe517c72f6470e2348455096f489911ed02bed9a",
+      "bytes": 12560,
+      "arrays": 1
+    },
+    "qualification/probe-1-0-plus.npz": {
+      "sha256": "1693a89de18589af9cad4e645ce2d9b17406af6a7183e1d2ad3d9c19767de7e7",
+      "bytes": 7751824,
+      "arrays": 13
+    },
+    "qualification/probe-1-0-minus.npz": {
+      "sha256": "2f66b8cfb56f64ac3f8cc99bee58cbfb6468a7d7233ab4eb3a0f6a527bd36899",
+      "bytes": 7751824,
+      "arrays": 13
+    },
+    "qualification/probe-1-1-plus.npz": {
+      "sha256": "dd72aa2369180bbebf4e8295da706151e70d5a3559bd5fd7717dc826790d0b1b",
+      "bytes": 7751824,
+      "arrays": 13
+    },
+    "qualification/probe-1-1-minus.npz": {
+      "sha256": "e610f25fcf6b584ebc319ecbf45734eb918c2ebfdc8a8363f0f1291825921266",
+      "bytes": 7751824,
+      "arrays": 13
+    },
+    "min/best-evaluated.npz": {
+      "sha256": "b9fce9fd629366afebd1a987872828cddd90341481bbc97a321efe241bd675a5",
+      "bytes": 7751334,
+      "arrays": 11
+    },
+    "min/final-verification.npz": {
+      "sha256": "b9fce9fd629366afebd1a987872828cddd90341481bbc97a321efe241bd675a5",
+      "bytes": 7751334,
+      "arrays": 11
+    },
+    "max/best-evaluated.npz": {
+      "sha256": "b9fce9fd629366afebd1a987872828cddd90341481bbc97a321efe241bd675a5",
+      "bytes": 7751334,
+      "arrays": 11
+    },
+    "max/final-verification.npz": {
+      "sha256": "b9fce9fd629366afebd1a987872828cddd90341481bbc97a321efe241bd675a5",
+      "bytes": 7751334,
+      "arrays": 11
+    }
+  },
+  "recomputed": {
+    "reference": {
+      "d": 0.010101999874651837,
+      "g": [
+        0.12195339725894526,
+        0.1320553971335971
+      ],
+      "constraintsMaxDifference": 3.552713678800501e-15,
+      "intervalMaxViolation": 0.0,
+      "intervalBadPixels": 0,
+      "quantizedDifferentPixels": 0,
+      "initialMaxComponent": 0.13842519749056242,
+      "initialComponentRMS": 0.07103211157583372,
+      "numericalPassed": true,
+      "qualified": true,
+      "firstFutureDensityMaxDifference": 0.0,
+      "firstFutureAlphaMaxDifference": 0.0
+    },
+    "G0 analytic": {
+      "d": 0.010109408428465985,
+      "g": [
+        0.12263036791666536,
+        0.13273977634513134
+      ],
+      "constraintsMaxDifference": 3.552713678800501e-15,
+      "intervalMaxViolation": 0.0019159077301107441,
+      "intervalBadPixels": 1965,
+      "quantizedDifferentPixels": 1965,
+      "initialMaxComponent": 0.1406780017194358,
+      "initialComponentRMS": 0.07101588698846482,
+      "numericalPassed": true,
+      "qualified": false,
+      "firstFutureDensityMaxDifference": 0.0,
+      "firstFutureAlphaMaxDifference": 0.0
+    },
+    "qualification/probe-0-0-plus.npz": {
+      "d": 0.010109409691332713,
+      "g": [
+        0.12263035571672136,
+        0.13273976540805407
+      ],
+      "constraintsMaxDifference": 3.552713678800501e-15,
+      "intervalMaxViolation": 0.0019158360478495617,
+      "intervalBadPixels": 1965,
+      "quantizedDifferentPixels": 1965,
+      "initialMaxComponent": 0.14067798892888214,
+      "initialComponentRMS": 0.07101588619339244,
+      "numericalPassed": true,
+      "qualified": false,
+      "firstFutureDensityMaxDifference": 0.0,
+      "firstFutureAlphaMaxDifference": 0.0
+    },
+    "qualification/probe-0-0-minus.npz": {
+      "d": 0.010109407165598092,
+      "g": [
+        0.1226303801166173,
+        0.1327397872822154
+      ],
+      "constraintsMaxDifference": 3.552713678800501e-15,
+      "intervalMaxViolation": 0.0019159794123730922,
+      "intervalBadPixels": 1965,
+      "quantizedDifferentPixels": 1965,
+      "initialMaxComponent": 0.14067801450998682,
+      "initialComponentRMS": 0.07101588778354403,
+      "numericalPassed": true,
+      "qualified": false,
+      "firstFutureDensityMaxDifference": 0.0,
+      "firstFutureAlphaMaxDifference": 0.0
+    },
+    "qualification/probe-0-1-plus.npz": {
+      "d": 0.010109408554752702,
+      "g": [
+        0.12263036669667063,
+        0.13273977525142333
+      ],
+      "constraintsMaxDifference": 3.552713678800501e-15,
+      "intervalMaxViolation": 0.0019159005618846203,
+      "intervalBadPixels": 1965,
+      "quantizedDifferentPixels": 1965,
+      "initialMaxComponent": 0.14067800044038056,
+      "initialComponentRMS": 0.07101588690895728,
+      "numericalPassed": true,
+      "qualified": false,
+      "firstFutureDensityMaxDifference": 0.0,
+      "firstFutureAlphaMaxDifference": 0.0
+    },
+    "qualification/probe-0-1-minus.npz": {
+      "d": 0.010109408302179226,
+      "g": [
+        0.12263036913666021,
+        0.13273977743883944
+      ],
+      "constraintsMaxDifference": 3.552713678800501e-15,
+      "intervalMaxViolation": 0.0019159148983369234,
+      "intervalBadPixels": 1965,
+      "quantizedDifferentPixels": 1965,
+      "initialMaxComponent": 0.14067800299849104,
+      "initialComponentRMS": 0.07101588706797245,
+      "numericalPassed": true,
+      "qualified": false,
+      "firstFutureDensityMaxDifference": 0.0,
+      "firstFutureAlphaMaxDifference": 0.0
+    },
+    "qualification/probe-1-0-plus.npz": {
+      "d": 0.010109409836640826,
+      "g": [
+        0.12263034452576588,
+        0.1327397543624067
+      ],
+      "constraintsMaxDifference": 3.552713678800501e-15,
+      "intervalMaxViolation": 0.0019159251624896734,
+      "intervalBadPixels": 1965,
+      "quantizedDifferentPixels": 1965,
+      "initialMaxComponent": 0.1406780545752641,
+      "initialComponentRMS": 0.07101588619568164,
+      "numericalPassed": true,
+      "qualified": false,
+      "firstFutureDensityMaxDifference": 0.0,
+      "firstFutureAlphaMaxDifference": 0.0
+    },
+    "qualification/probe-1-0-minus.npz": {
+      "d": 0.010109407020290298,
+      "g": [
+        0.12263039130757293,
+        0.13273979832786323
+      ],
+      "constraintsMaxDifference": 3.552713678800501e-15,
+      "intervalMaxViolation": 0.0019158902977265413,
+      "intervalBadPixels": 1965,
+      "quantizedDifferentPixels": 1965,
+      "initialMaxComponent": 0.14067794886360485,
+      "initialComponentRMS": 0.07101588778125484,
+      "numericalPassed": true,
+      "qualified": false,
+      "firstFutureDensityMaxDifference": 0.0,
+      "firstFutureAlphaMaxDifference": 0.0
+    },
+    "qualification/probe-1-1-plus.npz": {
+      "d": 0.010109408569283496,
+      "g": [
+        0.12263036557757506,
+        0.13273977414685856
+      ],
+      "constraintsMaxDifference": 3.552713678800501e-15,
+      "intervalMaxViolation": 0.0019159094733488535,
+      "intervalBadPixels": 1965,
+      "quantizedDifferentPixels": 1965,
+      "initialMaxComponent": 0.14067800700501876,
+      "initialComponentRMS": 0.0710158869091862,
+      "numericalPassed": true,
+      "qualified": false,
+      "firstFutureDensityMaxDifference": 0.0,
+      "firstFutureAlphaMaxDifference": 0.0
+    },
+    "qualification/probe-1-1-minus.npz": {
+      "d": 0.010109408287648461,
+      "g": [
+        0.12263037025575575,
+        0.1327397785434042
+      ],
+      "constraintsMaxDifference": 3.552713678800501e-15,
+      "intervalMaxViolation": 0.0019159059868725792,
+      "intervalBadPixels": 1965,
+      "quantizedDifferentPixels": 1965,
+      "initialMaxComponent": 0.14067799643385284,
+      "initialComponentRMS": 0.07101588706774352,
+      "numericalPassed": true,
+      "qualified": false,
+      "firstFutureDensityMaxDifference": 0.0,
+      "firstFutureAlphaMaxDifference": 0.0
+    },
+    "min best": {
+      "d": 0.010101999874651837,
+      "g": [
+        0.12195339725894526,
+        0.1320553971335971
+      ],
+      "constraintsMaxDifference": 3.552713678800501e-15,
+      "intervalMaxViolation": 0.0,
+      "intervalBadPixels": 0,
+      "quantizedDifferentPixels": 0,
+      "initialMaxComponent": 0.13842519749056242,
+      "initialComponentRMS": 0.07103211157583372,
+      "numericalPassed": true,
+      "qualified": true,
+      "firstFutureDensityMaxDifference": 0.0,
+      "firstFutureAlphaMaxDifference": 0.0
+    },
+    "min final": {
+      "d": 0.010101999874651837,
+      "g": [
+        0.12195339725894526,
+        0.1320553971335971
+      ],
+      "constraintsMaxDifference": 3.552713678800501e-15,
+      "intervalMaxViolation": 0.0,
+      "intervalBadPixels": 0,
+      "quantizedDifferentPixels": 0,
+      "initialMaxComponent": 0.13842519749056242,
+      "initialComponentRMS": 0.07103211157583372,
+      "numericalPassed": true,
+      "qualified": true,
+      "firstFutureDensityMaxDifference": 0.0,
+      "firstFutureAlphaMaxDifference": 0.0
+    },
+    "max best": {
+      "d": 0.010101999874651837,
+      "g": [
+        0.12195339725894526,
+        0.1320553971335971
+      ],
+      "constraintsMaxDifference": 3.552713678800501e-15,
+      "intervalMaxViolation": 0.0,
+      "intervalBadPixels": 0,
+      "quantizedDifferentPixels": 0,
+      "initialMaxComponent": 0.13842519749056242,
+      "initialComponentRMS": 0.07103211157583372,
+      "numericalPassed": true,
+      "qualified": true,
+      "firstFutureDensityMaxDifference": 0.0,
+      "firstFutureAlphaMaxDifference": 0.0
+    },
+    "max final": {
+      "d": 0.010101999874651837,
+      "g": [
+        0.12195339725894526,
+        0.1320553971335971
+      ],
+      "constraintsMaxDifference": 3.552713678800501e-15,
+      "intervalMaxViolation": 0.0,
+      "intervalBadPixels": 0,
+      "quantizedDifferentPixels": 0,
+      "initialMaxComponent": 0.13842519749056242,
+      "initialComponentRMS": 0.07103211157583372,
+      "numericalPassed": true,
+      "qualified": true,
+      "firstFutureDensityMaxDifference": 0.0,
+      "firstFutureAlphaMaxDifference": 0.0
+    }
+  },
+  "sourcePins": {
+    "runner.py": {
+      "path": "runner.py",
+      "sha256": "258da8e8c9f16be33c84edddc5601427d7a33aa388e10ca9b5cceeae7f1d1ca4",
+      "bytes": 40463
+    },
+    "config.json": {
+      "path": "config.json",
+      "sha256": "8fb935bfee4590358d12fc0fb7645bacdb337164ed7c4e67a26e72288936c3d8",
+      "bytes": 2459
+    },
+    "PROTOCOL.md": {
+      "path": "PROTOCOL.md",
+      "sha256": "a5d7f180402dd2aecefbf63ef2b293f7b555573c1aa72049f0da376d585c3380",
+      "bytes": 5170
+    },
+    "core.py": {
+      "path": "../../src/core.py",
+      "sha256": "ac750b70a86743ac858f1c53cf620ce29c63c462456115af4d0d8c93fa20bd9e",
+      "bytes": 13301
+    },
+    "scene.py": {
+      "path": "../../src/scene.py",
+      "sha256": "ad4cc525c22419d03479eaacb31c277952f9c54945dddd1e9cadc263adef130d",
+      "bytes": 805
+    }
+  },
+  "freezeSHA256": "965af1d80493f2cd28f67d5dc82a974047f792a8817ed739405cdc5ea31d20e0",
+  "wind": {
+    "potentialMaxError": 2.42861286636753e-17,
+    "forceMaxError": 3.885780586188048e-16,
+    "divergenceInf": 1.9984014443252818e-15,
+    "maxComponent": 0.35,
+    "phaseScope": "Source read: future updates 0..9 force, 10..19 zero. Saved first density/alpha delay checked; no replay."
+  },
+  "G0": {
+    "d": 0.010109408428465985,
+    "loss": -97255.77352241204,
+    "lossReductionDifference": 0.0,
+    "activeBranches": 163842,
+    "minimumAbsoluteBranch": 0.5114435288217638,
+    "directions": [
+      {
+        "index": 0,
+        "L2Norm": 1.0,
+        "dots": {
+          "d": 0.0001262867296785088,
+          "loss": -1033.32205998539
+        },
+        "h": [
+          {
+            "value": 1e-05,
+            "errors": {
+              "d": {
+                "fd": 0.00012628673107251132,
+                "relativeError": 1.1038392643281468e-08
+              },
+              "loss": {
+                "fd": -1033.32205908373,
+                "relativeError": 8.725837973989727e-10
+              }
+            }
+          },
+          {
+            "value": 1e-06,
+            "errors": {
+              "d": {
+                "fd": 0.00012628673801140522,
+                "relativeError": 6.598394330859476e-08
+              },
+              "loss": {
+                "fd": -1033.3220416214317,
+                "relativeError": 1.7771766491986097e-08
+              }
+            }
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "L2Norm": 1.0,
+        "dots": {
+          "d": 0.00014081752550987612,
+          "loss": 249.14664822521496
+        },
+        "h": [
+          {
+            "value": 1e-05,
+            "errors": {
+              "d": {
+                "fd": 0.00014081752638950285,
+                "relativeError": 6.246571353029814e-09
+              },
+              "loss": {
+                "fd": 249.14664682000873,
+                "relativeError": 5.640076814396855e-09
+              }
+            }
+          },
+          {
+            "value": 1e-06,
+            "errors": {
+              "d": {
+                "fd": 0.00014081751736894077,
+                "relativeError": 5.7811947232760466e-08
+              },
+              "loss": {
+                "fd": 249.14665118558332,
+                "relativeError": 1.1882031662798166e-08
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "memoryReported": {
+      "scope": "Torch allocator; not full process/device peak",
+      "peakAllocatedBytes": 3513746944,
+      "peakReservedBytes": 3531603968
+    },
+    "secondsReported": 17.92628270003479
+  },
+  "endpoints": [
+    {
+      "arm": "min",
+      "metrics": {
+        "d": 0.010101999874651837,
+        "g": [
+          0.12195339725894526,
+          0.1320553971335971
+        ],
+        "constraintsMaxDifference": 3.552713678800501e-15,
+        "intervalMaxViolation": 0.0,
+        "intervalBadPixels": 0,
+        "quantizedDifferentPixels": 0,
+        "initialMaxComponent": 0.13842519749056242,
+        "initialComponentRMS": 0.07103211157583372,
+        "numericalPassed": true,
+        "qualified": true,
+        "firstFutureDensityMaxDifference": 0.0,
+        "firstFutureAlphaMaxDifference": 0.0
+      },
+      "bestVsFinal": {
+        "theta": {
+          "maxAbs": 0.0,
+          "bytesEqual": true
+        },
+        "constraints": {
+          "maxAbs": 0.0,
+          "bytesEqual": true
+        },
+        "observation_alpha": {
+          "maxAbs": 0.0,
+          "bytesEqual": true
+        },
+        "future_alpha": {
+          "maxAbs": 0.0,
+          "bytesEqual": true
+        },
+        "initial_velocity": {
+          "maxAbs": 0.0,
+          "bytesEqual": true
+        },
+        "observation_velocity20": {
+          "maxAbs": 0.0,
+          "bytesEqual": true
+        },
+        "observation_density20": {
+          "maxAbs": 0.0,
+          "bytesEqual": true
+        },
+        "final_velocity": {
+          "maxAbs": 0.0,
+          "bytesEqual": true
+        },
+        "final_density": {
+          "maxAbs": 0.0,
+          "bytesEqual": true
+        },
+        "first_future_density": {
+          "maxAbs": 0.0,
+          "bytesEqual": true
+        },
+        "state_metrics": {
+          "maxAbs": 0.0,
+          "bytesEqual": true
+        }
+      },
+      "calls": 79,
+      "backwardCallsReported": 77,
+      "secondsReported": 126.14822039997671,
+      "termination": "evaluation_budget",
+      "selectedOrigin": "seed_initial"
+    },
+    {
+      "arm": "max",
+      "metrics": {
+        "d": 0.010101999874651837,
+        "g": [
+          0.12195339725894526,
+          0.1320553971335971
+        ],
+        "constraintsMaxDifference": 3.552713678800501e-15,
+        "intervalMaxViolation": 0.0,
+        "intervalBadPixels": 0,
+        "quantizedDifferentPixels": 0,
+        "initialMaxComponent": 0.13842519749056242,
+        "initialComponentRMS": 0.07103211157583372,
+        "numericalPassed": true,
+        "qualified": true,
+        "firstFutureDensityMaxDifference": 0.0,
+        "firstFutureAlphaMaxDifference": 0.0
+      },
+      "bestVsFinal": {
+        "theta": {
+          "maxAbs": 0.0,
+          "bytesEqual": true
+        },
+        "constraints": {
+          "maxAbs": 0.0,
+          "bytesEqual": true
+        },
+        "observation_alpha": {
+          "maxAbs": 0.0,
+          "bytesEqual": true
+        },
+        "future_alpha": {
+          "maxAbs": 0.0,
+          "bytesEqual": true
+        },
+        "initial_velocity": {
+          "maxAbs": 0.0,
+          "bytesEqual": true
+        },
+        "observation_velocity20": {
+          "maxAbs": 0.0,
+          "bytesEqual": true
+        },
+        "observation_density20": {
+          "maxAbs": 0.0,
+          "bytesEqual": true
+        },
+        "final_velocity": {
+          "maxAbs": 0.0,
+          "bytesEqual": true
+        },
+        "final_density": {
+          "maxAbs": 0.0,
+          "bytesEqual": true
+        },
+        "first_future_density": {
+          "maxAbs": 0.0,
+          "bytesEqual": true
+        },
+        "state_metrics": {
+          "maxAbs": 0.0,
+          "bytesEqual": true
+        }
+      },
+      "calls": 79,
+      "backwardCallsReported": 77,
+      "secondsReported": 111.52257760002976,
+      "termination": "evaluation_budget",
+      "selectedOrigin": "seed_initial"
+    }
+  ],
+  "costsReported": {
+    "setup": 1.832457099983003,
+    "G0": 17.92628270003479,
+    "actualWork": {
+      "fullEvaluationsStarted": 168,
+      "fullEvaluationsCompleted": 168,
+      "stepsCompleted": 10080,
+      "reverseCalls": 156,
+      "scope": "Includes reference setup, new G0, both searches and paid final verification"
+    },
+    "workerSeconds": 274.90117879997706
+  },
+  "summarySHA256": "8448f30f7a59e8a9332a714799d1f10ed1f0a1d20f23bef9bcff096fbd7cb229",
+  "limitations": [
+    "Not an independent AD, simulation or renderer run. Saved gradients are checked against independent scalar finite differences.",
+    "Trajectory state_metrics and allocator/timing values remain producer observations; only stored state arrays and derived scalar arithmetic are independently checked.",
+    "No confidence, safety, global extremum, statistical performance or artistic claim. Finite-budget failure to find a different qualified endpoint is not uniqueness.",
+    "CPU reduction ordering can differ from GPU; original FD and eligibility gates are unchanged. Summary comparison tolerance is 1e-11 absolute plus 1e-12 relative."
+  ],
+  "passed": true
+}

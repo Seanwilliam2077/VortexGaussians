@@ -1,0 +1,7 @@
+# T12 root publication review
+
+27 October 2026. Root inspected the actual `wind-response-witnesses.png` and read the publication script and result description. The three reference/min/max rows correctly show the same selected seed, with the fixed response ROI marked on the observation, unedited future, edited future and difference images. The zero found span is explicitly distinguished from uniqueness and coverage. The visible wind effect confirms that zero found **spread across states** is not zero intervention response.
+
+All12 final publication output identities listed in `publication.json` were independently hashed and matched. One Markdown table delimiter was corrected after visual review; that correction is recorded in the manifest, while plots, arrays and executed publisher source remain unchanged. The 5,786,157-byte compact archive preserves its predeclared image/parameter range and records exceeding the suggested5 MB target without truncation or precision reduction.
+
+The [independent CPU audit](t12-array-review.md) verifies all16 raw NPZ files, response/constraint arithmetic, G0 and final-state equality. Its trial rejection analysis is explicitly based on saved per-call records because complete trial arrays were not retained. Root did not rerun the simulation, renderer, gradients or timing. The next experiment must preserve the negative result and the exact original gates.

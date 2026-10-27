@@ -1,0 +1,2417 @@
+{
+  "stage": "final",
+  "scope": "CPU saved arrays; no Torch, producer import, simulation, rendering or AD",
+  "numpy": "2.3.5",
+  "scriptSHA256": "ebe96d9ae213d089b24813ed86a90ca91a7a1d7dd0bf71e64678bde05ade53a6",
+  "failures": [],
+  "files": {
+    "reference.npz": {
+      "sha256": "1f9436298078ab7a950219492e94b923e50f365226f2f80d4f7f4b311f652edb",
+      "bytes": 10469212,
+      "arrays": 20
+    },
+    "qualification/analytic.npz": {
+      "sha256": "2d940bbf6b377443903fc32e4dbdee1b6c75e8cb705d54859044f235dd699207",
+      "bytes": 9087900,
+      "arrays": 16
+    },
+    "qualification/direction-0.npz": {
+      "sha256": "4dc4519c54f56893bfcd0112af357973de8fb72bf7af3b6c4becae982be27e16",
+      "bytes": 12560,
+      "arrays": 1
+    },
+    "qualification/probe-0-0-plus.npz": {
+      "sha256": "273d97446e22644d8b3cd7ef67eda3ee7a933e730cad5398206716de54c09ef0",
+      "bytes": 7751824,
+      "arrays": 13
+    },
+    "qualification/probe-0-0-minus.npz": {
+      "sha256": "094ebee8b00ee7f0f720860a2fa943ae3f237463e0f8ac92085be25c2f14b922",
+      "bytes": 7751824,
+      "arrays": 13
+    },
+    "qualification/probe-0-1-plus.npz": {
+      "sha256": "e63e85cc33e9491118813419e7d68c024de9be982f6475f82d6cebc52b6f5558",
+      "bytes": 7751824,
+      "arrays": 13
+    },
+    "qualification/probe-0-1-minus.npz": {
+      "sha256": "8d699319cb9317b9e34facf8681b5b35c0dc9e131c9c74d61090e8c844e186b3",
+      "bytes": 7751824,
+      "arrays": 13
+    },
+    "qualification/direction-1.npz": {
+      "sha256": "76aa5f5dcd183467bef4189afe517c72f6470e2348455096f489911ed02bed9a",
+      "bytes": 12560,
+      "arrays": 1
+    },
+    "qualification/probe-1-0-plus.npz": {
+      "sha256": "1693a89de18589af9cad4e645ce2d9b17406af6a7183e1d2ad3d9c19767de7e7",
+      "bytes": 7751824,
+      "arrays": 13
+    },
+    "qualification/probe-1-0-minus.npz": {
+      "sha256": "2f66b8cfb56f64ac3f8cc99bee58cbfb6468a7d7233ab4eb3a0f6a527bd36899",
+      "bytes": 7751824,
+      "arrays": 13
+    },
+    "qualification/probe-1-1-plus.npz": {
+      "sha256": "dd72aa2369180bbebf4e8295da706151e70d5a3559bd5fd7717dc826790d0b1b",
+      "bytes": 7751824,
+      "arrays": 13
+    },
+    "qualification/probe-1-1-minus.npz": {
+      "sha256": "e610f25fcf6b584ebc319ecbf45734eb918c2ebfdc8a8363f0f1291825921266",
+      "bytes": 7751824,
+      "arrays": 13
+    },
+    "min/best-evaluated.npz": {
+      "sha256": "b9fce9fd629366afebd1a987872828cddd90341481bbc97a321efe241bd675a5",
+      "bytes": 7751334,
+      "arrays": 11
+    },
+    "min/final-verification.npz": {
+      "sha256": "b9fce9fd629366afebd1a987872828cddd90341481bbc97a321efe241bd675a5",
+      "bytes": 7751334,
+      "arrays": 11
+    },
+    "max/best-evaluated.npz": {
+      "sha256": "b9fce9fd629366afebd1a987872828cddd90341481bbc97a321efe241bd675a5",
+      "bytes": 7751334,
+      "arrays": 11
+    },
+    "max/final-verification.npz": {
+      "sha256": "b9fce9fd629366afebd1a987872828cddd90341481bbc97a321efe241bd675a5",
+      "bytes": 7751334,
+      "arrays": 11
+    }
+  },
+  "recomputed": {
+    "reference": {
+      "d": 0.010101999874651837,
+      "g": [
+        0.12195339725894526,
+        0.1320553971335971
+      ],
+      "constraintsMaxDifference": 3.552713678800501e-15,
+      "intervalMaxViolation": 0.0,
+      "intervalBadPixels": 0,
+      "quantizedDifferentPixels": 0,
+      "initialMaxComponent": 0.13842519749056242,
+      "initialComponentRMS": 0.07103211157583372,
+      "numericalPassed": true,
+      "qualified": true,
+      "firstFutureDensityMaxDifference": 0.0,
+      "firstFutureAlphaMaxDifference": 0.0
+    },
+    "G0 analytic": {
+      "d": 0.010109408428465985,
+      "g": [
+        0.12263036791666536,
+        0.13273977634513134
+      ],
+      "constraintsMaxDifference": 3.552713678800501e-15,
+      "intervalMaxViolation": 0.0019159077301107441,
+      "intervalBadPixels": 1965,
+      "quantizedDifferentPixels": 1965,
+      "initialMaxComponent": 0.1406780017194358,
+      "initialComponentRMS": 0.07101588698846482,
+      "numericalPassed": true,
+      "qualified": false,
+      "firstFutureDensityMaxDifference": 0.0,
+      "firstFutureAlphaMaxDifference": 0.0
+    },
+    "qualification/probe-0-0-plus.npz": {
+      "d": 0.010109409691332713,
+      "g": [
+        0.12263035571672136,
+        0.13273976540805407
+      ],
+      "constraintsMaxDifference": 3.552713678800501e-15,
+      "intervalMaxViolation": 0.0019158360478495617,
+      "intervalBadPixels": 1965,
+      "quantizedDifferentPixels": 1965,
+      "initialMaxComponent": 0.14067798892888214,
+      "initialComponentRMS": 0.07101588619339244,
+      "numericalPassed": true,
+      "qualified": false,
+      "firstFutureDensityMaxDifference": 0.0,
+      "firstFutureAlphaMaxDifference": 0.0
+    },
+    "qualification/probe-0-0-minus.npz": {
+      "d": 0.010109407165598092,
+      "g": [
+        0.1226303801166173,
+        0.1327397872822154
+      ],
+      "constraintsMaxDifference": 3.552713678800501e-15,
+      "intervalMaxViolation": 0.0019159794123730922,
+      "intervalBadPixels": 1965,
+      "quantizedDifferentPixels": 1965,
+      "initialMaxComponent": 0.14067801450998682,
+      "initialComponentRMS": 0.07101588778354403,
+      "numericalPassed": true,
+      "qualified": false,
+      "firstFutureDensityMaxDifference": 0.0,
+      "firstFutureAlphaMaxDifference": 0.0
+    },
+    "qualification/probe-0-1-plus.npz": {
+      "d": 0.010109408554752702,
+      "g": [
+        0.12263036669667063,
+        0.13273977525142333
+      ],
+      "constraintsMaxDifference": 3.552713678800501e-15,
+      "intervalMaxViolation": 0.0019159005618846203,
+      "intervalBadPixels": 1965,
+      "quantizedDifferentPixels": 1965,
+      "initialMaxComponent": 0.14067800044038056,
+      "initialComponentRMS": 0.07101588690895728,
+      "numericalPassed": true,
+      "qualified": false,
+      "firstFutureDensityMaxDifference": 0.0,
+      "firstFutureAlphaMaxDifference": 0.0
+    },
+    "qualification/probe-0-1-minus.npz": {
+      "d": 0.010109408302179226,
+      "g": [
+        0.12263036913666021,
+        0.13273977743883944
+      ],
+      "constraintsMaxDifference": 3.552713678800501e-15,
+      "intervalMaxViolation": 0.0019159148983369234,
+      "intervalBadPixels": 1965,
+      "quantizedDifferentPixels": 1965,
+      "initialMaxComponent": 0.14067800299849104,
+      "initialComponentRMS": 0.07101588706797245,
+      "numericalPassed": true,
+      "qualified": false,
+      "firstFutureDensityMaxDifference": 0.0,
+      "firstFutureAlphaMaxDifference": 0.0
+    },
+    "qualification/probe-1-0-plus.npz": {
+      "d": 0.010109409836640826,
+      "g": [
+        0.12263034452576588,
+        0.1327397543624067
+      ],
+      "constraintsMaxDifference": 3.552713678800501e-15,
+      "intervalMaxViolation": 0.0019159251624896734,
+      "intervalBadPixels": 1965,
+      "quantizedDifferentPixels": 1965,
+      "initialMaxComponent": 0.1406780545752641,
+      "initialComponentRMS": 0.07101588619568164,
+      "numericalPassed": true,
+      "qualified": false,
+      "firstFutureDensityMaxDifference": 0.0,
+      "firstFutureAlphaMaxDifference": 0.0
+    },
+    "qualification/probe-1-0-minus.npz": {
+      "d": 0.010109407020290298,
+      "g": [
+        0.12263039130757293,
+        0.13273979832786323
+      ],
+      "constraintsMaxDifference": 3.552713678800501e-15,
+      "intervalMaxViolation": 0.0019158902977265413,
+      "intervalBadPixels": 1965,
+      "quantizedDifferentPixels": 1965,
+      "initialMaxComponent": 0.14067794886360485,
+      "initialComponentRMS": 0.07101588778125484,
+      "numericalPassed": true,
+      "qualified": false,
+      "firstFutureDensityMaxDifference": 0.0,
+      "firstFutureAlphaMaxDifference": 0.0
+    },
+    "qualification/probe-1-1-plus.npz": {
+      "d": 0.010109408569283496,
+      "g": [
+        0.12263036557757506,
+        0.13273977414685856
+      ],
+      "constraintsMaxDifference": 3.552713678800501e-15,
+      "intervalMaxViolation": 0.0019159094733488535,
+      "intervalBadPixels": 1965,
+      "quantizedDifferentPixels": 1965,
+      "initialMaxComponent": 0.14067800700501876,
+      "initialComponentRMS": 0.0710158869091862,
+      "numericalPassed": true,
+      "qualified": false,
+      "firstFutureDensityMaxDifference": 0.0,
+      "firstFutureAlphaMaxDifference": 0.0
+    },
+    "qualification/probe-1-1-minus.npz": {
+      "d": 0.010109408287648461,
+      "g": [
+        0.12263037025575575,
+        0.1327397785434042
+      ],
+      "constraintsMaxDifference": 3.552713678800501e-15,
+      "intervalMaxViolation": 0.0019159059868725792,
+      "intervalBadPixels": 1965,
+      "quantizedDifferentPixels": 1965,
+      "initialMaxComponent": 0.14067799643385284,
+      "initialComponentRMS": 0.07101588706774352,
+      "numericalPassed": true,
+      "qualified": false,
+      "firstFutureDensityMaxDifference": 0.0,
+      "firstFutureAlphaMaxDifference": 0.0
+    },
+    "min best": {
+      "d": 0.010101999874651837,
+      "g": [
+        0.12195339725894526,
+        0.1320553971335971
+      ],
+      "constraintsMaxDifference": 3.552713678800501e-15,
+      "intervalMaxViolation": 0.0,
+      "intervalBadPixels": 0,
+      "quantizedDifferentPixels": 0,
+      "initialMaxComponent": 0.13842519749056242,
+      "initialComponentRMS": 0.07103211157583372,
+      "numericalPassed": true,
+      "qualified": true,
+      "firstFutureDensityMaxDifference": 0.0,
+      "firstFutureAlphaMaxDifference": 0.0
+    },
+    "min final": {
+      "d": 0.010101999874651837,
+      "g": [
+        0.12195339725894526,
+        0.1320553971335971
+      ],
+      "constraintsMaxDifference": 3.552713678800501e-15,
+      "intervalMaxViolation": 0.0,
+      "intervalBadPixels": 0,
+      "quantizedDifferentPixels": 0,
+      "initialMaxComponent": 0.13842519749056242,
+      "initialComponentRMS": 0.07103211157583372,
+      "numericalPassed": true,
+      "qualified": true,
+      "firstFutureDensityMaxDifference": 0.0,
+      "firstFutureAlphaMaxDifference": 0.0
+    },
+    "max best": {
+      "d": 0.010101999874651837,
+      "g": [
+        0.12195339725894526,
+        0.1320553971335971
+      ],
+      "constraintsMaxDifference": 3.552713678800501e-15,
+      "intervalMaxViolation": 0.0,
+      "intervalBadPixels": 0,
+      "quantizedDifferentPixels": 0,
+      "initialMaxComponent": 0.13842519749056242,
+      "initialComponentRMS": 0.07103211157583372,
+      "numericalPassed": true,
+      "qualified": true,
+      "firstFutureDensityMaxDifference": 0.0,
+      "firstFutureAlphaMaxDifference": 0.0
+    },
+    "max final": {
+      "d": 0.010101999874651837,
+      "g": [
+        0.12195339725894526,
+        0.1320553971335971
+      ],
+      "constraintsMaxDifference": 3.552713678800501e-15,
+      "intervalMaxViolation": 0.0,
+      "intervalBadPixels": 0,
+      "quantizedDifferentPixels": 0,
+      "initialMaxComponent": 0.13842519749056242,
+      "initialComponentRMS": 0.07103211157583372,
+      "numericalPassed": true,
+      "qualified": true,
+      "firstFutureDensityMaxDifference": 0.0,
+      "firstFutureAlphaMaxDifference": 0.0
+    }
+  },
+  "sourcePins": {
+    "runner.py": {
+      "path": "runner.py",
+      "sha256": "258da8e8c9f16be33c84edddc5601427d7a33aa388e10ca9b5cceeae7f1d1ca4",
+      "bytes": 40463
+    },
+    "config.json": {
+      "path": "config.json",
+      "sha256": "8fb935bfee4590358d12fc0fb7645bacdb337164ed7c4e67a26e72288936c3d8",
+      "bytes": 2459
+    },
+    "PROTOCOL.md": {
+      "path": "PROTOCOL.md",
+      "sha256": "a5d7f180402dd2aecefbf63ef2b293f7b555573c1aa72049f0da376d585c3380",
+      "bytes": 5170
+    },
+    "core.py": {
+      "path": "../../src/core.py",
+      "sha256": "ac750b70a86743ac858f1c53cf620ce29c63c462456115af4d0d8c93fa20bd9e",
+      "bytes": 13301
+    },
+    "scene.py": {
+      "path": "../../src/scene.py",
+      "sha256": "ad4cc525c22419d03479eaacb31c277952f9c54945dddd1e9cadc263adef130d",
+      "bytes": 805
+    }
+  },
+  "freezeSHA256": "965af1d80493f2cd28f67d5dc82a974047f792a8817ed739405cdc5ea31d20e0",
+  "wind": {
+    "potentialMaxError": 2.42861286636753e-17,
+    "forceMaxError": 3.885780586188048e-16,
+    "divergenceInf": 1.9984014443252818e-15,
+    "maxComponent": 0.35,
+    "phaseScope": "Source read: future updates 0..9 force, 10..19 zero. Saved first density/alpha delay checked; no replay."
+  },
+  "G0": {
+    "d": 0.010109408428465985,
+    "loss": -97255.77352241204,
+    "lossReductionDifference": 0.0,
+    "activeBranches": 163842,
+    "minimumAbsoluteBranch": 0.5114435288217638,
+    "directions": [
+      {
+        "index": 0,
+        "L2Norm": 1.0,
+        "dots": {
+          "d": 0.0001262867296785088,
+          "loss": -1033.32205998539
+        },
+        "h": [
+          {
+            "value": 1e-05,
+            "errors": {
+              "d": {
+                "fd": 0.00012628673107251132,
+                "relativeError": 1.1038392643281468e-08
+              },
+              "loss": {
+                "fd": -1033.32205908373,
+                "relativeError": 8.725837973989727e-10
+              }
+            }
+          },
+          {
+            "value": 1e-06,
+            "errors": {
+              "d": {
+                "fd": 0.00012628673801140522,
+                "relativeError": 6.598394330859476e-08
+              },
+              "loss": {
+                "fd": -1033.3220416214317,
+                "relativeError": 1.7771766491986097e-08
+              }
+            }
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "L2Norm": 1.0,
+        "dots": {
+          "d": 0.00014081752550987612,
+          "loss": 249.14664822521496
+        },
+        "h": [
+          {
+            "value": 1e-05,
+            "errors": {
+              "d": {
+                "fd": 0.00014081752638950285,
+                "relativeError": 6.246571353029814e-09
+              },
+              "loss": {
+                "fd": 249.14664682000873,
+                "relativeError": 5.640076814396855e-09
+              }
+            }
+          },
+          {
+            "value": 1e-06,
+            "errors": {
+              "d": {
+                "fd": 0.00014081751736894077,
+                "relativeError": 5.7811947232760466e-08
+              },
+              "loss": {
+                "fd": 249.14665118558332,
+                "relativeError": 1.1882031662798166e-08
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "memoryReported": {
+      "scope": "Torch allocator; not full process/device peak",
+      "peakAllocatedBytes": 3513746944,
+      "peakReservedBytes": 3531603968
+    },
+    "secondsReported": 17.92628270003479
+  },
+  "endpoints": [
+    {
+      "arm": "min",
+      "metrics": {
+        "d": 0.010101999874651837,
+        "g": [
+          0.12195339725894526,
+          0.1320553971335971
+        ],
+        "constraintsMaxDifference": 3.552713678800501e-15,
+        "intervalMaxViolation": 0.0,
+        "intervalBadPixels": 0,
+        "quantizedDifferentPixels": 0,
+        "initialMaxComponent": 0.13842519749056242,
+        "initialComponentRMS": 0.07103211157583372,
+        "numericalPassed": true,
+        "qualified": true,
+        "firstFutureDensityMaxDifference": 0.0,
+        "firstFutureAlphaMaxDifference": 0.0
+      },
+      "bestVsFinal": {
+        "theta": {
+          "maxAbs": 0.0,
+          "bytesEqual": true
+        },
+        "constraints": {
+          "maxAbs": 0.0,
+          "bytesEqual": true
+        },
+        "observation_alpha": {
+          "maxAbs": 0.0,
+          "bytesEqual": true
+        },
+        "future_alpha": {
+          "maxAbs": 0.0,
+          "bytesEqual": true
+        },
+        "initial_velocity": {
+          "maxAbs": 0.0,
+          "bytesEqual": true
+        },
+        "observation_velocity20": {
+          "maxAbs": 0.0,
+          "bytesEqual": true
+        },
+        "observation_density20": {
+          "maxAbs": 0.0,
+          "bytesEqual": true
+        },
+        "final_velocity": {
+          "maxAbs": 0.0,
+          "bytesEqual": true
+        },
+        "final_density": {
+          "maxAbs": 0.0,
+          "bytesEqual": true
+        },
+        "first_future_density": {
+          "maxAbs": 0.0,
+          "bytesEqual": true
+        },
+        "state_metrics": {
+          "maxAbs": 0.0,
+          "bytesEqual": true
+        }
+      },
+      "calls": 79,
+      "backwardCallsReported": 77,
+      "secondsReported": 126.14822039997671,
+      "termination": "evaluation_budget",
+      "selectedOrigin": "seed_initial",
+      "finalThetaEqualsSeedBytes": true,
+      "trialReview": {
+        "scope": "Independent classification of saved per-call metrics, not reconstruction of unsaved trial arrays.",
+        "qualifiedEvaluationIDs": [
+          1,
+          2,
+          79
+        ],
+        "invalidCount": 76,
+        "failedGateCounts": {
+          "numerical": 0,
+          "pixel_interval": 76,
+          "initial_velocity_max": 0,
+          "initial_velocity_rms": 0
+        },
+        "minimumMaximumIntervalViolation": {
+          "evaluation": 58,
+          "origin": "line_search_or_closure",
+          "qualified": false,
+          "failedGates": [
+            "pixel_interval"
+          ],
+          "d": 0.010081983398272154,
+          "intervalMaxAlphaViolation": 5.094566828033054e-06,
+          "intervalViolatingPixels": 37
+        },
+        "minimumViolatingPixelCount": 13,
+        "calls": [
+          {
+            "evaluation": 1,
+            "origin": "seed_initial",
+            "qualified": true,
+            "failedGates": [],
+            "d": 0.010101999874651865,
+            "intervalMaxAlphaViolation": 0.0,
+            "intervalViolatingPixels": 0
+          },
+          {
+            "evaluation": 2,
+            "origin": "line_search_or_closure",
+            "qualified": true,
+            "failedGates": [],
+            "d": 0.010101999874651865,
+            "intervalMaxAlphaViolation": 0.0,
+            "intervalViolatingPixels": 0
+          },
+          {
+            "evaluation": 3,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.009809292154017615,
+            "intervalMaxAlphaViolation": 0.004563397666462243,
+            "intervalViolatingPixels": 2304
+          },
+          {
+            "evaluation": 4,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010099867972530777,
+            "intervalMaxAlphaViolation": 2.420118404439231e-05,
+            "intervalViolatingPixels": 13
+          },
+          {
+            "evaluation": 5,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010099867972530777,
+            "intervalMaxAlphaViolation": 2.420118404439231e-05,
+            "intervalViolatingPixels": 13
+          },
+          {
+            "evaluation": 6,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010096537176293205,
+            "intervalMaxAlphaViolation": 5.288117445806373e-05,
+            "intervalViolatingPixels": 42
+          },
+          {
+            "evaluation": 7,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010096537176293205,
+            "intervalMaxAlphaViolation": 5.288117445806373e-05,
+            "intervalViolatingPixels": 42
+          },
+          {
+            "evaluation": 8,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010097115689789896,
+            "intervalMaxAlphaViolation": 3.7410641544777246e-05,
+            "intervalViolatingPixels": 33
+          },
+          {
+            "evaluation": 9,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010097115689789896,
+            "intervalMaxAlphaViolation": 3.7410641544777246e-05,
+            "intervalViolatingPixels": 33
+          },
+          {
+            "evaluation": 10,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.01009633135540626,
+            "intervalMaxAlphaViolation": 3.438188663457131e-05,
+            "intervalViolatingPixels": 42
+          },
+          {
+            "evaluation": 11,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.01009633135540626,
+            "intervalMaxAlphaViolation": 3.438188663457131e-05,
+            "intervalViolatingPixels": 42
+          },
+          {
+            "evaluation": 12,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010095792762082778,
+            "intervalMaxAlphaViolation": 3.7036907533372077e-05,
+            "intervalViolatingPixels": 46
+          },
+          {
+            "evaluation": 13,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010095792762082778,
+            "intervalMaxAlphaViolation": 3.7036907533372077e-05,
+            "intervalViolatingPixels": 46
+          },
+          {
+            "evaluation": 14,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.01009263222225161,
+            "intervalMaxAlphaViolation": 3.820522798764214e-05,
+            "intervalViolatingPixels": 69
+          },
+          {
+            "evaluation": 15,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.01009263222225161,
+            "intervalMaxAlphaViolation": 3.820522798764214e-05,
+            "intervalViolatingPixels": 69
+          },
+          {
+            "evaluation": 16,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.0100906844538214,
+            "intervalMaxAlphaViolation": 5.181336571491446e-05,
+            "intervalViolatingPixels": 63
+          },
+          {
+            "evaluation": 17,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.0100906844538214,
+            "intervalMaxAlphaViolation": 5.181336571491446e-05,
+            "intervalViolatingPixels": 63
+          },
+          {
+            "evaluation": 18,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010089528234071374,
+            "intervalMaxAlphaViolation": 4.366792044452339e-05,
+            "intervalViolatingPixels": 67
+          },
+          {
+            "evaluation": 19,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010089528234071374,
+            "intervalMaxAlphaViolation": 4.366792044452339e-05,
+            "intervalViolatingPixels": 67
+          },
+          {
+            "evaluation": 20,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010087548337481808,
+            "intervalMaxAlphaViolation": 4.1077781476217545e-05,
+            "intervalViolatingPixels": 69
+          },
+          {
+            "evaluation": 21,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010087548337481808,
+            "intervalMaxAlphaViolation": 4.1077781476217545e-05,
+            "intervalViolatingPixels": 69
+          },
+          {
+            "evaluation": 22,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010083809382785164,
+            "intervalMaxAlphaViolation": 4.1761620598601557e-05,
+            "intervalViolatingPixels": 81
+          },
+          {
+            "evaluation": 23,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010083809382785164,
+            "intervalMaxAlphaViolation": 4.1761620598601557e-05,
+            "intervalViolatingPixels": 81
+          },
+          {
+            "evaluation": 24,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010079860886782643,
+            "intervalMaxAlphaViolation": 4.492146181622747e-05,
+            "intervalViolatingPixels": 92
+          },
+          {
+            "evaluation": 25,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010079860886782643,
+            "intervalMaxAlphaViolation": 4.492146181622747e-05,
+            "intervalViolatingPixels": 92
+          },
+          {
+            "evaluation": 26,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010076008740877176,
+            "intervalMaxAlphaViolation": 5.143158238840595e-05,
+            "intervalViolatingPixels": 97
+          },
+          {
+            "evaluation": 27,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010076008740877176,
+            "intervalMaxAlphaViolation": 5.143158238840595e-05,
+            "intervalViolatingPixels": 97
+          },
+          {
+            "evaluation": 28,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010181290611806698,
+            "intervalMaxAlphaViolation": 0.0024834988255971746,
+            "intervalViolatingPixels": 2465
+          },
+          {
+            "evaluation": 29,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010080451751574598,
+            "intervalMaxAlphaViolation": 4.7108557035935306e-05,
+            "intervalViolatingPixels": 99
+          },
+          {
+            "evaluation": 30,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.01007814095574859,
+            "intervalMaxAlphaViolation": 4.2681781833420196e-05,
+            "intervalViolatingPixels": 70
+          },
+          {
+            "evaluation": 31,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.01007814095574859,
+            "intervalMaxAlphaViolation": 4.2681781833420196e-05,
+            "intervalViolatingPixels": 70
+          },
+          {
+            "evaluation": 32,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010079160257177297,
+            "intervalMaxAlphaViolation": 3.133760406248687e-05,
+            "intervalViolatingPixels": 66
+          },
+          {
+            "evaluation": 33,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010079160257177297,
+            "intervalMaxAlphaViolation": 3.133760406248687e-05,
+            "intervalViolatingPixels": 66
+          },
+          {
+            "evaluation": 34,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010079835677646448,
+            "intervalMaxAlphaViolation": 3.1553487594510043e-05,
+            "intervalViolatingPixels": 68
+          },
+          {
+            "evaluation": 35,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010079835677646448,
+            "intervalMaxAlphaViolation": 3.1553487594510043e-05,
+            "intervalViolatingPixels": 68
+          },
+          {
+            "evaluation": 36,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.01008052898599425,
+            "intervalMaxAlphaViolation": 2.9554184029972896e-05,
+            "intervalViolatingPixels": 70
+          },
+          {
+            "evaluation": 37,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.01008052898599425,
+            "intervalMaxAlphaViolation": 2.9554184029972896e-05,
+            "intervalViolatingPixels": 70
+          },
+          {
+            "evaluation": 38,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010080775438646689,
+            "intervalMaxAlphaViolation": 2.7098393443697466e-05,
+            "intervalViolatingPixels": 60
+          },
+          {
+            "evaluation": 39,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010080775438646689,
+            "intervalMaxAlphaViolation": 2.7098393443697466e-05,
+            "intervalViolatingPixels": 60
+          },
+          {
+            "evaluation": 40,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010080742514361377,
+            "intervalMaxAlphaViolation": 1.8256268752459004e-05,
+            "intervalViolatingPixels": 55
+          },
+          {
+            "evaluation": 41,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010080742514361377,
+            "intervalMaxAlphaViolation": 1.8256268752459004e-05,
+            "intervalViolatingPixels": 55
+          },
+          {
+            "evaluation": 42,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010080910923035188,
+            "intervalMaxAlphaViolation": 1.62547231772614e-05,
+            "intervalViolatingPixels": 42
+          },
+          {
+            "evaluation": 43,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010080910923035188,
+            "intervalMaxAlphaViolation": 1.62547231772614e-05,
+            "intervalViolatingPixels": 42
+          },
+          {
+            "evaluation": 44,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010081207080573848,
+            "intervalMaxAlphaViolation": 1.0728040292229402e-05,
+            "intervalViolatingPixels": 44
+          },
+          {
+            "evaluation": 45,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010081207080573848,
+            "intervalMaxAlphaViolation": 1.0728040292229402e-05,
+            "intervalViolatingPixels": 44
+          },
+          {
+            "evaluation": 46,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010081408557154878,
+            "intervalMaxAlphaViolation": 9.359494155515569e-06,
+            "intervalViolatingPixels": 44
+          },
+          {
+            "evaluation": 47,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010081408557154878,
+            "intervalMaxAlphaViolation": 9.359494155515569e-06,
+            "intervalViolatingPixels": 44
+          },
+          {
+            "evaluation": 48,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.01008177728977025,
+            "intervalMaxAlphaViolation": 8.002525228055501e-06,
+            "intervalViolatingPixels": 39
+          },
+          {
+            "evaluation": 49,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.01008177728977025,
+            "intervalMaxAlphaViolation": 8.002525228055501e-06,
+            "intervalViolatingPixels": 39
+          },
+          {
+            "evaluation": 50,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010081978545867717,
+            "intervalMaxAlphaViolation": 7.265989296512121e-06,
+            "intervalViolatingPixels": 41
+          },
+          {
+            "evaluation": 51,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010081978545867717,
+            "intervalMaxAlphaViolation": 7.265989296512121e-06,
+            "intervalViolatingPixels": 41
+          },
+          {
+            "evaluation": 52,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.01008193194682562,
+            "intervalMaxAlphaViolation": 5.873919914411996e-06,
+            "intervalViolatingPixels": 39
+          },
+          {
+            "evaluation": 53,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.01008193194682562,
+            "intervalMaxAlphaViolation": 5.873919914411996e-06,
+            "intervalViolatingPixels": 39
+          },
+          {
+            "evaluation": 54,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010130337633785194,
+            "intervalMaxAlphaViolation": 0.005283827397327551,
+            "intervalViolatingPixels": 2816
+          },
+          {
+            "evaluation": 55,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010082088113965229,
+            "intervalMaxAlphaViolation": 7.922151602779426e-06,
+            "intervalViolatingPixels": 35
+          },
+          {
+            "evaluation": 56,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010081987421949642,
+            "intervalMaxAlphaViolation": 5.5571273290949685e-06,
+            "intervalViolatingPixels": 38
+          },
+          {
+            "evaluation": 57,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010081987421949642,
+            "intervalMaxAlphaViolation": 5.5571273290949685e-06,
+            "intervalViolatingPixels": 38
+          },
+          {
+            "evaluation": 58,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010081983398272154,
+            "intervalMaxAlphaViolation": 5.094566828033054e-06,
+            "intervalViolatingPixels": 37
+          },
+          {
+            "evaluation": 59,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010081983398272154,
+            "intervalMaxAlphaViolation": 5.094566828033054e-06,
+            "intervalViolatingPixels": 37
+          },
+          {
+            "evaluation": 60,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010081933925330286,
+            "intervalMaxAlphaViolation": 6.485974772874048e-06,
+            "intervalViolatingPixels": 32
+          },
+          {
+            "evaluation": 61,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010081933925330286,
+            "intervalMaxAlphaViolation": 6.485974772874048e-06,
+            "intervalViolatingPixels": 32
+          },
+          {
+            "evaluation": 62,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010081835283644147,
+            "intervalMaxAlphaViolation": 6.584417727162339e-06,
+            "intervalViolatingPixels": 30
+          },
+          {
+            "evaluation": 63,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010081835283644147,
+            "intervalMaxAlphaViolation": 6.584417727162339e-06,
+            "intervalViolatingPixels": 30
+          },
+          {
+            "evaluation": 64,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010081668634975186,
+            "intervalMaxAlphaViolation": 7.424213608164809e-06,
+            "intervalViolatingPixels": 33
+          },
+          {
+            "evaluation": 65,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010081668634975186,
+            "intervalMaxAlphaViolation": 7.424213608164809e-06,
+            "intervalViolatingPixels": 33
+          },
+          {
+            "evaluation": 66,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010081524602981215,
+            "intervalMaxAlphaViolation": 7.403792880125715e-06,
+            "intervalViolatingPixels": 28
+          },
+          {
+            "evaluation": 67,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010081524602981215,
+            "intervalMaxAlphaViolation": 7.403792880125715e-06,
+            "intervalViolatingPixels": 28
+          },
+          {
+            "evaluation": 68,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.01008141110795377,
+            "intervalMaxAlphaViolation": 7.038336405945644e-06,
+            "intervalViolatingPixels": 25
+          },
+          {
+            "evaluation": 69,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.01008141110795377,
+            "intervalMaxAlphaViolation": 7.038336405945644e-06,
+            "intervalViolatingPixels": 25
+          },
+          {
+            "evaluation": 70,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010081260570725475,
+            "intervalMaxAlphaViolation": 7.5595844960529845e-06,
+            "intervalViolatingPixels": 22
+          },
+          {
+            "evaluation": 71,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010081260570725475,
+            "intervalMaxAlphaViolation": 7.5595844960529845e-06,
+            "intervalViolatingPixels": 22
+          },
+          {
+            "evaluation": 72,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010080971427455815,
+            "intervalMaxAlphaViolation": 8.076871189088841e-06,
+            "intervalViolatingPixels": 22
+          },
+          {
+            "evaluation": 73,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010080971427455815,
+            "intervalMaxAlphaViolation": 8.076871189088841e-06,
+            "intervalViolatingPixels": 22
+          },
+          {
+            "evaluation": 74,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.01008022523141805,
+            "intervalMaxAlphaViolation": 1.5507115106588865e-05,
+            "intervalViolatingPixels": 28
+          },
+          {
+            "evaluation": 75,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010080629842635233,
+            "intervalMaxAlphaViolation": 8.692374840219008e-06,
+            "intervalViolatingPixels": 27
+          },
+          {
+            "evaluation": 76,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010080629842635233,
+            "intervalMaxAlphaViolation": 8.692374840219008e-06,
+            "intervalViolatingPixels": 27
+          },
+          {
+            "evaluation": 77,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010080555472652145,
+            "intervalMaxAlphaViolation": 7.617066830181707e-06,
+            "intervalViolatingPixels": 24
+          },
+          {
+            "evaluation": 78,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010080555472652145,
+            "intervalMaxAlphaViolation": 7.617066830181707e-06,
+            "intervalViolatingPixels": 24
+          },
+          {
+            "evaluation": 79,
+            "origin": "mandatory_best_verification",
+            "qualified": true,
+            "failedGates": [],
+            "d": 0.010101999874651865,
+            "intervalMaxAlphaViolation": 0.0,
+            "intervalViolatingPixels": 0
+          }
+        ],
+        "bestUpdatesRecorded": [
+          {
+            "evaluation": 1,
+            "origin": "seed_initial",
+            "d": 0.010101999874651865
+          }
+        ],
+        "identityLimit": "Trial theta arrays were not saved. The first closure is at seed by source order; other failed calls have distinct observations. No claim about the number of distinct parameter vectors."
+      }
+    },
+    {
+      "arm": "max",
+      "metrics": {
+        "d": 0.010101999874651837,
+        "g": [
+          0.12195339725894526,
+          0.1320553971335971
+        ],
+        "constraintsMaxDifference": 3.552713678800501e-15,
+        "intervalMaxViolation": 0.0,
+        "intervalBadPixels": 0,
+        "quantizedDifferentPixels": 0,
+        "initialMaxComponent": 0.13842519749056242,
+        "initialComponentRMS": 0.07103211157583372,
+        "numericalPassed": true,
+        "qualified": true,
+        "firstFutureDensityMaxDifference": 0.0,
+        "firstFutureAlphaMaxDifference": 0.0
+      },
+      "bestVsFinal": {
+        "theta": {
+          "maxAbs": 0.0,
+          "bytesEqual": true
+        },
+        "constraints": {
+          "maxAbs": 0.0,
+          "bytesEqual": true
+        },
+        "observation_alpha": {
+          "maxAbs": 0.0,
+          "bytesEqual": true
+        },
+        "future_alpha": {
+          "maxAbs": 0.0,
+          "bytesEqual": true
+        },
+        "initial_velocity": {
+          "maxAbs": 0.0,
+          "bytesEqual": true
+        },
+        "observation_velocity20": {
+          "maxAbs": 0.0,
+          "bytesEqual": true
+        },
+        "observation_density20": {
+          "maxAbs": 0.0,
+          "bytesEqual": true
+        },
+        "final_velocity": {
+          "maxAbs": 0.0,
+          "bytesEqual": true
+        },
+        "final_density": {
+          "maxAbs": 0.0,
+          "bytesEqual": true
+        },
+        "first_future_density": {
+          "maxAbs": 0.0,
+          "bytesEqual": true
+        },
+        "state_metrics": {
+          "maxAbs": 0.0,
+          "bytesEqual": true
+        }
+      },
+      "calls": 79,
+      "backwardCallsReported": 77,
+      "secondsReported": 111.52257760002976,
+      "termination": "evaluation_budget",
+      "selectedOrigin": "seed_initial",
+      "finalThetaEqualsSeedBytes": true,
+      "trialReview": {
+        "scope": "Independent classification of saved per-call metrics, not reconstruction of unsaved trial arrays.",
+        "qualifiedEvaluationIDs": [
+          1,
+          2,
+          79
+        ],
+        "invalidCount": 76,
+        "failedGateCounts": {
+          "numerical": 0,
+          "pixel_interval": 76,
+          "initial_velocity_max": 0,
+          "initial_velocity_rms": 0
+        },
+        "minimumMaximumIntervalViolation": {
+          "evaluation": 69,
+          "origin": "line_search_or_closure",
+          "qualified": false,
+          "failedGates": [
+            "pixel_interval"
+          ],
+          "d": 0.010117943432561463,
+          "intervalMaxAlphaViolation": 3.304346351817866e-06,
+          "intervalViolatingPixels": 25
+        },
+        "minimumViolatingPixelCount": 22,
+        "calls": [
+          {
+            "evaluation": 1,
+            "origin": "seed_initial",
+            "qualified": true,
+            "failedGates": [],
+            "d": 0.010101999874651865,
+            "intervalMaxAlphaViolation": 0.0,
+            "intervalViolatingPixels": 0
+          },
+          {
+            "evaluation": 2,
+            "origin": "line_search_or_closure",
+            "qualified": true,
+            "failedGates": [],
+            "d": 0.010101999874651865,
+            "intervalMaxAlphaViolation": 0.0,
+            "intervalViolatingPixels": 0
+          },
+          {
+            "evaluation": 3,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010389924085918698,
+            "intervalMaxAlphaViolation": 0.004659011645298139,
+            "intervalViolatingPixels": 2242
+          },
+          {
+            "evaluation": 4,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010110450326899778,
+            "intervalMaxAlphaViolation": 9.918509002854181e-05,
+            "intervalViolatingPixels": 89
+          },
+          {
+            "evaluation": 5,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.0101054158250765,
+            "intervalMaxAlphaViolation": 3.3815757949418046e-05,
+            "intervalViolatingPixels": 40
+          },
+          {
+            "evaluation": 6,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.0101054158250765,
+            "intervalMaxAlphaViolation": 3.3815757949418046e-05,
+            "intervalViolatingPixels": 40
+          },
+          {
+            "evaluation": 7,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010107189541831471,
+            "intervalMaxAlphaViolation": 3.5587452437146894e-05,
+            "intervalViolatingPixels": 47
+          },
+          {
+            "evaluation": 8,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010106426802623567,
+            "intervalMaxAlphaViolation": 2.7986946394165102e-05,
+            "intervalViolatingPixels": 44
+          },
+          {
+            "evaluation": 9,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010106426802623567,
+            "intervalMaxAlphaViolation": 2.7986946394165102e-05,
+            "intervalViolatingPixels": 44
+          },
+          {
+            "evaluation": 10,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010106455986176946,
+            "intervalMaxAlphaViolation": 2.4062609581154693e-05,
+            "intervalViolatingPixels": 38
+          },
+          {
+            "evaluation": 11,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010106455986176946,
+            "intervalMaxAlphaViolation": 2.4062609581154693e-05,
+            "intervalViolatingPixels": 38
+          },
+          {
+            "evaluation": 12,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010107358082375811,
+            "intervalMaxAlphaViolation": 2.6779075209537595e-05,
+            "intervalViolatingPixels": 43
+          },
+          {
+            "evaluation": 13,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010107358082375811,
+            "intervalMaxAlphaViolation": 2.6779075209537595e-05,
+            "intervalViolatingPixels": 43
+          },
+          {
+            "evaluation": 14,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010109068632688234,
+            "intervalMaxAlphaViolation": 3.340268531726309e-05,
+            "intervalViolatingPixels": 50
+          },
+          {
+            "evaluation": 15,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010109068632688234,
+            "intervalMaxAlphaViolation": 3.340268531726309e-05,
+            "intervalViolatingPixels": 50
+          },
+          {
+            "evaluation": 16,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010109139867020903,
+            "intervalMaxAlphaViolation": 3.062557645494568e-05,
+            "intervalViolatingPixels": 48
+          },
+          {
+            "evaluation": 17,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010109139867020903,
+            "intervalMaxAlphaViolation": 3.062557645494568e-05,
+            "intervalViolatingPixels": 48
+          },
+          {
+            "evaluation": 18,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010110608897176299,
+            "intervalMaxAlphaViolation": 3.51768340043912e-05,
+            "intervalViolatingPixels": 53
+          },
+          {
+            "evaluation": 19,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010110608897176299,
+            "intervalMaxAlphaViolation": 3.51768340043912e-05,
+            "intervalViolatingPixels": 53
+          },
+          {
+            "evaluation": 20,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010114259731948336,
+            "intervalMaxAlphaViolation": 5.1281889660359514e-05,
+            "intervalViolatingPixels": 66
+          },
+          {
+            "evaluation": 21,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010114259731948336,
+            "intervalMaxAlphaViolation": 5.1281889660359514e-05,
+            "intervalViolatingPixels": 66
+          },
+          {
+            "evaluation": 22,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010116277142145885,
+            "intervalMaxAlphaViolation": 4.748414865574091e-05,
+            "intervalViolatingPixels": 68
+          },
+          {
+            "evaluation": 23,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010116277142145885,
+            "intervalMaxAlphaViolation": 4.748414865574091e-05,
+            "intervalViolatingPixels": 68
+          },
+          {
+            "evaluation": 24,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010117285381979993,
+            "intervalMaxAlphaViolation": 4.603206554926187e-05,
+            "intervalViolatingPixels": 73
+          },
+          {
+            "evaluation": 25,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010117285381979993,
+            "intervalMaxAlphaViolation": 4.603206554926187e-05,
+            "intervalViolatingPixels": 73
+          },
+          {
+            "evaluation": 26,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010121253536083716,
+            "intervalMaxAlphaViolation": 4.480483229168941e-05,
+            "intervalViolatingPixels": 103
+          },
+          {
+            "evaluation": 27,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010121253536083716,
+            "intervalMaxAlphaViolation": 4.480483229168941e-05,
+            "intervalViolatingPixels": 103
+          },
+          {
+            "evaluation": 28,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010121388748452725,
+            "intervalMaxAlphaViolation": 4.9054914194879284e-05,
+            "intervalViolatingPixels": 93
+          },
+          {
+            "evaluation": 29,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010121388748452725,
+            "intervalMaxAlphaViolation": 4.9054914194879284e-05,
+            "intervalViolatingPixels": 93
+          },
+          {
+            "evaluation": 30,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.009998085493831799,
+            "intervalMaxAlphaViolation": 0.0022401358064529364,
+            "intervalViolatingPixels": 2021
+          },
+          {
+            "evaluation": 31,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010119348212224655,
+            "intervalMaxAlphaViolation": 3.667100550784619e-05,
+            "intervalViolatingPixels": 68
+          },
+          {
+            "evaluation": 32,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010119348212224655,
+            "intervalMaxAlphaViolation": 3.667100550784619e-05,
+            "intervalViolatingPixels": 68
+          },
+          {
+            "evaluation": 33,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010119147319358437,
+            "intervalMaxAlphaViolation": 4.0416804804599415e-05,
+            "intervalViolatingPixels": 66
+          },
+          {
+            "evaluation": 34,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010119147319358437,
+            "intervalMaxAlphaViolation": 4.0416804804599415e-05,
+            "intervalViolatingPixels": 66
+          },
+          {
+            "evaluation": 35,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010119117778180059,
+            "intervalMaxAlphaViolation": 3.656054103534645e-05,
+            "intervalViolatingPixels": 69
+          },
+          {
+            "evaluation": 36,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010119117778180059,
+            "intervalMaxAlphaViolation": 3.656054103534645e-05,
+            "intervalViolatingPixels": 69
+          },
+          {
+            "evaluation": 37,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010118554615527811,
+            "intervalMaxAlphaViolation": 2.6744333491479644e-05,
+            "intervalViolatingPixels": 61
+          },
+          {
+            "evaluation": 38,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010118554615527811,
+            "intervalMaxAlphaViolation": 2.6744333491479644e-05,
+            "intervalViolatingPixels": 61
+          },
+          {
+            "evaluation": 39,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.01011828509536046,
+            "intervalMaxAlphaViolation": 2.252207664310557e-05,
+            "intervalViolatingPixels": 60
+          },
+          {
+            "evaluation": 40,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.01011828509536046,
+            "intervalMaxAlphaViolation": 2.252207664310557e-05,
+            "intervalViolatingPixels": 60
+          },
+          {
+            "evaluation": 41,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010117655520716667,
+            "intervalMaxAlphaViolation": 1.4802841349581541e-05,
+            "intervalViolatingPixels": 43
+          },
+          {
+            "evaluation": 42,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010117655520716667,
+            "intervalMaxAlphaViolation": 1.4802841349581541e-05,
+            "intervalViolatingPixels": 43
+          },
+          {
+            "evaluation": 43,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010117527588584072,
+            "intervalMaxAlphaViolation": 1.3384002862548705e-05,
+            "intervalViolatingPixels": 34
+          },
+          {
+            "evaluation": 44,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010117527588584072,
+            "intervalMaxAlphaViolation": 1.3384002862548705e-05,
+            "intervalViolatingPixels": 34
+          },
+          {
+            "evaluation": 45,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010117359378703908,
+            "intervalMaxAlphaViolation": 1.2343564724626166e-05,
+            "intervalViolatingPixels": 32
+          },
+          {
+            "evaluation": 46,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010117359378703908,
+            "intervalMaxAlphaViolation": 1.2343564724626166e-05,
+            "intervalViolatingPixels": 32
+          },
+          {
+            "evaluation": 47,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010117067320208409,
+            "intervalMaxAlphaViolation": 8.747619572424536e-06,
+            "intervalViolatingPixels": 35
+          },
+          {
+            "evaluation": 48,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010117067320208409,
+            "intervalMaxAlphaViolation": 8.747619572424536e-06,
+            "intervalViolatingPixels": 35
+          },
+          {
+            "evaluation": 49,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010117105860681541,
+            "intervalMaxAlphaViolation": 8.55738758182012e-06,
+            "intervalViolatingPixels": 33
+          },
+          {
+            "evaluation": 50,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010117105860681541,
+            "intervalMaxAlphaViolation": 8.55738758182012e-06,
+            "intervalViolatingPixels": 33
+          },
+          {
+            "evaluation": 51,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010117131371222887,
+            "intervalMaxAlphaViolation": 7.530815613832065e-06,
+            "intervalViolatingPixels": 33
+          },
+          {
+            "evaluation": 52,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010117131371222887,
+            "intervalMaxAlphaViolation": 7.530815613832065e-06,
+            "intervalViolatingPixels": 33
+          },
+          {
+            "evaluation": 53,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010117306085102556,
+            "intervalMaxAlphaViolation": 3.770063261965273e-06,
+            "intervalViolatingPixels": 29
+          },
+          {
+            "evaluation": 54,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010117306085102556,
+            "intervalMaxAlphaViolation": 3.770063261965273e-06,
+            "intervalViolatingPixels": 29
+          },
+          {
+            "evaluation": 55,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.01013902254831442,
+            "intervalMaxAlphaViolation": 0.0031825702545711376,
+            "intervalViolatingPixels": 2703
+          },
+          {
+            "evaluation": 56,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010117914084875487,
+            "intervalMaxAlphaViolation": 4.4761955472094606e-05,
+            "intervalViolatingPixels": 69
+          },
+          {
+            "evaluation": 57,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010117388804361305,
+            "intervalMaxAlphaViolation": 7.428592923297561e-06,
+            "intervalViolatingPixels": 27
+          },
+          {
+            "evaluation": 58,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010117388804361305,
+            "intervalMaxAlphaViolation": 7.428592923297561e-06,
+            "intervalViolatingPixels": 27
+          },
+          {
+            "evaluation": 59,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010117351360416846,
+            "intervalMaxAlphaViolation": 4.646675192676586e-06,
+            "intervalViolatingPixels": 24
+          },
+          {
+            "evaluation": 60,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010117351360416846,
+            "intervalMaxAlphaViolation": 4.646675192676586e-06,
+            "intervalViolatingPixels": 24
+          },
+          {
+            "evaluation": 61,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010117331403932284,
+            "intervalMaxAlphaViolation": 4.3231704079382816e-06,
+            "intervalViolatingPixels": 22
+          },
+          {
+            "evaluation": 62,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010117331403932284,
+            "intervalMaxAlphaViolation": 4.3231704079382816e-06,
+            "intervalViolatingPixels": 22
+          },
+          {
+            "evaluation": 63,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010117365844625067,
+            "intervalMaxAlphaViolation": 4.116542160315095e-06,
+            "intervalViolatingPixels": 23
+          },
+          {
+            "evaluation": 64,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010117365844625067,
+            "intervalMaxAlphaViolation": 4.116542160315095e-06,
+            "intervalViolatingPixels": 23
+          },
+          {
+            "evaluation": 65,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010117570633429676,
+            "intervalMaxAlphaViolation": 4.0394239020913325e-06,
+            "intervalViolatingPixels": 23
+          },
+          {
+            "evaluation": 66,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010117570633429676,
+            "intervalMaxAlphaViolation": 4.0394239020913325e-06,
+            "intervalViolatingPixels": 23
+          },
+          {
+            "evaluation": 67,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010117871366448247,
+            "intervalMaxAlphaViolation": 4.724752026230572e-06,
+            "intervalViolatingPixels": 24
+          },
+          {
+            "evaluation": 68,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010117871366448247,
+            "intervalMaxAlphaViolation": 4.724752026230572e-06,
+            "intervalViolatingPixels": 24
+          },
+          {
+            "evaluation": 69,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010117943432561463,
+            "intervalMaxAlphaViolation": 3.304346351817866e-06,
+            "intervalViolatingPixels": 25
+          },
+          {
+            "evaluation": 70,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010117943432561463,
+            "intervalMaxAlphaViolation": 3.304346351817866e-06,
+            "intervalViolatingPixels": 25
+          },
+          {
+            "evaluation": 71,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010118219177796914,
+            "intervalMaxAlphaViolation": 5.090249381778378e-06,
+            "intervalViolatingPixels": 32
+          },
+          {
+            "evaluation": 72,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010118219177796914,
+            "intervalMaxAlphaViolation": 5.090249381778378e-06,
+            "intervalViolatingPixels": 32
+          },
+          {
+            "evaluation": 73,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010118302266393805,
+            "intervalMaxAlphaViolation": 5.793096651662832e-06,
+            "intervalViolatingPixels": 25
+          },
+          {
+            "evaluation": 74,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010118302266393805,
+            "intervalMaxAlphaViolation": 5.793096651662832e-06,
+            "intervalViolatingPixels": 25
+          },
+          {
+            "evaluation": 75,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010118668668548145,
+            "intervalMaxAlphaViolation": 6.281017757792107e-06,
+            "intervalViolatingPixels": 27
+          },
+          {
+            "evaluation": 76,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010118668668548145,
+            "intervalMaxAlphaViolation": 6.281017757792107e-06,
+            "intervalViolatingPixels": 27
+          },
+          {
+            "evaluation": 77,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010119139710396075,
+            "intervalMaxAlphaViolation": 5.783037851370132e-06,
+            "intervalViolatingPixels": 27
+          },
+          {
+            "evaluation": 78,
+            "origin": "line_search_or_closure",
+            "qualified": false,
+            "failedGates": [
+              "pixel_interval"
+            ],
+            "d": 0.010119139710396075,
+            "intervalMaxAlphaViolation": 5.783037851370132e-06,
+            "intervalViolatingPixels": 27
+          },
+          {
+            "evaluation": 79,
+            "origin": "mandatory_best_verification",
+            "qualified": true,
+            "failedGates": [],
+            "d": 0.010101999874651865,
+            "intervalMaxAlphaViolation": 0.0,
+            "intervalViolatingPixels": 0
+          }
+        ],
+        "bestUpdatesRecorded": [
+          {
+            "evaluation": 1,
+            "origin": "seed_initial",
+            "d": 0.010101999874651865
+          }
+        ],
+        "identityLimit": "Trial theta arrays were not saved. The first closure is at seed by source order; other failed calls have distinct observations. No claim about the number of distinct parameter vectors."
+      }
+    }
+  ],
+  "costsReported": {
+    "setup": 1.832457099983003,
+    "G0": 17.92628270003479,
+    "actualWork": {
+      "fullEvaluationsStarted": 168,
+      "fullEvaluationsCompleted": 168,
+      "stepsCompleted": 10080,
+      "reverseCalls": 156,
+      "scope": "Includes reference setup, new G0, both searches and paid final verification"
+    },
+    "workerSeconds": 274.90117879997706
+  },
+  "summarySHA256": "8448f30f7a59e8a9332a714799d1f10ed1f0a1d20f23bef9bcff096fbd7cb229",
+  "limitations": [
+    "Not an independent AD, simulation or renderer run. Saved gradients are checked against independent scalar finite differences.",
+    "Trajectory state_metrics and allocator/timing values remain producer observations; only stored state arrays and derived scalar arithmetic are independently checked.",
+    "No confidence, safety, global extremum, statistical performance or artistic claim. Finite-budget failure to find a different qualified endpoint is not uniqueness.",
+    "CPU reduction ordering can differ from GPU; original FD and eligibility gates are unchanged. Summary comparison tolerance is 1e-11 absolute plus 1e-12 relative."
+  ],
+  "passed": true
+}

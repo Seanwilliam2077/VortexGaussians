@@ -1,0 +1,818 @@
+{
+  "schema": "t12-saved-publication-v1",
+  "producerStatus": "completed",
+  "producerDecision": "FINITE_BUDGET_WITNESSES_RECORDED",
+  "sourceIdentityMatches": true,
+  "runtimeInputsUnchanged": true,
+  "qualificationG0": {
+    "status": "completed",
+    "evaluations": 9,
+    "backwardCalls": 2,
+    "directions": [
+      {
+        "index": 0,
+        "euclideanNorm": 1.0,
+        "gradientDotDirection": {
+          "d": 0.00012628672967850883,
+          "loss": -1033.32205998539
+        },
+        "finiteDifferences": [
+          {
+            "h": 1e-05,
+            "plus": {
+              "d": 0.010109409691332713,
+              "loss": -97255.7838553174
+            },
+            "minus": {
+              "d": 0.010109407165598092,
+              "loss": -97255.7631888762
+            },
+            "errors": {
+              "d": {
+                "fd": 0.00012628673107251132,
+                "relativeError": 1.1038392428650408e-08,
+                "passed": true
+              },
+              "loss": {
+                "fd": -1033.3220598113257,
+                "relativeError": 1.6845118512450924e-10,
+                "passed": true
+              }
+            }
+          },
+          {
+            "h": 1e-06,
+            "plus": {
+              "d": 0.010109408554752702,
+              "loss": -97255.77455573094
+            },
+            "minus": {
+              "d": 0.010109408302179199,
+              "loss": -97255.77248908683
+            },
+            "errors": {
+              "d": {
+                "fd": 0.00012628675188919303,
+                "relativeError": 1.7587504442459023e-07,
+                "passed": true
+              },
+              "loss": {
+                "fd": -1033.322056173347,
+                "relativeError": 3.689114246496827e-09,
+                "passed": true
+              }
+            }
+          }
+        ]
+      },
+      {
+        "index": 1,
+        "euclideanNorm": 1.0,
+        "gradientDotDirection": {
+          "d": 0.00014081752550987615,
+          "loss": 249.14664822521507
+        },
+        "finiteDifferences": [
+          {
+            "h": 1e-05,
+            "plus": {
+              "d": 0.010109409836640798,
+              "loss": -97255.77103063217
+            },
+            "minus": {
+              "d": 0.01010940702029027,
+              "loss": -97255.7760135651
+            },
+            "errors": {
+              "d": {
+                "fd": 0.00014081752638950285,
+                "relativeError": 6.246571160546283e-09,
+                "passed": true
+              },
+              "loss": {
+                "fd": 249.14664682000873,
+                "relativeError": 5.6400772707017576e-09,
+                "passed": true
+              }
+            }
+          },
+          {
+            "h": 1e-06,
+            "plus": {
+              "d": 0.010109408569283496,
+              "loss": -97255.77327326227
+            },
+            "minus": {
+              "d": 0.010109408287648461,
+              "loss": -97255.77377155554
+            },
+            "errors": {
+              "d": {
+                "fd": 0.00014081751736894077,
+                "relativeError": 5.7811947425243986e-08,
+                "passed": true
+              },
+              "loss": {
+                "fd": 249.1466366336681,
+                "relativeError": 4.652499667056937e-08,
+                "passed": true
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "analyticD": 0.010109408428465985,
+    "analyticLoss": -97255.77352241204,
+    "activePHRBranches": 163842,
+    "minimumAbsolutePHRBranch": 0.5114435288217638,
+    "finiteAnalytic": true,
+    "analyticMetrics": {
+      "d": 0.010109408428465985,
+      "g_unedited": 0.12263036791666536,
+      "g_wind": 0.13273977634513134,
+      "finite": true,
+      "numericalPassed": true,
+      "intervalMaxAlphaViolation": 0.0019159077301107441,
+      "intervalViolatingPixels": 1965,
+      "quantizedByteExact": false,
+      "quantizedDifferentPixels": 1965,
+      "quantizedMaxCodeDifference": 1,
+      "initialVelocityMaxComponent": 0.1406780017194358,
+      "initialVelocityComponentRMS": 0.07101588698846484,
+      "initialDivergenceInf": 1.1102230246251565e-15,
+      "trajectoryDivergenceInf": 1.1102230246251565e-15,
+      "densityMin": 7.531634674912269e-25,
+      "alphaMin": 8.097581625845817e-25,
+      "alphaMax": 0.48676794657640615,
+      "maxPositiveConstraint": 0.48855647117823975,
+      "firstFutureAlphaWindDifferenceMax": 0.0,
+      "firstFutureDensityWindDifferenceMax": 0.0,
+      "qualified": false
+    },
+    "probeMetrics": [
+      {
+        "direction": 0,
+        "h": 1e-05,
+        "sign": "plus",
+        "metrics": {
+          "d": 0.010109409691332713,
+          "g_unedited": 0.12263035571672136,
+          "g_wind": 0.13273976540805407,
+          "finite": true,
+          "numericalPassed": true,
+          "intervalMaxAlphaViolation": 0.0019158360478495617,
+          "intervalViolatingPixels": 1965,
+          "quantizedByteExact": false,
+          "quantizedDifferentPixels": 1965,
+          "quantizedMaxCodeDifference": 1,
+          "initialVelocityMaxComponent": 0.14067798892888214,
+          "initialVelocityComponentRMS": 0.07101588619339243,
+          "initialDivergenceInf": 1.1102230246251565e-15,
+          "trajectoryDivergenceInf": 1.1102230246251565e-15,
+          "densityMin": 7.531631655817271e-25,
+          "alphaMin": 8.09757776531949e-25,
+          "alphaMax": 0.48676794710991705,
+          "maxPositiveConstraint": 0.48853819220163824,
+          "firstFutureAlphaWindDifferenceMax": 0.0,
+          "firstFutureDensityWindDifferenceMax": 0.0,
+          "qualified": false
+        }
+      },
+      {
+        "direction": 0,
+        "h": 1e-05,
+        "sign": "minus",
+        "metrics": {
+          "d": 0.010109407165598092,
+          "g_unedited": 0.1226303801166173,
+          "g_wind": 0.1327397872822154,
+          "finite": true,
+          "numericalPassed": true,
+          "intervalMaxAlphaViolation": 0.0019159794123730922,
+          "intervalViolatingPixels": 1965,
+          "quantizedByteExact": false,
+          "quantizedDifferentPixels": 1965,
+          "quantizedMaxCodeDifference": 1,
+          "initialVelocityMaxComponent": 0.14067801450998682,
+          "initialVelocityComponentRMS": 0.07101588778354403,
+          "initialDivergenceInf": 1.3322676295501878e-15,
+          "trajectoryDivergenceInf": 9.992007221626409e-16,
+          "densityMin": 7.53163769400746e-25,
+          "alphaMin": 8.0975854863728365e-25,
+          "alphaMax": 0.4867679460428953,
+          "maxPositiveConstraint": 0.4885747501551385,
+          "firstFutureAlphaWindDifferenceMax": 0.0,
+          "firstFutureDensityWindDifferenceMax": 0.0,
+          "qualified": false
+        }
+      },
+      {
+        "direction": 0,
+        "h": 1e-06,
+        "sign": "plus",
+        "metrics": {
+          "d": 0.010109408554752702,
+          "g_unedited": 0.12263036669667063,
+          "g_wind": 0.13273977525142333,
+          "finite": true,
+          "numericalPassed": true,
+          "intervalMaxAlphaViolation": 0.0019159005618846203,
+          "intervalViolatingPixels": 1965,
+          "quantizedByteExact": false,
+          "quantizedDifferentPixels": 1965,
+          "quantizedMaxCodeDifference": 1,
+          "initialVelocityMaxComponent": 0.14067800044038056,
+          "initialVelocityComponentRMS": 0.07101588690895728,
+          "initialDivergenceInf": 1.0547118733938987e-15,
+          "trajectoryDivergenceInf": 1.1102230246251565e-15,
+          "densityMin": 7.531634373002758e-25,
+          "alphaMin": 8.0975812397931395e-25,
+          "alphaMax": 0.4867679466297572,
+          "maxPositiveConstraint": 0.4885546432805782,
+          "firstFutureAlphaWindDifferenceMax": 0.0,
+          "firstFutureDensityWindDifferenceMax": 0.0,
+          "qualified": false
+        }
+      },
+      {
+        "direction": 0,
+        "h": 1e-06,
+        "sign": "minus",
+        "metrics": {
+          "d": 0.010109408302179199,
+          "g_unedited": 0.12263036913666021,
+          "g_wind": 0.1327397774388394,
+          "finite": true,
+          "numericalPassed": true,
+          "intervalMaxAlphaViolation": 0.0019159148983369234,
+          "intervalViolatingPixels": 1965,
+          "quantizedByteExact": false,
+          "quantizedDifferentPixels": 1965,
+          "quantizedMaxCodeDifference": 1,
+          "initialVelocityMaxComponent": 0.14067800299849104,
+          "initialVelocityComponentRMS": 0.07101588706797245,
+          "initialDivergenceInf": 1.2212453270876722e-15,
+          "trajectoryDivergenceInf": 9.992007221626409e-16,
+          "densityMin": 7.531634976821834e-25,
+          "alphaMin": 8.09758201189852e-25,
+          "alphaMax": 0.48676794652305505,
+          "maxPositiveConstraint": 0.48855829907591547,
+          "firstFutureAlphaWindDifferenceMax": 0.0,
+          "firstFutureDensityWindDifferenceMax": 0.0,
+          "qualified": false
+        }
+      },
+      {
+        "direction": 1,
+        "h": 1e-05,
+        "sign": "plus",
+        "metrics": {
+          "d": 0.010109409836640798,
+          "g_unedited": 0.12263034452576588,
+          "g_wind": 0.13273975436240668,
+          "finite": true,
+          "numericalPassed": true,
+          "intervalMaxAlphaViolation": 0.0019159251624896734,
+          "intervalViolatingPixels": 1965,
+          "quantizedByteExact": false,
+          "quantizedDifferentPixels": 1965,
+          "quantizedMaxCodeDifference": 1,
+          "initialVelocityMaxComponent": 0.1406780545752641,
+          "initialVelocityComponentRMS": 0.07101588619568162,
+          "initialDivergenceInf": 1.1102230246251565e-15,
+          "trajectoryDivergenceInf": 1.1102230246251565e-15,
+          "densityMin": 7.531635672241227e-25,
+          "alphaMin": 8.097581955294047e-25,
+          "alphaMax": 0.48676794772690746,
+          "maxPositiveConstraint": 0.4885609164348667,
+          "firstFutureAlphaWindDifferenceMax": 0.0,
+          "firstFutureDensityWindDifferenceMax": 0.0,
+          "qualified": false
+        }
+      },
+      {
+        "direction": 1,
+        "h": 1e-05,
+        "sign": "minus",
+        "metrics": {
+          "d": 0.01010940702029027,
+          "g_unedited": 0.12263039130757293,
+          "g_wind": 0.1327397983278632,
+          "finite": true,
+          "numericalPassed": true,
+          "intervalMaxAlphaViolation": 0.0019158902977265413,
+          "intervalViolatingPixels": 1965,
+          "quantizedByteExact": false,
+          "quantizedDifferentPixels": 1965,
+          "quantizedMaxCodeDifference": 1,
+          "initialVelocityMaxComponent": 0.14067794886360485,
+          "initialVelocityComponentRMS": 0.07101588778125484,
+          "initialDivergenceInf": 1.0824674490095276e-15,
+          "trajectoryDivergenceInf": 1.1102230246251565e-15,
+          "densityMin": 7.53163367758326e-25,
+          "alphaMin": 8.097581296397335e-25,
+          "alphaMax": 0.48676794542590496,
+          "maxPositiveConstraint": 0.48855202592026803,
+          "firstFutureAlphaWindDifferenceMax": 0.0,
+          "firstFutureDensityWindDifferenceMax": 0.0,
+          "qualified": false
+        }
+      },
+      {
+        "direction": 1,
+        "h": 1e-06,
+        "sign": "plus",
+        "metrics": {
+          "d": 0.010109408569283496,
+          "g_unedited": 0.12263036557757506,
+          "g_wind": 0.13273977414685856,
+          "finite": true,
+          "numericalPassed": true,
+          "intervalMaxAlphaViolation": 0.0019159094733488535,
+          "intervalViolatingPixels": 1965,
+          "quantizedByteExact": false,
+          "quantizedDifferentPixels": 1965,
+          "quantizedMaxCodeDifference": 1,
+          "initialVelocityMaxComponent": 0.14067800700501876,
+          "initialVelocityComponentRMS": 0.0710158869091862,
+          "initialDivergenceInf": 1.1379786002407855e-15,
+          "trajectoryDivergenceInf": 1.1102230246251565e-15,
+          "densityMin": 7.531634774645409e-25,
+          "alphaMin": 8.097581658790638e-25,
+          "alphaMax": 0.4867679466914563,
+          "maxPositiveConstraint": 0.48855691570395765,
+          "firstFutureAlphaWindDifferenceMax": 0.0,
+          "firstFutureDensityWindDifferenceMax": 0.0,
+          "qualified": false
+        }
+      },
+      {
+        "direction": 1,
+        "h": 1e-06,
+        "sign": "minus",
+        "metrics": {
+          "d": 0.010109408287648461,
+          "g_unedited": 0.12263037025575575,
+          "g_wind": 0.1327397785434042,
+          "finite": true,
+          "numericalPassed": true,
+          "intervalMaxAlphaViolation": 0.0019159059868725792,
+          "intervalViolatingPixels": 1965,
+          "quantizedByteExact": false,
+          "quantizedDifferentPixels": 1965,
+          "quantizedMaxCodeDifference": 1,
+          "initialVelocityMaxComponent": 0.14067799643385284,
+          "initialVelocityComponentRMS": 0.07101588706774352,
+          "initialDivergenceInf": 1.1102230246251565e-15,
+          "trajectoryDivergenceInf": 1.1102230246251565e-15,
+          "densityMin": 7.53163457517918e-25,
+          "alphaMin": 8.097581592901174e-25,
+          "alphaMax": 0.48676794646135607,
+          "maxPositiveConstraint": 0.4885560266525077,
+          "firstFutureAlphaWindDifferenceMax": 0.0,
+          "firstFutureDensityWindDifferenceMax": 0.0,
+          "qualified": false
+        }
+      }
+    ],
+    "memory": {
+      "scope": "Torch allocator; not full process/device peak",
+      "peakAllocatedBytes": 3513746944,
+      "peakReservedBytes": 3531603968
+    },
+    "memoryPassed": true,
+    "numericalPassed": true,
+    "passed": true,
+    "secondsIncludingIO": 17.92628270003479
+  },
+  "setup": {
+    "evaluations": 1,
+    "steps": 60,
+    "secondsIncludingIO": 1.832457099983003,
+    "referenceMetrics": {
+      "d": 0.010101999874651865,
+      "g_unedited": 0.12195339725894526,
+      "g_wind": 0.13205539713359712,
+      "finite": true,
+      "numericalPassed": true,
+      "intervalMaxAlphaViolation": 0.0,
+      "intervalViolatingPixels": 0,
+      "quantizedByteExact": true,
+      "quantizedDifferentPixels": 0,
+      "quantizedMaxCodeDifference": 0,
+      "initialVelocityMaxComponent": 0.13842519749056242,
+      "initialVelocityComponentRMS": 0.07103211157583371,
+      "initialDivergenceInf": 5.551115123125783e-16,
+      "trajectoryDivergenceInf": 1.1102230246251565e-15,
+      "densityMin": 7.587894051845043e-25,
+      "alphaMin": 8.041673779604597e-25,
+      "alphaMax": 0.48679925418153136,
+      "maxPositiveConstraint": 0.0,
+      "firstFutureAlphaWindDifferenceMax": 0.0,
+      "firstFutureDensityWindDifferenceMax": 0.0,
+      "qualified": true
+    },
+    "windDivergenceInf": 1.9984014443252818e-15,
+    "windProjectionChangeMax": 2.7755575615628914e-17,
+    "windMaxComponent": 0.35,
+    "windBeforeScaling": {
+      "maxComponent": 0.9863597130174392,
+      "componentRMS": 0.05627528573143381,
+      "euclideanNorm": 17.644254101931477,
+      "scale": 0.35484012108451946
+    },
+    "knownDensitySource": "Pinned scene.initial_state; its returned velocity is discarded",
+    "futureBranchOrder": [
+      "unedited",
+      "wind"
+    ],
+    "stateMetricsOrder": [
+      "observation1..20",
+      "unedited21..40",
+      "wind21..40"
+    ],
+    "stateMetricColumns": [
+      "divInf",
+      "rhoMin",
+      "rhoMax",
+      "alphaMin",
+      "alphaMax",
+      "finiteFlag"
+    ]
+  },
+  "actualWork": {
+    "fullEvaluationsStarted": 168,
+    "fullEvaluationsCompleted": 168,
+    "stepsCompleted": 10080,
+    "reverseCalls": 156,
+    "scope": "Includes reference setup, new G0, both searches and paid final verification"
+  },
+  "workerWallSeconds": 274.90117879997706,
+  "supervisorWallSeconds": 275.9082256000256,
+  "selected": {
+    "min": {
+      "status": "completed",
+      "finalQualified": true,
+      "selectedEvaluation": 1,
+      "selectedOrigin": "seed_initial",
+      "selectedWasInitialSeed": true,
+      "selectedWasOptimizerReturned": false,
+      "finalVerificationEvaluation": 79,
+      "termination": "evaluation_budget",
+      "evaluationsStarted": 79,
+      "evaluationsCompleted": 79,
+      "backwardCalls": 77,
+      "returnedSteps": 35,
+      "cacheHits": 35,
+      "cacheMisses": 0,
+      "searchSecondsBeforeFinal": 125.40644109999994,
+      "secondsIncludingFinalAndIO": 126.14822039997671,
+      "softLimitExceeded": false
+    },
+    "max": {
+      "status": "completed",
+      "finalQualified": true,
+      "selectedEvaluation": 1,
+      "selectedOrigin": "seed_initial",
+      "selectedWasInitialSeed": true,
+      "selectedWasOptimizerReturned": false,
+      "finalVerificationEvaluation": 79,
+      "termination": "evaluation_budget",
+      "evaluationsStarted": 79,
+      "evaluationsCompleted": 79,
+      "backwardCalls": 77,
+      "returnedSteps": 35,
+      "cacheHits": 35,
+      "cacheMisses": 0,
+      "searchSecondsBeforeFinal": 110.80156809999608,
+      "secondsIncludingFinalAndIO": 111.52257760002976,
+      "softLimitExceeded": false
+    }
+  },
+  "imageDerived": {
+    "reference": {
+      "available": true,
+      "imagesFinite": true,
+      "producerMetrics": {
+        "d": 0.010101999874651865,
+        "g_unedited": 0.12195339725894526,
+        "g_wind": 0.13205539713359712,
+        "finite": true,
+        "numericalPassed": true,
+        "intervalMaxAlphaViolation": 0.0,
+        "intervalViolatingPixels": 0,
+        "quantizedByteExact": true,
+        "quantizedDifferentPixels": 0,
+        "quantizedMaxCodeDifference": 0,
+        "initialVelocityMaxComponent": 0.13842519749056242,
+        "initialVelocityComponentRMS": 0.07103211157583371,
+        "initialDivergenceInf": 5.551115123125783e-16,
+        "trajectoryDivergenceInf": 1.1102230246251565e-15,
+        "densityMin": 7.587894051845043e-25,
+        "alphaMin": 8.041673779604597e-25,
+        "alphaMax": 0.48679925418153136,
+        "maxPositiveConstraint": 0.0,
+        "firstFutureAlphaWindDifferenceMax": 0.0,
+        "firstFutureDensityWindDifferenceMax": 0.0,
+        "qualified": true
+      },
+      "gUneditedByFutureFrame": [
+        0.10237559417241227,
+        0.1034100823925771,
+        0.10444634254464183,
+        0.10548403354572834,
+        0.10652286575983291,
+        0.10756261671175553,
+        0.10860303013963751,
+        0.1096437551514121,
+        0.11068438228200346,
+        0.11172445857221452,
+        0.11276346658935035,
+        0.1138007736039729,
+        0.11483567079019677,
+        0.11586744915951284,
+        0.11689542421223968,
+        0.11791892070577917,
+        0.11893723963087252,
+        0.11994962579359894,
+        0.12095528609097485,
+        0.12195339725894526
+      ],
+      "gWindByFutureFrame": [
+        0.10237559417241227,
+        0.10346670664018279,
+        0.10461826833571397,
+        0.10583199147094662,
+        0.10710956570385595,
+        0.10845283740199743,
+        0.10986399378257058,
+        0.1113449211719222,
+        0.11289721559421934,
+        0.11452217834222887,
+        0.11622073543305583,
+        0.11793917582665497,
+        0.11967435200953855,
+        0.12142315472061865,
+        0.12318253170360609,
+        0.12494960167472804,
+        0.12672247447473475,
+        0.12849934190867707,
+        0.13027782422413123,
+        0.1320553971335971
+      ],
+      "dByFutureFrame": [
+        0.0,
+        5.662424760569107e-05,
+        0.00017192579107214168,
+        0.00034795792521827296,
+        0.0005866999440230364,
+        0.0008902206902419024,
+        0.0012609636429330717,
+        0.0017011660205100976,
+        0.0022128333122158755,
+        0.002797719770014348,
+        0.00345726884370548,
+        0.0041384022226820805,
+        0.004838681219341778,
+        0.005555705561105809,
+        0.006287107491366406,
+        0.007030680968948877,
+        0.007785234843862232,
+        0.008549716115078126,
+        0.00932253813315638,
+        0.010101999874651837
+      ],
+      "dFinal": 0.010101999874651837,
+      "intervalMaxAlphaViolation": 0.0,
+      "intervalViolatingPixels": 0,
+      "quantizedByteExact": true,
+      "quantizedDifferentPixels": 0,
+      "quantizedMaxCodeDifference": 0
+    },
+    "min": {
+      "available": true,
+      "imagesFinite": true,
+      "producerMetrics": {
+        "d": 0.010101999874651865,
+        "g_unedited": 0.12195339725894526,
+        "g_wind": 0.13205539713359712,
+        "finite": true,
+        "numericalPassed": true,
+        "intervalMaxAlphaViolation": 0.0,
+        "intervalViolatingPixels": 0,
+        "quantizedByteExact": true,
+        "quantizedDifferentPixels": 0,
+        "quantizedMaxCodeDifference": 0,
+        "initialVelocityMaxComponent": 0.13842519749056242,
+        "initialVelocityComponentRMS": 0.07103211157583371,
+        "initialDivergenceInf": 5.551115123125783e-16,
+        "trajectoryDivergenceInf": 1.1102230246251565e-15,
+        "densityMin": 7.587894051845043e-25,
+        "alphaMin": 8.041673779604597e-25,
+        "alphaMax": 0.48679925418153136,
+        "maxPositiveConstraint": 0.0,
+        "firstFutureAlphaWindDifferenceMax": 0.0,
+        "firstFutureDensityWindDifferenceMax": 0.0,
+        "qualified": true
+      },
+      "gUneditedByFutureFrame": [
+        0.10237559417241227,
+        0.1034100823925771,
+        0.10444634254464183,
+        0.10548403354572834,
+        0.10652286575983291,
+        0.10756261671175553,
+        0.10860303013963751,
+        0.1096437551514121,
+        0.11068438228200346,
+        0.11172445857221452,
+        0.11276346658935035,
+        0.1138007736039729,
+        0.11483567079019677,
+        0.11586744915951284,
+        0.11689542421223968,
+        0.11791892070577917,
+        0.11893723963087252,
+        0.11994962579359894,
+        0.12095528609097485,
+        0.12195339725894526
+      ],
+      "gWindByFutureFrame": [
+        0.10237559417241227,
+        0.10346670664018279,
+        0.10461826833571397,
+        0.10583199147094662,
+        0.10710956570385595,
+        0.10845283740199743,
+        0.10986399378257058,
+        0.1113449211719222,
+        0.11289721559421934,
+        0.11452217834222887,
+        0.11622073543305583,
+        0.11793917582665497,
+        0.11967435200953855,
+        0.12142315472061865,
+        0.12318253170360609,
+        0.12494960167472804,
+        0.12672247447473475,
+        0.12849934190867707,
+        0.13027782422413123,
+        0.1320553971335971
+      ],
+      "dByFutureFrame": [
+        0.0,
+        5.662424760569107e-05,
+        0.00017192579107214168,
+        0.00034795792521827296,
+        0.0005866999440230364,
+        0.0008902206902419024,
+        0.0012609636429330717,
+        0.0017011660205100976,
+        0.0022128333122158755,
+        0.002797719770014348,
+        0.00345726884370548,
+        0.0041384022226820805,
+        0.004838681219341778,
+        0.005555705561105809,
+        0.006287107491366406,
+        0.007030680968948877,
+        0.007785234843862232,
+        0.008549716115078126,
+        0.00932253813315638,
+        0.010101999874651837
+      ],
+      "dFinal": 0.010101999874651837,
+      "intervalMaxAlphaViolation": 0.0,
+      "intervalViolatingPixels": 0,
+      "quantizedByteExact": true,
+      "quantizedDifferentPixels": 0,
+      "quantizedMaxCodeDifference": 0
+    },
+    "max": {
+      "available": true,
+      "imagesFinite": true,
+      "producerMetrics": {
+        "d": 0.010101999874651865,
+        "g_unedited": 0.12195339725894526,
+        "g_wind": 0.13205539713359712,
+        "finite": true,
+        "numericalPassed": true,
+        "intervalMaxAlphaViolation": 0.0,
+        "intervalViolatingPixels": 0,
+        "quantizedByteExact": true,
+        "quantizedDifferentPixels": 0,
+        "quantizedMaxCodeDifference": 0,
+        "initialVelocityMaxComponent": 0.13842519749056242,
+        "initialVelocityComponentRMS": 0.07103211157583371,
+        "initialDivergenceInf": 5.551115123125783e-16,
+        "trajectoryDivergenceInf": 1.1102230246251565e-15,
+        "densityMin": 7.587894051845043e-25,
+        "alphaMin": 8.041673779604597e-25,
+        "alphaMax": 0.48679925418153136,
+        "maxPositiveConstraint": 0.0,
+        "firstFutureAlphaWindDifferenceMax": 0.0,
+        "firstFutureDensityWindDifferenceMax": 0.0,
+        "qualified": true
+      },
+      "gUneditedByFutureFrame": [
+        0.10237559417241227,
+        0.1034100823925771,
+        0.10444634254464183,
+        0.10548403354572834,
+        0.10652286575983291,
+        0.10756261671175553,
+        0.10860303013963751,
+        0.1096437551514121,
+        0.11068438228200346,
+        0.11172445857221452,
+        0.11276346658935035,
+        0.1138007736039729,
+        0.11483567079019677,
+        0.11586744915951284,
+        0.11689542421223968,
+        0.11791892070577917,
+        0.11893723963087252,
+        0.11994962579359894,
+        0.12095528609097485,
+        0.12195339725894526
+      ],
+      "gWindByFutureFrame": [
+        0.10237559417241227,
+        0.10346670664018279,
+        0.10461826833571397,
+        0.10583199147094662,
+        0.10710956570385595,
+        0.10845283740199743,
+        0.10986399378257058,
+        0.1113449211719222,
+        0.11289721559421934,
+        0.11452217834222887,
+        0.11622073543305583,
+        0.11793917582665497,
+        0.11967435200953855,
+        0.12142315472061865,
+        0.12318253170360609,
+        0.12494960167472804,
+        0.12672247447473475,
+        0.12849934190867707,
+        0.13027782422413123,
+        0.1320553971335971
+      ],
+      "dByFutureFrame": [
+        0.0,
+        5.662424760569107e-05,
+        0.00017192579107214168,
+        0.00034795792521827296,
+        0.0005866999440230364,
+        0.0008902206902419024,
+        0.0012609636429330717,
+        0.0017011660205100976,
+        0.0022128333122158755,
+        0.002797719770014348,
+        0.00345726884370548,
+        0.0041384022226820805,
+        0.004838681219341778,
+        0.005555705561105809,
+        0.006287107491366406,
+        0.007030680968948877,
+        0.007785234843862232,
+        0.008549716115078126,
+        0.00932253813315638,
+        0.010101999874651837
+      ],
+      "dFinal": 0.010101999874651837,
+      "intervalMaxAlphaViolation": 0.0,
+      "intervalViolatingPixels": 0,
+      "quantizedByteExact": true,
+      "quantizedDifferentPixels": 0,
+      "quantizedMaxCodeDifference": 0
+    }
+  },
+  "qualifiedEndpointsAvailable": true,
+  "bothSelectedEndpointsAreSeed": true,
+  "foundSignedSpanMaxMinusMin": 0.0,
+  "fixedResponseROI": [
+    28,
+    26,
+    36,
+    56
+  ],
+  "imageOrigin": "lower-left",
+  "alphaLimits": [
+    0,
+    0.48679925418153136
+  ],
+  "responseLimits": [
+    -0.07015708833631934,
+    0.07015708833631934
+  ],
+  "compact": {
+    "bytes": 5786157,
+    "targetBytes": 5000000,
+    "withinTarget": false,
+    "roundtripExact": true,
+    "scopeFixedBeforeResults": "All obs/future alpha, theta; reference quantization contract; g/d. No 3D fields."
+  },
+  "scope": "Finite-budget witnesses; same public seed; interval feasibility is not quantized byte identity. No confidence interval/global extrema or benefit claim."
+}
