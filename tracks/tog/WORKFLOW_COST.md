@@ -15,11 +15,11 @@
 
 Closure plus acceptance time is contained in solve time, which is contained in worker time. Do not add these overlapping totals. T03/T04 development cost is a historical research expense, not the cold-start solve time. T05 authenticates the previously paid 9-forward G0 and does not execute a new G0.
 
-## A stronger ordinary implementation may remove redundant work
+## Removing redundant ordinary work
 
-In the present driver, every returned L-BFGS step triggers another complete forward rollout, even if its parameter vector is exactly the same as one just evaluated by a closure. That independent acceptance pass helps audit the prototype, but it is not intrinsically required by constrained optimization. The 11.4205 seconds above includes the necessary initial forward and quality/force calculations; it is **not** a measured removable-cost estimate.
+In the T05/T07 driver, every returned L-BFGS step triggers another complete forward rollout, even if its parameter vector is exactly the same as one just evaluated by a closure. That independent acceptance pass helps audit the prototype, but it is not intrinsically required by constrained optimization. The 11.4205 seconds above includes the necessary initial forward and quality/force calculations; it is **not** a measured removable-cost estimate.
 
-A standard implementation may retain detached closure outputs and use them for acceptance only when the returned x and all model/input identities match exactly. It must fall back to a real forward on a miss, invalidate after model/input changes, avoid retaining autograd graphs, preserve rollback, and retain real final verification. This optimization has not been implemented or timed here. Before a positive candidate-speed claim, remove or fairly match this ordinary overhead and evidence-IO policy. T07 keeps the existing driver for a bounded negative screen; if even that workflow is cheap, a dedicated mechanism has less opportunity.
+T08 implements detached closure-output reuse for acceptance only when returned x is byte-exact and model/input identities match. It falls back to a real forward on a miss, invalidates on input or solver-state changes, retains no autograd graph, preserves rollback, and pays for a final real verification. The result below establishes actual work reduction on T07's task. Any future candidate comparison must include this ordinary improvement and fairly match evidence-IO policy.
 
 ## Why protection reuse does not automatically save differentiation
 
@@ -33,6 +33,18 @@ The published `acceptedHistory` also limits the bottleneck story. In T05, editin
 
 T06 fixes a second image edit with a delayed onset and the same final bend. T07 used qualified T05 control and the unchanged ordinary mathematics with fresh solver state. It passed all original gates in101 solve rollouts:68 closures and33 acceptance forwards,71.1901 solve seconds (55.0382 closure and13.6883 acceptance seconds contained within it). New G0 used9 forwards/1backward and4.3911 seconds; whole worker91.5085 seconds. These values are independently audited in [T07 review](../validation/t07-review.md). T05 and T07 have different targets, so their times do not establish a warm-start speedup.
 
-T08 is a bounded ordinary-driver improvement on exactly the T07 input, starting control and mathematics. It will reuse a complete closure output only when the returned x and all input identities agree exactly, fall back to a real forward on a miss, and pay for a separate final real verification. The unchanged derivative qualification can be authenticated rather than rerun. Compare every saved accepted state with T07 and disclose any divergence. No protection-response model, approximation or claimed new algorithm is involved.
+T08 completed one frozen run on exactly the T07 input, starting control and mathematics. It uses **70 real forwards =68 closures +1 initial +1 final verification**, with68 backward calls and32 cache hits/0 misses. The32 removed acceptance forwards are offset by one extra final verification: **31 fewer net forwards**, with unchanged returned-step and backward counts. All25 editing and50 protection gates pass. Unchanged derivative qualification is authenticated from T07 rather than rerun.
 
-If the ordinary revision is cheap, close this two-edit sequence as evidence against investing in a dedicated protection-response cache for it. If it is costly or fails, first inspect whether the cause is the edit, the protection constraints, the control representation or ordinary driver overhead. An unresolved numerical example is not evidence of a TOG mechanism. A genuine creative workflow and comparisons to applicable existing methods are still required.
+| Observed T08 component | Seconds |
+|---|---:|
+| Complete solve, including evidence IO and final verification |59.8928993|
+| Closures, including0.0164432 s cache cloning |55.9859960|
+| Acceptance, including initial forward and force checks |0.9577334|
+| Extra final verification |0.4191882|
+| Whole worker, including prior-G0 authentication |75.9206307|
+
+These subtotals overlap and are not to be added to solve time. The single observed solve pair is71.1901340→59.8928993 seconds; it is not a repeated statistical speed estimate. Whole-worker times are not a matched speed comparison because T07 includes new G0 execution. Maximum retained cache payload is1,916,928 bytes, not a full-process memory measurement.
+
+[Independent post-audit](../validation/t08-post-audit.md) confirms T08's final state and extra real forward are byte-identical. Across33 T07/T08 accepted states, only the initial x/q/frames are byte-identical;96 later arrays differ, with maximum absolute differences x2.889e-11, q1.444e-11 and frames1.121e-11. Their cause was not isolated; do not claim exact cross-run trajectory equivalence. All original gates still pass without adjusting tolerances. No protection-response model, approximation or new algorithm is involved.
+
+Close this two-edit development sequence without investing in a dedicated protection-response cache for it. The experiment has removed an ordinary confound but has not established a production bottleneck, a user latency requirement or a distinct mechanism. The next input is [an actual sourced creative revision](CREATIVE_TASK_PACKET.md), followed by comparison to an applicable ordinary workflow. More toy targets or tighter invented gates would not resolve the missing evidence.

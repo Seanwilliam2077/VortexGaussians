@@ -1,6 +1,6 @@
 # Dual-track integration checks
 
-The subsequent numerical screens have their own [T03 independent audit](t03-review.md) and [plots](t03-20261027-v2/README.md), followed by [T04's joint feasible result](t04-review.md) and [plots](t04-20261027/README.md), [T05's ordinary cold start](t05-review.md), and [T07's ordinary timing revision](t07-review.md) with [saved plots](t07-20261027/README.md). The interface checks below do not validate those research results.
+The subsequent numerical screens have their own [T03 independent audit](t03-review.md) and [plots](t03-20261027-v2/README.md), followed by [T04's joint feasible result](t04-review.md) and [plots](t04-20261027/README.md), [T05's ordinary cold start](t05-review.md), and [T07's ordinary timing revision](t07-review.md) with [saved plots](t07-20261027/README.md). [T08's independent post-audit](t08-post-audit.md) verifies actual forward-call reduction and within-run final equality while documenting small cross-run trajectory differences; its [pre-run review](t08-review.md) remains unchanged. The interface checks below do not validate those research results.
 
 27 October 2026. These checks establish software behavior, not artistic merit, physical realism, or a TOG contribution.
 
