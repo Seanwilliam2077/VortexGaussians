@@ -4,8 +4,8 @@ Started 27 October 2026. VortexGaussians remains the shared project. Its origina
 
 | Track | Question | Entry | Current claim |
 |---|---|---|---|
-| TOG technical research | Can an artist revise selected smoke motion while retaining approved imagery, with a useful capability or cost advantage over strong ordinary control? | [Current experiments](STATUS.md) · [ordinary workflow costs](tog/WORKFLOW_COST.md) · [frozen portable interface](tog/README.md) | One development target is jointly feasible with ordinary cold-start control; core contribution and repeated-edit bottleneck unestablished |
-| Art research | How can burning and resetting a captured space become a medium for exploring digital memory? | [Art workspace](art/README.md) · [rehearsal interface](art/index.html) | “Combustible Digital Memory” is a provisional artistic proposition; no audience study or accepted paper |
+| TOG technical research | Can an artist revise selected smoke motion while retaining approved imagery, with a useful capability or cost advantage over strong ordinary control? | [Current experiments](STATUS.md) · [ordinary workflow costs](tog/WORKFLOW_COST.md) · [frozen portable interface](tog/README.md) | Both development edits are jointly feasible with ordinary control. Production/prior-work review has not identified a specific unmet operation; core contribution and repeated-edit bottleneck remain unestablished |
+| Art research | How can burning and resetting a digital space become a medium for exploring digital memory? | [Art workspace](art/README.md) · [rehearsal interface](art/index.html) | A provisional proposition with a synthetic interactive prototype and agent-authored film drafts; personal material, author rehearsal and audience evidence remain pending |
 
 [Current tasks](STATUS.md) · [Exploration rules](EXPLORATION.md) · [Historical evidence](evidence/README.md) · [Original browser demo](../demo/index.html)
 
