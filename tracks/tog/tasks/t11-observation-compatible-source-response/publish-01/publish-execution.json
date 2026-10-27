@@ -1,0 +1,29 @@
+{
+  "schema": "t11-publication-execution-v1",
+  "scope": "CPU-only publication of saved arrays; no simulator or Torch import",
+  "firstAttempt": {
+    "python": "C:/Users/seanzjxiao/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe",
+    "arguments": ["-I", "-B", "publish_saved.py", "--execute", "--run", "runs/run-01", "--output", "publish-01"],
+    "returnCode": 1,
+    "error": "ModuleNotFoundError: No module named 'matplotlib'",
+    "failureLocation": "publish_saved.py, publish(), import matplotlib",
+    "stage": "Before reading saved inputs or creating output directory",
+    "shellWallSeconds": 0.2642616
+  },
+  "completedAttempt": {
+    "python": "C:/Users/seanzjxiao/miniconda3/envs/gs-sph-3d/python.exe",
+    "arguments": ["-I", "-B", "-c", "import os,runpy,sys; os.environ['MKL_THREADING_LAYER']='SEQUENTIAL'; handle=os.add_dll_directory('C:/Users/seanzjxiao/miniconda3/envs/gs-sph-3d/Library/bin'); sys.argv=['publish_saved.py','--execute','--run','runs/run-01','--output','publish-01']; runpy.run_path('work/VortexGaussians/tracks/tog/tasks/t11-observation-compatible-source-response/publish_saved.py',run_name='__main__')"],
+    "cwd": "C:/Users/seanzjxiao/Documents/Codex/2026-10-13/https-github-com-jiarui-liu-ideascientist",
+    "returnCode": 0,
+    "shellWallSeconds": 2.7868996,
+    "usesExistingPackages": true,
+    "gpuUsed": false,
+    "globalEnvironmentModified": false
+  },
+  "visualInspection": {
+    "performed": true,
+    "file": "source-response.png",
+    "scope": "Publication layout and consistency with displayed saved arrays; not independent PDE verification",
+    "observed": "Observation panels appear identical at common scale; edited branches and response maps shift in opposite x directions; response difference has opposite-sign lobes; g_R curves are labeled as responses, not probabilities."
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "command": [
+    "C:\\Users\\seanzjxiao\\miniconda3\\envs\\gs-sph-3d\\python.exe",
+    "-I",
+    "-B",
+    "-u",
+    "-X",
+    "utf8",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t11-observation-compatible-source-response\\runner.py",
+    "--worker",
+    "--out",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t11-observation-compatible-source-response\\runs\\run-01\\worker"
+  ],
+  "sourcesBefore": {
+    "runner.py": {
+      "path": "runner.py",
+      "sha256": "d740a23bd639c1188fe0c6c932c1d309d33d0ada770db26aff89a67b5d7646d5",
+      "bytes": 18179
+    },
+    "config.json": {
+      "path": "config.json",
+      "sha256": "7f538bc947db3db80751b532d9a81c12c586f13945847c16634acad0c662d70c",
+      "bytes": 1530
+    },
+    "PROTOCOL.md": {
+      "path": "PROTOCOL.md",
+      "sha256": "3ffd178c1524789a3e9d2d6da257e660f037208f1c9c4d54b44cb73c64be5849",
+      "bytes": 3667
+    },
+    "core.py": {
+      "path": "../../src/core.py",
+      "sha256": "ac750b70a86743ac858f1c53cf620ce29c63c462456115af4d0d8c93fa20bd9e",
+      "bytes": 13301
+    }
+  },
+  "limitSeconds": 300,
+  "environmentPolicy": {
+    "MKL_THREADING_LAYER": "SEQUENTIAL",
+    "OMP_NUM_THREADS": "4",
+    "MKL_NUM_THREADS": "4",
+    "OPENBLAS_NUM_THREADS": "1",
+    "CUDA_VISIBLE_DEVICES": "GPU-53365c2e-346d-c2a5-2c98-25c00591a721"
+  },
+  "dllDirectory": "C:\\Users\\seanzjxiao\\miniconda3\\envs\\gs-sph-3d\\Library\\bin",
+  "status": "completed",
+  "returnCode": 0,
+  "wallSeconds": 20.32350860000588,
+  "sourcesAfter": {
+    "runner.py": {
+      "path": "runner.py",
+      "sha256": "d740a23bd639c1188fe0c6c932c1d309d33d0ada770db26aff89a67b5d7646d5",
+      "bytes": 18179
+    },
+    "config.json": {
+      "path": "config.json",
+      "sha256": "7f538bc947db3db80751b532d9a81c12c586f13945847c16634acad0c662d70c",
+      "bytes": 1530
+    },
+    "PROTOCOL.md": {
+      "path": "PROTOCOL.md",
+      "sha256": "3ffd178c1524789a3e9d2d6da257e660f037208f1c9c4d54b44cb73c64be5849",
+      "bytes": 3667
+    },
+    "core.py": {
+      "path": "../../src/core.py",
+      "sha256": "ac750b70a86743ac858f1c53cf620ce29c63c462456115af4d0d8c93fa20bd9e",
+      "bytes": 13301
+    }
+  },
+  "sourcesUnchanged": true
+}

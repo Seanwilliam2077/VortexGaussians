@@ -1,0 +1,19 @@
+{
+  "schema": "t11-analytic-source-qualification-v1",
+  "core": {"path": "../../src/core.py", "sha256": "ac750b70a86743ac858f1c53cf620ce29c63c462456115af4d0d8c93fa20bd9e"},
+  "model": {"n": 32, "steps": 40, "dt": 0.025, "frame_start": 16, "image_size": 64, "render_size": 32, "render_samples": 64, "kappa": 1.0},
+  "dtype": "float64",
+  "observation_steps": 20,
+  "future_steps": 20,
+  "velocity": {"shear_amplitude": 0.2, "constant_z": 0.05},
+  "density_lobes": [
+    {"amplitude": 0.4, "center_yz": [0.35, 0.45], "sigma_yz": [0.10, 0.12]},
+    {"amplitude": 0.2, "center_yz": [0.70, 0.65], "sigma_yz": [0.08, 0.10]}
+  ],
+  "source": {"amplitude": 1.0, "center": [0.5, 0.25, 0.5], "sigma": 0.06, "operation": "density += q at observation step 20, zero elapsed time; velocity unchanged"},
+  "gates": {"observation_density_relative_max": 1e-10, "observation_alpha_absolute_max": 1e-10, "divergence_inf": 1e-10, "same_sign_future_velocity_max": 1e-10, "density_lower": -1e-12, "alpha_lower": -1e-12, "alpha_upper": 1.000000000001},
+  "execution": {"threads": 4, "total_timeout_seconds": 300, "expected_gpu_uuid": "GPU-53365c2e-346d-c2a5-2c98-25c00591a721", "expected_torch": "2.11.0+cu128", "device": "cuda"},
+  "observation_order": ["plus", "minus"],
+  "future_order": ["plus_unedited", "plus_edited", "minus_unedited", "minus_edited"],
+  "interpretation": "Analytic passive-tracer qualification, not a wind edit, real reconstruction, confidence interval, novel method or benefit experiment. No optimization or parameter sweep."
+}

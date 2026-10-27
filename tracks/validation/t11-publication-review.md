@@ -1,0 +1,9 @@
+# T11 root publication review
+
+27 October 2026. The root agent read the frozen numerical runner and unchanged common core before execution. The independent reviewer found no blocking mismatch in MAC initialization, observation/future indices, source operation or 120-step accounting. One bounded execution completed; no numerical retry or parameter change occurred.
+
+After execution, root inspected the actual `source-response.png` from [publish-01](../tog/tasks/t11-observation-compatible-source-response/publish-01/README.md). The paired original images appear identical at the fixed common scale; the added source moves to different locations; the separately subtracted responses and their signed difference make the distinction visible. The right-half response curves agree with the published numerical endpoints. The plot labels the analytic construction, source operation, time and limits of interpretation.
+
+Root independently hashed all 13 outputs listed in the final `publication.json`; all matched. This includes the subsequently added execution record documenting the first CPU plotting attempt's missing Matplotlib and its follow-up in the existing numerical environment. No simulation was retried. The compressed data file is 4,920,316 bytes. This check authenticates publication files and the inspected figure; the [separate CPU audit](t11-array-review.md) is the evidence for saved-array arithmetic and initial/final-state consistency. Neither check rerenders the saved density or independently repeats the simulation. Intermediate velocity was not saved, so intermediate divergence remains supported by the producer's recorded checks.
+
+The result supports a known analytic counterexample in this passive model. It does not establish the size of ambiguity in nonsymmetric inputs, automatic search capability, wind-edit uncertainty, a user decision threshold, confidence coverage or a paper contribution.

@@ -2,6 +2,8 @@
 
 This is the repository's working research policy, not a venue acceptance checklist. User steering takes precedence. Updated 27 October 2026.
 
+The latest author instruction prioritizes continuing the technical line. D03 may test the independent R19-B observation-compatible intervention hypothesis with clearly labeled synthetic qualification and ordinary-search baselines. This does not reopen the completed two-edit cache sequence or manufacture human requirements. A known analytic construction is an implementation qualification only; any specialized method still needs an additional operation or measured advantage over strong ordinary methods. Art assets remain available without new art-production work in this cycle.
+
 ## Decide before a run
 
 For each finite task, record a question, the evidence that would change the next action, a preparation/compute budget, and a stopping condition. Distinguish exploratory development from held-out confirmation. Parameters may evolve between disclosed experiments, but saved failures and their original criteria are never relabeled.
