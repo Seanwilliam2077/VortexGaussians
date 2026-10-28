@@ -1,0 +1,79 @@
+{
+  "schema": "t16-ordinary-volume-reference-v1",
+  "date": "2026-10-28",
+  "status": "completed",
+  "previousResearchCommit": "ec13c8f225127b76f07f9492efad925700213014",
+  "predeclaredProtocol": {
+    "path": "tracks/tog/tasks/t15-core-hypothesis-selection/NEXT_EVIDENCE.md",
+    "sha256": "8154b424596934b2d9edf7277e9417fd3844c5010260332eaacbe4d06aefac7d"
+  },
+  "decision": "CLOSE_NAMED_SOURCE_ROUTE_NO_MATCHING_ACQUIRED_REFERENCE_OR_QUALIFIED_MEASUREMENT",
+  "sourceRepository": "https://github.com/facebookresearch/volumetric_primitives",
+  "sourceRevision": "622fabdac87aa446ca84131da97ebb9ac7d3d20c",
+  "budgetUsed": {
+    "codeFiles": 6,
+    "readmeFiles": 1,
+    "dependencyMetadataFiles": 2,
+    "successfulSourceBodyBytes": 73769,
+    "searchQueries": 0
+  },
+  "execution": {
+    "thirdPartyCodeExecuted": false,
+    "dependencyInstalls": 0,
+    "sceneAssetsDownloaded": 0,
+    "numericalExperiments": 0,
+    "GPURuns": 0
+  },
+  "costUnknown": {
+    "totalNetworkBytes": null,
+    "researchWallSeconds": null,
+    "rendererWallSeconds": null
+  },
+  "rootChecks": {
+    "savedSourceIdentitiesVerified": 9,
+    "publicationReviewHashesVerified": 4,
+    "relativeMarkdownLinksChecked": 73,
+    "pinnedSourceLineLinksChecked": 57,
+    "scientificSourceFilesChanged": false,
+    "coreSHA256": "ac750b70a86743ac858f1c53cf620ce29c63c462456115af4d0d8c93fa20bd9e",
+    "sourceBodiesKeptOutsideRepository": true
+  },
+  "automation": {
+    "id": "vortexgaussians",
+    "action": "delete",
+    "toolConfirmedDeleteStatus": "deleted",
+    "reason": "No running job, qualified next finite task or pending external change to monitor after T15/T16 queue closure.",
+    "researchGoalComplete": false,
+    "userRequestedPause": false,
+    "continuingResearchAuthorizationRevoked": false
+  },
+  "nextTask": null,
+  "files": {
+    "tracks/tog/tasks/t16-ordinary-volume-reference/access-ledger.json": {
+      "sha256": "5c9adab5a3ed0f570053e1ba4cf80d6ff208474e42df308faaab4bee5a6eb025",
+      "bytes": 7031
+    },
+    "tracks/tog/tasks/t16-ordinary-volume-reference/COST.md": {
+      "sha256": "68ecb00de7835e6c6ea3bb56620baf9b693b14891c21b1bb6638032537ff395f",
+      "bytes": 6569
+    },
+    "tracks/tog/tasks/t16-ordinary-volume-reference/README.md": {
+      "sha256": "27e81ad3b4938e4afb83b5b0fdeb6a2c11983d2c7299675eeff2d01a51cc952d",
+      "bytes": 5434
+    },
+    "tracks/tog/tasks/t16-ordinary-volume-reference/SEMANTICS.md": {
+      "sha256": "c5a4e21bff60b2b094708b6315dcd309e3cb2c7dcc142485d0e5a42693b09f46",
+      "bytes": 18501
+    },
+    "tracks/validation/t16-source-audit-review.md": {
+      "sha256": "658c38ee312af85da797b2b1e0e41a486ee9c3e31ce71d6d73b41c2a9a931d16",
+      "bytes": 8996
+    }
+  },
+  "claimLimits": [
+    "Fixed six-file snapshot only; not all author code or paper behavior.",
+    "Static model/cost inspection, not runtime qualification, pixel certification or measured bottleneck.",
+    "A standard quadrature reference remains possible; current absence does not establish scientific impossibility.",
+    "No fourth candidate, altered historical gate, resumed D03, modified renderer or new art work."
+  ]
+}

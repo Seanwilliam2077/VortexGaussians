@@ -1,0 +1,146 @@
+{
+  "revision": "622fabdac87aa446ca84131da97ebb9ac7d3d20c",
+  "requests": [
+    {
+      "url": "https://api.github.com/repos/facebookresearch/volumetric_primitives/git/trees/622fabdac87aa446ca84131da97ebb9ac7d3d20c?recursive=1",
+      "purpose": "pinned repository tree metadata",
+      "startedUTC": "2026-10-28T06:35:56Z",
+      "error": "HTTPError: HTTP Error 403: rate limit exceeded"
+    },
+    {
+      "url": "https://github.com/facebookresearch/volumetric_primitives/tree/622fabdac87aa446ca84131da97ebb9ac7d3d20c/volprim",
+      "purpose": "single normal public tree fallback via web.open",
+      "error": "web tool restricted URL/fetch failure",
+      "bytes": null
+    },
+    {
+      "path": "README.md",
+      "url": "https://raw.githubusercontent.com/facebookresearch/volumetric_primitives/622fabdac87aa446ca84131da97ebb9ac7d3d20c/README.md",
+      "purpose": "pinned metadata",
+      "status": 200,
+      "successfulBodyWritten": true,
+      "bytes": 6761,
+      "sha256": "183c3bd1389b42d99edc4778515a341af147b6861044af70075e93c4b36f3779",
+      "acquisitionNote": "Recovered local file after output UnicodeEncodeError prevented ledger flush; no repeat network request. README HTTP 200 retained in tool output; other status/timestamps not retained."
+    },
+    {
+      "path": "requirements.txt",
+      "url": "https://raw.githubusercontent.com/facebookresearch/volumetric_primitives/622fabdac87aa446ca84131da97ebb9ac7d3d20c/requirements.txt",
+      "purpose": "pinned metadata",
+      "status": null,
+      "successfulBodyWritten": true,
+      "bytes": 67,
+      "sha256": "d1d997c3d75e2f002d5470452eb9a1810bb80bc37cb69ff1fe256363b96f350b",
+      "acquisitionNote": "Recovered local file after output UnicodeEncodeError prevented ledger flush; no repeat network request. README HTTP 200 retained in tool output; other status/timestamps not retained."
+    },
+    {
+      "path": "environment.yml",
+      "url": "https://raw.githubusercontent.com/facebookresearch/volumetric_primitives/622fabdac87aa446ca84131da97ebb9ac7d3d20c/environment.yml",
+      "purpose": "pinned metadata",
+      "status": null,
+      "successfulBodyWritten": true,
+      "bytes": 202,
+      "sha256": "d0c18f23905d3a8a00e7da3998a7b5a8ba18f53b1efd316c39df6e11bc9a4124",
+      "acquisitionNote": "Recovered local file after output UnicodeEncodeError prevented ledger flush; no repeat network request. README HTTP 200 retained in tool output; other status/timestamps not retained."
+    },
+    {
+      "path": "examples/render_3dg_asset.py",
+      "url": "https://raw.githubusercontent.com/facebookresearch/volumetric_primitives/622fabdac87aa446ca84131da97ebb9ac7d3d20c/examples/render_3dg_asset.py",
+      "purpose": "code 1: entry point named in README",
+      "status": null,
+      "successfulBodyWritten": true,
+      "bytes": 2920,
+      "sha256": "9ac609a25a3d8fb7eee8c567b8b4ff238130b7307823056b41b1b3d520dd947a",
+      "acquisitionNote": "Recovered local file after output UnicodeEncodeError prevented ledger flush; no repeat network request. README HTTP 200 retained in tool output; other status/timestamps not retained."
+    },
+    {
+      "path": "volprim/__init__.py",
+      "url": "https://raw.githubusercontent.com/facebookresearch/volumetric_primitives/622fabdac87aa446ca84131da97ebb9ac7d3d20c/volprim/__init__.py",
+      "purpose": "code 2: import volprim at examples/render_3dg_asset.py:23",
+      "startedUTC": "2026-10-28T06:38:55Z",
+      "status": 200,
+      "bytes": 425,
+      "sha256": "9fa8bab4199a35c2c6aad14770c802de902ffe6b498abcb2131726168905181e"
+    },
+    {
+      "path": "volprim/integrators/__init__.py",
+      "url": "https://raw.githubusercontent.com/facebookresearch/volumetric_primitives/622fabdac87aa446ca84131da97ebb9ac7d3d20c/volprim/integrators/__init__.py",
+      "purpose": "code 3: from . import integrators in volprim/__init__.py",
+      "startedUTC": "2026-10-28T06:39:14Z",
+      "status": 200,
+      "bytes": 286,
+      "sha256": "6a916ed042afbf2e96417a7fd44c00381786fa1f9657b8192626802377bc92a6"
+    },
+    {
+      "path": "volprim/integrators/volprim_rf.py",
+      "url": "https://raw.githubusercontent.com/facebookresearch/volumetric_primitives/622fabdac87aa446ca84131da97ebb9ac7d3d20c/volprim/integrators/volprim_rf.py",
+      "purpose": "code 4/5: explicitly imported by integrators/__init__.py; RF entry point and shared helpers",
+      "startedUTC": "2026-10-28T06:39:31Z",
+      "status": 200,
+      "bytes": 8352,
+      "sha256": "b45efa6f9cf2095aa0092c6ce94701237fd38c9e23b1f59e3db9f26e8d9175f1"
+    },
+    {
+      "path": "volprim/integrators/common.py",
+      "url": "https://raw.githubusercontent.com/facebookresearch/volumetric_primitives/622fabdac87aa446ca84131da97ebb9ac7d3d20c/volprim/integrators/common.py",
+      "purpose": "code 4/5: explicitly imported by integrators/__init__.py; RF entry point and shared helpers",
+      "startedUTC": "2026-10-28T06:39:31Z",
+      "status": 200,
+      "bytes": 24747,
+      "sha256": "d8f020bacd9f7b775d7f7eb02de80bd0ffcec004753db2e94bca35a122ff5a8c"
+    },
+    {
+      "path": "volprim/integrators/volprim_prb.py",
+      "url": "https://raw.githubusercontent.com/facebookresearch/volumetric_primitives/622fabdac87aa446ca84131da97ebb9ac7d3d20c/volprim/integrators/volprim_prb.py",
+      "purpose": "code 6: physical path integrator imported by integrators/__init__.py; primitive_tracing common helper explicitly identifies this caller",
+      "startedUTC": "2026-10-28T06:39:52Z",
+      "status": 200,
+      "bytes": 30009,
+      "sha256": "95729d9464c81963996e8b29b8379a400ef384e4a10c081b8018365820c92a25"
+    }
+  ],
+  "localFailures": [
+    {
+      "operation": "print concurrently fetched source text before ledger flush",
+      "error": "UnicodeEncodeError: GBK stdout cannot encode README warning emoji",
+      "effect": "four files saved; HTTP metadata for three files lost; bytes and hashes recovered locally without re-fetch"
+    }
+  ],
+  "discovery": [
+    {
+      "tool": "web.open",
+      "url": "https://github.com/facebookresearch/volumetric_primitives",
+      "result": "repository landing and README accessible; used for entry-point discovery, not pinned code evidence",
+      "networkBytes": null
+    },
+    {
+      "tool": "git ls-remote --symref",
+      "url": "https://github.com/facebookresearch/volumetric_primitives.git",
+      "argument": "HEAD",
+      "result": "ref: refs/heads/main HEAD; 622fabdac87aa446ca84131da97ebb9ac7d3d20c HEAD",
+      "networkBytes": null
+    }
+  ],
+  "limits": {
+    "codeFiles": 6,
+    "readmeFiles": 1,
+    "buildMetadataFiles": 2,
+    "successfulSourceBodyByteCap": 2097152,
+    "searchQueries": 0,
+    "additionalSourceAcquisitionAllowed": false
+  },
+  "totals": {
+    "savedTextFiles": 9,
+    "codeFiles": 6,
+    "successfulSourceBodyBytes": 73769,
+    "totalNetworkBytes": null,
+    "researchWallSeconds": null
+  },
+  "execution": {
+    "thirdPartyCodeExecuted": false,
+    "dependencyInstalls": 0,
+    "sceneAssetsDownloaded": 0,
+    "numericalExperiments": 0,
+    "GPURuns": 0
+  }
+}
