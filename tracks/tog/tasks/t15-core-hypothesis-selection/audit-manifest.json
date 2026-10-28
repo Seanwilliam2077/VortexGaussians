@@ -1,0 +1,97 @@
+{
+  "schema": "t15-core-selection-v1",
+  "date": "2026-10-28",
+  "status": "completed",
+  "previousResearchCommit": "1608150888849228e33e1bb30ff6eed4d2e9a9f3",
+  "decision": "NO_NEW_METHOD_SELECTED",
+  "scope": "Three predeclared operations; current mechanism claims rejected, not all operations solved or impossible.",
+  "search": {
+    "rounds": [
+      [
+        "affine particle in cell anisotropic Gaussian conservative particle grid transfer paper",
+        "topology preserving geometric multigrid pressure disconnected fluid domains paper",
+        "Gaussian volumetric rendering analytic integration error bounds ray tracing emission absorption paper"
+      ],
+      [
+        "\"Affine particle in cell method for MAC grids and fluid simulation\" pdf Schroeder Ding Shinar",
+        "fluid pressure multigrid connectivity preserving coarsening moving solid boundaries"
+      ]
+    ],
+    "queryCount": 5,
+    "distinctPrimaryWorkFamilies": 6,
+    "agentSearchQueries": 0,
+    "unselectedSearchSnippetsUsedAsEvidence": false
+  },
+  "execution": {
+    "numericalExperiments": 0,
+    "trainingRuns": 0,
+    "GPUCalls": 0,
+    "solverImplementations": 0,
+    "dependencyInstalls": 0,
+    "thirdPartySceneAssetsDownloaded": 0,
+    "outreachMessages": 0,
+    "knownAPICPaperPDFDownloadBytes": 16866093,
+    "totalNetworkBytes": null,
+    "researchWallSeconds": null
+  },
+  "rootChecks": {
+    "sourceJSONFilesParsed": 3,
+    "relativeMarkdownLinksChecked": 76,
+    "reviewedFileHashesVerified": 4,
+    "scientificSourceFilesChanged": false,
+    "coreSHA256": "ac750b70a86743ac858f1c53cf620ce29c63c462456115af4d0d8c93fa20bd9e"
+  },
+  "reviewLimits": "Cross-candidate reviewer authored B; no independent reacquisition of all source pages. Root checked mathematical reductions and artifact identities, not execution performance.",
+  "nextTask": {
+    "id": "T16",
+    "state": "not_started",
+    "purpose": "One existing official implementation, same-model ordinary integration contract and full cost; conditional preparation only, no selected new method.",
+    "specification": "tracks/tog/tasks/t15-core-hypothesis-selection/NEXT_EVIDENCE.md"
+  },
+  "files": {
+    "tracks/tog/tasks/t15-core-hypothesis-selection/a-sources.json": {
+      "sha256": "67d7f9e544039b8151cbe09bfcac264343f5d6c783d5953ca7e8d36d09de2c80",
+      "bytes": 2719
+    },
+    "tracks/tog/tasks/t15-core-hypothesis-selection/A_TRANSFER.md": {
+      "sha256": "f470f356918b70ef2f025cc515a1dbf1860992bd7ba09235fbd189a578527daf",
+      "bytes": 6494
+    },
+    "tracks/tog/tasks/t15-core-hypothesis-selection/b-sources.json": {
+      "sha256": "d1840dc82baa0576c714de497d00e14d7e9741e0ecbd0a234d03fa65aa614c36",
+      "bytes": 2820
+    },
+    "tracks/tog/tasks/t15-core-hypothesis-selection/B_PRESSURE.md": {
+      "sha256": "e8df5bf42b3c07f97489659cc6f43089a3ee91fa7bced4cef6107f7cec0cccc4",
+      "bytes": 6849
+    },
+    "tracks/tog/tasks/t15-core-hypothesis-selection/c-sources.json": {
+      "sha256": "24804e59b065f1477deef93569e179d07699f46dd8aded79b01942b4b074da38",
+      "bytes": 2974
+    },
+    "tracks/tog/tasks/t15-core-hypothesis-selection/C_VOLUME.md": {
+      "sha256": "e89c9c0a6c480e391cb316750e9fb58bbdbcd32630c796786e276a07891e4578",
+      "bytes": 8572
+    },
+    "tracks/tog/tasks/t15-core-hypothesis-selection/CANDIDATES_BEFORE_SEARCH.md": {
+      "sha256": "c87af20d0ad8245da5a2a237dd178013a9b6c984c370bccf3034a5928c577e68",
+      "bytes": 6053
+    },
+    "tracks/tog/tasks/t15-core-hypothesis-selection/NEXT_EVIDENCE.md": {
+      "sha256": "8154b424596934b2d9edf7277e9417fd3844c5010260332eaacbe4d06aefac7d",
+      "bytes": 3675
+    },
+    "tracks/tog/tasks/t15-core-hypothesis-selection/PROTOCOL.md": {
+      "sha256": "9ab3df7de74e9b5bdb5adb3ee4869f1b7b31b94bba23d5ba0e903ae2d3acef53",
+      "bytes": 2994
+    },
+    "tracks/tog/tasks/t15-core-hypothesis-selection/README.md": {
+      "sha256": "b7a4b646267b434777de75c5556272bdcb836b616474960f1645be32555a848e",
+      "bytes": 4510
+    },
+    "tracks/validation/t15-selection-review.md": {
+      "sha256": "b66eca621b8a3485407a8a968c2f20d565ae4487a816088de5097dbcfe1e007b",
+      "bytes": 8466
+    }
+  }
+}

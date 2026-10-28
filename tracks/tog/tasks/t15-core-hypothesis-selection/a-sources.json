@@ -1,0 +1,42 @@
+{
+  "candidate": "A",
+  "date": "2026-10-28",
+  "status": "not_selected_no_distinct_mechanism_specified",
+  "sourceFamilyCount": 2,
+  "agentSearchQueries": 0,
+  "searchCoordination": "Both families chosen by root in round 1; MAC author URL located by root in round 2. Agent only opened these families.",
+  "sources": [
+    {
+      "title": "The Affine Particle-In-Cell Method",
+      "year": 2015,
+      "doi": "10.1145/2766996",
+      "primaryUrl": "https://math.ucdavis.edu/~jteran/papers/JSSTS15.pdf",
+      "read": "Author PDF text, sections 5.1-6 and 9; page 6 equations visually checked after rendering; introductory context also read.",
+      "access": "web.open rejected PDF length; downloaded once to external OS temporary scratch, extracted with bundled pypdf and rendered pages 5-6 with bundled Poppler. PDF not added to repository.",
+      "bytes": 16866093,
+      "sha256": "0de6a54c1c09e3ba5948de690c50c23b0368ddbc5a861c0355a30658ef00ecf0",
+      "notRead": ["supplementary proof document", "executable implementation"],
+      "notClaimed": ["exact angular momentum for the 2015 MAC variant", "physical Gaussian splitting or merging guarantees", "optical preservation"]
+    },
+    {
+      "title": "Affine particle in cell method for MAC grids and fluid simulation",
+      "publicationYear": 2020,
+      "inspectedVersion": "Author preprint dated 2019-08-14; 44 pages",
+      "doi": "10.1016/j.jcp.2020.109311",
+      "primaryUrl": "https://www.cs.ucr.edu/~shinar/papers/2019-mac-apic.pdf",
+      "read": "Abstract; sections 2.2, 2.4-2.5, 6-6.1 and 7.1.1-7.1.4; Figure 20 caption and definitions, equations (1)-(10), (17)-(19). Text inspected via web PDF extraction.",
+      "accessFailures": [
+        {"url": "https://www.sciencedirect.com/science/article/pii/S0021999120300851", "result": "403"},
+        {"url": "https://doi.org/10.1016/j.jcp.2020.109311", "result": "web tool inaccessible"},
+        {"url": "https://escholarship.org/uc/item/0vc0g86n", "result": "429"}
+      ],
+      "notRead": ["executable implementation", "full empirical/Fourier-analysis sections", "publisher final PDF"],
+      "notClaimed": ["conservation of the complete pressure-projected algorithm", "arbitrary Gaussian cell weights satisfy interpolation assumptions", "optical transfer guarantees"]
+    }
+  ],
+  "originalReasoning": "Analytic equal-moment two-Gaussian/single-Gaussian central-line optical-depth counterexample; no numerical experiment or novelty claim.",
+  "unsearched": ["general conservative remapping", "Gaussian-mixture compression", "adaptive particle resampling", "application-specific rendering transfer"],
+  "gpuWork": false,
+  "implementationWork": false,
+  "newProductionDemandEvidence": false
+}

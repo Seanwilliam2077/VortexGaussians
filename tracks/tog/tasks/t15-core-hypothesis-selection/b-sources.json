@@ -1,0 +1,54 @@
+{
+  "task": "T15",
+  "candidate": "B",
+  "date": "2026-10-28",
+  "status": "screened_no_go",
+  "search_coordination": {
+    "query_executed_by": "root",
+    "round_2_query": "fluid pressure multigrid connectivity preserving coarsening moving solid boundaries",
+    "agent_search_queries": 0,
+    "distinct_primary_source_families_inspected": 2,
+    "third_family_followed": false
+  },
+  "sources": [
+    {
+      "id": "B1",
+      "title": "Preserving Geometry and Topology for Fluid Flows with Thin Obstacles and Narrow Gaps",
+      "authors": ["Vinicius C. Azevedo", "Christopher Batty", "Manuel M. Oliveira"],
+      "year": 2016,
+      "record_url": "https://uwspace.uwaterloo.ca/items/339d8054-56bf-4ed3-8b6c-b44997ee82f3",
+      "full_text_url": "https://uwspace.uwaterloo.ca/bitstreams/9459a480-4969-40c2-9ef2-11a7244ee7e6/download",
+      "version": "author manuscript, ACM TOG 35(4), article 97",
+      "doi": "10.1145/2897824.2925919",
+      "inspected": ["institutional record", "Algorithm 1", "Section 4", "Section 7", "Table 2"],
+      "relevance": "Topology-respecting graph pressure projection and moving geometry.",
+      "limits": ["No incremental multigrid cost guarantee established by this inspection.", "Paper code and datasets were not inspected or downloaded."]
+    },
+    {
+      "id": "B2",
+      "title": "Matrix-Free Multigrid with Algebraically Consistent Coarsening on Adaptive Octrees",
+      "authors": ["Mengdi Wang", "Yuchen Sun", "Bo Zhu"],
+      "year": 2026,
+      "record_url": "https://arxiv.org/abs/2604.18886v1",
+      "full_text_url": "https://arxiv.org/html/2604.18886v1",
+      "version": "arXiv:2604.18886v1, submitted 2026-04-20; JCP submission, acceptance unverified",
+      "inspected": ["arXiv record", "Sections 2.1-2.5", "Section 3 overview", "Sections 4.4-4.6", "Section 5"],
+      "relevance": "Consistent coarsening and moving-obstacle pressure solves.",
+      "limits": ["Disconnected-component nullspaces and incremental topology-update costs remain unestablished in this inspection.", "Final-timestep pressure timing is not our end-to-end edit cost.", "No implementation or asset availability was verified."]
+    }
+  ],
+  "local_evidence": [
+    "tracks/tog/tasks/t15-core-hypothesis-selection/PROTOCOL.md",
+    "tracks/tog/tasks/t15-core-hypothesis-selection/CANDIDATES_BEFORE_SEARCH.md",
+    "tracks/tog/tasks/t14-input-task-audit/NEXT_HYPOTHESIS.md",
+    "tracks/tog/src/core.py"
+  ],
+  "execution": {
+    "numerical_experiments": 0,
+    "solver_implementations": 0,
+    "gpu_runs": 0,
+    "third_party_assets_downloaded": 0,
+    "external_outreach": 0
+  },
+  "conclusion_scope": "Current mechanism is unspecified beyond valid pressure-solver correctness/reuse. This is not an exhaustive prior-art conclusion or proof that dynamic topology research is solved."
+}

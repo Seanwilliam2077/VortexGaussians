@@ -1,0 +1,59 @@
+{
+  "task": "T15",
+  "candidate": "C",
+  "reviewDate": "2026-10-28",
+  "sourceFamilyBudgetUsed": 2,
+  "agentSearchQueries": 0,
+  "numericalExecutions": 0,
+  "decision": "not_selected_current_mechanism_reduces_to_standard_weighted_interval_quadrature",
+  "families": [
+    {
+      "title": "Don't Splat your Gaussians: Volumetric Ray-Traced Primitives for Modeling and Rendering Scattering and Emissive Media",
+      "doi": "10.1145/3711853",
+      "arxiv": "2405.15425v3",
+      "inspected": [
+        "https://arcanous98.github.io/projectPages/gaussianVolumes.html",
+        "https://arcanous98.github.io/assets/data/papers/Gaussian_tracing_meta_TOG-compressed.pdf",
+        "https://arcanous98.github.io/assets/data/papers/Gaussian_tracing_meta_TOG_supplemental-compressed.pdf",
+        "https://arxiv.org/abs/2405.15425",
+        "https://arxiv.org/html/2405.15425v3",
+        "https://github.com/facebookresearch/volumetric_primitives"
+      ],
+      "primaryLocators": [
+        "Main paper sections 4.1, 4.2 and 5.1; equations 6, 8, 10, 11 and 14",
+        "Main paper section 6.1, equation 22",
+        "Supplement section S.1.4, equation S.12 and its following paragraph",
+        "Author implementation README: Installation and Integrators"
+      ],
+      "versionCaution": "Author PDF is an 18-page manuscript with January 2025 template metadata; arXiv current landing page lists v3 revised 8 September 2025 and a 17-page comment. Relevant equation 22 was read in both representations. These are one family, not independent confirmations.",
+      "implementationInspection": "README only; source bodies not obtained; no installation or runtime",
+      "accessLimits": [
+        "Web fetch of GitHub volprim tree returned restricted URL/fetch failure",
+        "One unauthenticated GitHub tree API request returned rate-limit-exceeded; no retry or alternate credentials"
+      ]
+    },
+    {
+      "title": "Volumetrically Consistent 3D Gaussian Rasterization",
+      "arxiv": "2412.03378v3",
+      "versionDate": "2025-05-21",
+      "inspected": [
+        "https://arxiv.org/abs/2412.03378",
+        "https://arxiv.org/html/2412.03378v3",
+        "https://github.com/chinmay0301ucsd/Vol3DGS"
+      ],
+      "primaryLocators": [
+        "Sections 3.2 and 4: rendering assumptions and analytic alpha",
+        "Section 7: Sorting and overlap",
+        "Appendix A: equation 22 and Figure 7",
+        "Appendix B: one-dimensional Gaussian restriction"
+      ],
+      "implementationInspection": "Repository landing page only; no implementation audit, installation or runtime"
+    }
+  ],
+  "claimLimits": [
+    "Two source families do not constitute an exhaustive novelty review",
+    "No deterministic certification absence claim is made from source silence",
+    "Analytic enclosure derivation in C_VOLUME.md is an independent mathematical check, not a performance experiment",
+    "No authored analytic input was executed and no creator need was established"
+  ]
+}
