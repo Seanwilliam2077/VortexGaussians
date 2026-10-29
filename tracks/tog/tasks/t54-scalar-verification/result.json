@@ -1,0 +1,126 @@
+{
+  "schema": "t52-scalar-enstrophy-tangent-measurement-v1",
+  "created_utc": "2026-10-29T23:27:16.738010+00:00",
+  "status": "consistent",
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "executable": "C:\\Users\\seanzjxiao\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "measurement_script": {
+    "bytes": 5071,
+    "sha256": "488085c916d8172a9f243c2fa9f3e4cf18cc118ca6e628cc7d6fed4636657743"
+  },
+  "settings": {
+    "orders": [
+      128,
+      256,
+      512
+    ],
+    "radius": 12.0,
+    "tolerance": 1e-09,
+    "series_threshold": 0.25,
+    "series_terms": 12,
+    "total_nodes": 896
+  },
+  "closed_moments": [
+    1.661675485223921,
+    0.4824008363721784,
+    0.1602620299206584
+  ],
+  "rules": [
+    {
+      "nodes": 128,
+      "moments": [
+        1.6616754852239097,
+        0.4824008363721748,
+        0.16026202992065702
+      ],
+      "relative_difference_from_closed": [
+        6.814973773083365e-15,
+        7.47972341251906e-15,
+        8.659435934191642e-15
+      ],
+      "node_generation_seconds": 0.005903699900954962,
+      "integration_seconds": 0.00012430001515895128,
+      "node_and_integration_seconds": 0.006033199955709279
+    },
+    {
+      "nodes": 256,
+      "moments": [
+        1.66167548522392,
+        0.48240083637217757,
+        0.1602620299206578
+      ],
+      "relative_difference_from_closed": [
+        6.681346836356241e-16,
+        1.7260900182736292e-15,
+        3.810151811044323e-15
+      ],
+      "node_generation_seconds": 0.008937699953094125,
+      "integration_seconds": 0.000152900000102818,
+      "node_and_integration_seconds": 0.009094199980609119
+    },
+    {
+      "nodes": 512,
+      "moments": [
+        1.6616754852239124,
+        0.4824008363721755,
+        0.1602620299206572
+      ],
+      "relative_difference_from_closed": [
+        5.211450532357867e-15,
+        5.983778730015248e-15,
+        7.620303622088645e-15
+      ],
+      "node_generation_seconds": 0.03961219999473542,
+      "integration_seconds": 0.00031649996526539326,
+      "node_and_integration_seconds": 0.039932999992743134
+    }
+  ],
+  "adjacent_rule_relative_differences": [
+    [
+      6.146839089447741e-15,
+      5.753633394245431e-15,
+      4.84928412314732e-15
+    ],
+    [
+      4.543315848722243e-15,
+      4.257688711741619e-15,
+      3.810151811044323e-15
+    ]
+  ],
+  "real_arithmetic_tail_upper_bounds": [
+    3.664573476379817e-58,
+    2.4430489842532115e-58,
+    1.6286993228354743e-58
+  ],
+  "real_arithmetic_series_remainder_upper_bound": 1.341311127745098e-28,
+  "closed_metrics": {
+    "beta_best_over_g0": 0.29030989544096925,
+    "beta_center_over_g0": 0.6666666666666666,
+    "E_best": 0.3551693233816372,
+    "E_center": 1.2628476537634736,
+    "E_zero_derivative_reference": 1.0,
+    "best_to_center_residual_ratio": 0.2812447901559462,
+    "residual_reduction_fraction": 0.7187552098440537,
+    "kappa_N": 0.329396116405985,
+    "kappa_best": 0.11699139578845269,
+    "kappa_center": 0.4159771127620982
+  },
+  "finest_rule_metrics": {
+    "beta_best_over_g0": 0.290309895440969,
+    "beta_center_over_g0": 0.6666666666666666,
+    "E_best": 0.3551693233816361,
+    "E_center": 1.2628476537634752,
+    "E_zero_derivative_reference": 1.0,
+    "best_to_center_residual_ratio": 0.281244790155945,
+    "residual_reduction_fraction": 0.718755209844055,
+    "kappa_N": 0.3293961164059837,
+    "kappa_best": 0.11699139578845187,
+    "kappa_center": 0.4159771127620971
+  },
+  "formal_floating_point_certificate": false,
+  "fluid_trajectories": 0,
+  "new_methods_implemented": 0,
+  "child_elapsed_before_result_write_seconds": 0.4566193000646308
+}

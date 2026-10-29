@@ -1,0 +1,55 @@
+{
+  "schema": "t54-verification-input-freeze-v1",
+  "created_utc": "2026-10-29T23:27:07.658386+00:00",
+  "parent_commit": "0a6dc766308767337456c508bc12efa0a097ec8a",
+  "inputs": [
+    {
+      "path": "tracks/tog/tasks/t54-scalar-verification/.gitignore",
+      "bytes": 7,
+      "sha256": "a7d8bdcefba82a95ebc021d87c629fdea21f13af953bf01e28b7cf8b0eeceb41"
+    },
+    {
+      "path": "tracks/tog/tasks/t54-scalar-verification/SCOPE.md",
+      "bytes": 4175,
+      "sha256": "d7ddc2b72e4fc0b94f166e01f625feea174aab61f0f9fdc6a04931be082c4dcf"
+    },
+    {
+      "path": "tracks/tog/tasks/t54-scalar-verification/run_once.py",
+      "bytes": 5397,
+      "sha256": "9f57ae578016b35f5bc377a07cda111d39786e0fef122a98a3b15fef7f4e6465"
+    },
+    {
+      "path": "tracks/tog/tasks/t52-best-tangent-enstrophy/measure.py",
+      "bytes": 5071,
+      "sha256": "488085c916d8172a9f243c2fa9f3e4cf18cc118ca6e628cc7d6fed4636657743"
+    },
+    {
+      "path": "tracks/tog/tasks/t52-best-tangent-enstrophy/ANALYSIS.md",
+      "bytes": 5822,
+      "sha256": "16d2f8b9f9d1e7ea3d9e664bbb3edd2d104d6b87bee052899ceb508d12fdfae3"
+    },
+    {
+      "path": "tracks/tog/tasks/t52-best-tangent-enstrophy/RUN_PROTOCOL.md",
+      "bytes": 4155,
+      "sha256": "b269487b7f1854943ab98ef80b711b12aa6b78b1ab78630bca391a8c36f8e436"
+    },
+    {
+      "path": "tracks/tog/tasks/t53-runtime-diagnosis/DECISION.md",
+      "bytes": 2808,
+      "sha256": "347152e5b628685a3b12ea654d1ca7af5b5bbf89d98f505f56e3f91f5158b889"
+    }
+  ],
+  "executable": {
+    "path": "C:/Users/seanzjxiao/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe",
+    "bytes": 107312,
+    "sha256": "5640e9be2fd33d05a1a9ae1228e2354609a69ab831605995ec4e2bd6da8fff5e"
+  },
+  "evaluator_path": "tracks/tog/tasks/t52-best-tangent-enstrophy/measure.py",
+  "maximum_scientific_child_invocations": 1,
+  "cumulative_scientific_attempt_number": 2,
+  "child_timeout_seconds": 60,
+  "prior_failed_scientific_attempts": 1,
+  "prior_runtime_diagnostic_invocations": 2,
+  "scientific_evaluator_invocations_before_freeze_this_task": 0,
+  "pre_run_review": "t48_review: no unresolved scope/supervisor blocker; no evaluator execution"
+}

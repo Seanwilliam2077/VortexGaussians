@@ -1,0 +1,258 @@
+{
+  "schema": "t54-scalar-verification-publication-v1",
+  "created_utc": "2026-10-29T23:35:25.349308+00:00",
+  "parent_commit": "0a6dc766308767337456c508bc12efa0a097ec8a",
+  "goal_status": "active_not_submission_ready",
+  "evidence": {
+    "previous_goal_turn": "progress: T53 identified a current diagnostic failure interval and an existing tiny-operation runtime route",
+    "current_turn": "progress: unchanged scalar evaluator completed and quantified the strong ordinary baseline",
+    "scientific_child_invocations_this_task": 1,
+    "cumulative_scientific_attempts": 2,
+    "prior_failed_scientific_attempts": 1,
+    "prior_runtime_diagnostic_invocations": 2,
+    "new_runtime_diagnostic_invocations": 0,
+    "child_timeout_seconds": 60,
+    "execution_status": "completed_consistent",
+    "scientific_consistency_qualified": true,
+    "completed_rules": [
+      128,
+      256,
+      512
+    ],
+    "completed_shared_nodes": 896,
+    "saved_comparison_count": 15,
+    "maximum_saved_relative_difference": 8.659435934191642e-15,
+    "original_consistency_tolerance": 1e-09,
+    "metric": "initial all-space L2 physical vorticity-derivative residual",
+    "closed_metrics": {
+      "beta_best_over_g0": 0.29030989544096925,
+      "beta_center_over_g0": 0.6666666666666666,
+      "E_best": 0.3551693233816372,
+      "E_center": 1.2628476537634736,
+      "E_zero_derivative_reference": 1.0,
+      "best_to_center_residual_ratio": 0.2812447901559462,
+      "residual_reduction_fraction": 0.7187552098440537,
+      "kappa_N": 0.329396116405985,
+      "kappa_best": 0.11699139578845269,
+      "kappa_center": 0.4159771127620982
+    },
+    "finest_rule_metrics": {
+      "beta_best_over_g0": 0.290309895440969,
+      "beta_center_over_g0": 0.6666666666666666,
+      "E_best": 0.3551693233816361,
+      "E_center": 1.2628476537634752,
+      "E_zero_derivative_reference": 1.0,
+      "best_to_center_residual_ratio": 0.281244790155945,
+      "residual_reduction_fraction": 0.718755209844055,
+      "kappa_N": 0.3293961164059837,
+      "kappa_best": 0.11699139578845187,
+      "kappa_center": 0.4159771127620971
+    },
+    "ordinary_full_parameter_fit": true,
+    "novel_method_advantage": false,
+    "finite_time_flow_error_measured": false,
+    "application_quality_established": false,
+    "formal_floating_point_certificate": false,
+    "execution_costs": [
+      {
+        "task": "T52",
+        "kind": "failed_scientific",
+        "child_seconds": 4.807828599936329,
+        "supervisor_before_receipt_seconds": 4.814353100024164
+      },
+      {
+        "task": "T53_A",
+        "kind": "diagnostic",
+        "child_seconds": 5.221102399984375,
+        "supervisor_before_receipt_seconds": 5.236473200027831
+      },
+      {
+        "task": "T53_C",
+        "kind": "diagnostic",
+        "child_seconds": 0.3228970000054687,
+        "supervisor_before_receipt_seconds": 0.3276987000135705
+      },
+      {
+        "task": "T54",
+        "kind": "consistent_scientific",
+        "child_seconds": 0.5475459999870509,
+        "supervisor_before_receipt_seconds": 0.553717799950391
+      }
+    ],
+    "frozen_inputs_unchanged": true,
+    "executable_unchanged": true,
+    "original_evaluator_unchanged": true,
+    "T52_result_still_absent": true,
+    "prior_failure_reclassified": false,
+    "new_scientific_fallbacks": 0,
+    "fluid_trajectories": 0,
+    "new_methods_implemented": 0,
+    "source_acquisitions": 0,
+    "external_search_queries": 0,
+    "installations": 0,
+    "runtime_repairs": 0,
+    "rendering_executions": 0,
+    "saved_data_readbacks": 1,
+    "readback_provenance": "same second agent reviewed T52/T53 and T54 preparation; no independent replication",
+    "next_question_consultations": 1,
+    "next_question_consultant": "volume_screen: no numerical work or sources",
+    "next_question": "qualify a same-field free-space finite-time displacement/shape task and ordinary reference",
+    "next_reference_selected": false,
+    "next_scientific_run_selected": false,
+    "goal_status": "active_not_submission_ready"
+  },
+  "publication_plan": {
+    "path": "tracks/tog/tasks/t54-scalar-verification/local/publication-plan.json",
+    "bytes": 13429,
+    "sha256": "cad996d215145c59f190b931512ec8894d292b07b0fe0472ce2e686fe5a6e323"
+  },
+  "publication_plan_is_ignored_local_support": true,
+  "scientific_numerical_pass": true,
+  "T52_history_reclassified": false,
+  "execution_status": "completed_consistent",
+  "result_json_exists": true,
+  "artifacts": [
+    {
+      "path": "tracks/tog/tasks/t54-scalar-verification/.gitignore",
+      "bytes": 7,
+      "sha256": "a7d8bdcefba82a95ebc021d87c629fdea21f13af953bf01e28b7cf8b0eeceb41"
+    },
+    {
+      "path": "tracks/tog/tasks/t54-scalar-verification/DECISION.md",
+      "bytes": 4285,
+      "sha256": "52c7e6e29275e3cbe46663b43cb9117d2390bb335fef657d6ff4bb727d91a92b"
+    },
+    {
+      "path": "tracks/tog/tasks/t54-scalar-verification/README.md",
+      "bytes": 1443,
+      "sha256": "e26b0f589ffa0e8c94069fc7ebb9c9c08a89aeec7559f445279cd6a0fb2c6235"
+    },
+    {
+      "path": "tracks/tog/tasks/t54-scalar-verification/RESULTS.md",
+      "bytes": 4779,
+      "sha256": "95f39ef0c18fbb05b73abf14c28af9bc6099cad76dadcceb24dcfb733d68b8b6"
+    },
+    {
+      "path": "tracks/tog/tasks/t54-scalar-verification/SCOPE.md",
+      "bytes": 4175,
+      "sha256": "d7ddc2b72e4fc0b94f166e01f625feea174aab61f0f9fdc6a04931be082c4dcf"
+    },
+    {
+      "path": "tracks/tog/tasks/t54-scalar-verification/execution.json",
+      "bytes": 2507,
+      "sha256": "d442dd6cefb0a2b23ced9a83e857e05861167ed510089a837098c9f6f1010c4f"
+    },
+    {
+      "path": "tracks/tog/tasks/t54-scalar-verification/input-manifest.json",
+      "bytes": 2180,
+      "sha256": "7dd936c46c0652602d5c2f8ce24c5ef14aa55f672db803c43bd7d6e1cca92308"
+    },
+    {
+      "path": "tracks/tog/tasks/t54-scalar-verification/result.json",
+      "bytes": 3679,
+      "sha256": "66a83b67cff104773217757bc08fe9751dd357824778b130c432a4191d7cc9b8"
+    },
+    {
+      "path": "tracks/tog/tasks/t54-scalar-verification/run_once.py",
+      "bytes": 5397,
+      "sha256": "9f57ae578016b35f5bc377a07cda111d39786e0fef122a98a3b15fef7f4e6465"
+    },
+    {
+      "path": "tracks/validation/t54-scalar-review.md",
+      "bytes": 13323,
+      "sha256": "f1625f71aef525e3c08a1c16b37ecc7fdcbb1de5c1ba3c5e545b376dcc5454f7"
+    }
+  ],
+  "frozen_inputs": [
+    {
+      "path": "tracks/tog/tasks/t54-scalar-verification/.gitignore",
+      "bytes": 7,
+      "sha256": "a7d8bdcefba82a95ebc021d87c629fdea21f13af953bf01e28b7cf8b0eeceb41"
+    },
+    {
+      "path": "tracks/tog/tasks/t54-scalar-verification/SCOPE.md",
+      "bytes": 4175,
+      "sha256": "d7ddc2b72e4fc0b94f166e01f625feea174aab61f0f9fdc6a04931be082c4dcf"
+    },
+    {
+      "path": "tracks/tog/tasks/t54-scalar-verification/run_once.py",
+      "bytes": 5397,
+      "sha256": "9f57ae578016b35f5bc377a07cda111d39786e0fef122a98a3b15fef7f4e6465"
+    },
+    {
+      "path": "tracks/tog/tasks/t52-best-tangent-enstrophy/measure.py",
+      "bytes": 5071,
+      "sha256": "488085c916d8172a9f243c2fa9f3e4cf18cc118ca6e628cc7d6fed4636657743"
+    },
+    {
+      "path": "tracks/tog/tasks/t52-best-tangent-enstrophy/ANALYSIS.md",
+      "bytes": 5822,
+      "sha256": "16d2f8b9f9d1e7ea3d9e664bbb3edd2d104d6b87bee052899ceb508d12fdfae3"
+    },
+    {
+      "path": "tracks/tog/tasks/t52-best-tangent-enstrophy/RUN_PROTOCOL.md",
+      "bytes": 4155,
+      "sha256": "b269487b7f1854943ab98ef80b711b12aa6b78b1ab78630bca391a8c36f8e436"
+    },
+    {
+      "path": "tracks/tog/tasks/t53-runtime-diagnosis/DECISION.md",
+      "bytes": 2808,
+      "sha256": "347152e5b628685a3b12ea654d1ca7af5b5bbf89d98f505f56e3f91f5158b889"
+    }
+  ],
+  "current_state_documents": [
+    {
+      "path": "tracks/STATUS.md",
+      "bytes": 74190,
+      "sha256": "9432e78f6a8180ee1984e3fc4b2599b191c1c4e3a98aeb04cc689a77673f7039"
+    },
+    {
+      "path": "tracks/EXPLORATION.md",
+      "bytes": 8196,
+      "sha256": "780f2d47d687982be8c3f2b0eac1e560fdcb71898bc275dd239e929b5d4bd32e"
+    },
+    {
+      "path": "tracks/tog/README.md",
+      "bytes": 8301,
+      "sha256": "36dab62ff2093aa536923c779d4a5aab6cab70f5bd2f08ee6f977341989079f0"
+    }
+  ],
+  "preservation_chain": {
+    "parent_manifest": {
+      "path": "tracks/tog/tasks/t53-runtime-diagnosis/audit-manifest.json",
+      "bytes": 7633,
+      "sha256": "22545ebfb5f386e707cef1992a2fa336a393cc71be4e3bbfe3838a65e7645955"
+    },
+    "verified_prior_artifact_count": 638,
+    "all_recorded_prior_bytes_unchanged": true
+  },
+  "parent_tracked_file_count": 1166,
+  "other_parent_tracked_files_unchanged": 1163,
+  "literal_parent_blob_matches": 1149,
+  "CRLF_only_checkout_conversions": [
+    ".gitignore",
+    "CHANGELOG.md",
+    "PUBLISH.md",
+    "README.md",
+    "compare.html",
+    "index.html",
+    "research/EVIDENCE_STATUS.md",
+    "research/FRONTIER_EARLY_REJECTION.md",
+    "research/lib/p3d-baseline.json",
+    "research/lib/p3e-baseline.json",
+    "research/lib/p3f-baseline.json",
+    "research/lib/p3g-baseline.json",
+    "research/physical_reference/README.md",
+    "study/index.html"
+  ],
+  "all_parent_blob_ids_match_after_git_clean_filters": true,
+  "original_core": {
+    "path": "tracks/tog/src/core.py",
+    "bytes": 13301,
+    "sha256": "ac750b70a86743ac858f1c53cf620ce29c63c462456115af4d0d8c93fa20bd9e"
+  },
+  "historical_failures_unchanged": true,
+  "art_inactive": true,
+  "main_not_merged_or_deployed": true,
+  "automation_remains_deleted": true
+}

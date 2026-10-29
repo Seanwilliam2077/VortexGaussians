@@ -1,0 +1,66 @@
+{
+  "schema": "t54-single-verification-execution-v1",
+  "started_utc": "2026-10-29T23:27:16.368185+00:00",
+  "command": [
+    "C:\\Users\\seanzjxiao\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "-I",
+    "-B",
+    "-u",
+    "-X",
+    "utf8",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t52-best-tangent-enstrophy\\measure.py",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t54-scalar-verification\\result.json"
+  ],
+  "cwd": "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians",
+  "child_timeout_seconds": 60,
+  "scientific_child_invocations": 1,
+  "cumulative_scientific_attempt_number": 2,
+  "prior_failed_scientific_attempts": 1,
+  "prior_runtime_diagnostic_invocations": 2,
+  "input_manifest_identity": {
+    "bytes": 2180,
+    "sha256": "7dd936c46c0652602d5c2f8ce24c5ef14aa55f672db803c43bd7d6e1cca92308"
+  },
+  "evaluator_identity": {
+    "bytes": 5071,
+    "sha256": "488085c916d8172a9f243c2fa9f3e4cf18cc118ca6e628cc7d6fed4636657743"
+  },
+  "executable_identity": {
+    "bytes": 107312,
+    "sha256": "5640e9be2fd33d05a1a9ae1228e2354609a69ab831605995ec4e2bd6da8fff5e"
+  },
+  "supervisor_identity": {
+    "bytes": 5397,
+    "sha256": "9f57ae578016b35f5bc377a07cda111d39786e0fef122a98a3b15fef7f4e6465"
+  },
+  "returncode": 0,
+  "status": "completed_consistent",
+  "child_supervised_seconds": 0.5475459999870509,
+  "logs": [
+    {
+      "path": "local/stdout.txt",
+      "bytes": 616,
+      "sha256": "8c7442627680acfc87150c9f6f945de1dd0f60d57f9298646142757c3ffd5ad6"
+    },
+    {
+      "path": "local/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "frozen_inputs_unchanged": true,
+  "executable_unchanged": true,
+  "T52_result_still_absent": true,
+  "result_json_exists": true,
+  "scientific_consistency_qualified": true,
+  "result_identity": {
+    "bytes": 3679,
+    "sha256": "66a83b67cff104773217757bc08fe9751dd357824778b130c432a4191d7cc9b8"
+  },
+  "result_status": "consistent",
+  "result_code_identity_matches": true,
+  "result_settings_match": true,
+  "result_schema_matches": true,
+  "supervisor_elapsed_before_receipt_write_seconds": 0.553717799950391,
+  "finished_utc": "2026-10-29T23:27:16.920811+00:00"
+}
