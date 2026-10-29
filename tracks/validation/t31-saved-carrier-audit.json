@@ -1,0 +1,246 @@
+{
+  "schema": "t31-independent-saved-data-audit-v1",
+  "classification": "CLEAR_QUALIFIED_AUTHORED_INPUT_ONLY",
+  "scope": "Independent standard-library parsing/hash/arithmetic of saved receipts and all 810 primitive rows; no capture import, replay, browser, rays, integrals or external sources.",
+  "checks": 4970,
+  "failures": [],
+  "numeric_values_checked": 32156,
+  "nonfinite_paths": [],
+  "total_particle_rows": 810,
+  "freeze_sha256": "3c7a29482f7cdcf1f092c87d9cf56f469b4f85be7bef066c17c0b4f8c67584c5",
+  "frozen_artifacts": [
+    {
+      "path": "tracks/tog/tasks/t31-local-carrier/PROTOCOL.md",
+      "bytes": 8207,
+      "sha256": "5615c0702c0993b9674a7c8930c84ec6268d2a79d0b7b469a0b751c6d878ad23",
+      "matches": true
+    },
+    {
+      "path": "tracks/tog/tasks/t31-local-carrier/MODEL.md",
+      "bytes": 3652,
+      "sha256": "2fb5315f175f058509080fb4ba09b0e77ecac75206b7325662766adf88f66814",
+      "matches": true
+    },
+    {
+      "path": "tracks/tog/tasks/t31-local-carrier/capture.mjs",
+      "bytes": 12362,
+      "sha256": "fe09f9407dbab0f1134c9b5892ccd51ff13e85ca9b32e95b8c1a0b67bbd76aee",
+      "matches": true
+    },
+    {
+      "path": "tracks/tog/tasks/t31-local-carrier/supervise.py",
+      "bytes": 3421,
+      "sha256": "f297a9bcddacefacacb374eb7831e6fa8d05cbc230119b816105de84d3251a20",
+      "matches": true
+    },
+    {
+      "path": "tracks/validation/t31-pre-execution-review.md",
+      "bytes": 6886,
+      "sha256": "87fb39e26e853e8de105cb89bdac9583dab426edbc7aa27146898856d421cfba",
+      "matches": true
+    },
+    {
+      "path": "demo/index.html",
+      "bytes": 314044,
+      "sha256": "e9d808c434bdd8ce91482f60502f03f5d08c56b71c082eb704c53275ff9f57d0",
+      "matches": true
+    },
+    {
+      "path": "research/p3-design.mjs",
+      "bytes": 3969,
+      "sha256": "a9c6069993c1e8a2ec77ebd9d6ff82676ce195bd0136bbfd82bb6d0e329639b2",
+      "matches": true
+    },
+    {
+      "path": "research/lib/runtime.mjs",
+      "bytes": 5669,
+      "sha256": "cf540ed02429016ab2b8a50a1cd95ac14222247466a56cfbf37444234851b184",
+      "matches": true
+    }
+  ],
+  "compressed_artifacts": [
+    {
+      "path": "states.json.gz",
+      "gzip_bytes": 224545,
+      "gzip_sha256": "152a0aa52d6b6409d1c299366cbe17e6aa772dfe909760b23cb15ca2aeb5dde8",
+      "raw_bytes": 619128,
+      "raw_sha256": "f1d755fc84b351564fa9b365e0e241e861f8ce20d25dde53f0ca716856052e27"
+    },
+    {
+      "path": "carrier.json.gz",
+      "gzip_bytes": 58581,
+      "gzip_sha256": "39f4dc758bb790f3b88bb2bbfa65dbe469c030289d4237476f598e29b823dcf2",
+      "raw_bytes": 167310,
+      "raw_sha256": "b2a666a4a54b075e11e0e841a02b5d4768f399c715ea6cad1e331209185e62d1"
+    },
+    {
+      "path": "frame-090.json.gz",
+      "gzip_bytes": 75832,
+      "gzip_sha256": "3ea1441474710c549aa62ce8f35a8a22d6406e27cf2e572fa89a31c75ee19f54",
+      "raw_bytes": 208137,
+      "raw_sha256": "57330fe748dacbb4570957eac8f4703bb17ab4168d1f47cf1d41cac85d26c3d2"
+    },
+    {
+      "path": "frame-180.json.gz",
+      "gzip_bytes": 149015,
+      "gzip_sha256": "535493c19279a34ad1dbcdbf2c0fafc9ffe2f233c7ef4dc51cb2dcf5b13f68a5",
+      "raw_bytes": 410819,
+      "raw_sha256": "173bc7f60e52aeb5d461b7f5ca02894cb20d8aac386dd64c8dc1bf74d38dc945"
+    }
+  ],
+  "receipt_identities": [
+    {
+      "path": "attempt.json",
+      "bytes": 178,
+      "sha256": "cd7e1ac8b47b9f78165f315a6b06a2d27df84b656237f7c68708df0c34cd88d4"
+    },
+    {
+      "path": "worker-start.json",
+      "bytes": 43,
+      "sha256": "3915920c4c61db7811f274105a7323e631b64b9b199375464d12144a7160caeb"
+    },
+    {
+      "path": "result.json",
+      "bytes": 9390,
+      "sha256": "984d2cb436172f76d48fc4f03a3654feef1cc4480fee2ccd6476108bedd997b1"
+    },
+    {
+      "path": "execution.json",
+      "bytes": 773,
+      "sha256": "80b63d74746d9dee53fb58a6ea73d430ecfe52c1f18580001ecad25e7d5734b3"
+    }
+  ],
+  "max_absolute_discrepancies": {
+    "mu": 0.0,
+    "h": 0.0,
+    "k": 0.0,
+    "color": 0.0,
+    "aggregate_sequential": 0.0,
+    "aggregate_fsum": 3.410605131648481e-13,
+    "time": 5.773159728050814e-15
+  },
+  "frames": [
+    {
+      "frame": 90,
+      "count": 270,
+      "time": 1.4999999999999996,
+      "time_error": 4.440892098500626e-16,
+      "all_weights_implicit_one": true,
+      "statistics": {
+        "count": 270,
+        "sum_k": 40.073155027702256,
+        "integrated_3d_strength": 0.08497813237280627,
+        "max_color": 2.3239372513395082,
+        "min_color": 0.028374716456568024
+      },
+      "aggregate_discrepancies": {
+        "physics/temperatureSum": {
+          "sequential": 0.0,
+          "fsum": 2.842170943040401e-14
+        },
+        "physics/densitySum": {
+          "sequential": 0.0,
+          "fsum": 1.1368683772161603e-13
+        },
+        "physics/ageSum": {
+          "sequential": 0.0,
+          "fsum": 0.0
+        },
+        "render/temperatureSum": {
+          "sequential": 0.0,
+          "fsum": 2.842170943040401e-14
+        },
+        "render/densitySum": {
+          "sequential": 0.0,
+          "fsum": 1.1368683772161603e-13
+        },
+        "render/ageSum": {
+          "sequential": 0.0,
+          "fsum": 0.0
+        },
+        "render/opticalWeightSum": {
+          "sequential": 0.0,
+          "fsum": 0.0
+        },
+        "render/opticalDensitySum": {
+          "sequential": 0.0,
+          "fsum": 1.1368683772161603e-13
+        },
+        "sum_k": {
+          "sequential": 0.0,
+          "fsum": 1.4210854715202004e-14
+        },
+        "integrated_3d_strength": {
+          "sequential": 0.0,
+          "fsum": 9.71445146547012e-17
+        }
+      }
+    },
+    {
+      "frame": 180,
+      "count": 540,
+      "time": 2.9999999999999942,
+      "time_error": 5.773159728050814e-15,
+      "all_weights_implicit_one": true,
+      "statistics": {
+        "count": 540,
+        "sum_k": 65.71101349664323,
+        "integrated_3d_strength": 0.1393451351511709,
+        "max_color": 2.3430615086998454,
+        "min_color": 0.009695874730528319
+      },
+      "aggregate_discrepancies": {
+        "physics/temperatureSum": {
+          "sequential": 0.0,
+          "fsum": 3.410605131648481e-13
+        },
+        "physics/densitySum": {
+          "sequential": 0.0,
+          "fsum": 5.684341886080802e-14
+        },
+        "physics/ageSum": {
+          "sequential": 0.0,
+          "fsum": 1.1368683772161603e-13
+        },
+        "render/temperatureSum": {
+          "sequential": 0.0,
+          "fsum": 3.410605131648481e-13
+        },
+        "render/densitySum": {
+          "sequential": 0.0,
+          "fsum": 5.684341886080802e-14
+        },
+        "render/ageSum": {
+          "sequential": 0.0,
+          "fsum": 1.1368683772161603e-13
+        },
+        "render/opticalWeightSum": {
+          "sequential": 0.0,
+          "fsum": 0.0
+        },
+        "render/opticalDensitySum": {
+          "sequential": 0.0,
+          "fsum": 5.684341886080802e-14
+        },
+        "sum_k": {
+          "sequential": 0.0,
+          "fsum": 5.684341886080802e-14
+        },
+        "integrated_3d_strength": {
+          "sequential": 0.0,
+          "fsum": 2.7755575615628914e-17
+        }
+      }
+    }
+  ],
+  "lifecycle": {
+    "worker_elapsed_ms": 3865.6127,
+    "supervisor_elapsed_seconds": 4.388339700060897,
+    "time_order_pass": true
+  },
+  "limits": [
+    "Receipt consistency and source hashes do not establish independent replay or OS-level process/network tracing.",
+    "New authored continuous field differs from original billboard optics; no renderer correctness, timing, visual quality or production-need claim.",
+    "HDR colors require new range-aware accuracy and culling accounting; camera metadata is checked but no rays or images were generated."
+  ]
+}

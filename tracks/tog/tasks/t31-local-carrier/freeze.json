@@ -1,0 +1,51 @@
+{
+  "schema": "t31-pre-execution-freeze-v1",
+  "created_utc": "2026-10-29T15:08:26.280903+00:00",
+  "parent_commit": "3a79d2a65665dbce87f6fefdad377ba59912631b",
+  "artifacts": [
+    {
+      "path": "tracks/tog/tasks/t31-local-carrier/PROTOCOL.md",
+      "bytes": 8207,
+      "sha256": "5615c0702c0993b9674a7c8930c84ec6268d2a79d0b7b469a0b751c6d878ad23"
+    },
+    {
+      "path": "tracks/tog/tasks/t31-local-carrier/MODEL.md",
+      "bytes": 3652,
+      "sha256": "2fb5315f175f058509080fb4ba09b0e77ecac75206b7325662766adf88f66814"
+    },
+    {
+      "path": "tracks/tog/tasks/t31-local-carrier/capture.mjs",
+      "bytes": 12362,
+      "sha256": "fe09f9407dbab0f1134c9b5892ccd51ff13e85ca9b32e95b8c1a0b67bbd76aee"
+    },
+    {
+      "path": "tracks/tog/tasks/t31-local-carrier/supervise.py",
+      "bytes": 3421,
+      "sha256": "f297a9bcddacefacacb374eb7831e6fa8d05cbc230119b816105de84d3251a20"
+    },
+    {
+      "path": "tracks/validation/t31-pre-execution-review.md",
+      "bytes": 6886,
+      "sha256": "87fb39e26e853e8de105cb89bdac9583dab426edbc7aa27146898856d421cfba"
+    },
+    {
+      "path": "demo/index.html",
+      "bytes": 314044,
+      "sha256": "e9d808c434bdd8ce91482f60502f03f5d08c56b71c082eb704c53275ff9f57d0"
+    },
+    {
+      "path": "research/p3-design.mjs",
+      "bytes": 3969,
+      "sha256": "a9c6069993c1e8a2ec77ebd9d6ff82676ce195bd0136bbfd82bb6d0e329639b2"
+    },
+    {
+      "path": "research/lib/runtime.mjs",
+      "bytes": 5669,
+      "sha256": "cf540ed02429016ab2b8a50a1cd95ac14222247466a56cfbf37444234851b184"
+    }
+  ],
+  "browser_runs_before_freeze": 0,
+  "simulation_runs_before_freeze": 0,
+  "allowed_acquisition_invocations": 1,
+  "retry_allowed": false
+}
