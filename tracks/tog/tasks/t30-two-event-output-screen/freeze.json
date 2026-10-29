@@ -1,0 +1,50 @@
+{
+  "schema": "t30-pre-execution-freeze-v1",
+  "created_utc": "2026-10-29T14:25:09.732983+00:00",
+  "parent_commit": "6b081c60fded8ce9618326e7b6f5a35dfe41f642",
+  "previous_goal_turn": "progress",
+  "pre_freeze_candidate_output_or_tail_classification_invocations": 0,
+  "static_review": "root and volume_screen; conceptual derivation by transfer_screen",
+  "artifacts": [
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/inputs.json",
+      "bytes": 72396,
+      "sha256": "5cccf0238c679e14bc50e67d2d24726a58295b484b1d3464bf77d4eca0491cb7"
+    },
+    {
+      "path": "tracks/tog/tasks/t18-reference-robustness/run-01/results.json",
+      "bytes": 4682658,
+      "sha256": "fa4fb6887c6b38e800f18e919634821b3ee51c2fb0122cd0dbb4047eead7873d"
+    },
+    {
+      "path": "tracks/tog/tasks/t21-winner-prefix-bound/run-01/results.json",
+      "bytes": 976592,
+      "sha256": "94d3ad607ba70ee6d7192643e6ad39ec3802f2a269b12df8cbfe87e59917bf83"
+    },
+    {
+      "path": "tracks/tog/tasks/t30-two-event-output-screen/PROTOCOL.md",
+      "bytes": 8194,
+      "sha256": "d1786206c2d4ce1273d167fc7a8d08bfc4850c1ee778dd99b998e70bd31361bf"
+    },
+    {
+      "path": "tracks/tog/tasks/t30-two-event-output-screen/DERIVATION.md",
+      "bytes": 6216,
+      "sha256": "950cafccafbe9ef88b87795f6f2d9a18889926b3489499649e8a01c13a5451a5"
+    },
+    {
+      "path": "tracks/tog/tasks/t30-two-event-output-screen/screen.py",
+      "bytes": 9774,
+      "sha256": "fc1b65f3e3e5fb00f30740d4ef612256875350d0d29eeb31072d9e06f457b5e9"
+    },
+    {
+      "path": "tracks/tog/tasks/t30-two-event-output-screen/supervise.py",
+      "bytes": 2320,
+      "sha256": "b565083a838b1745f93d057a18d8471af50b29f2a5fbb8212dba39b5c7ae9cc6"
+    },
+    {
+      "path": "tracks/validation/t30-pre-execution-review.md",
+      "bytes": 4281,
+      "sha256": "7b3b01345becd05064a27c2e88ca758a9da2c04ed9bcc122e1658b7a03de7624"
+    }
+  ]
+}
