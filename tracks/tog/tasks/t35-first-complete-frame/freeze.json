@@ -1,0 +1,94 @@
+{
+  "schema": "t35-input-freeze-v1",
+  "created_utc": "2026-10-29T17:26:23.505145+00:00",
+  "parent_commit": "c1e5cee90c8cfaebde818b2e29737a6b208443b6",
+  "prior_turn_classification": "progress: T34 fixed-subset qualification and visible-coverage gap",
+  "artifacts": [
+    {
+      "path": "tracks/tog/tasks/t35-first-complete-frame/PROTOCOL.md",
+      "bytes": 7696,
+      "sha256": "5e3d93d64778a67397f0d64410e98ba70cd33cc9cc438547d1246a66c67af786"
+    },
+    {
+      "path": "tracks/tog/tasks/t35-first-complete-frame/evidence.py",
+      "bytes": 9929,
+      "sha256": "1bbcc1848bb13892b47fc96df40b86cd4fe9b14df4f19e60c4e0a04d3e452829"
+    },
+    {
+      "path": "tracks/tog/tasks/t35-first-complete-frame/run.py",
+      "bytes": 21579,
+      "sha256": "e77310c1f60a52569acfe4038c88762bac74f22a52069c6b1b4d0d3fc1fab28a"
+    },
+    {
+      "path": "tracks/tog/tasks/t35-first-complete-frame/supervise.py",
+      "bytes": 7012,
+      "sha256": "24621589dfd4ba3688887c099d7295809f0d1220bf21cafa15339a609ee38cd3"
+    },
+    {
+      "path": "tracks/validation/t35-static-review.md",
+      "bytes": 3906,
+      "sha256": "dcb4890daece68b17adef2fc113beb613825e3fe9dc6268e6896598d93c6b23a"
+    },
+    {
+      "path": "tracks/validation/t35-pre-execution-review.md",
+      "bytes": 6248,
+      "sha256": "56a68d4985555573e1cc49fe7d5149cf6695ae813f3042975249a0f4a70ce2a5"
+    },
+    {
+      "path": "tracks/tog/tasks/t34-box-reference-qualification/NEXT_ENTRY.md",
+      "bytes": 4042,
+      "sha256": "26301c834b359e463b7346302adcf0d637cb4700fc832d63e16c7e0f191a0d8a"
+    },
+    {
+      "path": "tracks/tog/tasks/t34-box-reference-qualification/PROTOCOL.md",
+      "bytes": 8866,
+      "sha256": "6784f24d9404415b4ec868d94cb54fddc9b56e86257677405233e89980edcc0c"
+    },
+    {
+      "path": "tracks/tog/tasks/t34-box-reference-qualification/reference.py",
+      "bytes": 29238,
+      "sha256": "25beec8688039830ca4a2609066b29dc82025929951c1f1e9e57fa7ee384d045"
+    },
+    {
+      "path": "tracks/tog/tasks/t32-ordinary-volume-entry/adapter.py",
+      "bytes": 11851,
+      "sha256": "e6da5219af1b8b1b7abf6f6b9555783fb846ebf740c0d1ed33f8dee4a8a9405c"
+    },
+    {
+      "path": "tracks/tog/tasks/t32-ordinary-volume-entry/ordinary.py",
+      "bytes": 3786,
+      "sha256": "7ca2fb5f67cfaa3ea2c33c7818956d31073ab36b57e4195ed70ed2efd09e2966"
+    },
+    {
+      "path": "tracks/tog/tasks/t22-prefix-complete-cost/integrators.py",
+      "bytes": 16091,
+      "sha256": "94c6ab6748c42c40c8446ec5af01adf3b7b4ff66a6a45f7f9aba26bc651113af"
+    },
+    {
+      "path": "tracks/tog/tasks/t31-local-carrier/MODEL.md",
+      "bytes": 3652,
+      "sha256": "2fb5315f175f058509080fb4ba09b0e77ecac75206b7325662766adf88f66814"
+    },
+    {
+      "path": "tracks/tog/tasks/t31-local-carrier/run-01/carrier.json.gz",
+      "bytes": 58581,
+      "sha256": "39f4dc758bb790f3b88bb2bbfa65dbe469c030289d4237476f598e29b823dcf2"
+    }
+  ],
+  "invocation_limit": 1,
+  "pre_freeze_scientific_invocations": 0,
+  "width": 256,
+  "height": 192,
+  "frame": 90,
+  "view": "front",
+  "pixel_order": "row-major",
+  "planned_pixels": 49152,
+  "computation_cap_seconds": 600,
+  "outer_wait_seconds": 630,
+  "cleanup_seconds": 10,
+  "raw_numeric_cap": 33554432,
+  "reference_created_cell_caps": {
+    "per_ray": 8192,
+    "global_total": 200000
+  }
+}
