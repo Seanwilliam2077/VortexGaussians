@@ -1,0 +1,377 @@
+{
+  "schema": "t20-ordinary-accuracy-contract-evidence-v1",
+  "created_utc": "2026-10-29T08:58:57.217584+00:00",
+  "previous_research_commit": "af06dd24717ca6bad4eee7313bb30fa619ec7bb7",
+  "previous_turn_classification": "progress: T19 failure evidence changed the next action",
+  "decision": "LOCAL_ORDINARY_CONTRACT_EXPLICIT_SOURCE_MAPPING_UNRESOLVED_NO_NUMERICAL_QUEUE",
+  "goal_status": "active_not_submission_ready",
+  "scientific_evidence": {
+    "local_real_arithmetic_sufficient_operator": true,
+    "ordinary_prior_not_claimed_novel": true,
+    "specific_endpoint_range_and_work_contract": true,
+    "empirically_qualified_implementation_supplied": false,
+    "formal_numerical_certificate_supplied": false,
+    "source_page_mapping_completed": false,
+    "new_performance_claim": false,
+    "TOG_contribution_established": false
+  },
+  "budget_accounting": {
+    "T20_metadata_accesses": 1,
+    "T20_metadata_limit": 1,
+    "T20_full_text_attempts": 2,
+    "T20_full_text_limit": 2,
+    "cumulative_T17_T20_full_text_attempts": 4,
+    "new_search_queries": 0,
+    "additional_source_families": 0,
+    "explicit_attempts_not_provider_internal_network_retry_counts": true
+  },
+  "inspection": {
+    "PDF_acquired": false,
+    "PDF_bytes_saved": 0,
+    "PDF_sha256": null,
+    "pages_inspected": [],
+    "page_limit": 32,
+    "new_primary_full_text_claims": [],
+    "third_party_document_committed": false
+  },
+  "execution": {
+    "numerical_method_invocations": 0,
+    "integrand_evaluations": 0,
+    "new_quadrature_samples": 0,
+    "new_scenes": 0,
+    "GPU_work": false,
+    "package_installation": false,
+    "source_download_attempts": 2,
+    "only_direct_urllib_fetch_elapsed_seconds_measured": 1.0539354999782518,
+    "web_fetch_durations_not_persisted": true,
+    "not_total_research_elapsed": true
+  },
+  "subsequent_numerical_protocol_prepared": false,
+  "publication_artifact_count_excluding_this_manifest": 7,
+  "publication_bytes_excluding_this_manifest": 37424,
+  "artifacts": [
+    {
+      "path": "tracks/tog/tasks/t20-ordinary-accuracy-contract/.gitignore",
+      "bytes": 75,
+      "sha256": "e997f5ecb6c0576d8650a47a2302760fbda3f584146b4168f08d8396e51d32c5"
+    },
+    {
+      "path": "tracks/tog/tasks/t20-ordinary-accuracy-contract/MATHEMATICAL_CONTRACT.md",
+      "bytes": 17483,
+      "sha256": "275faee9ecbd30946554622cfe8ac94b040a3b5093b3350093b49d9d68316a32"
+    },
+    {
+      "path": "tracks/tog/tasks/t20-ordinary-accuracy-contract/PROTOCOL.md",
+      "bytes": 3603,
+      "sha256": "fbb772587d59a8ef1240db69ef629511db71629b106a6feab979102745c059c6"
+    },
+    {
+      "path": "tracks/tog/tasks/t20-ordinary-accuracy-contract/README.md",
+      "bytes": 6130,
+      "sha256": "59130c74c1cd8c5eb803b214d46a67ce74f51f846e13f132a9f610451d7a78a0"
+    },
+    {
+      "path": "tracks/tog/tasks/t20-ordinary-accuracy-contract/source-attempt-02.json",
+      "bytes": 616,
+      "sha256": "3ad28f41c086ccb95e2fb5246d986f789b76754bb9373f7566915037a8d51210"
+    },
+    {
+      "path": "tracks/tog/tasks/t20-ordinary-accuracy-contract/SOURCE_LEDGER.json",
+      "bytes": 3583,
+      "sha256": "1cc4e291a47375686b7da4950e90a654b6c1bdd478a6a31bc9d75b7e193a43d2"
+    },
+    {
+      "path": "tracks/validation/t20-accuracy-contract-review.md",
+      "bytes": 5934,
+      "sha256": "660ca2844899b3f0e0e1edd1716a76ff9e4e34a90ff899fad0d4c272b7e157cf"
+    }
+  ],
+  "preserved_prior_artifact_count": 55,
+  "preserved_prior_artifacts": [
+    {
+      "path": "tracks/tog/src/core.py",
+      "bytes": 13301,
+      "sha256": "ac750b70a86743ac858f1c53cf620ce29c63c462456115af4d0d8c93fa20bd9e"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/.gitignore",
+      "bytes": 103,
+      "sha256": "bd031764145c44d8b35aff303774ee4976e0fea291833c761d33e6eaa79c9823"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/DERIVATION.md",
+      "bytes": 10677,
+      "sha256": "0bbbf3cac5e470fdfee175d835dd838370a0e134448caf61ec0e937ff1b3f27c"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/NEXT_EVIDENCE.md",
+      "bytes": 6770,
+      "sha256": "9a4b173fe3919d9b816c2284102b7d43df8c7116a5224e2877e96ab3fad641a4"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/PROTOCOL.md",
+      "bytes": 8118,
+      "sha256": "4c631c90d08d1e5b9ac19ebc6e52cbd2c902c267af105ccbedeb1cccc292586c"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/README.md",
+      "bytes": 8041,
+      "sha256": "dd1fa7ce3cdf48517866a62e003990fc147f5492cac48ac2f3076e75d994270e"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/RELATED_WORK.md",
+      "bytes": 3996,
+      "sha256": "5686b7ef8c531e5b14feb0aa2cf253c84c2e5cbf12a0de6ea76d097c4b64c2c5"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/REPAIR.md",
+      "bytes": 3386,
+      "sha256": "6318e4442e238106a5b9727a2124707a0ff8451178f5628b369798f4dc253f13"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/audit-manifest.json",
+      "bytes": 18893,
+      "sha256": "516265c9a74d55824c19ac50e2eae449648c9ac6c5c7efb50974d07701e72210"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/inputs.json",
+      "bytes": 72396,
+      "sha256": "5cccf0238c679e14bc50e67d2d24726a58295b484b1d3464bf77d4eca0491cb7"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/qualification.py",
+      "bytes": 33223,
+      "sha256": "d648567e27b030c454ba37fdbee11b0df1b7de6b9e2a78c10a66cc0031557831"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/run-01/attempt.json",
+      "bytes": 1089,
+      "sha256": "7562a9b11bf525ccaf515c1075e3cc83676e9b3cf9b7852f1a34cb7ffa20a977"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/run-01/execution.json",
+      "bytes": 833,
+      "sha256": "f894bf22f2bc1d09f23407584fe8067d6c4bfebe0d6a406dea7e9c47b6709bf8"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/run-01/runtime-diagnostics.json",
+      "bytes": 530,
+      "sha256": "2e595b522907f07c2d45b44cc386ad29e3c343c316aae8b8599ff3846e0c0df8"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/run-01/runtime-inherited-diagnostics.json",
+      "bytes": 155,
+      "sha256": "183c7dadbb6050bf0d6c768ee7b94a5478c999d434c9871c93eb54562b061775"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/run-01/runtime-leggauss-diagnostics.json",
+      "bytes": 207,
+      "sha256": "a8c75df36df42520bb2dcdf80de8249dd1b22af92996c6cdcc3f7a01f222fc38"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/run-01/source-qualification.py",
+      "bytes": 28688,
+      "sha256": "8d0e4221ba82708e14f2db9764d35f4ed48cf1ae3dc82f857cdb7823f0e14953"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/attempt.json",
+      "bytes": 1089,
+      "sha256": "961614550ddb50d6971bd011e81021ac598434e47779d5bb80357267793f77c5"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/execution.json",
+      "bytes": 902,
+      "sha256": "9c3cc1395b91da0ed52be18229f2c6d85b26cf6c2f961ed0abb168b93a2f88e0"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/progress.jsonl",
+      "bytes": 4841,
+      "sha256": "dd805ddeccd546a9801afb1ecf929ae3cdbf680d076d6d935243533e0f3fec6a"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/quadrature-rules.json",
+      "bytes": 11836,
+      "sha256": "886349f4d1ed63221a3afd317bbe5e4ab13532054f293207281135d5b1669375"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/results.json",
+      "bytes": 2276326,
+      "sha256": "63203cad05febfad1adf5c1a56a3341a61dbd7489110f46e0fc7b012ba5d95d2"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/worker-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/worker-stdout.log",
+      "bytes": 1903,
+      "sha256": "a9a2b27ae22593e7d2c6a6f14ed9a3f608dd8a9cb32d084a0e8ffc7cb190dc3f"
+    },
+    {
+      "path": "tracks/tog/tasks/t18-reference-robustness/.gitignore",
+      "bytes": 68,
+      "sha256": "59fcf57bd859dceb918c68d179eebc135d1ba31c7a5ea4b97390eecc7f4f66f2"
+    },
+    {
+      "path": "tracks/tog/tasks/t18-reference-robustness/NEXT_EVIDENCE.md",
+      "bytes": 11065,
+      "sha256": "e0c420eb663c09d4eb1ae041253c7561cd154227a3db23fe87dcf133c599aec2"
+    },
+    {
+      "path": "tracks/tog/tasks/t18-reference-robustness/PROTOCOL.md",
+      "bytes": 7501,
+      "sha256": "e510ef0970b35a2bfb5e87a34e152bcc3b5a63582667bcde613afad5481d05b4"
+    },
+    {
+      "path": "tracks/tog/tasks/t18-reference-robustness/README.md",
+      "bytes": 6896,
+      "sha256": "be1306219da06c526b2131b161cbadb198a207ed1f5a844984eedb047c2ca482"
+    },
+    {
+      "path": "tracks/tog/tasks/t18-reference-robustness/audit-manifest.json",
+      "bytes": 18198,
+      "sha256": "2bb0512cf2d8c696db044834b889ac2346746a1eac5dccd3855fdf6ad73193fa"
+    },
+    {
+      "path": "tracks/tog/tasks/t18-reference-robustness/qualification.py",
+      "bytes": 22528,
+      "sha256": "397ad0684a0a701d27471fab41c7bc604b95da4e79ef34c557cdf2edea0e6c74"
+    },
+    {
+      "path": "tracks/tog/tasks/t18-reference-robustness/run-01/attempt.json",
+      "bytes": 1986,
+      "sha256": "e576b9b43a0c1d23c19500a56ac2270fd4ffa967c1933756e2e1b10ea1b06329"
+    },
+    {
+      "path": "tracks/tog/tasks/t18-reference-robustness/run-01/execution.json",
+      "bytes": 3516,
+      "sha256": "1a982ef62ac5e4e749a90e369d3e7ab65c5aec90b95908eb0348776aee34b5e8"
+    },
+    {
+      "path": "tracks/tog/tasks/t18-reference-robustness/run-01/progress.jsonl",
+      "bytes": 5934,
+      "sha256": "39b59014373411cf9525bf302f14a4272d816e795fe0bd4914ef742f17114738"
+    },
+    {
+      "path": "tracks/tog/tasks/t18-reference-robustness/run-01/quadrature-rules.json",
+      "bytes": 11836,
+      "sha256": "886349f4d1ed63221a3afd317bbe5e4ab13532054f293207281135d5b1669375"
+    },
+    {
+      "path": "tracks/tog/tasks/t18-reference-robustness/run-01/results.json",
+      "bytes": 4682658,
+      "sha256": "fa4fb6887c6b38e800f18e919634821b3ee51c2fb0122cd0dbb4047eead7873d"
+    },
+    {
+      "path": "tracks/tog/tasks/t18-reference-robustness/run-01/worker-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tracks/tog/tasks/t18-reference-robustness/run-01/worker-stdout.log",
+      "bytes": 1878,
+      "sha256": "f65498eaf872d0a9949a3918810fd657d6e065c26b620df97954dd2eb8908f59"
+    },
+    {
+      "path": "tracks/tog/tasks/t19-complete-cost/.gitignore",
+      "bytes": 115,
+      "sha256": "d022c05e1ff620921ee3cabdf1c7000d96caa93d525b4282cc3f2ee8f377998b"
+    },
+    {
+      "path": "tracks/tog/tasks/t19-complete-cost/NEXT_EVIDENCE.md",
+      "bytes": 5066,
+      "sha256": "624ad9105efdb775892bf2690a4cac7de9ed49d12a5df1b3a3a5d3a7ada6015c"
+    },
+    {
+      "path": "tracks/tog/tasks/t19-complete-cost/PROTOCOL.md",
+      "bytes": 8296,
+      "sha256": "1b718de439eff6fade61ca55b899e9974c8246fc3c0fe287ca3b3acee9ecc5e0"
+    },
+    {
+      "path": "tracks/tog/tasks/t19-complete-cost/README.md",
+      "bytes": 6547,
+      "sha256": "566aa92d39bbc1cb4da8d6018379d59545531fce40a2e61eae67ce125f1b6e25"
+    },
+    {
+      "path": "tracks/tog/tasks/t19-complete-cost/audit-manifest.json",
+      "bytes": 15124,
+      "sha256": "455e0f5b0762a807d8c7da767212197905c186de8ce33bba6866578c41343093"
+    },
+    {
+      "path": "tracks/tog/tasks/t19-complete-cost/benchmark.py",
+      "bytes": 19861,
+      "sha256": "1537cb8f1e329a3ad232f8cc4e4d9f6d16c93553466f7cf6c3e16ffeb75243be"
+    },
+    {
+      "path": "tracks/tog/tasks/t19-complete-cost/integrators.py",
+      "bytes": 16091,
+      "sha256": "94c6ab6748c42c40c8446ec5af01adf3b7b4ff66a6a45f7f9aba26bc651113af"
+    },
+    {
+      "path": "tracks/tog/tasks/t19-complete-cost/methods.py",
+      "bytes": 14536,
+      "sha256": "2369efea4f60d4cf546f926b9b6322bfa12a4109fa1332b92f2b22f94779ecb2"
+    },
+    {
+      "path": "tracks/tog/tasks/t19-complete-cost/run-01/attempt.json",
+      "bytes": 2429,
+      "sha256": "631dbd80eddf67ed56b4be75ba5f4cef860b03162c3d0d0e281748bb45651b25"
+    },
+    {
+      "path": "tracks/tog/tasks/t19-complete-cost/run-01/execution.json",
+      "bytes": 4597,
+      "sha256": "d5c39de1e028a669e2e7859c4d0c1c47c7a792d2c3ee3de0289518707ea53599"
+    },
+    {
+      "path": "tracks/tog/tasks/t19-complete-cost/run-01/results.json",
+      "bytes": 529135,
+      "sha256": "7002bc85badaddab89fe074106b331bd5f29b527d4bc678b56c7458289f2ddd9"
+    },
+    {
+      "path": "tracks/tog/tasks/t19-complete-cost/run-01/setup.json",
+      "bytes": 459,
+      "sha256": "955224ce00b2a6bab791ed39bf86c349166b3b4746a3e512667c4e275e1152e5"
+    },
+    {
+      "path": "tracks/tog/tasks/t19-complete-cost/run-01/worker-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tracks/tog/tasks/t19-complete-cost/run-01/worker-stdout.log",
+      "bytes": 253,
+      "sha256": "d1130543731f51cbb7e47aa3a9b9b8e8ed30e1c56627f87ce1d87ae00de380a8"
+    },
+    {
+      "path": "tracks/tog/tasks/t19-complete-cost/saved-data-accounting.json",
+      "bytes": 10535,
+      "sha256": "5e30f184672d1617205050afdee31cdb334db9bd0eccb9d90419a25d077e7c5e"
+    },
+    {
+      "path": "tracks/validation/t17-array-review.md",
+      "bytes": 11999,
+      "sha256": "a49fa8809cb3842d86afd20e0d9fb72331ace8f31b0cda365622eaf7bee79ff5"
+    },
+    {
+      "path": "tracks/validation/t18-array-review.md",
+      "bytes": 13927,
+      "sha256": "dfc58e5486a8bfafee7617f4faf2107896c0e60c483462f7a37add6504b82a22"
+    },
+    {
+      "path": "tracks/validation/t19-cost-review.md",
+      "bytes": 18162,
+      "sha256": "a26cd823005a260ce873b5f418aa71ce7934c1a0f792cebeb02756c4f0af3a03"
+    }
+  ],
+  "unchanged_art_git_tree": "7f2702c068d5167e037b3296a84fb94ec50a4d65",
+  "next_action_boundary": "T20 has ended at its bounded source-access/mapping stop rule. No automatic retry, source expansion, repaired T19 run, new architecture or numerical queue. The full research goal remains active; a future task needs its own substantive evidence-based rationale.",
+  "limitations": [
+    "No acquired Cornell paper or inspected page",
+    "Local derivation cannot be attributed to the unavailable paper",
+    "Real-arithmetic guarantee differs from empirical accuracy and floating-point certification",
+    "Input-dependent subdivision work and total practical cost unmeasured",
+    "T19 remains incomplete with no evaluated stable-win gate",
+    "Core method, strong baselines, useful scene-level evidence and submission material remain incomplete"
+  ]
+}

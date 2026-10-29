@@ -1,0 +1,73 @@
+{
+  "schema": "t20-single-family-source-ledger-v1",
+  "date": "2026-10-29",
+  "family": "Novins, Arvo and Salesin, Adaptive Error Bracketing for Controlled-Precision Volume Rendering (1992)",
+  "record_url": "https://ecommons.cornell.edu/entities/publication/456a7f76-1dd0-4f9f-97eb-4242c19b8606",
+  "download_url": "https://ecommons.cornell.edu/bitstreams/27eeb67c-3304-4960-9887-808760b46a97/download",
+  "download_url_provenance": {
+    "provided_by": "pressure_screen, retained T17 tool history",
+    "reported_prior_action": "Previously clicked this endpoint from the identified institutional record; both that click and a direct retry returned429.",
+    "durable_T17_record": "tracks/tog/tasks/t17-order-inversion-bound/RELATED_WORK.md records the family and two failures, but omitted the exact download endpoint.",
+    "qualification": "This is a recovered earlier official-link target, not a guessed URL or an additional source family. No PDF content or file identity is authenticated by the remembered link alone."
+  },
+  "historical_T17_full_text_attempts": [
+    {"attempt": 1, "route": "institutional-record PDF link", "recorded_result": "HTTP429", "full_text_inspected": false},
+    {"attempt": 2, "route": "direct retry of the same PDF", "recorded_result": "HTTP429", "full_text_inspected": false}
+  ],
+  "T20_explicit_attempts": [
+    {
+      "kind": "metadata",
+      "sequence_within_kind": 1,
+      "client": "web.open",
+      "url": "https://ecommons.cornell.edu/entities/publication/456a7f76-1dd0-4f9f-97eb-4242c19b8606",
+      "reported_result": "Failed to fetch: (400) Timeout fetching",
+      "origin_http_status_verified": false,
+      "content_acquired": false,
+      "notes": "Tool transport failure; do not infer that Cornell returned HTTP400. No metadata retry."
+    },
+    {
+      "kind": "full_text",
+      "sequence_within_kind": 1,
+      "client": "web.open",
+      "url": "https://ecommons.cornell.edu/bitstreams/27eeb67c-3304-4960-9887-808760b46a97/download",
+      "reported_result": "Failed to fetch: (429) Too Many Requests",
+      "content_acquired": false
+    },
+    {
+      "kind": "full_text",
+      "sequence_within_kind": 2,
+      "client": "Python standard-library urllib, one call without retry loop",
+      "url": "https://ecommons.cornell.edu/bitstreams/27eeb67c-3304-4960-9887-808760b46a97/download",
+      "reported_result": "HTTPError429 Too Many Requests",
+      "content_acquired": false,
+      "machine_record": "source-attempt-02.json"
+    }
+  ],
+  "budget_accounting": {
+    "T20_metadata_accesses": 1,
+    "T20_metadata_limit": 1,
+    "T20_full_text_attempts": 2,
+    "T20_full_text_limit": 2,
+    "cumulative_T17_T20_full_text_attempts": 4,
+    "new_search_queries": 0,
+    "additional_source_families": 0,
+    "explicit_attempts_not_provider_internal_network_retry_counts": true
+  },
+  "inspection": {
+    "PDF_acquired": false,
+    "PDF_bytes_saved": 0,
+    "PDF_sha256": null,
+    "pages_inspected": [],
+    "page_limit": 32,
+    "new_primary_full_text_claims": [],
+    "third_party_document_committed": false
+  },
+  "decision": "SOURCE_ACCESS_GAP_REMAINS_STOP_THIS_ACQUISITION_BUDGET",
+  "limits": [
+    "The failed access is not evidence of absence of an ordinary accuracy method.",
+    "No unread theorem is inferred from the inherited abstract or title.",
+    "Local mathematical derivation cannot be attributed to this unavailable paper.",
+    "The result does not establish novelty of the pair construction.",
+    "No further source attempt, numerical qualification or repaired T19 benchmark is queued by T20."
+  ]
+}
