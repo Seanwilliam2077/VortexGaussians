@@ -1,0 +1,90 @@
+{
+  "schema": "t33-pre-execution-freeze-v1",
+  "created_utc": "2026-10-29T16:20:55.344913+00:00",
+  "parent_commit": "7ab9c990b1b05d0e59501e4491ee99a9db74c3b5",
+  "artifacts": [
+    {
+      "path": "tracks/tog/tasks/t33-output-accuracy-qualification/PROTOCOL.md",
+      "bytes": 8866,
+      "sha256": "89ed1c7486a73f721e4df814d7df97ecfc1f289f3d0de36935f808c8ab413022"
+    },
+    {
+      "path": "tracks/tog/tasks/t33-output-accuracy-qualification/reference.py",
+      "bytes": 23477,
+      "sha256": "ce3f4e251abcb3bf59fe056de6faa02d1dc7e6e6441f14823c3c657b1b7ee210"
+    },
+    {
+      "path": "tracks/tog/tasks/t33-output-accuracy-qualification/run.py",
+      "bytes": 15737,
+      "sha256": "7e68bee23cb25bc450c85032ad7e38f9d65b0d4565b1a4b5ec7eadd31f80ff92"
+    },
+    {
+      "path": "tracks/tog/tasks/t33-output-accuracy-qualification/supervise.py",
+      "bytes": 3004,
+      "sha256": "2bf06e6b744e4d516245cba28edb8d133bcc8fdefd591a41de108bd5461ee9cb"
+    },
+    {
+      "path": "tracks/validation/t33-pre-execution-review.md",
+      "bytes": 6007,
+      "sha256": "52d427e99696528064aaa62a3bdbdeb0099888af3de9878b47e8f60c62764d6b"
+    },
+    {
+      "path": "tracks/tog/tasks/t32-ordinary-volume-entry/adapter.py",
+      "bytes": 11851,
+      "sha256": "e6da5219af1b8b1b7abf6f6b9555783fb846ebf740c0d1ed33f8dee4a8a9405c"
+    },
+    {
+      "path": "tracks/tog/tasks/t32-ordinary-volume-entry/ordinary.py",
+      "bytes": 3786,
+      "sha256": "7ca2fb5f67cfaa3ea2c33c7818956d31073ab36b57e4195ed70ed2efd09e2966"
+    },
+    {
+      "path": "tracks/tog/tasks/t32-ordinary-volume-entry/PROTOCOL.md",
+      "bytes": 9684,
+      "sha256": "40fbcca08d40f3e2732d61afac8ecb87760a1952d3e99f5fc7a71b04f754119c"
+    },
+    {
+      "path": "tracks/tog/tasks/t32-ordinary-volume-entry/STOPPING_CONTRACT.md",
+      "bytes": 4740,
+      "sha256": "73189f17cf35af5f6b8dad1712126f1b3c1a36fbf332c7f7918c63a693c727fd"
+    },
+    {
+      "path": "tracks/tog/tasks/t32-ordinary-volume-entry/NEXT_EVIDENCE.md",
+      "bytes": 4259,
+      "sha256": "d01de0dcd92fe01653a592c37dbb195dc53a3835f417208d218a3e8d7a86d0b3"
+    },
+    {
+      "path": "tracks/tog/tasks/t22-prefix-complete-cost/integrators.py",
+      "bytes": 16091,
+      "sha256": "94c6ab6748c42c40c8446ec5af01adf3b7b4ff66a6a45f7f9aba26bc651113af"
+    },
+    {
+      "path": "tracks/tog/tasks/t31-local-carrier/MODEL.md",
+      "bytes": 3652,
+      "sha256": "2fb5315f175f058509080fb4ba09b0e77ecac75206b7325662766adf88f66814"
+    },
+    {
+      "path": "tracks/tog/tasks/t31-local-carrier/run-01/carrier.json.gz",
+      "bytes": 58581,
+      "sha256": "39f4dc758bb790f3b88bb2bbfa65dbe469c030289d4237476f598e29b823dcf2"
+    }
+  ],
+  "prior_T33_numerical_invocations": 0,
+  "allowed_T33_invocations": 1,
+  "prior_authored_entry_invocations": 1,
+  "cumulative_authored_entry_invocations_after_this_attempt": 2,
+  "T32_status_preserved": "failed",
+  "retry_allowed": false,
+  "output_endpoint_tolerance": 0.001,
+  "numerical_allowance": 1e-10,
+  "reference_midpoint_requirement": null,
+  "budget": {
+    "computation_seconds": 180,
+    "outer_wait_seconds": 210,
+    "termination_seconds": 10,
+    "per_ray_created_cells": 8192,
+    "total_created_cells": 200000,
+    "max_rays": 336,
+    "max_raw_result_bytes": 33554432
+  }
+}

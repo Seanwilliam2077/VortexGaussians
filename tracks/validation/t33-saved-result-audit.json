@@ -1,0 +1,3833 @@
+{
+  "schema": "t33-saved-result-audit-v1",
+  "date": "2026-10-30",
+  "audit_pass": true,
+  "experiment_status": "failed",
+  "experiment_qualification": false,
+  "scope": "Saved-file identities and arithmetic on stored scalars only; exact Fraction sums/comparisons where used. No method import or execution, projection, CDF/exp, density evaluation, integration or new sampling.",
+  "not_independently_recomputed": [
+    "Transcendental optical masses/alpha and exponential omission charges.",
+    "Per-component ordinary projection arrays not retained; saved maximum discrepancies checked, not new projection.",
+    "Per-cell Gaussian density extrema and their mathematical enclosure premise.",
+    "Camera/sample construction from the carrier; saved geometry/schedule relationships and static unchanged-source contract checked."
+  ],
+  "identities": [
+    {
+      "path": "tracks/tog/tasks/t33-output-accuracy-qualification/freeze.json",
+      "bytes": 3265,
+      "sha256": "e145ffe76842e2ab23f2e14eb229db768ff0128d536d808da473997c731c5d5a"
+    },
+    {
+      "path": "tracks/tog/tasks/t33-output-accuracy-qualification/PROTOCOL.md",
+      "bytes": 8866,
+      "sha256": "89ed1c7486a73f721e4df814d7df97ecfc1f289f3d0de36935f808c8ab413022"
+    },
+    {
+      "path": "tracks/tog/tasks/t33-output-accuracy-qualification/reference.py",
+      "bytes": 23477,
+      "sha256": "ce3f4e251abcb3bf59fe056de6faa02d1dc7e6e6441f14823c3c657b1b7ee210"
+    },
+    {
+      "path": "tracks/tog/tasks/t33-output-accuracy-qualification/run.py",
+      "bytes": 15737,
+      "sha256": "7e68bee23cb25bc450c85032ad7e38f9d65b0d4565b1a4b5ec7eadd31f80ff92"
+    },
+    {
+      "path": "tracks/tog/tasks/t33-output-accuracy-qualification/supervise.py",
+      "bytes": 3004,
+      "sha256": "2bf06e6b744e4d516245cba28edb8d133bcc8fdefd591a41de108bd5461ee9cb"
+    },
+    {
+      "path": "tracks/validation/t33-pre-execution-review.md",
+      "bytes": 6007,
+      "sha256": "52d427e99696528064aaa62a3bdbdeb0099888af3de9878b47e8f60c62764d6b"
+    },
+    {
+      "path": "tracks/tog/tasks/t32-ordinary-volume-entry/adapter.py",
+      "bytes": 11851,
+      "sha256": "e6da5219af1b8b1b7abf6f6b9555783fb846ebf740c0d1ed33f8dee4a8a9405c"
+    },
+    {
+      "path": "tracks/tog/tasks/t32-ordinary-volume-entry/ordinary.py",
+      "bytes": 3786,
+      "sha256": "7ca2fb5f67cfaa3ea2c33c7818956d31073ab36b57e4195ed70ed2efd09e2966"
+    },
+    {
+      "path": "tracks/tog/tasks/t32-ordinary-volume-entry/PROTOCOL.md",
+      "bytes": 9684,
+      "sha256": "40fbcca08d40f3e2732d61afac8ecb87760a1952d3e99f5fc7a71b04f754119c"
+    },
+    {
+      "path": "tracks/tog/tasks/t32-ordinary-volume-entry/STOPPING_CONTRACT.md",
+      "bytes": 4740,
+      "sha256": "73189f17cf35af5f6b8dad1712126f1b3c1a36fbf332c7f7918c63a693c727fd"
+    },
+    {
+      "path": "tracks/tog/tasks/t32-ordinary-volume-entry/NEXT_EVIDENCE.md",
+      "bytes": 4259,
+      "sha256": "d01de0dcd92fe01653a592c37dbb195dc53a3835f417208d218a3e8d7a86d0b3"
+    },
+    {
+      "path": "tracks/tog/tasks/t22-prefix-complete-cost/integrators.py",
+      "bytes": 16091,
+      "sha256": "94c6ab6748c42c40c8446ec5af01adf3b7b4ff66a6a45f7f9aba26bc651113af"
+    },
+    {
+      "path": "tracks/tog/tasks/t31-local-carrier/MODEL.md",
+      "bytes": 3652,
+      "sha256": "2fb5315f175f058509080fb4ba09b0e77ecac75206b7325662766adf88f66814"
+    },
+    {
+      "path": "tracks/tog/tasks/t31-local-carrier/run-01/carrier.json.gz",
+      "bytes": 58581,
+      "sha256": "39f4dc758bb790f3b88bb2bbfa65dbe469c030289d4237476f598e29b823dcf2"
+    },
+    {
+      "path": "tracks/tog/tasks/t33-output-accuracy-qualification/run-01/attempt.json",
+      "bytes": 236,
+      "sha256": "981fc94f1cd3295f7007dcd51f740819f5692665101be08cfbf2bc0024cade2a"
+    },
+    {
+      "path": "tracks/tog/tasks/t33-output-accuracy-qualification/run-01/execution.json",
+      "bytes": 778,
+      "sha256": "a4c181db21e413faa76917bc8536ca5a076caa39735e71e48455a72bef173961"
+    },
+    {
+      "path": "tracks/tog/tasks/t33-output-accuracy-qualification/run-01/result.json",
+      "bytes": 2849,
+      "sha256": "b3733dff882340324acd5bb70df9f1ecf4fb4527aa26647d03be8477e6ff19d4"
+    },
+    {
+      "path": "tracks/tog/tasks/t33-output-accuracy-qualification/run-01/results.json.gz",
+      "bytes": 497390,
+      "sha256": "c295eef6f762646f489459105f2ce076259b9f56061de42ab343eb8ca6d60c9b"
+    },
+    {
+      "path": "tracks/tog/tasks/t33-output-accuracy-qualification/run-01/stdout.txt",
+      "bytes": 2566,
+      "sha256": "4efd7f18b88dd5c3d54b84d6b715f5df9d5801288336669a247150aed08e7e24"
+    },
+    {
+      "path": "tracks/tog/tasks/t33-output-accuracy-qualification/run-01/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tracks/tog/tasks/t33-output-accuracy-qualification/run-01/journal.jsonl",
+      "bytes": 1372138,
+      "sha256": "e8cee7e6569fb29ffd0b59512ee83581732c994edf778b6b34681e02ab281021"
+    }
+  ],
+  "checks": [
+    {
+      "name": "freeze_artifact_count",
+      "pass": true
+    },
+    {
+      "name": "frozen:tracks/tog/tasks/t33-output-accuracy-qualification/PROTOCOL.md",
+      "pass": true
+    },
+    {
+      "name": "frozen:tracks/tog/tasks/t33-output-accuracy-qualification/reference.py",
+      "pass": true
+    },
+    {
+      "name": "frozen:tracks/tog/tasks/t33-output-accuracy-qualification/run.py",
+      "pass": true
+    },
+    {
+      "name": "frozen:tracks/tog/tasks/t33-output-accuracy-qualification/supervise.py",
+      "pass": true
+    },
+    {
+      "name": "frozen:tracks/validation/t33-pre-execution-review.md",
+      "pass": true
+    },
+    {
+      "name": "frozen:tracks/tog/tasks/t32-ordinary-volume-entry/adapter.py",
+      "pass": true
+    },
+    {
+      "name": "frozen:tracks/tog/tasks/t32-ordinary-volume-entry/ordinary.py",
+      "pass": true
+    },
+    {
+      "name": "frozen:tracks/tog/tasks/t32-ordinary-volume-entry/PROTOCOL.md",
+      "pass": true
+    },
+    {
+      "name": "frozen:tracks/tog/tasks/t32-ordinary-volume-entry/STOPPING_CONTRACT.md",
+      "pass": true
+    },
+    {
+      "name": "frozen:tracks/tog/tasks/t32-ordinary-volume-entry/NEXT_EVIDENCE.md",
+      "pass": true
+    },
+    {
+      "name": "frozen:tracks/tog/tasks/t22-prefix-complete-cost/integrators.py",
+      "pass": true
+    },
+    {
+      "name": "frozen:tracks/tog/tasks/t31-local-carrier/MODEL.md",
+      "pass": true
+    },
+    {
+      "name": "frozen:tracks/tog/tasks/t31-local-carrier/run-01/carrier.json.gz",
+      "pass": true
+    },
+    {
+      "name": "compressed_result_identity",
+      "pass": true
+    },
+    {
+      "name": "raw_result_identity",
+      "pass": true
+    },
+    {
+      "name": "raw_result_budget",
+      "pass": true
+    },
+    {
+      "name": "stdout_identity",
+      "pass": true
+    },
+    {
+      "name": "stdout_equals_worker_receipt",
+      "pass": true
+    },
+    {
+      "name": "stderr_identity",
+      "pass": true
+    },
+    {
+      "name": "freeze_identity_chain",
+      "pass": true
+    },
+    {
+      "name": "single_reserved_execution",
+      "pass": true
+    },
+    {
+      "name": "cumulative_attempt_history",
+      "pass": true
+    },
+    {
+      "name": "failed_status_preserved",
+      "pass": true
+    },
+    {
+      "name": "no_timeout_or_launch_failure",
+      "pass": true
+    },
+    {
+      "name": "source_recheck_pass",
+      "pass": true
+    },
+    {
+      "name": "no_publication_failure",
+      "pass": true
+    },
+    {
+      "name": "record_counts",
+      "pass": true
+    },
+    {
+      "name": "time_budget",
+      "pass": true
+    },
+    {
+      "name": "resource_counters",
+      "pass": true
+    },
+    {
+      "name": "unchanged_thresholds",
+      "pass": true
+    },
+    {
+      "name": "freeze_precedes_attempt",
+      "pass": true
+    },
+    {
+      "name": "frame_cmax:90",
+      "pass": true
+    },
+    {
+      "name": "one_constructed_group",
+      "pass": true
+    },
+    {
+      "name": "fixed_grid_present",
+      "pass": true
+    },
+    {
+      "name": "schedule_unique_sorted",
+      "pass": true
+    },
+    {
+      "name": "source_tags_fixed_indices",
+      "pass": true
+    },
+    {
+      "name": "ray01:schedule_identity",
+      "pass": true
+    },
+    {
+      "name": "ray01:finite_unit_geometry",
+      "pass": true
+    },
+    {
+      "name": "ray01:independent_geometry",
+      "pass": true
+    },
+    {
+      "name": "ray01:saved_projection_discrepancy",
+      "pass": true
+    },
+    {
+      "name": "ray01:bvh_partition",
+      "pass": true
+    },
+    {
+      "name": "ray01:omitted_node_partition",
+      "pass": true
+    },
+    {
+      "name": "ray01:saved_node_mass_sum",
+      "pass": true
+    },
+    {
+      "name": "ray01:reference_source_shapes",
+      "pass": true
+    },
+    {
+      "name": "ray01:finite_mass_range",
+      "pass": true
+    },
+    {
+      "name": "ray01:retained_mapping",
+      "pass": true
+    },
+    {
+      "name": "ray01:tiny_q_selection",
+      "pass": true
+    },
+    {
+      "name": "ray01:tiny_q_mass_charge",
+      "pass": true
+    },
+    {
+      "name": "ray01:reference_omitted_ids",
+      "pass": true
+    },
+    {
+      "name": "ray01:prune_mass_budget",
+      "pass": true
+    },
+    {
+      "name": "ray01:omitted_node_actual_masses",
+      "pass": true
+    },
+    {
+      "name": "ray01:conservative_prune_alpha_rgb_budget",
+      "pass": true
+    },
+    {
+      "name": "ray01:analytic_empty_path",
+      "pass": true
+    },
+    {
+      "name": "ray01:leaf_shape_and_range",
+      "pass": true
+    },
+    {
+      "name": "ray01:interval_ledger",
+      "pass": true
+    },
+    {
+      "name": "ray01:interval_radius",
+      "pass": true
+    },
+    {
+      "name": "ray01:fixed_answer_and_errors",
+      "pass": true
+    },
+    {
+      "name": "ray01:ordinary_finite_alpha_range",
+      "pass": true
+    },
+    {
+      "name": "ray01:ordinary_tau_saved_mass",
+      "pass": true
+    },
+    {
+      "name": "ray01:endpoint_acceptance",
+      "pass": true
+    },
+    {
+      "name": "ray01:alpha_acceptance",
+      "pass": true
+    },
+    {
+      "name": "ray01:saved_check_fields",
+      "pass": true
+    },
+    {
+      "name": "ray01:recorded_pruning_rgb_gate",
+      "pass": true
+    },
+    {
+      "name": "ray01:ordinary_path_contract",
+      "pass": true
+    },
+    {
+      "name": "ray01:cell_count_algebra",
+      "pass": true
+    },
+    {
+      "name": "ray02:schedule_identity",
+      "pass": true
+    },
+    {
+      "name": "ray02:finite_unit_geometry",
+      "pass": true
+    },
+    {
+      "name": "ray02:independent_geometry",
+      "pass": true
+    },
+    {
+      "name": "ray02:saved_projection_discrepancy",
+      "pass": true
+    },
+    {
+      "name": "ray02:bvh_partition",
+      "pass": true
+    },
+    {
+      "name": "ray02:omitted_node_partition",
+      "pass": true
+    },
+    {
+      "name": "ray02:saved_node_mass_sum",
+      "pass": true
+    },
+    {
+      "name": "ray02:reference_source_shapes",
+      "pass": true
+    },
+    {
+      "name": "ray02:finite_mass_range",
+      "pass": true
+    },
+    {
+      "name": "ray02:retained_mapping",
+      "pass": true
+    },
+    {
+      "name": "ray02:tiny_q_selection",
+      "pass": true
+    },
+    {
+      "name": "ray02:tiny_q_mass_charge",
+      "pass": true
+    },
+    {
+      "name": "ray02:reference_omitted_ids",
+      "pass": true
+    },
+    {
+      "name": "ray02:prune_mass_budget",
+      "pass": true
+    },
+    {
+      "name": "ray02:omitted_node_actual_masses",
+      "pass": true
+    },
+    {
+      "name": "ray02:conservative_prune_alpha_rgb_budget",
+      "pass": true
+    },
+    {
+      "name": "ray02:analytic_empty_path",
+      "pass": true
+    },
+    {
+      "name": "ray02:leaf_shape_and_range",
+      "pass": true
+    },
+    {
+      "name": "ray02:interval_ledger",
+      "pass": true
+    },
+    {
+      "name": "ray02:interval_radius",
+      "pass": true
+    },
+    {
+      "name": "ray02:fixed_answer_and_errors",
+      "pass": true
+    },
+    {
+      "name": "ray02:ordinary_finite_alpha_range",
+      "pass": true
+    },
+    {
+      "name": "ray02:ordinary_tau_saved_mass",
+      "pass": true
+    },
+    {
+      "name": "ray02:endpoint_acceptance",
+      "pass": true
+    },
+    {
+      "name": "ray02:alpha_acceptance",
+      "pass": true
+    },
+    {
+      "name": "ray02:saved_check_fields",
+      "pass": true
+    },
+    {
+      "name": "ray02:recorded_pruning_rgb_gate",
+      "pass": true
+    },
+    {
+      "name": "ray02:ordinary_path_contract",
+      "pass": true
+    },
+    {
+      "name": "ray02:cell_count_algebra",
+      "pass": true
+    },
+    {
+      "name": "ray03:schedule_identity",
+      "pass": true
+    },
+    {
+      "name": "ray03:finite_unit_geometry",
+      "pass": true
+    },
+    {
+      "name": "ray03:independent_geometry",
+      "pass": true
+    },
+    {
+      "name": "ray03:saved_projection_discrepancy",
+      "pass": true
+    },
+    {
+      "name": "ray03:bvh_partition",
+      "pass": true
+    },
+    {
+      "name": "ray03:omitted_node_partition",
+      "pass": true
+    },
+    {
+      "name": "ray03:saved_node_mass_sum",
+      "pass": true
+    },
+    {
+      "name": "ray03:reference_source_shapes",
+      "pass": true
+    },
+    {
+      "name": "ray03:finite_mass_range",
+      "pass": true
+    },
+    {
+      "name": "ray03:retained_mapping",
+      "pass": true
+    },
+    {
+      "name": "ray03:tiny_q_selection",
+      "pass": true
+    },
+    {
+      "name": "ray03:tiny_q_mass_charge",
+      "pass": true
+    },
+    {
+      "name": "ray03:reference_omitted_ids",
+      "pass": true
+    },
+    {
+      "name": "ray03:prune_mass_budget",
+      "pass": true
+    },
+    {
+      "name": "ray03:omitted_node_actual_masses",
+      "pass": true
+    },
+    {
+      "name": "ray03:conservative_prune_alpha_rgb_budget",
+      "pass": true
+    },
+    {
+      "name": "ray03:analytic_empty_path",
+      "pass": true
+    },
+    {
+      "name": "ray03:leaf_shape_and_range",
+      "pass": true
+    },
+    {
+      "name": "ray03:interval_ledger",
+      "pass": true
+    },
+    {
+      "name": "ray03:interval_radius",
+      "pass": true
+    },
+    {
+      "name": "ray03:fixed_answer_and_errors",
+      "pass": true
+    },
+    {
+      "name": "ray03:ordinary_finite_alpha_range",
+      "pass": true
+    },
+    {
+      "name": "ray03:ordinary_tau_saved_mass",
+      "pass": true
+    },
+    {
+      "name": "ray03:endpoint_acceptance",
+      "pass": true
+    },
+    {
+      "name": "ray03:alpha_acceptance",
+      "pass": true
+    },
+    {
+      "name": "ray03:saved_check_fields",
+      "pass": true
+    },
+    {
+      "name": "ray03:recorded_pruning_rgb_gate",
+      "pass": true
+    },
+    {
+      "name": "ray03:ordinary_path_contract",
+      "pass": true
+    },
+    {
+      "name": "ray03:cell_count_algebra",
+      "pass": true
+    },
+    {
+      "name": "ray04:schedule_identity",
+      "pass": true
+    },
+    {
+      "name": "ray04:finite_unit_geometry",
+      "pass": true
+    },
+    {
+      "name": "ray04:independent_geometry",
+      "pass": true
+    },
+    {
+      "name": "ray04:saved_projection_discrepancy",
+      "pass": true
+    },
+    {
+      "name": "ray04:bvh_partition",
+      "pass": true
+    },
+    {
+      "name": "ray04:omitted_node_partition",
+      "pass": true
+    },
+    {
+      "name": "ray04:saved_node_mass_sum",
+      "pass": true
+    },
+    {
+      "name": "ray04:reference_source_shapes",
+      "pass": true
+    },
+    {
+      "name": "ray04:finite_mass_range",
+      "pass": true
+    },
+    {
+      "name": "ray04:retained_mapping",
+      "pass": true
+    },
+    {
+      "name": "ray04:tiny_q_selection",
+      "pass": true
+    },
+    {
+      "name": "ray04:tiny_q_mass_charge",
+      "pass": true
+    },
+    {
+      "name": "ray04:reference_omitted_ids",
+      "pass": true
+    },
+    {
+      "name": "ray04:prune_mass_budget",
+      "pass": true
+    },
+    {
+      "name": "ray04:omitted_node_actual_masses",
+      "pass": true
+    },
+    {
+      "name": "ray04:conservative_prune_alpha_rgb_budget",
+      "pass": true
+    },
+    {
+      "name": "ray04:analytic_empty_path",
+      "pass": true
+    },
+    {
+      "name": "ray04:leaf_shape_and_range",
+      "pass": true
+    },
+    {
+      "name": "ray04:interval_ledger",
+      "pass": true
+    },
+    {
+      "name": "ray04:interval_radius",
+      "pass": true
+    },
+    {
+      "name": "ray04:fixed_answer_and_errors",
+      "pass": true
+    },
+    {
+      "name": "ray04:ordinary_finite_alpha_range",
+      "pass": true
+    },
+    {
+      "name": "ray04:ordinary_tau_saved_mass",
+      "pass": true
+    },
+    {
+      "name": "ray04:endpoint_acceptance",
+      "pass": true
+    },
+    {
+      "name": "ray04:alpha_acceptance",
+      "pass": true
+    },
+    {
+      "name": "ray04:saved_check_fields",
+      "pass": true
+    },
+    {
+      "name": "ray04:recorded_pruning_rgb_gate",
+      "pass": true
+    },
+    {
+      "name": "ray04:ordinary_path_contract",
+      "pass": true
+    },
+    {
+      "name": "ray04:cell_count_algebra",
+      "pass": true
+    },
+    {
+      "name": "ray05:schedule_identity",
+      "pass": true
+    },
+    {
+      "name": "ray05:finite_unit_geometry",
+      "pass": true
+    },
+    {
+      "name": "ray05:independent_geometry",
+      "pass": true
+    },
+    {
+      "name": "ray05:saved_projection_discrepancy",
+      "pass": true
+    },
+    {
+      "name": "ray05:bvh_partition",
+      "pass": true
+    },
+    {
+      "name": "ray05:omitted_node_partition",
+      "pass": true
+    },
+    {
+      "name": "ray05:saved_node_mass_sum",
+      "pass": true
+    },
+    {
+      "name": "ray05:reference_source_shapes",
+      "pass": true
+    },
+    {
+      "name": "ray05:finite_mass_range",
+      "pass": true
+    },
+    {
+      "name": "ray05:retained_mapping",
+      "pass": true
+    },
+    {
+      "name": "ray05:tiny_q_selection",
+      "pass": true
+    },
+    {
+      "name": "ray05:tiny_q_mass_charge",
+      "pass": true
+    },
+    {
+      "name": "ray05:reference_omitted_ids",
+      "pass": true
+    },
+    {
+      "name": "ray05:prune_mass_budget",
+      "pass": true
+    },
+    {
+      "name": "ray05:omitted_node_actual_masses",
+      "pass": true
+    },
+    {
+      "name": "ray05:conservative_prune_alpha_rgb_budget",
+      "pass": true
+    },
+    {
+      "name": "ray05:analytic_empty_path",
+      "pass": true
+    },
+    {
+      "name": "ray05:leaf_shape_and_range",
+      "pass": true
+    },
+    {
+      "name": "ray05:interval_ledger",
+      "pass": true
+    },
+    {
+      "name": "ray05:interval_radius",
+      "pass": true
+    },
+    {
+      "name": "ray05:fixed_answer_and_errors",
+      "pass": true
+    },
+    {
+      "name": "ray05:ordinary_finite_alpha_range",
+      "pass": true
+    },
+    {
+      "name": "ray05:ordinary_tau_saved_mass",
+      "pass": true
+    },
+    {
+      "name": "ray05:endpoint_acceptance",
+      "pass": true
+    },
+    {
+      "name": "ray05:alpha_acceptance",
+      "pass": true
+    },
+    {
+      "name": "ray05:saved_check_fields",
+      "pass": true
+    },
+    {
+      "name": "ray05:recorded_pruning_rgb_gate",
+      "pass": true
+    },
+    {
+      "name": "ray05:ordinary_path_contract",
+      "pass": true
+    },
+    {
+      "name": "ray05:cell_count_algebra",
+      "pass": true
+    },
+    {
+      "name": "ray06:schedule_identity",
+      "pass": true
+    },
+    {
+      "name": "ray06:finite_unit_geometry",
+      "pass": true
+    },
+    {
+      "name": "ray06:independent_geometry",
+      "pass": true
+    },
+    {
+      "name": "ray06:saved_projection_discrepancy",
+      "pass": true
+    },
+    {
+      "name": "ray06:bvh_partition",
+      "pass": true
+    },
+    {
+      "name": "ray06:omitted_node_partition",
+      "pass": true
+    },
+    {
+      "name": "ray06:saved_node_mass_sum",
+      "pass": true
+    },
+    {
+      "name": "ray06:reference_source_shapes",
+      "pass": true
+    },
+    {
+      "name": "ray06:finite_mass_range",
+      "pass": true
+    },
+    {
+      "name": "ray06:retained_mapping",
+      "pass": true
+    },
+    {
+      "name": "ray06:tiny_q_selection",
+      "pass": true
+    },
+    {
+      "name": "ray06:tiny_q_mass_charge",
+      "pass": true
+    },
+    {
+      "name": "ray06:reference_omitted_ids",
+      "pass": true
+    },
+    {
+      "name": "ray06:prune_mass_budget",
+      "pass": true
+    },
+    {
+      "name": "ray06:omitted_node_actual_masses",
+      "pass": true
+    },
+    {
+      "name": "ray06:conservative_prune_alpha_rgb_budget",
+      "pass": true
+    },
+    {
+      "name": "ray06:analytic_empty_path",
+      "pass": true
+    },
+    {
+      "name": "ray06:leaf_shape_and_range",
+      "pass": true
+    },
+    {
+      "name": "ray06:interval_ledger",
+      "pass": true
+    },
+    {
+      "name": "ray06:interval_radius",
+      "pass": true
+    },
+    {
+      "name": "ray06:fixed_answer_and_errors",
+      "pass": true
+    },
+    {
+      "name": "ray06:ordinary_finite_alpha_range",
+      "pass": true
+    },
+    {
+      "name": "ray06:ordinary_tau_saved_mass",
+      "pass": true
+    },
+    {
+      "name": "ray06:endpoint_acceptance",
+      "pass": true
+    },
+    {
+      "name": "ray06:alpha_acceptance",
+      "pass": true
+    },
+    {
+      "name": "ray06:saved_check_fields",
+      "pass": true
+    },
+    {
+      "name": "ray06:recorded_pruning_rgb_gate",
+      "pass": true
+    },
+    {
+      "name": "ray06:ordinary_path_contract",
+      "pass": true
+    },
+    {
+      "name": "ray06:cell_count_algebra",
+      "pass": true
+    },
+    {
+      "name": "ray07:schedule_identity",
+      "pass": true
+    },
+    {
+      "name": "ray07:finite_unit_geometry",
+      "pass": true
+    },
+    {
+      "name": "ray07:independent_geometry",
+      "pass": true
+    },
+    {
+      "name": "ray07:saved_projection_discrepancy",
+      "pass": true
+    },
+    {
+      "name": "ray07:bvh_partition",
+      "pass": true
+    },
+    {
+      "name": "ray07:omitted_node_partition",
+      "pass": true
+    },
+    {
+      "name": "ray07:saved_node_mass_sum",
+      "pass": true
+    },
+    {
+      "name": "ray07:reference_source_shapes",
+      "pass": true
+    },
+    {
+      "name": "ray07:finite_mass_range",
+      "pass": true
+    },
+    {
+      "name": "ray07:retained_mapping",
+      "pass": true
+    },
+    {
+      "name": "ray07:tiny_q_selection",
+      "pass": true
+    },
+    {
+      "name": "ray07:tiny_q_mass_charge",
+      "pass": true
+    },
+    {
+      "name": "ray07:reference_omitted_ids",
+      "pass": true
+    },
+    {
+      "name": "ray07:prune_mass_budget",
+      "pass": true
+    },
+    {
+      "name": "ray07:omitted_node_actual_masses",
+      "pass": true
+    },
+    {
+      "name": "ray07:conservative_prune_alpha_rgb_budget",
+      "pass": true
+    },
+    {
+      "name": "ray07:analytic_empty_path",
+      "pass": true
+    },
+    {
+      "name": "ray07:leaf_shape_and_range",
+      "pass": true
+    },
+    {
+      "name": "ray07:interval_ledger",
+      "pass": true
+    },
+    {
+      "name": "ray07:interval_radius",
+      "pass": true
+    },
+    {
+      "name": "ray07:fixed_answer_and_errors",
+      "pass": true
+    },
+    {
+      "name": "ray07:ordinary_finite_alpha_range",
+      "pass": true
+    },
+    {
+      "name": "ray07:ordinary_tau_saved_mass",
+      "pass": true
+    },
+    {
+      "name": "ray07:endpoint_acceptance",
+      "pass": true
+    },
+    {
+      "name": "ray07:alpha_acceptance",
+      "pass": true
+    },
+    {
+      "name": "ray07:saved_check_fields",
+      "pass": true
+    },
+    {
+      "name": "ray07:recorded_pruning_rgb_gate",
+      "pass": true
+    },
+    {
+      "name": "ray07:ordinary_path_contract",
+      "pass": true
+    },
+    {
+      "name": "ray07:cell_count_algebra",
+      "pass": true
+    },
+    {
+      "name": "ray08:schedule_identity",
+      "pass": true
+    },
+    {
+      "name": "ray08:finite_unit_geometry",
+      "pass": true
+    },
+    {
+      "name": "ray08:independent_geometry",
+      "pass": true
+    },
+    {
+      "name": "ray08:saved_projection_discrepancy",
+      "pass": true
+    },
+    {
+      "name": "ray08:bvh_partition",
+      "pass": true
+    },
+    {
+      "name": "ray08:omitted_node_partition",
+      "pass": true
+    },
+    {
+      "name": "ray08:saved_node_mass_sum",
+      "pass": true
+    },
+    {
+      "name": "ray08:reference_source_shapes",
+      "pass": true
+    },
+    {
+      "name": "ray08:finite_mass_range",
+      "pass": true
+    },
+    {
+      "name": "ray08:retained_mapping",
+      "pass": true
+    },
+    {
+      "name": "ray08:tiny_q_selection",
+      "pass": true
+    },
+    {
+      "name": "ray08:tiny_q_mass_charge",
+      "pass": true
+    },
+    {
+      "name": "ray08:reference_omitted_ids",
+      "pass": true
+    },
+    {
+      "name": "ray08:prune_mass_budget",
+      "pass": true
+    },
+    {
+      "name": "ray08:omitted_node_actual_masses",
+      "pass": true
+    },
+    {
+      "name": "ray08:conservative_prune_alpha_rgb_budget",
+      "pass": true
+    },
+    {
+      "name": "ray08:analytic_empty_path",
+      "pass": true
+    },
+    {
+      "name": "ray08:leaf_shape_and_range",
+      "pass": true
+    },
+    {
+      "name": "ray08:interval_ledger",
+      "pass": true
+    },
+    {
+      "name": "ray08:interval_radius",
+      "pass": true
+    },
+    {
+      "name": "ray08:fixed_answer_and_errors",
+      "pass": true
+    },
+    {
+      "name": "ray08:ordinary_finite_alpha_range",
+      "pass": true
+    },
+    {
+      "name": "ray08:ordinary_tau_saved_mass",
+      "pass": true
+    },
+    {
+      "name": "ray08:endpoint_acceptance",
+      "pass": true
+    },
+    {
+      "name": "ray08:alpha_acceptance",
+      "pass": true
+    },
+    {
+      "name": "ray08:saved_check_fields",
+      "pass": true
+    },
+    {
+      "name": "ray08:recorded_pruning_rgb_gate",
+      "pass": true
+    },
+    {
+      "name": "ray08:ordinary_path_contract",
+      "pass": true
+    },
+    {
+      "name": "ray08:cell_count_algebra",
+      "pass": true
+    },
+    {
+      "name": "ray09:schedule_identity",
+      "pass": true
+    },
+    {
+      "name": "ray09:finite_unit_geometry",
+      "pass": true
+    },
+    {
+      "name": "ray09:independent_geometry",
+      "pass": true
+    },
+    {
+      "name": "ray09:saved_projection_discrepancy",
+      "pass": true
+    },
+    {
+      "name": "ray09:bvh_partition",
+      "pass": true
+    },
+    {
+      "name": "ray09:omitted_node_partition",
+      "pass": true
+    },
+    {
+      "name": "ray09:saved_node_mass_sum",
+      "pass": true
+    },
+    {
+      "name": "ray09:reference_source_shapes",
+      "pass": true
+    },
+    {
+      "name": "ray09:finite_mass_range",
+      "pass": true
+    },
+    {
+      "name": "ray09:retained_mapping",
+      "pass": true
+    },
+    {
+      "name": "ray09:tiny_q_selection",
+      "pass": true
+    },
+    {
+      "name": "ray09:tiny_q_mass_charge",
+      "pass": true
+    },
+    {
+      "name": "ray09:reference_omitted_ids",
+      "pass": true
+    },
+    {
+      "name": "ray09:prune_mass_budget",
+      "pass": true
+    },
+    {
+      "name": "ray09:omitted_node_actual_masses",
+      "pass": true
+    },
+    {
+      "name": "ray09:conservative_prune_alpha_rgb_budget",
+      "pass": true
+    },
+    {
+      "name": "ray09:analytic_empty_path",
+      "pass": true
+    },
+    {
+      "name": "ray09:leaf_shape_and_range",
+      "pass": true
+    },
+    {
+      "name": "ray09:interval_ledger",
+      "pass": true
+    },
+    {
+      "name": "ray09:interval_radius",
+      "pass": true
+    },
+    {
+      "name": "ray09:fixed_answer_and_errors",
+      "pass": true
+    },
+    {
+      "name": "ray09:ordinary_finite_alpha_range",
+      "pass": true
+    },
+    {
+      "name": "ray09:ordinary_tau_saved_mass",
+      "pass": true
+    },
+    {
+      "name": "ray09:endpoint_acceptance",
+      "pass": true
+    },
+    {
+      "name": "ray09:alpha_acceptance",
+      "pass": true
+    },
+    {
+      "name": "ray09:saved_check_fields",
+      "pass": true
+    },
+    {
+      "name": "ray09:recorded_pruning_rgb_gate",
+      "pass": true
+    },
+    {
+      "name": "ray09:ordinary_path_contract",
+      "pass": true
+    },
+    {
+      "name": "ray09:cell_count_algebra",
+      "pass": true
+    },
+    {
+      "name": "ray10:schedule_identity",
+      "pass": true
+    },
+    {
+      "name": "ray10:finite_unit_geometry",
+      "pass": true
+    },
+    {
+      "name": "ray10:independent_geometry",
+      "pass": true
+    },
+    {
+      "name": "ray10:saved_projection_discrepancy",
+      "pass": true
+    },
+    {
+      "name": "ray10:bvh_partition",
+      "pass": true
+    },
+    {
+      "name": "ray10:omitted_node_partition",
+      "pass": true
+    },
+    {
+      "name": "ray10:saved_node_mass_sum",
+      "pass": true
+    },
+    {
+      "name": "ray10:reference_source_shapes",
+      "pass": true
+    },
+    {
+      "name": "ray10:finite_mass_range",
+      "pass": true
+    },
+    {
+      "name": "ray10:retained_mapping",
+      "pass": true
+    },
+    {
+      "name": "ray10:tiny_q_selection",
+      "pass": true
+    },
+    {
+      "name": "ray10:tiny_q_mass_charge",
+      "pass": true
+    },
+    {
+      "name": "ray10:reference_omitted_ids",
+      "pass": true
+    },
+    {
+      "name": "ray10:prune_mass_budget",
+      "pass": true
+    },
+    {
+      "name": "ray10:omitted_node_actual_masses",
+      "pass": true
+    },
+    {
+      "name": "ray10:conservative_prune_alpha_rgb_budget",
+      "pass": true
+    },
+    {
+      "name": "ray10:analytic_empty_path",
+      "pass": true
+    },
+    {
+      "name": "ray10:leaf_shape_and_range",
+      "pass": true
+    },
+    {
+      "name": "ray10:interval_ledger",
+      "pass": true
+    },
+    {
+      "name": "ray10:interval_radius",
+      "pass": true
+    },
+    {
+      "name": "ray10:fixed_answer_and_errors",
+      "pass": true
+    },
+    {
+      "name": "ray10:ordinary_finite_alpha_range",
+      "pass": true
+    },
+    {
+      "name": "ray10:ordinary_tau_saved_mass",
+      "pass": true
+    },
+    {
+      "name": "ray10:endpoint_acceptance",
+      "pass": true
+    },
+    {
+      "name": "ray10:alpha_acceptance",
+      "pass": true
+    },
+    {
+      "name": "ray10:saved_check_fields",
+      "pass": true
+    },
+    {
+      "name": "ray10:recorded_pruning_rgb_gate",
+      "pass": true
+    },
+    {
+      "name": "ray10:ordinary_path_contract",
+      "pass": true
+    },
+    {
+      "name": "ray10:cell_count_algebra",
+      "pass": true
+    },
+    {
+      "name": "ray11:schedule_identity",
+      "pass": true
+    },
+    {
+      "name": "ray11:finite_unit_geometry",
+      "pass": true
+    },
+    {
+      "name": "ray11:independent_geometry",
+      "pass": true
+    },
+    {
+      "name": "ray11:saved_projection_discrepancy",
+      "pass": true
+    },
+    {
+      "name": "ray11:bvh_partition",
+      "pass": true
+    },
+    {
+      "name": "ray11:omitted_node_partition",
+      "pass": true
+    },
+    {
+      "name": "ray11:saved_node_mass_sum",
+      "pass": true
+    },
+    {
+      "name": "ray11:reference_source_shapes",
+      "pass": true
+    },
+    {
+      "name": "ray11:finite_mass_range",
+      "pass": true
+    },
+    {
+      "name": "ray11:retained_mapping",
+      "pass": true
+    },
+    {
+      "name": "ray11:tiny_q_selection",
+      "pass": true
+    },
+    {
+      "name": "ray11:tiny_q_mass_charge",
+      "pass": true
+    },
+    {
+      "name": "ray11:reference_omitted_ids",
+      "pass": true
+    },
+    {
+      "name": "ray11:prune_mass_budget",
+      "pass": true
+    },
+    {
+      "name": "ray11:omitted_node_actual_masses",
+      "pass": true
+    },
+    {
+      "name": "ray11:conservative_prune_alpha_rgb_budget",
+      "pass": true
+    },
+    {
+      "name": "ray11:analytic_empty_path",
+      "pass": true
+    },
+    {
+      "name": "ray11:leaf_shape_and_range",
+      "pass": true
+    },
+    {
+      "name": "ray11:interval_ledger",
+      "pass": true
+    },
+    {
+      "name": "ray11:interval_radius",
+      "pass": true
+    },
+    {
+      "name": "ray11:fixed_answer_and_errors",
+      "pass": true
+    },
+    {
+      "name": "ray11:ordinary_finite_alpha_range",
+      "pass": true
+    },
+    {
+      "name": "ray11:ordinary_tau_saved_mass",
+      "pass": true
+    },
+    {
+      "name": "ray11:endpoint_acceptance",
+      "pass": true
+    },
+    {
+      "name": "ray11:alpha_acceptance",
+      "pass": true
+    },
+    {
+      "name": "ray11:saved_check_fields",
+      "pass": true
+    },
+    {
+      "name": "ray11:recorded_pruning_rgb_gate",
+      "pass": true
+    },
+    {
+      "name": "ray11:ordinary_path_contract",
+      "pass": true
+    },
+    {
+      "name": "ray11:cell_count_algebra",
+      "pass": true
+    },
+    {
+      "name": "ray12:schedule_identity",
+      "pass": true
+    },
+    {
+      "name": "ray12:finite_unit_geometry",
+      "pass": true
+    },
+    {
+      "name": "ray12:independent_geometry",
+      "pass": true
+    },
+    {
+      "name": "ray12:saved_projection_discrepancy",
+      "pass": true
+    },
+    {
+      "name": "ray12:bvh_partition",
+      "pass": true
+    },
+    {
+      "name": "ray12:omitted_node_partition",
+      "pass": true
+    },
+    {
+      "name": "ray12:saved_node_mass_sum",
+      "pass": true
+    },
+    {
+      "name": "ray12:reference_source_shapes",
+      "pass": true
+    },
+    {
+      "name": "ray12:finite_mass_range",
+      "pass": true
+    },
+    {
+      "name": "ray12:retained_mapping",
+      "pass": true
+    },
+    {
+      "name": "ray12:tiny_q_selection",
+      "pass": true
+    },
+    {
+      "name": "ray12:tiny_q_mass_charge",
+      "pass": true
+    },
+    {
+      "name": "ray12:reference_omitted_ids",
+      "pass": true
+    },
+    {
+      "name": "ray12:prune_mass_budget",
+      "pass": true
+    },
+    {
+      "name": "ray12:omitted_node_actual_masses",
+      "pass": true
+    },
+    {
+      "name": "ray12:conservative_prune_alpha_rgb_budget",
+      "pass": true
+    },
+    {
+      "name": "ray12:analytic_empty_path",
+      "pass": true
+    },
+    {
+      "name": "ray12:leaf_shape_and_range",
+      "pass": true
+    },
+    {
+      "name": "ray12:interval_ledger",
+      "pass": true
+    },
+    {
+      "name": "ray12:interval_radius",
+      "pass": true
+    },
+    {
+      "name": "ray12:fixed_answer_and_errors",
+      "pass": true
+    },
+    {
+      "name": "ray12:ordinary_finite_alpha_range",
+      "pass": true
+    },
+    {
+      "name": "ray12:ordinary_tau_saved_mass",
+      "pass": true
+    },
+    {
+      "name": "ray12:endpoint_acceptance",
+      "pass": true
+    },
+    {
+      "name": "ray12:alpha_acceptance",
+      "pass": true
+    },
+    {
+      "name": "ray12:saved_check_fields",
+      "pass": true
+    },
+    {
+      "name": "ray12:recorded_pruning_rgb_gate",
+      "pass": true
+    },
+    {
+      "name": "ray12:ordinary_path_contract",
+      "pass": true
+    },
+    {
+      "name": "ray12:cell_count_algebra",
+      "pass": true
+    },
+    {
+      "name": "ray13:schedule_identity",
+      "pass": true
+    },
+    {
+      "name": "ray13:finite_unit_geometry",
+      "pass": true
+    },
+    {
+      "name": "ray13:independent_geometry",
+      "pass": true
+    },
+    {
+      "name": "ray13:saved_projection_discrepancy",
+      "pass": true
+    },
+    {
+      "name": "ray13:bvh_partition",
+      "pass": true
+    },
+    {
+      "name": "ray13:omitted_node_partition",
+      "pass": true
+    },
+    {
+      "name": "ray13:saved_node_mass_sum",
+      "pass": true
+    },
+    {
+      "name": "ray13:reference_source_shapes",
+      "pass": true
+    },
+    {
+      "name": "ray13:finite_mass_range",
+      "pass": true
+    },
+    {
+      "name": "ray13:retained_mapping",
+      "pass": true
+    },
+    {
+      "name": "ray13:tiny_q_selection",
+      "pass": true
+    },
+    {
+      "name": "ray13:tiny_q_mass_charge",
+      "pass": true
+    },
+    {
+      "name": "ray13:reference_omitted_ids",
+      "pass": true
+    },
+    {
+      "name": "ray13:prune_mass_budget",
+      "pass": true
+    },
+    {
+      "name": "ray13:omitted_node_actual_masses",
+      "pass": true
+    },
+    {
+      "name": "ray13:conservative_prune_alpha_rgb_budget",
+      "pass": true
+    },
+    {
+      "name": "ray13:analytic_empty_path",
+      "pass": true
+    },
+    {
+      "name": "ray13:leaf_shape_and_range",
+      "pass": true
+    },
+    {
+      "name": "ray13:interval_ledger",
+      "pass": true
+    },
+    {
+      "name": "ray13:interval_radius",
+      "pass": true
+    },
+    {
+      "name": "ray13:fixed_answer_and_errors",
+      "pass": true
+    },
+    {
+      "name": "ray13:ordinary_finite_alpha_range",
+      "pass": true
+    },
+    {
+      "name": "ray13:ordinary_tau_saved_mass",
+      "pass": true
+    },
+    {
+      "name": "ray13:endpoint_acceptance",
+      "pass": true
+    },
+    {
+      "name": "ray13:alpha_acceptance",
+      "pass": true
+    },
+    {
+      "name": "ray13:saved_check_fields",
+      "pass": true
+    },
+    {
+      "name": "ray13:recorded_pruning_rgb_gate",
+      "pass": true
+    },
+    {
+      "name": "ray13:ordinary_path_contract",
+      "pass": true
+    },
+    {
+      "name": "ray13:cell_count_algebra",
+      "pass": true
+    },
+    {
+      "name": "ray14:schedule_identity",
+      "pass": true
+    },
+    {
+      "name": "ray14:finite_unit_geometry",
+      "pass": true
+    },
+    {
+      "name": "ray14:independent_geometry",
+      "pass": true
+    },
+    {
+      "name": "ray14:saved_projection_discrepancy",
+      "pass": true
+    },
+    {
+      "name": "ray14:bvh_partition",
+      "pass": true
+    },
+    {
+      "name": "ray14:omitted_node_partition",
+      "pass": true
+    },
+    {
+      "name": "ray14:saved_node_mass_sum",
+      "pass": true
+    },
+    {
+      "name": "ray14:reference_source_shapes",
+      "pass": true
+    },
+    {
+      "name": "ray14:finite_mass_range",
+      "pass": true
+    },
+    {
+      "name": "ray14:retained_mapping",
+      "pass": true
+    },
+    {
+      "name": "ray14:tiny_q_selection",
+      "pass": true
+    },
+    {
+      "name": "ray14:tiny_q_mass_charge",
+      "pass": true
+    },
+    {
+      "name": "ray14:reference_omitted_ids",
+      "pass": true
+    },
+    {
+      "name": "ray14:prune_mass_budget",
+      "pass": true
+    },
+    {
+      "name": "ray14:omitted_node_actual_masses",
+      "pass": true
+    },
+    {
+      "name": "ray14:conservative_prune_alpha_rgb_budget",
+      "pass": true
+    },
+    {
+      "name": "ray14:analytic_empty_path",
+      "pass": true
+    },
+    {
+      "name": "ray14:leaf_shape_and_range",
+      "pass": true
+    },
+    {
+      "name": "ray14:interval_ledger",
+      "pass": true
+    },
+    {
+      "name": "ray14:interval_radius",
+      "pass": true
+    },
+    {
+      "name": "ray14:fixed_answer_and_errors",
+      "pass": true
+    },
+    {
+      "name": "ray14:ordinary_finite_alpha_range",
+      "pass": true
+    },
+    {
+      "name": "ray14:ordinary_tau_saved_mass",
+      "pass": true
+    },
+    {
+      "name": "ray14:endpoint_acceptance",
+      "pass": true
+    },
+    {
+      "name": "ray14:alpha_acceptance",
+      "pass": true
+    },
+    {
+      "name": "ray14:saved_check_fields",
+      "pass": true
+    },
+    {
+      "name": "ray14:recorded_pruning_rgb_gate",
+      "pass": true
+    },
+    {
+      "name": "ray14:ordinary_path_contract",
+      "pass": true
+    },
+    {
+      "name": "ray14:cell_count_algebra",
+      "pass": true
+    },
+    {
+      "name": "ray15:schedule_identity",
+      "pass": true
+    },
+    {
+      "name": "ray15:finite_unit_geometry",
+      "pass": true
+    },
+    {
+      "name": "ray15:independent_geometry",
+      "pass": true
+    },
+    {
+      "name": "ray15:saved_projection_discrepancy",
+      "pass": true
+    },
+    {
+      "name": "ray15:bvh_partition",
+      "pass": true
+    },
+    {
+      "name": "ray15:omitted_node_partition",
+      "pass": true
+    },
+    {
+      "name": "ray15:saved_node_mass_sum",
+      "pass": true
+    },
+    {
+      "name": "ray15:reference_source_shapes",
+      "pass": true
+    },
+    {
+      "name": "ray15:finite_mass_range",
+      "pass": true
+    },
+    {
+      "name": "ray15:retained_mapping",
+      "pass": true
+    },
+    {
+      "name": "ray15:tiny_q_selection",
+      "pass": true
+    },
+    {
+      "name": "ray15:tiny_q_mass_charge",
+      "pass": true
+    },
+    {
+      "name": "ray15:reference_omitted_ids",
+      "pass": true
+    },
+    {
+      "name": "ray15:prune_mass_budget",
+      "pass": true
+    },
+    {
+      "name": "ray15:omitted_node_actual_masses",
+      "pass": true
+    },
+    {
+      "name": "ray15:conservative_prune_alpha_rgb_budget",
+      "pass": true
+    },
+    {
+      "name": "ray15:analytic_empty_path",
+      "pass": true
+    },
+    {
+      "name": "ray15:leaf_shape_and_range",
+      "pass": true
+    },
+    {
+      "name": "ray15:interval_ledger",
+      "pass": true
+    },
+    {
+      "name": "ray15:interval_radius",
+      "pass": true
+    },
+    {
+      "name": "ray15:fixed_answer_and_errors",
+      "pass": true
+    },
+    {
+      "name": "ray15:ordinary_finite_alpha_range",
+      "pass": true
+    },
+    {
+      "name": "ray15:ordinary_tau_saved_mass",
+      "pass": true
+    },
+    {
+      "name": "ray15:endpoint_acceptance",
+      "pass": true
+    },
+    {
+      "name": "ray15:alpha_acceptance",
+      "pass": true
+    },
+    {
+      "name": "ray15:saved_check_fields",
+      "pass": true
+    },
+    {
+      "name": "ray15:recorded_pruning_rgb_gate",
+      "pass": true
+    },
+    {
+      "name": "ray15:ordinary_path_contract",
+      "pass": true
+    },
+    {
+      "name": "ray15:cell_count_algebra",
+      "pass": true
+    },
+    {
+      "name": "ray16:schedule_identity",
+      "pass": true
+    },
+    {
+      "name": "ray16:finite_unit_geometry",
+      "pass": true
+    },
+    {
+      "name": "ray16:independent_geometry",
+      "pass": true
+    },
+    {
+      "name": "ray16:saved_projection_discrepancy",
+      "pass": true
+    },
+    {
+      "name": "ray16:bvh_partition",
+      "pass": true
+    },
+    {
+      "name": "ray16:omitted_node_partition",
+      "pass": true
+    },
+    {
+      "name": "ray16:saved_node_mass_sum",
+      "pass": true
+    },
+    {
+      "name": "ray16:reference_source_shapes",
+      "pass": true
+    },
+    {
+      "name": "ray16:finite_mass_range",
+      "pass": true
+    },
+    {
+      "name": "ray16:retained_mapping",
+      "pass": true
+    },
+    {
+      "name": "ray16:tiny_q_selection",
+      "pass": true
+    },
+    {
+      "name": "ray16:tiny_q_mass_charge",
+      "pass": true
+    },
+    {
+      "name": "ray16:reference_omitted_ids",
+      "pass": true
+    },
+    {
+      "name": "ray16:prune_mass_budget",
+      "pass": true
+    },
+    {
+      "name": "ray16:omitted_node_actual_masses",
+      "pass": true
+    },
+    {
+      "name": "ray16:conservative_prune_alpha_rgb_budget",
+      "pass": true
+    },
+    {
+      "name": "ray16:analytic_empty_path",
+      "pass": true
+    },
+    {
+      "name": "ray16:leaf_shape_and_range",
+      "pass": true
+    },
+    {
+      "name": "ray16:interval_ledger",
+      "pass": true
+    },
+    {
+      "name": "ray16:interval_radius",
+      "pass": true
+    },
+    {
+      "name": "ray16:fixed_answer_and_errors",
+      "pass": true
+    },
+    {
+      "name": "ray16:ordinary_finite_alpha_range",
+      "pass": true
+    },
+    {
+      "name": "ray16:ordinary_tau_saved_mass",
+      "pass": true
+    },
+    {
+      "name": "ray16:endpoint_acceptance",
+      "pass": true
+    },
+    {
+      "name": "ray16:alpha_acceptance",
+      "pass": true
+    },
+    {
+      "name": "ray16:saved_check_fields",
+      "pass": true
+    },
+    {
+      "name": "ray16:recorded_pruning_rgb_gate",
+      "pass": true
+    },
+    {
+      "name": "ray16:ordinary_path_contract",
+      "pass": true
+    },
+    {
+      "name": "ray16:cell_count_algebra",
+      "pass": true
+    },
+    {
+      "name": "ray17:schedule_identity",
+      "pass": true
+    },
+    {
+      "name": "ray17:finite_unit_geometry",
+      "pass": true
+    },
+    {
+      "name": "ray17:independent_geometry",
+      "pass": true
+    },
+    {
+      "name": "ray17:saved_projection_discrepancy",
+      "pass": true
+    },
+    {
+      "name": "ray17:bvh_partition",
+      "pass": true
+    },
+    {
+      "name": "ray17:omitted_node_partition",
+      "pass": true
+    },
+    {
+      "name": "ray17:saved_node_mass_sum",
+      "pass": true
+    },
+    {
+      "name": "ray17:reference_source_shapes",
+      "pass": true
+    },
+    {
+      "name": "ray17:finite_mass_range",
+      "pass": true
+    },
+    {
+      "name": "ray17:retained_mapping",
+      "pass": true
+    },
+    {
+      "name": "ray17:tiny_q_selection",
+      "pass": true
+    },
+    {
+      "name": "ray17:tiny_q_mass_charge",
+      "pass": true
+    },
+    {
+      "name": "ray17:reference_omitted_ids",
+      "pass": true
+    },
+    {
+      "name": "ray17:prune_mass_budget",
+      "pass": true
+    },
+    {
+      "name": "ray17:omitted_node_actual_masses",
+      "pass": true
+    },
+    {
+      "name": "ray17:conservative_prune_alpha_rgb_budget",
+      "pass": true
+    },
+    {
+      "name": "ray17:full_leaf_partition",
+      "pass": true
+    },
+    {
+      "name": "ray17:absorption_sum",
+      "pass": true
+    },
+    {
+      "name": "ray17:leaf_shape_and_range",
+      "pass": true
+    },
+    {
+      "name": "ray17:interval_ledger",
+      "pass": true
+    },
+    {
+      "name": "ray17:interval_radius",
+      "pass": true
+    },
+    {
+      "name": "ray17:fixed_answer_and_errors",
+      "pass": true
+    },
+    {
+      "name": "ray17:ordinary_finite_alpha_range",
+      "pass": true
+    },
+    {
+      "name": "ray17:ordinary_tau_saved_mass",
+      "pass": true
+    },
+    {
+      "name": "ray17:endpoint_acceptance",
+      "pass": true
+    },
+    {
+      "name": "ray17:alpha_acceptance",
+      "pass": true
+    },
+    {
+      "name": "ray17:saved_check_fields",
+      "pass": true
+    },
+    {
+      "name": "ray17:recorded_pruning_rgb_gate",
+      "pass": true
+    },
+    {
+      "name": "ray17:ordinary_path_contract",
+      "pass": true
+    },
+    {
+      "name": "ray17:cell_count_algebra",
+      "pass": true
+    },
+    {
+      "name": "ray18:schedule_identity",
+      "pass": true
+    },
+    {
+      "name": "ray18:finite_unit_geometry",
+      "pass": true
+    },
+    {
+      "name": "ray18:independent_geometry",
+      "pass": true
+    },
+    {
+      "name": "ray18:saved_projection_discrepancy",
+      "pass": true
+    },
+    {
+      "name": "ray18:bvh_partition",
+      "pass": true
+    },
+    {
+      "name": "ray18:omitted_node_partition",
+      "pass": true
+    },
+    {
+      "name": "ray18:saved_node_mass_sum",
+      "pass": true
+    },
+    {
+      "name": "ray18:reference_source_shapes",
+      "pass": true
+    },
+    {
+      "name": "ray18:finite_mass_range",
+      "pass": true
+    },
+    {
+      "name": "ray18:retained_mapping",
+      "pass": true
+    },
+    {
+      "name": "ray18:tiny_q_selection",
+      "pass": true
+    },
+    {
+      "name": "ray18:tiny_q_mass_charge",
+      "pass": true
+    },
+    {
+      "name": "ray18:prune_mass_budget",
+      "pass": true
+    },
+    {
+      "name": "ray18:omitted_node_actual_masses",
+      "pass": true
+    },
+    {
+      "name": "ray18:conservative_prune_alpha_rgb_budget",
+      "pass": true
+    },
+    {
+      "name": "ray18:full_leaf_partition",
+      "pass": true
+    },
+    {
+      "name": "ray18:absorption_sum",
+      "pass": true
+    },
+    {
+      "name": "ray18:leaf_shape_and_range",
+      "pass": true
+    },
+    {
+      "name": "ray18:interval_ledger",
+      "pass": true
+    },
+    {
+      "name": "ray18:interval_radius",
+      "pass": true
+    },
+    {
+      "name": "ray18:fixed_answer_and_errors",
+      "pass": true
+    },
+    {
+      "name": "ray18:ordinary_finite_alpha_range",
+      "pass": true
+    },
+    {
+      "name": "ray18:ordinary_tau_saved_mass",
+      "pass": true
+    },
+    {
+      "name": "ray18:unresolved_not_disproved",
+      "pass": true
+    },
+    {
+      "name": "ray18:failed_endpoint_gate",
+      "pass": true
+    },
+    {
+      "name": "ray18:red_interval_itself_too_wide",
+      "pass": true
+    },
+    {
+      "name": "ray18:failed_stage_timing_saved",
+      "pass": true
+    },
+    {
+      "name": "ray18:cell_count_algebra",
+      "pass": true
+    },
+    {
+      "name": "completed_nontrivial_mixed_counts",
+      "pass": true
+    },
+    {
+      "name": "first16_computationally_blank",
+      "pass": true
+    },
+    {
+      "name": "first_nonempty_record",
+      "pass": true
+    },
+    {
+      "name": "failure_next_pixel",
+      "pass": true
+    },
+    {
+      "name": "failure_cap_accounting",
+      "pass": true
+    },
+    {
+      "name": "global_cell_accounting",
+      "pass": true
+    },
+    {
+      "name": "full_subset_not_complete",
+      "pass": true
+    },
+    {
+      "name": "no_output_disproved_record",
+      "pass": true
+    },
+    {
+      "name": "journal_final_equivalence",
+      "pass": true
+    },
+    {
+      "name": "journal_event_counts",
+      "pass": true
+    },
+    {
+      "name": "freeze_unchanged_after_audit",
+      "pass": true
+    },
+    {
+      "name": "all_frozen_unchanged_after_audit",
+      "pass": true
+    },
+    {
+      "name": "post_result_retained_color_statistics",
+      "pass": true
+    },
+    {
+      "name": "post_result_redwidth_vs_twice_tolerance",
+      "pass": true
+    }
+  ],
+  "check_count": 573,
+  "failed_checks": [],
+  "execution": {
+    "returncode": 2,
+    "timed_out": false,
+    "errors": [],
+    "child_still_running": false,
+    "supervisor_seconds": 2.5327363000251353,
+    "retries": 0
+  },
+  "worker_accounting": {
+    "completed_rays": 17,
+    "planned_rays_in_constructed_groups": 56,
+    "groups_completed": 0,
+    "computation_elapsed_seconds": 2.0843771,
+    "worker_elapsed_before_receipt_seconds": 2.4163684,
+    "serialization_seconds": 0.1394666,
+    "failed_stage": "reference_enclosure",
+    "failure_code": "reference_per_ray_cell_cap"
+  },
+  "global_counters": {
+    "bvh_input_primitives": 270,
+    "bvh_build_center_distances": 1746,
+    "bvh_build_nodes": 91,
+    "bvh_build_sum_terms": 1746,
+    "bvh_build_leaves": 46,
+    "bvh_queries": 18,
+    "bvh_node_visits": 62,
+    "bvh_bound_exp": 62,
+    "bvh_pruned_nodes": 24,
+    "bvh_omitted_primitives": 4766,
+    "projection_calls": 18,
+    "ordinary_calls": 18,
+    "ordinary_zero_paths": 16,
+    "reference_projected_components": 4860,
+    "reference_log_calls": 5032,
+    "reference_exp_calls": 1111844,
+    "reference_projection_underflows": 4462,
+    "reference_deadline_checks": 75551,
+    "reference_mass_components": 828758,
+    "reference_cdf_intervals": 828758,
+    "reference_cdf_calls": 1657516,
+    "reference_erf_calls": 245820,
+    "reference_expm1_calls": 10947,
+    "reference_omitted_components": 4775,
+    "reference_retained_components": 85,
+    "reference_analytic_branches": 16,
+    "reference_global_reductions": 183,
+    "reference_output_gate_checks": 5253,
+    "bvh_kept_leaves": 16,
+    "bvh_kept_primitives": 94,
+    "projection_exp": 94,
+    "projected_primitives": 94,
+    "normal_interval_calls": 286582,
+    "normal_cdf_calls": 573164,
+    "integration_breakpoint_builds": 2,
+    "integration_original_segments": 472,
+    "integration_scalar_components": 94,
+    "gl_rule_builds": 2,
+    "gl_rule_newton_iterations": 25,
+    "gl_rule_moment_checks": 21,
+    "integration_evaluations": 5664,
+    "gl_evaluations": 5664,
+    "normal_pdf_component_evals": 286488,
+    "gl_refinement_levels": 4,
+    "reference_initial_segments": 427,
+    "reference_created_cells": 10893,
+    "reference_cell_depth_sum": 40582,
+    "reference_max_depth": 6,
+    "reference_erfc_calls": 1411696,
+    "reference_density_bound_components": 542572,
+    "reference_refinements": 5233,
+    "gl_rule_cache_hits": 2
+  },
+  "records": [
+    {
+      "ordinal": 1,
+      "frame": 90,
+      "view_id": "front",
+      "pixel": [
+        16,
+        16
+      ],
+      "accepted_record": true,
+      "ordinary_path": "computed_zero_mass",
+      "ordinary_rgb": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ordinary_alpha": 0.0,
+      "reference_alpha": 0.0,
+      "retained_reference_components": 0,
+      "retained_ordinary_components": 0,
+      "reference_lower": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reference_upper": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "reference_radius": [
+        3.1373152893083363e-298,
+        2.953150537673697e-298,
+        2.5416321086390227e-298
+      ],
+      "endpoint_errors": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "alpha_error": 0.0,
+      "nontrivial": false,
+      "mixed_color": false,
+      "active_mass_source_count": 0,
+      "active_source_color_span": 0.0,
+      "ordinary_omitted_finite_mass": 0.0,
+      "ordinary_charged_mass_bound": 1e-323,
+      "reference_omitted_mass_bound": 2.7e-298,
+      "reference_omission_rgb_radius": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "leaf_count": 0,
+      "created_cells": 0,
+      "derived_initial_segments": 0,
+      "derived_refinements": 0,
+      "absorption_sum_error": null,
+      "lower_reconstruction_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "upper_reconstruction_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ordinary_preparation_seconds": 0.0018221,
+      "ordinary_seconds": 2.74e-05,
+      "reference_seconds": 0.0010985,
+      "failed_stage_seconds": null
+    },
+    {
+      "ordinal": 2,
+      "frame": 90,
+      "view_id": "front",
+      "pixel": [
+        48,
+        16
+      ],
+      "accepted_record": true,
+      "ordinary_path": "computed_zero_mass",
+      "ordinary_rgb": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ordinary_alpha": 0.0,
+      "reference_alpha": 0.0,
+      "retained_reference_components": 0,
+      "retained_ordinary_components": 0,
+      "reference_lower": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reference_upper": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "reference_radius": [
+        3.1373152893083363e-298,
+        2.953150537673697e-298,
+        2.5416321086390227e-298
+      ],
+      "endpoint_errors": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "alpha_error": 0.0,
+      "nontrivial": false,
+      "mixed_color": false,
+      "active_mass_source_count": 0,
+      "active_source_color_span": 0.0,
+      "ordinary_omitted_finite_mass": 0.0,
+      "ordinary_charged_mass_bound": 1e-323,
+      "reference_omitted_mass_bound": 2.7e-298,
+      "reference_omission_rgb_radius": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "leaf_count": 0,
+      "created_cells": 0,
+      "derived_initial_segments": 0,
+      "derived_refinements": 0,
+      "absorption_sum_error": null,
+      "lower_reconstruction_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "upper_reconstruction_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ordinary_preparation_seconds": 0.0002287,
+      "ordinary_seconds": 5.9e-06,
+      "reference_seconds": 0.0010723,
+      "failed_stage_seconds": null
+    },
+    {
+      "ordinal": 3,
+      "frame": 90,
+      "view_id": "front",
+      "pixel": [
+        80,
+        16
+      ],
+      "accepted_record": true,
+      "ordinary_path": "computed_zero_mass",
+      "ordinary_rgb": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ordinary_alpha": 0.0,
+      "reference_alpha": 0.0,
+      "retained_reference_components": 0,
+      "retained_ordinary_components": 0,
+      "reference_lower": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reference_upper": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "reference_radius": [
+        3.1373152893083363e-298,
+        2.953150537673697e-298,
+        2.5416321086390227e-298
+      ],
+      "endpoint_errors": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "alpha_error": 0.0,
+      "nontrivial": false,
+      "mixed_color": false,
+      "active_mass_source_count": 0,
+      "active_source_color_span": 0.0,
+      "ordinary_omitted_finite_mass": 0.0,
+      "ordinary_charged_mass_bound": 1e-323,
+      "reference_omitted_mass_bound": 2.7e-298,
+      "reference_omission_rgb_radius": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "leaf_count": 0,
+      "created_cells": 0,
+      "derived_initial_segments": 0,
+      "derived_refinements": 0,
+      "absorption_sum_error": null,
+      "lower_reconstruction_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "upper_reconstruction_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ordinary_preparation_seconds": 0.0002314,
+      "ordinary_seconds": 4.8e-06,
+      "reference_seconds": 0.0010733,
+      "failed_stage_seconds": null
+    },
+    {
+      "ordinal": 4,
+      "frame": 90,
+      "view_id": "front",
+      "pixel": [
+        112,
+        16
+      ],
+      "accepted_record": true,
+      "ordinary_path": "computed_zero_mass",
+      "ordinary_rgb": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ordinary_alpha": 0.0,
+      "reference_alpha": 0.0,
+      "retained_reference_components": 0,
+      "retained_ordinary_components": 0,
+      "reference_lower": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reference_upper": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "reference_radius": [
+        3.1373152893083363e-298,
+        2.953150537673697e-298,
+        2.5416321086390227e-298
+      ],
+      "endpoint_errors": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "alpha_error": 0.0,
+      "nontrivial": false,
+      "mixed_color": false,
+      "active_mass_source_count": 0,
+      "active_source_color_span": 0.0,
+      "ordinary_omitted_finite_mass": 0.0,
+      "ordinary_charged_mass_bound": 1e-323,
+      "reference_omitted_mass_bound": 2.7e-298,
+      "reference_omission_rgb_radius": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "leaf_count": 0,
+      "created_cells": 0,
+      "derived_initial_segments": 0,
+      "derived_refinements": 0,
+      "absorption_sum_error": null,
+      "lower_reconstruction_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "upper_reconstruction_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ordinary_preparation_seconds": 0.0002101,
+      "ordinary_seconds": 4.7e-06,
+      "reference_seconds": 0.0010802,
+      "failed_stage_seconds": null
+    },
+    {
+      "ordinal": 5,
+      "frame": 90,
+      "view_id": "front",
+      "pixel": [
+        144,
+        16
+      ],
+      "accepted_record": true,
+      "ordinary_path": "computed_zero_mass",
+      "ordinary_rgb": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ordinary_alpha": 0.0,
+      "reference_alpha": 0.0,
+      "retained_reference_components": 0,
+      "retained_ordinary_components": 0,
+      "reference_lower": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reference_upper": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "reference_radius": [
+        3.1373152893083363e-298,
+        2.953150537673697e-298,
+        2.5416321086390227e-298
+      ],
+      "endpoint_errors": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "alpha_error": 0.0,
+      "nontrivial": false,
+      "mixed_color": false,
+      "active_mass_source_count": 0,
+      "active_source_color_span": 0.0,
+      "ordinary_omitted_finite_mass": 0.0,
+      "ordinary_charged_mass_bound": 1e-323,
+      "reference_omitted_mass_bound": 2.7e-298,
+      "reference_omission_rgb_radius": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "leaf_count": 0,
+      "created_cells": 0,
+      "derived_initial_segments": 0,
+      "derived_refinements": 0,
+      "absorption_sum_error": null,
+      "lower_reconstruction_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "upper_reconstruction_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ordinary_preparation_seconds": 0.0004089,
+      "ordinary_seconds": 1.72e-05,
+      "reference_seconds": 0.001083,
+      "failed_stage_seconds": null
+    },
+    {
+      "ordinal": 6,
+      "frame": 90,
+      "view_id": "front",
+      "pixel": [
+        176,
+        16
+      ],
+      "accepted_record": true,
+      "ordinary_path": "computed_zero_mass",
+      "ordinary_rgb": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ordinary_alpha": 0.0,
+      "reference_alpha": 0.0,
+      "retained_reference_components": 0,
+      "retained_ordinary_components": 0,
+      "reference_lower": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reference_upper": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "reference_radius": [
+        3.1373152893083363e-298,
+        2.953150537673697e-298,
+        2.5416321086390227e-298
+      ],
+      "endpoint_errors": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "alpha_error": 0.0,
+      "nontrivial": false,
+      "mixed_color": false,
+      "active_mass_source_count": 0,
+      "active_source_color_span": 0.0,
+      "ordinary_omitted_finite_mass": 0.0,
+      "ordinary_charged_mass_bound": 1e-323,
+      "reference_omitted_mass_bound": 2.7e-298,
+      "reference_omission_rgb_radius": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "leaf_count": 0,
+      "created_cells": 0,
+      "derived_initial_segments": 0,
+      "derived_refinements": 0,
+      "absorption_sum_error": null,
+      "lower_reconstruction_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "upper_reconstruction_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ordinary_preparation_seconds": 0.0002334,
+      "ordinary_seconds": 5e-06,
+      "reference_seconds": 0.0010746,
+      "failed_stage_seconds": null
+    },
+    {
+      "ordinal": 7,
+      "frame": 90,
+      "view_id": "front",
+      "pixel": [
+        208,
+        16
+      ],
+      "accepted_record": true,
+      "ordinary_path": "computed_zero_mass",
+      "ordinary_rgb": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ordinary_alpha": 0.0,
+      "reference_alpha": 0.0,
+      "retained_reference_components": 0,
+      "retained_ordinary_components": 0,
+      "reference_lower": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reference_upper": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "reference_radius": [
+        3.1373152893083363e-298,
+        2.953150537673697e-298,
+        2.5416321086390227e-298
+      ],
+      "endpoint_errors": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "alpha_error": 0.0,
+      "nontrivial": false,
+      "mixed_color": false,
+      "active_mass_source_count": 0,
+      "active_source_color_span": 0.0,
+      "ordinary_omitted_finite_mass": 0.0,
+      "ordinary_charged_mass_bound": 1e-323,
+      "reference_omitted_mass_bound": 2.7e-298,
+      "reference_omission_rgb_radius": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "leaf_count": 0,
+      "created_cells": 0,
+      "derived_initial_segments": 0,
+      "derived_refinements": 0,
+      "absorption_sum_error": null,
+      "lower_reconstruction_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "upper_reconstruction_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ordinary_preparation_seconds": 0.0002167,
+      "ordinary_seconds": 4.7e-06,
+      "reference_seconds": 0.0010715,
+      "failed_stage_seconds": null
+    },
+    {
+      "ordinal": 8,
+      "frame": 90,
+      "view_id": "front",
+      "pixel": [
+        240,
+        16
+      ],
+      "accepted_record": true,
+      "ordinary_path": "computed_zero_mass",
+      "ordinary_rgb": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ordinary_alpha": 0.0,
+      "reference_alpha": 0.0,
+      "retained_reference_components": 0,
+      "retained_ordinary_components": 0,
+      "reference_lower": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reference_upper": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "reference_radius": [
+        3.1373152893083363e-298,
+        2.953150537673697e-298,
+        2.5416321086390227e-298
+      ],
+      "endpoint_errors": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "alpha_error": 0.0,
+      "nontrivial": false,
+      "mixed_color": false,
+      "active_mass_source_count": 0,
+      "active_source_color_span": 0.0,
+      "ordinary_omitted_finite_mass": 0.0,
+      "ordinary_charged_mass_bound": 1e-323,
+      "reference_omitted_mass_bound": 2.7e-298,
+      "reference_omission_rgb_radius": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "leaf_count": 0,
+      "created_cells": 0,
+      "derived_initial_segments": 0,
+      "derived_refinements": 0,
+      "absorption_sum_error": null,
+      "lower_reconstruction_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "upper_reconstruction_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ordinary_preparation_seconds": 0.0002131,
+      "ordinary_seconds": 4.4e-06,
+      "reference_seconds": 0.001077,
+      "failed_stage_seconds": null
+    },
+    {
+      "ordinal": 9,
+      "frame": 90,
+      "view_id": "front",
+      "pixel": [
+        16,
+        48
+      ],
+      "accepted_record": true,
+      "ordinary_path": "computed_zero_mass",
+      "ordinary_rgb": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ordinary_alpha": 0.0,
+      "reference_alpha": 0.0,
+      "retained_reference_components": 0,
+      "retained_ordinary_components": 0,
+      "reference_lower": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reference_upper": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "reference_radius": [
+        3.1373152893083363e-298,
+        2.953150537673697e-298,
+        2.5416321086390227e-298
+      ],
+      "endpoint_errors": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "alpha_error": 0.0,
+      "nontrivial": false,
+      "mixed_color": false,
+      "active_mass_source_count": 0,
+      "active_source_color_span": 0.0,
+      "ordinary_omitted_finite_mass": 0.0,
+      "ordinary_charged_mass_bound": 1e-323,
+      "reference_omitted_mass_bound": 2.7e-298,
+      "reference_omission_rgb_radius": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "leaf_count": 0,
+      "created_cells": 0,
+      "derived_initial_segments": 0,
+      "derived_refinements": 0,
+      "absorption_sum_error": null,
+      "lower_reconstruction_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "upper_reconstruction_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ordinary_preparation_seconds": 0.0002228,
+      "ordinary_seconds": 4.7e-06,
+      "reference_seconds": 0.0010804,
+      "failed_stage_seconds": null
+    },
+    {
+      "ordinal": 10,
+      "frame": 90,
+      "view_id": "front",
+      "pixel": [
+        48,
+        48
+      ],
+      "accepted_record": true,
+      "ordinary_path": "computed_zero_mass",
+      "ordinary_rgb": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ordinary_alpha": 0.0,
+      "reference_alpha": 0.0,
+      "retained_reference_components": 0,
+      "retained_ordinary_components": 0,
+      "reference_lower": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reference_upper": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "reference_radius": [
+        3.1373152893083363e-298,
+        2.953150537673697e-298,
+        2.5416321086390227e-298
+      ],
+      "endpoint_errors": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "alpha_error": 0.0,
+      "nontrivial": false,
+      "mixed_color": false,
+      "active_mass_source_count": 0,
+      "active_source_color_span": 0.0,
+      "ordinary_omitted_finite_mass": 0.0,
+      "ordinary_charged_mass_bound": 1e-323,
+      "reference_omitted_mass_bound": 2.7e-298,
+      "reference_omission_rgb_radius": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "leaf_count": 0,
+      "created_cells": 0,
+      "derived_initial_segments": 0,
+      "derived_refinements": 0,
+      "absorption_sum_error": null,
+      "lower_reconstruction_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "upper_reconstruction_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ordinary_preparation_seconds": 0.0002409,
+      "ordinary_seconds": 4.5e-06,
+      "reference_seconds": 0.0010783,
+      "failed_stage_seconds": null
+    },
+    {
+      "ordinal": 11,
+      "frame": 90,
+      "view_id": "front",
+      "pixel": [
+        80,
+        48
+      ],
+      "accepted_record": true,
+      "ordinary_path": "computed_zero_mass",
+      "ordinary_rgb": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ordinary_alpha": 0.0,
+      "reference_alpha": 0.0,
+      "retained_reference_components": 0,
+      "retained_ordinary_components": 0,
+      "reference_lower": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reference_upper": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "reference_radius": [
+        3.1373152893083363e-298,
+        2.953150537673697e-298,
+        2.5416321086390227e-298
+      ],
+      "endpoint_errors": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "alpha_error": 0.0,
+      "nontrivial": false,
+      "mixed_color": false,
+      "active_mass_source_count": 0,
+      "active_source_color_span": 0.0,
+      "ordinary_omitted_finite_mass": 0.0,
+      "ordinary_charged_mass_bound": 1e-323,
+      "reference_omitted_mass_bound": 2.7e-298,
+      "reference_omission_rgb_radius": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "leaf_count": 0,
+      "created_cells": 0,
+      "derived_initial_segments": 0,
+      "derived_refinements": 0,
+      "absorption_sum_error": null,
+      "lower_reconstruction_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "upper_reconstruction_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ordinary_preparation_seconds": 0.0002144,
+      "ordinary_seconds": 4.5e-06,
+      "reference_seconds": 0.00107,
+      "failed_stage_seconds": null
+    },
+    {
+      "ordinal": 12,
+      "frame": 90,
+      "view_id": "front",
+      "pixel": [
+        112,
+        48
+      ],
+      "accepted_record": true,
+      "ordinary_path": "computed_zero_mass",
+      "ordinary_rgb": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ordinary_alpha": 0.0,
+      "reference_alpha": 3.1577831205518485e-193,
+      "retained_reference_components": 0,
+      "retained_ordinary_components": 0,
+      "reference_lower": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reference_upper": [
+        7.338489825501557e-193,
+        6.90771031134416e-193,
+        5.945128126898449e-193
+      ],
+      "reference_radius": [
+        3.6692449127507787e-193,
+        3.45385515567208e-193,
+        2.9725640634492247e-193
+      ],
+      "endpoint_errors": [
+        7.338489825501557e-193,
+        6.90771031134416e-193,
+        5.945128126898449e-193
+      ],
+      "alpha_error": 3.1577831205518485e-193,
+      "nontrivial": false,
+      "mixed_color": false,
+      "active_mass_source_count": 0,
+      "active_source_color_span": 0.0,
+      "ordinary_omitted_finite_mass": 3.1577831205518485e-193,
+      "ordinary_charged_mass_bound": 3.688780210861918e-168,
+      "reference_omitted_mass_bound": 3.1577831205518485e-193,
+      "reference_omission_rgb_radius": [
+        7.338489825501557e-193,
+        6.90771031134416e-193,
+        5.945128126898449e-193
+      ],
+      "leaf_count": 0,
+      "created_cells": 0,
+      "derived_initial_segments": 0,
+      "derived_refinements": 0,
+      "absorption_sum_error": null,
+      "lower_reconstruction_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "upper_reconstruction_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ordinary_preparation_seconds": 0.000223,
+      "ordinary_seconds": 4.8e-06,
+      "reference_seconds": 0.0010773,
+      "failed_stage_seconds": null
+    },
+    {
+      "ordinal": 13,
+      "frame": 90,
+      "view_id": "front",
+      "pixel": [
+        144,
+        48
+      ],
+      "accepted_record": true,
+      "ordinary_path": "computed_zero_mass",
+      "ordinary_rgb": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ordinary_alpha": 0.0,
+      "reference_alpha": 8.033527513362875e-196,
+      "retained_reference_components": 0,
+      "retained_ordinary_components": 0,
+      "reference_lower": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reference_upper": [
+        1.8669413847964836e-195,
+        1.7573493404077045e-195,
+        1.5124645535998583e-195
+      ],
+      "reference_radius": [
+        9.334706923982418e-196,
+        8.786746702038522e-196,
+        7.562322767999292e-196
+      ],
+      "endpoint_errors": [
+        1.8669413847964836e-195,
+        1.7573493404077045e-195,
+        1.5124645535998583e-195
+      ],
+      "alpha_error": 8.033527513362875e-196,
+      "nontrivial": false,
+      "mixed_color": false,
+      "active_mass_source_count": 0,
+      "active_source_color_span": 0.0,
+      "ordinary_omitted_finite_mass": 8.033527513362875e-196,
+      "ordinary_charged_mass_bound": 4.636738702486756e-170,
+      "reference_omitted_mass_bound": 8.033527513362875e-196,
+      "reference_omission_rgb_radius": [
+        1.8669413847964836e-195,
+        1.7573493404077045e-195,
+        1.5124645535998583e-195
+      ],
+      "leaf_count": 0,
+      "created_cells": 0,
+      "derived_initial_segments": 0,
+      "derived_refinements": 0,
+      "absorption_sum_error": null,
+      "lower_reconstruction_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "upper_reconstruction_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ordinary_preparation_seconds": 0.0002107,
+      "ordinary_seconds": 4.7e-06,
+      "reference_seconds": 0.00108,
+      "failed_stage_seconds": null
+    },
+    {
+      "ordinal": 14,
+      "frame": 90,
+      "view_id": "front",
+      "pixel": [
+        176,
+        48
+      ],
+      "accepted_record": true,
+      "ordinary_path": "computed_zero_mass",
+      "ordinary_rgb": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ordinary_alpha": 0.0,
+      "reference_alpha": 0.0,
+      "retained_reference_components": 0,
+      "retained_ordinary_components": 0,
+      "reference_lower": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reference_upper": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "reference_radius": [
+        3.1373152893083363e-298,
+        2.953150537673697e-298,
+        2.5416321086390227e-298
+      ],
+      "endpoint_errors": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "alpha_error": 0.0,
+      "nontrivial": false,
+      "mixed_color": false,
+      "active_mass_source_count": 0,
+      "active_source_color_span": 0.0,
+      "ordinary_omitted_finite_mass": 0.0,
+      "ordinary_charged_mass_bound": 1e-323,
+      "reference_omitted_mass_bound": 2.7e-298,
+      "reference_omission_rgb_radius": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "leaf_count": 0,
+      "created_cells": 0,
+      "derived_initial_segments": 0,
+      "derived_refinements": 0,
+      "absorption_sum_error": null,
+      "lower_reconstruction_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "upper_reconstruction_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ordinary_preparation_seconds": 0.0002437,
+      "ordinary_seconds": 4.9e-06,
+      "reference_seconds": 0.0011561,
+      "failed_stage_seconds": null
+    },
+    {
+      "ordinal": 15,
+      "frame": 90,
+      "view_id": "front",
+      "pixel": [
+        208,
+        48
+      ],
+      "accepted_record": true,
+      "ordinary_path": "computed_zero_mass",
+      "ordinary_rgb": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ordinary_alpha": 0.0,
+      "reference_alpha": 0.0,
+      "retained_reference_components": 0,
+      "retained_ordinary_components": 0,
+      "reference_lower": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reference_upper": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "reference_radius": [
+        3.1373152893083363e-298,
+        2.953150537673697e-298,
+        2.5416321086390227e-298
+      ],
+      "endpoint_errors": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "alpha_error": 0.0,
+      "nontrivial": false,
+      "mixed_color": false,
+      "active_mass_source_count": 0,
+      "active_source_color_span": 0.0,
+      "ordinary_omitted_finite_mass": 0.0,
+      "ordinary_charged_mass_bound": 1e-323,
+      "reference_omitted_mass_bound": 2.7e-298,
+      "reference_omission_rgb_radius": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "leaf_count": 0,
+      "created_cells": 0,
+      "derived_initial_segments": 0,
+      "derived_refinements": 0,
+      "absorption_sum_error": null,
+      "lower_reconstruction_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "upper_reconstruction_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ordinary_preparation_seconds": 0.000236,
+      "ordinary_seconds": 5.4e-06,
+      "reference_seconds": 0.0010672,
+      "failed_stage_seconds": null
+    },
+    {
+      "ordinal": 16,
+      "frame": 90,
+      "view_id": "front",
+      "pixel": [
+        240,
+        48
+      ],
+      "accepted_record": true,
+      "ordinary_path": "computed_zero_mass",
+      "ordinary_rgb": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ordinary_alpha": 0.0,
+      "reference_alpha": 0.0,
+      "retained_reference_components": 0,
+      "retained_ordinary_components": 0,
+      "reference_lower": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "reference_upper": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "reference_radius": [
+        3.1373152893083363e-298,
+        2.953150537673697e-298,
+        2.5416321086390227e-298
+      ],
+      "endpoint_errors": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "alpha_error": 0.0,
+      "nontrivial": false,
+      "mixed_color": false,
+      "active_mass_source_count": 0,
+      "active_source_color_span": 0.0,
+      "ordinary_omitted_finite_mass": 0.0,
+      "ordinary_charged_mass_bound": 1e-323,
+      "reference_omitted_mass_bound": 2.7e-298,
+      "reference_omission_rgb_radius": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "leaf_count": 0,
+      "created_cells": 0,
+      "derived_initial_segments": 0,
+      "derived_refinements": 0,
+      "absorption_sum_error": null,
+      "lower_reconstruction_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "upper_reconstruction_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "ordinary_preparation_seconds": 0.0002725,
+      "ordinary_seconds": 4.6e-06,
+      "reference_seconds": 0.0010774,
+      "failed_stage_seconds": null
+    },
+    {
+      "ordinal": 17,
+      "frame": 90,
+      "view_id": "front",
+      "pixel": [
+        132,
+        73
+      ],
+      "accepted_record": true,
+      "ordinary_path": "gl_no_fallback",
+      "ordinary_rgb": [
+        0.18927751611345842,
+        0.043074561765932266,
+        0.006092713879154582
+      ],
+      "ordinary_alpha": 0.19596156354397234,
+      "reference_alpha": 0.1959615658668975,
+      "retained_reference_components": 28,
+      "retained_ordinary_components": 34,
+      "reference_lower": [
+        0.18832182250188895,
+        0.04285247114143103,
+        0.006061520271279265
+      ],
+      "reference_upper": [
+        0.19027494444104126,
+        0.04330492443603096,
+        0.006125160239386238
+      ],
+      "reference_radius": [
+        0.0009765609695761568,
+        0.0002262266472999666,
+        3.1819984053486905e-05
+      ],
+      "endpoint_errors": [
+        0.0009974283275828444,
+        0.0002303626700986966,
+        3.244636023165635e-05
+      ],
+      "alpha_error": 2.3229251577827625e-09,
+      "nontrivial": true,
+      "mixed_color": true,
+      "active_mass_source_count": 10,
+      "active_source_color_span": 0.07015111059696033,
+      "ordinary_omitted_finite_mass": 2.889072074512326e-09,
+      "ordinary_charged_mass_bound": 6.4653559743036e-06,
+      "reference_omitted_mass_bound": 5.400927096589486e-14,
+      "reference_omission_rgb_radius": [
+        1.2551415671532902e-13,
+        1.1814630192021666e-13,
+        1.016827387045185e-13
+      ],
+      "leaf_count": 1421,
+      "created_cells": 2701,
+      "derived_initial_segments": 141,
+      "derived_refinements": 1280,
+      "absorption_sum_error": 2.7207004103036224e-17,
+      "lower_reconstruction_errors": [
+        2.3921344342758694e-18,
+        1.0028958857656261e-18,
+        6.198868630797264e-19
+      ],
+      "upper_reconstruction_errors": [
+        8.572117635447175e-19,
+        2.510954214479113e-18,
+        5.788782270516596e-19
+      ],
+      "ordinary_preparation_seconds": 0.0004069,
+      "ordinary_seconds": 0.0517623,
+      "reference_seconds": 0.2848299,
+      "failed_stage_seconds": null
+    },
+    {
+      "ordinal": 18,
+      "frame": 90,
+      "view_id": "front",
+      "pixel": [
+        130,
+        77
+      ],
+      "accepted_record": false,
+      "ordinary_path": "gl_no_fallback",
+      "ordinary_rgb": [
+        0.360990986154835,
+        0.08721908841773367,
+        0.012048256869983806
+      ],
+      "ordinary_alpha": 0.35546430530127576,
+      "reference_alpha": 0.35546431745556567,
+      "retained_reference_components": 57,
+      "retained_ordinary_components": 60,
+      "reference_lower": [
+        0.35989733466962315,
+        0.08695459745254283,
+        0.012011709767118017
+      ],
+      "reference_upper": [
+        0.3621008129453549,
+        0.08748683380582946,
+        0.012085278141270453
+      ],
+      "reference_radius": [
+        0.0011017391378658759,
+        0.0002661181766433207,
+        3.6784187076218874e-05
+      ],
+      "endpoint_errors": [
+        0.0011098267905199077,
+        0.0002677453880957914,
+        3.702127128664759e-05
+      ],
+      "alpha_error": 1.2154289907861937e-08,
+      "nontrivial": true,
+      "mixed_color": true,
+      "active_mass_source_count": 21,
+      "active_source_color_span": 0.1659119490106975,
+      "ordinary_omitted_finite_mass": 1.8857435210502217e-08,
+      "ordinary_charged_mass_bound": 2.964922322907969e-05,
+      "reference_omitted_mass_bound": 1.8094639164318543e-13,
+      "reference_omission_rgb_radius": [
+        4.2050806003502847e-13,
+        3.958236546452889e-13,
+        3.406660436612223e-13
+      ],
+      "leaf_count": 4239,
+      "created_cells": 8192,
+      "derived_initial_segments": 286,
+      "derived_refinements": 3953,
+      "absorption_sum_error": 2.948462922410224e-18,
+      "lower_reconstruction_errors": [
+        1.3030306728041702e-17,
+        5.2160847093430446e-18,
+        2.6129979839268305e-19
+      ],
+      "upper_reconstruction_errors": [
+        4.02460270698051e-18,
+        4.4903950384050304e-18,
+        7.6846891438430495e-19
+      ],
+      "ordinary_preparation_seconds": 0.0006262,
+      "ordinary_seconds": 0.1472574,
+      "reference_seconds": null,
+      "failed_stage_seconds": 1.4805898
+    }
+  ],
+  "max_first16_reference_alpha": 3.1577831205518485e-193,
+  "scientific_evaluations_added": 0,
+  "next_invocations_started": 0,
+  "T32_status_preserved": "failed",
+  "limits": "Consistency audit, not formal floating-point certification, full-frame qualification, latency comparison or a TOG contribution.",
+  "post_result_claim_review": {
+    "documents": [
+      {
+        "path": "tracks/tog/tasks/t33-output-accuracy-qualification/README.md",
+        "bytes": 5285,
+        "sha256": "495683a0736fe559c631cdb129663bc90b71899fc668600f64268325329ada41"
+      },
+      {
+        "path": "tracks/tog/tasks/t33-output-accuracy-qualification/REFERENCE_DIAGNOSIS.md",
+        "bytes": 5749,
+        "sha256": "a5eb788651e68f630c8d663e17ec58da16aa771b3ab6fb5c74fe08aa3a388155"
+      },
+      {
+        "path": "tracks/tog/tasks/t33-output-accuracy-qualification/NEXT_EVIDENCE.md",
+        "bytes": 3486,
+        "sha256": "f1979773a834f66887f99a025d39ab92126d2196b995ea8ecf5a764d6dc4be43"
+      }
+    ],
+    "blocking_findings": [],
+    "saved_color_statistics": {
+      "retained_count": 57,
+      "red_min": 0.9320010346900842,
+      "red_max": 1.217375068507919,
+      "red_span": 0.28537403381783477,
+      "all_h_equal": true,
+      "h": 0.018371173070873836
+    },
+    "mathematical_review": [
+      "For positive sum of lower densities, the sign of c_i-R at an extremal ratio requires each coordinate at the corresponding lower/upper endpoint; sorted threshold corners include an optimizer.",
+      "For zero sum of nonnegative lower densities, positive-denominator mixtures have exact extrema at the smallest/largest colors with positive upper density. An all-zero upper box is a failure, not implicit vacuum.",
+      "The channelwise box optimum is no looser than the old quotient-plus-range enclosure in exact arithmetic and is equivariant to adding a common color offset.",
+      "Old color-range clipping already fixes equal-color channels; the documents do not claim that degenerate case as new improvement."
+    ],
+    "cost_and_scope_review": "One deterministic color ordering per channel and prefix/suffix scans must be charged, using a specified stable O(N) construction per cell. Bounds remain independent of ordinary output; priority values may change while the priority rule remains fixed. Original full-field colors still govern omission uncertainty.",
+    "next_task_limit": "At most one separately reviewed and frozen complete box-extrema qualification, identical fields/sampling/tolerances/resource limits and all other gates; no pilot/retry. Failure closes this density-box reference route on these fields. No invocation here.",
+    "not_claimed": [
+      "True ordinary output error from GL agreement or interval midpoint proximity.",
+      "Held-out confirmation, formal floating-point certificate, renderer bottleneck or TOG method novelty."
+    ],
+    "scientific_evaluations_added": 0
+  }
+}
