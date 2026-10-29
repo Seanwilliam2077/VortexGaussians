@@ -1,0 +1,46 @@
+{
+  "schema": "t52-single-invocation-execution-v1",
+  "started_utc": "2026-10-29T22:55:36.824422+00:00",
+  "input_manifest": {
+    "path": "input-manifest.json",
+    "bytes": 1639,
+    "sha256": "7c32812965a7f6853048fe8cfadb485c479ae9cbd52175e1915cc868b952e2e9"
+  },
+  "invocation_limit": 1,
+  "scientific_child_invocations": 1,
+  "child_timeout_seconds": 60,
+  "supervisor_executable": "C:\\Users\\seanzjxiao\\miniconda3\\envs\\gs-sph-3d\\python.exe",
+  "helper": {
+    "path": "local/run_once.py",
+    "bytes": 3152,
+    "sha256": "e1c0b72f77f127bc259887c0a1be13770e0cd8fb730d9e09ae4017220e51531f"
+  },
+  "child_command": [
+    "C:\\Users\\seanzjxiao\\miniconda3\\envs\\gs-sph-3d\\python.exe",
+    "-I",
+    "-B",
+    "-u",
+    "-X",
+    "utf8",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t52-best-tangent-enstrophy\\measure.py",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t52-best-tangent-enstrophy\\result.json"
+  ],
+  "child_supervised_seconds": 4.807828599936329,
+  "returncode": 3228369023,
+  "status": "failed_child_no_retry",
+  "logs": [
+    {
+      "path": "local/stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "frozen_inputs_unchanged": true,
+  "supervisor_elapsed_before_receipt_write_seconds": 4.814353100024164,
+  "finished_utc": "2026-10-29T22:55:41.637406+00:00"
+}

@@ -1,0 +1,9 @@
+# T52 — retain the ordinary fit, retain the failed check
+
+The useful analytical finding is that a full-state ordinary least-squares tangent already beats the center update in the specified physical derivative norm. The exact formulas imply E_*<1<E_c, where 1 is the zero-derivative reference. Any future candidate must receive this stronger ordinary comparator and the same analytic field information; demonstrating a gain only over the center-affine update would not isolate a new method's value.
+
+This result advances beyond exact nonclosure by specifying the best attainable instantaneous residual within the existing one-carrier tangent, the optimal coefficient and their scale dependence. It does not quantify a visually acceptable error or show how a multi-carrier simulation behaves. The remaining residual is not itself a new mechanism or proof that refinement, splitting or another repair is worthwhile.
+
+The one numerical check terminated with no result. Its failure is an execution failure, not evidence against the formulas or a measurement of the approximation floor. Preserve the fixed protocol, code, input identities, empty logs, return code and complete observed cost. Do not repeat the measurement or compute substitute decimals in this task. Runtime diagnosis must be a separately bounded preparatory task before any later scientific invocation; its exact failure phase is currently unknown and no external blocker is established.
+
+No fluid implementation, benchmark expansion, additional carrier, alternate norm or source batch is selected here. A later method decision still needs practical physical outputs, an accuracy requirement and a mechanism whose benefit remains after ordinary fitting. The complete SIGGRAPH/TOG goal is active and unachieved. All historical outcomes, art inactivity, main and the deleted automation remain unchanged.

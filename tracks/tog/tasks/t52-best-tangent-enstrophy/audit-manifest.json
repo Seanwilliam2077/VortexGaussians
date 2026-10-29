@@ -1,0 +1,197 @@
+{
+  "schema": "t52-best-tangent-enstrophy-publication-v1",
+  "created_utc": "2026-10-29T23:05:27.582580+00:00",
+  "parent_commit": "43b0eac44dc974811d15d7671a1e4069aa680a5c",
+  "previous_goal_turn": "progress: T51 established full-tangent physical nonmembership without quantifying approximation error",
+  "current_turn_classification": "progress: analytic ordinary optimal tangent and preserved failed single scalar verification",
+  "goal_status": "active_not_submission_ready",
+  "decision": "retain_strong_ordinary_analytic_baseline_and_failed_measurement_no_retry",
+  "complete_existing_parameter_tangent_allowed": true,
+  "parameter_tangent_dimension": 12,
+  "metric": "all-space L2 physical vorticity-derivative residual",
+  "exact_ordinary_optimal_coefficient_derived": true,
+  "exact_J_formulas_derived": true,
+  "analytic_ordering": "0 < E_best < 1 < E_center",
+  "zero_update_role": "metric_anchor_not_fluid_solver",
+  "initial_isotropic_single_carrier_scope": true,
+  "independent_mathematical_and_execution_readbacks": 1,
+  "scientific_child_invocations": 1,
+  "child_execution_status": "failed_child_no_retry",
+  "child_returncode": 3228369023,
+  "child_supervised_seconds": 4.807828599936329,
+  "supervisor_elapsed_before_receipt_write_seconds": 4.814353100024164,
+  "elapsed_scope": "child supervised wall time and supervisor before receipt writing; not method timing",
+  "child_execution_budget_seconds": 60,
+  "empty_stdout_and_stderr": true,
+  "result_json_exists": false,
+  "failure_phase": null,
+  "completed_numerical_nodes": null,
+  "runtime_versions": null,
+  "numerical_values_available": false,
+  "numerical_consistency_qualified": false,
+  "frozen_inputs_unchanged": true,
+  "pre_run_dependency_preparation_change_disclosed": true,
+  "scientific_retry_count": 0,
+  "alternate_numerical_calculations": 0,
+  "failure_cause_identified": false,
+  "local_execution_support": [
+    {
+      "path": "tracks/tog/tasks/t52-best-tangent-enstrophy/local/run_once.py",
+      "bytes": 3152,
+      "sha256": "e1c0b72f77f127bc259887c0a1be13770e0cd8fb730d9e09ae4017220e51531f"
+    },
+    {
+      "path": "tracks/tog/tasks/t52-best-tangent-enstrophy/local/stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tracks/tog/tasks/t52-best-tangent-enstrophy/local/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "local_execution_support_published": false,
+  "exact_nonclosure_does_not_rule_out_useful_approximation": true,
+  "finite_time_physical_accuracy_established": false,
+  "practical_quality_or_utility_established": false,
+  "new_fluid_rollouts": 0,
+  "new_methods_implemented": 0,
+  "new_symbolic_software_evaluations": 0,
+  "source_acquisition_invocations": 0,
+  "external_search_queries": 0,
+  "paper_rereads": 0,
+  "new_browser_launches": 0,
+  "new_rendering_executions": 0,
+  "third_party_scene_assets": 0,
+  "installations": 0,
+  "novelty_established": false,
+  "cost_advantage_measured": false,
+  "next_repair_selected": false,
+  "next_scientific_run_selected": false,
+  "next_method_selected": false,
+  "next_source_batch_selected": false,
+  "later_scientific_invocation_requires_separately_bounded_preparation": true,
+  "later_method_decision_requires_physical_accuracy_task_and_payoff": true,
+  "next_decision_contract": {
+    "path": "tracks/tog/tasks/t52-best-tangent-enstrophy/DECISION.md",
+    "bytes": 1866,
+    "sha256": "e86244c1b8d456d70eece5c0df88bfcf21b4853c23b7b2b497148b1b2668cc08"
+  },
+  "TOG_core_contribution": false,
+  "artifacts": [
+    {
+      "path": "tracks/tog/tasks/t52-best-tangent-enstrophy/.gitignore",
+      "bytes": 7,
+      "sha256": "a7d8bdcefba82a95ebc021d87c629fdea21f13af953bf01e28b7cf8b0eeceb41"
+    },
+    {
+      "path": "tracks/tog/tasks/t52-best-tangent-enstrophy/ANALYSIS.md",
+      "bytes": 5822,
+      "sha256": "16d2f8b9f9d1e7ea3d9e664bbb3edd2d104d6b87bee052899ceb508d12fdfae3"
+    },
+    {
+      "path": "tracks/tog/tasks/t52-best-tangent-enstrophy/DECISION.md",
+      "bytes": 1866,
+      "sha256": "e86244c1b8d456d70eece5c0df88bfcf21b4853c23b7b2b497148b1b2668cc08"
+    },
+    {
+      "path": "tracks/tog/tasks/t52-best-tangent-enstrophy/README.md",
+      "bytes": 1785,
+      "sha256": "1f3e0eaf2821ec109183a2713619cd5fa0f56d32c9f9a9631425f173e1602ae1"
+    },
+    {
+      "path": "tracks/tog/tasks/t52-best-tangent-enstrophy/RESULTS.md",
+      "bytes": 4094,
+      "sha256": "54ba756368ac91ba343a616c48d56d8f1186f459f5ac321a9c7c5ac3081a15fc"
+    },
+    {
+      "path": "tracks/tog/tasks/t52-best-tangent-enstrophy/RUN_PROTOCOL.md",
+      "bytes": 4155,
+      "sha256": "b269487b7f1854943ab98ef80b711b12aa6b78b1ab78630bca391a8c36f8e436"
+    },
+    {
+      "path": "tracks/tog/tasks/t52-best-tangent-enstrophy/SCOPE.md",
+      "bytes": 3948,
+      "sha256": "db06c33e42ad375dd7f89079806022e572469fef7638e825bce062b90d518708"
+    },
+    {
+      "path": "tracks/tog/tasks/t52-best-tangent-enstrophy/execution.json",
+      "bytes": 1711,
+      "sha256": "bdb939c3701b4307dcd2f7b66beea9920e4c640841991188d0ad666113f727a5"
+    },
+    {
+      "path": "tracks/tog/tasks/t52-best-tangent-enstrophy/input-manifest.json",
+      "bytes": 1639,
+      "sha256": "7c32812965a7f6853048fe8cfadb485c479ae9cbd52175e1915cc868b952e2e9"
+    },
+    {
+      "path": "tracks/tog/tasks/t52-best-tangent-enstrophy/measure.py",
+      "bytes": 5071,
+      "sha256": "488085c916d8172a9f243c2fa9f3e4cf18cc118ca6e628cc7d6fed4636657743"
+    },
+    {
+      "path": "tracks/validation/t52-mathematical-measurement-review.md",
+      "bytes": 11891,
+      "sha256": "bc003870065a903971f7ab21df327b5634d28f32c795dbe050e632dddc863e0c"
+    }
+  ],
+  "current_state_documents": [
+    {
+      "path": "tracks/STATUS.md",
+      "bytes": 71989,
+      "sha256": "bf427a0db5fba4acde972e09800cea6316cd8a3ec6ef09a093d7fdbed48531e3"
+    },
+    {
+      "path": "tracks/EXPLORATION.md",
+      "bytes": 8391,
+      "sha256": "872f94cd6bbdde92fa82490eaf3c59e19d83d6ae367b22c26f547e6a3506cccf"
+    },
+    {
+      "path": "tracks/tog/README.md",
+      "bytes": 8498,
+      "sha256": "78cffe239acb264462ddd85616b58191a1996b6791602c4d59ec5b4050c3f9f6"
+    }
+  ],
+  "preservation_chain": {
+    "parent_manifest": {
+      "path": "tracks/tog/tasks/t51-self-induced-tangent/audit-manifest.json",
+      "bytes": 6265,
+      "sha256": "dfc39f6d2f59ad92272b994b40df5b3fb69739c471d5c985c0f871b9d8be826c"
+    },
+    "verified_prior_artifact_count": 614,
+    "all_recorded_prior_bytes_unchanged": true
+  },
+  "parent_tracked_file_count": 1142,
+  "other_parent_tracked_files_unchanged": 1139,
+  "literal_parent_blob_matches": 1125,
+  "CRLF_only_checkout_conversions": [
+    ".gitignore",
+    "CHANGELOG.md",
+    "PUBLISH.md",
+    "README.md",
+    "compare.html",
+    "index.html",
+    "research/EVIDENCE_STATUS.md",
+    "research/FRONTIER_EARLY_REJECTION.md",
+    "research/lib/p3d-baseline.json",
+    "research/lib/p3e-baseline.json",
+    "research/lib/p3f-baseline.json",
+    "research/lib/p3g-baseline.json",
+    "research/physical_reference/README.md",
+    "study/index.html"
+  ],
+  "all_parent_blob_ids_match_after_git_clean_filters": true,
+  "original_core": {
+    "path": "tracks/tog/src/core.py",
+    "bytes": 13301,
+    "sha256": "ac750b70a86743ac858f1c53cf620ce29c63c462456115af4d0d8c93fa20bd9e"
+  },
+  "historical_failures_unchanged": true,
+  "T49_prescribed_flow_contract_unchanged": true,
+  "T50_gauge_contract_unchanged": true,
+  "T51_full_tangent_nonmembership_unchanged": true,
+  "art_inactive": true,
+  "main_not_merged_or_deployed": true,
+  "automation_remains_deleted": true
+}
