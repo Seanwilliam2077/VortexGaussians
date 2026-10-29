@@ -1,0 +1,27 @@
+{
+  "schema": "t42-pre-freeze-input-development-v1",
+  "scientific_runs": 0,
+  "browser_launches": 0,
+  "attempts": [
+    {
+      "phase": "offline PLY input selection before protocol freeze",
+      "node_version": "v24.16.0",
+      "exit_code": 1,
+      "result": "no opaque center within 3 pixels of A",
+      "rule": "opacity >= .8; positive depth; nearest projected center within 3 pixels of fixed photograph A=[855,690]",
+      "B_processed": false,
+      "saved_original_script": "local/prepare-v1.mjs",
+      "original_script_sha256": "b7d4368002cf4ca13060a9741f4ef8c56a1d2c455f943b829a13e2a5472dc000",
+      "classification": "failed preparation rule, not a dynamic trial or contribution evidence"
+    }
+  ],
+  "next_preparation_revision": "Keep photograph targets, placement and dynamics unchanged. Before any browser launch, use a nearest-center selection within10px instead of3px. If this revision fails, stop this input route. Preserve the initial failure; no parameter is selected from a dynamic result.",
+  "revision_result": {
+    "exit_code": 0,
+    "A_index": 22158,
+    "A_pixel_distance": 3.268460505945326,
+    "B_index": 26728,
+    "B_pixel_distance": 1.140512234561626,
+    "note": "Second preparation invocation succeeded under the new disclosed selector; original3px preparation remains failed. No browser or dynamic execution preceded either invocation."
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "schema": "t42-linked-workflow-evidence-v1",
+  "created_utc": "2026-10-29T20:21:15.855398+00:00",
+  "parent_commit": "9343f9e957595b6bba1abcccd382a9cc6c8852b1",
+  "current_turn_classification": "progress: first recovered Firewoods dynamic workflow completed; saved state consistent, visual task unqualified",
+  "goal_status": "active_not_submission_ready",
+  "decision": "task_unqualified_visual_identifiability",
+  "new_scientific_executions": 1,
+  "new_browser_launches": 1,
+  "total_steps": 360,
+  "seeds": [
+    11
+  ],
+  "offline_input_preparations": 2,
+  "initial_3px_preparation_failed": true,
+  "new_assets": 0,
+  "installations": 0,
+  "external_source_acquisitions": 0,
+  "new_methods_implemented": 0,
+  "saved_data_engineering_consistent": true,
+  "visual_task_qualified": false,
+  "human_feedback": false,
+  "no_A_only_counterfactual": true,
+  "counterfactual_absence_is_not_an_added_gate": true,
+  "raw_run_files": 19,
+  "raw_run_bytes": 7817363,
+  "external_inventory_record": {
+    "path": "tracks/tog/tasks/t42-firewoods-sequential-workflow/decision-evidence.json",
+    "bytes": 30555,
+    "sha256": "320def93e1bc94dd7d08650d337d70a4defe8bfe5cd52a21f329b859c1adab38"
+  },
+  "frozen_input_count": 24,
+  "all_frozen_inputs_unchanged": true,
+  "freeze_record": {
+    "path": "tracks/tog/tasks/t42-firewoods-sequential-workflow/freeze.json",
+    "bytes": 5321,
+    "sha256": "2dc93f1b2d0d4bf2edfaac9f6fa3c6bac4d8fa595de35c149c7506c55dd83bb9"
+  },
+  "audit_result": {
+    "path": "tracks/tog/tasks/t42-firewoods-sequential-workflow/result-audit.json",
+    "bytes": 35252,
+    "sha256": "6b9d58ef92fdf4bb7a7e07ecc63c69b98a8af47cca457d2cce8f8806cd319dbc"
+  },
+  "next_scientific_run_selected": false,
+  "new_method_selected": false,
+  "TOG_core_contribution": false,
+  "artifacts": [
+    {
+      "path": "tracks/tog/tasks/t42-firewoods-sequential-workflow/.gitignore",
+      "bytes": 7,
+      "sha256": "a7d8bdcefba82a95ebc021d87c629fdea21f13af953bf01e28b7cf8b0eeceb41"
+    },
+    {
+      "path": "tracks/tog/tasks/t42-firewoods-sequential-workflow/PROTOCOL.md",
+      "bytes": 8931,
+      "sha256": "1719d3cd48dd08c1d6bd16f4b48ce7fc1e7d7063ad4769f5737e91a9ca994ef2"
+    },
+    {
+      "path": "tracks/tog/tasks/t42-firewoods-sequential-workflow/README.md",
+      "bytes": 10658,
+      "sha256": "97bad6ef96d7f17b92a66e057931c7a7a3029226988939bb8a8f5b98424b47e1"
+    },
+    {
+      "path": "tracks/tog/tasks/t42-firewoods-sequential-workflow/adapter-tail.js",
+      "bytes": 786,
+      "sha256": "419bcb234f8ce26841883587bd78d7ee14ce912c6b9c44488b2b2805b03f9cd2"
+    },
+    {
+      "path": "tracks/tog/tasks/t42-firewoods-sequential-workflow/adapter.js",
+      "bytes": 1985,
+      "sha256": "e3c6348a18ae633e963bdf574ceac92b2ce3956ac2b26e06b9b5f88cda7f58da"
+    },
+    {
+      "path": "tracks/tog/tasks/t42-firewoods-sequential-workflow/audit_saved.py",
+      "bytes": 28636,
+      "sha256": "4fea88b5f0897a117d87fa98347b72cbdff0a1b4d1ed1a0c0794579a02d1da96"
+    },
+    {
+      "path": "tracks/tog/tasks/t42-firewoods-sequential-workflow/capture.mjs",
+      "bytes": 7997,
+      "sha256": "398a5c9f5076bdf82155ced2d561867daa1c7028767881d2bed288bcfca39f34"
+    },
+    {
+      "path": "tracks/tog/tasks/t42-firewoods-sequential-workflow/decision-evidence.json",
+      "bytes": 30555,
+      "sha256": "320def93e1bc94dd7d08650d337d70a4defe8bfe5cd52a21f329b859c1adab38"
+    },
+    {
+      "path": "tracks/tog/tasks/t42-firewoods-sequential-workflow/freeze.json",
+      "bytes": 5321,
+      "sha256": "2dc93f1b2d0d4bf2edfaac9f6fa3c6bac4d8fa595de35c149c7506c55dd83bb9"
+    },
+    {
+      "path": "tracks/tog/tasks/t42-firewoods-sequential-workflow/freeze.py",
+      "bytes": 2670,
+      "sha256": "7aee54d79385eee9cc4d1d5ec8aa59c7334a019752e3b98c203d3ca92bf71d23"
+    },
+    {
+      "path": "tracks/tog/tasks/t42-firewoods-sequential-workflow/preparation-history.json",
+      "bytes": 1386,
+      "sha256": "8bdb91d3f3bc0e918d7aa8cb9b2a212101fcb4462d14e73f0a7f3601baac20a4"
+    },
+    {
+      "path": "tracks/tog/tasks/t42-firewoods-sequential-workflow/prepare.mjs",
+      "bytes": 6016,
+      "sha256": "bb8bdffa86b42d8f974953af6a9e60e874de8adf761658769f273343a98ff9ae"
+    },
+    {
+      "path": "tracks/tog/tasks/t42-firewoods-sequential-workflow/recipe.json",
+      "bytes": 11926,
+      "sha256": "982c98d3187ab26e95e251de562950adaab9a2101d1f1ff6371c93e7f6383013"
+    },
+    {
+      "path": "tracks/tog/tasks/t42-firewoods-sequential-workflow/result-audit.json",
+      "bytes": 35252,
+      "sha256": "6b9d58ef92fdf4bb7a7e07ecc63c69b98a8af47cca457d2cce8f8806cd319dbc"
+    },
+    {
+      "path": "tracks/tog/tasks/t42-firewoods-sequential-workflow/source-read-ledger.json",
+      "bytes": 14109,
+      "sha256": "7e8ca229f22243825861cc67509cb86cd16d2e23b7be687c37508831a595ab50"
+    },
+    {
+      "path": "tracks/tog/tasks/t42-firewoods-sequential-workflow/stage.mjs",
+      "bytes": 1394,
+      "sha256": "ce50290e4260d394c6cfe41380b4e95e12c7d50d5a6b143cd69c843df2528e1b"
+    },
+    {
+      "path": "tracks/tog/tasks/t42-firewoods-sequential-workflow/supervise.py",
+      "bytes": 2658,
+      "sha256": "0d4170d38466ffbc7f0410d57b3e56bbff1e7de8e685580a4c93336d14342ac4"
+    },
+    {
+      "path": "tracks/validation/t42-preexecution-review.md",
+      "bytes": 5844,
+      "sha256": "cdd931c98bb18d64cfd1027d80fdb48dd855b0eb4660e61fd674ee95e1aede59"
+    },
+    {
+      "path": "tracks/validation/t42-saved-output-review.md",
+      "bytes": 5000,
+      "sha256": "6742a881ee2c4f5c8ed1a748fdd0dab87896a5281db9b2875991534e80fda1fc"
+    }
+  ],
+  "current_state_documents": [
+    {
+      "path": "tracks/STATUS.md",
+      "bytes": 58464,
+      "sha256": "667a3952e684db61201eb9952936bcf4f1dc3d8d7096af109f2f00dac7d9447c"
+    },
+    {
+      "path": "tracks/EXPLORATION.md",
+      "bytes": 8302,
+      "sha256": "ba78d326b149dffd711c1eb56129732b004dab3874534a2fee8532c446754d46"
+    },
+    {
+      "path": "tracks/tog/README.md",
+      "bytes": 8381,
+      "sha256": "3881db3906d88fc0af4b5e592b0f8ea55b61d915eb75d0a592806d2aa014ca97"
+    }
+  ],
+  "preservation_chain": {
+    "parent_manifest": {
+      "path": "tracks/tog/tasks/t41-firewoods-workflow-entry/audit-manifest.json",
+      "bytes": 3354,
+      "sha256": "6b26fe740bca191a04c73453665ec385a36880047112f417e69f985cdf4c6f2a"
+    },
+    "verified_prior_artifact_count": 518,
+    "all_recorded_prior_bytes_unchanged": true
+  },
+  "other_parent_tracked_files_unchanged": 1043,
+  "literal_parent_blob_matches": 1029,
+  "CRLF_only_checkout_conversions": [
+    ".gitignore",
+    "CHANGELOG.md",
+    "PUBLISH.md",
+    "README.md",
+    "compare.html",
+    "index.html",
+    "research/EVIDENCE_STATUS.md",
+    "research/FRONTIER_EARLY_REJECTION.md",
+    "research/lib/p3d-baseline.json",
+    "research/lib/p3e-baseline.json",
+    "research/lib/p3f-baseline.json",
+    "research/lib/p3g-baseline.json",
+    "research/physical_reference/README.md",
+    "study/index.html"
+  ],
+  "all_parent_blob_ids_match_after_git_clean_filters": true,
+  "publication_validation_note": "Initial literal-byte publication check stopped at .gitignore because core.autocrlf checkout conversion changes LF bytes to CRLF. No scientific record or tracked input changed. All parent blobs subsequently verified with explicit conversion accounting and Git clean hashes.",
+  "original_core": {
+    "path": "tracks/tog/src/core.py",
+    "bytes": 13301,
+    "sha256": "ac750b70a86743ac858f1c53cf620ce29c63c462456115af4d0d8c93fa20bd9e"
+  },
+  "historical_failures_unchanged": true,
+  "art_inactive": true,
+  "main_not_merged_or_deployed": true,
+  "automation_remains_deleted": true,
+  "portability_limit": "scripts depend on pinned local runtimes, external assets/historical adapter and an exclusive consumed run; not a standalone public benchmark bundle"
+}

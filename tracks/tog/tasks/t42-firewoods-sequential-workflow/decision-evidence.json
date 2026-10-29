@@ -1,0 +1,985 @@
+{
+  "schema": "t42-decision-evidence-v1",
+  "decision": "task_unqualified_visual_identifiability",
+  "scientific_executions": 1,
+  "record_status": "completed_capture_pending_saved_audit",
+  "saved_data_engineering_consistent": true,
+  "task_visual_qualified": false,
+  "TOG_contribution_established": false,
+  "new_method_selected": false,
+  "source_artifacts": [
+    {
+      "path": "outputs/t42-firewoods-sequential-workflow/run-01/attempt.json",
+      "bytes": 175,
+      "sha256": "c916069dece894bab7edd5f8d68b8ca13967e302759dc461ec84ce03dcc2a83e"
+    },
+    {
+      "path": "outputs/t42-firewoods-sequential-workflow/run-01/result.json",
+      "bytes": 57625,
+      "sha256": "4d086b367da10afe23bf34bdd2a1670edf18501acdfef5091cb892cab4b4ffac"
+    },
+    {
+      "path": "outputs/t42-firewoods-sequential-workflow/run-01/supervisor.json",
+      "bytes": 3533,
+      "sha256": "415d0ea0a23488b74a23a8dbc47025336f8a2c77fbdb913368162683408bb8ec"
+    },
+    {
+      "path": "outputs/t42-firewoods-sequential-workflow/run-01/stdout.txt",
+      "bytes": 216,
+      "sha256": "f95813865363a6bcd250ba034d435100dcc792d79e3baa86ebd3fbddc6e9c0e3"
+    },
+    {
+      "path": "outputs/t42-firewoods-sequential-workflow/run-01/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "work/VortexGaussians/tracks/tog/tasks/t42-firewoods-sequential-workflow/result-audit.json",
+      "bytes": 35252,
+      "sha256": "6b9d58ef92fdf4bb7a7e07ecc63c69b98a8af47cca457d2cce8f8806cd319dbc"
+    }
+  ],
+  "external_run_inventory": [
+    {
+      "path": "outputs/t42-firewoods-sequential-workflow/run-01/00-initial.json.gz",
+      "bytes": 1156322,
+      "sha256": "96d8ed0a66267c7fe1837f100cd4197b558d9abe4d2704e050ff9630b7bfb3c1"
+    },
+    {
+      "path": "outputs/t42-firewoods-sequential-workflow/run-01/00-initial.png",
+      "bytes": 53186,
+      "sha256": "58e57a12514713c60ed85d1d6671038fa34346741de6a6f3c695241537cb5b5f"
+    },
+    {
+      "path": "outputs/t42-firewoods-sequential-workflow/run-01/01-after-A.json.gz",
+      "bytes": 1157474,
+      "sha256": "fdbbd66af65a26601be721b968124452a477a25a99a087a568ee85f5fea95569"
+    },
+    {
+      "path": "outputs/t42-firewoods-sequential-workflow/run-01/01-after-A.png",
+      "bytes": 53186,
+      "sha256": "58e57a12514713c60ed85d1d6671038fa34346741de6a6f3c695241537cb5b5f"
+    },
+    {
+      "path": "outputs/t42-firewoods-sequential-workflow/run-01/02-before-B.json.gz",
+      "bytes": 1257399,
+      "sha256": "03415fe54d9424b944aba6a79ce4dce3e0efb6d2c6c67115b8ce3cbff0301896"
+    },
+    {
+      "path": "outputs/t42-firewoods-sequential-workflow/run-01/02-before-B.png",
+      "bytes": 95728,
+      "sha256": "fbe88e259f5255228844ea8f47869c86804319d1e01aeb4828f76aca1617326a"
+    },
+    {
+      "path": "outputs/t42-firewoods-sequential-workflow/run-01/03-after-B.json.gz",
+      "bytes": 1259151,
+      "sha256": "8c4a9f7c8458f63c710cd75e2720b1b0c819289e4c7490d7cb28aba52c02c9ed"
+    },
+    {
+      "path": "outputs/t42-firewoods-sequential-workflow/run-01/03-after-B.png",
+      "bytes": 95728,
+      "sha256": "fbe88e259f5255228844ea8f47869c86804319d1e01aeb4828f76aca1617326a"
+    },
+    {
+      "path": "outputs/t42-firewoods-sequential-workflow/run-01/04-endpoint.json.gz",
+      "bytes": 1253813,
+      "sha256": "eed1fc2e5d457d736cc5baa022892e04405b5d215cf32e9e50b0afd7bc8f4cd3"
+    },
+    {
+      "path": "outputs/t42-firewoods-sequential-workflow/run-01/04-endpoint.png",
+      "bytes": 106647,
+      "sha256": "d59ac92c1796c6246c35908fe7839ddc0b0119e1203a67a16a45dbac3aeddc98"
+    },
+    {
+      "path": "outputs/t42-firewoods-sequential-workflow/run-01/05-reset.json.gz",
+      "bytes": 1156322,
+      "sha256": "96d8ed0a66267c7fe1837f100cd4197b558d9abe4d2704e050ff9630b7bfb3c1"
+    },
+    {
+      "path": "outputs/t42-firewoods-sequential-workflow/run-01/05-reset.png",
+      "bytes": 53186,
+      "sha256": "58e57a12514713c60ed85d1d6671038fa34346741de6a6f3c695241537cb5b5f"
+    },
+    {
+      "path": "outputs/t42-firewoods-sequential-workflow/run-01/attempt.json",
+      "bytes": 175,
+      "sha256": "c916069dece894bab7edd5f8d68b8ca13967e302759dc461ec84ce03dcc2a83e"
+    },
+    {
+      "path": "outputs/t42-firewoods-sequential-workflow/run-01/progress.json",
+      "bytes": 57625,
+      "sha256": "4d086b367da10afe23bf34bdd2a1670edf18501acdfef5091cb892cab4b4ffac"
+    },
+    {
+      "path": "outputs/t42-firewoods-sequential-workflow/run-01/result.json",
+      "bytes": 57625,
+      "sha256": "4d086b367da10afe23bf34bdd2a1670edf18501acdfef5091cb892cab4b4ffac"
+    },
+    {
+      "path": "outputs/t42-firewoods-sequential-workflow/run-01/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "outputs/t42-firewoods-sequential-workflow/run-01/stdout.txt",
+      "bytes": 216,
+      "sha256": "f95813865363a6bcd250ba034d435100dcc792d79e3baa86ebd3fbddc6e9c0e3"
+    },
+    {
+      "path": "outputs/t42-firewoods-sequential-workflow/run-01/supervisor.json",
+      "bytes": 3533,
+      "sha256": "415d0ea0a23488b74a23a8dbc47025336f8a2c77fbdb913368162683408bb8ec"
+    },
+    {
+      "path": "outputs/t42-firewoods-sequential-workflow/run-01/worker-start.json",
+      "bytes": 47,
+      "sha256": "845e9a8a3ddf18940c546c130c97a92ba8b8ab6765636c46d71515e4a3f1e7f3"
+    }
+  ],
+  "events": [
+    {
+      "name": "A",
+      "lit": 145,
+      "frame": 0,
+      "time": 0
+    },
+    {
+      "name": "B",
+      "lit": 288,
+      "frame": 180,
+      "time": 2.9999999999999942
+    }
+  ],
+  "checkpoints": [
+    {
+      "checkpoint": "00-initial",
+      "frame": 0,
+      "time": 0,
+      "scene": {
+        "count": 34687,
+        "burning": 0,
+        "charred": 0,
+        "heated": 0,
+        "fuelRemaining": 34687,
+        "frontier": 0,
+        "burnHash": "30cf2632",
+        "representedArea": null,
+        "areaWeightedFuelRemaining": null,
+        "areaWeightedHeat": null,
+        "areaWeightedChar": null
+      },
+      "particles": {
+        "count": 0,
+        "hotCount": 0,
+        "coldCount": 0,
+        "smokeCount": 0,
+        "temperatureSum": 0,
+        "dynamicTemperatureSum": 0,
+        "densitySum": 0,
+        "circulationSum": 0,
+        "absCirculationSum": 0,
+        "smokeProxySum": 0,
+        "layerCounts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "counters": {
+        "flameHeatDeposited": 0,
+        "graphHeatDeposited": 0,
+        "sceneSeedsEmitted": 0,
+        "frontierProcessed": 0,
+        "frontierDeferred": 0,
+        "sceneFeedAttempts": 0,
+        "sceneFeedCapacityBlocked": 0,
+        "sceneFeedRandomRejected": 0,
+        "baseParticlesEmitted": 0,
+        "baseHeatApplied": 0,
+        "flameSamplesProcessed": 0,
+        "flameSampleCapHits": 0,
+        "clockProcessed": 0,
+        "clockFuelConsumed": 0,
+        "sceneSeedsRecycled": 0,
+        "sceneFeedRecycleCandidates": 0,
+        "sceneFeedNoColdSlot": 0,
+        "sceneRecycleSlotsExamined": 0,
+        "recycledDensitySum": 0,
+        "recycledCirculationSum": 0,
+        "recycledAbsCirculationSum": 0,
+        "recycledMaxDensity": 0,
+        "recycledMaxAbsCirculation": 0,
+        "recycledSmokeProxySum": 0,
+        "recycledHotRemoved": 0,
+        "recycledMaxTemperature": 0,
+        "recycledMaxDynamicTemperature": 0,
+        "recycledMinAge": null,
+        "areaWeightedFlameHeatDeposited": 0,
+        "areaWeightedGraphHeatDeposited": 0,
+        "areaWeightedFuelConsumed": 0,
+        "areaFeedCreditsGenerated": 0,
+        "areaFeedAttempts": 0,
+        "areaFeedAdmitted": 0,
+        "areaFeedBlocked": 0,
+        "areaFeedServiceCapDropped": 0,
+        "areaFeedCancelledCredits": 0
+      },
+      "hash": "b458d133",
+      "draw_count": 0
+    },
+    {
+      "checkpoint": "01-after-A",
+      "frame": 0,
+      "time": 0,
+      "scene": {
+        "count": 34687,
+        "burning": 145,
+        "charred": 0,
+        "heated": 0,
+        "fuelRemaining": 34687,
+        "frontier": 145,
+        "burnHash": "6417bd43",
+        "representedArea": null,
+        "areaWeightedFuelRemaining": null,
+        "areaWeightedHeat": null,
+        "areaWeightedChar": null
+      },
+      "particles": {
+        "count": 0,
+        "hotCount": 0,
+        "coldCount": 0,
+        "smokeCount": 0,
+        "temperatureSum": 0,
+        "dynamicTemperatureSum": 0,
+        "densitySum": 0,
+        "circulationSum": 0,
+        "absCirculationSum": 0,
+        "smokeProxySum": 0,
+        "layerCounts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "counters": {
+        "flameHeatDeposited": 0,
+        "graphHeatDeposited": 0,
+        "sceneSeedsEmitted": 0,
+        "frontierProcessed": 0,
+        "frontierDeferred": 0,
+        "sceneFeedAttempts": 0,
+        "sceneFeedCapacityBlocked": 0,
+        "sceneFeedRandomRejected": 0,
+        "baseParticlesEmitted": 0,
+        "baseHeatApplied": 0,
+        "flameSamplesProcessed": 0,
+        "flameSampleCapHits": 0,
+        "clockProcessed": 0,
+        "clockFuelConsumed": 0,
+        "sceneSeedsRecycled": 0,
+        "sceneFeedRecycleCandidates": 0,
+        "sceneFeedNoColdSlot": 0,
+        "sceneRecycleSlotsExamined": 0,
+        "recycledDensitySum": 0,
+        "recycledCirculationSum": 0,
+        "recycledAbsCirculationSum": 0,
+        "recycledMaxDensity": 0,
+        "recycledMaxAbsCirculation": 0,
+        "recycledSmokeProxySum": 0,
+        "recycledHotRemoved": 0,
+        "recycledMaxTemperature": 0,
+        "recycledMaxDynamicTemperature": 0,
+        "recycledMinAge": null,
+        "areaWeightedFlameHeatDeposited": 0,
+        "areaWeightedGraphHeatDeposited": 0,
+        "areaWeightedFuelConsumed": 0,
+        "areaFeedCreditsGenerated": 0,
+        "areaFeedAttempts": 0,
+        "areaFeedAdmitted": 0,
+        "areaFeedBlocked": 0,
+        "areaFeedServiceCapDropped": 0,
+        "areaFeedCancelledCredits": 0
+      },
+      "hash": "4687ae41",
+      "draw_count": 0
+    },
+    {
+      "checkpoint": "02-before-B",
+      "frame": 180,
+      "time": 2.9999999999999942,
+      "scene": {
+        "count": 34687,
+        "burning": 3374,
+        "charred": 0,
+        "heated": 3624,
+        "fuelRemaining": 33147.87358772755,
+        "frontier": 3374,
+        "burnHash": "6ae5b770",
+        "representedArea": null,
+        "areaWeightedFuelRemaining": null,
+        "areaWeightedHeat": null,
+        "areaWeightedChar": null
+      },
+      "particles": {
+        "count": 2394,
+        "hotCount": 44,
+        "coldCount": 2222,
+        "smokeCount": 2350,
+        "temperatureSum": 720.6115768712866,
+        "dynamicTemperatureSum": 701.933251608688,
+        "densitySum": 1186.7161659302049,
+        "circulationSum": 925.2122586226811,
+        "absCirculationSum": 1948.128607020639,
+        "smokeProxySum": 805.2666615954163,
+        "layerCounts": [
+          0,
+          0,
+          600,
+          600,
+          600,
+          590,
+          4,
+          0,
+          0
+        ]
+      },
+      "counters": {
+        "flameHeatDeposited": 727.8441082666552,
+        "graphHeatDeposited": 6220.403648140611,
+        "sceneSeedsEmitted": 2394,
+        "frontierProcessed": 246652,
+        "frontierDeferred": 307438,
+        "sceneFeedAttempts": 8640,
+        "sceneFeedCapacityBlocked": 3826,
+        "sceneFeedRandomRejected": 2420,
+        "baseParticlesEmitted": 0,
+        "baseHeatApplied": 0,
+        "flameSamplesProcessed": 12324,
+        "flameSampleCapHits": 0,
+        "clockProcessed": 554090,
+        "clockFuelConsumed": 1539.1264122724533,
+        "sceneSeedsRecycled": 0,
+        "sceneFeedRecycleCandidates": 0,
+        "sceneFeedNoColdSlot": 0,
+        "sceneRecycleSlotsExamined": 0,
+        "recycledDensitySum": 0,
+        "recycledCirculationSum": 0,
+        "recycledAbsCirculationSum": 0,
+        "recycledMaxDensity": 0,
+        "recycledMaxAbsCirculation": 0,
+        "recycledSmokeProxySum": 0,
+        "recycledHotRemoved": 0,
+        "recycledMaxTemperature": 0,
+        "recycledMaxDynamicTemperature": 0,
+        "recycledMinAge": null,
+        "areaWeightedFlameHeatDeposited": 0,
+        "areaWeightedGraphHeatDeposited": 0,
+        "areaWeightedFuelConsumed": 0,
+        "areaFeedCreditsGenerated": 0,
+        "areaFeedAttempts": 0,
+        "areaFeedAdmitted": 0,
+        "areaFeedBlocked": 0,
+        "areaFeedServiceCapDropped": 0,
+        "areaFeedCancelledCredits": 0
+      },
+      "hash": "24ba7dc9",
+      "draw_count": 0
+    },
+    {
+      "checkpoint": "03-after-B",
+      "frame": 180,
+      "time": 2.9999999999999942,
+      "scene": {
+        "count": 34687,
+        "burning": 3662,
+        "charred": 0,
+        "heated": 3624,
+        "fuelRemaining": 33147.87358772755,
+        "frontier": 3662,
+        "burnHash": "b800277e",
+        "representedArea": null,
+        "areaWeightedFuelRemaining": null,
+        "areaWeightedHeat": null,
+        "areaWeightedChar": null
+      },
+      "particles": {
+        "count": 2394,
+        "hotCount": 44,
+        "coldCount": 2222,
+        "smokeCount": 2350,
+        "temperatureSum": 720.6115768712866,
+        "dynamicTemperatureSum": 701.933251608688,
+        "densitySum": 1186.7161659302049,
+        "circulationSum": 925.2122586226811,
+        "absCirculationSum": 1948.128607020639,
+        "smokeProxySum": 805.2666615954163,
+        "layerCounts": [
+          0,
+          0,
+          600,
+          600,
+          600,
+          590,
+          4,
+          0,
+          0
+        ]
+      },
+      "counters": {
+        "flameHeatDeposited": 727.8441082666552,
+        "graphHeatDeposited": 6220.403648140611,
+        "sceneSeedsEmitted": 2394,
+        "frontierProcessed": 246652,
+        "frontierDeferred": 307438,
+        "sceneFeedAttempts": 8640,
+        "sceneFeedCapacityBlocked": 3826,
+        "sceneFeedRandomRejected": 2420,
+        "baseParticlesEmitted": 0,
+        "baseHeatApplied": 0,
+        "flameSamplesProcessed": 12324,
+        "flameSampleCapHits": 0,
+        "clockProcessed": 554090,
+        "clockFuelConsumed": 1539.1264122724533,
+        "sceneSeedsRecycled": 0,
+        "sceneFeedRecycleCandidates": 0,
+        "sceneFeedNoColdSlot": 0,
+        "sceneRecycleSlotsExamined": 0,
+        "recycledDensitySum": 0,
+        "recycledCirculationSum": 0,
+        "recycledAbsCirculationSum": 0,
+        "recycledMaxDensity": 0,
+        "recycledMaxAbsCirculation": 0,
+        "recycledSmokeProxySum": 0,
+        "recycledHotRemoved": 0,
+        "recycledMaxTemperature": 0,
+        "recycledMaxDynamicTemperature": 0,
+        "recycledMinAge": null,
+        "areaWeightedFlameHeatDeposited": 0,
+        "areaWeightedGraphHeatDeposited": 0,
+        "areaWeightedFuelConsumed": 0,
+        "areaFeedCreditsGenerated": 0,
+        "areaFeedAttempts": 0,
+        "areaFeedAdmitted": 0,
+        "areaFeedBlocked": 0,
+        "areaFeedServiceCapDropped": 0,
+        "areaFeedCancelledCredits": 0
+      },
+      "hash": "36e624bc",
+      "draw_count": 0
+    },
+    {
+      "checkpoint": "04-endpoint",
+      "frame": 360,
+      "time": 5.999999999999984,
+      "scene": {
+        "count": 34687,
+        "burning": 3662,
+        "charred": 0,
+        "heated": 4071,
+        "fuelRemaining": 31316.872790388057,
+        "frontier": 3662,
+        "burnHash": "fed1314a",
+        "representedArea": null,
+        "areaWeightedFuelRemaining": null,
+        "areaWeightedHeat": null,
+        "areaWeightedChar": null
+      },
+      "particles": {
+        "count": 2433,
+        "hotCount": 11,
+        "coldCount": 2420,
+        "smokeCount": 2422,
+        "temperatureSum": 356.2257384437385,
+        "dynamicTemperatureSum": 133.5809173777829,
+        "densitySum": 505.75635160508415,
+        "circulationSum": 23.889672579012025,
+        "absCirculationSum": 2037.8446908124913,
+        "smokeProxySum": 423.0727322679911,
+        "layerCounts": [
+          0,
+          0,
+          600,
+          600,
+          600,
+          600,
+          33,
+          0,
+          0
+        ]
+      },
+      "counters": {
+        "flameHeatDeposited": 896.2315335519345,
+        "graphHeatDeposited": 6222.667428597579,
+        "sceneSeedsEmitted": 2437,
+        "frontierProcessed": 498652,
+        "frontierDeferred": 714598,
+        "sceneFeedAttempts": 17280,
+        "sceneFeedCapacityBlocked": 12379,
+        "sceneFeedRandomRejected": 2464,
+        "baseParticlesEmitted": 0,
+        "baseHeatApplied": 0,
+        "flameSamplesProcessed": 12759,
+        "flameSampleCapHits": 0,
+        "clockProcessed": 1213250,
+        "clockFuelConsumed": 3370.1272096117227,
+        "sceneSeedsRecycled": 0,
+        "sceneFeedRecycleCandidates": 0,
+        "sceneFeedNoColdSlot": 0,
+        "sceneRecycleSlotsExamined": 0,
+        "recycledDensitySum": 0,
+        "recycledCirculationSum": 0,
+        "recycledAbsCirculationSum": 0,
+        "recycledMaxDensity": 0,
+        "recycledMaxAbsCirculation": 0,
+        "recycledSmokeProxySum": 0,
+        "recycledHotRemoved": 0,
+        "recycledMaxTemperature": 0,
+        "recycledMaxDynamicTemperature": 0,
+        "recycledMinAge": null,
+        "areaWeightedFlameHeatDeposited": 0,
+        "areaWeightedGraphHeatDeposited": 0,
+        "areaWeightedFuelConsumed": 0,
+        "areaFeedCreditsGenerated": 0,
+        "areaFeedAttempts": 0,
+        "areaFeedAdmitted": 0,
+        "areaFeedBlocked": 0,
+        "areaFeedServiceCapDropped": 0,
+        "areaFeedCancelledCredits": 0
+      },
+      "hash": "cb784052",
+      "draw_count": 0
+    },
+    {
+      "checkpoint": "05-reset",
+      "frame": 0,
+      "time": 0,
+      "scene": {
+        "count": 34687,
+        "burning": 0,
+        "charred": 0,
+        "heated": 0,
+        "fuelRemaining": 34687,
+        "frontier": 0,
+        "burnHash": "30cf2632",
+        "representedArea": null,
+        "areaWeightedFuelRemaining": null,
+        "areaWeightedHeat": null,
+        "areaWeightedChar": null
+      },
+      "particles": {
+        "count": 0,
+        "hotCount": 0,
+        "coldCount": 0,
+        "smokeCount": 0,
+        "temperatureSum": 0,
+        "dynamicTemperatureSum": 0,
+        "densitySum": 0,
+        "circulationSum": 0,
+        "absCirculationSum": 0,
+        "smokeProxySum": 0,
+        "layerCounts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "counters": {
+        "flameHeatDeposited": 0,
+        "graphHeatDeposited": 0,
+        "sceneSeedsEmitted": 0,
+        "frontierProcessed": 0,
+        "frontierDeferred": 0,
+        "sceneFeedAttempts": 0,
+        "sceneFeedCapacityBlocked": 0,
+        "sceneFeedRandomRejected": 0,
+        "baseParticlesEmitted": 0,
+        "baseHeatApplied": 0,
+        "flameSamplesProcessed": 0,
+        "flameSampleCapHits": 0,
+        "clockProcessed": 0,
+        "clockFuelConsumed": 0,
+        "sceneSeedsRecycled": 0,
+        "sceneFeedRecycleCandidates": 0,
+        "sceneFeedNoColdSlot": 0,
+        "sceneRecycleSlotsExamined": 0,
+        "recycledDensitySum": 0,
+        "recycledCirculationSum": 0,
+        "recycledAbsCirculationSum": 0,
+        "recycledMaxDensity": 0,
+        "recycledMaxAbsCirculation": 0,
+        "recycledSmokeProxySum": 0,
+        "recycledHotRemoved": 0,
+        "recycledMaxTemperature": 0,
+        "recycledMaxDynamicTemperature": 0,
+        "recycledMinAge": null,
+        "areaWeightedFlameHeatDeposited": 0,
+        "areaWeightedGraphHeatDeposited": 0,
+        "areaWeightedFuelConsumed": 0,
+        "areaFeedCreditsGenerated": 0,
+        "areaFeedAttempts": 0,
+        "areaFeedAdmitted": 0,
+        "areaFeedBlocked": 0,
+        "areaFeedServiceCapDropped": 0,
+        "areaFeedCancelledCredits": 0
+      },
+      "hash": "b458d133",
+      "draw_count": 0
+    }
+  ],
+  "post_render_checks": [
+    {
+      "checkpoint": "00-initial",
+      "glError": 0,
+      "contextLost": false
+    },
+    {
+      "checkpoint": "01-after-A",
+      "glError": 0,
+      "contextLost": false
+    },
+    {
+      "checkpoint": "02-before-B",
+      "glError": 0,
+      "contextLost": false
+    },
+    {
+      "checkpoint": "03-after-B",
+      "glError": 0,
+      "contextLost": false
+    },
+    {
+      "checkpoint": "04-endpoint",
+      "glError": 0,
+      "contextLost": false
+    },
+    {
+      "checkpoint": "05-reset",
+      "glError": 0,
+      "contextLost": false
+    }
+  ],
+  "runtime": {
+    "node": "v24.16.0",
+    "browser": "149.0.4022.52",
+    "module": "C:/Users/seanzjxiao/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright",
+    "graphics": {
+      "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/149.0.0.0 Safari/537.36 Edg/149.0.0.0",
+      "vendor": "Google Inc. (AMD)",
+      "renderer": "ANGLE (AMD, AMD Radeon(TM) 890M Graphics (0x0000150E) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+    }
+  },
+  "A_continuation": {
+    "01-after-A": {
+      "original_A_count": 145,
+      "burning": 145,
+      "spent": 0,
+      "cold": 0,
+      "fuel_sum": 145.0,
+      "char_sum": 0.0
+    },
+    "02-before-B": {
+      "original_A_count": 145,
+      "burning": 145,
+      "spent": 0,
+      "cold": 0,
+      "fuel_sum": 72.50058770179749,
+      "char_sum": 85.29423356056213
+    },
+    "03-after-B": {
+      "original_A_count": 145,
+      "burning": 145,
+      "spent": 0,
+      "cold": 0,
+      "fuel_sum": 72.50058770179749,
+      "char_sum": 85.29423356056213
+    },
+    "04-endpoint": {
+      "original_A_count": 145,
+      "burning": 145,
+      "spent": 0,
+      "cold": 0,
+      "fuel_sum": 0.00044612025703827385,
+      "char_sum": 145.0
+    }
+  },
+  "known_service_policy_context": {
+    "B_frontier_zero_based_rank_min": 3374,
+    "B_frontier_zero_based_rank_max": 3661,
+    "post_B_endpoint_frontier_identical": true,
+    "frontier_cap": 1400,
+    "second_interval_counter_delta": {
+      "frontierProcessed": 252000,
+      "frontierDeferred": 407160,
+      "clockProcessed": 659160,
+      "sceneFeedAttempts": 8640,
+      "sceneFeedCapacityBlocked": 8553,
+      "sceneSeedsEmitted": 43
+    },
+    "blocked_feed_fraction": 0.9899305555555555,
+    "conditional_code_deduction": "Given the already inspected fixed-prefix graph service, stable frontier order with only new burning points appended and spent points permanently removed, and no rotation or reinsertion under one-way material state, newly appended B sources receive no outgoing graph-source service during the second interval. Elapsed clocks still advance them. Identical endpoint arrays alone would not establish the intervening service history.",
+    "limits": "This is a known scheduling/capacity policy, not a new method gap. Aggregate feed counts do not identify which source created the43 particles, and no counterfactual isolates the cause of visual ambiguity."
+  },
+  "visual_review": {
+    "reviewers": [
+      "root agent",
+      "independent volume_screen agent"
+    ],
+    "human_feedback": false,
+    "images": [
+      {
+        "path": "outputs/t42-firewoods-sequential-workflow/run-01/00-initial.png",
+        "bytes": 53186,
+        "sha256": "58e57a12514713c60ed85d1d6671038fa34346741de6a6f3c695241537cb5b5f"
+      },
+      {
+        "path": "outputs/t42-firewoods-sequential-workflow/run-01/02-before-B.png",
+        "bytes": 95728,
+        "sha256": "fbe88e259f5255228844ea8f47869c86804319d1e01aeb4828f76aca1617326a"
+      },
+      {
+        "path": "outputs/t42-firewoods-sequential-workflow/run-01/04-endpoint.png",
+        "bytes": 106647,
+        "sha256": "d59ac92c1796c6246c35908fe7839ddc0b0119e1203a67a16a45dbac3aeddc98"
+      }
+    ],
+    "observations": [
+      "Initial woodpile is recognizable. At3s the front log and orange/red plume are clearly changed.",
+      "At6s the front log still dominates. A weaker orange patch is visible on the right log after its location is known.",
+      "These fixed full frames do not establish two clearly distinguishable ignition events; continued A dynamics and B effects are not separately isolated.",
+      "The woodpile occupies a modest part of the full frame, front brightness hides detail, and the diffuse lower plume competes with both locations."
+    ],
+    "same_instant_png_pairs": "initial/after-A and before-B/after-B are byte-identical, consistent with hand ignition changing state only before the next step; not itself a failure",
+    "conclusion": "unqualified under the frozen visual criterion; no new viewpoint, crop, location, time or retry",
+    "causal_scope": "No A-only counterfactual was run. This limits causal attribution; it is not an additional acceptance gate. The decision rests on the frozen full-frame event-identifiability criterion."
+  },
+  "cost": {
+    "worker_total_ms": 30537.886199999997,
+    "phase_sum_ms": 29598.676499999994,
+    "phases": [
+      {
+        "name": "frozen_input_check",
+        "ms": 15.583799999999997
+      },
+      {
+        "name": "server_start",
+        "ms": 4.602699999999999
+      },
+      {
+        "name": "browser_launch",
+        "ms": 1590.5322
+      },
+      {
+        "name": "page_load",
+        "ms": 596.4706999999999
+      },
+      {
+        "name": "load_place_reset",
+        "ms": 158.3678
+      },
+      {
+        "name": "00-initial_state_export",
+        "ms": 2852.9771000000005
+      },
+      {
+        "name": "00-initial_state_write",
+        "ms": 86.50890000000072
+      },
+      {
+        "name": "00-initial_render_export",
+        "ms": 43.679699999999684
+      },
+      {
+        "name": "00-initial_png_write",
+        "ms": 1.4584999999997308
+      },
+      {
+        "name": "ignite_A",
+        "ms": 119.77329999999984
+      },
+      {
+        "name": "01-after-A_state_export",
+        "ms": 3370.8398000000016
+      },
+      {
+        "name": "01-after-A_state_write",
+        "ms": 78.33869999999843
+      },
+      {
+        "name": "01-after-A_render_export",
+        "ms": 35.77269999999953
+      },
+      {
+        "name": "01-after-A_png_write",
+        "ms": 1.3672999999998865
+      },
+      {
+        "name": "A_steps_1_30",
+        "ms": 619.0869000000002
+      },
+      {
+        "name": "A_steps_31_60",
+        "ms": 592.0391
+      },
+      {
+        "name": "A_steps_61_90",
+        "ms": 578.3724000000002
+      },
+      {
+        "name": "A_steps_91_120",
+        "ms": 556.6667999999991
+      },
+      {
+        "name": "A_steps_121_150",
+        "ms": 670.1585999999988
+      },
+      {
+        "name": "A_steps_151_180",
+        "ms": 511.8632999999991
+      },
+      {
+        "name": "02-before-B_state_export",
+        "ms": 3099.669099999999
+      },
+      {
+        "name": "02-before-B_state_write",
+        "ms": 81.17839999999887
+      },
+      {
+        "name": "02-before-B_render_export",
+        "ms": 55.22699999999713
+      },
+      {
+        "name": "02-before-B_png_write",
+        "ms": 1.672500000000582
+      },
+      {
+        "name": "ignite_B",
+        "ms": 130.54939999999988
+      },
+      {
+        "name": "03-after-B_state_export",
+        "ms": 3302.304400000001
+      },
+      {
+        "name": "03-after-B_state_write",
+        "ms": 81.96749999999884
+      },
+      {
+        "name": "03-after-B_render_export",
+        "ms": 27.016200000001845
+      },
+      {
+        "name": "03-after-B_png_write",
+        "ms": 2.336299999999028
+      },
+      {
+        "name": "AB_steps_1_30",
+        "ms": 508.8856999999989
+      },
+      {
+        "name": "AB_steps_31_60",
+        "ms": 543.770800000002
+      },
+      {
+        "name": "AB_steps_61_90",
+        "ms": 535.0760999999984
+      },
+      {
+        "name": "AB_steps_91_120",
+        "ms": 538.977899999998
+      },
+      {
+        "name": "AB_steps_121_150",
+        "ms": 622.6038000000008
+      },
+      {
+        "name": "AB_steps_151_180",
+        "ms": 507.5466000000015
+      },
+      {
+        "name": "04-endpoint_state_export",
+        "ms": 3184.964799999998
+      },
+      {
+        "name": "04-endpoint_state_write",
+        "ms": 90.46960000000036
+      },
+      {
+        "name": "04-endpoint_render_export",
+        "ms": 31.637399999999616
+      },
+      {
+        "name": "04-endpoint_png_write",
+        "ms": 2.0626000000011118
+      },
+      {
+        "name": "reset_same_controls",
+        "ms": 75.22479999999996
+      },
+      {
+        "name": "05-reset_state_export",
+        "ms": 3066.2613999999994
+      },
+      {
+        "name": "05-reset_state_write",
+        "ms": 78.40989999999874
+      },
+      {
+        "name": "05-reset_render_export",
+        "ms": 21.99409999999989
+      },
+      {
+        "name": "05-reset_png_write",
+        "ms": 3.743300000001909
+      },
+      {
+        "name": "final_frozen_input_check",
+        "ms": 21.964700000000448
+      },
+      {
+        "name": "browser_cleanup",
+        "ms": 497.7570999999989
+      },
+      {
+        "name": "server_cleanup",
+        "ms": 0.9448000000011234
+      }
+    ],
+    "supervisor_seconds": 31.153063100064173,
+    "file_inventory_hash_seconds": 0.012984299915842712,
+    "elapsed_before_receipt_write_seconds": 31.166055100038648,
+    "supervisor_timing_scope": "supervisor_seconds: attempt start through worker terminal/live check; inventory hashing separately measured; final supervisor.json write and stdout flush excluded",
+    "interpretation": "one trajectory including loading, capture and cleanup; inventory hashing separately recorded; final small supervisor receipt write and stdout flush excluded; not FPS or renderer benchmark",
+    "worker_timing_scope": "module entry through cleanup; excludes final progress.json/result.json receipt writes; these writes are included in the supervisor terminal window"
+  },
+  "supervisor": {
+    "status": "worker_terminal",
+    "worker_pid": 59076,
+    "exit_code": 0,
+    "worker_poll_exit_code": 0,
+    "worker_still_live": false,
+    "supervisor_seconds": 31.153063100064173,
+    "file_inventory_hash_seconds": 0.012984299915842712,
+    "elapsed_before_receipt_write_seconds": 31.166055100038648,
+    "timing_scope": "supervisor_seconds: attempt start through worker terminal/live check; inventory hashing separately measured; final supervisor.json write and stdout flush excluded"
+  },
+  "next": "No automatic replay or method development. Existing admission/scheduling remedies remain ordinary alternatives; this run does not establish a strong-baseline bottleneck."
+}

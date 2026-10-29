@@ -1,0 +1,18 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import {createHash} from 'node:crypto';
+const r=process.cwd(),h=path.join(r,'tracks/tog/tasks/t42-firewoods-sequential-workflow'),outer=path.dirname(path.dirname(r));
+const source=await fs.readFile(path.join(r,'demo/index.html'),'utf8');
+const old=await fs.readFile(path.join(outer,'work/real-asset-static-staging/adapter.js'),'utf8');
+const prefix=old.slice(0,old.indexOf('function staticBytes'));
+if(!prefix.includes('function staticUpdateCam()'))throw Error('camera prefix not found');
+const adapter=prefix+await fs.readFile(path.join(h,'adapter-tail.js'),'utf8');
+await fs.writeFile(path.join(h,'adapter.js'),adapter,{flag:'wx'});
+const marker='window.__demo = {';if(source.split(marker).length!==2)throw Error('insertion marker is not unique');
+const insertion='// T42 INSPECTION BEGIN\n'+adapter+'\n// T42 INSPECTION END\n';
+const candidate=source.replace(marker,insertion+marker);
+if(candidate.replace(insertion,'')!==source)throw Error('candidate does not reverse exactly');
+const dir=path.join(h,'local/site/demo');await fs.mkdir(dir,{recursive:true});
+await fs.writeFile(path.join(dir,'index.html'),candidate,{flag:'wx'});
+const sha=s=>createHash('sha256').update(s).digest('hex');
+console.log(JSON.stringify({source_sha256:sha(source),candidate_sha256:sha(candidate),adapter_sha256:sha(adapter),reverse_exact:true}));
