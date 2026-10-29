@@ -1,0 +1,50 @@
+{
+  "schema": "t29-pre-execution-freeze-v1",
+  "created_utc": "2026-10-29T13:50:53.270978+00:00",
+  "parent_commit": "f260268c9c70d8ba297cc7853ed2f365dc212b09",
+  "previous_goal_turn": "progress",
+  "candidate_invocations_before_freeze": 0,
+  "static_review": "root and volume_screen; no candidate values evaluated",
+  "artifacts": [
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/inputs.json",
+      "bytes": 72396,
+      "sha256": "5cccf0238c679e14bc50e67d2d24726a58295b484b1d3464bf77d4eca0491cb7"
+    },
+    {
+      "path": "tracks/tog/tasks/t18-reference-robustness/run-01/results.json",
+      "bytes": 4682658,
+      "sha256": "fa4fb6887c6b38e800f18e919634821b3ee51c2fb0122cd0dbb4047eead7873d"
+    },
+    {
+      "path": "tracks/tog/tasks/t21-winner-prefix-bound/run-01/results.json",
+      "bytes": 976592,
+      "sha256": "94d3ad607ba70ee6d7192643e6ad39ec3802f2a269b12df8cbfe87e59917bf83"
+    },
+    {
+      "path": "tracks/tog/tasks/t29-winner-row-mass/PROTOCOL.md",
+      "bytes": 6560,
+      "sha256": "07f11f498ecf53cbc492817b9ff999533eeb6239b410369cdd52a27477fa0aa6"
+    },
+    {
+      "path": "tracks/tog/tasks/t29-winner-row-mass/DERIVATION.md",
+      "bytes": 7018,
+      "sha256": "f2f9dfe0bd5b3cd6a33d3b1a91c11fee964fae5074f9f6106b2f82bcdcc4012c"
+    },
+    {
+      "path": "tracks/tog/tasks/t29-winner-row-mass/reduce.py",
+      "bytes": 19011,
+      "sha256": "8c3c571baff9cc9b58ff0557c27a8acffbf75a80151771d80ea37b986813b168"
+    },
+    {
+      "path": "tracks/tog/tasks/t29-winner-row-mass/supervise.py",
+      "bytes": 2315,
+      "sha256": "dd253bcb8097ff65cc103fd3c2b9805b2de965d052e0f6a335e183f36303b95d"
+    },
+    {
+      "path": "tracks/validation/t29-pre-execution-review.md",
+      "bytes": 4431,
+      "sha256": "9b4fdb590359f933bd6f6b0b95409dbc7aede0b897ae780988101f63c128662f"
+    }
+  ]
+}

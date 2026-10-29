@@ -1,0 +1,3815 @@
+{
+  "schema": "t29-publication-summary-v1",
+  "source_results": {
+    "path": "tracks/tog/tasks/t29-winner-row-mass/run-01/results.json",
+    "bytes": 4615730,
+    "sha256": "2c15b374e5c0fb026b93a6369eac3e76ccc58f78ffc7911f9521218846dab602"
+  },
+  "qualified": true,
+  "decision": "archive_row_optimization_on_fixed_scope",
+  "fixed_population_acceptance": {
+    "0.001": {
+      "population": [
+        "generic-02-n4",
+        "generic-03-n8",
+        "generic-04-n16",
+        "generic-06-n4",
+        "generic-07-n8",
+        "generic-08-n16",
+        "generic-10-n4",
+        "generic-11-n8",
+        "generic-12-n16",
+        "generic-14-n4",
+        "generic-15-n8",
+        "generic-16-n16",
+        "structured-01-n4-span0",
+        "structured-02-n4-span0.3",
+        "structured-03-n4-span1.2",
+        "structured-04-n4-span3",
+        "structured-05-n8-span0",
+        "structured-06-n8-span0.3",
+        "structured-07-n8-span1.2",
+        "structured-08-n8-span3",
+        "structured-09-n16-span0",
+        "structured-10-n16-span0.3",
+        "structured-11-n16-span1.2",
+        "structured-12-n16-span3",
+        "structured-13-n32-span0",
+        "structured-14-n32-span0.3",
+        "structured-15-n32-span1.2",
+        "structured-16-n32-span3"
+      ],
+      "caps": {
+        "simple": {
+          "raw": [
+            "structured-04-n4-span3"
+          ],
+          "cheap": [
+            "structured-04-n4-span3"
+          ],
+          "knapsack": [
+            "structured-04-n4-span3"
+          ],
+          "cheap_added": [],
+          "lp_added_over_t21": [],
+          "lp_specific_added": []
+        },
+        "jensen": {
+          "raw": [
+            "structured-04-n4-span3"
+          ],
+          "cheap": [
+            "structured-04-n4-span3"
+          ],
+          "knapsack": [
+            "structured-04-n4-span3"
+          ],
+          "cheap_added": [],
+          "lp_added_over_t21": [],
+          "lp_specific_added": []
+        }
+      }
+    },
+    "0.01": {
+      "population": [
+        "generic-02-n4",
+        "generic-03-n8",
+        "generic-04-n16",
+        "generic-06-n4",
+        "generic-07-n8",
+        "generic-08-n16",
+        "generic-10-n4",
+        "generic-11-n8",
+        "generic-12-n16",
+        "generic-14-n4",
+        "generic-15-n8",
+        "generic-16-n16",
+        "structured-01-n4-span0",
+        "structured-02-n4-span0.3",
+        "structured-03-n4-span1.2",
+        "structured-04-n4-span3",
+        "structured-05-n8-span0",
+        "structured-06-n8-span0.3",
+        "structured-07-n8-span1.2",
+        "structured-08-n8-span3",
+        "structured-09-n16-span0",
+        "structured-10-n16-span0.3",
+        "structured-11-n16-span1.2",
+        "structured-12-n16-span3",
+        "structured-13-n32-span0",
+        "structured-14-n32-span0.3",
+        "structured-15-n32-span1.2",
+        "structured-16-n32-span3"
+      ],
+      "caps": {
+        "simple": {
+          "raw": [
+            "generic-11-n8",
+            "generic-14-n4",
+            "structured-04-n4-span3",
+            "structured-08-n8-span3"
+          ],
+          "cheap": [
+            "generic-11-n8",
+            "generic-14-n4",
+            "structured-04-n4-span3",
+            "structured-08-n8-span3"
+          ],
+          "knapsack": [
+            "generic-11-n8",
+            "generic-14-n4",
+            "structured-04-n4-span3",
+            "structured-08-n8-span3"
+          ],
+          "cheap_added": [],
+          "lp_added_over_t21": [],
+          "lp_specific_added": []
+        },
+        "jensen": {
+          "raw": [
+            "generic-11-n8",
+            "generic-14-n4",
+            "structured-04-n4-span3",
+            "structured-08-n8-span3"
+          ],
+          "cheap": [
+            "generic-11-n8",
+            "generic-14-n4",
+            "structured-04-n4-span3",
+            "structured-08-n8-span3"
+          ],
+          "knapsack": [
+            "generic-11-n8",
+            "generic-14-n4",
+            "structured-04-n4-span3",
+            "structured-08-n8-span3"
+          ],
+          "cheap_added": [],
+          "lp_added_over_t21": [],
+          "lp_specific_added": []
+        }
+      }
+    }
+  },
+  "distinct_lp_specific_added_jensen": [],
+  "diagnostic_tightening_only": {
+    "comparison": "max-channel E difference > 1e-12; descriptive, not a new admission threshold",
+    "counts_are_lists": {
+      "all_48": {
+        "simple": {
+          "cheap_drop_vs_T21": [
+            "control-07-coincident-thick",
+            "generic-07-n8",
+            "generic-16-n16"
+          ],
+          "LP_drop_vs_cheap": [
+            "generic-03-n8",
+            "generic-04-n16",
+            "generic-07-n8",
+            "generic-12-n16",
+            "generic-15-n8",
+            "generic-16-n16"
+          ],
+          "LP_drop_vs_T21": [
+            "control-07-coincident-thick",
+            "generic-03-n8",
+            "generic-04-n16",
+            "generic-07-n8",
+            "generic-12-n16",
+            "generic-15-n8",
+            "generic-16-n16"
+          ]
+        },
+        "jensen": {
+          "cheap_drop_vs_T21": [
+            "control-07-coincident-thick",
+            "generic-16-n16"
+          ],
+          "LP_drop_vs_cheap": [
+            "generic-07-n8",
+            "generic-16-n16"
+          ],
+          "LP_drop_vs_T21": [
+            "control-07-coincident-thick",
+            "generic-07-n8",
+            "generic-16-n16"
+          ]
+        }
+      },
+      "common_unsolved_28": {
+        "simple": {
+          "cheap_drop_vs_T21": [
+            "generic-07-n8",
+            "generic-16-n16"
+          ],
+          "LP_drop_vs_cheap": [
+            "generic-03-n8",
+            "generic-04-n16",
+            "generic-07-n8",
+            "generic-12-n16",
+            "generic-15-n8",
+            "generic-16-n16"
+          ],
+          "LP_drop_vs_T21": [
+            "generic-03-n8",
+            "generic-04-n16",
+            "generic-07-n8",
+            "generic-12-n16",
+            "generic-15-n8",
+            "generic-16-n16"
+          ]
+        },
+        "jensen": {
+          "cheap_drop_vs_T21": [
+            "generic-16-n16"
+          ],
+          "LP_drop_vs_cheap": [
+            "generic-07-n8",
+            "generic-16-n16"
+          ],
+          "LP_drop_vs_T21": [
+            "generic-07-n8",
+            "generic-16-n16"
+          ]
+        }
+      }
+    }
+  },
+  "maxima": {
+    "arithmetic_difference": 2.220446049250313e-16,
+    "primal_dual_gap": 1.1102230246251565e-16,
+    "row_budget_excess": 1.1102230246251565e-16,
+    "dominance_excess": 0.0,
+    "reference_enclosure_excess": 5.440092820663267e-15,
+    "raw_row_bound_above_G": 0.0
+  },
+  "counters": {
+    "row_budget_products": 399,
+    "formula_pair_traversals": 3272,
+    "prefix_cap_products": 6544,
+    "color_differences": 9816,
+    "coefficient_sort_calls": 4788,
+    "coefficient_sort_items": 11036,
+    "greedy_item_visits": 11036,
+    "budget_subtractions": 10899,
+    "row_objective_products": 42684,
+    "fsum_calls": 25668
+  },
+  "worker_seconds_before_serialization": 0.2295189000433311,
+  "supervisor_seconds": 0.517368400003761,
+  "not_a_delivery_benchmark": true,
+  "cases": [
+    {
+      "id": "control-01-vacuum",
+      "n": 0,
+      "group": "control",
+      "in_common_unsolved_28": false,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 0.0,
+            "cheap": 0.0,
+            "knapsack": 0.0
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 0.0,
+            "cheap": 0.0,
+            "knapsack": 0.0
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": false,
+          "common_path": "common_vacuum",
+          "caps": {
+            "simple": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": false,
+          "common_path": "common_vacuum",
+          "caps": {
+            "simple": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "control-02-zero-mass",
+      "n": 3,
+      "group": "control",
+      "in_common_unsolved_28": false,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 0.0,
+            "cheap": 0.0,
+            "knapsack": 0.0
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 0.0,
+            "cheap": 0.0,
+            "knapsack": 0.0
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": false,
+          "common_path": "common_zero_mass",
+          "caps": {
+            "simple": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": false,
+          "common_path": "common_zero_mass",
+          "caps": {
+            "simple": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "control-03-single",
+      "n": 1,
+      "group": "control",
+      "in_common_unsolved_28": false,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 0.0,
+            "cheap": 0.0,
+            "knapsack": 0.0
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 0.0,
+            "cheap": 0.0,
+            "knapsack": 0.0
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": false,
+          "common_path": "common_equal_color",
+          "caps": {
+            "simple": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": false,
+          "common_path": "common_equal_color",
+          "caps": {
+            "simple": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "control-04-clipped-single",
+      "n": 1,
+      "group": "control",
+      "in_common_unsolved_28": false,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 0.0,
+            "cheap": 0.0,
+            "knapsack": 0.0
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 0.0,
+            "cheap": 0.0,
+            "knapsack": 0.0
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": false,
+          "common_path": "common_equal_color",
+          "caps": {
+            "simple": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": false,
+          "common_path": "common_equal_color",
+          "caps": {
+            "simple": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "control-05-equal-color",
+      "n": 8,
+      "group": "control",
+      "in_common_unsolved_28": false,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 0.0,
+            "cheap": 0.0,
+            "knapsack": 0.0
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 0.0,
+            "cheap": 0.0,
+            "knapsack": 0.0
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": false,
+          "common_path": "common_equal_color",
+          "caps": {
+            "simple": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": false,
+          "common_path": "common_equal_color",
+          "caps": {
+            "simple": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "control-06-coincident-thin",
+      "n": 4,
+      "group": "control",
+      "in_common_unsolved_28": false,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 0.00222329091963495,
+            "cheap": 0.00222329091963495,
+            "knapsack": 0.00222329091963495
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 0.0021978171327844773,
+            "cheap": 0.0021978171327844773,
+            "knapsack": 0.0021978171327844773
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": false,
+          "common_path": "common_proportional",
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": false,
+          "common_path": "common_proportional",
+          "caps": {
+            "simple": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "control-07-coincident-thick",
+      "n": 4,
+      "group": "control",
+      "in_common_unsolved_28": false,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 0.9999991584213054,
+            "cheap": 0.9932330810339066,
+            "knapsack": 0.9932330810339066
+          },
+          "cheap_drop_vs_T21": 0.006766077387398761,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.006766077387398761
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 0.9999991584213054,
+            "cheap": 0.9932330810339066,
+            "knapsack": 0.9932330810339066
+          },
+          "cheap_drop_vs_T21": 0.006766077387398761,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.006766077387398761
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": false,
+          "common_path": "common_proportional",
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": false,
+          "common_path": "common_proportional",
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "control-08-coincident-red-blue",
+      "n": 2,
+      "group": "control",
+      "in_common_unsolved_28": false,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 0.399177227452947,
+            "cheap": 0.399177227452947,
+            "knapsack": 0.399177227452947
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 0.34545994868496904,
+            "cheap": 0.34545994868496904,
+            "knapsack": 0.34545994868496904
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": false,
+          "common_path": "common_proportional",
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": false,
+          "common_path": "common_proportional",
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "generic-01-n2",
+      "n": 2,
+      "group": "generic",
+      "in_common_unsolved_28": false,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 0.00035858212994054913,
+            "cheap": 0.00035858212994054913,
+            "knapsack": 0.00035858212994054913
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 0.0003514905633731427,
+            "cheap": 0.0003514905633731427,
+            "knapsack": 0.0003514905633731427
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": false,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": false,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "generic-02-n4",
+      "n": 4,
+      "group": "generic",
+      "in_common_unsolved_28": true,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 0.05041754531028436,
+            "cheap": 0.05041754531028436,
+            "knapsack": 0.05041754531028436
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 0.04482045517744757,
+            "cheap": 0.04482045517744757,
+            "knapsack": 0.04482045517744757
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "generic-03-n8",
+      "n": 8,
+      "group": "generic",
+      "in_common_unsolved_28": true,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 0.1548764464584004,
+            "cheap": 0.1548764464584004,
+            "knapsack": 0.15454707310116245
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.00032937335723795536,
+          "LP_drop_vs_T21": 0.00032937335723795536
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 0.13653502296696957,
+            "cheap": 0.13653502296696957,
+            "knapsack": 0.13653502296696957
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "generic-04-n16",
+      "n": 16,
+      "group": "generic",
+      "in_common_unsolved_28": true,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 0.3036607043756145,
+            "cheap": 0.3036607043756145,
+            "knapsack": 0.295639647904536
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.00802105647107848,
+          "LP_drop_vs_T21": 0.00802105647107848
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 0.20869351975603,
+            "cheap": 0.20869351975603,
+            "knapsack": 0.20869351975603
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "generic-05-n2",
+      "n": 2,
+      "group": "generic",
+      "in_common_unsolved_28": false,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 7.694064664041808e-05,
+            "cheap": 7.694064664041808e-05,
+            "knapsack": 7.694064664041808e-05
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 7.65980746901841e-05,
+            "cheap": 7.65980746901841e-05,
+            "knapsack": 7.65980746901841e-05
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": false,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": false,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "generic-06-n4",
+      "n": 4,
+      "group": "generic",
+      "in_common_unsolved_28": true,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 0.027944191807672096,
+            "cheap": 0.027944191807672096,
+            "knapsack": 0.027944191807672096
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 0.02379743621718464,
+            "cheap": 0.02379743621718464,
+            "knapsack": 0.02379743621718464
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "generic-07-n8",
+      "n": 8,
+      "group": "generic",
+      "in_common_unsolved_28": true,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 0.1113785702295257,
+            "cheap": 0.10986975883787856,
+            "knapsack": 0.1085736060423083
+          },
+          "cheap_drop_vs_T21": 0.001508811391647144,
+          "LP_drop_vs_cheap": 0.0012961527955702573,
+          "LP_drop_vs_T21": 0.0028049641872174014
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 0.0926695817115267,
+            "cheap": 0.0926695817115267,
+            "knapsack": 0.09240400167501535
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.00026558003651135087,
+          "LP_drop_vs_T21": 0.00026558003651135087
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "generic-08-n16",
+      "n": 16,
+      "group": "generic",
+      "in_common_unsolved_28": true,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 0.11411815699390727,
+            "cheap": 0.11411815699390727,
+            "knapsack": 0.11411815699390727
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 0.0879787521868395,
+            "cheap": 0.0879787521868395,
+            "knapsack": 0.0879787521868395
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "generic-09-n2",
+      "n": 2,
+      "group": "generic",
+      "in_common_unsolved_28": false,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 0.002989243235339902,
+            "cheap": 0.002989243235339902,
+            "knapsack": 0.002989243235339902
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 0.0020549861297692353,
+            "cheap": 0.0020549861297692353,
+            "knapsack": 0.0020549861297692353
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": false,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": false,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "generic-10-n4",
+      "n": 4,
+      "group": "generic",
+      "in_common_unsolved_28": true,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 0.035094877395910086,
+            "cheap": 0.035094877395910086,
+            "knapsack": 0.035094877395910086
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 0.03471071975174984,
+            "cheap": 0.03471071975174984,
+            "knapsack": 0.03471071975174984
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "generic-11-n8",
+      "n": 8,
+      "group": "generic",
+      "in_common_unsolved_28": true,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 0.008493713378563339,
+            "cheap": 0.008493713378563339,
+            "knapsack": 0.008493713378563339
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 0.008029167396330883,
+            "cheap": 0.008029167396330883,
+            "knapsack": 0.008029167396330883
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "generic-12-n16",
+      "n": 16,
+      "group": "generic",
+      "in_common_unsolved_28": true,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 0.17483706618068814,
+            "cheap": 0.17483706618068814,
+            "knapsack": 0.17480945421376515
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 2.7611966922996833e-05,
+          "LP_drop_vs_T21": 2.7611966922996833e-05
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 0.14705685574617902,
+            "cheap": 0.14705685574617902,
+            "knapsack": 0.14705685574617902
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "generic-13-n2",
+      "n": 2,
+      "group": "generic",
+      "in_common_unsolved_28": false,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 0.0008654806767513628,
+            "cheap": 0.0008654806767513628,
+            "knapsack": 0.0008654806767513628
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 0.0008492927910987584,
+            "cheap": 0.0008492927910987584,
+            "knapsack": 0.0008492927910987584
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": false,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": false,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "generic-14-n4",
+      "n": 4,
+      "group": "generic",
+      "in_common_unsolved_28": true,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 0.005700712819343058,
+            "cheap": 0.005700712819343058,
+            "knapsack": 0.005700712819343058
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 0.005076645414011072,
+            "cheap": 0.005076645414011072,
+            "knapsack": 0.005076645414011072
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "generic-15-n8",
+      "n": 8,
+      "group": "generic",
+      "in_common_unsolved_28": true,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 0.17277670439247167,
+            "cheap": 0.17277670439247167,
+            "knapsack": 0.16561449296948694
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.007162211422984732,
+          "LP_drop_vs_T21": 0.007162211422984732
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 0.14025561769178257,
+            "cheap": 0.14025561769178257,
+            "knapsack": 0.14025561769178257
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "generic-16-n16",
+      "n": 16,
+      "group": "generic",
+      "in_common_unsolved_28": true,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 0.7682825455041317,
+            "cheap": 0.6842946277351977,
+            "knapsack": 0.6713237241123365
+          },
+          "cheap_drop_vs_T21": 0.083987917768934,
+          "LP_drop_vs_cheap": 0.01297090362286113,
+          "LP_drop_vs_T21": 0.09695882139179512
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 0.6735734548533894,
+            "cheap": 0.6732233285308025,
+            "knapsack": 0.6333693713099705
+          },
+          "cheap_drop_vs_T21": 0.0003501263225869078,
+          "LP_drop_vs_cheap": 0.03985395722083196,
+          "LP_drop_vs_T21": 0.04020408354341887
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "structured-01-n4-span0",
+      "n": 4,
+      "group": "structured",
+      "in_common_unsolved_28": true,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 0.25,
+            "cheap": 0.25,
+            "knapsack": 0.25
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 0.2141797260467952,
+            "cheap": 0.2141797260467952,
+            "knapsack": 0.2141797260467952
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "structured-02-n4-span0.3",
+      "n": 4,
+      "group": "structured",
+      "in_common_unsolved_28": true,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 0.15428456859675727,
+            "cheap": 0.15428456859675727,
+            "knapsack": 0.15428456859675727
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 0.13948297834699575,
+            "cheap": 0.13948297834699575,
+            "knapsack": 0.13948297834699575
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "structured-03-n4-span1.2",
+      "n": 4,
+      "group": "structured",
+      "in_common_unsolved_28": true,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 0.02702502054897204,
+            "cheap": 0.02702502054897204,
+            "knapsack": 0.02702502054897204
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 0.026140536850670446,
+            "cheap": 0.026140536850670446,
+            "knapsack": 0.026140536850670446
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "structured-04-n4-span3",
+      "n": 4,
+      "group": "structured",
+      "in_common_unsolved_28": true,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 0.00022341112981559165,
+            "cheap": 0.00022341112981559165,
+            "knapsack": 0.00022341112981559165
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 0.00022265612012673108,
+            "cheap": 0.00022265612012673108,
+            "knapsack": 0.00022265612012673108
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "structured-05-n8-span0",
+      "n": 8,
+      "group": "structured",
+      "in_common_unsolved_28": true,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 0.20750823005730198,
+            "cheap": 0.20750823005730198,
+            "knapsack": 0.20750823005730198
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 0.19351636779100997,
+            "cheap": 0.19351636779100997,
+            "knapsack": 0.19351636779100997
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "structured-06-n8-span0.3",
+      "n": 8,
+      "group": "structured",
+      "in_common_unsolved_28": true,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 0.1359928842778814,
+            "cheap": 0.1359928842778814,
+            "knapsack": 0.1359928842778814
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 0.1293859459202926,
+            "cheap": 0.1293859459202926,
+            "knapsack": 0.1293859459202926
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "structured-07-n8-span1.2",
+      "n": 8,
+      "group": "structured",
+      "in_common_unsolved_28": true,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 0.04498380199338337,
+            "cheap": 0.04498380199338337,
+            "knapsack": 0.04498380199338337
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 0.0434471838669137,
+            "cheap": 0.0434471838669137,
+            "knapsack": 0.0434471838669137
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "structured-08-n8-span3",
+      "n": 8,
+      "group": "structured",
+      "in_common_unsolved_28": true,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 0.009291979768190704,
+            "cheap": 0.009291979768190704,
+            "knapsack": 0.009291979768190704
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 0.009079286420270808,
+            "cheap": 0.009079286420270808,
+            "knapsack": 0.009079286420270808
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "structured-09-n16-span0",
+      "n": 16,
+      "group": "structured",
+      "in_common_unsolved_28": true,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 0.15685592952205588,
+            "cheap": 0.15685592952205588,
+            "knapsack": 0.15685592952205588
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 0.15175491281591869,
+            "cheap": 0.15175491281591869,
+            "knapsack": 0.15175491281591869
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "structured-10-n16-span0.3",
+      "n": 16,
+      "group": "structured",
+      "in_common_unsolved_28": true,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 0.10944348286990067,
+            "cheap": 0.10944348286990067,
+            "knapsack": 0.10944348286990067
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 0.10677229501587569,
+            "cheap": 0.10677229501587569,
+            "knapsack": 0.10677229501587569
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "structured-11-n16-span1.2",
+      "n": 16,
+      "group": "structured",
+      "in_common_unsolved_28": true,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 0.042099942843292694,
+            "cheap": 0.042099942843292694,
+            "knapsack": 0.042099942843292694
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 0.041297068937953846,
+            "cheap": 0.041297068937953846,
+            "knapsack": 0.041297068937953846
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "structured-12-n16-span3",
+      "n": 16,
+      "group": "structured",
+      "in_common_unsolved_28": true,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 0.014459997894258728,
+            "cheap": 0.014459997894258728,
+            "knapsack": 0.014459997894258728
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 0.014217877805485453,
+            "cheap": 0.014217877805485453,
+            "knapsack": 0.014217877805485453
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "structured-13-n32-span0",
+      "n": 32,
+      "group": "structured",
+      "in_common_unsolved_28": true,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 0.14465110767009712,
+            "cheap": 0.14465110767009712,
+            "knapsack": 0.14465110767009712
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 0.14234431867226188,
+            "cheap": 0.14234431867226188,
+            "knapsack": 0.14234431867226188
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "structured-14-n32-span0.3",
+      "n": 32,
+      "group": "structured",
+      "in_common_unsolved_28": true,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 0.10255636506850345,
+            "cheap": 0.10255636506850345,
+            "knapsack": 0.10255636506850345
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 0.10131923207945351,
+            "cheap": 0.10131923207945351,
+            "knapsack": 0.10131923207945351
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "structured-15-n32-span1.2",
+      "n": 32,
+      "group": "structured",
+      "in_common_unsolved_28": true,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 0.040744773921793584,
+            "cheap": 0.040744773921793584,
+            "knapsack": 0.040744773921793584
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 0.040350421629202125,
+            "cheap": 0.040350421629202125,
+            "knapsack": 0.040350421629202125
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "structured-16-n32-span3",
+      "n": 32,
+      "group": "structured",
+      "in_common_unsolved_28": true,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 0.015424409810833794,
+            "cheap": 0.015424409810833794,
+            "knapsack": 0.015424409810833794
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 0.015255492645079553,
+            "cheap": 0.015255492645079553,
+            "knapsack": 0.015255492645079553
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": true,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "clipping-01",
+      "n": 2,
+      "group": "clipping",
+      "in_common_unsolved_28": false,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 7.445515646814071e-05,
+            "cheap": 7.445515646814071e-05,
+            "knapsack": 7.445515646814071e-05
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 7.445515646814071e-05,
+            "cheap": 7.445515646814071e-05,
+            "knapsack": 7.445515646814071e-05
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": false,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": false,
+          "common_path": "common_global_center",
+          "caps": {
+            "simple": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "clipping-02",
+      "n": 2,
+      "group": "clipping",
+      "in_common_unsolved_28": false,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 0.002338867490523635,
+            "cheap": 0.002338867490523635,
+            "knapsack": 0.002338867490523635
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 0.002288317026217922,
+            "cheap": 0.002288317026217922,
+            "knapsack": 0.002288317026217922
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": false,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": false,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "clipping-03",
+      "n": 2,
+      "group": "clipping",
+      "in_common_unsolved_28": false,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 0.002338867490523635,
+            "cheap": 0.002338867490523635,
+            "knapsack": 0.002338867490523635
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 0.0020336698127342186,
+            "cheap": 0.0020336698127342186,
+            "knapsack": 0.0020336698127342186
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": false,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": false,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "clipping-04",
+      "n": 2,
+      "group": "clipping",
+      "in_common_unsolved_28": false,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 0.000474632038886501,
+            "cheap": 0.000474632038886501,
+            "knapsack": 0.000474632038886501
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 0.000474632038886501,
+            "cheap": 0.000474632038886501,
+            "knapsack": 0.000474632038886501
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": false,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": false,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "clipping-05",
+      "n": 2,
+      "group": "clipping",
+      "in_common_unsolved_28": false,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 6.829806339821775e-07,
+            "cheap": 6.829806339821775e-07,
+            "knapsack": 6.829806339821775e-07
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 6.829806339821775e-07,
+            "cheap": 6.829806339821775e-07,
+            "knapsack": 6.829806339821775e-07
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": false,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": false,
+          "common_path": "common_global_center",
+          "caps": {
+            "simple": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "clipping-06",
+      "n": 2,
+      "group": "clipping",
+      "in_common_unsolved_28": false,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 0.0003754570051549331,
+            "cheap": 0.0003754570051549331,
+            "knapsack": 0.0003754570051549331
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 0.0003754570051549331,
+            "cheap": 0.0003754570051549331,
+            "knapsack": 0.0003754570051549331
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": false,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": false,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "clipping-07",
+      "n": 2,
+      "group": "clipping",
+      "in_common_unsolved_28": false,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 0.05299924814099412,
+            "cheap": 0.05299924814099412,
+            "knapsack": 0.05299924814099412
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 0.05100352136634849,
+            "cheap": 0.05100352136634849,
+            "knapsack": 0.05100352136634849
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": false,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": false,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": false,
+              "cheap": false,
+              "knapsack": false,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "clipping-08",
+      "n": 2,
+      "group": "clipping",
+      "in_common_unsolved_28": false,
+      "caps": {
+        "simple": {
+          "E_max": {
+            "raw": 6.609419018319662e-06,
+            "cheap": 6.609419018319662e-06,
+            "knapsack": 6.609419018319662e-06
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        },
+        "jensen": {
+          "E_max": {
+            "raw": 6.609419018319662e-06,
+            "cheap": 6.609419018319662e-06,
+            "knapsack": 6.609419018319662e-06
+          },
+          "cheap_drop_vs_T21": 0.0,
+          "LP_drop_vs_cheap": 0.0,
+          "LP_drop_vs_T21": 0.0
+        }
+      },
+      "per_epsilon": {
+        "0.001": {
+          "common_unsolved": false,
+          "common_path": null,
+          "caps": {
+            "simple": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        },
+        "0.01": {
+          "common_unsolved": false,
+          "common_path": "common_global_center",
+          "caps": {
+            "simple": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            },
+            "jensen": {
+              "raw": true,
+              "cheap": true,
+              "knapsack": true,
+              "cheap_added": false,
+              "lp_added_over_t21": false,
+              "lp_specific_added": false
+            }
+          }
+        }
+      }
+    }
+  ]
+}
