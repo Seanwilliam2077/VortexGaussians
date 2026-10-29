@@ -1,0 +1,38 @@
+{
+  "schema": "t21-pre-execution-freeze-v1",
+  "created_utc": "2026-10-29T09:30:56.449481+00:00",
+  "parent_commit": "ed47e87b6cc12ec6211e889b5f6c8202f25e7d04",
+  "static_reviews": "root and pressure_screen; no candidate values executed",
+  "artifacts": [
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/inputs.json",
+      "bytes": 72396,
+      "sha256": "5cccf0238c679e14bc50e67d2d24726a58295b484b1d3464bf77d4eca0491cb7"
+    },
+    {
+      "path": "tracks/tog/tasks/t18-reference-robustness/run-01/results.json",
+      "bytes": 4682658,
+      "sha256": "fa4fb6887c6b38e800f18e919634821b3ee51c2fb0122cd0dbb4047eead7873d"
+    },
+    {
+      "path": "tracks/tog/tasks/t19-complete-cost/methods.py",
+      "bytes": 14536,
+      "sha256": "2369efea4f60d4cf546f926b9b6322bfa12a4109fa1332b92f2b22f94779ecb2"
+    },
+    {
+      "path": "tracks/tog/tasks/t21-winner-prefix-bound/PROTOCOL.md",
+      "bytes": 7646,
+      "sha256": "42795e131f9a6b0186de7169c8f2a574cd3c04d9a815f8e286e41d735fc85cd1"
+    },
+    {
+      "path": "tracks/tog/tasks/t21-winner-prefix-bound/DERIVATION.md",
+      "bytes": 10326,
+      "sha256": "af8956a46fc60e5ef0fa671388b485820c5d2a2b81e1eab285dd3a1e64866ddc"
+    },
+    {
+      "path": "tracks/tog/tasks/t21-winner-prefix-bound/reduce.py",
+      "bytes": 26947,
+      "sha256": "8c03c0a00057f881754fa50cc2ce3938a12db283ec7989147198c1cf539566fe"
+    }
+  ]
+}
