@@ -1,0 +1,107 @@
+{
+  "schema": "t27-environment-public-v1",
+  "captured_utc": "2026-10-29T12:46:14.235222+00:00",
+  "probe_source_sha256": "c591777f0733e60919d86fb41c9d1a1957a06bf3f5e016782e1fe1fdb2cf5742",
+  "raw_receipt_sha256": "99b6ebdadec915609f256f401024d7cf396b3cf4b0180e33261b71042f2cdcb0",
+  "raw_receipt_bytes": 3764,
+  "hardware": {
+    "os": "Windows",
+    "release": "11",
+    "machine": "AMD64",
+    "cpu_logical_count": 24,
+    "python_version": "3.12.13",
+    "memory_query_success": true,
+    "physical_memory_bytes": 67773509632,
+    "available_physical_memory_bytes": 27322261504,
+    "workspace_volume_total_bytes": 429497774080,
+    "workspace_volume_free_bytes": 120481173504
+  },
+  "installed_distribution_versions": {
+    "torch": "2.11.0+cu128",
+    "torchvision": null,
+    "torchaudio": null,
+    "numpy": "2.4.6",
+    "scipy": null,
+    "plyfile": null,
+    "Pillow": "12.2.0",
+    "opencv-python": "5.0.0.93",
+    "tqdm": "4.68.1",
+    "slangtorch": null,
+    "ninja": "1.13.0",
+    "fused-ssim": null,
+    "simple-knn": null,
+    "diff-gaussian-rasterization": null,
+    "slang-gaussian-rasterization": null,
+    "wandb": null,
+    "matplotlib": "3.11.0",
+    "lpips": null
+  },
+  "torch_query": {
+    "torch_version": "2.11.0+cu128",
+    "torch_compiled_cuda": "12.8",
+    "cuda_available": true,
+    "device_count": 1,
+    "devices": [
+      {
+        "name": "NVIDIA GeForce RTX 5070 Laptop GPU",
+        "capability": [
+          12,
+          0
+        ],
+        "total_memory_bytes": 8546484224
+      }
+    ]
+  },
+  "tool_observations": [
+    {
+      "tool": "nvidia-smi",
+      "status": "completed",
+      "returncode": 0,
+      "elapsed_seconds": 0.15700000000651926
+    },
+    {
+      "tool": "nvcc",
+      "status": "not_found_in_probed_locations",
+      "returncode": null,
+      "elapsed_seconds": null
+    },
+    {
+      "tool": "cmake",
+      "status": "not_found_in_probed_locations",
+      "returncode": null,
+      "elapsed_seconds": null
+    },
+    {
+      "tool": "ninja",
+      "status": "not_found_in_probed_locations",
+      "returncode": null,
+      "elapsed_seconds": null
+    },
+    {
+      "tool": "wsl",
+      "status": "completed",
+      "returncode": 1,
+      "elapsed_seconds": 0.062000000034458935
+    },
+    {
+      "tool": "vswhere",
+      "status": "not_found_in_probed_locations",
+      "returncode": null,
+      "elapsed_seconds": null
+    },
+    {
+      "tool": "cl",
+      "status": "not_found_in_path_or_vswhere_result",
+      "returncode": null,
+      "elapsed_seconds": null
+    }
+  ],
+  "gpu_driver_query": "NVIDIA GeForce RTX 5070 Laptop GPU, 8151, 7891, 595.71",
+  "wsl_observation": "wsl --list --verbose returned1 and reported WSL not installed",
+  "probe_elapsed_seconds": 26.15700000000652,
+  "total_budget_seconds": 150.0,
+  "external_executable_attempts": 2,
+  "torch_query_attempts": 1,
+  "torch_query_elapsed_seconds": 25.81299999996554,
+  "caveat": "Missing tools are not found in PATH/probed conventional locations, not a whole-disk absence proof. Package metadata does not prove import or execution. Torch query creates no tensor/model/compiler workload."
+}

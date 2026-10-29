@@ -1,0 +1,141 @@
+{
+  "schema": "t27-source-inventory-v1",
+  "main_commit": "dd175d52938264770a783cbb7929e20572675544",
+  "dependency_commit": "5eca1185550c35e3236c511c311aee3eb9129169",
+  "sources": [
+    {
+      "id": 1,
+      "repository": "main",
+      "path": "environment.yml",
+      "source_url": "https://raw.githubusercontent.com/chinmay0301ucsd/Vol3DGS/dd175d52938264770a783cbb7929e20572675544/environment.yml",
+      "content_local": "acquired/source/1-environment.yml",
+      "bytes": 192,
+      "sha256": "28b799cc254f6763aba1492bf72af3499cf66f76aa37a7e3e686ecffda7b8047",
+      "git_blob_sha1": "38d8984f01fcafab115e5fafd9aebfde9271c5e8",
+      "fixed_tree_verified": true,
+      "acquired_lines": 14,
+      "inspected_ranges": [
+        [
+          1,
+          14
+        ]
+      ]
+    },
+    {
+      "id": 2,
+      "repository": "main",
+      "path": "install.sh",
+      "source_url": "https://raw.githubusercontent.com/chinmay0301ucsd/Vol3DGS/dd175d52938264770a783cbb7929e20572675544/install.sh",
+      "content_local": "acquired/source/2-install.sh",
+      "bytes": 2905,
+      "sha256": "54d8557a7455b2e65c99487326002cf8e9e7978fa7e2a1051cb13ce39f14d4a6",
+      "git_blob_sha1": "3871e3d5e209e8ce72353df45fa646ae9b3d506b",
+      "fixed_tree_verified": true,
+      "acquired_lines": 84,
+      "inspected_ranges": [
+        [
+          1,
+          84
+        ]
+      ]
+    },
+    {
+      "id": 3,
+      "repository": "main",
+      "path": "requirements.txt",
+      "source_url": "https://raw.githubusercontent.com/chinmay0301ucsd/Vol3DGS/dd175d52938264770a783cbb7929e20572675544/requirements.txt",
+      "content_local": "acquired/source/3-requirements.txt",
+      "bytes": 212,
+      "sha256": "b9c9e589f05366bb4fc19b5784b56fadc0af516158bee675b869cdaf47ecfb62",
+      "git_blob_sha1": "b7ae39f0b97314a0ce43d1df973117800b986a77",
+      "fixed_tree_verified": true,
+      "acquired_lines": 18,
+      "inspected_ranges": [
+        [
+          1,
+          18
+        ]
+      ]
+    },
+    {
+      "id": 4,
+      "repository": "main",
+      "path": "scripts/all_datasets.sh",
+      "source_url": "https://raw.githubusercontent.com/chinmay0301ucsd/Vol3DGS/dd175d52938264770a783cbb7929e20572675544/scripts/all_datasets.sh",
+      "content_local": "acquired/source/4-all_datasets.sh",
+      "bytes": 6542,
+      "sha256": "be06fe8aedc3ccac6a6b1103a018f1befbd2ee7b62a02f45c025e4489880f242",
+      "git_blob_sha1": "b7b4dd70f175a0fb496df6d57e46175abd468f58",
+      "fixed_tree_verified": true,
+      "acquired_lines": 18,
+      "inspected_ranges": [
+        [
+          1,
+          18
+        ]
+      ]
+    },
+    {
+      "id": 5,
+      "repository": "dependency",
+      "path": "setup.py",
+      "source_url": "https://raw.githubusercontent.com/chinmay0301ucsd/slang-gaussian-rasterization/5eca1185550c35e3236c511c311aee3eb9129169/setup.py",
+      "content_local": "acquired/source/5-setup.py",
+      "bytes": 1252,
+      "sha256": "633eef0c89a85e4d6c81a2acfef32fa6b75bf425bf0d001399bda519e368fa99",
+      "git_blob_sha1": "4bece6fbdb205b767e71512adea3fe7ef4157d2f",
+      "fixed_tree_verified": true,
+      "acquired_lines": 32,
+      "inspected_ranges": [
+        [
+          1,
+          32
+        ]
+      ]
+    }
+  ],
+  "metadata": [
+    {
+      "id": 6,
+      "role": "metadata",
+      "method": "web_open",
+      "requested_url": "https://jonbarron.info/mipnerf360/",
+      "content_local": "acquired/metadata/page.web.txt",
+      "content_bytes": 2736,
+      "content_sha256": "83b01c9705b62a60b0ae95c690ab9f609e04eaf00a6bf94c5ec77f4fa3c4e8ba",
+      "representation": "tool text response, not raw HTML or network traffic",
+      "inspected_document_lines_zero_based": [
+        0,
+        36
+      ]
+    },
+    {
+      "id": 7,
+      "role": "metadata",
+      "method": "GET",
+      "requested_url": "https://jonbarron.info/mipnerf360/",
+      "content_local": "acquired/metadata/page.html",
+      "content_bytes": 11746,
+      "content_sha256": "a5a585b9d602f9f0f8fac7262ffe355cf0c56cb640bea1dec758e04de634b1c4",
+      "wrapper_local": "acquired/metadata/page-html-receipt.json",
+      "wrapper_bytes": 2537,
+      "wrapper_sha256": "9812d9af4d43f15174822eb5bb080f6cf5c715ca19c6c26c053f81dfd7954703",
+      "representation": "bounded same-page HTML read under disclosed transport clarification",
+      "status": 200,
+      "acquired_html_lines": 208
+    },
+    {
+      "id": 8,
+      "role": "metadata",
+      "method": "HEAD",
+      "requested_url": "http://storage.googleapis.com/gresearch/refraw360/360_v2.zip",
+      "content_local": "acquired/metadata/archive-head-receipt.json",
+      "content_bytes": 1170,
+      "content_sha256": "465593732cac94c3cbc99774ee651eb69ac93f659a82b0860de1b472ba4c7121",
+      "representation": "HEAD response metadata receipt; no archive body",
+      "status": 200,
+      "archive_body_bytes_read": 0,
+      "reported_archive_bytes": 12535427936
+    }
+  ]
+}
