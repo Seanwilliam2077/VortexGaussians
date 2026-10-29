@@ -1,0 +1,137 @@
+{
+  "schema": "t48-linked-affine-solenoidal-carrier-v1",
+  "created_utc": "2026-10-29T21:53:56.106516+00:00",
+  "parent_commit": "4b803bcd8e8ec04e07265450e57fd5f4e01f7f97",
+  "previous_goal_turn": "progress: T47 established projection/transport commutator and ordinary repair on the actual vorticity carrier",
+  "current_turn_classification": "progress: compact affine closure, explicit real-space carrier, same-field one-dimensional reconstruction and diffusion limits",
+  "goal_status": "active_not_submission_ready",
+  "decision": "retain_ordinary_analytical_reference_no_new_core_method_selected",
+  "scope_recorded_after_family_selection_before_completed_derivations": true,
+  "new_scientific_executions": 0,
+  "new_numerical_evaluations": 0,
+  "new_symbolic_software_evaluations": 0,
+  "new_browser_launches": 0,
+  "new_assets": 0,
+  "installations": 0,
+  "new_methods_implemented": 0,
+  "external_search_queries": 2,
+  "external_primary_items": 4,
+  "external_successful_opens": 2,
+  "external_failed_opens": 2,
+  "external_documents_locally_archived": false,
+  "external_source_record": {
+    "path": "tracks/tog/tasks/t48-affine-solenoidal-carrier/SOURCES.md",
+    "bytes": 6606,
+    "sha256": "d929a44f994b4246c3e313603eebd27e7b9d8f036777d864e5241df271d74bb8"
+  },
+  "exact_compact_affine_closure": true,
+  "parameter_record_scalars": 12,
+  "real_space_vorticity_tail": "O(|z|^-3), not absolutely L1 for nonzero single carrier",
+  "single_covariance_generically_closed_under_heat_diffusion": false,
+  "velocity_and_jacobian_integral_dimension": 1,
+  "bare_undifferentiated_double_potential_diverges": true,
+  "ordinary_same_field_reference_available_analytically": true,
+  "same_field_comparator_wording_clarified_before_sealing": true,
+  "current_simulator_bug_established": false,
+  "novelty_established": false,
+  "cost_advantage_measured": false,
+  "next_scientific_run_selected": false,
+  "next_implementation_selected": false,
+  "TOG_core_contribution": false,
+  "artifacts": [
+    {
+      "path": "tracks/tog/tasks/t48-affine-solenoidal-carrier/.gitignore",
+      "bytes": 7,
+      "sha256": "a7d8bdcefba82a95ebc021d87c629fdea21f13af953bf01e28b7cf8b0eeceb41"
+    },
+    {
+      "path": "tracks/tog/tasks/t48-affine-solenoidal-carrier/CARRIER.md",
+      "bytes": 7186,
+      "sha256": "1e328b7e8fae6c1eeb1cfaea95445f17642e71d25ad7c90698d3674a90885013"
+    },
+    {
+      "path": "tracks/tog/tasks/t48-affine-solenoidal-carrier/DECISION.md",
+      "bytes": 4990,
+      "sha256": "7972df60decebfc4adcc5b5f4daa0aef86ad2ceaf9ddcdeea0dcee2b2377f90b"
+    },
+    {
+      "path": "tracks/tog/tasks/t48-affine-solenoidal-carrier/README.md",
+      "bytes": 2133,
+      "sha256": "0bb96683dc7fc12975aae85d530ee15da5d3d716d5b28d73569285448b71ac94"
+    },
+    {
+      "path": "tracks/tog/tasks/t48-affine-solenoidal-carrier/SCOPE.md",
+      "bytes": 3005,
+      "sha256": "f1fbca4d45a504263daa18b41967d32d7f564d4f1071857d44f98aef89586ea2"
+    },
+    {
+      "path": "tracks/tog/tasks/t48-affine-solenoidal-carrier/SOURCES.md",
+      "bytes": 6606,
+      "sha256": "d929a44f994b4246c3e313603eebd27e7b9d8f036777d864e5241df271d74bb8"
+    },
+    {
+      "path": "tracks/tog/tasks/t48-affine-solenoidal-carrier/VELOCITY.md",
+      "bytes": 10579,
+      "sha256": "1136803b737a53fedca7ebfdeb12d2e1dd2519b6251d9291e8764afbe78b2a36"
+    },
+    {
+      "path": "tracks/validation/t48-mathematical-review.md",
+      "bytes": 10934,
+      "sha256": "db73a48de30f74ffaca2cf0871b26b2ba11fe31adb2ae9c7be5356d284feadf5"
+    }
+  ],
+  "current_state_documents": [
+    {
+      "path": "tracks/STATUS.md",
+      "bytes": 66186,
+      "sha256": "b38095077ce0f9cb87009596abc55fe6e3a523f55c7d45f043aaba39b6202c89"
+    },
+    {
+      "path": "tracks/EXPLORATION.md",
+      "bytes": 8286,
+      "sha256": "2c85681cfdfa5390098588edb8950771250f2b3120b46f6dfc3749d17b5a7164"
+    },
+    {
+      "path": "tracks/tog/README.md",
+      "bytes": 8113,
+      "sha256": "99cbf76d81fd16375041460e3c46b3cf52c2fa0315e9e32fb13e6a70035c4688"
+    }
+  ],
+  "preservation_chain": {
+    "parent_manifest": {
+      "path": "tracks/tog/tasks/t47-vorticity-transfer-commutator/audit-manifest.json",
+      "bytes": 5389,
+      "sha256": "a334e0d958f76b4a47ae151ddb54ab5bd8561959edf01b6ce8ad59e44df2c3e6"
+    },
+    "verified_prior_artifact_count": 576,
+    "all_recorded_prior_bytes_unchanged": true
+  },
+  "other_parent_tracked_files_unchanged": 1101,
+  "literal_parent_blob_matches": 1087,
+  "CRLF_only_checkout_conversions": [
+    ".gitignore",
+    "CHANGELOG.md",
+    "PUBLISH.md",
+    "README.md",
+    "compare.html",
+    "index.html",
+    "research/EVIDENCE_STATUS.md",
+    "research/FRONTIER_EARLY_REJECTION.md",
+    "research/lib/p3d-baseline.json",
+    "research/lib/p3e-baseline.json",
+    "research/lib/p3f-baseline.json",
+    "research/lib/p3g-baseline.json",
+    "research/physical_reference/README.md",
+    "study/index.html"
+  ],
+  "all_parent_blob_ids_match_after_git_clean_filters": true,
+  "original_core": {
+    "path": "tracks/tog/src/core.py",
+    "bytes": 13301,
+    "sha256": "ac750b70a86743ac858f1c53cf620ce29c63c462456115af4d0d8c93fa20bd9e"
+  },
+  "historical_failures_unchanged": true,
+  "art_inactive": true,
+  "main_not_merged_or_deployed": true,
+  "automation_remains_deleted": true
+}
