@@ -1,0 +1,51 @@
+{
+  "schema": "t36-execution-v1",
+  "invocation": 1,
+  "started_utc": "2026-10-29T18:01:43.542559+00:00",
+  "finished_utc": "2026-10-29T18:03:50.459500+00:00",
+  "returncode": 0,
+  "timed_out": false,
+  "errors": [],
+  "child_still_running": false,
+  "success": true,
+  "computation_cap_seconds": 300,
+  "external_wait_seconds": 330,
+  "cleanup_cap_seconds": 10,
+  "process_and_cleanup_seconds": 126.85683279996738,
+  "cleanup_seconds": 0.0,
+  "initial_source_check": {
+    "pass": true,
+    "seconds": 0.018795100040733814
+  },
+  "post_source_check": {
+    "pass": true,
+    "seconds": 0.05565370002295822
+  },
+  "supervisor_seconds_before_receipt": 126.9385287000332,
+  "freeze_sha256": "2956bd2b75aac195caaa036a6990a5d21c4f57d6931d65638f02f72110c8e0da",
+  "retries": 0,
+  "logs": {
+    "stdout.txt": {
+      "bytes": 153,
+      "sha256": "8c0f67f838303b3faa12f12a34a84c9d98782ae32f8c363b58c9e42d083dfdad"
+    },
+    "stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "last_progress": {
+    "sequence": 393232,
+    "pixel_index": null,
+    "stage_code": 12,
+    "state_code": 1,
+    "stage_started_perf_counter_ns": 657039207400900,
+    "active_stage_elapsed_upper_bound_seconds": null,
+    "note": "Hard-stop active elapsed includes termination latency; not a successful solver measurement."
+  },
+  "raw_numeric_bytes": 6298888,
+  "packaging_needed": false,
+  "packaging_recovery_invocations": 0,
+  "partial_files_preserved": true,
+  "not_a_strong_baseline_or_speedup_trial": true
+}

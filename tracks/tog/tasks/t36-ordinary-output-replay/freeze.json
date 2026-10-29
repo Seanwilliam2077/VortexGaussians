@@ -1,0 +1,123 @@
+{
+  "schema": "t36-input-freeze-v1",
+  "created_utc": "2026-10-29T18:01:36.917161+00:00",
+  "parent_commit": "a14f151d50f11286da015cfad429a151d713e5a0",
+  "prior_turn_classification": "progress: T35 full reference/alpha evidence and persisted-blue failure diagnosis",
+  "artifacts": [
+    {
+      "path": "tracks/tog/tasks/t36-ordinary-output-replay/PROTOCOL.md",
+      "bytes": 7869,
+      "sha256": "308027f0a223be33e9a9cd1284b7a0b5414be189171e1798a22945a65f74a5af"
+    },
+    {
+      "path": "tracks/tog/tasks/t36-ordinary-output-replay/evidence.py",
+      "bytes": 10880,
+      "sha256": "57484f6f24c571e39d066f87d556ef87326b1054f70e45486ec379a761c82935"
+    },
+    {
+      "path": "tracks/tog/tasks/t36-ordinary-output-replay/run.py",
+      "bytes": 21391,
+      "sha256": "97c83b9791543f37450f9273cd3f4b13692a057d1b2dc7d51c36a603a7e9364a"
+    },
+    {
+      "path": "tracks/tog/tasks/t36-ordinary-output-replay/supervise.py",
+      "bytes": 6993,
+      "sha256": "7c258b2e267ff5a7e07429ee516ef76ee1dd5d5374e1ed0050abd735a47a3d02"
+    },
+    {
+      "path": "tracks/tog/tasks/t36-ordinary-output-replay/test_storage.py",
+      "bytes": 14534,
+      "sha256": "218092e86a84d9b9376247d1b4f06dfdd04c8f2f41660a32e0752fbe0562e1b4"
+    },
+    {
+      "path": "tracks/validation/t36-storage-test.json",
+      "bytes": 2248,
+      "sha256": "0766c9476d52713d1aee06d3d5aa0fc84b63dcfd5db4a9d2090970c14f544a08"
+    },
+    {
+      "path": "tracks/validation/t36-pre-execution-review.md",
+      "bytes": 5207,
+      "sha256": "50595c2dd854fb0ada1c6915498966781be63564ac97359402f2ff6b928171fc"
+    },
+    {
+      "path": "tracks/tog/tasks/t35-first-complete-frame/NEXT_ENTRY.md",
+      "bytes": 4600,
+      "sha256": "8041d851b7fe46bc25dacc636bbf9dab9f1ccec6c632a04c13b022e6771f2cda"
+    },
+    {
+      "path": "tracks/tog/tasks/t35-first-complete-frame/run-01/pixels.bin.gz",
+      "bytes": 3036056,
+      "sha256": "e19dde61545fb792ec50cf9e815d4626943acc78704cba6d9a48d7965dc3c835"
+    },
+    {
+      "path": "tracks/tog/tasks/t35-first-complete-frame/run-01/leaves.bin.gz",
+      "bytes": 11953225,
+      "sha256": "b2beefb4133db39870668dca98dd9e26659008af30933adfdd0605e3dc0557b8"
+    },
+    {
+      "path": "tracks/tog/tasks/t35-first-complete-frame/run-01/frame.json",
+      "bytes": 1031,
+      "sha256": "c6303307488b87409c4727a3c932fb955ccf6726ad99726a2d2304342ef840d4"
+    },
+    {
+      "path": "tracks/tog/tasks/t35-first-complete-frame/run-01/result.json",
+      "bytes": 7797,
+      "sha256": "ab9cbbb13b3d8c2f5bdd22e22a2be5d8e86653b1b3e8babceed77687447a3c06"
+    },
+    {
+      "path": "tracks/tog/tasks/t35-first-complete-frame/run-01/execution.json",
+      "bytes": 1563,
+      "sha256": "9969059e92c3e13b43a52db9d47d5b698bea97eb56d4d5750e3e115124076541"
+    },
+    {
+      "path": "tracks/validation/t35-saved-result-review.md",
+      "bytes": 7469,
+      "sha256": "072ee5a98f4c2d198eaae0dcd1603e57e9f6503d5dd30517b228cd9e009268e6"
+    },
+    {
+      "path": "tracks/validation/t35-saved-result-audit.json",
+      "bytes": 22656,
+      "sha256": "d4511d7720466c6f7cf0cc4b45c5e78308d9dce84d92d3951753b1bf10442fbb"
+    },
+    {
+      "path": "tracks/tog/tasks/t32-ordinary-volume-entry/adapter.py",
+      "bytes": 11851,
+      "sha256": "e6da5219af1b8b1b7abf6f6b9555783fb846ebf740c0d1ed33f8dee4a8a9405c"
+    },
+    {
+      "path": "tracks/tog/tasks/t32-ordinary-volume-entry/ordinary.py",
+      "bytes": 3786,
+      "sha256": "7ca2fb5f67cfaa3ea2c33c7818956d31073ab36b57e4195ed70ed2efd09e2966"
+    },
+    {
+      "path": "tracks/tog/tasks/t22-prefix-complete-cost/integrators.py",
+      "bytes": 16091,
+      "sha256": "94c6ab6748c42c40c8446ec5af01adf3b7b4ff66a6a45f7f9aba26bc651113af"
+    },
+    {
+      "path": "tracks/tog/tasks/t31-local-carrier/MODEL.md",
+      "bytes": 3652,
+      "sha256": "2fb5315f175f058509080fb4ba09b0e77ecac75206b7325662766adf88f66814"
+    },
+    {
+      "path": "tracks/tog/tasks/t31-local-carrier/run-01/carrier.json.gz",
+      "bytes": 58581,
+      "sha256": "39f4dc758bb790f3b88bb2bbfa65dbe469c030289d4237476f598e29b823dcf2"
+    }
+  ],
+  "invocation_limit": 1,
+  "pre_freeze_scientific_invocations": 0,
+  "structural_test_report": "tracks/validation/t36-storage-test.json",
+  "width": 256,
+  "height": 192,
+  "frame": 90,
+  "view": "front",
+  "pixel_order": "row-major",
+  "planned_pixels": 49152,
+  "computation_cap_seconds": 300,
+  "outer_wait_seconds": 330,
+  "cleanup_seconds": 10,
+  "raw_numeric_cap": 33554432,
+  "reference_evaluations_allowed": 0,
+  "T35_delivery_status_preserved": "failed_saved_blue_alias"
+}

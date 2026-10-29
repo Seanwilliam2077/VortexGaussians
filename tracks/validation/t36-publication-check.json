@@ -1,0 +1,13 @@
+{
+  "schema": "t36-publication-check-v1",
+  "index_bytes_verified": true,
+  "original_git_diff_check_returncode": 2,
+  "original_git_diff_check_finding": "tracks/tog/tasks/t36-ordinary-output-replay/run.py:358: new blank line at EOF.",
+  "decision": "Preserve already-frozen source bytes; one trailing blank line has no scientific or execution effect.",
+  "frozen_source_modified": false,
+  "scientific_reexecutions": 0,
+  "configured_whitespace_check_returncode": 2,
+  "configured_check_note": "Path attribute whitespace=trailing-space,space-before-tab,cr-at-eol preserves the same EOF warning despite core.whitespace override; no source was changed.",
+  "all_other_files_whitespace_check_returncode": 0,
+  "all_other_files_check_command": "git diff --cached --check -- . :(exclude)tracks/tog/tasks/t36-ordinary-output-replay/run.py"
+}

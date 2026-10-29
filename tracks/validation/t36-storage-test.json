@@ -1,0 +1,101 @@
+{
+  "schema": "t36-independent-storage-sentinel-v1",
+  "passed": true,
+  "test_count": 18,
+  "failure_count": 0,
+  "tests": [
+    {
+      "name": "unique_independent_schema",
+      "pass": true
+    },
+    {
+      "name": "literal_HDR_positional_roundtrip",
+      "pass": true
+    },
+    {
+      "name": "reject_missing_field",
+      "pass": true
+    },
+    {
+      "name": "reject_extra_ambiguous_alias",
+      "pass": true
+    },
+    {
+      "name": "reject_bool_float",
+      "pass": true
+    },
+    {
+      "name": "reject_NaN_float",
+      "pass": true
+    },
+    {
+      "name": "reject_bool_integer",
+      "pass": true
+    },
+    {
+      "name": "reject_float_integer",
+      "pass": true
+    },
+    {
+      "name": "reject_negative_integer",
+      "pass": true
+    },
+    {
+      "name": "reject_overflow_integer",
+      "pass": true
+    },
+    {
+      "name": "reject_decode_length_0",
+      "pass": true
+    },
+    {
+      "name": "reject_decode_length_127",
+      "pass": true
+    },
+    {
+      "name": "reject_decode_length_129",
+      "pass": true
+    },
+    {
+      "name": "reject_nonfinite_saved_payload",
+      "pass": true
+    },
+    {
+      "name": "actual_readback_black_HDR_and_unfinished",
+      "pass": true
+    },
+    {
+      "name": "actual_saved_blue_equals_far_is_rejected",
+      "pass": true
+    },
+    {
+      "name": "failed_marker_and_legacy_extent_rejection",
+      "pass": true
+    },
+    {
+      "name": "sources_unchanged",
+      "pass": true
+    }
+  ],
+  "source_sha256_before": {
+    "evidence.py": "57484f6f24c571e39d066f87d556ef87326b1054f70e45486ec379a761c82935",
+    "test_storage.py": "218092e86a84d9b9376247d1b4f06dfdd04c8f2f41660a32e0752fbe0562e1b4"
+  },
+  "source_sha256_after": {
+    "evidence.py": "57484f6f24c571e39d066f87d556ef87326b1054f70e45486ec379a761c82935",
+    "test_storage.py": "218092e86a84d9b9376247d1b4f06dfdd04c8f2f41660a32e0752fbe0562e1b4"
+  },
+  "temporary_directory_cleaned": true,
+  "temporary_files_inside_scientific_run": false,
+  "scientific_evaluations": 0,
+  "scene_imports": 0,
+  "projection_imports": 0,
+  "quadrature_imports": 0,
+  "reference_imports": 0,
+  "literal_legacy_rows": 3,
+  "sentinel_dimensions": [
+    3,
+    1
+  ],
+  "elapsed_seconds": 0.04370859998743981
+}
