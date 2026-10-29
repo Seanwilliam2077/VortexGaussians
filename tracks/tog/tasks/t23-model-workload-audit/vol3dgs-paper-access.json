@@ -1,0 +1,270 @@
+{
+  "schema": "t23-vol3dgs-paper-access-v1",
+  "reviewer": "pressure_screen",
+  "completed_utc": "2026-10-29T11:29:41.8345026Z",
+  "family": {
+    "title": "Volumetrically Consistent 3D Gaussian Rasterization",
+    "arxiv": "2412.03378v3",
+    "displayed_version_date": "2025-05-21",
+    "named_url": "https://arxiv.org/html/2412.03378v3"
+  },
+  "local_reuse": {
+    "historical_notes_read": [
+      "tracks/tog/tasks/t15-core-hypothesis-selection/C_VOLUME.md",
+      "tracks/tog/tasks/t15-core-hypothesis-selection/c-sources.json"
+    ],
+    "raw_body_found": false,
+    "check": "Read-only rg filename inventory under the existing outer work directory; filtered for 2412.03378, Vol3DGS, or volumetrically. No matching local paper body found in that inventory; ordinary ignore rules applied, so this was not an exhaustive search of ignored files. A broad initial HTML/PDF name listing was truncated; the subsequent targeted listing returned no matches. No source content was executed."
+  },
+  "governing_protocol": {
+    "path": "tracks/tog/tasks/t23-model-workload-audit/PROTOCOL.md",
+    "sha256": "a9388576aab275c188dc8343900d7caecdae93a0eea76a39e2bfdaab2b55f1b4",
+    "freeze": "tracks/tog/tasks/t23-model-workload-audit/freeze.json",
+    "parent_commit": "0b961d20c14a99cae0470f47b0a0ecc8236b39fa"
+  },
+  "budget": {
+    "named_html_acquisition_limit": 1,
+    "named_html_acquisitions_used": 1,
+    "linked_official_pdf_fallback_limit": 1,
+    "linked_official_pdf_fallbacks_used": 0,
+    "pdf_pages_limit": 16,
+    "pdf_pages_inspected": 0,
+    "search_queries": 0,
+    "new_source_families": 0,
+    "repository_requests": 0,
+    "asset_requests": 0,
+    "code_imports_or_executions": 0,
+    "numerical_evaluations": 0,
+    "same_acquired_document_paging_calls": 2
+  },
+  "attempts": [
+    {
+      "sequence": 1,
+      "kind": "named_html_acquisition",
+      "url": "https://arxiv.org/html/2412.03378v3",
+      "method": "web.open",
+      "outcome": "success: extracted HTML document returned",
+      "origin_http_status": null,
+      "origin_http_status_note": "The tool did not expose an HTTP status; success is inferred only from returned article content.",
+      "content_type": "text/html",
+      "extractor_document_total_lines": 490,
+      "first_view_displayed_lines": [
+        0,
+        196
+      ],
+      "retained_response": "acquired/vol3dgs-paper/01-html.web.txt"
+    }
+  ],
+  "same_document_reads": [
+    {
+      "sequence": 2,
+      "operation": "page existing acquired document at extractor line 220",
+      "displayed_lines": [
+        178,
+        318
+      ],
+      "fresh_source_acquisition": false,
+      "retained_response": "acquired/vol3dgs-paper/02-same-document-page.web.txt"
+    },
+    {
+      "sequence": 3,
+      "operation": "page existing acquired document at extractor line 328",
+      "displayed_lines": [
+        286,
+        438
+      ],
+      "fresh_source_acquisition": false,
+      "retained_response": "acquired/vol3dgs-paper/03-same-document-page.web.txt"
+    }
+  ],
+  "inspected_locations": [
+    {
+      "section": "Version and official repository pointer",
+      "lines": [
+        [
+          58,
+          66
+        ]
+      ]
+    },
+    {
+      "section": "3.1 Volume rendering; 3.2 Volume rendering of 3D Gaussians",
+      "lines": [
+        [
+          103,
+          128
+        ]
+      ],
+      "equations": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    {
+      "section": "4.1 Alpha blending without splatting",
+      "lines": [
+        [
+          134,
+          152
+        ]
+      ],
+      "equations": [
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ]
+    },
+    {
+      "section": "4.2 Analytic transmittance computation",
+      "lines": [
+        [
+          155,
+          168
+        ]
+      ],
+      "equations": [
+        15,
+        16,
+        17,
+        18,
+        19
+      ]
+    },
+    {
+      "section": "5 Implementation details",
+      "lines": [
+        [
+          182,
+          193
+        ]
+      ],
+      "equations": [
+        20
+      ]
+    },
+    {
+      "section": "6.1 View synthesis scope; 6.2 Tomography model",
+      "lines": [
+        [
+          209,
+          211
+        ],
+        [
+          221,
+          229
+        ]
+      ],
+      "equations": [
+        21
+      ]
+    },
+    {
+      "section": "7 Limitations; 8 Future work",
+      "lines": [
+        [
+          245,
+          261
+        ]
+      ]
+    },
+    {
+      "section": "Appendix A Comparing volumetric rasterizer with ray marching",
+      "lines": [
+        [
+          333,
+          343
+        ]
+      ],
+      "equations": [
+        22
+      ]
+    },
+    {
+      "section": "Appendix B 1D Gaussian along camera ray",
+      "lines": [
+        [
+          344,
+          379
+        ]
+      ],
+      "equations": [
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33,
+        35
+      ]
+    },
+    {
+      "section": "Appendix D Implementation details and hyperparameters",
+      "lines": [
+        [
+          384,
+          390
+        ]
+      ]
+    }
+  ],
+  "incidental_returned_text": "Tool paging also returned navigation, references, figures' textual captions and performance tables. These are retained as retrieval receipts; no referenced paper, image, dataset or linked code was acquired from them, and no rendered figure was inspected.",
+  "observed_links_not_fetched": [
+    {
+      "type": "official_repository",
+      "url": "https://github.com/chinmay0301ucsd/Vol3DGS",
+      "location": "HTML lines 65-66; document link 47"
+    },
+    {
+      "type": "official_pdf_navigation",
+      "url": null,
+      "location": "HTML line 12; document link 2",
+      "note": "Link presence observed; its endpoint was not resolved or fetched because the named HTML supplied the requested sections."
+    }
+  ],
+  "direct_asset_endpoints_observed_in_inspected_sections": [],
+  "retained_representation": "Exact web-tool response text from the three views, not raw origin HTML and not a complete offline article. Byte counts/hashes identify these receipts only.",
+  "retained_responses": [
+    {
+      "path": "acquired/vol3dgs-paper/01-html.web.txt",
+      "bytes": 28721,
+      "sha256": "dfa8fd62e37baefadc41937f3be60c055c212892e0fa30db858ba7eb025a406d"
+    },
+    {
+      "path": "acquired/vol3dgs-paper/02-same-document-page.web.txt",
+      "bytes": 27364,
+      "sha256": "cb0c231046d355456a5fcfd2f2282de2a267596274f90fd5ace9a84c09640b08"
+    },
+    {
+      "path": "acquired/vol3dgs-paper/03-same-document-page.web.txt",
+      "bytes": 27564,
+      "sha256": "e95cb2ea06656f521d509f0a7e5e6a35bcd0bdfce467623d814fa7f445fe3a49"
+    }
+  ],
+  "retained_response_bytes_total": 83649,
+  "ignored_destination": "tracks/tog/tasks/t23-model-workload-audit/.gitignore contains acquired/",
+  "failed_paper_acquisitions": [],
+  "pdf_fallback_unused_reason": "Relevant model, approximation, limitation and implementation-description sections were available in the acquired HTML; no extra source was necessary.",
+  "unknowns": [
+    "Pinned implementation behavior and official assets are outside this paper-only assignment.",
+    "Origin raw-body bytes, total network bytes, server timing and data-download sizes were not measured.",
+    "No asset compatibility, useful-ray incidence, general numerical guarantee or novelty clearance follows from this paper-only reading."
+  ],
+  "source_summary_word_limit": 200,
+  "report_whitespace_tokens_including_table_markup": 199,
+  "quoted_source_words": 0,
+  "root_publication_clarification": "Final assessment distinguishes confirmed domain difference from unresolved color/support mappings; no new source access."
+}

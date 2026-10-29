@@ -1,0 +1,93 @@
+{
+  "schema": "t23-hybrid-paper-access-v1",
+  "completed_utc": "2026-10-29T11:28:15Z",
+  "parent_commit": "0b961d20c14a99cae0470f47b0a0ecc8236b39fa",
+  "paper_title": "Efficient Perspective-Correct 3D Gaussian Splatting Using Hybrid Transparency",
+  "doi": "10.1111/cgf.70014",
+  "primary_url": "https://onlinelibrary.wiley.com/doi/10.1111/cgf.70014",
+  "allocation": {
+    "named_html_access_limit": 1,
+    "conditional_linked_official_fallback_limit": 1,
+    "pdf_page_inspection_limit": 16,
+    "search_queries_allowed": 0,
+    "new_families_allowed": 0
+  },
+  "ancestry": [
+    {
+      "path": "tracks/tog/tasks/t23-model-workload-audit/PROTOCOL.md",
+      "sha256": "a9388576aab275c188dc8343900d7caecdae93a0eea76a39e2bfdaab2b55f1b4",
+      "inspected": "Complete protocol before external access"
+    },
+    {
+      "path": "tracks/tog/tasks/t23-model-workload-audit/freeze.json",
+      "sha256": "74ef4bbbd88b5305b94e2261e18f296a946870046dc602495111487cea58a4f9",
+      "inspected": "Complete pre-access freeze and source allocation"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/RELATED_WORK.md",
+      "sha256": "5686b7ef8c531e5b14feb0aa2cf253c84c2e5cbf12a0de6ea76d097c4b64c2c5",
+      "inspected_lines": [1, 24],
+      "relevant_lines": [15, 18, 20, 21, 22, 23, 24],
+      "status": "Historical secondary research note; no new verification of its publisher-paper statements"
+    }
+  ],
+  "local_reuse_check": {
+    "scope": "Current task workspace; filename search repeated with hidden/ignored files, then text search of HTML/TXT/MD/JSON excluding .git and node_modules",
+    "filename_terms": ["Hybrid", "hybrid", "70014", "transparency"],
+    "content_terms": ["cgf.70014", "Efficient Perspective-Correct 3D Gaussian Splatting Using Hybrid Transparency"],
+    "retained_full_text_found": false,
+    "matching_note_paths": [
+      "tracks/tog/tasks/t17-order-inversion-bound/RELATED_WORK.md",
+      "tracks/tog/tasks/t22-prefix-complete-cost/NEXT_EVIDENCE.md",
+      "tracks/tog/tasks/t23-model-workload-audit/PROTOCOL.md"
+    ],
+    "whole_computer_inventory_claimed": false
+  },
+  "attempts": [
+    {
+      "attempt": 1,
+      "kind": "named_publisher_html",
+      "url": "https://onlinelibrary.wiley.com/doi/10.1111/cgf.70014",
+      "tool": "web.run open",
+      "reported_result": "Failed to fetch https://onlinelibrary.wiley.com/doi/10.1111/cgf.70014: (403) Forbidden",
+      "tool_reported_status": 403,
+      "origin_response_headers_exposed": false,
+      "article_text_acquired": false,
+      "link_list_acquired": false,
+      "acquired_document_bytes": 0,
+      "document_sha256": null,
+      "inspected_html_sections": [],
+      "inspected_html_line_ranges": [],
+      "inspected_pdf_pages": []
+    }
+  ],
+  "fallback": {
+    "attempted": false,
+    "verified_linked_official_url_available": false,
+    "reason": "Failed HTML exposed no links; no retained verified official fallback was found locally or supplied by root. Root instructed to stop without guessing or changing source channels."
+  },
+  "totals": {
+    "explicit_document_acquisition_attempts": 1,
+    "named_html_attempts": 1,
+    "fallback_attempts": 0,
+    "successful_document_acquisitions": 0,
+    "acquired_document_bytes": 0,
+    "new_html_sections_inspected": 0,
+    "new_html_lines_inspected": 0,
+    "pdf_pages_inspected": 0,
+    "search_queries": 0,
+    "mirror_attempts": 0,
+    "additional_source_families": 0,
+    "repository_requests": 0,
+    "asset_requests": 0,
+    "numerical_executions": 0,
+    "historical_module_imports": 0,
+    "installations": 0
+  },
+  "decision": "STOP_WITH_CONCRETE_SOURCE_ACCESS_GAP",
+  "same_model_mapping_verified_this_task": false,
+  "new_prior_art_coverage_conclusion": false,
+  "scientific_falsification": false,
+  "novelty_established": false,
+  "automatic_followup_execution": false
+}

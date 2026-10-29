@@ -1,0 +1,24 @@
+{
+  "schema": "t23-repository-acquisition-v1",
+  "attempts": [
+    {
+      "ordinal": 1,
+      "category": "repository_metadata",
+      "purpose": "resolve fixed official repository revision",
+      "url": "https://api.github.com/repos/chinmay0301ucsd/Vol3DGS/commits/HEAD",
+      "started_utc": "2026-10-29T11:27:14.387285+00:00",
+      "error": "HTTP Error 403: rate limit exceeded"
+    }
+  ],
+  "closed_under_stop_rule": true,
+  "fixed_repository_commit": null,
+  "metadata_attempts_used": 1,
+  "metadata_attempts_limit": 4,
+  "code_files_acquired": 0,
+  "code_lines_inspected": 0,
+  "asset_metadata_attempts": 0,
+  "asset_downloads": 0,
+  "source_bytes_acquired": 0,
+  "failure_interpretation": "The official revision endpoint returned HTTP 403 rate limit exceeded. No fixed commit or tree was obtained, so implementation and official-asset semantics are unresolved. This is not evidence that the repository or compatible assets do not exist.",
+  "no_alternative_transport_or_retry": "No alternate API, Git transport, moving-branch files, mirror or guessed path was requested after the failure. The remaining budget is an upper limit, not a requirement to exhaust requests."
+}
