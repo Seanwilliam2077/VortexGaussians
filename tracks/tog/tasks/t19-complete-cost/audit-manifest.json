@@ -1,0 +1,389 @@
+{
+  "schema": "t19-complete-cost-evidence-v1",
+  "created_utc": "2026-10-29T08:37:16.250888+00:00",
+  "previous_research_commit": "2bf97ad1e193ec6a3546f158e128b21f80993b78",
+  "decision": "INCOMPLETE_OR_INVALID_NO_PERFORMANCE_CLAIM_NO_RETRY",
+  "goal_status": "active_not_submission_ready",
+  "t19_invocations": 1,
+  "t19_retries": 0,
+  "planned_deliveries": 2880,
+  "recorded_deliveries": 232,
+  "passing_deliveries": 231,
+  "failing_deliveries": 1,
+  "unexecuted_deliveries": 2648,
+  "stable_wins_evaluation": "not_evaluated",
+  "performance_comparison_admitted": false,
+  "summary": {
+    "planned_deliveries": 2880,
+    "recorded_deliveries": 232,
+    "unexecuted_deliveries": 2648,
+    "failed_deliveries": [
+      {
+        "sequence": 232,
+        "id": "clipping-07",
+        "arm": "tail",
+        "pass": 0,
+        "epsilon": 0.001,
+        "failures": [
+          "accuracy_violation"
+        ]
+      }
+    ],
+    "complete_and_accurate": false,
+    "identities_unchanged": true,
+    "performance_comparison_admitted": false,
+    "floating_point_certificate": false,
+    "submission_ready": false,
+    "max_observed_error": 0.005683689227868216,
+    "decision": "INCOMPLETE_OR_INVALID_NO_PERFORMANCE_CLAIM_NO_RETRY"
+  },
+  "time_accounting": {
+    "supervisor_seconds": 1.6210819,
+    "worker_before_final_serialization_seconds": 1.4663567,
+    "nested_timed_delivery_ns": 500082700,
+    "nested_setup": {
+      "module_import_ns": 746942100,
+      "input_and_reference_parse_and_immutable_records_ns": 28770300,
+      "empty_arm_cache_setup_ns": 1700,
+      "hardware": {
+        "platform": "Windows-11-10.0.26200-SP0",
+        "processor": "AMD64 Family 26 Model 36 Stepping 0, AuthenticAMD",
+        "logical_cpu_count": 24,
+        "python": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:36:12) [MSC v.1944 64 bit (AMD64)]",
+        "perf_counter_resolution_seconds": 1e-07
+      }
+    },
+    "all_four_T17_T18_T19_supervisor_seconds": 16.857390899941684,
+    "prior_T17_runtime_diagnostic_seconds": 8.350453799939714,
+    "identified_execution_intervals_including_prior_diagnostics_seconds": 25.2078446998814,
+    "not_total_research_elapsed": true
+  },
+  "work": {
+    "t19_integration_evaluations": 30360,
+    "t19_simpson_evaluations": 18888,
+    "t19_gl_evaluations": 11472,
+    "t19_pair_visits": 372,
+    "t19_pair_cdfs": 298,
+    "cumulative_T17_T18_T19_integrand_evaluations": 382607,
+    "new_scene_asset_or_gpu_work": false
+  },
+  "failure_conservation_check": {
+    "id": "clipping-07",
+    "provenance": "post-result saved-data calculation; no quadrature or Gaussian evaluation",
+    "identity": "Every component c_R+c_B=1 and c_G=0, hence true emission_R+emission_B=1-T; returned green channel equals T*background_G.",
+    "T_recovered_from_saved_green_channel": 0.04720030571697585,
+    "required_emission_R_plus_B": 0.9527996942830241,
+    "saved_emission_R_plus_B": 0.9584385682227908,
+    "signed_residual": 0.005638873939766698,
+    "max_channel_error_lower_bound_from_identity": 0.002819436969883349,
+    "nominal_epsilon": 0.001,
+    "sufficient_to_reject_this_result": true,
+    "general_channelwise_error_certificate": false
+  },
+  "source_identities_unchanged": true,
+  "publication_artifact_count_excluding_this_manifest": 15,
+  "publication_bytes_excluding_this_manifest": 636082,
+  "artifacts": [
+    {
+      "path": "tracks/tog/tasks/t19-complete-cost/.gitignore",
+      "bytes": 115,
+      "sha256": "d022c05e1ff620921ee3cabdf1c7000d96caa93d525b4282cc3f2ee8f377998b"
+    },
+    {
+      "path": "tracks/tog/tasks/t19-complete-cost/benchmark.py",
+      "bytes": 19861,
+      "sha256": "1537cb8f1e329a3ad232f8cc4e4d9f6d16c93553466f7cf6c3e16ffeb75243be"
+    },
+    {
+      "path": "tracks/tog/tasks/t19-complete-cost/integrators.py",
+      "bytes": 16091,
+      "sha256": "94c6ab6748c42c40c8446ec5af01adf3b7b4ff66a6a45f7f9aba26bc651113af"
+    },
+    {
+      "path": "tracks/tog/tasks/t19-complete-cost/methods.py",
+      "bytes": 14536,
+      "sha256": "2369efea4f60d4cf546f926b9b6322bfa12a4109fa1332b92f2b22f94779ecb2"
+    },
+    {
+      "path": "tracks/tog/tasks/t19-complete-cost/NEXT_EVIDENCE.md",
+      "bytes": 5066,
+      "sha256": "624ad9105efdb775892bf2690a4cac7de9ed49d12a5df1b3a3a5d3a7ada6015c"
+    },
+    {
+      "path": "tracks/tog/tasks/t19-complete-cost/PROTOCOL.md",
+      "bytes": 8296,
+      "sha256": "1b718de439eff6fade61ca55b899e9974c8246fc3c0fe287ca3b3acee9ecc5e0"
+    },
+    {
+      "path": "tracks/tog/tasks/t19-complete-cost/README.md",
+      "bytes": 6547,
+      "sha256": "566aa92d39bbc1cb4da8d6018379d59545531fce40a2e61eae67ce125f1b6e25"
+    },
+    {
+      "path": "tracks/tog/tasks/t19-complete-cost/run-01/attempt.json",
+      "bytes": 2429,
+      "sha256": "631dbd80eddf67ed56b4be75ba5f4cef860b03162c3d0d0e281748bb45651b25"
+    },
+    {
+      "path": "tracks/tog/tasks/t19-complete-cost/run-01/execution.json",
+      "bytes": 4597,
+      "sha256": "d5c39de1e028a669e2e7859c4d0c1c47c7a792d2c3ee3de0289518707ea53599"
+    },
+    {
+      "path": "tracks/tog/tasks/t19-complete-cost/run-01/results.json",
+      "bytes": 529135,
+      "sha256": "7002bc85badaddab89fe074106b331bd5f29b527d4bc678b56c7458289f2ddd9"
+    },
+    {
+      "path": "tracks/tog/tasks/t19-complete-cost/run-01/setup.json",
+      "bytes": 459,
+      "sha256": "955224ce00b2a6bab791ed39bf86c349166b3b4746a3e512667c4e275e1152e5"
+    },
+    {
+      "path": "tracks/tog/tasks/t19-complete-cost/run-01/worker-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tracks/tog/tasks/t19-complete-cost/run-01/worker-stdout.log",
+      "bytes": 253,
+      "sha256": "d1130543731f51cbb7e47aa3a9b9b8e8ed30e1c56627f87ce1d87ae00de380a8"
+    },
+    {
+      "path": "tracks/tog/tasks/t19-complete-cost/saved-data-accounting.json",
+      "bytes": 10535,
+      "sha256": "5e30f184672d1617205050afdee31cdb334db9bd0eccb9d90419a25d077e7c5e"
+    },
+    {
+      "path": "tracks/validation/t19-cost-review.md",
+      "bytes": 18162,
+      "sha256": "a26cd823005a260ce873b5f418aa71ce7934c1a0f792cebeb02756c4f0af3a03"
+    }
+  ],
+  "ignored_local_duplicate": {
+    "artifact": {
+      "path": "tracks/tog/tasks/t19-complete-cost/run-01/deliveries.jsonl",
+      "bytes": 374668,
+      "sha256": "fbe0b3aeac265745a7604e1669848449d742ae7e2ed30ad5a042bb9540ac96b5"
+    },
+    "all_records_equal_results": true,
+    "records": 232
+  },
+  "preserved_prior_artifact_count": 39,
+  "preserved_prior_artifacts": [
+    {
+      "path": "tracks/tog/src/core.py",
+      "bytes": 13301,
+      "sha256": "ac750b70a86743ac858f1c53cf620ce29c63c462456115af4d0d8c93fa20bd9e"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/.gitignore",
+      "bytes": 103,
+      "sha256": "bd031764145c44d8b35aff303774ee4976e0fea291833c761d33e6eaa79c9823"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/DERIVATION.md",
+      "bytes": 10677,
+      "sha256": "0bbbf3cac5e470fdfee175d835dd838370a0e134448caf61ec0e937ff1b3f27c"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/NEXT_EVIDENCE.md",
+      "bytes": 6770,
+      "sha256": "9a4b173fe3919d9b816c2284102b7d43df8c7116a5224e2877e96ab3fad641a4"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/PROTOCOL.md",
+      "bytes": 8118,
+      "sha256": "4c631c90d08d1e5b9ac19ebc6e52cbd2c902c267af105ccbedeb1cccc292586c"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/README.md",
+      "bytes": 8041,
+      "sha256": "dd1fa7ce3cdf48517866a62e003990fc147f5492cac48ac2f3076e75d994270e"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/RELATED_WORK.md",
+      "bytes": 3996,
+      "sha256": "5686b7ef8c531e5b14feb0aa2cf253c84c2e5cbf12a0de6ea76d097c4b64c2c5"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/REPAIR.md",
+      "bytes": 3386,
+      "sha256": "6318e4442e238106a5b9727a2124707a0ff8451178f5628b369798f4dc253f13"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/audit-manifest.json",
+      "bytes": 18893,
+      "sha256": "516265c9a74d55824c19ac50e2eae449648c9ac6c5c7efb50974d07701e72210"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/inputs.json",
+      "bytes": 72396,
+      "sha256": "5cccf0238c679e14bc50e67d2d24726a58295b484b1d3464bf77d4eca0491cb7"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/qualification.py",
+      "bytes": 33223,
+      "sha256": "d648567e27b030c454ba37fdbee11b0df1b7de6b9e2a78c10a66cc0031557831"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/run-01/attempt.json",
+      "bytes": 1089,
+      "sha256": "7562a9b11bf525ccaf515c1075e3cc83676e9b3cf9b7852f1a34cb7ffa20a977"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/run-01/execution.json",
+      "bytes": 833,
+      "sha256": "f894bf22f2bc1d09f23407584fe8067d6c4bfebe0d6a406dea7e9c47b6709bf8"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/run-01/runtime-diagnostics.json",
+      "bytes": 530,
+      "sha256": "2e595b522907f07c2d45b44cc386ad29e3c343c316aae8b8599ff3846e0c0df8"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/run-01/runtime-inherited-diagnostics.json",
+      "bytes": 155,
+      "sha256": "183c7dadbb6050bf0d6c768ee7b94a5478c999d434c9871c93eb54562b061775"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/run-01/runtime-leggauss-diagnostics.json",
+      "bytes": 207,
+      "sha256": "a8c75df36df42520bb2dcdf80de8249dd1b22af92996c6cdcc3f7a01f222fc38"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/run-01/source-qualification.py",
+      "bytes": 28688,
+      "sha256": "8d0e4221ba82708e14f2db9764d35f4ed48cf1ae3dc82f857cdb7823f0e14953"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/attempt.json",
+      "bytes": 1089,
+      "sha256": "961614550ddb50d6971bd011e81021ac598434e47779d5bb80357267793f77c5"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/execution.json",
+      "bytes": 902,
+      "sha256": "9c3cc1395b91da0ed52be18229f2c6d85b26cf6c2f961ed0abb168b93a2f88e0"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/progress.jsonl",
+      "bytes": 4841,
+      "sha256": "dd805ddeccd546a9801afb1ecf929ae3cdbf680d076d6d935243533e0f3fec6a"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/quadrature-rules.json",
+      "bytes": 11836,
+      "sha256": "886349f4d1ed63221a3afd317bbe5e4ab13532054f293207281135d5b1669375"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/results.json",
+      "bytes": 2276326,
+      "sha256": "63203cad05febfad1adf5c1a56a3341a61dbd7489110f46e0fc7b012ba5d95d2"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/worker-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/worker-stdout.log",
+      "bytes": 1903,
+      "sha256": "a9a2b27ae22593e7d2c6a6f14ed9a3f608dd8a9cb32d084a0e8ffc7cb190dc3f"
+    },
+    {
+      "path": "tracks/tog/tasks/t18-reference-robustness/.gitignore",
+      "bytes": 68,
+      "sha256": "59fcf57bd859dceb918c68d179eebc135d1ba31c7a5ea4b97390eecc7f4f66f2"
+    },
+    {
+      "path": "tracks/tog/tasks/t18-reference-robustness/NEXT_EVIDENCE.md",
+      "bytes": 11065,
+      "sha256": "e0c420eb663c09d4eb1ae041253c7561cd154227a3db23fe87dcf133c599aec2"
+    },
+    {
+      "path": "tracks/tog/tasks/t18-reference-robustness/PROTOCOL.md",
+      "bytes": 7501,
+      "sha256": "e510ef0970b35a2bfb5e87a34e152bcc3b5a63582667bcde613afad5481d05b4"
+    },
+    {
+      "path": "tracks/tog/tasks/t18-reference-robustness/README.md",
+      "bytes": 6896,
+      "sha256": "be1306219da06c526b2131b161cbadb198a207ed1f5a844984eedb047c2ca482"
+    },
+    {
+      "path": "tracks/tog/tasks/t18-reference-robustness/audit-manifest.json",
+      "bytes": 18198,
+      "sha256": "2bb0512cf2d8c696db044834b889ac2346746a1eac5dccd3855fdf6ad73193fa"
+    },
+    {
+      "path": "tracks/tog/tasks/t18-reference-robustness/qualification.py",
+      "bytes": 22528,
+      "sha256": "397ad0684a0a701d27471fab41c7bc604b95da4e79ef34c557cdf2edea0e6c74"
+    },
+    {
+      "path": "tracks/tog/tasks/t18-reference-robustness/run-01/attempt.json",
+      "bytes": 1986,
+      "sha256": "e576b9b43a0c1d23c19500a56ac2270fd4ffa967c1933756e2e1b10ea1b06329"
+    },
+    {
+      "path": "tracks/tog/tasks/t18-reference-robustness/run-01/execution.json",
+      "bytes": 3516,
+      "sha256": "1a982ef62ac5e4e749a90e369d3e7ab65c5aec90b95908eb0348776aee34b5e8"
+    },
+    {
+      "path": "tracks/tog/tasks/t18-reference-robustness/run-01/progress.jsonl",
+      "bytes": 5934,
+      "sha256": "39b59014373411cf9525bf302f14a4272d816e795fe0bd4914ef742f17114738"
+    },
+    {
+      "path": "tracks/tog/tasks/t18-reference-robustness/run-01/quadrature-rules.json",
+      "bytes": 11836,
+      "sha256": "886349f4d1ed63221a3afd317bbe5e4ab13532054f293207281135d5b1669375"
+    },
+    {
+      "path": "tracks/tog/tasks/t18-reference-robustness/run-01/results.json",
+      "bytes": 4682658,
+      "sha256": "fa4fb6887c6b38e800f18e919634821b3ee51c2fb0122cd0dbb4047eead7873d"
+    },
+    {
+      "path": "tracks/tog/tasks/t18-reference-robustness/run-01/worker-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tracks/tog/tasks/t18-reference-robustness/run-01/worker-stdout.log",
+      "bytes": 1878,
+      "sha256": "f65498eaf872d0a9949a3918810fd657d6e065c26b620df97954dd2eb8908f59"
+    },
+    {
+      "path": "tracks/validation/t17-array-review.md",
+      "bytes": 11999,
+      "sha256": "a49fa8809cb3842d86afd20e0d9fb72331ace8f31b0cda365622eaf7bee79ff5"
+    },
+    {
+      "path": "tracks/validation/t18-array-review.md",
+      "bytes": 13927,
+      "sha256": "dfc58e5486a8bfafee7617f4faf2107896c0e60c483462f7a37add6504b82a22"
+    }
+  ],
+  "art_tree_sha1_unchanged": "7f2702c068d5167e037b3296a84fb94ec50a4d65",
+  "review_format_only_adjustment": {
+    "reviewer_original_sha256": "852f406c09caa3a9cdb47782c68cb1e5db52e41fa6218e1082670a1d7e820db7",
+    "change": "Removed exactly one redundant trailing LF after git diff --check; no review content changed.",
+    "final": {
+      "path": "tracks/validation/t19-cost-review.md",
+      "bytes": 18162,
+      "sha256": "a26cd823005a260ce873b5f418aa71ce7934c1a0f792cebeb02756c4f0af3a03"
+    }
+  },
+  "next_finite_contract": "tracks/tog/tasks/t19-complete-cost/NEXT_EVIDENCE.md",
+  "limitations": [
+    "T19 incomplete; no performance conclusion",
+    "No warm passes; stable wins not evaluated",
+    "Empirical Simpson estimator failed; exact leaf cause not saved",
+    "Same-case ordinary GL success prevents an impossibility inference",
+    "Conservation check is necessary, not a general numerical certificate",
+    "No novelty, scene-level utility or TOG contribution established"
+  ]
+}
