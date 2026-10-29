@@ -1,0 +1,48 @@
+{
+  "schema": "t39-bounded-primary-source-review-v1",
+  "date": "2026-10-30",
+  "queries": [
+    "Gaussian volumetric rendering unbiased Monte Carlo control variate overlapping Gaussian first collision sampling",
+    "volume rendering first collision control variates correlated sampling Gaussian sorted alpha compositing"
+  ],
+  "query_count": 2,
+  "primary_pages_opened": 3,
+  "page_limit": 4,
+  "external_code_or_assets_acquired": false,
+  "sources": [
+    {
+      "url": "https://arxiv.org/html/2503.24366v1",
+      "title": "StochasticSplats: Stochastic Rasterization for Sorting-Free 3D Gaussian Splatting",
+      "version": "arXiv 2503.24366v1, 31 March 2025",
+      "inspected_relevant_sections": [
+        "3.1 sorted alpha blending",
+        "3.4 Fully volumetric intermixing",
+        "Supplement 4 Free-flight distance sampling"
+      ],
+      "finding": "Section 3.4 explicitly samples free-flight distances for overlapping Gaussians independently and selects the minimum. The supplement derives Gaussian CDF/inverse-CDF sampling. Thus this sampling operation is already described; no code or timing was reproduced.",
+      "limits": "This fixed version does not establish current implementation behavior or rule out every possible control-variate refinement."
+    },
+    {
+      "url": "https://arxiv.org/html/2008.06722v1",
+      "title": "Primary-Space Adaptive Control Variates using Piecewise-Polynomial Approximations",
+      "version": "arXiv 2008.06722v1, 15 August 2020",
+      "inspected_relevant_sections": [
+        "Abstract/introduction",
+        "3.3 Control variates, equations 5–7"
+      ],
+      "finding": "Known surrogate expectation plus sampled residual is the standard control-variate form. Its covariance coefficient governs variance reduction; unit coefficient is not universally optimal.",
+      "limits": "The paper's polynomial construction is not claimed to implement this particular coupled Gaussian surrogate."
+    },
+    {
+      "url": "https://cglab.gist.ac.kr/siga25iicv/",
+      "title": "Imperfect Image-Space Control Variates for Monte Carlo Rendering",
+      "version": "Author project page, ACM TOG / SIGGRAPH Asia 2025 as displayed; accessed 30 October 2026",
+      "inspected_relevant_sections": [
+        "Project abstract only"
+      ],
+      "finding": "The authors distinguish classical control variates with known expectations from their noisy estimated image-space expectations. T39 has a known surrogate expectation and does not solve that latter problem.",
+      "limits": "No full paper, supplementary material or code opened."
+    }
+  ],
+  "scope": "Targeted disqualification only; not a systematic novelty survey. No timing or experimental result inferred from these pages. Mathematical derivations in README are our analysis."
+}
