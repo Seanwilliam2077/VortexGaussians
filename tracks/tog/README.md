@@ -1,6 +1,6 @@
 # TOG 研究轨道：从创作需求到可审查任务
 
-**当前进度（2026-10-30）：** [T49](tasks/t49-affine-diffusive-state/README.md) 证明分开投影度量与包络即可普通地修复仿射/扩散闭合；另给出局部curl-Gaussian的协向量演化、冲量和一维速度/Jacobian参考。两者只精确满足规定的仿射流方程，且场、远场及自身速度不同，不能直接按粒子数宣称优势。两查询/三主文档已明确匹配一般magnetization先例，一次PDF过大未读。无数值或实现，已准备仅针对已识别Impulse Fluid Simulation正文的有限审查。完整目标active，TOG核心贡献仍未成立。
+**当前进度（2026-10-30）：** [T50](tasks/t50-impulse-paper-contract/README.md) 完成Impulse Fluid Simulation单篇正文审查，明确普通冲量求解器已有的状态、重初始化、拉伸、投影及边界合同。重初始化通常离开当前单Gaussian势表示；这不证明我们的方案稳定或更好。保留论文计时混杂及印刷歧义。一轮24MB获取，阅读预算计入16,271词、六页图像，无数值或方法实现。下一步仅准备检验现有载体在自身诱导速度下的完整切空间一致性，尚未执行；完整目标active、TOG核心贡献未成立。
 
 **目标是形成可发表的研究贡献；目前没有已经建立的 TOG 贡献。** 此目录首先把“艺术 brief—物理控制—像素指标”变成明确、可携带的输入合同。它提供普通共同模型、规格检查和单次控制验收，不包含响应缓存、新优化算法或自动创作系统。原仓库 demo 和既有 research 保持原状。
 
@@ -64,4 +64,4 @@ python tracks/tog/check_interfaces.py
 
 ## 当前下一步
 
-[T49的仿射/扩散表示比较](tasks/t49-affine-diffusive-state/README.md) 已完成，两条精确闭合均有普通构造，一般magnetization机制已有来源匹配。下一有限任务严格按[固定协议](tasks/t49-affine-diffusive-state/NEXT_EVIDENCE.md)读取已识别的Impulse Fluid Simulation正文，核对实际求解器、gauge、重建及比较合同；仅准备，尚未获取或执行。无替代来源、新候选、方法实现或数值队列，完整研究目标仍active。
+[T50的单篇冲量求解器审查](tasks/t50-impulse-paper-contract/README.md) 已完成，普通机制已匹配，当前局部Gaussian状态与其完整规范/边界操作有明确差异。下一有限任务按[固定解析协议](tasks/t50-impulse-paper-contract/NEXT_EVIDENCE.md)检验同一个载体的自身诱导非线性导数是否属于完整参数切空间，须保留所有普通更新自由度并比较物理残差；仅准备，尚未执行。无新增来源、族、数值或实现队列，完整研究目标仍active。
