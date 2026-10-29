@@ -1,0 +1,234 @@
+{
+  "schema": "t26-source-inventory-v1",
+  "main_commit": "dd175d52938264770a783cbb7929e20572675544",
+  "dependency_commit": "5eca1185550c35e3236c511c311aee3eb9129169",
+  "sources": [
+    {
+      "id": 1,
+      "role": "code",
+      "repository": "main",
+      "source_path": "utils/camera_utils.py",
+      "requested_url": "https://raw.githubusercontent.com/chinmay0301ucsd/Vol3DGS/dd175d52938264770a783cbb7929e20572675544/utils/camera_utils.py",
+      "returned_url": "https://github.com/chinmay0301ucsd/Vol3DGS/blob/dd175d52938264770a783cbb7929e20572675544/utils/camera_utils.py",
+      "content_local": "acquired/code/1-camera_utils.py",
+      "bytes": 2767,
+      "sha256": "a450a6bcd3630a183f0a6be1b75a89e91444471b12f460613b8beb23a9c3bcef",
+      "git_blob_sha1": "1a54d0ada0361997109c462cde1e088ea5da9ff2",
+      "fixed_tree_verified": true,
+      "acquired_lines": 82,
+      "inspected_ranges": [
+        [
+          1,
+          82
+        ]
+      ],
+      "unique_inspected_lines": 82
+    },
+    {
+      "id": 2,
+      "role": "code",
+      "repository": "main",
+      "source_path": "utils/graphics_utils.py",
+      "requested_url": "https://raw.githubusercontent.com/chinmay0301ucsd/Vol3DGS/dd175d52938264770a783cbb7929e20572675544/utils/graphics_utils.py",
+      "returned_url": "https://github.com/chinmay0301ucsd/Vol3DGS/blob/dd175d52938264770a783cbb7929e20572675544/utils/graphics_utils.py",
+      "content_local": "acquired/code/2-graphics_utils.py",
+      "bytes": 2052,
+      "sha256": "d6e75de8161e98b72c2691e8a944a842e1b6625d2306035d079c868ac632edfc",
+      "git_blob_sha1": "b4627d837c74fcdffc898fa0c3071cb7b316802b",
+      "fixed_tree_verified": true,
+      "acquired_lines": 77,
+      "inspected_ranges": [
+        [
+          1,
+          77
+        ]
+      ],
+      "unique_inspected_lines": 77
+    },
+    {
+      "id": 3,
+      "role": "code",
+      "repository": "dependency",
+      "source_path": "internal/render_grid.py",
+      "requested_url": "https://raw.githubusercontent.com/chinmay0301ucsd/slang-gaussian-rasterization/5eca1185550c35e3236c511c311aee3eb9129169/slang_gaussian_rasterization/internal/render_grid.py",
+      "returned_url": "https://github.com/chinmay0301ucsd/slang-gaussian-rasterization/blob/5eca1185550c35e3236c511c311aee3eb9129169/slang_gaussian_rasterization/internal/render_grid.py",
+      "content_local": "acquired/code/3-render_grid.py",
+      "bytes": 947,
+      "sha256": "bbefc273f7eedfeb385cf5b46664cf84491c8955f56cb97ce66bbdb0c527dcd9",
+      "git_blob_sha1": "4f0566176e14d3ffe1cbe21312b0c80ed5edff34",
+      "fixed_tree_verified": true,
+      "acquired_lines": 24,
+      "inspected_ranges": [
+        [
+          1,
+          24
+        ]
+      ],
+      "unique_inspected_lines": 24
+    },
+    {
+      "id": 4,
+      "role": "code",
+      "repository": "dependency",
+      "source_path": "internal/slang/slang_modules.py",
+      "requested_url": "https://raw.githubusercontent.com/chinmay0301ucsd/slang-gaussian-rasterization/5eca1185550c35e3236c511c311aee3eb9129169/slang_gaussian_rasterization/internal/slang/slang_modules.py",
+      "returned_url": "https://github.com/chinmay0301ucsd/slang-gaussian-rasterization/blob/5eca1185550c35e3236c511c311aee3eb9129169/slang_gaussian_rasterization/internal/slang/slang_modules.py",
+      "content_local": "acquired/code/4-slang_modules.py",
+      "bytes": 1611,
+      "sha256": "74e744c4d3bccd95f396880e329de2fa1864a8781a4dc9b3e01c8dbdb88d2208",
+      "git_blob_sha1": "201fea57aacd08b5f2315b68b00a072ec3e78a79",
+      "fixed_tree_verified": true,
+      "acquired_lines": 32,
+      "inspected_ranges": [
+        [
+          1,
+          32
+        ]
+      ],
+      "unique_inspected_lines": 32
+    },
+    {
+      "id": 5,
+      "role": "code",
+      "repository": "dependency",
+      "source_path": "internal/slang/spherical_harmonics.slang",
+      "requested_url": "https://raw.githubusercontent.com/chinmay0301ucsd/slang-gaussian-rasterization/5eca1185550c35e3236c511c311aee3eb9129169/slang_gaussian_rasterization/internal/slang/spherical_harmonics.slang",
+      "returned_url": "https://github.com/chinmay0301ucsd/slang-gaussian-rasterization/blob/5eca1185550c35e3236c511c311aee3eb9129169/slang_gaussian_rasterization/internal/slang/spherical_harmonics.slang",
+      "content_local": "acquired/code/5-spherical_harmonics.slang",
+      "bytes": 6973,
+      "sha256": "c06f4909bcd728181c66234eca328ee4fb46227532cf6d3ddf1a43a785f480f4",
+      "git_blob_sha1": "caad378853361c2d680e37f06130e174d6719c37",
+      "fixed_tree_verified": true,
+      "acquired_lines": 175,
+      "inspected_ranges": [
+        [
+          1,
+          175
+        ]
+      ],
+      "unique_inspected_lines": 175
+    },
+    {
+      "id": 6,
+      "role": "code",
+      "repository": "dependency",
+      "source_path": "internal/slang/tile_shader.slang",
+      "requested_url": "https://raw.githubusercontent.com/chinmay0301ucsd/slang-gaussian-rasterization/5eca1185550c35e3236c511c311aee3eb9129169/slang_gaussian_rasterization/internal/slang/tile_shader.slang",
+      "returned_url": "https://github.com/chinmay0301ucsd/slang-gaussian-rasterization/blob/5eca1185550c35e3236c511c311aee3eb9129169/slang_gaussian_rasterization/internal/slang/tile_shader.slang",
+      "content_local": "acquired/code/6-tile_shader.slang",
+      "bytes": 3417,
+      "sha256": "f9ca5b69d4c3cea6dfd5a048c7f96a6dba3f9fa3a5adc986d1fa045d49f172ed",
+      "git_blob_sha1": "d7371191d8172d21b41549dfba87ff4a297d6474",
+      "fixed_tree_verified": true,
+      "acquired_lines": 101,
+      "inspected_ranges": [
+        [
+          1,
+          101
+        ]
+      ],
+      "unique_inspected_lines": 101
+    },
+    {
+      "id": 7,
+      "role": "code",
+      "repository": "dependency",
+      "source_path": "internal/sort_by_keys/__init__.py",
+      "requested_url": "https://raw.githubusercontent.com/chinmay0301ucsd/slang-gaussian-rasterization/5eca1185550c35e3236c511c311aee3eb9129169/slang_gaussian_rasterization/internal/sort_by_keys/__init__.py",
+      "returned_url": "https://github.com/chinmay0301ucsd/slang-gaussian-rasterization/blob/5eca1185550c35e3236c511c311aee3eb9129169/slang_gaussian_rasterization/internal/sort_by_keys/__init__.py",
+      "content_local": "acquired/code/7-__init__.py",
+      "bytes": 239,
+      "sha256": "69c336a6a9f3210b04d1f3adcf49270692074f24469280af263f4d91273dcc0d",
+      "git_blob_sha1": "501218696b2511e004eab556685f746a1db9427b",
+      "fixed_tree_verified": true,
+      "acquired_lines": 7,
+      "inspected_ranges": [
+        [
+          1,
+          7
+        ]
+      ],
+      "unique_inspected_lines": 7
+    },
+    {
+      "id": 8,
+      "role": "code",
+      "repository": "dependency",
+      "source_path": "internal/sort_by_keys/sort_by_keys.cu",
+      "requested_url": "https://raw.githubusercontent.com/chinmay0301ucsd/slang-gaussian-rasterization/5eca1185550c35e3236c511c311aee3eb9129169/slang_gaussian_rasterization/internal/sort_by_keys/sort_by_keys.cu",
+      "returned_url": "https://github.com/chinmay0301ucsd/slang-gaussian-rasterization/blob/5eca1185550c35e3236c511c311aee3eb9129169/slang_gaussian_rasterization/internal/sort_by_keys/sort_by_keys.cu",
+      "content_local": "acquired/code/8-sort_by_keys.cu",
+      "bytes": 1962,
+      "sha256": "0433a3871af7a9729793df44c6b935a5d1e22d7fbc2673877e2b09d9dcde0a6c",
+      "git_blob_sha1": "84e45774bf49d4966de31f551514836e46bc57f9",
+      "fixed_tree_verified": true,
+      "acquired_lines": 59,
+      "inspected_ranges": [
+        [
+          1,
+          59
+        ]
+      ],
+      "unique_inspected_lines": 59
+    },
+    {
+      "id": 9,
+      "role": "metadata",
+      "repository": "main",
+      "source_path": "main-releases",
+      "requested_url": "https://api.github.com/repos/chinmay0301ucsd/Vol3DGS/releases?per_page=30&page=1",
+      "returned_url": "https://api.github.com/repos/chinmay0301ucsd/Vol3DGS/releases?per_page=30&page=1",
+      "content_local": "acquired/metadata/9-main-releases.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "git_blob_sha1": null,
+      "fixed_tree_verified": false,
+      "acquired_lines": 1,
+      "inspected_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "unique_inspected_lines": 1
+    },
+    {
+      "id": 10,
+      "role": "metadata",
+      "repository": "dependency",
+      "source_path": "dependency-releases",
+      "requested_url": "https://api.github.com/repos/chinmay0301ucsd/slang-gaussian-rasterization/releases?per_page=30&page=1",
+      "returned_url": "https://api.github.com/repos/chinmay0301ucsd/slang-gaussian-rasterization/releases?per_page=30&page=1",
+      "content_local": "acquired/metadata/10-dependency-releases.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "git_blob_sha1": null,
+      "fixed_tree_verified": false,
+      "acquired_lines": 1,
+      "inspected_ranges": [
+        [
+          1,
+          1
+        ]
+      ],
+      "unique_inspected_lines": 1
+    }
+  ],
+  "project_page_response": {
+    "id": 11,
+    "role": "metadata",
+    "provider": "web",
+    "requested_url": "https://chinmay0301.github.io/vol3dgs/",
+    "returned_url": "https://chinmay0301.github.io/vol3dgs/",
+    "content_local": "acquired/metadata/11-project-page.web.txt",
+    "content_bytes": 4690,
+    "content_sha256": "bea52a6a0bf64b4f8187f879121e30661e657af1186bb701ad08f85b659b71b0",
+    "representation": "complete tool text response, not raw HTML/network body",
+    "reported_document_lines": 75,
+    "inspected_document_lines_zero_based": [
+      0,
+      74
+    ],
+    "result": "text_and_links_returned"
+  }
+}
