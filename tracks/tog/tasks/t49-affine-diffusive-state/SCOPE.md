@@ -1,0 +1,16 @@
+# T49 — a matching affine/viscous state contract
+
+30 October 2026. Parent `0b327f19423b835927c335b0fb8d396e22c652d3`. Entry inspection found a clean research branch and no matching scientific process. T48 was progress: exact compact affine closure, a same-field ordinary reconstruction integral and a precise one-matrix diffusion limitation. The full SIGGRAPH/TOG objective remains active and unachieved.
+
+The finite question stays within representation transfer and the original vorticity direction. Is the diffusion limitation a missing state variable, and does a localized curl-based carrier already provide the same prescribed affine/viscous operation by ordinary means? This compares two explicitly specified representations under the *same operation*, not identical fields or equal-particle approximation accuracy:
+
+1. Separate projection metric and Gaussian envelope: omega_hat = Q_M(k)c exp(-k^T C k/2), with independent SPD M and C and a translated center.
+2. A localized curl Gaussian: omega = curl(a G_C(x-mu)), with a constant vector-potential coefficient a, SPD C and center mu.
+
+Derive exact closure under a prescribed incompressible affine velocity v(x,t)=A(t)x+b(t), trace A=0, with constant viscosity nu >= 0. Check normalization, state redundancy, simultaneous affine/diffusive evolution, localization, total-vorticity/impulse semantics and ordinary velocity/Jacobian reconstruction costs. Distinguish the prescribed-velocity vorticity equation from self-consistent Navier–Stokes; distinct kernel families are not automatically interchangeable approximations of the same input.
+
+The scope is recorded after selecting these two formulas and assigning separate algebra questions, before their completed derivations or new literature acquisition. One bounded analytical comparison is allowed. No new family, local-nonlinear evolution method, performance benchmark, numerical/symbolic software evaluation, scientific-array reduction, implementation, simulator, renderer, installation or asset. Existing T47 local-code applicability remains sufficient; no new repository model audit.
+
+External reading is limited to at most two targeted queries and four primary items/documents including failed accesses. Focus on impulse/magnetization or curl-based vortex-particle representations and their evolution/reconstruction semantics. Stop earlier when sufficient matching ordinary evidence is acquired; the cap is not a target. No third query or access retry/citation chase beyond that budget. Record partial access and distinguish the particular Gaussian parameterization from the general established representation. An unmatched exact formula does not prove novelty.
+
+Root assembles a finite decision record; two agents derive the state families, another performs the source screen, and a separate mathematical reviewer checks the final drafts with participation disclosed. A positive ordinary closure result alone does not justify a new implementation or numerical task. Preserve all old outcomes and gates, art inactivity, main and the deleted automation. Stop this finite screen after publication with a concrete account of what the representation question now permits and what method/task evidence is still missing.
