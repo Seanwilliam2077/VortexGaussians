@@ -1,0 +1,272 @@
+{
+  "schema": "t24-local-source-inventory-v1",
+  "fixed_commit": "dd175d52938264770a783cbb7929e20572675544",
+  "tree_sha": "3be1153bb1825daedbb0864d51eff9c909c5c981",
+  "tree_not_truncated": true,
+  "code": [
+    {
+      "repository_path": "gaussian_renderer/__init__.py",
+      "local_path": "acquired/code/gaussian_renderer/__init__.py",
+      "bytes": 3718,
+      "sha256": "75fcc86a57d27d9ea55b2904a4faaf075e7f73dba8c54bcb6cbd4c02c4884084",
+      "git_blob_sha": "f74e336af41e042dfb9f1c308e40caf17d0b3211",
+      "source_lines": 100,
+      "allowed_inspection_range": [
+        1,
+        100
+      ],
+      "inspected_ranges": [
+        [
+          1,
+          100
+        ]
+      ],
+      "primary_inspector": "root"
+    },
+    {
+      "repository_path": "scene/cameras.py",
+      "local_path": "acquired/code/scene/cameras.py",
+      "bytes": 5173,
+      "sha256": "4892af5b7d0ef728fb8979c0ce7c4e5b6a959c542826f90db3658daf0b0485e1",
+      "git_blob_sha": "c4a19f6ced9fea42ec31ae18a09d36a2fda3892a",
+      "source_lines": 126,
+      "allowed_inspection_range": [
+        1,
+        126
+      ],
+      "inspected_ranges": [
+        [
+          1,
+          126
+        ]
+      ],
+      "primary_inspector": "transfer_screen"
+    },
+    {
+      "repository_path": "scene/dataset_readers.py",
+      "local_path": "acquired/code/scene/dataset_readers.py",
+      "bytes": 10485,
+      "sha256": "34426d6ec041f6058118be343496d5d01746fd07a8e3ec4554779c54b96fde1f",
+      "git_blob_sha": "db6e144e3e331bee90b8c125162a1e7abbf43c3d",
+      "source_lines": 274,
+      "allowed_inspection_range": [
+        1,
+        274
+      ],
+      "inspected_ranges": [
+        [
+          1,
+          274
+        ]
+      ],
+      "primary_inspector": "transfer_screen"
+    },
+    {
+      "repository_path": "scene/gaussian_model_volr.py",
+      "local_path": "acquired/code/scene/gaussian_model_volr.py",
+      "bytes": 30308,
+      "sha256": "59410e4707b7628b013f2cece72a440be69bad3d5830f889617ef7a14893ef2a",
+      "git_blob_sha": "ac48ffd1aa733f9ad5a3cfd846c774e4f0f224f8",
+      "source_lines": 594,
+      "allowed_inspection_range": [
+        1,
+        594
+      ],
+      "inspected_ranges": [
+        [
+          1,
+          594
+        ]
+      ],
+      "primary_inspector": "pressure_screen"
+    },
+    {
+      "repository_path": "train_volr.py",
+      "local_path": "acquired/code/train_volr.py",
+      "bytes": 19535,
+      "sha256": "b6ec410f4fc1c0f667621b16f6009cd4b4748c277e6e5767967f59a6aaa0a1a9",
+      "git_blob_sha": "95e1e149f3a9ebeb9a7f5c22074fe997714a2a59",
+      "source_lines": 356,
+      "allowed_inspection_range": [
+        1,
+        356
+      ],
+      "inspected_ranges": [
+        [
+          1,
+          356
+        ]
+      ],
+      "primary_inspector": "root"
+    },
+    {
+      "repository_path": "utils/general_utils.py",
+      "local_path": "acquired/code/utils/general_utils.py",
+      "bytes": 8705,
+      "sha256": "0fa5c53974962d4e93ceb757c6638ae3b1336b98f86d7abbb7184cd245600ae8",
+      "git_blob_sha": "24a832e5851e941dcdaf08db262bca06e6561349",
+      "source_lines": 255,
+      "allowed_inspection_range": [
+        1,
+        255
+      ],
+      "inspected_ranges": [
+        [
+          1,
+          255
+        ]
+      ],
+      "primary_inspector": "pressure_screen"
+    }
+  ],
+  "code_bytes": 77924,
+  "code_unique_lines": 1705,
+  "content_bytes_including_returned_revision_and_tree": 106724,
+  "connector_response_representation_bytes": 227718,
+  "all_files": [
+    {
+      "path": "acquired/code/gaussian_renderer/__init__.py",
+      "bytes": 3718,
+      "sha256": "75fcc86a57d27d9ea55b2904a4faaf075e7f73dba8c54bcb6cbd4c02c4884084",
+      "kind": "source_code"
+    },
+    {
+      "path": "acquired/code/scene/cameras.py",
+      "bytes": 5173,
+      "sha256": "4892af5b7d0ef728fb8979c0ce7c4e5b6a959c542826f90db3658daf0b0485e1",
+      "kind": "source_code"
+    },
+    {
+      "path": "acquired/code/scene/dataset_readers.py",
+      "bytes": 10485,
+      "sha256": "34426d6ec041f6058118be343496d5d01746fd07a8e3ec4554779c54b96fde1f",
+      "kind": "source_code"
+    },
+    {
+      "path": "acquired/code/scene/gaussian_model_volr.py",
+      "bytes": 30308,
+      "sha256": "59410e4707b7628b013f2cece72a440be69bad3d5830f889617ef7a14893ef2a",
+      "kind": "source_code"
+    },
+    {
+      "path": "acquired/code/train_volr.py",
+      "bytes": 19535,
+      "sha256": "b6ec410f4fc1c0f667621b16f6009cd4b4748c277e6e5767967f59a6aaa0a1a9",
+      "kind": "source_code"
+    },
+    {
+      "path": "acquired/code/utils/general_utils.py",
+      "bytes": 8705,
+      "sha256": "0fa5c53974962d4e93ceb757c6638ae3b1336b98f86d7abbb7184cd245600ae8",
+      "kind": "source_code"
+    },
+    {
+      "path": "acquired/LICENSE.content",
+      "bytes": 1076,
+      "sha256": "203d026be1fdbf3abccfe6cf015e203c3ccd87553766a78ad468e8507aa6d077",
+      "kind": "returned_metadata_content"
+    },
+    {
+      "path": "acquired/LICENSE.response.json",
+      "bytes": 2776,
+      "sha256": "184aa293bcab7995f93dfc22533ced9f0b1c752123a50709be84f72d660d46e4",
+      "kind": "connector_response"
+    },
+    {
+      "path": "acquired/README.md.content",
+      "bytes": 6944,
+      "sha256": "b6fd5d37e2d2afbcac5099d3eb204a04b8023ffb56bf952791c4992986ec21a1",
+      "kind": "returned_metadata_content"
+    },
+    {
+      "path": "acquired/README.md.response.json",
+      "bytes": 14660,
+      "sha256": "94320ebddaae16d704534e5c41bfffe19eb70966872cd6aabe4f469249079f57",
+      "kind": "connector_response"
+    },
+    {
+      "path": "acquired/receipts/gaussian_renderer/__init__.py.json",
+      "bytes": 8320,
+      "sha256": "2224e9f34f7a72a584f5032c40a56b3dd4d74a1aab90a93383e2441c600d8963",
+      "kind": "connector_response"
+    },
+    {
+      "path": "acquired/receipts/scene/cameras.py.json",
+      "bytes": 11232,
+      "sha256": "cadf93c3b2bf892cb29d78a552fcfb2d4c2b8ea8269e4d0bbf43529c2732e432",
+      "kind": "connector_response"
+    },
+    {
+      "path": "acquired/receipts/scene/dataset_readers.py.json",
+      "bytes": 22340,
+      "sha256": "0a0fc09bbe224905e58b9499b9972bba82216f66b0b4c7d481f3e58577e01dab",
+      "kind": "connector_response"
+    },
+    {
+      "path": "acquired/receipts/scene/gaussian_model_volr.py.json",
+      "bytes": 62940,
+      "sha256": "c6308092bf0d10091bc4c69ac2216f608dabde1224c09f1f7cb41911fdc0761b",
+      "kind": "connector_response"
+    },
+    {
+      "path": "acquired/receipts/train_volr.py.json",
+      "bytes": 40752,
+      "sha256": "b03ee84fe2b6ab2a070c78b0379a15e08e3a3bdb33832611914b2c7a3b5f9962",
+      "kind": "connector_response"
+    },
+    {
+      "path": "acquired/receipts/utils/general_utils.py.json",
+      "bytes": 18726,
+      "sha256": "d2ad29336240594a383ee8747b5b5f357370c6e25402d63ba8c44853289646da",
+      "kind": "connector_response"
+    },
+    {
+      "path": "acquired/revision.content",
+      "bytes": 7522,
+      "sha256": "87a5c4aa5704a00f87eaeb91c7ddff5d89b0b100cc73d68b29ddd3af335b6df5",
+      "kind": "returned_metadata_content"
+    },
+    {
+      "path": "acquired/revision.response.json",
+      "bytes": 16220,
+      "sha256": "03e1ee94cc0247c735066352f7377059b760b11eafd530b58febb6a59429481f",
+      "kind": "connector_response"
+    },
+    {
+      "path": "acquired/tree.content",
+      "bytes": 13258,
+      "sha256": "408a65b82b6fc21d270991eab1724b1010083794260adb206f0eee8b08d9080d",
+      "kind": "returned_metadata_content"
+    },
+    {
+      "path": "acquired/tree.response.json",
+      "bytes": 29752,
+      "sha256": "0131ec690478a6c75ad4e219b5234e0888b9e1c48f403af2b276a6e351ad00d2",
+      "kind": "connector_response"
+    }
+  ],
+  "network_bytes_not_measured": true,
+  "external_code_imported_or_executed": false,
+  "inspection_complete": true,
+  "metadata_inspection": {
+    "revision": "fixed commit/tree identity and returned README diff context; no linked resources followed",
+    "tree": "complete returned recursive path/type/size/blob/gitlink inventory",
+    "README.md": [
+      1,
+      89
+    ],
+    "LICENSE": [
+      1,
+      21
+    ]
+  },
+  "inherited_local_paper_read": {
+    "task": "T23",
+    "receipt": "tracks/tog/tasks/t23-model-workload-audit/acquired/vol3dgs-paper/01-html.web.txt",
+    "extractor_lines": [
+      185,
+      193
+    ],
+    "purpose": "confirm equation20 normalization difference; no new source acquisition"
+  }
+}

@@ -1,0 +1,111 @@
+{
+  "schema": "t24-acquisition-requests-v1",
+  "fixed_commit": "dd175d52938264770a783cbb7929e20572675544",
+  "attempts": [
+    {
+      "ordinal": 1,
+      "category": "repository_metadata",
+      "name": "revision",
+      "success": true,
+      "tool": "mcp__codex_apps__github_fetch",
+      "requested_url": "https://api.github.com/repos/chinmay0301ucsd/Vol3DGS/commits/HEAD",
+      "origin_http_status_exposed": false,
+      "success_evidence": "UTF-8 content returned; source files additionally match the pinned tree blob SHA and size"
+    },
+    {
+      "ordinal": 2,
+      "category": "repository_metadata",
+      "name": "tree",
+      "success": true,
+      "tool": "mcp__codex_apps__github_fetch",
+      "requested_url": "https://api.github.com/repos/chinmay0301ucsd/Vol3DGS/git/trees/3be1153bb1825daedbb0864d51eff9c909c5c981?recursive=1",
+      "origin_http_status_exposed": false,
+      "success_evidence": "UTF-8 content returned; source files additionally match the pinned tree blob SHA and size"
+    },
+    {
+      "ordinal": 3,
+      "category": "repository_metadata",
+      "name": "README.md",
+      "success": true,
+      "tool": "mcp__codex_apps__github_fetch",
+      "requested_url": "https://raw.githubusercontent.com/chinmay0301ucsd/Vol3DGS/dd175d52938264770a783cbb7929e20572675544/README.md",
+      "connector_returned_canonical_url": "https://github.com/chinmay0301ucsd/Vol3DGS/blob/dd175d52938264770a783cbb7929e20572675544/README.md",
+      "origin_http_status_exposed": false,
+      "success_evidence": "UTF-8 content returned; source files additionally match the pinned tree blob SHA and size"
+    },
+    {
+      "ordinal": 4,
+      "category": "repository_metadata",
+      "name": "LICENSE",
+      "success": true,
+      "tool": "mcp__codex_apps__github_fetch",
+      "requested_url": "https://raw.githubusercontent.com/chinmay0301ucsd/Vol3DGS/dd175d52938264770a783cbb7929e20572675544/LICENSE",
+      "connector_returned_canonical_url": "https://github.com/chinmay0301ucsd/Vol3DGS/blob/dd175d52938264770a783cbb7929e20572675544/LICENSE",
+      "origin_http_status_exposed": false,
+      "success_evidence": "UTF-8 content returned; source files additionally match the pinned tree blob SHA and size"
+    },
+    {
+      "ordinal": 5,
+      "category": "code",
+      "name": "scene/gaussian_model_volr.py",
+      "success": true,
+      "tool": "mcp__codex_apps__github_fetch",
+      "requested_url": "https://raw.githubusercontent.com/chinmay0301ucsd/Vol3DGS/dd175d52938264770a783cbb7929e20572675544/scene/gaussian_model_volr.py",
+      "origin_http_status_exposed": false,
+      "success_evidence": "UTF-8 content returned; source files additionally match the pinned tree blob SHA and size"
+    },
+    {
+      "ordinal": 6,
+      "category": "code",
+      "name": "gaussian_renderer/__init__.py",
+      "success": true,
+      "tool": "mcp__codex_apps__github_fetch",
+      "requested_url": "https://raw.githubusercontent.com/chinmay0301ucsd/Vol3DGS/dd175d52938264770a783cbb7929e20572675544/gaussian_renderer/__init__.py",
+      "origin_http_status_exposed": false,
+      "success_evidence": "UTF-8 content returned; source files additionally match the pinned tree blob SHA and size"
+    },
+    {
+      "ordinal": 7,
+      "category": "code",
+      "name": "train_volr.py",
+      "success": true,
+      "tool": "mcp__codex_apps__github_fetch",
+      "requested_url": "https://raw.githubusercontent.com/chinmay0301ucsd/Vol3DGS/dd175d52938264770a783cbb7929e20572675544/train_volr.py",
+      "origin_http_status_exposed": false,
+      "success_evidence": "UTF-8 content returned; source files additionally match the pinned tree blob SHA and size"
+    },
+    {
+      "ordinal": 8,
+      "category": "code",
+      "name": "utils/general_utils.py",
+      "success": true,
+      "tool": "mcp__codex_apps__github_fetch",
+      "requested_url": "https://raw.githubusercontent.com/chinmay0301ucsd/Vol3DGS/dd175d52938264770a783cbb7929e20572675544/utils/general_utils.py",
+      "origin_http_status_exposed": false,
+      "success_evidence": "UTF-8 content returned; source files additionally match the pinned tree blob SHA and size"
+    },
+    {
+      "ordinal": 9,
+      "category": "code",
+      "name": "scene/cameras.py",
+      "success": true,
+      "tool": "mcp__codex_apps__github_fetch",
+      "requested_url": "https://raw.githubusercontent.com/chinmay0301ucsd/Vol3DGS/dd175d52938264770a783cbb7929e20572675544/scene/cameras.py",
+      "origin_http_status_exposed": false,
+      "success_evidence": "UTF-8 content returned; source files additionally match the pinned tree blob SHA and size"
+    },
+    {
+      "ordinal": 10,
+      "category": "code",
+      "name": "scene/dataset_readers.py",
+      "success": true,
+      "tool": "mcp__codex_apps__github_fetch",
+      "requested_url": "https://raw.githubusercontent.com/chinmay0301ucsd/Vol3DGS/dd175d52938264770a783cbb7929e20572675544/scene/dataset_readers.py",
+      "origin_http_status_exposed": false,
+      "success_evidence": "UTF-8 content returned; source files additionally match the pinned tree blob SHA and size"
+    }
+  ],
+  "asset_metadata_attempts": [],
+  "publication_io_diagnostic": "Initial attempt to transport receipt data through a shell command failed before process creation with Windows os error 206 (command too long). Recovered using a local JSON data file and byte-preserving standard-library writes. No source request was repeated and no scientific code executed.",
+  "unused_asset_metadata_allowance": "No trained density carrier was identified in the inspected README/tree. The linked observation-data pages would not by themselves qualify one; no metadata request was spent to imply pretrained availability."
+}
