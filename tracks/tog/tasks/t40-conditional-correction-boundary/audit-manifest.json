@@ -1,0 +1,83 @@
+{
+  "schema": "t40-linked-mathematical-evidence-v1",
+  "created_utc": "2026-10-29T19:20:06.652208+00:00",
+  "parent_commit": "03605643b968a3bd1ceb4d4c8e946bcf1c66442b",
+  "previous_turn_classification": "progress: T39 coupled derivation and variance/prior-art screen",
+  "current_turn_classification": "progress: two-component theorem, three-Gaussian counterexample, oracle limit and residual collapse constrain development decision",
+  "goal_status": "active_not_submission_ready",
+  "decision": "no_go_current_conditional_refinement",
+  "scope_recorded_after_preliminary_algebra": true,
+  "mathematics_only": true,
+  "numerical_experiments": 0,
+  "scientific_processes_live_at_entry": 0,
+  "new_assets": 0,
+  "installations": 0,
+  "external_source_acquisitions": 0,
+  "new_methods_implemented": 0,
+  "two_component_variance_bound": true,
+  "general_variance_dominance": false,
+  "three_component_counterexample_variance_limit": "1/16",
+  "oracle_relative_variance_limit": "1",
+  "ordinary_time_conditioning_and_sparse_sampling_accounted_for": true,
+  "full_cost_conditions_not_measured": true,
+  "TOG_core_contribution": false,
+  "automatic_next_run_queued": false,
+  "artifacts": [
+    {
+      "path": "tracks/tog/tasks/t40-conditional-correction-boundary/.gitignore",
+      "bytes": 7,
+      "sha256": "a7d8bdcefba82a95ebc021d87c629fdea21f13af953bf01e28b7cf8b0eeceb41"
+    },
+    {
+      "path": "tracks/tog/tasks/t40-conditional-correction-boundary/PROTOCOL.md",
+      "bytes": 1988,
+      "sha256": "0cce53ac99b356ff1e8efe1a000b9c21e0eaab82f58e251ecbda58bbdc1a062b"
+    },
+    {
+      "path": "tracks/tog/tasks/t40-conditional-correction-boundary/README.md",
+      "bytes": 11130,
+      "sha256": "9868dc07bc1d27aa9c9c69673635b6a5228973a98d252e6ad497e02e6e80399f"
+    },
+    {
+      "path": "tracks/validation/t40-mathematical-review.md",
+      "bytes": 5935,
+      "sha256": "26ab76db7b7cd82b901820817fe7ec08ce318e2141709e2ad9f1dc83e9a47b2c"
+    }
+  ],
+  "current_state_documents": [
+    {
+      "path": "tracks/STATUS.md",
+      "bytes": 56534,
+      "sha256": "8a7ffe2b532ac3918509736265cbce9c52934289d58688e595b8bfd8eb3f2350"
+    },
+    {
+      "path": "tracks/EXPLORATION.md",
+      "bytes": 8156,
+      "sha256": "6904bfa1ca91e1896a75eeff310f364ca61ce044f5cc6f2c45801cbb1b51608d"
+    },
+    {
+      "path": "tracks/tog/README.md",
+      "bytes": 8159,
+      "sha256": "a77c63eb053b08595bbb4cff981be469fd0521c2a978324037dba6e1512136e1"
+    }
+  ],
+  "preservation_chain": {
+    "parent_manifest": {
+      "path": "tracks/tog/tasks/t39-coupled-event-screen/audit-manifest.json",
+      "bytes": 3695,
+      "sha256": "441cc250aca55fd2ac1104e6d523e78893fe3774a45ef3efafa3f087f3dbff34"
+    },
+    "verified_prior_artifact_count": 507,
+    "all_recorded_prior_bytes_unchanged": true
+  },
+  "other_parent_tracked_files_unchanged": 1032,
+  "original_core": {
+    "path": "tracks/tog/src/core.py",
+    "bytes": 13301,
+    "sha256": "ac750b70a86743ac858f1c53cf620ce29c63c462456115af4d0d8c93fa20bd9e"
+  },
+  "historical_failures_unchanged": true,
+  "art_inactive": true,
+  "main_not_merged_or_deployed": true,
+  "automation_remains_deleted": true
+}
