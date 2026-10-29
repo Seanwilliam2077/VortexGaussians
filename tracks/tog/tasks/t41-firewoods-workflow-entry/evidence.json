@@ -1,0 +1,910 @@
+{
+  "schema": "t41-local-workflow-entry-evidence-v1",
+  "parent_commit": "61b65d92fe7a752f2fab42c1dd49bbad0dded6f0",
+  "path_base": "outer workspace containing work/VortexGaussians and outputs; relative paths are not repository links",
+  "new_scientific_executions": 0,
+  "new_browser_launches": 0,
+  "new_downloads": 0,
+  "new_asset_body_decodes": 0,
+  "saved_diagnostic_pngs_viewed": 2,
+  "provenance_as_saved_not_refetched": {
+    "publicURL": "https://drive.google.com/file/d/1EMWrcSLbeLjTWyGUh_cThYGvrrmMrvC0/view?usp=sharing",
+    "repositoryCommit": "f70fbe26d22431c7acd93a745861dd47ba4307d7",
+    "archiveBytes": 1313590023,
+    "tailSHA256": "2e5426d14af138b2378a0525abe4a2dcd5faa1aad81e48e3f7e390f303003f6a",
+    "centralDirectory": {
+      "offset": 1313530062,
+      "bytes": 59939,
+      "entries": 527
+    }
+  },
+  "historical_freeze_checks": [
+    {
+      "freeze_path": "adapter.js",
+      "expected": {
+        "bytes": 3761,
+        "sha256": "0b5e11a2268a59b832d7abbea48583421a4ff5d50ff331aa74320cc4012ea3a2"
+      },
+      "actual": {
+        "path": "work/real-asset-static-staging/adapter.js",
+        "bytes": 3761,
+        "sha256": "0b5e11a2268a59b832d7abbea48583421a4ff5d50ff331aa74320cc4012ea3a2"
+      },
+      "matches": true
+    },
+    {
+      "freeze_path": "run.mjs",
+      "expected": {
+        "bytes": 7280,
+        "sha256": "ed9d3c1d69cf05f96ab3f65b966b1fff8f842aba38c0a354ef694cd441ae288d"
+      },
+      "actual": {
+        "path": "work/real-asset-static-staging/run.mjs",
+        "bytes": 7280,
+        "sha256": "ed9d3c1d69cf05f96ab3f65b966b1fff8f842aba38c0a354ef694cd441ae288d"
+      },
+      "matches": true
+    },
+    {
+      "freeze_path": "prepare.mjs",
+      "expected": {
+        "bytes": 1315,
+        "sha256": "d562084c8d36aae17dabea91b8fa69ce0d64ec8db85893133100712049ba1633"
+      },
+      "actual": {
+        "path": "work/real-asset-static-staging/prepare.mjs",
+        "bytes": 1315,
+        "sha256": "d562084c8d36aae17dabea91b8fa69ce0d64ec8db85893133100712049ba1633"
+      },
+      "matches": true
+    },
+    {
+      "freeze_path": "PROTOCOL.md",
+      "expected": {
+        "bytes": 3577,
+        "sha256": "adf0f9e61a6fe6e5a0bfa5954b81ed05a0b508eedea1392ee47ca273d32015a1"
+      },
+      "actual": {
+        "path": "work/real-asset-static-staging/PROTOCOL.md",
+        "bytes": 3577,
+        "sha256": "adf0f9e61a6fe6e5a0bfa5954b81ed05a0b508eedea1392ee47ca273d32015a1"
+      },
+      "matches": true
+    },
+    {
+      "freeze_path": "candidate/demo/index.html",
+      "expected": {
+        "bytes": 317446,
+        "sha256": "ca01cc7feefbe0cd2586a3a13f39e2f8e2a2388cd4cf7f464a45f0e9a5f0cffc"
+      },
+      "actual": {
+        "path": "work/real-asset-static-staging/candidate/demo/index.html",
+        "bytes": 317446,
+        "sha256": "ca01cc7feefbe0cd2586a3a13f39e2f8e2a2388cd4cf7f464a45f0e9a5f0cffc"
+      },
+      "matches": true
+    },
+    {
+      "freeze_path": "source-demo.html",
+      "expected": {
+        "bytes": 313629,
+        "sha256": "3db09579c2d8c99fa0e72e7010c78d153d9f6b46d7bfd7bc01d076a0d4fbfc2f"
+      },
+      "actual": {
+        "path": "work/real-asset-static-staging/source-demo.html",
+        "bytes": 313629,
+        "sha256": "3db09579c2d8c99fa0e72e7010c78d153d9f6b46d7bfd7bc01d076a0d4fbfc2f"
+      },
+      "matches": true
+    },
+    {
+      "freeze_path": "../VortexGaussians/research/lib/runtime.mjs",
+      "expected": {
+        "bytes": 5669,
+        "sha256": "cf540ed02429016ab2b8a50a1cd95ac14222247466a56cfbf37444234851b184"
+      },
+      "actual": {
+        "path": "work/VortexGaussians/research/lib/runtime.mjs",
+        "bytes": 5669,
+        "sha256": "cf540ed02429016ab2b8a50a1cd95ac14222247466a56cfbf37444234851b184"
+      },
+      "matches": true
+    },
+    {
+      "freeze_path": "../VortexGaussians/demo/index.html",
+      "expected": {
+        "bytes": 313629,
+        "sha256": "3db09579c2d8c99fa0e72e7010c78d153d9f6b46d7bfd7bc01d076a0d4fbfc2f"
+      },
+      "actual": {
+        "path": "work/VortexGaussians/demo/index.html",
+        "bytes": 314044,
+        "sha256": "e9d808c434bdd8ce91482f60502f03f5d08c56b71c082eb704c53275ff9f57d0"
+      },
+      "matches": false
+    },
+    {
+      "freeze_path": "../real-asset-ingest/foreground.ply",
+      "expected": {
+        "bytes": 8603906,
+        "sha256": "906460f162f704b89666b159ae5b4744e53e6dc11baf448a550de581506919b0"
+      },
+      "actual": {
+        "path": "work/real-asset-ingest/foreground.ply",
+        "bytes": 8603906,
+        "sha256": "906460f162f704b89666b159ae5b4744e53e6dc11baf448a550de581506919b0"
+      },
+      "matches": true
+    },
+    {
+      "freeze_path": "../real-asset-ingest/cameras.json",
+      "expected": {
+        "bytes": 99000,
+        "sha256": "5cdd4605b0bf11970357c26e66ce3affb6c25ab2823171488fa41288ceb4a5c5"
+      },
+      "actual": {
+        "path": "work/real-asset-ingest/cameras.json",
+        "bytes": 99000,
+        "sha256": "5cdd4605b0bf11970357c26e66ce3affb6c25ab2823171488fa41288ceb4a5c5"
+      },
+      "matches": true
+    },
+    {
+      "freeze_path": "../real-asset-ingest/source-photo.png",
+      "expected": {
+        "bytes": 2914511,
+        "sha256": "9d099876e9494cb872467d8ce3490b9458582f3f48d95ff3c42edec4967c2892"
+      },
+      "actual": {
+        "path": "work/real-asset-ingest/source-photo.png",
+        "bytes": 2914511,
+        "sha256": "9d099876e9494cb872467d8ce3490b9458582f3f48d95ff3c42edec4967c2892"
+      },
+      "matches": true
+    },
+    {
+      "freeze_path": "../real-asset-ingest/cfg_args.txt",
+      "expected": {
+        "bytes": 513,
+        "sha256": "ebf3a24caa26de5d99666b16cf0000508590443c0891bd109eadc769e1a8b35a"
+      },
+      "actual": {
+        "path": "work/real-asset-ingest/cfg_args.txt",
+        "bytes": 513,
+        "sha256": "ebf3a24caa26de5d99666b16cf0000508590443c0891bd109eadc769e1a8b35a"
+      },
+      "matches": true
+    },
+    {
+      "freeze_path": "../real-asset-ingest/manifest.json",
+      "expected": {
+        "bytes": 27645,
+        "sha256": "b4f0e9d8f482a9de8389b4186104c10973540a15ea51d1beebc6b43c5a01961c"
+      },
+      "actual": {
+        "path": "work/real-asset-ingest/manifest.json",
+        "bytes": 27645,
+        "sha256": "b4f0e9d8f482a9de8389b4186104c10973540a15ea51d1beebc6b43c5a01961c"
+      },
+      "matches": true
+    }
+  ],
+  "recovered_historical_demo": {
+    "path": "work/real-asset-static-archive-check/work/VortexGaussians/demo/index.html",
+    "bytes": 313629,
+    "sha256": "3db09579c2d8c99fa0e72e7010c78d153d9f6b46d7bfd7bc01d076a0d4fbfc2f"
+  },
+  "additional_read_input_identities": [
+    {
+      "path": "work/real-asset-static-staging/run-01/freeze.json",
+      "bytes": 1976,
+      "sha256": "245bf075318b79e94fc2270302a4609f81bd22fef9ca6ca24d8bcc453e42688d"
+    },
+    {
+      "path": "work/real-asset-static-staging/run-01/result.json",
+      "bytes": 58361,
+      "sha256": "10644a1b198e95a61049c1bfdea00808056b18ecce2702154553e0985d51182d"
+    },
+    {
+      "path": "outputs/real-asset-static/real-asset-camera-probe.json",
+      "bytes": 13992,
+      "sha256": "1c4a79b7329547b405562bf3259910196785835235d2c936b12fb2f50f75c7b5"
+    },
+    {
+      "path": "outputs/real-asset-static/PROTOCOL.md",
+      "bytes": 3577,
+      "sha256": "adf0f9e61a6fe6e5a0bfa5954b81ed05a0b508eedea1392ee47ca273d32015a1"
+    },
+    {
+      "path": "outputs/real-asset-static/Reproduce-real-asset-static.md",
+      "bytes": 2474,
+      "sha256": "a76a26de64d0d60d9f38826afa945a8e3e892f8fd20f6918f6b2684493cc2555"
+    },
+    {
+      "path": "outputs/real-asset-static/visual-review.json",
+      "bytes": 786,
+      "sha256": "e9e633af192e076aaa6102b93aa08c8b12fd91796ce17ee77f2a6c257bfeef4d"
+    },
+    {
+      "path": "outputs/real-asset-static/figure-metadata.json",
+      "bytes": 552,
+      "sha256": "f560f6aefb0aab6e728bf3eaff51f59707b7f79b2c2b4084bcf3043c5a1788ab"
+    },
+    {
+      "path": "outputs/real-asset-static/source-camera-alignment.png",
+      "bytes": 761149,
+      "sha256": "2b6790f8b2615bb4fd74972b011feab3be1ac9d721cb6cc331e4b2a61c200f9d"
+    },
+    {
+      "path": "outputs/real-asset-static/all-static-captures.png",
+      "bytes": 208937,
+      "sha256": "577871ffccbaee534dc02a1763dd2dbf1fa9199813d0dd7ad8fb238d71daaaa7"
+    },
+    {
+      "path": "work/VortexGaussians/research/EVIDENCE_STATUS.md",
+      "bytes": 9044,
+      "sha256": "0eef78dee6c04239e36e0209e51d777281541569455aef66a0f0b1c311677b4a"
+    },
+    {
+      "path": "work/VortexGaussians/research/SCENE_WORLD_UP.md",
+      "bytes": 2335,
+      "sha256": "6eb4020021f28678fd2542ed5ba4724e125443dd37e19a01300269b2c2dda8b7"
+    }
+  ],
+  "saved_run_inventory_hash_only_not_numeric_array_decode": [
+    {
+      "path": "work/real-asset-static-staging/run-01/01-orbit-alpha.png",
+      "bytes": 165086,
+      "sha256": "839021571aa798ebf69bb0c94f7f799678b9dca902caf6547eb52cb0c8d72168"
+    },
+    {
+      "path": "work/real-asset-static-staging/run-01/01-orbit-raw-f32.bin",
+      "bytes": 3468700,
+      "sha256": "dca79cfa56765005cc4fbc340cd281bc3af80ec755d11356ea4dc8eb86b54a34"
+    },
+    {
+      "path": "work/real-asset-static-staging/run-01/01-orbit-sorted-f32.bin",
+      "bytes": 3468700,
+      "sha256": "9cbd27654db7f44da3f6f543edac54128b866224591b98ebb3913d63145fa8db"
+    },
+    {
+      "path": "work/real-asset-static-staging/run-01/01-orbit.png",
+      "bytes": 505581,
+      "sha256": "505328873d4cb1227ef73f144002595bd614308561b372318eb947699e494599"
+    },
+    {
+      "path": "work/real-asset-static-staging/run-01/02-source-camera-alpha.png",
+      "bytes": 81147,
+      "sha256": "43d74aebf76d0f681ccc92d3a29b64453265d46c3d48785257569bc4dba6a8c7"
+    },
+    {
+      "path": "work/real-asset-static-staging/run-01/02-source-camera-raw-f32.bin",
+      "bytes": 3468700,
+      "sha256": "dca79cfa56765005cc4fbc340cd281bc3af80ec755d11356ea4dc8eb86b54a34"
+    },
+    {
+      "path": "work/real-asset-static-staging/run-01/02-source-camera-sorted-f32.bin",
+      "bytes": 3468700,
+      "sha256": "5e7979822c4806f305b4a1526e50acb9c926f5374468bac7aecc0d5ca5117305"
+    },
+    {
+      "path": "work/real-asset-static-staging/run-01/02-source-camera.png",
+      "bytes": 177017,
+      "sha256": "fcad85c5ae0b136b5b0a568f2b9e43855914a9dd50bb7befb45042379a3cc98a"
+    },
+    {
+      "path": "work/real-asset-static-staging/run-01/03-transformed-source-camera-alpha.png",
+      "bytes": 81151,
+      "sha256": "a6a4c747d9207c25788732e690466b6da1e65a4be07f83baa9ce6c3dc260db2b"
+    },
+    {
+      "path": "work/real-asset-static-staging/run-01/03-transformed-source-camera-raw-f32.bin",
+      "bytes": 3468700,
+      "sha256": "7a3bc5e7020689f9ad941216c7408f4ffcc0e4bb008054ace64297aaf032619e"
+    },
+    {
+      "path": "work/real-asset-static-staging/run-01/03-transformed-source-camera-sorted-f32.bin",
+      "bytes": 3468700,
+      "sha256": "d1abbeab9e7771adcf710ce2549ef315fa8752ee0bfbcd5afb0f27ec1b024093"
+    },
+    {
+      "path": "work/real-asset-static-staging/run-01/03-transformed-source-camera.png",
+      "bytes": 177027,
+      "sha256": "c15be290aab0d29b8da97da61cd9eba639f8c1d4de15520bf8429dda8a25c53d"
+    },
+    {
+      "path": "work/real-asset-static-staging/run-01/freeze.json",
+      "bytes": 1976,
+      "sha256": "245bf075318b79e94fc2270302a4609f81bd22fef9ca6ca24d8bcc453e42688d"
+    },
+    {
+      "path": "work/real-asset-static-staging/run-01/gpu-high-sh-f32.bin",
+      "bytes": 5242880,
+      "sha256": "e6666621b426fe6b67faf3e4899357464f5f58d71d1d358b982883277f047473"
+    },
+    {
+      "path": "work/real-asset-static-staging/run-01/high-sh-f32.bin",
+      "bytes": 4994928,
+      "sha256": "73fb0361a90b431d2412cc2788e92993fe0714772812e006fdcf98e18cb2ad18"
+    },
+    {
+      "path": "work/real-asset-static-staging/run-01/progress.json",
+      "bytes": 56358,
+      "sha256": "b6ceb0644b60890be26c77a461a9cb28434f3c9ce0b9b3c2b910a790cbea4bc4"
+    },
+    {
+      "path": "work/real-asset-static-staging/run-01/result.json",
+      "bytes": 58361,
+      "sha256": "10644a1b198e95a61049c1bfdea00808056b18ecce2702154553e0985d51182d"
+    },
+    {
+      "path": "work/real-asset-static-staging/run-01/run-start.json",
+      "bytes": 916,
+      "sha256": "634a27831a7114fa579e88f8e0b309f90efe3a1590ab75cad07ad674f2693308"
+    },
+    {
+      "path": "work/real-asset-static-staging/run-01/source-packed-f64.bin",
+      "bytes": 6104912,
+      "sha256": "fd831664fbb00f75d3ca902c73e5065e70ee0f26f769fa53df54fb1aefcf38c7"
+    }
+  ],
+  "historical_run_common_parameters": {
+    "mode": "fire",
+    "simLayers": 9,
+    "riseV": 1.16,
+    "sway": 0.9,
+    "rate": 720,
+    "coolP": 0.8,
+    "spread": 0.7,
+    "buoy": 0.9,
+    "baro": 1.4,
+    "eps": 0.07,
+    "cool": 1.2,
+    "gam": 1,
+    "turb": 0.55,
+    "couple": 0.5,
+    "interZ": 0,
+    "solver": "vpm",
+    "theta": 0.9,
+    "vpmVisc": 0,
+    "vpmNaive": false,
+    "showTiming": false,
+    "layers": 9,
+    "yaw": 0,
+    "rad": 42,
+    "ppl": 600,
+    "wind": 0,
+    "camDist": 4.4,
+    "camElev": 0.12,
+    "fov": 0.85,
+    "sliceMode": "view",
+    "sliceDepth": 0.7,
+    "covStretch": 1.3,
+    "covMax": 3.6,
+    "covRelax": 1,
+    "dimMode": "layer",
+    "vol3DTurb": 0.6,
+    "vol3DScale": 2.4,
+    "stretch3": 1,
+    "filament": false,
+    "filLen": 0.5,
+    "filGain": 3,
+    "exposure": 1,
+    "emis": 2.2,
+    "bloom": 0,
+    "thresh": 0.4,
+    "blurIters": 5,
+    "look": "cinematic",
+    "box": false,
+    "boxLight": 0.1,
+    "embers": false,
+    "reflect": 0,
+    "haze": 0,
+    "emberRate": 16,
+    "emberMax": 160,
+    "sceneOn": true,
+    "sceneMax": 800000,
+    "faithful": true,
+    "scenePreComp": false,
+    "sceneSH": 3,
+    "sceneLight": 1,
+    "sceneSorted": true,
+    "sceneBackdrop": false,
+    "sceneDepthTest": false,
+    "depthTestAlpha": 0.5,
+    "spreadOn": false,
+    "spreadIgnR": 0.14,
+    "spreadHeat": 2.2,
+    "spreadIgnH": 1,
+    "spreadR": 0.11,
+    "spreadRate": 3,
+    "spreadBurnT": 6,
+    "spreadFeed": 5,
+    "spreadFlameHeat": true,
+    "spreadSceneFeed": true,
+    "emitterOn": false,
+    "spreadFrontierCap": 1400,
+    "spreadSampleCap": 160,
+    "spreadFeedCap": 48,
+    "spreadClockMode": "legacy",
+    "spreadParticlePolicy": "block",
+    "spreadRecycleMinAge": 0.5,
+    "spreadMeasureMode": "legacy",
+    "spreadReferenceArea": 0.0016,
+    "spreadAreaFeedRate": 30,
+    "charDesat": 0.85,
+    "charDim": 0.12,
+    "charSootMix": 0,
+    "charOpa": 0,
+    "charSootR": 0.0495,
+    "charSootG": 0.0459,
+    "charSootB": 0.0428,
+    "orbit": false,
+    "stretch": true,
+    "flicker": true,
+    "paused": true
+  },
+  "historical_captures": [
+    {
+      "id": "01-orbit",
+      "requested_camera": null,
+      "actual_placement": {
+        "sceneScale": 2.306,
+        "sceneYaw": 0,
+        "scenePitch": 0,
+        "sceneLift": 0,
+        "sceneOffX": 0,
+        "sceneOffZ": 0
+      },
+      "scene_count": 34687,
+      "drawing_buffer": [
+        1879,
+        1055
+      ],
+      "actual_camera": {
+        "VP": [
+          1.2405872012853734,
+          0,
+          0,
+          0,
+          0,
+          2.193649123989499,
+          -0.11995187136757583,
+          -0.11971220728891935,
+          0,
+          -0.2645087574448142,
+          -0.9947962407304505,
+          -0.9928086358538663,
+          0,
+          -2.3033315801889733,
+          4.434658173644664,
+          4.5256978176533655
+        ],
+        "V": [
+          1,
+          0,
+          0,
+          0,
+          0,
+          0.9928086358538663,
+          0.11971220728891935,
+          0,
+          0,
+          -0.11971220728891935,
+          0.9928086358538663,
+          0,
+          0,
+          -1.0424490676465594,
+          -4.5256978176533655,
+          1
+        ],
+        "bx": [
+          1,
+          0,
+          0
+        ],
+        "by": [
+          0,
+          0.9928086358538663,
+          -0.11971220728891935
+        ],
+        "fh": [
+          0,
+          0,
+          -1
+        ],
+        "eye": [
+          0,
+          1.5767337120712452,
+          4.368357997757012
+        ],
+        "fireUV": [
+          0.5,
+          0.2596873539434279
+        ],
+        "focal": [
+          1165.5316756076083,
+          1165.5316756076083
+        ]
+      },
+      "frame": 0,
+      "time": 0,
+      "seed": 11,
+      "scene": {
+        "count": 34687,
+        "burning": 0,
+        "charred": 0,
+        "heated": 0,
+        "fuelRemaining": 34687,
+        "frontier": 0,
+        "burnHash": "92acbcee",
+        "representedArea": null,
+        "areaWeightedFuelRemaining": null,
+        "areaWeightedHeat": null,
+        "areaWeightedChar": null
+      },
+      "particles": {
+        "count": 0,
+        "hotCount": 0,
+        "coldCount": 0,
+        "smokeCount": 0,
+        "temperatureSum": 0,
+        "dynamicTemperatureSum": 0,
+        "densitySum": 0,
+        "circulationSum": 0,
+        "absCirculationSum": 0,
+        "smokeProxySum": 0,
+        "layerCounts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "dynamic_draw_count": 0
+    },
+    {
+      "id": "02-source-camera",
+      "requested_camera": {
+        "id": 0,
+        "img_name": "00000",
+        "width": 1879,
+        "height": 1055,
+        "position": [
+          0.6272105453754347,
+          4.430022816563253,
+          1.261925944474295
+        ],
+        "rotation": [
+          [
+            -0.9760771666705462,
+            0.09025508332446777,
+            -0.19780643224751843
+          ],
+          [
+            0.2158547413095829,
+            0.5113756087754728,
+            -0.831806298006746
+          ],
+          [
+            0.026078637973862777,
+            -0.8546045908393005,
+            -0.5186240429808671
+          ]
+        ],
+        "fy": 1631.1191359949569,
+        "fx": 1634.293288851009
+      },
+      "actual_placement": {
+        "sceneScale": 2.306,
+        "sceneYaw": 0,
+        "scenePitch": 0,
+        "sceneLift": 0,
+        "sceneOffX": 0,
+        "sceneOffZ": 0
+      },
+      "scene_count": 34687,
+      "drawing_buffer": [
+        1879,
+        1055
+      ],
+      "actual_camera": {
+        "VP": [
+          -1.6979205565624071,
+          -0.27908396877982694,
+          -0.19820244112088684,
+          -0.19780643224751843,
+          0.37548691334637785,
+          -1.581259793658283,
+          -0.8334715758806334,
+          -0.831806298006746,
+          0.045364707847854194,
+          2.6425818044116083,
+          -0.5196623293532011,
+          -0.5186240429808671,
+          -1.3011927929043197,
+          -1.8915065963084143,
+          13.622700697454622,
+          13.695382614143025
+        ],
+        "V": [
+          -0.9760771666705462,
+          -0.09025508332446777,
+          0.19780643224751843,
+          0,
+          0.2158547413095829,
+          -0.5113756087754728,
+          0.831806298006746,
+          0,
+          0.026078637973862777,
+          0.8546045908393005,
+          0.5186240429808671,
+          0,
+          -0.7480117781019997,
+          -0.6117086775173322,
+          -13.695382614143025,
+          1
+        ],
+        "bx": [
+          -0.9760771666705462,
+          0.2158547413095829,
+          0.026078637973862777
+        ],
+        "by": [
+          -0.09025508332446777,
+          -0.5113756087754728,
+          0.8546045908393005
+        ],
+        "fh": [
+          -0.19780643224751843,
+          -0.831806298006746,
+          -0.5186240429808671
+        ],
+        "eye": [
+          1.9237077385026995,
+          11.240554503556327,
+          7.645030873940589
+        ],
+        "fireUV": [
+          0.4531469718104223,
+          0.42721461528067917
+        ],
+        "focal": [
+          1634.293288851009,
+          1631.1191359949569
+        ]
+      },
+      "frame": 0,
+      "time": 0,
+      "seed": 11,
+      "scene": {
+        "count": 34687,
+        "burning": 0,
+        "charred": 0,
+        "heated": 0,
+        "fuelRemaining": 34687,
+        "frontier": 0,
+        "burnHash": "92acbcee",
+        "representedArea": null,
+        "areaWeightedFuelRemaining": null,
+        "areaWeightedHeat": null,
+        "areaWeightedChar": null
+      },
+      "particles": {
+        "count": 0,
+        "hotCount": 0,
+        "coldCount": 0,
+        "smokeCount": 0,
+        "temperatureSum": 0,
+        "dynamicTemperatureSum": 0,
+        "densitySum": 0,
+        "circulationSum": 0,
+        "absCirculationSum": 0,
+        "smokeProxySum": 0,
+        "layerCounts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "dynamic_draw_count": 0
+    },
+    {
+      "id": "03-transformed-source-camera",
+      "requested_camera": {
+        "id": 0,
+        "img_name": "00000",
+        "width": 1879,
+        "height": 1055,
+        "position": [
+          0.6272105453754347,
+          4.430022816563253,
+          1.261925944474295
+        ],
+        "rotation": [
+          [
+            -0.9760771666705462,
+            0.09025508332446777,
+            -0.19780643224751843
+          ],
+          [
+            0.2158547413095829,
+            0.5113756087754728,
+            -0.831806298006746
+          ],
+          [
+            0.026078637973862777,
+            -0.8546045908393005,
+            -0.5186240429808671
+          ]
+        ],
+        "fy": 1631.1191359949569,
+        "fx": 1634.293288851009
+      },
+      "actual_placement": {
+        "sceneScale": 1.5,
+        "sceneYaw": 0.62,
+        "scenePitch": -0.48,
+        "sceneLift": 0.24,
+        "sceneOffX": -0.18,
+        "sceneOffZ": 0.3
+      },
+      "scene_count": 34687,
+      "drawing_buffer": [
+        1879,
+        1055
+      ],
+      "actual_camera": {
+        "VP": [
+          -1.4592679852481292,
+          1.5590485111224976,
+          -0.20550508687612826,
+          -0.20509448730195018,
+          0.35400346309696457,
+          -0.18228016162779884,
+          -0.9792542980956584,
+          -0.9772977460515113,
+          0.8781805569214842,
+          2.6641416389375987,
+          0.05326059467593386,
+          0.05315417990135657,
+          -1.457479241356435,
+          -1.7052480883051326,
+          9.008318357927996,
+          9.090219819750319
+        ],
+        "V": [
+          -0.8388838658846157,
+          0.5041925334996868,
+          0.20509448730195018,
+          0,
+          0.203504631542251,
+          -0.058948965245271434,
+          0.9772977460515113,
+          0,
+          0.5048363343692042,
+          0.8615769893977434,
+          -0.05315417990135657,
+          0,
+          -0.8378555774508866,
+          -0.5514731246361508,
+          -9.090219819750319,
+          1
+        ],
+        "bx": [
+          -0.8388838658846157,
+          0.203504631542251,
+          0.5048363343692042
+        ],
+        "by": [
+          0.5041925334996868,
+          -0.058948965245271434,
+          0.8615769893977434
+        ],
+        "fh": [
+          -0.20509448730195018,
+          -0.9772977460515113,
+          0.05315417990135657
+        ],
+        "eye": [
+          1.4395390793960194,
+          9.021850061471648,
+          0.4149333132669937
+        ],
+        "fireUV": [
+          0.4204879587690876,
+          0.4049897954446881
+        ],
+        "focal": [
+          1634.293288851009,
+          1631.1191359949569
+        ]
+      },
+      "frame": 0,
+      "time": 0,
+      "seed": 11,
+      "scene": {
+        "count": 34687,
+        "burning": 0,
+        "charred": 0,
+        "heated": 0,
+        "fuelRemaining": 34687,
+        "frontier": 0,
+        "burnHash": "32617733",
+        "representedArea": null,
+        "areaWeightedFuelRemaining": null,
+        "areaWeightedHeat": null,
+        "areaWeightedChar": null
+      },
+      "particles": {
+        "count": 0,
+        "hotCount": 0,
+        "coldCount": 0,
+        "smokeCount": 0,
+        "temperatureSum": 0,
+        "dynamicTemperatureSum": 0,
+        "densitySum": 0,
+        "circulationSum": 0,
+        "absCirculationSum": 0,
+        "smokeProxySum": 0,
+        "layerCounts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "dynamic_draw_count": 0
+    }
+  ],
+  "historical_strict_half_audit": {
+    "passed": 102,
+    "total": 103,
+    "status": "failed_preserved_not_rerun"
+  },
+  "code_inspection": {
+    "current_demo": {
+      "path": "work/VortexGaussians/demo/index.html",
+      "bytes": 314044,
+      "sha256": "e9d808c434bdd8ce91482f60502f03f5d08c56b71c082eb704c53275ff9f57d0"
+    },
+    "delegated_demo_display_lines_including_search_matches": 294,
+    "ignition_existing_state_not_reset_lines": [
+      1131,
+      1136
+    ],
+    "clock_evolution_lines": [
+      1195,
+      1207
+    ],
+    "legacy_and_area_heat_lines": [
+      1209,
+      1230
+    ],
+    "scene_to_gas_feed_lines": [
+      1241,
+      1279
+    ],
+    "source_clone_dependence": "real-arithmetic conditional deduction; no Firewoods magnitude measured",
+    "ordinary_remedies": "existing authored-area weighting or independent material state; not new methods"
+  },
+  "decision": "eligible_for_one_frozen_ordinary_sequential_ignition_workflow_not_method_development",
+  "physical_material_or_user_demand_established": false,
+  "TOG_contribution_established": false
+}
