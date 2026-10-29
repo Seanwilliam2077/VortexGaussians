@@ -1,0 +1,63 @@
+{
+  "schema": "t32-pre-execution-freeze-v1",
+  "created_utc": "2026-10-29T15:53:28.110432+00:00",
+  "parent_commit": "c4d3f5d44b73cf05cdefe844efba75656545fca9",
+  "artifacts": [
+    {
+      "path": "tracks/tog/tasks/t32-ordinary-volume-entry/PROTOCOL.md",
+      "bytes": 9684,
+      "sha256": "40fbcca08d40f3e2732d61afac8ecb87760a1952d3e99f5fc7a71b04f754119c"
+    },
+    {
+      "path": "tracks/tog/tasks/t32-ordinary-volume-entry/adapter.py",
+      "bytes": 11851,
+      "sha256": "e6da5219af1b8b1b7abf6f6b9555783fb846ebf740c0d1ed33f8dee4a8a9405c"
+    },
+    {
+      "path": "tracks/tog/tasks/t32-ordinary-volume-entry/ordinary.py",
+      "bytes": 3786,
+      "sha256": "7ca2fb5f67cfaa3ea2c33c7818956d31073ab36b57e4195ed70ed2efd09e2966"
+    },
+    {
+      "path": "tracks/tog/tasks/t32-ordinary-volume-entry/reference.py",
+      "bytes": 21520,
+      "sha256": "fb46af610a0b5936a892d3cc07f2784690a14509b043910ff7ef21cf3a11369b"
+    },
+    {
+      "path": "tracks/tog/tasks/t32-ordinary-volume-entry/run.py",
+      "bytes": 14943,
+      "sha256": "0656cd7db7d9c753bdfce696a7aa6bbb3820a1484f43d295ca01a1dc6f3055e6"
+    },
+    {
+      "path": "tracks/tog/tasks/t32-ordinary-volume-entry/supervise.py",
+      "bytes": 2892,
+      "sha256": "66a1637c28cb77dc2ba77016752a743ce881149a1cd36c882322bceda67baf59"
+    },
+    {
+      "path": "tracks/validation/t32-pre-execution-review.md",
+      "bytes": 6465,
+      "sha256": "770709606a1398d3c5213c9c395559e24b6c95636eb65fefd14a1e9583c4a970"
+    },
+    {
+      "path": "tracks/tog/tasks/t31-local-carrier/MODEL.md",
+      "bytes": 3652,
+      "sha256": "2fb5315f175f058509080fb4ba09b0e77ecac75206b7325662766adf88f66814"
+    },
+    {
+      "path": "tracks/tog/tasks/t31-local-carrier/run-01/carrier.json.gz",
+      "bytes": 58581,
+      "sha256": "39f4dc758bb790f3b88bb2bbfa65dbe469c030289d4237476f598e29b823dcf2"
+    },
+    {
+      "path": "tracks/tog/tasks/t22-prefix-complete-cost/integrators.py",
+      "bytes": 16091,
+      "sha256": "94c6ab6748c42c40c8446ec5af01adf3b7b4ff66a6a45f7f9aba26bc651113af"
+    }
+  ],
+  "prior_numerical_invocations": 0,
+  "allowed_invocations": 1,
+  "retry_allowed": false,
+  "reference_radius": 0.0001,
+  "output_endpoint_tolerance": 0.001,
+  "numerical_allowance": 1e-10
+}

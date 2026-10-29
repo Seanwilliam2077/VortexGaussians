@@ -1,0 +1,1909 @@
+{
+  "schema": "t32-saved-result-audit-v1",
+  "audit_pass": true,
+  "experiment_status": "failed",
+  "experiment_qualification": false,
+  "formal_fp_certificate": false,
+  "scope": "saved hashes, exact-rational arithmetic of stored binary64 scalars and ledger consistency only",
+  "no_new_integration_cdf_exp_sampling_or_method_imports": true,
+  "identity_files": [
+    {
+      "path": "tracks/tog/tasks/t32-ordinary-volume-entry/run-01/attempt.json",
+      "bytes": 178,
+      "sha256": "80bd2b78185cea0530f086584bcc1da0cb5b01c69998f33c080bae96100ac965"
+    },
+    {
+      "path": "tracks/tog/tasks/t32-ordinary-volume-entry/run-01/execution.json",
+      "bytes": 718,
+      "sha256": "72f42c67878941735ce80b0b7a181ebe92ad8854384db6c779257c62ec8721df"
+    },
+    {
+      "path": "tracks/tog/tasks/t32-ordinary-volume-entry/run-01/result.json",
+      "bytes": 2625,
+      "sha256": "180bea48cabec841724637912a7681f787b6676e2dd64056e5dc733ae5d7018c"
+    },
+    {
+      "path": "tracks/tog/tasks/t32-ordinary-volume-entry/freeze.json",
+      "bytes": 2249,
+      "sha256": "fd60ada647d1e20a78c86894a39826ae29de7810e220cf5fed320c016a935135"
+    },
+    {
+      "path": "tracks/tog/tasks/t32-ordinary-volume-entry/run-01/results.json.gz",
+      "bytes": 374592,
+      "sha256": "044d591adc42945209cd368c359caaab3b237f097e52efac01d387ea240b3dc8"
+    },
+    {
+      "path": "tracks/tog/tasks/t32-ordinary-volume-entry/PROTOCOL.md",
+      "bytes": 9684,
+      "sha256": "40fbcca08d40f3e2732d61afac8ecb87760a1952d3e99f5fc7a71b04f754119c"
+    },
+    {
+      "path": "tracks/tog/tasks/t32-ordinary-volume-entry/adapter.py",
+      "bytes": 11851,
+      "sha256": "e6da5219af1b8b1b7abf6f6b9555783fb846ebf740c0d1ed33f8dee4a8a9405c"
+    },
+    {
+      "path": "tracks/tog/tasks/t32-ordinary-volume-entry/ordinary.py",
+      "bytes": 3786,
+      "sha256": "7ca2fb5f67cfaa3ea2c33c7818956d31073ab36b57e4195ed70ed2efd09e2966"
+    },
+    {
+      "path": "tracks/tog/tasks/t32-ordinary-volume-entry/reference.py",
+      "bytes": 21520,
+      "sha256": "fb46af610a0b5936a892d3cc07f2784690a14509b043910ff7ef21cf3a11369b"
+    },
+    {
+      "path": "tracks/tog/tasks/t32-ordinary-volume-entry/run.py",
+      "bytes": 14943,
+      "sha256": "0656cd7db7d9c753bdfce696a7aa6bbb3820a1484f43d295ca01a1dc6f3055e6"
+    },
+    {
+      "path": "tracks/tog/tasks/t32-ordinary-volume-entry/supervise.py",
+      "bytes": 2892,
+      "sha256": "66a1637c28cb77dc2ba77016752a743ce881149a1cd36c882322bceda67baf59"
+    },
+    {
+      "path": "tracks/validation/t32-pre-execution-review.md",
+      "bytes": 6465,
+      "sha256": "770709606a1398d3c5213c9c395559e24b6c95636eb65fefd14a1e9583c4a970"
+    },
+    {
+      "path": "tracks/tog/tasks/t31-local-carrier/MODEL.md",
+      "bytes": 3652,
+      "sha256": "2fb5315f175f058509080fb4ba09b0e77ecac75206b7325662766adf88f66814"
+    },
+    {
+      "path": "tracks/tog/tasks/t31-local-carrier/run-01/carrier.json.gz",
+      "bytes": 58581,
+      "sha256": "39f4dc758bb790f3b88bb2bbfa65dbe469c030289d4237476f598e29b823dcf2"
+    },
+    {
+      "path": "tracks/tog/tasks/t22-prefix-complete-cost/integrators.py",
+      "bytes": 16091,
+      "sha256": "94c6ab6748c42c40c8446ec5af01adf3b7b4ff66a6a45f7f9aba26bc651113af"
+    },
+    {
+      "path": "tracks/tog/tasks/t32-ordinary-volume-entry/run-01/stdout.txt",
+      "bytes": 2356,
+      "sha256": "1ec2112482fdb30a7a91f0eca1b577420d173fc8197b05c2677be47e56961149"
+    },
+    {
+      "path": "tracks/tog/tasks/t32-ordinary-volume-entry/run-01/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "raw_results_bytes": 1054391,
+  "raw_results_sha256": "d716646a9520f5a266e3304c68b31218a5d2cd05852ac64cff39bed348a26c58",
+  "checks": [
+    {
+      "name": "result_compressed_identity",
+      "pass": true
+    },
+    {
+      "name": "result_raw_identity",
+      "pass": true
+    },
+    {
+      "name": "raw_under_32MiB",
+      "pass": true
+    },
+    {
+      "name": "frozen:tracks/tog/tasks/t32-ordinary-volume-entry/PROTOCOL.md",
+      "pass": true
+    },
+    {
+      "name": "frozen:tracks/tog/tasks/t32-ordinary-volume-entry/adapter.py",
+      "pass": true
+    },
+    {
+      "name": "frozen:tracks/tog/tasks/t32-ordinary-volume-entry/ordinary.py",
+      "pass": true
+    },
+    {
+      "name": "frozen:tracks/tog/tasks/t32-ordinary-volume-entry/reference.py",
+      "pass": true
+    },
+    {
+      "name": "frozen:tracks/tog/tasks/t32-ordinary-volume-entry/run.py",
+      "pass": true
+    },
+    {
+      "name": "frozen:tracks/tog/tasks/t32-ordinary-volume-entry/supervise.py",
+      "pass": true
+    },
+    {
+      "name": "frozen:tracks/validation/t32-pre-execution-review.md",
+      "pass": true
+    },
+    {
+      "name": "frozen:tracks/tog/tasks/t31-local-carrier/MODEL.md",
+      "pass": true
+    },
+    {
+      "name": "frozen:tracks/tog/tasks/t31-local-carrier/run-01/carrier.json.gz",
+      "pass": true
+    },
+    {
+      "name": "frozen:tracks/tog/tasks/t22-prefix-complete-cost/integrators.py",
+      "pass": true
+    },
+    {
+      "name": "freeze_identity:attempt",
+      "pass": true
+    },
+    {
+      "name": "freeze_identity:t32-execution-v1",
+      "pass": true
+    },
+    {
+      "name": "freeze_identity:t32-worker-receipt-v1",
+      "pass": true
+    },
+    {
+      "name": "freeze_identity:t32-ordinary-entry-results-v1",
+      "pass": true
+    },
+    {
+      "name": "one_failed_invocation",
+      "pass": true
+    },
+    {
+      "name": "not_timeout_or_cleanup_failure",
+      "pass": true
+    },
+    {
+      "name": "within_time_caps",
+      "pass": true
+    },
+    {
+      "name": "failure_status_preserved",
+      "pass": true
+    },
+    {
+      "name": "final_source_check_saved",
+      "pass": true
+    },
+    {
+      "name": "one_partial_group",
+      "pass": true
+    },
+    {
+      "name": "schedule_prefix",
+      "pass": true
+    },
+    {
+      "name": "bvh_complete_disjoint",
+      "pass": true
+    },
+    {
+      "name": "bvh_saved_node_partition",
+      "pass": true
+    },
+    {
+      "name": "bvh_charge_at_least_saved_nodes",
+      "pass": true
+    },
+    {
+      "name": "bvh_charge_budget",
+      "pass": true
+    },
+    {
+      "name": "geometry_saved_agreement",
+      "pass": true
+    },
+    {
+      "name": "empty_completed_paths",
+      "pass": true
+    },
+    {
+      "name": "source_mass_ledger_shape",
+      "pass": true
+    },
+    {
+      "name": "ledger_coverage",
+      "pass": true
+    },
+    {
+      "name": "ledger_cell_ranges",
+      "pass": true
+    },
+    {
+      "name": "ledger_bounds_sums",
+      "pass": true
+    },
+    {
+      "name": "ledger_midpoint_radius",
+      "pass": true
+    },
+    {
+      "name": "completed_omitted_mass_check",
+      "pass": true
+    },
+    {
+      "name": "completed_radius_gate",
+      "pass": true
+    },
+    {
+      "name": "completed_output_gates",
+      "pass": true
+    },
+    {
+      "name": "completed_recorded_checks",
+      "pass": true
+    },
+    {
+      "name": "schedule_prefix",
+      "pass": true
+    },
+    {
+      "name": "bvh_complete_disjoint",
+      "pass": true
+    },
+    {
+      "name": "bvh_saved_node_partition",
+      "pass": true
+    },
+    {
+      "name": "bvh_charge_at_least_saved_nodes",
+      "pass": true
+    },
+    {
+      "name": "bvh_charge_budget",
+      "pass": true
+    },
+    {
+      "name": "geometry_saved_agreement",
+      "pass": true
+    },
+    {
+      "name": "empty_completed_paths",
+      "pass": true
+    },
+    {
+      "name": "source_mass_ledger_shape",
+      "pass": true
+    },
+    {
+      "name": "ledger_coverage",
+      "pass": true
+    },
+    {
+      "name": "ledger_cell_ranges",
+      "pass": true
+    },
+    {
+      "name": "ledger_bounds_sums",
+      "pass": true
+    },
+    {
+      "name": "ledger_midpoint_radius",
+      "pass": true
+    },
+    {
+      "name": "completed_omitted_mass_check",
+      "pass": true
+    },
+    {
+      "name": "completed_radius_gate",
+      "pass": true
+    },
+    {
+      "name": "completed_output_gates",
+      "pass": true
+    },
+    {
+      "name": "completed_recorded_checks",
+      "pass": true
+    },
+    {
+      "name": "schedule_prefix",
+      "pass": true
+    },
+    {
+      "name": "bvh_complete_disjoint",
+      "pass": true
+    },
+    {
+      "name": "bvh_saved_node_partition",
+      "pass": true
+    },
+    {
+      "name": "bvh_charge_at_least_saved_nodes",
+      "pass": true
+    },
+    {
+      "name": "bvh_charge_budget",
+      "pass": true
+    },
+    {
+      "name": "geometry_saved_agreement",
+      "pass": true
+    },
+    {
+      "name": "empty_completed_paths",
+      "pass": true
+    },
+    {
+      "name": "source_mass_ledger_shape",
+      "pass": true
+    },
+    {
+      "name": "ledger_coverage",
+      "pass": true
+    },
+    {
+      "name": "ledger_cell_ranges",
+      "pass": true
+    },
+    {
+      "name": "ledger_bounds_sums",
+      "pass": true
+    },
+    {
+      "name": "ledger_midpoint_radius",
+      "pass": true
+    },
+    {
+      "name": "completed_omitted_mass_check",
+      "pass": true
+    },
+    {
+      "name": "completed_radius_gate",
+      "pass": true
+    },
+    {
+      "name": "completed_output_gates",
+      "pass": true
+    },
+    {
+      "name": "completed_recorded_checks",
+      "pass": true
+    },
+    {
+      "name": "schedule_prefix",
+      "pass": true
+    },
+    {
+      "name": "bvh_complete_disjoint",
+      "pass": true
+    },
+    {
+      "name": "bvh_saved_node_partition",
+      "pass": true
+    },
+    {
+      "name": "bvh_charge_at_least_saved_nodes",
+      "pass": true
+    },
+    {
+      "name": "bvh_charge_budget",
+      "pass": true
+    },
+    {
+      "name": "geometry_saved_agreement",
+      "pass": true
+    },
+    {
+      "name": "empty_completed_paths",
+      "pass": true
+    },
+    {
+      "name": "source_mass_ledger_shape",
+      "pass": true
+    },
+    {
+      "name": "ledger_coverage",
+      "pass": true
+    },
+    {
+      "name": "ledger_cell_ranges",
+      "pass": true
+    },
+    {
+      "name": "ledger_bounds_sums",
+      "pass": true
+    },
+    {
+      "name": "ledger_midpoint_radius",
+      "pass": true
+    },
+    {
+      "name": "completed_omitted_mass_check",
+      "pass": true
+    },
+    {
+      "name": "completed_radius_gate",
+      "pass": true
+    },
+    {
+      "name": "completed_output_gates",
+      "pass": true
+    },
+    {
+      "name": "completed_recorded_checks",
+      "pass": true
+    },
+    {
+      "name": "schedule_prefix",
+      "pass": true
+    },
+    {
+      "name": "bvh_complete_disjoint",
+      "pass": true
+    },
+    {
+      "name": "bvh_saved_node_partition",
+      "pass": true
+    },
+    {
+      "name": "bvh_charge_at_least_saved_nodes",
+      "pass": true
+    },
+    {
+      "name": "bvh_charge_budget",
+      "pass": true
+    },
+    {
+      "name": "geometry_saved_agreement",
+      "pass": true
+    },
+    {
+      "name": "empty_completed_paths",
+      "pass": true
+    },
+    {
+      "name": "source_mass_ledger_shape",
+      "pass": true
+    },
+    {
+      "name": "ledger_coverage",
+      "pass": true
+    },
+    {
+      "name": "ledger_cell_ranges",
+      "pass": true
+    },
+    {
+      "name": "ledger_bounds_sums",
+      "pass": true
+    },
+    {
+      "name": "ledger_midpoint_radius",
+      "pass": true
+    },
+    {
+      "name": "completed_omitted_mass_check",
+      "pass": true
+    },
+    {
+      "name": "completed_radius_gate",
+      "pass": true
+    },
+    {
+      "name": "completed_output_gates",
+      "pass": true
+    },
+    {
+      "name": "completed_recorded_checks",
+      "pass": true
+    },
+    {
+      "name": "schedule_prefix",
+      "pass": true
+    },
+    {
+      "name": "bvh_complete_disjoint",
+      "pass": true
+    },
+    {
+      "name": "bvh_saved_node_partition",
+      "pass": true
+    },
+    {
+      "name": "bvh_charge_at_least_saved_nodes",
+      "pass": true
+    },
+    {
+      "name": "bvh_charge_budget",
+      "pass": true
+    },
+    {
+      "name": "geometry_saved_agreement",
+      "pass": true
+    },
+    {
+      "name": "empty_completed_paths",
+      "pass": true
+    },
+    {
+      "name": "source_mass_ledger_shape",
+      "pass": true
+    },
+    {
+      "name": "ledger_coverage",
+      "pass": true
+    },
+    {
+      "name": "ledger_cell_ranges",
+      "pass": true
+    },
+    {
+      "name": "ledger_bounds_sums",
+      "pass": true
+    },
+    {
+      "name": "ledger_midpoint_radius",
+      "pass": true
+    },
+    {
+      "name": "completed_omitted_mass_check",
+      "pass": true
+    },
+    {
+      "name": "completed_radius_gate",
+      "pass": true
+    },
+    {
+      "name": "completed_output_gates",
+      "pass": true
+    },
+    {
+      "name": "completed_recorded_checks",
+      "pass": true
+    },
+    {
+      "name": "schedule_prefix",
+      "pass": true
+    },
+    {
+      "name": "bvh_complete_disjoint",
+      "pass": true
+    },
+    {
+      "name": "bvh_saved_node_partition",
+      "pass": true
+    },
+    {
+      "name": "bvh_charge_at_least_saved_nodes",
+      "pass": true
+    },
+    {
+      "name": "bvh_charge_budget",
+      "pass": true
+    },
+    {
+      "name": "geometry_saved_agreement",
+      "pass": true
+    },
+    {
+      "name": "empty_completed_paths",
+      "pass": true
+    },
+    {
+      "name": "source_mass_ledger_shape",
+      "pass": true
+    },
+    {
+      "name": "ledger_coverage",
+      "pass": true
+    },
+    {
+      "name": "ledger_cell_ranges",
+      "pass": true
+    },
+    {
+      "name": "ledger_bounds_sums",
+      "pass": true
+    },
+    {
+      "name": "ledger_midpoint_radius",
+      "pass": true
+    },
+    {
+      "name": "completed_omitted_mass_check",
+      "pass": true
+    },
+    {
+      "name": "completed_radius_gate",
+      "pass": true
+    },
+    {
+      "name": "completed_output_gates",
+      "pass": true
+    },
+    {
+      "name": "completed_recorded_checks",
+      "pass": true
+    },
+    {
+      "name": "schedule_prefix",
+      "pass": true
+    },
+    {
+      "name": "bvh_complete_disjoint",
+      "pass": true
+    },
+    {
+      "name": "bvh_saved_node_partition",
+      "pass": true
+    },
+    {
+      "name": "bvh_charge_at_least_saved_nodes",
+      "pass": true
+    },
+    {
+      "name": "bvh_charge_budget",
+      "pass": true
+    },
+    {
+      "name": "geometry_saved_agreement",
+      "pass": true
+    },
+    {
+      "name": "empty_completed_paths",
+      "pass": true
+    },
+    {
+      "name": "source_mass_ledger_shape",
+      "pass": true
+    },
+    {
+      "name": "ledger_coverage",
+      "pass": true
+    },
+    {
+      "name": "ledger_cell_ranges",
+      "pass": true
+    },
+    {
+      "name": "ledger_bounds_sums",
+      "pass": true
+    },
+    {
+      "name": "ledger_midpoint_radius",
+      "pass": true
+    },
+    {
+      "name": "completed_omitted_mass_check",
+      "pass": true
+    },
+    {
+      "name": "completed_radius_gate",
+      "pass": true
+    },
+    {
+      "name": "completed_output_gates",
+      "pass": true
+    },
+    {
+      "name": "completed_recorded_checks",
+      "pass": true
+    },
+    {
+      "name": "schedule_prefix",
+      "pass": true
+    },
+    {
+      "name": "bvh_complete_disjoint",
+      "pass": true
+    },
+    {
+      "name": "bvh_saved_node_partition",
+      "pass": true
+    },
+    {
+      "name": "bvh_charge_at_least_saved_nodes",
+      "pass": true
+    },
+    {
+      "name": "bvh_charge_budget",
+      "pass": true
+    },
+    {
+      "name": "geometry_saved_agreement",
+      "pass": true
+    },
+    {
+      "name": "empty_completed_paths",
+      "pass": true
+    },
+    {
+      "name": "source_mass_ledger_shape",
+      "pass": true
+    },
+    {
+      "name": "ledger_coverage",
+      "pass": true
+    },
+    {
+      "name": "ledger_cell_ranges",
+      "pass": true
+    },
+    {
+      "name": "ledger_bounds_sums",
+      "pass": true
+    },
+    {
+      "name": "ledger_midpoint_radius",
+      "pass": true
+    },
+    {
+      "name": "completed_omitted_mass_check",
+      "pass": true
+    },
+    {
+      "name": "completed_radius_gate",
+      "pass": true
+    },
+    {
+      "name": "completed_output_gates",
+      "pass": true
+    },
+    {
+      "name": "completed_recorded_checks",
+      "pass": true
+    },
+    {
+      "name": "schedule_prefix",
+      "pass": true
+    },
+    {
+      "name": "bvh_complete_disjoint",
+      "pass": true
+    },
+    {
+      "name": "bvh_saved_node_partition",
+      "pass": true
+    },
+    {
+      "name": "bvh_charge_at_least_saved_nodes",
+      "pass": true
+    },
+    {
+      "name": "bvh_charge_budget",
+      "pass": true
+    },
+    {
+      "name": "geometry_saved_agreement",
+      "pass": true
+    },
+    {
+      "name": "empty_completed_paths",
+      "pass": true
+    },
+    {
+      "name": "source_mass_ledger_shape",
+      "pass": true
+    },
+    {
+      "name": "ledger_coverage",
+      "pass": true
+    },
+    {
+      "name": "ledger_cell_ranges",
+      "pass": true
+    },
+    {
+      "name": "ledger_bounds_sums",
+      "pass": true
+    },
+    {
+      "name": "ledger_midpoint_radius",
+      "pass": true
+    },
+    {
+      "name": "completed_omitted_mass_check",
+      "pass": true
+    },
+    {
+      "name": "completed_radius_gate",
+      "pass": true
+    },
+    {
+      "name": "completed_output_gates",
+      "pass": true
+    },
+    {
+      "name": "completed_recorded_checks",
+      "pass": true
+    },
+    {
+      "name": "schedule_prefix",
+      "pass": true
+    },
+    {
+      "name": "bvh_complete_disjoint",
+      "pass": true
+    },
+    {
+      "name": "bvh_saved_node_partition",
+      "pass": true
+    },
+    {
+      "name": "bvh_charge_at_least_saved_nodes",
+      "pass": true
+    },
+    {
+      "name": "bvh_charge_budget",
+      "pass": true
+    },
+    {
+      "name": "geometry_saved_agreement",
+      "pass": true
+    },
+    {
+      "name": "empty_completed_paths",
+      "pass": true
+    },
+    {
+      "name": "source_mass_ledger_shape",
+      "pass": true
+    },
+    {
+      "name": "ledger_coverage",
+      "pass": true
+    },
+    {
+      "name": "ledger_cell_ranges",
+      "pass": true
+    },
+    {
+      "name": "ledger_bounds_sums",
+      "pass": true
+    },
+    {
+      "name": "ledger_midpoint_radius",
+      "pass": true
+    },
+    {
+      "name": "completed_omitted_mass_check",
+      "pass": true
+    },
+    {
+      "name": "completed_radius_gate",
+      "pass": true
+    },
+    {
+      "name": "completed_output_gates",
+      "pass": true
+    },
+    {
+      "name": "completed_recorded_checks",
+      "pass": true
+    },
+    {
+      "name": "schedule_prefix",
+      "pass": true
+    },
+    {
+      "name": "bvh_complete_disjoint",
+      "pass": true
+    },
+    {
+      "name": "bvh_saved_node_partition",
+      "pass": true
+    },
+    {
+      "name": "bvh_charge_at_least_saved_nodes",
+      "pass": true
+    },
+    {
+      "name": "bvh_charge_budget",
+      "pass": true
+    },
+    {
+      "name": "geometry_saved_agreement",
+      "pass": true
+    },
+    {
+      "name": "empty_completed_paths",
+      "pass": true
+    },
+    {
+      "name": "source_mass_ledger_shape",
+      "pass": true
+    },
+    {
+      "name": "ledger_coverage",
+      "pass": true
+    },
+    {
+      "name": "ledger_cell_ranges",
+      "pass": true
+    },
+    {
+      "name": "ledger_bounds_sums",
+      "pass": true
+    },
+    {
+      "name": "ledger_midpoint_radius",
+      "pass": true
+    },
+    {
+      "name": "completed_omitted_mass_check",
+      "pass": true
+    },
+    {
+      "name": "completed_radius_gate",
+      "pass": true
+    },
+    {
+      "name": "completed_output_gates",
+      "pass": true
+    },
+    {
+      "name": "completed_recorded_checks",
+      "pass": true
+    },
+    {
+      "name": "schedule_prefix",
+      "pass": true
+    },
+    {
+      "name": "bvh_complete_disjoint",
+      "pass": true
+    },
+    {
+      "name": "bvh_saved_node_partition",
+      "pass": true
+    },
+    {
+      "name": "bvh_charge_at_least_saved_nodes",
+      "pass": true
+    },
+    {
+      "name": "bvh_charge_budget",
+      "pass": true
+    },
+    {
+      "name": "geometry_saved_agreement",
+      "pass": true
+    },
+    {
+      "name": "empty_completed_paths",
+      "pass": true
+    },
+    {
+      "name": "source_mass_ledger_shape",
+      "pass": true
+    },
+    {
+      "name": "ledger_coverage",
+      "pass": true
+    },
+    {
+      "name": "ledger_cell_ranges",
+      "pass": true
+    },
+    {
+      "name": "ledger_bounds_sums",
+      "pass": true
+    },
+    {
+      "name": "ledger_midpoint_radius",
+      "pass": true
+    },
+    {
+      "name": "completed_omitted_mass_check",
+      "pass": true
+    },
+    {
+      "name": "completed_radius_gate",
+      "pass": true
+    },
+    {
+      "name": "completed_output_gates",
+      "pass": true
+    },
+    {
+      "name": "completed_recorded_checks",
+      "pass": true
+    },
+    {
+      "name": "schedule_prefix",
+      "pass": true
+    },
+    {
+      "name": "bvh_complete_disjoint",
+      "pass": true
+    },
+    {
+      "name": "bvh_saved_node_partition",
+      "pass": true
+    },
+    {
+      "name": "bvh_charge_at_least_saved_nodes",
+      "pass": true
+    },
+    {
+      "name": "bvh_charge_budget",
+      "pass": true
+    },
+    {
+      "name": "geometry_saved_agreement",
+      "pass": true
+    },
+    {
+      "name": "empty_completed_paths",
+      "pass": true
+    },
+    {
+      "name": "source_mass_ledger_shape",
+      "pass": true
+    },
+    {
+      "name": "ledger_coverage",
+      "pass": true
+    },
+    {
+      "name": "ledger_cell_ranges",
+      "pass": true
+    },
+    {
+      "name": "ledger_bounds_sums",
+      "pass": true
+    },
+    {
+      "name": "ledger_midpoint_radius",
+      "pass": true
+    },
+    {
+      "name": "completed_omitted_mass_check",
+      "pass": true
+    },
+    {
+      "name": "completed_radius_gate",
+      "pass": true
+    },
+    {
+      "name": "completed_output_gates",
+      "pass": true
+    },
+    {
+      "name": "completed_recorded_checks",
+      "pass": true
+    },
+    {
+      "name": "schedule_prefix",
+      "pass": true
+    },
+    {
+      "name": "bvh_complete_disjoint",
+      "pass": true
+    },
+    {
+      "name": "bvh_saved_node_partition",
+      "pass": true
+    },
+    {
+      "name": "bvh_charge_at_least_saved_nodes",
+      "pass": true
+    },
+    {
+      "name": "bvh_charge_budget",
+      "pass": true
+    },
+    {
+      "name": "geometry_saved_agreement",
+      "pass": true
+    },
+    {
+      "name": "empty_completed_paths",
+      "pass": true
+    },
+    {
+      "name": "source_mass_ledger_shape",
+      "pass": true
+    },
+    {
+      "name": "ledger_coverage",
+      "pass": true
+    },
+    {
+      "name": "ledger_cell_ranges",
+      "pass": true
+    },
+    {
+      "name": "ledger_bounds_sums",
+      "pass": true
+    },
+    {
+      "name": "ledger_midpoint_radius",
+      "pass": true
+    },
+    {
+      "name": "completed_omitted_mass_check",
+      "pass": true
+    },
+    {
+      "name": "completed_radius_gate",
+      "pass": true
+    },
+    {
+      "name": "completed_output_gates",
+      "pass": true
+    },
+    {
+      "name": "completed_recorded_checks",
+      "pass": true
+    },
+    {
+      "name": "schedule_prefix",
+      "pass": true
+    },
+    {
+      "name": "bvh_complete_disjoint",
+      "pass": true
+    },
+    {
+      "name": "bvh_saved_node_partition",
+      "pass": true
+    },
+    {
+      "name": "bvh_charge_at_least_saved_nodes",
+      "pass": true
+    },
+    {
+      "name": "bvh_charge_budget",
+      "pass": true
+    },
+    {
+      "name": "geometry_saved_agreement",
+      "pass": true
+    },
+    {
+      "name": "empty_completed_paths",
+      "pass": true
+    },
+    {
+      "name": "source_mass_ledger_shape",
+      "pass": true
+    },
+    {
+      "name": "ledger_coverage",
+      "pass": true
+    },
+    {
+      "name": "ledger_cell_ranges",
+      "pass": true
+    },
+    {
+      "name": "ledger_bounds_sums",
+      "pass": true
+    },
+    {
+      "name": "ledger_midpoint_radius",
+      "pass": true
+    },
+    {
+      "name": "completed_omitted_mass_check",
+      "pass": true
+    },
+    {
+      "name": "completed_radius_gate",
+      "pass": true
+    },
+    {
+      "name": "completed_output_gates",
+      "pass": true
+    },
+    {
+      "name": "completed_recorded_checks",
+      "pass": true
+    },
+    {
+      "name": "failure_at_next_scheduled_ray",
+      "pass": true
+    },
+    {
+      "name": "failure_at_reference_cap",
+      "pass": true
+    },
+    {
+      "name": "bvh_complete_disjoint",
+      "pass": true
+    },
+    {
+      "name": "bvh_saved_node_partition",
+      "pass": true
+    },
+    {
+      "name": "bvh_charge_at_least_saved_nodes",
+      "pass": true
+    },
+    {
+      "name": "bvh_charge_budget",
+      "pass": true
+    },
+    {
+      "name": "ledger_coverage",
+      "pass": true
+    },
+    {
+      "name": "ledger_cell_ranges",
+      "pass": true
+    },
+    {
+      "name": "ledger_absorption_sum",
+      "pass": true
+    },
+    {
+      "name": "ledger_bounds_sums",
+      "pass": true
+    },
+    {
+      "name": "ledger_midpoint_radius",
+      "pass": true
+    },
+    {
+      "name": "failure_cell_count_identities",
+      "pass": true
+    },
+    {
+      "name": "reference_radius_failed",
+      "pass": true
+    },
+    {
+      "name": "failure_not_ordinary_solver_error",
+      "pass": true
+    },
+    {
+      "name": "counter_and_receipt_agreement",
+      "pass": true
+    },
+    {
+      "name": "stdout_identity",
+      "pass": true
+    },
+    {
+      "name": "stderr_identity",
+      "pass": true
+    },
+    {
+      "name": "stdout_receipt_same",
+      "pass": true
+    },
+    {
+      "name": "failed_full_ledger_shape",
+      "pass": true
+    },
+    {
+      "name": "failed_retained_projection_provenance",
+      "pass": true
+    },
+    {
+      "name": "failed_positive_retained_widths",
+      "pass": true
+    },
+    {
+      "name": "failed_saved_pruning_mass_gate",
+      "pass": true
+    },
+    {
+      "name": "failed_reference_charge_accounting",
+      "pass": true
+    },
+    {
+      "name": "failed_reference_charge_channel_envelope",
+      "pass": true
+    },
+    {
+      "name": "completed_saved_alphas_below_coverage",
+      "pass": true
+    }
+  ],
+  "completed_records": [
+    {
+      "index": 1,
+      "i": 16,
+      "j": 16,
+      "path": "computed_zero_mass",
+      "reference_path": "empty",
+      "all_saved_arithmetic_gates_pass": true,
+      "endpoint_distances": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "alpha_distance": 0.0,
+      "output_endpoint_gate_arithmetic": true,
+      "alpha_gate_arithmetic": true,
+      "leaf_count": 0,
+      "domain_covered": true,
+      "absorption_sum_error": null,
+      "lower_sum_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "upper_sum_errors": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 2,
+      "i": 48,
+      "j": 16,
+      "path": "computed_zero_mass",
+      "reference_path": "empty",
+      "all_saved_arithmetic_gates_pass": true,
+      "endpoint_distances": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "alpha_distance": 0.0,
+      "output_endpoint_gate_arithmetic": true,
+      "alpha_gate_arithmetic": true,
+      "leaf_count": 0,
+      "domain_covered": true,
+      "absorption_sum_error": null,
+      "lower_sum_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "upper_sum_errors": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 3,
+      "i": 80,
+      "j": 16,
+      "path": "computed_zero_mass",
+      "reference_path": "empty",
+      "all_saved_arithmetic_gates_pass": true,
+      "endpoint_distances": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "alpha_distance": 0.0,
+      "output_endpoint_gate_arithmetic": true,
+      "alpha_gate_arithmetic": true,
+      "leaf_count": 0,
+      "domain_covered": true,
+      "absorption_sum_error": null,
+      "lower_sum_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "upper_sum_errors": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 4,
+      "i": 112,
+      "j": 16,
+      "path": "computed_zero_mass",
+      "reference_path": "empty",
+      "all_saved_arithmetic_gates_pass": true,
+      "endpoint_distances": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "alpha_distance": 0.0,
+      "output_endpoint_gate_arithmetic": true,
+      "alpha_gate_arithmetic": true,
+      "leaf_count": 0,
+      "domain_covered": true,
+      "absorption_sum_error": null,
+      "lower_sum_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "upper_sum_errors": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 5,
+      "i": 144,
+      "j": 16,
+      "path": "computed_zero_mass",
+      "reference_path": "empty",
+      "all_saved_arithmetic_gates_pass": true,
+      "endpoint_distances": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "alpha_distance": 0.0,
+      "output_endpoint_gate_arithmetic": true,
+      "alpha_gate_arithmetic": true,
+      "leaf_count": 0,
+      "domain_covered": true,
+      "absorption_sum_error": null,
+      "lower_sum_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "upper_sum_errors": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 6,
+      "i": 176,
+      "j": 16,
+      "path": "computed_zero_mass",
+      "reference_path": "empty",
+      "all_saved_arithmetic_gates_pass": true,
+      "endpoint_distances": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "alpha_distance": 0.0,
+      "output_endpoint_gate_arithmetic": true,
+      "alpha_gate_arithmetic": true,
+      "leaf_count": 0,
+      "domain_covered": true,
+      "absorption_sum_error": null,
+      "lower_sum_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "upper_sum_errors": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 7,
+      "i": 208,
+      "j": 16,
+      "path": "computed_zero_mass",
+      "reference_path": "empty",
+      "all_saved_arithmetic_gates_pass": true,
+      "endpoint_distances": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "alpha_distance": 0.0,
+      "output_endpoint_gate_arithmetic": true,
+      "alpha_gate_arithmetic": true,
+      "leaf_count": 0,
+      "domain_covered": true,
+      "absorption_sum_error": null,
+      "lower_sum_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "upper_sum_errors": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 8,
+      "i": 240,
+      "j": 16,
+      "path": "computed_zero_mass",
+      "reference_path": "empty",
+      "all_saved_arithmetic_gates_pass": true,
+      "endpoint_distances": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "alpha_distance": 0.0,
+      "output_endpoint_gate_arithmetic": true,
+      "alpha_gate_arithmetic": true,
+      "leaf_count": 0,
+      "domain_covered": true,
+      "absorption_sum_error": null,
+      "lower_sum_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "upper_sum_errors": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 9,
+      "i": 16,
+      "j": 48,
+      "path": "computed_zero_mass",
+      "reference_path": "empty",
+      "all_saved_arithmetic_gates_pass": true,
+      "endpoint_distances": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "alpha_distance": 0.0,
+      "output_endpoint_gate_arithmetic": true,
+      "alpha_gate_arithmetic": true,
+      "leaf_count": 0,
+      "domain_covered": true,
+      "absorption_sum_error": null,
+      "lower_sum_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "upper_sum_errors": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 10,
+      "i": 48,
+      "j": 48,
+      "path": "computed_zero_mass",
+      "reference_path": "empty",
+      "all_saved_arithmetic_gates_pass": true,
+      "endpoint_distances": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "alpha_distance": 0.0,
+      "output_endpoint_gate_arithmetic": true,
+      "alpha_gate_arithmetic": true,
+      "leaf_count": 0,
+      "domain_covered": true,
+      "absorption_sum_error": null,
+      "lower_sum_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "upper_sum_errors": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 11,
+      "i": 80,
+      "j": 48,
+      "path": "computed_zero_mass",
+      "reference_path": "empty",
+      "all_saved_arithmetic_gates_pass": true,
+      "endpoint_distances": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "alpha_distance": 0.0,
+      "output_endpoint_gate_arithmetic": true,
+      "alpha_gate_arithmetic": true,
+      "leaf_count": 0,
+      "domain_covered": true,
+      "absorption_sum_error": null,
+      "lower_sum_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "upper_sum_errors": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 12,
+      "i": 112,
+      "j": 48,
+      "path": "computed_zero_mass",
+      "reference_path": "empty",
+      "all_saved_arithmetic_gates_pass": true,
+      "endpoint_distances": [
+        7.338489825501557e-193,
+        6.90771031134416e-193,
+        5.945128126898449e-193
+      ],
+      "alpha_distance": 3.1577831205518485e-193,
+      "output_endpoint_gate_arithmetic": true,
+      "alpha_gate_arithmetic": true,
+      "leaf_count": 0,
+      "domain_covered": true,
+      "absorption_sum_error": null,
+      "lower_sum_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "upper_sum_errors": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 13,
+      "i": 144,
+      "j": 48,
+      "path": "computed_zero_mass",
+      "reference_path": "empty",
+      "all_saved_arithmetic_gates_pass": true,
+      "endpoint_distances": [
+        1.8669413847964836e-195,
+        1.7573493404077045e-195,
+        1.5124645535998583e-195
+      ],
+      "alpha_distance": 8.033527513362875e-196,
+      "output_endpoint_gate_arithmetic": true,
+      "alpha_gate_arithmetic": true,
+      "leaf_count": 0,
+      "domain_covered": true,
+      "absorption_sum_error": null,
+      "lower_sum_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "upper_sum_errors": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 14,
+      "i": 176,
+      "j": 48,
+      "path": "computed_zero_mass",
+      "reference_path": "empty",
+      "all_saved_arithmetic_gates_pass": true,
+      "endpoint_distances": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "alpha_distance": 0.0,
+      "output_endpoint_gate_arithmetic": true,
+      "alpha_gate_arithmetic": true,
+      "leaf_count": 0,
+      "domain_covered": true,
+      "absorption_sum_error": null,
+      "lower_sum_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "upper_sum_errors": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 15,
+      "i": 208,
+      "j": 48,
+      "path": "computed_zero_mass",
+      "reference_path": "empty",
+      "all_saved_arithmetic_gates_pass": true,
+      "endpoint_distances": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "alpha_distance": 0.0,
+      "output_endpoint_gate_arithmetic": true,
+      "alpha_gate_arithmetic": true,
+      "leaf_count": 0,
+      "domain_covered": true,
+      "absorption_sum_error": null,
+      "lower_sum_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "upper_sum_errors": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "index": 16,
+      "i": 240,
+      "j": 48,
+      "path": "computed_zero_mass",
+      "reference_path": "empty",
+      "all_saved_arithmetic_gates_pass": true,
+      "endpoint_distances": [
+        6.274630578616673e-298,
+        5.906301075347394e-298,
+        5.083264217278045e-298
+      ],
+      "alpha_distance": 0.0,
+      "output_endpoint_gate_arithmetic": true,
+      "alpha_gate_arithmetic": true,
+      "leaf_count": 0,
+      "domain_covered": true,
+      "absorption_sum_error": null,
+      "lower_sum_errors": [
+        0.0,
+        0.0,
+        0.0
+      ],
+      "upper_sum_errors": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "failure": {
+    "stage": "reference_enclosure",
+    "ray": {
+      "frame": 90,
+      "view_id": "front",
+      "i": 132,
+      "j": 73
+    },
+    "reference_created_cells": 8191,
+    "initial_segments": 141,
+    "refinements": 4025,
+    "reference_radius": [
+      0.0003317207355572338,
+      7.603933595447948e-05,
+      1.073370175794057e-05
+    ],
+    "reference_radius_limit": 0.0001,
+    "max_depth": 8,
+    "reference_retained_count": 28,
+    "ordinary_retained_count": 34,
+    "reference_omission_mass_bound": 5.400927096589486e-14,
+    "reference_lower": [
+      0.1889484565651139,
+      0.042999098820666555,
+      0.006082059173744056
+    ],
+    "reference_upper": [
+      0.18961189803622833,
+      0.043151177492575514,
+      0.006103526577259937
+    ],
+    "ordinary_rgb": [
+      0.18927751611345842,
+      0.043074561765932266,
+      0.006092713879154582
+    ],
+    "ordinary_path": "gl_no_fallback",
+    "ordinary_gl_order": 8,
+    "ordinary_empirical_difference": [
+      1.6736612096224235e-14,
+      3.760880495917718e-15,
+      5.35162192338845e-16
+    ],
+    "leaf_count": 4166,
+    "domain_covered": true,
+    "absorption_sum_error": 2.8775073846640744e-17,
+    "lower_sum_errors": [
+      2.3910606188691646e-18,
+      5.524869401368046e-18,
+      1.1303028837663355e-19
+    ],
+    "upper_sum_errors": [
+      3.637173896433331e-18,
+      1.1692715924428135e-18,
+      4.539938068908537e-19
+    ],
+    "endpoint_distances": [
+      0.00033438192276991074,
+      7.661572664324767e-05,
+      1.0812698105354575e-05
+    ],
+    "alpha_distance": 2.3229251577827625e-09,
+    "output_endpoint_gate_arithmetic": true,
+    "alpha_gate_arithmetic": true,
+    "endpoint_arithmetic_does_not_override_reference_radius_failure": true,
+    "actual_ordinary_omitted_mass": 2.889072074512326e-09,
+    "ordinary_mass_bound": 6.4653559743036e-06,
+    "reference_omitted_count": 242
+  },
+  "coverage": {
+    "completed_rays": 16,
+    "constructed_groups": 1,
+    "completed_groups": 0,
+    "planned_rays_in_constructed_group": 56,
+    "qualified_nontrivial_rays": 0,
+    "qualified_mixed_rays": 0,
+    "completed_max_full_alpha": 3.1577831205518485e-193,
+    "failed_ray_has_nontrivial_saved_alpha": true
+  },
+  "budgets": {
+    "worker_computation_seconds": 0.9825742,
+    "supervisor_seconds": 1.3827239000238478,
+    "computation_limit_seconds": 180,
+    "outer_limit_seconds": 210,
+    "timed_out": false,
+    "single_attempt": true
+  },
+  "limitations": [
+    "No new Gaussian projection/CDF/exponential/integrand evaluation; saved alpha-versus-mass transcendental relation not recomputed.",
+    "Leaf density-bound formulas were statically reviewed; this audit checks their saved sums/coverage, not new per-cell density extrema.",
+    "The failed ordinary output is not qualified under frozen T32 despite endpoint arithmetic passing."
+  ],
+  "path_python_alias_attempt": "PATH python was a Store alias and launched no interpreter; audit then used root-specified existing interpreter.",
+  "post_result_claim_review": {
+    "documents": [
+      {
+        "path": "tracks/tog/tasks/t32-ordinary-volume-entry/README.md",
+        "bytes": 5717,
+        "sha256": "ee28f6b8cc4057e6f1c61ff8beb446a67186e09b4fb92ff3c86f625877b63059"
+      },
+      {
+        "path": "tracks/tog/tasks/t32-ordinary-volume-entry/STOPPING_CONTRACT.md",
+        "bytes": 4740,
+        "sha256": "73189f17cf35af5f6b8dad1712126f1b3c1a36fbf332c7f7918c63a693c727fd"
+      },
+      {
+        "path": "tracks/tog/tasks/t32-ordinary-volume-entry/NEXT_EVIDENCE.md",
+        "bytes": 4259,
+        "sha256": "d01de0dcd92fe01653a592c37dbb195dc53a3835f417208d218a3e8d7a86d0b3"
+      }
+    ],
+    "review_kind": "Read-only claim and mathematical stopping-contract review; no new scientific evaluation.",
+    "blocking_findings": [],
+    "endpoint_rule": "For a true enclosure L <= C <= U and a fixed output g, max(abs(g-L),abs(g-U)) bounds abs(g-C). Containment is sufficient; strict disjointness demonstrates inaccuracy; other overlap is inconclusive.",
+    "independence": "The output is fixed before reference evaluation and may affect only stopping. Projection, retention, omission charges, bounds, initial partition, heap priority and splitting remain independent of the output.",
+    "historical_status_preserved": true,
+    "binary64_limit_preserved": true,
+    "next_task": "Stopping-contract analysis is complete. Any successor is one separately named, reviewed and frozen result-informed output-accuracy qualification on the identical authored fields and geometry subset, with unchanged budgets and all other gates. It is not held-out confirmation, a T32 retry, an expanded workload, or an authorized execution within this audit.",
+    "anti_selection_conditions": [
+      "No replaced samples or new field, seed, frame or view.",
+      "No tolerance or cap increase; no new density or color envelope.",
+      "First failed gate or unresolved budget stops; no repair-and-run retry.",
+      "Actual interval widths and cumulative failed attempts remain reported.",
+      "An ordinary pass only qualifies the fixed subset and cannot establish novelty or production demand."
+    ],
+    "scientific_evaluations_added": 0
+  }
+}
