@@ -1,0 +1,125 @@
+{
+  "schema": "t37-independent-literal-storage-test-v1",
+  "passed": true,
+  "test_count": 23,
+  "failure_count": 0,
+  "tests": [
+    {
+      "name": "unique_independent_schema",
+      "passed": true
+    },
+    {
+      "name": "literal_positional_HDR_roundtrip",
+      "passed": true
+    },
+    {
+      "name": "reject_missing_field",
+      "passed": true
+    },
+    {
+      "name": "reject_ambiguous_extra_alias",
+      "passed": true
+    },
+    {
+      "name": "reject_bool_float",
+      "passed": true
+    },
+    {
+      "name": "reject_NaN_float",
+      "passed": true
+    },
+    {
+      "name": "reject_infinite_float",
+      "passed": true
+    },
+    {
+      "name": "reject_bool_integer",
+      "passed": true
+    },
+    {
+      "name": "reject_float_integer",
+      "passed": true
+    },
+    {
+      "name": "reject_negative_integer",
+      "passed": true
+    },
+    {
+      "name": "reject_overflow_integer",
+      "passed": true
+    },
+    {
+      "name": "reject_decode_length_0",
+      "passed": true
+    },
+    {
+      "name": "reject_decode_length_119",
+      "passed": true
+    },
+    {
+      "name": "reject_decode_length_121",
+      "passed": true
+    },
+    {
+      "name": "reject_nonfinite_saved_payload",
+      "passed": true
+    },
+    {
+      "name": "three_classes_and_literal_threshold_boundaries",
+      "passed": true
+    },
+    {
+      "name": "actual_black_HDR_roundtrip_and_unfinished_two_arms",
+      "passed": true
+    },
+    {
+      "name": "actual_saved_blue_equals_far_rejected",
+      "passed": true
+    },
+    {
+      "name": "actual_saved_forged_class_rejected",
+      "passed": true
+    },
+    {
+      "name": "complete_two_arm_three_class_literal_accounting",
+      "passed": true
+    },
+    {
+      "name": "nonphysical_literal_alpha_joint_veto",
+      "passed": true
+    },
+    {
+      "name": "failed_marker_and_source_extent_rejection",
+      "passed": true
+    },
+    {
+      "name": "sources_unchanged",
+      "passed": true
+    }
+  ],
+  "source_sha256_before": {
+    "evidence.py": "00203688d29221f04461b22ccd157422d2e7b3aeb1c3980fe2d6f27850abdda5",
+    "test_contract.py": "d4f11560d86e140077aa082e7bfa53fdd71d7a89c61ebe2fd25b643e25f06b81"
+  },
+  "source_sha256_after": {
+    "evidence.py": "00203688d29221f04461b22ccd157422d2e7b3aeb1c3980fe2d6f27850abdda5",
+    "test_contract.py": "d4f11560d86e140077aa082e7bfa53fdd71d7a89c61ebe2fd25b643e25f06b81"
+  },
+  "temporary_directory_cleaned": true,
+  "temporary_files_inside_scientific_run": false,
+  "scientific_evaluations": 0,
+  "methods_imports": 0,
+  "scene_imports": 0,
+  "kernel_imports": 0,
+  "projection_imports": 0,
+  "quadrature_imports": 0,
+  "reference_imports": 0,
+  "persistence_scalar_alpha_consistency_check": true,
+  "nonphysical_literal_alpha_branch": true,
+  "sentinel_dimensions": [
+    3,
+    1
+  ],
+  "sentinel_arms": 2,
+  "elapsed_seconds": 0.09432909998577088
+}

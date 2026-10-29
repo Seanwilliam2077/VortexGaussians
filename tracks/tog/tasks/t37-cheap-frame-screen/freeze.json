@@ -1,0 +1,158 @@
+{
+  "schema": "t37-input-freeze-v1",
+  "created_utc": "2026-10-29T18:22:38.974910+00:00",
+  "parent_commit": "1d8043c493f392d2bdd59a1a1567516470028af8",
+  "prior_turn_classification": "progress: T36 new complete RGB delivery qualified; narrow workload and scalar-cost limits identified",
+  "artifacts": [
+    {
+      "path": "tracks/tog/tasks/t37-cheap-frame-screen/PROTOCOL.md",
+      "bytes": 9353,
+      "sha256": "3caa06acb65d097e51021f7ed20a176cc84eb4123a07f21b710143f4caf3824a"
+    },
+    {
+      "path": "tracks/tog/tasks/t37-cheap-frame-screen/evidence.py",
+      "bytes": 12038,
+      "sha256": "00203688d29221f04461b22ccd157422d2e7b3aeb1c3980fe2d6f27850abdda5"
+    },
+    {
+      "path": "tracks/tog/tasks/t37-cheap-frame-screen/methods.py",
+      "bytes": 7365,
+      "sha256": "27832a89b286a4e1c1c587b7da4ce31e666200cd08fb893e360f315f4731cd76"
+    },
+    {
+      "path": "tracks/tog/tasks/t37-cheap-frame-screen/run.py",
+      "bytes": 24131,
+      "sha256": "f8c8fbbbf33660c7939031142562cefdd6b0c2d3497fa285dffbfa3eb4d3d629"
+    },
+    {
+      "path": "tracks/tog/tasks/t37-cheap-frame-screen/supervise.py",
+      "bytes": 6980,
+      "sha256": "0961329dfaac5fd4cedc6a3d58fe611110470882f39a79d91919d5cef42cd0da"
+    },
+    {
+      "path": "tracks/tog/tasks/t37-cheap-frame-screen/test_contract.py",
+      "bytes": 18259,
+      "sha256": "d4f11560d86e140077aa082e7bfa53fdd71d7a89c61ebe2fd25b643e25f06b81"
+    },
+    {
+      "path": "tracks/validation/t37-storage-test.json",
+      "bytes": 2880,
+      "sha256": "b15951dda1dbab0aaba79950a99ff64449ff39ddfc289f0291970ad897cf28ba"
+    },
+    {
+      "path": "tracks/validation/t37-pre-execution-review.md",
+      "bytes": 5228,
+      "sha256": "3b79be791a3b32cdf223ea9172de4752130c827a86b1f28c025fcef93609fa2a"
+    },
+    {
+      "path": "tracks/tog/tasks/t36-ordinary-output-replay/NEXT_ENTRY.md",
+      "bytes": 6200,
+      "sha256": "c7a5257170bad4d6d0fd28c61593300dd5c25a3cf43c4307fad6e8b38e3697d6"
+    },
+    {
+      "path": "tracks/tog/tasks/t35-first-complete-frame/run-01/pixels.bin.gz",
+      "bytes": 3036056,
+      "sha256": "e19dde61545fb792ec50cf9e815d4626943acc78704cba6d9a48d7965dc3c835"
+    },
+    {
+      "path": "tracks/tog/tasks/t35-first-complete-frame/run-01/leaves.bin.gz",
+      "bytes": 11953225,
+      "sha256": "b2beefb4133db39870668dca98dd9e26659008af30933adfdd0605e3dc0557b8"
+    },
+    {
+      "path": "tracks/tog/tasks/t35-first-complete-frame/run-01/frame.json",
+      "bytes": 1031,
+      "sha256": "c6303307488b87409c4727a3c932fb955ccf6726ad99726a2d2304342ef840d4"
+    },
+    {
+      "path": "tracks/tog/tasks/t35-first-complete-frame/run-01/result.json",
+      "bytes": 7797,
+      "sha256": "ab9cbbb13b3d8c2f5bdd22e22a2be5d8e86653b1b3e8babceed77687447a3c06"
+    },
+    {
+      "path": "tracks/tog/tasks/t35-first-complete-frame/run-01/execution.json",
+      "bytes": 1563,
+      "sha256": "9969059e92c3e13b43a52db9d47d5b698bea97eb56d4d5750e3e115124076541"
+    },
+    {
+      "path": "tracks/validation/t35-saved-result-review.md",
+      "bytes": 7469,
+      "sha256": "072ee5a98f4c2d198eaae0dcd1603e57e9f6503d5dd30517b228cd9e009268e6"
+    },
+    {
+      "path": "tracks/validation/t35-saved-result-audit.json",
+      "bytes": 22656,
+      "sha256": "d4511d7720466c6f7cf0cc4b45c5e78308d9dce84d92d3951753b1bf10442fbb"
+    },
+    {
+      "path": "tracks/tog/tasks/t36-ordinary-output-replay/run-01/pixels.bin.gz",
+      "bytes": 1212661,
+      "sha256": "0450c3ffee1b8d9a4afad17ff1467c0e1f8e9cbee6418b8f8933bb9d7990d3e6"
+    },
+    {
+      "path": "tracks/tog/tasks/t36-ordinary-output-replay/run-01/frame.json",
+      "bytes": 1168,
+      "sha256": "88e912fe19d5f76cabc885fe985fa7c4309b562d4b2ca15d90747ca31cc46120"
+    },
+    {
+      "path": "tracks/tog/tasks/t36-ordinary-output-replay/run-01/result.json",
+      "bytes": 6264,
+      "sha256": "059211acdd10f6b0db16ca6d100ae3344985e063aad2fa1ac0a2bf5ef8fefee2"
+    },
+    {
+      "path": "tracks/tog/tasks/t36-ordinary-output-replay/run-01/execution.json",
+      "bytes": 1565,
+      "sha256": "a0594adfb1b2d1fb9b0453dcb2db42b4c30ce376a12a65f5c2ba5e3e8ae24d83"
+    },
+    {
+      "path": "tracks/validation/t36-saved-output-review.md",
+      "bytes": 5194,
+      "sha256": "b0a3a14f98a9fcec7fd5612568cbca9330a81dce3b9cc21959146eef8f1397d7"
+    },
+    {
+      "path": "tracks/validation/t36-saved-output-audit.json",
+      "bytes": 11838,
+      "sha256": "1d42666adde6dd9886e0cd67309314f510074237616b59e217865256f5d8ede5"
+    },
+    {
+      "path": "tracks/tog/tasks/t32-ordinary-volume-entry/adapter.py",
+      "bytes": 11851,
+      "sha256": "e6da5219af1b8b1b7abf6f6b9555783fb846ebf740c0d1ed33f8dee4a8a9405c"
+    },
+    {
+      "path": "tracks/tog/tasks/t22-prefix-complete-cost/integrators.py",
+      "bytes": 16091,
+      "sha256": "94c6ab6748c42c40c8446ec5af01adf3b7b4ff66a6a45f7f9aba26bc651113af"
+    },
+    {
+      "path": "tracks/tog/tasks/t31-local-carrier/MODEL.md",
+      "bytes": 3652,
+      "sha256": "2fb5315f175f058509080fb4ba09b0e77ecac75206b7325662766adf88f66814"
+    },
+    {
+      "path": "tracks/tog/tasks/t31-local-carrier/run-01/carrier.json.gz",
+      "bytes": 58581,
+      "sha256": "39f4dc758bb790f3b88bb2bbfa65dbe469c030289d4237476f598e29b823dcf2"
+    }
+  ],
+  "invocation_limit": 1,
+  "pre_freeze_scientific_invocations": 0,
+  "structural_test_report": "tracks/validation/t37-storage-test.json",
+  "width": 256,
+  "height": 192,
+  "frame": 90,
+  "view": "front",
+  "arms": [
+    "sorted",
+    "mixture"
+  ],
+  "record_order": "arm-major then row-major",
+  "planned_records": 98304,
+  "computation_cap_seconds": 60,
+  "outer_wait_seconds": 90,
+  "cleanup_seconds": 10,
+  "raw_numeric_cap": 16777216,
+  "reference_evaluations_allowed": 0,
+  "GL_evaluations_allowed": 0,
+  "T35_delivery_status_preserved": "failed_saved_blue_alias"
+}
