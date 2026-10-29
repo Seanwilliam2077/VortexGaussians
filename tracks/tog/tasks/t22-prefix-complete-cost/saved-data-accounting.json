@@ -1,0 +1,478 @@
+{
+  "schema": "t22-saved-data-accounting-v1",
+  "source_results_sha256": "b1e2863098e17d5c975b863f52f582042769e1dc7676df3c7cad7439e3500bd0",
+  "stage_summary": {
+    "A": {
+      "records": 192,
+      "all_passed": true,
+      "max_error_by_epsilon": {
+        "0.001": 0.0004781433874791463,
+        "0.01": 0.0073995006561309445
+      },
+      "actual_delivery_ns": 606077600,
+      "stage_wall_ns": 616899300
+    },
+    "B": {
+      "records": 3456,
+      "all_passed": true,
+      "max_error_by_epsilon": {
+        "0.001": 0.0006010194764183296,
+        "0.01": 0.0073995006561309445
+      },
+      "actual_delivery_ns": 10913789600,
+      "stage_wall_ns": 11125326000
+    }
+  },
+  "whole_batches": {
+    "gl": {
+      "initial_rule_use_ns": 302750600,
+      "five_subsequent_batches": {
+        "count": 5,
+        "samples_ns": [
+          303111800,
+          303489800,
+          304790000,
+          305927300,
+          306566100
+        ],
+        "min_ns": 303111800,
+        "max_ns": 306566100,
+        "median_ns": 304790000,
+        "sum_ns": 1523885000
+      }
+    },
+    "tail": {
+      "initial_rule_use_ns": 303163400,
+      "five_subsequent_batches": {
+        "count": 5,
+        "samples_ns": [
+          304093800,
+          304836200,
+          305011600,
+          307168300,
+          307796600
+        ],
+        "min_ns": 304093800,
+        "max_ns": 307796600,
+        "median_ns": 305011600,
+        "sum_ns": 1528906500
+      }
+    },
+    "signed_simple": {
+      "initial_rule_use_ns": 299989100,
+      "five_subsequent_batches": {
+        "count": 5,
+        "samples_ns": [
+          301757300,
+          300611700,
+          304269000,
+          302021700,
+          306098900
+        ],
+        "min_ns": 300611700,
+        "max_ns": 306098900,
+        "median_ns": 302021700,
+        "sum_ns": 1514758600
+      }
+    },
+    "signed_jensen": {
+      "initial_rule_use_ns": 299578000,
+      "five_subsequent_batches": {
+        "count": 5,
+        "samples_ns": [
+          300959100,
+          305496800,
+          301276800,
+          308578300,
+          303452300
+        ],
+        "min_ns": 300959100,
+        "max_ns": 308578300,
+        "median_ns": 303452300,
+        "sum_ns": 1519763300
+      }
+    },
+    "prefix_simple": {
+      "initial_rule_use_ns": 299005600,
+      "five_subsequent_batches": {
+        "count": 5,
+        "samples_ns": [
+          301229100,
+          305340300,
+          300683300,
+          306864900,
+          303191700
+        ],
+        "min_ns": 300683300,
+        "max_ns": 306864900,
+        "median_ns": 303191700,
+        "sum_ns": 1517309300
+      }
+    },
+    "prefix_jensen": {
+      "initial_rule_use_ns": 299774900,
+      "five_subsequent_batches": {
+        "count": 5,
+        "samples_ns": [
+          300628900,
+          298357300,
+          300053300,
+          302652100,
+          303213700
+        ],
+        "min_ns": 298357300,
+        "max_ns": 303213700,
+        "median_ns": 300628900,
+        "sum_ns": 1504905300
+      }
+    }
+  },
+  "epsilon_batches": [
+    {
+      "epsilon": 0.001,
+      "arm": "gl",
+      "initial_rule_use_ns": 150245300,
+      "five_subsequent_batches": {
+        "count": 5,
+        "samples_ns": [
+          151892600,
+          152500000,
+          152484600,
+          153801700,
+          154867800
+        ],
+        "min_ns": 151892600,
+        "max_ns": 154867800,
+        "median_ns": 152500000,
+        "sum_ns": 765546700
+      }
+    },
+    {
+      "epsilon": 0.001,
+      "arm": "tail",
+      "initial_rule_use_ns": 152229500,
+      "five_subsequent_batches": {
+        "count": 5,
+        "samples_ns": [
+          153124200,
+          153604200,
+          153433400,
+          154848800,
+          155811500
+        ],
+        "min_ns": 153124200,
+        "max_ns": 155811500,
+        "median_ns": 153604200,
+        "sum_ns": 770822100
+      }
+    },
+    {
+      "epsilon": 0.001,
+      "arm": "signed_simple",
+      "initial_rule_use_ns": 151411400,
+      "five_subsequent_batches": {
+        "count": 5,
+        "samples_ns": [
+          151982500,
+          151184800,
+          154840000,
+          152841900,
+          155769100
+        ],
+        "min_ns": 151184800,
+        "max_ns": 155769100,
+        "median_ns": 152841900,
+        "sum_ns": 766618300
+      }
+    },
+    {
+      "epsilon": 0.001,
+      "arm": "signed_jensen",
+      "initial_rule_use_ns": 150300500,
+      "five_subsequent_batches": {
+        "count": 5,
+        "samples_ns": [
+          152546200,
+          155259400,
+          152301700,
+          158676900,
+          153592800
+        ],
+        "min_ns": 152301700,
+        "max_ns": 158676900,
+        "median_ns": 153592800,
+        "sum_ns": 772377000
+      }
+    },
+    {
+      "epsilon": 0.001,
+      "arm": "prefix_simple",
+      "initial_rule_use_ns": 150788100,
+      "five_subsequent_batches": {
+        "count": 5,
+        "samples_ns": [
+          151973700,
+          156225400,
+          152494000,
+          158518700,
+          155393100
+        ],
+        "min_ns": 151973700,
+        "max_ns": 158518700,
+        "median_ns": 155393100,
+        "sum_ns": 774604900
+      }
+    },
+    {
+      "epsilon": 0.001,
+      "arm": "prefix_jensen",
+      "initial_rule_use_ns": 150754300,
+      "five_subsequent_batches": {
+        "count": 5,
+        "samples_ns": [
+          152395400,
+          152104700,
+          152953000,
+          153681500,
+          153726200
+        ],
+        "min_ns": 152104700,
+        "max_ns": 153726200,
+        "median_ns": 152953000,
+        "sum_ns": 764860800
+      }
+    },
+    {
+      "epsilon": 0.01,
+      "arm": "gl",
+      "initial_rule_use_ns": 152505300,
+      "five_subsequent_batches": {
+        "count": 5,
+        "samples_ns": [
+          151219200,
+          150989800,
+          152305400,
+          152125600,
+          151698300
+        ],
+        "min_ns": 150989800,
+        "max_ns": 152305400,
+        "median_ns": 151698300,
+        "sum_ns": 758338300
+      }
+    },
+    {
+      "epsilon": 0.01,
+      "arm": "tail",
+      "initial_rule_use_ns": 150933900,
+      "five_subsequent_batches": {
+        "count": 5,
+        "samples_ns": [
+          150969600,
+          151232000,
+          151578200,
+          152319500,
+          151985100
+        ],
+        "min_ns": 150969600,
+        "max_ns": 152319500,
+        "median_ns": 151578200,
+        "sum_ns": 758084400
+      }
+    },
+    {
+      "epsilon": 0.01,
+      "arm": "signed_simple",
+      "initial_rule_use_ns": 148577700,
+      "five_subsequent_batches": {
+        "count": 5,
+        "samples_ns": [
+          149774800,
+          149426900,
+          149429000,
+          149179800,
+          150329800
+        ],
+        "min_ns": 149179800,
+        "max_ns": 150329800,
+        "median_ns": 149429000,
+        "sum_ns": 748140300
+      }
+    },
+    {
+      "epsilon": 0.01,
+      "arm": "signed_jensen",
+      "initial_rule_use_ns": 149277500,
+      "five_subsequent_batches": {
+        "count": 5,
+        "samples_ns": [
+          148412900,
+          150237400,
+          148975100,
+          149901400,
+          149859500
+        ],
+        "min_ns": 148412900,
+        "max_ns": 150237400,
+        "median_ns": 149859500,
+        "sum_ns": 747386300
+      }
+    },
+    {
+      "epsilon": 0.01,
+      "arm": "prefix_simple",
+      "initial_rule_use_ns": 148217500,
+      "five_subsequent_batches": {
+        "count": 5,
+        "samples_ns": [
+          149255400,
+          149114900,
+          148189300,
+          148346200,
+          147798600
+        ],
+        "min_ns": 147798600,
+        "max_ns": 149255400,
+        "median_ns": 148346200,
+        "sum_ns": 742704400
+      }
+    },
+    {
+      "epsilon": 0.01,
+      "arm": "prefix_jensen",
+      "initial_rule_use_ns": 149020600,
+      "five_subsequent_batches": {
+        "count": 5,
+        "samples_ns": [
+          148233500,
+          146252600,
+          147100300,
+          148970600,
+          149487500
+        ],
+        "min_ns": 146252600,
+        "max_ns": 149487500,
+        "median_ns": 148233500,
+        "sum_ns": 740044500
+      }
+    }
+  ],
+  "stable_wins": {
+    "prefix_simple": {
+      "joint_delivery": [
+        {
+          "id": "generic-11-n8",
+          "group": "generic",
+          "n": 8,
+          "epsilon": 0.01
+        },
+        {
+          "id": "generic-14-n4",
+          "group": "generic",
+          "n": 4,
+          "epsilon": 0.01
+        },
+        {
+          "id": "structured-04-n4-span3",
+          "group": "structured",
+          "n": 4,
+          "epsilon": 0.001
+        },
+        {
+          "id": "structured-04-n4-span3",
+          "group": "structured",
+          "n": 4,
+          "epsilon": 0.01
+        },
+        {
+          "id": "structured-08-n8-span3",
+          "group": "structured",
+          "n": 8,
+          "epsilon": 0.01
+        }
+      ],
+      "prefix_increment": [
+        {
+          "id": "structured-08-n8-span3",
+          "group": "structured",
+          "n": 8,
+          "epsilon": 0.01
+        }
+      ]
+    },
+    "prefix_jensen": {
+      "joint_delivery": [
+        {
+          "id": "generic-11-n8",
+          "group": "generic",
+          "n": 8,
+          "epsilon": 0.01
+        },
+        {
+          "id": "generic-14-n4",
+          "group": "generic",
+          "n": 4,
+          "epsilon": 0.01
+        },
+        {
+          "id": "structured-04-n4-span3",
+          "group": "structured",
+          "n": 4,
+          "epsilon": 0.001
+        },
+        {
+          "id": "structured-04-n4-span3",
+          "group": "structured",
+          "n": 4,
+          "epsilon": 0.01
+        },
+        {
+          "id": "structured-08-n8-span3",
+          "group": "structured",
+          "n": 8,
+          "epsilon": 0.01
+        }
+      ],
+      "prefix_increment": [
+        {
+          "id": "structured-08-n8-span3",
+          "group": "structured",
+          "n": 8,
+          "epsilon": 0.01
+        }
+      ]
+    }
+  },
+  "integration_evaluations": 826596,
+  "normal_cdf_calls": 29958972,
+  "normal_pdf_component_evals": 14940936,
+  "exp_actual_calls_from_disjoint_categories": 15779888,
+  "exp_categories": {
+    "common_exp_evaluations": 3648,
+    "composite_exp_evaluations": 652,
+    "prefix_exp_evaluations": 8028,
+    "tail_retained_transmission_exp_evaluations": 28,
+    "normal_pdf_component_evals": 14940936,
+    "integration_evaluations": 826596
+  },
+  "expm1_actual_calls_from_disjoint_categories": 30101,
+  "expm1_categories": {
+    "common_expm1_evaluations": 3496,
+    "tail_bound_expm1_evaluations": 749,
+    "tail_retained_alpha_expm1_evaluations": 56,
+    "pair_alpha_expm1_evaluations": 17904,
+    "pair_jensen_expm1_evaluations": 7896
+  },
+  "aliases_not_added_again": [
+    "pair_alpha_evaluations",
+    "pair_jensen_saturation_evaluations",
+    "tail_retained_alpha_evaluations",
+    "common_total_attenuation_evaluations",
+    "composite_nonzero_components"
+  ],
+  "gl_internal_simpson_fallbacks": 0,
+  "simpson_evaluations": 0,
+  "rule_builds": 24,
+  "nested_costs_not_added_to_worker_or_supervisor": true,
+  "worker_wall_ns_before_final_serialization": 12782894400
+}
