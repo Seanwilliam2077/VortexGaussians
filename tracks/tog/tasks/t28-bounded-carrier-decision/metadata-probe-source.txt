@@ -1,0 +1,103 @@
+from pathlib import Path
+import datetime,hashlib,json,re,struct,time,urllib.request,urllib.error,sys
+base=Path(__file__).resolve().parents[1]
+acq=base/'acquired';acq.mkdir(exist_ok=True)
+def save_json(p,obj):p.write_bytes((json.dumps(obj,ensure_ascii=False,indent=2)+'\n').encode())
+start=datetime.datetime.now(datetime.timezone.utc).isoformat()
+save_json(acq/'acquisition-start.json',{'started_utc':start,'phase_cap_seconds':1200})
+records=[]
+def get(url,name,headers=None,cap=2097152,expected_range=None):
+ rec={'url':url,'started_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'headers_sent':headers or {},'cap_bytes':cap,'body_bytes_read':0}
+ try:
+  with urllib.request.urlopen(urllib.request.Request(url,headers=headers or {}),timeout=15) as r:
+   rec.update(status=r.status,returned_url=r.url,headers=dict(r.headers))
+   if expected_range is not None:
+    lo,hi=expected_range
+    assert r.status==206,('range_status',r.status)
+    assert r.headers.get('Content-Range')==f'bytes {lo}-{hi}/12535427936',r.headers.get('Content-Range')
+    assert r.headers.get('ETag')=='"cef2ef3aeaf0c062dbe65130bc249870"',r.headers.get('ETag')
+   n=int(r.headers.get('Content-Length','0'))
+   assert n<=cap,('content_length',n,cap)
+   b=r.read(cap+1);rec['body_bytes_read']=len(b)
+   assert len(b)<=cap,'over_cap'
+   if expected_range is not None:assert len(b)==hi-lo+1
+   p=acq/name;p.write_bytes(b)
+   rec.update(result='success',local=name,bytes=len(b),sha256=hashlib.sha256(b).hexdigest())
+   return b
+ except Exception as e:
+  rec.update(result='failure',exception=type(e).__name__,detail=str(e))
+  return None
+ finally:
+  records.append(rec);save_json(acq/'http-receipts.json',records)
+pypi=get('https://pypi.org/pypi/slangtorch/1.3.7/json','slangtorch-1.3.7.json')
+if pypi:
+ p=json.loads(pypi);info=p['info']
+ save_json(base/'package-summary.json',{'name':info['name'],'version':info['version'],'home_page':info.get('home_page'),'project_urls':info.get('project_urls'),'requires_python':info.get('requires_python'),'requires_dist':info.get('requires_dist'),'classifiers':info.get('classifiers'),'files':[{'filename':x['filename'],'size':x['size'],'sha256':x['digests']['sha256'],'url':x['url'],'packagetype':x['packagetype'],'python_version':x['python_version'],'upload_time':x['upload_time_iso_8601']} for x in p['urls']]})
+ print(json.dumps({'package':info['name'],'version':info['version'],'home_page':info.get('home_page'),'project_urls':info.get('project_urls'),'requires_dist':info.get('requires_dist'),'files':[(x['filename'],x['size']) for x in p['urls']]}))
+url='http://storage.googleapis.com/gresearch/refraw360/360_v2.zip'
+N=12535427936;lo=N-65557;hi=N-1
+tail=get(url,'archive-tail.bin',{'Range':f'bytes={lo}-{hi}','If-Match':'"cef2ef3aeaf0c062dbe65130bc249870"','Accept-Encoding':'identity'},65557,(lo,hi))
+result={'schema':'t28-archive-structure-v1','selected_scene':'bonsai','result':'unqualified','image_camera_point_payload_bytes':0}
+try:
+ assert tail is not None,'tail_failed'
+ ix=tail.rfind(b'PK\x05\x06');assert ix>=0
+ e=struct.unpack_from('<4s4H2IH',tail,ix)
+ assert ix+22+e[-1]==len(tail),'eocd_end'
+ assert e[1]==0 and e[2]==0,'multidisk'
+ entries,cdsize,cdoff=e[4],e[5],e[6]
+ if entries==65535 or cdsize==0xffffffff or cdoff==0xffffffff:
+  assert ix>=20
+  loc=struct.unpack_from('<4sIQI',tail,ix-20)
+  assert loc[0]==b'PK\x06\x07' and loc[1]==0 and loc[3]==1
+  zoff=loc[2]
+  if zoff>=lo and zoff+56<=N:
+   z=tail[zoff-lo:zoff-lo+56]
+  else:
+   z=get(url,'archive-zip64.bin',{'Range':f'bytes={zoff}-{zoff+55}','If-Match':'"cef2ef3aeaf0c062dbe65130bc249870"','Accept-Encoding':'identity'},56,(zoff,zoff+55))
+  assert z is not None
+  ze=struct.unpack('<4sQ2H2I4Q',z)
+  assert ze[0]==b'PK\x06\x06' and ze[4]==0 and ze[5]==0 and ze[6]==ze[7]
+  entries,cdsize,cdoff=ze[7],ze[8],ze[9]
+ assert cdsize<=4*1024*1024-sum(r['body_bytes_read'] for r in records if r['url']==url)
+ assert cdoff+cdsize<=lo+ix
+ cd=get(url,'archive-central-directory.bin',{'Range':f'bytes={cdoff}-{cdoff+cdsize-1}','If-Match':'"cef2ef3aeaf0c062dbe65130bc249870"','Accept-Encoding':'identity'},cdsize,(cdoff,cdoff+cdsize-1))
+ assert cd is not None
+ i=0;members=[]
+ while i<len(cd):
+  h=struct.unpack_from('<4s6H3I5H2I',cd,i);assert h[0]==b'PK\x01\x02'
+  fn,ex,co=h[10:13];end=i+46+fn+ex+co;assert end<=len(cd)
+  name=cd[i+46:i+46+fn].decode('utf-8' if h[3]&2048 else 'cp437')
+  assert not h[3]&1,'encrypted'
+  cs,us,off,disk=h[8],h[9],h[16],h[13]
+  extra=cd[i+46+fn:i+46+fn+ex];ei=0
+  while ei+4<=len(extra):
+   tag,sz=struct.unpack_from('<HH',extra,ei);v=extra[ei+4:ei+4+sz];assert len(v)==sz
+   if tag==1:
+    zi=0
+    if us==0xffffffff:us=struct.unpack_from('<Q',v,zi)[0];zi+=8
+    if cs==0xffffffff:cs=struct.unpack_from('<Q',v,zi)[0];zi+=8
+    if off==0xffffffff:off=struct.unpack_from('<Q',v,zi)[0];zi+=8
+    if disk==65535:disk=struct.unpack_from('<I',v,zi)[0]
+   ei+=4+sz
+  assert disk==0
+  assert not name.startswith(('/', '\\')) and '..' not in name.split('/'),'unsafe_member'
+  members.append({'name':name,'compressed_bytes':cs,'uncompressed_bytes':us,'method':h[4],'flags':h[3],'crc32':h[7],'local_header_offset':off})
+  i=end
+ assert len(members)==entries
+ save_json(acq/'archive-members.json',members)
+ selected=[m for m in members if m['name'].startswith('bonsai/')]
+ groups={}
+ for m in selected:
+  parts=m['name'].split('/');key='/'.join(parts[:2])
+  g=groups.setdefault(key,{'count':0,'compressed_bytes':0,'uncompressed_bytes':0})
+  if not m['name'].endswith('/'):
+   g['count']+=1;g['compressed_bytes']+=m['compressed_bytes'];g['uncompressed_bytes']+=m['uncompressed_bytes']
+ textmembers=[m for m in members if re.search(r'(^|/)(license|copying|readme|terms)([./_-]|$)',m['name'],re.I)]
+ result.update(result='directory_parsed_only',central_directory_offset=cdoff,central_directory_bytes=cdsize,member_count=len(members),selected_groups=groups,top_directories=sorted(set(m['name'].split('/')[0] for m in members)),possible_terms_members=textmembers,selected_members=len(selected),selected_payload_members=[m for m in selected if m['name'].startswith(('bonsai/images/','bonsai/sparse/'))])
+except Exception as e:
+ result.update(result='structure_failure',exception=type(e).__name__,detail=str(e))
+result['range_calls']=sum(r['url']==url for r in records)
+result['archive_body_metadata_bytes_read']=sum(r['body_bytes_read'] for r in records if r['url']==url)
+save_json(base/'archive-summary.json',result)
+print(json.dumps({k:v for k,v in result.items() if k!='selected_payload_members'},ensure_ascii=False))
+

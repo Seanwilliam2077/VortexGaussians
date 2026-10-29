@@ -1,0 +1,81 @@
+{
+  "schema": "t28-archive-structure-v1",
+  "selected_scene": "bonsai",
+  "result": "directory_parsed_only",
+  "image_camera_point_payload_bytes": 0,
+  "central_directory_offset": 12534653960,
+  "central_directory_bytes": 773878,
+  "member_count": 6583,
+  "selected_groups": {
+    "bonsai/": {
+      "count": 0,
+      "compressed_bytes": 0,
+      "uncompressed_bytes": 0
+    },
+    "bonsai/images": {
+      "count": 292,
+      "compressed_bytes": 953118939,
+      "uncompressed_bytes": 954204663
+    },
+    "bonsai/images_2": {
+      "count": 292,
+      "compressed_bytes": 279596708,
+      "uncompressed_bytes": 279689694
+    },
+    "bonsai/images_4": {
+      "count": 292,
+      "compressed_bytes": 82588877,
+      "uncompressed_bytes": 82652119
+    },
+    "bonsai/images_8": {
+      "count": 292,
+      "compressed_bytes": 24383903,
+      "uncompressed_bytes": 24416553
+    },
+    "bonsai/poses_bounds.npy": {
+      "count": 1,
+      "compressed_bytes": 28004,
+      "uncompressed_bytes": 39840
+    },
+    "bonsai/sparse": {
+      "count": 3,
+      "compressed_bytes": 55792794,
+      "uncompressed_bytes": 93277555
+    }
+  },
+  "top_directories": [
+    "bicycle",
+    "bonsai",
+    "counter",
+    "flowers.txt",
+    "garden",
+    "kitchen",
+    "room",
+    "stump",
+    "treehill.txt"
+  ],
+  "possible_terms_members": [],
+  "selected_members": 1179,
+  "range_calls": 2,
+  "archive_body_metadata_bytes_read": 839435,
+  "selected_payload_inventory": {
+    "local": "acquired/selected-bonsai-members.json",
+    "bytes": 63888,
+    "sha256": "6ef14f2d8abaffab89049b37280cc3654d40d55ea9e72e8e6e75938effea966a",
+    "compressed_bytes": 1008911733,
+    "uncompressed_bytes": 1047482218,
+    "images": 292,
+    "sparse_files": [
+      "bonsai/sparse/0/cameras.bin",
+      "bonsai/sparse/0/images.bin",
+      "bonsai/sparse/0/points3D.bin"
+    ],
+    "compression_methods": [
+      0,
+      8
+    ],
+    "entries": 298,
+    "files": 295,
+    "directory_entries": 3
+  }
+}
