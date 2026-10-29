@@ -1,0 +1,35 @@
+{
+  "schema": "t53-diagnostic-input-freeze-v1",
+  "created_utc": "2026-10-29T23:15:19.352043+00:00",
+  "parent_commit": "bf82b773af15ceb74d952ddd7c4ef477f3677260",
+  "inputs": [
+    {
+      "name": ".gitignore",
+      "bytes": 7,
+      "sha256": "a7d8bdcefba82a95ebc021d87c629fdea21f13af953bf01e28b7cf8b0eeceb41"
+    },
+    {
+      "name": "SCOPE.md",
+      "bytes": 4298,
+      "sha256": "f6729deb5156b62f1e155350f890b9a71adbdad5b2c54d09eee6734f856e985d"
+    },
+    {
+      "name": "probe.py",
+      "bytes": 1625,
+      "sha256": "5dbfae20f153dab6f4d6c816b962c9a85582531b7bcb7b5c2d787923e4445234"
+    },
+    {
+      "name": "diagnose.py",
+      "bytes": 4762,
+      "sha256": "b30ac60dc80ff4125609f15f858bd608866b57b442b8cbe9e28b9ee9959c5ab3"
+    }
+  ],
+  "pre_run_readback": "t48_review: no unresolved blocker in hand code/scope readback",
+  "maximum_diagnostic_child_invocations": 3,
+  "child_timeout_seconds": 20,
+  "scientific_measurement_invocations_permitted": 0,
+  "diagnostic_children_before_freeze": 0,
+  "preparation_ast_parses": 2,
+  "official_api_document_pages": 1,
+  "official_api_tool_calls": 2
+}

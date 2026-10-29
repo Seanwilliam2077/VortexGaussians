@@ -1,0 +1,206 @@
+{
+  "schema": "t53-runtime-diagnosis-publication-v1",
+  "created_utc": "2026-10-29T23:22:05.818799+00:00",
+  "parent_commit": "bf82b773af15ceb74d952ddd7c4ef477f3677260",
+  "goal_status": "active_not_submission_ready",
+  "evidence": {
+    "previous_goal_turn": "progress: T52 sealed the ordinary analytic optimum and failed scalar verification",
+    "current_turn": "progress: staged failure interval and existing small-operation runtime identified",
+    "diagnostic_child_invocations": 2,
+    "diagnostic_slots": [
+      "A",
+      "C"
+    ],
+    "skipped_slot_B": "ineligible: NumPy import completed in A",
+    "maximum_diagnostic_child_invocations": 3,
+    "child_timeout_seconds": 20,
+    "research_runtime": {
+      "python": "3.12.13",
+      "numpy": "2.4.6",
+      "returncode": 3228369023,
+      "last_stage": "leggauss4_begin",
+      "failure_interval": "leggauss(4) plus subsequent assertions",
+      "supervised_seconds": 5.221102399984375,
+      "diagnostic_pass": false
+    },
+    "bundled_runtime": {
+      "python": "3.12.14",
+      "numpy": "2.3.5",
+      "returncode": 0,
+      "last_stage": "complete",
+      "supervised_seconds": 0.3228970000054687,
+      "diagnostic_pass": true
+    },
+    "total_supervised_child_seconds": 5.543999399989843,
+    "total_supervisor_seconds_before_receipt_write": 5.564171900041401,
+    "cost_scope": "diagnostics only; not scientific performance, excludes supervisor interpreter startup and final receipt writes",
+    "successful_small_array_checks": 2,
+    "four_node_generation_check_sequences_attempted": 2,
+    "four_node_generation_check_sequences_completed": 1,
+    "A_generated_node_count": null,
+    "T52_original_failure_phase": null,
+    "root_cause": null,
+    "original_runtime_repaired": false,
+    "persistent_environment_changes": 0,
+    "T52_measurement_reinvocations": 0,
+    "scientific_measurement_invocations": 0,
+    "scientific_formula_values_computed": false,
+    "larger_order_qualification": false,
+    "scientific_numerical_consistency_qualified": false,
+    "frozen_inputs_unchanged": true,
+    "packages_installed": 0,
+    "fluid_rollouts": 0,
+    "rendering_executions": 0,
+    "research_source_acquisition_invocations": 0,
+    "official_API_document_pages": 1,
+    "official_API_tool_calls": 2,
+    "independent_saved_evidence_readbacks": 1,
+    "review_provenance": "same second agent advised scope and pre-run guard; no independent replication",
+    "next_scientific_task_prepared": "T54: one unchanged-evaluator check in existing bundled runtime",
+    "next_scientific_task_executed": false,
+    "next_task_cumulative_scientific_attempt_number_if_executed": 2,
+    "practical_quality_or_novelty_established": false
+  },
+  "publication_plan": {
+    "path": "tracks/tog/tasks/t53-runtime-diagnosis/local/publication-plan.json",
+    "bytes": 11401,
+    "sha256": "d54f34f017e26cf5deb0adb24f43c9f68dbfdc31d93f2cc623591fb48ef3f1cc"
+  },
+  "publication_plan_is_ignored_local_support": true,
+  "scientific_numerical_pass": false,
+  "T52_history_reclassified": false,
+  "artifacts": [
+    {
+      "path": "tracks/tog/tasks/t53-runtime-diagnosis/.gitignore",
+      "bytes": 7,
+      "sha256": "a7d8bdcefba82a95ebc021d87c629fdea21f13af953bf01e28b7cf8b0eeceb41"
+    },
+    {
+      "path": "tracks/tog/tasks/t53-runtime-diagnosis/DECISION.md",
+      "bytes": 2808,
+      "sha256": "347152e5b628685a3b12ea654d1ca7af5b5bbf89d98f505f56e3f91f5158b889"
+    },
+    {
+      "path": "tracks/tog/tasks/t53-runtime-diagnosis/README.md",
+      "bytes": 1349,
+      "sha256": "9182eec1788fd6cc04abc7ebf7149f70e9768d9a61e610d6662a2cfff58917e5"
+    },
+    {
+      "path": "tracks/tog/tasks/t53-runtime-diagnosis/RESULTS.md",
+      "bytes": 3688,
+      "sha256": "46b9ab925aa690129303e56f13788f177c549d12acdef0655f40d4b2b9623744"
+    },
+    {
+      "path": "tracks/tog/tasks/t53-runtime-diagnosis/SCOPE.md",
+      "bytes": 4298,
+      "sha256": "f6729deb5156b62f1e155350f890b9a71adbdad5b2c54d09eee6734f856e985d"
+    },
+    {
+      "path": "tracks/tog/tasks/t53-runtime-diagnosis/diagnose.py",
+      "bytes": 4762,
+      "sha256": "b30ac60dc80ff4125609f15f858bd608866b57b442b8cbe9e28b9ee9959c5ab3"
+    },
+    {
+      "path": "tracks/tog/tasks/t53-runtime-diagnosis/diagnostic-A.json",
+      "bytes": 3766,
+      "sha256": "89558e4764648d66a7052bca8f113cbc3e05cd9563f188eff98efb578cb4bc13"
+    },
+    {
+      "path": "tracks/tog/tasks/t53-runtime-diagnosis/diagnostic-C.json",
+      "bytes": 4180,
+      "sha256": "4d9699ff8e243345da9e7519fdb5b7394a4548bff1ced96b9db0629c1a5c3e18"
+    },
+    {
+      "path": "tracks/tog/tasks/t53-runtime-diagnosis/input-manifest.json",
+      "bytes": 1114,
+      "sha256": "ee3ea44665c517b9b219777528fce93420d24e14f7b8eea0a84ddf8d46849d9f"
+    },
+    {
+      "path": "tracks/tog/tasks/t53-runtime-diagnosis/probe.py",
+      "bytes": 1625,
+      "sha256": "5dbfae20f153dab6f4d6c816b962c9a85582531b7bcb7b5c2d787923e4445234"
+    },
+    {
+      "path": "tracks/validation/t53-runtime-review.md",
+      "bytes": 9823,
+      "sha256": "cbe3deb5a9166698cfda4c507ca4171d9dc3ccef9a687ed3660d7bd00ff955aa"
+    }
+  ],
+  "frozen_inputs": [
+    {
+      "path": "tracks/tog/tasks/t53-runtime-diagnosis/.gitignore",
+      "bytes": 7,
+      "sha256": "a7d8bdcefba82a95ebc021d87c629fdea21f13af953bf01e28b7cf8b0eeceb41"
+    },
+    {
+      "path": "tracks/tog/tasks/t53-runtime-diagnosis/SCOPE.md",
+      "bytes": 4298,
+      "sha256": "f6729deb5156b62f1e155350f890b9a71adbdad5b2c54d09eee6734f856e985d"
+    },
+    {
+      "path": "tracks/tog/tasks/t53-runtime-diagnosis/probe.py",
+      "bytes": 1625,
+      "sha256": "5dbfae20f153dab6f4d6c816b962c9a85582531b7bcb7b5c2d787923e4445234"
+    },
+    {
+      "path": "tracks/tog/tasks/t53-runtime-diagnosis/diagnose.py",
+      "bytes": 4762,
+      "sha256": "b30ac60dc80ff4125609f15f858bd608866b57b442b8cbe9e28b9ee9959c5ab3"
+    }
+  ],
+  "current_state_documents": [
+    {
+      "path": "tracks/STATUS.md",
+      "bytes": 72863,
+      "sha256": "ae10fe5ca9847fd7a763eec70d21e6b75373e612343653420d66d743c64d5b99"
+    },
+    {
+      "path": "tracks/EXPLORATION.md",
+      "bytes": 8169,
+      "sha256": "035002469d3f986a63208aad81375dfa669bd9323ab22b1a344972a3483231cb"
+    },
+    {
+      "path": "tracks/tog/README.md",
+      "bytes": 8313,
+      "sha256": "7d3ab5765d8fe6d2b9452a51ff72230c28a654bd4005bdde182e64f116efadff"
+    }
+  ],
+  "preservation_chain": {
+    "parent_manifest": {
+      "path": "tracks/tog/tasks/t52-best-tangent-enstrophy/audit-manifest.json",
+      "bytes": 7660,
+      "sha256": "9444d214ade1601dcd350d4f6748c0bc4a2b7e471fbc16715dfe656593802960"
+    },
+    "verified_prior_artifact_count": 626,
+    "all_recorded_prior_bytes_unchanged": true
+  },
+  "parent_tracked_file_count": 1154,
+  "other_parent_tracked_files_unchanged": 1151,
+  "literal_parent_blob_matches": 1137,
+  "CRLF_only_checkout_conversions": [
+    ".gitignore",
+    "CHANGELOG.md",
+    "PUBLISH.md",
+    "README.md",
+    "compare.html",
+    "index.html",
+    "research/EVIDENCE_STATUS.md",
+    "research/FRONTIER_EARLY_REJECTION.md",
+    "research/lib/p3d-baseline.json",
+    "research/lib/p3e-baseline.json",
+    "research/lib/p3f-baseline.json",
+    "research/lib/p3g-baseline.json",
+    "research/physical_reference/README.md",
+    "study/index.html"
+  ],
+  "all_parent_blob_ids_match_after_git_clean_filters": true,
+  "original_core": {
+    "path": "tracks/tog/src/core.py",
+    "bytes": 13301,
+    "sha256": "ac750b70a86743ac858f1c53cf620ce29c63c462456115af4d0d8c93fa20bd9e"
+  },
+  "historical_failures_unchanged": true,
+  "art_inactive": true,
+  "main_not_merged_or_deployed": true,
+  "automation_remains_deleted": true
+}
