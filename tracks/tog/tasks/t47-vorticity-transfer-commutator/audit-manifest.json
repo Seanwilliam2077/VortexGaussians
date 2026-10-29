@@ -1,0 +1,137 @@
+{
+  "schema": "t47-linked-vorticity-transfer-commutator-v1",
+  "created_utc": "2026-10-29T21:39:33.712123+00:00",
+  "parent_commit": "27e05a2f5a44c8c6e1afb441d1a4d982baa86493",
+  "previous_goal_turn": "progress: T46 established ordinary velocity-moment repair and a concrete mismatch to the current carrier",
+  "current_turn_classification": "progress: exact actual-vorticity transport/projection boundary and ordinary repair with scoped local applicability",
+  "goal_status": "active_not_submission_ready",
+  "decision": "ordinary_weighted_projection_repair_no_matching_existing_transfer_bug",
+  "scope_recorded_after_initial_duplicate_check_and_operator_discussion": true,
+  "new_scientific_executions": 0,
+  "new_numerical_evaluations": 0,
+  "new_browser_launches": 0,
+  "new_assets": 0,
+  "installations": 0,
+  "new_methods_implemented": 0,
+  "external_search_queries": 0,
+  "external_unique_primary_documents": 2,
+  "external_failed_document_routes": 0,
+  "repeated_paging_within_same_documents": true,
+  "external_documents_locally_archived": false,
+  "external_source_record": {
+    "path": "tracks/tog/tasks/t47-vorticity-transfer-commutator/SOURCES.md",
+    "bytes": 2874,
+    "sha256": "76f9457ddf0eb0a587530022ba20148be2d0b4a2789137e27cf310fad1051909"
+  },
+  "targeted_local_model_files": 4,
+  "local_model_record": {
+    "path": "tracks/tog/tasks/t47-vorticity-transfer-commutator/LOCAL_MODEL.md",
+    "bytes": 10190,
+    "sha256": "aa6afbfdfd5dc8a3d238a84f9ee3bfe73ab07edb30afc36fde5ff4e4284d667a"
+  },
+  "exact_commutator_proved": true,
+  "already_solenoidal_inputs_commute": true,
+  "universal_volume_preserving_equality": "proper rotations",
+  "continuous_derivative_gaussian_example_is_finite_particle_experiment": false,
+  "conjugated_projection_is_ordinary_weighted_Helmholtz": true,
+  "current_simulator_bug_established": false,
+  "publication_first_attempt": "stopped before state mutation: reviewed LOCAL_MODEL hash transcription mismatch",
+  "review_hash_transcription_corrected_before_sealing": true,
+  "publication_did_not_change_scientific_drafts": true,
+  "novelty_established": false,
+  "cost_advantage_measured": false,
+  "next_scientific_run_selected": false,
+  "next_implementation_selected": false,
+  "TOG_core_contribution": false,
+  "artifacts": [
+    {
+      "path": "tracks/tog/tasks/t47-vorticity-transfer-commutator/.gitignore",
+      "bytes": 7,
+      "sha256": "a7d8bdcefba82a95ebc021d87c629fdea21f13af953bf01e28b7cf8b0eeceb41"
+    },
+    {
+      "path": "tracks/tog/tasks/t47-vorticity-transfer-commutator/ANALYSIS.md",
+      "bytes": 7626,
+      "sha256": "11a0b15031185146b7c9aef8e009fdcd482c6ff60d0783542e19dcc23f9ef9f2"
+    },
+    {
+      "path": "tracks/tog/tasks/t47-vorticity-transfer-commutator/LOCAL_MODEL.md",
+      "bytes": 10190,
+      "sha256": "aa6afbfdfd5dc8a3d238a84f9ee3bfe73ab07edb30afc36fde5ff4e4284d667a"
+    },
+    {
+      "path": "tracks/tog/tasks/t47-vorticity-transfer-commutator/README.md",
+      "bytes": 2580,
+      "sha256": "a0ba0f3df3eaaad4855a9630175318e2019858818d94e437c67099dd6efe2a94"
+    },
+    {
+      "path": "tracks/tog/tasks/t47-vorticity-transfer-commutator/SCOPE.md",
+      "bytes": 2418,
+      "sha256": "4ef28b0c3ae66fd184d7976cac83be1f90c80a54034837928369484887034420"
+    },
+    {
+      "path": "tracks/tog/tasks/t47-vorticity-transfer-commutator/SOURCES.md",
+      "bytes": 2874,
+      "sha256": "76f9457ddf0eb0a587530022ba20148be2d0b4a2789137e27cf310fad1051909"
+    },
+    {
+      "path": "tracks/validation/t47-mathematical-review.md",
+      "bytes": 5071,
+      "sha256": "fefb235eed510fa4189b1d34fe3683acca7d91301d81924a5b22607852430dd8"
+    }
+  ],
+  "current_state_documents": [
+    {
+      "path": "tracks/STATUS.md",
+      "bytes": 64941,
+      "sha256": "4919f4ce53c8098ab5507ed4dea8936ae09d4db647e073b572dcf34c45f04772"
+    },
+    {
+      "path": "tracks/EXPLORATION.md",
+      "bytes": 8207,
+      "sha256": "f366cdb5ba601c406f494a4f684b77bd91e2682b4eb765a654034bca429b3dbe"
+    },
+    {
+      "path": "tracks/tog/README.md",
+      "bytes": 8068,
+      "sha256": "089a278a3ca53c630d2e5cbe76549facafcbd3803ca5dcdd2a313278d0f0eb9c"
+    }
+  ],
+  "preservation_chain": {
+    "parent_manifest": {
+      "path": "tracks/tog/tasks/t46-velocity-dispersion-screen/audit-manifest.json",
+      "bytes": 5139,
+      "sha256": "e0582314b262c2fa54bcf9dcdb3b171372cd6fa227f5327f8033b5fcaf248212"
+    },
+    "verified_prior_artifact_count": 568,
+    "all_recorded_prior_bytes_unchanged": true
+  },
+  "other_parent_tracked_files_unchanged": 1093,
+  "literal_parent_blob_matches": 1079,
+  "CRLF_only_checkout_conversions": [
+    ".gitignore",
+    "CHANGELOG.md",
+    "PUBLISH.md",
+    "README.md",
+    "compare.html",
+    "index.html",
+    "research/EVIDENCE_STATUS.md",
+    "research/FRONTIER_EARLY_REJECTION.md",
+    "research/lib/p3d-baseline.json",
+    "research/lib/p3e-baseline.json",
+    "research/lib/p3f-baseline.json",
+    "research/lib/p3g-baseline.json",
+    "research/physical_reference/README.md",
+    "study/index.html"
+  ],
+  "all_parent_blob_ids_match_after_git_clean_filters": true,
+  "original_core": {
+    "path": "tracks/tog/src/core.py",
+    "bytes": 13301,
+    "sha256": "ac750b70a86743ac858f1c53cf620ce29c63c462456115af4d0d8c93fa20bd9e"
+  },
+  "historical_failures_unchanged": true,
+  "art_inactive": true,
+  "main_not_merged_or_deployed": true,
+  "automation_remains_deleted": true
+}
