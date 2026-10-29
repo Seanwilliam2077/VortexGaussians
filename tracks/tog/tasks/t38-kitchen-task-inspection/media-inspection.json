@@ -1,0 +1,199 @@
+{
+  "schema": "t38-historical-media-inspection-v1",
+  "created_utc": "2026-10-29T18:35:07.523142+00:00",
+  "scope": "Existing historical media only; no rendering, simulation, training or scientific comparison",
+  "source": {
+    "path": "static/video/vortex_gaussians_kitchen.mp4",
+    "bytes": 7586963,
+    "sha256": "fbf5f26270cdaff8c37224b606039370c32a5c4a36567972ecfcc19ed0ac7ff0"
+  },
+  "reader": {
+    "command_probe": {
+      "ffprobe": "not found on PATH",
+      "ffmpeg": "not found on PATH"
+    },
+    "library": "cv2",
+    "version": "5.0.0",
+    "python_environment": "gs-sph-3d",
+    "python_version": "3.12.13 | packaged by conda-forge | (main, Mar  5 2026, 16:36:12) [MSC v.1944 64 bit (AMD64)]",
+    "opened": true,
+    "backend": "FFMPEG"
+  },
+  "selection_rule": "Zero-based floor(frame_count*f) at f=0,.2,.4,.6,.8, then frame_count-1; no replacements or extra frames",
+  "frames": [
+    {
+      "label": "00pct",
+      "requested_zero_based_index": 0,
+      "nominal_time_seconds": 0.0,
+      "seek_reported_success": true,
+      "position_before_read": 0.0,
+      "decoded": true,
+      "position_after_read": 1.0,
+      "reader_time_after_read_ms": 0.0,
+      "width": 1920,
+      "height": 1080,
+      "channels": 3,
+      "dtype": "uint8",
+      "frame_index_agreement": true,
+      "lossless_roundtrip_verified": true,
+      "file": {
+        "path": "media/frame-00pct-00000.png",
+        "bytes": 1348991,
+        "sha256": "d65c01bba7f77886515f6b44e4b7be04eaf89a4d26b5255be71e3f56fb208280"
+      },
+      "decoded_bgr_sha256": "a59d9784ac06571834aef67f15bdea4f139351f0cf82fcbb07ee5d7f5276b1b1"
+    },
+    {
+      "label": "20pct",
+      "requested_zero_based_index": 516,
+      "nominal_time_seconds": 8.6,
+      "seek_reported_success": true,
+      "position_before_read": 516.0,
+      "decoded": true,
+      "position_after_read": 517.0,
+      "reader_time_after_read_ms": 8600.0,
+      "width": 1920,
+      "height": 1080,
+      "channels": 3,
+      "dtype": "uint8",
+      "frame_index_agreement": true,
+      "lossless_roundtrip_verified": true,
+      "file": {
+        "path": "media/frame-20pct-00516.png",
+        "bytes": 1452852,
+        "sha256": "e59e8cccacd9b0a919a11f937a43fe0b44c1600ccccd390202955b80c92e12bc"
+      },
+      "decoded_bgr_sha256": "149314dd7ed1ff849351be6644aa2d654d9739ad2dc9d8e5c18a881f1c5444bc"
+    },
+    {
+      "label": "40pct",
+      "requested_zero_based_index": 1032,
+      "nominal_time_seconds": 17.2,
+      "seek_reported_success": true,
+      "position_before_read": 1032.0,
+      "decoded": true,
+      "position_after_read": 1033.0,
+      "reader_time_after_read_ms": 17200.0,
+      "width": 1920,
+      "height": 1080,
+      "channels": 3,
+      "dtype": "uint8",
+      "frame_index_agreement": true,
+      "lossless_roundtrip_verified": true,
+      "file": {
+        "path": "media/frame-40pct-01032.png",
+        "bytes": 1528802,
+        "sha256": "bfa896eb56c8dc93dc95b316121f0ed40dcf69546eaf552533110e58ffe86c88"
+      },
+      "decoded_bgr_sha256": "f2d05c5e9f21be28eed9f2dedadcbdff1d002d2fa51aa8016f7eea685a9bff57"
+    },
+    {
+      "label": "60pct",
+      "requested_zero_based_index": 1548,
+      "nominal_time_seconds": 25.8,
+      "seek_reported_success": true,
+      "position_before_read": 1548.0,
+      "decoded": true,
+      "position_after_read": 1549.0,
+      "reader_time_after_read_ms": 25800.0,
+      "width": 1920,
+      "height": 1080,
+      "channels": 3,
+      "dtype": "uint8",
+      "frame_index_agreement": true,
+      "lossless_roundtrip_verified": true,
+      "file": {
+        "path": "media/frame-60pct-01548.png",
+        "bytes": 1598847,
+        "sha256": "0aa61f25c42b9bfdf52f2253510c7f66cb9fb16061cb11839023f34f0ea5b034"
+      },
+      "decoded_bgr_sha256": "33af4c39dc544ba927cbc8f0e4e3884efe1bb9ecb842a60d9189d619b7b62e9e"
+    },
+    {
+      "label": "80pct",
+      "requested_zero_based_index": 2064,
+      "nominal_time_seconds": 34.4,
+      "seek_reported_success": true,
+      "position_before_read": 2064.0,
+      "decoded": true,
+      "position_after_read": 2065.0,
+      "reader_time_after_read_ms": 34400.0,
+      "width": 1920,
+      "height": 1080,
+      "channels": 3,
+      "dtype": "uint8",
+      "frame_index_agreement": true,
+      "lossless_roundtrip_verified": true,
+      "file": {
+        "path": "media/frame-80pct-02064.png",
+        "bytes": 1633045,
+        "sha256": "ec0209fc69d2c0e26605ba63fe0dde682ed7a66e9532213a03deab004300830d"
+      },
+      "decoded_bgr_sha256": "a17c3160d21ec7c00ea43b4a35f0b07dc0eae44f38967061ea3a3202f0592f59"
+    },
+    {
+      "label": "last",
+      "requested_zero_based_index": 2579,
+      "nominal_time_seconds": 42.983333333333334,
+      "seek_reported_success": true,
+      "position_before_read": 2579.0,
+      "decoded": true,
+      "position_after_read": 2580.0,
+      "reader_time_after_read_ms": 42983.333333333336,
+      "width": 1920,
+      "height": 1080,
+      "channels": 3,
+      "dtype": "uint8",
+      "frame_index_agreement": true,
+      "lossless_roundtrip_verified": true,
+      "file": {
+        "path": "media/frame-last-02579.png",
+        "bytes": 1607061,
+        "sha256": "21d88be0a8ade6d0590191552f5e18bc783e439d8420403ef35568c2b83c7108"
+      },
+      "decoded_bgr_sha256": "2a3f8916cf6dece511d6af5046542583ff8a632a2cab65fe0bd0a25f19ec5a49"
+    }
+  ],
+  "decoded_video_frame_attempts": 6,
+  "decoded_video_frames": 6,
+  "transformations": {
+    "crop": false,
+    "resize": false,
+    "enhancement": false,
+    "interpolation": false,
+    "color_edit": false,
+    "encoding": "Lossless PNG encoding of complete uint8 BGR decoded frame; normal PNG channel serialization only"
+  },
+  "new_scientific_runs": 0,
+  "metadata": {
+    "frame_count_reported": 2580.0,
+    "fps_reported": 60.0,
+    "width": 1920,
+    "height": 1080,
+    "fourcc_integer": 875967080,
+    "fourcc_text": "h264",
+    "duration_seconds_nominal": 43.0,
+    "duration_source": "reported frame count divided by reported FPS, not independently verified container duration"
+  },
+  "fixed_indices": [
+    0,
+    516,
+    1032,
+    1548,
+    2064,
+    2579
+  ],
+  "status": "six_fixed_frames_saved",
+  "last_reported_frame_decoded": true,
+  "limitations": [
+    "Frame count, FPS and timestamps are reader metadata; no separate container/timestamp audit.",
+    "Last frame means last zero-based frame reported by this reader and successfully decoded; no frame beyond metadata end was probed.",
+    "Images document six historical video instants, not interactive controls, reproducibility of the rendering, or author/audience intent."
+  ],
+  "source_after": {
+    "bytes": 7586963,
+    "sha256": "fbf5f26270cdaff8c37224b606039370c32a5c4a36567972ecfcc19ed0ac7ff0",
+    "unchanged": true
+  },
+  "elapsed_seconds": 1.139495600014925
+}

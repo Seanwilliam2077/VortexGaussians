@@ -1,0 +1,56 @@
+{
+  "schema": "t38-source-inspection-v1",
+  "source": "demo/index.html",
+  "source_bytes": 314044,
+  "source_sha256": "e9d808c434bdd8ce91482f60502f03f5d08c56b71c082eb704c53275ff9f57d0",
+  "allocation_lines": 260,
+  "inspected_lines": 239,
+  "acquisitions": [
+    {
+      "type": "rg_matches",
+      "pattern": "kitchen|sceneSorted|sceneFile|loadPLY|parsePLY|ignite|sceneScale|sceneYaw|sceneLift|loadScene",
+      "max_count": 35,
+      "returned_lines": 35,
+      "path": "sources/demo-search-01.txt",
+      "bytes": 3442,
+      "sha256": "0af584c9109c2edd9c0b6633d1675ede9a7b46cf0d61f025e7d2efd3d0d51cb6"
+    },
+    {
+      "type": "line_ranges",
+      "ranges": [
+        [
+          781,
+          809
+        ],
+        [
+          883,
+          917
+        ],
+        [
+          967,
+          991
+        ],
+        [
+          1131,
+          1145
+        ],
+        [
+          1418,
+          1435
+        ],
+        [
+          2838,
+          2898
+        ],
+        [
+          3122,
+          3142
+        ]
+      ],
+      "returned_lines": 204,
+      "path": "sources/demo-excerpts-01.txt",
+      "bytes": 15644,
+      "sha256": "4b9538c406c8b0bec5d1c34af166bb433c14f0279af6496bf43a65f208b26642"
+    }
+  ]
+}

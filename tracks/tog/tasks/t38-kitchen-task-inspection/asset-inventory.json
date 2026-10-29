@@ -1,0 +1,43 @@
+{
+  "schema": "t38-scoped-asset-name-inventory-v1",
+  "scope": "Tracked paths matching '*.ply' or '*kitchen*'; metadata only, not whole-repository content search",
+  "command": [
+    "git",
+    "ls-files",
+    "--",
+    "*.ply",
+    "*kitchen*"
+  ],
+  "assets": [
+    {
+      "path": "static/images/fig_kitchen_fire.jpg",
+      "bytes": 216611,
+      "sha256": "c939ac89b91775aadb36b574e40cbfc5b4f17b7a14410fdd91f4825431395167"
+    },
+    {
+      "path": "static/images/fig_kitchen_nofire.jpg",
+      "bytes": 217999,
+      "sha256": "5a6f199ed03c20548f1e5a3cc2e7a262e1e74f8f562c6df45f4f1c18b7d994ad"
+    },
+    {
+      "path": "static/images/kitchen_poster.jpg",
+      "bytes": 249460,
+      "sha256": "70d60812d0f83ee0af68e34a09384f0e456a774fd263c96dde0533fa37d0e98a"
+    },
+    {
+      "path": "static/test_scene.ply",
+      "bytes": 4214913,
+      "sha256": "2f7e110a4ae3cd7d9a2ea8e04537d562a37b1ddb04b2c541e961901afc7492d6"
+    },
+    {
+      "path": "static/video/vortex_gaussians_kitchen.mp4",
+      "bytes": 7586963,
+      "sha256": "fbf5f26270cdaff8c37224b606039370c32a5c4a36567972ecfcc19ed0ac7ff0"
+    }
+  ],
+  "limitations": [
+    "No other still image was visually inspected.",
+    "The one PLY is documented as synthetic in the acquired README.",
+    "No proof of absence under other names/formats, locations or historical commits."
+  ]
+}

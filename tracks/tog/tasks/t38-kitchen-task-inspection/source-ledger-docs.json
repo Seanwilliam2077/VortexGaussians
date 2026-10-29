@@ -1,0 +1,252 @@
+{
+  "schema": "t38-local-docs-source-inspection-v1",
+  "scope": "Only README.md and research/EVIDENCE_STATUS.md; local documentation inspection, not runtime or media evidence",
+  "policy_prerequisite": {
+    "path": "tracks/tog/tasks/t37-cheap-frame-screen/NEXT_ENTRY.md",
+    "budget_exempt": true,
+    "sha256": "740b60efabd98dc8faf0abe6be485d43466c424c872554aea20add269527c1c2"
+  },
+  "source_content_line_budget": 260,
+  "inspection_operations": [
+    {
+      "sequence": 1,
+      "kind": "rg_matches",
+      "query": "kitchen|capture|historical|replay|provenance|sceneSorted|Custom Scenes|ignite|configuration|control stream|code state",
+      "files": [
+        "README.md",
+        "research/EVIDENCE_STATUS.md"
+      ],
+      "emitted_lines": 20
+    },
+    {
+      "sequence": 2,
+      "kind": "bounded_sections",
+      "file": "README.md",
+      "ranges": [
+        [
+          13,
+          19
+        ],
+        [
+          32,
+          36
+        ],
+        [
+          58,
+          89
+        ],
+        [
+          103,
+          107
+        ]
+      ],
+      "emitted_lines": 49
+    },
+    {
+      "sequence": 3,
+      "kind": "bounded_sections",
+      "file": "research/EVIDENCE_STATUS.md",
+      "ranges": [
+        [
+          1,
+          31
+        ],
+        [
+          72,
+          129
+        ]
+      ],
+      "emitted_lines": 89
+    },
+    {
+      "sequence": 4,
+      "kind": "bounded_sections",
+      "file": "README.md",
+      "ranges": [
+        38,
+        57
+      ],
+      "emitted_lines": 20
+    }
+  ],
+  "total_inspected_lines_including_repeat_matches": 178,
+  "unique_source_lines_inspected": 160,
+  "remaining_line_budget": 82,
+  "extraction_note": "Excerpts copy only the already inspected line union; whole-file byte hashing and line-count metadata are not additional content inspection. No source was imported or executed.",
+  "sources": [
+    {
+      "source": "README.md",
+      "bytes": 11442,
+      "line_count": 123,
+      "sha256": "dc255209dc2197f9b03319772cd19221cebf6e90701c32409565856df004425e",
+      "selected_unique_line_ranges": [
+        [
+          3,
+          3
+        ],
+        [
+          5,
+          5
+        ],
+        [
+          13,
+          19
+        ],
+        [
+          32,
+          36
+        ],
+        [
+          38,
+          89
+        ],
+        [
+          103,
+          107
+        ]
+      ],
+      "selected_unique_line_count": 71,
+      "initial_rg_match_lines": [
+        3,
+        5,
+        15,
+        17,
+        18,
+        19,
+        34,
+        36,
+        40,
+        53,
+        82,
+        88,
+        89,
+        105,
+        107
+      ],
+      "excerpt_path": "sources/README.excerpt.txt",
+      "excerpt_bytes": 10296,
+      "excerpt_sha256": "eea1b3b9d38cb910ae6438b3a2dbdf743852115127fcf5f37d459e42822ada4d"
+    },
+    {
+      "source": "research/EVIDENCE_STATUS.md",
+      "bytes": 9044,
+      "line_count": 129,
+      "sha256": "0eef78dee6c04239e36e0209e51d777281541569455aef66a0f0b1c311677b4a",
+      "selected_unique_line_ranges": [
+        [
+          1,
+          31
+        ],
+        [
+          72,
+          129
+        ]
+      ],
+      "selected_unique_line_count": 89,
+      "initial_rg_match_lines": [
+        13,
+        72,
+        77,
+        122,
+        127
+      ],
+      "excerpt_path": "sources/EVIDENCE_STATUS.excerpt.txt",
+      "excerpt_bytes": 9428,
+      "excerpt_sha256": "73bfc60a08667c0470b91b7fe7db957c49edf98ae239fea499242f417f2e5347"
+    }
+  ],
+  "evidence": [
+    {
+      "locations": [
+        "README.md:13",
+        "README.md:63-70",
+        "README.md:84-89"
+      ],
+      "classification": "documented_existing_workflow",
+      "finding": "Place and move fire in loaded 3DGS scenes, orbit, ignite and use depth-interleaved scene/fire compositing are already documented. Their existence is not a new technical capability. Actual kitchen operation is for the separate media/code inspection."
+    },
+    {
+      "locations": [
+        "README.md:15-19",
+        "README.md:105-107",
+        "research/EVIDENCE_STATUS.md:127-129"
+      ],
+      "classification": "historical_author_claims_and_limits",
+      "finding": "Historical videos/FPS/treecode timing and heuristic combustion are not newly replicated full-system, calibrated physical or task-value evidence."
+    },
+    {
+      "locations": [
+        "README.md:34-36",
+        "README.md:42-53"
+      ],
+      "classification": "generic_diagnostics_not_kitchen_replay",
+      "finding": "Reset/step/hash depends on fixed code/config/input/runtime; compare.html and the synthetic P0 harness provide implementation/control diagnostics. No kitchen-specific replay contract is supplied in these inspected passages."
+    },
+    {
+      "locations": [
+        "README.md:88",
+        "research/EVIDENCE_STATUS.md:8-13"
+      ],
+      "classification": "ordinary_comparator_caution",
+      "finding": "Naive draw-after and browser backdrop/depth ablations are not strong matched baselines. The status document explicitly retracts the FieryGS-equivalence attribution; this task does not acquire or independently inspect FieryGS."
+    },
+    {
+      "locations": [
+        "README.md:86",
+        "research/EVIDENCE_STATUS.md:81-89"
+      ],
+      "classification": "asset_and_evidence_scope",
+      "finding": "The named 45,808-splat test_scene.ply is explicitly synthetic campfire, not identified as kitchen. P7/P7b named evidence archives concern thermal proxy studies and are separate local deliverables, not kitchen replay evidence."
+    },
+    {
+      "locations": [
+        "research/EVIDENCE_STATUS.md:113-125"
+      ],
+      "classification": "research_decision_constraint",
+      "finding": "A meaningful capability or quality-cost advantage with the same information for baselines remains required; engineering completeness and real asset replay alone are not contributions."
+    }
+  ],
+  "exact_local_references": [
+    {
+      "path": "static/video/vortex_gaussians_kitchen.mp4",
+      "at": "README.md:5",
+      "relationship": "named captured-scene media",
+      "inspected_here": false
+    },
+    {
+      "path": "static/test_scene.ply",
+      "at": "README.md:86",
+      "relationship": "synthetic campfire alternative, not matching kitchen asset",
+      "inspected_here": false
+    },
+    {
+      "path": "research/PROTOCOL.md",
+      "at": "README.md:42",
+      "relationship": "synthetic P0 protocol, not identified as kitchen provenance",
+      "inspected_here": false
+    },
+    {
+      "path": "research/README.md",
+      "at": "README.md:42",
+      "relationship": "synthetic P0 harness, not identified as kitchen configuration",
+      "inspected_here": false
+    },
+    {
+      "path": "research/proxy32_followup/README.md",
+      "at": "research/EVIDENCE_STATUS.md:89",
+      "relationship": "P7b thermal-proxy reproduction instructions, unrelated to kitchen replay",
+      "inspected_here": false
+    }
+  ],
+  "kitchen_replay_gaps_in_inspected_text": [
+    "No matching kitchen PLY path or asset identity identified",
+    "No kitchen camera/control stream identified",
+    "No kitchen-specific seed/configuration/code revision identified"
+  ],
+  "absence_limit": "These are gaps in the two inspected local documents, not proof that the matching materials never existed or are absent everywhere in the repository.",
+  "fourth_file_recommendation": "No directly kitchen-specific provenance/configuration file was identified in these excerpts. Do not spend the slot on unrelated P0/P7b files merely to fill the allowance.",
+  "external_requests": 0,
+  "other_original_source_files_read": 0,
+  "media_reads": 0,
+  "scientific_executions": 0
+}

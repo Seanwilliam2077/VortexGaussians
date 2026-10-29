@@ -1,0 +1,35 @@
+239:          <div class="prow"><label>Scene scale</label><input type="range" id="sceneScale" min="0.002" max="6" step="0.001" value="1"><span class="pval" id="sceneScaleV"></span></div>
+240:          <div class="prow"><label>Scene yaw</label><input type="range" id="sceneYaw" min="-3.14" max="3.14" step="0.02" value="0"><span class="pval" id="sceneYawV"></span></div>
+242:          <div class="prow"><label>Lift</label><input type="range" id="sceneLift" min="-2" max="2" step="0.02" value="0"><span class="pval" id="sceneLiftV"></span></div>
+781:function parsePLY(buf){
+883:function loadPLY(buf){
+885:  const r=parsePLY(buf); sceneGauss=r.gauss; sceneInfo={center:r.center, extent:r.extent};
+889:  P.sceneScale = 1.6 / (r.extent||1);      // 自动缩放到 ~3.2 单位跨度
+901://     P.sceneSorted=false   朴素基线: 连场景自身排序也去掉 (火先画, 场景按文件序垫后)。
+904:// 1536 是量出来的, 不是猜的 (kitchen 700k splats, 与 gsplat 参考逐像素对比;
+928:  const S=P.sceneScale, cy=Math.cos(P.sceneYaw), sy=Math.sin(P.sceneYaw),
+929:        cp=Math.cos(P.scenePitch), sp=Math.sin(P.scenePitch), C=sceneInfo.center, lift=P.sceneLift;
+979:  if(!P.sceneSorted){                       // 旧路径: 原顺序直接上传 (对照)
+1090:  const S=P.sceneScale||1;
+1116:  const S=P.sceneScale||1, cyw=Math.cos(P.sceneYaw), syw=Math.sin(P.sceneYaw),
+1118:  const x3=(wx-P.sceneOffX)/S, y2=(wy-P.sceneLift)/S, z3=(wz-P.sceneOffZ)/S;
+1124:  const S=P.sceneScale||1, cyw=Math.cos(P.sceneYaw), syw=Math.sin(P.sceneYaw),
+1129:  return [x3*S + P.sceneOffX, y2*S + P.sceneLift, z3*S + P.sceneOffZ];
+1131:function igniteAt(wx,wy,wz,r){
+1133:  const s=worldToSrc(wx,wy,wz), rr=(r||0.12)/(P.sceneScale||1);
+1147:  const S=P.sceneScale||1, N=layers.length, areaMode=P.spreadMeasureMode==='area';
+1419:  sceneOn:false, sceneMax:800000, sceneScale:1, sceneYaw:0, scenePitch:0, sceneLift:0,
+1429:  sceneSorted:true,                 // true=场景与火按深度桶交错(全局排序, 互遮挡) | false=旧行为(未排序,火后绘制)
+2847:    { const cyj=Math.cos(P.sceneYaw), syj=Math.sin(P.sceneYaw),
+2860:    if(P.sceneSorted && !P.sceneBackdrop && !P.sceneDepthTest){
+2984:      if(typeof igniteAt==='function') igniteAt(0,0.05,0,0.30); }
+3117:bindSlider('sceneScale','sceneScale',x=>x.toFixed(2)); bindSlider('sceneYaw','sceneYaw',x=>x.toFixed(2));
+3118:bindSlider('scenePitch','scenePitch',x=>x.toFixed(2)); bindSlider('sceneLift','sceneLift',x=>x.toFixed(2));
+3127:  const sc=document.getElementById('sceneScale'); if(sc){ sc.value=P.sceneScale; sc.dispatchEvent(new Event('input')); }
+3132:  file.arrayBuffer().then(buf=>{ try{ const r=loadPLY(buf);
+3192:const RESEARCH_SIGNED=new Set(['yaw','wind','camElev','sceneYaw','scenePitch','sceneLift','sceneOffX','sceneOffZ']);
+3193:const RESEARCH_STRUCTURAL=new Set(['layers','ppl','simLayers','solver','dimMode','sceneScale',
+3194:  'sceneYaw','scenePitch','sceneLift','sceneOffX','sceneOffZ','spreadMeasureMode','spreadReferenceArea']);
+3223:  for(const key of ['eps','sliceDepth','spreadIgnR','spreadR','spreadBurnT','sceneScale','camDist','fov','spreadReferenceArea'])
+3237:  if(researchScenePoints && (result.sceneScale!==1 || ['sceneYaw','scenePitch','sceneLift','sceneOffX','sceneOffZ'].some(k=>result[k]!==0)))
+3270:  Object.assign(P,{sceneScale:1,sceneYaw:0,scenePitch:0,sceneLift:0,sceneOffX:0,sceneOffZ:0,sceneOn:points.length>0,box:false,sceneSH:0});

@@ -1,0 +1,204 @@
+781:function parsePLY(buf){
+782:  const bytes=new Uint8Array(buf), sig='end_header\n';
+783:  let he=-1; for(let i=0;i<bytes.length-sig.length;i++){ let ok=true;
+784:    for(let j=0;j<sig.length;j++) if(bytes[i+j]!==sig.charCodeAt(j)){ok=false;break;} if(ok){he=i+sig.length;break;} }
+785:  if(he<0) throw new Error('.ply: missing end_header');
+786:  const header=new TextDecoder().decode(bytes.subarray(0,he));
+787:  if(!/binary_little_endian/.test(header)) throw new Error('.ply: only binary_little_endian is supported (Inria format)');
+788:  const N=(header.match(/element vertex (\d+)/)||[])[1]|0;
+789:  const props=[]; header.split('\n').forEach(l=>{ const m=l.match(/^property\s+(\w+)\s+([\w]+)/); if(m) props.push({t:m[1],n:m[2]}); });
+790:  const sz={char:1,uchar:1,uint8:1,int8:1,short:2,ushort:2,int:4,uint:4,float:4,float32:4,double:8};
+791:  let stride=0; const off={}; for(const p of props){ off[p.n]=stride; stride+=sz[p.t]||4; }
+792:  for(const k of ['x','y','z','opacity','scale_0','rot_0','f_dc_0']) if(off[k]===undefined) throw new Error('.ply: missing field '+k+' (not a 3DGS .ply?)');
+793:  const dv=new DataView(buf, he), C0=0.28209479177387814, sg=x=>1/(1+Math.exp(-x));
+794:  // ---- 显示空间预补偿 (CPU 孪生, 目前未接线) --------------------------------
+795:  // 3DGS 的 f_dc 存的是**显示空间**的颜色 (训练图像是 sRGB), 而我们的合成链是为火
+796:  // 设计的: HDR -> ACES -> 1/2.2 伽马。想法是在上传前施加该链的逆, 过完链回到训练色。
+797:  // **但这条路是错的, 且这里的 pre() 已经不再被调用** (下面写 c: 时用的是原始 DC):
+798:  //   逆变换非线性, 而 alpha 合成在它之后 —— 对重叠 splat 不是恒等, 抬亮度并放大通道比。
+799:  //   真正在跑的只有着色器里的 uPreComp 分支, 且 P.scenePreComp 默认已关。
+800:  //   保留 acesInv/pre 只为 A/B 对照, 别把它接回颜色写入。
+801:  // Narkowicz ACES 拟合 y = x(ax+b) / (x(cx+d)+e) 是有理式, 可闭式求逆:
+802:  //   (yc-a)x² + (yd-b)x + ye = 0
+803:  const acesInv=y=>{ const a=2.51,b=0.03,c=2.43,d=0.59,e=0.14;
+804:    y=Math.min(y, 0.9999);
+805:    const A=y*c-a, B=y*d-b, C=y*e;
+806:    if(Math.abs(A)<1e-9) return B!==0 ? -C/B : 0;
+807:    const disc=B*B-4*A*C; if(disc<0) return 1e3;
+808:    const r1=(-B+Math.sqrt(disc))/(2*A), r2=(-B-Math.sqrt(disc))/(2*A);
+809:    const r=Math.max(r1,r2);
+883:function loadPLY(buf){
+884:  if(P.spreadMeasureMode==='area') throw new Error('area mode requires an authored research scene with explicit areaWeight');
+885:  const r=parsePLY(buf); sceneGauss=r.gauss; sceneInfo={center:r.center, extent:r.extent};
+886:  researchScenePoints=null;
+887:  uploadSH(r.shHi, r.gauss.length, r.shDeg);
+888:  if(P.sceneSH>shDegAvail) P.sceneSH=shDegAvail;
+889:  P.sceneScale = 1.6 / (r.extent||1);      // 自动缩放到 ~3.2 单位跨度
+890:  P.sceneOn=true; P.box=false;             // 载入真场景 → 关掉程序化背景
+891:  buildBurnState();                        // 燃烧状态 + 源空间邻接哈希 (splat-graph 蔓延)
+892:  applyScene(); return { kept:sceneGauss.length, total:r.total };
+893:}
+894:// 每帧: 应用场景变换(缩放/绕Y/俯仰/抬升, 自动去中心) → 世界 splat →
+895://   按视空间深度 计数分桶 (O(n+K), 近→远桶序) 写 sceneVBO。
+896://   桶边界 (sceneDMin/DMax, SCENE_BUCKETS) 与动态流共享 → render() 逐桶交错两条流,
+897://   火与 .ply 场景获得全局 front-to-back 顺序 (逐基元互遮挡, 桶内近似)。
+898://   两档对照:
+899://     P.sceneBackdrop=true  内部合成消融: 场景内部排序正确，但不与火交错，火整体
+900://                           叠在场景之上。该消融不实现 FieryGS 的平面深度裁剪体积积分。
+901://     P.sceneSorted=false   朴素基线: 连场景自身排序也去掉 (火先画, 场景按文件序垫后)。
+902://                           只用于把「未交错」和「未排序」两种失效分开看。
+903:let SCENE_BUCKETS=1536;                    // 可调: 场景越密、深度跨度越大, 需要的桶越多。
+904:// 1536 是量出来的, 不是猜的 (kitchen 700k splats, 与 gsplat 参考逐像素对比;
+905:// 对照口径 = faithful 通路 + bloom=0, 即绕开为火设计的后期, 只比 splat 渲染本身):
+906://   ① 桶边界会在平坦表面上印出"灯芯绒"横纹, 周期恰好锁在 K 上 —— 实测 argmax 周期
+907://      15.2 / 7.8 / <4 px 对应 K=96 / 192 / 384 (∝1/K, 与预测一致), 该频率上的幅度
+908://      0.01200 → 0.00487 → 0.00189, 到 384 已落到参考自身纹理的水平 (0.00170)。
+909://      **可见的条纹在 K=384 就死了。**
+910://   ② 但桶内残余乱序还在: |Δ|>0.05 的像素占比 13.18% → 3.67% (384) → 0.67% (1536)
+911://      → 0.31% (4096); 到 1536 误差图只剩轮廓边 (= 两个光栅器 eps2d 的不可约差)。
+912://      PSNR(对 gsplat): 25.37 → 32.53 (384) → 38.67 (1536) → 40.68 (4096) → 41.74 (16384 饱和)。
+913://   ③ 代价 (1280x800, 700k + 9x600 火, 15 次交替重测中位数): 帧时 +5.4 / +12.3 / +19.4 ms
+914://      (384 / 1536 / 4096, 基线 273 ms)。机理是计数排序置换散射的并发写游标变多,
+915://      70MB 重排局部性变差 —— 随 n 增长, 不随 K 增长。
+916://   → 边际收益 1.33 / 0.89 / 0.28 dB per ms: 拐点在 1536 之后, 不在 384 之后。
+917://   预算紧时退回 384 (仍无可见条纹, 只是桶内噪声高 5.5 倍)。
+967:    // 这样场景的旋转/缩放摆放不需要旋转系数本身 (等价但更省且更不易出错)。
+968:    const sh=g.sh;
+969:    arr[o++]=sh[0][0]; arr[o++]=sh[0][1]; arr[o++]=sh[0][2];
+970:    arr[o++]=sh[1][0]; arr[o++]=sh[1][1]; arr[o++]=sh[1][2];
+971:    arr[o++]=sh[2][0]; arr[o++]=sh[2][1]; arr[o++]=sh[2][2];
+972:    arr[o++]=bi;                       // 原始下标 -> 2-3 阶球谐纹理 (缓冲会被深度重排)
+973:    bi++;
+974:    const ex=wx-eye[0], ey=wy-eye[1], ez=wz-eye[2];
+975:    const d=ex*fwx + ey*fwy + ez*fwz; sceneKey[gi++]=d;       // 视空间深度, 线性而非平方:
+976:    // 按 d² 均匀分桶会把最宽的桶放在离相机最近处 —— 恰好是最需要精度的地方。
+977:    if(d<dmin)dmin=d; if(d>dmax)dmax=d;
+978:  }
+979:  if(!P.sceneSorted){                       // 旧路径: 原顺序直接上传 (对照)
+980:    gl.bindBuffer(gl.ARRAY_BUFFER,sceneVBO);
+981:    gl.bufferData(gl.ARRAY_BUFFER, sceneRaw.subarray(0,n*SC_STRIDE_F), gl.DYNAMIC_DRAW);
+982:    return n;
+983:  }
+984:  sceneDMin=dmin; sceneDMax=(dmax>dmin)?dmax:dmin+1;
+985:  const K=SCENE_BUCKETS, inv=K/(sceneDMax-sceneDMin);
+986:  const cnt=new Int32Array(K);
+987:  for(let i=0;i<n;i++){ let b=((sceneKey[i]-sceneDMin)*inv)|0; if(b<0)b=0; if(b>=K)b=K-1;
+988:    sceneBIdx[i]=b; cnt[b]++; }
+989:  sceneBucketOfs[0]=0;
+990:  for(let k=0;k<K;k++) sceneBucketOfs[k+1]=sceneBucketOfs[k]+cnt[k];
+991:  const cursor=Int32Array.from(sceneBucketOfs.subarray(0,K));
+1131:function igniteAt(wx,wy,wz,r){
+1132:  const sb=sceneBurnState; if(!sb) return 0;
+1133:  const s=worldToSrc(wx,wy,wz), rr=(r||0.12)/(P.sceneScale||1);
+1134:  let lit=0;
+1135:  hashQuery(s,rr,(j)=>{ if(sb.state[j]===0 && sb.fuel[j]>0){ sb.state[j]=1; sb.burning.push(j); lit++; } });
+1136:  return lit;
+1137:}
+1138:function setFuelBelow(yWorld,val){                 // 按世界高度赋燃料 (如: 地面不可燃)
+1139:  const sb=sceneBurnState; if(!sb) return 0;
+1140:  let cnt=0;
+1141:  for(let i=0;i<sceneGauss.length;i++){ const w=srcToWorld(sceneGauss[i].p);
+1142:    if(w[1]<yWorld){ sb.fuel[i]=val; cnt++; } }
+1143:  return cnt;
+1144:}
+1145:function stepSpread(dt){
+1418:  box:true, boxLight:0.10, embers:true, reflect:0.05, haze:0.05, emberRate:16, emberMax:160,
+1419:  sceneOn:false, sceneMax:800000, sceneScale:1, sceneYaw:0, scenePitch:0, sceneLift:0,
+1420:                                     // 上限按整个 .ply 走: 700k-2M 的重建被抽稀到 12 万时
+1421:                                     // 丢掉的是高频细节, 实测 -16.2 dB。滑杆同步改到 80(×10k)。
+1422:  sceneOffX:0, sceneOffZ:0,          // 横向摆位: 把重建挪开, 好让火落在它旁边而不是正中
+1423:  faithful:false,                    // 忠实显示: 跳过为火设计的后期链 (火会变暗, 只用于看场景本身)
+1424:  scenePreComp:false,                // 场景颜色预补偿 ACES+伽马 (逐 splat 逆色调曲线)。默认关:
+1425:                                     // 逆变换在 alpha 合成之前, 对重叠 splat 不是恒等 —— 抬亮度
+1426:                                     // 并放大通道比 (彩虹亮斑)。见 VS_SCENE 里 acesInvV 上方的说明。
+1427:  sceneSH:3,                         // 场景球谐阶数 0-3 (受文件里实际有多少阶限制)
+1428:  sceneLight:1.0,
+1429:  sceneSorted:true,                 // true=场景与火按深度桶交错(全局排序, 互遮挡) | false=旧行为(未排序,火后绘制)
+1430:  sceneBackdrop:false,              // true=内部backdrop消融: 场景内部排序正确，火整体叠在场景之上
+1431:  sceneDepthTest:false, depthTestAlpha:0.5,   // 内部阈值深度消融: 场景片元写中心深度，火逐像素z-test；不等同PGSR平面深度
+1432:  spreadOn:false,                   // splat-graph 火蔓延 (燃烧状态住在场景 splats 上)
+1433:  spreadIgnR:0.14, spreadHeat:2.2, spreadIgnH:1.0,   // 火焰→splat 点燃: 半径/加热率/阈值
+1434:  spreadR:0.11, spreadRate:3.0, spreadBurnT:6.0,     // splat→splat 蔓延半径/速率, 燃烧时长(s)
+1435:  spreadFeed:5.0,                   // 燃烧 splat→切片温度场注入率 (闭环强度)
+2838:    gl.useProgram(pScene);
+2839:    gl.uniformMatrix4fv(uScene.VP, false, cam.VP); gl.uniform1f(uScene.Light, P.sceneLight);
+2840:    gl.uniform1f(uScene.Time, simTime);
+2841:    gl.uniformMatrix4fv(uScene.V, false, cam.V);            // EWA: 需要视图矩阵与像素焦距
+2842:    gl.uniform2f(uScene.Focal, cam.focal[0], cam.focal[1]);
+2843:    gl.uniform2f(uScene.Viewport, cv.width, cv.height);
+2844:    gl.uniform1f(uScene.CharDesat, P.charDesat); gl.uniform1f(uScene.CharDim, P.charDim);
+2845:    gl.uniform1f(uScene.CharSootMix, P.charSootMix); gl.uniform1f(uScene.CharOpa, P.charOpa);
+2846:    gl.uniform3f(uScene.CharSoot, P.charSootR, P.charSootG, P.charSootB);
+2847:    { const cyj=Math.cos(P.sceneYaw), syj=Math.sin(P.sceneYaw),
+2848:            cpj=Math.cos(P.scenePitch), spj=Math.sin(P.scenePitch);
+2849:      // R = Ry(yaw)·Rx(pitch) 的转置 (=逆, 正交); 列主序上传
+2850:      const r=[cyj, syj*spj, syj*cpj, 0, cpj, -spj, -syj, cyj*spj, cyj*cpj];
+2851:      gl.uniformMatrix3fv(uScene.RotInv, false,
+2852:        new Float32Array([r[0],r[1],r[2], r[3],r[4],r[5], r[6],r[7],r[8]]));
+2853:      gl.uniform3f(uScene.Eye, cam.eye[0], cam.eye[1], cam.eye[2]);
+2854:    gl.activeTexture(gl.TEXTURE3); gl.bindTexture(gl.TEXTURE_2D, shTex);
+2855:    gl.uniform1i(uScene.SH, 3); gl.uniform1i(uScene.SHW, shTexW||1);
+2856:    gl.uniform1i(uScene.SHDeg, Math.min(P.sceneSH, shDegAvail));
+2857:    // 两者同时开会把场景压死: faithful 已经跳过了 ACES+伽马, 再预补偿就是逆一次没做的变换。
+2858:    gl.uniform1f(uScene.PreComp, (P.scenePreComp && !P.faithful)?1.0:0.0); }
+2859:    gl.uniform1f(uScene.DepthPre, 0.0);
+2860:    if(P.sceneSorted && !P.sceneBackdrop && !P.sceneDepthTest){
+2861:      drawInterleaved(count, ns);
+2862:    } else if(P.sceneDepthTest){
+2863:      // 内部depth-aware消融: 在不透明度阈值下写Gaussian中心深度，再做z-test。
+2864:      // 这不实现FieryGS的PGSR平面深度，也不能代表最强合成基线。
+2865:      // 场景在 α≥0.5 处写深度 → 火逐像素被最近的不透明面裁剪。不透明遮挡正确;
+2866:      // 失败模式恰是我们的差异化点 —— 半透明界面处的遮挡是二值的
+2867:      // (整段火要么全被吃掉要么全浮在上面), 无逐基元的部分透射。
+2868:      gl.depthMask(true);                                // 先于 clear: depth clear 受写掩码约束
+2869:      gl.clearDepth(1.0); gl.clear(gl.DEPTH_BUFFER_BIT);
+2870:      gl.colorMask(false,false,false,false);
+2871:      gl.enable(gl.DEPTH_TEST); gl.depthFunc(gl.LESS);
+2872:      gl.uniform1f(uScene.DepthPre, P.depthTestAlpha);
+2873:      drawSceneRange(0,ns); gl.bindVertexArray(null);
+2874:      gl.uniform1f(uScene.DepthPre, 0.0);
+2875:      gl.colorMask(true,true,true,true);
+2876:      gl.depthMask(false);                               // 火: 只测不写
+2877:      gl.useProgram(pPart); drawPartRange(0,count);
+2878:      gl.disable(gl.DEPTH_TEST);
+2879:      gl.useProgram(pScene); drawSceneRange(0,ns);       // 场景颜色: 桶序正确, 垫底
+2880:      gl.bindVertexArray(null);
+2881:    } else if(P.sceneBackdrop){
+2882:      // 内部backdrop消融: 火合成在场景之上；不代表FieryGS原渲染器。
+2883:      // FieryGS使用PGSR平面深度裁剪体积积分，此分支没有该步骤。
+2884:      // 故火先累积、场景作不透明背景垫在后面 —— 但场景**内部排序是正确的**
+2885:      // (gatherScene 已分桶)。与下面的朴素路径唯一的差别就是这一点: 不把
+2886:      // 「场景未排序」这个实现 bug 算到对照方法头上, 差异只剩两条流是否交错。
+2887:      gl.useProgram(pPart);  drawPartRange(0,count);
+2888:      gl.useProgram(pScene); drawSceneRange(0,ns);
+2889:      gl.bindVertexArray(null);
+2890:    } else {                                             // 旧行为对照: 火先画, 场景未排序垫后
+2891:      gl.useProgram(pPart); drawPartRange(0,count);
+2892:      gl.useProgram(pScene); drawSceneRange(0,ns);
+2893:      gl.bindVertexArray(null);
+2894:    }
+2895:  } else if(count>0){
+2896:    drawPartRange(0,count); gl.bindVertexArray(null);
+2897:  }
+2898:  gl.disable(gl.BLEND);
+3122:    const pct=(el.value-el.min)/(el.max-el.min)*100; el.style.background=`linear-gradient(to right, var(--acc) ${pct}%, #3a3a3a ${pct}%)`; };
+3123:  el.addEventListener('input',upd); upd(); })();
+3124:function applyScene(){
+3125:  document.getElementById('sceneOn').querySelector('.cb').classList.toggle('on', P.sceneOn);
+3126:  document.getElementById('box').querySelector('.cb').classList.toggle('on', P.box);
+3127:  const sc=document.getElementById('sceneScale'); if(sc){ sc.value=P.sceneScale; sc.dispatchEvent(new Event('input')); }
+3128:}
+3129:bindCheck('sceneOn','sceneOn');
+3130:function readPLYFile(file){
+3131:  const st=document.getElementById('plyStatus'); st.textContent='Parsing… '+file.name;
+3132:  file.arrayBuffer().then(buf=>{ try{ const r=loadPLY(buf);
+3133:      st.innerHTML=`✅ ${file.name}<br>Loaded <b>${r.kept.toLocaleString()}</b> / ${r.total.toLocaleString()} Gaussians. Use the sliders to align (scale / rotate / level).`;
+3134:      document.getElementById('catPly').classList.remove('collapsed');   // 载入成功 → 展开放置滑杆
+3135:    }catch(e){ st.textContent='❌ '+e.message; } })
+3136:   .catch(e=>{ st.textContent='❌ Read failed: '+e.message; });
+3137:}
+3138:document.getElementById('plyBtn').addEventListener('click',()=>document.getElementById('plyFile').click());
+3139:document.getElementById('plyFile').addEventListener('change',e=>{ if(e.target.files[0]) readPLYFile(e.target.files[0]); });
+3140:cv.addEventListener('dragover',e=>{ e.preventDefault(); });
+3141:cv.addEventListener('drop',e=>{ e.preventDefault(); if(e.dataTransfer.files[0]) readPLYFile(e.dataTransfer.files[0]); });
+3142:

@@ -1,0 +1,89 @@
+research/EVIDENCE_STATUS.md:1: # Research evidence status
+research/EVIDENCE_STATUS.md:2: 
+research/EVIDENCE_STATUS.md:3: Updated 2026-10-16. The released browser prototype, the archived paper, and the
+research/EVIDENCE_STATUS.md:4: research experiments have different scopes. This page records the current
+research/EVIDENCE_STATUS.md:5: evidence without treating implementation checks as a new method or acceptance
+research/EVIDENCE_STATUS.md:6: criterion.
+research/EVIDENCE_STATUS.md:7: 
+research/EVIDENCE_STATUS.md:8: The browser's backdrop and opacity-threshold depth modes are internal ablations.
+research/EVIDENCE_STATUS.md:9: Neither reproduces FieryGS: its [fixed original renderer](https://github.com/PKU-VCL-Geometry/FieryGS/blob/f70fbe26d22431c7acd93a745861dd47ba4307d7/gaussian_renderer/renderer_with_fire.py)
+research/EVIDENCE_STATUS.md:10: uses PGSR plane depth to clip volume integration. A favorable result against the
+research/EVIDENCE_STATUS.md:11: browser ablations therefore does not establish an advantage over FieryGS. The
+research/EVIDENCE_STATUS.md:12: older changelog attribution has been explicitly withdrawn; existing measurements
+research/EVIDENCE_STATUS.md:13: remain historical observations of their actual implementations.
+research/EVIDENCE_STATUS.md:14: 
+research/EVIDENCE_STATUS.md:15: ## What the recent experiments establish
+research/EVIDENCE_STATUS.md:16: 
+research/EVIDENCE_STATUS.md:17: | Experiment | Finding | Scope and limitation |
+research/EVIDENCE_STATUS.md:18: | --- | --- | --- |
+research/EVIDENCE_STATUS.md:19: | [P4a](P4A_README.md) | Pairwise finite-capacity heat exchange conserves the declared sensible energy. | Authored areas, volumes and capacities; a standard exchange model, not combustion validation. |
+research/EVIDENCE_STATUS.md:20: | [P4b](P4B_README.md) | The exchange interface drives the actual 3D VPM path with fixed particles; feedback changes the trajectory. | Does not establish Navier–Stokes accuracy, reaction chemistry or particle lifecycle accounting. |
+research/EVIDENCE_STATUS.md:21: | P5/P5b | Velocity-tree acceptance could omit thermal support. An independent thermal traversal repairs the identified omission. | Differences from the old trajectory measure repair sensitivity, not error against physical truth. |
+research/EVIDENCE_STATUS.md:22: | [P5c](physical_reference/README.md) | A Float64 direct reference specifies integrated vorticity, source-only Gaussian velocity and its full Jacobian, volume-weighted temperature, and its own gradient. | Static fields and specified ODEs; not a validated coupled flow or combustion solver. |
+research/EVIDENCE_STATUS.md:23: | [P6](exact_neighbor_reference/README.md) | Exact spatial hashing reproduces the direct exchange graph and update in nine cases. | A standard CPU neighbor baseline; no GPU or full-frame acceleration claim. |
+research/EVIDENCE_STATUS.md:24: | [P7](shared_state_screen/README.md) | A 512-state material proxy fails the fixed 2% display-temperature tolerance; an 8192-state shared representation passes. | No timing was run because the quality gate failed. This does not establish superiority over stronger proxies. |
+research/EVIDENCE_STATUS.md:25: | [P7b](proxy32_followup/README.md) | One disclosed follow-up with 2048 material states passes the same quality gates and both cost and storage gates against the shared representation. | A post-result development experiment on two stationary panels with prescribed gas-particle paths; not a held-out result, renderer test or new method. |
+research/EVIDENCE_STATUS.md:26: 
+research/EVIDENCE_STATUS.md:27: P7b reuses the authenticated P7 reference and shared quality trajectory. Its
+research/EVIDENCE_STATUS.md:28: proxy errors are 0.575% for panel response, 0.881% for regional response and
+research/EVIDENCE_STATUS.md:29: 1.262% for the display-temperature field, each below the fixed 2% tolerance.
+research/EVIDENCE_STATUS.md:30: Both timing arms were run afresh: six paired blocks with alternating arm order,
+research/EVIDENCE_STATUS.md:31: each containing one full 120-step trajectory per arm (12 measured trajectories
+research/EVIDENCE_STATUS.md:72: ## Reproducibility and provenance
+research/EVIDENCE_STATUS.md:73: 
+research/EVIDENCE_STATUS.md:74: P7b source was frozen before its formal run. The producer's five unit tests and
+research/EVIDENCE_STATUS.md:75: the auditor's twelve metadata/negative checks passed. Independent audit covers
+research/EVIDENCE_STATUS.md:76: all 121 new states and 251,680 temperature components; independent all-pairs
+research/EVIDENCE_STATUS.md:77: physical replay covers five fixed steps, not the entire trajectory. The parent
+research/EVIDENCE_STATUS.md:78: P7 evidence was actually re-audited. Extracting both sealed packages into a new
+research/EVIDENCE_STATUS.md:79: directory reproduces both complete audit reports exactly.
+research/EVIDENCE_STATUS.md:80: 
+research/EVIDENCE_STATUS.md:81: The source is in this repository. The large evidence archives are separate local
+research/EVIDENCE_STATUS.md:82: deliverables; they are not silently assumed to be available from GitHub.
+research/EVIDENCE_STATUS.md:83: 
+research/EVIDENCE_STATUS.md:84: | Required archive | Bytes | SHA-256 |
+research/EVIDENCE_STATUS.md:85: | --- | ---: | --- |
+research/EVIDENCE_STATUS.md:86: | `VortexGaussians-P7-shared-state-screen.zip` | 254696730 | `e09b48282f81034a724db19dfb29f4b6bd7eacdde92b3f963e90f66ae746b32d` |
+research/EVIDENCE_STATUS.md:87: | `VortexGaussians-P7b-proxy32-followup.zip` | 4363125 | `3f1e0db992d013571f743c755f679f0121361f2299c00eb261784aa4f1688b52` |
+research/EVIDENCE_STATUS.md:88: 
+research/EVIDENCE_STATUS.md:89: Use the [P7b reproduction instructions](proxy32_followup/README.md) with both
+research/EVIDENCE_STATUS.md:90: archives. Do not overwrite old runs or edit the byte-pinned sources to reuse an
+research/EVIDENCE_STATUS.md:91: existing evidence record. Experimental thresholds are project decisions, not
+research/EVIDENCE_STATUS.md:92: SIGGRAPH requirements.
+research/EVIDENCE_STATUS.md:93: 
+research/EVIDENCE_STATUS.md:94: ## Contribution and remaining gaps
+research/EVIDENCE_STATUS.md:95: 
+research/EVIDENCE_STATUS.md:96: No new core method or compelling system-level advantage has yet been
+research/EVIDENCE_STATUS.md:97: established. Existing work already covers several tempting broad claims:
+research/EVIDENCE_STATUS.md:98: 
+research/EVIDENCE_STATUS.md:99: - [DDFKs](https://arxiv.org/html/2601.17693v1) provides forward fluid simulation
+research/EVIDENCE_STATUS.md:100:   with divergence-free kernels and vorticity-based updates;
+research/EVIDENCE_STATUS.md:101:   [Vortex Particle Flow Maps](https://arxiv.org/html/2505.21946v1) transports
+research/EVIDENCE_STATUS.md:102:   vorticity with flow-map derivatives. Gaussian deformation and Cauchy stretching
+research/EVIDENCE_STATUS.md:103:   alone do not identify a new solver.
+research/EVIDENCE_STATUS.md:104: - [GI 2022 surfel/VPM boundaries](https://graphicsinterface.org/wp-content/uploads/gi2022-10.pdf)
+research/EVIDENCE_STATUS.md:105:   and [VEMPIC](https://www.dgp.toronto.edu/projects/vempic/) are relevant strong
+research/EVIDENCE_STATUS.md:106:   alternatives for boundary handling. A point-based representation does not by
+research/EVIDENCE_STATUS.md:107:   itself resolve missing geometry or make a physical boundary uniquely known.
+research/EVIDENCE_STATUS.md:108: - [HyFluid](https://github.com/y-zheng18/HyFluid) already optimizes vortex
+research/EVIDENCE_STATUS.md:109:   particles from video; [LagrangianSplats](https://arxiv.org/html/2605.09299v1)
+research/EVIDENCE_STATUS.md:110:   uses divergence-free transport of Gaussian appearance. High-frame-rate RGB
+research/EVIDENCE_STATUS.md:111:   alone does not generally identify physical temperature or a unique velocity.
+research/EVIDENCE_STATUS.md:112: 
+research/EVIDENCE_STATUS.md:113: These comparisons reject the currently specified candidates, not every possible
+research/EVIDENCE_STATUS.md:114: research direction. A system contribution need not invent every component, but
+research/EVIDENCE_STATUS.md:115: must demonstrate a substantive new capability or quality–cost advantage under
+research/EVIDENCE_STATUS.md:116: fair comparison. Current evidence does not establish that either.
+research/EVIDENCE_STATUS.md:117: 
+research/EVIDENCE_STATUS.md:118: The next implementation must be motivated by a concrete technical hypothesis
+research/EVIDENCE_STATUS.md:119: and a baseline capable of using the same information. Do not extend the proxy
+research/EVIDENCE_STATUS.md:120: resolution sweep, rename standard moment/remapping methods, or start expensive
+research/EVIDENCE_STATUS.md:121: inverse training merely to produce another phase. Full reaction/lifecycle
+research/EVIDENCE_STATUS.md:122: accounting, physical boundaries, real asset replay and matched-quality
+research/EVIDENCE_STATUS.md:123: whole-system evaluation remain missing from the research path. Adding these
+research/EVIDENCE_STATUS.md:124: features would improve engineering completeness; it would not automatically
+research/EVIDENCE_STATUS.md:125: establish a research contribution.
+research/EVIDENCE_STATUS.md:126: 
+research/EVIDENCE_STATUS.md:127: Historical media and hardware timings remain author-reported records. The
+research/EVIDENCE_STATUS.md:128: archived PDF predates these checks and should not be read as the current
+research/EVIDENCE_STATUS.md:129: validated claim set.

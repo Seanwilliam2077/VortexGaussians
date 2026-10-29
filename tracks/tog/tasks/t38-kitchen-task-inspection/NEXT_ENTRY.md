@@ -1,0 +1,9 @@
+# After T38 — no numerical task is currently qualified
+
+T38 establishes that the historical video already shows the original qualitative operation: fire and progressive darkening around a toy/model in a captured scene. Its acquired record does not identify matching scene/camera/control/configuration/code inputs or a demonstrated unmet task. Under the prior fixed rule, the historical kitchen replay route is closed. Missing inputs are neither novelty nor impossibility evidence.
+
+No new numerical protocol or automatic run queue is prepared. Do not extend the T38 source/frame budget, substitute the synthetic campfire, reopen the T31 narrow-carrier optimization or relabel an internal compositing ablation as a strong baseline. Historical negative results remain unchanged. The full goal remains active; art stays inactive and the deleted automation stays deleted.
+
+The next research decision must supply substantive new task/mechanism evidence, rather than another packaging or qualification pass. For this historical route, reopening would require matching asset provenance, a recorded replay contract and one explicit, assessable operation whose ordinary solution remains in question. This is a reopen condition, not a request to recover files the author has already said are unavailable.
+
+An independent researcher-authored task is allowed only with a stated technical purpose and an actual usable input, separately justified from the closed carrier and protection-cache examples. Before execution, name the ordinary strong remedy, the result that would make the study worth pursuing, and the finite all-in cost/quality budget. Do not infer a new method from missing reproducibility, scalar Python slowness, an untested concern or the desire to continue spending compute. No such new task or method has been selected in T38.
