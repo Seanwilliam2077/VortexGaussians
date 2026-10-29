@@ -1,0 +1,14 @@
+# T44 — can a one-view exact merge stay trustworthy under motion?
+
+30 October 2026. Parent `0504db5b0f2b2debfa0a2c683947c008476c2582`. The previous turn is progress: T43 derived concrete ordinary merge/projection capabilities and changed the fair comparison. Entry inspection found a clean research branch and no matching live scientific process. No T42 replay or B/C numerical continuation is selected.
+
+The proposed refinement remains within T15-A's conservative representation-transfer operation: after an ordinary moment merge is exactly correct in one orthographic view, can a cheap view/deformation guard retain that benefit through motion? The proposed reason to examine it is reuse of a compressed representation across frames, not a claim that redundant spatial moments are novel. A common affine map commutes with ordinary moment matching; this alone does not preserve a changed projected footprint.
+
+This scope is recorded after initial discussion, before the new external source screen and before any numerical experiment. Perform one finite analytical screen:
+
+- Derive the first nonzero change of the projected density error near a common-footprint view. Check whether a first-order or higher-order cancellation actually holds, including different image-plane/depth covariances. Distinguish orthographic full-line optical depth from arbitrary emission or truncated rays.
+- Check whether mass/mean/covariance/affine momentum alone retain enough information to certify later views; use one explicit positive-Gaussian family if necessary. Separate this information question from the cost of retaining fine state or sufficient extra statistics.
+- Compare a possible guard with ordinary Gaussian-mixture distance bounds and exact projected Gaussian overlap integrals. Acquire at most two targeted search queries in one batch and at most four primary-source items/pages/documents, including abstracts if full text is unavailable. No citation chasing, second search batch, code repository inspection or dependency/asset download. Record access limits and do not infer novelty from omissions.
+- Finish with one adversarial mathematical review. If the construction is an ordinary metric/cumulant expansion without a distinct inexpensive guarantee or reuse opportunity, do not implement it or create a numerical qualification queue. A source access failure also does not establish a gap.
+
+No simulation, rendering, scene synthesis, training, optimization, numerical example or scientific-array reduction is authorized in this task. A mathematical counterexample is not a replacement benchmark. Do not alter prior failures, thresholds, files or user-facing art. Keep the full submission objective active and unachieved; a correct guard alone would still need practical tasks, fair complete-cost baselines and multi-scene evidence.
