@@ -1,0 +1,162 @@
+{
+  "schema": "t51-self-induced-full-tangent-v1",
+  "created_utc": "2026-10-29T22:43:36.893015+00:00",
+  "parent_commit": "eba5fc01d7c8562e538259117c19ffcb8ac53e6d",
+  "previous_goal_turn": "progress: T50 established the named ordinary impulse-solver contract and preserved gauge and source limitations",
+  "current_turn_classification": "progress: one complete physical self-induced tangent nonmembership argument and explicit residual",
+  "publication_attempts": 3,
+  "publication_bookkeeping_failures": [
+    {
+      "attempt": 1,
+      "stage": "Markdown-link check before manifest or staging",
+      "reason": "Generic closing-bracket/parenthesis regex misread a LaTeX factor as a link"
+    },
+    {
+      "attempt": 2,
+      "stage": "Markdown-link check before manifest or staging",
+      "reason": "Narrower matcher still read bracket/parenthesis notation inside an indented formula code block"
+    }
+  ],
+  "publication_recovery": "Saved both own state-edit attempts, restored only three state documents each time; final matcher excludes backslash math labels and indented code lines. No scientific execution or historical result changed.",
+  "publication_recovery_records": [
+    {
+      "path": "tracks/tog/tasks/t51-self-induced-tangent/local/publication-recovery.json",
+      "bytes": 1393,
+      "sha256": "4c62e658d544a3173fc13ed66e6776bf3bba8be56b54aeed6e39192c96ebac4e"
+    },
+    {
+      "path": "tracks/tog/tasks/t51-self-induced-tangent/local/publication-recovery-2.json",
+      "bytes": 1401,
+      "sha256": "52463aaf3c1f9ff047cb48a4049304745f5f6d5a693d58c26aa0d8362cdaa198"
+    }
+  ],
+  "goal_status": "active_not_submission_ready",
+  "decision": "retain_exact_nonclosure_boundary_no_repair_or_numerical_task_selected",
+  "hand_derived_membership_arguments": 1,
+  "independent_mathematical_readbacks": 1,
+  "full_parameter_tangent_allowed": true,
+  "parameter_tangent_dimension": 12,
+  "physical_vorticity_nonmembership_established": true,
+  "initially_isotropic_single_carrier_scope": true,
+  "strict_radial_variation_vs_constant_translation": true,
+  "physical_residual_explicit": true,
+  "center_axis_equatorial_checks_can_hide_residual": true,
+  "self_consistent_exact_closure_established": false,
+  "approximation_error_quantified": false,
+  "valid_approximation_ruled_out": false,
+  "useful_bottleneck_demonstrated": false,
+  "T49_prescribed_flow_contract_unchanged": true,
+  "T50_gauge_contract_unchanged": true,
+  "new_scientific_executions": 0,
+  "new_numerical_evaluations": 0,
+  "new_symbolic_software_evaluations": 0,
+  "scientific_array_reductions": 0,
+  "new_methods_implemented": 0,
+  "new_browser_launches": 0,
+  "new_rendering_executions": 0,
+  "source_acquisition_invocations": 0,
+  "external_search_queries": 0,
+  "paper_rereads": 0,
+  "linked_source_opens": 0,
+  "third_party_scene_assets": 0,
+  "installations": 0,
+  "novelty_established": false,
+  "cost_advantage_measured": false,
+  "next_repair_selected": false,
+  "next_scientific_run_selected": false,
+  "next_implementation_selected": false,
+  "next_source_batch_selected": false,
+  "next_decision_requires_physical_error_metric_and_task_payoff": true,
+  "next_decision_contract": {
+    "path": "tracks/tog/tasks/t51-self-induced-tangent/DECISION.md",
+    "bytes": 3005,
+    "sha256": "72d19b4f7d4d89233ba280fa6d16e72a48f0cc64030ee4991f45a35dec138e7a"
+  },
+  "TOG_core_contribution": false,
+  "artifacts": [
+    {
+      "path": "tracks/tog/tasks/t51-self-induced-tangent/.gitignore",
+      "bytes": 7,
+      "sha256": "a7d8bdcefba82a95ebc021d87c629fdea21f13af953bf01e28b7cf8b0eeceb41"
+    },
+    {
+      "path": "tracks/tog/tasks/t51-self-induced-tangent/DECISION.md",
+      "bytes": 3005,
+      "sha256": "72d19b4f7d4d89233ba280fa6d16e72a48f0cc64030ee4991f45a35dec138e7a"
+    },
+    {
+      "path": "tracks/tog/tasks/t51-self-induced-tangent/README.md",
+      "bytes": 1264,
+      "sha256": "2e8057e1341b32b3eb1f0ad083ed50255e5069a41973e352eb5b4a4d5e7e9447"
+    },
+    {
+      "path": "tracks/tog/tasks/t51-self-induced-tangent/SCOPE.md",
+      "bytes": 2149,
+      "sha256": "f7b27162656edd875f619806e32970dbdb9ef9f6dd22e2d45ce7d35ca5436772"
+    },
+    {
+      "path": "tracks/tog/tasks/t51-self-induced-tangent/TANGENT.md",
+      "bytes": 6553,
+      "sha256": "651d7b0daa128edefcd65d4f187229762363d6d627d6575d5ea1836ca7c8a66f"
+    },
+    {
+      "path": "tracks/validation/t51-mathematical-review.md",
+      "bytes": 8032,
+      "sha256": "f9548912967366073309157fa859241016a23ecc085b7d1fee430115916a021a"
+    }
+  ],
+  "current_state_documents": [
+    {
+      "path": "tracks/STATUS.md",
+      "bytes": 70491,
+      "sha256": "c321835fabb9d87601baf990a221d5d1249f4bd24abc2abbd6060a47ccd71f2c"
+    },
+    {
+      "path": "tracks/EXPLORATION.md",
+      "bytes": 8274,
+      "sha256": "7660f3bb16437260c11fd4fecf1ada56d3e4d8ded6417abb7b3b927c91ba5197"
+    },
+    {
+      "path": "tracks/tog/README.md",
+      "bytes": 8266,
+      "sha256": "3feff20df4f49925c9f398008dc8b05bbc45a8de8b05e2a910b8883e42f5f31e"
+    }
+  ],
+  "preservation_chain": {
+    "parent_manifest": {
+      "path": "tracks/tog/tasks/t50-impulse-paper-contract/audit-manifest.json",
+      "bytes": 6221,
+      "sha256": "41599c687ddac605322a9546f100ce8b674bd69182dd57f45615905ecbb93356"
+    },
+    "verified_prior_artifact_count": 607,
+    "all_recorded_prior_bytes_unchanged": true
+  },
+  "other_parent_tracked_files_unchanged": 1132,
+  "literal_parent_blob_matches": 1118,
+  "CRLF_only_checkout_conversions": [
+    ".gitignore",
+    "CHANGELOG.md",
+    "PUBLISH.md",
+    "README.md",
+    "compare.html",
+    "index.html",
+    "research/EVIDENCE_STATUS.md",
+    "research/FRONTIER_EARLY_REJECTION.md",
+    "research/lib/p3d-baseline.json",
+    "research/lib/p3e-baseline.json",
+    "research/lib/p3f-baseline.json",
+    "research/lib/p3g-baseline.json",
+    "research/physical_reference/README.md",
+    "study/index.html"
+  ],
+  "all_parent_blob_ids_match_after_git_clean_filters": true,
+  "original_core": {
+    "path": "tracks/tog/src/core.py",
+    "bytes": 13301,
+    "sha256": "ac750b70a86743ac858f1c53cf620ce29c63c462456115af4d0d8c93fa20bd9e"
+  },
+  "historical_failures_unchanged": true,
+  "art_inactive": true,
+  "main_not_merged_or_deployed": true,
+  "automation_remains_deleted": true
+}
