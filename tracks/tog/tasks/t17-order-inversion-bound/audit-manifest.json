@@ -1,0 +1,477 @@
+{
+  "schema": "t17-order-inversion-evidence-v1",
+  "created_utc": "2026-10-29T07:36:13.661114+00:00",
+  "previous_research_commit": "8d781f19ce50f995e78fffad3e5c96bfde272507",
+  "decision": "T17_BUDGET_CLOSED_INCOMPLETE_NUMERICAL_QUALIFICATION",
+  "goal_status": "active_not_submission_ready",
+  "attempt_count": 2,
+  "successful_full_qualification_count": 0,
+  "completed_ray_records": 48,
+  "qualified_ray_records": 41,
+  "summary": {
+    "completed_count": 48,
+    "qualified_count": 41,
+    "all_48_numerically_qualified": false,
+    "failures": [
+      {
+        "id": "control-05-equal-color",
+        "failures": [
+          "reference_failure"
+        ]
+      },
+      {
+        "id": "structured-03-n4-span1.2",
+        "failures": [
+          "reference_failure"
+        ]
+      },
+      {
+        "id": "structured-07-n8-span1.2",
+        "failures": [
+          "reference_failure"
+        ]
+      },
+      {
+        "id": "structured-11-n16-span1.2",
+        "failures": [
+          "reference_failure"
+        ]
+      },
+      {
+        "id": "structured-12-n16-span3",
+        "failures": [
+          "reference_failure"
+        ]
+      },
+      {
+        "id": "structured-15-n32-span1.2",
+        "failures": [
+          "reference_failure"
+        ]
+      },
+      {
+        "id": "clipping-06",
+        "failures": [
+          "reference_failure"
+        ]
+      }
+    ],
+    "informative_counts": {
+      "0.001": {
+        "eligible_count": 28,
+        "numerically_qualified_eligible_count": 23,
+        "jensen_informative_count": 1,
+        "jensen_fixture_ids": [
+          "structured-04-n4-span3"
+        ],
+        "simple_informative_count": 1,
+        "simple_fixture_ids": [
+          "structured-04-n4-span3"
+        ]
+      },
+      "0.01": {
+        "eligible_count": 28,
+        "numerically_qualified_eligible_count": 23,
+        "jensen_informative_count": 1,
+        "jensen_fixture_ids": [
+          "structured-04-n4-span3"
+        ],
+        "simple_informative_count": 1,
+        "simple_fixture_ids": [
+          "structured-04-n4-span3"
+        ]
+      }
+    },
+    "reference_evaluations": {
+      "adaptive_simpson": 79369,
+      "gl32": 31616,
+      "gl64": 63232
+    },
+    "floating_point_certificate": false,
+    "speedup_claim": false
+  },
+  "recorded_cost": {
+    "attempt_supervisor_seconds": [
+      6.061168999993242,
+      3.85225450003054
+    ],
+    "attempt_supervisor_sum_seconds": 9.913423500023782,
+    "repaired_worker_seconds": 2.843802500050515,
+    "diagnostic_seconds": 8.350453799939714,
+    "complete_research_seconds": null,
+    "performance_comparison": false
+  },
+  "artifacts": [
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/.gitignore",
+      "bytes": 103,
+      "sha256": "bd031764145c44d8b35aff303774ee4976e0fea291833c761d33e6eaa79c9823"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/DERIVATION.md",
+      "bytes": 10677,
+      "sha256": "0bbbf3cac5e470fdfee175d835dd838370a0e134448caf61ec0e937ff1b3f27c"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/inputs.json",
+      "bytes": 72396,
+      "sha256": "5cccf0238c679e14bc50e67d2d24726a58295b484b1d3464bf77d4eca0491cb7"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/NEXT_EVIDENCE.md",
+      "bytes": 6770,
+      "sha256": "9a4b173fe3919d9b816c2284102b7d43df8c7116a5224e2877e96ab3fad641a4"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/PROTOCOL.md",
+      "bytes": 8118,
+      "sha256": "4c631c90d08d1e5b9ac19ebc6e52cbd2c902c267af105ccbedeb1cccc292586c"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/qualification.py",
+      "bytes": 33223,
+      "sha256": "d648567e27b030c454ba37fdbee11b0df1b7de6b9e2a78c10a66cc0031557831"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/README.md",
+      "bytes": 8041,
+      "sha256": "dd1fa7ce3cdf48517866a62e003990fc147f5492cac48ac2f3076e75d994270e"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/RELATED_WORK.md",
+      "bytes": 3996,
+      "sha256": "5686b7ef8c531e5b14feb0aa2cf253c84c2e5cbf12a0de6ea76d097c4b64c2c5"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/REPAIR.md",
+      "bytes": 3386,
+      "sha256": "6318e4442e238106a5b9727a2124707a0ff8451178f5628b369798f4dc253f13"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/run-01/attempt.json",
+      "bytes": 1089,
+      "sha256": "7562a9b11bf525ccaf515c1075e3cc83676e9b3cf9b7852f1a34cb7ffa20a977"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/run-01/execution.json",
+      "bytes": 833,
+      "sha256": "f894bf22f2bc1d09f23407584fe8067d6c4bfebe0d6a406dea7e9c47b6709bf8"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/run-01/runtime-diagnostics.json",
+      "bytes": 530,
+      "sha256": "2e595b522907f07c2d45b44cc386ad29e3c343c316aae8b8599ff3846e0c0df8"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/run-01/runtime-inherited-diagnostics.json",
+      "bytes": 155,
+      "sha256": "183c7dadbb6050bf0d6c768ee7b94a5478c999d434c9871c93eb54562b061775"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/run-01/runtime-leggauss-diagnostics.json",
+      "bytes": 207,
+      "sha256": "a8c75df36df42520bb2dcdf80de8249dd1b22af92996c6cdcc3f7a01f222fc38"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/run-01/source-qualification.py",
+      "bytes": 28688,
+      "sha256": "8d0e4221ba82708e14f2db9764d35f4ed48cf1ae3dc82f857cdb7823f0e14953"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/attempt.json",
+      "bytes": 1089,
+      "sha256": "961614550ddb50d6971bd011e81021ac598434e47779d5bb80357267793f77c5"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/execution.json",
+      "bytes": 902,
+      "sha256": "9c3cc1395b91da0ed52be18229f2c6d85b26cf6c2f961ed0abb168b93a2f88e0"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/progress.jsonl",
+      "bytes": 4841,
+      "sha256": "dd805ddeccd546a9801afb1ecf929ae3cdbf680d076d6d935243533e0f3fec6a"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/quadrature-rules.json",
+      "bytes": 11836,
+      "sha256": "886349f4d1ed63221a3afd317bbe5e4ab13532054f293207281135d5b1669375"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/results.json",
+      "bytes": 2276326,
+      "sha256": "63203cad05febfad1adf5c1a56a3341a61dbd7489110f46e0fc7b012ba5d95d2"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/worker-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/worker-stdout.log",
+      "bytes": 1903,
+      "sha256": "a9a2b27ae22593e7d2c6a6f14ed9a3f608dd8a9cb32d084a0e8ffc7cb190dc3f"
+    },
+    {
+      "path": "tracks/validation/t17-array-review.md",
+      "bytes": 11999,
+      "sha256": "a49fa8809cb3842d86afd20e0d9fb72331ace8f31b0cda365622eaf7bee79ff5"
+    }
+  ],
+  "local_duplicate_checkpoints": {
+    "count": 48,
+    "identity_manifest_sha256": "093b7b726975cbe5b6e217c6a6440c28174777adeede58994c4bc502ff5c317d",
+    "format": "filename TAB lowercase SHA256 LF, sorted filenames; full records also in run-02/results.json",
+    "files": [
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/01-control-01-vacuum.json",
+        "bytes": 3776,
+        "sha256": "d6c54da1bf7f746afdc277f8f122333c059873e8e6d0536d477bfb4a37bcbf1c"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/02-control-02-zero-mass.json",
+        "bytes": 5463,
+        "sha256": "475928dff6e0d85f57135cfbcd54ede3d1d7f645ed70efab4f6e8e42073fa543"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/03-control-03-single.json",
+        "bytes": 5502,
+        "sha256": "71749ff1f46450b241c84870c5aa290837f7b5002dc9ce0a41f9ac422c636aa3"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/04-control-04-clipped-single.json",
+        "bytes": 5489,
+        "sha256": "fa3d94ab338aee761b6536cd8c07e9c36e5f417847720b18c579c919795bf7bd"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/05-control-05-equal-color.json",
+        "bytes": 19486,
+        "sha256": "0b22eb123e9910801660f43565b8660538bb75512faef68f483d52052c5e9b04"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/06-control-06-coincident-thin.json",
+        "bytes": 8779,
+        "sha256": "92f9fe7335634fbd5a2cafe6d5df01dda1443fea040498cc15d6b91bc6209a16"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/07-control-07-coincident-thick.json",
+        "bytes": 8653,
+        "sha256": "b00d5fc2ca73ace25cf3974ff3015f2bb4c0d41b796e6679db4c6b429728241c"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/08-control-08-coincident-red-blue.json",
+        "bytes": 6226,
+        "sha256": "1e1a2d7c5260f77600b3885994045eee8eebb6c2e379d143568477e94c1a4851"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/09-generic-01-n2.json",
+        "bytes": 6261,
+        "sha256": "cf28cfb1ef1890d2b830197f4f350a1ca6e603d762e589944dd25f536f0c0e59"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/10-generic-02-n4.json",
+        "bytes": 9430,
+        "sha256": "ebed9b6835be469d2e12744515f179fcca1cb5c04826658e3cd8c9e3d222c26a"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/11-generic-03-n8.json",
+        "bytes": 22745,
+        "sha256": "cfe66a4ba9193608d8033548da10df034d44f6c2d4a3073a40b8bf0df8189aab"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/12-generic-04-n16.json",
+        "bytes": 76424,
+        "sha256": "5c2473f0503cd8a2b160346c4c8d2607a8f33dfe9cd54cb026283dd9b33f8745"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/13-generic-05-n2.json",
+        "bytes": 6198,
+        "sha256": "7d13bea5297d0b48fce904c7f2f075b91e3e68f1f85aaf15f4348af53bcdc4e6"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/14-generic-06-n4.json",
+        "bytes": 9553,
+        "sha256": "e6a0e985b7784eff949959845d2022015f20629f1ab95c9fd8dea4c029f8ede3"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/15-generic-07-n8.json",
+        "bytes": 22768,
+        "sha256": "572d2a37e66be1072e94bc0364c2ba14dd5ecf26a0d7cd2a733787861506a042"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/16-generic-08-n16.json",
+        "bytes": 76589,
+        "sha256": "fffc51922e389973f5fd88127e7ed3d5a19246a637719e4f99aef18f6eb47925"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/17-generic-09-n2.json",
+        "bytes": 6183,
+        "sha256": "120ff424b5b59e3af751f05bdafa7fb3986545521aae390d44b1f660d355e7e2"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/18-generic-10-n4.json",
+        "bytes": 9608,
+        "sha256": "cf5e15b963e0ceb13e3b13dd0a04e0394b3dc2674979ac257e942f7a5a7c1ad3"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/19-generic-11-n8.json",
+        "bytes": 23147,
+        "sha256": "899251799212600d5fb0a15f6e0cf82665345cd4c505c77b244b1df54f9b7980"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/20-generic-12-n16.json",
+        "bytes": 76130,
+        "sha256": "cd7dfacdbf61e2e1cc4aa93a59b23bbf50003ea816e32c7ff184761ef374e6bb"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/21-generic-13-n2.json",
+        "bytes": 6184,
+        "sha256": "9a592c2f1e5027d7a040108229dc6b65594f29b34980e4cd1070152dd2abcbda"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/22-generic-14-n4.json",
+        "bytes": 9487,
+        "sha256": "b2817bdf2c2f365f1424b5c5e03e6e150e4d13d4a1f6f6973d3306189908a500"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/23-generic-15-n8.json",
+        "bytes": 22896,
+        "sha256": "d1fedceaba09bc671cfd85534049d3426d636e759178f63d3c0068f1cc75910f"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/24-generic-16-n16.json",
+        "bytes": 75817,
+        "sha256": "c9d0302483fba57eb7906a692cdf6566f70690bc4aff4c4065d7b3e1b96bd9ed"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/25-structured-01-n4-span0.json",
+        "bytes": 8087,
+        "sha256": "bfdb082b025b33b5d1c8b9638c57c7f0d5af4bc9916d8f760252e8ba7aae08a4"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/26-structured-02-n4-span0.3.json",
+        "bytes": 8677,
+        "sha256": "6a478fe2846b66daf16894546bc07143602a5ce0f9d405e9cc4a833871112ffa"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/27-structured-03-n4-span1.2.json",
+        "bytes": 7593,
+        "sha256": "c74212886ff307305d101c044f7fc73fefdf25bf124ce01c334288c4fbbd612d"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/28-structured-04-n4-span3.json",
+        "bytes": 8836,
+        "sha256": "575a54ea6d2bc700b9b69c72b145b411b92ea3d2bc9530ff464c92f2724ca197"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/29-structured-05-n8-span0.json",
+        "bytes": 18567,
+        "sha256": "37467dfc1fd44f18c32e17bcd9acf9b7e84c62bd9dce970246856ea98a1a559f"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/30-structured-06-n8-span0.3.json",
+        "bytes": 20611,
+        "sha256": "327c2dc84e7650c869a9a4d0fca9c4de87be802c3b0c86045ef9f11d2ef4570f"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/31-structured-07-n8-span1.2.json",
+        "bytes": 19630,
+        "sha256": "3ffdd2515a225865c3525d254991335d1260623370ee16bb763fce80e4a6747a"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/32-structured-08-n8-span3.json",
+        "bytes": 20956,
+        "sha256": "f6c3113937ce9fe320d9c11377eaee4c91620d36222bd078a132664e54f80426"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/33-structured-09-n16-span0.json",
+        "bytes": 61563,
+        "sha256": "9d6d8da8555c19ceabbc18cf9ee577dcac34f1513f95c919a0468a2649924f20"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/34-structured-10-n16-span0.3.json",
+        "bytes": 68262,
+        "sha256": "b7ff4d12318b3d46712fa91e2079fcc1818d94cd8d0526b284ed5422b50e2375"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/35-structured-11-n16-span1.2.json",
+        "bytes": 67611,
+        "sha256": "5ba9c1899548dbc5408f281676539862872aebeaf85a5090796c8ab422e07dc1"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/36-structured-12-n16-span3.json",
+        "bytes": 67916,
+        "sha256": "b9cd405df53ba2b432d6516f88d2d88ed76e9d96bd0b7bcbedf3e5a7eecdbd8c"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/37-structured-13-n32-span0.json",
+        "bytes": 238079,
+        "sha256": "bad2df6a978d490790db11a694dacd536ba8c3a2b07752900c19846924ba265e"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/38-structured-14-n32-span0.3.json",
+        "bytes": 262970,
+        "sha256": "ea99709b484bc9d0f0d96929c47547c33c38e166480b4f51ed612aa95238b1e5"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/39-structured-15-n32-span1.2.json",
+        "bytes": 262667,
+        "sha256": "510cdc29d55f1e89e174b060681e92f18a8a662a1fa18d148b75d63013614708"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/40-structured-16-n32-span3.json",
+        "bytes": 265441,
+        "sha256": "e5a64ccb67cb819c6bebbea737f21f67486e61b8122e0813f5e9dc0e2b2b63bb"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/41-clipping-01.json",
+        "bytes": 5340,
+        "sha256": "f2f602e37ca1ecde902ca6f14f558abaab62a31ad505d830e6f2a611fa88999c"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/42-clipping-02.json",
+        "bytes": 5322,
+        "sha256": "e2cf340dee1603c3b532be95e065482e1a0edd3b6cb31bc3d840d8de94975c22"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/43-clipping-03.json",
+        "bytes": 5380,
+        "sha256": "b2bb782544610a47373db7daf3033ee22cf01c7d25ad023e9bdbfe4aa60b45ba"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/44-clipping-04.json",
+        "bytes": 5380,
+        "sha256": "8c7d5aa90d4c063aa0e8612f4f559bbb127b45228ecc0511cd354856e0149289"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/45-clipping-05.json",
+        "bytes": 5362,
+        "sha256": "c07271337c9048c537389251e71748bd93540a9b8478c982162a7fbac91a7af6"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/46-clipping-06.json",
+        "bytes": 4426,
+        "sha256": "f33d1f3bd9153a42cbc52e0b1e82f4692df9844dbd61f93fbb058680c261d7df"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/47-clipping-07.json",
+        "bytes": 5363,
+        "sha256": "72dd484f8b661b2433009ea6adbe59f79ec97f377203d1777e09313b9fa79ba3"
+      },
+      {
+        "path": "tracks/tog/tasks/t17-order-inversion-bound/run-02/cases/48-clipping-08.json",
+        "bytes": 5389,
+        "sha256": "42efd11a9aaebd07e8b7c5034cc0de825a149ecae57f9c5378558ad1c5b9e097"
+      }
+    ]
+  },
+  "unchanged_core_sha256": "ac750b70a86743ac858f1c53cf620ce29c63c462456115af4d0d8c93fa20bd9e",
+  "next_finite_contract": "tracks/tog/tasks/t17-order-inversion-bound/NEXT_EVIDENCE.md",
+  "limitations": [
+    "real arithmetic proof does not certify binary64",
+    "seven missing references remain failures",
+    "one sparse informative witness; no new Jensen acceptance",
+    "no strong-baseline performance or scene evidence",
+    "two primary full texts inaccessible; novelty unestablished"
+  ]
+}
