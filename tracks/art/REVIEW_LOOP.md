@@ -1,6 +1,6 @@
 # 艺术线：制作与独立复评
 
-## 2026-10-31 current: A45 complete and closed at both3/6; A46 access gap closed; A47 layered-paper choice; A48 retained as study, paper core closed; A49 closed without images/new question; A50 rationale corrected, no new score; A51 independent proposal
+## 2026-10-31 current: A45 complete and closed at both3/6; A46 access gap closed; A47 layered-paper choice; A48 retained as study, paper core closed; A49 closed without images/new question; A50 rationale corrected, no new score; A51 selects Room Facing Away; A52 finite production
 
 [A45 Hollow](studies/a45-hollow-composition/README.md) completed one27.6441327-second run:150 source steps, one reset/no ignition,22.0223 seconds of normal presentation, six native PNGs/613028 bytes, one855468-byte VP9 WebM.18 behavior checks passed and all resources closed. The video first frame decoded at720square; finite playback duration and continuous viewing remain unverified. The original demo is unchanged. Actual images show repeated bright forms becoming sparse points and an unequal final composition, with the left side brightest.
 
@@ -16,7 +16,7 @@ A39's historical double3/6 remains separate. A42's minimum material qualificatio
 
 Root directly read all three images: before exchange, loss appears mainly as an interrupted front line and exposed rear diagonal, with the notch outline obscured by identical paper colors; afterward a clear stepped notch interrupts the rear outer edge. This reading does not settle artistic significance. The original creator retains the object but declines a full paper. Both original scorers independently read the same three images and advise preserving the study while closing this paper core: ordinary occlusion still explains its main relation. No new formal paper score exists. No rerun, geometry change, contrast repair or prose expansion follows. A45 remains closed at both3/6; target5/6 is unmet. TOG/main unchanged, full goal active, automation deleted.
 
-A49 is closed without directly viewed photos or a new question; browser discovery and the official first-photo link did not present an image. A50 is now closed: the original second scorer clarifies that a mechanically explicable effect does not logically exhaust artistic value, and unpredictable outcomes are not a universal Art Papers requirement. Root corrects the working rationale without changing historical judgments. Official2026 criteria were read as a reference; the bounded published-paper search produced only a verified Art Paper title in a contents list, not its full text, so that comparison remains incomplete. A51 is one independent creator proposal under this corrected approach, with no automatic making, new score or reopening of A45/A48. It may select no new work.
+A49 is closed without directly viewed photos or a new question; browser discovery and the official first-photo link did not present an image. A50 is now closed: the original second scorer clarifies that a mechanically explicable effect does not logically exhaust artistic value, and unpredictable outcomes are not a universal Art Papers requirement. Root corrects the working rationale without changing historical judgments. Official2026 criteria were read as a reference; the bounded published-paper search produced only a verified Art Paper title in a contents list, not its full text, so that comparison remains incomplete. A51 independently selects Room Facing Away: a120-second synthetic continuous shot first establishes a room, then leaves while a corridor mirror offers the remaining view of its fire. Root authorizes A52 finite making: one draft, at most one concrete author-led revision, then a decision on retaining a complete film. Original Vortex particle dynamics may supply the fire; conventional meshes, planar reflection and lighting remain disclosed. The original second scorer asks for a fixed complete playable version and preserves the distinction between frame inspection and continuous viewing. No proposal score or acceptance prediction, no reopening of A45/A48.
 
 
 
@@ -40,4 +40,4 @@ A49 is closed without directly viewed photos or a new question; browser discover
 
 ## 当前有限任务
 
-A50已结算：普通机制解释不能单独推导艺术价值不足，事前未知不是普遍门槛；评分与旧案结算不变。全文参照尚未取得，不续搜该路径。A51只由独立创作者选择零或一件实质不同的新作品提案，以作者立场与完整观看组织为先，不制作、运行或评分。不能把澄清当旧案获得接收；root核读后才决定是否有独立制作任务。A45两位3/6及5/6目标保持。
+A51独立选择《背向房间》，root批准A52有限制作：同一合成房间、镜面及持续离开路线；一版草稿、最多一次作者具体观察驱动的修订，随后决定保留/停止。正常技术可用，火源沿原demo、网格/反射/灯光如实披露，不伪称真实烧毁。媒体需120秒完整可播放MP4及有效性核验；图证与连续阅读分开。原第二评分者只明确呈交范围，未打新分。A45两位3/6及5/6目标保持；旧案/TOG/main不变。
