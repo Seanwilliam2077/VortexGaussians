@@ -1,6 +1,6 @@
 # 艺术线：制作与独立复评
 
-## 2026-10-31 current: A45 complete and closed at both3/6; A46 access gap closed; A47 layered-paper choice; A48 static preflight
+## 2026-10-31 current: A45 complete and closed at both3/6; A46 access gap closed; A47 layered-paper choice; A48 fixed implementation contract
 
 [A45 Hollow](studies/a45-hollow-composition/README.md) completed one27.6441327-second run:150 source steps, one reset/no ignition,22.0223 seconds of normal presentation, six native PNGs/613028 bytes, one855468-byte VP9 WebM.18 behavior checks passed and all resources closed. The video first frame decoded at720square; finite playback duration and continuous viewing remain unverified. The original demo is unchanged. Actual images show repeated bright forms becoming sparse points and an unequal final composition, with the left side brightest.
 
@@ -12,7 +12,7 @@ A39's historical double3/6 remains separate. A42's minimum material qualificatio
 
 [A47](studies/a47-restoration-transfer-choice/CREATOR_CHOICE.md) selected two overlapping synthetic paper sheets: a local loss of occlusion in the front sheet exposes the rear; restoring the front transfers the same material state to an exposed rear position. The proposed relation is an opening between layers becoming an interruption of the combined outer contour, not a generic cost-of-repair story. One exact official search and one Pulse Room page reading supplied limited mechanism context, not direct artwork viewing. Four prior images were read; no new work or score.
 
-Next finite task [A48](studies/a48-layered-repair-material/BRIEF.md) is preflight only: the original creator fixes geometry and accurate boundary terminology; an engineer audits at most six source files/1200 relevant lines for material alpha, occlusion and zero-step state exchange. No implementation or run yet. One bounded later inspection is only reserved, subject to concrete feasibility. The rule is authored, not a necessity of digital storage, real harm, physical paper combustion or a new algorithm. Original scorers and target remain; TOG/main unchanged, full goal active, automation deleted.
+A48 preflight is complete. The author fixes an edge notch supported inside the two-sheet union before transfer, exposed at the union edge afterward. The [implementation decision](studies/a48-layered-repair-material/IMPLEMENTATION_DECISION.md) explicitly uses a new ordinary 2D cell canvas reading original char state; the original Gaussian renderer cannot meet this specification. One fixed ignition/no propagation, 360 steps, no fluid particles, and one zero-step five-array swap are locked before any result. Source inspection corrected an omitted embed early-return: its RAF idles without simulation or rendering. Implementation is in progress; no assembly, browser run or new image yet. After source review, at most one 120-second inspection/three native PNGs; then original author and original scorers assess actual material, with no promised score. A45 remains closed at both3/6; target5/6 is unmet. TOG/main unchanged, full goal active, automation deleted.
 
 
 
@@ -36,4 +36,4 @@ Next finite task [A48](studies/a48-layered-repair-material/BRIEF.md) is prefligh
 
 ## 当前有限任务
 
-A47作者选两张错层纸片的一次材料交换；A48仅固定作者几何与静态可行性，尚未实现/运行。局部丧失遮挡能力是新呈现选择，原材料未证明烧穿。先查单张边界和组合轮廓、状态映射、透明度/遮挡及零步交换合同，再决定是否落实预留一次材料检查。A45双3/6闭合，A46访问缺口保留，原两评分者及5/6目标保持。
+A48作者规格、源码可行性与普通新呈现决定已封存；只实施固定的一次材料资格页。原demo为材料时钟，作品画面为新2D格片，不声称原Gaussian烧穿、传播形状、流体或真实纸燃烧。实现经静态核查后，只装配/执行一次120秒内检查、三原图；作者先读，保留才交原两评分者咨询。A45双3/6保留，5/6未达，不以工程通过换分。
