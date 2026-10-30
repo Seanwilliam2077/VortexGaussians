@@ -1,8 +1,8 @@
 # 可燃的数字记忆（暂定）
 
-## 2026-10-31 current: A32 actual image-reuse form under review
+## 2026-10-31 current: A32 writing one new-work argument
 
-[A32《图用这一张》](studies/a32-image-reuse-study/README.md) is implemented and checked once: 18.3429543 seconds, seven PNGs / 524083 bytes, with no new simulation. The same frozen fire image is cropped and reused in the next notice; all old raster names leave, two continuing names are newly typeset, and the request stays outside the paper. [Actual process](studies/a32-image-reuse-study/PROCESS.md) distinguishes discrete image observation from behavior checks and continuous experience. Creator and the original two reviewers are independently assessing the actual form; no new whole-paper score yet. A25 remains 4/6 and 3/6; A26 remains two 3/6 reviews and is closed. Earlier no-selections/access failures/process decisions stay preserved. Overall 5/6 unmet. Main, original platform and TOG queue unchanged; full goal active.
+[A32《图用这一张》](studies/a32-image-reuse-study/README.md) is implemented and checked once: 18.3429543 seconds, seven PNGs / 524083 bytes, with no new simulation. A frozen processing image is cropped into the next notice; old raster names leave, two names are newly typeset, and the request stays outside the paper. Creator and both original reviewers independently identify an actual new relation, while retaining the ordinary-crop/decorative-fire counterreading. [One fixed-material paper](studies/a32-image-reuse-study/PAPER_BRIEF.md) is being written before formal independent scoring; material eligibility is not acceptance. A25 remains 4/6 and 3/6, A26 two 3/6 reviews, overall 5/6 unmet. Historical failures, main, original platform and TOG queue stay unchanged; full goal active.
 
 
 **2026-10-30更新：** [A18及独立决定](studies/a18-context-positioning/DECISION.md)关闭A14《两边的火》作为当前投稿核心，保留其试作价值、总体3/6、准备度6/10、置信度4/5。关闭限于作品与自身主张的缺口，不以读取失败推导领域没有空间，也不要求所有艺术都必须影响他人、真人输入或私人记忆。艺术线继续用原平台探索；[A19单案创作决定](studies/a19-artistic-commitment/BRIEF.md)先选择有明确内容的对象和观看关系，之后才决定制作。暂定主题保留，用户未提供的经历不代写。以下历史brief不重启旧关闭路线；总体5/6目标未达。[复评流程](REVIEW_LOOP.md)继续适用。

@@ -1,8 +1,8 @@
 # 艺术线：制作与独立复评
 
-## 2026-10-31 current: A32 actual image-reuse form under review
+## 2026-10-31 current: A32 writing one new-work argument
 
-[A32《图用这一张》](studies/a32-image-reuse-study/README.md) is implemented and checked once: 18.3429543 seconds, seven PNGs / 524083 bytes, with no new simulation. The same frozen fire image is cropped and reused in the next notice; all old raster names leave, two continuing names are newly typeset, and the request stays outside the paper. [Actual process](studies/a32-image-reuse-study/PROCESS.md) distinguishes discrete image observation from behavior checks and continuous experience. Creator and the original two reviewers are independently assessing the actual form; no new whole-paper score yet. A25 remains 4/6 and 3/6; A26 remains two 3/6 reviews and is closed. Earlier no-selections/access failures/process decisions stay preserved. Overall 5/6 unmet. Main, original platform and TOG queue unchanged; full goal active.
+[A32《图用这一张》](studies/a32-image-reuse-study/README.md) is implemented and checked once: 18.3429543 seconds, seven PNGs / 524083 bytes, with no new simulation. A frozen processing image is cropped into the next notice; old raster names leave, two names are newly typeset, and the request stays outside the paper. Creator and both original reviewers independently identify an actual new relation, while retaining the ordinary-crop/decorative-fire counterreading. [One fixed-material paper](studies/a32-image-reuse-study/PAPER_BRIEF.md) is being written before formal independent scoring; material eligibility is not acceptance. A25 remains 4/6 and 3/6, A26 two 3/6 reviews, overall 5/6 unmet. Historical failures, main, original platform and TOG queue stay unchanged; full goal active.
 
 
 2026-10-30。用户重新授权持续艺术迭代，并要求与评分 Agent 交流直至至少 5 分。本轮把目标解释为既有内部六档总评中的 **5/6（Accept）**，不是就绪度 5/10，也不是官方录用概率。
@@ -25,6 +25,6 @@
 
 ## 当前有限任务
 
-A31作出同题的新形式选择，root批准A32一次静帧编排小样：旧处理图裁去全部名字，其上部火形转入新告示图栏，另两人重新署名，原请求保持在纸外。使用既有第122步PNG，不新模拟或调火。实现后单次有限UI/截图核验，再由作者及原评审判断实际增量；未预支分数。
+A32真实静帧编排已完成唯一一次检查并保留七图。创作者与原两位材料评审分别支持一次完整论述，同时保留装饰性火形和普通裁图的反读。按本作PAPER_BRIEF固定作品写新稿，然后由同两位评审独立正式复评。无新制作/调参/补录，不把材料资格转成评分，不改A25/A26历史。
 
-原A25分歧、A26停止、A27未选中、来源访问失败与过程审查都保留。只更新新版本的证据；目标5/6未实现，TOG/main保持，完整研究目标active。
+目标5/6尚未实现，TOG/main保持，完整研究目标active。
