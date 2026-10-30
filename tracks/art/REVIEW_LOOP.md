@@ -1,6 +1,6 @@
 # 艺术线：制作与独立复评
 
-## 2026-10-31 current: A45 complete and closed at both3/6; A46 access gap closed; A47 layered-paper choice; A48 single run complete; creator reading actual material
+## 2026-10-31 current: A45 complete and closed at both3/6; A46 access gap closed; A47 layered-paper choice; A48 retained as study, paper core closed; A49 closed without images/new question; A50 rationale corrected, no new score; A51 independent proposal
 
 [A45 Hollow](studies/a45-hollow-composition/README.md) completed one27.6441327-second run:150 source steps, one reset/no ignition,22.0223 seconds of normal presentation, six native PNGs/613028 bytes, one855468-byte VP9 WebM.18 behavior checks passed and all resources closed. The video first frame decoded at720square; finite playback duration and continuous viewing remain unverified. The original demo is unchanged. Actual images show repeated bright forms becoming sparse points and an unequal final composition, with the left side brightest.
 
@@ -14,7 +14,9 @@ A39's historical double3/6 remains separate. A42's minimum material qualificatio
 
 [A48](studies/a48-layered-repair-material/README.md) completed exactly one46.6834508-second inspection after code freeze880dce4: one reset/ignition,360 steps,159 changed F cells, one zero-step five-array swap across7500 pairs, three native720square PNGs/71189bytes. All six external checks and eight exchange assertions passed; no page/console/external errors,16 source identities unchanged, all resources closed. Original demo remains fixed. Source material fuel/glow/state were retained literally, including positive float fuel residue; the new ordinary2D canvas uses char opacity and does not display a Gaussian or fluid image. The full15MB snapshot is preserved in a verified1.34MB lossless archive. [PROCESS](studies/a48-layered-repair-material/PROCESS.md) records complete costs and limits.
 
-Root directly read all three images: before exchange, loss appears mainly as an interrupted front line and exposed rear diagonal, with the notch outline obscured by identical paper colors; afterward a clear stepped notch interrupts the rear outer edge. This reading does not settle artistic significance. The original A47 creator is reading the frozen15-file material pack; only if retained will the original two scorers assess this same material. No new formal paper score exists. A45 remains closed at both3/6; target5/6 is unmet. TOG/main unchanged, full goal active, automation deleted.
+Root directly read all three images: before exchange, loss appears mainly as an interrupted front line and exposed rear diagonal, with the notch outline obscured by identical paper colors; afterward a clear stepped notch interrupts the rear outer edge. This reading does not settle artistic significance. The original creator retains the object but declines a full paper. Both original scorers independently read the same three images and advise preserving the study while closing this paper core: ordinary occlusion still explains its main relation. No new formal paper score exists. No rerun, geometry change, contrast repair or prose expansion follows. A45 remains closed at both3/6; target5/6 is unmet. TOG/main unchanged, full goal active, automation deleted.
+
+A49 is closed without directly viewed photos or a new question; browser discovery and the official first-photo link did not present an image. A50 is now closed: the original second scorer clarifies that a mechanically explicable effect does not logically exhaust artistic value, and unpredictable outcomes are not a universal Art Papers requirement. Root corrects the working rationale without changing historical judgments. Official2026 criteria were read as a reference; the bounded published-paper search produced only a verified Art Paper title in a contents list, not its full text, so that comparison remains incomplete. A51 is one independent creator proposal under this corrected approach, with no automatic making, new score or reopening of A45/A48. It may select no new work.
 
 
 
@@ -38,4 +40,4 @@ Root directly read all three images: before exchange, loss appears mainly as an 
 
 ## 当前有限任务
 
-A48唯一材料检查完成，三原图及实际状态已封存，原A47作者阅读并作保留判断；保留后原两位评分者独立咨询。不能以159格准确交换或六项工程检查通过换分；前态缺损轮廓被同纸色隐去，后态外缘缺口清晰，艺术分量仍未知。没有第二次运行、参数/几何调整或新正式分数；A45双3/6及5/6目标保持。
+A50已结算：普通机制解释不能单独推导艺术价值不足，事前未知不是普遍门槛；评分与旧案结算不变。全文参照尚未取得，不续搜该路径。A51只由独立创作者选择零或一件实质不同的新作品提案，以作者立场与完整观看组织为先，不制作、运行或评分。不能把澄清当旧案获得接收；root核读后才决定是否有独立制作任务。A45两位3/6及5/6目标保持。
