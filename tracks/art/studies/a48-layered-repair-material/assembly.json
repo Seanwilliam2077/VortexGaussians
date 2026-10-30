@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "source": {
+    "path": "../../../../demo/index.html",
+    "bytes": 314044,
+    "sha256": "e9d808c434bdd8ce91482f60502f03f5d08c56b71c082eb704c53275ff9f57d0"
+  },
+  "bridge": {
+    "path": "./bridge.js",
+    "bytes": 16670,
+    "sha256": "209947bab0d649dac76f55d94fa244cf18c466405f68b9306c717cc59c5dcb64"
+  },
+  "output": {
+    "path": "./renderer.generated.html",
+    "bytes": 330794,
+    "sha256": "7153840f2c699b4bcc4d992f474e57c49a1e15b9b118b3a6c54f46baa3e65a5d"
+  },
+  "insertion": {
+    "anchor": "window.__demo = {",
+    "anchorOccurrences": 1,
+    "byteOffset": 303061,
+    "bytes": 16750,
+    "sha256": "124b081c8a0582108a010856ff30ddaa1ffaeee3636a22534e1ddf494403a59b",
+    "beginMarker": "\n/* A48 LOCAL BRIDGE BEGIN — source: bridge.js */\n",
+    "endMarker": "\n/* A48 LOCAL BRIDGE END */\n",
+    "insertionOnly": true,
+    "originalBytesReconstructExactly": true
+  },
+  "semantics": "Only a closure bridge is inserted; original initialization and embed early-return RAF remain intact."
+}
