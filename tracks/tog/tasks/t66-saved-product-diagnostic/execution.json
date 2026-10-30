@@ -1,0 +1,107 @@
+{
+  "schema": "t66-saved-product-diagnostic-execution-v1",
+  "started_utc": "2026-10-30T05:20:48.743945+00:00",
+  "command": [
+    "C:\\Users\\seanzjxiao\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "-I",
+    "-B",
+    "-u",
+    "-X",
+    "utf8",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t66-saved-product-diagnostic\\measure.py"
+  ],
+  "cwd": "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians",
+  "child_timeout_seconds": 60.0,
+  "observed_peak_working_set_limit_bytes": 536870912,
+  "required_available_physical_bytes": 1073741824,
+  "memory_sample_interval_seconds": 0.25,
+  "thread_environment_overrides": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  },
+  "scientific_child_invocations": 1,
+  "new_scientific_trajectories": 0,
+  "complete_result_validated": true,
+  "numerical_qualified": true,
+  "candidate_verdict": "broader_separable_endpoint_witness",
+  "capacity_witness": true,
+  "formal_exclusion": false,
+  "prior_scientific_child_seconds": 1979.5974398998078,
+  "T61_qualification_seconds": 0.9663960000034422,
+  "T60_history_reclassified": false,
+  "input_manifest_identity": {
+    "bytes": 11021,
+    "sha256": "7596eb8e9618faad6cd8d45be14ff205472c848e37f5d2d68e444a18efaace04"
+  },
+  "supervisor_identity": {
+    "bytes": 25506,
+    "sha256": "787c726d82f2be10ddbb8227912e4943d317c79dd237aef0f2116531b2a22984"
+  },
+  "worker_identity": {
+    "bytes": 25105,
+    "sha256": "d41fa8347342b96e14d2ce6640de799ecb25d05c0caf5a0926b0b016e5e138ae"
+  },
+  "memory_observer_identity": {
+    "bytes": 2231,
+    "sha256": "4b83a89eff664dc0d86fb0c71b39c99d71720c1d18c5f93557e279d0ca3745fd"
+  },
+  "executable_identity": {
+    "bytes": 107312,
+    "sha256": "5640e9be2fd33d05a1a9ae1228e2354609a69ab831605995ec4e2bd6da8fff5e"
+  },
+  "memory_samples": 4,
+  "peak_observed_working_set_bytes": 48238592,
+  "max_observed_private_bytes": 24436736,
+  "max_observed_peak_pagefile_bytes": 33591296,
+  "launch_memory": {
+    "total_physical_bytes": 67773509632,
+    "available_physical_bytes": 28460531712
+  },
+  "child_pid": 92936,
+  "last_memory_sample_elapsed_seconds": 0.653252899996005,
+  "returncode": 0,
+  "status": "completed_broader_separable_endpoint_witness",
+  "scientific_child_supervised_seconds": 0.653795599937439,
+  "cumulative_scientific_child_seconds": 1980.2512354997452,
+  "inputs_unchanged": true,
+  "input_manifest_unchanged": true,
+  "executable_unchanged": true,
+  "logs": [
+    {
+      "path": "local/stdout.txt",
+      "bytes": 109,
+      "sha256": "54f0a5506683b3f643764e8a63e029df76af063ed418f0fee83b12be09b0e575"
+    },
+    {
+      "path": "local/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local/memory.jsonl",
+      "bytes": 768,
+      "sha256": "302521cb909dcd81df5b71123fc7291dd83787a950275885b813c5061ebb9c8c"
+    }
+  ],
+  "partial_artifacts": [
+    {
+      "path": "local/recovered-factors.npz",
+      "bytes": 19390,
+      "sha256": "02fda1bd7d9a079b424337aeff7b08fe29596fd6718abfa3d985cde0ec616f5d"
+    },
+    {
+      "path": "local/work.jsonl",
+      "bytes": 4302,
+      "sha256": "ff8026750da272beaa04977cd1390004397b039ab313d6bd27b8e0c19aa8f599"
+    }
+  ],
+  "result_exists": true,
+  "result_identity": {
+    "bytes": 22811,
+    "sha256": "c713e1beb95b9859b59aba2822bc22b24b24cb6bc88d511369d42fab031d28eb"
+  },
+  "supervisor_elapsed_before_receipt_write_seconds": 0.8076659999787807,
+  "finished_utc": "2026-10-30T05:20:49.480163+00:00"
+}

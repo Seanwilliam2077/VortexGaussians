@@ -1,0 +1,775 @@
+{
+  "status": "broader_separable_endpoint_witness",
+  "candidate_verdict": "broader_separable_endpoint_witness",
+  "capacity_witness": true,
+  "schema": "t66-saved-product-diagnostic-v1",
+  "recovery": {
+    "leading_singular_value": 3.540940421530241,
+    "radial": {
+      "blocks": 256,
+      "relative_residual": 1.6616919780842952e-17,
+      "target_frobenius": 1.881738669829114
+    },
+    "axial": {
+      "blocks": 512,
+      "relative_residual": 6.403241222231151e-17,
+      "target_frobenius": 1.8817386698291139
+    }
+  },
+  "orientation": {
+    "radial_integral_before": -1.055438935660223,
+    "common_sign_flipped": true
+  },
+  "polynomial_statistics": {
+    "raw_moments": [
+      3.7500837415807626,
+      4.699490574373376,
+      1.271453957706525,
+      7.471074383566,
+      1.5933473228181396,
+      4.282773843159034,
+      12.363213419611574,
+      23.47107239783384,
+      12.538259068826779
+    ],
+    "circulation": 3.7500837415807626,
+    "centroid": [
+      1.2531695018608873,
+      0.3390468174373547
+    ],
+    "covariance": [
+      [
+        0.42180821295787974,
+        0.0
+      ],
+      [
+        0.0,
+        1.0270947772640708
+      ]
+    ],
+    "undefined_reason": null,
+    "positive_circulation": true,
+    "q_squared_integral": 12.363213419611574,
+    "axial_impulse": 23.47107239783384,
+    "vorticity_squared_integral": 12.538259068826779,
+    "R": [
+      1.055438935660223,
+      1.3226438852459066,
+      2.1026897901499666
+    ],
+    "Z": [
+      3.5531034670754518,
+      1.2046684225375628,
+      4.057813008840698
+    ],
+    "radial_squared_moments": [
+      0.5556903799530453,
+      0.563558171280438
+    ],
+    "axial_squared_moment": 3.5409404215302427
+  },
+  "factor_diagnostics": {
+    "radial": {
+      "minimum_endpoint": 1.2290799672965663e-14,
+      "maximum_endpoint": 1.0217659308159521,
+      "nonnegative": true,
+      "negative_endpoints": [],
+      "maximum_absolute_piece_jump": 0.00039755499675120376,
+      "nonzero_piece_jumps": 255
+    },
+    "axial": {
+      "minimum_endpoint": 1.6096382503772358e-14,
+      "maximum_endpoint": 1.4080806424250738,
+      "nonnegative": true,
+      "negative_endpoints": [],
+      "maximum_absolute_piece_jump": 0.0007841483614035027,
+      "nonzero_piece_jumps": 511
+    },
+    "nonnegative_factors": true,
+    "domain": {
+      "r": [
+        0.0,
+        8.0
+      ],
+      "z": [
+        -8.0,
+        8.0
+      ],
+      "outside": "explicit_zero_extension"
+    },
+    "boundary_product_suprema": {
+      "r8": 1.7306437099427377e-14,
+      "z_minus8": 1.644673525173657e-14,
+      "z_plus8": 1.9122939512692585e-14
+    },
+    "extension_discontinuous": true,
+    "internal_piece_discontinuity": true
+  },
+  "output_bundle": {
+    "path": "local/recovered-factors.npz",
+    "bytes": 19390,
+    "sha256": "02fda1bd7d9a079b424337aeff7b08fe29596fd6718abfa3d985cde0ec616f5d",
+    "arrays": {
+      "a": {
+        "shape": [
+          256,
+          2
+        ],
+        "dtype": "float64",
+        "bytes": 4096
+      },
+      "b": {
+        "shape": [
+          512,
+          2
+        ],
+        "dtype": "float64",
+        "bytes": 8192
+      },
+      "r": {
+        "shape": [
+          256
+        ],
+        "dtype": "float64",
+        "bytes": 2048
+      },
+      "z": {
+        "shape": [
+          512
+        ],
+        "dtype": "float64",
+        "bytes": 4096
+      }
+    },
+    "array_bytes": 18432
+  },
+  "candidate_statistics": {
+    "raw_moments": [
+      3.7500837415807635,
+      4.699490574373377,
+      1.2714539577065247,
+      7.471074383566,
+      1.5933473228181394,
+      4.282773843159034,
+      12.363213419611576,
+      23.471072397833836,
+      12.538259068826777
+    ],
+    "circulation": 3.7500837415807635,
+    "centroid": [
+      1.253169501860887,
+      0.3390468174373546
+    ],
+    "covariance": [
+      [
+        0.42180821295787996,
+        1.1102230246251565e-16
+      ],
+      [
+        1.1102230246251565e-16,
+        1.0270947772640708
+      ]
+    ],
+    "undefined_reason": null,
+    "positive_circulation": true,
+    "q_squared_integral": 12.363213419611576,
+    "axial_impulse": 23.471072397833836,
+    "vorticity_squared_integral": 12.538259068826777
+  },
+  "references": {
+    "S256": {
+      "raw_moments": [
+        3.7599424119464477,
+        4.717245003029393,
+        1.3263924968534229,
+        7.520213959373283,
+        1.3894221916902765,
+        4.363097044706391,
+        12.527044816735721,
+        23.62544892819052,
+        12.641021874312635
+      ],
+      "circulation": 3.7599424119464477,
+      "centroid": [
+        1.254605652480557,
+        0.35276936493470806
+      ],
+      "covariance": [
+        [
+          0.4260521941365736,
+          -0.07305360087353902
+        ],
+        [
+          -0.07305360087353902,
+          1.0359696982488587
+        ]
+      ],
+      "undefined_reason": null,
+      "positive_circulation": true,
+      "q_squared_integral": 12.527044816735721,
+      "axial_impulse": 23.62544892819052,
+      "vorticity_squared_integral": 12.641021874312635,
+      "minimum_node": 2.1816198232614e-28,
+      "minimum_corner": 1.8849400565054807e-28
+    },
+    "S128": {
+      "raw_moments": [
+        3.7599424119464477,
+        4.717552742523063,
+        1.3266206010146668,
+        7.521307460722756,
+        1.3896200805757162,
+        4.364837068104572,
+        12.521507661153027,
+        23.628884263996714,
+        12.63780003427593
+      ],
+      "circulation": 3.7599424119464477,
+      "centroid": [
+        1.2546874993441401,
+        0.35283003186421186
+      ],
+      "covariance": [
+        [
+          0.426137645643607,
+          -0.07310596114888351
+        ],
+        [
+          -0.07310596114888351,
+          1.0363896709682767
+        ]
+      ],
+      "undefined_reason": null,
+      "positive_circulation": true,
+      "q_squared_integral": 12.521507661153027,
+      "axial_impulse": 23.628884263996714,
+      "vorticity_squared_integral": 12.63780003427593,
+      "minimum_node": 1.6654851926973456e-28,
+      "minimum_corner": 1.251149720793472e-28
+    }
+  },
+  "scores": {
+    "S256": {
+      "error_numerator": 0.10276280548587871,
+      "reference_norm_squared": 12.641021874312635,
+      "relative_field_error": 0.09016269504854826,
+      "axial_centroid_error": 0.013722547497353466,
+      "normalized_covariance_error": 0.09536735231131477,
+      "covariance_denominator": 1.0882203729522952,
+      "gates": {
+        "field": true,
+        "axial_centroid": true,
+        "covariance": true
+      },
+      "undefined_reason": null,
+      "circulation_difference": -0.009858670365684219,
+      "axial_impulse_difference": -0.1543765303566822
+    },
+    "S128": {
+      "error_numerator": 0.10278340005110824,
+      "reference_norm_squared": 12.63780003427593,
+      "relative_field_error": 0.09018322260501836,
+      "axial_centroid_error": 0.01378321442685726,
+      "normalized_covariance_error": 0.0954720855302773,
+      "covariance_denominator": 1.0882203729522952,
+      "gates": {
+        "field": true,
+        "axial_centroid": true,
+        "covariance": true
+      },
+      "undefined_reason": null,
+      "circulation_difference": -0.009858670365684219,
+      "axial_impulse_difference": -0.15781186616287712
+    }
+  },
+  "physical_checks": {
+    "nonnegative_factors": true,
+    "positive_circulation": true,
+    "defined_moments": true,
+    "both_reference_gates": true
+  },
+  "sensitivity": {
+    "absolute_difference": 2.0527556470098518e-05,
+    "tolerance": 0.001,
+    "passed": true
+  },
+  "score_calibration_absolute": 1.3877787807814457e-17,
+  "checks": {
+    "frozen_inputs_before": true,
+    "input_shapes_coordinates": true,
+    "triangular_recovery": true,
+    "reference_readback": true,
+    "polynomial_quadrature_agreement": true,
+    "saved_field_score_agreement": true,
+    "fixed_work_accounting": true,
+    "frozen_inputs_after": true
+  },
+  "counters": {
+    "input_bytes_hashed_before": 52331299,
+    "input_bytes_hashed_after": 52331299,
+    "output_bytes_hashed": 19390,
+    "input_npz_files": 3,
+    "input_arrays": 19,
+    "triangular_blocks": 768,
+    "polynomial_cell_moment_evaluations": 3328,
+    "polynomial_factor_integrals": 9,
+    "factor_endpoint_checks": 1536,
+    "factor_jump_checks": 766,
+    "boundary_product_checks": 3,
+    "reference_corner_cell_points": 655360,
+    "candidate_node_cell_points": 786432,
+    "reference_node_cell_points": 1572864,
+    "rules_constructed": 2,
+    "rule_nodes": 5,
+    "reference_integrals": 2,
+    "candidate_quadrature_integrals": 1,
+    "output_bundles": 1,
+    "output_array_bytes": 18432,
+    "output_file_bytes": 19390,
+    "svd_calls": 0,
+    "eigensolver_calls": 0,
+    "gaussian_field_evaluations": 0,
+    "gaussian_fits": 0,
+    "new_flow_trajectories": 0
+  },
+  "numerical_qualified": true,
+  "input_arrays": [
+    {
+      "role": "S256",
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S256-snapshot-4.npz",
+      "bytes": 15764818,
+      "sha256": "9830bbfc8b7e36a3baed2f5669733998bf2f7f48143c19dfdadaeb40dbb1ec16",
+      "arrays": {
+        "q": {
+          "shape": [
+            256,
+            512
+          ],
+          "dtype": "float64",
+          "bytes": 1048576
+        },
+        "qr": {
+          "shape": [
+            256,
+            512
+          ],
+          "dtype": "float64",
+          "bytes": 1048576
+        },
+        "qz": {
+          "shape": [
+            256,
+            512
+          ],
+          "dtype": "float64",
+          "bytes": 1048576
+        },
+        "r": {
+          "shape": [
+            256
+          ],
+          "dtype": "float64",
+          "bytes": 2048
+        },
+        "rc": {
+          "shape": [
+            256
+          ],
+          "dtype": "float64",
+          "bytes": 2048
+        },
+        "z": {
+          "shape": [
+            512
+          ],
+          "dtype": "float64",
+          "bytes": 4096
+        }
+      }
+    },
+    {
+      "role": "S128",
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S128-snapshot-4.npz",
+      "bytes": 3951954,
+      "sha256": "33375f8db5ebed664069b969d2d45bf33e5732eddd34d6078a674164e1e6c7a0",
+      "arrays": {
+        "q": {
+          "shape": [
+            128,
+            256
+          ],
+          "dtype": "float64",
+          "bytes": 262144
+        },
+        "qr": {
+          "shape": [
+            128,
+            256
+          ],
+          "dtype": "float64",
+          "bytes": 262144
+        },
+        "qz": {
+          "shape": [
+            128,
+            256
+          ],
+          "dtype": "float64",
+          "bytes": 262144
+        },
+        "r": {
+          "shape": [
+            128
+          ],
+          "dtype": "float64",
+          "bytes": 1024
+        },
+        "rc": {
+          "shape": [
+            128
+          ],
+          "dtype": "float64",
+          "bytes": 1024
+        },
+        "z": {
+          "shape": [
+            256
+          ],
+          "dtype": "float64",
+          "bytes": 2048
+        }
+      }
+    },
+    {
+      "role": "S256_saved_factors",
+      "path": "tracks/tog/tasks/t65-separability-measurement/local/S256-audit.npz",
+      "bytes": 32052956,
+      "sha256": "d5a31f851f9fd3c0df86f29d5397f17861d1e3eb65168e51887d6519fa2a4de4",
+      "arrays": {
+        "U_F": {
+          "shape": [
+            512,
+            512
+          ],
+          "dtype": "float64",
+          "bytes": 2097152
+        },
+        "s_F": {
+          "shape": [
+            512
+          ],
+          "dtype": "float64",
+          "bytes": 4096
+        },
+        "Vh_F": {
+          "shape": [
+            512,
+            1024
+          ],
+          "dtype": "float64",
+          "bytes": 4194304
+        },
+        "Lr": {
+          "shape": [
+            256,
+            2,
+            2
+          ],
+          "dtype": "float64",
+          "bytes": 8192
+        },
+        "Lz": {
+          "shape": [
+            512,
+            2,
+            2
+          ],
+          "dtype": "float64",
+          "bytes": 16384
+        },
+        "r": {
+          "shape": [
+            256
+          ],
+          "dtype": "float64",
+          "bytes": 2048
+        },
+        "z": {
+          "shape": [
+            512
+          ],
+          "dtype": "float64",
+          "bytes": 4096
+        }
+      }
+    }
+  ],
+  "phases_seconds": {
+    "imports_and_input_hashes": 0.22010149993002415,
+    "input_arrays_and_recovery": 0.03034459997434169,
+    "independent_polynomial_moments_and_sign": 0.0032250999938696623,
+    "recovered_factor_artifact": 0.002161600044928491,
+    "fixed_quadrature": 0.0935981998918578,
+    "scores_and_verdict": 3.879994619637728e-05,
+    "input_hashes_after": 0.09266989992465824
+  },
+  "formal_exclusion": false,
+  "gaussian_witness": false,
+  "causal_dynamics_claim": false,
+  "new_flow_trajectories": 0,
+  "prior_scientific_child_seconds": 1979.5974398998078,
+  "prior_evidence_qualification_seconds": 0.9663960000034422,
+  "input_identities_unchanged": true,
+  "input_identities": [
+    {
+      "path": "tracks/tog/tasks/t57-finer-short-reference/memory.py",
+      "bytes": 2231,
+      "sha256": "4b83a89eff664dc0d86fb0c71b39c99d71720c1d18c5f93557e279d0ca3745fd"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S128-snapshot-4.json",
+      "bytes": 2146,
+      "sha256": "6d64d7288798d56e5fece9f2eca177761c5829d0cf6541e7bef7748a49f6a158"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S128-snapshot-4.npz",
+      "bytes": 3951954,
+      "sha256": "33375f8db5ebed664069b969d2d45bf33e5732eddd34d6078a674164e1e6c7a0"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S256-snapshot-4.json",
+      "bytes": 2143,
+      "sha256": "bdf326b8ae13b0e2431105db2c6e43d1cc76707c3564769840b6f07e22835644"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S256-snapshot-4.npz",
+      "bytes": 15764818,
+      "sha256": "9830bbfc8b7e36a3baed2f5669733998bf2f7f48143c19dfdadaeb40dbb1ec16"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/reference.py",
+      "bytes": 26760,
+      "sha256": "a4e91488b3130dcf659f324fc6d5614ebee9717824079aab5e7388e36737befb"
+    },
+    {
+      "path": "tracks/tog/tasks/t61-saved-output-qualification/execution.json",
+      "bytes": 2351,
+      "sha256": "cf0734c0f9310cd50704ad3677adb6161c939ab9d24ced8e9425f73cfd4f7059"
+    },
+    {
+      "path": "tracks/tog/tasks/t61-saved-output-qualification/result.json",
+      "bytes": 3936,
+      "sha256": "c6ac286c4527ad4925e1d85b4cd0cfc897ea5ceced413c810496dd716a0cd679"
+    },
+    {
+      "path": "tracks/tog/tasks/t62-joint-oracle-contract/DERIVATION.md",
+      "bytes": 10232,
+      "sha256": "b375dce8d5f0b5aad9cf76fafc0984f842008c8fd0a348877a5f1569dab0f8e7"
+    },
+    {
+      "path": "tracks/tog/tasks/t62-joint-oracle-contract/PROTOCOL.md",
+      "bytes": 10583,
+      "sha256": "225b1b26689f0548dee987e15d9d8432d3d8b9c5cb919c942751299d07563e66"
+    },
+    {
+      "path": "tracks/tog/tasks/t62-joint-oracle-contract/evidence.json",
+      "bytes": 7718,
+      "sha256": "a785798c2b3be17442ca08a5b6744f0096c2d487796507c4397a850922aeecfb"
+    },
+    {
+      "path": "tracks/tog/tasks/t63-endpoint-capacity/DECISION.md",
+      "bytes": 4044,
+      "sha256": "d9f9138daec49d4ef55a8d29ad1a8567f8a0249699e0d10253d048f656655cec"
+    },
+    {
+      "path": "tracks/tog/tasks/t63-endpoint-capacity/PROTOCOL.md",
+      "bytes": 2754,
+      "sha256": "859e9a2e420aaf0f074f51bbd404c5bac332815f5955aa4e90aa35d18a900b92"
+    },
+    {
+      "path": "tracks/tog/tasks/t63-endpoint-capacity/execution.json",
+      "bytes": 3499,
+      "sha256": "412f9f96d370d250633eaa228754675c51951ae659633bbcd9cf591246d57a3d"
+    },
+    {
+      "path": "tracks/tog/tasks/t63-endpoint-capacity/input-manifest.json",
+      "bytes": 8367,
+      "sha256": "bb9c3d46a838a4da2b2f66c537ae16433fc91c8d3fd3d84568fbbb3d26a8671c"
+    },
+    {
+      "path": "tracks/tog/tasks/t63-endpoint-capacity/measure.py",
+      "bytes": 25354,
+      "sha256": "ede813749657e3cef6db88eb327cbfef1a10ee11829b774503341477608f392a"
+    },
+    {
+      "path": "tracks/tog/tasks/t63-endpoint-capacity/result.json",
+      "bytes": 28645,
+      "sha256": "b5d5032a504a12d0df48012ade68ae65f61daf04e599e351981d10395df6de92"
+    },
+    {
+      "path": "tracks/tog/tasks/t64-separability-contract/.gitignore",
+      "bytes": 7,
+      "sha256": "a7d8bdcefba82a95ebc021d87c629fdea21f13af953bf01e28b7cf8b0eeceb41"
+    },
+    {
+      "path": "tracks/tog/tasks/t64-separability-contract/DECISION.md",
+      "bytes": 2453,
+      "sha256": "b2cefc0cdfaaac168a59bf10da38f67014612adf55ac609922dffeb6d0d3afe0"
+    },
+    {
+      "path": "tracks/tog/tasks/t64-separability-contract/DERIVATION.md",
+      "bytes": 8190,
+      "sha256": "2ec2c43d9c4100c48e5263a669e1d404c294c02ca49fb647e6834b336b94c3ad"
+    },
+    {
+      "path": "tracks/tog/tasks/t64-separability-contract/PROTOCOL.md",
+      "bytes": 7778,
+      "sha256": "f515b2c3789c22e4d602694fa7a0ddcf939993685c2a5716680cc53e71f1b20a"
+    },
+    {
+      "path": "tracks/tog/tasks/t64-separability-contract/README.md",
+      "bytes": 2123,
+      "sha256": "9c5806aa0716d91a05738c3daf9f145de044ee7c5bacbb65860a4d3429b7e245"
+    },
+    {
+      "path": "tracks/tog/tasks/t64-separability-contract/evidence.json",
+      "bytes": 11051,
+      "sha256": "7a0ef496267e45111bfa03ee9ac435e09bb7cb4b978dea73d5cec139b05ff1c7"
+    },
+    {
+      "path": "tracks/tog/tasks/t65-separability-measurement/.gitignore",
+      "bytes": 7,
+      "sha256": "a7d8bdcefba82a95ebc021d87c629fdea21f13af953bf01e28b7cf8b0eeceb41"
+    },
+    {
+      "path": "tracks/tog/tasks/t65-separability-measurement/DECISION.md",
+      "bytes": 7839,
+      "sha256": "28f9ce0a34806d883d8e01600bc6e0ec56e5d5ac992829c5d3de80029aae6e88"
+    },
+    {
+      "path": "tracks/tog/tasks/t65-separability-measurement/PROTOCOL.md",
+      "bytes": 2505,
+      "sha256": "61794eac409edaec7046eba6f2d669d42c9cd574acf59e89fd31f660d078704f"
+    },
+    {
+      "path": "tracks/tog/tasks/t65-separability-measurement/README.md",
+      "bytes": 2120,
+      "sha256": "268472a0f192977b2f4f1aada4ce2e956d990a988ddf2469f34420de73c25aad"
+    },
+    {
+      "path": "tracks/tog/tasks/t65-separability-measurement/RESULTS.md",
+      "bytes": 6734,
+      "sha256": "f627bd35d9e3add611826ad0534527247806e9b1fb65c3d60eaca05dee47eb21"
+    },
+    {
+      "path": "tracks/tog/tasks/t65-separability-measurement/audit-manifest.json",
+      "bytes": 31515,
+      "sha256": "f730311c0f269e969986cb42b8009af26cde1455a04be9d2707d8af3812a0c1d"
+    },
+    {
+      "path": "tracks/tog/tasks/t65-separability-measurement/execution.json",
+      "bytes": 3866,
+      "sha256": "fa6fb7b81e82fa712469d4e787bb23a26386e6033d501e52cee5e3b0b31abbe4"
+    },
+    {
+      "path": "tracks/tog/tasks/t65-separability-measurement/input-manifest.json",
+      "bytes": 7318,
+      "sha256": "1d151c331eb0e2b3bae7c83565d276341771e66f28a5368ec7462a95210f3768"
+    },
+    {
+      "path": "tracks/tog/tasks/t65-separability-measurement/local/S256-audit.npz",
+      "bytes": 32052956,
+      "sha256": "d5a31f851f9fd3c0df86f29d5397f17861d1e3eb65168e51887d6519fa2a4de4"
+    },
+    {
+      "path": "tracks/tog/tasks/t65-separability-measurement/local/preflight.py",
+      "bytes": 1428,
+      "sha256": "dfe5e698e486c6423ff1f5f348bb3ced3e36ed768ab3b9e6b8d1d5121ec2397d"
+    },
+    {
+      "path": "tracks/tog/tasks/t65-separability-measurement/measure.py",
+      "bytes": 21927,
+      "sha256": "d4354b4932eec0b5aa49af1918be219d717d01b357c6d8b463306db945b4638e"
+    },
+    {
+      "path": "tracks/tog/tasks/t65-separability-measurement/preflight.json",
+      "bytes": 732,
+      "sha256": "bfc69e8da287a07169c533cce3fbadf3525d6d9b882c5d80cb9ccf6409808ed4"
+    },
+    {
+      "path": "tracks/tog/tasks/t65-separability-measurement/result.json",
+      "bytes": 86562,
+      "sha256": "26e589f2fa09fd9599032deb5f407e22374071c67410d793f9f705bf5c3dcd16"
+    },
+    {
+      "path": "tracks/tog/tasks/t65-separability-measurement/run_once.py",
+      "bytes": 17806,
+      "sha256": "a9f942a2e02660b6538423e86d984d1dc7a9aaaeaa16922aeb9407016a5ef926"
+    },
+    {
+      "path": "tracks/tog/tasks/t66-saved-product-diagnostic/.gitignore",
+      "bytes": 7,
+      "sha256": "a7d8bdcefba82a95ebc021d87c629fdea21f13af953bf01e28b7cf8b0eeceb41"
+    },
+    {
+      "path": "tracks/tog/tasks/t66-saved-product-diagnostic/PROTOCOL.md",
+      "bytes": 3896,
+      "sha256": "124996ee3463d469d7035ca0b24cd518d4cf615c41b35aa2c5ae5d09206ec072"
+    },
+    {
+      "path": "tracks/tog/tasks/t66-saved-product-diagnostic/local/preflight.py",
+      "bytes": 1487,
+      "sha256": "20763e9844b6dd6c1de502320cc8dd55ae6891a1f6c5023fd52b54470ef89d9b"
+    },
+    {
+      "path": "tracks/tog/tasks/t66-saved-product-diagnostic/measure.py",
+      "bytes": 25105,
+      "sha256": "d41fa8347342b96e14d2ce6640de799ecb25d05c0caf5a0926b0b016e5e138ae"
+    },
+    {
+      "path": "tracks/tog/tasks/t66-saved-product-diagnostic/preflight.json",
+      "bytes": 732,
+      "sha256": "5e899b299c77938a86b254907a93c37f42f6d3e636f7617b94f76d1a0ee5c985"
+    },
+    {
+      "path": "tracks/tog/tasks/t66-saved-product-diagnostic/run_once.py",
+      "bytes": 25506,
+      "sha256": "787c726d82f2be10ddbb8227912e4943d317c79dd237aef0f2116531b2a22984"
+    },
+    {
+      "path": "tracks/validation/t61-saved-output-review.md",
+      "bytes": 5205,
+      "sha256": "aecda1b55abec9842e1eec35cec3d425356ca6a91a06bdb5888cf908fc9a0099"
+    },
+    {
+      "path": "tracks/validation/t63-endpoint-capacity-review.md",
+      "bytes": 6257,
+      "sha256": "bf9ca20aa9ac0a0556ebdb25ad0d8e136d39e15c0ac5cedce3e7ddcdcc0311eb"
+    },
+    {
+      "path": "tracks/validation/t64-separability-review.md",
+      "bytes": 5627,
+      "sha256": "f474cc40b0f9301f52b01aad0c3beceb543d69996918d0abbda990bd8c61df88"
+    },
+    {
+      "path": "tracks/validation/t65-separability-review.md",
+      "bytes": 6692,
+      "sha256": "e6c3c15069f193ac14f08bdcbcbf5d4ce6877bd8d199005f9f1e8d0c06c4b3f4"
+    },
+    {
+      "path": "C:\\Users\\seanzjxiao\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "bytes": 107312,
+      "sha256": "5640e9be2fd33d05a1a9ae1228e2354609a69ab831605995ec4e2bd6da8fff5e"
+    },
+    {
+      "path": "tracks/tog/tasks/t66-saved-product-diagnostic/input-manifest.json",
+      "bytes": 11021,
+      "sha256": "7596eb8e9618faad6cd8d45be14ff205472c848e37f5d2d68e444a18efaace04"
+    }
+  ],
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "executable": "C:\\Users\\seanzjxiao\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+  "created_utc": "2026-10-30T05:20:49.358430+00:00",
+  "child_elapsed_before_result_write_seconds": 0.44871629995759577
+}
