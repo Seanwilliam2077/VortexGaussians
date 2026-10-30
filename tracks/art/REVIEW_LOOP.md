@@ -1,8 +1,10 @@
 # 艺术线：制作与独立复评
 
-## 2026-10-31 current: A39 existing-clock maintenance prepared after A38 material reviews
+## 2026-10-31 current: A39 material qualified for one frozen-work manuscript
 
-[A36](studies/a36-handover-material/PROCESS.md) preserves the actual blurred initial glyphs, cross-line warming and cap deferrals. [A37](studies/a37-handover-readability/PROCESS.md) changed only Gaussian scale: one 3.2265483s initial check, one PNG, zero ignition/steps. Root, the creator and original fixed reviewer independently viewed that image and support desktop two-line readability, with prior knowledge of the text disclosed. This is a production condition, not artistic validation. [A38](studies/a38-after-the-last-train/BRIEF.md) now implements the original full six-line fictional note and hold-to-trace/release-to-read interaction; its sole inspection path is fixed before execution. A38 completed one 23.2155462s sequence (7 PNG, 2026465 bytes): later contacts enter state1 but line4/line6 show zero char/glow and no fuel loss under the known legacy clock cap. This is a production limitation, not authored selective memory. The creator and both original reviewers independently read four actual images and selected one existing elapsed-clock maintenance; A39 preserves all other controls/budgets and one fixed path. It is not a new contribution or score; its run is pending. A32 remains closed at 3/6 and 4/6, older outcomes remain, overall 5/6 unmet. TOG/main unchanged; full goal active.
+[A38](studies/a38-after-the-last-train/PROCESS.md) preserves its actual later-contact clock starvation. [A39](studies/a39-handover-clock-maintenance/PROCESS.md) uses only the existing elapsed clock: one 23.6109924s run, seven PNG (2045617 bytes), 360 steps, all 14 behavior/source checks, temporary resources closed. Later contacts now have visible local warmth and nonzero material updates in lines4/6; graph deferrals, particle capacity and domain limits remain. Different within-hold event timing prevents a strictly paired numerical causal claim. This is ordinary maintenance, not a contribution.
+
+The creator and both original reviewers independently read the same four main stills and support one [complete manuscript](studies/a39-handover-clock-maintenance/PAPER_BRIEF.md) from the frozen work. They retain the strongest counterreading: a literary note with a highlighter. Writing is underway; no additional run, source search or artwork change is authorized by this finite task. All know the text and prior consultations; none claims blind or human audience evidence. No new formal score yet. A32 remains closed at 3/6 and 4/6, historical outcomes intact, overall5/6 unmet. TOG/main unchanged; full goal active.
 
 
 2026-10-30。用户重新授权持续艺术迭代，并要求与评分 Agent 交流直至至少 5 分。本轮把目标解释为既有内部六档总评中的 **5/6（Accept）**，不是就绪度 5/10，也不是官方录用概率。
@@ -25,4 +27,4 @@
 
 ## 当前有限任务
 
-A37的单一scale初态修正通过有既有知识的制作阅读判断，无新艺术分。A38完整试作已运行一次，后两次触点进入state1却无char/glow/fuel变化，已知legacy前沿时钟缺口阻止后续局部可见回应。作者及原两位评审已独立读同一四图包，选择一次已有elapsed时钟维护。A39代码/规格/单次协议已准备，运行待执行；不自动写论文或用维护加分。旧版全部保留，TOG/main保持，完整研究目标active。
+A39动作条件已获实际支持，作者和原两位评分者各自选择一次完整论述。冻结六行交接条、四主图和一次真实输入记录；先写PAPER_DRAFT与CLAIM_EVIDENCE，再由同两位原评分者独立正式评分。不加运行、素材、路径或来源。维护、诚实记录和允许写作都不计作艺术贡献；文学便条加荧光笔反读须得到实质回应。旧分保留，5/6未达。
