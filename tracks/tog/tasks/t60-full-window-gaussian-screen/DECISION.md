@@ -1,0 +1,21 @@
+# T60 decision — preserve failure, recover saved evidence without new trajectories
+
+T60 completed the expensive numerical work but failed its frozen final acceptance because three Windows-native relative paths were compared with POSIX literals. The [diagnosis and saved-data review](RESULTS.md) isolate this acceptance defect and corroborate the stored numbers. They do not overwrite the failed receipt. The next useful step is to qualify existing evidence, not rerun simulation or choose a new carrier from an unaccepted result.
+
+## T61: one separately frozen saved-output qualification
+
+Prepare one **read-only, standard-library-only child, at most 60 seconds**, using the existing bookkeeping Python. Freeze the validator, protocol, executable, T60 sources/freeze/result/failed receipt/review/diagnosis and every saved artifact identity used. Include the prior scientific-input identities. The run may stream/hash the 36 existing NPZ files but may not load numerical arrays, import NumPy/SciPy/Torch, evaluate a Gaussian, integrate, solve, fit, evolve or render anything. No installation, new source batch, scene, candidate, OS warm-up or new scientific run. Count complete child time separately as evidence qualification; preserve the 1976.6796338998247-second scientific history.
+
+Before this child, statically review the mapping and perform only explicit standard-library path-contract checks. Accept either separator for exactly the three known relative evidence paths. Reject drives, absolute/UNC paths, parent traversal and unlisted destinations; resolve inside the expected T60 directory. Require the normalized logical path, bytes and SHA256 all to match. This changes path spelling interpretation only; it never changes saved files, numerical fields, equations, tolerances or historical statuses.
+
+The new validator must independently check the complete original acceptance conditions against the saved data: six cases, thirty checkpoint identities, thirty-six raw identities, schedule/counts/runtime/resources, all twelve reference predicates, fixed coefficient/no fitting, the two fixed score rules and their recorded arithmetic, meaningful motion, original model gates and all before/after identities. Use the already recorded independent saved-array review as explicitly attributed supporting evidence; do not describe a new metadata-only process as new array replication. Successful file parsing alone is insufficient.
+
+Emit a distinct T61 qualification record with links/hashes to both the unchanged failed T60 receipt and unchanged numerical output. Keep `T60_history_reclassified=false` and `new_scientific_trajectories=0`. A pass may accept the saved observations under the new artifact-path contract; it must not change T60 to passed or count another numerical sample. An identity discrepancy, missing evidence, gate inconsistency or timeout closes T61 without repair, retry, threshold change or fallback. Review and publish that result before selecting numerical follow-up.
+
+## Research decision after evidence acceptance
+
+The saved t=1 vorticity score .11619 versus .10 would identify a modest finite-time error in this ordinary projected single-Gaussian trajectory, if separately accepted. The covariance score .10057 is particularly close to its gate. Neither establishes a useful novel correction, a bottleneck of ordinary multi-carrier methods, or a TOG contribution.
+
+After qualification, distinguish trajectory choice from representation capacity before implementing a new method. A possible next bounded question is whether the ordinary symmetry-preserving single curl-Gaussian family can jointly meet the original field/centroid/covariance requirements on the saved frames when granted offline oracle parameters. Such a fit must be labeled an oracle, retain invariant discrepancies and costs, and use the same parameters for the S128 sensitivity check. An unconstrained L2 optimum failing a secondary gate does not prove joint infeasibility; nor does a local optimizer's failure prove a representation lower bound. This document selects **no oracle run, fitting algorithm, mixture or candidate**. A separate mathematical/measurement contract is required after T61.
+
+The full research goal remains active and unachieved. Preserve all historical failures, inactive art, main and the deleted automation.

@@ -1,6 +1,6 @@
 # TOG 研究轨道：从创作需求到可审查任务
 
-**当前进度（2026-10-30）：** [T59](tasks/t59-direct-coupled-reference/README.md) 完成六条 [0,.25] 新轨迹，全部 11 类检查通过，子进程耗时 242.856 秒；两档空间涡量差最大约 0.435%/0.112%，非零时刻误差下降约 3.9 倍。移植前后轨迹一致，18 个快照已复核。这只建立短窗普通参考。[下一项](tasks/t59-direct-coupled-reference/DECISION.md) 进入完整 t=1 任务，对照已验证的普通最优投影高斯轨迹，并冻结完整 D8 测量与积分检查。尚无新方法优势或 TOG 核心贡献；T56/T57 历史失败不变，目标 active、艺术 inactive、main 与已删除自动化不变。
+**当前进度（2026-10-30）：** [T60](tasks/t60-full-window-gaussian-screen/README.md) 已完成六条完整 t=1 轨迹，耗时 416.261 秒，保留 30 个快照与全部 36 个 NPZ；但最终验收因 Windows 路径分隔符的字符串比较而失败，原回执仍为 failed_result_validation_no_retry、模型结论未获资格。独立保存数据复核支持内部读数：t=1 高斯涡量误差约 11.62%、质心误差 .0827、形状误差 .10057。它们尚不是本轮正式模型判定。[下一项](tasks/t60-full-window-gaussian-screen/DECISION.md) 只对现有证据做独立冻结的只读验收，不重跑轨迹或修改历史门。TOG 核心贡献未建立；目标 active、艺术 inactive、main 与已删除自动化不变。
 
 **目标是形成可发表的研究贡献；目前没有已经建立的 TOG 贡献。** 此目录首先把“艺术 brief—物理控制—像素指标”变成明确、可携带的输入合同。它提供普通共同模型、规格检查和单次控制验收，不包含响应缓存、新优化算法或自动创作系统。原仓库 demo 和既有 research 保持原状。
 
@@ -64,4 +64,4 @@ python tracks/tog/check_interfaces.py
 
 ## 当前下一步
 
-[T59 的短窗参考资格](tasks/t59-direct-coupled-reference/RESULTS.md) 已通过。[T60 准备合同](tasks/t59-direct-coupled-reference/DECISION.md) 指向完整 t=1 与普通最优投影高斯对照：六条从初始状态运行的轨迹、五个时刻、原物理门及 D8 全盒涡量控制、预定双规则计分检查，另行冻结后最多一子进程 600 秒。参考失败不能用来判方法失败；普通模型通过也不构成新方法贡献。
+[T60 的计算与验收故障](tasks/t60-full-window-gaussian-screen/README.md) 已封存；[下一有限任务](tasks/t60-full-window-gaussian-screen/DECISION.md) 是一次最多 60 秒的标准库保存证据验收，处理三处已定位的相对路径格式，同时保持全部物理判别、旧回执和原始数据不变。尚未选择新数值实验、拟合或方法。

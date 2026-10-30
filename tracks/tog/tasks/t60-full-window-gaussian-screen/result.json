@@ -1,0 +1,4256 @@
+{
+  "schema": "t60-full-window-gaussian-screen-v1",
+  "created_utc": "2026-10-30T02:49:17.936814+00:00",
+  "status": "qualified_reference_ordinary_model_fail",
+  "python": "3.12.14",
+  "numpy": "2.3.5",
+  "executable": "C:\\Users\\seanzjxiao\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+  "code": {
+    "bytes": 26760,
+    "sha256": "a4e91488b3130dcf659f324fc6d5614ebee9717824079aab5e7388e36737befb"
+  },
+  "spatial_code": {
+    "bytes": 10613,
+    "sha256": "499bab137463df4435230e3cbf4d16b0723feed5ad5d06087a0bafd911204908"
+  },
+  "base_code": {
+    "bytes": 17488,
+    "sha256": "51499f5c50b8f7f25ebb8df2569bc7eff085938cbd9d88f36b8604f9aaa4e01f"
+  },
+  "solver_code": {
+    "bytes": 2790,
+    "sha256": "c643626adb909d79cb352a5d08d9355e1ecf749c6f39cc266bf98a52edbe3e16"
+  },
+  "measurement_code": {
+    "bytes": 17413,
+    "sha256": "3a8168baa58d6ba965a9ca609c8c03eb7d167020eac06f65dee695e4fd1cc2aa"
+  },
+  "source_identities_after": {
+    "code": {
+      "bytes": 26760,
+      "sha256": "a4e91488b3130dcf659f324fc6d5614ebee9717824079aab5e7388e36737befb"
+    },
+    "spatial_code": {
+      "bytes": 10613,
+      "sha256": "499bab137463df4435230e3cbf4d16b0723feed5ad5d06087a0bafd911204908"
+    },
+    "base_code": {
+      "bytes": 17488,
+      "sha256": "51499f5c50b8f7f25ebb8df2569bc7eff085938cbd9d88f36b8604f9aaa4e01f"
+    },
+    "solver_code": {
+      "bytes": 2790,
+      "sha256": "c643626adb909d79cb352a5d08d9355e1ecf749c6f39cc266bf98a52edbe3e16"
+    },
+    "measurement_code": {
+      "bytes": 17413,
+      "sha256": "3a8168baa58d6ba965a9ca609c8c03eb7d167020eac06f65dee695e4fd1cc2aa"
+    }
+  },
+  "source_identities_unchanged": true,
+  "coefficient_input": {
+    "bytes": 3679,
+    "sha256": "66a83b67cff104773217757bc08fe9751dd357824778b130c432a4191d7cc9b8"
+  },
+  "coefficient_input_after": {
+    "bytes": 3679,
+    "sha256": "66a83b67cff104773217757bc08fe9751dd357824778b130c432a4191d7cc9b8"
+  },
+  "coefficient_refitted": false,
+  "cases": [
+    {
+      "name": "S64",
+      "R": 8.0,
+      "Z": 8.0,
+      "radial_cells": 64,
+      "axial_cells": 128,
+      "h": 0.125,
+      "dt": 0.0025,
+      "steps": 400,
+      "angular_order": 32,
+      "kernel": {
+        "build_seconds": 0.841906400048174,
+        "shape": [
+          258,
+          8192
+        ],
+        "bytes": 16908288,
+        "angular_order": 32,
+        "scalar_kernel_pairs": 67633152
+      },
+      "method": "ordinary_FFT_sine_Thomas",
+      "elliptic_method": "ordinary_FFT_sine_Thomas",
+      "elliptic_solves": 805,
+      "transport_stages": 800,
+      "initial_analytic_errors": {
+        "u": 0.003381846101638504,
+        "J": 0.0020591744878415987
+      },
+      "snapshots": [
+        {
+          "step": 0,
+          "time": 0.0,
+          "circulation": 3.7599424119464486,
+          "centroid": [
+            1.2534294270211734,
+            -3.8928067839680454e-19
+          ],
+          "covariance": [
+            [
+              0.42934388657592826,
+              1.0141856636541858e-18
+            ],
+            [
+              1.0141856636541858e-18,
+              1.0001851291793673
+            ]
+          ],
+          "q_squared_integral": 12.526211410727756,
+          "axial_impulse": 23.629484896372094,
+          "vorticity_squared_integral": 12.527162636269262,
+          "min_q": 7.047622033264791e-28,
+          "max_q": 1.4902739258291573,
+          "negative_cell_mass": 0.0,
+          "outer_two_cell_circulation_fraction": 8.597808897859995e-14
+        },
+        {
+          "step": 100,
+          "time": 0.25,
+          "circulation": 3.759942411946449,
+          "centroid": [
+            1.25360836083442,
+            0.0884538413855051
+          ],
+          "covariance": [
+            [
+              0.4292367266487713,
+              -0.01855223642679965
+            ],
+            [
+              -0.01855223642679965,
+              1.0029512996299381
+            ]
+          ],
+          "q_squared_integral": 12.519556789503124,
+          "axial_impulse": 23.63351798448188,
+          "vorticity_squared_integral": 12.53047559067703,
+          "min_q": 6.991646931568874e-28,
+          "max_q": 1.4821165297523633,
+          "negative_cell_mass": 0.0,
+          "outer_two_cell_circulation_fraction": 8.600922382460718e-14
+        },
+        {
+          "step": 200,
+          "time": 0.5,
+          "circulation": 3.759942411946448,
+          "centroid": [
+            1.253941813893615,
+            0.1768319111891747
+          ],
+          "covariance": [
+            [
+              0.4287291869146532,
+              -0.03701067363328461
+            ],
+            [
+              -0.03701067363328461,
+              1.0102572069969649
+            ]
+          ],
+          "q_squared_integral": 12.51257508225814,
+          "axial_impulse": 23.63739960038591,
+          "vorticity_squared_integral": 12.547683886055616,
+          "min_q": 6.936435926704431e-28,
+          "max_q": 1.4746248156578825,
+          "negative_cell_mass": 0.0,
+          "outer_two_cell_circulation_fraction": 8.603119954025675e-14
+        },
+        {
+          "step": 300,
+          "time": 0.75,
+          "circulation": 3.759942411946448,
+          "centroid": [
+            1.254429941259354,
+            0.265058726569332
+          ],
+          "covariance": [
+            [
+              0.42782382183994283,
+              -0.05528641732609557
+            ],
+            [
+              -0.05528641732609557,
+              1.0220409329757978
+            ]
+          ],
+          "q_squared_integral": 12.504955026826526,
+          "axial_impulse": 23.64116816495619,
+          "vorticity_squared_integral": 12.578723952876633,
+          "min_q": 6.881984887567028e-28,
+          "max_q": 1.4678829490855003,
+          "negative_cell_mass": 0.0,
+          "outer_two_cell_circulation_fraction": 8.604420984299273e-14
+        },
+        {
+          "step": 400,
+          "time": 1.0,
+          "circulation": 3.759942411946448,
+          "centroid": [
+            1.2550725139180194,
+            0.35306019277078854
+          ],
+          "covariance": [
+            [
+              0.4265251817609197,
+              -0.07329294588426039
+            ],
+            [
+              -0.07329294588426039,
+              1.0382048947597757
+            ]
+          ],
+          "q_squared_integral": 12.496294192133101,
+          "axial_impulse": 23.644875988357406,
+          "vorticity_squared_integral": 12.623555241630752,
+          "min_q": 6.828288975536419e-28,
+          "max_q": 1.4612617776832553,
+          "negative_cell_mass": 0.0,
+          "outer_two_cell_circulation_fraction": 8.604849417435833e-14
+        }
+      ],
+      "checkpoint_records": [
+        {
+          "name": "S64",
+          "index": 0,
+          "step": 0,
+          "time": 0.0,
+          "raw": {
+            "path": "S64-snapshot-0.npz",
+            "bytes": 994642,
+            "sha256": "2fd47fb6177a37105d1942e1028bbbacf04f741a2b160fa84a76941deba1763a"
+          },
+          "path": "S64-snapshot-0.json",
+          "bytes": 2147,
+          "sha256": "9c477e78791c6f4014a67bc02e9eddca005d9fd470f7bb0d50068457b53aaa8a"
+        },
+        {
+          "name": "S64",
+          "index": 1,
+          "step": 100,
+          "time": 0.25,
+          "raw": {
+            "path": "S64-snapshot-1.npz",
+            "bytes": 994642,
+            "sha256": "03179445fdf49d5fa5a28641e293b4db6ddf5b781eb45f68a9d6ef4dd3b37068"
+          },
+          "path": "S64-snapshot-1.json",
+          "bytes": 2139,
+          "sha256": "19c6fca93e0d32d737458f561525431357983f0b130bbe3298f59412f2773632"
+        },
+        {
+          "name": "S64",
+          "index": 2,
+          "step": 200,
+          "time": 0.5,
+          "raw": {
+            "path": "S64-snapshot-2.npz",
+            "bytes": 994642,
+            "sha256": "853ed2155f724776148c2e1785f64ce9142886fea118bb008584c134f8b84ec9"
+          },
+          "path": "S64-snapshot-2.json",
+          "bytes": 2137,
+          "sha256": "e4edf8c85b5301c6323cd5e6526e47aa1f8781b0eb6a0fdbd8fdd1be5f91a2be"
+        },
+        {
+          "name": "S64",
+          "index": 3,
+          "step": 300,
+          "time": 0.75,
+          "raw": {
+            "path": "S64-snapshot-3.npz",
+            "bytes": 994642,
+            "sha256": "fbd60e3b14abb57b1408b018e64b37fc2ca6644c47523b6490641ae452378c2b"
+          },
+          "path": "S64-snapshot-3.json",
+          "bytes": 2141,
+          "sha256": "c363a3655e2b904d9a5f50a7e0a488b6b41c5450b46762d7b29de6978f152e7a"
+        },
+        {
+          "name": "S64",
+          "index": 4,
+          "step": 400,
+          "time": 1.0,
+          "raw": {
+            "path": "S64-snapshot-4.npz",
+            "bytes": 994642,
+            "sha256": "85f38e5b75c7d68297afa8d9cea2c0bcc1b939ea29226f720a3e4a0f090bc78a"
+          },
+          "path": "S64-snapshot-4.json",
+          "bytes": 2141,
+          "sha256": "4dc5f5310d8db479786ba3f12bb935a4535e0f2336a4d5a2d7b80cc7d232b931"
+        }
+      ],
+      "direct_solver_counts": {
+        "solves": 805,
+        "rhs_assemblies": 805,
+        "forward_transforms": 805,
+        "factorizations": 805,
+        "triangular_solves": 805,
+        "inverse_transforms": 805,
+        "original_rhs_assemblies": 805,
+        "original_residual_checks": 805,
+        "factor_reuses": 0,
+        "new_CG_solves": 0
+      },
+      "direct_solver_phase_seconds": {
+        "rhs_seconds": 0.03560280054807663,
+        "forward_transform_seconds": 0.15441929956432432,
+        "factor_seconds": 0.36443770199548453,
+        "triangular_seconds": 0.16790439747273922,
+        "inverse_transform_seconds": 0.0858591003343463,
+        "original_rhs_assembly_seconds": 0.03807459899690002,
+        "original_residual_seconds": 0.06293870147783309,
+        "checked_solve_seconds": 0.9368340985383838
+      },
+      "max_CFL": 0.01990907915755566,
+      "max_volume_divergence": 1.4210854715202005e-15,
+      "max_solver_true_residual": 7.289268415174445e-15,
+      "max_circulation_ledger_relative": 3.5433192415851367e-16,
+      "minimum_Euler_stage_q": 6.827755736790693e-28,
+      "q_squared_relative_drift": [
+        0.0,
+        0.0005312557010599406,
+        0.0010886235288938284,
+        0.0016969523508940654,
+        0.002388369285307834
+      ],
+      "impulse_relative_drift": [
+        0.0,
+        0.00017068032280320722,
+        0.00033495034058184103,
+        0.0004944360249634627,
+        0.0006513511425580987
+      ],
+      "phase_seconds": {
+        "boundary_seconds": 0.7835259006824344,
+        "linear_solve_seconds": 0.9402359004598111,
+        "reconstruction_seconds": 0.26746019965503365,
+        "transport_seconds": 0.3008832993218675
+      },
+      "checkpoint_save_seconds": 0.03854090010281652,
+      "final_array_save_seconds": 0.011524899979121983,
+      "green_released_before_final_array_save": true,
+      "lifetime_changes": [
+        "release_unused_initial_flow_after_oracle",
+        "release_completed_stage_buffers_before_next_step"
+      ],
+      "log": {
+        "path": "S64-steps.jsonl",
+        "bytes": 955151,
+        "sha256": "57c5edd5fc25edba54ce4b6df528ba913db56fd8c9b5844125ac519f02b85c3a"
+      },
+      "raw": {
+        "path": "S64.npz",
+        "bytes": 4083588,
+        "sha256": "b35d3c932f46038fcbe3e1108326e066b740f0c7cbb64a74b5be352cb938cebf"
+      },
+      "case_elapsed_before_record_write_seconds": 3.4130040999734774
+    },
+    {
+      "name": "S128",
+      "R": 8.0,
+      "Z": 8.0,
+      "radial_cells": 128,
+      "axial_cells": 256,
+      "h": 0.0625,
+      "dt": 0.0025,
+      "steps": 400,
+      "angular_order": 32,
+      "kernel": {
+        "build_seconds": 12.273128499975428,
+        "shape": [
+          514,
+          32768
+        ],
+        "bytes": 134742016,
+        "angular_order": 32,
+        "scalar_kernel_pairs": 538968064
+      },
+      "method": "ordinary_FFT_sine_Thomas",
+      "elliptic_method": "ordinary_FFT_sine_Thomas",
+      "elliptic_solves": 805,
+      "transport_stages": 800,
+      "initial_analytic_errors": {
+        "u": 0.0008456339116921696,
+        "J": 0.000514395522142308
+      },
+      "snapshots": [
+        {
+          "step": 0,
+          "time": 0.0,
+          "circulation": 3.7599424119464486,
+          "centroid": [
+            1.25332861585664,
+            -5.3309826236006846e-18
+          ],
+          "covariance": [
+            [
+              0.4292219248305371,
+              4.031751232918699e-18
+            ],
+            [
+              4.031751232918699e-18,
+              1.0000231479950212
+            ]
+          ],
+          "q_squared_integral": 12.528424551078384,
+          "axial_impulse": 23.625059205465625,
+          "vorticity_squared_integral": 12.528520011386522,
+          "min_q": 4.042434503111491e-28,
+          "max_q": 1.497561071393001,
+          "negative_cell_mass": 0.0,
+          "outer_two_cell_circulation_fraction": 2.3655946310059095e-14
+        },
+        {
+          "step": 100,
+          "time": 0.25,
+          "circulation": 3.759942411946448,
+          "centroid": [
+            1.2534326886782499,
+            0.0883955950099968
+          ],
+          "covariance": [
+            [
+              0.4290465653017803,
+              -0.018499649263643614
+            ],
+            [
+              -0.018499649263643614,
+              1.002409542439728
+            ]
+          ],
+          "q_squared_integral": 12.526852136395558,
+          "axial_impulse": 23.62606945860419,
+          "vorticity_squared_integral": 12.534652509300582,
+          "min_q": 3.9867171419424253e-28,
+          "max_q": 1.4935139182649388,
+          "negative_cell_mass": 0.0,
+          "outer_two_cell_circulation_fraction": 2.364126727406545e-14
+        },
+        {
+          "step": 200,
+          "time": 0.5,
+          "circulation": 3.759942411946448,
+          "centroid": [
+            1.2536944463179123,
+            0.17671564542282386
+          ],
+          "covariance": [
+            [
+              0.4284722305711126,
+              -0.036909108189412176
+            ],
+            [
+              -0.036909108189412176,
+              1.009311785063234
+            ]
+          ],
+          "q_squared_integral": 12.525223068682825,
+          "axial_impulse": 23.627037173115852,
+          "vorticity_squared_integral": 12.554860071895007,
+          "min_q": 3.931890184792644e-28,
+          "max_q": 1.490243946182157,
+          "negative_cell_mass": 0.0,
+          "outer_two_cell_circulation_fraction": 2.362329776953797e-14
+        },
+        {
+          "step": 300,
+          "time": 0.75,
+          "circulation": 3.759942411946448,
+          "centroid": [
+            1.2541131735673374,
+            0.26488499839518437
+          ],
+          "covariance": [
+            [
+              0.42750128002914134,
+              -0.055140038929552104
+            ],
+            [
+              -0.055140038929552104,
+              1.020670697740703
+            ]
+          ],
+          "q_squared_integral": 12.523468983075855,
+          "axial_impulse": 23.62797195394419,
+          "vorticity_squared_integral": 12.589203460587703,
+          "min_q": 3.8779482523515567e-28,
+          "max_q": 1.487280730753478,
+          "negative_cell_mass": 0.0,
+          "outer_two_cell_circulation_fraction": 2.3602047689702998e-14
+        },
+        {
+          "step": 400,
+          "time": 1.0,
+          "circulation": 3.7599424119464477,
+          "centroid": [
+            1.2546874993441401,
+            0.35283003186421197
+          ],
+          "covariance": [
+            [
+              0.42613764564360745,
+              -0.07310596114888357
+            ],
+            [
+              -0.07310596114888357,
+              1.0363896709682767
+            ]
+          ],
+          "q_squared_integral": 12.521507661153027,
+          "axial_impulse": 23.628884263996717,
+          "vorticity_squared_integral": 12.637800034275932,
+          "min_q": 3.824885096738535e-28,
+          "max_q": 1.4843240718580133,
+          "negative_cell_mass": 0.0,
+          "outer_two_cell_circulation_fraction": 2.3577539686852122e-14
+        }
+      ],
+      "checkpoint_records": [
+        {
+          "name": "S128",
+          "index": 0,
+          "step": 0,
+          "time": 0.0,
+          "raw": {
+            "path": "S128-snapshot-0.npz",
+            "bytes": 3951954,
+            "sha256": "a91e1ac02e7abc8319c30833b7f1c7b4deb533832a9d2e613a73aad0c9a93d3c"
+          },
+          "path": "S128-snapshot-0.json",
+          "bytes": 2144,
+          "sha256": "cd0042b4505656ac295921201236cc05fb7b0f2c87fcc3a6ffe30b9839056c8e"
+        },
+        {
+          "name": "S128",
+          "index": 1,
+          "step": 100,
+          "time": 0.25,
+          "raw": {
+            "path": "S128-snapshot-1.npz",
+            "bytes": 3951954,
+            "sha256": "709b0158e088c24d3a5be465282af26827f8506a01e6e9a295330544ad893bf9"
+          },
+          "path": "S128-snapshot-1.json",
+          "bytes": 2146,
+          "sha256": "c1dbe8a3a5f62ed4d4cb65c3ddfb13c76352307e417de73306e6b5ea26a561ca"
+        },
+        {
+          "name": "S128",
+          "index": 2,
+          "step": 200,
+          "time": 0.5,
+          "raw": {
+            "path": "S128-snapshot-2.npz",
+            "bytes": 3951954,
+            "sha256": "75e0acd72edba8f7892581778e116d24d6b545ba9f28b60e7b9774a495dbcefb"
+          },
+          "path": "S128-snapshot-2.json",
+          "bytes": 2144,
+          "sha256": "436787a7fc29f991aeff38ab56f0bdf3f49e8a760d2ef897436ba725cf16ce2a"
+        },
+        {
+          "name": "S128",
+          "index": 3,
+          "step": 300,
+          "time": 0.75,
+          "raw": {
+            "path": "S128-snapshot-3.npz",
+            "bytes": 3951954,
+            "sha256": "a356eb7bd89a1000ff161e7fdf35bb88948bd6b0ff07bc5c8decfc30368c9443"
+          },
+          "path": "S128-snapshot-3.json",
+          "bytes": 2150,
+          "sha256": "f82f55e2b24c024bc533ab66a2494a63597b9412d9e423e8629dc24642061c02"
+        },
+        {
+          "name": "S128",
+          "index": 4,
+          "step": 400,
+          "time": 1.0,
+          "raw": {
+            "path": "S128-snapshot-4.npz",
+            "bytes": 3951954,
+            "sha256": "33375f8db5ebed664069b969d2d45bf33e5732eddd34d6078a674164e1e6c7a0"
+          },
+          "path": "S128-snapshot-4.json",
+          "bytes": 2146,
+          "sha256": "6d64d7288798d56e5fece9f2eca177761c5829d0cf6541e7bef7748a49f6a158"
+        }
+      ],
+      "direct_solver_counts": {
+        "solves": 805,
+        "rhs_assemblies": 805,
+        "forward_transforms": 805,
+        "factorizations": 805,
+        "triangular_solves": 805,
+        "inverse_transforms": 805,
+        "original_rhs_assemblies": 805,
+        "original_residual_checks": 805,
+        "factor_reuses": 0,
+        "new_CG_solves": 0
+      },
+      "direct_solver_phase_seconds": {
+        "rhs_seconds": 0.11242209863848984,
+        "forward_transform_seconds": 0.6185299021890387,
+        "factor_seconds": 1.134562299004756,
+        "triangular_seconds": 0.6046700035221875,
+        "inverse_transform_seconds": 0.35620559856761247,
+        "original_rhs_assembly_seconds": 0.11036799976136535,
+        "original_residual_seconds": 0.2690896999556571,
+        "checked_solve_seconds": 3.3585056997835636
+      },
+      "max_CFL": 0.039954561929935566,
+      "max_volume_divergence": 2.842170943040401e-15,
+      "max_solver_true_residual": 1.0815662009008493e-14,
+      "max_circulation_ledger_relative": 2.3622128277234243e-16,
+      "minimum_Euler_stage_q": 3.8243587926730276e-28,
+      "q_squared_relative_drift": [
+        0.0,
+        0.0001255077744544142,
+        0.0002555375085275813,
+        0.0003955459828428598,
+        0.0005520957481250921
+      ],
+      "impulse_relative_drift": [
+        0.0,
+        4.27619304474991e-05,
+        8.372328860750677e-05,
+        0.00012329063191907075,
+        0.00016190683366446024
+      ],
+      "phase_seconds": {
+        "boundary_seconds": 7.602229002397507,
+        "linear_solve_seconds": 3.3702213014476,
+        "reconstruction_seconds": 1.3515102993696928,
+        "transport_seconds": 1.2808438995853066
+      },
+      "checkpoint_save_seconds": 0.06996960006654263,
+      "final_array_save_seconds": 0.03602489992044866,
+      "green_released_before_final_array_save": true,
+      "lifetime_changes": [
+        "release_unused_initial_flow_after_oracle",
+        "release_completed_stage_buffers_before_next_step"
+      ],
+      "log": {
+        "path": "S128-steps.jsonl",
+        "bytes": 952183,
+        "sha256": "50d614a32495559fddf2cd6feae22f48981bc9e35254c1142ae0be50724ead18"
+      },
+      "raw": {
+        "path": "S128.npz",
+        "bytes": 16289668,
+        "sha256": "fb63061660a8e2fdde2fdf83df08e0d52573d5fa76feb13d5dd520794ccfb5ad"
+      },
+      "case_elapsed_before_record_write_seconds": 26.826756600057706
+    },
+    {
+      "name": "S256",
+      "R": 8.0,
+      "Z": 8.0,
+      "radial_cells": 256,
+      "axial_cells": 512,
+      "h": 0.03125,
+      "dt": 0.0025,
+      "steps": 400,
+      "angular_order": 32,
+      "kernel": {
+        "build_seconds": 102.2612683000043,
+        "shape": [
+          1026,
+          131072
+        ],
+        "bytes": 1075838976,
+        "angular_order": 32,
+        "scalar_kernel_pairs": 4303355904
+      },
+      "method": "ordinary_FFT_sine_Thomas",
+      "elliptic_method": "ordinary_FFT_sine_Thomas",
+      "elliptic_solves": 805,
+      "transport_stages": 800,
+      "initial_analytic_errors": {
+        "u": 0.0002114196103658282,
+        "J": 0.0001285752644537227
+      },
+      "snapshots": [
+        {
+          "step": 0,
+          "time": 0.0,
+          "circulation": 3.7599424119464486,
+          "centroid": [
+            1.2533159496817243,
+            3.2471595476918638e-18
+          ],
+          "covariance": [
+            [
+              0.4292060026115663,
+              -4.989752900068547e-18
+            ],
+            [
+              -4.989752900068547e-18,
+              1.0000028937111296
+            ]
+          ],
+          "q_squared_integral": 12.528699025324546,
+          "axial_impulse": 23.624496096067478,
+          "vorticity_squared_integral": 12.528709359696702,
+          "min_q": 3.103796521435645e-28,
+          "max_q": 1.4993898033797126,
+          "negative_cell_mass": 0.0,
+          "outer_two_cell_circulation_fraction": 8.99355107882144e-15
+        },
+        {
+          "step": 100,
+          "time": 0.25,
+          "circulation": 3.759942411946448,
+          "centroid": [
+            1.2534016152393697,
+            0.08838071146327879
+          ],
+          "covariance": [
+            [
+              0.429012651533337,
+              -0.018485496945644858
+            ],
+            [
+              -0.018485496945644858,
+              1.0022972441063727
+            ]
+          ],
+          "q_squared_integral": 12.528318259264799,
+          "axial_impulse": 23.62474873886602,
+          "vorticity_squared_integral": 12.535525957289952,
+          "min_q": 3.030610335682677e-28,
+          "max_q": 1.4975518475322134,
+          "negative_cell_mass": 0.0,
+          "outer_two_cell_circulation_fraction": 8.972685235429592e-15
+        },
+        {
+          "step": 200,
+          "time": 0.5,
+          "circulation": 3.759942411946448,
+          "centroid": [
+            1.253645844803132,
+            0.1766856853551265
+          ],
+          "covariance": [
+            [
+              0.4284207962038724,
+              -0.036881523785366715
+            ],
+            [
+              -0.036881523785366715,
+              1.0091020321796622
+            ]
+          ],
+          "q_squared_integral": 12.527926640629364,
+          "axial_impulse": 23.624990177764566,
+          "vorticity_squared_integral": 12.556447655982888,
+          "min_q": 2.9591023377189815e-28,
+          "max_q": 1.4961824697434372,
+          "negative_cell_mass": 0.0,
+          "outer_two_cell_circulation_fraction": 8.94995337324047e-15
+        },
+        {
+          "step": 300,
+          "time": 0.75,
+          "circulation": 3.759942411946449,
+          "centroid": [
+            1.2540477205349299,
+            0.2648397935367202
+          ],
+          "covariance": [
+            [
+              0.42743270280616774,
+              -0.05509973197295953
+            ],
+            [
+              -0.05509973197295953,
+              1.0203583485945036
+            ]
+          ],
+          "q_squared_integral": 12.527508432518887,
+          "axial_impulse": 23.62522273401254,
+          "vorticity_squared_integral": 12.591562865992897,
+          "min_q": 2.8892507060081444e-28,
+          "max_q": 1.494935297344252,
+          "negative_cell_mass": 0.0,
+          "outer_two_cell_circulation_fraction": 8.925471934131107e-15
+        },
+        {
+          "step": 400,
+          "time": 1.0,
+          "circulation": 3.7599424119464477,
+          "centroid": [
+            1.2546056524805573,
+            0.35276936493470806
+          ],
+          "covariance": [
+            [
+              0.42605219413657314,
+              -0.07305360087353913
+            ],
+            [
+              -0.07305360087353913,
+              1.0359696982488587
+            ]
+          ],
+          "q_squared_integral": 12.527044816735721,
+          "axial_impulse": 23.625448928190522,
+          "vorticity_squared_integral": 12.641021874312637,
+          "min_q": 2.8210321884113047e-28,
+          "max_q": 1.4937684661109798,
+          "negative_cell_mass": 0.0,
+          "outer_two_cell_circulation_fraction": 8.899265403735028e-15
+        }
+      ],
+      "checkpoint_records": [
+        {
+          "name": "S256",
+          "index": 0,
+          "step": 0,
+          "time": 0.0,
+          "raw": {
+            "path": "S256-snapshot-0.npz",
+            "bytes": 15764818,
+            "sha256": "c4cf52a4487e0072a4cdbe4bcb901443a31663a1e5036b6d8934f0e5ce880cb9"
+          },
+          "path": "S256-snapshot-0.json",
+          "bytes": 2144,
+          "sha256": "5bb3e8be49fb1fe508dd892800b82fdf1e390f18c72a94cc3887c5e20d11ea93"
+        },
+        {
+          "name": "S256",
+          "index": 1,
+          "step": 100,
+          "time": 0.25,
+          "raw": {
+            "path": "S256-snapshot-1.npz",
+            "bytes": 15764818,
+            "sha256": "862449dbe4b4f2f32cc2c63b697180c353c70e6fe813ad32d4c2304e732131fb"
+          },
+          "path": "S256-snapshot-1.json",
+          "bytes": 2139,
+          "sha256": "786d41f4a3df8dfab112ffe0a50090fc4d2cd1cc243d9d54130a24721d61bbc1"
+        },
+        {
+          "name": "S256",
+          "index": 2,
+          "step": 200,
+          "time": 0.5,
+          "raw": {
+            "path": "S256-snapshot-2.npz",
+            "bytes": 15764818,
+            "sha256": "6651417679b252eb25b8ee62ffe0c830b033160cbfe905c38486d634c81ec080"
+          },
+          "path": "S256-snapshot-2.json",
+          "bytes": 2141,
+          "sha256": "45e2657db09f932ee870e1541972630f529beff9cebb02cbc8ad46e172df6fe4"
+        },
+        {
+          "name": "S256",
+          "index": 3,
+          "step": 300,
+          "time": 0.75,
+          "raw": {
+            "path": "S256-snapshot-3.npz",
+            "bytes": 15764818,
+            "sha256": "8fed918c0ff8c0ef7a2756fd1fbc493d9d2b1a18b9242ba68ddecdc4bdd9f5b6"
+          },
+          "path": "S256-snapshot-3.json",
+          "bytes": 2140,
+          "sha256": "e0e460a50791966c0b400e675c7341888b51f6ecbbc50a5a716f2be60d03fbf2"
+        },
+        {
+          "name": "S256",
+          "index": 4,
+          "step": 400,
+          "time": 1.0,
+          "raw": {
+            "path": "S256-snapshot-4.npz",
+            "bytes": 15764818,
+            "sha256": "9830bbfc8b7e36a3baed2f5669733998bf2f7f48143c19dfdadaeb40dbb1ec16"
+          },
+          "path": "S256-snapshot-4.json",
+          "bytes": 2143,
+          "sha256": "bdf326b8ae13b0e2431105db2c6e43d1cc76707c3564769840b6f07e22835644"
+        }
+      ],
+      "direct_solver_counts": {
+        "solves": 805,
+        "rhs_assemblies": 805,
+        "forward_transforms": 805,
+        "factorizations": 805,
+        "triangular_solves": 805,
+        "inverse_transforms": 805,
+        "original_rhs_assemblies": 805,
+        "original_residual_checks": 805,
+        "factor_reuses": 0,
+        "new_CG_solves": 0
+      },
+      "direct_solver_phase_seconds": {
+        "rhs_seconds": 0.3512043992523104,
+        "forward_transform_seconds": 3.385986899258569,
+        "factor_seconds": 2.7384403998730704,
+        "triangular_seconds": 1.8513144020689651,
+        "inverse_transform_seconds": 2.5782951989676803,
+        "original_rhs_assembly_seconds": 0.5222781008342281,
+        "original_residual_seconds": 3.1187201000284404,
+        "checked_solve_seconds": 15.345330398879014
+      },
+      "max_CFL": 0.07997729211069457,
+      "max_volume_divergence": 5.684341886080802e-15,
+      "max_solver_true_residual": 1.5584291754489985e-14,
+      "max_circulation_ledger_relative": 3.5433192415851367e-16,
+      "minimum_Euler_stage_q": 2.820358007707459e-28,
+      "q_squared_relative_drift": [
+        0.0,
+        3.039150824657444e-05,
+        6.164923378082499e-05,
+        9.502924471660457e-05,
+        0.00013203354837409975
+      ],
+      "impulse_relative_drift": [
+        0.0,
+        1.069410316789643e-05,
+        2.091395706727006e-05,
+        3.07578177374257e-05,
+        4.033237869571771e-05
+      ],
+      "phase_seconds": {
+        "boundary_seconds": 57.26894520269707,
+        "linear_solve_seconds": 15.684437799849547,
+        "reconstruction_seconds": 15.234010698506609,
+        "transport_seconds": 21.08122260228265
+      },
+      "checkpoint_save_seconds": 0.21765889995731413,
+      "final_array_save_seconds": 0.12983660004101694,
+      "green_released_before_final_array_save": true,
+      "lifetime_changes": [
+        "release_unused_initial_flow_after_oracle",
+        "release_completed_stage_buffers_before_next_step"
+      ],
+      "log": {
+        "path": "S256-steps.jsonl",
+        "bytes": 945014,
+        "sha256": "adea60404560baa52c8f94981405f48873966fde4f99e55a8b3acce14a78bad4"
+      },
+      "raw": {
+        "path": "S256.npz",
+        "bytes": 65081220,
+        "sha256": "cdd0a189c9418198cb6f22af141a865e45d67e99b6e887ed3be6f086a777b527"
+      },
+      "case_elapsed_before_record_write_seconds": 216.1723883000668
+    },
+    {
+      "name": "T128",
+      "R": 8.0,
+      "Z": 8.0,
+      "radial_cells": 128,
+      "axial_cells": 256,
+      "h": 0.0625,
+      "dt": 0.00125,
+      "steps": 800,
+      "angular_order": 32,
+      "kernel": {
+        "build_seconds": 12.291764299967326,
+        "shape": [
+          514,
+          32768
+        ],
+        "bytes": 134742016,
+        "angular_order": 32,
+        "scalar_kernel_pairs": 538968064
+      },
+      "method": "ordinary_FFT_sine_Thomas",
+      "elliptic_method": "ordinary_FFT_sine_Thomas",
+      "elliptic_solves": 1605,
+      "transport_stages": 1600,
+      "initial_analytic_errors": {
+        "u": 0.0008456339116921696,
+        "J": 0.000514395522142308
+      },
+      "snapshots": [
+        {
+          "step": 0,
+          "time": 0.0,
+          "circulation": 3.7599424119464486,
+          "centroid": [
+            1.25332861585664,
+            -5.3309826236006846e-18
+          ],
+          "covariance": [
+            [
+              0.4292219248305371,
+              4.031751232918699e-18
+            ],
+            [
+              4.031751232918699e-18,
+              1.0000231479950212
+            ]
+          ],
+          "q_squared_integral": 12.528424551078384,
+          "axial_impulse": 23.625059205465625,
+          "vorticity_squared_integral": 12.528520011386522,
+          "min_q": 4.042434503111491e-28,
+          "max_q": 1.497561071393001,
+          "negative_cell_mass": 0.0,
+          "outer_two_cell_circulation_fraction": 2.3655946310059095e-14
+        },
+        {
+          "step": 200,
+          "time": 0.25,
+          "circulation": 3.7599424119464486,
+          "centroid": [
+            1.2534326885342786,
+            0.08839558037443772
+          ],
+          "covariance": [
+            [
+              0.4290465656646256,
+              -0.018499639313373464
+            ],
+            [
+              -0.018499639313373464,
+              1.0024095372160793
+            ]
+          ],
+          "q_squared_integral": 12.526852139971117,
+          "axial_impulse": 23.626069458626976,
+          "vorticity_squared_integral": 12.534652488358125,
+          "min_q": 3.9867171419729606e-28,
+          "max_q": 1.4935136681317949,
+          "negative_cell_mass": 0.0,
+          "outer_two_cell_circulation_fraction": 2.3641267274947986e-14
+        },
+        {
+          "step": 400,
+          "time": 0.5,
+          "circulation": 3.759942411946449,
+          "centroid": [
+            1.253694445744427,
+            0.17671561643319425
+          ],
+          "covariance": [
+            [
+              0.4284722320164094,
+              -0.036909088707690635
+            ],
+            [
+              -0.036909088707690635,
+              1.0093117646177647
+            ]
+          ],
+          "q_squared_integral": 12.525223077973148,
+          "axial_impulse": 23.627037173202638,
+          "vorticity_squared_integral": 12.554859985506711,
+          "min_q": 3.931890184821356e-28,
+          "max_q": 1.490243814128236,
+          "negative_cell_mass": 0.0,
+          "outer_two_cell_circulation_fraction": 2.362329777166522e-14
+        },
+        {
+          "step": 600,
+          "time": 0.75,
+          "circulation": 3.759942411946448,
+          "centroid": [
+            1.2541131722783518,
+            0.26488495567236486
+          ],
+          "covariance": [
+            [
+              0.4275012832686429,
+              -0.05514001079065117
+            ],
+            [
+              -0.05514001079065117,
+              1.0206706526457932
+            ]
+          ],
+          "q_squared_integral": 12.523469004535208,
+          "axial_impulse": 23.62797195402019,
+          "vorticity_squared_integral": 12.589203262911418,
+          "min_q": 3.87794825234671e-28,
+          "max_q": 1.4872804667748034,
+          "negative_cell_mass": 0.0,
+          "outer_two_cell_circulation_fraction": 2.3602047693399237e-14
+        },
+        {
+          "step": 800,
+          "time": 1.0,
+          "circulation": 3.7599424119464486,
+          "centroid": [
+            1.2546874970551154,
+            0.3528299763143801
+          ],
+          "covariance": [
+            [
+              0.426137651373073,
+              -0.0731059256221181
+            ],
+            [
+              -0.0731059256221181,
+              1.0363895928833529
+            ]
+          ],
+          "q_squared_integral": 12.521507703925804,
+          "axial_impulse": 23.628884263824787,
+          "vorticity_squared_integral": 12.637799676725098,
+          "min_q": 3.82488509666957e-28,
+          "max_q": 1.4843240341699133,
+          "negative_cell_mass": 0.0,
+          "outer_two_cell_circulation_fraction": 2.3577539692378973e-14
+        }
+      ],
+      "checkpoint_records": [
+        {
+          "name": "T128",
+          "index": 0,
+          "step": 0,
+          "time": 0.0,
+          "raw": {
+            "path": "T128-snapshot-0.npz",
+            "bytes": 3951954,
+            "sha256": "a91e1ac02e7abc8319c30833b7f1c7b4deb533832a9d2e613a73aad0c9a93d3c"
+          },
+          "path": "T128-snapshot-0.json",
+          "bytes": 2143,
+          "sha256": "dbe9ae9fe8a4effaa6bb439f8b45423353fe4d0accf273fd691965af45bd3e91"
+        },
+        {
+          "name": "T128",
+          "index": 1,
+          "step": 200,
+          "time": 0.25,
+          "raw": {
+            "path": "T128-snapshot-1.npz",
+            "bytes": 3951954,
+            "sha256": "9794c784b3cc388372d699d3debf0eef7417744d6eabc0e99ccaa1ad22869336"
+          },
+          "path": "T128-snapshot-1.json",
+          "bytes": 2151,
+          "sha256": "430916443e73f4a89d27266ea997d5ac55b802c3be584b26831ce1ac293c7ef9"
+        },
+        {
+          "name": "T128",
+          "index": 2,
+          "step": 400,
+          "time": 0.5,
+          "raw": {
+            "path": "T128-snapshot-2.npz",
+            "bytes": 3951954,
+            "sha256": "88c110c6c036c8bafc87fd3c3c51fed487b8d157a3b6088e4ca7cd10bfe5183e"
+          },
+          "path": "T128-snapshot-2.json",
+          "bytes": 2147,
+          "sha256": "9584bd13ae5bac9833a38af8205cde3a9e93625ea9153224ce3c480e9270a3bf"
+        },
+        {
+          "name": "T128",
+          "index": 3,
+          "step": 600,
+          "time": 0.75,
+          "raw": {
+            "path": "T128-snapshot-3.npz",
+            "bytes": 3951954,
+            "sha256": "b30ad5728aba92b4990b93df483eef992387822bd89e11369d440a69d7610ef7"
+          },
+          "path": "T128-snapshot-3.json",
+          "bytes": 2144,
+          "sha256": "ffab4b612e62ecb2c291c446c53d1359cb70569a6ab5a4f5628d6893e301e3a4"
+        },
+        {
+          "name": "T128",
+          "index": 4,
+          "step": 800,
+          "time": 1.0,
+          "raw": {
+            "path": "T128-snapshot-4.npz",
+            "bytes": 3951954,
+            "sha256": "0d0ede388e9abe9d70e71a169cae23627b8d200d2bb801023b5cae562ffee096"
+          },
+          "path": "T128-snapshot-4.json",
+          "bytes": 2143,
+          "sha256": "3f82f6416b2e4f4437c11c580c8cce333476fd8f63d063b13cd9253ca911a2e2"
+        }
+      ],
+      "direct_solver_counts": {
+        "solves": 1605,
+        "rhs_assemblies": 1605,
+        "forward_transforms": 1605,
+        "factorizations": 1605,
+        "triangular_solves": 1605,
+        "inverse_transforms": 1605,
+        "original_rhs_assemblies": 1605,
+        "original_residual_checks": 1605,
+        "factor_reuses": 0,
+        "new_CG_solves": 0
+      },
+      "direct_solver_phase_seconds": {
+        "rhs_seconds": 0.19166869740001857,
+        "forward_transform_seconds": 1.1920233982382342,
+        "factor_seconds": 2.227450000704266,
+        "triangular_seconds": 1.173538999282755,
+        "inverse_transform_seconds": 0.6912615996552631,
+        "original_rhs_assembly_seconds": 0.19341690128203481,
+        "original_residual_seconds": 0.4954820985440165,
+        "checked_solve_seconds": 6.4266591996420175
+      },
+      "max_CFL": 0.019977280964967783,
+      "max_volume_divergence": 2.842170943040401e-15,
+      "max_solver_true_residual": 1.0980774835382703e-14,
+      "max_circulation_ledger_relative": 2.3622128277234243e-16,
+      "minimum_Euler_stage_q": 3.82462195553456e-28,
+      "q_squared_relative_drift": [
+        0.0,
+        0.00012550748905870712,
+        0.0002555367669879738,
+        0.00039554426998955616,
+        0.0005520923340663897
+      ],
+      "impulse_relative_drift": [
+        0.0,
+        4.276193141206086e-05,
+        8.372329228079067e-05,
+        0.00012329063513583094,
+        0.0001619068263869483
+      ],
+      "phase_seconds": {
+        "boundary_seconds": 14.967724202666432,
+        "linear_solve_seconds": 6.44369719887618,
+        "reconstruction_seconds": 2.350097701884806,
+        "transport_seconds": 2.2759855035692453
+      },
+      "checkpoint_save_seconds": 0.06957910011988133,
+      "final_array_save_seconds": 0.04297489998862147,
+      "green_released_before_final_array_save": true,
+      "lifetime_changes": [
+        "release_unused_initial_flow_after_oracle",
+        "release_completed_stage_buffers_before_next_step"
+      ],
+      "log": {
+        "path": "T128-steps.jsonl",
+        "bytes": 1899050,
+        "sha256": "3aa64d26722b0f66a4e9de27ab4d098bb6d0cbc83a4e73b4d3a25a6de338c2c2"
+      },
+      "raw": {
+        "path": "T128.npz",
+        "bytes": 16289668,
+        "sha256": "eca043697cfefb5cc54ce422846458f3696ff191964818bd8e202a100f4e74c4"
+      },
+      "case_elapsed_before_record_write_seconds": 39.79094029997941
+    },
+    {
+      "name": "D192",
+      "R": 12.0,
+      "Z": 12.0,
+      "radial_cells": 192,
+      "axial_cells": 384,
+      "h": 0.0625,
+      "dt": 0.0025,
+      "steps": 400,
+      "angular_order": 32,
+      "kernel": {
+        "build_seconds": 41.45756670006085,
+        "shape": [
+          770,
+          73728
+        ],
+        "bytes": 454164480,
+        "angular_order": 32,
+        "scalar_kernel_pairs": 1816657920
+      },
+      "method": "ordinary_FFT_sine_Thomas",
+      "elliptic_method": "ordinary_FFT_sine_Thomas",
+      "elliptic_solves": 805,
+      "transport_stages": 800,
+      "initial_analytic_errors": {
+        "u": 0.0008458076123747217,
+        "J": 0.0005143221554907542
+      },
+      "snapshots": [
+        {
+          "step": 0,
+          "time": 0.0,
+          "circulation": 3.759942411946501,
+          "centroid": [
+            1.2533286158567267,
+            -1.766180855689181e-19
+          ],
+          "covariance": [
+            [
+              0.4292219248311304,
+              3.212604046874539e-18
+            ],
+            [
+              3.212604046874539e-18,
+              1.000023147995102
+            ]
+          ],
+          "q_squared_integral": 12.528424551078384,
+          "axial_impulse": 23.62505920547553,
+          "vorticity_squared_integral": 12.528520011386522,
+          "min_q": 9.612948764467999e-63,
+          "max_q": 1.497561071393001,
+          "negative_cell_mass": 0.0,
+          "outer_two_cell_circulation_fraction": 1.9785535964493974e-31
+        },
+        {
+          "step": 100,
+          "time": 0.25,
+          "circulation": 3.759942411946501,
+          "centroid": [
+            1.25343268861314,
+            0.08839567044628427
+          ],
+          "covariance": [
+            [
+              0.4290465652650264,
+              -0.018499647097412225
+            ],
+            [
+              -0.018499647097412225,
+              1.0024095428076671
+            ]
+          ],
+          "q_squared_integral": 12.526852135571751,
+          "axial_impulse": 23.626069456242366,
+          "vorticity_squared_integral": 12.534652507704529,
+          "min_q": 9.568386566660082e-63,
+          "max_q": 1.4935139168573794,
+          "negative_cell_mass": 0.0,
+          "outer_two_cell_circulation_fraction": 1.9785616562042997e-31
+        },
+        {
+          "step": 200,
+          "time": 0.5,
+          "circulation": 3.7599424119465006,
+          "centroid": [
+            1.253694446050333,
+            0.17671579631600795
+          ],
+          "covariance": [
+            [
+              0.42847223040823956,
+              -0.03690910386007645
+            ],
+            [
+              -0.03690910386007645,
+              1.009311786241091
+            ]
+          ],
+          "q_squared_integral": 12.525223066984418,
+          "axial_impulse": 23.627037163267183,
+          "vorticity_squared_integral": 12.55486006704451,
+          "min_q": 9.524203031770181e-63,
+          "max_q": 1.490243944630163,
+          "negative_cell_mass": 0.0,
+          "outer_two_cell_circulation_fraction": 1.978481777755573e-31
+        },
+        {
+          "step": 300,
+          "time": 0.75,
+          "circulation": 3.7599424119465006,
+          "centroid": [
+            1.2541131729584676,
+            0.2648852247826994
+          ],
+          "covariance": [
+            [
+              0.4275012796516571,
+              -0.05514003244302135
+            ],
+            [
+              -0.05514003244302135,
+              1.0206707001844617
+            ]
+          ],
+          "q_squared_integral": 12.523468980409357,
+          "axial_impulse": 23.627971931446197,
+          "vorticity_squared_integral": 12.589203450743721,
+          "min_q": 9.480397305136865e-63,
+          "max_q": 1.4872807296641177,
+          "negative_cell_mass": 0.0,
+          "outer_two_cell_circulation_fraction": 1.978314317325398e-31
+        },
+        {
+          "step": 400,
+          "time": 1.0,
+          "circulation": 3.759942411946501,
+          "centroid": [
+            1.2546874982525567,
+            0.3528303338008356
+          ],
+          "covariance": [
+            [
+              0.4261376449635166,
+              -0.0731059525143054
+            ],
+            [
+              -0.0731059525143054,
+              1.0363896751568245
+            ]
+          ],
+          "q_squared_integral": 12.521507657374627,
+          "axial_impulse": 23.628884223607773,
+          "vorticity_squared_integral": 12.63780001757525,
+          "min_q": 9.43696839258068e-63,
+          "max_q": 1.4843240719554227,
+          "negative_cell_mass": 0.0,
+          "outer_two_cell_circulation_fraction": 1.978059742889643e-31
+        }
+      ],
+      "checkpoint_records": [
+        {
+          "name": "D192",
+          "index": 0,
+          "step": 0,
+          "time": 0.0,
+          "raw": {
+            "path": "D192-snapshot-0.npz",
+            "bytes": 8875346,
+            "sha256": "a7cb62e92972201c2518c04c08606c37d1d686459a6989803156e1a993bbc747"
+          },
+          "path": "D192-snapshot-0.json",
+          "bytes": 2141,
+          "sha256": "f9897408eacd4dc21e3d238d1b4c5de3e7a5a25ccd56619df1e44a0354053505"
+        },
+        {
+          "name": "D192",
+          "index": 1,
+          "step": 100,
+          "time": 0.25,
+          "raw": {
+            "path": "D192-snapshot-1.npz",
+            "bytes": 8875346,
+            "sha256": "7d19232e3599e2d4e5c0b3ced73305ebb948a7400e977773e080f670542a2793"
+          },
+          "path": "D192-snapshot-1.json",
+          "bytes": 2139,
+          "sha256": "32676d26168d113a90c74ac32ae0eba8662075fd8b44942df85978f95d67412a"
+        },
+        {
+          "name": "D192",
+          "index": 2,
+          "step": 200,
+          "time": 0.5,
+          "raw": {
+            "path": "D192-snapshot-2.npz",
+            "bytes": 8875346,
+            "sha256": "5f75a09498d952d0d9cfb2ecffa86c239754b7ceabecfee197fb29d0fbd29277"
+          },
+          "path": "D192-snapshot-2.json",
+          "bytes": 2139,
+          "sha256": "25c42eff0467e4c759a52bc0e3bf803166bf93402efeb05a47c4121f701cd34d"
+        },
+        {
+          "name": "D192",
+          "index": 3,
+          "step": 300,
+          "time": 0.75,
+          "raw": {
+            "path": "D192-snapshot-3.npz",
+            "bytes": 8875346,
+            "sha256": "b31e139e3d256aa80fa8e3f457621c6371b816fbf54c8fc9182439d24887d601"
+          },
+          "path": "D192-snapshot-3.json",
+          "bytes": 2145,
+          "sha256": "e10c4385e5cf63764b05686111e70d4c9c387430ff2b4ec0d5cf01485cdb6d7b"
+        },
+        {
+          "name": "D192",
+          "index": 4,
+          "step": 400,
+          "time": 1.0,
+          "raw": {
+            "path": "D192-snapshot-4.npz",
+            "bytes": 8875346,
+            "sha256": "0c9b67e086686995bd327ae43688bda118eaf269af66d3866cb70650b5d248bf"
+          },
+          "path": "D192-snapshot-4.json",
+          "bytes": 2134,
+          "sha256": "18bdcb55e9405df83ea98fe7cfb59e5d04a09ac7a67194ab33fc5a31a1552909"
+        }
+      ],
+      "direct_solver_counts": {
+        "solves": 805,
+        "rhs_assemblies": 805,
+        "forward_transforms": 805,
+        "factorizations": 805,
+        "triangular_solves": 805,
+        "inverse_transforms": 805,
+        "original_rhs_assemblies": 805,
+        "original_residual_checks": 805,
+        "factor_reuses": 0,
+        "new_CG_solves": 0
+      },
+      "direct_solver_phase_seconds": {
+        "rhs_seconds": 0.15290300094056875,
+        "forward_transform_seconds": 1.458962598699145,
+        "factor_seconds": 1.7636292981915176,
+        "triangular_seconds": 1.0376626999350265,
+        "inverse_transform_seconds": 1.2110224006464705,
+        "original_rhs_assembly_seconds": 0.1562401003902778,
+        "original_residual_seconds": 0.6327900985488668,
+        "checked_solve_seconds": 6.671589101431891
+      },
+      "max_CFL": 0.03995457399898663,
+      "max_volume_divergence": 2.842170943040401e-15,
+      "max_solver_true_residual": 1.7374625722690776e-14,
+      "max_circulation_ledger_relative": 3.543319241585088e-16,
+      "minimum_Euler_stage_q": 9.436535965098975e-63,
+      "q_squared_relative_drift": [
+        0.0,
+        0.00012550784020948225,
+        0.0002555376440919188,
+        0.00039554619567871985,
+        0.0005520960497112926
+      ],
+      "impulse_relative_drift": [
+        0.0,
+        4.276183005713641e-05,
+        8.372287131419576e-05,
+        0.00012328967920605116,
+        0.0001619051236645408
+      ],
+      "phase_seconds": {
+        "boundary_seconds": 24.800226101186126,
+        "linear_solve_seconds": 6.689750398742035,
+        "reconstruction_seconds": 3.5177378015359864,
+        "transport_seconds": 3.6281099002808332
+      },
+      "checkpoint_save_seconds": 0.1201036999700591,
+      "final_array_save_seconds": 0.0855140999192372,
+      "green_released_before_final_array_save": true,
+      "lifetime_changes": [
+        "release_unused_initial_flow_after_oracle",
+        "release_completed_stage_buffers_before_next_step"
+      ],
+      "log": {
+        "path": "D192-steps.jsonl",
+        "bytes": 949713,
+        "sha256": "0adc08db3038a4a603147a4cb79fc78c38ba9688bdf2e95df65befab30ce0382"
+      },
+      "raw": {
+        "path": "D192.npz",
+        "bytes": 36622212,
+        "sha256": "1ce9b3631a3752e988f06bc848bae6084aff037502df433aa313eca665e6b361"
+      },
+      "case_elapsed_before_record_write_seconds": 81.88306310004555
+    },
+    {
+      "name": "Q128",
+      "R": 8.0,
+      "Z": 8.0,
+      "radial_cells": 128,
+      "axial_cells": 256,
+      "h": 0.0625,
+      "dt": 0.0025,
+      "steps": 400,
+      "angular_order": 64,
+      "kernel": {
+        "build_seconds": 24.42134750005789,
+        "shape": [
+          514,
+          32768
+        ],
+        "bytes": 134742016,
+        "angular_order": 64,
+        "scalar_kernel_pairs": 1077936128
+      },
+      "method": "ordinary_FFT_sine_Thomas",
+      "elliptic_method": "ordinary_FFT_sine_Thomas",
+      "elliptic_solves": 805,
+      "transport_stages": 800,
+      "initial_analytic_errors": {
+        "u": 0.0008456339116921747,
+        "J": 0.0005143955221423664
+      },
+      "snapshots": [
+        {
+          "step": 0,
+          "time": 0.0,
+          "circulation": 3.7599424119464486,
+          "centroid": [
+            1.25332861585664,
+            -5.3309826236006846e-18
+          ],
+          "covariance": [
+            [
+              0.4292219248305371,
+              4.031751232918699e-18
+            ],
+            [
+              4.031751232918699e-18,
+              1.0000231479950212
+            ]
+          ],
+          "q_squared_integral": 12.528424551078384,
+          "axial_impulse": 23.625059205465625,
+          "vorticity_squared_integral": 12.528520011386522,
+          "min_q": 4.042434503111491e-28,
+          "max_q": 1.497561071393001,
+          "negative_cell_mass": 0.0,
+          "outer_two_cell_circulation_fraction": 2.3655946310059095e-14
+        },
+        {
+          "step": 100,
+          "time": 0.25,
+          "circulation": 3.759942411946448,
+          "centroid": [
+            1.2534326886782499,
+            0.08839559500999679
+          ],
+          "covariance": [
+            [
+              0.4290465653017803,
+              -0.018499649263643628
+            ],
+            [
+              -0.018499649263643628,
+              1.002409542439728
+            ]
+          ],
+          "q_squared_integral": 12.526852136395558,
+          "axial_impulse": 23.62606945860419,
+          "vorticity_squared_integral": 12.534652509300582,
+          "min_q": 3.9867171419424253e-28,
+          "max_q": 1.4935139182649388,
+          "negative_cell_mass": 0.0,
+          "outer_two_cell_circulation_fraction": 2.3641267274065453e-14
+        },
+        {
+          "step": 200,
+          "time": 0.5,
+          "circulation": 3.759942411946448,
+          "centroid": [
+            1.2536944463179123,
+            0.17671564542282386
+          ],
+          "covariance": [
+            [
+              0.42847223057111217,
+              -0.036909108189412176
+            ],
+            [
+              -0.036909108189412176,
+              1.009311785063234
+            ]
+          ],
+          "q_squared_integral": 12.525223068682825,
+          "axial_impulse": 23.627037173115852,
+          "vorticity_squared_integral": 12.554860071895007,
+          "min_q": 3.931890184792645e-28,
+          "max_q": 1.4902439461821566,
+          "negative_cell_mass": 0.0,
+          "outer_two_cell_circulation_fraction": 2.3623297769537966e-14
+        },
+        {
+          "step": 300,
+          "time": 0.75,
+          "circulation": 3.759942411946448,
+          "centroid": [
+            1.2541131735673374,
+            0.26488499839518437
+          ],
+          "covariance": [
+            [
+              0.42750128002914134,
+              -0.055140038929552104
+            ],
+            [
+              -0.055140038929552104,
+              1.020670697740703
+            ]
+          ],
+          "q_squared_integral": 12.523468983075855,
+          "axial_impulse": 23.62797195394419,
+          "vorticity_squared_integral": 12.589203460587703,
+          "min_q": 3.8779482523515576e-28,
+          "max_q": 1.4872807307534777,
+          "negative_cell_mass": 0.0,
+          "outer_two_cell_circulation_fraction": 2.3602047689703e-14
+        },
+        {
+          "step": 400,
+          "time": 1.0,
+          "circulation": 3.7599424119464477,
+          "centroid": [
+            1.2546874993441401,
+            0.35283003186421197
+          ],
+          "covariance": [
+            [
+              0.42613764564360745,
+              -0.07310596114888357
+            ],
+            [
+              -0.07310596114888357,
+              1.0363896709682767
+            ]
+          ],
+          "q_squared_integral": 12.521507661153025,
+          "axial_impulse": 23.628884263996717,
+          "vorticity_squared_integral": 12.63780003427593,
+          "min_q": 3.8248850967385362e-28,
+          "max_q": 1.4843240718580129,
+          "negative_cell_mass": 0.0,
+          "outer_two_cell_circulation_fraction": 2.3577539686852122e-14
+        }
+      ],
+      "checkpoint_records": [
+        {
+          "name": "Q128",
+          "index": 0,
+          "step": 0,
+          "time": 0.0,
+          "raw": {
+            "path": "Q128-snapshot-0.npz",
+            "bytes": 3951954,
+            "sha256": "42bac7da243a53dae707b0e3fc44690809abba9f94ba82209e6068d860dd4357"
+          },
+          "path": "Q128-snapshot-0.json",
+          "bytes": 2144,
+          "sha256": "f614c260a77f14a367f895d1b64af8103352bfad438e49197d47063818ac74a0"
+        },
+        {
+          "name": "Q128",
+          "index": 1,
+          "step": 100,
+          "time": 0.25,
+          "raw": {
+            "path": "Q128-snapshot-1.npz",
+            "bytes": 3951954,
+            "sha256": "f185cf03ee9acfb381d38d7fcfb4d0ccdcf2990f02b99a6f0875763b5dccdbe4"
+          },
+          "path": "Q128-snapshot-1.json",
+          "bytes": 2146,
+          "sha256": "d1f26907421cac9005768f6d39daff535b469e7cab5a51b1e807132e59d94075"
+        },
+        {
+          "name": "Q128",
+          "index": 2,
+          "step": 200,
+          "time": 0.5,
+          "raw": {
+            "path": "Q128-snapshot-2.npz",
+            "bytes": 3951954,
+            "sha256": "481deb3a058afd2f254fc9e21227915425ef83d6ec9895d85ceb907f7f78714b"
+          },
+          "path": "Q128-snapshot-2.json",
+          "bytes": 2146,
+          "sha256": "29fc19f96f47b166f46fab72ad9f05167300442ff5f48c2ad9f7a45b44c6899d"
+        },
+        {
+          "name": "Q128",
+          "index": 3,
+          "step": 300,
+          "time": 0.75,
+          "raw": {
+            "path": "Q128-snapshot-3.npz",
+            "bytes": 3951954,
+            "sha256": "7587e3b323e194a99eed6c8013d8c7c1ae0030b445161af9d205fb86d32d5be7"
+          },
+          "path": "Q128-snapshot-3.json",
+          "bytes": 2149,
+          "sha256": "2ea2f267027459b6ccf45f9cd9c45802c5cc5f298cfe2383f0dddd3a9c95d241"
+        },
+        {
+          "name": "Q128",
+          "index": 4,
+          "step": 400,
+          "time": 1.0,
+          "raw": {
+            "path": "Q128-snapshot-4.npz",
+            "bytes": 3951954,
+            "sha256": "1248b359cb8ff2c570dbfacb3a5d8fad75200bbba92298f475df151239a0a437"
+          },
+          "path": "Q128-snapshot-4.json",
+          "bytes": 2149,
+          "sha256": "20320ce582a122ee0d6a5cd85b3116fd0be41415fcd85f18f23bde24834d2469"
+        }
+      ],
+      "direct_solver_counts": {
+        "solves": 805,
+        "rhs_assemblies": 805,
+        "forward_transforms": 805,
+        "factorizations": 805,
+        "triangular_solves": 805,
+        "inverse_transforms": 805,
+        "original_rhs_assemblies": 805,
+        "original_residual_checks": 805,
+        "factor_reuses": 0,
+        "new_CG_solves": 0
+      },
+      "direct_solver_phase_seconds": {
+        "rhs_seconds": 0.09574899985454977,
+        "forward_transform_seconds": 0.5761999002425,
+        "factor_seconds": 1.1235845000483096,
+        "triangular_seconds": 0.5814736987231299,
+        "inverse_transform_seconds": 0.3356855974998325,
+        "original_rhs_assembly_seconds": 0.10083580063655972,
+        "original_residual_seconds": 0.24049559782724828,
+        "checked_solve_seconds": 3.1897292976500466
+      },
+      "max_CFL": 0.039954561929935566,
+      "max_volume_divergence": 2.842170943040401e-15,
+      "max_solver_true_residual": 1.0873270385596408e-14,
+      "max_circulation_ledger_relative": 2.3622128277234243e-16,
+      "minimum_Euler_stage_q": 3.824358792673029e-28,
+      "q_squared_relative_drift": [
+        0.0,
+        0.0001255077744544142,
+        0.0002555375085275813,
+        0.0003955459828428598,
+        0.0005520957481253141
+      ],
+      "impulse_relative_drift": [
+        0.0,
+        4.27619304474991e-05,
+        8.372328860750677e-05,
+        0.00012329063191907075,
+        0.00016190683366446024
+      ],
+      "phase_seconds": {
+        "boundary_seconds": 7.508141100755893,
+        "linear_solve_seconds": 3.1982319994131103,
+        "reconstruction_seconds": 1.1215159017592669,
+        "transport_seconds": 1.14450750045944
+      },
+      "checkpoint_save_seconds": 0.08258019993081689,
+      "final_array_save_seconds": 0.03549519996158779,
+      "green_released_before_final_array_save": true,
+      "lifetime_changes": [
+        "release_unused_initial_flow_after_oracle",
+        "release_completed_stage_buffers_before_next_step"
+      ],
+      "log": {
+        "path": "Q128-steps.jsonl",
+        "bytes": 952344,
+        "sha256": "1750e5586e91a1db5dc6d417456420fc9b5c2e28ce90e0c1e96d9929d63286bc"
+      },
+      "raw": {
+        "path": "Q128.npz",
+        "bytes": 16289668,
+        "sha256": "aa92acb77b386ee428114aecde33db66128bcb21b1a39e99b93ecc62601cf9f9"
+      },
+      "case_elapsed_before_record_write_seconds": 38.240946499980055
+    }
+  ],
+  "comparisons": [
+    {
+      "a": "S64",
+      "b": "S128",
+      "kind": "space",
+      "time": 0.0,
+      "vorticity_relative": 0.004177862997975246,
+      "velocity_relative": 0.002939615381405773,
+      "axial_centroid_absolute": 4.94170194520388e-18,
+      "covariance_relative": 0.00018632532873673056
+    },
+    {
+      "a": "S64",
+      "b": "S128",
+      "kind": "space",
+      "time": 0.25,
+      "vorticity_relative": 0.004347559713450979,
+      "velocity_relative": 0.002940626884293342,
+      "axial_centroid_absolute": 5.824637550830292e-05,
+      "covariance_relative": 0.0005320250150682611
+    },
+    {
+      "a": "S64",
+      "b": "S128",
+      "kind": "space",
+      "time": 0.5,
+      "vorticity_relative": 0.004744669433476977,
+      "velocity_relative": 0.0029671377100194056,
+      "axial_centroid_absolute": 0.00011626576635084818,
+      "covariance_relative": 0.0009099216658382716
+    },
+    {
+      "a": "S64",
+      "b": "S128",
+      "kind": "space",
+      "time": 0.75,
+      "vorticity_relative": 0.005302737961237085,
+      "velocity_relative": 0.0030199304145079493,
+      "axial_centroid_absolute": 0.00017372817414762487,
+      "covariance_relative": 0.0013074830719156923
+    },
+    {
+      "a": "S64",
+      "b": "S128",
+      "kind": "space",
+      "time": 1.0,
+      "vorticity_relative": 0.006007323790703513,
+      "velocity_relative": 0.0030996853440760316,
+      "axial_centroid_absolute": 0.00023016090657657085,
+      "covariance_relative": 0.0017228854283693118
+    },
+    {
+      "a": "S128",
+      "b": "S256",
+      "kind": "space",
+      "time": 0.0,
+      "vorticity_relative": 0.0010569841622392689,
+      "velocity_relative": 0.000733063694407365,
+      "axial_centroid_absolute": 8.578142171292548e-18,
+      "covariance_relative": 2.367488335946338e-05
+    },
+    {
+      "a": "S128",
+      "b": "S256",
+      "kind": "space",
+      "time": 0.25,
+      "vorticity_relative": 0.001119429477180243,
+      "velocity_relative": 0.0007330308997730001,
+      "axial_centroid_absolute": 1.4883546718011398e-05,
+      "covariance_relative": 0.0001093556642266249
+    },
+    {
+      "a": "S128",
+      "b": "S256",
+      "kind": "space",
+      "time": 0.5,
+      "vorticity_relative": 0.0012522083769426163,
+      "velocity_relative": 0.000739868275124687,
+      "axial_centroid_absolute": 2.996006769737103e-05,
+      "covariance_relative": 0.0002016712026979093
+    },
+    {
+      "a": "S128",
+      "b": "S256",
+      "kind": "space",
+      "time": 0.75,
+      "vorticity_relative": 0.00142978134616823,
+      "velocity_relative": 0.0007535400606895846,
+      "axial_centroid_absolute": 4.520485846415401e-05,
+      "covariance_relative": 0.000298496936930092
+    },
+    {
+      "a": "S128",
+      "b": "S256",
+      "kind": "space",
+      "time": 1.0,
+      "vorticity_relative": 0.001645468378815422,
+      "velocity_relative": 0.0007741252364766563,
+      "axial_centroid_absolute": 6.066692950390529e-05,
+      "covariance_relative": 0.00039967023145318146
+    },
+    {
+      "a": "S128",
+      "b": "T128",
+      "kind": "time",
+      "time": 0.0,
+      "vorticity_relative": 0.0,
+      "velocity_relative": 0.0,
+      "axial_centroid_absolute": 0.0,
+      "covariance_relative": 0.0
+    },
+    {
+      "a": "S128",
+      "b": "T128",
+      "kind": "time",
+      "time": 0.25,
+      "vorticity_relative": 1.266821021484555e-07,
+      "velocity_relative": 3.255197575605183e-08,
+      "axial_centroid_absolute": 1.4635559084097416e-08,
+      "covariance_relative": 1.3797302976340492e-08
+    },
+    {
+      "a": "S128",
+      "b": "T128",
+      "kind": "time",
+      "time": 0.5,
+      "vorticity_relative": 2.416796970353452e-07,
+      "velocity_relative": 6.528713978288427e-08,
+      "axial_centroid_absolute": 2.8989629613507262e-08,
+      "covariance_relative": 3.155548217641851e-08
+    },
+    {
+      "a": "S128",
+      "b": "T128",
+      "kind": "time",
+      "time": 0.75,
+      "vorticity_relative": 3.657164989402142e-07,
+      "velocity_relative": 9.853513986750345e-08,
+      "axial_centroid_absolute": 4.272281950434831e-08,
+      "covariance_relative": 5.53473346725199e-08
+    },
+    {
+      "a": "S128",
+      "b": "T128",
+      "kind": "time",
+      "time": 1.0,
+      "vorticity_relative": 4.999721490757053e-07,
+      "velocity_relative": 1.324771070029894e-07,
+      "axial_centroid_absolute": 5.554983184552498e-08,
+      "covariance_relative": 8.548750896323838e-08
+    },
+    {
+      "a": "S128",
+      "b": "D192",
+      "kind": "domain",
+      "time": 0.0,
+      "vorticity_relative": 0.0,
+      "velocity_relative": 2.0358541556619784e-06,
+      "axial_centroid_absolute": 5.154364538031767e-18,
+      "covariance_relative": 5.502424916484502e-13
+    },
+    {
+      "a": "S128",
+      "b": "D192",
+      "kind": "domain",
+      "time": 0.25,
+      "vorticity_relative": 5.484733500079634e-08,
+      "velocity_relative": 2.0362767365841425e-06,
+      "axial_centroid_absolute": 7.543628746664588e-08,
+      "covariance_relative": 2.8356013527226576e-09
+    },
+    {
+      "a": "S128",
+      "b": "D192",
+      "kind": "domain",
+      "time": 0.5,
+      "vorticity_relative": 1.1035160507861865e-07,
+      "velocity_relative": 2.0373591730249737e-06,
+      "axial_centroid_absolute": 1.508931840865646e-07,
+      "covariance_relative": 5.731394812167676e-09
+    },
+    {
+      "a": "S128",
+      "b": "D192",
+      "kind": "domain",
+      "time": 0.75,
+      "vorticity_relative": 1.6719435680295926e-07,
+      "velocity_relative": 2.039113138532567e-06,
+      "axial_centroid_absolute": 2.263875150121386e-07,
+      "covariance_relative": 8.730584893834615e-09
+    },
+    {
+      "a": "S128",
+      "b": "D192",
+      "kind": "domain",
+      "time": 1.0,
+      "vorticity_relative": 2.2610967353583898e-07,
+      "velocity_relative": 2.041557889566468e-06,
+      "axial_centroid_absolute": 3.0193662364785823e-07,
+      "covariance_relative": 1.1879458009750569e-08
+    },
+    {
+      "a": "S128",
+      "b": "Q128",
+      "kind": "angular",
+      "time": 0.0,
+      "vorticity_relative": 0.0,
+      "velocity_relative": 1.5226182678551103e-15,
+      "axial_centroid_absolute": 0.0,
+      "covariance_relative": 0.0
+    },
+    {
+      "a": "S128",
+      "b": "Q128",
+      "kind": "angular",
+      "time": 0.25,
+      "vorticity_relative": 2.6025727393914534e-16,
+      "velocity_relative": 1.8305633812132398e-15,
+      "axial_centroid_absolute": 1.3877787807814457e-17,
+      "covariance_relative": 1.8035152390858163e-17
+    },
+    {
+      "a": "S128",
+      "b": "Q128",
+      "kind": "angular",
+      "time": 0.5,
+      "vorticity_relative": 3.6695791955273217e-16,
+      "velocity_relative": 2.2650098003038417e-15,
+      "axial_centroid_absolute": 0.0,
+      "covariance_relative": 4.080889137698746e-16
+    },
+    {
+      "a": "S128",
+      "b": "Q128",
+      "kind": "angular",
+      "time": 0.75,
+      "vorticity_relative": 4.37026189894436e-16,
+      "velocity_relative": 2.3901353486653983e-15,
+      "axial_centroid_absolute": 0.0,
+      "covariance_relative": 0.0
+    },
+    {
+      "a": "S128",
+      "b": "Q128",
+      "kind": "angular",
+      "time": 1.0,
+      "vorticity_relative": 5.111033033302366e-16,
+      "velocity_relative": 1.8364754169679274e-15,
+      "axial_centroid_absolute": 0.0,
+      "covariance_relative": 0.0
+    }
+  ],
+  "spatial_reductions": [
+    {
+      "time": 0.25,
+      "coarse": 0.004347559713450979,
+      "fine": 0.001119429477180243,
+      "ratio": 3.8837280972823303,
+      "small_error_waiver": false,
+      "passed": true
+    },
+    {
+      "time": 0.5,
+      "coarse": 0.004744669433476977,
+      "fine": 0.0012522083769426163,
+      "ratio": 3.7890414413785756,
+      "small_error_waiver": false,
+      "passed": true
+    },
+    {
+      "time": 0.75,
+      "coarse": 0.005302737961237085,
+      "fine": 0.00142978134616823,
+      "ratio": 3.7087754539869047,
+      "small_error_waiver": false,
+      "passed": true
+    },
+    {
+      "time": 1.0,
+      "coarse": 0.006007323790703513,
+      "fine": 0.001645468378815422,
+      "ratio": 3.6508290697316257,
+      "small_error_waiver": false,
+      "passed": true
+    }
+  ],
+  "initial_checks": {
+    "S64": true,
+    "S128": true,
+    "S256": true,
+    "T128": true,
+    "D192": true,
+    "Q128": true
+  },
+  "reference_checks": {
+    "initial_analytic": true,
+    "all_stage_invariants": true,
+    "vorticity_disagreements": true,
+    "velocity_disagreements": true,
+    "centroid_disagreements": true,
+    "covariance_disagreements": true,
+    "spatial_reduction": true,
+    "circulation_ledger": true,
+    "q_squared_drift": true,
+    "axial_impulse_drift": true,
+    "full_box_vorticity_disagreements": true,
+    "full_box_spatial_reduction": true
+  },
+  "reference_qualified_full_window": true,
+  "full_box_controls": {
+    "checks": {
+      "full_box_vorticity_disagreements": true,
+      "full_box_spatial_reduction": true
+    },
+    "comparisons": [
+      {
+        "a": "S64",
+        "b": "S128",
+        "kind": "space",
+        "index": 0,
+        "time": 0.0,
+        "domain": "D8",
+        "h": 0.0625,
+        "quadrature_orders": [
+          3,
+          2
+        ],
+        "numerator": 0.0002186991222627948,
+        "denominator": 12.528520011386522,
+        "vorticity_relative": 0.004178050014417609,
+        "passed": true,
+        "quadrature_node_cell_points": 196608,
+        "elapsed_seconds": 0.006115600001066923
+      },
+      {
+        "a": "S64",
+        "b": "S128",
+        "kind": "space",
+        "index": 1,
+        "time": 0.25,
+        "domain": "D8",
+        "h": 0.0625,
+        "quadrature_orders": [
+          3,
+          2
+        ],
+        "numerator": 0.00023694040162031545,
+        "denominator": 12.534652509300583,
+        "vorticity_relative": 0.004347738457070642,
+        "passed": true,
+        "quadrature_node_cell_points": 196608,
+        "elapsed_seconds": 0.006630699965171516
+      },
+      {
+        "a": "S64",
+        "b": "S128",
+        "kind": "space",
+        "index": 2,
+        "time": 0.5,
+        "domain": "D8",
+        "h": 0.0625,
+        "quadrature_orders": [
+          3,
+          2
+        ],
+        "numerator": 0.0002826529123602476,
+        "denominator": 12.554860071895005,
+        "vorticity_relative": 0.0047448314970697835,
+        "passed": true,
+        "quadrature_node_cell_points": 196608,
+        "elapsed_seconds": 0.007043199962936342
+      },
+      {
+        "a": "S64",
+        "b": "S128",
+        "kind": "space",
+        "index": 3,
+        "time": 0.75,
+        "domain": "D8",
+        "h": 0.0625,
+        "quadrature_orders": [
+          3,
+          2
+        ],
+        "numerator": 0.0003540152511609731,
+        "denominator": 12.589203460587703,
+        "vorticity_relative": 0.00530288073645405,
+        "passed": true,
+        "quadrature_node_cell_points": 196608,
+        "elapsed_seconds": 0.004522099974565208
+      },
+      {
+        "a": "S64",
+        "b": "S128",
+        "kind": "space",
+        "index": 4,
+        "time": 1.0,
+        "domain": "D8",
+        "h": 0.0625,
+        "quadrature_orders": [
+          3,
+          2
+        ],
+        "numerator": 0.0004560908983047668,
+        "denominator": 12.63780003427593,
+        "vorticity_relative": 0.006007447209717373,
+        "passed": true,
+        "quadrature_node_cell_points": 196608,
+        "elapsed_seconds": 0.004671699949540198
+      },
+      {
+        "a": "S128",
+        "b": "S256",
+        "kind": "space",
+        "index": 0,
+        "time": 0.0,
+        "domain": "D8",
+        "h": 0.03125,
+        "quadrature_orders": [
+          3,
+          2
+        ],
+        "numerator": 1.3998731207063726e-05,
+        "denominator": 12.528709359696705,
+        "vorticity_relative": 0.0010570393867085778,
+        "passed": true,
+        "quadrature_node_cell_points": 786432,
+        "elapsed_seconds": 0.03945530008058995
+      },
+      {
+        "a": "S128",
+        "b": "S256",
+        "kind": "space",
+        "index": 1,
+        "time": 0.25,
+        "domain": "D8",
+        "h": 0.03125,
+        "quadrature_orders": [
+          3,
+          2
+        ],
+        "numerator": 1.571000392100386e-05,
+        "denominator": 12.535525957289952,
+        "vorticity_relative": 0.0011194813593119561,
+        "passed": true,
+        "quadrature_node_cell_points": 786432,
+        "elapsed_seconds": 0.038672400056384504
+      },
+      {
+        "a": "S128",
+        "b": "S256",
+        "kind": "space",
+        "index": 2,
+        "time": 0.5,
+        "domain": "D8",
+        "h": 0.03125,
+        "quadrature_orders": [
+          3,
+          2
+        ],
+        "numerator": 1.9690277574719604e-05,
+        "denominator": 12.55644765598289,
+        "vorticity_relative": 0.0012522542778093193,
+        "passed": true,
+        "quadrature_node_cell_points": 786432,
+        "elapsed_seconds": 0.03810689994134009
+      },
+      {
+        "a": "S128",
+        "b": "S256",
+        "kind": "space",
+        "index": 3,
+        "time": 0.75,
+        "domain": "D8",
+        "h": 0.03125,
+        "quadrature_orders": [
+          3,
+          2
+        ],
+        "numerator": 2.574203858683742e-05,
+        "denominator": 12.591562865992897,
+        "vorticity_relative": 0.001429820927887409,
+        "passed": true,
+        "quadrature_node_cell_points": 786432,
+        "elapsed_seconds": 0.04036779992748052
+      },
+      {
+        "a": "S128",
+        "b": "S256",
+        "kind": "space",
+        "index": 4,
+        "time": 1.0,
+        "domain": "D8",
+        "h": 0.03125,
+        "quadrature_orders": [
+          3,
+          2
+        ],
+        "numerator": 3.422780436636625e-05,
+        "denominator": 12.641021874312639,
+        "vorticity_relative": 0.0016455020553928486,
+        "passed": true,
+        "quadrature_node_cell_points": 786432,
+        "elapsed_seconds": 0.03898990002926439
+      },
+      {
+        "a": "S128",
+        "b": "T128",
+        "kind": "time",
+        "index": 0,
+        "time": 0.0,
+        "domain": "D8",
+        "h": 0.0625,
+        "quadrature_orders": [
+          3,
+          2
+        ],
+        "numerator": 0.0,
+        "denominator": 12.528520011386522,
+        "vorticity_relative": 0.0,
+        "passed": true,
+        "quadrature_node_cell_points": 196608,
+        "elapsed_seconds": 0.0057675999123603106
+      },
+      {
+        "a": "S128",
+        "b": "T128",
+        "kind": "time",
+        "index": 1,
+        "time": 0.25,
+        "domain": "D8",
+        "h": 0.0625,
+        "quadrature_orders": [
+          3,
+          2
+        ],
+        "numerator": 2.011601658474945e-13,
+        "denominator": 12.534652488358123,
+        "vorticity_relative": 1.2668198024432883e-07,
+        "passed": true,
+        "quadrature_node_cell_points": 196608,
+        "elapsed_seconds": 0.004606000031344593
+      },
+      {
+        "a": "S128",
+        "b": "T128",
+        "kind": "time",
+        "index": 2,
+        "time": 0.5,
+        "domain": "D8",
+        "h": 0.0625,
+        "quadrature_orders": [
+          3,
+          2
+        ],
+        "numerator": 7.333163645044915e-13,
+        "denominator": 12.554859985506713,
+        "vorticity_relative": 2.416794653399909e-07,
+        "passed": true,
+        "quadrature_node_cell_points": 196608,
+        "elapsed_seconds": 0.005430299905128777
+      },
+      {
+        "a": "S128",
+        "b": "T128",
+        "kind": "time",
+        "index": 3,
+        "time": 0.75,
+        "domain": "D8",
+        "h": 0.0625,
+        "quadrature_orders": [
+          3,
+          2
+        ],
+        "numerator": 1.6837845700297039e-12,
+        "denominator": 12.589203262911418,
+        "vorticity_relative": 3.657161505879663e-07,
+        "passed": true,
+        "quadrature_node_cell_points": 196608,
+        "elapsed_seconds": 0.0046036000130698085
+      },
+      {
+        "a": "S128",
+        "b": "T128",
+        "kind": "time",
+        "index": 4,
+        "time": 1.0,
+        "domain": "D8",
+        "h": 0.0625,
+        "quadrature_orders": [
+          3,
+          2
+        ],
+        "numerator": 3.1590919910682422e-12,
+        "denominator": 12.637799676725097,
+        "vorticity_relative": 4.999716771700761e-07,
+        "passed": true,
+        "quadrature_node_cell_points": 196608,
+        "elapsed_seconds": 0.004648200003430247
+      },
+      {
+        "a": "S128",
+        "b": "D192",
+        "kind": "domain",
+        "index": 0,
+        "time": 0.0,
+        "domain": "D8",
+        "h": 0.0625,
+        "quadrature_orders": [
+          3,
+          2
+        ],
+        "numerator": 1.1011419565745439e-27,
+        "denominator": 12.528520011386522,
+        "vorticity_relative": 9.375010652803264e-15,
+        "passed": true,
+        "quadrature_node_cell_points": 196608,
+        "elapsed_seconds": 0.005583699909038842
+      },
+      {
+        "a": "S128",
+        "b": "D192",
+        "kind": "domain",
+        "index": 1,
+        "time": 0.25,
+        "domain": "D8",
+        "h": 0.0625,
+        "quadrature_orders": [
+          3,
+          2
+        ],
+        "numerator": 3.770728372621836e-14,
+        "denominator": 12.534652507704525,
+        "vorticity_relative": 5.484745431030864e-08,
+        "passed": true,
+        "quadrature_node_cell_points": 196608,
+        "elapsed_seconds": 0.0047012000577524304
+      },
+      {
+        "a": "S128",
+        "b": "D192",
+        "kind": "domain",
+        "index": 2,
+        "time": 0.5,
+        "domain": "D8",
+        "h": 0.0625,
+        "quadrature_orders": [
+          3,
+          2
+        ],
+        "numerator": 1.5288716913172363e-13,
+        "denominator": 12.55486006704451,
+        "vorticity_relative": 1.1035184061512195e-07,
+        "passed": true,
+        "quadrature_node_cell_points": 196608,
+        "elapsed_seconds": 0.004728900035843253
+      },
+      {
+        "a": "S128",
+        "b": "D192",
+        "kind": "domain",
+        "index": 3,
+        "time": 0.75,
+        "domain": "D8",
+        "h": 0.0625,
+        "quadrature_orders": [
+          3,
+          2
+        ],
+        "numerator": 3.5191945613265185e-13,
+        "denominator": 12.589203450743721,
+        "vorticity_relative": 1.6719470248940567e-07,
+        "passed": true,
+        "quadrature_node_cell_points": 196608,
+        "elapsed_seconds": 0.005869299988262355
+      },
+      {
+        "a": "S128",
+        "b": "D192",
+        "kind": "domain",
+        "index": 4,
+        "time": 1.0,
+        "domain": "D8",
+        "h": 0.0625,
+        "quadrature_orders": [
+          3,
+          2
+        ],
+        "numerator": 6.461174668054818e-13,
+        "denominator": 12.63780001757525,
+        "vorticity_relative": 2.2611012051888462e-07,
+        "passed": true,
+        "quadrature_node_cell_points": 196608,
+        "elapsed_seconds": 0.005452600074931979
+      },
+      {
+        "a": "S128",
+        "b": "Q128",
+        "kind": "angular",
+        "index": 0,
+        "time": 0.0,
+        "domain": "D8",
+        "h": 0.0625,
+        "quadrature_orders": [
+          3,
+          2
+        ],
+        "numerator": 0.0,
+        "denominator": 12.528520011386522,
+        "vorticity_relative": 0.0,
+        "passed": true,
+        "quadrature_node_cell_points": 196608,
+        "elapsed_seconds": 0.0046412000665441155
+      },
+      {
+        "a": "S128",
+        "b": "Q128",
+        "kind": "angular",
+        "index": 1,
+        "time": 0.25,
+        "domain": "D8",
+        "h": 0.0625,
+        "quadrature_orders": [
+          3,
+          2
+        ],
+        "numerator": 8.490201797113203e-31,
+        "denominator": 12.534652509300583,
+        "vorticity_relative": 2.602572622774263e-16,
+        "passed": true,
+        "quadrature_node_cell_points": 196608,
+        "elapsed_seconds": 0.00471310003194958
+      },
+      {
+        "a": "S128",
+        "b": "Q128",
+        "kind": "angular",
+        "index": 2,
+        "time": 0.5,
+        "domain": "D8",
+        "h": 0.0625,
+        "quadrature_orders": [
+          3,
+          2
+        ],
+        "numerator": 1.6906133376518624e-30,
+        "denominator": 12.554860071895005,
+        "vorticity_relative": 3.6695787068973426e-16,
+        "passed": true,
+        "quadrature_node_cell_points": 196608,
+        "elapsed_seconds": 0.004602000000886619
+      },
+      {
+        "a": "S128",
+        "b": "Q128",
+        "kind": "angular",
+        "index": 3,
+        "time": 0.75,
+        "domain": "D8",
+        "h": 0.0625,
+        "quadrature_orders": [
+          3,
+          2
+        ],
+        "numerator": 2.4044350430930974e-30,
+        "denominator": 12.5892034605877,
+        "vorticity_relative": 4.370261237645777e-16,
+        "passed": true,
+        "quadrature_node_cell_points": 196608,
+        "elapsed_seconds": 0.004654599935747683
+      },
+      {
+        "a": "S128",
+        "b": "Q128",
+        "kind": "angular",
+        "index": 4,
+        "time": 1.0,
+        "domain": "D8",
+        "h": 0.0625,
+        "quadrature_orders": [
+          3,
+          2
+        ],
+        "numerator": 3.301328615592835e-30,
+        "denominator": 12.63780003427593,
+        "vorticity_relative": 5.111032452393867e-16,
+        "passed": true,
+        "quadrature_node_cell_points": 196608,
+        "elapsed_seconds": 0.0056733000092208385
+      }
+    ],
+    "spatial_reductions": [
+      {
+        "time": 0.25,
+        "coarse": 0.004347738457070642,
+        "fine": 0.0011194813593119561,
+        "ratio": 3.883707773162747,
+        "small_error_waiver": false,
+        "passed": true
+      },
+      {
+        "time": 0.5,
+        "coarse": 0.0047448314970697835,
+        "fine": 0.0012522542778093193,
+        "ratio": 3.7890319730992195,
+        "small_error_waiver": false,
+        "passed": true
+      },
+      {
+        "time": 0.75,
+        "coarse": 0.00530288073645405,
+        "fine": 0.001429820927887409,
+        "ratio": 3.708772639304678,
+        "small_error_waiver": false,
+        "passed": true
+      },
+      {
+        "time": 1.0,
+        "coarse": 0.006007447209717373,
+        "fine": 0.0016455020553928486,
+        "ratio": 3.6508293563225904,
+        "small_error_waiver": false,
+        "passed": true
+      }
+    ],
+    "outside_D8": [
+      {
+        "time": 0.0,
+        "index": 0,
+        "domain": "D12 minus D8",
+        "circulation": 5.2294623861201146e-14,
+        "vorticity_squared_integral": 1.297642303418053e-25,
+        "whole_D12_circulation": 3.759942411946501,
+        "whole_D12_vorticity_squared_integral": 12.528520011386522,
+        "circulation_fraction": 1.3908357663948506e-14,
+        "vorticity_squared_fraction": 1.0357506730553116e-26,
+        "quadrature_orders": [
+          3,
+          2
+        ],
+        "quadrature_node_cell_points": 442368,
+        "selected_node_cell_points": 245760,
+        "elapsed_seconds": 0.006105400039814413,
+        "formal_free_space_tail_bound": false
+      },
+      {
+        "time": 0.25,
+        "index": 1,
+        "domain": "D12 minus D8",
+        "circulation": 5.230027601957605e-14,
+        "vorticity_squared_integral": 1.2976379653456668e-25,
+        "whole_D12_circulation": 3.759942411946501,
+        "whole_D12_vorticity_squared_integral": 12.534652507704529,
+        "circulation_fraction": 1.390986092058269e-14,
+        "vorticity_squared_fraction": 1.0352404779853792e-26,
+        "quadrature_orders": [
+          3,
+          2
+        ],
+        "quadrature_node_cell_points": 442368,
+        "selected_node_cell_points": 245760,
+        "elapsed_seconds": 0.005753299919888377,
+        "formal_free_space_tail_bound": false
+      },
+      {
+        "time": 0.5,
+        "index": 2,
+        "domain": "D12 minus D8",
+        "circulation": 5.2301222365252825e-14,
+        "vorticity_squared_integral": 1.2972348503333418e-25,
+        "whole_D12_circulation": 3.7599424119465006,
+        "whole_D12_vorticity_squared_integral": 12.55486006704451,
+        "circulation_fraction": 1.3910112612117585e-14,
+        "vorticity_squared_fraction": 1.03325313337301e-26,
+        "quadrature_orders": [
+          3,
+          2
+        ],
+        "quadrature_node_cell_points": 442368,
+        "selected_node_cell_points": 245760,
+        "elapsed_seconds": 0.0061085999477654696,
+        "formal_free_space_tail_bound": false
+      },
+      {
+        "time": 0.75,
+        "index": 3,
+        "domain": "D12 minus D8",
+        "circulation": 5.2297520434941256e-14,
+        "vorticity_squared_integral": 1.2964354775556093e-25,
+        "whole_D12_circulation": 3.7599424119465006,
+        "whole_D12_vorticity_squared_integral": 12.589203450743721,
+        "circulation_fraction": 1.3909128041103994e-14,
+        "vorticity_squared_fraction": 1.0297994488912807e-26,
+        "quadrature_orders": [
+          3,
+          2
+        ],
+        "quadrature_node_cell_points": 442368,
+        "selected_node_cell_points": 245760,
+        "elapsed_seconds": 0.0056180000538006425,
+        "formal_free_space_tail_bound": false
+      },
+      {
+        "time": 1.0,
+        "index": 4,
+        "domain": "D12 minus D8",
+        "circulation": 5.22892522406147e-14,
+        "vorticity_squared_integral": 1.2952433765598573e-25,
+        "whole_D12_circulation": 3.759942411946501,
+        "whole_D12_vorticity_squared_integral": 12.63780001757525,
+        "circulation_fraction": 1.3906929019571033e-14,
+        "vorticity_squared_fraction": 1.024896243617225e-26,
+        "quadrature_orders": [
+          3,
+          2
+        ],
+        "quadrature_node_cell_points": 442368,
+        "selected_node_cell_points": 245760,
+        "elapsed_seconds": 0.00573959993198514,
+        "formal_free_space_tail_bound": false
+      }
+    ],
+    "counters": {
+      "quadrature_node_cell_points": 10076160,
+      "reference_reconstruction_points": 17940480,
+      "sample_validations": 17940480,
+      "comparison_integrals": 25,
+      "outside_integrals": 5,
+      "outside_selected_node_cell_points": 1228800
+    },
+    "elapsed_seconds": 0.3301514000631869,
+    "cost_note": "Named evaluated-point counts, not total FLOPs; one node plane at a time.",
+    "formal_error_certificate": false
+  },
+  "reference_evidence": {
+    "path": "local\\reference-evaluation.json",
+    "bytes": 26487,
+    "sha256": "8ef86e040f85436f9fc92b62d3379e92ea4dd43bd1c4787ebf63c799529e280a"
+  },
+  "score_integration_qualified": true,
+  "meaningful_motion": true,
+  "ordinary_model_screen": {
+    "integration_qualified": true,
+    "score_integration_qualified": true,
+    "meaningful_motion": true,
+    "motion": {
+      "reference": "S256",
+      "initial_axial_centroid": 3.2471595476918638e-18,
+      "final_axial_centroid": 0.35276936493470806,
+      "axial_displacement": 0.35276936493470806,
+      "required_initial_widths": 0.25,
+      "initial_width": 1.0,
+      "passed": true
+    },
+    "primary_model_checks": {
+      "vorticity_L2": false,
+      "axial_centroid": true,
+      "covariance": false
+    },
+    "model_pass": false,
+    "model_pass_requires_external_reference_and_integration_qualification": true,
+    "checks": {
+      "score_integration": true,
+      "meaningful_motion": true,
+      "vorticity_L2": false,
+      "axial_centroid": true,
+      "covariance": false
+    },
+    "scores": [
+      {
+        "reference": "S256",
+        "index": 0,
+        "time": 0.0,
+        "primary_8x6": {
+          "domain": "D8",
+          "quadrature_orders": [
+            8,
+            6
+          ],
+          "h": 0.03125,
+          "numerator": 1.0675128678255947e-06,
+          "denominator": 12.528709359696705,
+          "vorticity_relative": 0.0002918995275417306,
+          "model_D8_circulation": 3.7599424119464486,
+          "model_D8_vorticity_squared_integral": 12.528737992871342,
+          "model_D8_circulation_fraction_of_analytic_fullspace": 0.9999999999999862,
+          "model_D8_vorticity_squared_fraction_of_analytic_fullspace": 1.0,
+          "reference_minimum_sampled_q": 2.273552223316266e-28,
+          "reference_sampled_nonnegative": true,
+          "reference_sampled_negative_circulation": 0.0,
+          "model_analytic_positive": true,
+          "quadrature_node_cell_points": 6291456,
+          "gaussian_exp_evaluations": 6291456,
+          "elapsed_seconds": 0.3559186999918893,
+          "mass_values_are_numerical": true
+        },
+        "confirmation_16x12": {
+          "domain": "D8",
+          "quadrature_orders": [
+            16,
+            12
+          ],
+          "h": 0.03125,
+          "numerator": 1.0675128678255921e-06,
+          "denominator": 12.528709359696702,
+          "vorticity_relative": 0.0002918995275417303,
+          "model_D8_circulation": 3.7599424119464477,
+          "model_D8_vorticity_squared_integral": 12.52873799287134,
+          "model_D8_circulation_fraction_of_analytic_fullspace": 0.9999999999999859,
+          "model_D8_vorticity_squared_fraction_of_analytic_fullspace": 0.9999999999999999,
+          "reference_minimum_sampled_q": 2.239237611960273e-28,
+          "reference_sampled_nonnegative": true,
+          "reference_sampled_negative_circulation": 0.0,
+          "model_analytic_positive": true,
+          "quadrature_node_cell_points": 25165824,
+          "gaussian_exp_evaluations": 25165824,
+          "elapsed_seconds": 1.2283781999722123,
+          "mass_values_are_numerical": true
+        },
+        "score_absolute_difference": 3.2526065174565133e-19,
+        "integration_passed": true,
+        "numerical_mass_absolute_differences": {
+          "circulation": 8.881784197001252e-16,
+          "vorticity_squared_integral": 1.7763568394002505e-15
+        },
+        "model_fullspace_centroid": [
+          1.2533141373155001,
+          0.0
+        ],
+        "model_fullspace_covariance": [
+          [
+            0.42920367320510344,
+            0.0
+          ],
+          [
+            0.0,
+            1.0
+          ]
+        ],
+        "reference_own_domain_centroid": [
+          1.2533159496817243,
+          3.2471595476918638e-18
+        ],
+        "reference_own_domain_covariance": [
+          [
+            0.4292060026115663,
+            -4.989752900068547e-18
+          ],
+          [
+            -4.989752900068547e-18,
+            1.0000028937111296
+          ]
+        ],
+        "reference_own_domain_circulation": 3.7599424119464486,
+        "reference_negative_cell_mass": 0.0,
+        "reference_own_domain_vorticity_squared_integral": 12.528709359696702,
+        "axial_centroid_absolute": 3.2471595476918638e-18,
+        "covariance_frobenius_absolute": 3.714794552955741e-06,
+        "covariance_relative_to_initial_S256": 3.4136418002152106e-06,
+        "score_is_primary_regardless_of_confirmation": true
+      },
+      {
+        "reference": "S256",
+        "index": 1,
+        "time": 0.25,
+        "primary_8x6": {
+          "domain": "D8",
+          "quadrature_orders": [
+            8,
+            6
+          ],
+          "h": 0.03125,
+          "numerator": 0.010719039447608473,
+          "denominator": 12.535525957289952,
+          "vorticity_relative": 0.029241971825698293,
+          "model_D8_circulation": 3.759942411946447,
+          "model_D8_vorticity_squared_integral": 12.528737992871344,
+          "model_D8_circulation_fraction_of_analytic_fullspace": 0.9999999999999857,
+          "model_D8_vorticity_squared_fraction_of_analytic_fullspace": 1.0000000000000002,
+          "reference_minimum_sampled_q": 2.184639294316857e-28,
+          "reference_sampled_nonnegative": true,
+          "reference_sampled_negative_circulation": 0.0,
+          "model_analytic_positive": true,
+          "quadrature_node_cell_points": 6291456,
+          "gaussian_exp_evaluations": 6291456,
+          "elapsed_seconds": 0.2917188999708742,
+          "mass_values_are_numerical": true
+        },
+        "confirmation_16x12": {
+          "domain": "D8",
+          "quadrature_orders": [
+            16,
+            12
+          ],
+          "h": 0.03125,
+          "numerator": 0.010719039447608474,
+          "denominator": 12.535525957289948,
+          "vorticity_relative": 0.0292419718256983,
+          "model_D8_circulation": 3.759942411946446,
+          "model_D8_vorticity_squared_integral": 12.52873799287134,
+          "model_D8_circulation_fraction_of_analytic_fullspace": 0.9999999999999855,
+          "model_D8_vorticity_squared_fraction_of_analytic_fullspace": 0.9999999999999999,
+          "reference_minimum_sampled_q": 2.149870291933079e-28,
+          "reference_sampled_nonnegative": true,
+          "reference_sampled_negative_circulation": 0.0,
+          "model_analytic_positive": true,
+          "quadrature_node_cell_points": 25165824,
+          "gaussian_exp_evaluations": 25165824,
+          "elapsed_seconds": 1.3182361000217497,
+          "mass_values_are_numerical": true
+        },
+        "score_absolute_difference": 6.938893903907228e-18,
+        "integration_passed": true,
+        "numerical_mass_absolute_differences": {
+          "circulation": 8.881784197001252e-16,
+          "vorticity_squared_integral": 3.552713678800501e-15
+        },
+        "model_fullspace_centroid": [
+          1.2533141373155001,
+          0.10886621079036346
+        ],
+        "model_fullspace_covariance": [
+          [
+            0.42920367320510344,
+            0.0
+          ],
+          [
+            0.0,
+            1.0
+          ]
+        ],
+        "reference_own_domain_centroid": [
+          1.2534016152393697,
+          0.08838071146327879
+        ],
+        "reference_own_domain_covariance": [
+          [
+            0.429012651533337,
+            -0.018485496945644858
+          ],
+          [
+            -0.018485496945644858,
+            1.0022972441063727
+          ]
+        ],
+        "reference_own_domain_circulation": 3.759942411946448,
+        "reference_negative_cell_mass": 0.0,
+        "reference_own_domain_vorticity_squared_integral": 12.535525957289952,
+        "axial_centroid_absolute": 0.02048549932708467,
+        "covariance_frobenius_absolute": 0.026243875750701137,
+        "covariance_relative_to_initial_S256": 0.024116324600230214,
+        "score_is_primary_regardless_of_confirmation": true
+      },
+      {
+        "reference": "S256",
+        "index": 2,
+        "time": 0.5,
+        "primary_8x6": {
+          "domain": "D8",
+          "quadrature_orders": [
+            8,
+            6
+          ],
+          "h": 0.03125,
+          "numerator": 0.04282765242206491,
+          "denominator": 12.556447655982888,
+          "vorticity_relative": 0.058402137093893275,
+          "model_D8_circulation": 3.7599424119464397,
+          "model_D8_vorticity_squared_integral": 12.528737992871342,
+          "model_D8_circulation_fraction_of_analytic_fullspace": 0.9999999999999838,
+          "model_D8_vorticity_squared_fraction_of_analytic_fullspace": 1.0,
+          "reference_minimum_sampled_q": 2.098484434520466e-28,
+          "reference_sampled_nonnegative": true,
+          "reference_sampled_negative_circulation": 0.0,
+          "model_analytic_positive": true,
+          "quadrature_node_cell_points": 6291456,
+          "gaussian_exp_evaluations": 6291456,
+          "elapsed_seconds": 0.3423213000642136,
+          "mass_values_are_numerical": true
+        },
+        "confirmation_16x12": {
+          "domain": "D8",
+          "quadrature_orders": [
+            16,
+            12
+          ],
+          "h": 0.03125,
+          "numerator": 0.042827652422064925,
+          "denominator": 12.556447655982886,
+          "vorticity_relative": 0.05840213709389329,
+          "model_D8_circulation": 3.759942411946439,
+          "model_D8_vorticity_squared_integral": 12.52873799287134,
+          "model_D8_circulation_fraction_of_analytic_fullspace": 0.9999999999999836,
+          "model_D8_vorticity_squared_fraction_of_analytic_fullspace": 0.9999999999999999,
+          "reference_minimum_sampled_q": 2.0632952139156394e-28,
+          "reference_sampled_nonnegative": true,
+          "reference_sampled_negative_circulation": 0.0,
+          "model_analytic_positive": true,
+          "quadrature_node_cell_points": 25165824,
+          "gaussian_exp_evaluations": 25165824,
+          "elapsed_seconds": 1.2336687999777496,
+          "mass_values_are_numerical": true
+        },
+        "score_absolute_difference": 1.3877787807814457e-17,
+        "integration_passed": true,
+        "numerical_mass_absolute_differences": {
+          "circulation": 8.881784197001252e-16,
+          "vorticity_squared_integral": 1.7763568394002505e-15
+        },
+        "model_fullspace_centroid": [
+          1.2533141373155001,
+          0.21773242158072692
+        ],
+        "model_fullspace_covariance": [
+          [
+            0.42920367320510344,
+            0.0
+          ],
+          [
+            0.0,
+            1.0
+          ]
+        ],
+        "reference_own_domain_centroid": [
+          1.253645844803132,
+          0.1766856853551265
+        ],
+        "reference_own_domain_covariance": [
+          [
+            0.4284207962038724,
+            -0.036881523785366715
+          ],
+          [
+            -0.036881523785366715,
+            1.0091020321796622
+          ]
+        ],
+        "reference_own_domain_circulation": 3.759942411946448,
+        "reference_negative_cell_mass": 0.0,
+        "reference_own_domain_vorticity_squared_integral": 12.556447655982888,
+        "axial_centroid_absolute": 0.04104673622560043,
+        "covariance_frobenius_absolute": 0.05295236991542309,
+        "covariance_relative_to_initial_S256": 0.048659601705273704,
+        "score_is_primary_regardless_of_confirmation": true
+      },
+      {
+        "reference": "S256",
+        "index": 3,
+        "time": 0.75,
+        "primary_8x6": {
+          "domain": "D8",
+          "quadrature_orders": [
+            8,
+            6
+          ],
+          "h": 0.03125,
+          "numerator": 0.09620510127995413,
+          "denominator": 12.591562865992897,
+          "vorticity_relative": 0.08740961985759241,
+          "model_D8_circulation": 3.7599424119464215,
+          "model_D8_vorticity_squared_integral": 12.528737992871342,
+          "model_D8_circulation_fraction_of_analytic_fullspace": 0.999999999999979,
+          "model_D8_vorticity_squared_fraction_of_analytic_fullspace": 1.0,
+          "reference_minimum_sampled_q": 2.0150255680112184e-28,
+          "reference_sampled_nonnegative": true,
+          "reference_sampled_negative_circulation": 0.0,
+          "model_analytic_positive": true,
+          "quadrature_node_cell_points": 6291456,
+          "gaussian_exp_evaluations": 6291456,
+          "elapsed_seconds": 0.330144300009124,
+          "mass_values_are_numerical": true
+        },
+        "confirmation_16x12": {
+          "domain": "D8",
+          "quadrature_orders": [
+            16,
+            12
+          ],
+          "h": 0.03125,
+          "numerator": 0.0962051012799541,
+          "denominator": 12.591562865992895,
+          "vorticity_relative": 0.08740961985759241,
+          "model_D8_circulation": 3.7599424119464206,
+          "model_D8_vorticity_squared_integral": 12.52873799287134,
+          "model_D8_circulation_fraction_of_analytic_fullspace": 0.9999999999999788,
+          "model_D8_vorticity_squared_fraction_of_analytic_fullspace": 0.9999999999999999,
+          "reference_minimum_sampled_q": 1.97944913524251e-28,
+          "reference_sampled_nonnegative": true,
+          "reference_sampled_negative_circulation": 0.0,
+          "model_analytic_positive": true,
+          "quadrature_node_cell_points": 25165824,
+          "gaussian_exp_evaluations": 25165824,
+          "elapsed_seconds": 1.241045199916698,
+          "mass_values_are_numerical": true
+        },
+        "score_absolute_difference": 0.0,
+        "integration_passed": true,
+        "numerical_mass_absolute_differences": {
+          "circulation": 8.881784197001252e-16,
+          "vorticity_squared_integral": 1.7763568394002505e-15
+        },
+        "model_fullspace_centroid": [
+          1.2533141373155001,
+          0.3265986323710904
+        ],
+        "model_fullspace_covariance": [
+          [
+            0.42920367320510344,
+            0.0
+          ],
+          [
+            0.0,
+            1.0
+          ]
+        ],
+        "reference_own_domain_centroid": [
+          1.2540477205349299,
+          0.2648397935367202
+        ],
+        "reference_own_domain_covariance": [
+          [
+            0.42743270280616774,
+            -0.05509973197295953
+          ],
+          [
+            -0.05509973197295953,
+            1.0203583485945036
+          ]
+        ],
+        "reference_own_domain_circulation": 3.759942411946449,
+        "reference_negative_cell_mass": 0.0,
+        "reference_own_domain_vorticity_squared_integral": 12.591562865992897,
+        "axial_centroid_absolute": 0.06175883883437017,
+        "covariance_frobenius_absolute": 0.08055780297794367,
+        "covariance_relative_to_initial_S256": 0.07402710423385458,
+        "score_is_primary_regardless_of_confirmation": true
+      },
+      {
+        "reference": "S256",
+        "index": 4,
+        "time": 1.0,
+        "primary_8x6": {
+          "domain": "D8",
+          "quadrature_orders": [
+            8,
+            6
+          ],
+          "h": 0.03125,
+          "numerator": 0.17066487460467172,
+          "denominator": 12.641021874312637,
+          "vorticity_relative": 0.11619327199178484,
+          "model_D8_circulation": 3.7599424119463802,
+          "model_D8_vorticity_squared_integral": 12.528737992871342,
+          "model_D8_circulation_fraction_of_analytic_fullspace": 0.999999999999968,
+          "model_D8_vorticity_squared_fraction_of_analytic_fullspace": 1.0,
+          "reference_minimum_sampled_q": 1.9341998291843543e-28,
+          "reference_sampled_nonnegative": true,
+          "reference_sampled_negative_circulation": 0.0,
+          "model_analytic_positive": true,
+          "quadrature_node_cell_points": 6291456,
+          "gaussian_exp_evaluations": 6291456,
+          "elapsed_seconds": 0.29463909997139126,
+          "mass_values_are_numerical": true
+        },
+        "confirmation_16x12": {
+          "domain": "D8",
+          "quadrature_orders": [
+            16,
+            12
+          ],
+          "h": 0.03125,
+          "numerator": 0.1706648746046717,
+          "denominator": 12.641021874312635,
+          "vorticity_relative": 0.11619327199178484,
+          "model_D8_circulation": 3.7599424119463793,
+          "model_D8_vorticity_squared_integral": 12.52873799287134,
+          "model_D8_circulation_fraction_of_analytic_fullspace": 0.9999999999999678,
+          "model_D8_vorticity_squared_fraction_of_analytic_fullspace": 0.9999999999999999,
+          "reference_minimum_sampled_q": 1.8982680282754312e-28,
+          "reference_sampled_nonnegative": true,
+          "reference_sampled_negative_circulation": 0.0,
+          "model_analytic_positive": true,
+          "quadrature_node_cell_points": 25165824,
+          "gaussian_exp_evaluations": 25165824,
+          "elapsed_seconds": 1.2502015000209212,
+          "mass_values_are_numerical": true
+        },
+        "score_absolute_difference": 0.0,
+        "integration_passed": true,
+        "numerical_mass_absolute_differences": {
+          "circulation": 8.881784197001252e-16,
+          "vorticity_squared_integral": 1.7763568394002505e-15
+        },
+        "model_fullspace_centroid": [
+          1.2533141373155001,
+          0.43546484316145384
+        ],
+        "model_fullspace_covariance": [
+          [
+            0.42920367320510344,
+            0.0
+          ],
+          [
+            0.0,
+            1.0
+          ]
+        ],
+        "reference_own_domain_centroid": [
+          1.2546056524805573,
+          0.35276936493470806
+        ],
+        "reference_own_domain_covariance": [
+          [
+            0.42605219413657314,
+            -0.07305360087353913
+          ],
+          [
+            -0.07305360087353913,
+            1.0359696982488587
+          ]
+        ],
+        "reference_own_domain_circulation": 3.7599424119464477,
+        "reference_negative_cell_mass": 0.0,
+        "reference_own_domain_vorticity_squared_integral": 12.641021874312637,
+        "axial_centroid_absolute": 0.08269547822674578,
+        "covariance_frobenius_absolute": 0.10944134599690394,
+        "covariance_relative_to_initial_S256": 0.10056910228577531,
+        "score_is_primary_regardless_of_confirmation": true
+      },
+      {
+        "reference": "S128",
+        "index": 0,
+        "time": 0.0,
+        "primary_8x6": {
+          "domain": "D8",
+          "quadrature_orders": [
+            8,
+            6
+          ],
+          "h": 0.0625,
+          "numerator": 1.6896465028023046e-05,
+          "denominator": 12.528520011386522,
+          "vorticity_relative": 0.0011613096674279258,
+          "model_D8_circulation": 3.7599424119464486,
+          "model_D8_vorticity_squared_integral": 12.528737992871342,
+          "model_D8_circulation_fraction_of_analytic_fullspace": 0.9999999999999862,
+          "model_D8_vorticity_squared_fraction_of_analytic_fullspace": 1.0,
+          "reference_minimum_sampled_q": 1.5879266174957762e-28,
+          "reference_sampled_nonnegative": true,
+          "reference_sampled_negative_circulation": 0.0,
+          "model_analytic_positive": true,
+          "quadrature_node_cell_points": 1572864,
+          "gaussian_exp_evaluations": 1572864,
+          "elapsed_seconds": 0.031067500007338822,
+          "mass_values_are_numerical": true
+        },
+        "confirmation_16x12": {
+          "domain": "D8",
+          "quadrature_orders": [
+            16,
+            12
+          ],
+          "h": 0.0625,
+          "numerator": 1.6896465028022917e-05,
+          "denominator": 12.52852001138652,
+          "vorticity_relative": 0.0011613096674279214,
+          "model_D8_circulation": 3.7599424119464477,
+          "model_D8_vorticity_squared_integral": 12.52873799287134,
+          "model_D8_circulation_fraction_of_analytic_fullspace": 0.9999999999999859,
+          "model_D8_vorticity_squared_fraction_of_analytic_fullspace": 0.9999999999999999,
+          "reference_minimum_sampled_q": 1.486444918604797e-28,
+          "reference_sampled_nonnegative": true,
+          "reference_sampled_negative_circulation": 0.0,
+          "model_analytic_positive": true,
+          "quadrature_node_cell_points": 6291456,
+          "gaussian_exp_evaluations": 6291456,
+          "elapsed_seconds": 0.1258759000338614,
+          "mass_values_are_numerical": true
+        },
+        "score_absolute_difference": 4.336808689942018e-18,
+        "integration_passed": true,
+        "numerical_mass_absolute_differences": {
+          "circulation": 8.881784197001252e-16,
+          "vorticity_squared_integral": 1.7763568394002505e-15
+        },
+        "model_fullspace_centroid": [
+          1.2533141373155001,
+          0.0
+        ],
+        "model_fullspace_covariance": [
+          [
+            0.42920367320510344,
+            0.0
+          ],
+          [
+            0.0,
+            1.0
+          ]
+        ],
+        "reference_own_domain_centroid": [
+          1.25332861585664,
+          -5.3309826236006846e-18
+        ],
+        "reference_own_domain_covariance": [
+          [
+            0.4292219248305371,
+            4.031751232918699e-18
+          ],
+          [
+            4.031751232918699e-18,
+            1.0000231479950212
+          ]
+        ],
+        "reference_own_domain_circulation": 3.7599424119464486,
+        "reference_negative_cell_mass": 0.0,
+        "reference_own_domain_vorticity_squared_integral": 12.528520011386522,
+        "axial_centroid_absolute": 5.3309826236006846e-18,
+        "covariance_frobenius_absolute": 2.9477983385472156e-05,
+        "covariance_relative_to_initial_S256": 2.7088248040697538e-05,
+        "score_is_primary_regardless_of_confirmation": true
+      },
+      {
+        "reference": "S128",
+        "index": 1,
+        "time": 0.25,
+        "primary_8x6": {
+          "domain": "D8",
+          "quadrature_orders": [
+            8,
+            6
+          ],
+          "h": 0.0625,
+          "numerator": 0.010744179549352445,
+          "denominator": 12.534652509300582,
+          "vorticity_relative": 0.029277263353811235,
+          "model_D8_circulation": 3.759942411946447,
+          "model_D8_vorticity_squared_integral": 12.528737992871342,
+          "model_D8_circulation_fraction_of_analytic_fullspace": 0.9999999999999857,
+          "model_D8_vorticity_squared_fraction_of_analytic_fullspace": 1.0,
+          "reference_minimum_sampled_q": 1.5363672967353361e-28,
+          "reference_sampled_nonnegative": true,
+          "reference_sampled_negative_circulation": 0.0,
+          "model_analytic_positive": true,
+          "quadrature_node_cell_points": 1572864,
+          "gaussian_exp_evaluations": 1572864,
+          "elapsed_seconds": 0.033756199991330504,
+          "mass_values_are_numerical": true
+        },
+        "confirmation_16x12": {
+          "domain": "D8",
+          "quadrature_orders": [
+            16,
+            12
+          ],
+          "h": 0.0625,
+          "numerator": 0.010744179549352438,
+          "denominator": 12.53465250930058,
+          "vorticity_relative": 0.029277263353811228,
+          "model_D8_circulation": 3.759942411946446,
+          "model_D8_vorticity_squared_integral": 12.52873799287134,
+          "model_D8_circulation_fraction_of_analytic_fullspace": 0.9999999999999855,
+          "model_D8_vorticity_squared_fraction_of_analytic_fullspace": 0.9999999999999999,
+          "reference_minimum_sampled_q": 1.4352229111684429e-28,
+          "reference_sampled_nonnegative": true,
+          "reference_sampled_negative_circulation": 0.0,
+          "model_analytic_positive": true,
+          "quadrature_node_cell_points": 6291456,
+          "gaussian_exp_evaluations": 6291456,
+          "elapsed_seconds": 0.12647100002504885,
+          "mass_values_are_numerical": true
+        },
+        "score_absolute_difference": 6.938893903907228e-18,
+        "integration_passed": true,
+        "numerical_mass_absolute_differences": {
+          "circulation": 8.881784197001252e-16,
+          "vorticity_squared_integral": 1.7763568394002505e-15
+        },
+        "model_fullspace_centroid": [
+          1.2533141373155001,
+          0.10886621079036346
+        ],
+        "model_fullspace_covariance": [
+          [
+            0.42920367320510344,
+            0.0
+          ],
+          [
+            0.0,
+            1.0
+          ]
+        ],
+        "reference_own_domain_centroid": [
+          1.2534326886782499,
+          0.0883955950099968
+        ],
+        "reference_own_domain_covariance": [
+          [
+            0.4290465653017803,
+            -0.018499649263643614
+          ],
+          [
+            -0.018499649263643614,
+            1.002409542439728
+          ]
+        ],
+        "reference_own_domain_circulation": 3.759942411946448,
+        "reference_negative_cell_mass": 0.0,
+        "reference_own_domain_vorticity_squared_integral": 12.534652509300582,
+        "axial_centroid_absolute": 0.020470615780366658,
+        "covariance_frobenius_absolute": 0.02627364884095462,
+        "covariance_relative_to_initial_S256": 0.024143684031273312,
+        "score_is_primary_regardless_of_confirmation": true
+      },
+      {
+        "reference": "S128",
+        "index": 2,
+        "time": 0.5,
+        "primary_8x6": {
+          "domain": "D8",
+          "quadrature_orders": [
+            8,
+            6
+          ],
+          "h": 0.0625,
+          "numerator": 0.042855145726853665,
+          "denominator": 12.554860071895005,
+          "vorticity_relative": 0.05842457337060071,
+          "model_D8_circulation": 3.7599424119464393,
+          "model_D8_vorticity_squared_integral": 12.528737992871342,
+          "model_D8_circulation_fraction_of_analytic_fullspace": 0.9999999999999837,
+          "model_D8_vorticity_squared_fraction_of_analytic_fullspace": 1.0,
+          "reference_minimum_sampled_q": 1.4859402936656965e-28,
+          "reference_sampled_nonnegative": true,
+          "reference_sampled_negative_circulation": 0.0,
+          "model_analytic_positive": true,
+          "quadrature_node_cell_points": 1572864,
+          "gaussian_exp_evaluations": 1572864,
+          "elapsed_seconds": 0.03162589995190501,
+          "mass_values_are_numerical": true
+        },
+        "confirmation_16x12": {
+          "domain": "D8",
+          "quadrature_orders": [
+            16,
+            12
+          ],
+          "h": 0.0625,
+          "numerator": 0.042855145726853644,
+          "denominator": 12.554860071895003,
+          "vorticity_relative": 0.058424573370600696,
+          "model_D8_circulation": 3.759942411946439,
+          "model_D8_vorticity_squared_integral": 12.52873799287134,
+          "model_D8_circulation_fraction_of_analytic_fullspace": 0.9999999999999836,
+          "model_D8_vorticity_squared_fraction_of_analytic_fullspace": 0.9999999999999999,
+          "reference_minimum_sampled_q": 1.3851368963188725e-28,
+          "reference_sampled_nonnegative": true,
+          "reference_sampled_negative_circulation": 0.0,
+          "model_analytic_positive": true,
+          "quadrature_node_cell_points": 6291456,
+          "gaussian_exp_evaluations": 6291456,
+          "elapsed_seconds": 0.13002009992487729,
+          "mass_values_are_numerical": true
+        },
+        "score_absolute_difference": 1.3877787807814457e-17,
+        "integration_passed": true,
+        "numerical_mass_absolute_differences": {
+          "circulation": 4.440892098500626e-16,
+          "vorticity_squared_integral": 1.7763568394002505e-15
+        },
+        "model_fullspace_centroid": [
+          1.2533141373155001,
+          0.21773242158072692
+        ],
+        "model_fullspace_covariance": [
+          [
+            0.42920367320510344,
+            0.0
+          ],
+          [
+            0.0,
+            1.0
+          ]
+        ],
+        "reference_own_domain_centroid": [
+          1.2536944463179123,
+          0.17671564542282386
+        ],
+        "reference_own_domain_covariance": [
+          [
+            0.4284722305711126,
+            -0.036909108189412176
+          ],
+          [
+            -0.036909108189412176,
+            1.009311785063234
+          ]
+        ],
+        "reference_own_domain_circulation": 3.759942411946448,
+        "reference_negative_cell_mass": 0.0,
+        "reference_own_domain_vorticity_squared_integral": 12.554860071895007,
+        "axial_centroid_absolute": 0.04101677615790306,
+        "covariance_frobenius_absolute": 0.053026492285141336,
+        "covariance_relative_to_initial_S256": 0.04872771508704871,
+        "score_is_primary_regardless_of_confirmation": true
+      },
+      {
+        "reference": "S128",
+        "index": 3,
+        "time": 0.75,
+        "primary_8x6": {
+          "domain": "D8",
+          "quadrature_orders": [
+            8,
+            6
+          ],
+          "h": 0.0625,
+          "numerator": 0.09619103892334681,
+          "denominator": 12.5892034605877,
+          "vorticity_relative": 0.08741142122020902,
+          "model_D8_circulation": 3.7599424119464215,
+          "model_D8_vorticity_squared_integral": 12.528737992871342,
+          "model_D8_circulation_fraction_of_analytic_fullspace": 0.999999999999979,
+          "model_D8_vorticity_squared_fraction_of_analytic_fullspace": 1.0,
+          "reference_minimum_sampled_q": 1.4366305022891825e-28,
+          "reference_sampled_nonnegative": true,
+          "reference_sampled_negative_circulation": 0.0,
+          "model_analytic_positive": true,
+          "quadrature_node_cell_points": 1572864,
+          "gaussian_exp_evaluations": 1572864,
+          "elapsed_seconds": 0.03180870006326586,
+          "mass_values_are_numerical": true
+        },
+        "confirmation_16x12": {
+          "domain": "D8",
+          "quadrature_orders": [
+            16,
+            12
+          ],
+          "h": 0.0625,
+          "numerator": 0.0961910389233468,
+          "denominator": 12.589203460587699,
+          "vorticity_relative": 0.08741142122020902,
+          "model_D8_circulation": 3.759942411946421,
+          "model_D8_vorticity_squared_integral": 12.52873799287134,
+          "model_D8_circulation_fraction_of_analytic_fullspace": 0.9999999999999789,
+          "model_D8_vorticity_squared_fraction_of_analytic_fullspace": 0.9999999999999999,
+          "reference_minimum_sampled_q": 1.3361715957194885e-28,
+          "reference_sampled_nonnegative": true,
+          "reference_sampled_negative_circulation": 0.0,
+          "model_analytic_positive": true,
+          "quadrature_node_cell_points": 6291456,
+          "gaussian_exp_evaluations": 6291456,
+          "elapsed_seconds": 0.12479689996689558,
+          "mass_values_are_numerical": true
+        },
+        "score_absolute_difference": 0.0,
+        "integration_passed": true,
+        "numerical_mass_absolute_differences": {
+          "circulation": 4.440892098500626e-16,
+          "vorticity_squared_integral": 1.7763568394002505e-15
+        },
+        "model_fullspace_centroid": [
+          1.2533141373155001,
+          0.3265986323710904
+        ],
+        "model_fullspace_covariance": [
+          [
+            0.42920367320510344,
+            0.0
+          ],
+          [
+            0.0,
+            1.0
+          ]
+        ],
+        "reference_own_domain_centroid": [
+          1.2541131735673374,
+          0.26488499839518437
+        ],
+        "reference_own_domain_covariance": [
+          [
+            0.42750128002914134,
+            -0.055140038929552104
+          ],
+          [
+            -0.055140038929552104,
+            1.020670697740703
+          ]
+        ],
+        "reference_own_domain_circulation": 3.759942411946448,
+        "reference_negative_cell_mass": 0.0,
+        "reference_own_domain_vorticity_squared_integral": 12.589203460587703,
+        "axial_centroid_absolute": 0.06171363397590601,
+        "covariance_frobenius_absolute": 0.08069091444467653,
+        "covariance_relative_to_initial_S256": 0.07414942455613613,
+        "score_is_primary_regardless_of_confirmation": true
+      },
+      {
+        "reference": "S128",
+        "index": 4,
+        "time": 1.0,
+        "primary_8x6": {
+          "domain": "D8",
+          "quadrature_orders": [
+            8,
+            6
+          ],
+          "h": 0.0625,
+          "numerator": 0.17052633583977703,
+          "denominator": 12.63780003427593,
+          "vorticity_relative": 0.11616090595736346,
+          "model_D8_circulation": 3.7599424119463802,
+          "model_D8_vorticity_squared_integral": 12.528737992871344,
+          "model_D8_circulation_fraction_of_analytic_fullspace": 0.999999999999968,
+          "model_D8_vorticity_squared_fraction_of_analytic_fullspace": 1.0000000000000002,
+          "reference_minimum_sampled_q": 1.3884220750907624e-28,
+          "reference_sampled_nonnegative": true,
+          "reference_sampled_negative_circulation": 0.0,
+          "model_analytic_positive": true,
+          "quadrature_node_cell_points": 1572864,
+          "gaussian_exp_evaluations": 1572864,
+          "elapsed_seconds": 0.03617019997909665,
+          "mass_values_are_numerical": true
+        },
+        "confirmation_16x12": {
+          "domain": "D8",
+          "quadrature_orders": [
+            16,
+            12
+          ],
+          "h": 0.0625,
+          "numerator": 0.17052633583977703,
+          "denominator": 12.637800034275926,
+          "vorticity_relative": 0.11616090595736348,
+          "model_D8_circulation": 3.7599424119463793,
+          "model_D8_vorticity_squared_integral": 12.52873799287134,
+          "model_D8_circulation_fraction_of_analytic_fullspace": 0.9999999999999678,
+          "model_D8_vorticity_squared_fraction_of_analytic_fullspace": 0.9999999999999999,
+          "reference_minimum_sampled_q": 1.2883109868318775e-28,
+          "reference_sampled_nonnegative": true,
+          "reference_sampled_negative_circulation": 0.0,
+          "model_analytic_positive": true,
+          "quadrature_node_cell_points": 6291456,
+          "gaussian_exp_evaluations": 6291456,
+          "elapsed_seconds": 0.18872259999625385,
+          "mass_values_are_numerical": true
+        },
+        "score_absolute_difference": 1.3877787807814457e-17,
+        "integration_passed": true,
+        "numerical_mass_absolute_differences": {
+          "circulation": 8.881784197001252e-16,
+          "vorticity_squared_integral": 3.552713678800501e-15
+        },
+        "model_fullspace_centroid": [
+          1.2533141373155001,
+          0.43546484316145384
+        ],
+        "model_fullspace_covariance": [
+          [
+            0.42920367320510344,
+            0.0
+          ],
+          [
+            0.0,
+            1.0
+          ]
+        ],
+        "reference_own_domain_centroid": [
+          1.2546874993441401,
+          0.35283003186421197
+        ],
+        "reference_own_domain_covariance": [
+          [
+            0.42613764564360745,
+            -0.07310596114888357
+          ],
+          [
+            -0.07310596114888357,
+            1.0363896709682767
+          ]
+        ],
+        "reference_own_domain_circulation": 3.7599424119464477,
+        "reference_negative_cell_mass": 0.0,
+        "reference_own_domain_vorticity_squared_integral": 12.637800034275932,
+        "axial_centroid_absolute": 0.08263481129724187,
+        "covariance_frobenius_absolute": 0.1096474887500459,
+        "covariance_relative_to_initial_S256": 0.10075853335898956,
+        "score_is_primary_regardless_of_confirmation": true
+      }
+    ],
+    "coefficient_identity": {
+      "path": "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t54-scalar-verification\\result.json",
+      "bytes": 3679,
+      "sha256": "66a83b67cff104773217757bc08fe9751dd357824778b130c432a4191d7cc9b8"
+    },
+    "beta_best_over_g0": 0.29030989544096925,
+    "axial_speed": 0.43546484316145384,
+    "actual_initial_S256_covariance_frobenius_norm": 1.0882203729522952,
+    "analytic_model": {
+      "amplitude": 1.5,
+      "width": 1.0,
+      "fullspace_circulation": 3.7599424119465006,
+      "radial_centroid": 1.2533141373155001,
+      "axial_centroid_formula": "c*t",
+      "covariance": [
+        [
+          0.42920367320510344,
+          0.0
+        ],
+        [
+          0.0,
+          1.0
+        ]
+      ],
+      "fullspace_vorticity_squared_integral": 12.528737992871342,
+      "negative_vorticity_mass": 0.0,
+      "positive_for_all_finite_r_z": true
+    },
+    "coefficient_loading_seconds": 0.00036040006671100855,
+    "rule_generation_seconds": 0.0009864999447017908,
+    "counters": {
+      "quadrature_node_cell_points": 196608000,
+      "reference_reconstruction_points": 196608000,
+      "sample_validations": 196608000,
+      "gaussian_exp_evaluations": 196608000,
+      "model_rule_integrals": 20,
+      "quadrature_rules_constructed": 4,
+      "quadrature_rule_nodes": 42
+    },
+    "elapsed_seconds": 8.749823299935088,
+    "scope": "D8 fields, finite computational reference moments, five saved times; no rigorous whole-space or continuous-time bound",
+    "cost_note": "Named evaluated-point counts, not total FLOPs; setup and both rules are paid; no fitted parameters or stepper.",
+    "formal_error_certificate": false
+  },
+  "ordinary_model_verdict": "fail",
+  "ordinary_model_evidence": {
+    "path": "local\\ordinary-model-screen.json",
+    "bytes": 37195,
+    "sha256": "993e73d28640fcf5eb4347a1c949f70719dd9bad7e05f0c22c10af55e9e8f90d"
+  },
+  "full_t1_task_pass": false,
+  "runtime_counts": {
+    "elliptic_attempts": 5630,
+    "elliptic_completed": 5630,
+    "transport_stages": 5600,
+    "completed_steps": 2800,
+    "snapshots": 30,
+    "completed_cases": 6,
+    "new_CG_solves": 0
+  },
+  "direct_solver_phase_seconds": {
+    "rhs_seconds": 0.939549996634014,
+    "forward_transform_seconds": 7.386121998191811,
+    "factor_seconds": 9.352104199817404,
+    "triangular_seconds": 5.416564201004803,
+    "inverse_transform_seconds": 5.258329495671205,
+    "original_rhs_assembly_seconds": 1.1212135019013658,
+    "original_residual_seconds": 4.819516296382062,
+    "checked_solve_seconds": 35.92864779592492,
+    "failed_checked_solve_seconds": 0.0
+  },
+  "phase_timing_note": "Case phases and direct subphases overlap; do not add them twice. Child wall time includes all work.",
+  "comparison_seconds": 0.29136779997497797,
+  "full_box_comparison_seconds": 0.3301514000631869,
+  "ordinary_model_measurement_seconds": 8.749823299935088,
+  "checkpoint_records": [
+    {
+      "name": "S64",
+      "index": 0,
+      "step": 0,
+      "time": 0.0,
+      "raw": {
+        "path": "S64-snapshot-0.npz",
+        "bytes": 994642,
+        "sha256": "2fd47fb6177a37105d1942e1028bbbacf04f741a2b160fa84a76941deba1763a"
+      },
+      "path": "S64-snapshot-0.json",
+      "bytes": 2147,
+      "sha256": "9c477e78791c6f4014a67bc02e9eddca005d9fd470f7bb0d50068457b53aaa8a"
+    },
+    {
+      "name": "S64",
+      "index": 1,
+      "step": 100,
+      "time": 0.25,
+      "raw": {
+        "path": "S64-snapshot-1.npz",
+        "bytes": 994642,
+        "sha256": "03179445fdf49d5fa5a28641e293b4db6ddf5b781eb45f68a9d6ef4dd3b37068"
+      },
+      "path": "S64-snapshot-1.json",
+      "bytes": 2139,
+      "sha256": "19c6fca93e0d32d737458f561525431357983f0b130bbe3298f59412f2773632"
+    },
+    {
+      "name": "S64",
+      "index": 2,
+      "step": 200,
+      "time": 0.5,
+      "raw": {
+        "path": "S64-snapshot-2.npz",
+        "bytes": 994642,
+        "sha256": "853ed2155f724776148c2e1785f64ce9142886fea118bb008584c134f8b84ec9"
+      },
+      "path": "S64-snapshot-2.json",
+      "bytes": 2137,
+      "sha256": "e4edf8c85b5301c6323cd5e6526e47aa1f8781b0eb6a0fdbd8fdd1be5f91a2be"
+    },
+    {
+      "name": "S64",
+      "index": 3,
+      "step": 300,
+      "time": 0.75,
+      "raw": {
+        "path": "S64-snapshot-3.npz",
+        "bytes": 994642,
+        "sha256": "fbd60e3b14abb57b1408b018e64b37fc2ca6644c47523b6490641ae452378c2b"
+      },
+      "path": "S64-snapshot-3.json",
+      "bytes": 2141,
+      "sha256": "c363a3655e2b904d9a5f50a7e0a488b6b41c5450b46762d7b29de6978f152e7a"
+    },
+    {
+      "name": "S64",
+      "index": 4,
+      "step": 400,
+      "time": 1.0,
+      "raw": {
+        "path": "S64-snapshot-4.npz",
+        "bytes": 994642,
+        "sha256": "85f38e5b75c7d68297afa8d9cea2c0bcc1b939ea29226f720a3e4a0f090bc78a"
+      },
+      "path": "S64-snapshot-4.json",
+      "bytes": 2141,
+      "sha256": "4dc5f5310d8db479786ba3f12bb935a4535e0f2336a4d5a2d7b80cc7d232b931"
+    },
+    {
+      "name": "S128",
+      "index": 0,
+      "step": 0,
+      "time": 0.0,
+      "raw": {
+        "path": "S128-snapshot-0.npz",
+        "bytes": 3951954,
+        "sha256": "a91e1ac02e7abc8319c30833b7f1c7b4deb533832a9d2e613a73aad0c9a93d3c"
+      },
+      "path": "S128-snapshot-0.json",
+      "bytes": 2144,
+      "sha256": "cd0042b4505656ac295921201236cc05fb7b0f2c87fcc3a6ffe30b9839056c8e"
+    },
+    {
+      "name": "S128",
+      "index": 1,
+      "step": 100,
+      "time": 0.25,
+      "raw": {
+        "path": "S128-snapshot-1.npz",
+        "bytes": 3951954,
+        "sha256": "709b0158e088c24d3a5be465282af26827f8506a01e6e9a295330544ad893bf9"
+      },
+      "path": "S128-snapshot-1.json",
+      "bytes": 2146,
+      "sha256": "c1dbe8a3a5f62ed4d4cb65c3ddfb13c76352307e417de73306e6b5ea26a561ca"
+    },
+    {
+      "name": "S128",
+      "index": 2,
+      "step": 200,
+      "time": 0.5,
+      "raw": {
+        "path": "S128-snapshot-2.npz",
+        "bytes": 3951954,
+        "sha256": "75e0acd72edba8f7892581778e116d24d6b545ba9f28b60e7b9774a495dbcefb"
+      },
+      "path": "S128-snapshot-2.json",
+      "bytes": 2144,
+      "sha256": "436787a7fc29f991aeff38ab56f0bdf3f49e8a760d2ef897436ba725cf16ce2a"
+    },
+    {
+      "name": "S128",
+      "index": 3,
+      "step": 300,
+      "time": 0.75,
+      "raw": {
+        "path": "S128-snapshot-3.npz",
+        "bytes": 3951954,
+        "sha256": "a356eb7bd89a1000ff161e7fdf35bb88948bd6b0ff07bc5c8decfc30368c9443"
+      },
+      "path": "S128-snapshot-3.json",
+      "bytes": 2150,
+      "sha256": "f82f55e2b24c024bc533ab66a2494a63597b9412d9e423e8629dc24642061c02"
+    },
+    {
+      "name": "S128",
+      "index": 4,
+      "step": 400,
+      "time": 1.0,
+      "raw": {
+        "path": "S128-snapshot-4.npz",
+        "bytes": 3951954,
+        "sha256": "33375f8db5ebed664069b969d2d45bf33e5732eddd34d6078a674164e1e6c7a0"
+      },
+      "path": "S128-snapshot-4.json",
+      "bytes": 2146,
+      "sha256": "6d64d7288798d56e5fece9f2eca177761c5829d0cf6541e7bef7748a49f6a158"
+    },
+    {
+      "name": "S256",
+      "index": 0,
+      "step": 0,
+      "time": 0.0,
+      "raw": {
+        "path": "S256-snapshot-0.npz",
+        "bytes": 15764818,
+        "sha256": "c4cf52a4487e0072a4cdbe4bcb901443a31663a1e5036b6d8934f0e5ce880cb9"
+      },
+      "path": "S256-snapshot-0.json",
+      "bytes": 2144,
+      "sha256": "5bb3e8be49fb1fe508dd892800b82fdf1e390f18c72a94cc3887c5e20d11ea93"
+    },
+    {
+      "name": "S256",
+      "index": 1,
+      "step": 100,
+      "time": 0.25,
+      "raw": {
+        "path": "S256-snapshot-1.npz",
+        "bytes": 15764818,
+        "sha256": "862449dbe4b4f2f32cc2c63b697180c353c70e6fe813ad32d4c2304e732131fb"
+      },
+      "path": "S256-snapshot-1.json",
+      "bytes": 2139,
+      "sha256": "786d41f4a3df8dfab112ffe0a50090fc4d2cd1cc243d9d54130a24721d61bbc1"
+    },
+    {
+      "name": "S256",
+      "index": 2,
+      "step": 200,
+      "time": 0.5,
+      "raw": {
+        "path": "S256-snapshot-2.npz",
+        "bytes": 15764818,
+        "sha256": "6651417679b252eb25b8ee62ffe0c830b033160cbfe905c38486d634c81ec080"
+      },
+      "path": "S256-snapshot-2.json",
+      "bytes": 2141,
+      "sha256": "45e2657db09f932ee870e1541972630f529beff9cebb02cbc8ad46e172df6fe4"
+    },
+    {
+      "name": "S256",
+      "index": 3,
+      "step": 300,
+      "time": 0.75,
+      "raw": {
+        "path": "S256-snapshot-3.npz",
+        "bytes": 15764818,
+        "sha256": "8fed918c0ff8c0ef7a2756fd1fbc493d9d2b1a18b9242ba68ddecdc4bdd9f5b6"
+      },
+      "path": "S256-snapshot-3.json",
+      "bytes": 2140,
+      "sha256": "e0e460a50791966c0b400e675c7341888b51f6ecbbc50a5a716f2be60d03fbf2"
+    },
+    {
+      "name": "S256",
+      "index": 4,
+      "step": 400,
+      "time": 1.0,
+      "raw": {
+        "path": "S256-snapshot-4.npz",
+        "bytes": 15764818,
+        "sha256": "9830bbfc8b7e36a3baed2f5669733998bf2f7f48143c19dfdadaeb40dbb1ec16"
+      },
+      "path": "S256-snapshot-4.json",
+      "bytes": 2143,
+      "sha256": "bdf326b8ae13b0e2431105db2c6e43d1cc76707c3564769840b6f07e22835644"
+    },
+    {
+      "name": "T128",
+      "index": 0,
+      "step": 0,
+      "time": 0.0,
+      "raw": {
+        "path": "T128-snapshot-0.npz",
+        "bytes": 3951954,
+        "sha256": "a91e1ac02e7abc8319c30833b7f1c7b4deb533832a9d2e613a73aad0c9a93d3c"
+      },
+      "path": "T128-snapshot-0.json",
+      "bytes": 2143,
+      "sha256": "dbe9ae9fe8a4effaa6bb439f8b45423353fe4d0accf273fd691965af45bd3e91"
+    },
+    {
+      "name": "T128",
+      "index": 1,
+      "step": 200,
+      "time": 0.25,
+      "raw": {
+        "path": "T128-snapshot-1.npz",
+        "bytes": 3951954,
+        "sha256": "9794c784b3cc388372d699d3debf0eef7417744d6eabc0e99ccaa1ad22869336"
+      },
+      "path": "T128-snapshot-1.json",
+      "bytes": 2151,
+      "sha256": "430916443e73f4a89d27266ea997d5ac55b802c3be584b26831ce1ac293c7ef9"
+    },
+    {
+      "name": "T128",
+      "index": 2,
+      "step": 400,
+      "time": 0.5,
+      "raw": {
+        "path": "T128-snapshot-2.npz",
+        "bytes": 3951954,
+        "sha256": "88c110c6c036c8bafc87fd3c3c51fed487b8d157a3b6088e4ca7cd10bfe5183e"
+      },
+      "path": "T128-snapshot-2.json",
+      "bytes": 2147,
+      "sha256": "9584bd13ae5bac9833a38af8205cde3a9e93625ea9153224ce3c480e9270a3bf"
+    },
+    {
+      "name": "T128",
+      "index": 3,
+      "step": 600,
+      "time": 0.75,
+      "raw": {
+        "path": "T128-snapshot-3.npz",
+        "bytes": 3951954,
+        "sha256": "b30ad5728aba92b4990b93df483eef992387822bd89e11369d440a69d7610ef7"
+      },
+      "path": "T128-snapshot-3.json",
+      "bytes": 2144,
+      "sha256": "ffab4b612e62ecb2c291c446c53d1359cb70569a6ab5a4f5628d6893e301e3a4"
+    },
+    {
+      "name": "T128",
+      "index": 4,
+      "step": 800,
+      "time": 1.0,
+      "raw": {
+        "path": "T128-snapshot-4.npz",
+        "bytes": 3951954,
+        "sha256": "0d0ede388e9abe9d70e71a169cae23627b8d200d2bb801023b5cae562ffee096"
+      },
+      "path": "T128-snapshot-4.json",
+      "bytes": 2143,
+      "sha256": "3f82f6416b2e4f4437c11c580c8cce333476fd8f63d063b13cd9253ca911a2e2"
+    },
+    {
+      "name": "D192",
+      "index": 0,
+      "step": 0,
+      "time": 0.0,
+      "raw": {
+        "path": "D192-snapshot-0.npz",
+        "bytes": 8875346,
+        "sha256": "a7cb62e92972201c2518c04c08606c37d1d686459a6989803156e1a993bbc747"
+      },
+      "path": "D192-snapshot-0.json",
+      "bytes": 2141,
+      "sha256": "f9897408eacd4dc21e3d238d1b4c5de3e7a5a25ccd56619df1e44a0354053505"
+    },
+    {
+      "name": "D192",
+      "index": 1,
+      "step": 100,
+      "time": 0.25,
+      "raw": {
+        "path": "D192-snapshot-1.npz",
+        "bytes": 8875346,
+        "sha256": "7d19232e3599e2d4e5c0b3ced73305ebb948a7400e977773e080f670542a2793"
+      },
+      "path": "D192-snapshot-1.json",
+      "bytes": 2139,
+      "sha256": "32676d26168d113a90c74ac32ae0eba8662075fd8b44942df85978f95d67412a"
+    },
+    {
+      "name": "D192",
+      "index": 2,
+      "step": 200,
+      "time": 0.5,
+      "raw": {
+        "path": "D192-snapshot-2.npz",
+        "bytes": 8875346,
+        "sha256": "5f75a09498d952d0d9cfb2ecffa86c239754b7ceabecfee197fb29d0fbd29277"
+      },
+      "path": "D192-snapshot-2.json",
+      "bytes": 2139,
+      "sha256": "25c42eff0467e4c759a52bc0e3bf803166bf93402efeb05a47c4121f701cd34d"
+    },
+    {
+      "name": "D192",
+      "index": 3,
+      "step": 300,
+      "time": 0.75,
+      "raw": {
+        "path": "D192-snapshot-3.npz",
+        "bytes": 8875346,
+        "sha256": "b31e139e3d256aa80fa8e3f457621c6371b816fbf54c8fc9182439d24887d601"
+      },
+      "path": "D192-snapshot-3.json",
+      "bytes": 2145,
+      "sha256": "e10c4385e5cf63764b05686111e70d4c9c387430ff2b4ec0d5cf01485cdb6d7b"
+    },
+    {
+      "name": "D192",
+      "index": 4,
+      "step": 400,
+      "time": 1.0,
+      "raw": {
+        "path": "D192-snapshot-4.npz",
+        "bytes": 8875346,
+        "sha256": "0c9b67e086686995bd327ae43688bda118eaf269af66d3866cb70650b5d248bf"
+      },
+      "path": "D192-snapshot-4.json",
+      "bytes": 2134,
+      "sha256": "18bdcb55e9405df83ea98fe7cfb59e5d04a09ac7a67194ab33fc5a31a1552909"
+    },
+    {
+      "name": "Q128",
+      "index": 0,
+      "step": 0,
+      "time": 0.0,
+      "raw": {
+        "path": "Q128-snapshot-0.npz",
+        "bytes": 3951954,
+        "sha256": "42bac7da243a53dae707b0e3fc44690809abba9f94ba82209e6068d860dd4357"
+      },
+      "path": "Q128-snapshot-0.json",
+      "bytes": 2144,
+      "sha256": "f614c260a77f14a367f895d1b64af8103352bfad438e49197d47063818ac74a0"
+    },
+    {
+      "name": "Q128",
+      "index": 1,
+      "step": 100,
+      "time": 0.25,
+      "raw": {
+        "path": "Q128-snapshot-1.npz",
+        "bytes": 3951954,
+        "sha256": "f185cf03ee9acfb381d38d7fcfb4d0ccdcf2990f02b99a6f0875763b5dccdbe4"
+      },
+      "path": "Q128-snapshot-1.json",
+      "bytes": 2146,
+      "sha256": "d1f26907421cac9005768f6d39daff535b469e7cab5a51b1e807132e59d94075"
+    },
+    {
+      "name": "Q128",
+      "index": 2,
+      "step": 200,
+      "time": 0.5,
+      "raw": {
+        "path": "Q128-snapshot-2.npz",
+        "bytes": 3951954,
+        "sha256": "481deb3a058afd2f254fc9e21227915425ef83d6ec9895d85ceb907f7f78714b"
+      },
+      "path": "Q128-snapshot-2.json",
+      "bytes": 2146,
+      "sha256": "29fc19f96f47b166f46fab72ad9f05167300442ff5f48c2ad9f7a45b44c6899d"
+    },
+    {
+      "name": "Q128",
+      "index": 3,
+      "step": 300,
+      "time": 0.75,
+      "raw": {
+        "path": "Q128-snapshot-3.npz",
+        "bytes": 3951954,
+        "sha256": "7587e3b323e194a99eed6c8013d8c7c1ae0030b445161af9d205fb86d32d5be7"
+      },
+      "path": "Q128-snapshot-3.json",
+      "bytes": 2149,
+      "sha256": "2ea2f267027459b6ccf45f9cd9c45802c5cc5f298cfe2383f0dddd3a9c95d241"
+    },
+    {
+      "name": "Q128",
+      "index": 4,
+      "step": 400,
+      "time": 1.0,
+      "raw": {
+        "path": "Q128-snapshot-4.npz",
+        "bytes": 3951954,
+        "sha256": "1248b359cb8ff2c570dbfacb3a5d8fad75200bbba92298f475df151239a0a437"
+      },
+      "path": "Q128-snapshot-4.json",
+      "bytes": 2149,
+      "sha256": "20320ce582a122ee0d6a5cd85b3116fd0be41415fcd85f18f23bde24834d2469"
+    }
+  ],
+  "checkpoint_index": {
+    "path": "local\\checkpoints.jsonl",
+    "bytes": 15545,
+    "sha256": "de79508769016fca4a4b1544da2f039975fceb4aec7aa064c7cbfebac2324c7b"
+  },
+  "completed_trajectories": 6,
+  "new_completed_trajectories": 6,
+  "reused_trajectories": 0,
+  "time_end": 1.0,
+  "candidate_trajectories": 0,
+  "ordinary_model_trajectories": 1,
+  "new_CG_solves": 0,
+  "formal_error_certificate": false,
+  "prior_T56_status": "failed_checks",
+  "prior_T57_status": "timeout_no_retry",
+  "prior_T59_status": "qualified_short_reference_only",
+  "prior_child_seconds": 1560.418468699907,
+  "prior_plus_child_elapsed_before_result_write_seconds": 1976.3252048998838,
+  "child_elapsed_before_result_write_seconds": 415.9067361999769
+}

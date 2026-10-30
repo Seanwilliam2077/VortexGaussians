@@ -1,0 +1,288 @@
+{
+  "schema": "t60-full-window-gaussian-freeze-v1",
+  "created_utc": "2026-10-30T02:41:39.006009+00:00",
+  "parent_commit": "ec589fd56d602b4bab74e8f9b7da25890f35da1e",
+  "inputs": [
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/.gitignore",
+      "bytes": 7,
+      "sha256": "a7d8bdcefba82a95ebc021d87c629fdea21f13af953bf01e28b7cf8b0eeceb41"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/FORMULATION.md",
+      "bytes": 4702,
+      "sha256": "c7acd044d5800a5818e0a77a5ee8faededda3de026194c46d875b2ea85ff220b"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/PROTOCOL.md",
+      "bytes": 7451,
+      "sha256": "1da093026ce7da401e4bbc9850bff2f0322e5c04dd123aff76e579cfc23c92bc"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/reference.py",
+      "bytes": 26760,
+      "sha256": "a4e91488b3130dcf659f324fc6d5614ebee9717824079aab5e7388e36737befb"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/measurement.py",
+      "bytes": 17413,
+      "sha256": "3a8168baa58d6ba965a9ca609c8c03eb7d167020eac06f65dee695e4fd1cc2aa"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/run_once.py",
+      "bytes": 22266,
+      "sha256": "d6c620f76f0805f7bfe510ba0d8bdc5b52634fc68146d6a6b4c706b6d9eef1ca"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/resource_preflight.py",
+      "bytes": 1589,
+      "sha256": "5d72449961f7af148d0c6e0c54a24c28b63427948a6e5be696042ff6ec357368"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/resource-preflight.json",
+      "bytes": 906,
+      "sha256": "4f960fb9185c38384eebfd5b60bee2e0cd32e8e23d0288ef507a6fa150497f0d"
+    },
+    {
+      "path": "tracks/tog/tasks/t54-scalar-verification/result.json",
+      "bytes": 3679,
+      "sha256": "66a83b67cff104773217757bc08fe9751dd357824778b130c432a4191d7cc9b8"
+    },
+    {
+      "path": "tracks/tog/tasks/t54-scalar-verification/execution.json",
+      "bytes": 2507,
+      "sha256": "d442dd6cefb0a2b23ced9a83e857e05861167ed510089a837098c9f6f1010c4f"
+    },
+    {
+      "path": "tracks/tog/tasks/t54-scalar-verification/input-manifest.json",
+      "bytes": 2180,
+      "sha256": "7dd936c46c0652602d5c2f8ce24c5ef14aa55f672db803c43bd7d6e1cca92308"
+    },
+    {
+      "path": "tracks/tog/tasks/t54-scalar-verification/audit-manifest.json",
+      "bytes": 9452,
+      "sha256": "1e32383e3976010e380a904c9504d6c9d1749367d4003bde4763b7bc48b51325"
+    },
+    {
+      "path": "tracks/tog/tasks/t55-axisymmetric-reference/reference.py",
+      "bytes": 10613,
+      "sha256": "499bab137463df4435230e3cbf4d16b0723feed5ad5d06087a0bafd911204908"
+    },
+    {
+      "path": "tracks/tog/tasks/t55-axisymmetric-reference/FORMULATION.md",
+      "bytes": 4604,
+      "sha256": "7d463593ec8f021ab814d0213bcf5f9b74b1c79ae9496b6d4cab2452f6440709"
+    },
+    {
+      "path": "tracks/tog/tasks/t55-axisymmetric-reference/TASK.md",
+      "bytes": 4132,
+      "sha256": "b470e55c6449348136673764e7d7b975cd3bad479ddefa0d881d827eba84e89e"
+    },
+    {
+      "path": "tracks/tog/tasks/t56-coupled-reference/reference.py",
+      "bytes": 17488,
+      "sha256": "51499f5c50b8f7f25ebb8df2569bc7eff085938cbd9d88f36b8604f9aaa4e01f"
+    },
+    {
+      "path": "tracks/tog/tasks/t56-coupled-reference/FORMULATION.md",
+      "bytes": 5434,
+      "sha256": "0500b1fad0d187f7815f5751f33ec78835d60ea9b047b21ed08e74c28d39f029"
+    },
+    {
+      "path": "tracks/tog/tasks/t56-coupled-reference/PROTOCOL.md",
+      "bytes": 7332,
+      "sha256": "1b7defa36dbe33df2ff6d01ca52aa62117ea7aeaea8a1121d4deba66406ae537"
+    },
+    {
+      "path": "tracks/tog/tasks/t56-coupled-reference/result.json",
+      "bytes": 31700,
+      "sha256": "95e616130f169cf325f79f3e27f79ac5879a029fef922291e92d4b11842ee099"
+    },
+    {
+      "path": "tracks/tog/tasks/t56-coupled-reference/execution.json",
+      "bytes": 4937,
+      "sha256": "6a2b25ae1b11c47921f535589637a7412b9d9c94110b617e285bc7b38d02b746"
+    },
+    {
+      "path": "tracks/tog/tasks/t56-coupled-reference/input-manifest.json",
+      "bytes": 2723,
+      "sha256": "cd353bc8eec8eb4616be9f44922fcafcad67e953a85545db1f5c6286d9548967"
+    },
+    {
+      "path": "tracks/tog/tasks/t56-coupled-reference/audit-manifest.json",
+      "bytes": 9396,
+      "sha256": "601bc9d1b431d7fa1ed8703d007dc118297c90ffdce00150fb83083d79643622"
+    },
+    {
+      "path": "tracks/tog/tasks/t57-finer-short-reference/DECISION.md",
+      "bytes": 9091,
+      "sha256": "2ff004ffa50276bdbf425d80df06be29b1017abbc60180fe04050221c900f328"
+    },
+    {
+      "path": "tracks/tog/tasks/t57-finer-short-reference/PROTOCOL.md",
+      "bytes": 6948,
+      "sha256": "02cab7e2195ab268dd3d00c98ab741825a44f9d80176e64115faa600ef30404d"
+    },
+    {
+      "path": "tracks/tog/tasks/t57-finer-short-reference/execution.json",
+      "bytes": 2793,
+      "sha256": "0fba254f5b3b485eca041fd93a3dd1cd0bb1ddb780b94e28faf0d190bd6f4672"
+    },
+    {
+      "path": "tracks/tog/tasks/t57-finer-short-reference/input-manifest.json",
+      "bytes": 6538,
+      "sha256": "6dc00fa6ed67bcd689e95b5c31457818e359d8142921e0b3da6a10c60430e91f"
+    },
+    {
+      "path": "tracks/tog/tasks/t57-finer-short-reference/audit-manifest.json",
+      "bytes": 13819,
+      "sha256": "4fe8d7f41632910d26d6e3eadb66d9879715d3ba5a3232aa9ba107ad14db3aa8"
+    },
+    {
+      "path": "tracks/tog/tasks/t57-finer-short-reference/memory.py",
+      "bytes": 2231,
+      "sha256": "4b83a89eff664dc0d86fb0c71b39c99d71720c1d18c5f93557e279d0ca3745fd"
+    },
+    {
+      "path": "tracks/tog/tasks/t58-separable-solver-qualification/solver.py",
+      "bytes": 2790,
+      "sha256": "c643626adb909d79cb352a5d08d9355e1ecf749c6f39cc266bf98a52edbe3e16"
+    },
+    {
+      "path": "tracks/tog/tasks/t58-separable-solver-qualification/FORMULATION.md",
+      "bytes": 5399,
+      "sha256": "d70c1a2105a3beb2506001335a1dbb581bd768f1ce3e1ef584ba3f50608dcfa3"
+    },
+    {
+      "path": "tracks/tog/tasks/t58-separable-solver-qualification/PROTOCOL.md",
+      "bytes": 6877,
+      "sha256": "d51ae3b26279af8f3eda3eb6bb7903f95be9653093fb11ea62da8a810c667d1e"
+    },
+    {
+      "path": "tracks/tog/tasks/t58-separable-solver-qualification/DECISION.md",
+      "bytes": 7594,
+      "sha256": "116bf655a4c48cf4917b27053794e843fa234ae8966000a32f460f212685aed6"
+    },
+    {
+      "path": "tracks/tog/tasks/t58-separable-solver-qualification/result.json",
+      "bytes": 37501,
+      "sha256": "34e8a1da37322456cccb8df9d1d6c0a0c4f9a0991048d20b056b012a4dc874b9"
+    },
+    {
+      "path": "tracks/tog/tasks/t58-separable-solver-qualification/execution.json",
+      "bytes": 8875,
+      "sha256": "8fd003d7f2775c32744177b0808a3f4779711046c119c50f948994022ad2087f"
+    },
+    {
+      "path": "tracks/tog/tasks/t58-separable-solver-qualification/input-manifest.json",
+      "bytes": 9574,
+      "sha256": "7d5ebdfaef27de08d97c9f6635b3a984a4d88d5a01b5fc3cefc38b4b5850675f"
+    },
+    {
+      "path": "tracks/tog/tasks/t58-separable-solver-qualification/audit-manifest.json",
+      "bytes": 16322,
+      "sha256": "30c1c8fcd0350367d998c84e6ff2106d65b72eefeea27233aa562409a21960e0"
+    },
+    {
+      "path": "tracks/tog/tasks/t59-direct-coupled-reference/reference.py",
+      "bytes": 23596,
+      "sha256": "341003961d69eaab70578b04d8ab55fa82aff7c0cb066f8e3a8c9395edf803a1"
+    },
+    {
+      "path": "tracks/tog/tasks/t59-direct-coupled-reference/FORMULATION.md",
+      "bytes": 3275,
+      "sha256": "c680766e71f8b59cb436d2a0b7a6ade51d1dbc7f1f7ccca66fc47c0df2a4a52f"
+    },
+    {
+      "path": "tracks/tog/tasks/t59-direct-coupled-reference/PROTOCOL.md",
+      "bytes": 5897,
+      "sha256": "d5b7d45c31cfed0e0f7ef1cbbd2b061a7b8d470783baa5eadaf304afff4dcc07"
+    },
+    {
+      "path": "tracks/tog/tasks/t59-direct-coupled-reference/DECISION.md",
+      "bytes": 9352,
+      "sha256": "9c628d2e047aea964fee9941e2dbfa03abed689fc6586653d66e8478429f2806"
+    },
+    {
+      "path": "tracks/tog/tasks/t59-direct-coupled-reference/result.json",
+      "bytes": 58706,
+      "sha256": "87085827f56a34a19e688fc8d05e467f0d3996ed93484e0cac049ae75fc159c6"
+    },
+    {
+      "path": "tracks/tog/tasks/t59-direct-coupled-reference/execution.json",
+      "bytes": 15732,
+      "sha256": "fec3ad0d7795cff5d79531cfe127f10653bd3eb78412621d90d3cbd9701d7f6d"
+    },
+    {
+      "path": "tracks/tog/tasks/t59-direct-coupled-reference/input-manifest.json",
+      "bytes": 9135,
+      "sha256": "b1d67d1b5ee3a7e0bc4da2989fb0f3c885b5f106e43196247ccdc080ad7d8ff6"
+    },
+    {
+      "path": "tracks/tog/tasks/t59-direct-coupled-reference/audit-manifest.json",
+      "bytes": 17475,
+      "sha256": "05e632ed56021da5970bbea266d811264e257139f19ae0adc73655bae3a94906"
+    },
+    {
+      "path": "tracks/validation/t54-scalar-review.md",
+      "bytes": 13323,
+      "sha256": "f1625f71aef525e3c08a1c16b37ecc7fdcbb1de5c1ba3c5e545b376dcc5454f7"
+    },
+    {
+      "path": "tracks/validation/t56-coupled-review.md",
+      "bytes": 17447,
+      "sha256": "ec44008a21429649bca6c2d77ff2b242003124e602510cf02d8e531ec8a62a4a"
+    },
+    {
+      "path": "tracks/validation/t57-finer-short-review.md",
+      "bytes": 21442,
+      "sha256": "217b5d2acd9b8e1409258ec6ca3cfd17293fa36466bbfb82ddb6cb9d39129a29"
+    },
+    {
+      "path": "tracks/validation/t58-separable-solver-review.md",
+      "bytes": 20591,
+      "sha256": "6ca648849dd1e10e014cedc2cb7c25194b9312e0802e93a468faa78c19987b1b"
+    },
+    {
+      "path": "tracks/validation/t59-direct-coupled-review.md",
+      "bytes": 10951,
+      "sha256": "456e6803469441b68c1d37be775f23bdf6851629003aa455e4b131d8c8c0ed91"
+    }
+  ],
+  "executable": {
+    "path": "C:/Users/seanzjxiao/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe",
+    "bytes": 107312,
+    "sha256": "5640e9be2fd33d05a1a9ae1228e2354609a69ab831605995ec4e2bd6da8fff5e"
+  },
+  "expected_python": "3.12.14",
+  "expected_numpy": "2.3.5",
+  "maximum_scientific_child_invocations": 1,
+  "child_timeout_seconds": 600,
+  "maximum_new_reference_trajectories": 6,
+  "reused_reference_trajectories": 0,
+  "new_CG_solves_permitted": 0,
+  "candidate_trajectories_permitted": 0,
+  "ordinary_model_trajectories_permitted": 1,
+  "case_names": [
+    "S64",
+    "S128",
+    "S256",
+    "T128",
+    "D192",
+    "Q128"
+  ],
+  "maximum_steps": 2800,
+  "maximum_transport_stages": 5600,
+  "maximum_direct_solves": 5630,
+  "maximum_completed_checkpoints": 30,
+  "time_end": 1.0,
+  "scientific_children_before_freeze_this_task": 0,
+  "OS_only_preparation_probes": 1,
+  "peak_working_set_stop_bytes": 2147483648,
+  "minimum_available_host_bytes": 3221225472,
+  "memory_sample_interval_seconds": 0.25,
+  "prior_T56_T57_T58_T59_supervised_seconds": 1560.418468699907,
+  "new_source_queries": 0,
+  "new_primary_documents": 0,
+  "pre_run_review": "root and t48_review source/protocol/runner readback; no unresolved blocker; volume_screen reference/supervisor author, transfer_screen measurement author"
+}
