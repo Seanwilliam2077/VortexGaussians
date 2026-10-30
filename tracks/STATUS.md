@@ -1,8 +1,8 @@
 # Dual-track status
 
-## 2026-10-30 current: A20 reviewed; A21 cultural decision
+## 2026-10-30 current: A21 decision reviewed; A22 production
 
-[A20](art/studies/a20-room-gift/README.md) is a realized fictional room-gift work with a complete initial essay and nine original stage images. [Independent review](validation/art-a20-review-round-01.md): overall3/6, readiness6/10, confidence4/5, seven subscores4/2/3/3/4/4/4. Specific objects and door occlusion now support the argument; the cultural position of external fire and the knowledge gained from authored withdrawal remain insufficient. One normal UI inspection completed in13.810165s with150 fire steps, not aesthetic validation or total project cost. [A21](art/studies/a21-paper-offering-position/BRIEF.md) now permits only a bounded paper-offering context inquiry and one creator decision about external fire; no image revision, rerun, recording or TOG computation follows automatically. A14 historical3/6 and A15/A16 failures remain. Overall5/6 target unmet, research branch only, full goal active.
+[A21](art/studies/a21-paper-offering-position/ROOT_DECISION.md) acquired three readable geographically bounded sources and records the creator decision to remove unsupported external fire and delivery claims. [Independent decision review](validation/art-a21-decision-review.md) supports one actual revision without raising A20 overall3/6 (readiness6/10, confidence4/5). [A22](art/studies/a22-undelivered-room/BRIEF.md) is now one finite room-gift formal study, with no fire simulation. The loss of direct platform material is explicit: this study cannot stand in for the original Vortex platform art contribution. Original works remain; no main deployment, new search batch, recording repair or TOG computation is authorized here. Overall5/6 target unmet, full goal active.
 
 
 Updated 30 October 2026. Active exploration authorized by the author. TOG and Art Papers contributions are both unestablished.

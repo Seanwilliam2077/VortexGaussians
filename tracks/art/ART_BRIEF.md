@@ -1,8 +1,8 @@
 # 可燃的数字记忆（暂定）
 
-## 2026-10-30 current: A20 reviewed; A21 cultural decision
+## 2026-10-30 current: A21 decision reviewed; A22 production
 
-[A20](studies/a20-room-gift/README.md) is a realized fictional room-gift work with a complete initial essay and nine original stage images. [Independent review](../validation/art-a20-review-round-01.md): overall3/6, readiness6/10, confidence4/5, seven subscores4/2/3/3/4/4/4. Specific objects and door occlusion now support the argument; the cultural position of external fire and the knowledge gained from authored withdrawal remain insufficient. One normal UI inspection completed in13.810165s with150 fire steps, not aesthetic validation or total project cost. [A21](studies/a21-paper-offering-position/BRIEF.md) now permits only a bounded paper-offering context inquiry and one creator decision about external fire; no image revision, rerun, recording or TOG computation follows automatically. A14 historical3/6 and A15/A16 failures remain. Overall5/6 target unmet, research branch only, full goal active.
+[A21](studies/a21-paper-offering-position/ROOT_DECISION.md) acquired three readable geographically bounded sources and records the creator decision to remove unsupported external fire and delivery claims. [Independent decision review](../validation/art-a21-decision-review.md) supports one actual revision without raising A20 overall3/6 (readiness6/10, confidence4/5). [A22](studies/a22-undelivered-room/BRIEF.md) is now one finite room-gift formal study, with no fire simulation. The loss of direct platform material is explicit: this study cannot stand in for the original Vortex platform art contribution. Original works remain; no main deployment, new search batch, recording repair or TOG computation is authorized here. Overall5/6 target unmet, full goal active.
 
 
 **2026-10-30更新：** [A18及独立决定](studies/a18-context-positioning/DECISION.md)关闭A14《两边的火》作为当前投稿核心，保留其试作价值、总体3/6、准备度6/10、置信度4/5。关闭限于作品与自身主张的缺口，不以读取失败推导领域没有空间，也不要求所有艺术都必须影响他人、真人输入或私人记忆。艺术线继续用原平台探索；[A19单案创作决定](studies/a19-artistic-commitment/BRIEF.md)先选择有明确内容的对象和观看关系，之后才决定制作。暂定主题保留，用户未提供的经历不代写。以下历史brief不重启旧关闭路线；总体5/6目标未达。[复评流程](REVIEW_LOOP.md)继续适用。
