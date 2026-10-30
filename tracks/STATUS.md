@@ -1,8 +1,8 @@
 # Dual-track status
 
-## 2026-10-31 current: A24 material sample completed; consultation pending
+## 2026-10-31 current: A24 creator recommits; A25 complete-work production
 
-[A24](art/studies/a24-signature-material/README.md) completed one fixed six-second signature sample: 2023 points, 555 initially ignited, 360 steps, seven images/932118 bytes and 10.3260526 seconds including browser work. The central name remained legible and glowed gold; the predicted visible darkening/occlusion relation was not observed. Its char=1 but fuel remains0.271738%, state1/glow1: this is not a post-burn or permanent effect. [Process](art/studies/a24-signature-material/PROCESS.md) preserves that boundary and the negative initial claim. Independent material consultation and creator response follow without another run or a submission score. A22 remains overall3/6, readiness7/10, confidence4/5; original platform remains, overall5/6 unmet, goal active, no TOG computation or main change.
+[A24 independent consultation](validation/art-a24-material-review.md) preserves the unsupported darkening expectation while identifying a limited visible relation: the requested-for-removal name is distinguished during processing. The [creator response](art/studies/a24-signature-material/CREATOR_RESPONSE.md) accepts responsibility for publicly presenting that request, without claiming fulfilled withdrawal, permanent exposure or a post-burn state. [Root decision](art/studies/a24-signature-material/DECISION.md) permits [A25](art/studies/a25-public-request/BRIEF.md), one complete viewing sequence using the frozen six-second material, bounded practice comparison and subsequent short paper. No retuning, extended burn, recording or TOG queue. Historical A22 overall3/6/readiness7/10 remain; no new submission score, overall5/6 unmet, original platform preserved, goal active and main unchanged.
 
 
 Updated 30 October 2026. Active exploration authorized by the author. TOG and Art Papers contributions are both unestablished.

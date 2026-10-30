@@ -1,8 +1,8 @@
 # 艺术线：制作与独立复评
 
-## 2026-10-31 current: A24 material sample completed; consultation pending
+## 2026-10-31 current: A24 creator recommits; A25 complete-work production
 
-[A24](studies/a24-signature-material/README.md) completed one fixed six-second signature sample: 2023 points, 555 initially ignited, 360 steps, seven images/932118 bytes and 10.3260526 seconds including browser work. The central name remained legible and glowed gold; the predicted visible darkening/occlusion relation was not observed. Its char=1 but fuel remains0.271738%, state1/glow1: this is not a post-burn or permanent effect. [Process](studies/a24-signature-material/PROCESS.md) preserves that boundary and the negative initial claim. Independent material consultation and creator response follow without another run or a submission score. A22 remains overall3/6, readiness7/10, confidence4/5; original platform remains, overall5/6 unmet, goal active, no TOG computation or main change.
+[A24 independent consultation](../validation/art-a24-material-review.md) preserves the unsupported darkening expectation while identifying a limited visible relation: the requested-for-removal name is distinguished during processing. The [creator response](studies/a24-signature-material/CREATOR_RESPONSE.md) accepts responsibility for publicly presenting that request, without claiming fulfilled withdrawal, permanent exposure or a post-burn state. [Root decision](studies/a24-signature-material/DECISION.md) permits [A25](studies/a25-public-request/BRIEF.md), one complete viewing sequence using the frozen six-second material, bounded practice comparison and subsequent short paper. No retuning, extended burn, recording or TOG queue. Historical A22 overall3/6/readiness7/10 remain; no new submission score, overall5/6 unmet, original platform preserved, goal active and main unchanged.
 
 
 2026-10-30。用户重新授权持续艺术迭代，并要求与评分 Agent 交流直至至少 5 分。本轮把目标解释为既有内部六档总评中的 **5/6（Accept）**，不是就绪度 5/10，也不是官方录用概率。
@@ -25,6 +25,6 @@
 
 ## 当前有限任务
 
-[A24材料小样](studies/a24-signature-material/BRIEF.md)只检验原火/char是否在三位虚构署名者的字形上产生可辨关系。root承担具体文字、对象及小样决定；A23作者不承诺完整作品的原意见保留。A23独立咨询没有评分或代选规则。
+[A25](studies/a25-public-request/BRIEF.md)完成‘被公示的撤名请求’观看作品，保持A24固定六秒原模型窗口、名字及材料条件。A24原亮火遮暗变期待未支持；新现象是处理期间姓名被区别标出，尚非艺术贡献。独立材料咨询与原创者改承诺分别保存，root批准有限制作。
 
-一次固定正常UI序列及原图之后，评分Agent先作材料咨询；有可用现象也不能直接给投稿5/6。旧A14、A20和A22作品、原3/6及关闭范围保留，补录循环关闭，TOG无新队列。实际制作与论文包具备后才新评分，不把每次文件完善都当一次艺术贡献。
+一次正常UI检查仅核新作品行为，不重选火效果；并行三查询/四正文访问做指定一手艺术实践比较。实际图像后写完整短稿并复评，不把材料资格或页面精制兑换分数。A22历史3/6、准备度7/10保留；房间和录像循环关闭，TOG无新队列，main不动。任何评分仍可维持或下降，5/6是目标而非给分指令。

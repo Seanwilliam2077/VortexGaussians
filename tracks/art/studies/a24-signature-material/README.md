@@ -6,4 +6,4 @@
 - [唯一结果](inspection-01/result.json)：2023点、初次点火555点、360步；10.3260526秒，7图932,118字节，12行为项true。工程结果不计艺术成功。
 - 实际原图：[初态](inspection-01/01-ready.png)、[点火](inspection-01/02-ignited.png)、[2秒](inspection-01/03-two-seconds.png)、[4秒](inspection-01/04-four-seconds.png)、[6秒](inspection-01/05-six-seconds.png)、[窄屏](inspection-01/06-mobile-ended.png)、[停止](inspection-01/07-left.png)。
 
-六秒时目标名char=1但仍未燃尽，glow=1，不能说烧完后仍如此或永久不可移除。正文未参与模拟。暂不追加推进、效果调参、录像或TOG运行；等待独立材料咨询和创作者对实际结果的回应。A22历史总体3/6保留，目标5/6未达，原作品与main不变。
+六秒时目标名char=1但仍未燃尽，glow=1，不能说烧完后仍如此或永久不可移除。正文未参与模拟。[独立材料咨询](../../../validation/art-a24-material-review.md)与[创作者回应](CREATOR_RESPONSE.md)已完成；[root决定](DECISION.md)允许A25一件完整观看作品，原A24不追加推进或效果调参。无录像或TOG运行。A22历史总体3/6保留，目标5/6未达，原作品与main不变。
