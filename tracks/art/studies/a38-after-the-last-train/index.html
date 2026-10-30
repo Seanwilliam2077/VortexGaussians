@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>末班之后</title>
+  <link rel="stylesheet" href="work.css">
+</head>
+<body>
+  <main class="page">
+    <header>
+      <div><p class="edition">一张关站交接条</p><h1>末班之后</h1></div>
+      <p class="fiction">原创虚构文本<br>人物与事项不指向现实车站</p>
+    </header>
+    <section class="work" aria-label="可以停留阅读的交接条">
+      <div id="canvas-frame" class="canvas-frame">
+        <canvas id="view" width="1200" height="600" role="img" aria-label="六行交接条的高斯材料字；按住指针时材料推进，松开后冻结"></canvas>
+        <div id="loading" role="status">正在准备字面</div>
+      </div>
+      <div id="end-card" class="end-card" hidden>
+        <p class="edition">观看已结束</p>
+        <h2>字面停在刚才的位置。</h2>
+        <p>你可以从原文开始另一遍。</p>
+      </div>
+      <div class="reading-bar">
+        <p id="status" role="status" aria-live="polite">正在准备字面。</p>
+        <p id="time-readout">0.00 / 6.00 模拟秒</p>
+      </div>
+      <div class="controls">
+        <p class="gesture-note">按住字面，可沿行移动。松开后，阅读不限时。</p>
+        <button id="leave" type="button" disabled>结束观看</button>
+        <button id="restart" type="button" hidden>从原文开始另一遍</button>
+      </div>
+      <p id="error" role="alert" hidden></p>
+    </section>
+    <details id="colophon" class="colophon">
+      <summary>关于字面与这次观看</summary>
+      <div class="method">
+        <p>全文是原创虚构的关站交接条。这里的火只作用于作品中的材料字，不代表关门、分水、留宿或交接已经完成。字面初态可先停留阅读；是否以及如何经过它，由当前观看者决定。</p>
+        <p>按住时每次绘制至多推进一个固定步，在当前位置点火；火也可能由已点燃的字继续传播。空白处允许零命中，不会吸附到文字。松开、离开画布、取消触点、窗口失焦或切入后台都会冻结。累计到六模拟秒后停留。</p>
+        <p>结束会离开画布呈示并保留状态。“从原文开始另一遍”恢复同一全文初态；它没有删除旧文件、截图或先前阅读。这里没有永久擦除的承诺。</p>
+        <p>字面由原VortexGaussians平台的高斯材料字绘制。32px字号与48px行距依据1200×600源画布；窄屏仅缩放。长句部分点位于流体横向域外，不能当作整张纸均匀的热动力学。旧材料结果与本次记录分别保留。</p>
+      </div>
+      <details class="measurements">
+        <summary>当前材料记录</summary>
+        <p id="stats-caption">等待初态</p>
+        <div class="table-scroll">
+          <table>
+            <thead><tr><th scope="col">行</th><th scope="col">点数</th><th scope="col">热量均值</th><th scope="col">燃料余量</th><th scope="col">state 1 / 2</th></tr></thead>
+            <tbody id="group-rows"></tbody>
+          </table>
+        </div>
+        <p id="counter-readout"></p>
+        <p class="stat-note">frontierDeferred是累计延期的点×步次数，不是唯一点数。state 2只表示代码判定燃料耗尽，不恢复逐点延期史或宣称正常燃尽。字是否可读、火是否遮住句子，须看实际画面。</p>
+      </details>
+      <footer><span>A38 · 2026</span><nav><a href="WORK_SPEC.md">动作与材料规格</a><a href="BRIEF.md">制作范围</a></nav></footer>
+    </details>
+  </main>
+  <iframe id="source" src="../../../../demo/index.html?embed=1" title="原 VortexGaussians 渲染器" tabindex="-1" aria-hidden="true"></iframe>
+  <script type="module" src="work.mjs"></script>
+</body>
+</html>
