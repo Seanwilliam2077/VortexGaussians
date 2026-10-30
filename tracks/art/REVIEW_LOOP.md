@@ -1,10 +1,12 @@
 # 艺术线：制作与独立复评
 
-## 2026-10-31 current: A39 material qualified for one frozen-work manuscript
+## 2026-10-31 current: A39 formally 3/6 from both reviewers; A40 creative choice only
 
-[A38](studies/a38-after-the-last-train/PROCESS.md) preserves its actual later-contact clock starvation. [A39](studies/a39-handover-clock-maintenance/PROCESS.md) uses only the existing elapsed clock: one 23.6109924s run, seven PNG (2045617 bytes), 360 steps, all 14 behavior/source checks, temporary resources closed. Later contacts now have visible local warmth and nonzero material updates in lines4/6; graph deferrals, particle capacity and domain limits remain. Different within-hold event timing prevents a strictly paired numerical causal claim. This is ordinary maintenance, not a contribution.
+[A39](studies/a39-handover-clock-maintenance/README.md) is a completed fictional six-line work with one actual 23.6109924s inspection, seven PNG, a full manuscript and claim/evidence map. Existing elapsed-clock maintenance restored visible later-contact response; graph/particle/domain limits and A38's failure remain. This is not a contribution inferred from maintenance.
 
-The creator and both original reviewers independently read the same four main stills and support one [complete manuscript](studies/a39-handover-clock-maintenance/PAPER_BRIEF.md) from the frozen work. They retain the strongest counterreading: a literary note with a highlighter. The complete manuscript and claim/evidence map are now with the original two independent scorers; no additional run, source search or artwork change is authorized by this finite task. All know the text and prior consultations; none claims blind or human audience evidence. No new formal score yet. A32 remains closed at 3/6 and 4/6, historical outcomes intact, overall5/6 unmet. TOG/main unchanged; full goal active.
+The [original fixed reviewer](../validation/art-a39-review-round-01.md) gives overall3/6, readiness7/10, confidence3/5; the [original second reviewer](../validation/art-a39-second-review-round-01.md) gives overall3/6, readiness7/10, confidence4/5. Both acknowledge the actual form but find the literary-note-plus-highlighter reading stronger than the claimed artistic increment. They independently read the same frozen pack, with prior consultation and no continuous or human viewing disclosed. The [creator response](studies/a39-handover-clock-maintenance/RESPONSE_AND_DECISION.md) identifies no overlooked counterevidence and closes this configuration's submission-core, rewrite and repeat-capture queue. No historical score changes; overall5/6 remains unmet.
+
+[A40](studies/a40-material-handover-choice/BRIEF.md) assigns a new creator one bounded choice about an actually altered digital text passed into a later presentation, allowing no-selection. Nine fixed documents and at most two saved images; no production, run, search, score or new reviewer. New buttons or file transfer are not assumed to be art contributions. TOG/main unchanged; full goal active.
 
 
 2026-10-30。用户重新授权持续艺术迭代，并要求与评分 Agent 交流直至至少 5 分。本轮把目标解释为既有内部六档总评中的 **5/6（Accept）**，不是就绪度 5/10，也不是官方录用概率。
@@ -27,4 +29,4 @@ The creator and both original reviewers independently read the same four main st
 
 ## 当前有限任务
 
-A39动作条件已获实际支持，作者和原两位评分者各自选择一次完整论述。冻结六行交接条、四主图和一次真实输入记录；PAPER_DRAFT与CLAIM_EVIDENCE已完成，由同两位原评分者独立正式评分中。不加运行、素材、路径或来源。维护、诚实记录和允许写作都不计作艺术贡献；文学便条加荧光笔反读须得到实质回应。旧分保留，5/6未达。
+A39已由原两位独立评为3/6，作者读完整意见后确认没有漏读的现成反证，封存当前投稿核心、润稿及同路径补录。A40仅由新创作Agent写一次实际材料交接的选择，九文/最多两既有图，不制作、不运行、不检索或评分，允许不选。原两位评分者不替换；5/6目标未达，所有旧分保留。
