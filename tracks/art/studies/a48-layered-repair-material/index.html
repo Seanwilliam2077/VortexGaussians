@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>恢复前片</title>
+  <link rel="stylesheet" href="./work.css">
+</head>
+<body>
+  <main>
+    <div id="stage" aria-busy="true">
+      <canvas id="work" width="720" height="720" aria-label="两张错层纸片"></canvas>
+      <div id="cover" role="status">准备中</div>
+    </div>
+    <nav aria-label="作品操作">
+      <button id="restore" type="button" disabled>恢复前片</button>
+      <button id="leave" type="button">离开</button>
+    </nav>
+  </main>
+  <div id="source-host" aria-hidden="true"></div>
+  <script type="module" src="./work.mjs"></script>
+</body>
+</html>

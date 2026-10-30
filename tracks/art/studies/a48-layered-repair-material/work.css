@@ -1,0 +1,14 @@
+:root { color-scheme: dark; font-family: system-ui, sans-serif; background: #171b19; color: #e4ddcc; }
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; display: grid; place-items: center; }
+main { width: min(720px, 100vw); padding-bottom: 20px; }
+#stage { position: relative; width: 100%; aspect-ratio: 1; }
+#work { display: block; width: 100%; height: 100%; }
+#cover { position: absolute; inset: 0; display: grid; place-items: center; background: #1d2320; font-size: 14px; }
+#cover[hidden] { display: none; }
+nav { display: flex; justify-content: center; gap: 24px; padding-top: 20px; }
+button { appearance: none; border: 1px solid #6b716a; border-radius: 2px; background: transparent; color: inherit; padding: 9px 18px; font: inherit; font-size: 14px; cursor: pointer; }
+button:disabled { opacity: .35; cursor: default; }
+button:focus-visible { outline: 2px solid #e4ddcc; outline-offset: 4px; }
+#source-host { position: fixed; left: -10000px; top: 0; width: 720px; height: 720px; pointer-events: none; }
+#source-host iframe { width: 720px; height: 720px; border: 0; }
