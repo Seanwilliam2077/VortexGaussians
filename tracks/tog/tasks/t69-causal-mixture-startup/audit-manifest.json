@@ -1,0 +1,449 @@
+{
+  "schema": "t69-causal-mixture-startup-publication-v1",
+  "created_utc": "2026-10-30T08:08:23.238134+00:00",
+  "parent_commit": "0b972da02d201828766394bf5b8960f8c7af50d8",
+  "goal_status": "active_not_submission_ready",
+  "evidence": {
+    "schema": "t69-causal-mixture-startup-evidence-v1",
+    "created_utc": "2026-10-30T08:01:23.263377+00:00",
+    "parent_commit": "0b972da02d201828766394bf5b8960f8c7af50d8",
+    "status": "analytic_ordinary_causal_comparator_selected_not_numerically_qualified",
+    "input_identities": [
+      {
+        "path": "tracks/tog/tasks/t52-best-tangent-enstrophy/ANALYSIS.md",
+        "bytes": 5822,
+        "sha256": "16d2f8b9f9d1e7ea3d9e664bbb3edd2d104d6b87bee052899ceb508d12fdfae3"
+      },
+      {
+        "path": "tracks/tog/tasks/t54-scalar-verification/result.json",
+        "bytes": 3679,
+        "sha256": "66a83b67cff104773217757bc08fe9751dd357824778b130c432a4191d7cc9b8"
+      },
+      {
+        "path": "tracks/tog/tasks/t55-axisymmetric-reference/TASK.md",
+        "bytes": 4132,
+        "sha256": "b470e55c6449348136673764e7d7b975cd3bad479ddefa0d881d827eba84e89e"
+      },
+      {
+        "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/FORMULATION.md",
+        "bytes": 4702,
+        "sha256": "c7acd044d5800a5818e0a77a5ee8faededda3de026194c46d875b2ea85ff220b"
+      },
+      {
+        "path": "tracks/tog/tasks/t67-compact-mixture-contract/DERIVATION.md",
+        "bytes": 11302,
+        "sha256": "e2f73c592fe4d747dc685cc4213b1920902e4261d0e9dfa8db59db35dbe7afc9"
+      },
+      {
+        "path": "tracks/tog/tasks/t68-compact-mixture-capacity/result.json",
+        "bytes": 41654,
+        "sha256": "8b44c84c5bdefa6f649b4176546ae1336a209b36dc87f1c5af5f66198b7a4f67"
+      }
+    ],
+    "scientific_source_artifact_count": 6,
+    "external_source_batches": 0,
+    "new_scientific_invocations": 0,
+    "new_arrays_decoded": 0,
+    "new_raw_array_hashes": 0,
+    "new_fits": 0,
+    "new_integrals": 0,
+    "new_flow_trajectories": 0,
+    "new_field_evaluations": 0,
+    "new_parameter_searches": 0,
+    "scientific_series_seconds": 1990.3707298998488,
+    "scientific_series_scope": [
+      "T56",
+      "T57",
+      "T58",
+      "T59",
+      "T60",
+      "T63",
+      "T65",
+      "T66",
+      "T68"
+    ],
+    "scientific_series_is_total_project_cost": false,
+    "contract_numerically_evaluated": false,
+    "formal_error_certificate": false,
+    "causal_dynamics_qualified": false,
+    "full_t1_task_passed": false,
+    "TOG_contribution_established": false,
+    "ordinary_formulations_considered": [
+      "current_residual_zero_weight_birth",
+      "finite_step_Euler_target_projection"
+    ],
+    "selected_formulation": "bounded_finite_step_Euler_target_projection",
+    "exact_initial_field": "1.5*exp(-(r*r+z*z)/2)",
+    "initial_parameter_perturbation": false,
+    "future_reference_predictor_inputs": false,
+    "new_fit_metric": "all-space 2*pi*r^3 inner product for q",
+    "physical_score_metric_unchanged": "original D8 physical-vorticity error and original full-space model moment gates",
+    "amplitude_rule": "max(0,B/M)",
+    "signed_Euler_target_permitted": true,
+    "reference_moment_constraints_in_prediction": false,
+    "circulation_and_impulse": "reported diagnostics; unconstrained in selected projection",
+    "initial_coincident_jacobian_rank_free_scale": 4,
+    "initial_coincident_jacobian_rank_fixed_circulation": 3,
+    "initial_coincident_jacobian_rank_fixed_circulation_and_impulse": 2,
+    "density_tangent_cone_completely_classified": false,
+    "per_step_caps": {
+      "bank_components_max": 47,
+      "bank_pairs_max": 1128,
+      "initial_exact_state_bank_components": 45,
+      "initial_exact_state_bank_pairs": 1035,
+      "local_starts_max": 4,
+      "levels": 3,
+      "polls_per_level_max": 8,
+      "signed_neighbors_per_poll": 12,
+      "neighbor_proposals_max": 1152,
+      "geometry_proposals_max": 2280,
+      "distinct_component_bases_max": 1199,
+      "ordered_current_pairs_max": 4,
+      "scalar_improper_cross_integrals_max": 4796,
+      "weight_and_control_attempts_max": 9121
+    },
+    "full_target_norm_cost_in_cross_integral_cap": false,
+    "global_projection_optimality_claim": false,
+    "numerical_convergence_claim": false,
+    "inherited_T54_closed_metrics": {
+      "beta_best_over_g0": 0.29030989544096925,
+      "beta_center_over_g0": 0.6666666666666666,
+      "E_best": 0.3551693233816372,
+      "E_center": 1.2628476537634736,
+      "E_zero_derivative_reference": 1.0,
+      "best_to_center_residual_ratio": 0.2812447901559462,
+      "residual_reduction_fraction": 0.7187552098440537,
+      "kappa_N": 0.329396116405985,
+      "kappa_best": 0.11699139578845269,
+      "kappa_center": 0.4159771127620982
+    },
+    "inherited_T68_verdict": "ordinary_two_gaussian_endpoint_witness",
+    "inherited_T68_sensitivity": {
+      "absolute_difference": 0.00010007312258487888,
+      "tolerance": 0.001,
+      "passed": true,
+      "selected_parameters_identical": true,
+      "selection_reference": "S256"
+    },
+    "inherited_T68_field_errors": {
+      "S256": 0.04751348970275233,
+      "S128": 0.047613562825337206
+    },
+    "next_task": {
+      "name": "T70 current-state evaluator and first-step projection qualification",
+      "maximum_scientific_child_invocations": 1,
+      "child_timeout_seconds": 120,
+      "observed_peak_working_set_limit_bytes": 536870912,
+      "required_available_physical_bytes": 1073741824,
+      "first_step_sizes": [
+        "1/16",
+        "1/32"
+      ],
+      "first_step_initial_state": "same exact q0 independently",
+      "evaluator_fixture": {
+        "Gamma": "1.5*sqrt(2*pi)",
+        "eta": "1/3",
+        "geometry_sr_sz_z": [
+          [
+            0.9,
+            1.05,
+            -0.2
+          ],
+          [
+            1.1,
+            0.85,
+            0.4
+          ]
+        ]
+      },
+      "fixture_is_author_defined": true,
+      "fixture_is_new_trajectory_or_scene": false,
+      "future_reference_arrays_allowed": false,
+      "numerical_protocol_and_review_required_before_launch": true,
+      "invocation_performed_in_T69": false
+    },
+    "T60_history_reclassified": false,
+    "historical_outcomes_unchanged": true,
+    "metadata_script": {
+      "path": "tracks/tog/tasks/t69-causal-mixture-startup/local/record_metadata.py",
+      "bytes": 5599,
+      "sha256": "e2649fea6920e7039b205bbb5a2f29efcdfabe4fc2410c0de4a7a309a0bc37af"
+    },
+    "metadata_elapsed_before_write_seconds": 0.08727050002198666
+  },
+  "publication_plan": {
+    "path": "tracks/tog/tasks/t69-causal-mixture-startup/local/publication-plan.json",
+    "bytes": 15721,
+    "sha256": "8c1bc51e7b27d6da7da4b6bc08a67c8b8433e81296c957f87d3a2e4b05b96520"
+  },
+  "publication_plan_is_ignored_local_support": true,
+  "analysis_only": true,
+  "new_measurement": false,
+  "new_scientific_invocations": 0,
+  "new_arrays_decoded": 0,
+  "new_raw_array_hashes": 0,
+  "new_fits": 0,
+  "new_integrals": 0,
+  "new_flow_trajectories": 0,
+  "new_field_evaluations": 0,
+  "new_parameter_searches": 0,
+  "inherited_T68_outcome": {
+    "measurement_qualified": true,
+    "execution_status": "completed_ordinary_two_gaussian_endpoint_witness",
+    "numerical_qualified": true,
+    "candidate_verdict": "ordinary_two_gaussian_endpoint_witness",
+    "capacity_witness": true,
+    "formal_exclusion": false,
+    "causal_dynamics_claim": false,
+    "result_exists": true,
+    "worker_failure_exists": false,
+    "scientific_child_invocations": 1,
+    "new_flow_trajectories": 0,
+    "scientific_child_supervised_seconds": 10.119494400103576,
+    "prior_scientific_child_seconds": 1980.2512354997452,
+    "cumulative_scientific_child_seconds": 1990.3707298998488,
+    "prior_scientific_series_scope": [
+      "T56",
+      "T57",
+      "T58",
+      "T59",
+      "T60",
+      "T63",
+      "T65",
+      "T66"
+    ],
+    "current_scientific_series_scope": [
+      "T56",
+      "T57",
+      "T58",
+      "T59",
+      "T60",
+      "T63",
+      "T65",
+      "T66",
+      "T68"
+    ],
+    "scientific_series_is_total_project_cost": false,
+    "T61_qualification_seconds": 0.9663960000034422,
+    "T60_history_reclassified": false,
+    "T61_ordinary_model_failure_unchanged": true
+  },
+  "contract_numerically_evaluated": false,
+  "formal_error_certificate": false,
+  "prior_scientific_child_seconds": 1990.3707298998488,
+  "scientific_series_seconds": 1990.3707298998488,
+  "scientific_series_scope": [
+    "T56",
+    "T57",
+    "T58",
+    "T59",
+    "T60",
+    "T63",
+    "T65",
+    "T66",
+    "T68"
+  ],
+  "prior_scientific_cost_scope": "T56/T57/T58/T59/T60/T63/T65/T66/T68 recorded scientific-child series subtotal; not total project cost",
+  "artifacts": [
+    {
+      "path": "tracks/tog/tasks/t69-causal-mixture-startup/.gitignore",
+      "bytes": 7,
+      "sha256": "a7d8bdcefba82a95ebc021d87c629fdea21f13af953bf01e28b7cf8b0eeceb41"
+    },
+    {
+      "path": "tracks/tog/tasks/t69-causal-mixture-startup/ANALYSIS.md",
+      "bytes": 11426,
+      "sha256": "8818bd794fc8563d5bb174d96e61894443978a5e4e469fb6ff6bcefb9264d5e9"
+    },
+    {
+      "path": "tracks/tog/tasks/t69-causal-mixture-startup/COMPARATOR.md",
+      "bytes": 10310,
+      "sha256": "2e3827cec3f5a2d2674d3fdf603443a43540cd390a2d7136da5a97d8f6785ca1"
+    },
+    {
+      "path": "tracks/tog/tasks/t69-causal-mixture-startup/DECISION.md",
+      "bytes": 5305,
+      "sha256": "56450e13afbf7401ebb98b9b715db3495797a541276f1f62dd4124dc79b385e4"
+    },
+    {
+      "path": "tracks/tog/tasks/t69-causal-mixture-startup/README.md",
+      "bytes": 2548,
+      "sha256": "1bdc0ac286bcb047d5db88e252cd6112ae4fe344487d0d5fb055d4b80e35c247"
+    },
+    {
+      "path": "tracks/tog/tasks/t69-causal-mixture-startup/evidence.json",
+      "bytes": 5932,
+      "sha256": "5363e57581c973e322a269a1d4b43c8364b6a6585b33ce105f1abbf74ed6febe"
+    },
+    {
+      "path": "tracks/validation/t69-causal-mixture-review.md",
+      "bytes": 7872,
+      "sha256": "e4b1be07382ae11b2690ee2494b47f57d677f38ae5574e271fb45414848a6987"
+    }
+  ],
+  "frozen_inputs": [
+    {
+      "path": "tracks/tog/tasks/t52-best-tangent-enstrophy/ANALYSIS.md",
+      "bytes": 5822,
+      "sha256": "16d2f8b9f9d1e7ea3d9e664bbb3edd2d104d6b87bee052899ceb508d12fdfae3"
+    },
+    {
+      "path": "tracks/tog/tasks/t54-scalar-verification/result.json",
+      "bytes": 3679,
+      "sha256": "66a83b67cff104773217757bc08fe9751dd357824778b130c432a4191d7cc9b8"
+    },
+    {
+      "path": "tracks/tog/tasks/t55-axisymmetric-reference/TASK.md",
+      "bytes": 4132,
+      "sha256": "b470e55c6449348136673764e7d7b975cd3bad479ddefa0d881d827eba84e89e"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/FORMULATION.md",
+      "bytes": 4702,
+      "sha256": "c7acd044d5800a5818e0a77a5ee8faededda3de026194c46d875b2ea85ff220b"
+    },
+    {
+      "path": "tracks/tog/tasks/t67-compact-mixture-contract/DERIVATION.md",
+      "bytes": 11302,
+      "sha256": "e2f73c592fe4d747dc685cc4213b1920902e4261d0e9dfa8db59db35dbe7afc9"
+    },
+    {
+      "path": "tracks/tog/tasks/t68-compact-mixture-capacity/result.json",
+      "bytes": 41654,
+      "sha256": "8b44c84c5bdefa6f649b4176546ae1336a209b36dc87f1c5af5f66198b7a4f67"
+    }
+  ],
+  "current_state_documents": [
+    {
+      "path": "tracks/STATUS.md",
+      "bytes": 90994,
+      "sha256": "673d518e65ae8f9aa1d5c1bc3c4f3cdae4421a2efd5a8df519a8adda6a75140e"
+    },
+    {
+      "path": "tracks/EXPLORATION.md",
+      "bytes": 8365,
+      "sha256": "151c8672a76b30f17e68262de6ea1e59d9e6043f556d82d26a12c7fc83c0b9cd"
+    },
+    {
+      "path": "tracks/tog/README.md",
+      "bytes": 8214,
+      "sha256": "3809470c1884f44b317142af7283abbb2a1f35cf2318b88729d2b40f29da9e5f"
+    }
+  ],
+  "preservation_chain": {
+    "parent_manifest": {
+      "path": "tracks/tog/tasks/t68-compact-mixture-capacity/audit-manifest.json",
+      "bytes": 31982,
+      "sha256": "77ae1d5463a94367d304b97411fa55d12c5e85682db01f71db46c5da54b3cc8b"
+    },
+    "verified_prior_artifact_count": 829,
+    "all_recorded_prior_bytes_unchanged": true
+  },
+  "parent_tracked_file_count": 1357,
+  "other_parent_tracked_files_unchanged": 1354,
+  "other_parent_tracked_files_unchanged_scope": "Git diff/index status; array content bytes not verified",
+  "nonarray_parent_files_byte_verified": 1336,
+  "historical_array_path_count_not_opened": 18,
+  "historical_array_paths_not_opened": [
+    {
+      "path": "tracks/tog/fixtures/r22/approved.npz",
+      "blob_id": "a20c97964788b14f3fe3bed07df0bfca9b1fa4bd"
+    },
+    {
+      "path": "tracks/tog/fixtures/r22/witness.npz",
+      "blob_id": "6333e00b1cfa4032b5becb6cd3672f65ad34d87f"
+    },
+    {
+      "path": "tracks/tog/tasks/t02-authored-upper-bend/run-01/target-edit.npy",
+      "blob_id": "a7bd860b30e6d06a5936b122638e863ec471a4ba"
+    },
+    {
+      "path": "tracks/tog/tasks/t02-authored-upper-bend/run-01/target-full.npy",
+      "blob_id": "ff6ff290dd4e5cb274c44913dfaa07a420d2db61"
+    },
+    {
+      "path": "tracks/tog/tasks/t03-ordinary-conflict-screen/edit_only-final.npz",
+      "blob_id": "d843ddda0b4a554cd11094dd71e01414e17025be"
+    },
+    {
+      "path": "tracks/tog/tasks/t03-ordinary-conflict-screen/joint-final.npz",
+      "blob_id": "c4616137808765a57c6817991866a33a02f52ed1"
+    },
+    {
+      "path": "tracks/tog/tasks/t04-framewise-feasibility/framewise_joint-final.npz",
+      "blob_id": "ee268c33b1b9a86d4fa37dc0cd21e75994a4e54e"
+    },
+    {
+      "path": "tracks/tog/tasks/t05-framewise-cold-start/framewise_joint-final.npz",
+      "blob_id": "cb04203401b9f2fbe58dbf64008744aa915e740f"
+    },
+    {
+      "path": "tracks/tog/tasks/t05-framewise-cold-start/g0-proof.npz",
+      "blob_id": "2bd0f8970b6129f622e104baeec4a0f0a9ea46b3"
+    },
+    {
+      "path": "tracks/tog/tasks/t06-authored-timing-revision/run-01/target-edit.npy",
+      "blob_id": "1626d82784e53e7834f7256fa1cfac972fc7a497"
+    },
+    {
+      "path": "tracks/tog/tasks/t06-authored-timing-revision/run-01/target-full.npy",
+      "blob_id": "89ee8c227efcbcb4c51bd7b519b805ca38045b13"
+    },
+    {
+      "path": "tracks/tog/tasks/t07-ordinary-timing-revision/framewise_joint-final.npz",
+      "blob_id": "5634b43a752c9467eb7447f8261a2f1343e5694c"
+    },
+    {
+      "path": "tracks/tog/tasks/t08-ordinary-evaluation-reuse/framewise_joint-final.npz",
+      "blob_id": "1dd26f94bf966924e81b6e22397f4d2c9e1fbbea"
+    },
+    {
+      "path": "tracks/tog/tasks/t08-ordinary-evaluation-reuse/g0-proof.npz",
+      "blob_id": "05b28e106f4bf46b92f8b1c112df6a6b1c95dc6d"
+    },
+    {
+      "path": "tracks/tog/tasks/t11-observation-compatible-source-response/publish-01/compact.npz",
+      "blob_id": "193625dfeef93d20366137281384da261f821cf8"
+    },
+    {
+      "path": "tracks/tog/tasks/t12-ordinary-wind-response-extrema/publish-01/compact.npz",
+      "blob_id": "2b76da94aba264236b09c9915bff1eff19f9dc83"
+    },
+    {
+      "path": "tracks/tog/tasks/t13-ordinary-feasibility-recovery/inputs.npz",
+      "blob_id": "c6720dbcc3f7e7fb8fa6ba97739b9080da009c4d"
+    },
+    {
+      "path": "tracks/tog/tasks/t13-ordinary-feasibility-recovery/publish-01/compact.npz",
+      "blob_id": "3b4029f2c4f74da77a6a8c7e792c44a71d7625fd"
+    }
+  ],
+  "historical_array_git_index_blob_ids_match_parent": true,
+  "literal_nonarray_parent_blob_matches": 1322,
+  "nonarray_CRLF_only_checkout_conversions": [
+    ".gitignore",
+    "CHANGELOG.md",
+    "PUBLISH.md",
+    "README.md",
+    "compare.html",
+    "index.html",
+    "research/EVIDENCE_STATUS.md",
+    "research/FRONTIER_EARLY_REJECTION.md",
+    "research/lib/p3d-baseline.json",
+    "research/lib/p3e-baseline.json",
+    "research/lib/p3f-baseline.json",
+    "research/lib/p3g-baseline.json",
+    "research/physical_reference/README.md",
+    "study/index.html"
+  ],
+  "all_nonarray_parent_blob_ids_match_after_git_clean_filters": true,
+  "original_core": {
+    "path": "tracks/tog/src/core.py",
+    "bytes": 13301,
+    "sha256": "ac750b70a86743ac858f1c53cf620ce29c63c462456115af4d0d8c93fa20bd9e"
+  },
+  "historical_failures_unchanged": true,
+  "art_inactive": true,
+  "main_not_merged_or_deployed": true,
+  "automation_remains_deleted": true
+}
