@@ -1,0 +1,110 @@
+{
+  "schema": "t65-separability-measurement-execution-v1",
+  "started_utc": "2026-10-30T04:52:50.802691+00:00",
+  "command": [
+    "C:\\Users\\seanzjxiao\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "-I",
+    "-B",
+    "-u",
+    "-X",
+    "utf8",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t65-separability-measurement\\measure.py"
+  ],
+  "cwd": "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians",
+  "child_timeout_seconds": 120.0,
+  "observed_peak_working_set_limit_bytes": 536870912,
+  "required_available_physical_bytes": 1073741824,
+  "memory_sample_interval_seconds": 0.25,
+  "thread_environment_overrides": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  },
+  "scientific_child_invocations": 1,
+  "new_scientific_trajectories": 0,
+  "complete_result_validated": true,
+  "separability_verdict": "qualified_no_separability_exclusion",
+  "formal_exclusion": false,
+  "prior_scientific_child_seconds": 1978.636870399816,
+  "T61_qualification_seconds": 0.9663960000034422,
+  "T60_history_reclassified": false,
+  "input_manifest_identity": {
+    "bytes": 7318,
+    "sha256": "1d151c331eb0e2b3bae7c83565d276341771e66f28a5368ec7462a95210f3768"
+  },
+  "supervisor_identity": {
+    "bytes": 17806,
+    "sha256": "a9f942a2e02660b6538423e86d984d1dc7a9aaaeaa16922aeb9407016a5ef926"
+  },
+  "worker_identity": {
+    "bytes": 21927,
+    "sha256": "d4354b4932eec0b5aa49af1918be219d717d01b357c6d8b463306db945b4638e"
+  },
+  "memory_observer_identity": {
+    "bytes": 2231,
+    "sha256": "4b83a89eff664dc0d86fb0c71b39c99d71720c1d18c5f93557e279d0ca3745fd"
+  },
+  "executable_identity": {
+    "bytes": 107312,
+    "sha256": "5640e9be2fd33d05a1a9ae1228e2354609a69ab831605995ec4e2bd6da8fff5e"
+  },
+  "memory_samples": 5,
+  "peak_observed_working_set_bytes": 102449152,
+  "max_observed_private_bytes": 109199360,
+  "max_observed_peak_pagefile_bytes": 125071360,
+  "launch_memory": {
+    "total_physical_bytes": 67773509632,
+    "available_physical_bytes": 28752113664
+  },
+  "child_pid": 71468,
+  "last_memory_sample_elapsed_seconds": 0.960165899945423,
+  "returncode": 0,
+  "status": "completed_qualified_no_separability_exclusion",
+  "scientific_child_supervised_seconds": 0.9605694999918342,
+  "cumulative_scientific_child_seconds": 1979.5974398998078,
+  "inputs_unchanged": true,
+  "input_manifest_unchanged": true,
+  "executable_unchanged": true,
+  "logs": [
+    {
+      "path": "local/stdout.txt",
+      "bytes": 78,
+      "sha256": "fbb957f315d3697014a4e46d078dec8972e95e83cd3342675774ee26c0e85591"
+    },
+    {
+      "path": "local/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local/memory.jsonl",
+      "bytes": 967,
+      "sha256": "a8e7bda5754742afe6cee4b77fd418defa81181b609dd2277ef70c283467fa4a"
+    }
+  ],
+  "partial_artifacts": [
+    {
+      "path": "local/S128-audit.npz",
+      "bytes": 8032988,
+      "sha256": "aab0677987fcb99375817ab3e2b8dbbe7ddcc85206de671e3d38959c86d5fc30"
+    },
+    {
+      "path": "local/S256-audit.npz",
+      "bytes": 32052956,
+      "sha256": "d5a31f851f9fd3c0df86f29d5397f17861d1e3eb65168e51887d6519fa2a4de4"
+    },
+    {
+      "path": "local/work.jsonl",
+      "bytes": 61885,
+      "sha256": "6c69efc618b76eaaf5d5a72eab94d98642876c9979b0ad5aaa77dfa6a767043f"
+    }
+  ],
+  "result_exists": true,
+  "result_identity": {
+    "bytes": 86562,
+    "sha256": "26e589f2fa09fd9599032deb5f407e22374071c67410d793f9f705bf5c3dcd16"
+  },
+  "supervisor_elapsed_before_receipt_write_seconds": 1.0986102999886498,
+  "finished_utc": "2026-10-30T04:52:51.861753+00:00"
+}
