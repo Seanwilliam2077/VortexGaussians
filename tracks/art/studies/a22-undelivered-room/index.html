@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>门从你那边关</title>
+  <link rel="stylesheet" href="room.css">
+</head>
+<body>
+  <div class="page">
+    <header><div><p class="edition">一间纸房 · 尚未送出的赠礼</p><h1>门从你那边关</h1></div><p class="dedication">给阿照。<br>床不用收，门从你那边关。</p></header>
+    <main>
+      <div class="stage" id="stage" aria-label="纸房作品">
+        <svg class="scene" id="room" viewBox="0 0 1200 800" role="img" aria-labelledby="room-title room-desc">
+          <title id="room-title">尚未送出的房间</title><desc id="room-desc">一间折纸般的房间：左边展开的床通向前景，一双分开的纸拖鞋留在床边；空出的地板通往右后方的门，门闩在内侧。左墙的小窗透向房外。</desc>
+          <defs>
+            <linearGradient id="back-paper" x2=".2" y2="1"><stop stop-color="#f4edda"/><stop offset="1" stop-color="#e5dcc6"/></linearGradient>
+            <linearGradient id="floor-paper" x2=".5" y2="1"><stop stop-color="#ded0b3"/><stop offset="1" stop-color="#efe5cf"/></linearGradient>
+            <linearGradient id="bed-paper" x2=".1" y2="1"><stop stop-color="#faf5e9"/><stop offset="1" stop-color="#e6e0d2"/></linearGradient>
+            
+            <pattern id="fibre" width="89" height="63" patternUnits="userSpaceOnUse"><path d="M8 13l19 1M54 41l24-1M21 49l12 1M63 8l4 1M6 37l3-1" stroke="#9a8b6e" stroke-width=".6" opacity=".14"/></pattern>
+            <pattern id="floor-lines" width="180" height="14" patternUnits="userSpaceOnUse"><path d="M0 3h180M40 10h60" stroke="#af9d7e" stroke-width=".55" opacity=".1"/></pattern>
+          </defs>
+          <path d="M0 0H1200V800H0Z" fill="#e9dfc9"/>
+          <!-- Walls are an authored paper interior, not a captured room. -->
+          <path d="M0 0L286 112V480L0 689Z" fill="#d4c5a8"/>
+          <path d="M286 112L925 112V480H286Z" fill="url(#back-paper)"/>
+          <path d="M925 112L1200 0V688L925 480Z" fill="#e3d5b9"/>
+          <path d="M0 689L286 480H925L1200 688V800H0Z" fill="url(#floor-paper)"/>
+          <path d="M0 0L286 112H925L1200 0Z" fill="#f7f0e0"/>
+          <path d="M272 108L286 112V480L272 490Z" fill="#bcae93" opacity=".6"/>
+          <path d="M925 112L938 107V489L925 480Z" fill="#cbbd9f"/>
+          <path d="M286 112H925M286 480H925M286 112V480M925 112V480" fill="none" stroke="#a6977b" stroke-width="1.5"/>
+          <path d="M0 26L270 127M944 123L1200 21" fill="none" stroke="#d1c4a9" stroke-width="2"/>
+          <path d="M276 129V463M936 130V465" stroke="#a6977b" stroke-width="1" stroke-dasharray="3 7" opacity=".55"/>
+          <path d="M0 689L286 480H925L1200 688V800H0Z" fill="url(#floor-lines)"/>
+          <path d="M320 480L99 800M514 480L444 800M705 480L813 800M889 480L1160 800" stroke="#d3c4a6" stroke-width="1.1"/>
+          <!-- The retained high window is pale paper, with no inserted screen or simulated light. -->
+          <path d="M110 174L277 221V393L110 421Z" fill="#95896f"/>
+          <path d="M121 188L267 229V384L121 409Z" fill="#e8ddc1"/>
+          <path d="M121 188L267 229V384L121 409Z" fill="#f7e2b4" opacity=".38" pointer-events="none"/>
+          <path d="M116 181L121 188V409L116 414Z" fill="#eee4cd"/>
+          <path d="M121 409L267 384L277 393L110 421Z" fill="#b5a689"/>
+          <path d="M123 190L265 230M123 408L265 384" stroke="#fff8e6" opacity=".6"/>
+          <!-- No furniture occupies this passage. -->
+          <path d="M603 489L892 489L1055 745L596 745Z" fill="#faf0d7" opacity=".11"/>
+          <!-- Door: inside bolt on the left, paper hinges on the right. -->
+          <path d="M671 168H879V485H671Z" fill="#a99b7e"/>
+          <path d="M680 175H870V480H680Z" fill="#d7c8a6"/>
+          <path d="M689 182H862V472H689Z" fill="#e7d7b7"/>
+          <path d="M700 188H850V318H700Z M700 342H850V458H700Z" fill="none" stroke="#cab998" stroke-width="1"/>
+          <path d="M690 184V469M862 184V469" stroke="#f5e7cd" stroke-width="2"/>
+          <path d="M869 217h11v34h-11ZM869 411h11v34h-11Z" fill="#b8a583" stroke="#99896f" stroke-width="1"/>
+          <path d="M659 324h19v26h-19Z" fill="#8d7c60"/>
+          <path d="M663 330h12v15h-12Z" fill="#c9b590"/>
+          <path d="M665 333h68v10h-68Z" fill="#8a7555"/>
+          <path d="M665 331h68v5h-68Z" fill="#bba680"/>
+          <path d="M718 325h10v19h-10Z" fill="#c5b18b" stroke="#826e52" stroke-width="1"/>
+          <path d="M735 321h11v29h-11Z" fill="#ac9471"/>
+          <path d="M738 324h4v23h-4Z" fill="#e2d0ad"/>
+          <path d="M679 479H875L888 488H670Z" fill="#b8a381"/>
+          <!-- An unfolded bed. Its broad top, folded tabs, and head-end folds read as paper construction. -->
+          <path d="M50 734L290 432L524 456L531 738L298 800H116Z" fill="#9b896c" opacity=".16"/>
+          <path d="M105 627L315 370L532 407L365 704Z" fill="#aeb8a9"/>
+          <path d="M105 627L365 704V757L105 677Z" fill="#95a08f"/>
+          <path d="M365 704L532 407V455L365 757Z" fill="#b5beae"/>
+          <path d="M105 677L124 684V738L105 730Z M350 752L365 757V794L350 788Z" fill="#87937f"/>
+          <path d="M308 376L318 356L541 393L532 407Z" fill="#dce1d1"/>
+          <path d="M116 620L318 381L521 414L359 691Z" fill="url(#bed-paper)"/>
+          <path d="M116 620L359 691V715L116 643Z" fill="#d4ccbc"/>
+          <path d="M359 691L521 414V436L359 715Z" fill="#ece4d5"/>
+          <path d="M318 381L521 414L479 486L273 443Z" fill="#f8f1e3"/>
+          <path d="M116 620L284 437L485 478L359 691Z" fill="#dce3d4"/>
+          <path d="M284 437L485 478L470 499L269 456Z" fill="#c4cfbd"/>
+          <path d="M163 567L399 626M216 507L434 558" fill="none" stroke="#b8c4b1" stroke-width="1.1" opacity=".65"/>
+          <path d="M339 389L496 415L465 463L306 434Z" fill="#fff9ec" stroke="#ddd3bf" stroke-width="1"/>
+          <path d="M307 434L465 463L461 469L302 440Z" fill="#dbd2bd"/>
+          <path d="M132 632L353 699M372 690L515 434" stroke="#fff8e9" stroke-width="1.3" opacity=".65"/>
+          <!-- Separate left and right slippers rest beside the bed, not on a shrine. -->
+          <g transform="translate(474 654) rotate(18)">
+            <path d="M-18-29Q-20-48 0-50Q20-48 21-27L24 35Q20 51 0 51Q-20 49-22 34Z" fill="#aa8066" opacity=".2" transform="translate(4 5)"/>
+            <path d="M-18-29Q-20-48 0-50Q20-48 21-27L24 35Q20 48 0 48Q-20 48-22 34Z" fill="#c48d6c"/>
+            <path d="M-18-22Q0-42 21-22L22 6Q0-10-20 6Z" fill="#d7a381" stroke="#aa785c" stroke-width="1"/>
+            <path d="M-19 7Q0-9 22 7" stroke="#f0c5a5" fill="none"/>
+            <path d="M-12 14Q0 8 14 16L14 35Q0 42-13 34Z" fill="#ddb594"/>
+          </g>
+          <g transform="translate(549 675) rotate(9)">
+            <path d="M-18-29Q-20-48 0-50Q20-48 21-27L24 35Q20 51 0 51Q-20 49-22 34Z" fill="#aa8066" opacity=".2" transform="translate(4 5)"/>
+            <path d="M-18-29Q-20-48 0-50Q20-48 21-27L24 35Q20 48 0 48Q-20 48-22 34Z" fill="#bd8667"/>
+            <path d="M-18-22Q0-42 21-22L22 6Q0-10-20 6Z" fill="#d39d7b" stroke="#aa785c" stroke-width="1"/>
+            <path d="M-19 7Q0-9 22 7" stroke="#efc09d" fill="none"/>
+            <path d="M-12 14Q0 8 14 16L14 35Q0 42-13 34Z" fill="#d7ac8b"/>
+          </g>
+          <path d="M0 0H1200V800H0Z" fill="url(#fibre)" pointer-events="none"/>
+        </svg>
+        <svg class="scene" id="outside" viewBox="0 0 1200 800" role="img" aria-labelledby="outside-title outside-desc" hidden>
+          <title id="outside-title">门槛之外</title><desc id="outside-desc">折叠纸墙正面只有一扇门。门开着时还能看见展开的床和一双拖鞋；关闭后只剩没有外侧门闩的纸门。没有收讫印记。</desc>
+          <defs>
+            <linearGradient id="outer-paper" x2=".2" y2="1"><stop stop-color="#ebe0c7"/><stop offset="1" stop-color="#dbcbab"/></linearGradient>
+            <linearGradient id="door-paper" x2="1" y2="1"><stop stop-color="#e4d2ad"/><stop offset="1" stop-color="#d4bf99"/></linearGradient>
+            <pattern id="outer-fibre" width="89" height="63" patternUnits="userSpaceOnUse"><path d="M8 13l19 1M54 41l24-1M21 49l12 1M63 8l4 1" stroke="#998665" stroke-width=".6" opacity=".17"/></pattern>
+          </defs>
+          <path d="M0 0H1200V800H0Z" fill="#e6dcc7"/>
+          <path d="M0 681L1200 653V800H0Z" fill="#dcd0b7"/>
+          <path d="M256 657L883 632L1048 735L336 779Z" fill="#857458" opacity=".1"/>
+          <path d="M325 162L867 146L920 630L307 659Z" fill="url(#outer-paper)"/>
+          <path d="M325 162L307 659L278 638L294 177Z" fill="#c8b794"/>
+          <path d="M325 162L867 146L840 122L307 139Z" fill="#f2e7cc"/>
+          <path d="M867 146L920 630L945 607L892 154Z" fill="#c8b794"/>
+          <path d="M337 173L321 638M855 161L903 613" stroke="#b9a683" stroke-width="1" stroke-dasharray="4 9"/>
+          <path d="M336 177L854 162M325 638L902 610" fill="none" stroke="#fff2d6" stroke-width="1.5"/>
+          <path d="M465 231L723 223L745 631L450 644Z" fill="#9d8d70"/>
+          <g id="open-room">
+            <path d="M477 241L711 234L730 620L464 632Z" fill="#cfc1a5"/>
+            <path d="M477 241L605 279L608 486L464 632Z" fill="#c0af8e"/>
+            <path d="M605 279L711 234L730 620L608 486Z" fill="#ddd1b8"/>
+            <path d="M464 632L608 486L730 620Z" fill="#e6d8bc"/>
+            <path d="M470 546L558 416L620 445L547 576Z" fill="#e7e5d9"/>
+            <path d="M470 546L547 576V598L467 571Z" fill="#98a28f"/>
+            <path d="M547 576L620 445V465L547 598Z" fill="#b5beaa"/>
+            <path d="M485 529L551 432L610 455L547 565Z" fill="#c7d2bc"/>
+            <path d="M548 433L605 452L594 471L536 451Z" fill="#f7f0df"/>
+            <path d="M579 579Q576 566 584 565Q592 563 594 576L598 602Q591 611 584 604Z M606 589Q603 575 611 574Q619 572 621 584L625 608Q619 618 612 612Z" fill="#c38a69"/>
+            <!-- Hinged inward: the visible leaf has no exterior bolt. -->
+            <path d="M711 234L654 280L665 566L730 620Z" fill="#bba781"/>
+            <path d="M705 254L664 289L673 549L722 598Z" fill="#d6c39f"/>
+          </g>
+          <g id="closed-door" hidden>
+            <path d="M477 241L711 234L730 620L464 632Z" fill="url(#door-paper)"/>
+            <path d="M490 255L698 248L715 606L478 617Z" fill="none" stroke="#c4af87" stroke-width="1.4"/>
+            <path d="M477 242L464 630" stroke="#f1dfb9" stroke-width="2"/>
+            <path d="M503 263L505 607M684 258L701 601" stroke="#c7b38c" stroke-width=".8" opacity=".5"/>
+            <path d="M477 631L729 620" stroke="#807054" stroke-width="3"/>
+          </g>
+          <path d="M450 644L745 631L768 648L438 664Z" fill="#b4a07d"/>
+          <path d="M438 664L768 648V656L438 673Z" fill="#9e8b69"/>
+          <path d="M325 162L867 146L920 630L307 659Z" fill="url(#outer-fibre)" pointer-events="none"/>
+          <g transform="translate(357 557) rotate(-6)"><path d="M0 0H61V79H0Z" fill="#f6ead0" stroke="#c7b38b"/><circle cx="30" cy="8" r="2" fill="#b29c78"/><path d="M30 8V-24" stroke="#a28b68" fill="none"/><text x="29" y="40" fill="#7d6b50" font-size="12" text-anchor="middle" font-family="serif">给阿照</text><path d="M15 51h32M20 58h22" stroke="#b8a17b" stroke-width=".7"/></g>
+        </svg>
+        <div id="left-place" hidden><span class="small-line"></span><p>观看到这里。</p></div>
+        <div id="loading" role="status">纸房正在展开。</div>
+      </div>
+      <div class="below-stage"><p id="position" aria-live="polite">房内 · 尚未送出</p><p class="room-note" id="room-note">不必把床收起来。</p></div>
+      <div class="controls"><button id="to-threshold" class="primary" disabled>退到门槛外</button><button id="close-door" class="primary" hidden>合上门，先留在这里</button><span id="ended-note" hidden>门关上了。</span><button id="leave" class="leave" disabled>提前离开</button></div>
+      <p id="error" role="alert" hidden></p>
+    </main>
+    <details><summary>未送出的赠礼与作品说明</summary><div class="colophon"><p>阿照是虚构人物。在这个故事里，阿照曾睡合住房间的折叠床，每天早晨要收起床，让出通道。赠予者在阿照死后做这间纸房：床不必再收，拖鞋可以留在床边，门闩向内。</p><p>这份迟来的好意无法询问收件人是否需要。纸房仍留在赠予者这一边：本作没有完成送出，也不把最后的关门当作已经收讫。标题里的“你”仍是一句向阿照说的话；实际关闭图像的是作者安排的按钮，不能代替阿照的行动。</p><p>纸制住处、日用品与为亡者焚送已有明确的地域实践前件；香港纸扎说明中甚至已有给亡故祖父拖鞋的例子。本作保留这份文化借用，同时撤回初版不充分的外火与送出承诺。不使用火不代表更正确的仪式，也不代表更尊重收件人。</p><p>这一版从 A20 派生，床、鞋、通道与门保留，外火材料撤去。观者可以停留、退到门外或提前离开；关门以离散图像变化停止提供内部，房间外壳仍在。重新载入网页只是再次呈示，不改变礼物尚未送出的位置。</p><nav><a href="WORK_SPEC.md">制作说明</a><a href="../a21-paper-offering-position/SOURCES.md">地域来源与范围</a><a href="../a21-paper-offering-position/DECISION.md">撤火决定</a><a href="../a20-room-gift/">保留的初版</a></nav></div></details>
+    <footer><span>门从你那边关</span><span>2026 · 原创虚构 / 未送出修订</span></footer>
+  </div>
+  <script type="module" src="room.mjs"></script>
+</body>
+</html>

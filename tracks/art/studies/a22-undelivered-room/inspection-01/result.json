@@ -1,0 +1,376 @@
+{
+  "schema": "a22-ui-stills-1",
+  "createdUTC": "2026-10-30T15:29:13.559Z",
+  "status": "completed_normal_ui_still_inspection",
+  "scope": "Normal UI actions and stills; no simulation, human participant or artistic validation.",
+  "sources": {
+    "index.html": {
+      "bytes": 13724,
+      "sha256": "7c74cd6678a22d810a89310fbf2ed9ef9f84656d01f9119256f0afa5336bbbd3"
+    },
+    "room.css": {
+      "bytes": 3509,
+      "sha256": "8faccc5dea2bb7a81272ebc5d0a06b5a919ce264482a1d35dfeeaa03d2da9d1e"
+    },
+    "room.mjs": {
+      "bytes": 3287,
+      "sha256": "96b209efb46abadcc039128b4cfc07c45ec97cbacabb750a867a3771e2af5126"
+    },
+    "inspect.mjs": {
+      "bytes": 5022,
+      "sha256": "9dfeef033cd5ebb87d94e628bc86f9406f8ed865903862948f3112accfcfca92"
+    }
+  },
+  "images": [
+    {
+      "file": "01-room.png",
+      "bytes": 224979,
+      "sha256": "12e68262c23d8d544570bbe84f2c9196e78b81f60b1c78fa144f771c55a6c6d4",
+      "before": {
+        "phase": "room",
+        "door": "authored_closed_from_inside",
+        "viewpoint": "room",
+        "authoredDeliveryClaim": "undelivered",
+        "errors": [],
+        "events": [
+          {
+            "action": "room_ready",
+            "phase": "room",
+            "elapsedSeconds": 0.0003999999761581421
+          }
+        ],
+        "interiorVisible": true,
+        "outerShellVisible": false,
+        "staging": "Authored SVG room and discrete viewpoint/door states. The room remains on the giver side; closure is not receipt.",
+        "elapsedSeconds": 0.030799999952316283
+      },
+      "after": {
+        "phase": "room",
+        "door": "authored_closed_from_inside",
+        "viewpoint": "room",
+        "authoredDeliveryClaim": "undelivered",
+        "errors": [],
+        "events": [
+          {
+            "action": "room_ready",
+            "phase": "room",
+            "elapsedSeconds": 0.0003999999761581421
+          }
+        ],
+        "interiorVisible": true,
+        "outerShellVisible": false,
+        "staging": "Authored SVG room and discrete viewpoint/door states. The room remains on the giver side; closure is not receipt.",
+        "elapsedSeconds": 0.42639999997615813
+      },
+      "inspectionElapsedSeconds": 2.6165656
+    },
+    {
+      "file": "02-threshold.png",
+      "bytes": 123764,
+      "sha256": "7e24b7c6a7fa9de76a09d5fd47c68f85d5d2a514f2818beefcf53786396753f1",
+      "before": {
+        "phase": "threshold",
+        "door": "authored_open_inward",
+        "viewpoint": "outside_threshold",
+        "authoredDeliveryClaim": "undelivered",
+        "errors": [],
+        "events": [
+          {
+            "action": "room_ready",
+            "phase": "room",
+            "elapsedSeconds": 0.0003999999761581421
+          },
+          {
+            "action": "withdrew_to_threshold",
+            "phase": "threshold",
+            "elapsedSeconds": 0.4896999999284744
+          }
+        ],
+        "interiorVisible": true,
+        "outerShellVisible": true,
+        "staging": "Authored SVG room and discrete viewpoint/door states. The room remains on the giver side; closure is not receipt.",
+        "elapsedSeconds": 0.4967999999523163
+      },
+      "after": {
+        "phase": "threshold",
+        "door": "authored_open_inward",
+        "viewpoint": "outside_threshold",
+        "authoredDeliveryClaim": "undelivered",
+        "errors": [],
+        "events": [
+          {
+            "action": "room_ready",
+            "phase": "room",
+            "elapsedSeconds": 0.0003999999761581421
+          },
+          {
+            "action": "withdrew_to_threshold",
+            "phase": "threshold",
+            "elapsedSeconds": 0.4896999999284744
+          }
+        ],
+        "interiorVisible": true,
+        "outerShellVisible": true,
+        "staging": "Authored SVG room and discrete viewpoint/door states. The room remains on the giver side; closure is not receipt.",
+        "elapsedSeconds": 0.5766000000238418
+      },
+      "inspectionElapsedSeconds": 2.7646553
+    },
+    {
+      "file": "03-closed-door.png",
+      "bytes": 155821,
+      "sha256": "cf45b909261636a29ec9362f438f1be7f4e40c217c574130e36305c123e1e573",
+      "before": {
+        "phase": "ended",
+        "door": "authored_closed_from_inside",
+        "viewpoint": "outside_threshold",
+        "authoredDeliveryClaim": "undelivered",
+        "errors": [],
+        "events": [
+          {
+            "action": "room_ready",
+            "phase": "room",
+            "elapsedSeconds": 0.0003999999761581421
+          },
+          {
+            "action": "withdrew_to_threshold",
+            "phase": "threshold",
+            "elapsedSeconds": 0.4896999999284744
+          },
+          {
+            "action": "door_closed_by_authored_staging",
+            "phase": "ended",
+            "elapsedSeconds": 0.6196999999284745
+          }
+        ],
+        "interiorVisible": false,
+        "outerShellVisible": true,
+        "staging": "Authored SVG room and discrete viewpoint/door states. The room remains on the giver side; closure is not receipt.",
+        "elapsedSeconds": 0.6221999999284744
+      },
+      "after": {
+        "phase": "ended",
+        "door": "authored_closed_from_inside",
+        "viewpoint": "outside_threshold",
+        "authoredDeliveryClaim": "undelivered",
+        "errors": [],
+        "events": [
+          {
+            "action": "room_ready",
+            "phase": "room",
+            "elapsedSeconds": 0.0003999999761581421
+          },
+          {
+            "action": "withdrew_to_threshold",
+            "phase": "threshold",
+            "elapsedSeconds": 0.4896999999284744
+          },
+          {
+            "action": "door_closed_by_authored_staging",
+            "phase": "ended",
+            "elapsedSeconds": 0.6196999999284745
+          }
+        ],
+        "interiorVisible": false,
+        "outerShellVisible": true,
+        "staging": "Authored SVG room and discrete viewpoint/door states. The room remains on the giver side; closure is not receipt.",
+        "elapsedSeconds": 0.7081000000238419
+      },
+      "inspectionElapsedSeconds": 2.8964836999999997
+    },
+    {
+      "file": "04-ended.png",
+      "bytes": 22969,
+      "sha256": "1c3d18685f32b5121b6a847d0ec26bebbe996c5ffa1ece165693d7d2e4b78982",
+      "before": {
+        "phase": "left",
+        "door": "authored_closed_from_inside",
+        "viewpoint": "no_view",
+        "authoredDeliveryClaim": "undelivered",
+        "errors": [],
+        "events": [
+          {
+            "action": "room_ready",
+            "phase": "room",
+            "elapsedSeconds": 0.0003999999761581421
+          },
+          {
+            "action": "withdrew_to_threshold",
+            "phase": "threshold",
+            "elapsedSeconds": 0.4896999999284744
+          },
+          {
+            "action": "door_closed_by_authored_staging",
+            "phase": "ended",
+            "elapsedSeconds": 0.6196999999284745
+          },
+          {
+            "action": "viewer_left",
+            "phase": "left",
+            "elapsedSeconds": 0.7368999999761582
+          }
+        ],
+        "interiorVisible": false,
+        "outerShellVisible": false,
+        "staging": "Authored SVG room and discrete viewpoint/door states. The room remains on the giver side; closure is not receipt.",
+        "elapsedSeconds": 0.7405
+      },
+      "after": {
+        "phase": "left",
+        "door": "authored_closed_from_inside",
+        "viewpoint": "no_view",
+        "authoredDeliveryClaim": "undelivered",
+        "errors": [],
+        "events": [
+          {
+            "action": "room_ready",
+            "phase": "room",
+            "elapsedSeconds": 0.0003999999761581421
+          },
+          {
+            "action": "withdrew_to_threshold",
+            "phase": "threshold",
+            "elapsedSeconds": 0.4896999999284744
+          },
+          {
+            "action": "door_closed_by_authored_staging",
+            "phase": "ended",
+            "elapsedSeconds": 0.6196999999284745
+          },
+          {
+            "action": "viewer_left",
+            "phase": "left",
+            "elapsedSeconds": 0.7368999999761582
+          }
+        ],
+        "interiorVisible": false,
+        "outerShellVisible": false,
+        "staging": "Authored SVG room and discrete viewpoint/door states. The room remains on the giver side; closure is not receipt.",
+        "elapsedSeconds": 0.8056999999284744
+      },
+      "inspectionElapsedSeconds": 2.9943071999999997
+    },
+    {
+      "file": "05-mobile-room.png",
+      "bytes": 58642,
+      "sha256": "0bb129ed0f9ddf6a89e0ae51a202f09783a4c7c0247cd777f3f82e66991689a1",
+      "before": {
+        "phase": "room",
+        "door": "authored_closed_from_inside",
+        "viewpoint": "room",
+        "authoredDeliveryClaim": "undelivered",
+        "errors": [],
+        "events": [
+          {
+            "action": "room_ready",
+            "phase": "room",
+            "elapsedSeconds": 0.00029999995231628417
+          }
+        ],
+        "interiorVisible": true,
+        "outerShellVisible": false,
+        "staging": "Authored SVG room and discrete viewpoint/door states. The room remains on the giver side; closure is not receipt.",
+        "elapsedSeconds": 0.03879999995231628
+      },
+      "after": {
+        "phase": "room",
+        "door": "authored_closed_from_inside",
+        "viewpoint": "room",
+        "authoredDeliveryClaim": "undelivered",
+        "errors": [],
+        "events": [
+          {
+            "action": "room_ready",
+            "phase": "room",
+            "elapsedSeconds": 0.00029999995231628417
+          }
+        ],
+        "interiorVisible": true,
+        "outerShellVisible": false,
+        "staging": "Authored SVG room and discrete viewpoint/door states. The room remains on the giver side; closure is not receipt.",
+        "elapsedSeconds": 0.12310000002384186
+      },
+      "inspectionElapsedSeconds": 3.3132145
+    },
+    {
+      "file": "06-mobile-early-exit.png",
+      "bytes": 15371,
+      "sha256": "52897d7ca7ba7e96c31928a7d1bf08be2202586f14c7c254a42437a4bb29c550",
+      "before": {
+        "phase": "left",
+        "door": "authored_closed_from_inside",
+        "viewpoint": "no_view",
+        "authoredDeliveryClaim": "undelivered",
+        "errors": [],
+        "events": [
+          {
+            "action": "room_ready",
+            "phase": "room",
+            "elapsedSeconds": 0.00029999995231628417
+          },
+          {
+            "action": "viewer_left",
+            "phase": "left",
+            "elapsedSeconds": 0.17
+          }
+        ],
+        "interiorVisible": false,
+        "outerShellVisible": false,
+        "staging": "Authored SVG room and discrete viewpoint/door states. The room remains on the giver side; closure is not receipt.",
+        "elapsedSeconds": 0.17589999997615816
+      },
+      "after": {
+        "phase": "left",
+        "door": "authored_closed_from_inside",
+        "viewpoint": "no_view",
+        "authoredDeliveryClaim": "undelivered",
+        "errors": [],
+        "events": [
+          {
+            "action": "room_ready",
+            "phase": "room",
+            "elapsedSeconds": 0.00029999995231628417
+          },
+          {
+            "action": "viewer_left",
+            "phase": "left",
+            "elapsedSeconds": 0.17
+          }
+        ],
+        "interiorVisible": false,
+        "outerShellVisible": false,
+        "staging": "Authored SVG room and discrete viewpoint/door states. The room remains on the giver side; closure is not receipt.",
+        "elapsedSeconds": 0.21419999992847444
+      },
+      "inspectionElapsedSeconds": 3.4043392
+    }
+  ],
+  "checks": {
+    "threshold": true,
+    "closed": true,
+    "normalExit": true,
+    "mobileNoHorizontalOverflow": true,
+    "earlyExit": true,
+    "noPageErrors": true,
+    "noExternalRequests": true,
+    "sourcesUnchanged": true,
+    "withinDeadline": true
+  },
+  "pageErrors": [],
+  "externalRequests": [],
+  "imageBytes": 601546,
+  "closed": {
+    "context": true,
+    "browser": true,
+    "server": true
+  },
+  "browser": {
+    "module": "C:/Users/seanzjxiao/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright",
+    "launchOptions": {
+      "headless": true,
+      "executablePath": "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe"
+    },
+    "version": "149.0.4022.52"
+  },
+  "wallSeconds": 4.142
+}
