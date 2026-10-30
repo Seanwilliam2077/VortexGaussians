@@ -1,8 +1,8 @@
 # Exploration policy
 
-## 2026-10-31 current: A32 scored 3/6 and 4/6; A33 finite creator choice
+## 2026-10-31 current: A35 concrete text-and-fire choice
 
-[A32《图用这一张》](art/studies/a32-image-reuse-study/README.md) completed a new form, one 18.3429543-second UI inspection (seven PNGs / 524083 bytes), a full paper and two independent formal reviews. Original reviewers give 3/6 and 4/6, both readiness 7/10 and confidence 3/5. They agree on the actual form and differ on its artistic weight; ordinary crop/decorative-fire remains a strong counterreading. [Author response](art/studies/a32-image-reuse-study/RESPONSE_AND_DECISION.md) preserves the work and both views, and closes this configuration's rewriting/recapture queue. [A33](art/studies/a33-iteration-as-material/BRIEF.md) asks a new creator, not a new scorer, whether actual public iteration records afford one specific new work. No production is approved by that question. A25 and A26 scores stay unchanged, overall 5/6 unmet. Main, original platform and TOG queue unchanged; full goal active.
+[A32](art/studies/a32-image-reuse-study/README.md) is preserved with independent 3/6 and 4/6 formal reviews; its current submission claim is closed. [A33](art/studies/a33-iteration-as-material/DECISION.md) did not select a work made from review records: proposed arrangements would exaggerate the recorded disagreement. [A34](art/studies/a34-primary-visual-reading/SOURCE_RESULT.md) directly read two fixed institutions' displayed artwork photos, adding a specific distinction between visible document content and the prior general redaction description. No old score changed. [A35](art/studies/a35-reading-by-fire/BRIEF.md) now asks for one original, concrete text and an authored reading relation to the existing fire platform; no new production, material behavior or score is presumed. A25/A26 history remains, overall 5/6 unmet. Main and TOG queue unchanged; full goal active.
 
 
 This is the repository's working research policy, not a venue acceptance checklist. User steering takes precedence. Updated 30 October 2026.

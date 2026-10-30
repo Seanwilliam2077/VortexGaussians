@@ -1,8 +1,8 @@
 # 艺术线：制作与独立复评
 
-## 2026-10-31 current: A32 scored 3/6 and 4/6; A33 finite creator choice
+## 2026-10-31 current: A35 concrete text-and-fire choice
 
-[A32《图用这一张》](studies/a32-image-reuse-study/README.md) completed a new form, one 18.3429543-second UI inspection (seven PNGs / 524083 bytes), a full paper and two independent formal reviews. Original reviewers give 3/6 and 4/6, both readiness 7/10 and confidence 3/5. They agree on the actual form and differ on its artistic weight; ordinary crop/decorative-fire remains a strong counterreading. [Author response](studies/a32-image-reuse-study/RESPONSE_AND_DECISION.md) preserves the work and both views, and closes this configuration's rewriting/recapture queue. [A33](studies/a33-iteration-as-material/BRIEF.md) asks a new creator, not a new scorer, whether actual public iteration records afford one specific new work. No production is approved by that question. A25 and A26 scores stay unchanged, overall 5/6 unmet. Main, original platform and TOG queue unchanged; full goal active.
+[A32](studies/a32-image-reuse-study/README.md) is preserved with independent 3/6 and 4/6 formal reviews; its current submission claim is closed. [A33](studies/a33-iteration-as-material/DECISION.md) did not select a work made from review records: proposed arrangements would exaggerate the recorded disagreement. [A34](studies/a34-primary-visual-reading/SOURCE_RESULT.md) directly read two fixed institutions' displayed artwork photos, adding a specific distinction between visible document content and the prior general redaction description. No old score changed. [A35](studies/a35-reading-by-fire/BRIEF.md) now asks for one original, concrete text and an authored reading relation to the existing fire platform; no new production, material behavior or score is presumed. A25/A26 history remains, overall 5/6 unmet. Main and TOG queue unchanged; full goal active.
 
 
 2026-10-30。用户重新授权持续艺术迭代，并要求与评分 Agent 交流直至至少 5 分。本轮把目标解释为既有内部六档总评中的 **5/6（Accept）**，不是就绪度 5/10，也不是官方录用概率。
@@ -25,6 +25,6 @@
 
 ## 当前有限任务
 
-A32已完成作品、真实图像、完整稿与两份正式评审：固定3/6、第二4/6。两者承认形式展开，艺术分量判断不同；作者回应没有核心事实反驳或新证据，封存当前投稿核心，保留作品与分歧。新分不回写A25/A26。
+A32正式3/6与4/6、作者回应和有限收束保持。A33新创作者没有选中真实评审记录作为本次新作，不追加生产或向评分者求分。A34只在两项既有机构来源各读一次网页和页面照片，无第三方图像入库、不重试全文、不改旧分。
 
-A33仅由未参与这些作品制作的创作者，一次判断已公开的真实迭代记录能否支持具体新作选择。不是新评分者，不把真实记录、失败或评分分歧自动当艺术贡献；无生产/新图/运行/搜索授权。原评分者保持，目标5/6未实现，TOG/main保持，完整研究目标active。
+A35回到原火平台，先由创作者写完整原创文字并作单一内容/阅读关系选择；假设材料受热显现仍须根据后续选择核查，不预设消失或不可重读。原评分者保持，当前没有生产/运行队列。目标5/6未实现，TOG/main保持，完整研究目标active。
