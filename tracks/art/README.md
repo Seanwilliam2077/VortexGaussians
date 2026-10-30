@@ -1,8 +1,8 @@
 # 可燃的数字记忆（暂定） · 艺术排练入口
 
-## 2026-10-31 current: A32 writing one new-work argument
+## 2026-10-31 current: A32 full argument under independent review
 
-[A32《图用这一张》](studies/a32-image-reuse-study/README.md) is implemented and checked once: 18.3429543 seconds, seven PNGs / 524083 bytes, with no new simulation. A frozen processing image is cropped into the next notice; old raster names leave, two names are newly typeset, and the request stays outside the paper. Creator and both original reviewers independently identify an actual new relation, while retaining the ordinary-crop/decorative-fire counterreading. [One fixed-material paper](studies/a32-image-reuse-study/PAPER_BRIEF.md) is being written before formal independent scoring; material eligibility is not acceptance. A25 remains 4/6 and 3/6, A26 two 3/6 reviews, overall 5/6 unmet. Historical failures, main, original platform and TOG queue stay unchanged; full goal active.
+[A32《图用这一张》](studies/a32-image-reuse-study/README.md) is implemented and checked once: 18.3429543 seconds, seven PNGs / 524083 bytes, with no new simulation. A frozen processing image is cropped into the next notice; old raster names leave, two names are newly typeset, and the request stays outside the paper. Creator and both original reviewers independently identify an actual new relation, while retaining the ordinary-crop/decorative-fire counterreading. [One fixed-material paper](studies/a32-image-reuse-study/PAPER_BRIEF.md) is complete and under formal independent review by the same two reviewers; material eligibility is not acceptance. A25 remains 4/6 and 3/6, A26 two 3/6 reviews, overall 5/6 unmet. Historical failures, main, original platform and TOG queue stay unchanged; full goal active.
 
 
 **2026-10-30：A14封存为试作，结束当前投稿核心路线。** [A18有限比较](studies/a18-context-positioning/README.md)与[独立复核](../validation/art-a18-core-decision.md)认为，轮流移动、接续变化和共同退开虽有图像依据，现有形式仍未支持其核心艺术认识。维持第二轮总体3/6、准备度6/10、置信度4/5；不是因录像失败否定作品，也不据来源缺失否定领域。原平台和艺术线继续。[A19](studies/a19-artistic-commitment/BRIEF.md)先完成一页单案创作决定，选择具体对象、观看关系和观者行为/取舍，暂不制作或运行。A15/A16失败与[A17实际33图](studies/a17-saved-sequence-reading/README.md)保留，补录循环关闭；总体5/6目标未达。

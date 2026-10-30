@@ -8,6 +8,6 @@
 
 [事先选择](../a31-next-posting-choice/CREATOR_CHOICE.md) → [有限制作约定](BRIEF.md) → [作品规则](WORK_SPEC.md) → [真实过程与七图](PROCESS.md) → [完整检查记录](inspection-01/result.json)。
 
-2026-10-31完成一次呈示检查：18.3429543秒，7PNG共524083字节。[创作者反思](CREATOR_REFLECTION.md)、[原固定评审](../../../validation/art-a32-material-review-fixed.md)与[另一原评审](../../../validation/art-a32-material-review-second.md)都支持一次固定材料的完整论述，三者同时保留普通裁图／装饰的反读。root据此进入[一次新稿](PAPER_BRIEF.md)，没有增加制作或运行，尚无本作正式论文评分。
+2026-10-31完成一次呈示检查：18.3429543秒，7PNG共524083字节。[创作者反思](CREATOR_REFLECTION.md)、[原固定评审](../../../validation/art-a32-material-review-fixed.md)与[另一原评审](../../../validation/art-a32-material-review-second.md)都支持一次固定材料的完整论述，三者同时保留普通裁图／装饰的反读。按[写作范围](PAPER_BRIEF.md)完成的[新稿](PAPER_DRAFT.md)和[主张—证据映射](CLAIM_EVIDENCE.md)已交同两位评审独立正式复评，没有增加制作或运行；当前评分尚待返回。
 
 材料资格与20项行为检查通过都不等于Art Papers贡献成立；原A25评分4/6和3/6、A26两份3/6均不因新小样改变，目标5/6仍未达到。

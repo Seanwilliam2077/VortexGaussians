@@ -1,8 +1,8 @@
 # 艺术线：制作与独立复评
 
-## 2026-10-31 current: A32 writing one new-work argument
+## 2026-10-31 current: A32 full argument under independent review
 
-[A32《图用这一张》](studies/a32-image-reuse-study/README.md) is implemented and checked once: 18.3429543 seconds, seven PNGs / 524083 bytes, with no new simulation. A frozen processing image is cropped into the next notice; old raster names leave, two names are newly typeset, and the request stays outside the paper. Creator and both original reviewers independently identify an actual new relation, while retaining the ordinary-crop/decorative-fire counterreading. [One fixed-material paper](studies/a32-image-reuse-study/PAPER_BRIEF.md) is being written before formal independent scoring; material eligibility is not acceptance. A25 remains 4/6 and 3/6, A26 two 3/6 reviews, overall 5/6 unmet. Historical failures, main, original platform and TOG queue stay unchanged; full goal active.
+[A32《图用这一张》](studies/a32-image-reuse-study/README.md) is implemented and checked once: 18.3429543 seconds, seven PNGs / 524083 bytes, with no new simulation. A frozen processing image is cropped into the next notice; old raster names leave, two names are newly typeset, and the request stays outside the paper. Creator and both original reviewers independently identify an actual new relation, while retaining the ordinary-crop/decorative-fire counterreading. [One fixed-material paper](studies/a32-image-reuse-study/PAPER_BRIEF.md) is complete and under formal independent review by the same two reviewers; material eligibility is not acceptance. A25 remains 4/6 and 3/6, A26 two 3/6 reviews, overall 5/6 unmet. Historical failures, main, original platform and TOG queue stay unchanged; full goal active.
 
 
 2026-10-30。用户重新授权持续艺术迭代，并要求与评分 Agent 交流直至至少 5 分。本轮把目标解释为既有内部六档总评中的 **5/6（Accept）**，不是就绪度 5/10，也不是官方录用概率。
