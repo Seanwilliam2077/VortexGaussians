@@ -37,13 +37,19 @@ const read = () => page.evaluate(() => window.__a42.snapshot());
 const equal = (a, b) => JSON.stringify(a) === JSON.stringify(b);
 const group = (s, name) => s.material.points.filter(p => p.group === name);
 const sum = (pts, key) => pts.reduce((n, p) => n + p[key], 0);
+const identity = s => ({ phase: s.phase, frame: s.frame, hash: s.hash,
+  stepCalls: s.stepCalls, ignitionCalls: s.ignitionCalls,
+  snapshotSHA256: sha(JSON.stringify(s)), snapshotError: s.snapshotError });
 async function shot(label) {
   if (result.images.length >= 5) throw Error('Image-count budget exhausted');
   const before = await read(), file = label + '.png';
   await page.screenshot({ path: path.join(out, file), fullPage: true });
   const bytes = await fs.readFile(path.join(out, file));
   result.imageBytes += bytes.length;
-  result.images.push({ file, bytes: bytes.length, sha256: sha(bytes), before, after: await read(), inspectionElapsedSeconds: elapsed() });
+  const after = await read();
+  result.images.push({ file, bytes: bytes.length, sha256: sha(bytes),
+    before: identity(before), after: identity(after), completeSnapshotEqual: equal(before, after),
+    inspectionElapsedSeconds: elapsed() });
   await save();
   if (result.imageBytes > 8 * 1024 * 1024) throw Error('Image-byte budget exhausted');
 }
@@ -115,8 +121,15 @@ try {
     && result.first.material.randomDraws === result.handed.material.randomDraws
     && result.first.material.particleStateHash === result.handed.material.particleStateHash;
   result.checks.handoverKeepsCounters = equal(result.first.material.counters, result.handed.material.counters);
-  result.checks.noScreenshotAdvance = result.images.every(x => x.before.frame === x.after.frame && x.before.hash === x.after.hash
+  result.checks.noScreenshotAdvance = result.images.every(x => x.completeSnapshotEqual && !x.before.snapshotError && !x.after.snapshotError
+    && x.before.frame === x.after.frame && x.before.hash === x.after.hash
     && x.before.stepCalls === x.after.stepCalls && x.before.ignitionCalls === x.after.ignitionCalls);
+  result.checks.handoverAssertions = result.handed.handover?.passed === true
+    && Object.values(result.handed.handover.assertions).every(v => v === true);
+  result.checks.correctDirectIgnitions = result.final.ignitions.length === 2
+    && result.final.ignitions.every(x => x.passed && x.called && x.newlyLit > 0)
+    && result.final.ignitions[1].intendedGroup === 'request'
+    && result.final.ignitions[1].directlyTouchedApology === false;
   result.checks.noErrors = stages.every(s => Array.isArray(s.errors) && s.errors.length === 0)
     && result.pageErrors.length === 0 && result.console.length === 0 && result.externalRequests.length === 0;
   result.checks.sourcesUnchanged = true;
@@ -126,6 +139,24 @@ try {
   }
   result.checks.withinDeadline = !deadline;
   if (!Object.values(result.checks).every(v => v === true)) throw Error('A predeclared behavior/source check failed');
+  // Store common geometry and the verbose transfer proof once. Stage material
+  // points, counters, input records and costs remain complete; no arrays are
+  // compressed, discarded or changed to improve a material outcome.
+  result.sharedGeometry = result.initial.geometry;
+  result.handoverReport = result.handed.handover;
+  result.recordStorage = 'Stage geometry and handover proofs use explicit shared references. pointGroups are derivable from each full material.points array. Screenshot records retain exact full-snapshot equality and SHA256 rather than duplicate payloads.';
+  for (const s of stages) {
+    if (equal(s.geometry, result.sharedGeometry)) {
+      delete s.geometry; s.geometryReference = 'sharedGeometry';
+    }
+    if (s.handover && equal(s.handover, result.handoverReport)) {
+      delete s.handover; s.handoverReference = 'handoverReport';
+    }
+    if (s.evidence?.handoverReport && equal(s.evidence.handoverReport, result.handoverReport)) {
+      delete s.evidence.handoverReport; s.evidence.handoverReportReference = 'handoverReport';
+    }
+    delete s.pointGroups;
+  }
   result.status = 'completed_single_inherited_apology_material';
 } catch (e) {
   result.status = 'failed'; result.error = { message: e.message, stack: e.stack };

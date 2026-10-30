@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>道歉沿用 · 单次材料检查</title>
+  <link rel="stylesheet" href="../a39-handover-clock-maintenance/work.css">
+  <style>
+    #view{cursor:default}.controls{flex-wrap:wrap;gap:24px}.instrument-note{color:var(--muted);font-size:12px;max-width:960px}
+    .controls button{padding:9px 4px}#counter-readout{font-size:11px}.page{padding-top:24px}
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <div><p class="edition">A42 · 单次材料检查页</p><h1>道歉沿用</h1></div>
+      <p class="fiction">原创虚构<br>材料资格尚待实际字面判断</p>
+    </header>
+    <section class="work" aria-label="两次呈示的高斯材料字">
+      <div class="canvas-frame">
+        <canvas id="view" width="1200" height="600" role="img" aria-label="两行高斯材料文字；上行为沿用的道歉，下行在固定阶段更换"></canvas>
+        <div id="loading" role="status">正在准备固定材料</div>
+      </div>
+      <div class="reading-bar">
+        <p id="status" role="status" aria-live="polite">正在准备固定材料。</p>
+        <p id="time-readout">0.00 / 6.00 模拟秒 · frame 0</p>
+      </div>
+      <div class="controls" aria-label="一次固定检查的四个动作">
+        <button id="first" type="button" disabled>1 · 点燃旧句，推进至3秒</button>
+        <button id="handover" type="button" disabled>2 · 只更换下行</button>
+        <button id="later" type="button" disabled>3 · 点燃新行，推进至4.5秒</button>
+        <button id="finish" type="button" disabled>4 · 继续至6秒</button>
+      </div>
+      <p id="counter-readout">reset 0 · ignite 0 · steps 0 · handover 0</p>
+      <p id="error" role="alert" hidden></p>
+    </section>
+    <p class="instrument-note">这是一次固定材料检查。下行更换是作者编排；上行沿用已经受过接触的材料。换行时不推进，随后只点燃新下行。旧句是否仍可读、是否继续出现可辨变化，须直接比较实际字面。</p>
+    <p class="instrument-note">每次绘制至多一步，四个按钮各用一次；窗口失焦或页面隐藏即停止未完成的推进。六模拟秒后不再延长或重置。本页尚非完整观看体验。</p>
+    <footer><span>A42 · 2026-10-31</span><nav><a href="WORK_SPEC.md">动作与材料规格</a><a href="BRIEF.md">固定检查合同</a></nav></footer>
+  </main>
+  <iframe id="source" src="renderer.generated.html?embed=1&amp;solver=vpm&amp;orbit=0" title="显式本地装配的 VortexGaussians 渲染器" tabindex="-1" aria-hidden="true"></iframe>
+  <script type="module" src="sample.mjs"></script>
+</body>
+</html>
