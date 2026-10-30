@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "source": {
+    "path": "../../../../demo/index.html",
+    "bytes": 314044,
+    "sha256": "e9d808c434bdd8ce91482f60502f03f5d08c56b71c082eb704c53275ff9f57d0"
+  },
+  "bridge": {
+    "path": "./bridge.js",
+    "bytes": 12453,
+    "sha256": "6762792fee0c004edad49abb1383148a554249e5ed673bfe7007f9f5a8c869dc"
+  },
+  "output": {
+    "path": "./renderer.generated.html",
+    "bytes": 326577,
+    "sha256": "6f3b1253c94e79852d8df924fc3eeb685fcd4735fd28ec2e434e329647ad7ab5"
+  },
+  "insertion": {
+    "anchor": "window.__demo = {",
+    "anchorOccurrences": 1,
+    "byteOffset": 303061,
+    "bytes": 12533,
+    "sha256": "acae700c507867c7ae2e1879ebd76a50b236f4b2d2904517d9f8348e53355ccd",
+    "beginMarker": "\n/* A42 LOCAL BRIDGE BEGIN — source: bridge.js */\n",
+    "endMarker": "\n/* A42 LOCAL BRIDGE END */\n",
+    "insertionOnly": true,
+    "originalBytesReconstructExactly": true
+  },
+  "semantics": "Bridge declarations inserted inside the existing IIFE. Normal embed URL and initialization order retained."
+}
