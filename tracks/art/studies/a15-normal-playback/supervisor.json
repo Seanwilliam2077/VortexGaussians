@@ -1,0 +1,42 @@
+{
+  "schema": "a15-supervisor-v1",
+  "command": [
+    "C:/Users/seanzjxiao/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\art\\studies\\a15-normal-playback\\record.mjs",
+    "--execute"
+  ],
+  "attempts": 1,
+  "browser_seconds": 150,
+  "worker_wait_seconds": 270,
+  "supervisor_seconds": 300,
+  "timed_out": false,
+  "errors": [],
+  "termination_attempted": false,
+  "pid": 48816,
+  "exit_code": 1,
+  "worker_lifetime_observed_seconds": 25.548184699960984,
+  "worker_launched": true,
+  "poll_exit_code": 1,
+  "still_live": false,
+  "requires_cleanup": false,
+  "partial_result_exists": true,
+  "worker_status": "failed",
+  "resources_closed": {
+    "context": true,
+    "browser": true,
+    "server": true
+  },
+  "recording_completed": false,
+  "media_validated": false,
+  "sources_unchanged": true,
+  "worker_failure": {
+    "stage": "browser",
+    "wallSeconds": 24.816413700000002,
+    "message": "Non-increasing CDP frame timestamp; no temporal repair",
+    "stack": "Error: Non-increasing CDP frame timestamp; no temporal repair\n    at CDPSession2.onFrame (file:///C:/Users/seanzjxiao/Documents/Codex/2026-10-13/https-github-com-jiarui-liu-ideascientist/work/VortexGaussians/tracks/art/studies/a15-normal-playback/record.mjs:81:79)\n    at CDPSession2._callHandler (C:\\Users\\seanzjxiao\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\playwright-core\\lib\\coreBundle.js:10746:33)\n    at CDPSession2.emit (C:\\Users\\seanzjxiao\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\playwright-core\\lib\\coreBundle.js:10736:16)\n    at Proxy.<anonymous> (C:\\Users\\seanzjxiao\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\playwright-core\\lib\\coreBundle.js:57198:16)\n    at Proxy._callHandler (C:\\Users\\seanzjxiao\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\playwright-core\\lib\\coreBundle.js:10746:33)\n    at Proxy.emit (C:\\Users\\seanzjxiao\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\playwright-core\\lib\\coreBundle.js:10736:16)\n    at Connection.dispatch (C:\\Users\\seanzjxiao\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\playwright-core\\lib\\coreBundle.js:63525:25)\n    at Immediate.<anonymous> (C:\\Users\\seanzjxiao\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\playwright-core\\lib\\coreBundle.js:63586:85)\n    at process.processImmediate (node:internal/timers:534:21)"
+  },
+  "parent_terminal_check_seconds": 25.55165959999431,
+  "success": false,
+  "no_retry": true,
+  "timing_limit": "Child launch, wait, and attempted own-tree cleanup are included; final receipt/stdout writing is excluded. Parent poll is not a proof that every descendant exited."
+}

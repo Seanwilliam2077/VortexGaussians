@@ -1,6 +1,6 @@
 # 可燃的数字记忆（暂定） · 艺术排练入口
 
-**2026-10-30：新作品A14《两边的火》完成首轮评审。** [实际网页](studies/a14-view-authored-object/index.html)新建一个双口共腔炉与两块地垫，以同一计算状态的两个呈示实现一次生成资格交接。5381点、360步、六张实际图与[论证短稿](studies/a14-view-authored-object/PAPER_DRAFT.md)已保存。[独立评审](../validation/art-a14-review-round-01.md)为**3/6 Weak Reject**、准备度5/10、置信度3/5：对象具体化有实质改善，继承经验与投稿贡献尚未得到支持。评审同时纠正了仅据静帧就关闭整个时序形式的过早结论；[回应](studies/a14-view-authored-object/RESPONSE_ROUND_01.md)保留原稿与分歧。[下一项A15](studies/a15-normal-playback/PROTOCOL.md)只录制冻结版本的一次正常时序，不调效果、参数或时长。目标总体5/6未达，准备度不能顶替；原作品、评分和平台保留。
+**2026-10-30：A14仍为3/6，A15正常记录首试失败。** [A15](studies/a15-normal-playback/README.md)因一次CDP时间戳倒序按原门停止，1147原始图保留，未取得完整结尾或成片。[只读诊断](studies/a15-normal-playback/DIAGNOSTIC.md)确认来源和索引身份，不能确定倒序根因。[独立判断](../validation/art-a15-evidence-decision.md)维持总体3/6、准备度5/10、置信度3/5：记录失败不是艺术失败，也不支持升分。唯一下一项[A16](studies/a16-reception-timing-record/PROTOCOL.md)另立明确单调接收时序的记录合同，完整保留来源时间和事件，对冻结A14再录一次；若仍失败则停止补录循环。它不修改[作品](studies/a14-view-authored-object/index.html)或[短稿](studies/a14-view-authored-object/PAPER_DRAFT.md)，不自动解决继承经验与原创性。目标总体5/6未达，准备度不能顶替。
 
 首个作者排练原型。它把现有 VortexGaussians demo 放在“保存的空间 → 介入燃烧 → 重置重看”的三个阶段中，并记录创作选择。它不是完成作品、观众实验或新燃烧算法。创作命题及待补证据见 [ART_BRIEF.md](ART_BRIEF.md)；技术证据另见 [research/EVIDENCE_STATUS.md](../../research/EVIDENCE_STATUS.md)。
 

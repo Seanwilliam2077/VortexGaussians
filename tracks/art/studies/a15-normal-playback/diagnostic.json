@@ -1,0 +1,261 @@
+{
+  "schema": "a15-saved-metadata-diagnostic-v1",
+  "diagnosticUTC": "2026-10-30T13:43:39.374204+00:00",
+  "method": "Read-only Python standard library metadata diagnostic. No browser, simulation, encoding, image decode, or timestamp repair. At most five neighboring JPEG files read only for hashes.",
+  "python": "3.12.14",
+  "evidenceSHA256": {
+    "result.json": "c921af576236dad254f92a108e12d670ada0b4c11493ec467beb9f10481fd40e",
+    "supervisor.json": "95d5c4280f299f8397653097a7daff17bede9984133b87dd27de3d4dc9adf9c8",
+    "raw/frames.ndjson": "50521fd069588a07035bf01991089f4e6c830aa76b18c077a0259d89899b69a6"
+  },
+  "indexChecks": {
+    "indexLines": 1147,
+    "indexValuesSequential": true,
+    "indexSHA256": "50521fd069588a07035bf01991089f4e6c830aa76b18c077a0259d89899b69a6",
+    "indexSHA256MatchesReceipt": true,
+    "sumJPEGBytes": 73638131,
+    "savedFrameCountMatches": true,
+    "metadataTimestampMatchesRow": true,
+    "allSourceHashesMatch": true
+  },
+  "nonIncreasingEvents": [
+    {
+      "previousIndex": 1145,
+      "index": 1146,
+      "timestampDeltaSeconds": -0.0027480125427246094,
+      "receiptWallDeltaSeconds": 0.0006711000000017009,
+      "receiptHostDeltaSeconds": 0.0010001659393310547,
+      "sameSavedJPEGHash": false,
+      "sessionIds": [
+        1,
+        1
+      ]
+    }
+  ],
+  "neighbors": [
+    {
+      "index": 1144,
+      "file": "raw/frame-01144.jpg",
+      "timestamp": 1793367623.256286,
+      "receivedWallSeconds": 24.7671959,
+      "receivedHostEpochSeconds": 1793367623.266,
+      "sessionId": 1,
+      "bytes": 71366,
+      "sha256": "2c2419c22b4734c3d833b6341346f484d89a16a0d848f8a89894b30575c73068",
+      "actualFileHashMatches": true,
+      "actualFileBytesMatch": true
+    },
+    {
+      "index": 1145,
+      "file": "raw/frame-01145.jpg",
+      "timestamp": 1793367623.283328,
+      "receivedWallSeconds": 24.7924472,
+      "receivedHostEpochSeconds": 1793367623.291,
+      "sessionId": 1,
+      "bytes": 71430,
+      "sha256": "c88fa4339369ae4eece649bb9a77abf8f0f9fd5c7b1556cdce821d61baaac05e",
+      "actualFileHashMatches": true,
+      "actualFileBytesMatch": true
+    },
+    {
+      "index": 1146,
+      "file": "raw/frame-01146.jpg",
+      "timestamp": 1793367623.28058,
+      "receivedWallSeconds": 24.793118300000003,
+      "receivedHostEpochSeconds": 1793367623.292,
+      "sessionId": 1,
+      "bytes": 71345,
+      "sha256": "09b1bd5b37f672339cf547601c0af2e6027427e23e23a4924c2144142fa5d035",
+      "actualFileHashMatches": true,
+      "actualFileBytesMatch": true
+    }
+  ],
+  "firstSavedFrame": {
+    "index": 0,
+    "file": "raw/frame-00000.jpg",
+    "timestamp": 1793367601.322828,
+    "receivedWallSeconds": 2.8301409,
+    "receivedHostEpochSeconds": 1793367601.329,
+    "sessionId": 1,
+    "bytes": 45594,
+    "sha256": "9e750bc7d36fbe103c1d1207d1bb2478dd7f1a2aee41f9bf9baef7d332df5bc6"
+  },
+  "lastSavedFrame": {
+    "index": 1146,
+    "file": "raw/frame-01146.jpg",
+    "timestamp": 1793367623.28058,
+    "receivedWallSeconds": 24.793118300000003,
+    "receivedHostEpochSeconds": 1793367623.292,
+    "sessionId": 1,
+    "bytes": 71345,
+    "sha256": "09b1bd5b37f672339cf547601c0af2e6027427e23e23a4924c2144142fa5d035"
+  },
+  "greatestTimestampFrame": {
+    "index": 1145,
+    "file": "raw/frame-01145.jpg",
+    "timestamp": 1793367623.283328,
+    "receivedWallSeconds": 24.7924472,
+    "receivedHostEpochSeconds": 1793367623.291,
+    "sessionId": 1,
+    "bytes": 71430,
+    "sha256": "c88fa4339369ae4eece649bb9a77abf8f0f9fd5c7b1556cdce821d61baaac05e"
+  },
+  "receiptTiming": {
+    "monotonicReceiptNegativeDeltas": 0,
+    "hostReceiptNegativeDeltas": 0,
+    "hostMinusMonotonicDeltaMinimumSeconds": -0.0009714675750736035,
+    "hostMinusMonotonicDeltaMaximumSeconds": 0.0009244664855962981,
+    "spanTimestampSeconds": 21.957751989364624,
+    "spanReceiptWallSeconds": 21.962977400000003,
+    "spanReceiptHostSeconds": 21.963000059127808,
+    "uniqueSessionIds": [
+      1
+    ]
+  },
+  "sourceChecks": [
+    {
+      "file": "tracks/art/studies/a14-view-authored-object/index.html",
+      "sha256": "3cbdaf8703bfa88c01e60d57bdf8c6b25c560cc2528fa03649ea5520cbdce6d5",
+      "beforeEqualsAfter": true,
+      "currentEqualsBefore": true,
+      "currentEqualsAfter": true
+    },
+    {
+      "file": "demo/index.html",
+      "sha256": "e9d808c434bdd8ce91482f60502f03f5d08c56b71c082eb704c53275ff9f57d0",
+      "beforeEqualsAfter": true,
+      "currentEqualsBefore": true,
+      "currentEqualsAfter": true
+    },
+    {
+      "file": "research/lib/runtime.mjs",
+      "sha256": "cf540ed02429016ab2b8a50a1cd95ac14222247466a56cfbf37444234851b184",
+      "beforeEqualsAfter": true,
+      "currentEqualsBefore": true,
+      "currentEqualsAfter": true
+    },
+    {
+      "file": "tracks/art/studies/a14-view-authored-object/WORK_SPEC.md",
+      "sha256": "3e324d5ccc84b36d75ef73d829ca520d64a046607b372ee65b8f776481faa996",
+      "beforeEqualsAfter": true,
+      "currentEqualsBefore": true,
+      "currentEqualsAfter": true
+    },
+    {
+      "file": "tracks/art/studies/a15-normal-playback/PROTOCOL.md",
+      "sha256": "6a6399f807937158d8f07dac7bc54b6bbe109b0b870c5ff6b29264683ccbfe89",
+      "beforeEqualsAfter": true,
+      "currentEqualsBefore": true,
+      "currentEqualsAfter": true
+    },
+    {
+      "file": "tracks/art/studies/a15-normal-playback/record.mjs",
+      "sha256": "144c04b6789fc813fee211aa6783c017134c6e4b1f7a6d027bbfd12c6c0aa19f",
+      "beforeEqualsAfter": true,
+      "currentEqualsBefore": true,
+      "currentEqualsAfter": true
+    },
+    {
+      "file": "tracks/art/studies/a15-normal-playback/execute.py",
+      "sha256": "ebdf6fb16b04363dd2520ec2b1f26fc7647b5e04c01b33268cf23cff08ec2f54",
+      "beforeEqualsAfter": true,
+      "currentEqualsBefore": true,
+      "currentEqualsAfter": true
+    },
+    {
+      "file": "tracks/art/studies/a15-normal-playback/PREPARATION.md",
+      "sha256": "3d69224a09d13163c5312fa703f35be7d1f2dbf8b7199e404d262a8bf83739d9",
+      "beforeEqualsAfter": true,
+      "currentEqualsBefore": true,
+      "currentEqualsAfter": true
+    }
+  ],
+  "execution": {
+    "createdUTC": "2026-10-30T13:39:58.500Z",
+    "status": "failed",
+    "failure": {
+      "stage": "browser",
+      "wallSeconds": 24.816413700000002,
+      "message": "Non-increasing CDP frame timestamp; no temporal repair"
+    },
+    "captureFailure": {
+      "wallSeconds": 24.7933826,
+      "message": "Non-increasing CDP frame timestamp; no temporal repair"
+    },
+    "captureStart": {
+      "browserEpochSeconds": 1793367601.322828,
+      "receivedWallSeconds": 2.8301409,
+      "definition": "First actually received compositor frame; no blank or invented pre-frame interval is encoded."
+    },
+    "captureStop": {
+      "browserEpochSeconds": 1793367623.343,
+      "receivedWallSeconds": 24.8448757
+    },
+    "receivedEvents": 1147,
+    "savedFrames": 1147,
+    "savedJPEGBytes": 73638131,
+    "discardedBudgetEvents": [],
+    "captureStopped": true,
+    "commands": [],
+    "recordingCompleted": false,
+    "mediaValidated": false,
+    "resourcesClosed": {
+      "context": true,
+      "browser": true,
+      "server": true
+    },
+    "sourcesUnchanged": true,
+    "noRetry": true,
+    "lastObservation": {
+      "browserEpochSeconds": 1793367623.159,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 289,
+        "simSeconds": 9.633333333333333,
+        "driver": "B",
+        "driverYaw": 0.43440188614540465,
+        "displayDistance": 3.6,
+        "wallSeconds": 19.7575,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 24.6611767
+    },
+    "supervisor": {
+      "exitCode": 1,
+      "timedOut": false,
+      "stillLive": false,
+      "requiresCleanup": false,
+      "terminationAttempted": false,
+      "success": false,
+      "workerLifetimeSeconds": 25.548184699960984,
+      "parentTerminalCheckSeconds": 25.55165959999431,
+      "errors": []
+    }
+  },
+  "preflightChronology": {
+    "createdUTC": "2026-10-30T13:39:58.707530+00:00",
+    "modifiedUTC": "2026-10-30T13:39:58.707530+00:00",
+    "workerReceiptCreatedUTC": "2026-10-30T13:39:58.500Z",
+    "reportModifiedAfterWorkerReceiptApproxMilliseconds": 208,
+    "limitation": "The no-blocker conclusion and wording correction were sent to root before execution. PREFLIGHT.md was archived after the worker started; it is not a previously saved approval record."
+  },
+  "interpretation": {
+    "established": "Arrival order conflicts with CDP timestamp order in one adjacent pair; host receipt clocks both move forward, and the two JPEG byte identities differ.",
+    "notEstablished": "These saved fields do not identify delivery reordering, producer clock adjustment, compositor timestamp mapping, or another time-domain cause. Distinct JPEG hashes do not establish image chronology.",
+    "artisticLimit": "The normal sequence stopped before ended, withdrawal, and final hold. This recorder failure does not establish failure of the continuous artwork.",
+    "noHistoricalRepair": "No frame reorder, timestamp substitution, image decode, encode, rerun, or source/evidence changes were performed."
+  },
+  "cost": {
+    "readbackWallSeconds": 0.009811200085096061,
+    "readbackCpuSeconds": 0,
+    "commandWallSeconds": 0.6872264,
+    "jpegFilesHashed": 3,
+    "imageDecodes": 0,
+    "browserRuns": 0,
+    "simulationRuns": 0,
+    "mediaCommands": 0
+  },
+  "proposedNextStep": "Only a separately scoped recorder revision: define and validate the presentation-order/time authority and bounded anomaly policy before another attempt. Preserve A15 as failed; do not silently sort or re-time its saved frames."
+}

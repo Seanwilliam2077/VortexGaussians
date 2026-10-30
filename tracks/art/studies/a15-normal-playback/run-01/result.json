@@ -1,0 +1,2840 @@
+{
+  "schema": "a15-normal-playback-v1",
+  "createdUTC": "2026-10-30T13:39:58.500Z",
+  "plan": {
+    "attempts": 1,
+    "viewport": {
+      "width": 1440,
+      "height": 1100
+    },
+    "initialHoldSeconds": 2,
+    "finalHoldSeconds": 3,
+    "browserLimitSeconds": 150,
+    "workerLimitSeconds": 270,
+    "supervisorLimitSeconds": 300,
+    "maximumJPEGFrames": 2000,
+    "maximumJPEGBytes": 209715200,
+    "maximumVideoBytes": 20971520,
+    "capture": "CDP Page.startScreencast JPEG quality 85, everyNthFrame=1; no native-full-frame-rate claim",
+    "output": "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\art\\studies\\a15-normal-playback\\run-01",
+    "frozenSHA256": "3cbdaf8703bfa88c01e60d57bdf8c6b25c560cc2528fa03649ea5520cbdce6d5",
+    "ffmpeg": "C:/Users/seanzjxiao/miniconda3/envs/gs-sph-3d/Library/bin/ffmpeg.exe",
+    "ffprobe": "C:\\Users\\seanzjxiao\\miniconda3\\envs\\gs-sph-3d\\Library\\bin\\ffprobe.exe"
+  },
+  "status": "failed",
+  "errors": [],
+  "console": [],
+  "external": [],
+  "events": [
+    {
+      "name": "opening-hold-begins",
+      "browserEpochSeconds": 1793367601.331,
+      "snapshot": {
+        "phase": "ready",
+        "frame": 0,
+        "simSeconds": 0,
+        "driver": "A",
+        "driverYaw": 0,
+        "displayDistance": 3.6,
+        "wallSeconds": 0,
+        "ignitionCalls": 0,
+        "resetCalls": 0,
+        "errors": []
+      },
+      "receivedWallSeconds": 2.832213
+    },
+    {
+      "name": "ui-click-before",
+      "browserEpochSeconds": 1793367603.346,
+      "snapshot": {
+        "phase": "ready",
+        "frame": 0,
+        "simSeconds": 0,
+        "driver": "A",
+        "driverYaw": 0,
+        "displayDistance": 3.6,
+        "wallSeconds": 0,
+        "ignitionCalls": 0,
+        "resetCalls": 0,
+        "errors": []
+      },
+      "receivedWallSeconds": 4.8474798
+    },
+    {
+      "name": "ui-click-after",
+      "browserEpochSeconds": 1793367603.462,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 1,
+        "simSeconds": 0.03333333333333333,
+        "driver": "A",
+        "driverYaw": 0.000009224965706447189,
+        "params": {
+          "mode": "fire",
+          "simLayers": 9,
+          "riseV": 1.15,
+          "sway": 0.9,
+          "rate": 1500,
+          "coolP": 0.8,
+          "spread": 0.7,
+          "buoy": 0.9,
+          "baro": 1.4,
+          "eps": 0.07,
+          "cool": 1.2,
+          "gam": 1,
+          "turb": 0.55,
+          "couple": 0.5,
+          "interZ": 0,
+          "solver": "vpm",
+          "theta": 0.9,
+          "vpmVisc": 0,
+          "vpmNaive": false,
+          "showTiming": false,
+          "layers": 9,
+          "yaw": 0.000009224965706447189,
+          "rad": 42,
+          "ppl": 160,
+          "wind": 0,
+          "camDist": 3.6,
+          "camElev": 0.18,
+          "fov": 0.85,
+          "sliceMode": "view",
+          "sliceDepth": 0.7,
+          "covStretch": 1.3,
+          "covMax": 3.6,
+          "covRelax": 1,
+          "dimMode": "layer",
+          "vol3DTurb": 0.6,
+          "vol3DScale": 2.4,
+          "stretch3": 1,
+          "filament": false,
+          "filLen": 0.5,
+          "filGain": 3,
+          "exposure": 1,
+          "emis": 2.2,
+          "bloom": 0.65,
+          "thresh": 0.4,
+          "blurIters": 5,
+          "look": "cinematic",
+          "box": false,
+          "boxLight": 0.1,
+          "embers": true,
+          "reflect": 0.05,
+          "haze": 0.05,
+          "emberRate": 16,
+          "emberMax": 160,
+          "sceneOn": true,
+          "sceneMax": 8000,
+          "sceneScale": 1,
+          "sceneYaw": 0,
+          "scenePitch": 0,
+          "sceneLift": 0.3314746368835308,
+          "sceneOffX": 0.14505853893986823,
+          "sceneOffZ": 0.14505853893986823,
+          "faithful": false,
+          "scenePreComp": false,
+          "sceneSH": 0,
+          "sceneLight": 1.1,
+          "sceneSorted": true,
+          "sceneBackdrop": false,
+          "sceneDepthTest": false,
+          "depthTestAlpha": 0.5,
+          "spreadOn": true,
+          "spreadIgnR": 0.14,
+          "spreadHeat": 2.2,
+          "spreadIgnH": 1,
+          "spreadR": 0.11,
+          "spreadRate": 3,
+          "spreadBurnT": 6,
+          "spreadFeed": 5,
+          "spreadFlameHeat": true,
+          "spreadSceneFeed": true,
+          "emitterOn": false,
+          "spreadFrontierCap": 1400,
+          "spreadSampleCap": 160,
+          "spreadFeedCap": 48,
+          "spreadClockMode": "legacy",
+          "spreadParticlePolicy": "block",
+          "spreadRecycleMinAge": 0.5,
+          "spreadMeasureMode": "legacy",
+          "spreadReferenceArea": 0.0016,
+          "spreadAreaFeedRate": 30,
+          "charDesat": 0.85,
+          "charDim": 0.12,
+          "charSootMix": 0,
+          "charOpa": 0,
+          "charSootR": 0.0495,
+          "charSootG": 0.0459,
+          "charSootB": 0.0428,
+          "orbit": false,
+          "stretch": true,
+          "flicker": true,
+          "paused": true
+        },
+        "pointCount": 5381,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "sequence": 1,
+        "lastHandoffBefore": null,
+        "lastHandoffAfter": null,
+        "handoffEqualExceptYaw": null,
+        "errors": [],
+        "inspect": false,
+        "wallSeconds": 0.060899999976158144,
+        "remainingSteps": 359,
+        "cameraYaws": [
+          0.000009224965706447189,
+          0.5
+        ],
+        "displayDistance": 3.6,
+        "scene": {
+          "groups": {
+            "ground": 1089,
+            "mat-A": 575,
+            "mat-B": 575,
+            "hearth-base": 576,
+            "shared-chamber": 792,
+            "mouth-A": 300,
+            "mouth-rim-A": 50,
+            "mouth-B": 300,
+            "mouth-rim-B": 50,
+            "crown": 450,
+            "single-fuel-bed": 624
+          },
+          "originCompensation": [
+            0.14505853893986823,
+            0.3314746368835308,
+            0.14505853893986823
+          ],
+          "format": "in-memory binary_little_endian 3DGS PLY",
+          "openSharedChamber": true
+        },
+        "materialSummary": {
+          "version": 3,
+          "frame": 1,
+          "time": 0.03333333333333333,
+          "seed": 20261030,
+          "hash": "679a1efa",
+          "particleStateHash": "4887e9c2",
+          "randomDraws": 178,
+          "params": {
+            "mode": "fire",
+            "simLayers": 9,
+            "riseV": 1.15,
+            "sway": 0.9,
+            "rate": 1500,
+            "coolP": 0.8,
+            "spread": 0.7,
+            "buoy": 0.9,
+            "baro": 1.4,
+            "eps": 0.07,
+            "cool": 1.2,
+            "gam": 1,
+            "turb": 0.55,
+            "couple": 0.5,
+            "interZ": 0,
+            "solver": "vpm",
+            "theta": 0.9,
+            "vpmVisc": 0,
+            "vpmNaive": false,
+            "showTiming": false,
+            "layers": 9,
+            "yaw": 0.000009224965706447189,
+            "rad": 42,
+            "ppl": 160,
+            "wind": 0,
+            "camDist": 3.6,
+            "camElev": 0.18,
+            "fov": 0.85,
+            "sliceMode": "view",
+            "sliceDepth": 0.7,
+            "covStretch": 1.3,
+            "covMax": 3.6,
+            "covRelax": 1,
+            "dimMode": "layer",
+            "vol3DTurb": 0.6,
+            "vol3DScale": 2.4,
+            "stretch3": 1,
+            "filament": false,
+            "filLen": 0.5,
+            "filGain": 3,
+            "exposure": 1,
+            "emis": 2.2,
+            "bloom": 0.65,
+            "thresh": 0.4,
+            "blurIters": 5,
+            "look": "cinematic",
+            "box": false,
+            "boxLight": 0.1,
+            "embers": true,
+            "reflect": 0.05,
+            "haze": 0.05,
+            "emberRate": 16,
+            "emberMax": 160,
+            "sceneOn": true,
+            "sceneMax": 8000,
+            "sceneScale": 1,
+            "sceneYaw": 0,
+            "scenePitch": 0,
+            "sceneLift": 0.3314746368835308,
+            "sceneOffX": 0.14505853893986823,
+            "sceneOffZ": 0.14505853893986823,
+            "faithful": false,
+            "scenePreComp": false,
+            "sceneSH": 0,
+            "sceneLight": 1.1,
+            "sceneSorted": true,
+            "sceneBackdrop": false,
+            "sceneDepthTest": false,
+            "depthTestAlpha": 0.5,
+            "spreadOn": true,
+            "spreadIgnR": 0.14,
+            "spreadHeat": 2.2,
+            "spreadIgnH": 1,
+            "spreadR": 0.11,
+            "spreadRate": 3,
+            "spreadBurnT": 6,
+            "spreadFeed": 5,
+            "spreadFlameHeat": true,
+            "spreadSceneFeed": true,
+            "emitterOn": false,
+            "spreadFrontierCap": 1400,
+            "spreadSampleCap": 160,
+            "spreadFeedCap": 48,
+            "spreadClockMode": "legacy",
+            "spreadParticlePolicy": "block",
+            "spreadRecycleMinAge": 0.5,
+            "spreadMeasureMode": "legacy",
+            "spreadReferenceArea": 0.0016,
+            "spreadAreaFeedRate": 30,
+            "charDesat": 0.85,
+            "charDim": 0.12,
+            "charSootMix": 0,
+            "charOpa": 0,
+            "charSootR": 0.0495,
+            "charSootG": 0.0459,
+            "charSootB": 0.0428,
+            "orbit": false,
+            "stretch": true,
+            "flicker": true,
+            "paused": true
+          },
+          "scene": {
+            "count": 5381,
+            "burning": 588,
+            "charred": 0,
+            "heated": 164,
+            "fuelRemaining": 5377.733324766159,
+            "frontier": 588,
+            "burnHash": "bd0cd16b",
+            "representedArea": null,
+            "areaWeightedFuelRemaining": null,
+            "areaWeightedHeat": null,
+            "areaWeightedChar": null
+          },
+          "particles": {
+            "count": 26,
+            "hotCount": 26,
+            "coldCount": 0,
+            "smokeCount": 0,
+            "temperatureSum": 23.89656456491211,
+            "dynamicTemperatureSum": 23.89656456491211,
+            "densitySum": 23.42593990219757,
+            "circulationSum": 0,
+            "absCirculationSum": 0,
+            "smokeProxySum": 1.871788649774051,
+            "layerCounts": [
+              0,
+              0,
+              0,
+              0,
+              6,
+              9,
+              10,
+              1,
+              0
+            ]
+          },
+          "counters": {
+            "flameHeatDeposited": 0,
+            "graphHeatDeposited": 50.92631524987519,
+            "sceneSeedsEmitted": 26,
+            "frontierProcessed": 588,
+            "frontierDeferred": 0,
+            "sceneFeedAttempts": 48,
+            "sceneFeedCapacityBlocked": 0,
+            "sceneFeedRandomRejected": 22,
+            "baseParticlesEmitted": 0,
+            "baseHeatApplied": 0,
+            "flameSamplesProcessed": 0,
+            "flameSampleCapHits": 0,
+            "clockProcessed": 588,
+            "clockFuelConsumed": 3.2666752338409424,
+            "sceneSeedsRecycled": 0,
+            "sceneFeedRecycleCandidates": 0,
+            "sceneFeedNoColdSlot": 0,
+            "sceneRecycleSlotsExamined": 0,
+            "recycledDensitySum": 0,
+            "recycledCirculationSum": 0,
+            "recycledAbsCirculationSum": 0,
+            "recycledMaxDensity": 0,
+            "recycledMaxAbsCirculation": 0,
+            "recycledSmokeProxySum": 0,
+            "recycledHotRemoved": 0,
+            "recycledMaxTemperature": 0,
+            "recycledMaxDynamicTemperature": 0,
+            "recycledMinAge": null,
+            "areaWeightedFlameHeatDeposited": 0,
+            "areaWeightedGraphHeatDeposited": 0,
+            "areaWeightedFuelConsumed": 0,
+            "areaFeedCreditsGenerated": 0,
+            "areaFeedAttempts": 0,
+            "areaFeedAdmitted": 0,
+            "areaFeedBlocked": 0,
+            "areaFeedServiceCapDropped": 0,
+            "areaFeedCancelledCredits": 0
+          },
+          "countersByGroup": {
+            "ply": {
+              "flameHeatDeposited": 0,
+              "graphHeatDeposited": 50.92631524987519,
+              "sceneSeedsEmitted": 26,
+              "sceneSeedsRecycled": 0,
+              "clockProcessed": 588,
+              "clockFuelConsumed": 3.2666752338409424,
+              "areaWeightedFlameHeatDeposited": 0,
+              "areaWeightedGraphHeatDeposited": 0,
+              "areaWeightedFuelConsumed": 0
+            }
+          },
+          "areaFeed": {
+            "creditBalance": 0,
+            "fractionalCredit": 0,
+            "wholeEventsPending": 0,
+            "burningArea": null,
+            "sourceWeightSum": null
+          }
+        }
+      },
+      "receivedWallSeconds": 4.969156
+    }
+  ],
+  "observations": [
+    {
+      "browserEpochSeconds": 1793367603.474,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 1,
+        "simSeconds": 0.03333333333333333,
+        "driver": "A",
+        "driverYaw": 0.000009224965706447189,
+        "displayDistance": 3.6,
+        "wallSeconds": 0.07210000002384186,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 4.975736900000001
+    },
+    {
+      "browserEpochSeconds": 1793367603.659,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 4,
+        "simSeconds": 0.13333333333333333,
+        "driver": "A",
+        "driverYaw": 0.0001459533607681756,
+        "displayDistance": 3.6,
+        "wallSeconds": 0.25739999997615814,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 5.161175
+    },
+    {
+      "browserEpochSeconds": 1793367603.814,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 6,
+        "simSeconds": 0.2,
+        "driver": "A",
+        "driverYaw": 0.0003259259259259259,
+        "displayDistance": 3.6,
+        "wallSeconds": 0.4127000000476837,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 5.3161889
+    },
+    {
+      "browserEpochSeconds": 1793367603.985,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 9,
+        "simSeconds": 0.3,
+        "driver": "A",
+        "driverYaw": 0.0007250000000000002,
+        "displayDistance": 3.6,
+        "wallSeconds": 0.5832999999523163,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 5.4870681
+    },
+    {
+      "browserEpochSeconds": 1793367604.15,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 11,
+        "simSeconds": 0.36666666666666664,
+        "driver": "A",
+        "driverYaw": 0.0010747256515775034,
+        "displayDistance": 3.6,
+        "wallSeconds": 0.7482000000476837,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 5.6527788
+    },
+    {
+      "browserEpochSeconds": 1793367604.321,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 14,
+        "simSeconds": 0.4666666666666667,
+        "driver": "A",
+        "driverYaw": 0.001720713305898491,
+        "displayDistance": 3.6,
+        "wallSeconds": 0.9197999999523163,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 5.823433400000001
+    },
+    {
+      "browserEpochSeconds": 1793367604.477,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 16,
+        "simSeconds": 0.5333333333333333,
+        "driver": "A",
+        "driverYaw": 0.002229903978052127,
+        "displayDistance": 3.6,
+        "wallSeconds": 1.0751000000238418,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 5.979186500000001
+    },
+    {
+      "browserEpochSeconds": 1793367604.647,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 19,
+        "simSeconds": 0.6333333333333333,
+        "driver": "A",
+        "driverYaw": 0.003107373113854595,
+        "displayDistance": 3.6,
+        "wallSeconds": 1.2458999999761582,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 6.1492633
+    },
+    {
+      "browserEpochSeconds": 1793367604.807,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 21,
+        "simSeconds": 0.7,
+        "driver": "A",
+        "driverYaw": 0.0037657407407407414,
+        "displayDistance": 3.6,
+        "wallSeconds": 1.4053999999761582,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 6.3087428
+    },
+    {
+      "browserEpochSeconds": 1793367604.959,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 23,
+        "simSeconds": 0.7666666666666666,
+        "driver": "A",
+        "driverYaw": 0.004480898491083675,
+        "displayDistance": 3.6,
+        "wallSeconds": 1.5577000000476837,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 6.4612811
+    },
+    {
+      "browserEpochSeconds": 1793367605.117,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 26,
+        "simSeconds": 0.8666666666666667,
+        "driver": "A",
+        "driverYaw": 0.005656515775034294,
+        "displayDistance": 3.6,
+        "wallSeconds": 1.7152999999523162,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 6.618827200000001
+    },
+    {
+      "browserEpochSeconds": 1793367605.273,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 28,
+        "simSeconds": 0.9333333333333333,
+        "driver": "A",
+        "driverYaw": 0.00650644718792867,
+        "displayDistance": 3.6,
+        "wallSeconds": 1.8717999999523163,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 6.775177
+    },
+    {
+      "browserEpochSeconds": 1793367605.426,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 30,
+        "simSeconds": 1,
+        "driver": "A",
+        "driverYaw": 0.007407407407407408,
+        "displayDistance": 3.6,
+        "wallSeconds": 2.024399999976158,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 6.9275339
+    },
+    {
+      "browserEpochSeconds": 1793367605.607,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 33,
+        "simSeconds": 1.1,
+        "driver": "A",
+        "driverYaw": 0.008850925925925925,
+        "displayDistance": 3.6,
+        "wallSeconds": 2.2051000000238417,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 7.1087038
+    },
+    {
+      "browserEpochSeconds": 1793367605.76,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 35,
+        "simSeconds": 1.1666666666666667,
+        "driver": "A",
+        "driverYaw": 0.009872256515775037,
+        "displayDistance": 3.6,
+        "wallSeconds": 2.3582000000476837,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 7.2617786
+    },
+    {
+      "browserEpochSeconds": 1793367605.935,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 38,
+        "simSeconds": 1.2666666666666666,
+        "driver": "A",
+        "driverYaw": 0.011488614540466393,
+        "displayDistance": 3.6,
+        "wallSeconds": 2.5332999999523165,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 7.4373025
+    },
+    {
+      "browserEpochSeconds": 1793367606.09,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 40,
+        "simSeconds": 1.3333333333333333,
+        "driver": "A",
+        "driverYaw": 0.01262002743484225,
+        "displayDistance": 3.6,
+        "wallSeconds": 2.688600000023842,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 7.591920600000001
+    },
+    {
+      "browserEpochSeconds": 1793367606.273,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 43,
+        "simSeconds": 1.4333333333333333,
+        "driver": "A",
+        "driverYaw": 0.014393792866941016,
+        "displayDistance": 3.6,
+        "wallSeconds": 2.8716000000238417,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 7.774921
+    },
+    {
+      "browserEpochSeconds": 1793367606.438,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 45,
+        "simSeconds": 1.5,
+        "driver": "A",
+        "driverYaw": 0.015625,
+        "displayDistance": 3.6,
+        "wallSeconds": 3.036700000047684,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 7.9403741
+    },
+    {
+      "browserEpochSeconds": 1793367606.591,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 47,
+        "simSeconds": 1.5666666666666667,
+        "driver": "A",
+        "driverYaw": 0.016893244170096026,
+        "displayDistance": 3.6,
+        "wallSeconds": 3.1897999999523163,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 8.0931145
+    },
+    {
+      "browserEpochSeconds": 1793367606.75,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 50,
+        "simSeconds": 1.6666666666666667,
+        "driver": "A",
+        "driverYaw": 0.018861454046639237,
+        "displayDistance": 3.6,
+        "wallSeconds": 3.3482999999523164,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 8.2516315
+    },
+    {
+      "browserEpochSeconds": 1793367606.909,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 52,
+        "simSeconds": 1.7333333333333334,
+        "driver": "A",
+        "driverYaw": 0.02021508916323731,
+        "displayDistance": 3.6,
+        "wallSeconds": 3.506899999976158,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 8.4109378
+    },
+    {
+      "browserEpochSeconds": 1793367607.087,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 55,
+        "simSeconds": 1.8333333333333333,
+        "driver": "A",
+        "driverYaw": 0.022303669410150898,
+        "displayDistance": 3.6,
+        "wallSeconds": 3.6851000000238416,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 8.588535899999998
+    },
+    {
+      "browserEpochSeconds": 1793367607.25,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 57,
+        "simSeconds": 1.9,
+        "driver": "A",
+        "driverYaw": 0.023732407407407407,
+        "displayDistance": 3.6,
+        "wallSeconds": 3.848799999952316,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 8.752414299999998
+    },
+    {
+      "browserEpochSeconds": 1793367607.406,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 59,
+        "simSeconds": 1.9666666666666666,
+        "driver": "A",
+        "driverYaw": 0.02518830589849108,
+        "displayDistance": 3.6,
+        "wallSeconds": 4.004399999976158,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 8.9079857
+    },
+    {
+      "browserEpochSeconds": 1793367607.568,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 62,
+        "simSeconds": 2.0666666666666664,
+        "driver": "A",
+        "driverYaw": 0.027419478737997258,
+        "displayDistance": 3.6,
+        "wallSeconds": 4.166899999976158,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 9.070435899999998
+    },
+    {
+      "browserEpochSeconds": 1793367607.727,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 64,
+        "simSeconds": 2.1333333333333333,
+        "driver": "A",
+        "driverYaw": 0.0289360768175583,
+        "displayDistance": 3.6,
+        "wallSeconds": 4.325,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 9.2287454
+    },
+    {
+      "browserEpochSeconds": 1793367607.904,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 67,
+        "simSeconds": 2.2333333333333334,
+        "driver": "A",
+        "driverYaw": 0.03125058299039781,
+        "displayDistance": 3.6,
+        "wallSeconds": 4.502799999952316,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 9.405981
+    },
+    {
+      "browserEpochSeconds": 1793367608.057,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 69,
+        "simSeconds": 2.3,
+        "driver": "A",
+        "driverYaw": 0.0328175925925926,
+        "displayDistance": 3.6,
+        "wallSeconds": 4.655200000047683,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 9.558339899999998
+    },
+    {
+      "browserEpochSeconds": 1793367608.237,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 72,
+        "simSeconds": 2.4,
+        "driver": "A",
+        "driverYaw": 0.03520000000000001,
+        "displayDistance": 3.6,
+        "wallSeconds": 4.835799999952316,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 9.7393095
+    },
+    {
+      "browserEpochSeconds": 1793367608.39,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 74,
+        "simSeconds": 2.466666666666667,
+        "driver": "A",
+        "driverYaw": 0.03680713305898491,
+        "displayDistance": 3.6,
+        "wallSeconds": 4.9885,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 9.8919455
+    },
+    {
+      "browserEpochSeconds": 1793367608.542,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 76,
+        "simSeconds": 2.533333333333333,
+        "driver": "A",
+        "driverYaw": 0.038427434842249655,
+        "displayDistance": 3.6,
+        "wallSeconds": 5.140299999952316,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 10.043625899999999
+    },
+    {
+      "browserEpochSeconds": 1793367608.71,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 79,
+        "simSeconds": 2.6333333333333333,
+        "driver": "A",
+        "driverYaw": 0.0408789780521262,
+        "displayDistance": 3.6,
+        "wallSeconds": 5.307899999976158,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 10.211510999999998
+    },
+    {
+      "browserEpochSeconds": 1793367608.862,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 81,
+        "simSeconds": 2.7,
+        "driver": "A",
+        "driverYaw": 0.04252500000000001,
+        "displayDistance": 3.6,
+        "wallSeconds": 5.460600000023842,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 10.363915299999999
+    },
+    {
+      "browserEpochSeconds": 1793367609.025,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 83,
+        "simSeconds": 2.7666666666666666,
+        "driver": "A",
+        "driverYaw": 0.04417842935528121,
+        "displayDistance": 3.6,
+        "wallSeconds": 5.623600000023842,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 10.5271675
+    },
+    {
+      "browserEpochSeconds": 1793367609.191,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 86,
+        "simSeconds": 2.8666666666666667,
+        "driver": "A",
+        "driverYaw": 0.04666886145404664,
+        "displayDistance": 3.6,
+        "wallSeconds": 5.7896000000238415,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 10.693323699999999
+    },
+    {
+      "browserEpochSeconds": 1793367609.36,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 88,
+        "simSeconds": 2.933333333333333,
+        "driver": "A",
+        "driverYaw": 0.048333607681755826,
+        "displayDistance": 3.6,
+        "wallSeconds": 5.957899999976158,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 10.8631515
+    },
+    {
+      "browserEpochSeconds": 1793367609.535,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 91,
+        "simSeconds": 3.033333333333333,
+        "driver": "A",
+        "driverYaw": 0.05083329903978051,
+        "displayDistance": 3.6,
+        "wallSeconds": 6.134,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 11.0376314
+    },
+    {
+      "browserEpochSeconds": 1793367609.692,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 93,
+        "simSeconds": 3.1,
+        "driver": "A",
+        "driverYaw": 0.05249907407407409,
+        "displayDistance": 3.6,
+        "wallSeconds": 6.290200000047684,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 11.1936977
+    },
+    {
+      "browserEpochSeconds": 1793367609.877,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 96,
+        "simSeconds": 3.2,
+        "driver": "A",
+        "driverYaw": 0.05499259259259259,
+        "displayDistance": 3.6,
+        "wallSeconds": 6.475799999952316,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 11.3800247
+    },
+    {
+      "browserEpochSeconds": 1793367610.041,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 98,
+        "simSeconds": 3.2666666666666666,
+        "driver": "A",
+        "driverYaw": 0.05664910836762688,
+        "displayDistance": 3.6,
+        "wallSeconds": 6.639600000023842,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 11.543038
+    },
+    {
+      "browserEpochSeconds": 1793367610.235,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 101,
+        "simSeconds": 3.3666666666666667,
+        "driver": "A",
+        "driverYaw": 0.0591210219478738,
+        "displayDistance": 3.6,
+        "wallSeconds": 6.8337999999523165,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 11.7379293
+    },
+    {
+      "browserEpochSeconds": 1793367610.395,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 103,
+        "simSeconds": 3.433333333333333,
+        "driver": "A",
+        "driverYaw": 0.06075799039780521,
+        "displayDistance": 3.6,
+        "wallSeconds": 6.993799999952317,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 11.897453099999998
+    },
+    {
+      "browserEpochSeconds": 1793367610.578,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 106,
+        "simSeconds": 3.533333333333333,
+        "driver": "A",
+        "driverYaw": 0.0631928669410151,
+        "displayDistance": 3.6,
+        "wallSeconds": 7.176,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 12.0795476
+    },
+    {
+      "browserEpochSeconds": 1793367610.74,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 108,
+        "simSeconds": 3.6,
+        "driver": "A",
+        "driverYaw": 0.06480000000000001,
+        "displayDistance": 3.6,
+        "wallSeconds": 7.338299999952317,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 12.2418582
+    },
+    {
+      "browserEpochSeconds": 1793367610.91,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 111,
+        "simSeconds": 3.6999999999999997,
+        "driver": "A",
+        "driverYaw": 0.06718240740740743,
+        "displayDistance": 3.6,
+        "wallSeconds": 7.508100000023842,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 12.4116296
+    },
+    {
+      "browserEpochSeconds": 1793367611.064,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 113,
+        "simSeconds": 3.7666666666666666,
+        "driver": "A",
+        "driverYaw": 0.06874941700960219,
+        "displayDistance": 3.6,
+        "wallSeconds": 7.661899999976158,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 12.5655071
+    },
+    {
+      "browserEpochSeconds": 1793367611.218,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 115,
+        "simSeconds": 3.8333333333333335,
+        "driver": "A",
+        "driverYaw": 0.07029749657064471,
+        "displayDistance": 3.6,
+        "wallSeconds": 7.816799999952316,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 12.7201633
+    },
+    {
+      "browserEpochSeconds": 1793367611.404,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 118,
+        "simSeconds": 3.933333333333333,
+        "driver": "A",
+        "driverYaw": 0.07258052126200275,
+        "displayDistance": 3.6,
+        "wallSeconds": 8.002899999976158,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 12.9063033
+    },
+    {
+      "browserEpochSeconds": 1793367611.559,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 120,
+        "simSeconds": 4,
+        "driver": "A",
+        "driverYaw": 0.07407407407407407,
+        "displayDistance": 3.6,
+        "wallSeconds": 8.157399999976159,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 13.0607302
+    },
+    {
+      "browserEpochSeconds": 1793367611.742,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 123,
+        "simSeconds": 4.1,
+        "driver": "A",
+        "driverYaw": 0.0762675925925926,
+        "displayDistance": 3.6,
+        "wallSeconds": 8.340899999976157,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 13.244582000000001
+    },
+    {
+      "browserEpochSeconds": 1793367611.898,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 125,
+        "simSeconds": 4.166666666666667,
+        "driver": "A",
+        "driverYaw": 0.07769633058984911,
+        "displayDistance": 3.6,
+        "wallSeconds": 8.496899999976158,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 13.4001212
+    },
+    {
+      "browserEpochSeconds": 1793367612.09,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 128,
+        "simSeconds": 4.266666666666667,
+        "driver": "A",
+        "driverYaw": 0.0797849108367627,
+        "displayDistance": 3.6,
+        "wallSeconds": 8.688700000047684,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 13.604669699999999
+    },
+    {
+      "browserEpochSeconds": 1793367612.256,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 130,
+        "simSeconds": 4.333333333333333,
+        "driver": "A",
+        "driverYaw": 0.08113854595336077,
+        "displayDistance": 3.6,
+        "wallSeconds": 8.854899999976158,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 13.7580165
+    },
+    {
+      "browserEpochSeconds": 1793367612.422,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 133,
+        "simSeconds": 4.433333333333334,
+        "driver": "A",
+        "driverYaw": 0.083106755829904,
+        "displayDistance": 3.6,
+        "wallSeconds": 9.020899999976159,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 13.924572099999999
+    },
+    {
+      "browserEpochSeconds": 1793367612.575,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 135,
+        "simSeconds": 4.5,
+        "driver": "A",
+        "driverYaw": 0.084375,
+        "displayDistance": 3.6,
+        "wallSeconds": 9.173600000023843,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 14.0769336
+    },
+    {
+      "browserEpochSeconds": 1793367612.757,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 138,
+        "simSeconds": 4.6,
+        "driver": "A",
+        "driverYaw": 0.08620740740740741,
+        "displayDistance": 3.6,
+        "wallSeconds": 9.354899999976158,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 14.2595829
+    },
+    {
+      "browserEpochSeconds": 1793367612.912,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 140,
+        "simSeconds": 4.666666666666667,
+        "driver": "A",
+        "driverYaw": 0.08737997256515775,
+        "displayDistance": 3.6,
+        "wallSeconds": 9.510399999976158,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 14.4137361
+    },
+    {
+      "browserEpochSeconds": 1793367613.069,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 142,
+        "simSeconds": 4.733333333333333,
+        "driver": "A",
+        "driverYaw": 0.0885113854595336,
+        "displayDistance": 3.6,
+        "wallSeconds": 9.667200000047684,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 14.570891
+    },
+    {
+      "browserEpochSeconds": 1793367613.259,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 145,
+        "simSeconds": 4.833333333333333,
+        "driver": "A",
+        "driverYaw": 0.09012774348422498,
+        "displayDistance": 3.6,
+        "wallSeconds": 9.8575,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 14.760820599999999
+    },
+    {
+      "browserEpochSeconds": 1793367613.427,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 147,
+        "simSeconds": 4.9,
+        "driver": "A",
+        "driverYaw": 0.09114907407407408,
+        "displayDistance": 3.6,
+        "wallSeconds": 10.025700000047683,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 14.9315348
+    },
+    {
+      "browserEpochSeconds": 1793367613.608,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 150,
+        "simSeconds": 5,
+        "driver": "A",
+        "driverYaw": 0.09259259259259262,
+        "displayDistance": 3.6,
+        "wallSeconds": 10.206200000047684,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 15.1099088
+    },
+    {
+      "browserEpochSeconds": 1793367613.762,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 152,
+        "simSeconds": 5.066666666666666,
+        "driver": "A",
+        "driverYaw": 0.09349355281207133,
+        "displayDistance": 3.6,
+        "wallSeconds": 10.360600000023842,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 15.264009199999999
+    },
+    {
+      "browserEpochSeconds": 1793367613.945,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 155,
+        "simSeconds": 5.166666666666667,
+        "driver": "A",
+        "driverYaw": 0.09474879972565159,
+        "displayDistance": 3.6,
+        "wallSeconds": 10.543299999952316,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 15.4465954
+    },
+    {
+      "browserEpochSeconds": 1793367614.099,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 157,
+        "simSeconds": 5.233333333333333,
+        "driver": "A",
+        "driverYaw": 0.09551910150891633,
+        "displayDistance": 3.6,
+        "wallSeconds": 10.697100000023841,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 15.6010049
+    },
+    {
+      "browserEpochSeconds": 1793367614.251,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 159,
+        "simSeconds": 5.3,
+        "driver": "A",
+        "driverYaw": 0.09623425925925927,
+        "displayDistance": 3.6,
+        "wallSeconds": 10.8495,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 15.7526379
+    },
+    {
+      "browserEpochSeconds": 1793367614.418,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 162,
+        "simSeconds": 5.4,
+        "driver": "A",
+        "driverYaw": 0.09720000000000001,
+        "displayDistance": 3.6,
+        "wallSeconds": 11.017,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 15.920981099999999
+    },
+    {
+      "browserEpochSeconds": 1793367614.587,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 164,
+        "simSeconds": 5.466666666666667,
+        "driver": "A",
+        "driverYaw": 0.09777009602194787,
+        "displayDistance": 3.6,
+        "wallSeconds": 11.185,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 16.0883669
+    },
+    {
+      "browserEpochSeconds": 1793367614.753,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 167,
+        "simSeconds": 5.566666666666666,
+        "driver": "A",
+        "driverYaw": 0.09851052812071331,
+        "displayDistance": 3.6,
+        "wallSeconds": 11.351700000047684,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 16.256520499999997
+    },
+    {
+      "browserEpochSeconds": 1793367614.907,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 169,
+        "simSeconds": 5.633333333333333,
+        "driver": "A",
+        "driverYaw": 0.0989252743484225,
+        "displayDistance": 3.6,
+        "wallSeconds": 11.505299999952316,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 16.4084259
+    },
+    {
+      "browserEpochSeconds": 1793367615.069,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 171,
+        "simSeconds": 5.7,
+        "driver": "A",
+        "driverYaw": 0.099275,
+        "displayDistance": 3.6,
+        "wallSeconds": 11.667700000047684,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 16.571811
+    },
+    {
+      "browserEpochSeconds": 1793367615.237,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 174,
+        "simSeconds": 5.8,
+        "driver": "A",
+        "driverYaw": 0.09967407407407408,
+        "displayDistance": 3.6,
+        "wallSeconds": 11.835,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 16.7392566
+    },
+    {
+      "browserEpochSeconds": 1793367615.39,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 176,
+        "simSeconds": 5.866666666666666,
+        "driver": "A",
+        "driverYaw": 0.09985404663923184,
+        "displayDistance": 3.6,
+        "wallSeconds": 11.9885,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 16.8921041
+    },
+    {
+      "browserEpochSeconds": 1793367615.544,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 178,
+        "simSeconds": 5.933333333333334,
+        "driver": "A",
+        "driverYaw": 0.09996323731138547,
+        "displayDistance": 3.6,
+        "wallSeconds": 12.142399999976158,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 17.0455596
+    },
+    {
+      "browserEpochSeconds": 1793367615.696,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 180,
+        "simSeconds": 6,
+        "driver": "B",
+        "driverYaw": 0.5,
+        "displayDistance": 3.6,
+        "wallSeconds": 12.294200000047685,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 17.1977836
+    },
+    {
+      "browserEpochSeconds": 1793367615.873,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 183,
+        "simSeconds": 6.1,
+        "driver": "B",
+        "driverYaw": 0.4999175925925926,
+        "displayDistance": 3.6,
+        "wallSeconds": 12.471100000023842,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 17.3743918
+    },
+    {
+      "browserEpochSeconds": 1793367616.035,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 185,
+        "simSeconds": 6.166666666666667,
+        "driver": "B",
+        "driverYaw": 0.49977280521262,
+        "displayDistance": 3.6,
+        "wallSeconds": 12.633100000023841,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 17.536457300000002
+    },
+    {
+      "browserEpochSeconds": 1793367616.22,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 188,
+        "simSeconds": 6.266666666666667,
+        "driver": "B",
+        "driverYaw": 0.4994249657064472,
+        "displayDistance": 3.6,
+        "wallSeconds": 12.818200000047684,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 17.721789500000003
+    },
+    {
+      "browserEpochSeconds": 1793367616.376,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 190,
+        "simSeconds": 6.333333333333333,
+        "driver": "B",
+        "driverYaw": 0.49910836762688615,
+        "displayDistance": 3.6,
+        "wallSeconds": 12.974600000023841,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 17.878494200000002
+    },
+    {
+      "browserEpochSeconds": 1793367616.556,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 193,
+        "simSeconds": 6.433333333333334,
+        "driver": "B",
+        "driverYaw": 0.4985105281207133,
+        "displayDistance": 3.6,
+        "wallSeconds": 13.154899999976157,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 18.058802200000002
+    },
+    {
+      "browserEpochSeconds": 1793367616.709,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 195,
+        "simSeconds": 6.5,
+        "driver": "B",
+        "driverYaw": 0.4980324074074074,
+        "displayDistance": 3.6,
+        "wallSeconds": 13.307299999952317,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 18.2103446
+    },
+    {
+      "browserEpochSeconds": 1793367616.913,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 198,
+        "simSeconds": 6.6,
+        "driver": "B",
+        "driverYaw": 0.4972,
+        "displayDistance": 3.6,
+        "wallSeconds": 13.511,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 18.4157801
+    },
+    {
+      "browserEpochSeconds": 1793367617.072,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 200,
+        "simSeconds": 6.666666666666667,
+        "driver": "B",
+        "driverYaw": 0.49657064471879286,
+        "displayDistance": 3.6,
+        "wallSeconds": 13.670299999952316,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 18.5734448
+    },
+    {
+      "browserEpochSeconds": 1793367617.235,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 203,
+        "simSeconds": 6.766666666666667,
+        "driver": "B",
+        "driverYaw": 0.4955191015089163,
+        "displayDistance": 3.6,
+        "wallSeconds": 13.833700000047683,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 18.7370214
+    },
+    {
+      "browserEpochSeconds": 1793367617.393,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 205,
+        "simSeconds": 6.833333333333333,
+        "driver": "B",
+        "driverYaw": 0.49474879972565156,
+        "displayDistance": 3.6,
+        "wallSeconds": 13.9915,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 18.8950341
+    },
+    {
+      "browserEpochSeconds": 1793367617.573,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 208,
+        "simSeconds": 6.933333333333334,
+        "driver": "B",
+        "driverYaw": 0.49349355281207136,
+        "displayDistance": 3.6,
+        "wallSeconds": 14.171299999952316,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 19.0746031
+    },
+    {
+      "browserEpochSeconds": 1793367617.726,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 210,
+        "simSeconds": 7,
+        "driver": "B",
+        "driverYaw": 0.4925925925925926,
+        "displayDistance": 3.6,
+        "wallSeconds": 14.324200000047684,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 19.2274198
+    },
+    {
+      "browserEpochSeconds": 1793367617.888,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 212,
+        "simSeconds": 7.066666666666666,
+        "driver": "B",
+        "driverYaw": 0.4916422496570645,
+        "displayDistance": 3.6,
+        "wallSeconds": 14.486,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 19.389498900000003
+    },
+    {
+      "browserEpochSeconds": 1793367618.072,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 215,
+        "simSeconds": 7.166666666666667,
+        "driver": "B",
+        "driverYaw": 0.49012774348422494,
+        "displayDistance": 3.6,
+        "wallSeconds": 14.670399999976159,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 19.5736368
+    },
+    {
+      "browserEpochSeconds": 1793367618.226,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 217,
+        "simSeconds": 7.233333333333333,
+        "driver": "B",
+        "driverYaw": 0.48906114540466394,
+        "displayDistance": 3.6,
+        "wallSeconds": 14.824899999976157,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 19.729782900000004
+    },
+    {
+      "browserEpochSeconds": 1793367618.405,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 220,
+        "simSeconds": 7.333333333333333,
+        "driver": "B",
+        "driverYaw": 0.48737997256515775,
+        "displayDistance": 3.6,
+        "wallSeconds": 15.003799999952316,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 19.908732200000003
+    },
+    {
+      "browserEpochSeconds": 1793367618.559,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 222,
+        "simSeconds": 7.3999999999999995,
+        "driver": "B",
+        "driverYaw": 0.4862074074074074,
+        "displayDistance": 3.6,
+        "wallSeconds": 15.157399999976159,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 20.0604957
+    },
+    {
+      "browserEpochSeconds": 1793367618.736,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 225,
+        "simSeconds": 7.5,
+        "driver": "B",
+        "driverYaw": 0.484375,
+        "displayDistance": 3.6,
+        "wallSeconds": 15.334200000047684,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 20.238601700000004
+    },
+    {
+      "browserEpochSeconds": 1793367618.898,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 227,
+        "simSeconds": 7.566666666666666,
+        "driver": "B",
+        "driverYaw": 0.483106755829904,
+        "displayDistance": 3.6,
+        "wallSeconds": 15.496100000023842,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 20.3991575
+    },
+    {
+      "browserEpochSeconds": 1793367619.057,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 229,
+        "simSeconds": 7.633333333333333,
+        "driver": "B",
+        "driverYaw": 0.4818031207133059,
+        "displayDistance": 3.6,
+        "wallSeconds": 15.655200000047683,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 20.558573
+    },
+    {
+      "browserEpochSeconds": 1793367619.225,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 232,
+        "simSeconds": 7.733333333333333,
+        "driver": "B",
+        "driverYaw": 0.47978491083676267,
+        "displayDistance": 3.6,
+        "wallSeconds": 15.823,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 20.7264106
+    },
+    {
+      "browserEpochSeconds": 1793367619.382,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 234,
+        "simSeconds": 7.8,
+        "driver": "B",
+        "driverYaw": 0.4784,
+        "displayDistance": 3.6,
+        "wallSeconds": 15.980299999952317,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 20.8840937
+    },
+    {
+      "browserEpochSeconds": 1793367619.542,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 236,
+        "simSeconds": 7.866666666666666,
+        "driver": "B",
+        "driverYaw": 0.47698545953360766,
+        "displayDistance": 3.6,
+        "wallSeconds": 16.14089999997616,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 21.0440788
+    },
+    {
+      "browserEpochSeconds": 1793367619.708,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 239,
+        "simSeconds": 7.966666666666667,
+        "driver": "B",
+        "driverYaw": 0.4748116941015089,
+        "displayDistance": 3.6,
+        "wallSeconds": 16.30589999997616,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 21.2107382
+    },
+    {
+      "browserEpochSeconds": 1793367619.862,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 241,
+        "simSeconds": 8.033333333333333,
+        "driver": "B",
+        "driverYaw": 0.47333028120713305,
+        "displayDistance": 3.6,
+        "wallSeconds": 16.460799999952318,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 21.363968500000002
+    },
+    {
+      "browserEpochSeconds": 1793367620.016,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 243,
+        "simSeconds": 8.1,
+        "driver": "B",
+        "driverYaw": 0.471825,
+        "displayDistance": 3.6,
+        "wallSeconds": 16.61389999997616,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 21.5177971
+    },
+    {
+      "browserEpochSeconds": 1793367620.19,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 246,
+        "simSeconds": 8.2,
+        "driver": "B",
+        "driverYaw": 0.4695259259259259,
+        "displayDistance": 3.6,
+        "wallSeconds": 16.788100000023842,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 21.6918182
+    },
+    {
+      "browserEpochSeconds": 1793367620.342,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 248,
+        "simSeconds": 8.266666666666666,
+        "driver": "B",
+        "driverYaw": 0.4679681755829904,
+        "displayDistance": 3.6,
+        "wallSeconds": 16.940899999976157,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 21.845243300000003
+    },
+    {
+      "browserEpochSeconds": 1793367620.526,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 251,
+        "simSeconds": 8.366666666666667,
+        "driver": "B",
+        "driverYaw": 0.4655981138545953,
+        "displayDistance": 3.6,
+        "wallSeconds": 17.12410000002384,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 22.0276011
+    },
+    {
+      "browserEpochSeconds": 1793367620.686,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 253,
+        "simSeconds": 8.433333333333334,
+        "driver": "B",
+        "driverYaw": 0.46399818244170093,
+        "displayDistance": 3.6,
+        "wallSeconds": 17.284200000047683,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 22.188156300000003
+    },
+    {
+      "browserEpochSeconds": 1793367620.845,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 255,
+        "simSeconds": 8.5,
+        "driver": "B",
+        "driverYaw": 0.46238425925925924,
+        "displayDistance": 3.6,
+        "wallSeconds": 17.443700000047684,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 22.348996600000003
+    },
+    {
+      "browserEpochSeconds": 1793367621.025,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 258,
+        "simSeconds": 8.6,
+        "driver": "B",
+        "driverYaw": 0.45994074074074076,
+        "displayDistance": 3.6,
+        "wallSeconds": 17.623700000047684,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 22.527365000000003
+    },
+    {
+      "browserEpochSeconds": 1793367621.185,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 260,
+        "simSeconds": 8.666666666666666,
+        "driver": "B",
+        "driverYaw": 0.4582990397805213,
+        "displayDistance": 3.6,
+        "wallSeconds": 17.7835,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 22.686616
+    },
+    {
+      "browserEpochSeconds": 1793367621.357,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 263,
+        "simSeconds": 8.766666666666666,
+        "driver": "B",
+        "driverYaw": 0.4558215706447188,
+        "displayDistance": 3.6,
+        "wallSeconds": 17.955899999976157,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 22.859299200000002
+    },
+    {
+      "browserEpochSeconds": 1793367621.51,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 265,
+        "simSeconds": 8.833333333333334,
+        "driver": "B",
+        "driverYaw": 0.45416237997256514,
+        "displayDistance": 3.6,
+        "wallSeconds": 18.108399999976157,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 23.0124856
+    },
+    {
+      "browserEpochSeconds": 1793367621.674,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 267,
+        "simSeconds": 8.9,
+        "driver": "B",
+        "driverYaw": 0.4524990740740741,
+        "displayDistance": 3.6,
+        "wallSeconds": 18.272200000047683,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 23.1766657
+    },
+    {
+      "browserEpochSeconds": 1793367621.84,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 270,
+        "simSeconds": 9,
+        "driver": "B",
+        "driverYaw": 0.45,
+        "displayDistance": 3.6,
+        "wallSeconds": 18.438200000047683,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 23.342669
+    },
+    {
+      "browserEpochSeconds": 1793367621.994,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 272,
+        "simSeconds": 9.066666666666666,
+        "driver": "B",
+        "driverYaw": 0.44833360768175584,
+        "displayDistance": 3.6,
+        "wallSeconds": 18.592,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 23.49568
+    },
+    {
+      "browserEpochSeconds": 1793367622.174,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 275,
+        "simSeconds": 9.166666666666666,
+        "driver": "B",
+        "driverYaw": 0.4458376200274348,
+        "displayDistance": 3.6,
+        "wallSeconds": 18.77210000002384,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 23.676136700000004
+    },
+    {
+      "browserEpochSeconds": 1793367622.329,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 277,
+        "simSeconds": 9.233333333333333,
+        "driver": "B",
+        "driverYaw": 0.4441784293552812,
+        "displayDistance": 3.6,
+        "wallSeconds": 18.927399999976156,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 23.830769900000004
+    },
+    {
+      "browserEpochSeconds": 1793367622.515,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 280,
+        "simSeconds": 9.333333333333334,
+        "driver": "B",
+        "driverYaw": 0.44170096021947874,
+        "displayDistance": 3.6,
+        "wallSeconds": 19.113799999952317,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 24.017333
+    },
+    {
+      "browserEpochSeconds": 1793367622.675,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 282,
+        "simSeconds": 9.4,
+        "driver": "B",
+        "driverYaw": 0.44005925925925926,
+        "displayDistance": 3.6,
+        "wallSeconds": 19.27389999997616,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 24.1774166
+    },
+    {
+      "browserEpochSeconds": 1793367622.829,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 284,
+        "simSeconds": 9.466666666666667,
+        "driver": "B",
+        "driverYaw": 0.43842743484224966,
+        "displayDistance": 3.6,
+        "wallSeconds": 19.4275,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 24.3313498
+    },
+    {
+      "browserEpochSeconds": 1793367623.006,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 287,
+        "simSeconds": 9.566666666666666,
+        "driver": "B",
+        "driverYaw": 0.43600181755829903,
+        "displayDistance": 3.6,
+        "wallSeconds": 19.604799999952316,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 24.5082953
+    },
+    {
+      "browserEpochSeconds": 1793367623.159,
+      "snapshot": {
+        "phase": "playing",
+        "frame": 289,
+        "simSeconds": 9.633333333333333,
+        "driver": "B",
+        "driverYaw": 0.43440188614540465,
+        "displayDistance": 3.6,
+        "wallSeconds": 19.7575,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "errors": []
+      },
+      "receivedWallSeconds": 24.6611767
+    }
+  ],
+  "commands": [],
+  "resourcesClosed": {
+    "context": true,
+    "browser": true,
+    "server": true
+  },
+  "recordingCompleted": false,
+  "mediaValidated": false,
+  "interpretation": "Normal presentation record of a frozen artwork. Not a control experiment, benchmark, audience test, or evidence of artistic success.",
+  "costScope": "This complete recording/media worker is separate from the historical TOG subprocess subtotal; neither is total project cost.",
+  "runtime": {
+    "node": "v24.19.0",
+    "playwright": "C:/Users/seanzjxiao/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright",
+    "browserExecutable": "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe",
+    "browser": "149.0.4022.52",
+    "launch": {
+      "headless": true,
+      "executablePath": "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe"
+    }
+  },
+  "sourceBefore": {
+    "tracks/art/studies/a14-view-authored-object/index.html": {
+      "bytes": 25782,
+      "sha256": "3cbdaf8703bfa88c01e60d57bdf8c6b25c560cc2528fa03649ea5520cbdce6d5"
+    },
+    "demo/index.html": {
+      "bytes": 314044,
+      "sha256": "e9d808c434bdd8ce91482f60502f03f5d08c56b71c082eb704c53275ff9f57d0"
+    },
+    "research/lib/runtime.mjs": {
+      "bytes": 5669,
+      "sha256": "cf540ed02429016ab2b8a50a1cd95ac14222247466a56cfbf37444234851b184"
+    },
+    "tracks/art/studies/a14-view-authored-object/WORK_SPEC.md": {
+      "bytes": 6228,
+      "sha256": "3e324d5ccc84b36d75ef73d829ca520d64a046607b372ee65b8f776481faa996"
+    },
+    "tracks/art/studies/a15-normal-playback/PROTOCOL.md": {
+      "bytes": 3622,
+      "sha256": "6a6399f807937158d8f07dac7bc54b6bbe109b0b870c5ff6b29264683ccbfe89"
+    },
+    "tracks/art/studies/a15-normal-playback/record.mjs": {
+      "bytes": 23085,
+      "sha256": "144c04b6789fc813fee211aa6783c017134c6e4b1f7a6d027bbfd12c6c0aa19f"
+    },
+    "tracks/art/studies/a15-normal-playback/execute.py": {
+      "bytes": 6356,
+      "sha256": "ebdf6fb16b04363dd2520ec2b1f26fc7647b5e04c01b33268cf23cff08ec2f54"
+    },
+    "tracks/art/studies/a15-normal-playback/PREPARATION.md": {
+      "bytes": 5173,
+      "sha256": "3d69224a09d13163c5312fa703f35be7d1f2dbf8b7199e404d262a8bf83739d9"
+    }
+  },
+  "initial": {
+    "browserEpochSeconds": 1793367601.249,
+    "snapshot": {
+      "phase": "ready",
+      "frame": 0,
+      "simSeconds": 0,
+      "driver": "A",
+      "driverYaw": 0,
+      "params": {
+        "mode": "fire",
+        "simLayers": 9,
+        "riseV": 1.16,
+        "sway": 0.9,
+        "rate": 720,
+        "coolP": 0.8,
+        "spread": 0.7,
+        "buoy": 0.9,
+        "baro": 1.4,
+        "eps": 0.07,
+        "cool": 1.2,
+        "gam": 1,
+        "turb": 0.55,
+        "couple": 0.5,
+        "interZ": 0,
+        "solver": "vpm",
+        "theta": 0.9,
+        "vpmVisc": 0,
+        "vpmNaive": false,
+        "showTiming": false,
+        "layers": 9,
+        "yaw": 0,
+        "rad": 42,
+        "ppl": 160,
+        "wind": 0,
+        "camDist": 3.6,
+        "camElev": 0.18,
+        "fov": 0.85,
+        "sliceMode": "view",
+        "sliceDepth": 0.7,
+        "covStretch": 1.3,
+        "covMax": 3.6,
+        "covRelax": 1,
+        "dimMode": "layer",
+        "vol3DTurb": 0.6,
+        "vol3DScale": 2.4,
+        "stretch3": 1,
+        "filament": false,
+        "filLen": 0.5,
+        "filGain": 3,
+        "exposure": 1,
+        "emis": 2.2,
+        "bloom": 0.65,
+        "thresh": 0.4,
+        "blurIters": 5,
+        "look": "cinematic",
+        "box": false,
+        "boxLight": 0.1,
+        "embers": true,
+        "reflect": 0.05,
+        "haze": 0.06,
+        "emberRate": 16,
+        "emberMax": 160,
+        "sceneOn": true,
+        "sceneMax": 8000,
+        "sceneScale": 1,
+        "sceneYaw": 0,
+        "scenePitch": 0,
+        "sceneLift": 0.3314746368835308,
+        "sceneOffX": 0.14505853893986823,
+        "sceneOffZ": 0.14505853893986823,
+        "faithful": false,
+        "scenePreComp": false,
+        "sceneSH": 0,
+        "sceneLight": 1.1,
+        "sceneSorted": true,
+        "sceneBackdrop": false,
+        "sceneDepthTest": false,
+        "depthTestAlpha": 0.5,
+        "spreadOn": false,
+        "spreadIgnR": 0.14,
+        "spreadHeat": 2.2,
+        "spreadIgnH": 1,
+        "spreadR": 0.11,
+        "spreadRate": 3,
+        "spreadBurnT": 6,
+        "spreadFeed": 5,
+        "spreadFlameHeat": true,
+        "spreadSceneFeed": true,
+        "emitterOn": false,
+        "spreadFrontierCap": 1400,
+        "spreadSampleCap": 160,
+        "spreadFeedCap": 48,
+        "spreadClockMode": "legacy",
+        "spreadParticlePolicy": "block",
+        "spreadRecycleMinAge": 0.5,
+        "spreadMeasureMode": "legacy",
+        "spreadReferenceArea": 0.0016,
+        "spreadAreaFeedRate": 30,
+        "charDesat": 0.85,
+        "charDim": 0.12,
+        "charSootMix": 0,
+        "charOpa": 0,
+        "charSootR": 0.0495,
+        "charSootG": 0.0459,
+        "charSootB": 0.0428,
+        "orbit": false,
+        "stretch": true,
+        "flicker": true,
+        "paused": true
+      },
+      "pointCount": 5381,
+      "ignitionCalls": 0,
+      "resetCalls": 0,
+      "sequence": 0,
+      "lastHandoffBefore": null,
+      "lastHandoffAfter": null,
+      "handoffEqualExceptYaw": null,
+      "errors": [],
+      "inspect": false,
+      "wallSeconds": 0,
+      "remainingSteps": 360,
+      "cameraYaws": [
+        0,
+        0.5
+      ],
+      "displayDistance": 3.6,
+      "scene": {
+        "groups": {
+          "ground": 1089,
+          "mat-A": 575,
+          "mat-B": 575,
+          "hearth-base": 576,
+          "shared-chamber": 792,
+          "mouth-A": 300,
+          "mouth-rim-A": 50,
+          "mouth-B": 300,
+          "mouth-rim-B": 50,
+          "crown": 450,
+          "single-fuel-bed": 624
+        },
+        "originCompensation": [
+          0.14505853893986823,
+          0.3314746368835308,
+          0.14505853893986823
+        ],
+        "format": "in-memory binary_little_endian 3DGS PLY",
+        "openSharedChamber": true
+      },
+      "materialSummary": {
+        "version": 3,
+        "frame": 0,
+        "time": 0,
+        "seed": 0,
+        "hash": "31952b9a",
+        "particleStateHash": "fdd75bf2",
+        "randomDraws": 0,
+        "params": {
+          "mode": "fire",
+          "simLayers": 9,
+          "riseV": 1.16,
+          "sway": 0.9,
+          "rate": 720,
+          "coolP": 0.8,
+          "spread": 0.7,
+          "buoy": 0.9,
+          "baro": 1.4,
+          "eps": 0.07,
+          "cool": 1.2,
+          "gam": 1,
+          "turb": 0.55,
+          "couple": 0.5,
+          "interZ": 0,
+          "solver": "vpm",
+          "theta": 0.9,
+          "vpmVisc": 0,
+          "vpmNaive": false,
+          "showTiming": false,
+          "layers": 9,
+          "yaw": 0,
+          "rad": 42,
+          "ppl": 160,
+          "wind": 0,
+          "camDist": 3.6,
+          "camElev": 0.18,
+          "fov": 0.85,
+          "sliceMode": "view",
+          "sliceDepth": 0.7,
+          "covStretch": 1.3,
+          "covMax": 3.6,
+          "covRelax": 1,
+          "dimMode": "layer",
+          "vol3DTurb": 0.6,
+          "vol3DScale": 2.4,
+          "stretch3": 1,
+          "filament": false,
+          "filLen": 0.5,
+          "filGain": 3,
+          "exposure": 1,
+          "emis": 2.2,
+          "bloom": 0.65,
+          "thresh": 0.4,
+          "blurIters": 5,
+          "look": "cinematic",
+          "box": false,
+          "boxLight": 0.1,
+          "embers": true,
+          "reflect": 0.05,
+          "haze": 0.06,
+          "emberRate": 16,
+          "emberMax": 160,
+          "sceneOn": true,
+          "sceneMax": 8000,
+          "sceneScale": 1,
+          "sceneYaw": 0,
+          "scenePitch": 0,
+          "sceneLift": 0.3314746368835308,
+          "sceneOffX": 0.14505853893986823,
+          "sceneOffZ": 0.14505853893986823,
+          "faithful": false,
+          "scenePreComp": false,
+          "sceneSH": 0,
+          "sceneLight": 1.1,
+          "sceneSorted": true,
+          "sceneBackdrop": false,
+          "sceneDepthTest": false,
+          "depthTestAlpha": 0.5,
+          "spreadOn": false,
+          "spreadIgnR": 0.14,
+          "spreadHeat": 2.2,
+          "spreadIgnH": 1,
+          "spreadR": 0.11,
+          "spreadRate": 3,
+          "spreadBurnT": 6,
+          "spreadFeed": 5,
+          "spreadFlameHeat": true,
+          "spreadSceneFeed": true,
+          "emitterOn": false,
+          "spreadFrontierCap": 1400,
+          "spreadSampleCap": 160,
+          "spreadFeedCap": 48,
+          "spreadClockMode": "legacy",
+          "spreadParticlePolicy": "block",
+          "spreadRecycleMinAge": 0.5,
+          "spreadMeasureMode": "legacy",
+          "spreadReferenceArea": 0.0016,
+          "spreadAreaFeedRate": 30,
+          "charDesat": 0.85,
+          "charDim": 0.12,
+          "charSootMix": 0,
+          "charOpa": 0,
+          "charSootR": 0.0495,
+          "charSootG": 0.0459,
+          "charSootB": 0.0428,
+          "orbit": false,
+          "stretch": true,
+          "flicker": true,
+          "paused": true
+        },
+        "scene": {
+          "count": 5381,
+          "burning": 0,
+          "charred": 0,
+          "heated": 0,
+          "fuelRemaining": 5381,
+          "frontier": 0,
+          "burnHash": "66bc6d5b",
+          "representedArea": null,
+          "areaWeightedFuelRemaining": null,
+          "areaWeightedHeat": null,
+          "areaWeightedChar": null
+        },
+        "particles": {
+          "count": 0,
+          "hotCount": 0,
+          "coldCount": 0,
+          "smokeCount": 0,
+          "temperatureSum": 0,
+          "dynamicTemperatureSum": 0,
+          "densitySum": 0,
+          "circulationSum": 0,
+          "absCirculationSum": 0,
+          "smokeProxySum": 0,
+          "layerCounts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ]
+        },
+        "counters": {
+          "flameHeatDeposited": 0,
+          "graphHeatDeposited": 0,
+          "sceneSeedsEmitted": 0,
+          "frontierProcessed": 0,
+          "frontierDeferred": 0,
+          "sceneFeedAttempts": 0,
+          "sceneFeedCapacityBlocked": 0,
+          "sceneFeedRandomRejected": 0,
+          "baseParticlesEmitted": 0,
+          "baseHeatApplied": 0,
+          "flameSamplesProcessed": 0,
+          "flameSampleCapHits": 0,
+          "clockProcessed": 0,
+          "clockFuelConsumed": 0,
+          "sceneSeedsRecycled": 0,
+          "sceneFeedRecycleCandidates": 0,
+          "sceneFeedNoColdSlot": 0,
+          "sceneRecycleSlotsExamined": 0,
+          "recycledDensitySum": 0,
+          "recycledCirculationSum": 0,
+          "recycledAbsCirculationSum": 0,
+          "recycledMaxDensity": 0,
+          "recycledMaxAbsCirculation": 0,
+          "recycledSmokeProxySum": 0,
+          "recycledHotRemoved": 0,
+          "recycledMaxTemperature": 0,
+          "recycledMaxDynamicTemperature": 0,
+          "recycledMinAge": null,
+          "areaWeightedFlameHeatDeposited": 0,
+          "areaWeightedGraphHeatDeposited": 0,
+          "areaWeightedFuelConsumed": 0,
+          "areaFeedCreditsGenerated": 0,
+          "areaFeedAttempts": 0,
+          "areaFeedAdmitted": 0,
+          "areaFeedBlocked": 0,
+          "areaFeedServiceCapDropped": 0,
+          "areaFeedCancelledCredits": 0
+        },
+        "countersByGroup": {
+          "ply": {
+            "flameHeatDeposited": 0,
+            "graphHeatDeposited": 0,
+            "sceneSeedsEmitted": 0,
+            "sceneSeedsRecycled": 0,
+            "clockProcessed": 0,
+            "clockFuelConsumed": 0,
+            "areaWeightedFlameHeatDeposited": 0,
+            "areaWeightedGraphHeatDeposited": 0,
+            "areaWeightedFuelConsumed": 0
+          }
+        },
+        "areaFeed": {
+          "creditBalance": 0,
+          "fractionalCredit": 0,
+          "wholeEventsPending": 0,
+          "burningArea": null,
+          "sourceWeightSum": null
+        }
+      }
+    },
+    "receivedWallSeconds": 2.7516064
+  },
+  "captureRequested": {
+    "browserEpochSeconds": 1793367601.253,
+    "receivedWallSeconds": 2.7544339
+  },
+  "captureStart": {
+    "browserEpochSeconds": 1793367601.322828,
+    "receivedWallSeconds": 2.8301409,
+    "definition": "First actually received compositor frame; no blank or invented pre-frame interval is encoded."
+  },
+  "captureFailure": {
+    "wallSeconds": 24.7933826,
+    "message": "Non-increasing CDP frame timestamp; no temporal repair"
+  },
+  "failure": {
+    "stage": "browser",
+    "wallSeconds": 24.816413700000002,
+    "message": "Non-increasing CDP frame timestamp; no temporal repair",
+    "stack": "Error: Non-increasing CDP frame timestamp; no temporal repair\n    at CDPSession2.onFrame (file:///C:/Users/seanzjxiao/Documents/Codex/2026-10-13/https-github-com-jiarui-liu-ideascientist/work/VortexGaussians/tracks/art/studies/a15-normal-playback/record.mjs:81:79)\n    at CDPSession2._callHandler (C:\\Users\\seanzjxiao\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\playwright-core\\lib\\coreBundle.js:10746:33)\n    at CDPSession2.emit (C:\\Users\\seanzjxiao\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\playwright-core\\lib\\coreBundle.js:10736:16)\n    at Proxy.<anonymous> (C:\\Users\\seanzjxiao\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\playwright-core\\lib\\coreBundle.js:57198:16)\n    at Proxy._callHandler (C:\\Users\\seanzjxiao\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\playwright-core\\lib\\coreBundle.js:10746:33)\n    at Proxy.emit (C:\\Users\\seanzjxiao\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\playwright-core\\lib\\coreBundle.js:10736:16)\n    at Connection.dispatch (C:\\Users\\seanzjxiao\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\playwright-core\\lib\\coreBundle.js:63525:25)\n    at Immediate.<anonymous> (C:\\Users\\seanzjxiao\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\playwright-core\\lib\\coreBundle.js:63586:85)\n    at process.processImmediate (node:internal/timers:534:21)"
+  },
+  "captureStop": {
+    "browserEpochSeconds": 1793367623.343,
+    "receivedWallSeconds": 24.8448757
+  },
+  "browserWallSeconds": 25.3935624,
+  "capture": {
+    "receivedEvents": 1147,
+    "savedFrames": 1147,
+    "savedJPEGBytes": 73638131,
+    "budgetDiscardedEvents": [],
+    "stopped": true,
+    "frameIndex": "raw/frames.ndjson",
+    "limitations": "CDP emits compositor samples, often only on changes. Every arrival is acknowledged; native missed/repaint-coalesced frames cannot be counted. Long static holds are not assumed dropped frames. Recording/observation overhead may change wall time.",
+    "timing": {
+      "firstTimestamp": 1793367601.322828,
+      "lastTimestamp": 1793367623.28058,
+      "minIntervalSeconds": -0.0027480125427246094,
+      "medianIntervalSeconds": 0.016328096389770508,
+      "p95IntervalSeconds": 0.030549049377441406,
+      "maxIntervalSeconds": 2.138169050216675,
+      "intervalsOver100ms": 1,
+      "intervalsOver500ms": 1,
+      "identicalJPEGAdjacentPairs": 80,
+      "nonIncreasingIntervals": 1,
+      "firstReceiptDelaySeconds": 0.0061719417572021484
+    },
+    "frameIndexSHA256": "50521fd069588a07035bf01991089f4e6c830aa76b18c077a0259d89899b69a6"
+  },
+  "sourceAfter": {
+    "tracks/art/studies/a14-view-authored-object/index.html": {
+      "bytes": 25782,
+      "sha256": "3cbdaf8703bfa88c01e60d57bdf8c6b25c560cc2528fa03649ea5520cbdce6d5"
+    },
+    "demo/index.html": {
+      "bytes": 314044,
+      "sha256": "e9d808c434bdd8ce91482f60502f03f5d08c56b71c082eb704c53275ff9f57d0"
+    },
+    "research/lib/runtime.mjs": {
+      "bytes": 5669,
+      "sha256": "cf540ed02429016ab2b8a50a1cd95ac14222247466a56cfbf37444234851b184"
+    },
+    "tracks/art/studies/a14-view-authored-object/WORK_SPEC.md": {
+      "bytes": 6228,
+      "sha256": "3e324d5ccc84b36d75ef73d829ca520d64a046607b372ee65b8f776481faa996"
+    },
+    "tracks/art/studies/a15-normal-playback/PROTOCOL.md": {
+      "bytes": 3622,
+      "sha256": "6a6399f807937158d8f07dac7bc54b6bbe109b0b870c5ff6b29264683ccbfe89"
+    },
+    "tracks/art/studies/a15-normal-playback/record.mjs": {
+      "bytes": 23085,
+      "sha256": "144c04b6789fc813fee211aa6783c017134c6e4b1f7a6d027bbfd12c6c0aa19f"
+    },
+    "tracks/art/studies/a15-normal-playback/execute.py": {
+      "bytes": 6356,
+      "sha256": "ebdf6fb16b04363dd2520ec2b1f26fc7647b5e04c01b33268cf23cff08ec2f54"
+    },
+    "tracks/art/studies/a15-normal-playback/PREPARATION.md": {
+      "bytes": 5173,
+      "sha256": "3d69224a09d13163c5312fa703f35be7d1f2dbf8b7199e404d262a8bf83739d9"
+    }
+  },
+  "sourcesUnchanged": true,
+  "totalWallSecondsBeforeFinalReceipt": 25.4058845,
+  "noRetry": true,
+  "timingLimit": "Node total ends before final receipt/stdout write; supervisor measures the entire child lifetime."
+}
