@@ -1,8 +1,8 @@
 # 艺术线：制作与独立复评
 
-## 2026-10-31 current: A35 concrete text-and-fire choice
+## 2026-10-31 current: A36 two-line handover material sample
 
-[A32](studies/a32-image-reuse-study/README.md) is preserved with independent 3/6 and 4/6 formal reviews; its current submission claim is closed. [A33](studies/a33-iteration-as-material/DECISION.md) did not select a work made from review records: proposed arrangements would exaggerate the recorded disagreement. [A34](studies/a34-primary-visual-reading/SOURCE_RESULT.md) directly read two fixed institutions' displayed artwork photos, adding a specific distinction between visible document content and the prior general redaction description. No old score changed. [A35](studies/a35-reading-by-fire/BRIEF.md) now asks for one original, concrete text and an authored reading relation to the existing fire platform; no new production, material behavior or score is presumed. A25/A26 history remains, overall 5/6 unmet. Main and TOG queue unchanged; full goal active.
+[A35](studies/a35-reading-by-fire/CREATOR_CHOICE.md) selected an original fictional station handover note, 《末班之后》; [root accepted](studies/a35-reading-by-fire/DECISION.md) one material qualification before a full work. [A36](studies/a36-handover-material/BRIEF.md) fixes two lines, nominal 32px type/48px spacing, the original material and legacy budgets, one ignition and 360 steps. Implementation is in progress; no new run, image or score yet. A fixed reviewer's [pre-production consultation](studies/a36-handover-material/REVIEWER_CONSULTATION.md) identifies a reading relation and the decorative-highlighting counterreading without grading unseen work. A32 remains closed at independent 3/6 and 4/6; A33 no-selection, A34 direct-source scope and older results remain. Overall 5/6 unmet; TOG/main unchanged, full goal active.
 
 
 2026-10-30。用户重新授权持续艺术迭代，并要求与评分 Agent 交流直至至少 5 分。本轮把目标解释为既有内部六档总评中的 **5/6（Accept）**，不是就绪度 5/10，也不是官方录用概率。
@@ -25,6 +25,4 @@
 
 ## 当前有限任务
 
-A32正式3/6与4/6、作者回应和有限收束保持。A33新创作者没有选中真实评审记录作为本次新作，不追加生产或向评分者求分。A34只在两项既有机构来源各读一次网页和页面照片，无第三方图像入库、不重试全文、不改旧分。
-
-A35回到原火平台，先由创作者写完整原创文字并作单一内容/阅读关系选择；假设材料受热显现仍须根据后续选择核查，不预设消失或不可重读。原评分者保持，当前没有生产/运行队列。目标5/6未实现，TOG/main保持，完整研究目标active。
+A35已选完整原创虚构交接条。A36正在实现固定两行材料核查，初态可读性、点火位置与邻行变化尚未观察。仅root静态读回后执行一次检查；不制作完整拖拽或新论文。原固定评分者的制作前咨询已保存，无新评分。原两位正式评分者保持，5/6目标未实现，TOG/main保持，完整研究目标active。

@@ -1,8 +1,8 @@
 # Dual-track status
 
-## 2026-10-31 current: A35 concrete text-and-fire choice
+## 2026-10-31 current: A36 two-line handover material sample
 
-[A32](art/studies/a32-image-reuse-study/README.md) is preserved with independent 3/6 and 4/6 formal reviews; its current submission claim is closed. [A33](art/studies/a33-iteration-as-material/DECISION.md) did not select a work made from review records: proposed arrangements would exaggerate the recorded disagreement. [A34](art/studies/a34-primary-visual-reading/SOURCE_RESULT.md) directly read two fixed institutions' displayed artwork photos, adding a specific distinction between visible document content and the prior general redaction description. No old score changed. [A35](art/studies/a35-reading-by-fire/BRIEF.md) now asks for one original, concrete text and an authored reading relation to the existing fire platform; no new production, material behavior or score is presumed. A25/A26 history remains, overall 5/6 unmet. Main and TOG queue unchanged; full goal active.
+[A35](art/studies/a35-reading-by-fire/CREATOR_CHOICE.md) selected an original fictional station handover note, 《末班之后》; [root accepted](art/studies/a35-reading-by-fire/DECISION.md) one material qualification before a full work. [A36](art/studies/a36-handover-material/BRIEF.md) fixes two lines, nominal 32px type/48px spacing, the original material and legacy budgets, one ignition and 360 steps. Implementation is in progress; no new run, image or score yet. A fixed reviewer's [pre-production consultation](art/studies/a36-handover-material/REVIEWER_CONSULTATION.md) identifies a reading relation and the decorative-highlighting counterreading without grading unseen work. A32 remains closed at independent 3/6 and 4/6; A33 no-selection, A34 direct-source scope and older results remain. Overall 5/6 unmet; TOG/main unchanged, full goal active.
 
 
 Updated 30 October 2026. Active exploration authorized by the author. TOG and Art Papers contributions are both unestablished.
