@@ -1,8 +1,8 @@
 # Dual-track status
 
-## 2026-10-31 current: A31 considers one formal development of the existing statement
+## 2026-10-31 current: A32 making a finite image-reuse study
 
-[A30 independent process audit](art/studies/a30-iteration-process-audit/PROCESS_ASSESSMENT.md) found no demonstrated rejection of a concrete useful proposal; it identified an unexamined branch between freezing A25 and moving to new topics. [The decision](art/studies/a30-iteration-process-audit/DECISION.md) therefore allows [A31](art/studies/a31-next-posting-choice/BRIEF.md) to judge one formal choice within A25's existing statement and future withdrawal request: making the next posting occur inside a new work, with its editorial choices visible. The creator may decline; no production is authorized yet. A25 remains 4/6 and 3/6; A26 remains two 3/6 reviews, readiness 7/10 and confidence 4/5, with its synthesis closed. A27 no-selection and A28/A29 full-text access failures remain recorded. Overall 5/6 unmet; no new artwork, simulation, image, video or TOG run. Main and original platform preserved; full goal active.
+[A31 creator choice](art/studies/a31-next-posting-choice/CREATOR_CHOICE.md), “图用这一张,” gives the existing statement a specific new editorial relation: crop all old names from a frozen processing image, reuse its fire as the next notice's illustration, and newly typeset the two continuing signatories. The request remains outside the paper throughout. [Root approved](art/studies/a31-next-posting-choice/DECISION.md) one [A32 study](art/studies/a32-image-reuse-study/BRIEF.md), using an unchanged existing PNG through native code viewports, with no new simulation. Implementation is underway; no behavior run or new score yet. A25 remains 4/6 and 3/6; A26 remains two 3/6 reviews and its synthesis is closed. A27 no-selection, A28/A29 access failures and A30 process audit remain preserved. Overall 5/6 unmet. Main, original platform and TOG queue unchanged; full goal active.
 
 
 Updated 30 October 2026. Active exploration authorized by the author. TOG and Art Papers contributions are both unestablished.

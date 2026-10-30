@@ -1,8 +1,8 @@
 # 艺术线：制作与独立复评
 
-## 2026-10-31 current: A31 considers one formal development of the existing statement
+## 2026-10-31 current: A32 making a finite image-reuse study
 
-[A30 independent process audit](studies/a30-iteration-process-audit/PROCESS_ASSESSMENT.md) found no demonstrated rejection of a concrete useful proposal; it identified an unexamined branch between freezing A25 and moving to new topics. [The decision](studies/a30-iteration-process-audit/DECISION.md) therefore allows [A31](studies/a31-next-posting-choice/BRIEF.md) to judge one formal choice within A25's existing statement and future withdrawal request: making the next posting occur inside a new work, with its editorial choices visible. The creator may decline; no production is authorized yet. A25 remains 4/6 and 3/6; A26 remains two 3/6 reviews, readiness 7/10 and confidence 4/5, with its synthesis closed. A27 no-selection and A28/A29 full-text access failures remain recorded. Overall 5/6 unmet; no new artwork, simulation, image, video or TOG run. Main and original platform preserved; full goal active.
+[A31 creator choice](studies/a31-next-posting-choice/CREATOR_CHOICE.md), “图用这一张,” gives the existing statement a specific new editorial relation: crop all old names from a frozen processing image, reuse its fire as the next notice's illustration, and newly typeset the two continuing signatories. The request remains outside the paper throughout. [Root approved](studies/a31-next-posting-choice/DECISION.md) one [A32 study](studies/a32-image-reuse-study/BRIEF.md), using an unchanged existing PNG through native code viewports, with no new simulation. Implementation is underway; no behavior run or new score yet. A25 remains 4/6 and 3/6; A26 remains two 3/6 reviews and its synthesis is closed. A27 no-selection, A28/A29 access failures and A30 process audit remain preserved. Overall 5/6 unmet. Main, original platform and TOG queue unchanged; full goal active.
 
 
 2026-10-30。用户重新授权持续艺术迭代，并要求与评分 Agent 交流直至至少 5 分。本轮把目标解释为既有内部六档总评中的 **5/6（Accept）**，不是就绪度 5/10，也不是官方录用概率。
@@ -25,6 +25,6 @@
 
 ## 当前有限任务
 
-A30过程审查没有推翻A25同证据写作停止、A26收束或A27未选中。它指出同一内容的新形式发展没有被专门询问。A31只给作者一次具体选择窗口：原虚构声明与面向未来的请求不变，作品内实际发生下一次张贴，编排这版图像成为可见选择。创作者可拒绝，不要求先证明艺术效果，也不把普通标签/按钮改变算作新形式。
+A31作出同题的新形式选择，root批准A32一次静帧编排小样：旧处理图裁去全部名字，其上部火形转入新告示图栏，另两人重新署名，原请求保持在纸外。使用既有第122步PNG，不新模拟或调火。实现后单次有限UI/截图核验，再由作者及原评审判断实际增量；未预支分数。
 
-root读作者选择再决定有限小样或未选中；目前不制作、不运行、不检索、不看新图。若进入制作后仍由原两位独立评分，不以流程审查替代投稿分。目标5/6未实现，TOG/main保持，完整研究目标active。
+原A25分歧、A26停止、A27未选中、来源访问失败与过程审查都保留。只更新新版本的证据；目标5/6未实现，TOG/main保持，完整研究目标active。
