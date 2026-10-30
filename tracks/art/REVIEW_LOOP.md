@@ -1,8 +1,8 @@
 # 艺术线：制作与独立复评
 
-## 2026-10-31 current: A25 scores remain 4/6 and 3/6; A26 practice proposition
+## 2026-10-31 current: A26 retained-reference argument qualified for one complete draft
 
-[A25](studies/a25-public-request/README.md) is a completed work with two preserved paper versions and reviewer dialogue. After revision the [fixed reviewer](../validation/art-a25-review-round-02.md) remains4/6 and the [other reviewer](../validation/art-a25-fresh-review-round-02.md) remains3/6; both readiness7/10, confidence3/5. Better argument does not supply new artistic evidence. [Decision](studies/a25-public-request/DECISION_ROUND_02.md) freezes this version and stops same-evidence polishing; no recording loop substitutes frame reading for continuous experience. [A26](studies/a26-practice-synthesis/BRIEF.md) now tests one critical-practice proposition from at most three existing cases and six images, against bounded primary theoretical context, before any full paper or new production. This is not a change to acceptance standards or proof that failed studies are contributions. Overall5/6 remains unmet. No new UI/simulation/TOG queue, main change or fabricated audience response; original platform and full goal remain active.
+[A26](studies/a26-practice-synthesis/README.md) preserves its initial unsuccessful synthesis and source-scope correction. One bounded [reselection](studies/a26-practice-synthesis/CURATION_02.md) now examines the gains and expressive losses of retaining references in A07/A14/A25. Both independent reviewers support one complete practice manuscript, without a submission score or acceptance prediction. [The finite decision](studies/a26-practice-synthesis/DECISION_STAGE_03.md) fixes the existing six images and sources; a full argument and claim/evidence map are being written, then the same two reviewers assess independently. A07 omits fire morphology only at its ending; equal A14 panels do not guarantee legible succession or prove its cause; A25 visibility is a reversible choice, not continuous labor. Historical A25 scores remain4/6 and3/6, each readiness7/10 and confidence3/5. Overall5/6 unmet; no new artwork run, simulation, video, search or TOG queue; main and original platform preserved, full goal active.
 
 
 2026-10-30。用户重新授权持续艺术迭代，并要求与评分 Agent 交流直至至少 5 分。本轮把目标解释为既有内部六档总评中的 **5/6（Accept）**，不是就绪度 5/10，也不是官方录用概率。
@@ -25,8 +25,8 @@
 
 ## 当前有限任务
 
-A25第二轮仍为4/6与3/6，完成作品和两稿封存。两位同意继续润稿收益低；工具仅能逐图阅读，不能把补录/抽帧当连续体验。原审、复审与两份对话都保留，不从中挑高分。
+A25两次4/6与3/6分歧保持，作品与两稿封存。A26最初六图综合未获资格支持；来源更正和唯一一次旧证据重选都已保留。两评审现均支持把A07/A14/A25的保留收益与表达代价写成一份完整实践稿，尚未给新接收分。
 
-A26先评估批判性实践命题：最多三项既有案例、六图和一页具体编辑提案；并行至多两查询、三次一手理论正文施加既有研究压力。综合必须提供比失败清单或普通操作解释更多的、由实际制作支持的认识。root读两个产物后才决定下一项；没有自动新作品、运行、全文或评分。
+只写固定六图、已有来源的完整论证与主张证据映射，随后同两位独立评分。不能因支持成稿就宣布贡献成立，不能用实践类型改变降低标准，也不要求每例自成新理论。若全文仍只有一般编辑常识/三篇短评，此综合构型按已定边界收束，不第三次换图或补案例。
 
-5/6仍是独立判断目标，未达到。旧作品/材料/失败、TOG边界和main保持。
+5/6未达到；没有新制作、运行、录影或检索。旧作、历史媒体失败、TOG边界与main保持，完整研究目标仍active。
