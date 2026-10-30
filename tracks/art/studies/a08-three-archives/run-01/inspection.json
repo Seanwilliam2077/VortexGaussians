@@ -1,0 +1,82 @@
+{
+  "schema": "a08-seven-frame-visual-inspection-v1",
+  "method": "Agent inspection with view_image of the seven actual decoded PNG files; no continuous video viewing",
+  "video": {
+    "file": "study.mp4",
+    "duration_seconds": 84,
+    "frames": 2100,
+    "fps": 25,
+    "width": 1280,
+    "height": 960,
+    "audio": false,
+    "bytes": 647446,
+    "sha256": "009799a6e8028300a79375acc5ccbe638ec36f28fa096d9479d3c6e16296c642"
+  },
+  "source_result": {
+    "file": "run-01/result.json",
+    "sha256": "0f1087f24fe5b8dda6866dfcdee4592b32a53121129eac38e4599b909cd983f6"
+  },
+  "frames": [
+    {
+      "file": "check-01-02s.png",
+      "seconds": 2,
+      "bytes": 38759,
+      "sha256": "4ebba6c13fa6f8016920ac1af1325598e5b786fb3c9da6478024c53e19e39085",
+      "observation": "片名与短句居中，页脚标明合成、同一次Agent操作和编辑并置；字体无截断。"
+    },
+    {
+      "file": "check-02-15s.png",
+      "seconds": 15,
+      "bytes": 207316,
+      "sha256": "3f65011b32a7d375d06b1dfd329e1f6424a1ebe5ba685d1b2ce5c0ac48137891",
+      "observation": "原事件火焰与烟样轨迹位于单一画面框中，源图的模拟时间/合成标记仍在；未从该帧认定炭化程度。"
+    },
+    {
+      "file": "check-03-33s.png",
+      "seconds": 33,
+      "bytes": 123448,
+      "sha256": "fdd1f89c8ca8b5690ee275cc364e86008dcf47cd74738ae759be420f54759c87",
+      "observation": "档案I重复同一带原UI的重置截图，仍可见0.00s与合成声明；并非无数据的纯图像。图像下方保持空白。"
+    },
+    {
+      "file": "check-04-48s.png",
+      "seconds": 48,
+      "bytes": 146122,
+      "sha256": "2af18fb7eb705d665d40e65bca5e6b5c28d44a45ec057b43d68bc3bc387fd8ae",
+      "observation": "档案II的重置前标题、10.00 s、3,320与1,400可读；源画面自身显示当前0.00 s。两种时间的区别有明确标签。"
+    },
+    {
+      "file": "check-05-66s.png",
+      "seconds": 66,
+      "bytes": 140035,
+      "sha256": "b3aac5a972182f34fb3ceea3eaf4eb5a3e8a2d659869f29cf663fd4a72a43f73",
+      "observation": "档案III五项动作均已显露，横排不重叠；该抽帧只能验证最终状态，逐项显露顺序来自已记录filter时间条件。"
+    },
+    {
+      "file": "check-06-74s.png",
+      "seconds": 74,
+      "bytes": 120864,
+      "sha256": "eb84e0f0425e22c18c33f6cc07d7356ebd3c70cf1ad1f7f42bba9d5d2495e7c6",
+      "observation": "三幅缩略图来自同一个重置裁切，三列信息分别稀疏、计数、动作次序。原图中的小UI文字缩小后难以辨认；未检验有损压缩后不同位置像素逐字节相等。"
+    },
+    {
+      "file": "check-07-81s.png",
+      "seconds": 81,
+      "bytes": 76618,
+      "sha256": "11b3313e26020e15ad448337290ba431d05f4120ab502fd1dbd3097d0da78efd",
+      "observation": "三个图像位置为空框，摘要和动作文字仍在；I列的只留图像标签也仍在，与当前空位形成不一致。末句与剪辑撤画面/源文件保留说明完整可读。"
+    }
+  ],
+  "layout_delivery_observation": "No visible clipping or overlapping main copy in these frames; planned visual withdrawal is visible",
+  "continuous_viewing": false,
+  "audience_reaction_evidence": false,
+  "artistic_score_assigned": false,
+  "new_render_or_repair": false,
+  "limits": [
+    "Seven representative frames do not establish experienced pacing or attention.",
+    "The source is a synthetic sampled capture; model counters are not physical damage measurements.",
+    "Chronological text is a selective editorial transcription, not an exhaustive recoverable history.",
+    "Engineering checks do not establish artistic contribution or acceptance."
+  ],
+  "additional_root_viewing": "Root inspected saved frames at15/33/48/74/81 seconds and identified inherited UI text, tiny thumbnail labels, residual labels and a possible classification-diagram reading; this is collaborator feedback, not independent audience evidence."
+}

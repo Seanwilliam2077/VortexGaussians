@@ -1,0 +1,181 @@
+{
+  "schema": "a08-three-archives-edit-plan-v1",
+  "title": "三次归档",
+  "duration_seconds": 84,
+  "width": 1280,
+  "height": 960,
+  "fps": 25,
+  "audio": false,
+  "encode_timeout_seconds": 120,
+  "encode_attempts": 1,
+  "scope": "Three editorial archives of one synthetic Agent-operated A06 event; no new simulation or personal memory claim",
+  "sources": {
+    "video": {
+      "file": "a06-char-and-reset/run-01/study.mp4",
+      "bytes": 737188,
+      "sha256": "c42b6e27b3df2cb68470cbe5b2b106e4f2cf3d81c5f8ee7021f5cdd6230a1299"
+    },
+    "initial": {
+      "file": "a06-char-and-reset/run-01/02-loaded.png",
+      "bytes": 176005,
+      "sha256": "ca189657350c5d7d5437b58223078b95408c331903d3b9543f80c183aa83d079"
+    },
+    "reset": {
+      "file": "a06-char-and-reset/run-01/06-reset-scene.png",
+      "bytes": 186731,
+      "sha256": "de419d5557ff8a3e47a4ba6086496ce9dc1d5479a0644accb436b12a7520838d"
+    },
+    "receipt": {
+      "file": "a06-char-and-reset/run-01/07-reset-receipt.png",
+      "bytes": 62774,
+      "sha256": "69e9ec0d7ea806fafd42b6fa9efb992006654fdf52daae1d8c1863a3b73bbb52"
+    },
+    "metadata": {
+      "file": "a06-char-and-reset/run-01/result.json",
+      "bytes": 49538,
+      "sha256": "02c93dac15a67ae87d7388c9af8eb56b25a987531c76bfc831082661dd6fff34"
+    }
+  },
+  "crop_initial": [
+    40,
+    20,
+    850,
+    530
+  ],
+  "crop_burn_reset": [
+    40,
+    0,
+    850,
+    530
+  ],
+  "source_video_interval": [
+    5.1,
+    18.1
+  ],
+  "image_position": [
+    215,
+    190
+  ],
+  "triptych_x": [
+    80,
+    470,
+    860
+  ],
+  "triptych_size": [
+    340,
+    212
+  ],
+  "triptych_y": 290,
+  "inspection_seconds": [
+    2,
+    15,
+    33,
+    48,
+    66,
+    74,
+    81
+  ],
+  "colors": {
+    "background": "0x10110f",
+    "offwhite": "0xede9df",
+    "amber": "0xc99a61",
+    "muted": "0x8c8a7f",
+    "line": "0x4d4f46"
+  },
+  "copy": {
+    "title": "三次归档",
+    "opening": "同一次燃烧，三种保留。",
+    "provenance": "合成场景 / 同一次 Agent 操作 / 编辑并置",
+    "initial": "载入",
+    "burn": "一次燃烧",
+    "reset": "重新开始",
+    "i": "I   图像",
+    "ii": "II   摘要",
+    "iii": "III   次序",
+    "stats_heading": "重置前",
+    "time": "10.00 s",
+    "time_label": "模拟时间",
+    "burning": "3,320",
+    "burning_label": "燃烧点",
+    "charred": "1,400",
+    "charred_label": "炭化点",
+    "action_heading": "操作节选",
+    "load": "载入",
+    "ignite": "点火 × 1",
+    "advance": "推进 10.00 s",
+    "reinitialize": "重置 × 1",
+    "receipt": "展开回执",
+    "compare": "同一图像",
+    "i_evidence": "只留图像",
+    "ii_evidence": "10.00 s\n3,320 燃烧 / 1,400 炭化",
+    "iii_evidence": "载入 → 点火\n推进 → 重置\n展开回执",
+    "withdrawal": "图像退出。记录仍不完整。",
+    "withdrawal_note": "剪辑撤画面；原始文件保留。"
+  },
+  "segments": [
+    {
+      "id": "opening",
+      "start": 0,
+      "duration": 4
+    },
+    {
+      "id": "initial",
+      "start": 4,
+      "duration": 4
+    },
+    {
+      "id": "burn",
+      "start": 8,
+      "duration": 13
+    },
+    {
+      "id": "reset",
+      "start": 21,
+      "duration": 4
+    },
+    {
+      "id": "archive_i",
+      "start": 25,
+      "duration": 16
+    },
+    {
+      "id": "archive_ii",
+      "start": 41,
+      "duration": 14
+    },
+    {
+      "id": "archive_iii",
+      "start": 55,
+      "duration": 14
+    },
+    {
+      "id": "triptych",
+      "start": 69,
+      "duration": 9
+    },
+    {
+      "id": "withdrawal",
+      "start": 78,
+      "duration": 6
+    }
+  ],
+  "action_reveals_in_archive_iii_seconds": {
+    "load": 2,
+    "ignite": 4,
+    "advance": 6,
+    "reinitialize": 9,
+    "receipt": 11
+  },
+  "source_facts": {
+    "simulated_seconds_before_reset": 10,
+    "burning_before_reset": 3320,
+    "charred_before_reset": 1400,
+    "burning_after_reset": 0,
+    "charred_after_reset": 0,
+    "ignitions": 1,
+    "resets": 1,
+    "no_personal_memory_claim": true,
+    "no_audience_claim": true,
+    "no_simultaneous_original_UI_claim": true
+  }
+}

@@ -1,8 +1,10 @@
 # 可燃的数字记忆（暂定） · 艺术排练入口
 
+**2026-10-30：艺术线已恢复持续制作与独立复评。** 新作 [A08《三次归档》](studies/a08-three-archives/README.md) 是84秒单屏静默影片，以同一次合成事件编排图像、摘要和动作节选。[影片](studies/a08-three-archives/run-01/study.mp4)、[论文草稿](studies/a08-three-archives/PAPER_DRAFT.md)与[实际制作反思](studies/a08-three-archives/PROCESS.md)组成复评材料。它没有真实用户体验或观众证据。[独立复评](../validation/art-a08-review-round-01.md)给出总评2/6（Reject）、准备度4/10：作品可评审性有进展，艺术贡献仍未超出信息比较。[复评流程](REVIEW_LOOP.md)保留原始评分，以独立总评5/6为内部目标，不改变标准或保证录用。下面的A04–A07和原排练说明继续作为历史与可用入口保留。
+
 首个作者排练原型。它把现有 VortexGaussians demo 放在“保存的空间 → 介入燃烧 → 重置重看”的三个阶段中，并记录创作选择。它不是完成作品、观众实验或新燃烧算法。创作命题及待补证据见 [ART_BRIEF.md](ART_BRIEF.md)；技术证据另见 [research/EVIDENCE_STATUS.md](../../research/EVIDENCE_STATUS.md)。
 
-目前还没有实际作者体验记录。最新可看 [A07《一次重新开始》](studies/a07-return-and-record/run-01/study.mp4)：24.92 秒、四镜头，从原状、燃烧到重置，结尾让恢复场景与真实操作摘要同屏。这是 agent 提出的完整观看顺序，合成示例、静帧和并置均有标记；它没有替作者选择个人故事或证明艺术效果。[制作说明](studies/a07-return-and-record/README.md)保留剪辑计划、元数据读取失败及后置验证；[独立完整解码检查](../validation/a07-delivery-review.md)确认 623 帧成片可读。
+目前还没有实际人类作者体验记录。此前的 [A07《一次重新开始》](studies/a07-return-and-record/run-01/study.mp4)为24.92秒、四镜头，从原状、燃烧到重置，结尾让恢复场景与真实操作摘要同屏。这是 agent 提出的完整观看顺序，合成示例、静帧和并置均有标记；它没有替作者选择个人故事或证明艺术效果。[制作说明](studies/a07-return-and-record/README.md)保留剪辑计划、元数据读取失败及后置验证；[独立完整解码检查](../validation/a07-delivery-review.md)确认 623 帧成片可读。
 
 来源是 [A06 十秒燃烧与重置](studies/a06-char-and-reset/README.md)：原参数下一次播放到 10.00 模拟秒，计数为 3,320 个燃烧点、1,400 个燃尽点；火焰根部只有局部可见深色痕迹，重置后消失。27.609 秒完整采样录像保留实际操作。这里的焦化是模型状态及着色，未删除点云几何；回执保存摘要，不能恢复烧损状态或代替个人记忆。
 
