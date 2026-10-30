@@ -1,6 +1,6 @@
 # TOG 研究轨道：从创作需求到可审查任务
 
-**当前进度（2026-10-30）：** [T58](tasks/t58-separable-solver-qualification/README.md) 的 18 个保存状态与一个最大网格已知解系统通过全部六类检查，总子进程耗时 0.768267 秒；最大原算子残差约 1.08e-14。这是同一离散方程的普通直接解验证，尚无新流体轨迹或新方法。[下一项](tasks/t58-separable-solver-qualification/DECISION.md) 独立冻结六条同求解器短轨迹，保留物理门并增加旧/新移植回归，单次 600 秒预算。T56 失败与 T57 超时保持不变；完整 t=1 任务与 TOG 核心贡献仍未成立。完整目标 active，艺术 inactive，main 与已删除自动化不变。
+**当前进度（2026-10-30）：** [T59](tasks/t59-direct-coupled-reference/README.md) 完成六条 [0,.25] 新轨迹，全部 11 类检查通过，子进程耗时 242.856 秒；两档空间涡量差最大约 0.435%/0.112%，非零时刻误差下降约 3.9 倍。移植前后轨迹一致，18 个快照已复核。这只建立短窗普通参考。[下一项](tasks/t59-direct-coupled-reference/DECISION.md) 进入完整 t=1 任务，对照已验证的普通最优投影高斯轨迹，并冻结完整 D8 测量与积分检查。尚无新方法优势或 TOG 核心贡献；T56/T57 历史失败不变，目标 active、艺术 inactive、main 与已删除自动化不变。
 
 **目标是形成可发表的研究贡献；目前没有已经建立的 TOG 贡献。** 此目录首先把“艺术 brief—物理控制—像素指标”变成明确、可携带的输入合同。它提供普通共同模型、规格检查和单次控制验收，不包含响应缓存、新优化算法或自动创作系统。原仓库 demo 和既有 research 保持原状。
 
@@ -64,4 +64,4 @@ python tracks/tog/check_interfaces.py
 
 ## 当前下一步
 
-[T58 的有限通过](tasks/t58-separable-solver-qualification/RESULTS.md) 只支持同算子求解器移植。[T59 准备合同](tasks/t58-separable-solver-qualification/DECISION.md) 要求六条新短轨迹、相同求解器、原物理控制及额外回归门，计入 Green、分解、残差与保存成本；另行冻结后最多一子进程 600 秒，失败不调参重跑。尚无完整 t=1 或候选方法结果。
+[T59 的短窗参考资格](tasks/t59-direct-coupled-reference/RESULTS.md) 已通过。[T60 准备合同](tasks/t59-direct-coupled-reference/DECISION.md) 指向完整 t=1 与普通最优投影高斯对照：六条从初始状态运行的轨迹、五个时刻、原物理门及 D8 全盒涡量控制、预定双规则计分检查，另行冻结后最多一子进程 600 秒。参考失败不能用来判方法失败；普通模型通过也不构成新方法贡献。

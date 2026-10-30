@@ -1,0 +1,242 @@
+{
+  "schema": "t59-direct-coupled-freeze-v1",
+  "created_utc": "2026-10-30T01:53:43.703803+00:00",
+  "parent_commit": "9373ca4eb608eb0f188e376992086fc72d0047fc",
+  "inputs": [
+    {
+      "path": "tracks/tog/tasks/t59-direct-coupled-reference/.gitignore",
+      "bytes": 7,
+      "sha256": "a7d8bdcefba82a95ebc021d87c629fdea21f13af953bf01e28b7cf8b0eeceb41"
+    },
+    {
+      "path": "tracks/tog/tasks/t59-direct-coupled-reference/FORMULATION.md",
+      "bytes": 3275,
+      "sha256": "c680766e71f8b59cb436d2a0b7a6ade51d1dbc7f1f7ccca66fc47c0df2a4a52f"
+    },
+    {
+      "path": "tracks/tog/tasks/t59-direct-coupled-reference/PROTOCOL.md",
+      "bytes": 5897,
+      "sha256": "d5b7d45c31cfed0e0f7ef1cbbd2b061a7b8d470783baa5eadaf304afff4dcc07"
+    },
+    {
+      "path": "tracks/tog/tasks/t59-direct-coupled-reference/reference.py",
+      "bytes": 23596,
+      "sha256": "341003961d69eaab70578b04d8ab55fa82aff7c0cb066f8e3a8c9395edf803a1"
+    },
+    {
+      "path": "tracks/tog/tasks/t59-direct-coupled-reference/run_once.py",
+      "bytes": 11930,
+      "sha256": "7eea711efe99adeb4e95b9ca2dffa7dba4c349af8b002523bc0941ebf96cdbf5"
+    },
+    {
+      "path": "tracks/tog/tasks/t59-direct-coupled-reference/resource_preflight.py",
+      "bytes": 1589,
+      "sha256": "d15bcbd4fa41b9e31608b94313d01a9cd8360b4b9ee65be874575e4e1b49ef47"
+    },
+    {
+      "path": "tracks/tog/tasks/t59-direct-coupled-reference/resource-preflight.json",
+      "bytes": 906,
+      "sha256": "41b19a0a07e979d4ef6a80df63c4b8cf26e88c60b0af3e9a21d8cbf173861c21"
+    },
+    {
+      "path": "tracks/tog/tasks/t55-axisymmetric-reference/reference.py",
+      "bytes": 10613,
+      "sha256": "499bab137463df4435230e3cbf4d16b0723feed5ad5d06087a0bafd911204908"
+    },
+    {
+      "path": "tracks/tog/tasks/t55-axisymmetric-reference/FORMULATION.md",
+      "bytes": 4604,
+      "sha256": "7d463593ec8f021ab814d0213bcf5f9b74b1c79ae9496b6d4cab2452f6440709"
+    },
+    {
+      "path": "tracks/tog/tasks/t55-axisymmetric-reference/TASK.md",
+      "bytes": 4132,
+      "sha256": "b470e55c6449348136673764e7d7b975cd3bad479ddefa0d881d827eba84e89e"
+    },
+    {
+      "path": "tracks/tog/tasks/t56-coupled-reference/reference.py",
+      "bytes": 17488,
+      "sha256": "51499f5c50b8f7f25ebb8df2569bc7eff085938cbd9d88f36b8604f9aaa4e01f"
+    },
+    {
+      "path": "tracks/tog/tasks/t56-coupled-reference/FORMULATION.md",
+      "bytes": 5434,
+      "sha256": "0500b1fad0d187f7815f5751f33ec78835d60ea9b047b21ed08e74c28d39f029"
+    },
+    {
+      "path": "tracks/tog/tasks/t56-coupled-reference/PROTOCOL.md",
+      "bytes": 7332,
+      "sha256": "1b7defa36dbe33df2ff6d01ca52aa62117ea7aeaea8a1121d4deba66406ae537"
+    },
+    {
+      "path": "tracks/tog/tasks/t56-coupled-reference/result.json",
+      "bytes": 31700,
+      "sha256": "95e616130f169cf325f79f3e27f79ac5879a029fef922291e92d4b11842ee099"
+    },
+    {
+      "path": "tracks/tog/tasks/t56-coupled-reference/execution.json",
+      "bytes": 4937,
+      "sha256": "6a2b25ae1b11c47921f535589637a7412b9d9c94110b617e285bc7b38d02b746"
+    },
+    {
+      "path": "tracks/tog/tasks/t56-coupled-reference/input-manifest.json",
+      "bytes": 2723,
+      "sha256": "cd353bc8eec8eb4616be9f44922fcafcad67e953a85545db1f5c6286d9548967"
+    },
+    {
+      "path": "tracks/tog/tasks/t56-coupled-reference/audit-manifest.json",
+      "bytes": 9396,
+      "sha256": "601bc9d1b431d7fa1ed8703d007dc118297c90ffdce00150fb83083d79643622"
+    },
+    {
+      "path": "tracks/tog/tasks/t56-coupled-reference/local/S64.npz",
+      "bytes": 2768740,
+      "sha256": "1100e33caf1fd28d250ecda7b251aa4fbe0bba03501e1b5d9d3f5d7c5d396493"
+    },
+    {
+      "path": "tracks/tog/tasks/t56-coupled-reference/local/S64.json",
+      "bytes": 3700,
+      "sha256": "c0a4563c85eba9652f33e53d3f1ea3b6a9fb7052300969ed4130af9b3c7199e3"
+    },
+    {
+      "path": "tracks/tog/tasks/t56-coupled-reference/local/S64-steps.jsonl",
+      "bytes": 140400,
+      "sha256": "8eb50ac12fac021cbbb2e1fde2e3398d08c7450f344e0eb5b0d6e3b9c715ffd6"
+    },
+    {
+      "path": "tracks/tog/tasks/t56-coupled-reference/local/S128.npz",
+      "bytes": 11038564,
+      "sha256": "346d78f7f0ebba17c15fd1b5285c3472c1b4ac9d43cebf20eca9fe7532112bb2"
+    },
+    {
+      "path": "tracks/tog/tasks/t56-coupled-reference/local/S128.json",
+      "bytes": 3703,
+      "sha256": "a17c2e94ece6f699581943986d779eaba63c6e3bc509040387cce0736259e075"
+    },
+    {
+      "path": "tracks/tog/tasks/t56-coupled-reference/local/S128-steps.jsonl",
+      "bytes": 139459,
+      "sha256": "3b922240d528a54dc5fda341b64be16a17b538e5dab3e3810c5cc5977be55c76"
+    },
+    {
+      "path": "tracks/tog/tasks/t57-finer-short-reference/DECISION.md",
+      "bytes": 9091,
+      "sha256": "2ff004ffa50276bdbf425d80df06be29b1017abbc60180fe04050221c900f328"
+    },
+    {
+      "path": "tracks/tog/tasks/t57-finer-short-reference/PROTOCOL.md",
+      "bytes": 6948,
+      "sha256": "02cab7e2195ab268dd3d00c98ab741825a44f9d80176e64115faa600ef30404d"
+    },
+    {
+      "path": "tracks/tog/tasks/t57-finer-short-reference/execution.json",
+      "bytes": 2793,
+      "sha256": "0fba254f5b3b485eca041fd93a3dd1cd0bb1ddb780b94e28faf0d190bd6f4672"
+    },
+    {
+      "path": "tracks/tog/tasks/t57-finer-short-reference/input-manifest.json",
+      "bytes": 6538,
+      "sha256": "6dc00fa6ed67bcd689e95b5c31457818e359d8142921e0b3da6a10c60430e91f"
+    },
+    {
+      "path": "tracks/tog/tasks/t57-finer-short-reference/audit-manifest.json",
+      "bytes": 13819,
+      "sha256": "4fe8d7f41632910d26d6e3eadb66d9879715d3ba5a3232aa9ba107ad14db3aa8"
+    },
+    {
+      "path": "tracks/tog/tasks/t57-finer-short-reference/memory.py",
+      "bytes": 2231,
+      "sha256": "4b83a89eff664dc0d86fb0c71b39c99d71720c1d18c5f93557e279d0ca3745fd"
+    },
+    {
+      "path": "tracks/tog/tasks/t58-separable-solver-qualification/solver.py",
+      "bytes": 2790,
+      "sha256": "c643626adb909d79cb352a5d08d9355e1ecf749c6f39cc266bf98a52edbe3e16"
+    },
+    {
+      "path": "tracks/tog/tasks/t58-separable-solver-qualification/FORMULATION.md",
+      "bytes": 5399,
+      "sha256": "d70c1a2105a3beb2506001335a1dbb581bd768f1ce3e1ef584ba3f50608dcfa3"
+    },
+    {
+      "path": "tracks/tog/tasks/t58-separable-solver-qualification/PROTOCOL.md",
+      "bytes": 6877,
+      "sha256": "d51ae3b26279af8f3eda3eb6bb7903f95be9653093fb11ea62da8a810c667d1e"
+    },
+    {
+      "path": "tracks/tog/tasks/t58-separable-solver-qualification/DECISION.md",
+      "bytes": 7594,
+      "sha256": "116bf655a4c48cf4917b27053794e843fa234ae8966000a32f460f212685aed6"
+    },
+    {
+      "path": "tracks/tog/tasks/t58-separable-solver-qualification/result.json",
+      "bytes": 37501,
+      "sha256": "34e8a1da37322456cccb8df9d1d6c0a0c4f9a0991048d20b056b012a4dc874b9"
+    },
+    {
+      "path": "tracks/tog/tasks/t58-separable-solver-qualification/execution.json",
+      "bytes": 8875,
+      "sha256": "8fd003d7f2775c32744177b0808a3f4779711046c119c50f948994022ad2087f"
+    },
+    {
+      "path": "tracks/tog/tasks/t58-separable-solver-qualification/input-manifest.json",
+      "bytes": 9574,
+      "sha256": "7d5ebdfaef27de08d97c9f6635b3a984a4d88d5a01b5fc3cefc38b4b5850675f"
+    },
+    {
+      "path": "tracks/tog/tasks/t58-separable-solver-qualification/audit-manifest.json",
+      "bytes": 16322,
+      "sha256": "30c1c8fcd0350367d998c84e6ff2106d65b72eefeea27233aa562409a21960e0"
+    },
+    {
+      "path": "tracks/validation/t56-coupled-review.md",
+      "bytes": 17447,
+      "sha256": "ec44008a21429649bca6c2d77ff2b242003124e602510cf02d8e531ec8a62a4a"
+    },
+    {
+      "path": "tracks/validation/t57-finer-short-review.md",
+      "bytes": 21442,
+      "sha256": "217b5d2acd9b8e1409258ec6ca3cfd17293fa36466bbfb82ddb6cb9d39129a29"
+    },
+    {
+      "path": "tracks/validation/t58-separable-solver-review.md",
+      "bytes": 20591,
+      "sha256": "6ca648849dd1e10e014cedc2cb7c25194b9312e0802e93a468faa78c19987b1b"
+    }
+  ],
+  "executable": {
+    "path": "C:/Users/seanzjxiao/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe",
+    "bytes": 107312,
+    "sha256": "5640e9be2fd33d05a1a9ae1228e2354609a69ab831605995ec4e2bd6da8fff5e"
+  },
+  "expected_python": "3.12.14",
+  "expected_numpy": "2.3.5",
+  "maximum_scientific_child_invocations": 1,
+  "child_timeout_seconds": 600,
+  "maximum_new_reference_trajectories": 6,
+  "reused_reference_trajectories": 0,
+  "new_CG_solves_permitted": 0,
+  "candidate_trajectories_permitted": 0,
+  "case_names": [
+    "S64",
+    "S128",
+    "S256",
+    "T128",
+    "D192",
+    "Q128"
+  ],
+  "maximum_steps": 700,
+  "maximum_transport_stages": 1400,
+  "maximum_direct_solves": 1418,
+  "maximum_completed_checkpoints": 18,
+  "time_end": 0.25,
+  "scientific_children_before_freeze_this_task": 0,
+  "OS_only_preparation_probes": 1,
+  "peak_working_set_stop_bytes": 2147483648,
+  "minimum_available_host_bytes": 3221225472,
+  "memory_sample_interval_seconds": 0.25,
+  "prior_T56_T57_T58_supervised_seconds": 1317.5624378999928,
+  "new_source_queries": 0,
+  "new_primary_documents": 0,
+  "pre_run_review": "root and t48_review source/protocol/runner readback, no unresolved blocker; volume_screen implementation author"
+}
