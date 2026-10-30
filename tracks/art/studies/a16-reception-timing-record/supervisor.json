@@ -1,0 +1,43 @@
+{
+  "schema": "a16-supervisor-v1",
+  "command": [
+    "C:/Users/seanzjxiao/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\art\\studies\\a16-reception-timing-record\\record.mjs",
+    "--execute"
+  ],
+  "attempts": 1,
+  "browser_seconds": 150,
+  "worker_wait_seconds": 270,
+  "supervisor_seconds": 300,
+  "timed_out": false,
+  "errors": [],
+  "termination_attempted": false,
+  "pid": 82948,
+  "exit_code": 1,
+  "worker_lifetime_observed_seconds": 35.74122309999075,
+  "worker_launched": true,
+  "poll_exit_code": 1,
+  "still_live": false,
+  "requires_cleanup": false,
+  "partial_result_exists": true,
+  "worker_status": "failed",
+  "resources_closed": {
+    "context": true,
+    "browser": true,
+    "server": true
+  },
+  "recording_completed": true,
+  "media_validated": false,
+  "sources_unchanged": true,
+  "worker_failure": {
+    "stage": "media",
+    "wallSeconds": 35.5907533,
+    "message": "encode: exit 4294967274",
+    "stack": "Error: encode: exit 4294967274\n    at command (file:///C:/Users/seanzjxiao/Documents/Codex/2026-10-13/https-github-com-jiarui-liu-ideascientist/work/VortexGaussians/tracks/art/studies/a16-reception-timing-record/record.mjs:220:50)\n    at file:///C:/Users/seanzjxiao/Documents/Codex/2026-10-13/https-github-com-jiarui-liu-ideascientist/work/VortexGaussians/tracks/art/studies/a16-reception-timing-record/record.mjs:257:5"
+  },
+  "parent_terminal_check_seconds": 35.74633279989939,
+  "success": false,
+  "no_retry": true,
+  "stop_recording_loop_after_failure": true,
+  "timing_limit": "Child launch, wait, and attempted own-tree cleanup are included; final receipt/stdout writing is excluded. Parent poll is not a proof that every descendant exited."
+}

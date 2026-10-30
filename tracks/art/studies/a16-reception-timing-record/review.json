@@ -1,0 +1,379 @@
+{
+  "schema": "a16-saved-result-review-v1",
+  "reviewUTC": "2026-10-30T14:05:46.031715+00:00",
+  "method": "One read-only standard-library verification of saved metadata, concat timing, source hashes, and command logs. No JPEG reads or decode, browser, simulation, encoding, or gate changes.",
+  "python": "3.12.14",
+  "verificationScope": {
+    "metadataRows": 1552,
+    "JPEGFilesRead": 0,
+    "JPEGFilesHashed": 0,
+    "imageDecodes": 0,
+    "sourceFilesHashed": 8,
+    "sourceEqualityIndependentlyChecked": true,
+    "receiptCleanupRead": true,
+    "liveOSProcessInspection": false,
+    "browserRuns": 0,
+    "simulationRuns": 0,
+    "mediaCommands": 0
+  },
+  "evidenceSHA256": {
+    "result.json": "05aa2f3e45da61ef86a2dc12cfed75d295ec539902d6824d04f2c60664942550",
+    "supervisor.json": "4faed6199ae37c1f79c37f31a88f68ab38b015b18669e7c723bd585abe011f8a",
+    "raw/frames.ndjson": "9888c5e9b949ff3a964a75939d5684cf08d19709b9f20bd5efef3f2f569029c0",
+    "raw/timeline.ffconcat": "b08d1d58815b90d464348a73299a24722844c9af5f98f4be02f334c3e46ac084"
+  },
+  "checks": {
+    "indexRows": 1552,
+    "indexSHA256": "9888c5e9b949ff3a964a75939d5684cf08d19709b9f20bd5efef3f2f569029c0",
+    "indexHashMatchesReceipt": true,
+    "indexAndArrivalSequential": true,
+    "receivedAndSavedCountsMatch": true,
+    "registeredJPEGBytes": 102268103,
+    "registeredJPEGBytesMatchReceipt": true,
+    "rawNanosecondReceiptStrictlyIncreasing": true,
+    "offsetsIncludingStopStrictlyIncreasing": true,
+    "quantizedMicrosecondsStrictlyIncreasing": true,
+    "firstOffsetUS": 0,
+    "expectedPTSCount": 1553,
+    "recomputedPTSMatchSaved": true,
+    "maximumRoundingErrorNs": 500,
+    "maximumRoundingMatchesSaved": true,
+    "metadataTimestampMatchesRow": true,
+    "concatFileCount": 1553,
+    "concatDurationCount": 1552,
+    "concatDurationsMatchAbsoluteOffsets": true,
+    "concatTotalDurationUS": 31937993,
+    "concatTerminalFileRepeatsLast": true,
+    "singleUIClickPair": true,
+    "observationsNeverExtraIgnitionOrReset": true,
+    "observationsNoFrameBeyond360": true,
+    "endedContract": true,
+    "openingHoldNs": 2012262100,
+    "postEndedHoldNs": 3017913100,
+    "openingAndFinalHoldPass": true,
+    "sourceHashesAllMatch": true
+  },
+  "timing": {
+    "firstReceivedNs": "728874464041300",
+    "lastReceivedNs": "728903583797400",
+    "stopReceivedNs": "728906402034700",
+    "captureDurationNs": "31937993400",
+    "captureDurationSeconds": 31.9379934,
+    "lastImageHoldNs": "2818237300",
+    "captureFirstCDPTimestamp": 1793368850.562877,
+    "captureLastCDPTimestamp": 1793368879.678644,
+    "cdpAnomaliesRecomputed": [
+      {
+        "previousIndex": 351,
+        "index": 352,
+        "deltaSeconds": -0.0030150413513183594
+      }
+    ],
+    "cdpAnomaliesSaved": [
+      {
+        "previousArrivalIndex": 351,
+        "arrivalIndex": 352,
+        "previousTimestamp": 1793368858.768871,
+        "timestamp": 1793368858.765856,
+        "deltaSeconds": -0.0030150413513183594,
+        "previousReceivedMonotonicNs": "728882675102500",
+        "receivedMonotonicNs": "728882675879400",
+        "receiptDeltaNs": "776900",
+        "sameJPEG": false
+      }
+    ]
+  },
+  "initial": {
+    "name": null,
+    "requestedMonotonicNs": "728874374204000",
+    "receivedMonotonicNs": "728874377321400",
+    "receivedWallSeconds": 2.7087792,
+    "state": {
+      "phase": "ready",
+      "frame": 0,
+      "simSeconds": 0,
+      "driver": "A",
+      "displayDistance": 3.6,
+      "ignitionCalls": 0,
+      "resetCalls": 0,
+      "sequence": 0,
+      "handoffEqualExceptYaw": null,
+      "inspect": false,
+      "errors": []
+    }
+  },
+  "events": [
+    {
+      "name": "opening-hold-begins",
+      "requestedMonotonicNs": "728874464897100",
+      "receivedMonotonicNs": "728874466560900",
+      "receivedWallSeconds": 2.7980187,
+      "state": {
+        "phase": "ready",
+        "frame": 0,
+        "simSeconds": 0,
+        "driver": "A",
+        "displayDistance": 3.6,
+        "ignitionCalls": 0,
+        "resetCalls": 0,
+        "sequence": null,
+        "handoffEqualExceptYaw": null,
+        "inspect": null,
+        "errors": []
+      }
+    },
+    {
+      "name": "ui-click-before",
+      "requestedMonotonicNs": "728876473487500",
+      "receivedMonotonicNs": "728876476303400",
+      "receivedWallSeconds": 4.8077612,
+      "state": {
+        "phase": "ready",
+        "frame": 0,
+        "simSeconds": 0,
+        "driver": "A",
+        "displayDistance": 3.6,
+        "ignitionCalls": 0,
+        "resetCalls": 0,
+        "sequence": null,
+        "handoffEqualExceptYaw": null,
+        "inspect": null,
+        "errors": []
+      }
+    },
+    {
+      "name": "ui-click-after",
+      "requestedMonotonicNs": "728876611215500",
+      "receivedMonotonicNs": "728876629707900",
+      "receivedWallSeconds": 4.9611657,
+      "state": {
+        "phase": "playing",
+        "frame": 1,
+        "simSeconds": 0.03333333333333333,
+        "driver": "A",
+        "displayDistance": 3.6,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "sequence": 1,
+        "handoffEqualExceptYaw": null,
+        "inspect": false,
+        "errors": []
+      }
+    },
+    {
+      "name": "ended-observed",
+      "requestedMonotonicNs": "728903377637500",
+      "receivedMonotonicNs": "728903384121600",
+      "receivedWallSeconds": 31.7155794,
+      "state": {
+        "phase": "ended",
+        "frame": 360,
+        "simSeconds": 12,
+        "driver": "B",
+        "displayDistance": 5.6,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "sequence": 1,
+        "handoffEqualExceptYaw": true,
+        "inspect": false,
+        "errors": []
+      }
+    },
+    {
+      "name": "final-hold-complete",
+      "requestedMonotonicNs": "728906389470500",
+      "receivedMonotonicNs": "728906396245600",
+      "receivedWallSeconds": 34.7277034,
+      "state": {
+        "phase": "ended",
+        "frame": 360,
+        "simSeconds": 12,
+        "driver": "B",
+        "displayDistance": 5.6,
+        "ignitionCalls": 1,
+        "resetCalls": 1,
+        "sequence": 1,
+        "handoffEqualExceptYaw": true,
+        "inspect": false,
+        "errors": []
+      }
+    }
+  ],
+  "ended": {
+    "name": "ended-observed",
+    "requestedMonotonicNs": "728903377637500",
+    "receivedMonotonicNs": "728903384121600",
+    "receivedWallSeconds": 31.7155794,
+    "state": {
+      "phase": "ended",
+      "frame": 360,
+      "simSeconds": 12,
+      "driver": "B",
+      "displayDistance": 5.6,
+      "ignitionCalls": 1,
+      "resetCalls": 1,
+      "sequence": 1,
+      "handoffEqualExceptYaw": true,
+      "inspect": false,
+      "errors": []
+    }
+  },
+  "observationCount": 163,
+  "recording": {
+    "createdUTC": "2026-10-30T14:00:47.775Z",
+    "status": "failed",
+    "recordingCompleted": true,
+    "mediaValidated": false,
+    "browserWallSeconds": 35.2525178,
+    "totalWallSecondsBeforeFinalReceipt": 35.5921492,
+    "sourcesUnchanged": true,
+    "resourcesClosed": {
+      "context": true,
+      "browser": true,
+      "server": true
+    },
+    "noRetry": true,
+    "stopRecordingLoopAfterFailure": true,
+    "failure": {
+      "stage": "media",
+      "message": "encode: exit 4294967274",
+      "wallSeconds": 35.5907533
+    },
+    "errors": [],
+    "commands": [
+      {
+        "label": "encode",
+        "executable": "C:/Users/seanzjxiao/miniconda3/envs/gs-sph-3d/Library/bin/ffmpeg.exe",
+        "args": [
+          "-hide_banner",
+          "-nostdin",
+          "-n",
+          "-f",
+          "concat",
+          "-safe",
+          "0",
+          "-i",
+          "raw/timeline.ffconcat",
+          "-an",
+          "-r",
+          "60",
+          "-fps_mode",
+          "passthrough",
+          "-enc_time_base",
+          "1:1000000",
+          "-c:v",
+          "libx264",
+          "-preset",
+          "medium",
+          "-crf",
+          "20",
+          "-pix_fmt",
+          "yuv420p",
+          "-threads",
+          "2",
+          "-video_track_timescale",
+          "1000000",
+          "-movflags",
+          "+faststart",
+          "study.mp4"
+        ],
+        "startedWallSeconds": 35.2750538,
+        "timeoutMilliseconds": 90000,
+        "exitCode": 4294967274,
+        "signal": null,
+        "error": null,
+        "endedWallSeconds": 35.5907131,
+        "wallSeconds": 0.3156593000000001
+      }
+    ]
+  },
+  "supervisor": {
+    "exitCode": 1,
+    "success": false,
+    "timedOut": false,
+    "stillLive": false,
+    "requiresCleanup": false,
+    "resourcesClosed": {
+      "context": true,
+      "browser": true,
+      "server": true
+    },
+    "terminationAttempted": false,
+    "workerLifetimeSeconds": 35.74122309999075,
+    "parentTerminalCheckSeconds": 35.74633279989939,
+    "noRetry": true,
+    "stopRecordingLoopAfterFailure": true,
+    "errors": []
+  },
+  "logs": [
+    {
+      "file": "encode.stdout.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "text": ""
+    },
+    {
+      "file": "encode.stderr.log",
+      "bytes": 455,
+      "sha256": "2766bcf04a6ffc49871d601aba1c43096570679dc299d080441779654d3a2428",
+      "text": "Input #0, concat, from 'raw/timeline.ffconcat':\r\n  Duration: N/A, start: 0.000000, bitrate: N/A\r\n  Stream #0:0: Video: mjpeg (Baseline), yuvj420p(pc, bt470bg/unknown/unknown), 1440x1100 [SAR 1:1 DAR 72:55], 1000k fps, 1000k tbr, 1000k tbn\r\n[vost#0:0/libx264 @ 00000220109DE880] One of -r/-fpsmax was specified together a non-CFR -vsync/-fps_mode. This is contradictory.\r\nError opening output file study.mp4.\r\nError opening output files: Invalid argument\r\n"
+    }
+  ],
+  "sourceChecks": [
+    {
+      "file": "tracks/art/studies/a14-view-authored-object/index.html",
+      "sha256": "3cbdaf8703bfa88c01e60d57bdf8c6b25c560cc2528fa03649ea5520cbdce6d5",
+      "beforeAfterCurrentEqual": true
+    },
+    {
+      "file": "demo/index.html",
+      "sha256": "e9d808c434bdd8ce91482f60502f03f5d08c56b71c082eb704c53275ff9f57d0",
+      "beforeAfterCurrentEqual": true
+    },
+    {
+      "file": "research/lib/runtime.mjs",
+      "sha256": "cf540ed02429016ab2b8a50a1cd95ac14222247466a56cfbf37444234851b184",
+      "beforeAfterCurrentEqual": true
+    },
+    {
+      "file": "tracks/art/studies/a14-view-authored-object/WORK_SPEC.md",
+      "sha256": "3e324d5ccc84b36d75ef73d829ca520d64a046607b372ee65b8f776481faa996",
+      "beforeAfterCurrentEqual": true
+    },
+    {
+      "file": "tracks/art/studies/a16-reception-timing-record/PROTOCOL.md",
+      "sha256": "423a740357c82c5ab56cf39b86327389800dad0b5cc56ee50e4bd6ddf95d6e27",
+      "beforeAfterCurrentEqual": true
+    },
+    {
+      "file": "tracks/art/studies/a16-reception-timing-record/record.mjs",
+      "sha256": "e3e671a10124ec9723bcbc06d8d61d02508cbfdf70ce9299579e9d4977e5fdc7",
+      "beforeAfterCurrentEqual": true
+    },
+    {
+      "file": "tracks/art/studies/a16-reception-timing-record/execute.py",
+      "sha256": "cd78674e425c07a3630d857bde1bd2ca6fe56c114397f592e50c4bb2d7c6d086",
+      "beforeAfterCurrentEqual": true
+    },
+    {
+      "file": "tracks/art/studies/a16-reception-timing-record/PREPARATION.md",
+      "sha256": "75661a3d921a92dc3433247e856443d1c05e3d481c0e3dd0894ee72e3dc0d788",
+      "beforeAfterCurrentEqual": true
+    }
+  ],
+  "studyMP4Exists": false,
+  "reviewDirectoryExists": false,
+  "conclusion": {
+    "overall": "Failed: normal capture reached ended, but the only encoding command was rejected before an MP4 was created.",
+    "defect": "The recorder combines output -r 60 with non-CFR -fps_mode passthrough. The installed FFmpeg rejects this contradictory parameter combination.",
+    "preflightAccountability": "The prior static preflight incorrectly accepted -r 60 as a compatible nominal declaration and missed this actual parameter compatibility defect. This is a review failure, not an uncertainty that can only be resolved by running.",
+    "captureLimit": "Counts and registered byte totals are independently recomputed from the saved index; individual JPEG bytes and decodability were not independently verified.",
+    "artisticLimit": "No qualified movie or sequential review-frame set was produced. This recorder defect provides no basis to change the artistic judgment.",
+    "stopped": "The recording loop remains closed; no browser run, simulation, encoding, timestamp repair, script/gate change, or third attempt was made."
+  },
+  "cost": {
+    "readbackWallSeconds": 0.014735299977473915,
+    "readbackCpuSeconds": 0.015625,
+    "commandWallSeconds": 0.7856494
+  }
+}
