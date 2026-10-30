@@ -1,8 +1,8 @@
 # 艺术线：制作与独立复评
 
-## 2026-10-31 current: A36 material finding and A37 initial readability repair
+## 2026-10-31 current: A37 initial readability repaired; A38 full work in preparation
 
-[A35](studies/a35-reading-by-fire/CREATOR_CHOICE.md) selected an original fictional station handover note, 《末班之后》; [root accepted](studies/a35-reading-by-fire/DECISION.md) one material qualification before a full work. [A36](studies/a36-handover-material/BRIEF.md) fixes two lines, nominal 32px type/48px spacing, the original material and legacy budgets, one ignition and 360 steps. The sole 13.1660841s check completed (7 PNG, 977069 bytes, 13 behavior checks); initial glyphs visibly merge and wash out, so character-by-character readability is not established. Ignition reached the next line, while 14273 point-step frontier deferrals limit clock interpretation. The creator and original fixed reviewer directly saw three images and both identify initial readability as the next gap. A37 now implements the creator-selected single scale correction, with one initial image and zero ignition/steps; no full work or new score. A fixed reviewer's [pre-production consultation](studies/a36-handover-material/REVIEWER_CONSULTATION.md) identifies a reading relation and the decorative-highlighting counterreading without grading unseen work. A32 remains closed at independent 3/6 and 4/6; A33 no-selection, A34 direct-source scope and older results remain. Overall 5/6 unmet; TOG/main unchanged, full goal active.
+[A36](studies/a36-handover-material/PROCESS.md) preserves the actual blurred initial glyphs, cross-line warming and cap deferrals. [A37](studies/a37-handover-readability/PROCESS.md) changed only Gaussian scale: one 3.2265483s initial check, one PNG, zero ignition/steps. Root, the creator and original fixed reviewer independently viewed that image and support desktop two-line readability, with prior knowledge of the text disclosed. This is a production condition, not artistic validation. [A38](studies/a38-after-the-last-train/BRIEF.md) now implements the original full six-line fictional note and hold-to-trace/release-to-read interaction; its sole inspection path is fixed before execution. No full-work run or new score yet. A32 remains closed at 3/6 and 4/6, older outcomes remain, overall 5/6 unmet. TOG/main unchanged; full goal active.
 
 
 2026-10-30。用户重新授权持续艺术迭代，并要求与评分 Agent 交流直至至少 5 分。本轮把目标解释为既有内部六档总评中的 **5/6（Accept）**，不是就绪度 5/10，也不是官方录用概率。
@@ -25,4 +25,4 @@
 
 ## 当前有限任务
 
-A35已选完整原创虚构交接条。A36唯一检查已完成：初态字形粘连、泛白，点火后下行实际变化，cap累计延期14273点×步。创作者与原评分者已直接看三图，均确认初态辨读问题。A37按作者单一scale修正实施一次初态检查，0点火0推进；不重跑A36、不制作完整拖拽或新论文。原固定评分者的制作前咨询已保存，无新评分。原两位正式评分者保持，5/6目标未实现，TOG/main保持，完整研究目标active。
+A37的单一scale初态修正通过有既有知识的制作阅读判断，无新艺术分。A38正在制作A35原定完整六行/按住划行/松手冻结/结束与重新开始；一次输入协议已冻结，尚未运行。完成后原两位评分者读同一实际材料，再决定论文资格，不因初态可读预支5分。旧版全部保留，TOG/main保持，完整研究目标active。

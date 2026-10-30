@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>末班之后 · A37 初态阅读核查</title>
+  <link rel="stylesheet" href="../a36-handover-material/sample.css">
+</head>
+<body>
+  <main class="page">
+    <header>
+      <div><p class="edition">A37 / 初态阅读核查</p><h1>末班之后</h1></div>
+      <p class="fiction">原创虚构交接条摘录<br>仅呈示第三、第四行初态</p>
+    </header>
+    <section class="material" aria-label="两行交接事项的初始材料字">
+      <div class="canvas-frame">
+        <canvas id="view" width="1200" height="600" role="img" aria-label="第三、第四行交接条的初始高斯材料字，没有点火或推进"></canvas>
+        <div id="loading" role="status">正在准备两行材料字</div>
+      </div>
+      <div class="readout"><span id="phase-text">准备中</span><span id="time-readout">等待初态</span></div>
+      <p id="error" role="alert" hidden></p>
+      <p class="material-note">本次仅检查初态阅读；没有点火、推进或重置操作。</p>
+    </section>
+    <details class="measurements">
+      <summary>材料记录与本次差异</summary>
+      <p id="stats-caption">等待初始状态</p>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th scope="col">范围</th><th scope="col">点数</th><th scope="col">热量均值</th><th scope="col">燃料余量</th><th scope="col">state 1 / 2</th></tr></thead>
+          <tbody id="group-rows"></tbody>
+        </table>
+      </div>
+      <p id="initial-readout"></p>
+      <p class="stat-note">与A36相比，唯一材料差异是Gaussian scale由.0102改为WORLD_PER_PIXEL，约.0051292757。沿用同一字体、采样顺序、点ID及位置构造；未改颜色、opacity、相机、光晕或平台参数。</p>
+      <p class="stat-note">“不要摘”仍是第三行的子组，不重复计入总数。源画布1200×600、32px字号、48px行距；画布内没有替代正文。字是否可读须直接看图，不能由数值或本次初始化通过推断。</p>
+    </details>
+    <footer>
+      <p>此页保留初始材料状态。A36的原源码、图像及已记录的泛白、邻行变化与延期结果另行保留。</p>
+      <nav><a href="WORK_SPEC.md">本次规格</a><a href="BRIEF.md">阅读问题</a></nav>
+    </footer>
+  </main>
+  <iframe id="source" src="../../../../demo/index.html?embed=1" title="原 VortexGaussians 渲染器" tabindex="-1" aria-hidden="true"></iframe>
+  <script type="module" src="sample.mjs"></script>
+</body>
+</html>

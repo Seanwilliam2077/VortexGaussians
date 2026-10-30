@@ -1,0 +1,1592 @@
+{
+  "schema": "a37-initial-readability-1",
+  "createdUTC": "2026-10-30T19:41:45.730Z",
+  "status": "completed_single_initial_readability_check",
+  "sources": {
+    "tracks/art/studies/a37-handover-readability/BRIEF.md": {
+      "sha256": "765ff7cb5b14436f5ff0dc82cb146eb0218772b16b039996143b4b2314da7158"
+    },
+    "tracks/art/studies/a37-handover-readability/WORK_SPEC.md": {
+      "sha256": "1df4a7a30fe7d433459c2fb1d2f8256d9b1b13b80454ee35f9eeea88e7bec841"
+    },
+    "tracks/art/studies/a37-handover-readability/index.html": {
+      "sha256": "7ae30ad59e63f9ec14611cdce91f788f46218167505ad6304640d67cfb94c533"
+    },
+    "tracks/art/studies/a37-handover-readability/sample.mjs": {
+      "sha256": "bf7afce000f972e31c36ce31e629d519dacba2e25dbe781fbd24dc0295b36ee7"
+    },
+    "tracks/art/studies/a37-handover-readability/inspect.mjs": {
+      "sha256": "bdb260b03e523cff482402dabc7915ec290c6718e84715b3c60058bb7f4fae44"
+    },
+    "tracks/art/studies/a36-handover-material/sample.css": {
+      "sha256": "f32abbdc85d7982cf03e834ea5c33fbf72d90cfb89af568c74fc9f12fd821967"
+    },
+    "demo/index.html": {
+      "sha256": "e9d808c434bdd8ce91482f60502f03f5d08c56b71c082eb704c53275ff9f57d0"
+    },
+    "research/lib/runtime.mjs": {
+      "sha256": "cf540ed02429016ab2b8a50a1cd95ac14222247466a56cfbf37444234851b184"
+    }
+  },
+  "checks": {
+    "onlyInitialState": true,
+    "oneResetNoIgnition": true,
+    "noClockWork": true,
+    "sameRasterAsA36": true,
+    "imageBudget": true,
+    "noErrors": true,
+    "sourcesUnchanged": true,
+    "withinDeadline": true
+  },
+  "pageErrors": [],
+  "console": [],
+  "externalRequests": [],
+  "images": [
+    {
+      "file": "01-ready.png",
+      "bytes": 166506,
+      "sha256": "73c14b5b144bb43efbaa0d79e2197e5d749d9d867c0d4c9c02c8bc7ce122a950"
+    }
+  ],
+  "closed": {
+    "context": true,
+    "browser": true,
+    "server": true
+  },
+  "scope": "Single initial-state production inspection by informed agents; no viewer study or artistic score.",
+  "browser": {
+    "module": "C:/Users/seanzjxiao/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright",
+    "launchOptions": {
+      "headless": true,
+      "executablePath": "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe"
+    },
+    "version": "149.0.4022.52"
+  },
+  "initial": {
+    "phase": "ready",
+    "resetCalls": 1,
+    "ignitionCalls": 0,
+    "stepCalls": 0,
+    "pointCount": 3966,
+    "geometry": {
+      "fontSource": "local(\"Microsoft YaHei\")",
+      "fontStatus": "loaded",
+      "requestedFont": "400 32px \"A36Raster\"",
+      "raster": {
+        "width": 1200,
+        "height": 96,
+        "anchorX": 280,
+        "anchorY": 48,
+        "stride": 2,
+        "alphaThreshold": 128,
+        "worldPerPixel": 0.005129275727505855,
+        "z": 0,
+        "gaussianScale": 0.005129275727505855,
+        "opacity": 0.94,
+        "color": [
+          0.82,
+          0.78,
+          0.67
+        ],
+        "fuel": 1
+      },
+      "camera": {
+        "yaw": 0,
+        "elevation": 0,
+        "distance": 3.4,
+        "fov": 0.85,
+        "targetY": 1.05
+      },
+      "groups": [
+        {
+          "id": "line3",
+          "label": "第三行",
+          "text": "时刻表不要摘，明早第一班仍是六点四十。",
+          "sourceY": 300,
+          "pointCount": 1666,
+          "requestedCanvasFont": "400 32px \"A36Raster\"",
+          "canvasFont": "32px A36Raster",
+          "measuredTextWidth": 608,
+          "measuredInkBounds": {
+            "left": 281,
+            "right": 867,
+            "top": 29.390625,
+            "bottom": 61.390625
+          },
+          "sampledPixelBounds": {
+            "minX": 281,
+            "maxX": 865,
+            "minY": 29,
+            "maxY": 59
+          },
+          "rgbaFNV1a32": "121e9054"
+        },
+        {
+          "id": "line4",
+          "label": "第四行",
+          "text": "若有人问今晚还能不能走，先把今晚那一行念完，再把门打开。",
+          "sourceY": 348,
+          "pointCount": 2300,
+          "requestedCanvasFont": "400 32px \"A36Raster\"",
+          "canvasFont": "32px A36Raster",
+          "measuredTextWidth": 896,
+          "measuredInkBounds": {
+            "left": 280,
+            "right": 1155,
+            "top": 29.390625,
+            "bottom": 61.390625
+          },
+          "sampledPixelBounds": {
+            "minX": 281,
+            "maxX": 1153,
+            "minY": 29,
+            "maxY": 59
+          },
+          "rgbaFNV1a32": "5fb42ee1"
+        }
+      ],
+      "pointCount": 3966,
+      "target": {
+        "id": "do-not-remove",
+        "label": "不要摘",
+        "line": "line3",
+        "startIndex": 3,
+        "endIndexExclusive": 6,
+        "startX": 376,
+        "endXExclusive": 472,
+        "pointCount": 323,
+        "attribution": "sample centers in fixed character-prefix bounds; subset of line3"
+      },
+      "sourceCanvasSize": [
+        1200,
+        600
+      ],
+      "sourcePixelLineSpacing": 48,
+      "outsideFluidXCount": 1864,
+      "stableOnlyForSameLocalFontAndRasterizer": true
+    },
+    "errors": [],
+    "events": [
+      {
+        "action": "ready",
+        "phase": "ready",
+        "elapsedSeconds": 0.5232000000476837
+      }
+    ],
+    "frame": 0,
+    "simSeconds": 0,
+    "seed": 20261031,
+    "groups": {
+      "line3": {
+        "label": "第三行",
+        "count": 1666,
+        "heat": {
+          "sum": 0,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
+          "nonzeroCount": 0
+        },
+        "fuel": {
+          "sum": 1666,
+          "mean": 1,
+          "min": 1,
+          "max": 1,
+          "nonzeroCount": 1666
+        },
+        "fuelInitial": {
+          "sum": 1666,
+          "mean": 1,
+          "min": 1,
+          "max": 1,
+          "nonzeroCount": 1666
+        },
+        "char": {
+          "sum": 0,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
+          "nonzeroCount": 0
+        },
+        "glow": {
+          "sum": 0,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
+          "nonzeroCount": 0
+        },
+        "stateCounts": {
+          "unburned": 1666,
+          "burning": 0,
+          "fuelDepleted": 0,
+          "other": 0
+        }
+      },
+      "line4": {
+        "label": "第四行",
+        "count": 2300,
+        "heat": {
+          "sum": 0,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
+          "nonzeroCount": 0
+        },
+        "fuel": {
+          "sum": 2300,
+          "mean": 1,
+          "min": 1,
+          "max": 1,
+          "nonzeroCount": 2300
+        },
+        "fuelInitial": {
+          "sum": 2300,
+          "mean": 1,
+          "min": 1,
+          "max": 1,
+          "nonzeroCount": 2300
+        },
+        "char": {
+          "sum": 0,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
+          "nonzeroCount": 0
+        },
+        "glow": {
+          "sum": 0,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
+          "nonzeroCount": 0
+        },
+        "stateCounts": {
+          "unburned": 2300,
+          "burning": 0,
+          "fuelDepleted": 0,
+          "other": 0
+        }
+      }
+    },
+    "subgroups": {
+      "do-not-remove": {
+        "label": "不要摘",
+        "parentGroup": "line3",
+        "overlapsParent": true,
+        "count": 323,
+        "heat": {
+          "sum": 0,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
+          "nonzeroCount": 0
+        },
+        "fuel": {
+          "sum": 323,
+          "mean": 1,
+          "min": 1,
+          "max": 1,
+          "nonzeroCount": 323
+        },
+        "fuelInitial": {
+          "sum": 323,
+          "mean": 1,
+          "min": 1,
+          "max": 1,
+          "nonzeroCount": 323
+        },
+        "char": {
+          "sum": 0,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
+          "nonzeroCount": 0
+        },
+        "glow": {
+          "sum": 0,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
+          "nonzeroCount": 0
+        },
+        "stateCounts": {
+          "unburned": 323,
+          "burning": 0,
+          "fuelDepleted": 0,
+          "other": 0
+        }
+      }
+    },
+    "total": {
+      "count": 3966,
+      "heat": {
+        "sum": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "nonzeroCount": 0
+      },
+      "fuel": {
+        "sum": 3966,
+        "mean": 1,
+        "min": 1,
+        "max": 1,
+        "nonzeroCount": 3966
+      },
+      "fuelInitial": {
+        "sum": 3966,
+        "mean": 1,
+        "min": 1,
+        "max": 1,
+        "nonzeroCount": 3966
+      },
+      "char": {
+        "sum": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "nonzeroCount": 0
+      },
+      "glow": {
+        "sum": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "nonzeroCount": 0
+      },
+      "stateCounts": {
+        "unburned": 3966,
+        "burning": 0,
+        "fuelDepleted": 0,
+        "other": 0
+      }
+    },
+    "counters": {
+      "flameHeatDeposited": 0,
+      "graphHeatDeposited": 0,
+      "sceneSeedsEmitted": 0,
+      "frontierProcessed": 0,
+      "frontierDeferred": 0,
+      "sceneFeedAttempts": 0,
+      "sceneFeedCapacityBlocked": 0,
+      "sceneFeedRandomRejected": 0,
+      "baseParticlesEmitted": 0,
+      "baseHeatApplied": 0,
+      "flameSamplesProcessed": 0,
+      "flameSampleCapHits": 0,
+      "clockProcessed": 0,
+      "clockFuelConsumed": 0,
+      "sceneSeedsRecycled": 0,
+      "sceneFeedRecycleCandidates": 0,
+      "sceneFeedNoColdSlot": 0,
+      "sceneRecycleSlotsExamined": 0,
+      "recycledDensitySum": 0,
+      "recycledCirculationSum": 0,
+      "recycledAbsCirculationSum": 0,
+      "recycledMaxDensity": 0,
+      "recycledMaxAbsCirculation": 0,
+      "recycledSmokeProxySum": 0,
+      "recycledHotRemoved": 0,
+      "recycledMaxTemperature": 0,
+      "recycledMaxDynamicTemperature": 0,
+      "recycledMinAge": null,
+      "areaWeightedFlameHeatDeposited": 0,
+      "areaWeightedGraphHeatDeposited": 0,
+      "areaWeightedFuelConsumed": 0,
+      "areaFeedCreditsGenerated": 0,
+      "areaFeedAttempts": 0,
+      "areaFeedAdmitted": 0,
+      "areaFeedBlocked": 0,
+      "areaFeedServiceCapDropped": 0,
+      "areaFeedCancelledCredits": 0
+    },
+    "initialState": {
+      "frameZero": true,
+      "timeZero": true,
+      "zeroBurning": true,
+      "fuelLoss": 0,
+      "unchangedFuelCount": 3966,
+      "allUnburned": true
+    },
+    "hash": "87fe48d8",
+    "material": {
+      "frame": 0,
+      "time": 0,
+      "seed": 20261031,
+      "hash": "87fe48d8",
+      "particleStateHash": "ab798af7",
+      "scene": {
+        "count": 3966,
+        "burning": 0,
+        "charred": 0,
+        "heated": 0,
+        "fuelRemaining": 3966,
+        "frontier": 0,
+        "burnHash": "e28b25c7",
+        "representedArea": null,
+        "areaWeightedFuelRemaining": null,
+        "areaWeightedHeat": null,
+        "areaWeightedChar": null
+      },
+      "total": {
+        "count": 3966,
+        "heat": {
+          "sum": 0,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
+          "nonzeroCount": 0
+        },
+        "fuel": {
+          "sum": 3966,
+          "mean": 1,
+          "min": 1,
+          "max": 1,
+          "nonzeroCount": 3966
+        },
+        "fuelInitial": {
+          "sum": 3966,
+          "mean": 1,
+          "min": 1,
+          "max": 1,
+          "nonzeroCount": 3966
+        },
+        "char": {
+          "sum": 0,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
+          "nonzeroCount": 0
+        },
+        "glow": {
+          "sum": 0,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
+          "nonzeroCount": 0
+        },
+        "stateCounts": {
+          "unburned": 3966,
+          "burning": 0,
+          "fuelDepleted": 0,
+          "other": 0
+        }
+      },
+      "groups": {
+        "line3": {
+          "label": "第三行",
+          "count": 1666,
+          "heat": {
+            "sum": 0,
+            "mean": 0,
+            "min": 0,
+            "max": 0,
+            "nonzeroCount": 0
+          },
+          "fuel": {
+            "sum": 1666,
+            "mean": 1,
+            "min": 1,
+            "max": 1,
+            "nonzeroCount": 1666
+          },
+          "fuelInitial": {
+            "sum": 1666,
+            "mean": 1,
+            "min": 1,
+            "max": 1,
+            "nonzeroCount": 1666
+          },
+          "char": {
+            "sum": 0,
+            "mean": 0,
+            "min": 0,
+            "max": 0,
+            "nonzeroCount": 0
+          },
+          "glow": {
+            "sum": 0,
+            "mean": 0,
+            "min": 0,
+            "max": 0,
+            "nonzeroCount": 0
+          },
+          "stateCounts": {
+            "unburned": 1666,
+            "burning": 0,
+            "fuelDepleted": 0,
+            "other": 0
+          }
+        },
+        "line4": {
+          "label": "第四行",
+          "count": 2300,
+          "heat": {
+            "sum": 0,
+            "mean": 0,
+            "min": 0,
+            "max": 0,
+            "nonzeroCount": 0
+          },
+          "fuel": {
+            "sum": 2300,
+            "mean": 1,
+            "min": 1,
+            "max": 1,
+            "nonzeroCount": 2300
+          },
+          "fuelInitial": {
+            "sum": 2300,
+            "mean": 1,
+            "min": 1,
+            "max": 1,
+            "nonzeroCount": 2300
+          },
+          "char": {
+            "sum": 0,
+            "mean": 0,
+            "min": 0,
+            "max": 0,
+            "nonzeroCount": 0
+          },
+          "glow": {
+            "sum": 0,
+            "mean": 0,
+            "min": 0,
+            "max": 0,
+            "nonzeroCount": 0
+          },
+          "stateCounts": {
+            "unburned": 2300,
+            "burning": 0,
+            "fuelDepleted": 0,
+            "other": 0
+          }
+        }
+      },
+      "subgroups": {
+        "do-not-remove": {
+          "label": "不要摘",
+          "parentGroup": "line3",
+          "overlapsParent": true,
+          "count": 323,
+          "heat": {
+            "sum": 0,
+            "mean": 0,
+            "min": 0,
+            "max": 0,
+            "nonzeroCount": 0
+          },
+          "fuel": {
+            "sum": 323,
+            "mean": 1,
+            "min": 1,
+            "max": 1,
+            "nonzeroCount": 323
+          },
+          "fuelInitial": {
+            "sum": 323,
+            "mean": 1,
+            "min": 1,
+            "max": 1,
+            "nonzeroCount": 323
+          },
+          "char": {
+            "sum": 0,
+            "mean": 0,
+            "min": 0,
+            "max": 0,
+            "nonzeroCount": 0
+          },
+          "glow": {
+            "sum": 0,
+            "mean": 0,
+            "min": 0,
+            "max": 0,
+            "nonzeroCount": 0
+          },
+          "stateCounts": {
+            "unburned": 323,
+            "burning": 0,
+            "fuelDepleted": 0,
+            "other": 0
+          }
+        }
+      },
+      "initialState": {
+        "frameZero": true,
+        "timeZero": true,
+        "zeroBurning": true,
+        "fuelLoss": 0,
+        "unchangedFuelCount": 3966,
+        "allUnburned": true
+      },
+      "particles": {
+        "count": 0,
+        "hotCount": 0,
+        "coldCount": 0,
+        "smokeCount": 0,
+        "temperatureSum": 0,
+        "dynamicTemperatureSum": 0,
+        "densitySum": 0,
+        "circulationSum": 0,
+        "absCirculationSum": 0,
+        "smokeProxySum": 0,
+        "layerCounts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "counters": {
+        "flameHeatDeposited": 0,
+        "graphHeatDeposited": 0,
+        "sceneSeedsEmitted": 0,
+        "frontierProcessed": 0,
+        "frontierDeferred": 0,
+        "sceneFeedAttempts": 0,
+        "sceneFeedCapacityBlocked": 0,
+        "sceneFeedRandomRejected": 0,
+        "baseParticlesEmitted": 0,
+        "baseHeatApplied": 0,
+        "flameSamplesProcessed": 0,
+        "flameSampleCapHits": 0,
+        "clockProcessed": 0,
+        "clockFuelConsumed": 0,
+        "sceneSeedsRecycled": 0,
+        "sceneFeedRecycleCandidates": 0,
+        "sceneFeedNoColdSlot": 0,
+        "sceneRecycleSlotsExamined": 0,
+        "recycledDensitySum": 0,
+        "recycledCirculationSum": 0,
+        "recycledAbsCirculationSum": 0,
+        "recycledMaxDensity": 0,
+        "recycledMaxAbsCirculation": 0,
+        "recycledSmokeProxySum": 0,
+        "recycledHotRemoved": 0,
+        "recycledMaxTemperature": 0,
+        "recycledMaxDynamicTemperature": 0,
+        "recycledMinAge": null,
+        "areaWeightedFlameHeatDeposited": 0,
+        "areaWeightedGraphHeatDeposited": 0,
+        "areaWeightedFuelConsumed": 0,
+        "areaFeedCreditsGenerated": 0,
+        "areaFeedAttempts": 0,
+        "areaFeedAdmitted": 0,
+        "areaFeedBlocked": 0,
+        "areaFeedServiceCapDropped": 0,
+        "areaFeedCancelledCredits": 0
+      },
+      "countersByGroup": {
+        "line3": {
+          "flameHeatDeposited": 0,
+          "graphHeatDeposited": 0,
+          "sceneSeedsEmitted": 0,
+          "sceneSeedsRecycled": 0,
+          "clockProcessed": 0,
+          "clockFuelConsumed": 0,
+          "areaWeightedFlameHeatDeposited": 0,
+          "areaWeightedGraphHeatDeposited": 0,
+          "areaWeightedFuelConsumed": 0
+        },
+        "line4": {
+          "flameHeatDeposited": 0,
+          "graphHeatDeposited": 0,
+          "sceneSeedsEmitted": 0,
+          "sceneSeedsRecycled": 0,
+          "clockProcessed": 0,
+          "clockFuelConsumed": 0,
+          "areaWeightedFlameHeatDeposited": 0,
+          "areaWeightedGraphHeatDeposited": 0,
+          "areaWeightedFuelConsumed": 0
+        }
+      },
+      "params": {
+        "mode": "fire",
+        "simLayers": 9,
+        "riseV": 1.15,
+        "sway": 0.9,
+        "rate": 1500,
+        "coolP": 0.8,
+        "spread": 0.7,
+        "buoy": 0.9,
+        "baro": 1.4,
+        "eps": 0.07,
+        "cool": 1.2,
+        "gam": 1,
+        "turb": 0.55,
+        "couple": 0.5,
+        "interZ": 0,
+        "solver": "vpm",
+        "theta": 0.9,
+        "vpmVisc": 0,
+        "vpmNaive": false,
+        "showTiming": false,
+        "layers": 9,
+        "yaw": 0,
+        "rad": 42,
+        "ppl": 160,
+        "wind": 0,
+        "camDist": 3.4,
+        "camElev": 0,
+        "fov": 0.85,
+        "sliceMode": "world",
+        "sliceDepth": 0.7,
+        "covStretch": 1.3,
+        "covMax": 3.6,
+        "covRelax": 1,
+        "dimMode": "layer",
+        "vol3DTurb": 0.6,
+        "vol3DScale": 2.4,
+        "stretch3": 1,
+        "filament": false,
+        "filLen": 0.5,
+        "filGain": 3,
+        "exposure": 1,
+        "emis": 2.2,
+        "bloom": 1,
+        "thresh": 0.4,
+        "blurIters": 5,
+        "look": "cinematic",
+        "box": false,
+        "boxLight": 0.1,
+        "embers": true,
+        "reflect": 0.05,
+        "haze": 0.05,
+        "emberRate": 16,
+        "emberMax": 160,
+        "sceneOn": true,
+        "sceneMax": 8000,
+        "sceneScale": 1,
+        "sceneYaw": 0,
+        "scenePitch": 0,
+        "sceneLift": 0,
+        "sceneOffX": 0,
+        "sceneOffZ": 0,
+        "faithful": false,
+        "scenePreComp": false,
+        "sceneSH": 0,
+        "sceneLight": 1,
+        "sceneSorted": true,
+        "sceneBackdrop": false,
+        "sceneDepthTest": false,
+        "depthTestAlpha": 0.5,
+        "spreadOn": false,
+        "spreadIgnR": 0.14,
+        "spreadHeat": 2.2,
+        "spreadIgnH": 1,
+        "spreadR": 0.11,
+        "spreadRate": 3,
+        "spreadBurnT": 6,
+        "spreadFeed": 5,
+        "spreadFlameHeat": true,
+        "spreadSceneFeed": true,
+        "emitterOn": false,
+        "spreadFrontierCap": 1400,
+        "spreadSampleCap": 160,
+        "spreadFeedCap": 48,
+        "spreadClockMode": "legacy",
+        "spreadParticlePolicy": "block",
+        "spreadRecycleMinAge": 0.5,
+        "spreadMeasureMode": "legacy",
+        "spreadReferenceArea": 0.0016,
+        "spreadAreaFeedRate": 30,
+        "charDesat": 0.85,
+        "charDim": 0.12,
+        "charSootMix": 0,
+        "charOpa": 0,
+        "charSootR": 0.0495,
+        "charSootG": 0.0459,
+        "charSootB": 0.0428,
+        "orbit": false,
+        "stretch": true,
+        "flicker": true,
+        "paused": true
+      },
+      "randomDraws": 0
+    },
+    "elapsedSeconds": 0.5626000000238418,
+    "sourceCanvasSize": [
+      1200,
+      600
+    ],
+    "materialDifference": {
+      "base": "A36",
+      "property": "Gaussian scale",
+      "previous": 0.0102,
+      "current": 0.005129275727505855,
+      "pointConstruction": "same IDs, order and positions; compare raster metadata on the same font/rasterizer"
+    },
+    "scope": "Initial state only. Two material-text lines; subgroup overlaps line3 and is never added to total."
+  },
+  "after": {
+    "phase": "ready",
+    "resetCalls": 1,
+    "ignitionCalls": 0,
+    "stepCalls": 0,
+    "pointCount": 3966,
+    "geometry": {
+      "fontSource": "local(\"Microsoft YaHei\")",
+      "fontStatus": "loaded",
+      "requestedFont": "400 32px \"A36Raster\"",
+      "raster": {
+        "width": 1200,
+        "height": 96,
+        "anchorX": 280,
+        "anchorY": 48,
+        "stride": 2,
+        "alphaThreshold": 128,
+        "worldPerPixel": 0.005129275727505855,
+        "z": 0,
+        "gaussianScale": 0.005129275727505855,
+        "opacity": 0.94,
+        "color": [
+          0.82,
+          0.78,
+          0.67
+        ],
+        "fuel": 1
+      },
+      "camera": {
+        "yaw": 0,
+        "elevation": 0,
+        "distance": 3.4,
+        "fov": 0.85,
+        "targetY": 1.05
+      },
+      "groups": [
+        {
+          "id": "line3",
+          "label": "第三行",
+          "text": "时刻表不要摘，明早第一班仍是六点四十。",
+          "sourceY": 300,
+          "pointCount": 1666,
+          "requestedCanvasFont": "400 32px \"A36Raster\"",
+          "canvasFont": "32px A36Raster",
+          "measuredTextWidth": 608,
+          "measuredInkBounds": {
+            "left": 281,
+            "right": 867,
+            "top": 29.390625,
+            "bottom": 61.390625
+          },
+          "sampledPixelBounds": {
+            "minX": 281,
+            "maxX": 865,
+            "minY": 29,
+            "maxY": 59
+          },
+          "rgbaFNV1a32": "121e9054"
+        },
+        {
+          "id": "line4",
+          "label": "第四行",
+          "text": "若有人问今晚还能不能走，先把今晚那一行念完，再把门打开。",
+          "sourceY": 348,
+          "pointCount": 2300,
+          "requestedCanvasFont": "400 32px \"A36Raster\"",
+          "canvasFont": "32px A36Raster",
+          "measuredTextWidth": 896,
+          "measuredInkBounds": {
+            "left": 280,
+            "right": 1155,
+            "top": 29.390625,
+            "bottom": 61.390625
+          },
+          "sampledPixelBounds": {
+            "minX": 281,
+            "maxX": 1153,
+            "minY": 29,
+            "maxY": 59
+          },
+          "rgbaFNV1a32": "5fb42ee1"
+        }
+      ],
+      "pointCount": 3966,
+      "target": {
+        "id": "do-not-remove",
+        "label": "不要摘",
+        "line": "line3",
+        "startIndex": 3,
+        "endIndexExclusive": 6,
+        "startX": 376,
+        "endXExclusive": 472,
+        "pointCount": 323,
+        "attribution": "sample centers in fixed character-prefix bounds; subset of line3"
+      },
+      "sourceCanvasSize": [
+        1200,
+        600
+      ],
+      "sourcePixelLineSpacing": 48,
+      "outsideFluidXCount": 1864,
+      "stableOnlyForSameLocalFontAndRasterizer": true
+    },
+    "errors": [],
+    "events": [
+      {
+        "action": "ready",
+        "phase": "ready",
+        "elapsedSeconds": 0.5232000000476837
+      }
+    ],
+    "frame": 0,
+    "simSeconds": 0,
+    "seed": 20261031,
+    "groups": {
+      "line3": {
+        "label": "第三行",
+        "count": 1666,
+        "heat": {
+          "sum": 0,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
+          "nonzeroCount": 0
+        },
+        "fuel": {
+          "sum": 1666,
+          "mean": 1,
+          "min": 1,
+          "max": 1,
+          "nonzeroCount": 1666
+        },
+        "fuelInitial": {
+          "sum": 1666,
+          "mean": 1,
+          "min": 1,
+          "max": 1,
+          "nonzeroCount": 1666
+        },
+        "char": {
+          "sum": 0,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
+          "nonzeroCount": 0
+        },
+        "glow": {
+          "sum": 0,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
+          "nonzeroCount": 0
+        },
+        "stateCounts": {
+          "unburned": 1666,
+          "burning": 0,
+          "fuelDepleted": 0,
+          "other": 0
+        }
+      },
+      "line4": {
+        "label": "第四行",
+        "count": 2300,
+        "heat": {
+          "sum": 0,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
+          "nonzeroCount": 0
+        },
+        "fuel": {
+          "sum": 2300,
+          "mean": 1,
+          "min": 1,
+          "max": 1,
+          "nonzeroCount": 2300
+        },
+        "fuelInitial": {
+          "sum": 2300,
+          "mean": 1,
+          "min": 1,
+          "max": 1,
+          "nonzeroCount": 2300
+        },
+        "char": {
+          "sum": 0,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
+          "nonzeroCount": 0
+        },
+        "glow": {
+          "sum": 0,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
+          "nonzeroCount": 0
+        },
+        "stateCounts": {
+          "unburned": 2300,
+          "burning": 0,
+          "fuelDepleted": 0,
+          "other": 0
+        }
+      }
+    },
+    "subgroups": {
+      "do-not-remove": {
+        "label": "不要摘",
+        "parentGroup": "line3",
+        "overlapsParent": true,
+        "count": 323,
+        "heat": {
+          "sum": 0,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
+          "nonzeroCount": 0
+        },
+        "fuel": {
+          "sum": 323,
+          "mean": 1,
+          "min": 1,
+          "max": 1,
+          "nonzeroCount": 323
+        },
+        "fuelInitial": {
+          "sum": 323,
+          "mean": 1,
+          "min": 1,
+          "max": 1,
+          "nonzeroCount": 323
+        },
+        "char": {
+          "sum": 0,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
+          "nonzeroCount": 0
+        },
+        "glow": {
+          "sum": 0,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
+          "nonzeroCount": 0
+        },
+        "stateCounts": {
+          "unburned": 323,
+          "burning": 0,
+          "fuelDepleted": 0,
+          "other": 0
+        }
+      }
+    },
+    "total": {
+      "count": 3966,
+      "heat": {
+        "sum": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "nonzeroCount": 0
+      },
+      "fuel": {
+        "sum": 3966,
+        "mean": 1,
+        "min": 1,
+        "max": 1,
+        "nonzeroCount": 3966
+      },
+      "fuelInitial": {
+        "sum": 3966,
+        "mean": 1,
+        "min": 1,
+        "max": 1,
+        "nonzeroCount": 3966
+      },
+      "char": {
+        "sum": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "nonzeroCount": 0
+      },
+      "glow": {
+        "sum": 0,
+        "mean": 0,
+        "min": 0,
+        "max": 0,
+        "nonzeroCount": 0
+      },
+      "stateCounts": {
+        "unburned": 3966,
+        "burning": 0,
+        "fuelDepleted": 0,
+        "other": 0
+      }
+    },
+    "counters": {
+      "flameHeatDeposited": 0,
+      "graphHeatDeposited": 0,
+      "sceneSeedsEmitted": 0,
+      "frontierProcessed": 0,
+      "frontierDeferred": 0,
+      "sceneFeedAttempts": 0,
+      "sceneFeedCapacityBlocked": 0,
+      "sceneFeedRandomRejected": 0,
+      "baseParticlesEmitted": 0,
+      "baseHeatApplied": 0,
+      "flameSamplesProcessed": 0,
+      "flameSampleCapHits": 0,
+      "clockProcessed": 0,
+      "clockFuelConsumed": 0,
+      "sceneSeedsRecycled": 0,
+      "sceneFeedRecycleCandidates": 0,
+      "sceneFeedNoColdSlot": 0,
+      "sceneRecycleSlotsExamined": 0,
+      "recycledDensitySum": 0,
+      "recycledCirculationSum": 0,
+      "recycledAbsCirculationSum": 0,
+      "recycledMaxDensity": 0,
+      "recycledMaxAbsCirculation": 0,
+      "recycledSmokeProxySum": 0,
+      "recycledHotRemoved": 0,
+      "recycledMaxTemperature": 0,
+      "recycledMaxDynamicTemperature": 0,
+      "recycledMinAge": null,
+      "areaWeightedFlameHeatDeposited": 0,
+      "areaWeightedGraphHeatDeposited": 0,
+      "areaWeightedFuelConsumed": 0,
+      "areaFeedCreditsGenerated": 0,
+      "areaFeedAttempts": 0,
+      "areaFeedAdmitted": 0,
+      "areaFeedBlocked": 0,
+      "areaFeedServiceCapDropped": 0,
+      "areaFeedCancelledCredits": 0
+    },
+    "initialState": {
+      "frameZero": true,
+      "timeZero": true,
+      "zeroBurning": true,
+      "fuelLoss": 0,
+      "unchangedFuelCount": 3966,
+      "allUnburned": true
+    },
+    "hash": "87fe48d8",
+    "material": {
+      "frame": 0,
+      "time": 0,
+      "seed": 20261031,
+      "hash": "87fe48d8",
+      "particleStateHash": "ab798af7",
+      "scene": {
+        "count": 3966,
+        "burning": 0,
+        "charred": 0,
+        "heated": 0,
+        "fuelRemaining": 3966,
+        "frontier": 0,
+        "burnHash": "e28b25c7",
+        "representedArea": null,
+        "areaWeightedFuelRemaining": null,
+        "areaWeightedHeat": null,
+        "areaWeightedChar": null
+      },
+      "total": {
+        "count": 3966,
+        "heat": {
+          "sum": 0,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
+          "nonzeroCount": 0
+        },
+        "fuel": {
+          "sum": 3966,
+          "mean": 1,
+          "min": 1,
+          "max": 1,
+          "nonzeroCount": 3966
+        },
+        "fuelInitial": {
+          "sum": 3966,
+          "mean": 1,
+          "min": 1,
+          "max": 1,
+          "nonzeroCount": 3966
+        },
+        "char": {
+          "sum": 0,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
+          "nonzeroCount": 0
+        },
+        "glow": {
+          "sum": 0,
+          "mean": 0,
+          "min": 0,
+          "max": 0,
+          "nonzeroCount": 0
+        },
+        "stateCounts": {
+          "unburned": 3966,
+          "burning": 0,
+          "fuelDepleted": 0,
+          "other": 0
+        }
+      },
+      "groups": {
+        "line3": {
+          "label": "第三行",
+          "count": 1666,
+          "heat": {
+            "sum": 0,
+            "mean": 0,
+            "min": 0,
+            "max": 0,
+            "nonzeroCount": 0
+          },
+          "fuel": {
+            "sum": 1666,
+            "mean": 1,
+            "min": 1,
+            "max": 1,
+            "nonzeroCount": 1666
+          },
+          "fuelInitial": {
+            "sum": 1666,
+            "mean": 1,
+            "min": 1,
+            "max": 1,
+            "nonzeroCount": 1666
+          },
+          "char": {
+            "sum": 0,
+            "mean": 0,
+            "min": 0,
+            "max": 0,
+            "nonzeroCount": 0
+          },
+          "glow": {
+            "sum": 0,
+            "mean": 0,
+            "min": 0,
+            "max": 0,
+            "nonzeroCount": 0
+          },
+          "stateCounts": {
+            "unburned": 1666,
+            "burning": 0,
+            "fuelDepleted": 0,
+            "other": 0
+          }
+        },
+        "line4": {
+          "label": "第四行",
+          "count": 2300,
+          "heat": {
+            "sum": 0,
+            "mean": 0,
+            "min": 0,
+            "max": 0,
+            "nonzeroCount": 0
+          },
+          "fuel": {
+            "sum": 2300,
+            "mean": 1,
+            "min": 1,
+            "max": 1,
+            "nonzeroCount": 2300
+          },
+          "fuelInitial": {
+            "sum": 2300,
+            "mean": 1,
+            "min": 1,
+            "max": 1,
+            "nonzeroCount": 2300
+          },
+          "char": {
+            "sum": 0,
+            "mean": 0,
+            "min": 0,
+            "max": 0,
+            "nonzeroCount": 0
+          },
+          "glow": {
+            "sum": 0,
+            "mean": 0,
+            "min": 0,
+            "max": 0,
+            "nonzeroCount": 0
+          },
+          "stateCounts": {
+            "unburned": 2300,
+            "burning": 0,
+            "fuelDepleted": 0,
+            "other": 0
+          }
+        }
+      },
+      "subgroups": {
+        "do-not-remove": {
+          "label": "不要摘",
+          "parentGroup": "line3",
+          "overlapsParent": true,
+          "count": 323,
+          "heat": {
+            "sum": 0,
+            "mean": 0,
+            "min": 0,
+            "max": 0,
+            "nonzeroCount": 0
+          },
+          "fuel": {
+            "sum": 323,
+            "mean": 1,
+            "min": 1,
+            "max": 1,
+            "nonzeroCount": 323
+          },
+          "fuelInitial": {
+            "sum": 323,
+            "mean": 1,
+            "min": 1,
+            "max": 1,
+            "nonzeroCount": 323
+          },
+          "char": {
+            "sum": 0,
+            "mean": 0,
+            "min": 0,
+            "max": 0,
+            "nonzeroCount": 0
+          },
+          "glow": {
+            "sum": 0,
+            "mean": 0,
+            "min": 0,
+            "max": 0,
+            "nonzeroCount": 0
+          },
+          "stateCounts": {
+            "unburned": 323,
+            "burning": 0,
+            "fuelDepleted": 0,
+            "other": 0
+          }
+        }
+      },
+      "initialState": {
+        "frameZero": true,
+        "timeZero": true,
+        "zeroBurning": true,
+        "fuelLoss": 0,
+        "unchangedFuelCount": 3966,
+        "allUnburned": true
+      },
+      "particles": {
+        "count": 0,
+        "hotCount": 0,
+        "coldCount": 0,
+        "smokeCount": 0,
+        "temperatureSum": 0,
+        "dynamicTemperatureSum": 0,
+        "densitySum": 0,
+        "circulationSum": 0,
+        "absCirculationSum": 0,
+        "smokeProxySum": 0,
+        "layerCounts": [
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "counters": {
+        "flameHeatDeposited": 0,
+        "graphHeatDeposited": 0,
+        "sceneSeedsEmitted": 0,
+        "frontierProcessed": 0,
+        "frontierDeferred": 0,
+        "sceneFeedAttempts": 0,
+        "sceneFeedCapacityBlocked": 0,
+        "sceneFeedRandomRejected": 0,
+        "baseParticlesEmitted": 0,
+        "baseHeatApplied": 0,
+        "flameSamplesProcessed": 0,
+        "flameSampleCapHits": 0,
+        "clockProcessed": 0,
+        "clockFuelConsumed": 0,
+        "sceneSeedsRecycled": 0,
+        "sceneFeedRecycleCandidates": 0,
+        "sceneFeedNoColdSlot": 0,
+        "sceneRecycleSlotsExamined": 0,
+        "recycledDensitySum": 0,
+        "recycledCirculationSum": 0,
+        "recycledAbsCirculationSum": 0,
+        "recycledMaxDensity": 0,
+        "recycledMaxAbsCirculation": 0,
+        "recycledSmokeProxySum": 0,
+        "recycledHotRemoved": 0,
+        "recycledMaxTemperature": 0,
+        "recycledMaxDynamicTemperature": 0,
+        "recycledMinAge": null,
+        "areaWeightedFlameHeatDeposited": 0,
+        "areaWeightedGraphHeatDeposited": 0,
+        "areaWeightedFuelConsumed": 0,
+        "areaFeedCreditsGenerated": 0,
+        "areaFeedAttempts": 0,
+        "areaFeedAdmitted": 0,
+        "areaFeedBlocked": 0,
+        "areaFeedServiceCapDropped": 0,
+        "areaFeedCancelledCredits": 0
+      },
+      "countersByGroup": {
+        "line3": {
+          "flameHeatDeposited": 0,
+          "graphHeatDeposited": 0,
+          "sceneSeedsEmitted": 0,
+          "sceneSeedsRecycled": 0,
+          "clockProcessed": 0,
+          "clockFuelConsumed": 0,
+          "areaWeightedFlameHeatDeposited": 0,
+          "areaWeightedGraphHeatDeposited": 0,
+          "areaWeightedFuelConsumed": 0
+        },
+        "line4": {
+          "flameHeatDeposited": 0,
+          "graphHeatDeposited": 0,
+          "sceneSeedsEmitted": 0,
+          "sceneSeedsRecycled": 0,
+          "clockProcessed": 0,
+          "clockFuelConsumed": 0,
+          "areaWeightedFlameHeatDeposited": 0,
+          "areaWeightedGraphHeatDeposited": 0,
+          "areaWeightedFuelConsumed": 0
+        }
+      },
+      "params": {
+        "mode": "fire",
+        "simLayers": 9,
+        "riseV": 1.15,
+        "sway": 0.9,
+        "rate": 1500,
+        "coolP": 0.8,
+        "spread": 0.7,
+        "buoy": 0.9,
+        "baro": 1.4,
+        "eps": 0.07,
+        "cool": 1.2,
+        "gam": 1,
+        "turb": 0.55,
+        "couple": 0.5,
+        "interZ": 0,
+        "solver": "vpm",
+        "theta": 0.9,
+        "vpmVisc": 0,
+        "vpmNaive": false,
+        "showTiming": false,
+        "layers": 9,
+        "yaw": 0,
+        "rad": 42,
+        "ppl": 160,
+        "wind": 0,
+        "camDist": 3.4,
+        "camElev": 0,
+        "fov": 0.85,
+        "sliceMode": "world",
+        "sliceDepth": 0.7,
+        "covStretch": 1.3,
+        "covMax": 3.6,
+        "covRelax": 1,
+        "dimMode": "layer",
+        "vol3DTurb": 0.6,
+        "vol3DScale": 2.4,
+        "stretch3": 1,
+        "filament": false,
+        "filLen": 0.5,
+        "filGain": 3,
+        "exposure": 1,
+        "emis": 2.2,
+        "bloom": 1,
+        "thresh": 0.4,
+        "blurIters": 5,
+        "look": "cinematic",
+        "box": false,
+        "boxLight": 0.1,
+        "embers": true,
+        "reflect": 0.05,
+        "haze": 0.05,
+        "emberRate": 16,
+        "emberMax": 160,
+        "sceneOn": true,
+        "sceneMax": 8000,
+        "sceneScale": 1,
+        "sceneYaw": 0,
+        "scenePitch": 0,
+        "sceneLift": 0,
+        "sceneOffX": 0,
+        "sceneOffZ": 0,
+        "faithful": false,
+        "scenePreComp": false,
+        "sceneSH": 0,
+        "sceneLight": 1,
+        "sceneSorted": true,
+        "sceneBackdrop": false,
+        "sceneDepthTest": false,
+        "depthTestAlpha": 0.5,
+        "spreadOn": false,
+        "spreadIgnR": 0.14,
+        "spreadHeat": 2.2,
+        "spreadIgnH": 1,
+        "spreadR": 0.11,
+        "spreadRate": 3,
+        "spreadBurnT": 6,
+        "spreadFeed": 5,
+        "spreadFlameHeat": true,
+        "spreadSceneFeed": true,
+        "emitterOn": false,
+        "spreadFrontierCap": 1400,
+        "spreadSampleCap": 160,
+        "spreadFeedCap": 48,
+        "spreadClockMode": "legacy",
+        "spreadParticlePolicy": "block",
+        "spreadRecycleMinAge": 0.5,
+        "spreadMeasureMode": "legacy",
+        "spreadReferenceArea": 0.0016,
+        "spreadAreaFeedRate": 30,
+        "charDesat": 0.85,
+        "charDim": 0.12,
+        "charSootMix": 0,
+        "charOpa": 0,
+        "charSootR": 0.0495,
+        "charSootG": 0.0459,
+        "charSootB": 0.0428,
+        "orbit": false,
+        "stretch": true,
+        "flicker": true,
+        "paused": true
+      },
+      "randomDraws": 0
+    },
+    "elapsedSeconds": 0.6725,
+    "sourceCanvasSize": [
+      1200,
+      600
+    ],
+    "materialDifference": {
+      "base": "A36",
+      "property": "Gaussian scale",
+      "previous": 0.0102,
+      "current": 0.005129275727505855,
+      "pointConstruction": "same IDs, order and positions; compare raster metadata on the same font/rasterizer"
+    },
+    "scope": "Initial state only. Two material-text lines; subgroup overlaps line3 and is never added to total."
+  },
+  "wallSeconds": 3.2265483
+}
