@@ -1,0 +1,236 @@
+{
+  "schema": "t62-joint-oracle-contract-evidence-v1",
+  "created_utc": "2026-10-30T03:49:32.993600+00:00",
+  "parent_commit": "cdb963b09021ad41340c155ccbe31b75f97f1dba",
+  "analysis_only": true,
+  "new_measurement": false,
+  "new_scientific_invocations": 0,
+  "new_scientific_trajectories": 0,
+  "new_fits": 0,
+  "new_integrals": 0,
+  "preparation_scalar_arithmetic_invocations": 1,
+  "operation": "Copy saved scalar metadata and evaluate displayed algebraic bounds using standard-library binary64; no NPZ decode or field evaluation.",
+  "input_identities": [
+    {
+      "path": "tracks/tog/tasks/t54-scalar-verification/result.json",
+      "bytes": 3679,
+      "sha256": "66a83b67cff104773217757bc08fe9751dd357824778b130c432a4191d7cc9b8"
+    },
+    {
+      "path": "tracks/tog/tasks/t56-coupled-reference/reference.py",
+      "bytes": 17488,
+      "sha256": "51499f5c50b8f7f25ebb8df2569bc7eff085938cbd9d88f36b8604f9aaa4e01f"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/measurement.py",
+      "bytes": 17413,
+      "sha256": "3a8168baa58d6ba965a9ca609c8c03eb7d167020eac06f65dee695e4fd1cc2aa"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/reference.py",
+      "bytes": 26760,
+      "sha256": "a4e91488b3130dcf659f324fc6d5614ebee9717824079aab5e7388e36737befb"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/PROTOCOL.md",
+      "bytes": 7451,
+      "sha256": "1da093026ce7da401e4bbc9850bff2f0322e5c04dd123aff76e579cfc23c92bc"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/result.json",
+      "bytes": 136401,
+      "sha256": "8908fe090dd50c2c60291ffde31a52fb0e525063d9a66646462c6d3e6ba88954"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/execution.json",
+      "bytes": 22168,
+      "sha256": "3eaf3d644c649ed26dc10d9a1f52546232b635a4e2c598ac47564c78197c727e"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/input-manifest.json",
+      "bytes": 10984,
+      "sha256": "007dea68a26f3aeb476ac89db6990f7b06d0678ebf7a3d2fb987575277a39023"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S256.json",
+      "bytes": 8299,
+      "sha256": "2f7f1dc0ca14e5c6c7d46f0e7256f386fd35e01c502c555f893de637da3ac47a"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S128.json",
+      "bytes": 8295,
+      "sha256": "9b2123bcf96e93fe40285978b321ce94ed6d7fd0cfb81e7e446f04fceb6da93b"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S256-snapshot-4.json",
+      "bytes": 2143,
+      "sha256": "bdf326b8ae13b0e2431105db2c6e43d1cc76707c3564769840b6f07e22835644"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S128-snapshot-4.json",
+      "bytes": 2146,
+      "sha256": "6d64d7288798d56e5fece9f2eca177761c5829d0cf6541e7bef7748a49f6a158"
+    },
+    {
+      "path": "tracks/tog/tasks/t61-saved-output-qualification/DECISION.md",
+      "bytes": 5372,
+      "sha256": "304da739381a10e9b8a54ca9dfdedc162c870693e06fc6b623c6f9d002a1ce72"
+    },
+    {
+      "path": "tracks/tog/tasks/t61-saved-output-qualification/PROTOCOL.md",
+      "bytes": 5617,
+      "sha256": "555139a1e3ba7c5dd4ea1469ed0da5a014bf006f6e757eff06a5943d1151a06b"
+    },
+    {
+      "path": "tracks/tog/tasks/t61-saved-output-qualification/result.json",
+      "bytes": 3936,
+      "sha256": "c6ac286c4527ad4925e1d85b4cd0cfc897ea5ceced413c810496dd716a0cd679"
+    },
+    {
+      "path": "tracks/tog/tasks/t61-saved-output-qualification/execution.json",
+      "bytes": 2351,
+      "sha256": "cf0734c0f9310cd50704ad3677adb6161c939ab9d24ced8e9425f73cfd4f7059"
+    },
+    {
+      "path": "tracks/tog/tasks/t61-saved-output-qualification/input-manifest.json",
+      "bytes": 31766,
+      "sha256": "ed4e5a7b8392f4ffaea6fa0705d4715edd0a5aab9792b74030066b0f061d616d"
+    },
+    {
+      "path": "tracks/validation/t60-full-window-review.md",
+      "bytes": 7536,
+      "sha256": "66bd20356a1aaf1622498ce83849ed1150a1d6784f2a11c0ddb15b17f83db4a4"
+    },
+    {
+      "path": "tracks/validation/t61-saved-output-review.md",
+      "bytes": 5205,
+      "sha256": "aecda1b55abec9842e1eec35cec3d425356ca6a91a06bdb5888cf908fc9a0099"
+    }
+  ],
+  "preparation_script": {
+    "path": "tracks/tog/tasks/t62-joint-oracle-contract/local/prepare_evidence.py",
+    "bytes": 5266,
+    "sha256": "2606e88cbf15b654f7bb53e83ea17a2bdb1d9d371ef97cc99ad9fbd764fd61d2"
+  },
+  "preparation_script_is_ignored_local_support": true,
+  "inherited_T61": {
+    "accepted_saved_evidence": true,
+    "ordinary_model_verdict": "fail",
+    "full_t1_task_pass": false,
+    "T60_history_reclassified": false
+  },
+  "saved_endpoint": {
+    "a": 0.42605219413657314,
+    "b": -0.07305360087353913,
+    "d": 1.0359696982488587,
+    "mu_z": 0.35276936493470806,
+    "D0": 1.0882203729522952,
+    "reference": "S256",
+    "index": 4,
+    "time": 1.0
+  },
+  "scalar_algebra": {
+    "gamma": 0.42920367320510344,
+    "rho_squared": 0.0011685785999036129,
+    "rho": 0.03418447893274977,
+    "covariance_unavoidable_relative": 0.09493793325635433,
+    "covariance_alone_excludes": false,
+    "sr_interval": [
+      0.9555161400824651,
+      1.0355209645080754
+    ],
+    "sz_interval": [
+      1.0008922116372516,
+      1.034482564948104
+    ],
+    "z0_interval": [
+      0.25276936493470803,
+      0.4527693649347081
+    ],
+    "compact_positive_geometry_domain": true,
+    "moment_matched_geometry": {
+      "sr": 0.9963219263606086,
+      "sz": 1.0178259665821356,
+      "z0": 0.35276936493470806,
+      "amplitude": null
+    },
+    "moment_geometry_is_field_witness": false
+  },
+  "earlier_qualified_sample_witnesses": [
+    {
+      "time": 0.0,
+      "gates": {
+        "field": true,
+        "centroid": true,
+        "covariance": true
+      }
+    },
+    {
+      "time": 0.25,
+      "gates": {
+        "field": true,
+        "centroid": true,
+        "covariance": true
+      }
+    },
+    {
+      "time": 0.5,
+      "gates": {
+        "field": true,
+        "centroid": true,
+        "covariance": true
+      }
+    },
+    {
+      "time": 0.75,
+      "gates": {
+        "field": true,
+        "centroid": true,
+        "covariance": true
+      }
+    }
+  ],
+  "endpoint_raw_identities_not_decoded": [
+    {
+      "path": "local/S128-snapshot-4.npz",
+      "bytes": 3951954,
+      "sha256": "33375f8db5ebed664069b969d2d45bf33e5732eddd34d6078a674164e1e6c7a0"
+    },
+    {
+      "path": "local/S256-snapshot-4.npz",
+      "bytes": 15764818,
+      "sha256": "9830bbfc8b7e36a3baed2f5669733998bf2f7f48143c19dfdadaeb40dbb1ec16"
+    }
+  ],
+  "old_scientific_executable_record": {
+    "path": "C:/Users/seanzjxiao/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe",
+    "bytes": 107312,
+    "sha256": "5640e9be2fd33d05a1a9ae1228e2354609a69ab831605995ec4e2bd6da8fff5e"
+  },
+  "scientific_history_seconds": 1976.6796338998247,
+  "T61_qualification_seconds": 0.9663960000034422,
+  "planned_later_measurement": {
+    "scientific_child_invocations": 1,
+    "child_seconds": 120,
+    "observed_peak_working_set_bytes": 536870912,
+    "primary_geometry_evaluations_max": 606,
+    "separate_calibration_contractions": 2,
+    "full_gaussian_rule_integrals_max": 8,
+    "full_gaussian_node_cell_points_max": 78643200,
+    "reference_polynomial_node_cell_points": 983040,
+    "unique_1D_rule_orders": [
+      3,
+      2,
+      8,
+      6,
+      16,
+      12
+    ],
+    "rule_nodes": 47
+  },
+  "capacity_established": false,
+  "contribution_established": false,
+  "formal_error_certificate": false,
+  "inputs_unchanged": true,
+  "scalar_preparation_seconds_before_record_write": 0.007609400083310902
+}
