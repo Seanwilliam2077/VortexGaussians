@@ -1,0 +1,279 @@
+{
+  "schema": "t70-causal-projector-freeze-v1",
+  "created_utc": "2026-10-30T08:40:34.057049+00:00",
+  "parent_commit": "2d8f9b771cea425ca22bc65d676c3a809a2dc376",
+  "inputs": [
+    {
+      "path": "tracks/tog/tasks/t54-scalar-verification/result.json",
+      "bytes": 3679,
+      "sha256": "66a83b67cff104773217757bc08fe9751dd357824778b130c432a4191d7cc9b8"
+    },
+    {
+      "path": "tracks/tog/tasks/t57-finer-short-reference/memory.py",
+      "bytes": 2231,
+      "sha256": "4b83a89eff664dc0d86fb0c71b39c99d71720c1d18c5f93557e279d0ca3745fd"
+    },
+    {
+      "path": "tracks/tog/tasks/t69-causal-mixture-startup/.gitignore",
+      "bytes": 7,
+      "sha256": "a7d8bdcefba82a95ebc021d87c629fdea21f13af953bf01e28b7cf8b0eeceb41"
+    },
+    {
+      "path": "tracks/tog/tasks/t69-causal-mixture-startup/ANALYSIS.md",
+      "bytes": 11426,
+      "sha256": "8818bd794fc8563d5bb174d96e61894443978a5e4e469fb6ff6bcefb9264d5e9"
+    },
+    {
+      "path": "tracks/tog/tasks/t69-causal-mixture-startup/COMPARATOR.md",
+      "bytes": 10310,
+      "sha256": "2e3827cec3f5a2d2674d3fdf603443a43540cd390a2d7136da5a97d8f6785ca1"
+    },
+    {
+      "path": "tracks/tog/tasks/t69-causal-mixture-startup/DECISION.md",
+      "bytes": 5305,
+      "sha256": "56450e13afbf7401ebb98b9b715db3495797a541276f1f62dd4124dc79b385e4"
+    },
+    {
+      "path": "tracks/tog/tasks/t69-causal-mixture-startup/README.md",
+      "bytes": 2548,
+      "sha256": "1bdc0ac286bcb047d5db88e252cd6112ae4fe344487d0d5fb055d4b80e35c247"
+    },
+    {
+      "path": "tracks/tog/tasks/t69-causal-mixture-startup/audit-manifest.json",
+      "bytes": 16087,
+      "sha256": "deb6dc4eedf8c796004906f6fa6fcd58f640db5ae6c97035e7f50aed9bd94d2c"
+    },
+    {
+      "path": "tracks/tog/tasks/t69-causal-mixture-startup/evidence.json",
+      "bytes": 5932,
+      "sha256": "5363e57581c973e322a269a1d4b43c8364b6a6585b33ce105f1abbf74ed6febe"
+    },
+    {
+      "path": "tracks/tog/tasks/t70-causal-projector-qualification/.gitignore",
+      "bytes": 7,
+      "sha256": "a7d8bdcefba82a95ebc021d87c629fdea21f13af953bf01e28b7cf8b0eeceb41"
+    },
+    {
+      "path": "tracks/tog/tasks/t70-causal-projector-qualification/PROTOCOL.md",
+      "bytes": 10802,
+      "sha256": "24bf6e4cebaee51ca7e343743243d66da1b1f16cf1229b4990308f26c710f68c"
+    },
+    {
+      "path": "tracks/tog/tasks/t70-causal-projector-qualification/measure.py",
+      "bytes": 31045,
+      "sha256": "fc2f1f169422562b6160f328cfc18c5e855e1f1a06a7c8f51246e33e03a30377"
+    },
+    {
+      "path": "tracks/tog/tasks/t70-causal-projector-qualification/physics.py",
+      "bytes": 15104,
+      "sha256": "7b3788924bf6cd604f1e22c6aa837ae2407fd583445871975b799ba6851f227d"
+    },
+    {
+      "path": "tracks/tog/tasks/t70-causal-projector-qualification/preflight.json",
+      "bytes": 732,
+      "sha256": "de8b2a8064c8c27d70fde1bc85e2bc72ebb380ff7f59f8c9921ec06c20fccbad"
+    },
+    {
+      "path": "tracks/tog/tasks/t70-causal-projector-qualification/prepare.py",
+      "bytes": 8753,
+      "sha256": "5386a731e8573a1487a7d7f63279b3fb19b62c1e9c352d7272f8e7ea3efaf02b"
+    },
+    {
+      "path": "tracks/tog/tasks/t70-causal-projector-qualification/run_once.py",
+      "bytes": 36617,
+      "sha256": "4a075388dc7aafe4f99f4c2b1fefbb7ccd152b5ede53ed522b37e192a93dffb4"
+    },
+    {
+      "path": "tracks/tog/tasks/t70-causal-projector-qualification/search.py",
+      "bytes": 18390,
+      "sha256": "70b75cbfb971657ccc280856e4f585709e1c07a18a5ab1398c7dedbd707e594a"
+    },
+    {
+      "path": "tracks/validation/t69-causal-mixture-review.md",
+      "bytes": 7872,
+      "sha256": "e4b1be07382ae11b2690ee2494b47f57d677f38ae5574e271fb45414848a6987"
+    }
+  ],
+  "executable": {
+    "path": "C:/Users/seanzjxiao/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe",
+    "bytes": 107312,
+    "sha256": "5640e9be2fd33d05a1a9ae1228e2354609a69ab831605995ec4e2bd6da8fff5e"
+  },
+  "scientific_input_paths": [
+    "tracks/tog/tasks/t54-scalar-verification/result.json"
+  ],
+  "expected_python": "3.12.14",
+  "expected_numpy": "2.3.5",
+  "maximum_scientific_child_invocations": 1,
+  "child_timeout_seconds": 120,
+  "observed_peak_working_set_limit_bytes": 536870912,
+  "required_available_physical_bytes": 1073741824,
+  "memory_sample_interval_seconds": 0.25,
+  "expected_rule_orders": [
+    64,
+    96,
+    128,
+    192,
+    256
+  ],
+  "expected_rule_nodes": 736,
+  "expected_rule_eigh_calls": 5,
+  "heat_orders": [
+    64,
+    128,
+    256
+  ],
+  "step_sizes": [
+    0.0625,
+    0.03125
+  ],
+  "expected_check_names": [
+    "frozen_identity_runtime",
+    "rule_initial_operator",
+    "full_self_cross_evaluator",
+    "independent_weight_controls",
+    "complete_prescribed_searches",
+    "selected_direct_confirmation_moments",
+    "complete_work_accounting",
+    "final_identity_preservation"
+  ],
+  "dimensional_atol": 1e-10,
+  "dimensional_rtol": 1e-09,
+  "dimensionless_atol": 1e-08,
+  "search_caps_per_step": {
+    "proposals": 2280,
+    "component_bases": 1199,
+    "weight_control_attempts": 9121,
+    "initial_pairs": 1128,
+    "neighbor_proposals": 1152,
+    "starts": 4,
+    "levels": 3,
+    "polls_per_level": 8
+  },
+  "fixed_work": {
+    "rule_count": 5,
+    "rule_nodes": 736,
+    "rule_eigh_calls": 5,
+    "root_scalar_control_calls": 7,
+    "phys_field_calls": 30,
+    "phys_field_spatial_points": 319566,
+    "phys_field_component_points": 479349,
+    "phys_field_heat_integrand_points": 71582784,
+    "phys_field_ordered_pair_points": 798915,
+    "phys_initial_exact_calls": 1,
+    "phys_initial_exact_points": 13
+  },
+  "total_work_caps": {
+    "search_proposals": 4560,
+    "search_component_evaluations": 2398,
+    "phys_cross_calls": 2434,
+    "phys_cross_ordered_pair_integrals": 2461,
+    "phys_cross_integrand_points": 316352
+  },
+  "prior_scientific_child_seconds": 1990.3707298998488,
+  "prior_evidence_qualification_seconds": 0.9663960000034422,
+  "prior_scientific_series_scope": [
+    "T56",
+    "T57",
+    "T58",
+    "T59",
+    "T60",
+    "T63",
+    "T65",
+    "T66",
+    "T68"
+  ],
+  "prior_scientific_series_is_total_project_cost": false,
+  "preparation_scientific_invocations": 0,
+  "input_arrays_read": 0,
+  "input_arrays_saved": 0,
+  "new_flow_trajectories_permitted": 0,
+  "parent_preservation": {
+    "tracked_count": 1365,
+    "nonstate_count": 1362,
+    "nonarray_nonstate_count": 1344,
+    "historical_array_count": 18,
+    "historical_array_paths_not_opened": [
+      {
+        "path": "tracks/tog/fixtures/r22/approved.npz",
+        "blob_id": "a20c97964788b14f3fe3bed07df0bfca9b1fa4bd"
+      },
+      {
+        "path": "tracks/tog/fixtures/r22/witness.npz",
+        "blob_id": "6333e00b1cfa4032b5becb6cd3672f65ad34d87f"
+      },
+      {
+        "path": "tracks/tog/tasks/t02-authored-upper-bend/run-01/target-edit.npy",
+        "blob_id": "a7bd860b30e6d06a5936b122638e863ec471a4ba"
+      },
+      {
+        "path": "tracks/tog/tasks/t02-authored-upper-bend/run-01/target-full.npy",
+        "blob_id": "ff6ff290dd4e5cb274c44913dfaa07a420d2db61"
+      },
+      {
+        "path": "tracks/tog/tasks/t03-ordinary-conflict-screen/edit_only-final.npz",
+        "blob_id": "d843ddda0b4a554cd11094dd71e01414e17025be"
+      },
+      {
+        "path": "tracks/tog/tasks/t03-ordinary-conflict-screen/joint-final.npz",
+        "blob_id": "c4616137808765a57c6817991866a33a02f52ed1"
+      },
+      {
+        "path": "tracks/tog/tasks/t04-framewise-feasibility/framewise_joint-final.npz",
+        "blob_id": "ee268c33b1b9a86d4fa37dc0cd21e75994a4e54e"
+      },
+      {
+        "path": "tracks/tog/tasks/t05-framewise-cold-start/framewise_joint-final.npz",
+        "blob_id": "cb04203401b9f2fbe58dbf64008744aa915e740f"
+      },
+      {
+        "path": "tracks/tog/tasks/t05-framewise-cold-start/g0-proof.npz",
+        "blob_id": "2bd0f8970b6129f622e104baeec4a0f0a9ea46b3"
+      },
+      {
+        "path": "tracks/tog/tasks/t06-authored-timing-revision/run-01/target-edit.npy",
+        "blob_id": "1626d82784e53e7834f7256fa1cfac972fc7a497"
+      },
+      {
+        "path": "tracks/tog/tasks/t06-authored-timing-revision/run-01/target-full.npy",
+        "blob_id": "89ee8c227efcbcb4c51bd7b519b805ca38045b13"
+      },
+      {
+        "path": "tracks/tog/tasks/t07-ordinary-timing-revision/framewise_joint-final.npz",
+        "blob_id": "5634b43a752c9467eb7447f8261a2f1343e5694c"
+      },
+      {
+        "path": "tracks/tog/tasks/t08-ordinary-evaluation-reuse/framewise_joint-final.npz",
+        "blob_id": "1dd26f94bf966924e81b6e22397f4d2c9e1fbbea"
+      },
+      {
+        "path": "tracks/tog/tasks/t08-ordinary-evaluation-reuse/g0-proof.npz",
+        "blob_id": "05b28e106f4bf46b92f8b1c112df6a6b1c95dc6d"
+      },
+      {
+        "path": "tracks/tog/tasks/t11-observation-compatible-source-response/publish-01/compact.npz",
+        "blob_id": "193625dfeef93d20366137281384da261f821cf8"
+      },
+      {
+        "path": "tracks/tog/tasks/t12-ordinary-wind-response-extrema/publish-01/compact.npz",
+        "blob_id": "2b76da94aba264236b09c9915bff1eff19f9dc83"
+      },
+      {
+        "path": "tracks/tog/tasks/t13-ordinary-feasibility-recovery/inputs.npz",
+        "blob_id": "c6720dbcc3f7e7fb8fa6ba97739b9080da009c4d"
+      },
+      {
+        "path": "tracks/tog/tasks/t13-ordinary-feasibility-recovery/publish-01/compact.npz",
+        "blob_id": "3b4029f2c4f74da77a6a8c7e792c44a71d7625fd"
+      }
+    ],
+    "git_tree_index_match": true,
+    "tracked_working_diff_empty": true,
+    "scope": "Git metadata/status only here; complete publication byte preservation is separate"
+  },
+  "freezer": {
+    "path": "tracks/tog/tasks/t70-causal-projector-qualification/prepare.py",
+    "bytes": 8753,
+    "sha256": "5386a731e8573a1487a7d7f63279b3fb19b62c1e9c352d7272f8e7ea3efaf02b"
+  }
+}

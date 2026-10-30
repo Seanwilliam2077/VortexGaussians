@@ -1,0 +1,95 @@
+{
+  "schema": "t70-saved-scalar-evidence-v1",
+  "execution_status": "completed_ordinary_current_state_evaluator_and_first_steps_qualified",
+  "worker_verdict": "ordinary_current_state_evaluator_and_first_steps_qualified",
+  "numerical_qualified": true,
+  "checks_passed": 8,
+  "scientific_child_seconds": 1.098377399961464,
+  "cumulative_scientific_child_seconds": 1991.4691072998103,
+  "scientific_series_scope": [
+    "T56",
+    "T57",
+    "T58",
+    "T59",
+    "T60",
+    "T63",
+    "T65",
+    "T66",
+    "T68",
+    "T70"
+  ],
+  "scientific_series_is_total_project_cost": false,
+  "observed_peak_working_set_bytes": 59285504,
+  "two_independent_first_steps": [
+    {
+      "h": 0.0625,
+      "active_components": 2,
+      "relative_target_errors": {
+        "unchanged": 0.02058289585995349,
+        "translation": 0.007319226703874666,
+        "selected": 0.005178501090998496
+      },
+      "relative_error_reduction_against_translation": 0.2924797522315996,
+      "relative_circulation_change": -0.0005011619904655706,
+      "relative_impulse_change": -0.0037879336900521476,
+      "selected": {
+        "Gamma": 3.7580580717232936,
+        "eta": 0.03372738185194228,
+        "geometry": [
+          [
+            1.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.95,
+            0.725,
+            0.6
+          ]
+        ]
+      },
+      "proposals": 1431,
+      "selected_classification_unresolved": false
+    },
+    {
+      "h": 0.03125,
+      "active_components": 2,
+      "relative_target_errors": {
+        "unchanged": 0.010293083330801367,
+        "translation": 0.0036568899061102124,
+        "selected": 0.0025896619999909885
+      },
+      "relative_error_reduction_against_translation": 0.2918403160937434,
+      "relative_circulation_change": -0.0002505809952326743,
+      "relative_impulse_change": -0.0018939668450260738,
+      "selected": {
+        "Gamma": 3.7590002418348973,
+        "eta": 0.016859464146365313,
+        "geometry": [
+          [
+            1.0,
+            1.0,
+            0.0
+          ],
+          [
+            0.95,
+            0.7249999999999999,
+            0.6
+          ]
+        ]
+      },
+      "proposals": 1431,
+      "selected_classification_unresolved": false
+    }
+  ],
+  "field_calls": 30,
+  "proposal_count": 2862,
+  "journal_events": 3455,
+  "full_task_validated": false,
+  "new_method_claim": false,
+  "formal_error_certificate": false,
+  "future_reference_predictor_inputs": false,
+  "raw_array_access": false,
+  "saved_scalar_reporting_only": true,
+  "additional_scientific_invocations": 0
+}

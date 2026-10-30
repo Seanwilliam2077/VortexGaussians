@@ -1,0 +1,45 @@
+{
+  "schema": "t70-saved-record-exports-v1",
+  "artifacts": [
+    {
+      "source": "local/result.json",
+      "public": "result.json",
+      "bytes": 113953,
+      "sha256": "f05dcff99bb4b9aadc5f6c690e069b04f5ba1c3121d1d7aac4966170f896a778"
+    },
+    {
+      "source": "local/execution-started.json",
+      "public": "execution-started.json",
+      "bytes": 2847,
+      "sha256": "59b4eb0118b558178d16ed3d517ff87db5ead9bc19b028fd0a89ab76f3b3570d"
+    },
+    {
+      "source": "local/stdout.txt",
+      "public": "stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "local/stderr.txt",
+      "public": "stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "local/memory.jsonl",
+      "public": "memory.jsonl",
+      "bytes": 1158,
+      "sha256": "f26b84b7b0f3b7cf99c4692913a7f2b245ca9c72f0ceb23da1f78fb499652ad3"
+    },
+    {
+      "source": "local/journal.jsonl",
+      "public": "journal.jsonl.gz",
+      "source_bytes": 5998924,
+      "source_sha256": "ca5fa026af88d9fca148346b6869a2559735f8dca0be2dceb0146c7b2bfd8944",
+      "bytes": 631361,
+      "sha256": "c5848d91e95f884895d789e6b7e09e77fb5ff7a59357b3e9ff57b5079d1dc292",
+      "lossless_roundtrip": true
+    }
+  ],
+  "scientific_reexecution": false
+}

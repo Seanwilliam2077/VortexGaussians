@@ -1,0 +1,82 @@
+{
+  "schema": "t70-causal-projector-execution-v1",
+  "started_utc": "2026-10-30T08:41:39.884047+00:00",
+  "command": [
+    "C:\\Users\\seanzjxiao\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "-I",
+    "-B",
+    "-u",
+    "-X",
+    "utf8",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t70-causal-projector-qualification\\measure.py",
+    "--manifest",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t70-causal-projector-qualification\\input-manifest.json"
+  ],
+  "cwd": "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians",
+  "child_timeout_seconds": 120.0,
+  "observed_peak_working_set_limit_bytes": 536870912,
+  "required_available_physical_bytes": 1073741824,
+  "memory_sample_interval_seconds": 0.25,
+  "thread_environment_overrides": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  },
+  "scientific_child_invocations": 0,
+  "new_scientific_trajectories": 0,
+  "complete_result_validated": false,
+  "numerical_qualified": false,
+  "verdict": null,
+  "prior_scientific_child_seconds": 1990.3707298998488,
+  "T61_qualification_seconds": 0.9663960000034422,
+  "prior_scientific_series_scope": [
+    "T56",
+    "T57",
+    "T58",
+    "T59",
+    "T60",
+    "T63",
+    "T65",
+    "T66",
+    "T68"
+  ],
+  "scientific_series_is_total_project_cost": false,
+  "input_manifest_identity": {
+    "bytes": 9720,
+    "sha256": "8d9feb36e6aade13c79046dba54edbed6d65569aaf9dfce0c754017272ac3cce"
+  },
+  "supervisor_identity": {
+    "bytes": 36617,
+    "sha256": "4a075388dc7aafe4f99f4c2b1fefbb7ccd152b5ede53ed522b37e192a93dffb4"
+  },
+  "worker_identity": {
+    "bytes": 31045,
+    "sha256": "fc2f1f169422562b6160f328cfc18c5e855e1f1a06a7c8f51246e33e03a30377"
+  },
+  "physics_identity": {
+    "bytes": 15104,
+    "sha256": "7b3788924bf6cd604f1e22c6aa837ae2407fd583445871975b799ba6851f227d"
+  },
+  "search_identity": {
+    "bytes": 18390,
+    "sha256": "70b75cbfb971657ccc280856e4f585709e1c07a18a5ab1398c7dedbd707e594a"
+  },
+  "memory_observer_identity": {
+    "bytes": 2231,
+    "sha256": "4b83a89eff664dc0d86fb0c71b39c99d71720c1d18c5f93557e279d0ca3745fd"
+  },
+  "executable_identity": {
+    "bytes": 107312,
+    "sha256": "5640e9be2fd33d05a1a9ae1228e2354609a69ab831605995ec4e2bd6da8fff5e"
+  },
+  "memory_samples": 0,
+  "peak_observed_working_set_bytes": 0,
+  "max_observed_private_bytes": 0,
+  "max_observed_peak_pagefile_bytes": 0,
+  "T60_history_reclassified": false,
+  "launch_memory": {
+    "total_physical_bytes": 67773509632,
+    "available_physical_bytes": 35875880960
+  }
+}

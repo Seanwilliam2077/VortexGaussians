@@ -1,0 +1,137 @@
+{
+  "schema": "t70-causal-projector-execution-v1",
+  "started_utc": "2026-10-30T08:41:39.884047+00:00",
+  "command": [
+    "C:\\Users\\seanzjxiao\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "-I",
+    "-B",
+    "-u",
+    "-X",
+    "utf8",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t70-causal-projector-qualification\\measure.py",
+    "--manifest",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t70-causal-projector-qualification\\input-manifest.json"
+  ],
+  "cwd": "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians",
+  "child_timeout_seconds": 120.0,
+  "observed_peak_working_set_limit_bytes": 536870912,
+  "required_available_physical_bytes": 1073741824,
+  "memory_sample_interval_seconds": 0.25,
+  "thread_environment_overrides": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "MKL_NUM_THREADS": "1",
+    "NUMEXPR_NUM_THREADS": "1"
+  },
+  "scientific_child_invocations": 1,
+  "new_scientific_trajectories": 0,
+  "complete_result_validated": true,
+  "numerical_qualified": true,
+  "verdict": "ordinary_current_state_evaluator_and_first_steps_qualified",
+  "prior_scientific_child_seconds": 1990.3707298998488,
+  "T61_qualification_seconds": 0.9663960000034422,
+  "prior_scientific_series_scope": [
+    "T56",
+    "T57",
+    "T58",
+    "T59",
+    "T60",
+    "T63",
+    "T65",
+    "T66",
+    "T68"
+  ],
+  "scientific_series_is_total_project_cost": false,
+  "input_manifest_identity": {
+    "bytes": 9720,
+    "sha256": "8d9feb36e6aade13c79046dba54edbed6d65569aaf9dfce0c754017272ac3cce"
+  },
+  "supervisor_identity": {
+    "bytes": 36617,
+    "sha256": "4a075388dc7aafe4f99f4c2b1fefbb7ccd152b5ede53ed522b37e192a93dffb4"
+  },
+  "worker_identity": {
+    "bytes": 31045,
+    "sha256": "fc2f1f169422562b6160f328cfc18c5e855e1f1a06a7c8f51246e33e03a30377"
+  },
+  "physics_identity": {
+    "bytes": 15104,
+    "sha256": "7b3788924bf6cd604f1e22c6aa837ae2407fd583445871975b799ba6851f227d"
+  },
+  "search_identity": {
+    "bytes": 18390,
+    "sha256": "70b75cbfb971657ccc280856e4f585709e1c07a18a5ab1398c7dedbd707e594a"
+  },
+  "memory_observer_identity": {
+    "bytes": 2231,
+    "sha256": "4b83a89eff664dc0d86fb0c71b39c99d71720c1d18c5f93557e279d0ca3745fd"
+  },
+  "executable_identity": {
+    "bytes": 107312,
+    "sha256": "5640e9be2fd33d05a1a9ae1228e2354609a69ab831605995ec4e2bd6da8fff5e"
+  },
+  "memory_samples": 6,
+  "peak_observed_working_set_bytes": 59285504,
+  "max_observed_private_bytes": 75661312,
+  "max_observed_peak_pagefile_bytes": 77697024,
+  "T60_history_reclassified": false,
+  "launch_memory": {
+    "total_physical_bytes": 67773509632,
+    "available_physical_bytes": 35875880960
+  },
+  "child_pid": 66984,
+  "last_memory_sample_elapsed_seconds": 1.098117999965325,
+  "returncode": 0,
+  "status": "completed_ordinary_current_state_evaluator_and_first_steps_qualified",
+  "scientific_child_supervised_seconds": 1.098377399961464,
+  "cumulative_scientific_child_seconds": 1991.4691072998103,
+  "child_still_live": false,
+  "inputs_unchanged": true,
+  "input_manifest_unchanged": true,
+  "executable_unchanged": true,
+  "logs": [
+    {
+      "path": "local/stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "local/memory.jsonl",
+      "bytes": 1158,
+      "sha256": "f26b84b7b0f3b7cf99c4692913a7f2b245ca9c72f0ceb23da1f78fb499652ad3"
+    }
+  ],
+  "partial_artifacts": [
+    {
+      "path": "local/journal.jsonl",
+      "bytes": 5998924,
+      "sha256": "ca5fa026af88d9fca148346b6869a2559735f8dca0be2dceb0146c7b2bfd8944"
+    }
+  ],
+  "forbidden_array_outputs": [],
+  "worker_failure_exists": false,
+  "result_exists": true,
+  "result_identity": {
+    "bytes": 113953,
+    "sha256": "f05dcff99bb4b9aadc5f6c690e069b04f5ba1c3121d1d7aac4966170f896a778"
+  },
+  "retained_worker_verdict": "ordinary_current_state_evaluator_and_first_steps_qualified",
+  "saved_result_validation": {
+    "check_count": 8,
+    "step_count": 2,
+    "journal_events": 3455,
+    "positive_startups": 2,
+    "mathematical_reexecution": false,
+    "scalar_readback": true,
+    "raw_arrays_read": 0,
+    "source_imports": 0,
+    "full_task_validated": false
+  },
+  "supervisor_elapsed_before_receipt_write_seconds": 1.3115278999321163,
+  "finished_utc": "2026-10-30T08:41:41.174172+00:00"
+}
