@@ -1,12 +1,12 @@
 # 艺术线：制作与独立复评
 
-## 2026-10-31 current: A40 apology reuse selected; A41 scope failure preserved; A42 preparation only
+## 2026-10-31 current: A42 material supported; creator closes the chosen form; A43 access gap retained; A44 form selection
 
-[A39](studies/a39-handover-clock-maintenance/README.md) remains closed at overall3/6 from both original reviewers, readiness7/10, confidence3/5 and4/5. No factual correction or overlooked counterevidence warranted reassessment; the literary-note-plus-highlighter objection remains. Complete work, manuscript, four main stills and all historical outcomes are preserved. Overall5/6 unmet.
+[A42](studies/a42-inherited-apology-local-build/README.md) completed one 33.6634537-second material inspection: five original PNGs, 544154 bytes, 16 behavior checks. The treated apology is inherited exactly; a later request is introduced unburned; old glyphs remain readable and warm slightly. Both original reviewers support the minimum visual qualification, with the pasted-golden-prefix counterreading intact. The creator accepts those facts but elects not to develop this form. This is a documented artistic-choice disagreement, not shared confirmation of a material failure. No new art score or complete work; A40's current proposal is closed by its creator. Raw evidence is losslessly archived in 282795 bytes; original demo unchanged.
 
-The new creator selected [A40 “Apology Reused”](studies/a40-material-handover-choice/CREATOR_CHOICE.md): the same treated “我来迟了” moves from permission to leave into a request to keep waiting. This is a proposal, not a completed artwork. Its only material question is whether later contact with the new request visibly continues changing the still-readable inherited apology. A fixed golden prefix or numeric-only change is insufficient; changes only in the flame above the text do not count.
+[A39](studies/a39-handover-clock-maintenance/README.md) remains historically closed at both overall3/6, readiness7/10, confidence3/5 and4/5. A41's static scope failure and all prior outcomes remain. These are not scores assigned to A42. Overall5/6 remains unmet.
 
-[A41](studies/a41-inherited-apology-material/STATIC_RESULT.md) ended static_bridge_scope_blocked with zero runs/images/steps: root wrongly assumed private IIFE variables were global. The engineer caught it before implementation. [A42](studies/a42-inherited-apology-local-build/BRIEF.md) now explicitly prepares a local derived renderer with one bridge inserted inside that IIFE; original demo and old artwork stay byte-identical. The generated platform copy is local/ignored, its assembler and hashes reproducible. Static placement is qualified, implementation underway, assembly and the sole <=120s/5-image/360-step material run still pending. Ordinary plumbing does not establish an art or technical contribution. Original scorers, TOG/main and full active goal retained.
+[A43](studies/a43-published-practice-reading/SOURCE_READING.md) ended after two broad searches and four opens with no full Art Paper: two publisher403 results, two official2023 pages with criteria/award identity only. No full-text calibration, and no immediate replacement search batch. [Next A44](studies/a44-form-selection/BRIEF.md) grants a new creator one finite form choice, with up to three candidates and at most one selection, based on existing materials; no production, simulation or new score queued. Original scorers retained, no weaker acceptance target, TOG/main unchanged, full goal active and automation remains deleted.
 
 
 2026-10-30。用户重新授权持续艺术迭代，并要求与评分 Agent 交流直至至少 5 分。本轮把目标解释为既有内部六档总评中的 **5/6（Accept）**，不是就绪度 5/10，也不是官方录用概率。
@@ -29,4 +29,4 @@ The new creator selected [A40 “Apology Reused”](studies/a40-material-handove
 
 ## 当前有限任务
 
-A40选择《道歉沿用》，只问继承旧句在接触新请求时是否继续可见变化且仍可读。A41外部script桥接因IIFE作用域误判而静态收束，0运行；不改其失败。A42改为明确的本地派生页面装配，保持原demo与旧作不动。实现中，root读回后才一次装配和3+1.5+1.5秒材料检查；任何关键材料条件失败收束，不加时长或路径。尚无新艺术作品、论文资格或评分，原两位不替换，5/6未达。
+A42材料获两位原评审窄幅支持，作者认可事实但主动不继续；完整保留判断分歧，无新分。A43两查询/四打开未获全文，不追加同一搜索批次或拿摘要校准。A44新创作协作者仅读九固定文/最多六旧图，至多三候选选一或不选，扩展形式选择空间但不改评分标准；未批准新制作、数值运行或论文。5/6未达。
