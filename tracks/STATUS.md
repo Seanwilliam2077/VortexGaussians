@@ -1,8 +1,8 @@
 # Dual-track status
 
-## 2026-10-31 current: A23 decision consultation; A24 material sample
+## 2026-10-31 current: A24 material sample completed; consultation pending
 
-[A23 creator](art/studies/a23-fire-material-commitment/COMMITMENT.md) withheld a production commitment for a fictional signature withdrawal. [Independent consultation](validation/art-a23-decision-review.md) distinguishes an untested text-material relation from an established failure. [Root](art/studies/a23-fire-material-commitment/DECISION.md) preserves that disagreement and approves [A24](art/studies/a24-signature-material/BRIEF.md): one fixed six-simulated-second sample using original fire/char on three authored names. This is a material test, not a complete work or an acceptance claim. No search, parameter sweep, recording or TOG computation follows. A22 remains overall3/6, readiness7/10, confidence4/5; the room core is closed, original platform remains, overall5/6 unmet, goal active and main unchanged.
+[A24](art/studies/a24-signature-material/README.md) completed one fixed six-second signature sample: 2023 points, 555 initially ignited, 360 steps, seven images/932118 bytes and 10.3260526 seconds including browser work. The central name remained legible and glowed gold; the predicted visible darkening/occlusion relation was not observed. Its char=1 but fuel remains0.271738%, state1/glow1: this is not a post-burn or permanent effect. [Process](art/studies/a24-signature-material/PROCESS.md) preserves that boundary and the negative initial claim. Independent material consultation and creator response follow without another run or a submission score. A22 remains overall3/6, readiness7/10, confidence4/5; original platform remains, overall5/6 unmet, goal active, no TOG computation or main change.
 
 
 Updated 30 October 2026. Active exploration authorized by the author. TOG and Art Papers contributions are both unestablished.

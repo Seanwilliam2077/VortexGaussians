@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>一处署名 · A24 材料小样</title>
+  <link rel="stylesheet" href="sample.css">
+</head>
+<body>
+  <main class="page">
+    <header>
+      <div><p class="edition">A24 / 一次材料小样</p><h1>一处署名</h1></div>
+      <p class="fiction">三人、声明与请求均为虚构<br>尚不代表撤回已经完成</p>
+    </header>
+    <section class="statement" aria-labelledby="statement-title">
+      <h2 id="statement-title">小院放映 · 共同声明</h2>
+      <p class="statement-body">我们同意将小院的周六晚间开放给放映，并在闭场后共同收拾。</p>
+      <p class="static-note">正文为静态文字，不参与下方材料变化。</p>
+    </section>
+    <div class="work-grid">
+      <section class="material" aria-label="同一场景中的三处署名">
+        <div class="canvas-frame">
+          <canvas id="view" width="1200" height="600" role="img" aria-label="从左到右为宁岚、叶青、沈舟的高斯字形；画面显示当前材料状态"></canvas>
+          <div id="loading" role="status">正在准备署名材料</div>
+        </div>
+        <div class="readout"><span id="phase-text">准备中</span><span><strong id="sim-time">0.00</strong> / 6.00 模拟秒</span></div>
+        <div class="controls">
+          <button id="ignite" class="primary" disabled>点燃选定位置</button>
+          <button id="advance" class="primary" disabled>推进 2 模拟秒</button>
+          <button id="pause" disabled>暂停</button>
+          <button id="leave" class="quiet" disabled>停止在这里</button>
+        </div>
+        <p id="error" role="alert" hidden></p>
+        <p class="material-note">选定位置在中间署名。每段结束后停留；最终状态保留，不重燃、不重置。</p>
+      </section>
+      <aside>
+        <section class="request" aria-labelledby="request-title">
+          <h2 id="request-title">一项请求</h2>
+          <blockquote>叶青：下次张贴时，请不要再列我的名字。正文由另两人保留。</blockquote>
+          <p>这里只观察火与署名的可见变化，不把变暗或读不清当作认同已撤回。</p>
+        </section>
+        <details class="measurements" open>
+          <summary>材料记录</summary>
+          <p id="stats-caption">等待初始状态</p>
+          <div class="table-scroll">
+            <table>
+              <thead><tr><th scope="col">署名</th><th scope="col">热量均值</th><th scope="col">燃料余量</th><th scope="col">暗变均值</th><th scope="col">燃烧 / 耗尽</th></tr></thead>
+              <tbody id="group-rows"></tbody>
+            </table>
+          </div>
+          <p class="stat-note">这些量记录材料状态。字是否可读，仍需看实际画面。</p>
+        </details>
+      </aside>
+    </div>
+    <footer>
+      <p>署名全部来自原 VortexGaussians 场景高斯及其烧损着色；没有另加抹字图层。</p>
+      <nav><a href="WORK_SPEC.md">本次规格</a><a href="BRIEF.md">材料问题</a></nav>
+    </footer>
+  </main>
+  <iframe id="source" src="../../../../demo/index.html?embed=1" title="原 VortexGaussians 渲染器" tabindex="-1" aria-hidden="true"></iframe>
+  <script type="module" src="sample.mjs"></script>
+</body>
+</html>

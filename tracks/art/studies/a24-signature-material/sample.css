@@ -1,0 +1,49 @@
+:root{color-scheme:dark;--bg:#171916;--panel:#20231e;--ink:#e8e5d8;--muted:#a4a99b;--line:#3b4136;--accent:#d7b48a}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:14px/1.75 "Segoe UI","Microsoft YaHei",sans-serif}
+[hidden]{display:none!important}
+.page{max-width:1360px;margin:auto;padding:30px 38px 26px}
+header{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:24px}
+.edition{margin:0 0 8px;color:var(--muted);font-size:10px;letter-spacing:.16em}
+h1{font:400 clamp(28px,3vw,40px)/1.3 "Microsoft YaHei",sans-serif;letter-spacing:.12em;margin:0}
+.fiction{margin:0;color:var(--muted);font-size:11px;line-height:1.9;text-align:right}
+.statement{border-top:1px solid var(--line);padding:20px 0 19px}
+h2{font:400 11px/1.5 "Microsoft YaHei",sans-serif;letter-spacing:.13em;color:var(--muted);margin:0 0 12px}
+.statement-body{font-size:18px;line-height:1.9;margin:0;max-width:980px;letter-spacing:.035em}
+.static-note{font-size:10px;color:var(--muted);margin:9px 0 0}
+.work-grid{display:grid;grid-template-columns:minmax(0,1fr) 310px;gap:25px;align-items:start}
+.material{min-width:0}
+.canvas-frame{position:relative;background:#000;border:1px solid var(--line);aspect-ratio:2/1;overflow:hidden}
+#view{display:block;width:100%;height:100%}
+#loading{position:absolute;inset:0;display:grid;place-items:center;background:#11130f;color:var(--muted);font-size:13px}
+#source{position:fixed;left:-10000px;top:0;width:1200px;height:600px;visibility:hidden;pointer-events:none;border:0}
+.readout{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line);padding:10px 0;color:var(--muted);font-size:11px}
+.readout strong{font-weight:400;color:var(--ink);font-variant-numeric:tabular-nums}
+.controls{display:flex;flex-wrap:wrap;align-items:center;gap:9px;padding:15px 0 5px}
+button{font:inherit;font-size:11px;letter-spacing:.025em;padding:9px 13px;border:1px solid #727c66;background:transparent;color:var(--ink);border-radius:2px;cursor:pointer;min-height:37px}
+button.primary{border-color:var(--accent);background:var(--accent);color:#27251f}
+button:hover:not(:disabled){filter:brightness(1.1)}
+button:disabled{opacity:.35;cursor:default}
+button.quiet{border-color:transparent;margin-left:auto;color:var(--muted);padding-right:0}
+button:focus-visible,a:focus-visible,summary:focus-visible{outline:2px solid var(--accent);outline-offset:4px}
+.material-note{color:var(--muted);font-size:10px;margin:10px 0}
+#error{border-left:2px solid #c8926e;background:#32251f;padding:12px 14px;font-size:12px}
+.request{border-left:2px solid #69775c;padding:16px 18px;background:var(--panel)}
+.request blockquote{margin:0;font-size:16px;line-height:1.95;letter-spacing:.035em}
+.request p{font-size:10px;color:var(--muted);margin:17px 0 0}
+.measurements{margin-top:23px;color:var(--muted);font-size:10px}
+summary{cursor:pointer;width:fit-content;color:var(--ink);font-size:11px;letter-spacing:.08em}
+#stats-caption{margin:12px 0 8px;line-height:1.6}
+.table-scroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+th,td{padding:7px 5px;border-bottom:1px solid var(--line)}
+th{font-size:9px;font-weight:400;color:var(--muted)}
+th:first-child,td:first-child{text-align:left;padding-left:0}
+td{font-size:10px;color:#d1d4c9}
+.stat-note{margin:10px 0 0;font-size:9px;line-height:1.8}
+footer{border-top:1px solid var(--line);margin-top:24px;padding-top:13px;display:flex;justify-content:space-between;gap:24px;color:var(--muted);font-size:10px}
+footer p{margin:0;max-width:800px}
+nav{display:flex;gap:20px;flex-shrink:0}
+a{color:inherit;text-underline-offset:4px}
+@media(max-width:950px){.page{padding:25px 23px}.work-grid{grid-template-columns:minmax(0,1fr)}aside{display:grid;grid-template-columns:1fr 1fr;gap:23px}.measurements{margin-top:0}.statement-body{font-size:16px}}
+@media(max-width:560px){.page{padding:23px 15px}header{align-items:flex-start;gap:12px;margin-bottom:20px}.fiction{font-size:9px;max-width:130px}h1{font-size:28px}.edition{font-size:9px}.statement{padding:17px 0}.statement-body{font-size:15px}.static-note{font-size:9px}.work-grid{gap:18px}.controls{gap:7px}button{font-size:10px;padding:9px 10px}button.quiet{margin-left:0;padding:9px 6px}.readout{font-size:10px}aside{display:block}.request{padding:14px 15px}.request blockquote{font-size:14px}.measurements{margin-top:19px}.material-note{font-size:9px}footer{display:block;font-size:9px}nav{margin-top:13px}}

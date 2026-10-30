@@ -1,8 +1,8 @@
 # 可燃的数字记忆（暂定）
 
-## 2026-10-31 current: A23 decision consultation; A24 material sample
+## 2026-10-31 current: A24 material sample completed; consultation pending
 
-[A23 creator](studies/a23-fire-material-commitment/COMMITMENT.md) withheld a production commitment for a fictional signature withdrawal. [Independent consultation](../validation/art-a23-decision-review.md) distinguishes an untested text-material relation from an established failure. [Root](studies/a23-fire-material-commitment/DECISION.md) preserves that disagreement and approves [A24](studies/a24-signature-material/BRIEF.md): one fixed six-simulated-second sample using original fire/char on three authored names. This is a material test, not a complete work or an acceptance claim. No search, parameter sweep, recording or TOG computation follows. A22 remains overall3/6, readiness7/10, confidence4/5; the room core is closed, original platform remains, overall5/6 unmet, goal active and main unchanged.
+[A24](studies/a24-signature-material/README.md) completed one fixed six-second signature sample: 2023 points, 555 initially ignited, 360 steps, seven images/932118 bytes and 10.3260526 seconds including browser work. The central name remained legible and glowed gold; the predicted visible darkening/occlusion relation was not observed. Its char=1 but fuel remains0.271738%, state1/glow1: this is not a post-burn or permanent effect. [Process](studies/a24-signature-material/PROCESS.md) preserves that boundary and the negative initial claim. Independent material consultation and creator response follow without another run or a submission score. A22 remains overall3/6, readiness7/10, confidence4/5; original platform remains, overall5/6 unmet, goal active, no TOG computation or main change.
 
 
 **2026-10-30更新：** [A18及独立决定](studies/a18-context-positioning/DECISION.md)关闭A14《两边的火》作为当前投稿核心，保留其试作价值、总体3/6、准备度6/10、置信度4/5。关闭限于作品与自身主张的缺口，不以读取失败推导领域没有空间，也不要求所有艺术都必须影响他人、真人输入或私人记忆。艺术线继续用原平台探索；[A19单案创作决定](studies/a19-artistic-commitment/BRIEF.md)先选择有明确内容的对象和观看关系，之后才决定制作。暂定主题保留，用户未提供的经历不代写。以下历史brief不重启旧关闭路线；总体5/6目标未达。[复评流程](REVIEW_LOOP.md)继续适用。
