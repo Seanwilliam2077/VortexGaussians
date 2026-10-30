@@ -1,0 +1,210 @@
+{
+  "schema": "t72-search-sensitivity-publication-v1",
+  "created_utc": "2026-10-30T10:01:14.846957+00:00",
+  "parent_commit": "32dd95a2d4f852f26cd69e1a2257075e1da941ca",
+  "goal_status": "active_not_submission_ready",
+  "artifacts": [
+    {
+      "path": "tracks/tog/tasks/t72-search-sensitivity-diagnosis/.gitignore",
+      "bytes": 7,
+      "sha256": "a7d8bdcefba82a95ebc021d87c629fdea21f13af953bf01e28b7cf8b0eeceb41"
+    },
+    {
+      "path": "tracks/tog/tasks/t72-search-sensitivity-diagnosis/DECISION.md",
+      "bytes": 2007,
+      "sha256": "d2b2cbd809a71dbb1ed17260e4326f64e253e95eb55884f73f3ab7be353bc367"
+    },
+    {
+      "path": "tracks/tog/tasks/t72-search-sensitivity-diagnosis/MECHANISM.md",
+      "bytes": 3126,
+      "sha256": "5fd953bef5d9712e185d3d51c2fc5ba4b1bbf4c0044cefa32666ab5b6ef96ac2"
+    },
+    {
+      "path": "tracks/tog/tasks/t72-search-sensitivity-diagnosis/README.md",
+      "bytes": 2488,
+      "sha256": "215e7bc9c3e65afc89385477d057d92d33c1b5fc9ee772963568186241e1ffe3"
+    },
+    {
+      "path": "tracks/tog/tasks/t72-search-sensitivity-diagnosis/TABLES.md",
+      "bytes": 6892,
+      "sha256": "21dc74b2431b229d3713df7a81f6701c195bc5430a9fa63e2609fa48b5e50b62"
+    },
+    {
+      "path": "tracks/tog/tasks/t72-search-sensitivity-diagnosis/TASK.md",
+      "bytes": 1999,
+      "sha256": "f44774cef1f46e6147c94d96fcd567a640cde8c889c09b9c7fc9ba3407a77eb7"
+    },
+    {
+      "path": "tracks/tog/tasks/t72-search-sensitivity-diagnosis/diagnostic.json",
+      "bytes": 318836,
+      "sha256": "fd2951466f19abd9bb1a05ed18ddaa62aa8acc0bb980d64561c264fa55384928"
+    },
+    {
+      "path": "tracks/tog/tasks/t72-search-sensitivity-diagnosis/extract.py",
+      "bytes": 6903,
+      "sha256": "3908afb001d3bb15e39af04267896aab347388f260f9371d57c52f1bce6d33ee"
+    },
+    {
+      "path": "tracks/validation/t72-search-sensitivity-review.md",
+      "bytes": 2276,
+      "sha256": "b8cd685566725a19c5add90eafb5bdbeaf6171e80be3ea6659ed04112a319c09"
+    }
+  ],
+  "current_state_documents": [
+    {
+      "path": "tracks/STATUS.md",
+      "bytes": 93509,
+      "sha256": "80738d27d85ec8751764239f6af786e6d73619f658876811e4c6f2028816ee20"
+    },
+    {
+      "path": "tracks/EXPLORATION.md",
+      "bytes": 8239,
+      "sha256": "a52be6da19912516c937283a4cf8ec9e675063d93134ee613144385ea34b856e"
+    },
+    {
+      "path": "tracks/tog/README.md",
+      "bytes": 8131,
+      "sha256": "a5e9a27802bc3d51b105679587bf406a2a9a21f937c9397007509083224e243d"
+    }
+  ],
+  "source_inputs": [
+    {
+      "path": "tracks/tog/tasks/t71-causal-full-window/result.json",
+      "bytes": 1927519,
+      "sha256": "cf97d25c2fe6d9759a338f2e2890f93569ce8e0f4c4f4aa463fe574c2e6b7e4b"
+    },
+    {
+      "path": "tracks/tog/tasks/t70-causal-projector-qualification/search.py",
+      "bytes": 18390,
+      "sha256": "70b75cbfb971657ccc280856e4f585709e1c07a18a5ab1398c7dedbd707e594a"
+    },
+    {
+      "path": "tracks/tog/tasks/t70-causal-projector-qualification/physics.py",
+      "bytes": 15104,
+      "sha256": "7b3788924bf6cd604f1e22c6aa837ae2407fd583445871975b799ba6851f227d"
+    },
+    {
+      "path": "tracks/tog/tasks/t72-search-sensitivity-diagnosis/extract.py",
+      "bytes": 6903,
+      "sha256": "3908afb001d3bb15e39af04267896aab347388f260f9371d57c52f1bce6d33ee"
+    }
+  ],
+  "preservation_chain": {
+    "parent_manifest": {
+      "path": "tracks/tog/tasks/t71-causal-full-window/audit-manifest.json",
+      "bytes": 16842,
+      "sha256": "7475cd876251c47c88c6b1fad25713c3a86b19443de5a6050fce70b8289d79c9"
+    },
+    "verified_prior_artifacts": 882
+  },
+  "parent_preservation": {
+    "tracked_count": 1410,
+    "nonstate_count": 1407,
+    "nonarray_nonstate_byte_and_git_identity_verified": 1389,
+    "arrays_metadata_only": [
+      {
+        "path": "tracks/tog/fixtures/r22/approved.npz",
+        "blob_id": "a20c97964788b14f3fe3bed07df0bfca9b1fa4bd"
+      },
+      {
+        "path": "tracks/tog/fixtures/r22/witness.npz",
+        "blob_id": "6333e00b1cfa4032b5becb6cd3672f65ad34d87f"
+      },
+      {
+        "path": "tracks/tog/tasks/t02-authored-upper-bend/run-01/target-edit.npy",
+        "blob_id": "a7bd860b30e6d06a5936b122638e863ec471a4ba"
+      },
+      {
+        "path": "tracks/tog/tasks/t02-authored-upper-bend/run-01/target-full.npy",
+        "blob_id": "ff6ff290dd4e5cb274c44913dfaa07a420d2db61"
+      },
+      {
+        "path": "tracks/tog/tasks/t03-ordinary-conflict-screen/edit_only-final.npz",
+        "blob_id": "d843ddda0b4a554cd11094dd71e01414e17025be"
+      },
+      {
+        "path": "tracks/tog/tasks/t03-ordinary-conflict-screen/joint-final.npz",
+        "blob_id": "c4616137808765a57c6817991866a33a02f52ed1"
+      },
+      {
+        "path": "tracks/tog/tasks/t04-framewise-feasibility/framewise_joint-final.npz",
+        "blob_id": "ee268c33b1b9a86d4fa37dc0cd21e75994a4e54e"
+      },
+      {
+        "path": "tracks/tog/tasks/t05-framewise-cold-start/framewise_joint-final.npz",
+        "blob_id": "cb04203401b9f2fbe58dbf64008744aa915e740f"
+      },
+      {
+        "path": "tracks/tog/tasks/t05-framewise-cold-start/g0-proof.npz",
+        "blob_id": "2bd0f8970b6129f622e104baeec4a0f0a9ea46b3"
+      },
+      {
+        "path": "tracks/tog/tasks/t06-authored-timing-revision/run-01/target-edit.npy",
+        "blob_id": "1626d82784e53e7834f7256fa1cfac972fc7a497"
+      },
+      {
+        "path": "tracks/tog/tasks/t06-authored-timing-revision/run-01/target-full.npy",
+        "blob_id": "89ee8c227efcbcb4c51bd7b519b805ca38045b13"
+      },
+      {
+        "path": "tracks/tog/tasks/t07-ordinary-timing-revision/framewise_joint-final.npz",
+        "blob_id": "5634b43a752c9467eb7447f8261a2f1343e5694c"
+      },
+      {
+        "path": "tracks/tog/tasks/t08-ordinary-evaluation-reuse/framewise_joint-final.npz",
+        "blob_id": "1dd26f94bf966924e81b6e22397f4d2c9e1fbbea"
+      },
+      {
+        "path": "tracks/tog/tasks/t08-ordinary-evaluation-reuse/g0-proof.npz",
+        "blob_id": "05b28e106f4bf46b92f8b1c112df6a6b1c95dc6d"
+      },
+      {
+        "path": "tracks/tog/tasks/t11-observation-compatible-source-response/publish-01/compact.npz",
+        "blob_id": "193625dfeef93d20366137281384da261f821cf8"
+      },
+      {
+        "path": "tracks/tog/tasks/t12-ordinary-wind-response-extrema/publish-01/compact.npz",
+        "blob_id": "2b76da94aba264236b09c9915bff1eff19f9dc83"
+      },
+      {
+        "path": "tracks/tog/tasks/t13-ordinary-feasibility-recovery/inputs.npz",
+        "blob_id": "c6720dbcc3f7e7fb8fa6ba97739b9080da009c4d"
+      },
+      {
+        "path": "tracks/tog/tasks/t13-ordinary-feasibility-recovery/publish-01/compact.npz",
+        "blob_id": "3b4029f2c4f74da77a6a8c7e792c44a71d7625fd"
+      }
+    ]
+  },
+  "scientific_series_seconds": 2017.6732525997795,
+  "scientific_outcome": {
+    "new_scientific_invocations": 0,
+    "new_trajectories": 0,
+    "raw_array_accesses": 0,
+    "new_integrals": 0,
+    "new_fits": 0,
+    "mechanism_causally_established": false,
+    "new_method_claim": false,
+    "numerical_counterfactual_executed": false,
+    "ordinary_baseline_maintenance_only": true,
+    "inherited_T71_verdict": "time_or_reference_sensitive_inconclusive",
+    "full_task_validated": false,
+    "cumulative_scientific_child_seconds": 2017.6732525997795
+  },
+  "diagnosis": {
+    "coarse_unchanged_geometry_updates": 2,
+    "fine_unchanged_geometry_updates": 11,
+    "geometry_freezing_does_not_mean_field_freezing": true,
+    "extract_bookkeeping_seconds_before_write": 0.0164736999431625
+  },
+  "publication_raw_arrays_opened": 0,
+  "historical_outcomes_reclassified": false,
+  "public_artifact_bytes_rewritten": false,
+  "links_and_eofs_preflighted_before_state_writes": true,
+  "art_production_active": true,
+  "art_review_target_internal_overall": 5,
+  "art_review_scale": 6,
+  "original_review_scores_preserved": true,
+  "main_unchanged": true,
+  "automation_deleted": true
+}
