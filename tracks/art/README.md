@@ -1,6 +1,6 @@
 # 可燃的数字记忆（暂定） · 艺术排练入口
 
-**2026-10-30：艺术线已恢复持续制作与独立复评。** 新作 [A08《三次归档》](studies/a08-three-archives/README.md) 是84秒单屏静默影片，以同一次合成事件编排图像、摘要和动作节选。[影片](studies/a08-three-archives/run-01/study.mp4)、[论文草稿](studies/a08-three-archives/PAPER_DRAFT.md)与[实际制作反思](studies/a08-three-archives/PROCESS.md)组成复评材料。它没有真实用户体验或观众证据。[独立复评](../validation/art-a08-review-round-01.md)给出总评2/6（Reject）、准备度4/10：作品可评审性有进展，艺术贡献仍未超出信息比较。[复评流程](REVIEW_LOOP.md)保留原始评分，以独立总评5/6为内部目标，不改变标准或保证录用。下面的A04–A07和原排练说明继续作为历史与可用入口保留。
+**2026-10-30：艺术线持续制作与独立复评。** 最新[A09《未予归档》](studies/a09-rejected-records/README.md)是76秒影片：真实退件清单控制图像退出，末段重新展示一张退件但不修改资格。[影片](studies/a09-rejected-records/run-01/study.mp4)、[论文](studies/a09-rejected-records/PAPER_DRAFT.md)与[过程](studies/a09-rejected-records/PROCESS.md)已冻结。[独立复评](../validation/art-a09-review-round-01.md)为**3/6 Weak Reject、准备度5/10、置信度3/5**，认可有限立场，但原创意义及只召回火焰的第二次选择尚不足；[回应](studies/a09-rejected-records/RESPONSE_ROUND_01.md)记录下一问题。准备度5/10不是内部总评5/6目标。此前[A08](studies/a08-three-archives/README.md)总评2/6不变，原A04–A07保留。没有人类观看证据，评审只看实际帧，未连续播放。[复评流程](REVIEW_LOOP.md)保持标准并披露咨询关系，不保证录用。
 
 首个作者排练原型。它把现有 VortexGaussians demo 放在“保存的空间 → 介入燃烧 → 重置重看”的三个阶段中，并记录创作选择。它不是完成作品、观众实验或新燃烧算法。创作命题及待补证据见 [ART_BRIEF.md](ART_BRIEF.md)；技术证据另见 [research/EVIDENCE_STATUS.md](../../research/EVIDENCE_STATUS.md)。
 

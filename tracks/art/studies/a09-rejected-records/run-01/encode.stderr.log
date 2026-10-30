@@ -1,0 +1,73 @@
+-filter_complex_script is deprecated, use -/filter_complex filter.ffscript instead
+Input #0, mov,mp4,m4a,3gp,3g2,mj2, from 'C:\Users\seanzjxiao\Documents\Codex\2026-10-13\https-github-com-jiarui-liu-ideascientist\work\VortexGaussians\tracks\art\studies\a06-char-and-reset\run-01\study.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf61.7.100
+  Duration: 00:00:27.61, start: 0.000000, bitrate: 213 kb/s
+  Stream #0:0[0x1](und): Video: h264 (High) (avc1 / 0x31637661), yuv420p(progressive), 1280x800, 212 kb/s, 4.24 fps, 2k tbr, 1000k tbn (default)
+      Metadata:
+        handler_name    : VideoHandler
+        vendor_id       : [0][0][0][0]
+        encoder         : Lavc61.19.101 libx264
+Input #1, png_pipe, from 'C:\Users\seanzjxiao\Documents\Codex\2026-10-13\https-github-com-jiarui-liu-ideascientist\work\VortexGaussians\tracks\art\studies\a06-char-and-reset\run-01\02-loaded.png':
+  Duration: N/A, bitrate: N/A
+  Stream #1:0: Video: png, rgb24(pc, gbr/unknown/unknown), 1280x800, 25 fps, 25 tbr, 25 tbn
+Input #2, png_pipe, from 'C:\Users\seanzjxiao\Documents\Codex\2026-10-13\https-github-com-jiarui-liu-ideascientist\work\VortexGaussians\tracks\art\studies\a06-char-and-reset\run-01\03-ignited.png':
+  Duration: N/A, bitrate: N/A
+  Stream #2:0: Video: png, rgb24(pc, gbr/unknown/unknown), 1280x800, 25 fps, 25 tbr, 25 tbn
+Input #3, png_pipe, from 'C:\Users\seanzjxiao\Documents\Codex\2026-10-13\https-github-com-jiarui-liu-ideascientist\work\VortexGaussians\tracks\art\studies\a06-char-and-reset\run-01\04-ten-seconds-scene.png':
+  Duration: N/A, bitrate: N/A
+  Stream #3:0: Video: png, rgb24(pc, gbr/unknown/unknown), 1280x800, 25 fps, 25 tbr, 25 tbn
+Input #4, png_pipe, from 'C:\Users\seanzjxiao\Documents\Codex\2026-10-13\https-github-com-jiarui-liu-ideascientist\work\VortexGaussians\tracks\art\studies\a06-char-and-reset\run-01\06-reset-scene.png':
+  Duration: N/A, bitrate: N/A
+  Stream #4:0: Video: png, rgb24(pc, gbr/unknown/unknown), 1280x800, 25 fps, 25 tbr, 25 tbn
+Input #5, png_pipe, from 'C:\Users\seanzjxiao\Documents\Codex\2026-10-13\https-github-com-jiarui-liu-ideascientist\work\VortexGaussians\tracks\art\studies\a06-char-and-reset\run-01\07-reset-receipt.png':
+  Duration: N/A, bitrate: N/A
+  Stream #5:0: Video: png, rgb24(pc, gbr/unknown/unknown), 1280x800, 25 fps, 25 tbr, 25 tbn
+Stream mapping:
+  Stream #0:0 (h264) -> fps:default
+  Stream #1:0 (png) -> split:default
+  Stream #2:0 (png) -> split:default
+  Stream #3:0 (png) -> split:default
+  Stream #4:0 (png) -> split:default
+  Stream #5:0 (png) -> split:default
+  concat:out:v0 -> Stream #0:0 (libx264)
+[libx264 @ 000001A53988F140] using SAR=1/1
+[libx264 @ 000001A53988F140] using cpu capabilities: MMX2 SSE2Fast SSSE3 SSE4.2 AVX FMA3 BMI2 AVX2 AVX512
+[libx264 @ 000001A53988F140] profile High, level 3.2, 4:2:0, 8-bit
+[libx264 @ 000001A53988F140] 264 - core 164 r3095 baee400 - H.264/MPEG-4 AVC codec - Copyleft 2003-2022 - http://www.videolan.org/x264.html - options: cabac=1 ref=3 deblock=1:0:0 analyse=0x3:0x113 me=hex subme=7 psy=1 psy_rd=1.00:0.00 mixed_ref=1 me_range=16 chroma_me=1 trellis=1 8x8dct=1 cqm=0 deadzone=21,11 fast_pskip=1 chroma_qp_offset=-2 threads=2 lookahead_threads=1 sliced_threads=0 nr=0 decimate=1 interlaced=0 bluray_compat=0 constrained_intra=0 bframes=3 b_pyramid=2 b_adapt=1 b_bias=0 direct=1 weightb=1 open_gop=0 weightp=2 keyint=250 keyint_min=25 scenecut=40 intra_refresh=0 rc_lookahead=40 rc=crf mbtree=1 crf=18.0 qcomp=0.60 qpmin=0 qpmax=69 qpstep=4 ip_ratio=1.40 aq=1:1.00
+Output #0, mp4, to 'study.mp4':
+  Metadata:
+    major_brand     : isom
+    minor_version   : 512
+    compatible_brands: isomiso2avc1mp41
+    encoder         : Lavf61.7.100
+  Stream #0:0: Video: h264 (avc1 / 0x31637661), yuv420p(tv, progressive), 1280x960 [SAR 1:1 DAR 4:3], q=2-31, 25 fps, 12800 tbn
+      Metadata:
+        encoder         : Lavc61.19.101 libx264
+      Side data:
+        cpb: bitrate max/min/avg: 0/0/0 buffer size: 0 vbv_delay: N/A
+frame=    0 fps=0.0 q=0.0 size=       0KiB time=N/A bitrate=N/A speed=N/A    frame=    0 fps=0.0 q=0.0 size=       0KiB time=N/A bitrate=N/A speed=N/A    frame=   15 fps=9.9 q=23.0 size=       0KiB time=00:00:00.52 bitrate=   0.7kbits/s speed=0.343x    frame=   41 fps= 20 q=23.0 size=       0KiB time=00:00:01.56 bitrate=   0.2kbits/s speed=0.771x    frame=   72 fps= 29 q=23.0 size=       0KiB time=00:00:02.80 bitrate=   0.1kbits/s speed=1.11x    frame=   93 fps= 31 q=23.0 size=       0KiB time=00:00:03.64 bitrate=   0.1kbits/s speed= 1.2x    frame=  110 fps= 31 q=23.0 size=       0KiB time=00:00:04.32 bitrate=   0.1kbits/s speed=1.22x    [out_#0:0 @ 000001A556AB1480] 100 buffers queued in out_#0:0, something may be wrong.
+frame=  134 fps= 33 q=23.0 size=       0KiB time=00:00:05.28 bitrate=   0.1kbits/s speed= 1.3x    frame=  249 fps= 54 q=23.0 size=       0KiB time=00:00:09.88 bitrate=   0.0kbits/s speed=2.16x    frame=  313 fps= 62 q=23.0 size=       0KiB time=00:00:12.44 bitrate=   0.0kbits/s speed=2.45x    frame=  342 fps= 61 q=23.0 size=       0KiB time=00:00:13.60 bitrate=   0.0kbits/s speed=2.43x    frame=  380 fps= 62 q=23.0 size=       0KiB time=00:00:15.12 bitrate=   0.0kbits/s speed=2.48x    frame=  419 fps= 64 q=23.0 size=       0KiB time=00:00:16.68 bitrate=   0.0kbits/s speed=2.53x    frame=  461 fps= 65 q=23.0 size=       0KiB time=00:00:18.36 bitrate=   0.0kbits/s speed=2.59x    frame=  503 fps= 66 q=23.0 size=       0KiB time=00:00:20.04 bitrate=   0.0kbits/s speed=2.64x    frame=  550 fps= 68 q=23.0 size=       0KiB time=00:00:21.92 bitrate=   0.0kbits/s speed=2.71x    frame=  582 fps= 68 q=23.0 size=       0KiB time=00:00:23.20 bitrate=   0.0kbits/s speed= 2.7x    frame=  620 fps= 68 q=23.0 size=       0KiB time=00:00:24.72 bitrate=   0.0kbits/s speed=2.71x    frame=  652 fps= 68 q=23.0 size=       0KiB time=00:00:26.00 bitrate=   0.0kbits/s speed=2.71x    frame=  694 fps= 69 q=23.0 size=       0KiB time=00:00:27.68 bitrate=   0.0kbits/s speed=2.73x    frame=  746 fps= 70 q=23.0 size=     256KiB time=00:00:29.76 bitrate=  70.5kbits/s speed= 2.8x    frame=  790 fps= 71 q=23.0 size=     256KiB time=00:00:31.52 bitrate=  66.5kbits/s speed=2.83x    frame=  841 fps= 72 q=23.0 size=     256KiB time=00:00:33.56 bitrate=  62.5kbits/s speed=2.88x    frame=  894 fps= 73 q=23.0 size=     256KiB time=00:00:35.68 bitrate=  58.8kbits/s speed=2.93x    frame=  955 fps= 75 q=23.0 size=     256KiB time=00:00:38.12 bitrate=  55.0kbits/s speed=   3x    frame= 1001 fps= 76 q=23.0 size=     256KiB time=00:00:39.96 bitrate=  52.5kbits/s speed=3.03x    frame= 1061 fps= 77 q=23.0 size=     256KiB time=00:00:42.36 bitrate=  49.5kbits/s speed=3.09x    frame= 1117 fps= 79 q=23.0 size=     512KiB time=00:00:44.60 bitrate=  94.1kbits/s speed=3.14x    frame= 1251 fps= 85 q=23.0 size=     512KiB time=00:00:49.96 bitrate=  84.0kbits/s speed=3.39x    frame= 1386 fps= 91 q=23.0 size=     512KiB time=00:00:55.36 bitrate=  75.8kbits/s speed=3.63x    frame= 1483 fps= 94 q=23.0 size=     512KiB time=00:00:59.24 bitrate=  70.8kbits/s speed=3.76x    frame= 1577 fps= 97 q=23.0 size=     768KiB time=00:01:03.00 bitrate=  99.9kbits/s speed=3.88x    frame= 1642 fps= 98 q=23.0 size=     768KiB time=00:01:05.60 bitrate=  95.9kbits/s speed=3.91x    frame= 1717 fps= 99 q=23.0 size=     768KiB time=00:01:08.60 bitrate=  91.7kbits/s speed=3.97x    frame= 1802 fps=101 q=23.0 size=     768KiB time=00:01:12.00 bitrate=  87.4kbits/s speed=4.05x    [mp4 @ 000001A539940840] Starting second pass: moving the moov atom to the beginning of the file
+[out#0/mp4 @ 000001A5398E5840] video:996KiB audio:0KiB subtitle:0KiB other streams:0KiB global headers:0KiB muxing overhead: 2.309554%
+frame= 1900 fps= 99 q=-1.0 Lsize=    1019KiB time=00:01:15.92 bitrate= 109.9kbits/s speed=3.97x    
+[libx264 @ 000001A53988F140] frame I:8     Avg QP: 4.70  size: 34793
+[libx264 @ 000001A53988F140] frame P:494   Avg QP: 8.67  size:  1087
+[libx264 @ 000001A53988F140] frame B:1398  Avg QP: 8.58  size:   146
+[libx264 @ 000001A53988F140] consecutive B-frames:  1.4%  1.2%  1.3% 96.2%
+[libx264 @ 000001A53988F140] mb I  I16..4: 74.7% 18.1%  7.2%
+[libx264 @ 000001A53988F140] mb P  I16..4:  0.8%  0.6%  0.1%  P16..4:  0.8%  0.4%  0.2%  0.0%  0.0%    skip:97.1%
+[libx264 @ 000001A53988F140] mb B  I16..4:  0.1%  0.0%  0.0%  B16..8:  0.7%  0.1%  0.0%  direct: 0.0%  skip:99.1%  L0:48.1% L1:45.5% BI: 6.5%
+[libx264 @ 000001A53988F140] 8x8 transform intra:26.4% inter:65.4%
+[libx264 @ 000001A53988F140] coded y,uvDC,uvAC intra: 14.1% 14.8% 12.8% inter: 0.2% 0.2% 0.1%
+[libx264 @ 000001A53988F140] i16 v,h,dc,p: 77% 22%  1%  1%
+[libx264 @ 000001A53988F140] i8 v,h,dc,ddl,ddr,vr,hd,vl,hu: 19% 20% 46%  2%  3%  2%  3%  2%  3%
+[libx264 @ 000001A53988F140] i4 v,h,dc,ddl,ddr,vr,hd,vl,hu: 23% 35% 20%  3%  5%  3%  4%  3%  4%
+[libx264 @ 000001A53988F140] i8c dc,h,v,p: 72% 20%  7%  1%
+[libx264 @ 000001A53988F140] Weighted P-Frames: Y:0.0% UV:0.0%
+[libx264 @ 000001A53988F140] ref P L0: 81.0%  8.5%  8.0%  2.4%
+[libx264 @ 000001A53988F140] ref B L0: 88.7% 11.0%  0.3%
+[libx264 @ 000001A53988F140] ref B L1: 99.0%  1.0%
+[libx264 @ 000001A53988F140] kb/s:107.27

@@ -1,0 +1,132 @@
+{
+  "schema": "a09-nine-frame-inspection-v1",
+  "movie": {
+    "file": "study.mp4",
+    "duration_seconds": 76,
+    "frames": 1900,
+    "fps": 25,
+    "width": 1280,
+    "height": 960,
+    "audio": false,
+    "bytes": 1043316,
+    "sha256": "f50af1cad805066451753c54078f863fd339d4d5a1946ecc04034e2d9ebfabe5"
+  },
+  "result_identity": {
+    "bytes": 28257,
+    "sha256": "099b2b410cb04d0aeaf852f107622155a1cb166674a8c053a9a7255b65f7e8bf"
+  },
+  "frames": [
+    {
+      "file": "check-01-03s.png",
+      "seconds": 3,
+      "bytes": 133963,
+      "sha256": "dfb98cd2305a0e5b47116cc63a87436c8dcd31d2f03b039b98cdc24e9caaf96a",
+      "viewed_with": "view_image",
+      "observation": "Title, broader ability wording, fictional-rule label and synthetic/Agent provenance visible. Main source crop still contains its own simulation-time and synthetic statement."
+    },
+    {
+      "file": "check-02-10s.png",
+      "seconds": 10,
+      "bytes": 136549,
+      "sha256": "223f02dc827c50f91088766297aa5b907714b4f42a62f9131be82ec75ad4b3d9",
+      "viewed_with": "view_image",
+      "observation": "First supplied record occupies the main archive rectangle; rejected strip is still empty."
+    },
+    {
+      "file": "check-03-13s.png",
+      "seconds": 13,
+      "bytes": 67679,
+      "sha256": "7ef491fc2f1e6c0e4725a102fdf707a0c2449e0c005f4deee5569715119d4a06",
+      "viewed_with": "view_image",
+      "observation": "First record has left the main position and is shrinking toward the bottom strip. Its transitional rectangle partly covers the left rejected-strip label; retained as a layout limitation."
+    },
+    {
+      "file": "check-04-27s.png",
+      "seconds": 27,
+      "bytes": 225486,
+      "sha256": "fe81473699427970c8120bf618f72ac383ffe6c89aa7eb8ef7fc92c6bc4f581b",
+      "viewed_with": "view_image",
+      "observation": "Ten-second fire image occupies the main rectangle; two prior rejected thumbnails remain below."
+    },
+    {
+      "file": "check-05-42s.png",
+      "seconds": 42,
+      "bytes": 201342,
+      "sha256": "1c050a7000bb30db78aafb7f888f4c9a9bd8092c328eb2b1bc9f6ef8bf813122",
+      "viewed_with": "view_image",
+      "observation": "Receipt is readable at main size, including 10.00 s / 3,320 / 1,400. Crop leaves top-row numbers without their full original heading; it is a selective crop, not the complete page."
+    },
+    {
+      "file": "check-06-51s.png",
+      "seconds": 51,
+      "bytes": 100666,
+      "sha256": "9f7b3f5a99f6cd878925617440262e6c7684fb2c5cf17c666c9cb88e74988759",
+      "viewed_with": "view_image",
+      "observation": "Main archive rectangle is empty and five rejected thumbnails remain. Thumbnail source text is too small for comfortable reading."
+    },
+    {
+      "file": "check-07-56s.png",
+      "seconds": 56,
+      "bytes": 264028,
+      "sha256": "fb59a7b03035b2e95915be95caa33279ab4c0a27387de460de27b59ece1ac801",
+      "viewed_with": "view_image",
+      "observation": "The actual rejected ten-second PNG returns to the main position while its thumbnail remains in the rejected strip; the return label is visible."
+    },
+    {
+      "file": "check-08-65s.png",
+      "seconds": 65,
+      "bytes": 272960,
+      "sha256": "69dbde619ebd334357168628690d5205d692922fdfd7a4dfc03c7c454f6866ed",
+      "viewed_with": "view_image",
+      "observation": "Supplementary same-event video shows a changing fire/smoke frame at displayed simulation time 5.68 s. This MP4 was not itself a member of the five-item admission audit."
+    },
+    {
+      "file": "check-09-74s.png",
+      "seconds": 74,
+      "bytes": 279250,
+      "sha256": "12637b510ccf23c1cd93a75a45b3d6693dae3f395c4aa7ff99a2adb82efa0c32",
+      "viewed_with": "view_image",
+      "observation": "The same rejected ten-second PNG remains in the main position, with five thumbnails still present. There is no final clean-reset image; source-preservation text is visible."
+    }
+  ],
+  "continuous_playback_viewed": false,
+  "audience_observations": false,
+  "source_and_selection_identity_recheck": true,
+  "full_decode_returncode": 0,
+  "full_decode_stderr_bytes": 0,
+  "production_encoding_attempts": 1,
+  "repairs": 0,
+  "new_simulations": 0,
+  "selection": {
+    "accepted": 0,
+    "rejected": 5,
+    "membership_changed_by_final_exhibition": false
+  },
+  "scope_limits": [
+    "Finite supplied-format positive admission check, not proof that replay/inference/external information cannot restore a state.",
+    "Five screenshot items plus result context make all rejection unsurprising; metadata checks are provenance, not artistic merit.",
+    "Opening ability phrase is broader than the actual explicit-state-payload rule; this authority transfer is an authored choice.",
+    "MP4 is supplementary same-event footage, not one of the five rejected files. The returned rejected artifact is A09-03 PNG.",
+    "Transition partly occludes strip label; thumbnail text remains small and scene states can look similar.",
+    "The work retains an archive-viewer interface appearance. No new immersive-space claim.",
+    "Engineering checks do not establish artistic contribution or acceptance. No independent rating claimed here."
+  ],
+  "other_team_observations_reported": {
+    "root": [
+      3,
+      13,
+      27,
+      51,
+      56,
+      74
+    ],
+    "paper_writer": [
+      10,
+      13,
+      51,
+      56,
+      74
+    ],
+    "agreement": "Both separately noted transient label occlusion; neither supplied audience evidence."
+  }
+}
