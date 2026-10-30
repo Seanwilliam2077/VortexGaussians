@@ -1,8 +1,8 @@
 # 艺术线：制作与独立复评
 
-## 2026-10-31 current: A25 independent scores 4/6 and 3/6; one bounded argument revision
+## 2026-10-31 current: A25 scores remain 4/6 and 3/6; A26 practice proposition
 
-[A25](studies/a25-public-request/README.md), Before the Next Posting, has a complete work and paper. The [fixed reviewer](../validation/art-a25-review-round-01.md) gives overall4/6, readiness7/10, confidence3/5; the [first-read reviewer](../validation/art-a25-fresh-review.md) gives overall3/6, readiness6/10, confidence3/5. Both recognize the actual control of request/image co-presence and retain the strong text-plus-highlight counterreading. Neither score replaces the other or reaches5/6. [The decision](studies/a25-public-request/DECISION_ROUND_01.md) allows one argument-only revision using saved A24/A25 evidence, preserving the initial paper and both reviews. Separate unscored reviewer dialogue distinguishes evidence gaps from evaluative differences; a continuous record is proposed, not authorized or run in this step. No artwork change, retuning, longer burn, recording, new sources or TOG computation. Original platform, main and full active goal remain unchanged.
+[A25](studies/a25-public-request/README.md) is a completed work with two preserved paper versions and reviewer dialogue. After revision the [fixed reviewer](../validation/art-a25-review-round-02.md) remains4/6 and the [other reviewer](../validation/art-a25-fresh-review-round-02.md) remains3/6; both readiness7/10, confidence3/5. Better argument does not supply new artistic evidence. [Decision](studies/a25-public-request/DECISION_ROUND_02.md) freezes this version and stops same-evidence polishing; no recording loop substitutes frame reading for continuous experience. [A26](studies/a26-practice-synthesis/BRIEF.md) now tests one critical-practice proposition from at most three existing cases and six images, against bounded primary theoretical context, before any full paper or new production. This is not a change to acceptance standards or proof that failed studies are contributions. Overall5/6 remains unmet. No new UI/simulation/TOG queue, main change or fabricated audience response; original platform and full goal remain active.
 
 
 2026-10-30。用户重新授权持续艺术迭代，并要求与评分 Agent 交流直至至少 5 分。本轮把目标解释为既有内部六档总评中的 **5/6（Accept）**，不是就绪度 5/10，也不是官方录用概率。
@@ -25,6 +25,8 @@
 
 ## 当前有限任务
 
-A25 两份独立审稿已封存：固定评审4/6与首次阅读评审3/6。两位均认为呈示操作真实，但对它是否超过较薄交互图解的判断不同。先以既有A24固定并置与A25第122步的原话显隐对照，写一份完整论证修订，保留初稿。两位先各自记录不评分的意见对话，再读取同一修订包重新判断；不按目标倒推分数，也不选择性公布高分。
+A25第二轮仍为4/6与3/6，完成作品和两稿封存。两位同意继续润稿收益低；工具仅能逐图阅读，不能把补录/抽帧当连续体验。原审、复审与两份对话都保留，不从中挑高分。
 
-本步没有新作品运行、参数变化、连续录像或来源扩张。首次阅读评审提出的时间证据缺口明确保留，文字修订不能代替它；是否继续记录或改变作品待此步结果后另决。A22历史3/6、房间与既有录像失败不改，TOG无新队列，main不动。5/6是目标而非给分指令。
+A26先评估批判性实践命题：最多三项既有案例、六图和一页具体编辑提案；并行至多两查询、三次一手理论正文施加既有研究压力。综合必须提供比失败清单或普通操作解释更多的、由实际制作支持的认识。root读两个产物后才决定下一项；没有自动新作品、运行、全文或评分。
+
+5/6仍是独立判断目标，未达到。旧作品/材料/失败、TOG边界和main保持。

@@ -11,3 +11,5 @@
 [完整初稿](PAPER_DRAFT.md)保留。两份独立审查已完成：[固定评审4/6](../../../validation/art-a25-review-round-01.md)，准备度7/10、置信度3/5；[首次阅读评审3/6](../../../validation/art-a25-fresh-review.md)，准备度6/10、置信度3/5。分歧与原文均保留，目标总体5/6未满足。按[第一轮决定](DECISION_ROUND_01.md)只做一次基于既有图像的完整论证修订，再交回两位评审；尚不制作录像或改作品。main、旧作品及原demo不改，TOG无新数值任务。
 
 [第二版完整短稿](PAPER_REVISION_02.md)与[逐项回应](RESPONSE_ROUND_01.md)已完成，正交回原两位评审分别复核。两份不评分对话：[固定评审](../../../validation/art-a25-reviewer-dialogue-fixed.md)、[首次阅读评审](../../../validation/art-a25-reviewer-dialogue-fresh.md)。本步仅补读旧A24图及分析既有A25图，没有新作品证据；原分数保持历史身份，尚无第二轮结论。
+
+第二轮复核完成：[固定评审仍4/6](../../../validation/art-a25-review-round-02.md)，[另一评审仍3/6](../../../validation/art-a25-fresh-review-round-02.md)，两者准备度现均7/10、置信度3/5。按[第二轮决定](DECISION_ROUND_02.md)封存此完成版本，不继续同一证据第三轮润稿或补录循环。目标5/6未达到；下一[A26命题探索](../a26-practice-synthesis/BRIEF.md)不预设新贡献。
