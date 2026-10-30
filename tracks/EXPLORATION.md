@@ -1,8 +1,8 @@
 # Exploration policy
 
-## 2026-10-30 current: A21 decision reviewed; A22 production
+## 2026-10-30 current: A22 reviewed; A23 material commitment
 
-[A21](art/studies/a21-paper-offering-position/ROOT_DECISION.md) acquired three readable geographically bounded sources and records the creator decision to remove unsupported external fire and delivery claims. [Independent decision review](validation/art-a21-decision-review.md) supports one actual revision without raising A20 overall3/6 (readiness6/10, confidence4/5). [A22](art/studies/a22-undelivered-room/BRIEF.md) is now one finite room-gift formal study, with no fire simulation. The loss of direct platform material is explicit: this study cannot stand in for the original Vortex platform art contribution. Original works remain; no main deployment, new search batch, recording repair or TOG computation is authorized here. Overall5/6 target unmet, full goal active.
+[A22 independent review](validation/art-a22-review-round-01.md) gives overall3/6, readiness7/10 and confidence4/5 after inspecting all six images and the complete paper. Withdrawal of the delivery claim is a real change; the remaining relation still depends chiefly on its explanation. [Root decision](art/studies/a22-undelivered-room/RESPONSE_ROUND_01.md) closes this room as the current submission core while preserving its form study. [A23](art/studies/a23-fire-material-commitment/BRIEF.md) is one creator-authored page grounded in an already observed original fire-material phenomenon, before any making. No new search, artwork run, recording or TOG computation is queued. A20 and A14 historical3/6 remain; original platform and art track continue, overall5/6 unmet, goal active and main unchanged.
 
 
 This is the repository's working research policy, not a venue acceptance checklist. User steering takes precedence. Updated 30 October 2026.

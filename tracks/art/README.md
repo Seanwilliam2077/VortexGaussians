@@ -1,8 +1,8 @@
 # 可燃的数字记忆（暂定） · 艺术排练入口
 
-## 2026-10-30 current: A21 decision reviewed; A22 production
+## 2026-10-30 current: A22 reviewed; A23 material commitment
 
-[A21](studies/a21-paper-offering-position/ROOT_DECISION.md) acquired three readable geographically bounded sources and records the creator decision to remove unsupported external fire and delivery claims. [Independent decision review](../validation/art-a21-decision-review.md) supports one actual revision without raising A20 overall3/6 (readiness6/10, confidence4/5). [A22](studies/a22-undelivered-room/BRIEF.md) is now one finite room-gift formal study, with no fire simulation. The loss of direct platform material is explicit: this study cannot stand in for the original Vortex platform art contribution. Original works remain; no main deployment, new search batch, recording repair or TOG computation is authorized here. Overall5/6 target unmet, full goal active.
+[A22 independent review](../validation/art-a22-review-round-01.md) gives overall3/6, readiness7/10 and confidence4/5 after inspecting all six images and the complete paper. Withdrawal of the delivery claim is a real change; the remaining relation still depends chiefly on its explanation. [Root decision](studies/a22-undelivered-room/RESPONSE_ROUND_01.md) closes this room as the current submission core while preserving its form study. [A23](studies/a23-fire-material-commitment/BRIEF.md) is one creator-authored page grounded in an already observed original fire-material phenomenon, before any making. No new search, artwork run, recording or TOG computation is queued. A20 and A14 historical3/6 remain; original platform and art track continue, overall5/6 unmet, goal active and main unchanged.
 
 
 **2026-10-30：A14封存为试作，结束当前投稿核心路线。** [A18有限比较](studies/a18-context-positioning/README.md)与[独立复核](../validation/art-a18-core-decision.md)认为，轮流移动、接续变化和共同退开虽有图像依据，现有形式仍未支持其核心艺术认识。维持第二轮总体3/6、准备度6/10、置信度4/5；不是因录像失败否定作品，也不据来源缺失否定领域。原平台和艺术线继续。[A19](studies/a19-artistic-commitment/BRIEF.md)先完成一页单案创作决定，选择具体对象、观看关系和观者行为/取舍，暂不制作或运行。A15/A16失败与[A17实际33图](studies/a17-saved-sequence-reading/README.md)保留，补录循环关闭；总体5/6目标未达。

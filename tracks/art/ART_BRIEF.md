@@ -1,8 +1,8 @@
 # 可燃的数字记忆（暂定）
 
-## 2026-10-30 current: A21 decision reviewed; A22 production
+## 2026-10-30 current: A22 reviewed; A23 material commitment
 
-[A21](studies/a21-paper-offering-position/ROOT_DECISION.md) acquired three readable geographically bounded sources and records the creator decision to remove unsupported external fire and delivery claims. [Independent decision review](../validation/art-a21-decision-review.md) supports one actual revision without raising A20 overall3/6 (readiness6/10, confidence4/5). [A22](studies/a22-undelivered-room/BRIEF.md) is now one finite room-gift formal study, with no fire simulation. The loss of direct platform material is explicit: this study cannot stand in for the original Vortex platform art contribution. Original works remain; no main deployment, new search batch, recording repair or TOG computation is authorized here. Overall5/6 target unmet, full goal active.
+[A22 independent review](../validation/art-a22-review-round-01.md) gives overall3/6, readiness7/10 and confidence4/5 after inspecting all six images and the complete paper. Withdrawal of the delivery claim is a real change; the remaining relation still depends chiefly on its explanation. [Root decision](studies/a22-undelivered-room/RESPONSE_ROUND_01.md) closes this room as the current submission core while preserving its form study. [A23](studies/a23-fire-material-commitment/BRIEF.md) is one creator-authored page grounded in an already observed original fire-material phenomenon, before any making. No new search, artwork run, recording or TOG computation is queued. A20 and A14 historical3/6 remain; original platform and art track continue, overall5/6 unmet, goal active and main unchanged.
 
 
 **2026-10-30更新：** [A18及独立决定](studies/a18-context-positioning/DECISION.md)关闭A14《两边的火》作为当前投稿核心，保留其试作价值、总体3/6、准备度6/10、置信度4/5。关闭限于作品与自身主张的缺口，不以读取失败推导领域没有空间，也不要求所有艺术都必须影响他人、真人输入或私人记忆。艺术线继续用原平台探索；[A19单案创作决定](studies/a19-artistic-commitment/BRIEF.md)先选择有明确内容的对象和观看关系，之后才决定制作。暂定主题保留，用户未提供的经历不代写。以下历史brief不重启旧关闭路线；总体5/6目标未达。[复评流程](REVIEW_LOOP.md)继续适用。
