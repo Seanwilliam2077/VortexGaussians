@@ -8,4 +8,4 @@
 
 实际原图：[声明](inspection-01/01-statement.png)、[请求](inspection-01/02-request.png)、[暂停且收起原话](inspection-01/03-paused-processing.png)、[同一步放回原话](inspection-01/04-request-returned.png)、[窗口结束](inspection-01/05-window-end.png)、[结束观看](inspection-01/06-finished.png)、[窄屏初态](inspection-01/07-mobile-opening.png)、[窄屏提前退出](inspection-01/08-mobile-early-end.png)。
 
-[完整短稿](PAPER_DRAFT.md)已根据实际图像完成，正在独立评分。原A22总体3/6、准备度7/10保留；A25尚未评分，目标总体5/6未满足。main、旧作品及原demo不改，TOG无新数值任务。
+[完整初稿](PAPER_DRAFT.md)保留。两份独立审查已完成：[固定评审4/6](../../../validation/art-a25-review-round-01.md)，准备度7/10、置信度3/5；[首次阅读评审3/6](../../../validation/art-a25-fresh-review.md)，准备度6/10、置信度3/5。分歧与原文均保留，目标总体5/6未满足。按[第一轮决定](DECISION_ROUND_01.md)只做一次基于既有图像的完整论证修订，再交回两位评审；尚不制作录像或改作品。main、旧作品及原demo不改，TOG无新数值任务。

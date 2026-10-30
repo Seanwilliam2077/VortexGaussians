@@ -1,8 +1,8 @@
 # Dual-track status
 
-## 2026-10-31 current: A25 work and complete paper; independent scoring
+## 2026-10-31 current: A25 independent scores 4/6 and 3/6; one bounded argument revision
 
-[A25](art/studies/a25-public-request/README.md), titled Before the Next Posting, now has an actual viewing sequence, eight images, [process](art/studies/a25-public-request/PROCESS.md), three institutional practice comparisons and a [complete short paper](art/studies/a25-public-request/PAPER_DRAFT.md). Normal UI read/fold/process/pause/return/resume/end and a no-fire mobile exit completed in10.9920832 seconds; one fire sequence, model hash/groups unchanged from A24. Images03/04 share frame122 and differ in request visibility. This supports the implemented relation, not audience interpretation or acceptance. Independent scoring is pending; historical A22 overall3/6/readiness7/10 remain, overall5/6 unmet. No retuning, longer burn, recording or TOG computation; original platform preserved, goal active and main unchanged.
+[A25](art/studies/a25-public-request/README.md), Before the Next Posting, has a complete work and paper. The [fixed reviewer](validation/art-a25-review-round-01.md) gives overall4/6, readiness7/10, confidence3/5; the [first-read reviewer](validation/art-a25-fresh-review.md) gives overall3/6, readiness6/10, confidence3/5. Both recognize the actual control of request/image co-presence and retain the strong text-plus-highlight counterreading. Neither score replaces the other or reaches5/6. [The decision](art/studies/a25-public-request/DECISION_ROUND_01.md) allows one argument-only revision using saved A24/A25 evidence, preserving the initial paper and both reviews. Separate unscored reviewer dialogue distinguishes evidence gaps from evaluative differences; a continuous record is proposed, not authorized or run in this step. No artwork change, retuning, longer burn, recording, new sources or TOG computation. Original platform, main and full active goal remain unchanged.
 
 
 Updated 30 October 2026. Active exploration authorized by the author. TOG and Art Papers contributions are both unestablished.

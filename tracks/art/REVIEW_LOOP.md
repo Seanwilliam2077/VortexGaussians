@@ -1,8 +1,8 @@
 # 艺术线：制作与独立复评
 
-## 2026-10-31 current: A25 work and complete paper; independent scoring
+## 2026-10-31 current: A25 independent scores 4/6 and 3/6; one bounded argument revision
 
-[A25](studies/a25-public-request/README.md), titled Before the Next Posting, now has an actual viewing sequence, eight images, [process](studies/a25-public-request/PROCESS.md), three institutional practice comparisons and a [complete short paper](studies/a25-public-request/PAPER_DRAFT.md). Normal UI read/fold/process/pause/return/resume/end and a no-fire mobile exit completed in10.9920832 seconds; one fire sequence, model hash/groups unchanged from A24. Images03/04 share frame122 and differ in request visibility. This supports the implemented relation, not audience interpretation or acceptance. Independent scoring is pending; historical A22 overall3/6/readiness7/10 remain, overall5/6 unmet. No retuning, longer burn, recording or TOG computation; original platform preserved, goal active and main unchanged.
+[A25](studies/a25-public-request/README.md), Before the Next Posting, has a complete work and paper. The [fixed reviewer](../validation/art-a25-review-round-01.md) gives overall4/6, readiness7/10, confidence3/5; the [first-read reviewer](../validation/art-a25-fresh-review.md) gives overall3/6, readiness6/10, confidence3/5. Both recognize the actual control of request/image co-presence and retain the strong text-plus-highlight counterreading. Neither score replaces the other or reaches5/6. [The decision](studies/a25-public-request/DECISION_ROUND_01.md) allows one argument-only revision using saved A24/A25 evidence, preserving the initial paper and both reviews. Separate unscored reviewer dialogue distinguishes evidence gaps from evaluative differences; a continuous record is proposed, not authorized or run in this step. No artwork change, retuning, longer burn, recording, new sources or TOG computation. Original platform, main and full active goal remain unchanged.
 
 
 2026-10-30。用户重新授权持续艺术迭代，并要求与评分 Agent 交流直至至少 5 分。本轮把目标解释为既有内部六档总评中的 **5/6（Accept）**，不是就绪度 5/10，也不是官方录用概率。
@@ -25,6 +25,6 @@
 
 ## 当前有限任务
 
-[A25](studies/a25-public-request/BRIEF.md)完成‘被公示的撤名请求’观看作品，保持A24固定六秒原模型窗口、名字及材料条件。A24原亮火遮暗变期待未支持；新现象是处理期间姓名被区别标出，尚非艺术贡献。独立材料咨询与原创者改承诺分别保存，root批准有限制作。
+A25 两份独立审稿已封存：固定评审4/6与首次阅读评审3/6。两位均认为呈示操作真实，但对它是否超过较薄交互图解的判断不同。先以既有A24固定并置与A25第122步的原话显隐对照，写一份完整论证修订，保留初稿。两位先各自记录不评分的意见对话，再读取同一修订包重新判断；不按目标倒推分数，也不选择性公布高分。
 
-一次正常UI检查仅核新作品行为，不重选火效果；并行三查询/四正文访问做指定一手艺术实践比较。实际图像后写完整短稿并复评，不把材料资格或页面精制兑换分数。A22历史3/6、准备度7/10保留；房间和录像循环关闭，TOG无新队列，main不动。任何评分仍可维持或下降，5/6是目标而非给分指令。
+本步没有新作品运行、参数变化、连续录像或来源扩张。首次阅读评审提出的时间证据缺口明确保留，文字修订不能代替它；是否继续记录或改变作品待此步结果后另决。A22历史3/6、房间与既有录像失败不改，TOG无新队列，main不动。5/6是目标而非给分指令。
