@@ -1,8 +1,8 @@
 # 艺术线：制作与独立复评
 
-## 2026-10-31 current: A26 closed at two independent 3/6 reviews; A27 creative decision only
+## 2026-10-31 current: no new artwork queued; A30 audits iteration decisions
 
-[A26 complete practice manuscript](studies/a26-practice-synthesis/PAPER_DRAFT.md) received independent overall **3/6** from [the fixed reviewer](../validation/art-a26-review-round-01.md) and [the other reviewer](../validation/art-a26-fresh-review-round-01.md), each readiness **7/10** and confidence **4/5**. Local analyses stand; the hypothetical cross-case remedy chain does not establish sufficient synthesis contribution. [The final decision](studies/a26-practice-synthesis/DECISION_FINAL.md) closes this configuration under its prior rule, preserving all drafts, evidence and qualifications. A25 historical 4/6 and 3/6 remain distinct. [A27](studies/a27-next-artistic-question/BRIEF.md) permits one creator decision on a substantively different concrete artistic question, not automatic production or a new score. Overall 5/6 unmet; no new artwork run, simulation, video, image, source search or TOG queue. Main and original platform preserved; full goal active.
+A26 complete synthesis remains **3/6 from both reviewers**, readiness 7/10 and confidence 4/5; [its closure](studies/a26-practice-synthesis/DECISION_FINAL.md) preserves local analyses and the failed cross-case argument. A25 remains 4/6 and 3/6. [A27](studies/a27-next-artistic-question/DECISION.md) selected no new production, with a separate [decision consultation](../validation/art-a27-decision-assessment.md). [A28](studies/a28-review-calibration/SOURCE_RESULT.md) and [A29](studies/a29-publisher-text-check/RESULT.md) confirmed two published Art Papers identities but acquired zero complete papers in two queries/eight opens; slides and abstracts are not full-paper calibration. [A30](studies/a30-iteration-process-audit/BRIEF.md) now independently audits whether the process prematurely closes worthwhile formal development or instead keeps generating weak next tasks. It is not another submission scorer and cannot revise historical scores. Overall 5/6 unmet; no new artwork, simulation, image, video or TOG run. Main and original platform preserved; full goal active.
 
 
 2026-10-30。用户重新授权持续艺术迭代，并要求与评分 Agent 交流直至至少 5 分。本轮把目标解释为既有内部六档总评中的 **5/6（Accept）**，不是就绪度 5/10，也不是官方录用概率。
@@ -25,6 +25,6 @@
 
 ## 当前有限任务
 
-A26两份正式独立报告均为3/6、准备度7/10、信心4/5。接受具体跨案联系不足的判断，按预定规则关闭当前综合构型；保留所有稿件、证据和不同阶段意见，不第三次换图、扩源或继续润稿。A25单作分数不变。
+A26收束、A27未选中及来源获取不足均保留，不追加制作或用摘要校准评分。A30独立审查近期推进/停止规则：是否把同证据润稿低价值误扩为禁止形式深化，或反过来无依据地换题材、重跑。允许结论为没有合格下一项。该角色不写作品、不打投稿分，不取代原两位评分者。
 
-A27只让新的创作者判断一次是否有内容具体、形式关系不同的新艺术问题。没有合格选择即可记录未选中，不为满足持续队列强行制作；评分Agent不替作者设计，不对提案发放5/6。root读完后才决定下一项。当前不运行、不新增媒体/检索，TOG无队列，main保持，完整研究目标active。
+root完整读报告再决定一个有依据的后续动作。目标5/6仍未达到；不购买/重置额度，不合并main，TOG无运行队列。完整目标active，无常驻预览服务或重新开启的自动化。
