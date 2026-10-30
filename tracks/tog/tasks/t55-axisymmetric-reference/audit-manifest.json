@@ -1,0 +1,266 @@
+{
+  "schema": "t55-axisymmetric-reference-publication-v1",
+  "created_utc": "2026-10-30T00:03:47.828788+00:00",
+  "parent_commit": "898b5b68ea402d3696e4d6e8f6d196a1ef592916",
+  "goal_status": "active_not_submission_ready",
+  "evidence": {
+    "task": "T55",
+    "outcome": "qualified_initial_only",
+    "scientific_child_invocations": 1,
+    "initial_elliptic_cases": 5,
+    "fluid_trajectories": 0,
+    "candidate_methods": 0,
+    "child_timeout_seconds": 180,
+    "checks": {
+      "all_linear_solves": true,
+      "fine_u": true,
+      "fine_J": true,
+      "spatial_reductions": true,
+      "boundary_u": true,
+      "boundary_J": true,
+      "domain_u": true,
+      "domain_J": true
+    },
+    "finest_core_u_relative": 0.0009202425493332519,
+    "finest_core_J_relative": 0.0004934573730947934,
+    "spatial_error_reduction_factors": {
+      "core_u_relative": [
+        4.01728143988709,
+        4.004285998669207
+      ],
+      "core_J_relative": [
+        3.9978361649930836,
+        3.9992779678743946
+      ]
+    },
+    "boundary_disagreements": {
+      "u": 8.362970310756439e-15,
+      "J": 1.7873746984816567e-13
+    },
+    "combined_domain_quadrature_disagreements": {
+      "u": 6.522378115760852e-05,
+      "J": 4.502255222099013e-06
+    },
+    "child_supervised_seconds": 3.918251399998553,
+    "child_elapsed_before_result_write_seconds": 3.7610482999589294,
+    "supervisor_elapsed_before_receipt_write_seconds": 3.942284299992025,
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "totals": {
+      "grid_cells": 69632,
+      "scalar_boundary_kernel_pairs": 279756800,
+      "local_raw_bytes": 8972626
+    },
+    "frozen_input_count": 10,
+    "frozen_inputs_and_executable_unchanged": true,
+    "source_queries": 2,
+    "primary_documents": 3,
+    "source_web_calls": 5,
+    "physical_task_pass": null,
+    "formal_error_certificate": false,
+    "finite_time_qualification": false,
+    "new_TOG_contribution_established": false,
+    "next_question": "T56 separately frozen short coupled-reference qualification, no T56 execution yet",
+    "next_preparation_limits": {
+      "maximum_reference_trajectories": 6,
+      "maximum_scientific_children": 1,
+      "child_timeout_seconds": 600,
+      "time_interval": [
+        0,
+        0.25
+      ]
+    },
+    "old_T52_failure_and_T53_diagnostics_retained": true
+  },
+  "publication_plan": {
+    "path": "tracks/tog/tasks/t55-axisymmetric-reference/local/publication-plan.json",
+    "bytes": 13439,
+    "sha256": "6835169394b89de81068cdee9453013908ad5422470832d6e361bf12953bb773"
+  },
+  "publication_plan_is_ignored_local_support": true,
+  "scientific_numerical_pass": true,
+  "T52_history_reclassified": false,
+  "execution_status": "completed_qualified_initial_only",
+  "result_json_exists": true,
+  "qualification_scope": "initial_field_only_no_trajectory",
+  "fluid_trajectories": 0,
+  "artifacts": [
+    {
+      "path": "tracks/tog/tasks/t55-axisymmetric-reference/.gitignore",
+      "bytes": 7,
+      "sha256": "a7d8bdcefba82a95ebc021d87c629fdea21f13af953bf01e28b7cf8b0eeceb41"
+    },
+    {
+      "path": "tracks/tog/tasks/t55-axisymmetric-reference/DECISION.md",
+      "bytes": 6454,
+      "sha256": "ed1d20b4b603ecb4afd49e06f4a33aba6b86ecbabd6bb1f87c4cbc445c1d420f"
+    },
+    {
+      "path": "tracks/tog/tasks/t55-axisymmetric-reference/FORMULATION.md",
+      "bytes": 4604,
+      "sha256": "7d463593ec8f021ab814d0213bcf5f9b74b1c79ae9496b6d4cab2452f6440709"
+    },
+    {
+      "path": "tracks/tog/tasks/t55-axisymmetric-reference/PROTOCOL.md",
+      "bytes": 4087,
+      "sha256": "878d7ef55fbbbe6927233b1defcad425d33c4c49ff221515fa5fabf2c833e465"
+    },
+    {
+      "path": "tracks/tog/tasks/t55-axisymmetric-reference/README.md",
+      "bytes": 1645,
+      "sha256": "21a92427c2a2f5e825be5f23994746e9dcaa93ef95f14f44330786f2bdceb434"
+    },
+    {
+      "path": "tracks/tog/tasks/t55-axisymmetric-reference/RESULTS.md",
+      "bytes": 6587,
+      "sha256": "508e34cb0d1d0422841b77b486692a06117dbb3a355694803c74fd7a349d3848"
+    },
+    {
+      "path": "tracks/tog/tasks/t55-axisymmetric-reference/SOURCES.md",
+      "bytes": 5590,
+      "sha256": "6a543063d8c079ff654b9a5c1f3cb32b574efbca2e2a9c7d93525af5134d7c10"
+    },
+    {
+      "path": "tracks/tog/tasks/t55-axisymmetric-reference/TASK.md",
+      "bytes": 4132,
+      "sha256": "b470e55c6449348136673764e7d7b975cd3bad479ddefa0d881d827eba84e89e"
+    },
+    {
+      "path": "tracks/tog/tasks/t55-axisymmetric-reference/execution.json",
+      "bytes": 2868,
+      "sha256": "87bc69a913b50d77b061186788da98b4e5382b44deab29fe0ba9477c9aeab476"
+    },
+    {
+      "path": "tracks/tog/tasks/t55-axisymmetric-reference/input-manifest.json",
+      "bytes": 2726,
+      "sha256": "f0e9d24ab7e084a893e355490988f69bc99563a2eb444b2d0baa37e6b9b00e05"
+    },
+    {
+      "path": "tracks/tog/tasks/t55-axisymmetric-reference/reference.py",
+      "bytes": 10613,
+      "sha256": "499bab137463df4435230e3cbf4d16b0723feed5ad5d06087a0bafd911204908"
+    },
+    {
+      "path": "tracks/tog/tasks/t55-axisymmetric-reference/result.json",
+      "bytes": 7436,
+      "sha256": "93ade10e42154fdc46c90aaaed3839c1362f3f05ff1b1b9b3bb971816bc41cae"
+    },
+    {
+      "path": "tracks/tog/tasks/t55-axisymmetric-reference/run_once.py",
+      "bytes": 4932,
+      "sha256": "37d8eefdbd6e7af26602568aa3447c3ad6c19a6453a0a4f54281b81a94970ffd"
+    },
+    {
+      "path": "tracks/validation/t55-reference-review.md",
+      "bytes": 16639,
+      "sha256": "5a64354733277ada655c82ffa2b39a5146c7ca9efea3195d818f2a137269bc0d"
+    }
+  ],
+  "frozen_inputs": [
+    {
+      "path": "tracks/tog/tasks/t55-axisymmetric-reference/.gitignore",
+      "bytes": 7,
+      "sha256": "a7d8bdcefba82a95ebc021d87c629fdea21f13af953bf01e28b7cf8b0eeceb41"
+    },
+    {
+      "path": "tracks/tog/tasks/t55-axisymmetric-reference/TASK.md",
+      "bytes": 4132,
+      "sha256": "b470e55c6449348136673764e7d7b975cd3bad479ddefa0d881d827eba84e89e"
+    },
+    {
+      "path": "tracks/tog/tasks/t55-axisymmetric-reference/FORMULATION.md",
+      "bytes": 4604,
+      "sha256": "7d463593ec8f021ab814d0213bcf5f9b74b1c79ae9496b6d4cab2452f6440709"
+    },
+    {
+      "path": "tracks/tog/tasks/t55-axisymmetric-reference/PROTOCOL.md",
+      "bytes": 4087,
+      "sha256": "878d7ef55fbbbe6927233b1defcad425d33c4c49ff221515fa5fabf2c833e465"
+    },
+    {
+      "path": "tracks/tog/tasks/t55-axisymmetric-reference/SOURCES.md",
+      "bytes": 5590,
+      "sha256": "6a543063d8c079ff654b9a5c1f3cb32b574efbca2e2a9c7d93525af5134d7c10"
+    },
+    {
+      "path": "tracks/tog/tasks/t55-axisymmetric-reference/reference.py",
+      "bytes": 10613,
+      "sha256": "499bab137463df4435230e3cbf4d16b0723feed5ad5d06087a0bafd911204908"
+    },
+    {
+      "path": "tracks/tog/tasks/t55-axisymmetric-reference/run_once.py",
+      "bytes": 4932,
+      "sha256": "37d8eefdbd6e7af26602568aa3447c3ad6c19a6453a0a4f54281b81a94970ffd"
+    },
+    {
+      "path": "tracks/tog/tasks/t49-affine-diffusive-state/CURL_CARRIER.md",
+      "bytes": 10494,
+      "sha256": "3ea80f3adb73eacf0318e9a362121926c3a7d229d453c408d7d9728edda71717"
+    },
+    {
+      "path": "tracks/tog/tasks/t51-self-induced-tangent/TANGENT.md",
+      "bytes": 6553,
+      "sha256": "651d7b0daa128edefcd65d4f187229762363d6d627d6575d5ea1836ca7c8a66f"
+    },
+    {
+      "path": "tracks/tog/tasks/t54-scalar-verification/DECISION.md",
+      "bytes": 4285,
+      "sha256": "52c7e6e29275e3cbe46663b43cb9117d2390bb335fef657d6ff4bb727d91a92b"
+    }
+  ],
+  "current_state_documents": [
+    {
+      "path": "tracks/STATUS.md",
+      "bytes": 75406,
+      "sha256": "1405f82f582d44b079b51b2bb8750f3d29305119cba1a53ea4c940710e39697b"
+    },
+    {
+      "path": "tracks/EXPLORATION.md",
+      "bytes": 8222,
+      "sha256": "8711f8db8c18bdfba0982fcc3d97683958ed250b21ce2c5100f118ce75c959a3"
+    },
+    {
+      "path": "tracks/tog/README.md",
+      "bytes": 8345,
+      "sha256": "758e7d92d9f0e6ca470fefb2b2f8fb870c2cb74e58548c69a0b14f318a2f0898"
+    }
+  ],
+  "preservation_chain": {
+    "parent_manifest": {
+      "path": "tracks/tog/tasks/t54-scalar-verification/audit-manifest.json",
+      "bytes": 9452,
+      "sha256": "1e32383e3976010e380a904c9504d6c9d1749367d4003bde4763b7bc48b51325"
+    },
+    "verified_prior_artifact_count": 649,
+    "all_recorded_prior_bytes_unchanged": true
+  },
+  "parent_tracked_file_count": 1177,
+  "other_parent_tracked_files_unchanged": 1174,
+  "literal_parent_blob_matches": 1160,
+  "CRLF_only_checkout_conversions": [
+    ".gitignore",
+    "CHANGELOG.md",
+    "PUBLISH.md",
+    "README.md",
+    "compare.html",
+    "index.html",
+    "research/EVIDENCE_STATUS.md",
+    "research/FRONTIER_EARLY_REJECTION.md",
+    "research/lib/p3d-baseline.json",
+    "research/lib/p3e-baseline.json",
+    "research/lib/p3f-baseline.json",
+    "research/lib/p3g-baseline.json",
+    "research/physical_reference/README.md",
+    "study/index.html"
+  ],
+  "all_parent_blob_ids_match_after_git_clean_filters": true,
+  "original_core": {
+    "path": "tracks/tog/src/core.py",
+    "bytes": 13301,
+    "sha256": "ac750b70a86743ac858f1c53cf620ce29c63c462456115af4d0d8c93fa20bd9e"
+  },
+  "historical_failures_unchanged": true,
+  "art_inactive": true,
+  "main_not_merged_or_deployed": true,
+  "automation_remains_deleted": true
+}

@@ -1,0 +1,72 @@
+{
+  "schema": "t55-initial-reference-freeze-v1",
+  "created_utc": "2026-10-29T23:53:57.540256+00:00",
+  "parent_commit": "898b5b68ea402d3696e4d6e8f6d196a1ef592916",
+  "inputs": [
+    {
+      "path": "tracks/tog/tasks/t55-axisymmetric-reference/.gitignore",
+      "bytes": 7,
+      "sha256": "a7d8bdcefba82a95ebc021d87c629fdea21f13af953bf01e28b7cf8b0eeceb41"
+    },
+    {
+      "path": "tracks/tog/tasks/t55-axisymmetric-reference/TASK.md",
+      "bytes": 4132,
+      "sha256": "b470e55c6449348136673764e7d7b975cd3bad479ddefa0d881d827eba84e89e"
+    },
+    {
+      "path": "tracks/tog/tasks/t55-axisymmetric-reference/FORMULATION.md",
+      "bytes": 4604,
+      "sha256": "7d463593ec8f021ab814d0213bcf5f9b74b1c79ae9496b6d4cab2452f6440709"
+    },
+    {
+      "path": "tracks/tog/tasks/t55-axisymmetric-reference/PROTOCOL.md",
+      "bytes": 4087,
+      "sha256": "878d7ef55fbbbe6927233b1defcad425d33c4c49ff221515fa5fabf2c833e465"
+    },
+    {
+      "path": "tracks/tog/tasks/t55-axisymmetric-reference/SOURCES.md",
+      "bytes": 5590,
+      "sha256": "6a543063d8c079ff654b9a5c1f3cb32b574efbca2e2a9c7d93525af5134d7c10"
+    },
+    {
+      "path": "tracks/tog/tasks/t55-axisymmetric-reference/reference.py",
+      "bytes": 10613,
+      "sha256": "499bab137463df4435230e3cbf4d16b0723feed5ad5d06087a0bafd911204908"
+    },
+    {
+      "path": "tracks/tog/tasks/t55-axisymmetric-reference/run_once.py",
+      "bytes": 4932,
+      "sha256": "37d8eefdbd6e7af26602568aa3447c3ad6c19a6453a0a4f54281b81a94970ffd"
+    },
+    {
+      "path": "tracks/tog/tasks/t49-affine-diffusive-state/CURL_CARRIER.md",
+      "bytes": 10494,
+      "sha256": "3ea80f3adb73eacf0318e9a362121926c3a7d229d453c408d7d9728edda71717"
+    },
+    {
+      "path": "tracks/tog/tasks/t51-self-induced-tangent/TANGENT.md",
+      "bytes": 6553,
+      "sha256": "651d7b0daa128edefcd65d4f187229762363d6d627d6575d5ea1836ca7c8a66f"
+    },
+    {
+      "path": "tracks/tog/tasks/t54-scalar-verification/DECISION.md",
+      "bytes": 4285,
+      "sha256": "52c7e6e29275e3cbe46663b43cb9117d2390bb335fef657d6ff4bb727d91a92b"
+    }
+  ],
+  "executable": {
+    "path": "C:/Users/seanzjxiao/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe",
+    "bytes": 107312,
+    "sha256": "5640e9be2fd33d05a1a9ae1228e2354609a69ab831605995ec4e2bd6da8fff5e"
+  },
+  "maximum_scientific_child_invocations": 1,
+  "child_timeout_seconds": 180,
+  "maximum_cases": 5,
+  "maximum_CG_iterations_per_case": 2000,
+  "fluid_trajectories_permitted": 0,
+  "scientific_children_before_freeze_this_task": 0,
+  "source_queries": 2,
+  "primary_documents": 3,
+  "source_web_calls": 5,
+  "pre_run_review": "t48_review scope/code and volume_screen formulation readbacks, no unresolved blocker"
+}

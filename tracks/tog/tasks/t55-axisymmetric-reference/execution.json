@@ -1,0 +1,86 @@
+{
+  "schema": "t55-initial-reference-execution-v1",
+  "started_utc": "2026-10-29T23:54:02.407073+00:00",
+  "command": [
+    "C:\\Users\\seanzjxiao\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+    "-I",
+    "-B",
+    "-u",
+    "-X",
+    "utf8",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t55-axisymmetric-reference\\reference.py"
+  ],
+  "cwd": "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians",
+  "child_timeout_seconds": 180,
+  "scientific_child_invocations": 1,
+  "input_manifest_identity": {
+    "bytes": 2726,
+    "sha256": "f0e9d24ab7e084a893e355490988f69bc99563a2eb444b2d0baa37e6b9b00e05"
+  },
+  "code_identity": {
+    "bytes": 10613,
+    "sha256": "499bab137463df4435230e3cbf4d16b0723feed5ad5d06087a0bafd911204908"
+  },
+  "supervisor_identity": {
+    "bytes": 4932,
+    "sha256": "37d8eefdbd6e7af26602568aa3447c3ad6c19a6453a0a4f54281b81a94970ffd"
+  },
+  "executable_identity": {
+    "bytes": 107312,
+    "sha256": "5640e9be2fd33d05a1a9ae1228e2354609a69ab831605995ec4e2bd6da8fff5e"
+  },
+  "fluid_trajectories": 0,
+  "returncode": 0,
+  "status": "completed_qualified_initial_only",
+  "child_supervised_seconds": 3.918251399998553,
+  "logs": [
+    {
+      "path": "local/stdout.txt",
+      "bytes": 2028,
+      "sha256": "03c8cbaf4ad8ec7efc7a0441f82528156a26d8bf08cc549d30fc6ce737d411a8"
+    },
+    {
+      "path": "local/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "frozen_inputs_unchanged": true,
+  "executable_unchanged": true,
+  "result_json_exists": true,
+  "qualified_initial_only": true,
+  "partial_case_records": [
+    {
+      "path": "local/D96.json",
+      "bytes": 1109,
+      "sha256": "9e302360551e64e9ff92728b16fa41c19bff7cecc5a53c343ba297d5ce26ecd0"
+    },
+    {
+      "path": "local/Q64.json",
+      "bytes": 1111,
+      "sha256": "83329562432d2e4897fa8a37ad69e6012ef95b4370695b812b178c5e4d018ac4"
+    },
+    {
+      "path": "local/S128.json",
+      "bytes": 1112,
+      "sha256": "9e6013678ded661383c4b4b4fc3377c0aa704f43c6b2c9b4b5e961fa9858d51e"
+    },
+    {
+      "path": "local/S32.json",
+      "bytes": 1103,
+      "sha256": "dbdc91f10d9b72680ee2ba235eedc93579699701540ec201556c82139537e339"
+    },
+    {
+      "path": "local/S64.json",
+      "bytes": 1111,
+      "sha256": "2398142ac08358271c868cee836a4504b8e32767346b3ed214fe216ff0afbe2c"
+    }
+  ],
+  "result_identity": {
+    "bytes": 7436,
+    "sha256": "93ade10e42154fdc46c90aaaed3839c1362f3f05ff1b1b9b3bb971816bc41cae"
+  },
+  "result_status": "qualified_initial_only",
+  "supervisor_elapsed_before_receipt_write_seconds": 3.942284299992025,
+  "finished_utc": "2026-10-29T23:54:06.346906+00:00"
+}
