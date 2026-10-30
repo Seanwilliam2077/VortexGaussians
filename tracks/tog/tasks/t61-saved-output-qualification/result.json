@@ -1,0 +1,112 @@
+{
+  "schema": "t61-saved-output-qualification-v1",
+  "status": "qualified_saved_reference_ordinary_model_fail",
+  "accepted_saved_evidence": true,
+  "reference_qualified_full_window": true,
+  "ordinary_model_verdict": "fail",
+  "full_t1_task_pass": false,
+  "T60_history_reclassified": false,
+  "new_scientific_trajectories": 0,
+  "new_scientific_invocations": 0,
+  "reference_checks": {
+    "initial_analytic": true,
+    "all_stage_invariants": true,
+    "vorticity_disagreements": true,
+    "velocity_disagreements": true,
+    "centroid_disagreements": true,
+    "covariance_disagreements": true,
+    "spatial_reduction": true,
+    "circulation_ledger": true,
+    "q_squared_drift": true,
+    "axial_impulse_drift": true,
+    "full_box_vorticity_disagreements": true,
+    "full_box_spatial_reduction": true
+  },
+  "model_checks": {
+    "vorticity_L2": false,
+    "axial_centroid": true,
+    "covariance": false
+  },
+  "score_integration_qualified": true,
+  "meaningful_motion": true,
+  "counts": {
+    "solves": 5630,
+    "stages": 5600,
+    "steps": 2800,
+    "snapshots": 30
+  },
+  "raw_files_hashed_not_loaded": 36,
+  "normalized_evidence_paths": [
+    {
+      "supplied": "local\\checkpoints.jsonl",
+      "logical": "local/checkpoints.jsonl",
+      "identity": {
+        "bytes": 15545,
+        "sha256": "de79508769016fca4a4b1544da2f039975fceb4aec7aa064c7cbfebac2324c7b"
+      }
+    },
+    {
+      "supplied": "local\\reference-evaluation.json",
+      "logical": "local/reference-evaluation.json",
+      "identity": {
+        "bytes": 26487,
+        "sha256": "8ef86e040f85436f9fc92b62d3379e92ea4dd43bd1c4787ebf63c799529e280a"
+      }
+    },
+    {
+      "supplied": "local\\ordinary-model-screen.json",
+      "logical": "local/ordinary-model-screen.json",
+      "identity": {
+        "bytes": 37195,
+        "sha256": "993e73d28640fcf5eb4347a1c949f70719dd9bad7e05f0c22c10af55e9e8f90d"
+      }
+    }
+  ],
+  "original_failed_receipt": {
+    "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/execution.json",
+    "bytes": 22168,
+    "sha256": "3eaf3d644c649ed26dc10d9a1f52546232b635a4e2c598ac47564c78197c727e"
+  },
+  "original_numerical_result": {
+    "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/result.json",
+    "bytes": 136401,
+    "sha256": "8908fe090dd50c2c60291ffde31a52fb0e525063d9a66646462c6d3e6ba88954"
+  },
+  "saved_array_review": {
+    "path": "tracks/validation/t60-full-window-review.md",
+    "bytes": 7536,
+    "sha256": "66bd20356a1aaf1622498ce83849ed1150a1d6784f2a11c0ddb15b17f83db4a4",
+    "attribution": "Prior t48_review saved-array/log reduction; not repeated by this metadata-only child."
+  },
+  "limitations": [
+    "No array decoding or new integration; core field measurements are saved scalars.",
+    "Unsaved intermediate face upper bounds rely on frozen producer assertions; logged minimum/solver/CFL conditions are rechecked.",
+    "D8, five sampled times, empirical reference and rule agreement; no formal whole-space or continuous-time certificate."
+  ],
+  "scalar_readback_tolerance": {
+    "relative": 3e-11,
+    "absolute": 3e-14,
+    "scientific_thresholds_changed": false
+  },
+  "input_manifest": {
+    "bytes": 31766,
+    "sha256": "ed4e5a7b8392f4ffaea6fa0705d4715edd0a5aab9792b74030066b0f061d616d"
+  },
+  "input_count": 151,
+  "external_input_count": 1,
+  "all_input_identities_unchanged": true,
+  "files_read_or_hashed": 153,
+  "python": "3.12.13",
+  "executable": "C:\\Users\\seanzjxiao\\miniconda3\\envs\\gs-sph-3d\\python.exe",
+  "code": {
+    "bytes": 38303,
+    "sha256": "231174ee776cf59b0a5d986e0869709352d2516af9548b16611b124e8c727304"
+  },
+  "path_contract": {
+    "bytes": 1207,
+    "sha256": "68b370059443a6ca4e8c8af6d1365af39021e7764ab8772b67faee7fbcf0caa3"
+  },
+  "original_scientific_history_seconds": 1976.6796338998247,
+  "qualification_child_elapsed_before_result_write_seconds": 0.8606901998864487,
+  "created_utc": "2026-10-30T03:27:24.466044+00:00"
+}

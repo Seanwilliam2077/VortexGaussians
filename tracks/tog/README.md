@@ -1,6 +1,6 @@
 # TOG 研究轨道：从创作需求到可审查任务
 
-**当前进度（2026-10-30）：** [T60](tasks/t60-full-window-gaussian-screen/README.md) 已完成六条完整 t=1 轨迹，耗时 416.261 秒，保留 30 个快照与全部 36 个 NPZ；但最终验收因 Windows 路径分隔符的字符串比较而失败，原回执仍为 failed_result_validation_no_retry、模型结论未获资格。独立保存数据复核支持内部读数：t=1 高斯涡量误差约 11.62%、质心误差 .0827、形状误差 .10057。它们尚不是本轮正式模型判定。[下一项](tasks/t60-full-window-gaussian-screen/DECISION.md) 只对现有证据做独立冻结的只读验收，不重跑轨迹或修改历史门。TOG 核心贡献未建立；目标 active、艺术 inactive、main 与已删除自动化不变。
+**当前进度（2026-10-30）：** [T61](tasks/t61-saved-output-qualification/README.md) 已接受现有完整窗口参考数据：全部 12 项参考检查通过；现有普通单高斯推进在 t=1 的涡量误差 .11619 和协方差误差 .10057 超过原 .10 门槛，轴向质心误差 .08270 通过。本轮只读验收耗时 .966396 秒，未新增轨迹或积分，T60 的历史失败回执保持不变。[下一项](tasks/t61-saved-output-qualification/DECISION.md) 推导联合单高斯容量 oracle 的有限测试合同，先区分推进规则误差与表达能力限制，不直接开发新方法。TOG 核心贡献未建立；目标 active、艺术 inactive、main 与已删除自动化不变。
 
 **目标是形成可发表的研究贡献；目前没有已经建立的 TOG 贡献。** 此目录首先把“艺术 brief—物理控制—像素指标”变成明确、可携带的输入合同。它提供普通共同模型、规格检查和单次控制验收，不包含响应缓存、新优化算法或自动创作系统。原仓库 demo 和既有 research 保持原状。
 
@@ -64,4 +64,4 @@ python tracks/tog/check_interfaces.py
 
 ## 当前下一步
 
-[T60 的计算与验收故障](tasks/t60-full-window-gaussian-screen/README.md) 已封存；[下一有限任务](tasks/t60-full-window-gaussian-screen/DECISION.md) 是一次最多 60 秒的标准库保存证据验收，处理三处已定位的相对路径格式，同时保持全部物理判别、旧回执和原始数据不变。尚未选择新数值实验、拟合或方法。
+[T61 的保存证据验收](tasks/t61-saved-output-qualification/README.md) 已封存，现有普通高斯轨迹未通过原联合精度要求。[下一有限任务](tasks/t61-saved-output-qualification/DECISION.md) 是一份联合容量测试的解析合同：保留原场、轴向质心与协方差门，允许离线自由振幅和宽度，先明确可行见证与局部搜索失败分别能说明什么；准备阶段不执行拟合或科学计算。

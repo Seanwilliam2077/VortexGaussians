@@ -1,0 +1,785 @@
+{
+  "schema": "t61-saved-output-freeze-v1",
+  "created_utc": "2026-10-30T03:26:33.990018+00:00",
+  "parent_commit": "6f33ee3e87206a4e7f8e936c4b4045c52d874191",
+  "inputs": [
+    {
+      "path": "tracks/tog/tasks/t54-scalar-verification/audit-manifest.json",
+      "bytes": 9452,
+      "sha256": "1e32383e3976010e380a904c9504d6c9d1749367d4003bde4763b7bc48b51325"
+    },
+    {
+      "path": "tracks/tog/tasks/t54-scalar-verification/execution.json",
+      "bytes": 2507,
+      "sha256": "d442dd6cefb0a2b23ced9a83e857e05861167ed510089a837098c9f6f1010c4f"
+    },
+    {
+      "path": "tracks/tog/tasks/t54-scalar-verification/input-manifest.json",
+      "bytes": 2180,
+      "sha256": "7dd936c46c0652602d5c2f8ce24c5ef14aa55f672db803c43bd7d6e1cca92308"
+    },
+    {
+      "path": "tracks/tog/tasks/t54-scalar-verification/result.json",
+      "bytes": 3679,
+      "sha256": "66a83b67cff104773217757bc08fe9751dd357824778b130c432a4191d7cc9b8"
+    },
+    {
+      "path": "tracks/tog/tasks/t55-axisymmetric-reference/FORMULATION.md",
+      "bytes": 4604,
+      "sha256": "7d463593ec8f021ab814d0213bcf5f9b74b1c79ae9496b6d4cab2452f6440709"
+    },
+    {
+      "path": "tracks/tog/tasks/t55-axisymmetric-reference/reference.py",
+      "bytes": 10613,
+      "sha256": "499bab137463df4435230e3cbf4d16b0723feed5ad5d06087a0bafd911204908"
+    },
+    {
+      "path": "tracks/tog/tasks/t55-axisymmetric-reference/TASK.md",
+      "bytes": 4132,
+      "sha256": "b470e55c6449348136673764e7d7b975cd3bad479ddefa0d881d827eba84e89e"
+    },
+    {
+      "path": "tracks/tog/tasks/t56-coupled-reference/audit-manifest.json",
+      "bytes": 9396,
+      "sha256": "601bc9d1b431d7fa1ed8703d007dc118297c90ffdce00150fb83083d79643622"
+    },
+    {
+      "path": "tracks/tog/tasks/t56-coupled-reference/execution.json",
+      "bytes": 4937,
+      "sha256": "6a2b25ae1b11c47921f535589637a7412b9d9c94110b617e285bc7b38d02b746"
+    },
+    {
+      "path": "tracks/tog/tasks/t56-coupled-reference/FORMULATION.md",
+      "bytes": 5434,
+      "sha256": "0500b1fad0d187f7815f5751f33ec78835d60ea9b047b21ed08e74c28d39f029"
+    },
+    {
+      "path": "tracks/tog/tasks/t56-coupled-reference/input-manifest.json",
+      "bytes": 2723,
+      "sha256": "cd353bc8eec8eb4616be9f44922fcafcad67e953a85545db1f5c6286d9548967"
+    },
+    {
+      "path": "tracks/tog/tasks/t56-coupled-reference/PROTOCOL.md",
+      "bytes": 7332,
+      "sha256": "1b7defa36dbe33df2ff6d01ca52aa62117ea7aeaea8a1121d4deba66406ae537"
+    },
+    {
+      "path": "tracks/tog/tasks/t56-coupled-reference/reference.py",
+      "bytes": 17488,
+      "sha256": "51499f5c50b8f7f25ebb8df2569bc7eff085938cbd9d88f36b8604f9aaa4e01f"
+    },
+    {
+      "path": "tracks/tog/tasks/t56-coupled-reference/result.json",
+      "bytes": 31700,
+      "sha256": "95e616130f169cf325f79f3e27f79ac5879a029fef922291e92d4b11842ee099"
+    },
+    {
+      "path": "tracks/tog/tasks/t57-finer-short-reference/audit-manifest.json",
+      "bytes": 13819,
+      "sha256": "4fe8d7f41632910d26d6e3eadb66d9879715d3ba5a3232aa9ba107ad14db3aa8"
+    },
+    {
+      "path": "tracks/tog/tasks/t57-finer-short-reference/DECISION.md",
+      "bytes": 9091,
+      "sha256": "2ff004ffa50276bdbf425d80df06be29b1017abbc60180fe04050221c900f328"
+    },
+    {
+      "path": "tracks/tog/tasks/t57-finer-short-reference/execution.json",
+      "bytes": 2793,
+      "sha256": "0fba254f5b3b485eca041fd93a3dd1cd0bb1ddb780b94e28faf0d190bd6f4672"
+    },
+    {
+      "path": "tracks/tog/tasks/t57-finer-short-reference/input-manifest.json",
+      "bytes": 6538,
+      "sha256": "6dc00fa6ed67bcd689e95b5c31457818e359d8142921e0b3da6a10c60430e91f"
+    },
+    {
+      "path": "tracks/tog/tasks/t57-finer-short-reference/memory.py",
+      "bytes": 2231,
+      "sha256": "4b83a89eff664dc0d86fb0c71b39c99d71720c1d18c5f93557e279d0ca3745fd"
+    },
+    {
+      "path": "tracks/tog/tasks/t57-finer-short-reference/PROTOCOL.md",
+      "bytes": 6948,
+      "sha256": "02cab7e2195ab268dd3d00c98ab741825a44f9d80176e64115faa600ef30404d"
+    },
+    {
+      "path": "tracks/tog/tasks/t58-separable-solver-qualification/audit-manifest.json",
+      "bytes": 16322,
+      "sha256": "30c1c8fcd0350367d998c84e6ff2106d65b72eefeea27233aa562409a21960e0"
+    },
+    {
+      "path": "tracks/tog/tasks/t58-separable-solver-qualification/DECISION.md",
+      "bytes": 7594,
+      "sha256": "116bf655a4c48cf4917b27053794e843fa234ae8966000a32f460f212685aed6"
+    },
+    {
+      "path": "tracks/tog/tasks/t58-separable-solver-qualification/execution.json",
+      "bytes": 8875,
+      "sha256": "8fd003d7f2775c32744177b0808a3f4779711046c119c50f948994022ad2087f"
+    },
+    {
+      "path": "tracks/tog/tasks/t58-separable-solver-qualification/FORMULATION.md",
+      "bytes": 5399,
+      "sha256": "d70c1a2105a3beb2506001335a1dbb581bd768f1ce3e1ef584ba3f50608dcfa3"
+    },
+    {
+      "path": "tracks/tog/tasks/t58-separable-solver-qualification/input-manifest.json",
+      "bytes": 9574,
+      "sha256": "7d5ebdfaef27de08d97c9f6635b3a984a4d88d5a01b5fc3cefc38b4b5850675f"
+    },
+    {
+      "path": "tracks/tog/tasks/t58-separable-solver-qualification/PROTOCOL.md",
+      "bytes": 6877,
+      "sha256": "d51ae3b26279af8f3eda3eb6bb7903f95be9653093fb11ea62da8a810c667d1e"
+    },
+    {
+      "path": "tracks/tog/tasks/t58-separable-solver-qualification/result.json",
+      "bytes": 37501,
+      "sha256": "34e8a1da37322456cccb8df9d1d6c0a0c4f9a0991048d20b056b012a4dc874b9"
+    },
+    {
+      "path": "tracks/tog/tasks/t58-separable-solver-qualification/solver.py",
+      "bytes": 2790,
+      "sha256": "c643626adb909d79cb352a5d08d9355e1ecf749c6f39cc266bf98a52edbe3e16"
+    },
+    {
+      "path": "tracks/tog/tasks/t59-direct-coupled-reference/audit-manifest.json",
+      "bytes": 17475,
+      "sha256": "05e632ed56021da5970bbea266d811264e257139f19ae0adc73655bae3a94906"
+    },
+    {
+      "path": "tracks/tog/tasks/t59-direct-coupled-reference/DECISION.md",
+      "bytes": 9352,
+      "sha256": "9c628d2e047aea964fee9941e2dbfa03abed689fc6586653d66e8478429f2806"
+    },
+    {
+      "path": "tracks/tog/tasks/t59-direct-coupled-reference/execution.json",
+      "bytes": 15732,
+      "sha256": "fec3ad0d7795cff5d79531cfe127f10653bd3eb78412621d90d3cbd9701d7f6d"
+    },
+    {
+      "path": "tracks/tog/tasks/t59-direct-coupled-reference/FORMULATION.md",
+      "bytes": 3275,
+      "sha256": "c680766e71f8b59cb436d2a0b7a6ade51d1dbc7f1f7ccca66fc47c0df2a4a52f"
+    },
+    {
+      "path": "tracks/tog/tasks/t59-direct-coupled-reference/input-manifest.json",
+      "bytes": 9135,
+      "sha256": "b1d67d1b5ee3a7e0bc4da2989fb0f3c885b5f106e43196247ccdc080ad7d8ff6"
+    },
+    {
+      "path": "tracks/tog/tasks/t59-direct-coupled-reference/PROTOCOL.md",
+      "bytes": 5897,
+      "sha256": "d5b7d45c31cfed0e0f7ef1cbbd2b061a7b8d470783baa5eadaf304afff4dcc07"
+    },
+    {
+      "path": "tracks/tog/tasks/t59-direct-coupled-reference/reference.py",
+      "bytes": 23596,
+      "sha256": "341003961d69eaab70578b04d8ab55fa82aff7c0cb066f8e3a8c9395edf803a1"
+    },
+    {
+      "path": "tracks/tog/tasks/t59-direct-coupled-reference/result.json",
+      "bytes": 58706,
+      "sha256": "87085827f56a34a19e688fc8d05e467f0d3996ed93484e0cac049ae75fc159c6"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/.gitignore",
+      "bytes": 7,
+      "sha256": "a7d8bdcefba82a95ebc021d87c629fdea21f13af953bf01e28b7cf8b0eeceb41"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/audit-manifest.json",
+      "bytes": 21226,
+      "sha256": "329df466d2b8cb6b05729630e3755b00bd250d7f8435bc207a04cd6d352b25fe"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/DECISION.md",
+      "bytes": 4335,
+      "sha256": "39f5cbad6dc376b46b3249c108f89c412c19b3d216701747688bea9e0d8fd47f"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/execution.json",
+      "bytes": 22168,
+      "sha256": "3eaf3d644c649ed26dc10d9a1f52546232b635a4e2c598ac47564c78197c727e"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/FORMULATION.md",
+      "bytes": 4702,
+      "sha256": "c7acd044d5800a5818e0a77a5ee8faededda3de026194c46d875b2ea85ff220b"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/input-manifest.json",
+      "bytes": 10984,
+      "sha256": "007dea68a26f3aeb476ac89db6990f7b06d0678ebf7a3d2fb987575277a39023"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/checkpoints.jsonl",
+      "bytes": 15545,
+      "sha256": "de79508769016fca4a4b1544da2f039975fceb4aec7aa064c7cbfebac2324c7b"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/D192-snapshot-0.json",
+      "bytes": 2141,
+      "sha256": "f9897408eacd4dc21e3d238d1b4c5de3e7a5a25ccd56619df1e44a0354053505"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/D192-snapshot-0.npz",
+      "bytes": 8875346,
+      "sha256": "a7cb62e92972201c2518c04c08606c37d1d686459a6989803156e1a993bbc747"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/D192-snapshot-1.json",
+      "bytes": 2139,
+      "sha256": "32676d26168d113a90c74ac32ae0eba8662075fd8b44942df85978f95d67412a"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/D192-snapshot-1.npz",
+      "bytes": 8875346,
+      "sha256": "7d19232e3599e2d4e5c0b3ced73305ebb948a7400e977773e080f670542a2793"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/D192-snapshot-2.json",
+      "bytes": 2139,
+      "sha256": "25c42eff0467e4c759a52bc0e3bf803166bf93402efeb05a47c4121f701cd34d"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/D192-snapshot-2.npz",
+      "bytes": 8875346,
+      "sha256": "5f75a09498d952d0d9cfb2ecffa86c239754b7ceabecfee197fb29d0fbd29277"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/D192-snapshot-3.json",
+      "bytes": 2145,
+      "sha256": "e10c4385e5cf63764b05686111e70d4c9c387430ff2b4ec0d5cf01485cdb6d7b"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/D192-snapshot-3.npz",
+      "bytes": 8875346,
+      "sha256": "b31e139e3d256aa80fa8e3f457621c6371b816fbf54c8fc9182439d24887d601"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/D192-snapshot-4.json",
+      "bytes": 2134,
+      "sha256": "18bdcb55e9405df83ea98fe7cfb59e5d04a09ac7a67194ab33fc5a31a1552909"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/D192-snapshot-4.npz",
+      "bytes": 8875346,
+      "sha256": "0c9b67e086686995bd327ae43688bda118eaf269af66d3866cb70650b5d248bf"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/D192-steps.jsonl",
+      "bytes": 949713,
+      "sha256": "0adc08db3038a4a603147a4cb79fc78c38ba9688bdf2e95df65befab30ce0382"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/D192.json",
+      "bytes": 8281,
+      "sha256": "7b45da4745215a0defe025d5723a9a68698400a1f8d0d370236359b6e14f53e8"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/D192.npz",
+      "bytes": 36622212,
+      "sha256": "1ce9b3631a3752e988f06bc848bae6084aff037502df433aa313eca665e6b361"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/execution-started.json",
+      "bytes": 1534,
+      "sha256": "bbf1e0f558af17b8b0730e293f24617c0e3eea2934eb4b1d45d3a77dd06bcc63"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/memory.jsonl",
+      "bytes": 308600,
+      "sha256": "f273e716720f2ab52543279e6effa1e2ecba04a52fff1a2d4da404afac18abde"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/ordinary-model-screen.json",
+      "bytes": 37195,
+      "sha256": "993e73d28640fcf5eb4347a1c949f70719dd9bad7e05f0c22c10af55e9e8f90d"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/Q128-snapshot-0.json",
+      "bytes": 2144,
+      "sha256": "f614c260a77f14a367f895d1b64af8103352bfad438e49197d47063818ac74a0"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/Q128-snapshot-0.npz",
+      "bytes": 3951954,
+      "sha256": "42bac7da243a53dae707b0e3fc44690809abba9f94ba82209e6068d860dd4357"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/Q128-snapshot-1.json",
+      "bytes": 2146,
+      "sha256": "d1f26907421cac9005768f6d39daff535b469e7cab5a51b1e807132e59d94075"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/Q128-snapshot-1.npz",
+      "bytes": 3951954,
+      "sha256": "f185cf03ee9acfb381d38d7fcfb4d0ccdcf2990f02b99a6f0875763b5dccdbe4"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/Q128-snapshot-2.json",
+      "bytes": 2146,
+      "sha256": "29fc19f96f47b166f46fab72ad9f05167300442ff5f48c2ad9f7a45b44c6899d"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/Q128-snapshot-2.npz",
+      "bytes": 3951954,
+      "sha256": "481deb3a058afd2f254fc9e21227915425ef83d6ec9895d85ceb907f7f78714b"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/Q128-snapshot-3.json",
+      "bytes": 2149,
+      "sha256": "2ea2f267027459b6ccf45f9cd9c45802c5cc5f298cfe2383f0dddd3a9c95d241"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/Q128-snapshot-3.npz",
+      "bytes": 3951954,
+      "sha256": "7587e3b323e194a99eed6c8013d8c7c1ae0030b445161af9d205fb86d32d5be7"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/Q128-snapshot-4.json",
+      "bytes": 2149,
+      "sha256": "20320ce582a122ee0d6a5cd85b3116fd0be41415fcd85f18f23bde24834d2469"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/Q128-snapshot-4.npz",
+      "bytes": 3951954,
+      "sha256": "1248b359cb8ff2c570dbfacb3a5d8fad75200bbba92298f475df151239a0a437"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/Q128-steps.jsonl",
+      "bytes": 952344,
+      "sha256": "1750e5586e91a1db5dc6d417456420fc9b5c2e28ce90e0c1e96d9929d63286bc"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/Q128.json",
+      "bytes": 8297,
+      "sha256": "efb35ac229c43862ece644ce6cc41b777aacdf0f28a3a8a483211372bb0081fa"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/Q128.npz",
+      "bytes": 16289668,
+      "sha256": "aa92acb77b386ee428114aecde33db66128bcb21b1a39e99b93ecc62601cf9f9"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/readback-diagnosis.json",
+      "bytes": 3341,
+      "sha256": "f32af7272918b376a7907f9b2ec39bfeeb47e74d37882c8f5f85f14b716f8918"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/readback_diagnosis.py",
+      "bytes": 6799,
+      "sha256": "7cee43ac58892d1cd87d3fbf3e5222d7b3e21cbe872670d28429bef878c05dcd"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/reference-evaluation.json",
+      "bytes": 26487,
+      "sha256": "8ef86e040f85436f9fc92b62d3379e92ea4dd43bd1c4787ebf63c799529e280a"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S128-snapshot-0.json",
+      "bytes": 2144,
+      "sha256": "cd0042b4505656ac295921201236cc05fb7b0f2c87fcc3a6ffe30b9839056c8e"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S128-snapshot-0.npz",
+      "bytes": 3951954,
+      "sha256": "a91e1ac02e7abc8319c30833b7f1c7b4deb533832a9d2e613a73aad0c9a93d3c"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S128-snapshot-1.json",
+      "bytes": 2146,
+      "sha256": "c1dbe8a3a5f62ed4d4cb65c3ddfb13c76352307e417de73306e6b5ea26a561ca"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S128-snapshot-1.npz",
+      "bytes": 3951954,
+      "sha256": "709b0158e088c24d3a5be465282af26827f8506a01e6e9a295330544ad893bf9"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S128-snapshot-2.json",
+      "bytes": 2144,
+      "sha256": "436787a7fc29f991aeff38ab56f0bdf3f49e8a760d2ef897436ba725cf16ce2a"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S128-snapshot-2.npz",
+      "bytes": 3951954,
+      "sha256": "75e0acd72edba8f7892581778e116d24d6b545ba9f28b60e7b9774a495dbcefb"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S128-snapshot-3.json",
+      "bytes": 2150,
+      "sha256": "f82f55e2b24c024bc533ab66a2494a63597b9412d9e423e8629dc24642061c02"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S128-snapshot-3.npz",
+      "bytes": 3951954,
+      "sha256": "a356eb7bd89a1000ff161e7fdf35bb88948bd6b0ff07bc5c8decfc30368c9443"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S128-snapshot-4.json",
+      "bytes": 2146,
+      "sha256": "6d64d7288798d56e5fece9f2eca177761c5829d0cf6541e7bef7748a49f6a158"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S128-snapshot-4.npz",
+      "bytes": 3951954,
+      "sha256": "33375f8db5ebed664069b969d2d45bf33e5732eddd34d6078a674164e1e6c7a0"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S128-steps.jsonl",
+      "bytes": 952183,
+      "sha256": "50d614a32495559fddf2cd6feae22f48981bc9e35254c1142ae0be50724ead18"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S128.json",
+      "bytes": 8295,
+      "sha256": "9b2123bcf96e93fe40285978b321ce94ed6d7fd0cfb81e7e446f04fceb6da93b"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S128.npz",
+      "bytes": 16289668,
+      "sha256": "fb63061660a8e2fdde2fdf83df08e0d52573d5fa76feb13d5dd520794ccfb5ad"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S256-snapshot-0.json",
+      "bytes": 2144,
+      "sha256": "5bb3e8be49fb1fe508dd892800b82fdf1e390f18c72a94cc3887c5e20d11ea93"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S256-snapshot-0.npz",
+      "bytes": 15764818,
+      "sha256": "c4cf52a4487e0072a4cdbe4bcb901443a31663a1e5036b6d8934f0e5ce880cb9"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S256-snapshot-1.json",
+      "bytes": 2139,
+      "sha256": "786d41f4a3df8dfab112ffe0a50090fc4d2cd1cc243d9d54130a24721d61bbc1"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S256-snapshot-1.npz",
+      "bytes": 15764818,
+      "sha256": "862449dbe4b4f2f32cc2c63b697180c353c70e6fe813ad32d4c2304e732131fb"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S256-snapshot-2.json",
+      "bytes": 2141,
+      "sha256": "45e2657db09f932ee870e1541972630f529beff9cebb02cbc8ad46e172df6fe4"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S256-snapshot-2.npz",
+      "bytes": 15764818,
+      "sha256": "6651417679b252eb25b8ee62ffe0c830b033160cbfe905c38486d634c81ec080"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S256-snapshot-3.json",
+      "bytes": 2140,
+      "sha256": "e0e460a50791966c0b400e675c7341888b51f6ecbbc50a5a716f2be60d03fbf2"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S256-snapshot-3.npz",
+      "bytes": 15764818,
+      "sha256": "8fed918c0ff8c0ef7a2756fd1fbc493d9d2b1a18b9242ba68ddecdc4bdd9f5b6"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S256-snapshot-4.json",
+      "bytes": 2143,
+      "sha256": "bdf326b8ae13b0e2431105db2c6e43d1cc76707c3564769840b6f07e22835644"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S256-snapshot-4.npz",
+      "bytes": 15764818,
+      "sha256": "9830bbfc8b7e36a3baed2f5669733998bf2f7f48143c19dfdadaeb40dbb1ec16"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S256-steps.jsonl",
+      "bytes": 945014,
+      "sha256": "adea60404560baa52c8f94981405f48873966fde4f99e55a8b3acce14a78bad4"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S256.json",
+      "bytes": 8299,
+      "sha256": "2f7f1dc0ca14e5c6c7d46f0e7256f386fd35e01c502c555f893de637da3ac47a"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S256.npz",
+      "bytes": 65081220,
+      "sha256": "cdd0a189c9418198cb6f22af141a865e45d67e99b6e887ed3be6f086a777b527"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S64-snapshot-0.json",
+      "bytes": 2147,
+      "sha256": "9c477e78791c6f4014a67bc02e9eddca005d9fd470f7bb0d50068457b53aaa8a"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S64-snapshot-0.npz",
+      "bytes": 994642,
+      "sha256": "2fd47fb6177a37105d1942e1028bbbacf04f741a2b160fa84a76941deba1763a"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S64-snapshot-1.json",
+      "bytes": 2139,
+      "sha256": "19c6fca93e0d32d737458f561525431357983f0b130bbe3298f59412f2773632"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S64-snapshot-1.npz",
+      "bytes": 994642,
+      "sha256": "03179445fdf49d5fa5a28641e293b4db6ddf5b781eb45f68a9d6ef4dd3b37068"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S64-snapshot-2.json",
+      "bytes": 2137,
+      "sha256": "e4edf8c85b5301c6323cd5e6526e47aa1f8781b0eb6a0fdbd8fdd1be5f91a2be"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S64-snapshot-2.npz",
+      "bytes": 994642,
+      "sha256": "853ed2155f724776148c2e1785f64ce9142886fea118bb008584c134f8b84ec9"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S64-snapshot-3.json",
+      "bytes": 2141,
+      "sha256": "c363a3655e2b904d9a5f50a7e0a488b6b41c5450b46762d7b29de6978f152e7a"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S64-snapshot-3.npz",
+      "bytes": 994642,
+      "sha256": "fbd60e3b14abb57b1408b018e64b37fc2ca6644c47523b6490641ae452378c2b"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S64-snapshot-4.json",
+      "bytes": 2141,
+      "sha256": "4dc5f5310d8db479786ba3f12bb935a4535e0f2336a4d5a2d7b80cc7d232b931"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S64-snapshot-4.npz",
+      "bytes": 994642,
+      "sha256": "85f38e5b75c7d68297afa8d9cea2c0bcc1b939ea29226f720a3e4a0f090bc78a"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S64-steps.jsonl",
+      "bytes": 955151,
+      "sha256": "57c5edd5fc25edba54ce4b6df528ba913db56fd8c9b5844125ac519f02b85c3a"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S64.json",
+      "bytes": 8261,
+      "sha256": "42210b37098ad1be573cfdd128f8f4b86b8c09611deea6777898a562cb570d33"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S64.npz",
+      "bytes": 4083588,
+      "sha256": "b35d3c932f46038fcbe3e1108326e066b740f0c7cbb64a74b5be352cb938cebf"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/stdout.txt",
+      "bytes": 7127,
+      "sha256": "f5abde9966154191d6ef3029655eef14005bc7355eb3c57f0c9e39f3c4e1e74d"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/T128-snapshot-0.json",
+      "bytes": 2143,
+      "sha256": "dbe9ae9fe8a4effaa6bb439f8b45423353fe4d0accf273fd691965af45bd3e91"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/T128-snapshot-0.npz",
+      "bytes": 3951954,
+      "sha256": "a91e1ac02e7abc8319c30833b7f1c7b4deb533832a9d2e613a73aad0c9a93d3c"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/T128-snapshot-1.json",
+      "bytes": 2151,
+      "sha256": "430916443e73f4a89d27266ea997d5ac55b802c3be584b26831ce1ac293c7ef9"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/T128-snapshot-1.npz",
+      "bytes": 3951954,
+      "sha256": "9794c784b3cc388372d699d3debf0eef7417744d6eabc0e99ccaa1ad22869336"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/T128-snapshot-2.json",
+      "bytes": 2147,
+      "sha256": "9584bd13ae5bac9833a38af8205cde3a9e93625ea9153224ce3c480e9270a3bf"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/T128-snapshot-2.npz",
+      "bytes": 3951954,
+      "sha256": "88c110c6c036c8bafc87fd3c3c51fed487b8d157a3b6088e4ca7cd10bfe5183e"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/T128-snapshot-3.json",
+      "bytes": 2144,
+      "sha256": "ffab4b612e62ecb2c291c446c53d1359cb70569a6ab5a4f5628d6893e301e3a4"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/T128-snapshot-3.npz",
+      "bytes": 3951954,
+      "sha256": "b30ad5728aba92b4990b93df483eef992387822bd89e11369d440a69d7610ef7"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/T128-snapshot-4.json",
+      "bytes": 2143,
+      "sha256": "3f82f6416b2e4f4437c11c580c8cce333476fd8f63d063b13cd9253ca911a2e2"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/T128-snapshot-4.npz",
+      "bytes": 3951954,
+      "sha256": "0d0ede388e9abe9d70e71a169cae23627b8d200d2bb801023b5cae562ffee096"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/T128-steps.jsonl",
+      "bytes": 1899050,
+      "sha256": "3aa64d26722b0f66a4e9de27ab4d098bb6d0cbc83a4e73b4d3a25a6de338c2c2"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/T128.json",
+      "bytes": 8301,
+      "sha256": "c39949428d31f73389a7942546a06ce7cef6b9e66e1bf2964a5dd0a0479d4f72"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/T128.npz",
+      "bytes": 16289668,
+      "sha256": "eca043697cfefb5cc54ce422846458f3696ff191964818bd8e202a100f4e74c4"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/measurement.py",
+      "bytes": 17413,
+      "sha256": "3a8168baa58d6ba965a9ca609c8c03eb7d167020eac06f65dee695e4fd1cc2aa"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/PROTOCOL.md",
+      "bytes": 7451,
+      "sha256": "1da093026ce7da401e4bbc9850bff2f0322e5c04dd123aff76e579cfc23c92bc"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/README.md",
+      "bytes": 1683,
+      "sha256": "ec64c01e1a4761c99fe3006e2fb2b6d4e4c4d31a3f75e8a46c63a360652cb85f"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/reference.py",
+      "bytes": 26760,
+      "sha256": "a4e91488b3130dcf659f324fc6d5614ebee9717824079aab5e7388e36737befb"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/resource-preflight.json",
+      "bytes": 906,
+      "sha256": "4f960fb9185c38384eebfd5b60bee2e0cd32e8e23d0288ef507a6fa150497f0d"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/resource_preflight.py",
+      "bytes": 1589,
+      "sha256": "5d72449961f7af148d0c6e0c54a24c28b63427948a6e5be696042ff6ec357368"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/result.json",
+      "bytes": 136401,
+      "sha256": "8908fe090dd50c2c60291ffde31a52fb0e525063d9a66646462c6d3e6ba88954"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/RESULTS.md",
+      "bytes": 7616,
+      "sha256": "428d4961804028be610edca1782def1a42841fc8eee21dd3973c8e1a652c001d"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/run_once.py",
+      "bytes": 22266,
+      "sha256": "d6c620f76f0805f7bfe510ba0d8bdc5b52634fc68146d6a6b4c706b6d9eef1ca"
+    },
+    {
+      "path": "tracks/tog/tasks/t61-saved-output-qualification/.gitignore",
+      "bytes": 7,
+      "sha256": "a7d8bdcefba82a95ebc021d87c629fdea21f13af953bf01e28b7cf8b0eeceb41"
+    },
+    {
+      "path": "tracks/tog/tasks/t61-saved-output-qualification/local/check_paths.py",
+      "bytes": 2461,
+      "sha256": "c0e5d01d41ee2f6036419da5b02c73722f98b83b1c6678af516d9b29ded43f8c"
+    },
+    {
+      "path": "tracks/tog/tasks/t61-saved-output-qualification/path-checks.json",
+      "bytes": 3537,
+      "sha256": "04f46075b5f705ada56becc6a4fb8865030f804df9b76500f7007552f90aa919"
+    },
+    {
+      "path": "tracks/tog/tasks/t61-saved-output-qualification/path_contract.py",
+      "bytes": 1207,
+      "sha256": "68b370059443a6ca4e8c8af6d1365af39021e7764ab8772b67faee7fbcf0caa3"
+    },
+    {
+      "path": "tracks/tog/tasks/t61-saved-output-qualification/PROTOCOL.md",
+      "bytes": 5617,
+      "sha256": "555139a1e3ba7c5dd4ea1469ed0da5a014bf006f6e757eff06a5943d1151a06b"
+    },
+    {
+      "path": "tracks/tog/tasks/t61-saved-output-qualification/run_once.py",
+      "bytes": 7078,
+      "sha256": "71a0b2e07a1cef79b2829731faedd61bc8441e29f08611fa0c7722031b278d21"
+    },
+    {
+      "path": "tracks/tog/tasks/t61-saved-output-qualification/validate.py",
+      "bytes": 38303,
+      "sha256": "231174ee776cf59b0a5d986e0869709352d2516af9548b16611b124e8c727304"
+    },
+    {
+      "path": "tracks/validation/t54-scalar-review.md",
+      "bytes": 13323,
+      "sha256": "f1625f71aef525e3c08a1c16b37ecc7fdcbb1de5c1ba3c5e545b376dcc5454f7"
+    },
+    {
+      "path": "tracks/validation/t56-coupled-review.md",
+      "bytes": 17447,
+      "sha256": "ec44008a21429649bca6c2d77ff2b242003124e602510cf02d8e531ec8a62a4a"
+    },
+    {
+      "path": "tracks/validation/t57-finer-short-review.md",
+      "bytes": 21442,
+      "sha256": "217b5d2acd9b8e1409258ec6ca3cfd17293fa36466bbfb82ddb6cb9d39129a29"
+    },
+    {
+      "path": "tracks/validation/t58-separable-solver-review.md",
+      "bytes": 20591,
+      "sha256": "6ca648849dd1e10e014cedc2cb7c25194b9312e0802e93a468faa78c19987b1b"
+    },
+    {
+      "path": "tracks/validation/t59-direct-coupled-review.md",
+      "bytes": 10951,
+      "sha256": "456e6803469441b68c1d37be775f23bdf6851629003aa455e4b131d8c8c0ed91"
+    },
+    {
+      "path": "tracks/validation/t60-full-window-review.md",
+      "bytes": 7536,
+      "sha256": "66bd20356a1aaf1622498ce83849ed1150a1d6784f2a11c0ddb15b17f83db4a4"
+    }
+  ],
+  "external_inputs": [
+    {
+      "path": "C:/Users/seanzjxiao/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe",
+      "bytes": 107312,
+      "sha256": "5640e9be2fd33d05a1a9ae1228e2354609a69ab831605995ec4e2bd6da8fff5e"
+    }
+  ],
+  "executable": {
+    "path": "C:/Users/seanzjxiao/miniconda3/envs/gs-sph-3d/python.exe",
+    "bytes": 93184,
+    "sha256": "a7564ce2b593db9ede125b448afc21ca2ee2717ceea49874e5ffe5e62bceabd9"
+  },
+  "expected_python": "3.12.13",
+  "maximum_qualification_child_invocations": 1,
+  "child_timeout_seconds": 60,
+  "new_scientific_invocations_permitted": 0,
+  "new_scientific_trajectories_permitted": 0,
+  "prior_T56_through_T60_scientific_child_seconds": 1976.6796338998247,
+  "path_literal_preparation_invocations": 1,
+  "path_positive_cases": 6,
+  "path_negative_cases": 17,
+  "pre_run_review": "root and t48_review reviewed actual sources/protocol/runner; volume_screen validator/path author; no unresolved blocker",
+  "T60_history_reclassified": false
+}

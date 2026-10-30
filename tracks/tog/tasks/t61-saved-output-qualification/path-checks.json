@@ -1,0 +1,133 @@
+{
+  "schema": "t61-path-contract-checks-v1",
+  "created_utc": "2026-10-30T03:08:10.818402+00:00",
+  "status": "passed_literal_path_checks",
+  "accepted_cases": 6,
+  "rejected_cases": 17,
+  "source_identity": {
+    "bytes": 1207,
+    "sha256": "68b370059443a6ca4e8c8af6d1365af39021e7764ab8772b67faee7fbcf0caa3"
+  },
+  "cases": [
+    {
+      "value": "local/checkpoints.jsonl",
+      "expected": "local/checkpoints.jsonl",
+      "accepted": true
+    },
+    {
+      "value": "local\\checkpoints.jsonl",
+      "expected": "local/checkpoints.jsonl",
+      "accepted": true
+    },
+    {
+      "value": "local/ordinary-model-screen.json",
+      "expected": "local/ordinary-model-screen.json",
+      "accepted": true
+    },
+    {
+      "value": "local\\ordinary-model-screen.json",
+      "expected": "local/ordinary-model-screen.json",
+      "accepted": true
+    },
+    {
+      "value": "local/reference-evaluation.json",
+      "expected": "local/reference-evaluation.json",
+      "accepted": true
+    },
+    {
+      "value": "local\\reference-evaluation.json",
+      "expected": "local/reference-evaluation.json",
+      "accepted": true
+    },
+    {
+      "value": "",
+      "expected": "local/checkpoints.jsonl",
+      "accepted": false
+    },
+    {
+      "value": null,
+      "expected": "local/checkpoints.jsonl",
+      "accepted": false
+    },
+    {
+      "value": "/local/checkpoints.jsonl",
+      "expected": "local/checkpoints.jsonl",
+      "accepted": false
+    },
+    {
+      "value": "\\local\\checkpoints.jsonl",
+      "expected": "local/checkpoints.jsonl",
+      "accepted": false
+    },
+    {
+      "value": "C:/local/checkpoints.jsonl",
+      "expected": "local/checkpoints.jsonl",
+      "accepted": false
+    },
+    {
+      "value": "C:local/checkpoints.jsonl",
+      "expected": "local/checkpoints.jsonl",
+      "accepted": false
+    },
+    {
+      "value": "//server/share/local/checkpoints.jsonl",
+      "expected": "local/checkpoints.jsonl",
+      "accepted": false
+    },
+    {
+      "value": "../local/checkpoints.jsonl",
+      "expected": "local/checkpoints.jsonl",
+      "accepted": false
+    },
+    {
+      "value": "local//checkpoints.jsonl",
+      "expected": "local/checkpoints.jsonl",
+      "accepted": false
+    },
+    {
+      "value": "local/./checkpoints.jsonl",
+      "expected": "local/checkpoints.jsonl",
+      "accepted": false
+    },
+    {
+      "value": "local/../local/checkpoints.jsonl",
+      "expected": "local/checkpoints.jsonl",
+      "accepted": false
+    },
+    {
+      "value": "local\\..\\local\\checkpoints.jsonl",
+      "expected": "local/checkpoints.jsonl",
+      "accepted": false
+    },
+    {
+      "value": "local/checkpoints.jsonl/",
+      "expected": "local/checkpoints.jsonl",
+      "accepted": false
+    },
+    {
+      "value": "local/unknown.json",
+      "expected": "local/checkpoints.jsonl",
+      "accepted": false
+    },
+    {
+      "value": "local/reference-evaluation.json",
+      "expected": "local/checkpoints.jsonl",
+      "accepted": false
+    },
+    {
+      "value": "local/checkpoints.jsonl:stream",
+      "expected": "local/checkpoints.jsonl",
+      "accepted": false
+    },
+    {
+      "value": "local/checkpoints.jsonl",
+      "expected": "local/unknown.json",
+      "accepted": false
+    }
+  ],
+  "numerical_imports": 0,
+  "qualification_children": 0,
+  "scientific_invocations": 0,
+  "elapsed_before_receipt_write_seconds": 0.0046048000222072005,
+  "scope": "Literal path semantics only; static containment code reviewed, no symlink fixture or scientific evaluation"
+}
