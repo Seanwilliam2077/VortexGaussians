@@ -1,0 +1,16 @@
+:root { color-scheme: dark; font-family: system-ui, sans-serif; background: #171b1a; color: #c9ccc5; }
+* { box-sizing: border-box; }
+body { margin: 0; min-height: 100vh; display: grid; place-items: center; }
+main { width: min(100vw, 1280px); }
+canvas { display: block; width: 100%; height: auto; aspect-ratio: 16 / 9; background: #3c403c; }
+.player { display: flex; gap: 12px; align-items: center; padding: 17px 20px; font-size: 12px; }
+.title { margin-right: 16px; letter-spacing: .12em; }
+button { font: inherit; color: inherit; padding: 6px 13px; background: transparent; border: 1px solid #4a5049; border-radius: 2px; cursor: pointer; }
+button:hover:not(:disabled) { background: #2b302a; }
+button:disabled { opacity: .38; cursor: default; }
+button:focus-visible { outline: 2px solid #a2aaa0; outline-offset: 3px; }
+output { margin-left: auto; color: #929a90; font-variant-numeric: tabular-nums; }
+.embed { display: block; background: #000; }
+.embed main { width: 1280px; }
+.embed .player { display: none; }
+@media (max-width: 600px) { .player { gap: 8px; padding: 12px 8px; } .title { margin-right: 4px; } output { font-size: 10px; } }

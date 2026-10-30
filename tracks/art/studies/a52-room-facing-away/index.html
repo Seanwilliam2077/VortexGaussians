@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>背向房间</title>
+  <link rel="icon" href="data:,">
+  <link rel="stylesheet" href="./work.css">
+</head>
+<body>
+  <main>
+    <canvas id="view" width="1280" height="720" aria-label="背向房间，一部两分钟的无声合成单镜头作品"></canvas>
+    <div class="player" aria-label="外部播放控制">
+      <span class="title">背向房间</span>
+      <button id="play" type="button" disabled>播放</button>
+      <button id="pause" type="button" disabled>暂停</button>
+      <button id="leave" type="button">离开</button>
+      <output id="status" aria-live="polite">正在准备</output>
+    </div>
+  </main>
+  <script type="module" src="./work.mjs"></script>
+</body>
+</html>
