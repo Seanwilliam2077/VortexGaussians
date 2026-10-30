@@ -1,8 +1,8 @@
 # Dual-track status
 
-## 2026-10-30 current: A22 reviewed; A23 material commitment
+## 2026-10-31 current: A23 decision consultation; A24 material sample
 
-[A22 independent review](validation/art-a22-review-round-01.md) gives overall3/6, readiness7/10 and confidence4/5 after inspecting all six images and the complete paper. Withdrawal of the delivery claim is a real change; the remaining relation still depends chiefly on its explanation. [Root decision](art/studies/a22-undelivered-room/RESPONSE_ROUND_01.md) closes this room as the current submission core while preserving its form study. [A23](art/studies/a23-fire-material-commitment/BRIEF.md) is one creator-authored page grounded in an already observed original fire-material phenomenon, before any making. No new search, artwork run, recording or TOG computation is queued. A20 and A14 historical3/6 remain; original platform and art track continue, overall5/6 unmet, goal active and main unchanged.
+[A23 creator](art/studies/a23-fire-material-commitment/COMMITMENT.md) withheld a production commitment for a fictional signature withdrawal. [Independent consultation](validation/art-a23-decision-review.md) distinguishes an untested text-material relation from an established failure. [Root](art/studies/a23-fire-material-commitment/DECISION.md) preserves that disagreement and approves [A24](art/studies/a24-signature-material/BRIEF.md): one fixed six-simulated-second sample using original fire/char on three authored names. This is a material test, not a complete work or an acceptance claim. No search, parameter sweep, recording or TOG computation follows. A22 remains overall3/6, readiness7/10, confidence4/5; the room core is closed, original platform remains, overall5/6 unmet, goal active and main unchanged.
 
 
 Updated 30 October 2026. Active exploration authorized by the author. TOG and Art Papers contributions are both unestablished.

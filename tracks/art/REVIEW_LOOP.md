@@ -1,8 +1,8 @@
 # 艺术线：制作与独立复评
 
-## 2026-10-30 current: A22 reviewed; A23 material commitment
+## 2026-10-31 current: A23 decision consultation; A24 material sample
 
-[A22 independent review](../validation/art-a22-review-round-01.md) gives overall3/6, readiness7/10 and confidence4/5 after inspecting all six images and the complete paper. Withdrawal of the delivery claim is a real change; the remaining relation still depends chiefly on its explanation. [Root decision](studies/a22-undelivered-room/RESPONSE_ROUND_01.md) closes this room as the current submission core while preserving its form study. [A23](studies/a23-fire-material-commitment/BRIEF.md) is one creator-authored page grounded in an already observed original fire-material phenomenon, before any making. No new search, artwork run, recording or TOG computation is queued. A20 and A14 historical3/6 remain; original platform and art track continue, overall5/6 unmet, goal active and main unchanged.
+[A23 creator](studies/a23-fire-material-commitment/COMMITMENT.md) withheld a production commitment for a fictional signature withdrawal. [Independent consultation](../validation/art-a23-decision-review.md) distinguishes an untested text-material relation from an established failure. [Root](studies/a23-fire-material-commitment/DECISION.md) preserves that disagreement and approves [A24](studies/a24-signature-material/BRIEF.md): one fixed six-simulated-second sample using original fire/char on three authored names. This is a material test, not a complete work or an acceptance claim. No search, parameter sweep, recording or TOG computation follows. A22 remains overall3/6, readiness7/10, confidence4/5; the room core is closed, original platform remains, overall5/6 unmet, goal active and main unchanged.
 
 
 2026-10-30。用户重新授权持续艺术迭代，并要求与评分 Agent 交流直至至少 5 分。本轮把目标解释为既有内部六档总评中的 **5/6（Accept）**，不是就绪度 5/10，也不是官方录用概率。
@@ -25,8 +25,6 @@
 
 ## 当前有限任务
 
-[A18语境札记](studies/a18-context-positioning/POSITION.md)提出唯一候选认识并建议关闭A14核心形式；[独立决定](../validation/art-a18-core-decision.md)同意关闭，同时明确来源缺失不能否定领域、具体影响后来者不是普遍艺术硬门。A14原3/6、准备度6/10、置信度4/5保持，文献札记不触发新评分。
+[A24材料小样](studies/a24-signature-material/BRIEF.md)只检验原火/char是否在三位虚构署名者的字形上产生可辨关系。root承担具体文字、对象及小样决定；A23作者不承诺完整作品的原意见保留。A23独立咨询没有评分或代选规则。
 
-下一项[A19](studies/a19-artistic-commitment/BRIEF.md)只由创作者写一页单案承诺：内容明确的对象、观看关系、观者实际行为或取舍，以及火/视角为何有作用。暂不制作、运行、检索或给未制作品打5/6。root依据具体选择判断是否值得制作，评分Agent不代替创作者设计。
-
-A14已有共同对象及时间结构不被抹除，旧失败和33图保留；A15/A16补录循环关闭。艺术线与原平台继续，不重启同类换名参数演示，不捏造真人记录。TOG无新数值队列，main不动，目标总体5/6未满足。
+一次固定正常UI序列及原图之后，评分Agent先作材料咨询；有可用现象也不能直接给投稿5/6。旧A14、A20和A22作品、原3/6及关闭范围保留，补录循环关闭，TOG无新队列。实际制作与论文包具备后才新评分，不把每次文件完善都当一次艺术贡献。
