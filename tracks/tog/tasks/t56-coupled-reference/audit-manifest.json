@@ -1,0 +1,282 @@
+{
+  "schema": "t56-coupled-reference-publication-v1",
+  "created_utc": "2026-10-30T00:35:21.452924+00:00",
+  "parent_commit": "6ac5d1a26faa32aec0d5a284e4e9b31952b8c270",
+  "goal_status": "active_not_submission_ready",
+  "evidence": {
+    "task": "T56",
+    "outcome": "failed_short_reference",
+    "execution_status": "completed_failed_checks",
+    "scientific_numerical_pass": false,
+    "scientific_child_invocations": 1,
+    "completed_reference_trajectories": 6,
+    "time_end": 0.25,
+    "candidate_trajectories": 0,
+    "checks": {
+      "initial_analytic": true,
+      "all_stage_invariants": true,
+      "vorticity_disagreements": false,
+      "velocity_disagreements": true,
+      "centroid_disagreements": true,
+      "covariance_disagreements": true,
+      "spatial_reduction": true,
+      "circulation_ledger": true,
+      "q_squared_drift": true,
+      "axial_impulse_drift": true
+    },
+    "failed_predicates": [
+      "vorticity_disagreements"
+    ],
+    "coarse_spatial_vorticity": [
+      0.01627836698386338,
+      0.016319024627933772,
+      0.016624221509034684
+    ],
+    "finer_spatial_vorticity": [
+      0.004177862997975246,
+      0.004216435278366882,
+      0.004347559713233459
+    ],
+    "spatial_reductions": [
+      {
+        "time": 0.125,
+        "coarse": 0.016319024627933772,
+        "fine": 0.004216435278366882,
+        "ratio": 3.870336801245646,
+        "small_error_waiver": false,
+        "passed": true
+      },
+      {
+        "time": 0.25,
+        "coarse": 0.016624221509034684,
+        "fine": 0.004347559713233459,
+        "ratio": 3.8238052161612672,
+        "small_error_waiver": false,
+        "passed": true
+      }
+    ],
+    "child_timeout_seconds": 600,
+    "child_supervised_seconds": 116.53663460002281,
+    "child_elapsed_before_result_write_seconds": 116.29796609992627,
+    "supervisor_elapsed_before_receipt_write_seconds": 116.61247589997947,
+    "comparison_seconds": 0.06366179999895394,
+    "python": "3.12.14",
+    "numpy": "2.3.5",
+    "totals": {
+      "steps": 700,
+      "solves": 1418,
+      "transport_stages": 1400,
+      "CG_iterations": 515506,
+      "kernel_pairs": 1045692416,
+      "raw_bytes": 26258520,
+      "step_log_bytes": 981157
+    },
+    "frozen_inputs": 10,
+    "frozen_inputs_and_executable_unchanged": true,
+    "new_source_queries": 0,
+    "full_t1_task_pass": null,
+    "formal_error_certificate": false,
+    "TOG_contribution_established": false,
+    "next_question": "Separately frozen unchanged-algorithm finer reference extension, no T57 run yet",
+    "next_preparation_limits": {
+      "new_trajectories": 4,
+      "maximum_scientific_children": 1,
+      "child_timeout_seconds": 1200,
+      "time_end": 0.25,
+      "reused_cases": [
+        "S64",
+        "S128"
+      ],
+      "new_cases": [
+        "S256",
+        "T128",
+        "D192",
+        "Q128"
+      ]
+    }
+  },
+  "publication_plan": {
+    "path": "tracks/tog/tasks/t56-coupled-reference/local/publication-plan.json",
+    "bytes": 13004,
+    "sha256": "a9e51e405dc28cdded407b04b5e44c26ca9a55976db445475c306b127835f7ca"
+  },
+  "publication_plan_is_ignored_local_support": true,
+  "scientific_numerical_pass": false,
+  "T52_history_reclassified": false,
+  "execution_status": "completed_failed_checks",
+  "result_json_exists": true,
+  "qualification_scope": "failed_short_reference",
+  "completed_reference_trajectories": 6,
+  "candidate_trajectories": 0,
+  "time_end": 0.25,
+  "full_t1_task_pass": null,
+  "artifacts": [
+    {
+      "path": "tracks/tog/tasks/t56-coupled-reference/.gitignore",
+      "bytes": 7,
+      "sha256": "a7d8bdcefba82a95ebc021d87c629fdea21f13af953bf01e28b7cf8b0eeceb41"
+    },
+    {
+      "path": "tracks/tog/tasks/t56-coupled-reference/DECISION.md",
+      "bytes": 5561,
+      "sha256": "82aa1e72b36e2712b0a076ad000f3ad6221ea60f8380d8fbc5d9f424e2625c95"
+    },
+    {
+      "path": "tracks/tog/tasks/t56-coupled-reference/FORMULATION.md",
+      "bytes": 5434,
+      "sha256": "0500b1fad0d187f7815f5751f33ec78835d60ea9b047b21ed08e74c28d39f029"
+    },
+    {
+      "path": "tracks/tog/tasks/t56-coupled-reference/PROTOCOL.md",
+      "bytes": 7332,
+      "sha256": "1b7defa36dbe33df2ff6d01ca52aa62117ea7aeaea8a1121d4deba66406ae537"
+    },
+    {
+      "path": "tracks/tog/tasks/t56-coupled-reference/README.md",
+      "bytes": 1534,
+      "sha256": "66f61f93fcdf84997783af6dd7fd562a2502b48ff1a53fb559ab02829c1fabda"
+    },
+    {
+      "path": "tracks/tog/tasks/t56-coupled-reference/RESULTS.md",
+      "bytes": 8205,
+      "sha256": "ea69873ac27a500eb438e34e4e0b3098e1903fc36f22a0c0978b6524241a2692"
+    },
+    {
+      "path": "tracks/tog/tasks/t56-coupled-reference/execution.json",
+      "bytes": 4937,
+      "sha256": "6a2b25ae1b11c47921f535589637a7412b9d9c94110b617e285bc7b38d02b746"
+    },
+    {
+      "path": "tracks/tog/tasks/t56-coupled-reference/input-manifest.json",
+      "bytes": 2723,
+      "sha256": "cd353bc8eec8eb4616be9f44922fcafcad67e953a85545db1f5c6286d9548967"
+    },
+    {
+      "path": "tracks/tog/tasks/t56-coupled-reference/reference.py",
+      "bytes": 17488,
+      "sha256": "51499f5c50b8f7f25ebb8df2569bc7eff085938cbd9d88f36b8604f9aaa4e01f"
+    },
+    {
+      "path": "tracks/tog/tasks/t56-coupled-reference/result.json",
+      "bytes": 31700,
+      "sha256": "95e616130f169cf325f79f3e27f79ac5879a029fef922291e92d4b11842ee099"
+    },
+    {
+      "path": "tracks/tog/tasks/t56-coupled-reference/run_once.py",
+      "bytes": 5666,
+      "sha256": "8bc3082b5f1449998f2f27008cdb7b7616552afa9955898fd05aabece47c9ffc"
+    },
+    {
+      "path": "tracks/validation/t56-coupled-review.md",
+      "bytes": 17447,
+      "sha256": "ec44008a21429649bca6c2d77ff2b242003124e602510cf02d8e531ec8a62a4a"
+    }
+  ],
+  "frozen_inputs": [
+    {
+      "path": "tracks/tog/tasks/t56-coupled-reference/.gitignore",
+      "bytes": 7,
+      "sha256": "a7d8bdcefba82a95ebc021d87c629fdea21f13af953bf01e28b7cf8b0eeceb41"
+    },
+    {
+      "path": "tracks/tog/tasks/t56-coupled-reference/FORMULATION.md",
+      "bytes": 5434,
+      "sha256": "0500b1fad0d187f7815f5751f33ec78835d60ea9b047b21ed08e74c28d39f029"
+    },
+    {
+      "path": "tracks/tog/tasks/t56-coupled-reference/PROTOCOL.md",
+      "bytes": 7332,
+      "sha256": "1b7defa36dbe33df2ff6d01ca52aa62117ea7aeaea8a1121d4deba66406ae537"
+    },
+    {
+      "path": "tracks/tog/tasks/t56-coupled-reference/reference.py",
+      "bytes": 17488,
+      "sha256": "51499f5c50b8f7f25ebb8df2569bc7eff085938cbd9d88f36b8604f9aaa4e01f"
+    },
+    {
+      "path": "tracks/tog/tasks/t56-coupled-reference/run_once.py",
+      "bytes": 5666,
+      "sha256": "8bc3082b5f1449998f2f27008cdb7b7616552afa9955898fd05aabece47c9ffc"
+    },
+    {
+      "path": "tracks/tog/tasks/t55-axisymmetric-reference/reference.py",
+      "bytes": 10613,
+      "sha256": "499bab137463df4435230e3cbf4d16b0723feed5ad5d06087a0bafd911204908"
+    },
+    {
+      "path": "tracks/tog/tasks/t55-axisymmetric-reference/FORMULATION.md",
+      "bytes": 4604,
+      "sha256": "7d463593ec8f021ab814d0213bcf5f9b74b1c79ae9496b6d4cab2452f6440709"
+    },
+    {
+      "path": "tracks/tog/tasks/t55-axisymmetric-reference/TASK.md",
+      "bytes": 4132,
+      "sha256": "b470e55c6449348136673764e7d7b975cd3bad479ddefa0d881d827eba84e89e"
+    },
+    {
+      "path": "tracks/tog/tasks/t55-axisymmetric-reference/DECISION.md",
+      "bytes": 6454,
+      "sha256": "ed1d20b4b603ecb4afd49e06f4a33aba6b86ecbabd6bb1f87c4cbc445c1d420f"
+    },
+    {
+      "path": "tracks/tog/tasks/t55-axisymmetric-reference/audit-manifest.json",
+      "bytes": 9225,
+      "sha256": "5bc23f9b3e2deb550365d4ac2a1a94db4f8ed59064bd15aab5b85a8f45ec7d76"
+    }
+  ],
+  "current_state_documents": [
+    {
+      "path": "tracks/STATUS.md",
+      "bytes": 76473,
+      "sha256": "17980b76d57a10dd6aca8776c7c978e0ae4945d937cc7f7807df85e3895b0d3a"
+    },
+    {
+      "path": "tracks/EXPLORATION.md",
+      "bytes": 8118,
+      "sha256": "e13b3d438ef0750df994f6762c2a988f725a07b656ba58aa4725703decf0340a"
+    },
+    {
+      "path": "tracks/tog/README.md",
+      "bytes": 8160,
+      "sha256": "55d02d37d078ee23a9943b96e37389f6ec3e7cacc41bd5a2169b41711604a593"
+    }
+  ],
+  "preservation_chain": {
+    "parent_manifest": {
+      "path": "tracks/tog/tasks/t55-axisymmetric-reference/audit-manifest.json",
+      "bytes": 9225,
+      "sha256": "5bc23f9b3e2deb550365d4ac2a1a94db4f8ed59064bd15aab5b85a8f45ec7d76"
+    },
+    "verified_prior_artifact_count": 664,
+    "all_recorded_prior_bytes_unchanged": true
+  },
+  "parent_tracked_file_count": 1192,
+  "other_parent_tracked_files_unchanged": 1189,
+  "literal_parent_blob_matches": 1175,
+  "CRLF_only_checkout_conversions": [
+    ".gitignore",
+    "CHANGELOG.md",
+    "PUBLISH.md",
+    "README.md",
+    "compare.html",
+    "index.html",
+    "research/EVIDENCE_STATUS.md",
+    "research/FRONTIER_EARLY_REJECTION.md",
+    "research/lib/p3d-baseline.json",
+    "research/lib/p3e-baseline.json",
+    "research/lib/p3f-baseline.json",
+    "research/lib/p3g-baseline.json",
+    "research/physical_reference/README.md",
+    "study/index.html"
+  ],
+  "all_parent_blob_ids_match_after_git_clean_filters": true,
+  "original_core": {
+    "path": "tracks/tog/src/core.py",
+    "bytes": 13301,
+    "sha256": "ac750b70a86743ac858f1c53cf620ce29c63c462456115af4d0d8c93fa20bd9e"
+  },
+  "historical_failures_unchanged": true,
+  "art_inactive": true,
+  "main_not_merged_or_deployed": true,
+  "automation_remains_deleted": true
+}
