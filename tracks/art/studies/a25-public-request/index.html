@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>下次张贴之前</title>
+  <link rel="stylesheet" href="work.css">
+</head>
+<body>
+  <div class="page">
+    <header><div><p class="edition">一张声明 · 一项请求 · 一段处理中</p><h1>下次张贴之前</h1></div><p class="fiction">此处的人名与事项均为虚构</p></header>
+    <main>
+      <div id="work">
+        <section class="notice" aria-labelledby="notice-title">
+          <p class="document-label">仍在眼前的这张声明</p>
+          <h2 id="notice-title">小院 · 周六放映</h2>
+          <p class="statement">我们同意将小院的周六晚间开放给放映，并在闭场后共同收拾。</p>
+        </section>
+        <div class="viewing-space">
+          <section class="image-space" aria-label="声明中的三处署名">
+            <div class="canvas-frame"><canvas id="view" width="1200" height="600" role="img" aria-label="宁岚、叶青、沈舟的同一行署名，及正在呈示的材料变化"></canvas><div id="loading" role="status">正在展开这张声明</div></div>
+            <div class="interval"><span id="interval-text">尚未开始处理</span><span id="window-note">下一次张贴尚未发生</span></div>
+          </section>
+          <aside class="letter-space">
+            <div id="folded-request" class="folded">
+              <div class="fold-mark" aria-hidden="true"></div>
+              <p id="folded-text">旁边还有一句话。</p>
+              <button id="read-request" class="text-button" disabled>展开这项请求</button>
+              <p id="folded-during" hidden>原话暂时收起，仍可放回。</p>
+            </div>
+            <section id="request-paper" class="request-paper" aria-labelledby="request-label" hidden>
+              <p id="request-label" class="document-label">收到的原话</p>
+              <blockquote>叶青：下次张贴时，请不要再列我的名字。正文由另两人保留。</blockquote>
+              <p class="letter-end">请求针对下一次张贴。</p>
+            </section>
+            <button id="request" class="text-button request-control" hidden>把原话放回旁边</button>
+          </aside>
+        </div>
+        <div class="controls">
+          <button id="begin" class="primary" hidden disabled>收起原话，查看处理</button>
+          <button id="pause" hidden disabled>暂停处理画面</button>
+          <span id="held-note" hidden>本版停在处理期间。</span>
+          <button id="finish" class="text-button leave" disabled>结束这次观看</button>
+        </div>
+        <p id="interval-boundary" class="boundary" hidden>这只是所选观察窗口的结束；材料仍在燃烧，没有制作下一张声明。</p>
+      </div>
+      <section id="ending" class="ending" hidden aria-live="polite">
+        <span class="end-rule" aria-hidden="true"></span>
+        <h2>这次观看到这里。</h2>
+        <p>下一次张贴没有在作品中发生。</p>
+        <p class="end-small">画面退出，材料状态保留；没有替任何人完成或拒绝请求。</p>
+      </section>
+      <p id="error" role="alert" hidden></p>
+    </main>
+    <details class="colophon" id="colophon">
+      <summary>关于这次呈示</summary>
+      <p>你先读到原话，再选择将它收起、观看处理；过程中可以暂停，也可以把原话重新放回旁边。这些是作者为本地虚构页面安排的观看动作，不是现实张贴或授权流程。</p>
+      <p>三个名字由同一组原 VortexGaussians 场景高斯绘制。火、烧损着色与字形处于原平台的同一渲染过程；没有另加擦字遮罩。正文和请求为静态文字，不参与燃烧。</p>
+      <p>本版只展开六模拟秒，随后停在处理中。既有材料记录中此刻尚未燃尽；停留不是灭火，结束观看也不是撤名成功。将原话收起或放回，不重启、清除或改变材料计算。</p>
+      <nav><a href="WORK_SPEC.md">动作与材料规格</a><a href="../a24-signature-material/CREATOR_RESPONSE.md">创作者的改承诺</a></nav>
+    </details>
+    <footer><span>下次张贴之前</span><span>2026 · 有限呈示</span></footer>
+  </div>
+  <iframe id="source" src="../../../../demo/index.html?embed=1" title="原 VortexGaussians 渲染器" tabindex="-1" aria-hidden="true"></iframe>
+  <script type="module" src="work.mjs"></script>
+</body>
+</html>
