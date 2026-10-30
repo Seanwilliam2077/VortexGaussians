@@ -1,8 +1,8 @@
 # 艺术线：制作与独立复评
 
-## 2026-10-31 current: A32 full argument under independent review
+## 2026-10-31 current: A32 scored 3/6 and 4/6; A33 finite creator choice
 
-[A32《图用这一张》](studies/a32-image-reuse-study/README.md) is implemented and checked once: 18.3429543 seconds, seven PNGs / 524083 bytes, with no new simulation. A frozen processing image is cropped into the next notice; old raster names leave, two names are newly typeset, and the request stays outside the paper. Creator and both original reviewers independently identify an actual new relation, while retaining the ordinary-crop/decorative-fire counterreading. [One fixed-material paper](studies/a32-image-reuse-study/PAPER_BRIEF.md) is complete and under formal independent review by the same two reviewers; material eligibility is not acceptance. A25 remains 4/6 and 3/6, A26 two 3/6 reviews, overall 5/6 unmet. Historical failures, main, original platform and TOG queue stay unchanged; full goal active.
+[A32《图用这一张》](studies/a32-image-reuse-study/README.md) completed a new form, one 18.3429543-second UI inspection (seven PNGs / 524083 bytes), a full paper and two independent formal reviews. Original reviewers give 3/6 and 4/6, both readiness 7/10 and confidence 3/5. They agree on the actual form and differ on its artistic weight; ordinary crop/decorative-fire remains a strong counterreading. [Author response](studies/a32-image-reuse-study/RESPONSE_AND_DECISION.md) preserves the work and both views, and closes this configuration's rewriting/recapture queue. [A33](studies/a33-iteration-as-material/BRIEF.md) asks a new creator, not a new scorer, whether actual public iteration records afford one specific new work. No production is approved by that question. A25 and A26 scores stay unchanged, overall 5/6 unmet. Main, original platform and TOG queue unchanged; full goal active.
 
 
 2026-10-30。用户重新授权持续艺术迭代，并要求与评分 Agent 交流直至至少 5 分。本轮把目标解释为既有内部六档总评中的 **5/6（Accept）**，不是就绪度 5/10，也不是官方录用概率。
@@ -25,6 +25,6 @@
 
 ## 当前有限任务
 
-A32真实静帧编排已完成唯一一次检查并保留七图。创作者与原两位材料评审分别支持一次完整论述，同时保留装饰性火形和普通裁图的反读。按本作PAPER_BRIEF固定作品写新稿，然后由同两位评审独立正式复评。无新制作/调参/补录，不把材料资格转成评分，不改A25/A26历史。
+A32已完成作品、真实图像、完整稿与两份正式评审：固定3/6、第二4/6。两者承认形式展开，艺术分量判断不同；作者回应没有核心事实反驳或新证据，封存当前投稿核心，保留作品与分歧。新分不回写A25/A26。
 
-目标5/6尚未实现，TOG/main保持，完整研究目标active。
+A33仅由未参与这些作品制作的创作者，一次判断已公开的真实迭代记录能否支持具体新作选择。不是新评分者，不把真实记录、失败或评分分歧自动当艺术贡献；无生产/新图/运行/搜索授权。原评分者保持，目标5/6未实现，TOG/main保持，完整研究目标active。
