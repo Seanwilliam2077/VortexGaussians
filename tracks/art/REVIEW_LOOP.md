@@ -4,7 +4,7 @@
 
 [A38](studies/a38-after-the-last-train/PROCESS.md) preserves its actual later-contact clock starvation. [A39](studies/a39-handover-clock-maintenance/PROCESS.md) uses only the existing elapsed clock: one 23.6109924s run, seven PNG (2045617 bytes), 360 steps, all 14 behavior/source checks, temporary resources closed. Later contacts now have visible local warmth and nonzero material updates in lines4/6; graph deferrals, particle capacity and domain limits remain. Different within-hold event timing prevents a strictly paired numerical causal claim. This is ordinary maintenance, not a contribution.
 
-The creator and both original reviewers independently read the same four main stills and support one [complete manuscript](studies/a39-handover-clock-maintenance/PAPER_BRIEF.md) from the frozen work. They retain the strongest counterreading: a literary note with a highlighter. Writing is underway; no additional run, source search or artwork change is authorized by this finite task. All know the text and prior consultations; none claims blind or human audience evidence. No new formal score yet. A32 remains closed at 3/6 and 4/6, historical outcomes intact, overall5/6 unmet. TOG/main unchanged; full goal active.
+The creator and both original reviewers independently read the same four main stills and support one [complete manuscript](studies/a39-handover-clock-maintenance/PAPER_BRIEF.md) from the frozen work. They retain the strongest counterreading: a literary note with a highlighter. The complete manuscript and claim/evidence map are now with the original two independent scorers; no additional run, source search or artwork change is authorized by this finite task. All know the text and prior consultations; none claims blind or human audience evidence. No new formal score yet. A32 remains closed at 3/6 and 4/6, historical outcomes intact, overall5/6 unmet. TOG/main unchanged; full goal active.
 
 
 2026-10-30。用户重新授权持续艺术迭代，并要求与评分 Agent 交流直至至少 5 分。本轮把目标解释为既有内部六档总评中的 **5/6（Accept）**，不是就绪度 5/10，也不是官方录用概率。
@@ -27,4 +27,4 @@ The creator and both original reviewers independently read the same four main st
 
 ## 当前有限任务
 
-A39动作条件已获实际支持，作者和原两位评分者各自选择一次完整论述。冻结六行交接条、四主图和一次真实输入记录；先写PAPER_DRAFT与CLAIM_EVIDENCE，再由同两位原评分者独立正式评分。不加运行、素材、路径或来源。维护、诚实记录和允许写作都不计作艺术贡献；文学便条加荧光笔反读须得到实质回应。旧分保留，5/6未达。
+A39动作条件已获实际支持，作者和原两位评分者各自选择一次完整论述。冻结六行交接条、四主图和一次真实输入记录；PAPER_DRAFT与CLAIM_EVIDENCE已完成，由同两位原评分者独立正式评分中。不加运行、素材、路径或来源。维护、诚实记录和允许写作都不计作艺术贡献；文学便条加荧光笔反读须得到实质回应。旧分保留，5/6未达。
