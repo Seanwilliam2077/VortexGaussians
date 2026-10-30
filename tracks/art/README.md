@@ -1,6 +1,6 @@
 # 可燃的数字记忆（暂定） · 艺术排练入口
 
-**2026-10-30：A13材料对照完成，进入A14具体作品选择。** [五臂实验](studies/a13-camera-coupling/README.md)测得view两视角有4339点热量差异、65点点燃分类差异；fuel、char、glow逐点差异均零，world负对照和重复基准精确一致。[独立读回](../validation/a13-camera-coupling-review.md)核对15份数据，未重仿真。[材料咨询](../validation/art-a13-material-consultation.md)认为值得一次新作品试作，但普通相机特效的反读仍未排除。既有总体**3/6 Weak Reject**保留，目标5/6未达；A13不另赋论文分。[决定](studies/a13-camera-coupling/DECISION.md)停止本实验、不追求追加烧痕，转向具体合成对象及观看形式。A11三状态复制形式、旧营火续剪仍关闭；所有旧作品和评分保留。[复评流程](REVIEW_LOOP.md)继续适用。
+**2026-10-30：新作品A14《两边的火》完成首轮评审。** [实际网页](studies/a14-view-authored-object/index.html)新建一个双口共腔炉与两块地垫，以同一计算状态的两个呈示实现一次生成资格交接。5381点、360步、六张实际图与[论证短稿](studies/a14-view-authored-object/PAPER_DRAFT.md)已保存。[独立评审](../validation/art-a14-review-round-01.md)为**3/6 Weak Reject**、准备度5/10、置信度3/5：对象具体化有实质改善，继承经验与投稿贡献尚未得到支持。评审同时纠正了仅据静帧就关闭整个时序形式的过早结论；[回应](studies/a14-view-authored-object/RESPONSE_ROUND_01.md)保留原稿与分歧。[下一项A15](studies/a15-normal-playback/PROTOCOL.md)只录制冻结版本的一次正常时序，不调效果、参数或时长。目标总体5/6未达，准备度不能顶替；原作品、评分和平台保留。
 
 首个作者排练原型。它把现有 VortexGaussians demo 放在“保存的空间 → 介入燃烧 → 重置重看”的三个阶段中，并记录创作选择。它不是完成作品、观众实验或新燃烧算法。创作命题及待补证据见 [ART_BRIEF.md](ART_BRIEF.md)；技术证据另见 [research/EVIDENCE_STATUS.md](../../research/EVIDENCE_STATUS.md)。
 
