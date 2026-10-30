@@ -1,8 +1,8 @@
 # 艺术线：制作与独立复评
 
-## 2026-10-31 current: no new artwork queued; A30 audits iteration decisions
+## 2026-10-31 current: A31 considers one formal development of the existing statement
 
-A26 complete synthesis remains **3/6 from both reviewers**, readiness 7/10 and confidence 4/5; [its closure](studies/a26-practice-synthesis/DECISION_FINAL.md) preserves local analyses and the failed cross-case argument. A25 remains 4/6 and 3/6. [A27](studies/a27-next-artistic-question/DECISION.md) selected no new production, with a separate [decision consultation](../validation/art-a27-decision-assessment.md). [A28](studies/a28-review-calibration/SOURCE_RESULT.md) and [A29](studies/a29-publisher-text-check/RESULT.md) confirmed two published Art Papers identities but acquired zero complete papers in two queries/eight opens; slides and abstracts are not full-paper calibration. [A30](studies/a30-iteration-process-audit/BRIEF.md) now independently audits whether the process prematurely closes worthwhile formal development or instead keeps generating weak next tasks. It is not another submission scorer and cannot revise historical scores. Overall 5/6 unmet; no new artwork, simulation, image, video or TOG run. Main and original platform preserved; full goal active.
+[A30 independent process audit](studies/a30-iteration-process-audit/PROCESS_ASSESSMENT.md) found no demonstrated rejection of a concrete useful proposal; it identified an unexamined branch between freezing A25 and moving to new topics. [The decision](studies/a30-iteration-process-audit/DECISION.md) therefore allows [A31](studies/a31-next-posting-choice/BRIEF.md) to judge one formal choice within A25's existing statement and future withdrawal request: making the next posting occur inside a new work, with its editorial choices visible. The creator may decline; no production is authorized yet. A25 remains 4/6 and 3/6; A26 remains two 3/6 reviews, readiness 7/10 and confidence 4/5, with its synthesis closed. A27 no-selection and A28/A29 full-text access failures remain recorded. Overall 5/6 unmet; no new artwork, simulation, image, video or TOG run. Main and original platform preserved; full goal active.
 
 
 2026-10-30。用户重新授权持续艺术迭代，并要求与评分 Agent 交流直至至少 5 分。本轮把目标解释为既有内部六档总评中的 **5/6（Accept）**，不是就绪度 5/10，也不是官方录用概率。
@@ -25,6 +25,6 @@ A26 complete synthesis remains **3/6 from both reviewers**, readiness 7/10 and c
 
 ## 当前有限任务
 
-A26收束、A27未选中及来源获取不足均保留，不追加制作或用摘要校准评分。A30独立审查近期推进/停止规则：是否把同证据润稿低价值误扩为禁止形式深化，或反过来无依据地换题材、重跑。允许结论为没有合格下一项。该角色不写作品、不打投稿分，不取代原两位评分者。
+A30过程审查没有推翻A25同证据写作停止、A26收束或A27未选中。它指出同一内容的新形式发展没有被专门询问。A31只给作者一次具体选择窗口：原虚构声明与面向未来的请求不变，作品内实际发生下一次张贴，编排这版图像成为可见选择。创作者可拒绝，不要求先证明艺术效果，也不把普通标签/按钮改变算作新形式。
 
-root完整读报告再决定一个有依据的后续动作。目标5/6仍未达到；不购买/重置额度，不合并main，TOG无运行队列。完整目标active，无常驻预览服务或重新开启的自动化。
+root读作者选择再决定有限小样或未选中；目前不制作、不运行、不检索、不看新图。若进入制作后仍由原两位独立评分，不以流程审查替代投稿分。目标5/6未实现，TOG/main保持，完整研究目标active。
