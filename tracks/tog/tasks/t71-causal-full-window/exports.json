@@ -1,0 +1,182 @@
+{
+  "schema": "t71-saved-record-exports-v1",
+  "public_original_size_limit_bytes": 5000000,
+  "execution_receipt": {
+    "path": "execution.json",
+    "bytes": 8287,
+    "sha256": "f5292f8c26dc7ef712de21aedba72e06b8db9288e6775b012fa472ea52ed5125"
+  },
+  "artifacts": [
+    {
+      "source": "local/result.json",
+      "exists": true,
+      "bytes": 1927519,
+      "sha256": "cf97d25c2fe6d9759a338f2e2890f93569ce8e0f4c4f4aa463fe574c2e6b7e4b",
+      "public": "result.json",
+      "public_bytes": 1927519,
+      "public_sha256": "cf97d25c2fe6d9759a338f2e2890f93569ce8e0f4c4f4aa463fe574c2e6b7e4b",
+      "retention": "exact_copy",
+      "structure": {
+        "parse_error": null,
+        "top_level_keys": [
+          "array_layouts",
+          "checks",
+          "child_elapsed_before_result_write_seconds",
+          "counters",
+          "details",
+          "formal_error_certificate",
+          "formal_family_exclusion",
+          "full_task_validated",
+          "future_reference_predictor_inputs",
+          "input_identities",
+          "inputs_preserved",
+          "new_method_claim",
+          "new_model_trajectories",
+          "new_reference_trajectories",
+          "numerical_qualified",
+          "paths",
+          "phases_seconds",
+          "physical_pass",
+          "prediction_seal",
+          "prior_scientific_child_seconds",
+          "raw_identities",
+          "reference_sensitive",
+          "runtime",
+          "schema",
+          "scoring",
+          "searches",
+          "time_sensitive",
+          "verdict"
+        ],
+        "saved_path_count": 2,
+        "saved_search_count": 48,
+        "retained_verdict": "time_or_reference_sensitive_inconclusive"
+      }
+    },
+    {
+      "source": "local/predictions.json",
+      "exists": true,
+      "bytes": 312019,
+      "sha256": "0f18f33ca746f9f0dcce17b13c1e0086afaad815f12bb1b82a316cca907028f3",
+      "public": "predictions.json",
+      "public_bytes": 312019,
+      "public_sha256": "0f18f33ca746f9f0dcce17b13c1e0086afaad815f12bb1b82a316cca907028f3",
+      "retention": "exact_copy"
+    },
+    {
+      "source": "local/execution-started.json",
+      "exists": true,
+      "bytes": 5207,
+      "sha256": "c9ea5517d6fd0db18b896b695021ea6a8741dfa7f737e1108e8a09e908619b36",
+      "public": "execution-started.json",
+      "public_bytes": 5207,
+      "public_sha256": "c9ea5517d6fd0db18b896b695021ea6a8741dfa7f737e1108e8a09e908619b36",
+      "retention": "exact_copy"
+    },
+    {
+      "source": "local/failure.json",
+      "exists": false
+    },
+    {
+      "source": "local/stdout.txt",
+      "exists": true,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public": "stdout.txt",
+      "public_bytes": 0,
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "retention": "exact_copy"
+    },
+    {
+      "source": "local/stderr.txt",
+      "exists": true,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "public": "stderr.txt",
+      "public_bytes": 0,
+      "public_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "retention": "exact_copy"
+    },
+    {
+      "source": "local/memory.jsonl",
+      "exists": true,
+      "bytes": 20026,
+      "sha256": "03a5562a125c3a4ea25ce920f7688d6b45c3705feba17981646708c770a9e661",
+      "public": "memory.jsonl",
+      "structure": {
+        "parsed_events": 103,
+        "event_counts": {
+          "<missing-kind>": 103
+        },
+        "malformed_line_examples": [],
+        "final_line_newline_terminated": true,
+        "predictions_sealed_line": null,
+        "first_raw_hash_line": null,
+        "observed_seal_precedes_first_raw": null,
+        "last_parsed_event": {
+          "line": 103,
+          "elapsed_seconds": 26.203852299950086
+        },
+        "independently_revalidated_search_or_scoring": false
+      },
+      "public_bytes": 20026,
+      "public_sha256": "03a5562a125c3a4ea25ce920f7688d6b45c3705feba17981646708c770a9e661",
+      "retention": "exact_copy"
+    },
+    {
+      "source": "local/journal.jsonl",
+      "exists": true,
+      "bytes": 165632166,
+      "sha256": "b39de7a48b6b8afc3dc7906b7876f15bfefc241ba8d2cc32d780306ab807e800",
+      "public": null,
+      "structure": {
+        "parsed_events": 80628,
+        "event_counts": {
+          "checkpoint_evaluator": 10,
+          "first_raw_hash": 1,
+          "path_completed": 2,
+          "path_started": 2,
+          "phase_finished": 9,
+          "phase_started": 9,
+          "physics_setup": 1,
+          "predictions_sealed": 1,
+          "qualification": 8,
+          "reference_array_decoded": 60,
+          "reference_direct_score": 40,
+          "reference_snapshot_scored": 10,
+          "rule_constructed": 11,
+          "scorer_prediction_seal_verified": 1,
+          "search_completed": 48,
+          "search_component_basis": 9538,
+          "search_local_starts": 48,
+          "search_pair_cache_hit": 1181,
+          "search_pair_evaluated": 68030,
+          "search_poll_completed": 1278,
+          "search_proposal_rejected": 83,
+          "search_started": 48,
+          "search_unchanged_control": 48,
+          "step_completed": 48,
+          "step_confirmation": 48,
+          "step_started": 48,
+          "time_sensitivity_scored": 17
+        },
+        "malformed_line_examples": [],
+        "final_line_newline_terminated": true,
+        "predictions_sealed_line": 80483,
+        "first_raw_hash_line": 80492,
+        "observed_seal_precedes_first_raw": true,
+        "last_parsed_event": {
+          "line": 80628,
+          "kind": "phase_finished",
+          "name": "identity_preservation",
+          "journal_elapsed_seconds": 25.968823000090197,
+          "elapsed_seconds": 25.968823000090197
+        },
+        "independently_revalidated_search_or_scoring": false
+      },
+      "retention": "ignored_original_identity_and_structure_only"
+    }
+  ],
+  "scientific_reexecution": false,
+  "raw_scientific_arrays_opened": 0
+}

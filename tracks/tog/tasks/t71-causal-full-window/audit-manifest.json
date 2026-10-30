@@ -1,0 +1,441 @@
+{
+  "schema": "t71-causal-full-window-publication-v1",
+  "created_utc": "2026-10-30T09:43:03.362770+00:00",
+  "parent_commit": "2d1c075d4c91fcb3e8118a39d176de86205d7fac",
+  "goal_status": "active_not_submission_ready",
+  "artifacts": [
+    {
+      "path": "tracks/tog/tasks/t71-causal-full-window/.gitignore",
+      "bytes": 7,
+      "sha256": "a7d8bdcefba82a95ebc021d87c629fdea21f13af953bf01e28b7cf8b0eeceb41"
+    },
+    {
+      "path": "tracks/tog/tasks/t71-causal-full-window/DECISION.md",
+      "bytes": 2868,
+      "sha256": "cacd05e4e9eaa5c67f4b6d4ec13aaffd3c401228f616af125a13be70edfbdffb"
+    },
+    {
+      "path": "tracks/tog/tasks/t71-causal-full-window/PROTOCOL.md",
+      "bytes": 12014,
+      "sha256": "210acfce28e3eee2acd3f4c314158ede59dc1c736893f47cd9ed8bd80100f20a"
+    },
+    {
+      "path": "tracks/tog/tasks/t71-causal-full-window/README.md",
+      "bytes": 6355,
+      "sha256": "150d1a3eb35b950f28069fe4f4524c8b9858cc583b6c861e1a4adb9fc10af693"
+    },
+    {
+      "path": "tracks/tog/tasks/t71-causal-full-window/evidence.json",
+      "bytes": 112680,
+      "sha256": "510aead76f4dc6f12d9726eb58439942828c04116093b08591e06c1d1a06bd74"
+    },
+    {
+      "path": "tracks/tog/tasks/t71-causal-full-window/execution-started.json",
+      "bytes": 5207,
+      "sha256": "c9ea5517d6fd0db18b896b695021ea6a8741dfa7f737e1108e8a09e908619b36"
+    },
+    {
+      "path": "tracks/tog/tasks/t71-causal-full-window/execution.json",
+      "bytes": 8287,
+      "sha256": "f5292f8c26dc7ef712de21aedba72e06b8db9288e6775b012fa472ea52ed5125"
+    },
+    {
+      "path": "tracks/tog/tasks/t71-causal-full-window/exports.json",
+      "bytes": 6073,
+      "sha256": "c320355314c3a9d0ee9d993cb99a496b257f97444bd21d83a3c4f1817295ee76"
+    },
+    {
+      "path": "tracks/tog/tasks/t71-causal-full-window/input-manifest.json",
+      "bytes": 23025,
+      "sha256": "f73ebbd00250b70d28014f93da91cc1c8e40333526767bcd840bd751647b15d4"
+    },
+    {
+      "path": "tracks/tog/tasks/t71-causal-full-window/measure.py",
+      "bytes": 27417,
+      "sha256": "18bdc33eaa5fd37d8d4535ad0f087770cc17eeb7830c8c904e4238a9da1b1e8a"
+    },
+    {
+      "path": "tracks/tog/tasks/t71-causal-full-window/memory.jsonl",
+      "bytes": 20026,
+      "sha256": "03a5562a125c3a4ea25ce920f7688d6b45c3705feba17981646708c770a9e661"
+    },
+    {
+      "path": "tracks/tog/tasks/t71-causal-full-window/predictions.json",
+      "bytes": 312019,
+      "sha256": "0f18f33ca746f9f0dcce17b13c1e0086afaad815f12bb1b82a316cca907028f3"
+    },
+    {
+      "path": "tracks/tog/tasks/t71-causal-full-window/preflight.json",
+      "bytes": 733,
+      "sha256": "1208667bd0628717bb04977f5232000c6b6de1f6112d966b86b78d850eefc136"
+    },
+    {
+      "path": "tracks/tog/tasks/t71-causal-full-window/prepare.py",
+      "bytes": 12388,
+      "sha256": "d520131250a630062f878434bbba4737d3c2473304376dc0412b1a1f010577ff"
+    },
+    {
+      "path": "tracks/tog/tasks/t71-causal-full-window/result.json",
+      "bytes": 1927519,
+      "sha256": "cf97d25c2fe6d9759a338f2e2890f93569ce8e0f4c4f4aa463fe574c2e6b7e4b"
+    },
+    {
+      "path": "tracks/tog/tasks/t71-causal-full-window/run_once.py",
+      "bytes": 59324,
+      "sha256": "73ef71992be088dc7ba6ac1b67305cc720f72423225f9458ef69df01fc72eb30"
+    },
+    {
+      "path": "tracks/tog/tasks/t71-causal-full-window/scorer.py",
+      "bytes": 25990,
+      "sha256": "91d787bdb4df469e591f8f1cebacd02c27252e49636be35b5a1a9d41cfc68a8f"
+    },
+    {
+      "path": "tracks/tog/tasks/t71-causal-full-window/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tracks/tog/tasks/t71-causal-full-window/stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "tracks/validation/art-independent-review-2026-10-30.md",
+      "bytes": 14108,
+      "sha256": "cebe44c3c44c25eae57e43934ef4e9c93310fbcf134639fae22503b5e962e1ce"
+    },
+    {
+      "path": "tracks/validation/t71-causal-full-window-review.md",
+      "bytes": 9883,
+      "sha256": "c61d305e7215f709280c422e80bcff822d45176c772e8e766b4ac3d9522d2410"
+    },
+    {
+      "path": "tracks/validation/tog-independent-review-2026-10-30.md",
+      "bytes": 18704,
+      "sha256": "2d874d7f0cddadef0ff19e8802f73c1a909865b4e41ffde33c054d19193c1cb9"
+    }
+  ],
+  "current_state_documents": [
+    {
+      "path": "tracks/STATUS.md",
+      "bytes": 92760,
+      "sha256": "b69d04aaef44b5d42303ad0e66113b463e7238527c7271b8ba88a45dc3177db3"
+    },
+    {
+      "path": "tracks/EXPLORATION.md",
+      "bytes": 8337,
+      "sha256": "6740a38d488c73ad957ca2732f3c84bf54677a8cd4f695ba49535d6624ff58ae"
+    },
+    {
+      "path": "tracks/tog/README.md",
+      "bytes": 8099,
+      "sha256": "ad6ce6767854ac6f2690ce8cc3019a9f35ef22e0c09b09a1f5fa2b04a72c4dd9"
+    }
+  ],
+  "frozen_inputs": [
+    {
+      "path": "tracks/tog/tasks/t55-axisymmetric-reference/TASK.md",
+      "bytes": 4132,
+      "sha256": "b470e55c6449348136673764e7d7b975cd3bad479ddefa0d881d827eba84e89e"
+    },
+    {
+      "path": "tracks/tog/tasks/t57-finer-short-reference/memory.py",
+      "bytes": 2231,
+      "sha256": "4b83a89eff664dc0d86fb0c71b39c99d71720c1d18c5f93557e279d0ca3745fd"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/execution.json",
+      "bytes": 22168,
+      "sha256": "3eaf3d644c649ed26dc10d9a1f52546232b635a4e2c598ac47564c78197c727e"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/input-manifest.json",
+      "bytes": 10984,
+      "sha256": "007dea68a26f3aeb476ac89db6990f7b06d0678ebf7a3d2fb987575277a39023"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S128-snapshot-0.json",
+      "bytes": 2144,
+      "sha256": "cd0042b4505656ac295921201236cc05fb7b0f2c87fcc3a6ffe30b9839056c8e"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S128-snapshot-1.json",
+      "bytes": 2146,
+      "sha256": "c1dbe8a3a5f62ed4d4cb65c3ddfb13c76352307e417de73306e6b5ea26a561ca"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S128-snapshot-2.json",
+      "bytes": 2144,
+      "sha256": "436787a7fc29f991aeff38ab56f0bdf3f49e8a760d2ef897436ba725cf16ce2a"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S128-snapshot-3.json",
+      "bytes": 2150,
+      "sha256": "f82f55e2b24c024bc533ab66a2494a63597b9412d9e423e8629dc24642061c02"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S128-snapshot-4.json",
+      "bytes": 2146,
+      "sha256": "6d64d7288798d56e5fece9f2eca177761c5829d0cf6541e7bef7748a49f6a158"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S128.json",
+      "bytes": 8295,
+      "sha256": "9b2123bcf96e93fe40285978b321ce94ed6d7fd0cfb81e7e446f04fceb6da93b"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S256-snapshot-0.json",
+      "bytes": 2144,
+      "sha256": "5bb3e8be49fb1fe508dd892800b82fdf1e390f18c72a94cc3887c5e20d11ea93"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S256-snapshot-1.json",
+      "bytes": 2139,
+      "sha256": "786d41f4a3df8dfab112ffe0a50090fc4d2cd1cc243d9d54130a24721d61bbc1"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S256-snapshot-2.json",
+      "bytes": 2141,
+      "sha256": "45e2657db09f932ee870e1541972630f529beff9cebb02cbc8ad46e172df6fe4"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S256-snapshot-3.json",
+      "bytes": 2140,
+      "sha256": "e0e460a50791966c0b400e675c7341888b51f6ecbbc50a5a716f2be60d03fbf2"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S256-snapshot-4.json",
+      "bytes": 2143,
+      "sha256": "bdf326b8ae13b0e2431105db2c6e43d1cc76707c3564769840b6f07e22835644"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S256.json",
+      "bytes": 8299,
+      "sha256": "2f7f1dc0ca14e5c6c7d46f0e7256f386fd35e01c502c555f893de637da3ac47a"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/result.json",
+      "bytes": 136401,
+      "sha256": "8908fe090dd50c2c60291ffde31a52fb0e525063d9a66646462c6d3e6ba88954"
+    },
+    {
+      "path": "tracks/tog/tasks/t61-saved-output-qualification/audit-manifest.json",
+      "bytes": 39054,
+      "sha256": "1db810f38cc04298a8613db1e95c76c6594f420b8145ea85bb7798c6448f253e"
+    },
+    {
+      "path": "tracks/tog/tasks/t61-saved-output-qualification/execution.json",
+      "bytes": 2351,
+      "sha256": "cf0734c0f9310cd50704ad3677adb6161c939ab9d24ced8e9425f73cfd4f7059"
+    },
+    {
+      "path": "tracks/tog/tasks/t61-saved-output-qualification/input-manifest.json",
+      "bytes": 31766,
+      "sha256": "ed4e5a7b8392f4ffaea6fa0705d4715edd0a5aab9792b74030066b0f061d616d"
+    },
+    {
+      "path": "tracks/tog/tasks/t61-saved-output-qualification/result.json",
+      "bytes": 3936,
+      "sha256": "c6ac286c4527ad4925e1d85b4cd0cfc897ea5ceced413c810496dd716a0cd679"
+    },
+    {
+      "path": "tracks/tog/tasks/t69-causal-mixture-startup/ANALYSIS.md",
+      "bytes": 11426,
+      "sha256": "8818bd794fc8563d5bb174d96e61894443978a5e4e469fb6ff6bcefb9264d5e9"
+    },
+    {
+      "path": "tracks/tog/tasks/t69-causal-mixture-startup/COMPARATOR.md",
+      "bytes": 10310,
+      "sha256": "2e3827cec3f5a2d2674d3fdf603443a43540cd390a2d7136da5a97d8f6785ca1"
+    },
+    {
+      "path": "tracks/tog/tasks/t70-causal-projector-qualification/DECISION.md",
+      "bytes": 5749,
+      "sha256": "0a0300c4a291cfd17f0ebdb87db85a3579bf60ac05548c56941f32f1db27dc09"
+    },
+    {
+      "path": "tracks/tog/tasks/t70-causal-projector-qualification/PROTOCOL.md",
+      "bytes": 10802,
+      "sha256": "24bf6e4cebaee51ca7e343743243d66da1b1f16cf1229b4990308f26c710f68c"
+    },
+    {
+      "path": "tracks/tog/tasks/t70-causal-projector-qualification/audit-manifest.json",
+      "bytes": 15520,
+      "sha256": "6339a3f09af63a01696062b5969fb99e7845425c5a5e100e37f30df74cd5e190"
+    },
+    {
+      "path": "tracks/tog/tasks/t70-causal-projector-qualification/execution.json",
+      "bytes": 4730,
+      "sha256": "2c9071610b944a6455053a84f49b6caba77bbd0a32e4e99ab05ad3588e02d7fe"
+    },
+    {
+      "path": "tracks/tog/tasks/t70-causal-projector-qualification/input-manifest.json",
+      "bytes": 9720,
+      "sha256": "8d9feb36e6aade13c79046dba54edbed6d65569aaf9dfce0c754017272ac3cce"
+    },
+    {
+      "path": "tracks/tog/tasks/t70-causal-projector-qualification/physics.py",
+      "bytes": 15104,
+      "sha256": "7b3788924bf6cd604f1e22c6aa837ae2407fd583445871975b799ba6851f227d"
+    },
+    {
+      "path": "tracks/tog/tasks/t70-causal-projector-qualification/result.json",
+      "bytes": 113953,
+      "sha256": "f05dcff99bb4b9aadc5f6c690e069b04f5ba1c3121d1d7aac4966170f896a778"
+    },
+    {
+      "path": "tracks/tog/tasks/t70-causal-projector-qualification/search.py",
+      "bytes": 18390,
+      "sha256": "70b75cbfb971657ccc280856e4f585709e1c07a18a5ab1398c7dedbd707e594a"
+    },
+    {
+      "path": "tracks/tog/tasks/t71-causal-full-window/.gitignore",
+      "bytes": 7,
+      "sha256": "a7d8bdcefba82a95ebc021d87c629fdea21f13af953bf01e28b7cf8b0eeceb41"
+    },
+    {
+      "path": "tracks/tog/tasks/t71-causal-full-window/PROTOCOL.md",
+      "bytes": 12014,
+      "sha256": "210acfce28e3eee2acd3f4c314158ede59dc1c736893f47cd9ed8bd80100f20a"
+    },
+    {
+      "path": "tracks/tog/tasks/t71-causal-full-window/measure.py",
+      "bytes": 27417,
+      "sha256": "18bdc33eaa5fd37d8d4535ad0f087770cc17eeb7830c8c904e4238a9da1b1e8a"
+    },
+    {
+      "path": "tracks/tog/tasks/t71-causal-full-window/preflight.json",
+      "bytes": 733,
+      "sha256": "1208667bd0628717bb04977f5232000c6b6de1f6112d966b86b78d850eefc136"
+    },
+    {
+      "path": "tracks/tog/tasks/t71-causal-full-window/prepare.py",
+      "bytes": 12388,
+      "sha256": "d520131250a630062f878434bbba4737d3c2473304376dc0412b1a1f010577ff"
+    },
+    {
+      "path": "tracks/tog/tasks/t71-causal-full-window/run_once.py",
+      "bytes": 59324,
+      "sha256": "73ef71992be088dc7ba6ac1b67305cc720f72423225f9458ef69df01fc72eb30"
+    },
+    {
+      "path": "tracks/tog/tasks/t71-causal-full-window/scorer.py",
+      "bytes": 25990,
+      "sha256": "91d787bdb4df469e591f8f1cebacd02c27252e49636be35b5a1a9d41cfc68a8f"
+    },
+    {
+      "path": "tracks/validation/t61-saved-output-review.md",
+      "bytes": 5205,
+      "sha256": "aecda1b55abec9842e1eec35cec3d425356ca6a91a06bdb5888cf908fc9a0099"
+    },
+    {
+      "path": "tracks/validation/t70-causal-projector-review.md",
+      "bytes": 7357,
+      "sha256": "76f2b6c88e695d4d2179914617e9166d7ccf9e0493f530624f5a91db6489fb80"
+    }
+  ],
+  "preservation_chain": {
+    "parent_manifest": {
+      "path": "tracks/tog/tasks/t70-causal-projector-qualification/audit-manifest.json",
+      "bytes": 15520,
+      "sha256": "6339a3f09af63a01696062b5969fb99e7845425c5a5e100e37f30df74cd5e190"
+    },
+    "verified_prior_artifacts": 859
+  },
+  "parent_preservation": {
+    "tracked_count": 1387,
+    "nonstate_count": 1384,
+    "nonarray_nonstate_byte_and_git_identity_verified": 1366,
+    "arrays_metadata_only": [
+      {
+        "path": "tracks/tog/fixtures/r22/approved.npz",
+        "blob_id": "a20c97964788b14f3fe3bed07df0bfca9b1fa4bd"
+      },
+      {
+        "path": "tracks/tog/fixtures/r22/witness.npz",
+        "blob_id": "6333e00b1cfa4032b5becb6cd3672f65ad34d87f"
+      },
+      {
+        "path": "tracks/tog/tasks/t02-authored-upper-bend/run-01/target-edit.npy",
+        "blob_id": "a7bd860b30e6d06a5936b122638e863ec471a4ba"
+      },
+      {
+        "path": "tracks/tog/tasks/t02-authored-upper-bend/run-01/target-full.npy",
+        "blob_id": "ff6ff290dd4e5cb274c44913dfaa07a420d2db61"
+      },
+      {
+        "path": "tracks/tog/tasks/t03-ordinary-conflict-screen/edit_only-final.npz",
+        "blob_id": "d843ddda0b4a554cd11094dd71e01414e17025be"
+      },
+      {
+        "path": "tracks/tog/tasks/t03-ordinary-conflict-screen/joint-final.npz",
+        "blob_id": "c4616137808765a57c6817991866a33a02f52ed1"
+      },
+      {
+        "path": "tracks/tog/tasks/t04-framewise-feasibility/framewise_joint-final.npz",
+        "blob_id": "ee268c33b1b9a86d4fa37dc0cd21e75994a4e54e"
+      },
+      {
+        "path": "tracks/tog/tasks/t05-framewise-cold-start/framewise_joint-final.npz",
+        "blob_id": "cb04203401b9f2fbe58dbf64008744aa915e740f"
+      },
+      {
+        "path": "tracks/tog/tasks/t05-framewise-cold-start/g0-proof.npz",
+        "blob_id": "2bd0f8970b6129f622e104baeec4a0f0a9ea46b3"
+      },
+      {
+        "path": "tracks/tog/tasks/t06-authored-timing-revision/run-01/target-edit.npy",
+        "blob_id": "1626d82784e53e7834f7256fa1cfac972fc7a497"
+      },
+      {
+        "path": "tracks/tog/tasks/t06-authored-timing-revision/run-01/target-full.npy",
+        "blob_id": "89ee8c227efcbcb4c51bd7b519b805ca38045b13"
+      },
+      {
+        "path": "tracks/tog/tasks/t07-ordinary-timing-revision/framewise_joint-final.npz",
+        "blob_id": "5634b43a752c9467eb7447f8261a2f1343e5694c"
+      },
+      {
+        "path": "tracks/tog/tasks/t08-ordinary-evaluation-reuse/framewise_joint-final.npz",
+        "blob_id": "1dd26f94bf966924e81b6e22397f4d2c9e1fbbea"
+      },
+      {
+        "path": "tracks/tog/tasks/t08-ordinary-evaluation-reuse/g0-proof.npz",
+        "blob_id": "05b28e106f4bf46b92f8b1c112df6a6b1c95dc6d"
+      },
+      {
+        "path": "tracks/tog/tasks/t11-observation-compatible-source-response/publish-01/compact.npz",
+        "blob_id": "193625dfeef93d20366137281384da261f821cf8"
+      },
+      {
+        "path": "tracks/tog/tasks/t12-ordinary-wind-response-extrema/publish-01/compact.npz",
+        "blob_id": "2b76da94aba264236b09c9915bff1eff19f9dc83"
+      },
+      {
+        "path": "tracks/tog/tasks/t13-ordinary-feasibility-recovery/inputs.npz",
+        "blob_id": "c6720dbcc3f7e7fb8fa6ba97739b9080da009c4d"
+      },
+      {
+        "path": "tracks/tog/tasks/t13-ordinary-feasibility-recovery/publish-01/compact.npz",
+        "blob_id": "3b4029f2c4f74da77a6a8c7e792c44a71d7625fd"
+      }
+    ]
+  },
+  "scientific_series_seconds": 2017.6732525997795,
+  "scientific_outcome": {
+    "verdict": "time_or_reference_sensitive_inconclusive",
+    "numerical_qualified": true,
+    "time_sensitive": true,
+    "reference_sensitive": false,
+    "physical_pass": false,
+    "full_task_validated": false,
+    "new_method_claim": false,
+    "current_child_seconds": 26.20414529996924,
+    "cumulative_scientific_child_seconds": 2017.6732525997795
+  },
+  "publication_raw_arrays_opened": 0,
+  "historical_outcomes_reclassified": false,
+  "independent_reviews_are_simulations": true,
+  "art_production_inactive": true,
+  "main_unchanged": true
+}
