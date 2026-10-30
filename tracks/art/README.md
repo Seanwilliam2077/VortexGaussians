@@ -1,6 +1,6 @@
 # 可燃的数字记忆（暂定） · 艺术排练入口
 
-**2026-10-30：艺术迭代继续，当前营火剪辑分支关闭。** [A10第二次点火](studies/a10-second-ignition/README.md)完成一次不重置的31模拟秒排练，保留[83.427秒采样记录](studies/a10-second-ignition/run-01/study.mp4)。第二次没有新增点，但晚态仍以醒目火焰为中心，未形成新的作品操作。[独立复评](../validation/art-a10-review-round-01.md)对原A09加本次排练维持**3/6 Weak Reject、准备度5/10、置信度3/5**；总评5/6目标未达。[回应](studies/a10-second-ignition/RESPONSE_ROUND_01.md)停止同一营火的反复点火、延时和再剪片，[内容先行核查](CONTENT_FIRST_SCREEN.md)也否决了把A09六句澄清改成燃烧阅读的候选。下一项先确定新的具体作品内容，当前没有录制或模拟在运行。[A09《未予归档》](studies/a09-rejected-records/README.md)、[A08《三次归档》](studies/a08-three-archives/README.md)及A04–A07历史作品不变。没有人类观看证据；独立评审实际看帧，未连续播放。[复评流程](REVIEW_LOOP.md)保持标准与角色披露。
+**2026-10-30：A11实际小样完成，当前复制形式关闭。** [《凳子可以带走》](studies/a11-content-first/index.html)是原创虚构短文与单文件SVG交互小样：长凳移走后，数字副本回到门口，预留位置仍有同一张凳子。四状态及375窄屏检查产生五张截图，没有真人观看。[独立材料复评](../validation/art-a11-material-review-round-01.md)认为它仍可由普通“副本不等于公共使用”概括，增量不足以改变既有**3/6 Weak Reject**；A11没有单独投稿总分，也没有达到目标5/6。[决定](studies/a11-content-first/DECISION.md)保留短文与实际作品，关闭此三状态形式。[A12源码核查](studies/a12-view-material-screen/README.md)已确认特定模式下存在相机参与热量／烧损更新的因果路径，尚未测得效果；下一项先核定逐点状态读取、随机／绘制控制和world模式负对照，再决定有限四臂材料实验，不自动续剪营火。原命题、平台、A04–A10材料与历史评分保留；[复评流程](REVIEW_LOOP.md)继续适用。
 
 首个作者排练原型。它把现有 VortexGaussians demo 放在“保存的空间 → 介入燃烧 → 重置重看”的三个阶段中，并记录创作选择。它不是完成作品、观众实验或新燃烧算法。创作命题及待补证据见 [ART_BRIEF.md](ART_BRIEF.md)；技术证据另见 [research/EVIDENCE_STATUS.md](../../research/EVIDENCE_STATUS.md)。
 

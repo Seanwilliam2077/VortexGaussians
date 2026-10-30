@@ -1,0 +1,239 @@
+{
+  "createdUTC": "2026-10-30T11:58:29.090Z",
+  "scope": "Agent UI behavior and frame inspection only",
+  "source": {
+    "bytes": 19515,
+    "sha256": "08b415e3163cb7cd5b13752fd2305012a1d2877dde0c9db052520c9e52edf09f"
+  },
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "steps": [
+    {
+      "name": "01-doorway",
+      "file": "01-doorway.png",
+      "wallSeconds": 2.8237514,
+      "bytes": 178783,
+      "sha256": "f90156aa71d66a8a47037fe5c0bae2726801c2b2510de777fde6015df37169e6",
+      "uses": [
+        {
+          "id": "bench-shop",
+          "href": "#bench-definition",
+          "visible": true,
+          "box": {
+            "x": 250.64639282226562,
+            "y": 482.0008544921875,
+            "width": 330.1759948730469,
+            "height": 141.1787109375
+          }
+        },
+        {
+          "id": "bench-reserved",
+          "href": "#bench-definition",
+          "visible": false,
+          "box": null
+        }
+      ],
+      "buttons": [
+        {
+          "text": "按约定移走",
+          "enabled": true
+        },
+        {
+          "text": "留下数字副本",
+          "enabled": false
+        },
+        {
+          "text": "重新开始小样",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "name": "02-reserved",
+      "file": "02-reserved.png",
+      "wallSeconds": 3.0028334,
+      "bytes": 181482,
+      "sha256": "34b069bcdd59efee8140634c6fc1022d2ea8c92369da2c8327c03284550119f0",
+      "uses": [
+        {
+          "id": "bench-shop",
+          "href": "#bench-definition",
+          "visible": false,
+          "box": null
+        },
+        {
+          "id": "bench-reserved",
+          "href": "#bench-definition",
+          "visible": true,
+          "box": {
+            "x": 856.6463623046875,
+            "y": 482.0008544921875,
+            "width": 330.176025390625,
+            "height": 141.1787109375
+          }
+        }
+      ],
+      "buttons": [
+        {
+          "text": "按约定移走",
+          "enabled": false
+        },
+        {
+          "text": "留下数字副本",
+          "enabled": true
+        },
+        {
+          "text": "重新开始小样",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "name": "03-copy",
+      "file": "03-copy.png",
+      "wallSeconds": 3.1289187,
+      "bytes": 181436,
+      "sha256": "4dd03aa5fe488fd6062158a4d501430d5a248cb06bb1f98f3df28a00b95d0d3f",
+      "uses": [
+        {
+          "id": "bench-shop",
+          "href": "#bench-definition",
+          "visible": true,
+          "box": {
+            "x": 250.64639282226562,
+            "y": 482.0008544921875,
+            "width": 330.1759948730469,
+            "height": 141.1787109375
+          }
+        },
+        {
+          "id": "bench-reserved",
+          "href": "#bench-definition",
+          "visible": true,
+          "box": {
+            "x": 856.6463623046875,
+            "y": 482.0008544921875,
+            "width": 330.176025390625,
+            "height": 141.1787109375
+          }
+        }
+      ],
+      "buttons": [
+        {
+          "text": "按约定移走",
+          "enabled": false
+        },
+        {
+          "text": "留下数字副本",
+          "enabled": false
+        },
+        {
+          "text": "重新开始小样",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "name": "04-restart",
+      "file": "04-restart.png",
+      "wallSeconds": 3.2599601,
+      "bytes": 179128,
+      "sha256": "46eb04a733926164e3613042aa47e5cc845bf52113304c31c82e4e72c57421a1",
+      "uses": [
+        {
+          "id": "bench-shop",
+          "href": "#bench-definition",
+          "visible": true,
+          "box": {
+            "x": 250.64639282226562,
+            "y": 482.0008544921875,
+            "width": 330.1759948730469,
+            "height": 141.1787109375
+          }
+        },
+        {
+          "id": "bench-reserved",
+          "href": "#bench-definition",
+          "visible": false,
+          "box": null
+        }
+      ],
+      "buttons": [
+        {
+          "text": "按约定移走",
+          "enabled": true
+        },
+        {
+          "text": "留下数字副本",
+          "enabled": false
+        },
+        {
+          "text": "重新开始小样",
+          "enabled": true
+        }
+      ]
+    },
+    {
+      "name": "05-mobile",
+      "file": "05-mobile.png",
+      "wallSeconds": 3.4167796,
+      "bytes": 199085,
+      "sha256": "4f81b22d0371bfb495ec54b16e6d409ee023f48114a76f0356eb23d617e22781",
+      "uses": [
+        {
+          "id": "bench-shop",
+          "href": "#bench-definition",
+          "visible": true,
+          "box": {
+            "x": 91.08267974853516,
+            "y": 351.0732727050781,
+            "width": 191.3675765991211,
+            "height": 81.82614135742188
+          }
+        },
+        {
+          "id": "bench-reserved",
+          "href": "#bench-definition",
+          "visible": false,
+          "box": null
+        }
+      ],
+      "buttons": [
+        {
+          "text": "按约定移走",
+          "enabled": true
+        },
+        {
+          "text": "留下数字副本",
+          "enabled": false
+        },
+        {
+          "text": "重新开始小样",
+          "enabled": true
+        }
+      ]
+    }
+  ],
+  "pageErrors": [],
+  "consoleWarnings": [],
+  "externalRequests": [],
+  "status": "completed_ui_sequence",
+  "closed": {
+    "context": true,
+    "browser": true,
+    "server": true
+  },
+  "runtime": {
+    "node": "v24.19.0",
+    "browser": "149.0.4022.52",
+    "launch": {
+      "headless": true,
+      "executablePath": "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe"
+    }
+  },
+  "visibleGeometrySequence": true,
+  "sourceUnchanged": true,
+  "wallSeconds": 4.0165233
+}
