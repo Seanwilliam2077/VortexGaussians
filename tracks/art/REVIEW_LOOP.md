@@ -1,12 +1,12 @@
 # 艺术线：制作与独立复评
 
-## 2026-10-31 current: A42 material supported; creator closes the chosen form; A43 access gap retained; A44 form selection
+## 2026-10-31 current: A42 material supported; creator closes the chosen form; A43 access gap retained; A45 Hollow preparation
 
 [A42](studies/a42-inherited-apology-local-build/README.md) completed one 33.6634537-second material inspection: five original PNGs, 544154 bytes, 16 behavior checks. The treated apology is inherited exactly; a later request is introduced unburned; old glyphs remain readable and warm slightly. Both original reviewers support the minimum visual qualification, with the pasted-golden-prefix counterreading intact. The creator accepts those facts but elects not to develop this form. This is a documented artistic-choice disagreement, not shared confirmation of a material failure. No new art score or complete work; A40's current proposal is closed by its creator. Raw evidence is losslessly archived in 282795 bytes; original demo unchanged.
 
 [A39](studies/a39-handover-clock-maintenance/README.md) remains historically closed at both overall3/6, readiness7/10, confidence3/5 and4/5. A41's static scope failure and all prior outcomes remain. These are not scores assigned to A42. Overall5/6 remains unmet.
 
-[A43](studies/a43-published-practice-reading/SOURCE_READING.md) ended after two broad searches and four opens with no full Art Paper: two publisher403 results, two official2023 pages with criteria/award identity only. No full-text calibration, and no immediate replacement search batch. [Next A44](studies/a44-form-selection/BRIEF.md) grants a new creator one finite form choice, with up to three candidates and at most one selection, based on existing materials; no production, simulation or new score queued. Original scorers retained, no weaker acceptance target, TOG/main unchanged, full goal active and automation remains deleted.
+[A43](studies/a43-published-practice-reading/SOURCE_READING.md) ended after two broad searches and four opens with no full Art Paper: two publisher403 results, two official2023 pages with criteria/award identity only. No full-text calibration, and no immediate replacement search batch. [A44](studies/a44-form-selection/CREATOR_CHOICE.md) selected “Hollow”: four rotated copies of a single fire sequence surround a black square, then freeze clockwise at presentation4/6/8/10seconds; the final image holds12seconds. [A45](studies/a45-hollow-composition/BRIEF.md) fixes one150-step source,22seconds of playback,≤6original canvas frames and one optional native WebM. Author layout/endpoints are fixed; implementation is underway, no source generation or playback executed yet. Kaleidoscopic decoration remains the strong counterreading; no art score promised. Original scorers retained, no weaker acceptance target, TOG/main unchanged, full goal active and automation remains deleted.
 
 
 2026-10-30。用户重新授权持续艺术迭代，并要求与评分 Agent 交流直至至少 5 分。本轮把目标解释为既有内部六档总评中的 **5/6（Accept）**，不是就绪度 5/10，也不是官方录用概率。
@@ -29,4 +29,4 @@
 
 ## 当前有限任务
 
-A42材料获两位原评审窄幅支持，作者认可事实但主动不继续；完整保留判断分歧，无新分。A43两查询/四打开未获全文，不追加同一搜索批次或拿摘要校准。A44新创作协作者仅读九固定文/最多六旧图，至多三候选选一或不选，扩展形式选择空间但不改评分标准；未批准新制作、数值运行或论文。5/6未达。
+A44作者选择纯视觉《空心》，A45准备一次单源150步与22秒呈示。720方画布、中央240黑方、四梯形旋转与4/6/8/10秒停格端点已由作者固定，末幅静置12秒。工程实现中，root静态读回后才一次检查；最多六原生canvas图和一次可选WebM，无重跑或调参。之后作者及原两位评审看真实材料，尚无新分。A42分歧、A43全文访问缺口及旧分保留，5/6未达。
