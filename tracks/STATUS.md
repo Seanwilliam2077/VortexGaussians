@@ -1,5 +1,10 @@
 # Dual-track status
 
+## 2026-10-30 active: A20 production
+
+[A19](art/studies/a19-artistic-commitment/COMMITMENT.md) completed; its root decision authorizes one A20 room-gift artwork and bounded primary-source context check. The specific bed, slippers and inward latch now precede the choice of fire; viewpoint-driven burning is dropped. This is a production decision, not evidence of an Art Papers contribution. Independent review follows actual images; historical A14 remains3/6 and overall5/6 target is unmet. No TOG computation or A15/A16 recording repair is queued.
+
+
 Updated 30 October 2026. Active exploration authorized by the author. TOG and Art Papers contributions are both unestablished.
 
 Latest steering: [A18 context assessment](art/studies/a18-context-positioning/README.md) and [independent decision](validation/art-a18-core-decision.md) close A14 as the current submission core. Its visible shared object, turn-taking and retreat remain real; the closure concerns the gap to its artistic claim, not recording failure or a field-wide impossibility. Prior A14 overall3/6, readiness6/10, confidence4/5 remain, with no new score. Two of the fixed practices' primary texts were read; other access gaps are explicit and do not support exclusion claims. [A19](art/studies/a19-artistic-commitment/BRIEF.md) is one creator-authored page choosing a specific object, viewing relation and action/tradeoff before production. No new artwork run, recording, encoding or TOG computation is queued by this decision. A15/A16 failures, A17 source images and historical scientific-child subtotal2017.6732525997795 seconds remain unchanged; recorded task costs are not project cost. Art track and original platform continue, overall5/6 target unmet, main unchanged, automation deleted, full goal active.

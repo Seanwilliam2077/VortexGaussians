@@ -1,5 +1,10 @@
 # Exploration policy
 
+## 2026-10-30 active: A20 production
+
+[A19](art/studies/a19-artistic-commitment/COMMITMENT.md) completed; its root decision authorizes one A20 room-gift artwork and bounded primary-source context check. The specific bed, slippers and inward latch now precede the choice of fire; viewpoint-driven burning is dropped. This is a production decision, not evidence of an Art Papers contribution. Independent review follows actual images; historical A14 remains3/6 and overall5/6 target is unmet. No TOG computation or A15/A16 recording repair is queued.
+
+
 This is the repository's working research policy, not a venue acceptance checklist. User steering takes precedence. Updated 30 October 2026.
 
 The latest author instruction keeps technical research and Art Papers iteration active toward an independent overall5/6 assessment. [A18 decision](art/studies/a18-context-positioning/DECISION.md) closes A14 as the present submission core while retaining its actual formal achievements, overall3/6 and all evidence. Limited source access is not proof of exhausted novelty; concretely affecting another person, private history, interactivity and new algorithms are not universal art requirements. The problem is this work's unsupported central claim. Only [A19](art/studies/a19-artistic-commitment/BRIEF.md) follows: one creator-authored page commits to a content-specific object, viewing relation and observer action/tradeoff, without making, running, searching or grading a new work. Root then decides whether production is warranted. Do not revive A14 by changing furnace geometry/trajectory, or restart closed campfire/copy/disappearing-reading forms without a substantive new artistic choice. The recording loop stays closed. A13 evidence and TOG T73/T72 boundaries remain; no numerical queue, fabricated human feedback, main change or restored automation.

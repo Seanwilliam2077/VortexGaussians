@@ -1,5 +1,10 @@
 # 可燃的数字记忆（暂定）
 
+## 2026-10-30 active: A20 production
+
+[A19](studies/a19-artistic-commitment/COMMITMENT.md) completed; its root decision authorizes one A20 room-gift artwork and bounded primary-source context check. The specific bed, slippers and inward latch now precede the choice of fire; viewpoint-driven burning is dropped. This is a production decision, not evidence of an Art Papers contribution. Independent review follows actual images; historical A14 remains3/6 and overall5/6 target is unmet. No TOG computation or A15/A16 recording repair is queued.
+
+
 **2026-10-30更新：** [A18及独立决定](studies/a18-context-positioning/DECISION.md)关闭A14《两边的火》作为当前投稿核心，保留其试作价值、总体3/6、准备度6/10、置信度4/5。关闭限于作品与自身主张的缺口，不以读取失败推导领域没有空间，也不要求所有艺术都必须影响他人、真人输入或私人记忆。艺术线继续用原平台探索；[A19单案创作决定](studies/a19-artistic-commitment/BRIEF.md)先选择有明确内容的对象和观看关系，之后才决定制作。暂定主题保留，用户未提供的经历不代写。以下历史brief不重启旧关闭路线；总体5/6目标未达。[复评流程](REVIEW_LOOP.md)继续适用。
 
 2026-10-27。用户已选择此命题作为可更改的艺术研究方向；本文是作者排练 brief，不是既有观众研究、完成作品声明或已成立学术结论。

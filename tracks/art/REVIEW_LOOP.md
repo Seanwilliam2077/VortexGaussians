@@ -1,5 +1,10 @@
 # 艺术线：制作与独立复评
 
+## 2026-10-30 active: A20 production
+
+[A19](studies/a19-artistic-commitment/COMMITMENT.md) completed; its root decision authorizes one A20 room-gift artwork and bounded primary-source context check. The specific bed, slippers and inward latch now precede the choice of fire; viewpoint-driven burning is dropped. This is a production decision, not evidence of an Art Papers contribution. Independent review follows actual images; historical A14 remains3/6 and overall5/6 target is unmet. No TOG computation or A15/A16 recording repair is queued.
+
+
 2026-10-30。用户重新授权持续艺术迭代，并要求与评分 Agent 交流直至至少 5 分。本轮把目标解释为既有内部六档总评中的 **5/6（Accept）**，不是就绪度 5/10，也不是官方录用概率。
 
 ## 分工与判断
