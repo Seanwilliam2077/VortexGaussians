@@ -1,0 +1,653 @@
+{
+  "schema": "t67-compact-mixture-contract-evidence-v1",
+  "created_utc": "2026-10-30T06:00:26.170242+00:00",
+  "parent_commit": "6e324dee9ed3d57fcbef01c580324eaea5915fa2",
+  "status": "analytic_contract_complete_no_numerical_capacity_result",
+  "analysis_only": true,
+  "new_measurement": false,
+  "new_scientific_invocations": 0,
+  "new_arrays_decoded": 0,
+  "new_raw_array_hashes": 0,
+  "new_fits": 0,
+  "new_integrals": 0,
+  "new_flow_trajectories": 0,
+  "new_field_evaluations": 0,
+  "new_parameter_searches": 0,
+  "new_root_solver_invocations": 0,
+  "new_scientific_implementation": false,
+  "contract_numerically_evaluated": false,
+  "formal_error_certificate": false,
+  "contribution_established": false,
+  "input_identities": [
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S128-snapshot-4.json",
+      "bytes": 2146,
+      "sha256": "6d64d7288798d56e5fece9f2eca177761c5829d0cf6541e7bef7748a49f6a158"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S256-snapshot-4.json",
+      "bytes": 2143,
+      "sha256": "bdf326b8ae13b0e2431105db2c6e43d1cc76707c3564769840b6f07e22835644"
+    },
+    {
+      "path": "tracks/tog/tasks/t62-joint-oracle-contract/DERIVATION.md",
+      "bytes": 10232,
+      "sha256": "b375dce8d5f0b5aad9cf76fafc0984f842008c8fd0a348877a5f1569dab0f8e7"
+    },
+    {
+      "path": "tracks/tog/tasks/t62-joint-oracle-contract/PROTOCOL.md",
+      "bytes": 10583,
+      "sha256": "225b1b26689f0548dee987e15d9d8432d3d8b9c5cb919c942751299d07563e66"
+    },
+    {
+      "path": "tracks/tog/tasks/t62-joint-oracle-contract/evidence.json",
+      "bytes": 7718,
+      "sha256": "a785798c2b3be17442ca08a5b6744f0096c2d487796507c4397a850922aeecfb"
+    },
+    {
+      "path": "tracks/tog/tasks/t63-endpoint-capacity/PROTOCOL.md",
+      "bytes": 2754,
+      "sha256": "859e9a2e420aaf0f074f51bbd404c5bac332815f5955aa4e90aa35d18a900b92"
+    },
+    {
+      "path": "tracks/tog/tasks/t63-endpoint-capacity/execution.json",
+      "bytes": 3499,
+      "sha256": "412f9f96d370d250633eaa228754675c51951ae659633bbcd9cf591246d57a3d"
+    },
+    {
+      "path": "tracks/tog/tasks/t63-endpoint-capacity/input-manifest.json",
+      "bytes": 8367,
+      "sha256": "bb9c3d46a838a4da2b2f66c537ae16433fc91c8d3fd3d84568fbbb3d26a8671c"
+    },
+    {
+      "path": "tracks/tog/tasks/t63-endpoint-capacity/measure.py",
+      "bytes": 25354,
+      "sha256": "ede813749657e3cef6db88eb327cbfef1a10ee11829b774503341477608f392a"
+    },
+    {
+      "path": "tracks/tog/tasks/t63-endpoint-capacity/result.json",
+      "bytes": 28645,
+      "sha256": "b5d5032a504a12d0df48012ade68ae65f61daf04e599e351981d10395df6de92"
+    },
+    {
+      "path": "tracks/tog/tasks/t64-separability-contract/DERIVATION.md",
+      "bytes": 8190,
+      "sha256": "2ec2c43d9c4100c48e5263a669e1d404c294c02ca49fb647e6834b336b94c3ad"
+    },
+    {
+      "path": "tracks/tog/tasks/t64-separability-contract/evidence.json",
+      "bytes": 11051,
+      "sha256": "7a0ef496267e45111bfa03ee9ac435e09bb7cb4b978dea73d5cec139b05ff1c7"
+    },
+    {
+      "path": "tracks/tog/tasks/t65-separability-measurement/execution.json",
+      "bytes": 3866,
+      "sha256": "fa6fb7b81e82fa712469d4e787bb23a26386e6033d501e52cee5e3b0b31abbe4"
+    },
+    {
+      "path": "tracks/tog/tasks/t65-separability-measurement/input-manifest.json",
+      "bytes": 7318,
+      "sha256": "1d151c331eb0e2b3bae7c83565d276341771e66f28a5368ec7462a95210f3768"
+    },
+    {
+      "path": "tracks/tog/tasks/t65-separability-measurement/result.json",
+      "bytes": 86562,
+      "sha256": "26e589f2fa09fd9599032deb5f407e22374071c67410d793f9f705bf5c3dcd16"
+    },
+    {
+      "path": "tracks/tog/tasks/t66-saved-product-diagnostic/DECISION.md",
+      "bytes": 6375,
+      "sha256": "df478e22cbd066274834938b097b6a9ad99dafaf0b20f8efba46c71b2a57afc7"
+    },
+    {
+      "path": "tracks/tog/tasks/t66-saved-product-diagnostic/README.md",
+      "bytes": 2229,
+      "sha256": "e656f95a0385cf442f6387f9f25c7f29418df27506269dd4c9cce152600850f8"
+    },
+    {
+      "path": "tracks/tog/tasks/t66-saved-product-diagnostic/RESULTS.md",
+      "bytes": 8259,
+      "sha256": "fe4f523d1c6bcd167a53e5cb43eb34faeb3f33d3a84b3f6ac0d3cfc0b2b43bca"
+    },
+    {
+      "path": "tracks/tog/tasks/t66-saved-product-diagnostic/audit-manifest.json",
+      "bytes": 27526,
+      "sha256": "8ac4384c0552000f1def5ebf03beb38e25bc4e8ef3ecc0c8ce4c4cffda4caa94"
+    },
+    {
+      "path": "tracks/tog/tasks/t66-saved-product-diagnostic/execution.json",
+      "bytes": 3763,
+      "sha256": "c35032438d1dd7a661a1aacd79061917d0273feb406ae798e56517a904a13cad"
+    },
+    {
+      "path": "tracks/tog/tasks/t66-saved-product-diagnostic/input-manifest.json",
+      "bytes": 11021,
+      "sha256": "7596eb8e9618faad6cd8d45be14ff205472c848e37f5d2d68e444a18efaace04"
+    },
+    {
+      "path": "tracks/tog/tasks/t66-saved-product-diagnostic/measure.py",
+      "bytes": 25105,
+      "sha256": "d41fa8347342b96e14d2ce6640de799ecb25d05c0caf5a0926b0b016e5e138ae"
+    },
+    {
+      "path": "tracks/tog/tasks/t66-saved-product-diagnostic/result.json",
+      "bytes": 22811,
+      "sha256": "c713e1beb95b9859b59aba2822bc22b24b24cb6bc88d511369d42fab031d28eb"
+    },
+    {
+      "path": "tracks/tog/tasks/t66-saved-product-diagnostic/run_once.py",
+      "bytes": 25506,
+      "sha256": "787c726d82f2be10ddbb8227912e4943d317c79dd237aef0f2116531b2a22984"
+    },
+    {
+      "path": "tracks/tog/tasks/t67-compact-mixture-contract/local/extract_metadata.py",
+      "bytes": 10570,
+      "sha256": "5b963c3edb68c34dd835a9caa0bbcb7873e6b61feba11db7120583255c4010e5"
+    },
+    {
+      "path": "tracks/tog/tasks/t67-compact-mixture-contract/local/metadata.json",
+      "bytes": 44161,
+      "sha256": "a14c93d38ba9771244b450f78a40122f109b260674268b87c66456e0886ab6b6"
+    },
+    {
+      "path": "tracks/validation/t66-saved-product-review.md",
+      "bytes": 7497,
+      "sha256": "cefd482d57162a1cb669fe7ea608ded4c97b1685fe0be60bf0961e3912bf2517"
+    }
+  ],
+  "raw_inputs_as_previously_recorded": [
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S128-snapshot-4.npz",
+      "bytes": 3951954,
+      "sha256": "33375f8db5ebed664069b969d2d45bf33e5732eddd34d6078a674164e1e6c7a0"
+    },
+    {
+      "path": "tracks/tog/tasks/t60-full-window-gaussian-screen/local/S256-snapshot-4.npz",
+      "bytes": 15764818,
+      "sha256": "9830bbfc8b7e36a3baed2f5669733998bf2f7f48143c19dfdadaeb40dbb1ec16"
+    }
+  ],
+  "raw_identity_scope": "Inherited metadata only; current raw bytes not opened, hashed, decoded or verified.",
+  "scientific_runtime_as_previously_recorded": {
+    "executable": {
+      "path": "C:\\Users\\seanzjxiao\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+      "bytes": 107312,
+      "sha256": "5640e9be2fd33d05a1a9ae1228e2354609a69ab831605995ec4e2bd6da8fff5e"
+    },
+    "per_task_frozen_executable_records": {
+      "t63": {
+        "path": "C:/Users/seanzjxiao/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/python.exe",
+        "bytes": 107312,
+        "sha256": "5640e9be2fd33d05a1a9ae1228e2354609a69ab831605995ec4e2bd6da8fff5e"
+      },
+      "t65": {
+        "path": "C:\\Users\\seanzjxiao\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "bytes": 107312,
+        "sha256": "5640e9be2fd33d05a1a9ae1228e2354609a69ab831605995ec4e2bd6da8fff5e"
+      },
+      "t66": {
+        "path": "C:\\Users\\seanzjxiao\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "bytes": 107312,
+        "sha256": "5640e9be2fd33d05a1a9ae1228e2354609a69ab831605995ec4e2bd6da8fff5e"
+      }
+    },
+    "expected_python": "3.12.14",
+    "expected_numpy": "2.3.5",
+    "thread_environment_overrides": {
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1"
+    },
+    "identity_origin": "tracks/tog/tasks/t66-saved-product-diagnostic/input-manifest.json",
+    "current_executable_bytes_reverified": false
+  },
+  "metadata_preparation": {
+    "extraction_invocations": 2,
+    "prior_schema_inspection_invocations": 2,
+    "failed_attempt_metadata_inspections": 1,
+    "prior_failed_extraction": {
+      "invocation": 1,
+      "returncode": 1,
+      "output_created": false,
+      "source_bytes": 9713,
+      "source_sha256": "81df2fc37e5d74f1d9bc417f7f23821d5df048d68f3fa6b38632f9c1945a6a3d",
+      "failure": "Pre-output assertion compared complete executable identity dictionaries; slash spelling differs between T63 and T65/T66.",
+      "correction": "Compare Windows Path equality and exact bytes/SHA256; preserve all three recorded dictionaries.",
+      "scientific_invocation": false
+    },
+    "successful_extraction_seconds_before_record_write": 0.005929799983277917,
+    "source": {
+      "path": "tracks/tog/tasks/t67-compact-mixture-contract/local/extract_metadata.py",
+      "bytes": 10570,
+      "sha256": "5b963c3edb68c34dd835a9caa0bbcb7873e6b61feba11db7120583255c4010e5"
+    },
+    "output": {
+      "path": "tracks/tog/tasks/t67-compact-mixture-contract/local/metadata.json",
+      "bytes": 44161,
+      "sha256": "a14c93d38ba9771244b450f78a40122f109b260674268b87c66456e0886ab6b6"
+    },
+    "public_evidence_builder": {
+      "path": "tracks/tog/tasks/t67-compact-mixture-contract/local/build_evidence.py",
+      "bytes": 9741,
+      "sha256": "d5f7dfcf17cdebb2711fb63e7494be512b08fb3b75d4c1f7e33484ca21d42bdc"
+    },
+    "scope": "Standard-library metadata copy/hash and integer-cap checks only; static reasoning/review and other publication bookkeeping are not scientific time."
+  },
+  "saved_T63_selected_control": {
+    "index": 139,
+    "coordinates": [
+      0.05078125,
+      -0.62890625,
+      0.810546875
+    ],
+    "origin": "poll/0/16/2/-1",
+    "parameters": {
+      "sr": 0.9983495975649336,
+      "sz": 1.0072094448500069,
+      "z0": 0.43382405243470806,
+      "A": 1.4960975737243711
+    },
+    "moments": {
+      "centroid": [
+        1.2512456646113714,
+        0.43382405243470806
+      ],
+      "covariance": [
+        [
+          0.42778812470737676,
+          0.0
+        ],
+        [
+          0.0,
+          1.014470865795059
+        ]
+      ],
+      "axial_centroid_absolute": 0.0810546875,
+      "covariance_relative": 0.0969848111128256,
+      "axial_centroid_pass": true,
+      "covariance_pass": true
+    },
+    "contraction": {
+      "B": 8.335566221730828,
+      "M": 5.571539161700763,
+      "C": 12.641021874312637,
+      "A": 1.4960975737243711,
+      "numerator": 0.17020147436232236,
+      "error_squared": 0.013464218008212027,
+      "relative_error": 0.11603541704243592,
+      "seconds": 0.0001238000113517046
+    }
+  },
+  "saved_T63_control_scores": {
+    "S256": {
+      "primary_8x6": {
+        "reference": "S256",
+        "label": "selected",
+        "orders": [
+          8,
+          6
+        ],
+        "numerator": 0.1702014743623162,
+        "denominator": 12.641021874312637,
+        "relative_error": 0.11603541704243381,
+        "D8_circulation": 3.7647395530637833,
+        "D8_vorticity_squared": 12.470820399950313,
+        "node_cell_points": 6291456,
+        "seconds": 0.1265156000154093
+      },
+      "confirmation_16x12": {
+        "reference": "S256",
+        "label": "selected",
+        "orders": [
+          16,
+          12
+        ],
+        "numerator": 0.17020147436231617,
+        "denominator": 12.641021874312635,
+        "relative_error": 0.11603541704243381,
+        "D8_circulation": 3.764739553063783,
+        "D8_vorticity_squared": 12.47082039995031,
+        "node_cell_points": 25165824,
+        "seconds": 0.5354751999257132
+      },
+      "rule_difference": 0.0,
+      "moments": {
+        "centroid": [
+          1.2512456646113714,
+          0.43382405243470806
+        ],
+        "covariance": [
+          [
+            0.42778812470737676,
+            0.0
+          ],
+          [
+            0.0,
+            1.014470865795059
+          ]
+        ],
+        "axial_centroid_absolute": 0.0810546875,
+        "covariance_relative": 0.0969848111128256,
+        "axial_centroid_pass": true,
+        "covariance_pass": true
+      },
+      "physical_gates": {
+        "vorticity_L2": false,
+        "axial_centroid": true,
+        "covariance": true
+      },
+      "joint_pass": false,
+      "fullspace_circulation": 3.764739553063935,
+      "fullspace_axial_impulse": 23.576541601661578,
+      "circulation_relative_difference": 0.001275854944545296,
+      "impulse_relative_difference": -0.002070112050678863,
+      "fullspace_vorticity_squared": 12.470820399950313
+    },
+    "S128": {
+      "primary_8x6": {
+        "reference": "S128",
+        "label": "selected",
+        "orders": [
+          8,
+          6
+        ],
+        "numerator": 0.17004123437668497,
+        "denominator": 12.63780003427593,
+        "relative_error": 0.1159955650518796,
+        "D8_circulation": 3.7647395530637833,
+        "D8_vorticity_squared": 12.470820399950313,
+        "node_cell_points": 1572864,
+        "seconds": 0.010523700038902462
+      },
+      "confirmation_16x12": {
+        "reference": "S128",
+        "label": "selected",
+        "orders": [
+          16,
+          12
+        ],
+        "numerator": 0.17004123437668492,
+        "denominator": 12.637800034275926,
+        "relative_error": 0.11599556505187959,
+        "D8_circulation": 3.764739553063783,
+        "D8_vorticity_squared": 12.470820399950309,
+        "node_cell_points": 6291456,
+        "seconds": 0.04750790004618466
+      },
+      "rule_difference": 1.3877787807814457e-17,
+      "moments": {
+        "centroid": [
+          1.2512456646113714,
+          0.43382405243470806
+        ],
+        "covariance": [
+          [
+            0.42778812470737676,
+            0.0
+          ],
+          [
+            0.0,
+            1.014470865795059
+          ]
+        ],
+        "axial_centroid_absolute": 0.0809940205704961,
+        "covariance_relative": 0.09712945843613188,
+        "axial_centroid_pass": true,
+        "covariance_pass": true
+      },
+      "physical_gates": {
+        "vorticity_L2": false,
+        "axial_centroid": true,
+        "covariance": true
+      },
+      "joint_pass": false,
+      "fullspace_circulation": 3.764739553063935,
+      "fullspace_axial_impulse": 23.576541601661578,
+      "circulation_relative_difference": 0.001275854944545296,
+      "impulse_relative_difference": -0.0022151982188550745,
+      "fullspace_vorticity_squared": 12.470820399950313
+    }
+  },
+  "saved_reference_statistics": {
+    "S256": {
+      "circulation": 3.7599424119464477,
+      "centroid": [
+        1.2546056524805573,
+        0.35276936493470806
+      ],
+      "covariance": [
+        [
+          0.42605219413657314,
+          -0.07305360087353913
+        ],
+        [
+          -0.07305360087353913,
+          1.0359696982488587
+        ]
+      ],
+      "q_squared_integral": 12.527044816735721,
+      "axial_impulse": 23.625448928190522,
+      "vorticity_squared_integral": 12.641021874312637,
+      "minimum_corner": 1.8849400565054807e-28
+    },
+    "S128": {
+      "circulation": 3.7599424119464477,
+      "centroid": [
+        1.2546874993441401,
+        0.35283003186421197
+      ],
+      "covariance": [
+        [
+          0.42613764564360745,
+          -0.07310596114888357
+        ],
+        [
+          -0.07310596114888357,
+          1.0363896709682767
+        ]
+      ],
+      "q_squared_integral": 12.521507661153027,
+      "axial_impulse": 23.628884263996717,
+      "vorticity_squared_integral": 12.63780003427593,
+      "minimum_corner": 1.251149720793472e-28
+    }
+  },
+  "saved_T63_outcome": {
+    "status": "search_inconclusive",
+    "capacity_witness": false,
+    "global_optimality_certified": false
+  },
+  "saved_T66_outcome": {
+    "status": "broader_separable_endpoint_witness",
+    "candidate_verdict": "broader_separable_endpoint_witness",
+    "capacity_witness": true,
+    "numerical_qualified": true,
+    "scores": {
+      "S256": {
+        "error_numerator": 0.10276280548587871,
+        "reference_norm_squared": 12.641021874312635,
+        "relative_field_error": 0.09016269504854826,
+        "axial_centroid_error": 0.013722547497353466,
+        "normalized_covariance_error": 0.09536735231131477,
+        "covariance_denominator": 1.0882203729522952,
+        "gates": {
+          "field": true,
+          "axial_centroid": true,
+          "covariance": true
+        },
+        "undefined_reason": null,
+        "circulation_difference": -0.009858670365684219,
+        "axial_impulse_difference": -0.1543765303566822
+      },
+      "S128": {
+        "error_numerator": 0.10278340005110824,
+        "reference_norm_squared": 12.63780003427593,
+        "relative_field_error": 0.09018322260501836,
+        "axial_centroid_error": 0.01378321442685726,
+        "normalized_covariance_error": 0.0954720855302773,
+        "covariance_denominator": 1.0882203729522952,
+        "gates": {
+          "field": true,
+          "axial_centroid": true,
+          "covariance": true
+        },
+        "undefined_reason": null,
+        "circulation_difference": -0.009858670365684219,
+        "axial_impulse_difference": -0.15781186616287712
+      }
+    },
+    "sensitivity": {
+      "absolute_difference": 2.0527556470098518e-05,
+      "tolerance": 0.001,
+      "passed": true
+    },
+    "gaussian_witness": false,
+    "causal_dynamics_claim": false
+  },
+  "original_physical_gates": {
+    "relative_field_L2_max": 0.1,
+    "axial_centroid_absolute_max": 0.1,
+    "covariance_relative_max": 0.1,
+    "covariance_denominator": 1.0882203729522952,
+    "candidate_reference_sensitivity_max": 0.001,
+    "conservation_equality_added": false,
+    "radial_centroid_gate_added": false
+  },
+  "analytic_findings": {
+    "component_count": 2,
+    "scalar_parameter_count_including_redundancies": 8,
+    "fullspace_circulation_normalized": true,
+    "fullspace_gaussian_tails": true,
+    "zero_weight_and_identical_components_allowed": true,
+    "fixed_geometry_covariance_polynomial_degree_max": 4,
+    "nondegenerate_stationary_weight_count_max": 1,
+    "scale_eliminated_by_ordinary_variable_projection": true,
+    "finite_outer_box_does_not_cover_full_family": true,
+    "no_exact_numerical_inner_optimality_claim": true
+  },
+  "future_measurement": {
+    "task": "T68",
+    "implementation_created": false,
+    "invocation_started": false,
+    "child_invocations_max": 1,
+    "child_wall_seconds_max": 120,
+    "observed_peak_working_set_bytes_max": 536870912,
+    "required_available_physical_bytes": 1073741824,
+    "observer_interval_seconds": 0.25,
+    "selection_reference": "S256",
+    "held_candidate_reference": "S128",
+    "control": "unchanged T63 selected tuple, including saved A",
+    "field_direct_rule_orders": [
+      [
+        8,
+        6
+      ],
+      [
+        16,
+        12
+      ]
+    ],
+    "reference_polynomial_rule_orders": [
+      3,
+      2
+    ],
+    "direct_cross_rule_tolerance": 1e-09,
+    "tolerance_history": "New prospective numerical qualification; T63 used 1e-6 cross-rule tolerance and its historical outcome remains unchanged.",
+    "metadata_rtol": 3e-11,
+    "metadata_atol": 3e-14,
+    "root_contract": {
+      "exact_for_rounded_coefficients_only": true,
+      "degree_max": 4,
+      "polynomial_long_divisions_per_geometry_max": 24,
+      "sturm_chain_polynomials_max": 5,
+      "retained_rational_bits_max": 8192,
+      "isolation_nodes_per_geometry_max": 512,
+      "isolation_depth_max": 64,
+      "nonexact_root_bracket_width_max": "2^-40",
+      "candidate_weight_attempts_per_geometry_max": 26,
+      "procedural_flags": [
+        "root_isolation_complete_for_rounded_polynomial",
+        "representable_candidate_construction_complete"
+      ]
+    },
+    "count_caps": {
+      "input_npz_files": 2,
+      "input_arrays": 12,
+      "rule_count": 6,
+      "rule_nodes": 47,
+      "reference_polynomial_node_cells": 983040,
+      "reference_corner_cells": 655360,
+      "control_primary_contractions": 2,
+      "control_additional_axis_exponentials_max": 7680,
+      "control_additional_diagonal_gram_axis_products_max": 7680,
+      "control_additional_three_term_cell_visits_max": 491520,
+      "initial_geometry_proposals": 1081,
+      "neighbor_geometry_proposals_max": 1152,
+      "geometry_proposals_max": 2233,
+      "distinct_S256_components_max": 1198,
+      "search_component_axis_exponentials_max": 6133760,
+      "search_three_term_reference_cell_visits_max": 471072768,
+      "search_diagonal_gram_axis_products_max": 6133760,
+      "search_cross_gram_axis_products_max": 11432960,
+      "exact_polynomial_long_divisions_max": 53592,
+      "root_isolation_nodes_max": 1143296,
+      "weight_attempts_max": 58058,
+      "search_original_moment_checks_max": 58058,
+      "fixed_control_selected_moment_routes_max": 4,
+      "fixed_model_reference_route_gate_comparisons_max": 8,
+      "direct_control_integrals": 4,
+      "direct_selected_integrals_max": 4,
+      "direct_reference_model_node_cells_max": 78643200,
+      "direct_component_point_evaluations_max": 117964800
+    },
+    "timeout_has_no_qualified_witness": true,
+    "automatic_retry": false,
+    "third_component_or_box_expansion": false
+  },
+  "scientific_series_seconds": 1980.2512354997452,
+  "scientific_series_scope": [
+    "T56",
+    "T57",
+    "T58",
+    "T59",
+    "T60",
+    "T63",
+    "T65",
+    "T66"
+  ],
+  "scientific_series_scope_note": "Recorded scientific-child subtotal for the listed tasks; not total project cost.",
+  "saved_execution_records": {
+    "t63": {
+      "status": "completed_search_inconclusive",
+      "scientific_child_invocations": 1,
+      "scientific_child_supervised_seconds": 1.957236499991268,
+      "cumulative_scientific_child_seconds": 1978.636870399816,
+      "complete_result_validated": true,
+      "returncode": 0
+    },
+    "t65": {
+      "status": "completed_qualified_no_separability_exclusion",
+      "scientific_child_invocations": 1,
+      "scientific_child_supervised_seconds": 0.9605694999918342,
+      "cumulative_scientific_child_seconds": 1979.5974398998078,
+      "complete_result_validated": true,
+      "returncode": 0
+    },
+    "t66": {
+      "status": "completed_broader_separable_endpoint_witness",
+      "scientific_child_invocations": 1,
+      "scientific_child_supervised_seconds": 0.653795599937439,
+      "cumulative_scientific_child_seconds": 1980.2512354997452,
+      "complete_result_validated": true,
+      "returncode": 0
+    }
+  },
+  "T61_qualification_seconds": 0.9663960000034422,
+  "historical_failures_unchanged": true,
+  "T60_history_reclassified": false,
+  "goal_status": "active_not_submission_ready",
+  "art_inactive": true,
+  "main_not_merged_or_deployed": true,
+  "automation_remains_deleted": true
+}
