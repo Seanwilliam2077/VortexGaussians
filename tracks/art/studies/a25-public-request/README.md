@@ -8,4 +8,4 @@
 
 实际原图：[声明](inspection-01/01-statement.png)、[请求](inspection-01/02-request.png)、[暂停且收起原话](inspection-01/03-paused-processing.png)、[同一步放回原话](inspection-01/04-request-returned.png)、[窗口结束](inspection-01/05-window-end.png)、[结束观看](inspection-01/06-finished.png)、[窄屏初态](inspection-01/07-mobile-opening.png)、[窄屏提前退出](inspection-01/08-mobile-early-end.png)。
 
-完整短稿正在根据实际图像编写，之后独立评分。原A22总体3/6、准备度7/10保留；A25尚未评分，目标总体5/6未满足。main、旧作品及原demo不改，TOG无新数值任务。
+[完整短稿](PAPER_DRAFT.md)已根据实际图像完成，正在独立评分。原A22总体3/6、准备度7/10保留；A25尚未评分，目标总体5/6未满足。main、旧作品及原demo不改，TOG无新数值任务。

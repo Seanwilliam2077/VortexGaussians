@@ -1,8 +1,8 @@
 # Exploration policy
 
-## 2026-10-31 current: A24 creator recommits; A25 complete-work production
+## 2026-10-31 current: A25 work and complete paper; independent scoring
 
-[A24 independent consultation](validation/art-a24-material-review.md) preserves the unsupported darkening expectation while identifying a limited visible relation: the requested-for-removal name is distinguished during processing. The [creator response](art/studies/a24-signature-material/CREATOR_RESPONSE.md) accepts responsibility for publicly presenting that request, without claiming fulfilled withdrawal, permanent exposure or a post-burn state. [Root decision](art/studies/a24-signature-material/DECISION.md) permits [A25](art/studies/a25-public-request/BRIEF.md), one complete viewing sequence using the frozen six-second material, bounded practice comparison and subsequent short paper. No retuning, extended burn, recording or TOG queue. Historical A22 overall3/6/readiness7/10 remain; no new submission score, overall5/6 unmet, original platform preserved, goal active and main unchanged.
+[A25](art/studies/a25-public-request/README.md), titled Before the Next Posting, now has an actual viewing sequence, eight images, [process](art/studies/a25-public-request/PROCESS.md), three institutional practice comparisons and a [complete short paper](art/studies/a25-public-request/PAPER_DRAFT.md). Normal UI read/fold/process/pause/return/resume/end and a no-fire mobile exit completed in10.9920832 seconds; one fire sequence, model hash/groups unchanged from A24. Images03/04 share frame122 and differ in request visibility. This supports the implemented relation, not audience interpretation or acceptance. Independent scoring is pending; historical A22 overall3/6/readiness7/10 remain, overall5/6 unmet. No retuning, longer burn, recording or TOG computation; original platform preserved, goal active and main unchanged.
 
 
 This is the repository's working research policy, not a venue acceptance checklist. User steering takes precedence. Updated 30 October 2026.
