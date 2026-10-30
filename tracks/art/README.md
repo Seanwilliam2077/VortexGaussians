@@ -1,6 +1,6 @@
 # 可燃的数字记忆（暂定） · 艺术排练入口
 
-**2026-10-30：艺术线持续制作与独立复评。** 最新[A09《未予归档》](studies/a09-rejected-records/README.md)是76秒影片：真实退件清单控制图像退出，末段重新展示一张退件但不修改资格。[影片](studies/a09-rejected-records/run-01/study.mp4)、[论文](studies/a09-rejected-records/PAPER_DRAFT.md)与[过程](studies/a09-rejected-records/PROCESS.md)已冻结。[独立复评](../validation/art-a09-review-round-01.md)为**3/6 Weak Reject、准备度5/10、置信度3/5**，认可有限立场，但原创意义及只召回火焰的第二次选择尚不足；[回应](studies/a09-rejected-records/RESPONSE_ROUND_01.md)记录下一问题。准备度5/10不是内部总评5/6目标。此前[A08](studies/a08-three-archives/README.md)总评2/6不变，原A04–A07保留。没有人类观看证据，评审只看实际帧，未连续播放。[复评流程](REVIEW_LOOP.md)保持标准并披露咨询关系，不保证录用。
+**2026-10-30：艺术迭代继续，当前营火剪辑分支关闭。** [A10第二次点火](studies/a10-second-ignition/README.md)完成一次不重置的31模拟秒排练，保留[83.427秒采样记录](studies/a10-second-ignition/run-01/study.mp4)。第二次没有新增点，但晚态仍以醒目火焰为中心，未形成新的作品操作。[独立复评](../validation/art-a10-review-round-01.md)对原A09加本次排练维持**3/6 Weak Reject、准备度5/10、置信度3/5**；总评5/6目标未达。[回应](studies/a10-second-ignition/RESPONSE_ROUND_01.md)停止同一营火的反复点火、延时和再剪片，[内容先行核查](CONTENT_FIRST_SCREEN.md)也否决了把A09六句澄清改成燃烧阅读的候选。下一项先确定新的具体作品内容，当前没有录制或模拟在运行。[A09《未予归档》](studies/a09-rejected-records/README.md)、[A08《三次归档》](studies/a08-three-archives/README.md)及A04–A07历史作品不变。没有人类观看证据；独立评审实际看帧，未连续播放。[复评流程](REVIEW_LOOP.md)保持标准与角色披露。
 
 首个作者排练原型。它把现有 VortexGaussians demo 放在“保存的空间 → 介入燃烧 → 重置重看”的三个阶段中，并记录创作选择。它不是完成作品、观众实验或新燃烧算法。创作命题及待补证据见 [ART_BRIEF.md](ART_BRIEF.md)；技术证据另见 [research/EVIDENCE_STATUS.md](../../research/EVIDENCE_STATUS.md)。
 

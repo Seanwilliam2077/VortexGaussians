@@ -1,0 +1,76 @@
+{
+  "schema": "a10-saved-record-check-v1",
+  "scope": "Standard-library saved-file hash/receipt checks only; no browser, simulation or media command repeated. Does not certify artistic value or physical combustion.",
+  "created_utc": "2026-10-30T11:18:11.061179+00:00",
+  "passed": false,
+  "checks": {
+    "source_before_after_16_match": true,
+    "current_16_source_identities_match": true,
+    "worker_completed_no_recorded_errors": true,
+    "supervisor_terminal_no_timeout": true,
+    "recorded_resource_close": true,
+    "budgets_within_fixed_limits": true,
+    "fixed_actions_complete": true,
+    "fixed_segments_complete": true,
+    "defaults_unchanged": true,
+    "notes_untouched": true,
+    "all_298_frame_files_identity_and_timestamp": true,
+    "chronological_frame_timestamps": true,
+    "frame_directory_exact": true,
+    "nine_named_snapshots_match_captured_frames": true,
+    "nine_decoded_image_identities": true,
+    "video_identity_and_size": true,
+    "recorded_media_commands_complete": true,
+    "captured_span_matches_receipt": false,
+    "snapshot_visible_times": true
+  },
+  "failures": [
+    "captured_span_matches_receipt"
+  ],
+  "source_checks": {
+    "tracks/art/index.html": true,
+    "tracks/art/art.js": true,
+    "tracks/art/art.css": true,
+    "demo/index.html": true,
+    "static/test_scene.ply": true,
+    "research/lib/runtime.mjs": true,
+    "tracks/art/studies/a10-second-ignition/INTENT.md": true,
+    "tracks/art/studies/a10-second-ignition/PROTOCOL.md": true,
+    "tracks/art/studies/a10-second-ignition/record.mjs": true,
+    "tracks/art/studies/a10-second-ignition/execute.py": true,
+    "tracks/art/studies/a10-second-ignition/.gitignore": true,
+    "node_executable": true,
+    "browser_executable": true,
+    "playwright_package": true,
+    "ffmpeg": true,
+    "ffprobe": true
+  },
+  "frames_hashed": 298,
+  "snapshots_hashed": 9,
+  "decoded_images_hashed": 9,
+  "video_identity": {
+    "bytes": 1505243,
+    "sha256": "960884ce05728c4b21cd4c1936ec3aa3dfccd8fd9e0bc1230e464e9f1206acc3"
+  },
+  "input_records": {
+    "result.json": {
+      "bytes": 162493,
+      "sha256": "45edec5deaaab79083e72bbdf60160b678cca1fb9b483aeb54785609c56eedea"
+    },
+    "supervisor.json": {
+      "bytes": 1200,
+      "sha256": "ff50f5a587a7554126ccefd54ec7ed75d9d03ed3e6bc6b73e33d3cf69084713c"
+    },
+    "attempt.json": {
+      "bytes": 378,
+      "sha256": "c5143c905c8c6dbc64e4a6ba2ba9e5689338fe7eaa15f5b7b8c135afc484d1f0"
+    }
+  },
+  "elapsed_before_report_write_seconds": 0.15065220010001212,
+  "limits": [
+    "Source pins cover the listed files and selected executables/package metadata, not every transitive dependency.",
+    "Resource closure is the worker API receipt plus supervisor parent-terminal observation; not an independent proof of every descendant exit.",
+    "Named screenshot, separate visible UI read, and compressed-video seek are not atomic or guaranteed identical frames.",
+    "Full decode result is inherited from the sole production command, not repeated here."
+  ]
+}

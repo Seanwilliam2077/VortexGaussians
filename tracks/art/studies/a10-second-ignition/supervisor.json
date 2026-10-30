@@ -1,0 +1,34 @@
+{
+  "schema": "a10-supervisor-v1",
+  "command": [
+    "C:/Users/seanzjxiao/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\art\\studies\\a10-second-ignition\\record.mjs",
+    "--execute"
+  ],
+  "total_budget_seconds": 420,
+  "work_wait_seconds": 400,
+  "termination_reserve_seconds": 20,
+  "timed_out": false,
+  "errors": [],
+  "pid": 48256,
+  "exit_code": 0,
+  "worker_launched": true,
+  "poll_exit_code": 0,
+  "still_live": false,
+  "requires_cleanup": false,
+  "parent_terminal_check_seconds": 92.44296540005598,
+  "worker_status": "completed_workflow_and_media",
+  "resources_closed": {
+    "context": true,
+    "contextSeconds": 0.034000599999998826,
+    "browser": true,
+    "browserSeconds": 0.47119020000000944,
+    "server": true,
+    "serverSeconds": 0.0009385999999977912
+  },
+  "workflow_completed": true,
+  "sources_unchanged": true,
+  "success": true,
+  "timing_limit": "Final receipt/stdout writing excluded; parent poll is not a proof about every descendant.",
+  "elapsed_before_receipt_write_seconds": 92.44580910005607
+}

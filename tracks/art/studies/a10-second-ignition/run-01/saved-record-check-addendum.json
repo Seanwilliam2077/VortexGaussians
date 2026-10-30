@@ -1,0 +1,20 @@
+{
+  "schema": "a10-saved-record-check-addendum-v1",
+  "original_report": {
+    "path": "saved-record-check.json",
+    "bytes": 3027,
+    "sha256": "b6a84bbd28328c208ef4fd8f9709be189eb5e09e79c26e9e0840157eaa4ad74a"
+  },
+  "original_report_preserved": true,
+  "original_failed_check": "captured_span_matches_receipt",
+  "cause": "The new post-run checker incorrectly used last frame midpoint minus first midpoint. Frozen record.mjs lines 179-191 retains the last frame to recordingEndedWallSeconds and reports that full interval.",
+  "first_midpoint_seconds": 2.5778221500000003,
+  "last_midpoint_seconds": 85.94698599999998,
+  "recording_ended_seconds": 86.00408649999999,
+  "last_frame_hold_seconds": 0.05710050000000422,
+  "concat_last_duration_seconds": 0.057101,
+  "correct_receipt_span_seconds": 83.42626434999998,
+  "saved_receipt_span_seconds": 83.42626434999998,
+  "correct_definition_matches": true,
+  "scope": "One arithmetic correction on saved scalar metadata; no source edit, recording, encoding, extraction or decode repeated. This does not replace the preserved 18/19 original report or certify artistic value."
+}

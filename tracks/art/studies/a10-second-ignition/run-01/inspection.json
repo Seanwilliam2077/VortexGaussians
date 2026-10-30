@@ -1,0 +1,126 @@
+{
+  "schema": "a10-visual-inspection-v1",
+  "created_utc": "2026-10-30T11:18:11.063179+00:00",
+  "inspector": "production agent, not an independent audience or score reviewer",
+  "review_mode": "Nine fixed decoded PNGs viewed individually; no claim of continuous playback viewing.",
+  "video_identity": {
+    "bytes": 1505243,
+    "sha256": "960884ce05728c4b21cd4c1936ec3aa3dfccd8fd9e0bc1230e464e9f1206acc3"
+  },
+  "frames": [
+    {
+      "file": "decoded-01-opening.png",
+      "seconds": 0.46253410000000006,
+      "sourceSnapshot": "01-opening",
+      "bytes": 212973,
+      "sha256": "1035a961efcdf24ef81edc57d4d8bfbc91df19ca8cd663dedbfd066578339d55",
+      "viewed": true,
+      "method": "view_image on the saved decoded PNG",
+      "visible_simulation_time_seconds": null,
+      "observation": "Opening page shows the project title and instructions before loading; this is the original interface, not a new artwork title card."
+    },
+    {
+      "file": "decoded-02-loaded.png",
+      "seconds": 1.2313106499999997,
+      "sourceSnapshot": "02-loaded",
+      "bytes": 257507,
+      "sha256": "3827980713f100281d69421c44b1b59242748e8729735251f0c1901ad8354001",
+      "viewed": true,
+      "method": "view_image on the saved decoded PNG",
+      "visible_simulation_time_seconds": 0,
+      "observation": "Loaded synthetic bench/wood/back-panel scene is visible with no developed flame; original interface and synthetic/nonpersonal declaration remain."
+    },
+    {
+      "file": "decoded-03-first-ignited.png",
+      "seconds": 2.638593,
+      "sourceSnapshot": "03-first-ignited",
+      "bytes": 255225,
+      "sha256": "d4530a6b657b8f9be25b77166e0893a05bac33467a24b020561cbe281ad40775",
+      "viewed": true,
+      "method": "view_image on the saved decoded PNG",
+      "visible_simulation_time_seconds": 0,
+      "observation": "At the first ignition sample the shape still resembles the loaded scene without a developed plume; the visible status supplies the new-point count, not an image-only inference."
+    },
+    {
+      "file": "decoded-04-ten-seconds.png",
+      "seconds": 26.77204245,
+      "sourceSnapshot": "04-ten-seconds",
+      "bytes": 334776,
+      "sha256": "9a9b92449351f1755061f70970fe1a75949b7c704866c35db9e3236940b51292",
+      "viewed": true,
+      "method": "view_image on the saved decoded PNG",
+      "visible_simulation_time_seconds": 10,
+      "observation": "A compact bright yellow/orange root and red upper plume are visible; large portions of the synthetic construction remain visible."
+    },
+    {
+      "file": "decoded-05-twenty-seconds.png",
+      "seconds": 52.501235799999996,
+      "sourceSnapshot": "05-twenty-seconds",
+      "bytes": 228041,
+      "sha256": "c424ba396cae5b0f30cb87c86bd4178f87c699f329bf31f06a1dbf555bd37fe5",
+      "viewed": true,
+      "method": "view_image on the saved decoded PNG",
+      "visible_simulation_time_seconds": 20.02,
+      "observation": "The actual decoded frame displays 20.02 s and advancing status, scrolled to the control panel; the scene is largely out of view. It is not a full-scene view of the separate 20.00 s paused readback."
+    },
+    {
+      "file": "decoded-06-thirty-seconds.png",
+      "seconds": 75.76820669999998,
+      "sourceSnapshot": "06-thirty-seconds",
+      "bytes": 371249,
+      "sha256": "2f2ae61a373043cbd50bc7bc489b5f3cf21d7aa39ca207e27c194f74b68d2f23",
+      "viewed": true,
+      "method": "view_image on the saved decoded PNG",
+      "visible_simulation_time_seconds": 30,
+      "observation": "At 30.00 s a large red plume and bright yellow root remain prominent; a dark/glowing rounded region and much of the underlying form remain. This is not a visually extinguished endpoint."
+    },
+    {
+      "file": "decoded-07-second-ignited.png",
+      "seconds": 76.06530014999998,
+      "sourceSnapshot": "07-second-ignited",
+      "bytes": 375802,
+      "sha256": "11c8452926dc2ff3708a256b1bcd465377240a01ae944883d199b1b44099b3f6",
+      "viewed": true,
+      "method": "view_image on the saved decoded PNG",
+      "visible_simulation_time_seconds": 30,
+      "observation": "The 30.00 s scene appears visually the same as the preceding decoded sample; the obvious change is the no-new-points status text. No pixel-equality computation is claimed."
+    },
+    {
+      "file": "decoded-08-thirty-one-seconds.png",
+      "seconds": 80.11318829999999,
+      "sourceSnapshot": "08-thirty-one-seconds",
+      "bytes": 375365,
+      "sha256": "3c6039e88a643d637421130dd207e463e7b65433aadd90a82e05894f876a7a6c",
+      "viewed": true,
+      "method": "view_image on the saved decoded PNG",
+      "visible_simulation_time_seconds": 31,
+      "observation": "At 31.00 s the red plume and bright root have a different visible arrangement; the scene still contains extensive luminous fire and retained form."
+    },
+    {
+      "file": "decoded-09-final-hold.png",
+      "seconds": 83.25309485,
+      "sourceSnapshot": "09-final-hold",
+      "bytes": 375359,
+      "sha256": "a0f6a671286207413bccd8282fa9f12aed1d61f4ddd2b098d4628a063f381bb7",
+      "viewed": true,
+      "method": "view_image on the saved decoded PNG",
+      "visible_simulation_time_seconds": 31,
+      "observation": "The 31.00 s final hold retains the same broad flame/form arrangement as the preceding sample. There is no reset-to-clean ending; there is also no removal of spectacle."
+    }
+  ],
+  "production_outcome": "completed_workflow_and_media",
+  "creative_rehearsal_assessment": "negative_rehearsal_for_the_proposed_material_relation",
+  "observed_relation": "The second ignition added no new points according to the visible UI while an already visible flame remained and changed over the next requested simulation second.",
+  "interpretive_limits": [
+    "This is an ordinary state-gate and ongoing-simulation behavior, not a new technical mechanism or established artistic contribution.",
+    "No natural extinction, fuel exhaustion, removal of spectacle, real destruction, personal memory, or audience response was established.",
+    "The 20 s decoded-frame mismatch and viewport scroll are retained; no replacement extraction, re-recording or corrective artistic edit was made.",
+    "Simulation counts are discrete labels, not physical heat or material damage.",
+    "Engineering checks do not establish artistic contribution or acceptance."
+  ],
+  "continuous_viewing_claim": false,
+  "artistic_score": null,
+  "additional_recordings": 0,
+  "new_artistic_edit": false,
+  "decision": "Preserve the untrimmed sampled recording and this negative rehearsal. Stop for the parent’s creative decision."
+}

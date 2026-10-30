@@ -1,0 +1,4841 @@
+{
+  "schema": "a10-second-ignition-record-v1",
+  "createdUTC": "2026-10-30T11:11:59.877Z",
+  "plan": {
+    "scope": "Synthetic Agent-operated creative rehearsal; no contribution or audience claim",
+    "method": "all timestamped viewport screenshots, not native video or performance measurement",
+    "viewport": {
+      "width": 1280,
+      "height": 800
+    },
+    "targetSamplingFPS": 4,
+    "browserLimitSeconds": 360,
+    "workerLimitSeconds": 400,
+    "supervisorLimitSeconds": 420,
+    "maximumEncodeSeconds": 120,
+    "recordingAttempts": 1,
+    "loads": 1,
+    "ignitions": 2,
+    "advanceSeconds": [
+      10,
+      10,
+      10,
+      1
+    ],
+    "targetSimulatedTimes": [
+      10,
+      20,
+      30,
+      31
+    ],
+    "resets": 0,
+    "notesWritten": 0,
+    "defaults": {
+      "x": 0,
+      "y": 0.65,
+      "z": 0,
+      "radius": 0.3,
+      "cameraYaw": 0
+    },
+    "out": "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\art\\studies\\a10-second-ignition\\run-01"
+  },
+  "actions": [
+    {
+      "name": "open unchanged art page",
+      "startedWallSeconds": 2.7078606,
+      "completed": true,
+      "endedWallSeconds": 2.8178594
+    },
+    {
+      "name": "load synthetic example once",
+      "startedWallSeconds": 3.1884123,
+      "completed": true,
+      "endedWallSeconds": 3.2244944
+    },
+    {
+      "name": "switch intervene once",
+      "startedWallSeconds": 4.8700612,
+      "completed": true,
+      "endedWallSeconds": 4.9726441
+    },
+    {
+      "name": "first ignition at unchanged defaults",
+      "startedWallSeconds": 4.9739311,
+      "completed": true,
+      "endedWallSeconds": 5.0355545
+    },
+    {
+      "name": "request public 10-second segment to 10s",
+      "startedWallSeconds": 6.2894203,
+      "completed": true,
+      "endedWallSeconds": 6.3381517999999994
+    },
+    {
+      "name": "request public 10-second segment to 20s",
+      "startedWallSeconds": 29.420472,
+      "completed": true,
+      "endedWallSeconds": 29.502095
+    },
+    {
+      "name": "request public 10-second segment to 30s",
+      "startedWallSeconds": 55.143926,
+      "completed": true,
+      "endedWallSeconds": 55.190223700000004
+    },
+    {
+      "name": "second ignition at same unchanged defaults",
+      "startedWallSeconds": 78.43464599999999,
+      "completed": true,
+      "endedWallSeconds": 78.5399546
+    },
+    {
+      "name": "request public 1-second segment to 31s",
+      "startedWallSeconds": 79.7180109,
+      "completed": true,
+      "endedWallSeconds": 79.75781039999998
+    }
+  ],
+  "snapshots": [
+    {
+      "name": "01-opening",
+      "file": "01-opening.png",
+      "frameIndex": 2,
+      "sha256": "94863593bf72008086b2e85b6875f529415a97a5c86893216a2abd6a21693ba5",
+      "wallSeconds": 3.0403562500000003,
+      "visible": {
+        "status": "按需启动；当前没有运行仿真。",
+        "time": "模拟时间 0.00 s",
+        "burning": "—",
+        "charred": "—",
+        "scene": "—",
+        "notes": "0 条记录",
+        "cameraYaw": "0",
+        "readStartedWallSeconds": 3.112371,
+        "readEndedWallSeconds": 3.1867599,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "name": "02-loaded",
+      "file": "02-loaded.png",
+      "frameIndex": 6,
+      "sha256": "ca189657350c5d7d5437b58223078b95408c331903d3b9543f80c183aa83d079",
+      "wallSeconds": 3.8091328,
+      "visible": {
+        "status": "已载入 45,808 / 45,808 个点。当前暂停；请先观察、记录情境。",
+        "time": "模拟时间 0.00 s",
+        "burning": "0",
+        "charred": "0",
+        "scene": "45,808",
+        "notes": "0 条记录",
+        "cameraYaw": "0",
+        "readStartedWallSeconds": 3.8512019,
+        "readEndedWallSeconds": 3.8656037999999997,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "name": "03-first-ignited",
+      "file": "03-first-ignited.png",
+      "frameIndex": 13,
+      "sha256": "b9d799f8478cad4f8153a0d6af7a6979d49680228d6c4daf74c618a0c4832804",
+      "wallSeconds": 5.2164151500000004,
+      "visible": {
+        "status": "此次点燃 2,483 个未燃点。尚未推进；可先记录选择。",
+        "time": "模拟时间 0.00 s",
+        "burning": "2,483",
+        "charred": "0",
+        "scene": "45,808",
+        "notes": "0 条记录",
+        "cameraYaw": "0",
+        "readStartedWallSeconds": 5.263161,
+        "readEndedWallSeconds": 5.2715506,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "name": "04-ten-seconds",
+      "file": "04-ten-seconds.png",
+      "frameIndex": 99,
+      "sha256": "8b327466da42041b1d569e84df938e1d1de53bd0ad0e69af7863fc776cc3eada",
+      "wallSeconds": 29.3498646,
+      "visible": {
+        "status": "本段推进完成，已暂停。请记录变化，再决定下一步。",
+        "time": "模拟时间 10.00 s",
+        "burning": "3,320",
+        "charred": "1,400",
+        "scene": "45,808",
+        "notes": "0 条记录",
+        "cameraYaw": "0",
+        "readStartedWallSeconds": 29.3984845,
+        "readEndedWallSeconds": 29.4182762,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "name": "05-twenty-seconds",
+      "file": "05-twenty-seconds.png",
+      "frameIndex": 185,
+      "sha256": "4ac3192d0f9c186339f8d57398c8de58584d7074efb1a14cdec8f7b3fde6addf",
+      "wallSeconds": 55.07905795,
+      "visible": {
+        "status": "本段推进完成，已暂停。请记录变化，再决定下一步。",
+        "time": "模拟时间 20.00 s",
+        "burning": "5,513",
+        "charred": "4,200",
+        "scene": "45,808",
+        "notes": "0 条记录",
+        "cameraYaw": "0",
+        "readStartedWallSeconds": 55.1332373,
+        "readEndedWallSeconds": 55.142025200000006,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "name": "06-thirty-seconds",
+      "file": "06-thirty-seconds.png",
+      "frameIndex": 265,
+      "sha256": "2d3dbc048ffbfce0a8fdd31a76095c0513fc26c1679e85af9a5fe7f511b2f8c3",
+      "wallSeconds": 78.34602884999998,
+      "visible": {
+        "status": "本段推进完成，已暂停。请记录变化，再决定下一步。",
+        "time": "模拟时间 30.00 s",
+        "burning": "5,321",
+        "charred": "5,600",
+        "scene": "45,808",
+        "notes": "0 条记录",
+        "cameraYaw": "0",
+        "readStartedWallSeconds": 78.40162769999999,
+        "readEndedWallSeconds": 78.41533079999999,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "name": "07-second-ignited",
+      "file": "07-second-ignited.png",
+      "frameIndex": 267,
+      "sha256": "755a90be63a0a2b92151791cc2acd0c7c272c059fc2b6cdf0b2ed4d3e1f3b22b",
+      "wallSeconds": 78.64312229999999,
+      "visible": {
+        "status": "此位置没有点燃新点：可能未命中场景，或该处已燃烧。请检查位置与半径。",
+        "time": "模拟时间 30.00 s",
+        "burning": "5,321",
+        "charred": "5,600",
+        "scene": "45,808",
+        "notes": "0 条记录",
+        "cameraYaw": "0",
+        "readStartedWallSeconds": 78.6974053,
+        "readEndedWallSeconds": 78.71057599999999,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "name": "08-thirty-one-seconds",
+      "file": "08-thirty-one-seconds.png",
+      "frameIndex": 283,
+      "sha256": "e498696d95166cba2a88b5272d8188e9ea3e09087700ebe30afd55e1eb55aac2",
+      "wallSeconds": 82.69101045,
+      "visible": {
+        "status": "本段推进完成，已暂停。请记录变化，再决定下一步。",
+        "time": "模拟时间 31.00 s",
+        "burning": "4,205",
+        "charred": "7,000",
+        "scene": "45,808",
+        "notes": "0 条记录",
+        "cameraYaw": "0",
+        "readStartedWallSeconds": 82.7420297,
+        "readEndedWallSeconds": 82.7541739,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "name": "09-final-hold",
+      "file": "09-final-hold.png",
+      "frameIndex": 296,
+      "sha256": "e498696d95166cba2a88b5272d8188e9ea3e09087700ebe30afd55e1eb55aac2",
+      "wallSeconds": 85.830917,
+      "visible": {
+        "status": "本段推进完成，已暂停。请记录变化，再决定下一步。",
+        "time": "模拟时间 31.00 s",
+        "burning": "4,205",
+        "charred": "7,000",
+        "scene": "45,808",
+        "notes": "0 条记录",
+        "cameraYaw": "0",
+        "readStartedWallSeconds": 85.891559,
+        "readEndedWallSeconds": 85.9060818,
+        "atomicSnapshot": false
+      }
+    }
+  ],
+  "frames": [
+    {
+      "index": 0,
+      "file": "frames/frame-00000.png",
+      "startedWallSeconds": 2.4478902000000002,
+      "endedWallSeconds": 2.7077541000000003,
+      "timestampSeconds": 2.5778221500000003,
+      "bytes": 4714,
+      "sha256": "3eab349ebf404dae5a2a20d041325042a032d46aeab4b9730d8f8962686fb9b0"
+    },
+    {
+      "index": 1,
+      "file": "frames/frame-00001.png",
+      "startedWallSeconds": 2.7079671,
+      "endedWallSeconds": 2.9726656000000005,
+      "timestampSeconds": 2.84031635,
+      "bytes": 177195,
+      "sha256": "94863593bf72008086b2e85b6875f529415a97a5c86893216a2abd6a21693ba5"
+    },
+    {
+      "index": 2,
+      "file": "frames/frame-00002.png",
+      "startedWallSeconds": 2.9731085000000004,
+      "endedWallSeconds": 3.1076040000000003,
+      "timestampSeconds": 3.0403562500000003,
+      "bytes": 177195,
+      "sha256": "94863593bf72008086b2e85b6875f529415a97a5c86893216a2abd6a21693ba5"
+    },
+    {
+      "index": 3,
+      "file": "frames/frame-00003.png",
+      "startedWallSeconds": 3.1079919,
+      "endedWallSeconds": 3.1853175,
+      "timestampSeconds": 3.1466547,
+      "bytes": 177195,
+      "sha256": "94863593bf72008086b2e85b6875f529415a97a5c86893216a2abd6a21693ba5"
+    },
+    {
+      "index": 4,
+      "file": "frames/frame-00004.png",
+      "startedWallSeconds": 3.2247386000000002,
+      "endedWallSeconds": 3.5371767,
+      "timestampSeconds": 3.38095765,
+      "bytes": 244437,
+      "sha256": "62a119c4c62a878575a26b1964e60b5609f14b7f442e30f58b6e981eff76cfc6"
+    },
+    {
+      "index": 5,
+      "file": "frames/frame-00005.png",
+      "startedWallSeconds": 3.5393043000000004,
+      "endedWallSeconds": 3.7288745,
+      "timestampSeconds": 3.6340894,
+      "bytes": 176005,
+      "sha256": "ca189657350c5d7d5437b58223078b95408c331903d3b9543f80c183aa83d079"
+    },
+    {
+      "index": 6,
+      "file": "frames/frame-00006.png",
+      "startedWallSeconds": 3.7692391,
+      "endedWallSeconds": 3.8490265,
+      "timestampSeconds": 3.8091328,
+      "bytes": 176005,
+      "sha256": "ca189657350c5d7d5437b58223078b95408c331903d3b9543f80c183aa83d079"
+    },
+    {
+      "index": 7,
+      "file": "frames/frame-00007.png",
+      "startedWallSeconds": 3.84929,
+      "endedWallSeconds": 3.9400944,
+      "timestampSeconds": 3.8946921999999997,
+      "bytes": 176005,
+      "sha256": "ca189657350c5d7d5437b58223078b95408c331903d3b9543f80c183aa83d079"
+    },
+    {
+      "index": 8,
+      "file": "frames/frame-00008.png",
+      "startedWallSeconds": 4.0555969,
+      "endedWallSeconds": 4.1480346,
+      "timestampSeconds": 4.10181575,
+      "bytes": 176005,
+      "sha256": "ca189657350c5d7d5437b58223078b95408c331903d3b9543f80c183aa83d079"
+    },
+    {
+      "index": 9,
+      "file": "frames/frame-00009.png",
+      "startedWallSeconds": 4.3070904,
+      "endedWallSeconds": 4.397938600000001,
+      "timestampSeconds": 4.3525145,
+      "bytes": 176005,
+      "sha256": "ca189657350c5d7d5437b58223078b95408c331903d3b9543f80c183aa83d079"
+    },
+    {
+      "index": 10,
+      "file": "frames/frame-00010.png",
+      "startedWallSeconds": 4.5712665,
+      "endedWallSeconds": 4.6680600000000005,
+      "timestampSeconds": 4.61966325,
+      "bytes": 176005,
+      "sha256": "ca189657350c5d7d5437b58223078b95408c331903d3b9543f80c183aa83d079"
+    },
+    {
+      "index": 11,
+      "file": "frames/frame-00011.png",
+      "startedWallSeconds": 4.8223401,
+      "endedWallSeconds": 4.937118099999999,
+      "timestampSeconds": 4.8797291,
+      "bytes": 176005,
+      "sha256": "ca189657350c5d7d5437b58223078b95408c331903d3b9543f80c183aa83d079"
+    },
+    {
+      "index": 12,
+      "file": "frames/frame-00012.png",
+      "startedWallSeconds": 5.0788954,
+      "endedWallSeconds": 5.1711785,
+      "timestampSeconds": 5.12503695,
+      "bytes": 175903,
+      "sha256": "b9d799f8478cad4f8153a0d6af7a6979d49680228d6c4daf74c618a0c4832804"
+    },
+    {
+      "index": 13,
+      "file": "frames/frame-00013.png",
+      "startedWallSeconds": 5.1714735,
+      "endedWallSeconds": 5.261356800000001,
+      "timestampSeconds": 5.2164151500000004,
+      "bytes": 175903,
+      "sha256": "b9d799f8478cad4f8153a0d6af7a6979d49680228d6c4daf74c618a0c4832804"
+    },
+    {
+      "index": 14,
+      "file": "frames/frame-00014.png",
+      "startedWallSeconds": 5.3363368,
+      "endedWallSeconds": 5.416716,
+      "timestampSeconds": 5.3765263999999995,
+      "bytes": 175903,
+      "sha256": "b9d799f8478cad4f8153a0d6af7a6979d49680228d6c4daf74c618a0c4832804"
+    },
+    {
+      "index": 15,
+      "file": "frames/frame-00015.png",
+      "startedWallSeconds": 5.5859318,
+      "endedWallSeconds": 5.6758905,
+      "timestampSeconds": 5.63091115,
+      "bytes": 175903,
+      "sha256": "b9d799f8478cad4f8153a0d6af7a6979d49680228d6c4daf74c618a0c4832804"
+    },
+    {
+      "index": 16,
+      "file": "frames/frame-00016.png",
+      "startedWallSeconds": 5.8373271,
+      "endedWallSeconds": 5.944534,
+      "timestampSeconds": 5.89093055,
+      "bytes": 175903,
+      "sha256": "b9d799f8478cad4f8153a0d6af7a6979d49680228d6c4daf74c618a0c4832804"
+    },
+    {
+      "index": 17,
+      "file": "frames/frame-00017.png",
+      "startedWallSeconds": 6.100926,
+      "endedWallSeconds": 6.1980186999999995,
+      "timestampSeconds": 6.14947235,
+      "bytes": 175903,
+      "sha256": "b9d799f8478cad4f8153a0d6af7a6979d49680228d6c4daf74c618a0c4832804"
+    },
+    {
+      "index": 18,
+      "file": "frames/frame-00018.png",
+      "startedWallSeconds": 6.3516693,
+      "endedWallSeconds": 6.6463073,
+      "timestampSeconds": 6.498988300000001,
+      "bytes": 96617,
+      "sha256": "ec1352779194520da60207875ee94d8b404eebe121f0a5042b981b3b826c501f"
+    },
+    {
+      "index": 19,
+      "file": "frames/frame-00019.png",
+      "startedWallSeconds": 6.6494689,
+      "endedWallSeconds": 7.0134141,
+      "timestampSeconds": 6.8314415,
+      "bytes": 177447,
+      "sha256": "f1fc0210447c526d19d9daad0e7b0504f5113531c45c5fa56e8976d4b120c052"
+    },
+    {
+      "index": 20,
+      "file": "frames/frame-00020.png",
+      "startedWallSeconds": 7.0232618,
+      "endedWallSeconds": 7.308331600000001,
+      "timestampSeconds": 7.1657967000000005,
+      "bytes": 177947,
+      "sha256": "483f9f05fb38d34a55187264f94da7e688a515e4c943150257f11830ce3f94e6"
+    },
+    {
+      "index": 21,
+      "file": "frames/frame-00021.png",
+      "startedWallSeconds": 7.308649099999999,
+      "endedWallSeconds": 7.5884777,
+      "timestampSeconds": 7.448563399999999,
+      "bytes": 178412,
+      "sha256": "4ad6127931446ea790eef0e15c623c4649ddab006fcdc7bd837460c2b113a774"
+    },
+    {
+      "index": 22,
+      "file": "frames/frame-00022.png",
+      "startedWallSeconds": 7.6039228,
+      "endedWallSeconds": 7.8662737,
+      "timestampSeconds": 7.73509825,
+      "bytes": 179590,
+      "sha256": "91ecd55a72f51ffd4e095ddcccd1153b0a4121c030c1f2c346fb59be3daf8397"
+    },
+    {
+      "index": 23,
+      "file": "frames/frame-00023.png",
+      "startedWallSeconds": 7.8707564,
+      "endedWallSeconds": 8.1183809,
+      "timestampSeconds": 7.99456865,
+      "bytes": 180117,
+      "sha256": "860d8d997c5e0c8bde4270e415cfe8090221a0a4f38a08acc196bc2bfa7478f9"
+    },
+    {
+      "index": 24,
+      "file": "frames/frame-00024.png",
+      "startedWallSeconds": 8.1223057,
+      "endedWallSeconds": 8.3751175,
+      "timestampSeconds": 8.2487116,
+      "bytes": 180801,
+      "sha256": "a964d5f4f07a3d2f352b98253e3d04d7bd3c849f7e11bd617413915a6e8f5f88"
+    },
+    {
+      "index": 25,
+      "file": "frames/frame-00025.png",
+      "startedWallSeconds": 8.3860182,
+      "endedWallSeconds": 8.6635878,
+      "timestampSeconds": 8.524803,
+      "bytes": 182115,
+      "sha256": "0ec8d6105148e642a0df12b3f0115b681e04616e99b8555caf4cd7dd505d5734"
+    },
+    {
+      "index": 26,
+      "file": "frames/frame-00026.png",
+      "startedWallSeconds": 8.6680482,
+      "endedWallSeconds": 8.9623145,
+      "timestampSeconds": 8.81518135,
+      "bytes": 181941,
+      "sha256": "f62fddbe23811fec2bc11486a23222647fc547c3a333805d464c6a569ce1841d"
+    },
+    {
+      "index": 27,
+      "file": "frames/frame-00027.png",
+      "startedWallSeconds": 8.964770399999999,
+      "endedWallSeconds": 9.235448700000001,
+      "timestampSeconds": 9.100109549999999,
+      "bytes": 182038,
+      "sha256": "eab00d215749461a4bd91904b1052bdc38f2f6ba411d5f7a6c0cd830fafd03e3"
+    },
+    {
+      "index": 28,
+      "file": "frames/frame-00028.png",
+      "startedWallSeconds": 9.2461509,
+      "endedWallSeconds": 9.5749419,
+      "timestampSeconds": 9.410546400000001,
+      "bytes": 182225,
+      "sha256": "4d5a55ba4c78704cc0283f5d125a56ce525cba9a2b1b7c62ac76e09b5c948cfc"
+    },
+    {
+      "index": 29,
+      "file": "frames/frame-00029.png",
+      "startedWallSeconds": 9.575627899999999,
+      "endedWallSeconds": 9.9167965,
+      "timestampSeconds": 9.746212199999999,
+      "bytes": 183019,
+      "sha256": "bb29efbf6ba9e6bb3ce6312dc4a4d8db47d15d56e9442c4bcc7fef2b5a19efc7"
+    },
+    {
+      "index": 30,
+      "file": "frames/frame-00030.png",
+      "startedWallSeconds": 9.920609,
+      "endedWallSeconds": 10.2184702,
+      "timestampSeconds": 10.0695396,
+      "bytes": 183977,
+      "sha256": "019b6209feccdd66eda21ba839c70983cef87d66bd2b9bfb0a3038d6e1fd754d"
+    },
+    {
+      "index": 31,
+      "file": "frames/frame-00031.png",
+      "startedWallSeconds": 10.2343711,
+      "endedWallSeconds": 10.476925699999999,
+      "timestampSeconds": 10.3556484,
+      "bytes": 184823,
+      "sha256": "f7fe9acf899028ff5726fdb37543841f7b2558350e896fe3c4febee01f76853d"
+    },
+    {
+      "index": 32,
+      "file": "frames/frame-00032.png",
+      "startedWallSeconds": 10.4985061,
+      "endedWallSeconds": 10.7595262,
+      "timestampSeconds": 10.62901615,
+      "bytes": 185468,
+      "sha256": "e9482df0a6a65a7a16c1ae15aebfe83bc96c5f341747cf68d196384ee72b167b"
+    },
+    {
+      "index": 33,
+      "file": "frames/frame-00033.png",
+      "startedWallSeconds": 10.764275900000001,
+      "endedWallSeconds": 11.0298249,
+      "timestampSeconds": 10.897050400000001,
+      "bytes": 186455,
+      "sha256": "249b0905c593ed86799465e6e7ac6bdd16e98869ed5f93a6d4365d0e22f0e072"
+    },
+    {
+      "index": 34,
+      "file": "frames/frame-00034.png",
+      "startedWallSeconds": 11.045919099999999,
+      "endedWallSeconds": 11.2825509,
+      "timestampSeconds": 11.164235,
+      "bytes": 186587,
+      "sha256": "588042eca2f6f3795237b5190e8c5b7bafdbf670f03a94a4f76a0be78cc1fa2e"
+    },
+    {
+      "index": 35,
+      "file": "frames/frame-00035.png",
+      "startedWallSeconds": 11.310293900000001,
+      "endedWallSeconds": 11.5903276,
+      "timestampSeconds": 11.45031075,
+      "bytes": 186988,
+      "sha256": "35716d761ab83ab6618931647e9e09a6befc9e9a52bc43f630bbcb29f91acdf0"
+    },
+    {
+      "index": 36,
+      "file": "frames/frame-00036.png",
+      "startedWallSeconds": 11.6053406,
+      "endedWallSeconds": 11.8546244,
+      "timestampSeconds": 11.7299825,
+      "bytes": 188134,
+      "sha256": "cb7b3b9d9086f706e849c814dd6f38394f54b12fe6fca85ac43d8dbf8e7ed2ca"
+    },
+    {
+      "index": 37,
+      "file": "frames/frame-00037.png",
+      "startedWallSeconds": 11.857417,
+      "endedWallSeconds": 12.1477273,
+      "timestampSeconds": 12.002572149999999,
+      "bytes": 187994,
+      "sha256": "1ee2a50ecf466ef95a84260ebccf5b35c928fa4612ca6240487c251b56fbee54"
+    },
+    {
+      "index": 38,
+      "file": "frames/frame-00038.png",
+      "startedWallSeconds": 12.1562691,
+      "endedWallSeconds": 12.4166132,
+      "timestampSeconds": 12.28644115,
+      "bytes": 187934,
+      "sha256": "2e700bdab2e4415875bdd99017cc9702ec078f92bad6593b66ef818bb53e354b"
+    },
+    {
+      "index": 39,
+      "file": "frames/frame-00039.png",
+      "startedWallSeconds": 12.424055399999999,
+      "endedWallSeconds": 12.6909603,
+      "timestampSeconds": 12.55750785,
+      "bytes": 188021,
+      "sha256": "628bf4996c2f769f442e04055d4e931fea7842e694811a69769462b4170264cb"
+    },
+    {
+      "index": 40,
+      "file": "frames/frame-00040.png",
+      "startedWallSeconds": 12.7076649,
+      "endedWallSeconds": 13.0182939,
+      "timestampSeconds": 12.8629794,
+      "bytes": 188446,
+      "sha256": "9cc78aa1dfe8f7f491943360a8aa1e1bde363a28822956a6582a5bd8500e86e1"
+    },
+    {
+      "index": 41,
+      "file": "frames/frame-00041.png",
+      "startedWallSeconds": 13.0212124,
+      "endedWallSeconds": 13.3069223,
+      "timestampSeconds": 13.16406735,
+      "bytes": 189016,
+      "sha256": "311227fdb9aae10798d8e1682ce7c616d69281e01bbf97caef075d9d71009b63"
+    },
+    {
+      "index": 42,
+      "file": "frames/frame-00042.png",
+      "startedWallSeconds": 13.3204352,
+      "endedWallSeconds": 13.637049300000001,
+      "timestampSeconds": 13.47874225,
+      "bytes": 188967,
+      "sha256": "2bf4ee9b8c382952ec897e40771235afb8253d2bd43d9de0db0232b16b3df710"
+    },
+    {
+      "index": 43,
+      "file": "frames/frame-00043.png",
+      "startedWallSeconds": 13.6485564,
+      "endedWallSeconds": 13.920416600000001,
+      "timestampSeconds": 13.7844865,
+      "bytes": 188862,
+      "sha256": "a8857e5cfa51547313ab6ed92bf74aadd47ba1b61e03915265ab9b7a5bfce3ea"
+    },
+    {
+      "index": 44,
+      "file": "frames/frame-00044.png",
+      "startedWallSeconds": 13.929454600000001,
+      "endedWallSeconds": 14.1657753,
+      "timestampSeconds": 14.04761495,
+      "bytes": 189325,
+      "sha256": "60a310ebb413dbef762b956c4599f57d597783758c3571daa278e446ce4eac10"
+    },
+    {
+      "index": 45,
+      "file": "frames/frame-00045.png",
+      "startedWallSeconds": 14.181831599999999,
+      "endedWallSeconds": 14.4976595,
+      "timestampSeconds": 14.33974555,
+      "bytes": 190330,
+      "sha256": "8e412cfa8f1c3b3bee2108e3c8fce241bfffbce47e557c5ae4754e56d190b4cc"
+    },
+    {
+      "index": 46,
+      "file": "frames/frame-00046.png",
+      "startedWallSeconds": 14.512032999999999,
+      "endedWallSeconds": 14.7748042,
+      "timestampSeconds": 14.6434186,
+      "bytes": 191213,
+      "sha256": "3b8a043d3d3241db71139a83bb55d137efae92e48d9f527cf447b9f1fe3933a9"
+    },
+    {
+      "index": 47,
+      "file": "frames/frame-00047.png",
+      "startedWallSeconds": 14.791334500000001,
+      "endedWallSeconds": 15.0617798,
+      "timestampSeconds": 14.92655715,
+      "bytes": 193694,
+      "sha256": "ff29b1e9eba32306bc0ae82f6d72d6071307cf3b118d51d0861b05bbd06d33aa"
+    },
+    {
+      "index": 48,
+      "file": "frames/frame-00048.png",
+      "startedWallSeconds": 15.0736034,
+      "endedWallSeconds": 15.3474977,
+      "timestampSeconds": 15.21055055,
+      "bytes": 194024,
+      "sha256": "e4f8f16b0e6bc694921eb7b011fb82718afd972d80d5c298e8c02d28d621b0de"
+    },
+    {
+      "index": 49,
+      "file": "frames/frame-00049.png",
+      "startedWallSeconds": 15.3525573,
+      "endedWallSeconds": 15.6229705,
+      "timestampSeconds": 15.487763900000001,
+      "bytes": 195812,
+      "sha256": "e8c45457fd25da687c04a7ba2fb64b8e7a187aab20166392dc5dc8277b55aca1"
+    },
+    {
+      "index": 50,
+      "file": "frames/frame-00050.png",
+      "startedWallSeconds": 15.634973599999999,
+      "endedWallSeconds": 15.8840917,
+      "timestampSeconds": 15.75953265,
+      "bytes": 196885,
+      "sha256": "7a0c633a0f4339d7f9273a9dd058bf780a0e6f4999727c7da1d2c36cd8a61961"
+    },
+    {
+      "index": 51,
+      "file": "frames/frame-00051.png",
+      "startedWallSeconds": 15.8859257,
+      "endedWallSeconds": 16.1761545,
+      "timestampSeconds": 16.0310401,
+      "bytes": 198599,
+      "sha256": "413dca60393507d80e0af0cebc097053370f4435bbecbc2cb496d286fda53e6c"
+    },
+    {
+      "index": 52,
+      "file": "frames/frame-00052.png",
+      "startedWallSeconds": 16.1796048,
+      "endedWallSeconds": 16.4503377,
+      "timestampSeconds": 16.31497125,
+      "bytes": 199331,
+      "sha256": "cfecfbc171db0c3da6ed8037cdbd56fdca95bfc6c4222c85966e6fef60adf92e"
+    },
+    {
+      "index": 53,
+      "file": "frames/frame-00053.png",
+      "startedWallSeconds": 16.4506871,
+      "endedWallSeconds": 16.736036499999997,
+      "timestampSeconds": 16.593361799999997,
+      "bytes": 199850,
+      "sha256": "d262769b8c5dc46926d43ee3d115de6de8eba658af8c0f2caad2635f9ad12e67"
+    },
+    {
+      "index": 54,
+      "file": "frames/frame-00054.png",
+      "startedWallSeconds": 16.742996599999998,
+      "endedWallSeconds": 17.009229599999998,
+      "timestampSeconds": 16.876113099999998,
+      "bytes": 199468,
+      "sha256": "4c832696238f6ec4122ffea3f55802c0800d7d5201ede603614ec6449dfd896a"
+    },
+    {
+      "index": 55,
+      "file": "frames/frame-00055.png",
+      "startedWallSeconds": 17.0242231,
+      "endedWallSeconds": 17.3192764,
+      "timestampSeconds": 17.17174975,
+      "bytes": 200094,
+      "sha256": "51d794554ace7e25701d13b62da0c47193be6c2f1e329bc3aedd3bd38d08c249"
+    },
+    {
+      "index": 56,
+      "file": "frames/frame-00056.png",
+      "startedWallSeconds": 17.3232334,
+      "endedWallSeconds": 17.591542099999998,
+      "timestampSeconds": 17.45738775,
+      "bytes": 200639,
+      "sha256": "dbb54d309b26d57b83c959e222be5a3fcf4bfdf21bb1871b555d585bc6aa4e00"
+    },
+    {
+      "index": 57,
+      "file": "frames/frame-00057.png",
+      "startedWallSeconds": 17.6057427,
+      "endedWallSeconds": 17.8620062,
+      "timestampSeconds": 17.733874450000002,
+      "bytes": 201493,
+      "sha256": "44cb52ebc7c76c1c556dc37d33217dd13dd7cd89aa2be560e1edcf07d370acb4"
+    },
+    {
+      "index": 58,
+      "file": "frames/frame-00058.png",
+      "startedWallSeconds": 17.873034,
+      "endedWallSeconds": 18.1996526,
+      "timestampSeconds": 18.0363433,
+      "bytes": 201871,
+      "sha256": "8d52f9cbd441e0aebf5b7fcc9cedee253b2ff4489d841c19b14240d77cc959ba"
+    },
+    {
+      "index": 59,
+      "file": "frames/frame-00059.png",
+      "startedWallSeconds": 18.201819,
+      "endedWallSeconds": 18.5106296,
+      "timestampSeconds": 18.3562243,
+      "bytes": 202186,
+      "sha256": "9cce1a7e1111dab7553a95dceaab4e02668ef7b7d98e5a301a5be677860e8442"
+    },
+    {
+      "index": 60,
+      "file": "frames/frame-00060.png",
+      "startedWallSeconds": 18.5179433,
+      "endedWallSeconds": 18.7883799,
+      "timestampSeconds": 18.653161599999997,
+      "bytes": 202880,
+      "sha256": "640cfb4ec5f1803acf36398e713d9253f49e95b37063e726d82581686b7e617c"
+    },
+    {
+      "index": 61,
+      "file": "frames/frame-00061.png",
+      "startedWallSeconds": 18.8008381,
+      "endedWallSeconds": 19.123381300000002,
+      "timestampSeconds": 18.9621097,
+      "bytes": 204314,
+      "sha256": "1291f685c70ebc1bb5538996b6d23d723cca7d84bdc1c251d7d39499b0fd4c86"
+    },
+    {
+      "index": 62,
+      "file": "frames/frame-00062.png",
+      "startedWallSeconds": 19.1302545,
+      "endedWallSeconds": 19.414704099999998,
+      "timestampSeconds": 19.2724793,
+      "bytes": 204886,
+      "sha256": "9ce0b460e3cc6a6b55bf266e546b81286fa7160c6a43aef9194e0c65518ca394"
+    },
+    {
+      "index": 63,
+      "file": "frames/frame-00063.png",
+      "startedWallSeconds": 19.429303700000002,
+      "endedWallSeconds": 19.7119747,
+      "timestampSeconds": 19.570639200000002,
+      "bytes": 204905,
+      "sha256": "1bfd1d708aec762f851a9ebf49689e1b411a5f4d0876637a2b3f0df5b4f17de1"
+    },
+    {
+      "index": 64,
+      "file": "frames/frame-00064.png",
+      "startedWallSeconds": 19.7266637,
+      "endedWallSeconds": 20.023234,
+      "timestampSeconds": 19.87494885,
+      "bytes": 205331,
+      "sha256": "7c290823282d38a7341f9a7fa8e5759ff4d3d284b55046828bcf7ed9052d1c03"
+    },
+    {
+      "index": 65,
+      "file": "frames/frame-00065.png",
+      "startedWallSeconds": 20.0236598,
+      "endedWallSeconds": 20.2902945,
+      "timestampSeconds": 20.156977150000003,
+      "bytes": 204839,
+      "sha256": "9613a0722bfd53fb05daf8e74bce6b844f95aa330dba384739e9246224e605fa"
+    },
+    {
+      "index": 66,
+      "file": "frames/frame-00066.png",
+      "startedWallSeconds": 20.302015200000003,
+      "endedWallSeconds": 20.557715599999998,
+      "timestampSeconds": 20.4298654,
+      "bytes": 205144,
+      "sha256": "911cdd2eb5871d3ad17c9884dea85b674135a461d1a478152c348b9ed7bdb9ac"
+    },
+    {
+      "index": 67,
+      "file": "frames/frame-00067.png",
+      "startedWallSeconds": 20.5677285,
+      "endedWallSeconds": 20.835305599999998,
+      "timestampSeconds": 20.70151705,
+      "bytes": 205516,
+      "sha256": "295440be0fa84fc8eddbfef2c7bfa33e6a613b579bf33e195ded4ff635d2e34c"
+    },
+    {
+      "index": 68,
+      "file": "frames/frame-00068.png",
+      "startedWallSeconds": 20.8503036,
+      "endedWallSeconds": 21.0734048,
+      "timestampSeconds": 20.961854199999998,
+      "bytes": 206302,
+      "sha256": "1f3770ddf4be912821a880275da0f07bed3732bd301e6fe75b7415c913db6311"
+    },
+    {
+      "index": 69,
+      "file": "frames/frame-00069.png",
+      "startedWallSeconds": 21.1139143,
+      "endedWallSeconds": 21.393978899999997,
+      "timestampSeconds": 21.2539466,
+      "bytes": 206273,
+      "sha256": "51fc6730da6be09af5a8bb54b7fc631da7dde703fa1133f480f769ed298d646a"
+    },
+    {
+      "index": 70,
+      "file": "frames/frame-00070.png",
+      "startedWallSeconds": 21.395077399999998,
+      "endedWallSeconds": 21.669946500000002,
+      "timestampSeconds": 21.53251195,
+      "bytes": 206363,
+      "sha256": "65f9edaf86d8d81532660ae1c0dd8dbdba1f4899bac00faba36b435a94f56e01"
+    },
+    {
+      "index": 71,
+      "file": "frames/frame-00071.png",
+      "startedWallSeconds": 21.6782994,
+      "endedWallSeconds": 21.960614399999997,
+      "timestampSeconds": 21.8194569,
+      "bytes": 205829,
+      "sha256": "ca3ba56e9ec265a9b37627ac3fc7ed419c7b24f256eeac3914a52206c0358422"
+    },
+    {
+      "index": 72,
+      "file": "frames/frame-00072.png",
+      "startedWallSeconds": 21.9745862,
+      "endedWallSeconds": 22.2088091,
+      "timestampSeconds": 22.09169765,
+      "bytes": 205979,
+      "sha256": "01fed7d5b8660eeabafd0ddc4922c86d3a3294f4c59a28a9759e980c7fb95335"
+    },
+    {
+      "index": 73,
+      "file": "frames/frame-00073.png",
+      "startedWallSeconds": 22.2251744,
+      "endedWallSeconds": 22.484236,
+      "timestampSeconds": 22.354705199999998,
+      "bytes": 206202,
+      "sha256": "5a50a49a646e1288024748f374b74e053b7609bcd49854d18b9af52ff6bcc0aa"
+    },
+    {
+      "index": 74,
+      "file": "frames/frame-00074.png",
+      "startedWallSeconds": 22.4892415,
+      "endedWallSeconds": 22.7450945,
+      "timestampSeconds": 22.617168,
+      "bytes": 206284,
+      "sha256": "963c1f97eec696266b0eb67ba57ec47a519d8e25593f0e1295dfb0489b39869a"
+    },
+    {
+      "index": 75,
+      "file": "frames/frame-00075.png",
+      "startedWallSeconds": 22.7538426,
+      "endedWallSeconds": 23.0020846,
+      "timestampSeconds": 22.8779636,
+      "bytes": 206881,
+      "sha256": "fffd67c40aabce00f999cb65978290ab847a8b7dc2bd0c0d619144c58d533f5a"
+    },
+    {
+      "index": 76,
+      "file": "frames/frame-00076.png",
+      "startedWallSeconds": 23.0046366,
+      "endedWallSeconds": 23.27111,
+      "timestampSeconds": 23.137873300000003,
+      "bytes": 207154,
+      "sha256": "d79617291cc1f34cadc05bbd19f6ef299f94583da6105024abd72323991a424c"
+    },
+    {
+      "index": 77,
+      "file": "frames/frame-00077.png",
+      "startedWallSeconds": 23.283995299999997,
+      "endedWallSeconds": 23.541194,
+      "timestampSeconds": 23.41259465,
+      "bytes": 207571,
+      "sha256": "1bc13e590e091316aecd587ea98c20f12c9b41c538f917acc40d2944b8295e53"
+    },
+    {
+      "index": 78,
+      "file": "frames/frame-00078.png",
+      "startedWallSeconds": 23.5416092,
+      "endedWallSeconds": 23.8405474,
+      "timestampSeconds": 23.6910783,
+      "bytes": 207432,
+      "sha256": "4aa7a7dcc48bc0e2553f948ebe0122c07ff78a080fab6f55b3d42e478e37923f"
+    },
+    {
+      "index": 79,
+      "file": "frames/frame-00079.png",
+      "startedWallSeconds": 23.8456781,
+      "endedWallSeconds": 24.0833799,
+      "timestampSeconds": 23.964529,
+      "bytes": 207867,
+      "sha256": "1083dd79de56359e98f0f1473c94367bbec3de86d66eeec4f75a7b1383ebe3c4"
+    },
+    {
+      "index": 80,
+      "file": "frames/frame-00080.png",
+      "startedWallSeconds": 24.0975724,
+      "endedWallSeconds": 24.3582374,
+      "timestampSeconds": 24.2279049,
+      "bytes": 207730,
+      "sha256": "f7a128921479425d53a9b5c5eb0adad6ff2a475b77ae969ea29889166fe50703"
+    },
+    {
+      "index": 81,
+      "file": "frames/frame-00081.png",
+      "startedWallSeconds": 24.3629145,
+      "endedWallSeconds": 24.6540918,
+      "timestampSeconds": 24.50850315,
+      "bytes": 208291,
+      "sha256": "60b57f999a2208e1c2f10d114295bf0b18f1fb27d86d6b711d6cffa831338cd2"
+    },
+    {
+      "index": 82,
+      "file": "frames/frame-00082.png",
+      "startedWallSeconds": 24.658112199999998,
+      "endedWallSeconds": 24.9335887,
+      "timestampSeconds": 24.79585045,
+      "bytes": 208076,
+      "sha256": "33cc57eecbc3e24ce6c401d8ec25efc3e69ad862643b23d95970bb83b15006cc"
+    },
+    {
+      "index": 83,
+      "file": "frames/frame-00083.png",
+      "startedWallSeconds": 24.9386182,
+      "endedWallSeconds": 25.2331783,
+      "timestampSeconds": 25.08589825,
+      "bytes": 208674,
+      "sha256": "6c721e8c78f498d66de2b356920692d9959a01a46d1a0689f2828d71904500a7"
+    },
+    {
+      "index": 84,
+      "file": "frames/frame-00084.png",
+      "startedWallSeconds": 25.2344561,
+      "endedWallSeconds": 25.5564863,
+      "timestampSeconds": 25.3954712,
+      "bytes": 208779,
+      "sha256": "ef4d8c36969ea11c2f66c3669981c736fa9d5eed0accafcffe85fb90ae8fe5ae"
+    },
+    {
+      "index": 85,
+      "file": "frames/frame-00085.png",
+      "startedWallSeconds": 25.5647223,
+      "endedWallSeconds": 25.8572297,
+      "timestampSeconds": 25.710976000000002,
+      "bytes": 208556,
+      "sha256": "355bfdfb62f23e260119d4ae3ca3a9c4c4219cd2e793e44a72567cb5c5381edb"
+    },
+    {
+      "index": 86,
+      "file": "frames/frame-00086.png",
+      "startedWallSeconds": 25.857618,
+      "endedWallSeconds": 26.124732199999997,
+      "timestampSeconds": 25.9911751,
+      "bytes": 207735,
+      "sha256": "50908ce4aa315e9d8201d034a48d328728e390c9241c551c6dd17daa4d978919"
+    },
+    {
+      "index": 87,
+      "file": "frames/frame-00087.png",
+      "startedWallSeconds": 26.1404997,
+      "endedWallSeconds": 26.3771804,
+      "timestampSeconds": 26.25884005,
+      "bytes": 208316,
+      "sha256": "c7053863d21ac04f38397539694f8ec92ff7e1413235d6de27eb4803448517da"
+    },
+    {
+      "index": 88,
+      "file": "frames/frame-00088.png",
+      "startedWallSeconds": 26.3910262,
+      "endedWallSeconds": 26.676209999999998,
+      "timestampSeconds": 26.533618099999998,
+      "bytes": 208310,
+      "sha256": "cead9f5bf6747685447e91f9356df56216919928b88fb121ff1c95694c177297"
+    },
+    {
+      "index": 89,
+      "file": "frames/frame-00089.png",
+      "startedWallSeconds": 26.687854299999998,
+      "endedWallSeconds": 26.9341615,
+      "timestampSeconds": 26.8110079,
+      "bytes": 208674,
+      "sha256": "43cf16fea7dd316d6b89b9278e03717756d36f356b84d815e9d624a331b5635d"
+    },
+    {
+      "index": 90,
+      "file": "frames/frame-00090.png",
+      "startedWallSeconds": 26.9372642,
+      "endedWallSeconds": 27.2085251,
+      "timestampSeconds": 27.072894650000002,
+      "bytes": 208361,
+      "sha256": "b81090004994a4e32537d7a9f123b7f116d4662afe6e889320d6e05fd59c6645"
+    },
+    {
+      "index": 91,
+      "file": "frames/frame-00091.png",
+      "startedWallSeconds": 27.2179733,
+      "endedWallSeconds": 27.4930915,
+      "timestampSeconds": 27.3555324,
+      "bytes": 207949,
+      "sha256": "af69cc3b674a414d5091a360b770f09ffd2298339d500b1f209cafc443742005"
+    },
+    {
+      "index": 92,
+      "file": "frames/frame-00092.png",
+      "startedWallSeconds": 27.5011318,
+      "endedWallSeconds": 27.773365000000002,
+      "timestampSeconds": 27.6372484,
+      "bytes": 208258,
+      "sha256": "78ca544ea4c29a26c84001a013d703804bc3ca78478841255aaac64eafd25a04"
+    },
+    {
+      "index": 93,
+      "file": "frames/frame-00093.png",
+      "startedWallSeconds": 27.7800421,
+      "endedWallSeconds": 28.0646727,
+      "timestampSeconds": 27.9223574,
+      "bytes": 208435,
+      "sha256": "8428ec4200c30f7302b84a8ecf649d33edfc3955f67dbe0fb0f0bafb44e4419a"
+    },
+    {
+      "index": 94,
+      "file": "frames/frame-00094.png",
+      "startedWallSeconds": 28.0775252,
+      "endedWallSeconds": 28.3346643,
+      "timestampSeconds": 28.20609475,
+      "bytes": 208743,
+      "sha256": "1e14c4f14b29fac4be929941ed8e7ad5c4bdc5248d9da1f096dc246ed0d3c29d"
+    },
+    {
+      "index": 95,
+      "file": "frames/frame-00095.png",
+      "startedWallSeconds": 28.3437651,
+      "endedWallSeconds": 28.608565,
+      "timestampSeconds": 28.47616505,
+      "bytes": 209094,
+      "sha256": "6a0b5e19a52198aecc6797de09126bf58dd9211c67065827d5654723f2ff0379"
+    },
+    {
+      "index": 96,
+      "file": "frames/frame-00096.png",
+      "startedWallSeconds": 28.6257198,
+      "endedWallSeconds": 28.8646213,
+      "timestampSeconds": 28.745170549999997,
+      "bytes": 209493,
+      "sha256": "8b327466da42041b1d569e84df938e1d1de53bd0ad0e69af7863fc776cc3eada"
+    },
+    {
+      "index": 97,
+      "file": "frames/frame-00097.png",
+      "startedWallSeconds": 28.878641599999998,
+      "endedWallSeconds": 28.9903698,
+      "timestampSeconds": 28.9345057,
+      "bytes": 209493,
+      "sha256": "8b327466da42041b1d569e84df938e1d1de53bd0ad0e69af7863fc776cc3eada"
+    },
+    {
+      "index": 98,
+      "file": "frames/frame-00098.png",
+      "startedWallSeconds": 29.130148700000003,
+      "endedWallSeconds": 29.236268199999998,
+      "timestampSeconds": 29.183208450000002,
+      "bytes": 209493,
+      "sha256": "8b327466da42041b1d569e84df938e1d1de53bd0ad0e69af7863fc776cc3eada"
+    },
+    {
+      "index": 99,
+      "file": "frames/frame-00099.png",
+      "startedWallSeconds": 29.304465,
+      "endedWallSeconds": 29.3952642,
+      "timestampSeconds": 29.3498646,
+      "bytes": 209493,
+      "sha256": "8b327466da42041b1d569e84df938e1d1de53bd0ad0e69af7863fc776cc3eada"
+    },
+    {
+      "index": 100,
+      "file": "frames/frame-00100.png",
+      "startedWallSeconds": 29.3956352,
+      "endedWallSeconds": 29.4957769,
+      "timestampSeconds": 29.44570605,
+      "bytes": 209493,
+      "sha256": "8b327466da42041b1d569e84df938e1d1de53bd0ad0e69af7863fc776cc3eada"
+    },
+    {
+      "index": 101,
+      "file": "frames/frame-00101.png",
+      "startedWallSeconds": 29.633653300000002,
+      "endedWallSeconds": 29.9401353,
+      "timestampSeconds": 29.7868943,
+      "bytes": 209275,
+      "sha256": "96fdb39d3372e2c55dbd9e9964b0786f29dcbf004d08c4588c9e2c57f2ab1db9"
+    },
+    {
+      "index": 102,
+      "file": "frames/frame-00102.png",
+      "startedWallSeconds": 29.945090800000003,
+      "endedWallSeconds": 30.260668799999998,
+      "timestampSeconds": 30.1028798,
+      "bytes": 209474,
+      "sha256": "e176baa39b1edd8900cb12b68990ba325e3a64d0d7425fae674564ac3788e1df"
+    },
+    {
+      "index": 103,
+      "file": "frames/frame-00103.png",
+      "startedWallSeconds": 30.2733138,
+      "endedWallSeconds": 30.5424967,
+      "timestampSeconds": 30.40790525,
+      "bytes": 210177,
+      "sha256": "1475766a4a0968f3cc477c1146f82aefe53df4d7e05d0cd23662b5fa37c8ec83"
+    },
+    {
+      "index": 104,
+      "file": "frames/frame-00104.png",
+      "startedWallSeconds": 30.5534492,
+      "endedWallSeconds": 30.8770871,
+      "timestampSeconds": 30.71526815,
+      "bytes": 210428,
+      "sha256": "18a598abcf2d9818eb87ac0d4ef8734c6f848ec88ecb3182d746e4f4cd04086b"
+    },
+    {
+      "index": 105,
+      "file": "frames/frame-00105.png",
+      "startedWallSeconds": 30.8797684,
+      "endedWallSeconds": 31.1893846,
+      "timestampSeconds": 31.0345765,
+      "bytes": 211298,
+      "sha256": "d641143b161453d8829ec653bbc9bd361593fe48558b6fe32f3568389515edae"
+    },
+    {
+      "index": 106,
+      "file": "frames/frame-00106.png",
+      "startedWallSeconds": 31.1919857,
+      "endedWallSeconds": 31.504849099999998,
+      "timestampSeconds": 31.3484174,
+      "bytes": 211186,
+      "sha256": "8f41062c407a8ad8441842075ceacc87678b975ad3488b8ca0d0d2d1cfa5aa70"
+    },
+    {
+      "index": 107,
+      "file": "frames/frame-00107.png",
+      "startedWallSeconds": 31.51781,
+      "endedWallSeconds": 31.8276597,
+      "timestampSeconds": 31.67273485,
+      "bytes": 211608,
+      "sha256": "6cd950dafb703d298556d4d1e52d93123932e8ca594c99b7a364364bbae7e945"
+    },
+    {
+      "index": 108,
+      "file": "frames/frame-00108.png",
+      "startedWallSeconds": 31.8430389,
+      "endedWallSeconds": 32.12741,
+      "timestampSeconds": 31.985224449999997,
+      "bytes": 212196,
+      "sha256": "165e9cf7e321f412b9888bd43f7b2e69d1e5750c22e3e5ae70dca1d99426770f"
+    },
+    {
+      "index": 109,
+      "file": "frames/frame-00109.png",
+      "startedWallSeconds": 32.1369029,
+      "endedWallSeconds": 32.409413,
+      "timestampSeconds": 32.27315795,
+      "bytes": 212550,
+      "sha256": "b913022e6a3b31962761c9749061e8c6f1d122259b101eddeea116f59b86b547"
+    },
+    {
+      "index": 110,
+      "file": "frames/frame-00110.png",
+      "startedWallSeconds": 32.4184128,
+      "endedWallSeconds": 32.728099300000004,
+      "timestampSeconds": 32.57325605,
+      "bytes": 213350,
+      "sha256": "9056f31fc10d626b476e920886bd0a49a8c8b8c9012e3c29a970f0c4b1abeb71"
+    },
+    {
+      "index": 111,
+      "file": "frames/frame-00111.png",
+      "startedWallSeconds": 32.730701800000006,
+      "endedWallSeconds": 33.0198093,
+      "timestampSeconds": 32.875255550000006,
+      "bytes": 213392,
+      "sha256": "4f6da5ddda985272b1101be32c9ef689ac3028fb0a7ba08a7631becaceb56995"
+    },
+    {
+      "index": 112,
+      "file": "frames/frame-00112.png",
+      "startedWallSeconds": 33.0263019,
+      "endedWallSeconds": 33.3112519,
+      "timestampSeconds": 33.1687769,
+      "bytes": 213190,
+      "sha256": "9d310cc4f8a177c810e5db3da348058c74bbe3692ba1ff98e68a2642399330c6"
+    },
+    {
+      "index": 113,
+      "file": "frames/frame-00113.png",
+      "startedWallSeconds": 33.311658,
+      "endedWallSeconds": 33.6205372,
+      "timestampSeconds": 33.4660976,
+      "bytes": 212192,
+      "sha256": "f9b43119a9885d8f1273b04ee49b523372904994312367ba41b4c41208d176e4"
+    },
+    {
+      "index": 114,
+      "file": "frames/frame-00114.png",
+      "startedWallSeconds": 33.6352148,
+      "endedWallSeconds": 33.8901696,
+      "timestampSeconds": 33.762692200000004,
+      "bytes": 211898,
+      "sha256": "1703b4f436ee610cc5b84423ebf4a6dad76bca7ebc11921e8c99f429f64b7cc0"
+    },
+    {
+      "index": 115,
+      "file": "frames/frame-00115.png",
+      "startedWallSeconds": 33.9019184,
+      "endedWallSeconds": 34.160011,
+      "timestampSeconds": 34.0309647,
+      "bytes": 210874,
+      "sha256": "751db21bb38c29db53122543d334140c2490d3f718ad91dfc1b7387151f3447a"
+    },
+    {
+      "index": 116,
+      "file": "frames/frame-00116.png",
+      "startedWallSeconds": 34.1662762,
+      "endedWallSeconds": 34.4883479,
+      "timestampSeconds": 34.32731205,
+      "bytes": 210780,
+      "sha256": "18a50fd4884fa70daff3ecb9484f2db735bace7c3e41a801f2ea7567415d6f7b"
+    },
+    {
+      "index": 117,
+      "file": "frames/frame-00117.png",
+      "startedWallSeconds": 34.4947747,
+      "endedWallSeconds": 34.8029305,
+      "timestampSeconds": 34.6488526,
+      "bytes": 209138,
+      "sha256": "ba53e8131d7db126f532738eaec41fd8190e5ef40611d8ac8a8e5be5c09a5fb5"
+    },
+    {
+      "index": 118,
+      "file": "frames/frame-00118.png",
+      "startedWallSeconds": 34.8055951,
+      "endedWallSeconds": 35.103294999999996,
+      "timestampSeconds": 34.95444505,
+      "bytes": 207597,
+      "sha256": "fa6ff2ffedd9e2bf1e0744fd6243f87f43dbaad7c5e0aa4c27e9ad584a1135fc"
+    },
+    {
+      "index": 119,
+      "file": "frames/frame-00119.png",
+      "startedWallSeconds": 35.1147348,
+      "endedWallSeconds": 35.4004879,
+      "timestampSeconds": 35.257611350000005,
+      "bytes": 205947,
+      "sha256": "46ba330185a00c8cd70ed374cc61f27a2f424069c5bcc87572f4118e189ba047"
+    },
+    {
+      "index": 120,
+      "file": "frames/frame-00120.png",
+      "startedWallSeconds": 35.4110365,
+      "endedWallSeconds": 35.6796573,
+      "timestampSeconds": 35.5453469,
+      "bytes": 203581,
+      "sha256": "5d8b4678719d0c0fbd1b7dc9b61c67b62a2691b752a4f3de99a91d615e1317d2"
+    },
+    {
+      "index": 121,
+      "file": "frames/frame-00121.png",
+      "startedWallSeconds": 35.6927532,
+      "endedWallSeconds": 36.0289116,
+      "timestampSeconds": 35.8608324,
+      "bytes": 203950,
+      "sha256": "d4e66f4571aaf291160fd10eee2dbfa5108a8aa576d60ec139a66d99942eac49"
+    },
+    {
+      "index": 122,
+      "file": "frames/frame-00122.png",
+      "startedWallSeconds": 36.0357844,
+      "endedWallSeconds": 36.3531426,
+      "timestampSeconds": 36.1944635,
+      "bytes": 202818,
+      "sha256": "a60564de38a9bb4045e768c93a2c005da5d5e923287159c26d42bec06df8b742"
+    },
+    {
+      "index": 123,
+      "file": "frames/frame-00123.png",
+      "startedWallSeconds": 36.363597199999994,
+      "endedWallSeconds": 36.6522985,
+      "timestampSeconds": 36.507947849999994,
+      "bytes": 202509,
+      "sha256": "0e3ac2562539efd5b9772b5518b082df4d0612162d824d9cf0d42f3efa762513"
+    },
+    {
+      "index": 124,
+      "file": "frames/frame-00124.png",
+      "startedWallSeconds": 36.659442600000006,
+      "endedWallSeconds": 36.9742851,
+      "timestampSeconds": 36.816863850000004,
+      "bytes": 201792,
+      "sha256": "b87010be272cdef725e85c39f74b907335d79296bed8f4f3bdd01dee1630d142"
+    },
+    {
+      "index": 125,
+      "file": "frames/frame-00125.png",
+      "startedWallSeconds": 36.9882558,
+      "endedWallSeconds": 37.2834029,
+      "timestampSeconds": 37.135829349999995,
+      "bytes": 202132,
+      "sha256": "e314a5adbf55d71fc7683377286e6c989754e0920557a0c3775aab1132952f00"
+    },
+    {
+      "index": 126,
+      "file": "frames/frame-00126.png",
+      "startedWallSeconds": 37.286096,
+      "endedWallSeconds": 37.6420653,
+      "timestampSeconds": 37.46408065,
+      "bytes": 202130,
+      "sha256": "307687fe478859341fb5931d98620fcdfe0d40e170f5ddad99ed67a7f01b084e"
+    },
+    {
+      "index": 127,
+      "file": "frames/frame-00127.png",
+      "startedWallSeconds": 37.6435381,
+      "endedWallSeconds": 38.001834699999996,
+      "timestampSeconds": 37.822686399999995,
+      "bytes": 201801,
+      "sha256": "14f2fc77a6614cf4d5cd3c765d43839791f2355d4900e52493635f4225c14308"
+    },
+    {
+      "index": 128,
+      "file": "frames/frame-00128.png",
+      "startedWallSeconds": 38.0057535,
+      "endedWallSeconds": 38.335450900000005,
+      "timestampSeconds": 38.170602200000005,
+      "bytes": 201293,
+      "sha256": "b9506532b625d2169182abe8461daa0aefcd449dd71977ffd01baef4fa79d493"
+    },
+    {
+      "index": 129,
+      "file": "frames/frame-00129.png",
+      "startedWallSeconds": 38.3376855,
+      "endedWallSeconds": 38.6474914,
+      "timestampSeconds": 38.49258845,
+      "bytes": 201028,
+      "sha256": "0f39f7d1293fbcbed3e54ce351e86200016eb51f971c7210b8bcf3a51c0c3a52"
+    },
+    {
+      "index": 130,
+      "file": "frames/frame-00130.png",
+      "startedWallSeconds": 38.6508932,
+      "endedWallSeconds": 38.9445063,
+      "timestampSeconds": 38.79769975,
+      "bytes": 200038,
+      "sha256": "5128d0e6563276594e0331240d20cd6874d8f02d7b566d7c86f27e56e289843f"
+    },
+    {
+      "index": 131,
+      "file": "frames/frame-00131.png",
+      "startedWallSeconds": 38.9473135,
+      "endedWallSeconds": 39.2496759,
+      "timestampSeconds": 39.0984947,
+      "bytes": 197620,
+      "sha256": "269e4a47d189ccb0ec700adec32e33c71e5eb322457254460e1ec249636c3124"
+    },
+    {
+      "index": 132,
+      "file": "frames/frame-00132.png",
+      "startedWallSeconds": 39.2586167,
+      "endedWallSeconds": 39.569320399999995,
+      "timestampSeconds": 39.41396854999999,
+      "bytes": 197137,
+      "sha256": "2c18111adcf8e14fcda1dd603f88e09f68047c8ee160bf7aeaf6c9f54c218787"
+    },
+    {
+      "index": 133,
+      "file": "frames/frame-00133.png",
+      "startedWallSeconds": 39.5711437,
+      "endedWallSeconds": 39.8722912,
+      "timestampSeconds": 39.72171745,
+      "bytes": 195982,
+      "sha256": "27a380965e64d95e698f520657ae76cca6c025a3b7475e3b1995cd4022d9652d"
+    },
+    {
+      "index": 134,
+      "file": "frames/frame-00134.png",
+      "startedWallSeconds": 39.8727079,
+      "endedWallSeconds": 40.1759151,
+      "timestampSeconds": 40.024311499999996,
+      "bytes": 197166,
+      "sha256": "2d339f98d6e5cec6be5990a9c2fe634be482f5b3000bed0859a97f2c801cc12b"
+    },
+    {
+      "index": 135,
+      "file": "frames/frame-00135.png",
+      "startedWallSeconds": 40.1779862,
+      "endedWallSeconds": 40.4854133,
+      "timestampSeconds": 40.33169975,
+      "bytes": 197281,
+      "sha256": "4bf62a762a94624a31346bfd1a3c6f2f10f410bdc2c95d8c5ec121475dc49cd1"
+    },
+    {
+      "index": 136,
+      "file": "frames/frame-00136.png",
+      "startedWallSeconds": 40.490296199999996,
+      "endedWallSeconds": 40.806977700000004,
+      "timestampSeconds": 40.64863695,
+      "bytes": 197364,
+      "sha256": "920ff342fb6d956c139cac1e3e32893d5ac8e08a0830690291a0ca370329ee33"
+    },
+    {
+      "index": 137,
+      "file": "frames/frame-00137.png",
+      "startedWallSeconds": 40.819756999999996,
+      "endedWallSeconds": 41.0807536,
+      "timestampSeconds": 40.950255299999995,
+      "bytes": 198014,
+      "sha256": "7882575f5080a371561c7982c055cf71354909bc00f58ed6134a93ebea5737b0"
+    },
+    {
+      "index": 138,
+      "file": "frames/frame-00138.png",
+      "startedWallSeconds": 41.084686999999995,
+      "endedWallSeconds": 41.3731538,
+      "timestampSeconds": 41.22892039999999,
+      "bytes": 199045,
+      "sha256": "081f092dbce20d0474857df3f43839d9be27738a9d48367da8dd95623009b568"
+    },
+    {
+      "index": 139,
+      "file": "frames/frame-00139.png",
+      "startedWallSeconds": 41.3799646,
+      "endedWallSeconds": 41.648231200000005,
+      "timestampSeconds": 41.5140979,
+      "bytes": 199464,
+      "sha256": "598b1448012cedbe1b9579893d639be64406fd3567a73a3f75e5598aa9e66fed"
+    },
+    {
+      "index": 140,
+      "file": "frames/frame-00140.png",
+      "startedWallSeconds": 41.661022900000006,
+      "endedWallSeconds": 41.9662718,
+      "timestampSeconds": 41.813647350000004,
+      "bytes": 199103,
+      "sha256": "5849573191c21a774cf33f479dea100ad8855c4f087a42b83a77a2dbd30a2886"
+    },
+    {
+      "index": 141,
+      "file": "frames/frame-00141.png",
+      "startedWallSeconds": 41.9671256,
+      "endedWallSeconds": 42.256795100000005,
+      "timestampSeconds": 42.111960350000004,
+      "bytes": 199657,
+      "sha256": "e688c905eba0427ff691b7852ec1960cefe25d746f7ee21423a09811bcd2278f"
+    },
+    {
+      "index": 142,
+      "file": "frames/frame-00142.png",
+      "startedWallSeconds": 42.2700814,
+      "endedWallSeconds": 42.5423591,
+      "timestampSeconds": 42.406220250000004,
+      "bytes": 199469,
+      "sha256": "0452fb718533f821d0de33a88527321cca51427bbe83fa091943af25ddd60002"
+    },
+    {
+      "index": 143,
+      "file": "frames/frame-00143.png",
+      "startedWallSeconds": 42.552346899999996,
+      "endedWallSeconds": 42.831713,
+      "timestampSeconds": 42.69202995,
+      "bytes": 200575,
+      "sha256": "436da27843030172505b0a8eaabe08d3696617c043b68aacc928c20800d7572f"
+    },
+    {
+      "index": 144,
+      "file": "frames/frame-00144.png",
+      "startedWallSeconds": 42.8341515,
+      "endedWallSeconds": 43.120736599999994,
+      "timestampSeconds": 42.977444049999995,
+      "bytes": 201265,
+      "sha256": "734dd19f35230815f2b957c5696374cbf1eca3b4c5fb0cd8882ccc2d462f019a"
+    },
+    {
+      "index": 145,
+      "file": "frames/frame-00145.png",
+      "startedWallSeconds": 43.1312546,
+      "endedWallSeconds": 43.4826501,
+      "timestampSeconds": 43.30695235,
+      "bytes": 202674,
+      "sha256": "237de417b1766bb6eed7e4ee22a90d81868c3389b2ed86b2b6aef91446be8894"
+    },
+    {
+      "index": 146,
+      "file": "frames/frame-00146.png",
+      "startedWallSeconds": 43.4910523,
+      "endedWallSeconds": 43.838305399999996,
+      "timestampSeconds": 43.66467885,
+      "bytes": 203728,
+      "sha256": "8a322f0f9688f38f3631cafac9368aabc00f7b5c0e420040b9d0396f13de63eb"
+    },
+    {
+      "index": 147,
+      "file": "frames/frame-00147.png",
+      "startedWallSeconds": 43.848387699999996,
+      "endedWallSeconds": 44.1365962,
+      "timestampSeconds": 43.99249195,
+      "bytes": 203626,
+      "sha256": "302134d6dddc4afa542367a09d072926ec95a36c06503e11fa265a3f761728ff"
+    },
+    {
+      "index": 148,
+      "file": "frames/frame-00148.png",
+      "startedWallSeconds": 44.1449954,
+      "endedWallSeconds": 44.4415581,
+      "timestampSeconds": 44.293276750000004,
+      "bytes": 205010,
+      "sha256": "c5bafeb6a8372b6cda6d88b6f1d2d5887531d342d05660119b4f3e3e4cf7d083"
+    },
+    {
+      "index": 149,
+      "file": "frames/frame-00149.png",
+      "startedWallSeconds": 44.4575842,
+      "endedWallSeconds": 44.7405092,
+      "timestampSeconds": 44.5990467,
+      "bytes": 205074,
+      "sha256": "e2d76d4c24c4669cd09cb3e9f5e48b0e2f72352be2bd618092c4669edd4548ec"
+    },
+    {
+      "index": 150,
+      "file": "frames/frame-00150.png",
+      "startedWallSeconds": 44.754841500000005,
+      "endedWallSeconds": 45.034580399999996,
+      "timestampSeconds": 44.894710950000004,
+      "bytes": 205633,
+      "sha256": "a5ce1ac288800b3c4c81b8ef8dd9ce3ffb865ab76115f2dbd8539808c609f3ca"
+    },
+    {
+      "index": 151,
+      "file": "frames/frame-00151.png",
+      "startedWallSeconds": 45.0491575,
+      "endedWallSeconds": 45.3535239,
+      "timestampSeconds": 45.2013407,
+      "bytes": 205172,
+      "sha256": "dfb98b1a27bdd6031cfafd061c6868e21b192ded7e12bfe7a430a7d74594799d"
+    },
+    {
+      "index": 152,
+      "file": "frames/frame-00152.png",
+      "startedWallSeconds": 45.3625383,
+      "endedWallSeconds": 45.6493256,
+      "timestampSeconds": 45.50593195,
+      "bytes": 206370,
+      "sha256": "be1421204c17843ba3ab81328b249dc3d8c0ee90bdf45912d34107ffc61ebbe9"
+    },
+    {
+      "index": 153,
+      "file": "frames/frame-00153.png",
+      "startedWallSeconds": 45.6598288,
+      "endedWallSeconds": 45.9545593,
+      "timestampSeconds": 45.80719405,
+      "bytes": 206826,
+      "sha256": "1ed7913aca3acaa8d0055ee922f049b3dd74dddf8a7e563855a2abb9473bed92"
+    },
+    {
+      "index": 154,
+      "file": "frames/frame-00154.png",
+      "startedWallSeconds": 45.9558277,
+      "endedWallSeconds": 46.2715921,
+      "timestampSeconds": 46.1137099,
+      "bytes": 206196,
+      "sha256": "99fe9d0bf2a5e961bb13707e19d1109503d579d8e9b382e21f86d0312f384fef"
+    },
+    {
+      "index": 155,
+      "file": "frames/frame-00155.png",
+      "startedWallSeconds": 46.2837946,
+      "endedWallSeconds": 46.5569865,
+      "timestampSeconds": 46.42039055,
+      "bytes": 206512,
+      "sha256": "34e946effb88d6450d546a367acc0fccf025d71a309c845114276605c12b815a"
+    },
+    {
+      "index": 156,
+      "file": "frames/frame-00156.png",
+      "startedWallSeconds": 46.563597800000004,
+      "endedWallSeconds": 46.8528345,
+      "timestampSeconds": 46.70821615,
+      "bytes": 205435,
+      "sha256": "356223da591a622851066bb8e9a9d05bf19a77f2169afc815860489b5d66e1f5"
+    },
+    {
+      "index": 157,
+      "file": "frames/frame-00157.png",
+      "startedWallSeconds": 46.8581489,
+      "endedWallSeconds": 47.1677089,
+      "timestampSeconds": 47.012928900000006,
+      "bytes": 206338,
+      "sha256": "068e903687885dab978ed93482e7a204f8d690f82ae2ca224a7a5915bfcac9b6"
+    },
+    {
+      "index": 158,
+      "file": "frames/frame-00158.png",
+      "startedWallSeconds": 47.1687087,
+      "endedWallSeconds": 47.4610484,
+      "timestampSeconds": 47.31487855,
+      "bytes": 206303,
+      "sha256": "343638c2ae12c13c876c690c86ad1e827e9a3c3fe41c20494019b5d6968a1322"
+    },
+    {
+      "index": 159,
+      "file": "frames/frame-00159.png",
+      "startedWallSeconds": 47.4650276,
+      "endedWallSeconds": 47.7537237,
+      "timestampSeconds": 47.609375650000004,
+      "bytes": 207158,
+      "sha256": "93fb3c85cb45dee3ec9b92667ae92b7926c418f1480ba7cc7c70cf57097460ef"
+    },
+    {
+      "index": 160,
+      "file": "frames/frame-00160.png",
+      "startedWallSeconds": 47.7628798,
+      "endedWallSeconds": 48.084140700000006,
+      "timestampSeconds": 47.92351025000001,
+      "bytes": 207469,
+      "sha256": "dd696ad82270ea93b98d515977e3b5ab949d7ff9f3f63aa273d9834967020457"
+    },
+    {
+      "index": 161,
+      "file": "frames/frame-00161.png",
+      "startedWallSeconds": 48.093045100000005,
+      "endedWallSeconds": 48.3832906,
+      "timestampSeconds": 48.23816785,
+      "bytes": 207461,
+      "sha256": "4c1bc6031513135109ca97c7bb9850319e06f25a3ea28c65feb8dbc370e84e41"
+    },
+    {
+      "index": 162,
+      "file": "frames/frame-00162.png",
+      "startedWallSeconds": 48.3874731,
+      "endedWallSeconds": 48.682697399999995,
+      "timestampSeconds": 48.535085249999995,
+      "bytes": 208265,
+      "sha256": "c338e953312e5c2bbfc2facc4e34c56d507d31a131c11173dbb928343ee41dac"
+    },
+    {
+      "index": 163,
+      "file": "frames/frame-00163.png",
+      "startedWallSeconds": 48.6862122,
+      "endedWallSeconds": 49.0108442,
+      "timestampSeconds": 48.848528200000004,
+      "bytes": 208342,
+      "sha256": "a6303a3fedafbaa0c9ced7950bba8eada9fa9f0c5d04f643163b4563776e16ba"
+    },
+    {
+      "index": 164,
+      "file": "frames/frame-00164.png",
+      "startedWallSeconds": 49.0168692,
+      "endedWallSeconds": 49.3495792,
+      "timestampSeconds": 49.1832242,
+      "bytes": 207878,
+      "sha256": "1f739b1725e36dbe96f499b90cb8c953ad282db1e51e892c3fd0370b38bd28ea"
+    },
+    {
+      "index": 165,
+      "file": "frames/frame-00165.png",
+      "startedWallSeconds": 49.3573706,
+      "endedWallSeconds": 49.6738543,
+      "timestampSeconds": 49.515612450000006,
+      "bytes": 208314,
+      "sha256": "03f46eda2b13338791aba4d2a2e055d4b5df8d61b21f825f2e43c876b187d605"
+    },
+    {
+      "index": 166,
+      "file": "frames/frame-00166.png",
+      "startedWallSeconds": 49.689409,
+      "endedWallSeconds": 50.0399369,
+      "timestampSeconds": 49.86467295,
+      "bytes": 208041,
+      "sha256": "cb1aaf803080d162b7b7d8ed9cda253ae2215cc617d0054e93c29afaba1882c3"
+    },
+    {
+      "index": 167,
+      "file": "frames/frame-00167.png",
+      "startedWallSeconds": 50.0506155,
+      "endedWallSeconds": 50.3324983,
+      "timestampSeconds": 50.191556899999995,
+      "bytes": 208283,
+      "sha256": "ef5ec935cd38960a9844af2165266a67628e75fd98eb231cc592c8294bc9b76d"
+    },
+    {
+      "index": 168,
+      "file": "frames/frame-00168.png",
+      "startedWallSeconds": 50.34793,
+      "endedWallSeconds": 50.5814156,
+      "timestampSeconds": 50.4646728,
+      "bytes": 208301,
+      "sha256": "54dc0056b8ec03942cfb8f4d11afc56bc85fe0cc94a83c63e71a5e49b08735a7"
+    },
+    {
+      "index": 169,
+      "file": "frames/frame-00169.png",
+      "startedWallSeconds": 50.612510300000004,
+      "endedWallSeconds": 50.9062457,
+      "timestampSeconds": 50.759378,
+      "bytes": 208816,
+      "sha256": "a17c55105f3fc8cbe637029d097522558b65f426d62f615960cb4ee7c47e6c1f"
+    },
+    {
+      "index": 170,
+      "file": "frames/frame-00170.png",
+      "startedWallSeconds": 50.9100661,
+      "endedWallSeconds": 51.199474699999996,
+      "timestampSeconds": 51.054770399999995,
+      "bytes": 208548,
+      "sha256": "bb4901ded4e1fd6798b4b75c22436aae3eb041972896978a4153f12be8c0d7e6"
+    },
+    {
+      "index": 171,
+      "file": "frames/frame-00171.png",
+      "startedWallSeconds": 51.2058188,
+      "endedWallSeconds": 51.5105891,
+      "timestampSeconds": 51.358203950000004,
+      "bytes": 210164,
+      "sha256": "94ee4cc441bab4062c1ad0d4c987c51d1421d98f0810ffd4bf909e357c33001b"
+    },
+    {
+      "index": 172,
+      "file": "frames/frame-00172.png",
+      "startedWallSeconds": 51.5209311,
+      "endedWallSeconds": 51.77759,
+      "timestampSeconds": 51.649260549999994,
+      "bytes": 210704,
+      "sha256": "a001ee775ac31840b4dc179f6e10fcdb6297ed25566dfc5e7351ca43ab00ccb9"
+    },
+    {
+      "index": 173,
+      "file": "frames/frame-00173.png",
+      "startedWallSeconds": 51.785087,
+      "endedWallSeconds": 52.1048422,
+      "timestampSeconds": 51.9449646,
+      "bytes": 211455,
+      "sha256": "747261e2f45e3bf85a52fb4ff83631e1d4afd253b87c0c46f87804503313d2bd"
+    },
+    {
+      "index": 174,
+      "file": "frames/frame-00174.png",
+      "startedWallSeconds": 52.1123457,
+      "endedWallSeconds": 52.3863543,
+      "timestampSeconds": 52.24935,
+      "bytes": 210308,
+      "sha256": "e7e2a767c5f2b3aec68c91e3039ca0970cac359f5367f657797b93c244cb7227"
+    },
+    {
+      "index": 175,
+      "file": "frames/frame-00175.png",
+      "startedWallSeconds": 52.393332199999996,
+      "endedWallSeconds": 52.6781268,
+      "timestampSeconds": 52.5357295,
+      "bytes": 211377,
+      "sha256": "c3868e6c261763653561f3a4b67ba8f4d70af4417bb8f8bb58557daf4d468b03"
+    },
+    {
+      "index": 176,
+      "file": "frames/frame-00176.png",
+      "startedWallSeconds": 52.6906499,
+      "endedWallSeconds": 52.995914299999995,
+      "timestampSeconds": 52.843282099999996,
+      "bytes": 211838,
+      "sha256": "704cdbbbf11eed6ebafefe531b0d13ec13e06d67ce351e5169393885cbb8b55f"
+    },
+    {
+      "index": 177,
+      "file": "frames/frame-00177.png",
+      "startedWallSeconds": 53.005168100000006,
+      "endedWallSeconds": 53.2765854,
+      "timestampSeconds": 53.140876750000004,
+      "bytes": 212704,
+      "sha256": "55d629a691405d28c80b64ad45aa8198b4315845206cd0910411866647d74bdf"
+    },
+    {
+      "index": 178,
+      "file": "frames/frame-00178.png",
+      "startedWallSeconds": 53.284719900000006,
+      "endedWallSeconds": 53.5815835,
+      "timestampSeconds": 53.4331517,
+      "bytes": 212775,
+      "sha256": "7094ccbee3c4646618af3e494f200ea348af1d4b0a83596bc462128f7c200021"
+    },
+    {
+      "index": 179,
+      "file": "frames/frame-00179.png",
+      "startedWallSeconds": 53.5973697,
+      "endedWallSeconds": 53.8922204,
+      "timestampSeconds": 53.74479505,
+      "bytes": 213998,
+      "sha256": "b4fcefc3070f0fbca1de5220de9c14095249172d701e4afd337a90d9e2ddb514"
+    },
+    {
+      "index": 180,
+      "file": "frames/frame-00180.png",
+      "startedWallSeconds": 53.8953918,
+      "endedWallSeconds": 54.1688998,
+      "timestampSeconds": 54.032145799999995,
+      "bytes": 214374,
+      "sha256": "cfc8c717dba59140dc21e0784425a233af0c3099def4cdc85bd765158394d246"
+    },
+    {
+      "index": 181,
+      "file": "frames/frame-00181.png",
+      "startedWallSeconds": 54.1781074,
+      "endedWallSeconds": 54.4217527,
+      "timestampSeconds": 54.29993005,
+      "bytes": 215639,
+      "sha256": "81f0befebd4a1f145958e80f79126851746a489d86fa358f4a6c190f8781197a"
+    },
+    {
+      "index": 182,
+      "file": "frames/frame-00182.png",
+      "startedWallSeconds": 54.4276331,
+      "endedWallSeconds": 54.5287267,
+      "timestampSeconds": 54.4781799,
+      "bytes": 216446,
+      "sha256": "4ac3192d0f9c186339f8d57398c8de58584d7074efb1a14cdec8f7b3fde6addf"
+    },
+    {
+      "index": 183,
+      "file": "frames/frame-00183.png",
+      "startedWallSeconds": 54.6800534,
+      "endedWallSeconds": 54.7833059,
+      "timestampSeconds": 54.731679650000004,
+      "bytes": 216446,
+      "sha256": "4ac3192d0f9c186339f8d57398c8de58584d7074efb1a14cdec8f7b3fde6addf"
+    },
+    {
+      "index": 184,
+      "file": "frames/frame-00184.png",
+      "startedWallSeconds": 54.929653200000004,
+      "endedWallSeconds": 55.0290936,
+      "timestampSeconds": 54.9793734,
+      "bytes": 216446,
+      "sha256": "4ac3192d0f9c186339f8d57398c8de58584d7074efb1a14cdec8f7b3fde6addf"
+    },
+    {
+      "index": 185,
+      "file": "frames/frame-00185.png",
+      "startedWallSeconds": 55.029312,
+      "endedWallSeconds": 55.1288039,
+      "timestampSeconds": 55.07905795,
+      "bytes": 216446,
+      "sha256": "4ac3192d0f9c186339f8d57398c8de58584d7074efb1a14cdec8f7b3fde6addf"
+    },
+    {
+      "index": 186,
+      "file": "frames/frame-00186.png",
+      "startedWallSeconds": 55.1790152,
+      "endedWallSeconds": 55.3252362,
+      "timestampSeconds": 55.2521257,
+      "bytes": 99824,
+      "sha256": "ba0cb8159ea6d7ee82f2a5e00c19de1b318fee7c9a16a3b4cf7f9be7ff131b8c"
+    },
+    {
+      "index": 187,
+      "file": "frames/frame-00187.png",
+      "startedWallSeconds": 55.4319012,
+      "endedWallSeconds": 55.7133232,
+      "timestampSeconds": 55.572612199999995,
+      "bytes": 99869,
+      "sha256": "8f2e2987ef54c179293ba4cf086e1ad41025723eba80b0767b708e9be0eccd63"
+    },
+    {
+      "index": 188,
+      "file": "frames/frame-00188.png",
+      "startedWallSeconds": 55.729167800000006,
+      "endedWallSeconds": 56.014372,
+      "timestampSeconds": 55.871769900000004,
+      "bytes": 216678,
+      "sha256": "ac6dbd46acf264930c6369becf31c2806a8df3914499db76027209f7f2c0383c"
+    },
+    {
+      "index": 189,
+      "file": "frames/frame-00189.png",
+      "startedWallSeconds": 56.0291515,
+      "endedWallSeconds": 56.314909099999994,
+      "timestampSeconds": 56.172030299999996,
+      "bytes": 216286,
+      "sha256": "e614689747bee0fbe14fe1644a13d381ca6c65b418758afdf33851a857ec5826"
+    },
+    {
+      "index": 190,
+      "file": "frames/frame-00190.png",
+      "startedWallSeconds": 56.325434800000004,
+      "endedWallSeconds": 56.6241348,
+      "timestampSeconds": 56.4747848,
+      "bytes": 216976,
+      "sha256": "446129679a0bbc8163cfee3366ee863d3f60671ce12219fff5630f60f64ce574"
+    },
+    {
+      "index": 191,
+      "file": "frames/frame-00191.png",
+      "startedWallSeconds": 56.636297,
+      "endedWallSeconds": 56.924715400000004,
+      "timestampSeconds": 56.780506200000005,
+      "bytes": 216506,
+      "sha256": "a6d95bcc84d125d07b2266169b1097b41a82157552717e9c09888565b4042048"
+    },
+    {
+      "index": 192,
+      "file": "frames/frame-00192.png",
+      "startedWallSeconds": 56.936856399999996,
+      "endedWallSeconds": 57.2101833,
+      "timestampSeconds": 57.07351985,
+      "bytes": 217552,
+      "sha256": "d2de3e25024b368ec262e84f82b293fd168e78d28873ef2788a46ecd68ca052d"
+    },
+    {
+      "index": 193,
+      "file": "frames/frame-00193.png",
+      "startedWallSeconds": 57.2106297,
+      "endedWallSeconds": 57.5190881,
+      "timestampSeconds": 57.3648589,
+      "bytes": 217263,
+      "sha256": "ddfcb3858dab819c2d536d2519152dcb5a2997eb99407332a0b5052a153771ff"
+    },
+    {
+      "index": 194,
+      "file": "frames/frame-00194.png",
+      "startedWallSeconds": 57.5287198,
+      "endedWallSeconds": 57.804126499999995,
+      "timestampSeconds": 57.66642315,
+      "bytes": 217312,
+      "sha256": "3ce6ecafdbac16a2c34604c6ac1f5f0ab5a11ce053b21a851c1d9cef997ab9d8"
+    },
+    {
+      "index": 195,
+      "file": "frames/frame-00195.png",
+      "startedWallSeconds": 57.8088894,
+      "endedWallSeconds": 58.0909984,
+      "timestampSeconds": 57.949943899999994,
+      "bytes": 216528,
+      "sha256": "b845d3d0c5306d76c7ad98d20528bea19019e9067a27e6d0469ae7597b36ebc9"
+    },
+    {
+      "index": 196,
+      "file": "frames/frame-00196.png",
+      "startedWallSeconds": 58.093140700000006,
+      "endedWallSeconds": 58.3825947,
+      "timestampSeconds": 58.2378677,
+      "bytes": 216038,
+      "sha256": "7d6bc408ff7c69cdf0c57d486b7104f38e8a208d328c91668b75f03a912e8208"
+    },
+    {
+      "index": 197,
+      "file": "frames/frame-00197.png",
+      "startedWallSeconds": 58.3915972,
+      "endedWallSeconds": 58.6943916,
+      "timestampSeconds": 58.5429944,
+      "bytes": 216701,
+      "sha256": "758dc5eb5ce86201016ae3d82ea4a721b883b289e0e921862c9f715f39274ca2"
+    },
+    {
+      "index": 198,
+      "file": "frames/frame-00198.png",
+      "startedWallSeconds": 58.7062785,
+      "endedWallSeconds": 58.9790533,
+      "timestampSeconds": 58.8426659,
+      "bytes": 217377,
+      "sha256": "1c0305458166c15eeed73f5b2b8b81cc0c5f163628535de09d0d2ea80874bed4"
+    },
+    {
+      "index": 199,
+      "file": "frames/frame-00199.png",
+      "startedWallSeconds": 58.9886057,
+      "endedWallSeconds": 59.259619,
+      "timestampSeconds": 59.124112350000004,
+      "bytes": 216794,
+      "sha256": "9124b0eb59d502c6ef09175de975dc220d93cd95b3a154fad36356ea04669681"
+    },
+    {
+      "index": 200,
+      "file": "frames/frame-00200.png",
+      "startedWallSeconds": 59.2706238,
+      "endedWallSeconds": 59.584197200000006,
+      "timestampSeconds": 59.42741050000001,
+      "bytes": 216834,
+      "sha256": "dd6059485185a1763b772e4c6ff177f00289e7e2a7f2f8b286970eddb159ab02"
+    },
+    {
+      "index": 201,
+      "file": "frames/frame-00201.png",
+      "startedWallSeconds": 59.6006345,
+      "endedWallSeconds": 59.8788125,
+      "timestampSeconds": 59.7397235,
+      "bytes": 216917,
+      "sha256": "a7b531b8136f147fb4e3b5b5b6f66fd073801387f9c30e2f3d9f7f742ba92c79"
+    },
+    {
+      "index": 202,
+      "file": "frames/frame-00202.png",
+      "startedWallSeconds": 59.883181799999996,
+      "endedWallSeconds": 60.181368,
+      "timestampSeconds": 60.0322749,
+      "bytes": 216604,
+      "sha256": "7d30b0cff95ac99b16982c5edeb9aa75140a2bacf31c53358aeb9cee466d3792"
+    },
+    {
+      "index": 203,
+      "file": "frames/frame-00203.png",
+      "startedWallSeconds": 60.1831112,
+      "endedWallSeconds": 60.466696400000004,
+      "timestampSeconds": 60.3249038,
+      "bytes": 216128,
+      "sha256": "0e2121b50fd64f394142f0915b983080b60ff06214e38e07b54f049e7114535f"
+    },
+    {
+      "index": 204,
+      "file": "frames/frame-00204.png",
+      "startedWallSeconds": 60.4676197,
+      "endedWallSeconds": 60.739840300000004,
+      "timestampSeconds": 60.60373,
+      "bytes": 216625,
+      "sha256": "38428678213d69a04d45079e85049610dcae61fb7f4f3163c7a82e789d958724"
+    },
+    {
+      "index": 205,
+      "file": "frames/frame-00205.png",
+      "startedWallSeconds": 60.7457433,
+      "endedWallSeconds": 61.0101449,
+      "timestampSeconds": 60.8779441,
+      "bytes": 216332,
+      "sha256": "802e6e6f6ee1952c0b70b683307c58917b9ea25a19b56d59dc0e8d1b55623dac"
+    },
+    {
+      "index": 206,
+      "file": "frames/frame-00206.png",
+      "startedWallSeconds": 61.0257052,
+      "endedWallSeconds": 61.343313,
+      "timestampSeconds": 61.1845091,
+      "bytes": 216075,
+      "sha256": "f91877f0298dcdd7382aef6e657f51891e5cedce9cb85c114e4348fc84ef5bce"
+    },
+    {
+      "index": 207,
+      "file": "frames/frame-00207.png",
+      "startedWallSeconds": 61.343606699999995,
+      "endedWallSeconds": 61.641553800000004,
+      "timestampSeconds": 61.49258025,
+      "bytes": 217309,
+      "sha256": "fcaeaf057ed1fd6d82acfb8d700c0c1952922d9df5bfa5d9ba3e1b5ee0eb9ec5"
+    },
+    {
+      "index": 208,
+      "file": "frames/frame-00208.png",
+      "startedWallSeconds": 61.6513365,
+      "endedWallSeconds": 62.0051887,
+      "timestampSeconds": 61.8282626,
+      "bytes": 217381,
+      "sha256": "f42515be83d0897ed6c9a744d41f38861db57f8a2f9e33bb7b3ebd50fcbcc67c"
+    },
+    {
+      "index": 209,
+      "file": "frames/frame-00209.png",
+      "startedWallSeconds": 62.011473599999995,
+      "endedWallSeconds": 62.34959550000001,
+      "timestampSeconds": 62.180534550000004,
+      "bytes": 217481,
+      "sha256": "f854bfddc0311acd18a2c469b47fbde0ba9567b664439ba0548f311925f3de68"
+    },
+    {
+      "index": 210,
+      "file": "frames/frame-00210.png",
+      "startedWallSeconds": 62.3538606,
+      "endedWallSeconds": 62.669638299999995,
+      "timestampSeconds": 62.511749449999996,
+      "bytes": 216251,
+      "sha256": "e49598c28862534e9a3128560663d6a58c9918dedd8f007aebf1ea6e58336cc4"
+    },
+    {
+      "index": 211,
+      "file": "frames/frame-00211.png",
+      "startedWallSeconds": 62.680694100000004,
+      "endedWallSeconds": 62.9641059,
+      "timestampSeconds": 62.8224,
+      "bytes": 215873,
+      "sha256": "e705b3300da2ce36f50d0a49463027263e0daf0a5428643ef082d4b0c6c66374"
+    },
+    {
+      "index": 212,
+      "file": "frames/frame-00212.png",
+      "startedWallSeconds": 62.9786892,
+      "endedWallSeconds": 63.249705199999994,
+      "timestampSeconds": 63.11419719999999,
+      "bytes": 215836,
+      "sha256": "3e6b73d90013383b56bf19eeb3dd9839f21e50ad9d56274dc34c38ebb5b42e19"
+    },
+    {
+      "index": 213,
+      "file": "frames/frame-00213.png",
+      "startedWallSeconds": 63.2588693,
+      "endedWallSeconds": 63.5337506,
+      "timestampSeconds": 63.39630995,
+      "bytes": 215758,
+      "sha256": "793f294441efc3dc2471592bc8fead50bab05c8c08ab0e86535ca498470a9f7e"
+    },
+    {
+      "index": 214,
+      "file": "frames/frame-00214.png",
+      "startedWallSeconds": 63.5404027,
+      "endedWallSeconds": 63.8045319,
+      "timestampSeconds": 63.6724673,
+      "bytes": 215672,
+      "sha256": "afc0dfa150ade067b78813159d4033267514d00310a9ae5a6484de6c5028a682"
+    },
+    {
+      "index": 215,
+      "file": "frames/frame-00215.png",
+      "startedWallSeconds": 63.8073946,
+      "endedWallSeconds": 64.1220964,
+      "timestampSeconds": 63.96474550000001,
+      "bytes": 214780,
+      "sha256": "0d15f55b725d5b92eb65ed00a30f0d6035acc83e970cca8d86b7d69b272b6f29"
+    },
+    {
+      "index": 216,
+      "file": "frames/frame-00216.png",
+      "startedWallSeconds": 64.1346583,
+      "endedWallSeconds": 64.41769430000001,
+      "timestampSeconds": 64.2761763,
+      "bytes": 213579,
+      "sha256": "9ba3f334bcd198dcb6c33aa7514f657da786ac7a532a2d7677df73466be36c28"
+    },
+    {
+      "index": 217,
+      "file": "frames/frame-00217.png",
+      "startedWallSeconds": 64.4198184,
+      "endedWallSeconds": 64.6966318,
+      "timestampSeconds": 64.5582251,
+      "bytes": 212794,
+      "sha256": "e1ae068c8f30156335a5dcc09c784c0c178c69439328d405f59029d9b30329b3"
+    },
+    {
+      "index": 218,
+      "file": "frames/frame-00218.png",
+      "startedWallSeconds": 64.7010619,
+      "endedWallSeconds": 65.0038526,
+      "timestampSeconds": 64.85245725,
+      "bytes": 210919,
+      "sha256": "d80967b1e154000cd2a2a0b5d463d9c1ae651850999ec424abfee8ee83cb8a4e"
+    },
+    {
+      "index": 219,
+      "file": "frames/frame-00219.png",
+      "startedWallSeconds": 65.01433490000001,
+      "endedWallSeconds": 65.3147011,
+      "timestampSeconds": 65.164518,
+      "bytes": 210669,
+      "sha256": "b05b146dd0e2b779e9da9362ab69cf922e092fc1df163d8898f0f45a91cd9da4"
+    },
+    {
+      "index": 220,
+      "file": "frames/frame-00220.png",
+      "startedWallSeconds": 65.32729140000001,
+      "endedWallSeconds": 65.61937289999999,
+      "timestampSeconds": 65.47333215,
+      "bytes": 209309,
+      "sha256": "bea28d9aea436c6d1967cce3d26e450ccaa759470d25cc5ec5547d5f293c8464"
+    },
+    {
+      "index": 221,
+      "file": "frames/frame-00221.png",
+      "startedWallSeconds": 65.62497219999999,
+      "endedWallSeconds": 65.9203082,
+      "timestampSeconds": 65.77264019999998,
+      "bytes": 208070,
+      "sha256": "31adc052204cea5194c59be5e6bb21bf21ff7ad2465a2340072577f4f4290663"
+    },
+    {
+      "index": 222,
+      "file": "frames/frame-00222.png",
+      "startedWallSeconds": 65.92191079999999,
+      "endedWallSeconds": 66.20516949999998,
+      "timestampSeconds": 66.06354015,
+      "bytes": 207202,
+      "sha256": "9c7508d46461b1de2919c7ddf06ae3a1ab0323bd02c21a84b553a73782685a9a"
+    },
+    {
+      "index": 223,
+      "file": "frames/frame-00223.png",
+      "startedWallSeconds": 66.2192536,
+      "endedWallSeconds": 66.48422589999998,
+      "timestampSeconds": 66.35173975,
+      "bytes": 206353,
+      "sha256": "2590c8f8e848e62203b87f2fb3f05c008ad7d0fc88346638f1ec117b3094026e"
+    },
+    {
+      "index": 224,
+      "file": "frames/frame-00224.png",
+      "startedWallSeconds": 66.4857706,
+      "endedWallSeconds": 66.7904119,
+      "timestampSeconds": 66.63809125,
+      "bytes": 206605,
+      "sha256": "5f46a1dada567cd86cb5115d9b7357d0f061508c19069281cc41b9dbbb62a519"
+    },
+    {
+      "index": 225,
+      "file": "frames/frame-00225.png",
+      "startedWallSeconds": 66.7957889,
+      "endedWallSeconds": 67.0606155,
+      "timestampSeconds": 66.9282022,
+      "bytes": 206740,
+      "sha256": "8af0ee8f3316ad432c556420a5fdfee02345d1322936a1db19cb545ea0b2b335"
+    },
+    {
+      "index": 226,
+      "file": "frames/frame-00226.png",
+      "startedWallSeconds": 67.0765158,
+      "endedWallSeconds": 67.3209771,
+      "timestampSeconds": 67.19874644999999,
+      "bytes": 207251,
+      "sha256": "fba91bea90e9a08577ca2e45b81234d85e96d3814eaea33d47852e00529108d9"
+    },
+    {
+      "index": 227,
+      "file": "frames/frame-00227.png",
+      "startedWallSeconds": 67.34069319999999,
+      "endedWallSeconds": 67.60167809999999,
+      "timestampSeconds": 67.47118565,
+      "bytes": 206959,
+      "sha256": "be080e3df7f74fe50517f617f5c0802a20cb1d43d123f58797d2e9aa3fa13bb6"
+    },
+    {
+      "index": 228,
+      "file": "frames/frame-00228.png",
+      "startedWallSeconds": 67.60743879999998,
+      "endedWallSeconds": 67.91905609999999,
+      "timestampSeconds": 67.76324745,
+      "bytes": 207403,
+      "sha256": "92491a751d3e676a4d6878fae2713c493526d108064d4d904c0fc272195a286e"
+    },
+    {
+      "index": 229,
+      "file": "frames/frame-00229.png",
+      "startedWallSeconds": 67.92217509999999,
+      "endedWallSeconds": 68.23263269999998,
+      "timestampSeconds": 68.07740389999998,
+      "bytes": 207052,
+      "sha256": "02597791f33aabe5d4cca1dc514a31b27517caad4eac95efe8465b4e63e81300"
+    },
+    {
+      "index": 230,
+      "file": "frames/frame-00230.png",
+      "startedWallSeconds": 68.24811889999998,
+      "endedWallSeconds": 68.5058438,
+      "timestampSeconds": 68.37698135,
+      "bytes": 207907,
+      "sha256": "8e3b427529384293c2b241f78517326441856ca05499fd03fcb3b20cff27761b"
+    },
+    {
+      "index": 231,
+      "file": "frames/frame-00231.png",
+      "startedWallSeconds": 68.512418,
+      "endedWallSeconds": 68.81657639999999,
+      "timestampSeconds": 68.6644972,
+      "bytes": 208400,
+      "sha256": "cce22a23cdace67e085c310ad53eb26817828d34b6034d91792667d42a9ce38c"
+    },
+    {
+      "index": 232,
+      "file": "frames/frame-00232.png",
+      "startedWallSeconds": 68.82586979999999,
+      "endedWallSeconds": 69.0937087,
+      "timestampSeconds": 68.95978925,
+      "bytes": 209054,
+      "sha256": "311a06c0384c3450de5cd6377c8cc8e69cf22b07d42f939c6cf9383780a47052"
+    },
+    {
+      "index": 233,
+      "file": "frames/frame-00233.png",
+      "startedWallSeconds": 69.10920829999999,
+      "endedWallSeconds": 69.36905729999998,
+      "timestampSeconds": 69.2391328,
+      "bytes": 208424,
+      "sha256": "c1ce8d5aaa1326ccf6104c10a5676b81567155cbcb1c99fed7118b04528ccdc3"
+    },
+    {
+      "index": 234,
+      "file": "frames/frame-00234.png",
+      "startedWallSeconds": 69.3755646,
+      "endedWallSeconds": 69.6511893,
+      "timestampSeconds": 69.51337695000001,
+      "bytes": 209419,
+      "sha256": "bd5d5fa01e698a025e665555e3d72c9ec6d4e4f2118ecd0e7d61f247c7900fd7"
+    },
+    {
+      "index": 235,
+      "file": "frames/frame-00235.png",
+      "startedWallSeconds": 69.658446,
+      "endedWallSeconds": 69.94653849999999,
+      "timestampSeconds": 69.80249225,
+      "bytes": 209917,
+      "sha256": "47a75d2840c60b59e480f38b851accfb9da565aecb43821259bef8dae78ffeeb"
+    },
+    {
+      "index": 236,
+      "file": "frames/frame-00236.png",
+      "startedWallSeconds": 69.95649479999999,
+      "endedWallSeconds": 70.25774509999998,
+      "timestampSeconds": 70.10711994999998,
+      "bytes": 210949,
+      "sha256": "710305074207fd5a10bd8f17a817634863f5976463570cbc5ff4c7bc0ea2ad18"
+    },
+    {
+      "index": 237,
+      "file": "frames/frame-00237.png",
+      "startedWallSeconds": 70.27022469999999,
+      "endedWallSeconds": 70.56719699999998,
+      "timestampSeconds": 70.41871084999998,
+      "bytes": 212098,
+      "sha256": "8021a987f95d991184a8de9c83f3ae74b1f8ec1586f63237526f517eb07d63db"
+    },
+    {
+      "index": 238,
+      "file": "frames/frame-00238.png",
+      "startedWallSeconds": 70.5684426,
+      "endedWallSeconds": 70.90694339999999,
+      "timestampSeconds": 70.737693,
+      "bytes": 211976,
+      "sha256": "8a99a8be01ac5c0fdc069e8c20423640d65a76ebad320bfb4b0bf87f2f9797a4"
+    },
+    {
+      "index": 239,
+      "file": "frames/frame-00239.png",
+      "startedWallSeconds": 70.9129244,
+      "endedWallSeconds": 71.23748549999999,
+      "timestampSeconds": 71.07520495,
+      "bytes": 212780,
+      "sha256": "b3fa4fe1649399059d4cb3d72a97e50de313e1543c9980bc1c75a0b670f58c3e"
+    },
+    {
+      "index": 240,
+      "file": "frames/frame-00240.png",
+      "startedWallSeconds": 71.24411669999999,
+      "endedWallSeconds": 71.54720569999999,
+      "timestampSeconds": 71.39566119999999,
+      "bytes": 212445,
+      "sha256": "f7b0eaf604dd789e5d128e1be42673cc616cd2d7c694317b69395d2bf37abb31"
+    },
+    {
+      "index": 241,
+      "file": "frames/frame-00241.png",
+      "startedWallSeconds": 71.5564831,
+      "endedWallSeconds": 71.8403704,
+      "timestampSeconds": 71.69842675,
+      "bytes": 212700,
+      "sha256": "fa97779515db2285618333746dc5a1e203750077bcd7e8d85357944cd6b5312f"
+    },
+    {
+      "index": 242,
+      "file": "frames/frame-00242.png",
+      "startedWallSeconds": 71.85225009999999,
+      "endedWallSeconds": 72.12005059999998,
+      "timestampSeconds": 71.98615034999999,
+      "bytes": 210602,
+      "sha256": "1d4e489c4a816839040e8d74b4708241fd6a908b431b1031b85b3c08b14edbe3"
+    },
+    {
+      "index": 243,
+      "file": "frames/frame-00243.png",
+      "startedWallSeconds": 72.1319099,
+      "endedWallSeconds": 72.37248069999998,
+      "timestampSeconds": 72.25219529999998,
+      "bytes": 210925,
+      "sha256": "352e672a674e7a7dcd67d25d941432f27c71d8b0fe5569ad45b9b1470ab8913c"
+    },
+    {
+      "index": 244,
+      "file": "frames/frame-00244.png",
+      "startedWallSeconds": 72.3820293,
+      "endedWallSeconds": 72.67769559999999,
+      "timestampSeconds": 72.52986245,
+      "bytes": 211673,
+      "sha256": "e2b54ed18a2373cf9023e8737de6071679e663abe72581647ee7966b68e997f8"
+    },
+    {
+      "index": 245,
+      "file": "frames/frame-00245.png",
+      "startedWallSeconds": 72.69428509999999,
+      "endedWallSeconds": 72.95479229999998,
+      "timestampSeconds": 72.82453869999998,
+      "bytes": 212909,
+      "sha256": "9c91e07a99dac063a125c0c15e73e8d5887a94db5b340462426a71c77b2d6d28"
+    },
+    {
+      "index": 246,
+      "file": "frames/frame-00246.png",
+      "startedWallSeconds": 72.9619824,
+      "endedWallSeconds": 73.22515139999999,
+      "timestampSeconds": 73.09356689999998,
+      "bytes": 213616,
+      "sha256": "293ef5269f95beedd0cbb3d7b9d9ce661365a8cb4cda946c0b68e0b29830b61f"
+    },
+    {
+      "index": 247,
+      "file": "frames/frame-00247.png",
+      "startedWallSeconds": 73.22977649999999,
+      "endedWallSeconds": 73.5497523,
+      "timestampSeconds": 73.38976439999999,
+      "bytes": 213889,
+      "sha256": "89eb9127f445f555a1eabe9ff87b21de2458d66578a78d23ddaec2fd2f6c08ca"
+    },
+    {
+      "index": 248,
+      "file": "frames/frame-00248.png",
+      "startedWallSeconds": 73.55910619999999,
+      "endedWallSeconds": 73.8447101,
+      "timestampSeconds": 73.70190815,
+      "bytes": 214164,
+      "sha256": "08c94cec231a3dde902f8734e3a8738a01f5fb5e4ad2ffa49e299f9b55eb07d1"
+    },
+    {
+      "index": 249,
+      "file": "frames/frame-00249.png",
+      "startedWallSeconds": 73.85694489999999,
+      "endedWallSeconds": 74.14702859999998,
+      "timestampSeconds": 74.00198674999999,
+      "bytes": 215214,
+      "sha256": "e459dbb9b27dc386d5f0f1257f2105d9807461ddf51a8bf4a2b1c35157c2f4c4"
+    },
+    {
+      "index": 250,
+      "file": "frames/frame-00250.png",
+      "startedWallSeconds": 74.1546761,
+      "endedWallSeconds": 74.4723786,
+      "timestampSeconds": 74.31352735,
+      "bytes": 215507,
+      "sha256": "d1786303df09ea76723a424ba2f39466955da9c79c8cf27a4eb689893a12cbe4"
+    },
+    {
+      "index": 251,
+      "file": "frames/frame-00251.png",
+      "startedWallSeconds": 74.48496829999999,
+      "endedWallSeconds": 74.74423049999999,
+      "timestampSeconds": 74.61459939999999,
+      "bytes": 217149,
+      "sha256": "ec56279f74c68585dab76e518184c3f4126fecef6487764275f5d75e1c93ec3e"
+    },
+    {
+      "index": 252,
+      "file": "frames/frame-00252.png",
+      "startedWallSeconds": 74.75186959999999,
+      "endedWallSeconds": 75.0153483,
+      "timestampSeconds": 74.88360895,
+      "bytes": 217323,
+      "sha256": "432cfad551d5c683c59370dd7015a955fcd2025411d31ff4886d52e69e44324a"
+    },
+    {
+      "index": 253,
+      "file": "frames/frame-00253.png",
+      "startedWallSeconds": 75.01567719999998,
+      "endedWallSeconds": 75.32908089999998,
+      "timestampSeconds": 75.17237904999999,
+      "bytes": 218571,
+      "sha256": "31263f05d4f3bfbdb8a370b4c0d02a75c1d20413aeedeb8677e19d0bb7e7c55a"
+    },
+    {
+      "index": 254,
+      "file": "frames/frame-00254.png",
+      "startedWallSeconds": 75.33017159999999,
+      "endedWallSeconds": 75.62815459999999,
+      "timestampSeconds": 75.4791631,
+      "bytes": 219150,
+      "sha256": "fcaa1d05f177470737f0515e8fb00cd45a3ed89a342b9c456c79e562d386bc3e"
+    },
+    {
+      "index": 255,
+      "file": "frames/frame-00255.png",
+      "startedWallSeconds": 75.6429144,
+      "endedWallSeconds": 75.9067621,
+      "timestampSeconds": 75.77483824999999,
+      "bytes": 218288,
+      "sha256": "7865ca74dbf39059639f12cbc21a1a43ba67ca534548863dc5c6992da4102cfe"
+    },
+    {
+      "index": 256,
+      "file": "frames/frame-00256.png",
+      "startedWallSeconds": 75.92262199999999,
+      "endedWallSeconds": 76.1828565,
+      "timestampSeconds": 76.05273925,
+      "bytes": 218558,
+      "sha256": "29ab78ced0be260a4b1ee8c439ea6ba67a4587726ddfa2920e8c3aea17f7033e"
+    },
+    {
+      "index": 257,
+      "file": "frames/frame-00257.png",
+      "startedWallSeconds": 76.18879909999998,
+      "endedWallSeconds": 76.49685609999999,
+      "timestampSeconds": 76.34282759999999,
+      "bytes": 217860,
+      "sha256": "5c9c5e14f306ba3b3f6f29c36b98a698a15ff99bbe84b5a384f7e8a529f112a8"
+    },
+    {
+      "index": 258,
+      "file": "frames/frame-00258.png",
+      "startedWallSeconds": 76.5040535,
+      "endedWallSeconds": 76.79701829999999,
+      "timestampSeconds": 76.6505359,
+      "bytes": 218436,
+      "sha256": "00468e2517f26d9cca75d1689154a3b1de0bbeee4e67415f3e61ea99509d74aa"
+    },
+    {
+      "index": 259,
+      "file": "frames/frame-00259.png",
+      "startedWallSeconds": 76.8035673,
+      "endedWallSeconds": 77.06435539999998,
+      "timestampSeconds": 76.93396134999999,
+      "bytes": 218484,
+      "sha256": "6d89ece9917bcd62673ea8cf22e801dafb7ab83229159987ba14f40f3040a634"
+    },
+    {
+      "index": 260,
+      "file": "frames/frame-00260.png",
+      "startedWallSeconds": 77.0683579,
+      "endedWallSeconds": 77.38799909999999,
+      "timestampSeconds": 77.22817849999998,
+      "bytes": 219508,
+      "sha256": "0de11100366a7a858274650cbc0414430a0755d316595e945375cbd89ac60226"
+    },
+    {
+      "index": 261,
+      "file": "frames/frame-00261.png",
+      "startedWallSeconds": 77.39663269999998,
+      "endedWallSeconds": 77.6694285,
+      "timestampSeconds": 77.53303059999999,
+      "bytes": 220149,
+      "sha256": "df68440d5e17408de8763d1ccace5a15e86dcc174d35a24444500dd637d2b08a"
+    },
+    {
+      "index": 262,
+      "file": "frames/frame-00262.png",
+      "startedWallSeconds": 77.67393449999999,
+      "endedWallSeconds": 77.95435239999999,
+      "timestampSeconds": 77.81414344999999,
+      "bytes": 220753,
+      "sha256": "a2265e46bd3514344c8406c24b0396d9343c9f0526ff9a2bd011aba575414814"
+    },
+    {
+      "index": 263,
+      "file": "frames/frame-00263.png",
+      "startedWallSeconds": 77.9546158,
+      "endedWallSeconds": 78.20412909999999,
+      "timestampSeconds": 78.07937245,
+      "bytes": 221045,
+      "sha256": "2d3dbc048ffbfce0a8fdd31a76095c0513fc26c1679e85af9a5fe7f511b2f8c3"
+    },
+    {
+      "index": 264,
+      "file": "frames/frame-00264.png",
+      "startedWallSeconds": 78.20507099999999,
+      "endedWallSeconds": 78.2924601,
+      "timestampSeconds": 78.24876555,
+      "bytes": 221045,
+      "sha256": "2d3dbc048ffbfce0a8fdd31a76095c0513fc26c1679e85af9a5fe7f511b2f8c3"
+    },
+    {
+      "index": 265,
+      "file": "frames/frame-00265.png",
+      "startedWallSeconds": 78.29284719999998,
+      "endedWallSeconds": 78.39921049999998,
+      "timestampSeconds": 78.34602884999998,
+      "bytes": 221045,
+      "sha256": "2d3dbc048ffbfce0a8fdd31a76095c0513fc26c1679e85af9a5fe7f511b2f8c3"
+    },
+    {
+      "index": 266,
+      "file": "frames/frame-00266.png",
+      "startedWallSeconds": 78.45542809999999,
+      "endedWallSeconds": 78.5411647,
+      "timestampSeconds": 78.49829639999999,
+      "bytes": 221045,
+      "sha256": "2d3dbc048ffbfce0a8fdd31a76095c0513fc26c1679e85af9a5fe7f511b2f8c3"
+    },
+    {
+      "index": 267,
+      "file": "frames/frame-00267.png",
+      "startedWallSeconds": 78.59125139999999,
+      "endedWallSeconds": 78.6949932,
+      "timestampSeconds": 78.64312229999999,
+      "bytes": 222297,
+      "sha256": "755a90be63a0a2b92151791cc2acd0c7c272c059fc2b6cdf0b2ed4d3e1f3b22b"
+    },
+    {
+      "index": 268,
+      "file": "frames/frame-00268.png",
+      "startedWallSeconds": 78.70410849999999,
+      "endedWallSeconds": 78.7866481,
+      "timestampSeconds": 78.7453783,
+      "bytes": 222297,
+      "sha256": "755a90be63a0a2b92151791cc2acd0c7c272c059fc2b6cdf0b2ed4d3e1f3b22b"
+    },
+    {
+      "index": 269,
+      "file": "frames/frame-00269.png",
+      "startedWallSeconds": 78.9677123,
+      "endedWallSeconds": 79.0675685,
+      "timestampSeconds": 79.0176404,
+      "bytes": 222297,
+      "sha256": "755a90be63a0a2b92151791cc2acd0c7c272c059fc2b6cdf0b2ed4d3e1f3b22b"
+    },
+    {
+      "index": 270,
+      "file": "frames/frame-00270.png",
+      "startedWallSeconds": 79.23245,
+      "endedWallSeconds": 79.33510639999999,
+      "timestampSeconds": 79.2837782,
+      "bytes": 222297,
+      "sha256": "755a90be63a0a2b92151791cc2acd0c7c272c059fc2b6cdf0b2ed4d3e1f3b22b"
+    },
+    {
+      "index": 271,
+      "file": "frames/frame-00271.png",
+      "startedWallSeconds": 79.484681,
+      "endedWallSeconds": 79.59054189999999,
+      "timestampSeconds": 79.53761144999999,
+      "bytes": 222297,
+      "sha256": "755a90be63a0a2b92151791cc2acd0c7c272c059fc2b6cdf0b2ed4d3e1f3b22b"
+    },
+    {
+      "index": 272,
+      "file": "frames/frame-00272.png",
+      "startedWallSeconds": 79.74746809999999,
+      "endedWallSeconds": 79.8872616,
+      "timestampSeconds": 79.81736484999999,
+      "bytes": 98735,
+      "sha256": "c36490c1980d808f5e1dd7377b061933e80dad97a985096ce93ca658de4d94d4"
+    },
+    {
+      "index": 273,
+      "file": "frames/frame-00273.png",
+      "startedWallSeconds": 79.99852759999999,
+      "endedWallSeconds": 80.29421819999999,
+      "timestampSeconds": 80.14637289999999,
+      "bytes": 98898,
+      "sha256": "308a8885a08a8605a4ad2be26c2915f2dce6cc7436ecf79410ada451386f9f13"
+    },
+    {
+      "index": 274,
+      "file": "frames/frame-00274.png",
+      "startedWallSeconds": 80.3099641,
+      "endedWallSeconds": 80.5738091,
+      "timestampSeconds": 80.4418866,
+      "bytes": 223486,
+      "sha256": "17e0a903c2826eb855cca89e4688a6bb899fef704b9d857eda5fb110fdceb0e4"
+    },
+    {
+      "index": 275,
+      "file": "frames/frame-00275.png",
+      "startedWallSeconds": 80.59017499999999,
+      "endedWallSeconds": 80.86064329999999,
+      "timestampSeconds": 80.72540914999999,
+      "bytes": 225573,
+      "sha256": "89097aeccc0b120b46e396e7bf2745ba40c00c77e40baa58817d746cb51945c2"
+    },
+    {
+      "index": 276,
+      "file": "frames/frame-00276.png",
+      "startedWallSeconds": 80.87255149999999,
+      "endedWallSeconds": 81.1626307,
+      "timestampSeconds": 81.01759109999999,
+      "bytes": 226513,
+      "sha256": "01b052dc7536492145a31515b131f9447a40619d73603c66342c937a6ea3d6c7"
+    },
+    {
+      "index": 277,
+      "file": "frames/frame-00277.png",
+      "startedWallSeconds": 81.1698699,
+      "endedWallSeconds": 81.44619579999998,
+      "timestampSeconds": 81.30803284999999,
+      "bytes": 227220,
+      "sha256": "85e712c1a50d427e3961b024189b9ea43cedd5802d1d1cb4d70a4dd4d7f6bbc2"
+    },
+    {
+      "index": 278,
+      "file": "frames/frame-00278.png",
+      "startedWallSeconds": 81.45290139999999,
+      "endedWallSeconds": 81.7393616,
+      "timestampSeconds": 81.59613149999998,
+      "bytes": 225966,
+      "sha256": "33a9189ab953a2ef01352a65d1fb683439f43ce93df9bdf3931e04209ee1593d"
+    },
+    {
+      "index": 279,
+      "file": "frames/frame-00279.png",
+      "startedWallSeconds": 81.75010379999999,
+      "endedWallSeconds": 82.02575499999999,
+      "timestampSeconds": 81.88792939999999,
+      "bytes": 225849,
+      "sha256": "b026886a6b434f0c1aaba0c559eb78d604cdac0b4c4bea00e7a6976b8df763f9"
+    },
+    {
+      "index": 280,
+      "file": "frames/frame-00280.png",
+      "startedWallSeconds": 82.03104479999999,
+      "endedWallSeconds": 82.1607968,
+      "timestampSeconds": 82.09592079999999,
+      "bytes": 226584,
+      "sha256": "e498696d95166cba2a88b5272d8188e9ea3e09087700ebe30afd55e1eb55aac2"
+    },
+    {
+      "index": 281,
+      "file": "frames/frame-00281.png",
+      "startedWallSeconds": 82.2832615,
+      "endedWallSeconds": 82.3831081,
+      "timestampSeconds": 82.3331848,
+      "bytes": 226584,
+      "sha256": "e498696d95166cba2a88b5272d8188e9ea3e09087700ebe30afd55e1eb55aac2"
+    },
+    {
+      "index": 282,
+      "file": "frames/frame-00282.png",
+      "startedWallSeconds": 82.53256569999999,
+      "endedWallSeconds": 82.63637409999998,
+      "timestampSeconds": 82.58446989999999,
+      "bytes": 226584,
+      "sha256": "e498696d95166cba2a88b5272d8188e9ea3e09087700ebe30afd55e1eb55aac2"
+    },
+    {
+      "index": 283,
+      "file": "frames/frame-00283.png",
+      "startedWallSeconds": 82.641579,
+      "endedWallSeconds": 82.7404419,
+      "timestampSeconds": 82.69101045,
+      "bytes": 226584,
+      "sha256": "e498696d95166cba2a88b5272d8188e9ea3e09087700ebe30afd55e1eb55aac2"
+    },
+    {
+      "index": 284,
+      "file": "frames/frame-00284.png",
+      "startedWallSeconds": 82.79731749999999,
+      "endedWallSeconds": 82.8962845,
+      "timestampSeconds": 82.846801,
+      "bytes": 226584,
+      "sha256": "e498696d95166cba2a88b5272d8188e9ea3e09087700ebe30afd55e1eb55aac2"
+    },
+    {
+      "index": 285,
+      "file": "frames/frame-00285.png",
+      "startedWallSeconds": 83.0477483,
+      "endedWallSeconds": 83.1481233,
+      "timestampSeconds": 83.09793579999999,
+      "bytes": 226584,
+      "sha256": "e498696d95166cba2a88b5272d8188e9ea3e09087700ebe30afd55e1eb55aac2"
+    },
+    {
+      "index": 286,
+      "file": "frames/frame-00286.png",
+      "startedWallSeconds": 83.3123897,
+      "endedWallSeconds": 83.41383799999998,
+      "timestampSeconds": 83.36311384999999,
+      "bytes": 226584,
+      "sha256": "e498696d95166cba2a88b5272d8188e9ea3e09087700ebe30afd55e1eb55aac2"
+    },
+    {
+      "index": 287,
+      "file": "frames/frame-00287.png",
+      "startedWallSeconds": 83.56258489999999,
+      "endedWallSeconds": 83.6621565,
+      "timestampSeconds": 83.61237069999999,
+      "bytes": 226584,
+      "sha256": "e498696d95166cba2a88b5272d8188e9ea3e09087700ebe30afd55e1eb55aac2"
+    },
+    {
+      "index": 288,
+      "file": "frames/frame-00288.png",
+      "startedWallSeconds": 83.81325799999999,
+      "endedWallSeconds": 83.9372873,
+      "timestampSeconds": 83.87527265,
+      "bytes": 226584,
+      "sha256": "e498696d95166cba2a88b5272d8188e9ea3e09087700ebe30afd55e1eb55aac2"
+    },
+    {
+      "index": 289,
+      "file": "frames/frame-00289.png",
+      "startedWallSeconds": 84.0627425,
+      "endedWallSeconds": 84.16499699999999,
+      "timestampSeconds": 84.11386974999999,
+      "bytes": 226584,
+      "sha256": "e498696d95166cba2a88b5272d8188e9ea3e09087700ebe30afd55e1eb55aac2"
+    },
+    {
+      "index": 290,
+      "file": "frames/frame-00290.png",
+      "startedWallSeconds": 84.3275001,
+      "endedWallSeconds": 84.4325676,
+      "timestampSeconds": 84.38003384999999,
+      "bytes": 226584,
+      "sha256": "e498696d95166cba2a88b5272d8188e9ea3e09087700ebe30afd55e1eb55aac2"
+    },
+    {
+      "index": 291,
+      "file": "frames/frame-00291.png",
+      "startedWallSeconds": 84.578464,
+      "endedWallSeconds": 84.6800554,
+      "timestampSeconds": 84.6292597,
+      "bytes": 226584,
+      "sha256": "e498696d95166cba2a88b5272d8188e9ea3e09087700ebe30afd55e1eb55aac2"
+    },
+    {
+      "index": 292,
+      "file": "frames/frame-00292.png",
+      "startedWallSeconds": 84.8298517,
+      "endedWallSeconds": 84.9412948,
+      "timestampSeconds": 84.88557325,
+      "bytes": 226584,
+      "sha256": "e498696d95166cba2a88b5272d8188e9ea3e09087700ebe30afd55e1eb55aac2"
+    },
+    {
+      "index": 293,
+      "file": "frames/frame-00293.png",
+      "startedWallSeconds": 85.0938853,
+      "endedWallSeconds": 85.1969944,
+      "timestampSeconds": 85.14543985,
+      "bytes": 226584,
+      "sha256": "e498696d95166cba2a88b5272d8188e9ea3e09087700ebe30afd55e1eb55aac2"
+    },
+    {
+      "index": 294,
+      "file": "frames/frame-00294.png",
+      "startedWallSeconds": 85.34467819999999,
+      "endedWallSeconds": 85.45131049999999,
+      "timestampSeconds": 85.39799434999999,
+      "bytes": 226584,
+      "sha256": "e498696d95166cba2a88b5272d8188e9ea3e09087700ebe30afd55e1eb55aac2"
+    },
+    {
+      "index": 295,
+      "file": "frames/frame-00295.png",
+      "startedWallSeconds": 85.596886,
+      "endedWallSeconds": 85.70405,
+      "timestampSeconds": 85.65046799999999,
+      "bytes": 226584,
+      "sha256": "e498696d95166cba2a88b5272d8188e9ea3e09087700ebe30afd55e1eb55aac2"
+    },
+    {
+      "index": 296,
+      "file": "frames/frame-00296.png",
+      "startedWallSeconds": 85.7720997,
+      "endedWallSeconds": 85.8897343,
+      "timestampSeconds": 85.830917,
+      "bytes": 226584,
+      "sha256": "e498696d95166cba2a88b5272d8188e9ea3e09087700ebe30afd55e1eb55aac2"
+    },
+    {
+      "index": 297,
+      "file": "frames/frame-00297.png",
+      "startedWallSeconds": 85.89008589999999,
+      "endedWallSeconds": 86.00388609999999,
+      "timestampSeconds": 85.94698599999998,
+      "bytes": 226584,
+      "sha256": "e498696d95166cba2a88b5272d8188e9ea3e09087700ebe30afd55e1eb55aac2"
+    }
+  ],
+  "segments": [
+    {
+      "requestedSeconds": 10,
+      "targetSeconds": 10,
+      "observations": [
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 0.18 s",
+          "burning": "2,483",
+          "charred": "0",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 6.6850273,
+          "readEndedWallSeconds": 7.0448773000000005,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 0.53 s",
+          "burning": "3,664",
+          "charred": "0",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 7.556588,
+          "readEndedWallSeconds": 7.8555494,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 0.88 s",
+          "burning": "3,664",
+          "charred": "0",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 8.366342200000002,
+          "readEndedWallSeconds": 8.6477233,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 1.22 s",
+          "burning": "3,746",
+          "charred": "0",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 9.151939500000001,
+          "readEndedWallSeconds": 9.4552885,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 1.52 s",
+          "burning": "3,785",
+          "charred": "0",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 9.968232500000001,
+          "readEndedWallSeconds": 10.2501971,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 1.87 s",
+          "burning": "3,785",
+          "charred": "0",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 10.756128,
+          "readEndedWallSeconds": 11.064134,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 2.22 s",
+          "burning": "3,794",
+          "charred": "0",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 11.5739984,
+          "readEndedWallSeconds": 11.8469194,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 2.58 s",
+          "burning": "3,804",
+          "charred": "0",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 12.3620152,
+          "readEndedWallSeconds": 12.673034900000001,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 2.92 s",
+          "burning": "3,804",
+          "charred": "0",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 13.1796974,
+          "readEndedWallSeconds": 13.5040607,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 3.25 s",
+          "burning": "3,812",
+          "charred": "0",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 14.0085227,
+          "readEndedWallSeconds": 14.2635232,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 3.60 s",
+          "burning": "3,813",
+          "charred": "0",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 14.772668600000001,
+          "readEndedWallSeconds": 15.0584153,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 3.97 s",
+          "burning": "3,813",
+          "charred": "0",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 15.5716529,
+          "readEndedWallSeconds": 15.875671899999999,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 4.33 s",
+          "burning": "3,816",
+          "charred": "0",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 16.3834866,
+          "readEndedWallSeconds": 16.707296900000003,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 4.72 s",
+          "burning": "3,819",
+          "charred": "0",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 17.2126311,
+          "readEndedWallSeconds": 17.4854201,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 5.07 s",
+          "burning": "3,819",
+          "charred": "0",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 17.9986007,
+          "readEndedWallSeconds": 18.3451387,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 5.42 s",
+          "burning": "3,819",
+          "charred": "0",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 18.848878,
+          "readEndedWallSeconds": 19.1623051,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 5.75 s",
+          "burning": "3,821",
+          "charred": "0",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 19.665054899999998,
+          "readEndedWallSeconds": 19.9938577,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 6.15 s",
+          "burning": "3,821",
+          "charred": "0",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 20.5051678,
+          "readEndedWallSeconds": 20.8237956,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 6.53 s",
+          "burning": "2,919",
+          "charred": "1,400",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 21.3325578,
+          "readEndedWallSeconds": 21.629141999999998,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 6.92 s",
+          "burning": "2,919",
+          "charred": "1,400",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 22.132043200000002,
+          "readEndedWallSeconds": 22.4531255,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 7.30 s",
+          "burning": "2,983",
+          "charred": "1,400",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 22.9576432,
+          "readEndedWallSeconds": 23.2424434,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 7.68 s",
+          "burning": "3,042",
+          "charred": "1,400",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 23.7520271,
+          "readEndedWallSeconds": 24.004026699999997,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 8.07 s",
+          "burning": "3,056",
+          "charred": "1,400",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 24.5190475,
+          "readEndedWallSeconds": 24.817991999999997,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 8.40 s",
+          "burning": "3,056",
+          "charred": "1,400",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 25.3295599,
+          "readEndedWallSeconds": 25.6457999,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 8.78 s",
+          "burning": "3,173",
+          "charred": "1,400",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 26.1569379,
+          "readEndedWallSeconds": 26.406401600000002,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 9.13 s",
+          "burning": "3,183",
+          "charred": "1,400",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 26.9096726,
+          "readEndedWallSeconds": 27.1769594,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 9.53 s",
+          "burning": "3,204",
+          "charred": "1,400",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 27.6862605,
+          "readEndedWallSeconds": 28.027663,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 9.92 s",
+          "burning": "3,204",
+          "charred": "1,400",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 28.5318118,
+          "readEndedWallSeconds": 28.7825248,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "本段推进完成，已暂停。请记录变化，再决定下一步。",
+          "time": "模拟时间 10.00 s",
+          "burning": "3,320",
+          "charred": "1,400",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 29.289140200000002,
+          "readEndedWallSeconds": 29.3044038,
+          "atomicSnapshot": false
+        }
+      ],
+      "startedWallSeconds": 6.289390999999999,
+      "endedWallSeconds": 29.3044315,
+      "completed": true
+    },
+    {
+      "requestedSeconds": 10,
+      "targetSeconds": 20,
+      "observations": [
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 10.13 s",
+          "burning": "3,320",
+          "charred": "1,400",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 29.722481,
+          "readEndedWallSeconds": 30.0550905,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 10.48 s",
+          "burning": "3,320",
+          "charred": "1,400",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 30.5688715,
+          "readEndedWallSeconds": 30.8741766,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 10.85 s",
+          "burning": "3,320",
+          "charred": "1,400",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 31.378049100000002,
+          "readEndedWallSeconds": 31.737457900000003,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 11.18 s",
+          "burning": "4,337",
+          "charred": "1,400",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 32.2471378,
+          "readEndedWallSeconds": 32.5429534,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 11.53 s",
+          "burning": "4,981",
+          "charred": "1,400",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 33.054093200000004,
+          "readEndedWallSeconds": 33.349166100000005,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 11.87 s",
+          "burning": "4,981",
+          "charred": "1,400",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 33.8550616,
+          "readEndedWallSeconds": 34.156402,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 12.18 s",
+          "burning": "4,987",
+          "charred": "1,400",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 34.665175000000005,
+          "readEndedWallSeconds": 34.9704427,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 12.50 s",
+          "burning": "4,303",
+          "charred": "2,800",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 35.4718985,
+          "readEndedWallSeconds": 35.7773897,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 12.80 s",
+          "burning": "4,303",
+          "charred": "2,800",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 36.2850943,
+          "readEndedWallSeconds": 36.6385712,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 13.12 s",
+          "burning": "5,423",
+          "charred": "2,800",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 37.1456615,
+          "readEndedWallSeconds": 37.5050198,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 13.43 s",
+          "burning": "5,423",
+          "charred": "2,800",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 38.0068956,
+          "readEndedWallSeconds": 38.3336296,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 13.77 s",
+          "burning": "6,127",
+          "charred": "2,800",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 38.8372734,
+          "readEndedWallSeconds": 39.0931614,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 14.08 s",
+          "burning": "6,131",
+          "charred": "2,800",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 39.6020934,
+          "readEndedWallSeconds": 39.868287900000006,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 14.43 s",
+          "burning": "6,131",
+          "charred": "2,800",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 40.3809267,
+          "readEndedWallSeconds": 40.774894,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 14.78 s",
+          "burning": "6,144",
+          "charred": "2,800",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 41.286947,
+          "readEndedWallSeconds": 41.567844199999996,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 15.12 s",
+          "burning": "6,222",
+          "charred": "2,800",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 42.0822901,
+          "readEndedWallSeconds": 42.3790287,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 15.43 s",
+          "burning": "6,222",
+          "charred": "2,800",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 42.881295599999994,
+          "readEndedWallSeconds": 43.1575032,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 15.70 s",
+          "burning": "6,503",
+          "charred": "2,800",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 43.6624752,
+          "readEndedWallSeconds": 43.9681219,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 16.00 s",
+          "burning": "6,782",
+          "charred": "2,800",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 44.4736585,
+          "readEndedWallSeconds": 44.7367863,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 16.30 s",
+          "burning": "6,782",
+          "charred": "2,800",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 45.2378699,
+          "readEndedWallSeconds": 45.513338000000005,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 16.60 s",
+          "burning": "6,782",
+          "charred": "2,800",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 46.019166299999995,
+          "readEndedWallSeconds": 46.3517783,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 16.93 s",
+          "burning": "6,782",
+          "charred": "2,800",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 46.8517706,
+          "readEndedWallSeconds": 47.1656691,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 17.25 s",
+          "burning": "6,782",
+          "charred": "2,800",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 47.668971,
+          "readEndedWallSeconds": 47.969482000000006,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 17.55 s",
+          "burning": "6,783",
+          "charred": "2,800",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 48.482548900000005,
+          "readEndedWallSeconds": 48.767299400000006,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 17.85 s",
+          "burning": "6,783",
+          "charred": "2,800",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 49.279942999999996,
+          "readEndedWallSeconds": 49.6430199,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 18.15 s",
+          "burning": "6,783",
+          "charred": "2,800",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 50.1452052,
+          "readEndedWallSeconds": 50.436121099999994,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 18.50 s",
+          "burning": "5,487",
+          "charred": "4,200",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 50.9399676,
+          "readEndedWallSeconds": 51.2409848,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 18.85 s",
+          "burning": "5,487",
+          "charred": "4,200",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 51.7537731,
+          "readEndedWallSeconds": 52.064018600000004,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 19.23 s",
+          "burning": "5,501",
+          "charred": "4,200",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 52.5648817,
+          "readEndedWallSeconds": 52.890267200000004,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 19.58 s",
+          "burning": "5,507",
+          "charred": "4,200",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 53.3918623,
+          "readEndedWallSeconds": 53.6907345,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 19.93 s",
+          "burning": "5,507",
+          "charred": "4,200",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 54.1937491,
+          "readEndedWallSeconds": 54.420523800000005,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "本段推进完成，已暂停。请记录变化，再决定下一步。",
+          "time": "模拟时间 20.00 s",
+          "burning": "5,513",
+          "charred": "4,200",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 54.9301152,
+          "readEndedWallSeconds": 54.941705999999996,
+          "atomicSnapshot": false
+        }
+      ],
+      "startedWallSeconds": 29.4204428,
+      "endedWallSeconds": 54.9417166,
+      "completed": true
+    },
+    {
+      "requestedSeconds": 10,
+      "targetSeconds": 30,
+      "observations": [
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 20.22 s",
+          "burning": "5,513",
+          "charred": "4,200",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 55.6742114,
+          "readEndedWallSeconds": 56.0108353,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 20.58 s",
+          "burning": "5,513",
+          "charred": "4,200",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 56.512309099999996,
+          "readEndedWallSeconds": 56.805244599999995,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 20.92 s",
+          "burning": "5,513",
+          "charred": "4,200",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 57.3101507,
+          "readEndedWallSeconds": 57.598358,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 21.28 s",
+          "burning": "5,518",
+          "charred": "4,200",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 58.109157700000004,
+          "readEndedWallSeconds": 58.3787538,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 21.67 s",
+          "burning": "5,533",
+          "charred": "4,200",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 58.893745499999994,
+          "readEndedWallSeconds": 59.2288657,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 22.02 s",
+          "burning": "5,542",
+          "charred": "4,200",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 59.742869299999995,
+          "readEndedWallSeconds": 60.018549400000005,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 22.35 s",
+          "burning": "5,542",
+          "charred": "4,200",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 60.5270988,
+          "readEndedWallSeconds": 60.773363100000005,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 22.67 s",
+          "burning": "5,543",
+          "charred": "4,200",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 61.2765006,
+          "readEndedWallSeconds": 61.6318497,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 22.98 s",
+          "burning": "5,549",
+          "charred": "4,200",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 62.136811099999996,
+          "readEndedWallSeconds": 62.4887431,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 23.33 s",
+          "burning": "5,549",
+          "charred": "4,200",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 62.9948422,
+          "readEndedWallSeconds": 63.282219,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 23.70 s",
+          "burning": "5,551",
+          "charred": "4,200",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 63.7836246,
+          "readEndedWallSeconds": 64.0865314,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 24.08 s",
+          "burning": "5,574",
+          "charred": "4,200",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 64.5912771,
+          "readEndedWallSeconds": 64.8969689,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 24.42 s",
+          "burning": "5,574",
+          "charred": "4,200",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 65.4067482,
+          "readEndedWallSeconds": 65.6891973,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 24.78 s",
+          "burning": "4,476",
+          "charred": "5,600",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 66.20239309999998,
+          "readEndedWallSeconds": 66.4806117,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 25.17 s",
+          "burning": "4,609",
+          "charred": "5,600",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 66.9835088,
+          "readEndedWallSeconds": 67.3154994,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 25.52 s",
+          "burning": "4,981",
+          "charred": "5,600",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 67.8278921,
+          "readEndedWallSeconds": 68.1993004,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 25.87 s",
+          "burning": "4,981",
+          "charred": "5,600",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 68.70125999999999,
+          "readEndedWallSeconds": 68.9568213,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 26.23 s",
+          "burning": "5,042",
+          "charred": "5,600",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 69.46894529999999,
+          "readEndedWallSeconds": 69.75509939999999,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 26.57 s",
+          "burning": "5,051",
+          "charred": "5,600",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 70.2548961,
+          "readEndedWallSeconds": 70.564105,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 26.87 s",
+          "burning": "5,051",
+          "charred": "5,600",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 71.07078569999999,
+          "readEndedWallSeconds": 71.3610873,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 27.20 s",
+          "burning": "5,077",
+          "charred": "5,600",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 71.86799669999999,
+          "readEndedWallSeconds": 72.11694659999999,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 27.57 s",
+          "burning": "5,312",
+          "charred": "5,600",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 72.61717929999999,
+          "readEndedWallSeconds": 72.9277587,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 27.92 s",
+          "burning": "5,312",
+          "charred": "5,600",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 73.43416839999999,
+          "readEndedWallSeconds": 73.68927049999999,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 28.25 s",
+          "burning": "5,312",
+          "charred": "5,600",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 74.2019378,
+          "readEndedWallSeconds": 74.5032886,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 28.62 s",
+          "burning": "5,312",
+          "charred": "5,600",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 75.00419949999998,
+          "readEndedWallSeconds": 75.2884766,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 29.00 s",
+          "burning": "5,315",
+          "charred": "5,600",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 75.7989181,
+          "readEndedWallSeconds": 76.07733759999999,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 29.33 s",
+          "burning": "5,315",
+          "charred": "5,600",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 76.5821672,
+          "readEndedWallSeconds": 76.8618334,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 10 秒模拟；可随时暂停。",
+          "time": "模拟时间 29.68 s",
+          "burning": "5,321",
+          "charred": "5,600",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 77.3661213,
+          "readEndedWallSeconds": 77.6471924,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "本段推进完成，已暂停。请记录变化，再决定下一步。",
+          "time": "模拟时间 30.00 s",
+          "burning": "5,321",
+          "charred": "5,600",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 78.15999679999999,
+          "readEndedWallSeconds": 78.21552679999999,
+          "atomicSnapshot": false
+        }
+      ],
+      "startedWallSeconds": 55.1439094,
+      "endedWallSeconds": 78.21554139999999,
+      "completed": true
+    },
+    {
+      "requestedSeconds": 1,
+      "targetSeconds": 31,
+      "observations": [
+        {
+          "status": "正在推进 1 秒模拟；可随时暂停。",
+          "time": "模拟时间 30.20 s",
+          "burning": "5,321",
+          "charred": "5,600",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 80.20861489999999,
+          "readEndedWallSeconds": 80.4617316,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 1 秒模拟；可随时暂停。",
+          "time": "模拟时间 30.55 s",
+          "burning": "4,154",
+          "charred": "7,000",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 80.96645889999999,
+          "readEndedWallSeconds": 81.2627256,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "正在推进 1 秒模拟；可随时暂停。",
+          "time": "模拟时间 30.92 s",
+          "burning": "4,154",
+          "charred": "7,000",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 81.7665879,
+          "readEndedWallSeconds": 82.0585723,
+          "atomicSnapshot": false
+        },
+        {
+          "status": "本段推进完成，已暂停。请记录变化，再决定下一步。",
+          "time": "模拟时间 31.00 s",
+          "burning": "4,205",
+          "charred": "7,000",
+          "scene": "45,808",
+          "notes": "0 条记录",
+          "cameraYaw": "0",
+          "readStartedWallSeconds": 82.5635203,
+          "readEndedWallSeconds": 82.6415495,
+          "atomicSnapshot": false
+        }
+      ],
+      "startedWallSeconds": 79.71796499999999,
+      "endedWallSeconds": 82.6415634,
+      "completed": true
+    }
+  ],
+  "errors": [],
+  "console": [],
+  "blockedExternal": [],
+  "resourcesClosed": {
+    "context": true,
+    "contextSeconds": 0.034000599999998826,
+    "browser": true,
+    "browserSeconds": 0.47119020000000944,
+    "server": true,
+    "serverSeconds": 0.0009385999999977912
+  },
+  "workflowCompleted": true,
+  "runtime": {
+    "node": "v24.19.0",
+    "module": "C:/Users/seanzjxiao/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright",
+    "executable": "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe"
+  },
+  "sourceBefore": {
+    "tracks/art/index.html": {
+      "path": "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\art\\index.html",
+      "bytes": 10571,
+      "sha256": "07c8048f3870d9462dcd8072d3f09b6115e2023227b4a75d9a69a173418ee640"
+    },
+    "tracks/art/art.js": {
+      "path": "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\art\\art.js",
+      "bytes": 20864,
+      "sha256": "1ff8194561f2acb5d9a8124de68b3a39710e7e8de32d14b2a04d2615e8ccc13c"
+    },
+    "tracks/art/art.css": {
+      "path": "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\art\\art.css",
+      "bytes": 8814,
+      "sha256": "2afe962cb45c40cc1ee9d007e66dd5caae8ff312d34109b24e12a413cab5cdbb"
+    },
+    "demo/index.html": {
+      "path": "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\demo\\index.html",
+      "bytes": 314044,
+      "sha256": "e9d808c434bdd8ce91482f60502f03f5d08c56b71c082eb704c53275ff9f57d0"
+    },
+    "static/test_scene.ply": {
+      "path": "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\static\\test_scene.ply",
+      "bytes": 4214913,
+      "sha256": "2f7e110a4ae3cd7d9a2ea8e04537d562a37b1ddb04b2c541e961901afc7492d6"
+    },
+    "research/lib/runtime.mjs": {
+      "path": "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\research\\lib\\runtime.mjs",
+      "bytes": 5669,
+      "sha256": "cf540ed02429016ab2b8a50a1cd95ac14222247466a56cfbf37444234851b184"
+    },
+    "tracks/art/studies/a10-second-ignition/INTENT.md": {
+      "path": "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\art\\studies\\a10-second-ignition\\INTENT.md",
+      "bytes": 1753,
+      "sha256": "0244448de308722051d8512c30dfab10e53ea4556151c1727c1261df83e2b306"
+    },
+    "tracks/art/studies/a10-second-ignition/PROTOCOL.md": {
+      "path": "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\art\\studies\\a10-second-ignition\\PROTOCOL.md",
+      "bytes": 5145,
+      "sha256": "6a7f48ffcefc0e75c843c27ddf95aa7d5b6fa489af291acd81d7c935fc17847e"
+    },
+    "tracks/art/studies/a10-second-ignition/record.mjs": {
+      "path": "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\art\\studies\\a10-second-ignition\\record.mjs",
+      "bytes": 15739,
+      "sha256": "15ff1d7f5c0446cdd2460932ee2e6c083eeaeb369fc87747d4d75b7512b94430"
+    },
+    "tracks/art/studies/a10-second-ignition/execute.py": {
+      "path": "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\art\\studies\\a10-second-ignition\\execute.py",
+      "bytes": 5278,
+      "sha256": "e64657c2daf388dca38e9b7a06d970fe5642a94cc8eff4a7c9e8e3c24a28867c"
+    },
+    "tracks/art/studies/a10-second-ignition/.gitignore": {
+      "path": "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\art\\studies\\a10-second-ignition\\.gitignore",
+      "bytes": 46,
+      "sha256": "10b63b1deb82fdc0c1206350b3f6f5c3ff8aa9fdad428408b336a13c7e5e13bf"
+    },
+    "node_executable": {
+      "path": "C:\\Users\\seanzjxiao\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+      "bytes": 92825416,
+      "sha256": "3602f2bb1a10f2cbab4c36886218a33c1ab3db87290e73b033c46c77147d0237"
+    },
+    "browser_executable": {
+      "path": "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe",
+      "bytes": 5257584,
+      "sha256": "6c6729d3ade101ad8b97f9812a852a9024b7bb2a8394b5f506219dd635dc330d"
+    },
+    "playwright_package": {
+      "path": "C:\\Users\\seanzjxiao\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\playwright\\package.json",
+      "bytes": 1416,
+      "sha256": "ca170ec143a88ed3043ac953eb3b2377b2b97304104f4e1e23316684ce2c35af"
+    },
+    "ffmpeg": {
+      "path": "C:/Users/seanzjxiao/miniconda3/envs/gs-sph-3d/Library/bin/ffmpeg.exe",
+      "bytes": 289792,
+      "sha256": "8fb0db0c4545e37a03baca91cbfbadfce553a8f800ad0faf2b5bd6ee2140aacf"
+    },
+    "ffprobe": {
+      "path": "C:\\Users\\seanzjxiao\\miniconda3\\envs\\gs-sph-3d\\Library\\bin\\ffprobe.exe",
+      "bytes": 199680,
+      "sha256": "1e61ae8975b4c9e3d908a46a5c7b4cedef4ce4945817be09891a7f26cc961e96"
+    }
+  },
+  "server": {
+    "url": "http://127.0.0.1:49861",
+    "scope": "fresh ephemeral loopback; user8137 untouched"
+  },
+  "browser": "149.0.4022.52",
+  "launch": {
+    "headless": true,
+    "executablePath": "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe"
+  },
+  "context": {
+    "persistent": false,
+    "storageStateProvided": false,
+    "recordVideo": false,
+    "serviceWorkers": "block"
+  },
+  "recordingStartedWallSeconds": 2.5778221500000003,
+  "initialDefaults": {
+    "x": {
+      "text": "0",
+      "value": 0
+    },
+    "y": {
+      "text": "0.65",
+      "value": 0.65
+    },
+    "z": {
+      "text": "0",
+      "value": 0
+    },
+    "radius": {
+      "text": "0.30",
+      "value": 0.3
+    },
+    "cameraYaw": {
+      "text": "0",
+      "value": 0
+    }
+  },
+  "firstIgnition": {
+    "status": "此次点燃 2,483 个未燃点。尚未推进；可先记录选择。",
+    "time": "模拟时间 0.00 s",
+    "burning": "2,483",
+    "charred": "0",
+    "scene": "45,808",
+    "notes": "0 条记录",
+    "cameraYaw": "0",
+    "readStartedWallSeconds": 5.0804703,
+    "readEndedWallSeconds": 5.0934061,
+    "atomicSnapshot": false
+  },
+  "beforeSecondIgnition": {
+    "status": "本段推进完成，已暂停。请记录变化，再决定下一步。",
+    "time": "模拟时间 30.00 s",
+    "burning": "5,321",
+    "charred": "5,600",
+    "scene": "45,808",
+    "notes": "0 条记录",
+    "cameraYaw": "0",
+    "readStartedWallSeconds": 78.4181685,
+    "readEndedWallSeconds": 78.4280241,
+    "atomicSnapshot": false
+  },
+  "secondDefaults": {
+    "x": {
+      "text": "0",
+      "value": 0
+    },
+    "y": {
+      "text": "0.65",
+      "value": 0.65
+    },
+    "z": {
+      "text": "0",
+      "value": 0
+    },
+    "radius": {
+      "text": "0.30",
+      "value": 0.3
+    },
+    "cameraYaw": {
+      "text": "0",
+      "value": 0
+    }
+  },
+  "secondIgnition": {
+    "status": "此位置没有点燃新点：可能未命中场景，或该处已燃烧。请检查位置与半径。",
+    "time": "模拟时间 30.00 s",
+    "burning": "5,321",
+    "charred": "5,600",
+    "scene": "45,808",
+    "notes": "0 条记录",
+    "cameraYaw": "0",
+    "readStartedWallSeconds": 78.5826074,
+    "readEndedWallSeconds": 78.59121459999999,
+    "atomicSnapshot": false
+  },
+  "finalDefaults": {
+    "x": {
+      "text": "0",
+      "value": 0
+    },
+    "y": {
+      "text": "0.65",
+      "value": 0.65
+    },
+    "z": {
+      "text": "0",
+      "value": 0
+    },
+    "radius": {
+      "text": "0.30",
+      "value": 0.3
+    },
+    "cameraYaw": {
+      "text": "0",
+      "value": 0
+    }
+  },
+  "finalVisible": {
+    "status": "本段推进完成，已暂停。请记录变化，再决定下一步。",
+    "time": "模拟时间 31.00 s",
+    "burning": "4,205",
+    "charred": "7,000",
+    "scene": "45,808",
+    "notes": "0 条记录",
+    "cameraYaw": "0",
+    "readStartedWallSeconds": 85.90855979999999,
+    "readEndedWallSeconds": 85.92015809999998,
+    "atomicSnapshot": false
+  },
+  "notesUntouched": true,
+  "status": "completed_workflow_and_media",
+  "recordingEndedWallSeconds": 86.00408649999999,
+  "browserPhaseWallSeconds": 86.51049509999999,
+  "mediaCommands": [
+    {
+      "label": "encode",
+      "command": [
+        "C:/Users/seanzjxiao/miniconda3/envs/gs-sph-3d/Library/bin/ffmpeg.exe",
+        "-hide_banner",
+        "-nostdin",
+        "-n",
+        "-f",
+        "concat",
+        "-safe",
+        "0",
+        "-i",
+        "timeline.ffconcat",
+        "-fps_mode",
+        "vfr",
+        "-c:v",
+        "libx264",
+        "-preset",
+        "medium",
+        "-crf",
+        "20",
+        "-pix_fmt",
+        "yuv420p",
+        "-threads",
+        "2",
+        "-video_track_timescale",
+        "1000000",
+        "-movflags",
+        "+faststart",
+        "study.mp4"
+      ],
+      "timeoutMilliseconds": 120000,
+      "startedWallSeconds": 86.51518139999999,
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "endedWallSeconds": 90.66670839999999
+    },
+    {
+      "label": "probe",
+      "command": [
+        "C:\\Users\\seanzjxiao\\miniconda3\\envs\\gs-sph-3d\\Library\\bin\\ffprobe.exe",
+        "-v",
+        "error",
+        "-show_entries",
+        "format=duration,size:stream=codec_type,codec_name,width,height,nb_frames,duration",
+        "-of",
+        "flat",
+        "study.mp4"
+      ],
+      "timeoutMilliseconds": 15000,
+      "startedWallSeconds": 90.6691734,
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "endedWallSeconds": 90.7444855
+    },
+    {
+      "label": "decode",
+      "command": [
+        "C:/Users/seanzjxiao/miniconda3/envs/gs-sph-3d/Library/bin/ffmpeg.exe",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-nostdin",
+        "-xerror",
+        "-i",
+        "study.mp4",
+        "-an",
+        "-f",
+        "null",
+        "-"
+      ],
+      "timeoutMilliseconds": 30000,
+      "startedWallSeconds": 90.74597029999998,
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "endedWallSeconds": 90.89581059999999
+    },
+    {
+      "label": "extract-01-opening",
+      "command": [
+        "C:/Users/seanzjxiao/miniconda3/envs/gs-sph-3d/Library/bin/ffmpeg.exe",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-nostdin",
+        "-n",
+        "-ss",
+        "0.462534",
+        "-i",
+        "study.mp4",
+        "-frames:v",
+        "1",
+        "-update",
+        "1",
+        "decoded-01-opening.png"
+      ],
+      "timeoutMilliseconds": 15000,
+      "startedWallSeconds": 90.89590719999998,
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "endedWallSeconds": 91.03020009999999
+    },
+    {
+      "label": "extract-02-loaded",
+      "command": [
+        "C:/Users/seanzjxiao/miniconda3/envs/gs-sph-3d/Library/bin/ffmpeg.exe",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-nostdin",
+        "-n",
+        "-ss",
+        "1.231311",
+        "-i",
+        "study.mp4",
+        "-frames:v",
+        "1",
+        "-update",
+        "1",
+        "decoded-02-loaded.png"
+      ],
+      "timeoutMilliseconds": 15000,
+      "startedWallSeconds": 91.03194049999999,
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "endedWallSeconds": 91.15546179999998
+    },
+    {
+      "label": "extract-03-first-ignited",
+      "command": [
+        "C:/Users/seanzjxiao/miniconda3/envs/gs-sph-3d/Library/bin/ffmpeg.exe",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-nostdin",
+        "-n",
+        "-ss",
+        "2.638593",
+        "-i",
+        "study.mp4",
+        "-frames:v",
+        "1",
+        "-update",
+        "1",
+        "decoded-03-first-ignited.png"
+      ],
+      "timeoutMilliseconds": 15000,
+      "startedWallSeconds": 91.15702139999999,
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "endedWallSeconds": 91.27449619999999
+    },
+    {
+      "label": "extract-04-ten-seconds",
+      "command": [
+        "C:/Users/seanzjxiao/miniconda3/envs/gs-sph-3d/Library/bin/ffmpeg.exe",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-nostdin",
+        "-n",
+        "-ss",
+        "26.772042",
+        "-i",
+        "study.mp4",
+        "-frames:v",
+        "1",
+        "-update",
+        "1",
+        "decoded-04-ten-seconds.png"
+      ],
+      "timeoutMilliseconds": 15000,
+      "startedWallSeconds": 91.2759002,
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "endedWallSeconds": 91.4132521
+    },
+    {
+      "label": "extract-05-twenty-seconds",
+      "command": [
+        "C:/Users/seanzjxiao/miniconda3/envs/gs-sph-3d/Library/bin/ffmpeg.exe",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-nostdin",
+        "-n",
+        "-ss",
+        "52.501236",
+        "-i",
+        "study.mp4",
+        "-frames:v",
+        "1",
+        "-update",
+        "1",
+        "decoded-05-twenty-seconds.png"
+      ],
+      "timeoutMilliseconds": 15000,
+      "startedWallSeconds": 91.41434659999999,
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "endedWallSeconds": 91.55439219999998
+    },
+    {
+      "label": "extract-06-thirty-seconds",
+      "command": [
+        "C:/Users/seanzjxiao/miniconda3/envs/gs-sph-3d/Library/bin/ffmpeg.exe",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-nostdin",
+        "-n",
+        "-ss",
+        "75.768207",
+        "-i",
+        "study.mp4",
+        "-frames:v",
+        "1",
+        "-update",
+        "1",
+        "decoded-06-thirty-seconds.png"
+      ],
+      "timeoutMilliseconds": 15000,
+      "startedWallSeconds": 91.5555202,
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "endedWallSeconds": 91.7812601
+    },
+    {
+      "label": "extract-07-second-ignited",
+      "command": [
+        "C:/Users/seanzjxiao/miniconda3/envs/gs-sph-3d/Library/bin/ffmpeg.exe",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-nostdin",
+        "-n",
+        "-ss",
+        "76.065300",
+        "-i",
+        "study.mp4",
+        "-frames:v",
+        "1",
+        "-update",
+        "1",
+        "decoded-07-second-ignited.png"
+      ],
+      "timeoutMilliseconds": 15000,
+      "startedWallSeconds": 91.78268999999999,
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "endedWallSeconds": 91.9222226
+    },
+    {
+      "label": "extract-08-thirty-one-seconds",
+      "command": [
+        "C:/Users/seanzjxiao/miniconda3/envs/gs-sph-3d/Library/bin/ffmpeg.exe",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-nostdin",
+        "-n",
+        "-ss",
+        "80.113188",
+        "-i",
+        "study.mp4",
+        "-frames:v",
+        "1",
+        "-update",
+        "1",
+        "decoded-08-thirty-one-seconds.png"
+      ],
+      "timeoutMilliseconds": 15000,
+      "startedWallSeconds": 91.92382889999999,
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "endedWallSeconds": 92.0472723
+    },
+    {
+      "label": "extract-09-final-hold",
+      "command": [
+        "C:/Users/seanzjxiao/miniconda3/envs/gs-sph-3d/Library/bin/ffmpeg.exe",
+        "-hide_banner",
+        "-loglevel",
+        "error",
+        "-nostdin",
+        "-n",
+        "-ss",
+        "83.253095",
+        "-i",
+        "study.mp4",
+        "-frames:v",
+        "1",
+        "-update",
+        "1",
+        "decoded-09-final-hold.png"
+      ],
+      "timeoutMilliseconds": 15000,
+      "startedWallSeconds": 92.04844279999999,
+      "exitCode": 0,
+      "signal": null,
+      "error": null,
+      "endedWallSeconds": 92.16449939999998
+    }
+  ],
+  "video": {
+    "file": "study.mp4",
+    "bytes": 1505243,
+    "sha256": "960884ce05728c4b21cd4c1936ec3aa3dfccd8fd9e0bc1230e464e9f1206acc3",
+    "commitEligible": true,
+    "completeWorkflow": true,
+    "frameCountCaptured": 298,
+    "untrimmedSamplingSpanSeconds": 83.42626434999998,
+    "probeFlat": {
+      "streams.stream.0.codec_name": "h264",
+      "streams.stream.0.codec_type": "video",
+      "streams.stream.0.width": "1280",
+      "streams.stream.0.height": "800",
+      "streams.stream.0.duration": "83.427000",
+      "streams.stream.0.nb_frames": "299",
+      "format.duration": "83.427000",
+      "format.size": "1505243"
+    },
+    "fullDecodePassed": true
+  },
+  "decodedSnapshots": [
+    {
+      "file": "decoded-01-opening.png",
+      "seconds": 0.46253410000000006,
+      "sourceSnapshot": "01-opening",
+      "bytes": 212973,
+      "sha256": "1035a961efcdf24ef81edc57d4d8bfbc91df19ca8cd663dedbfd066578339d55"
+    },
+    {
+      "file": "decoded-02-loaded.png",
+      "seconds": 1.2313106499999997,
+      "sourceSnapshot": "02-loaded",
+      "bytes": 257507,
+      "sha256": "3827980713f100281d69421c44b1b59242748e8729735251f0c1901ad8354001"
+    },
+    {
+      "file": "decoded-03-first-ignited.png",
+      "seconds": 2.638593,
+      "sourceSnapshot": "03-first-ignited",
+      "bytes": 255225,
+      "sha256": "d4530a6b657b8f9be25b77166e0893a05bac33467a24b020561cbe281ad40775"
+    },
+    {
+      "file": "decoded-04-ten-seconds.png",
+      "seconds": 26.77204245,
+      "sourceSnapshot": "04-ten-seconds",
+      "bytes": 334776,
+      "sha256": "9a9b92449351f1755061f70970fe1a75949b7c704866c35db9e3236940b51292"
+    },
+    {
+      "file": "decoded-05-twenty-seconds.png",
+      "seconds": 52.501235799999996,
+      "sourceSnapshot": "05-twenty-seconds",
+      "bytes": 228041,
+      "sha256": "c424ba396cae5b0f30cb87c86bd4178f87c699f329bf31f06a1dbf555bd37fe5"
+    },
+    {
+      "file": "decoded-06-thirty-seconds.png",
+      "seconds": 75.76820669999998,
+      "sourceSnapshot": "06-thirty-seconds",
+      "bytes": 371249,
+      "sha256": "2f2ae61a373043cbd50bc7bc489b5f3cf21d7aa39ca207e27c194f74b68d2f23"
+    },
+    {
+      "file": "decoded-07-second-ignited.png",
+      "seconds": 76.06530014999998,
+      "sourceSnapshot": "07-second-ignited",
+      "bytes": 375802,
+      "sha256": "11c8452926dc2ff3708a256b1bcd465377240a01ae944883d199b1b44099b3f6"
+    },
+    {
+      "file": "decoded-08-thirty-one-seconds.png",
+      "seconds": 80.11318829999999,
+      "sourceSnapshot": "08-thirty-one-seconds",
+      "bytes": 375365,
+      "sha256": "3c6039e88a643d637421130dd207e463e7b65433aadd90a82e05894f876a7a6c"
+    },
+    {
+      "file": "decoded-09-final-hold.png",
+      "seconds": 83.25309485,
+      "sourceSnapshot": "09-final-hold",
+      "bytes": 375359,
+      "sha256": "a0f6a671286207413bccd8282fa9f12aed1d61f4ddd2b098d4628a063f381bb7"
+    }
+  ],
+  "sourceAfter": {
+    "tracks/art/index.html": {
+      "path": "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\art\\index.html",
+      "bytes": 10571,
+      "sha256": "07c8048f3870d9462dcd8072d3f09b6115e2023227b4a75d9a69a173418ee640"
+    },
+    "tracks/art/art.js": {
+      "path": "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\art\\art.js",
+      "bytes": 20864,
+      "sha256": "1ff8194561f2acb5d9a8124de68b3a39710e7e8de32d14b2a04d2615e8ccc13c"
+    },
+    "tracks/art/art.css": {
+      "path": "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\art\\art.css",
+      "bytes": 8814,
+      "sha256": "2afe962cb45c40cc1ee9d007e66dd5caae8ff312d34109b24e12a413cab5cdbb"
+    },
+    "demo/index.html": {
+      "path": "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\demo\\index.html",
+      "bytes": 314044,
+      "sha256": "e9d808c434bdd8ce91482f60502f03f5d08c56b71c082eb704c53275ff9f57d0"
+    },
+    "static/test_scene.ply": {
+      "path": "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\static\\test_scene.ply",
+      "bytes": 4214913,
+      "sha256": "2f7e110a4ae3cd7d9a2ea8e04537d562a37b1ddb04b2c541e961901afc7492d6"
+    },
+    "research/lib/runtime.mjs": {
+      "path": "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\research\\lib\\runtime.mjs",
+      "bytes": 5669,
+      "sha256": "cf540ed02429016ab2b8a50a1cd95ac14222247466a56cfbf37444234851b184"
+    },
+    "tracks/art/studies/a10-second-ignition/INTENT.md": {
+      "path": "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\art\\studies\\a10-second-ignition\\INTENT.md",
+      "bytes": 1753,
+      "sha256": "0244448de308722051d8512c30dfab10e53ea4556151c1727c1261df83e2b306"
+    },
+    "tracks/art/studies/a10-second-ignition/PROTOCOL.md": {
+      "path": "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\art\\studies\\a10-second-ignition\\PROTOCOL.md",
+      "bytes": 5145,
+      "sha256": "6a7f48ffcefc0e75c843c27ddf95aa7d5b6fa489af291acd81d7c935fc17847e"
+    },
+    "tracks/art/studies/a10-second-ignition/record.mjs": {
+      "path": "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\art\\studies\\a10-second-ignition\\record.mjs",
+      "bytes": 15739,
+      "sha256": "15ff1d7f5c0446cdd2460932ee2e6c083eeaeb369fc87747d4d75b7512b94430"
+    },
+    "tracks/art/studies/a10-second-ignition/execute.py": {
+      "path": "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\art\\studies\\a10-second-ignition\\execute.py",
+      "bytes": 5278,
+      "sha256": "e64657c2daf388dca38e9b7a06d970fe5642a94cc8eff4a7c9e8e3c24a28867c"
+    },
+    "tracks/art/studies/a10-second-ignition/.gitignore": {
+      "path": "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\art\\studies\\a10-second-ignition\\.gitignore",
+      "bytes": 46,
+      "sha256": "10b63b1deb82fdc0c1206350b3f6f5c3ff8aa9fdad428408b336a13c7e5e13bf"
+    },
+    "node_executable": {
+      "path": "C:\\Users\\seanzjxiao\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\bin\\node.exe",
+      "bytes": 92825416,
+      "sha256": "3602f2bb1a10f2cbab4c36886218a33c1ab3db87290e73b033c46c77147d0237"
+    },
+    "browser_executable": {
+      "path": "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe",
+      "bytes": 5257584,
+      "sha256": "6c6729d3ade101ad8b97f9812a852a9024b7bb2a8394b5f506219dd635dc330d"
+    },
+    "playwright_package": {
+      "path": "C:\\Users\\seanzjxiao\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\node\\node_modules\\playwright\\package.json",
+      "bytes": 1416,
+      "sha256": "ca170ec143a88ed3043ac953eb3b2377b2b97304104f4e1e23316684ce2c35af"
+    },
+    "ffmpeg": {
+      "path": "C:/Users/seanzjxiao/miniconda3/envs/gs-sph-3d/Library/bin/ffmpeg.exe",
+      "bytes": 289792,
+      "sha256": "8fb0db0c4545e37a03baca91cbfbadfce553a8f800ad0faf2b5bd6ee2140aacf"
+    },
+    "ffprobe": {
+      "path": "C:\\Users\\seanzjxiao\\miniconda3\\envs\\gs-sph-3d\\Library\\bin\\ffprobe.exe",
+      "bytes": 199680,
+      "sha256": "1e61ae8975b4c9e3d908a46a5c7b4cedef4ce4945817be09891a7f26cc961e96"
+    }
+  },
+  "sourcesUnchanged": true,
+  "totalWallSecondsBeforeFinalReceipt": 92.27520969999999,
+  "noFurtherRecording": true,
+  "visualInspection": "not yet performed"
+}
