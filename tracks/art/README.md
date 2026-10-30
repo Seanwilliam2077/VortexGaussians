@@ -1,6 +1,6 @@
 # 可燃的数字记忆（暂定） · 艺术排练入口
 
-**2026-10-30：第二轮总评仍3/6，准备度6/10。** [评分Agent](../validation/art-a14-review-round-02.md)直接看完[A17全部33项原图](studies/a17-saved-sequence-reading/README.md)，将实际体验、技术表达关系各提高到3/5，置信度4/5：轮流移动、接续变化及共同退开已有图像支持，但艺术认识与原创性仍不足。[A16](studies/a16-reception-timing-record/README.md)完成正常采集后因编码参数冲突失败，没有MP4；补录循环已关闭，A17只读复制不重标媒体成功。[回应](studies/a17-saved-sequence-reading/RESPONSE_ROUND_02.md)进入[A18](studies/a18-context-positioning/PROTOCOL.md)：至多三个近邻实践的一页定位，判断当前形式是否有可辩护的投稿核心；不再以录像修理或追加效果代替贡献。总体5/6目标未达。
+**2026-10-30：A14封存为试作，结束当前投稿核心路线。** [A18有限比较](studies/a18-context-positioning/README.md)与[独立复核](../validation/art-a18-core-decision.md)认为，轮流移动、接续变化和共同退开虽有图像依据，现有形式仍未支持其核心艺术认识。维持第二轮总体3/6、准备度6/10、置信度4/5；不是因录像失败否定作品，也不据来源缺失否定领域。原平台和艺术线继续。[A19](studies/a19-artistic-commitment/BRIEF.md)先完成一页单案创作决定，选择具体对象、观看关系和观者行为/取舍，暂不制作或运行。A15/A16失败与[A17实际33图](studies/a17-saved-sequence-reading/README.md)保留，补录循环关闭；总体5/6目标未达。
 
 首个作者排练原型。它把现有 VortexGaussians demo 放在“保存的空间 → 介入燃烧 → 重置重看”的三个阶段中，并记录创作选择。它不是完成作品、观众实验或新燃烧算法。创作命题及待补证据见 [ART_BRIEF.md](ART_BRIEF.md)；技术证据另见 [research/EVIDENCE_STATUS.md](../../research/EVIDENCE_STATUS.md)。
 
