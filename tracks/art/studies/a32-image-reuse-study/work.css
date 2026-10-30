@@ -1,0 +1,105 @@
+:root {
+  color-scheme: dark;
+  --ground: #1b1c19;
+  --ink: #ece7d9;
+  --muted: #b3b1a5;
+  --rule: #484a42;
+  --paper: #eae3d2;
+  --paper-ink: #262820;
+  --serif: "Songti SC", "SimSun", "Noto Serif CJK SC", serif;
+  --sans: "Microsoft YaHei", "PingFang SC", sans-serif;
+  font-family: var(--sans);
+  background: var(--ground);
+  color: var(--ink);
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; }
+button, summary, a { -webkit-tap-highlight-color: transparent; }
+button { font: inherit; }
+button:focus-visible, summary:focus-visible, a:focus-visible {
+  outline: 2px solid #e0a97c;
+  outline-offset: 5px;
+}
+[hidden] { display: none !important; }
+
+.work { width: min(1320px, calc(100% - 80px)); margin: 0 auto; padding: 39px 0 34px; }
+.work-header { display: flex; justify-content: space-between; align-items: end; gap: 25px; border-bottom: 1px solid var(--rule); padding-bottom: 27px; }
+.eyebrow { margin: 0; font-size: 11px; line-height: 1.6; letter-spacing: .12em; color: var(--muted); font-weight: 400; }
+h1 { margin: 13px 0 0; font: 400 clamp(35px, 3.7vw, 50px)/1.2 var(--serif); letter-spacing: .08em; }
+.fiction { margin: 0 0 4px; font-size: 12px; line-height: 1.7; color: var(--muted); }
+.composition { display: grid; grid-template-columns: minmax(0, 1fr) 244px; gap: 48px; padding-top: 25px; }
+.stage-column { grid-column: 1; grid-row: 1; min-width: 0; }
+.request { grid-column: 2; grid-row: 1; align-self: start; margin-top: 127px; padding-top: 20px; border-top: 1px solid #9e7050; }
+.request blockquote { margin: 24px 0 0; font: 400 21px/1.95 var(--serif); letter-spacing: .025em; overflow-wrap: anywhere; }
+.stage { position: relative; width: 100%; height: 672px; overflow: hidden; }
+.notice { position: absolute; top: 18px; left: 50%; transform: translateX(-50%); width: min(520px, calc(100% - 32px)); height: 636px; color: var(--paper-ink); pointer-events: none; }
+.paper-stock { position: absolute; inset: 0; background: var(--paper); opacity: 0; box-shadow: 0 6px 22px #00000022; }
+.image-slot { position: absolute; top: 58px; left: 34px; right: 34px; aspect-ratio: 944 / 214; }
+.notice-print { position: absolute; inset: 0; opacity: 0; }
+.notice-location { position: absolute; top: 25px; left: 34px; margin: 0; font-size: 12px; letter-spacing: .24em; }
+.notice h2 { position: absolute; top: 202px; left: 34px; right: 34px; margin: 0; font: 400 51px/1.2 var(--serif); letter-spacing: .06em; }
+.notice-body { position: absolute; top: 301px; left: 34px; right: 34px; margin: 0; font: 400 22px/1.95 var(--serif); letter-spacing: .025em; overflow-wrap: anywhere; }
+.notice-signatures { position: absolute; bottom: 53px; left: 34px; right: 34px; display: grid; grid-template-columns: 1fr 1fr; gap: 24px; border-top: 1px solid #9c9a8c; padding-top: 26px; opacity: 0; }
+.notice-signatures span { font: 400 26px/1.4 var(--serif); letter-spacing: .15em; color: var(--paper-ink); }
+.notice-signatures span:last-child { text-align: right; }
+.source-window { position: absolute; overflow: hidden; background: #000; visibility: hidden; z-index: 2; }
+.source-window svg { display: block; width: 100%; height: auto; aspect-ratio: 944 / 471; overflow: hidden; }
+.crop-edge { position: absolute; bottom: 0; left: 0; right: 0; height: 13px; border-bottom: 1px solid #f1d0a4; opacity: 0; pointer-events: none; }
+.crop-edge::before, .crop-edge::after { content: ""; position: absolute; width: 1px; height: 13px; bottom: -1px; background: #f1d0a4; }
+.crop-edge::before { left: 0; }
+.crop-edge::after { right: 0; }
+
+.watching-controls { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 15px 22px; min-height: 55px; padding: 12px 0 0; }
+.buttons { display: flex; align-items: center; gap: 21px; flex-wrap: wrap; }
+button { appearance: none; border: 0; border-bottom: 1px solid #747668; border-radius: 0; padding: 8px 0; background: transparent; color: var(--ink); font-size: 12px; cursor: pointer; }
+button:hover:not(:disabled) { border-color: var(--ink); }
+button:disabled { opacity: .36; cursor: default; }
+#begin { border-bottom-color: #e1b284; }
+#finish { color: var(--muted); border-bottom-color: transparent; }
+.status { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.7; }
+.colophon { margin-top: 31px; border-top: 1px solid var(--rule); padding-top: 20px; }
+.colophon summary { width: fit-content; color: var(--muted); font-size: 12px; cursor: pointer; }
+.colophon-content { max-width: 860px; padding-top: 14px; display: grid; grid-template-columns: 1fr 1fr; gap: 0 36px; }
+.colophon-content p { font-size: 13px; line-height: 1.95; color: var(--muted); margin: 13px 0; }
+.colophon-content .colophon-note { font-size: 11px; }
+a { color: inherit; text-decoration-color: #76796c; text-underline-offset: 3px; }
+.no-script { font-size: 13px; line-height: 1.8; }
+
+@media (max-width: 1050px) {
+  .work { width: calc(100% - 48px); }
+  .composition { grid-template-columns: minmax(0, 1fr) 210px; gap: 28px; }
+  .request blockquote { font-size: 20px; }
+  .notice h2 { font-size: 44px; }
+  .notice-body { font-size: 21px; }
+}
+
+@media (max-width: 760px) {
+  .work { width: calc(100% - 36px); padding-top: 26px; }
+  .work-header { align-items: start; flex-direction: column; gap: 16px; padding-bottom: 22px; }
+  h1 { font-size: 38px; margin-top: 10px; }
+  .fiction { font-size: 11px; margin: 0; }
+  .composition { display: flex; flex-direction: column; gap: 25px; padding-top: 25px; }
+  .request { margin-top: 0; padding-top: 16px; }
+  .request blockquote { max-width: 40em; margin-top: 13px; font-size: 18px; line-height: 1.85; }
+  .stage { height: 260px; }
+  .notice { width: 100%; max-width: 520px; height: 570px; }
+  .image-slot { top: 54px; left: 25px; right: 25px; }
+  .notice-location { top: 23px; left: 25px; font-size: 11px; }
+  .notice h2 { top: 164px; left: 25px; right: 25px; font-size: clamp(32px, 9.4vw, 44px); }
+  .notice-body { top: 246px; left: 25px; right: 25px; font-size: 20px; line-height: 1.9; }
+  .notice-signatures { bottom: 43px; left: 25px; right: 25px; padding-top: 23px; }
+  .notice-signatures span { font-size: 24px; }
+  .watching-controls { align-items: start; padding-top: 6px; }
+  .buttons { gap: 24px; }
+  button { min-height: 42px; }
+  .status { flex-basis: 100%; }
+  .colophon { margin-top: 27px; }
+  .colophon-content { display: block; }
+}
+
+@media (max-width: 360px) {
+  .work { width: calc(100% - 28px); }
+  .notice-body { font-size: 19px; }
+  .buttons { gap: 19px; }
+}

@@ -1,8 +1,8 @@
 # 可燃的数字记忆（暂定）
 
-## 2026-10-31 current: A32 making a finite image-reuse study
+## 2026-10-31 current: A32 actual image-reuse form under review
 
-[A31 creator choice](studies/a31-next-posting-choice/CREATOR_CHOICE.md), “图用这一张,” gives the existing statement a specific new editorial relation: crop all old names from a frozen processing image, reuse its fire as the next notice's illustration, and newly typeset the two continuing signatories. The request remains outside the paper throughout. [Root approved](studies/a31-next-posting-choice/DECISION.md) one [A32 study](studies/a32-image-reuse-study/BRIEF.md), using an unchanged existing PNG through native code viewports, with no new simulation. Implementation is underway; no behavior run or new score yet. A25 remains 4/6 and 3/6; A26 remains two 3/6 reviews and its synthesis is closed. A27 no-selection, A28/A29 access failures and A30 process audit remain preserved. Overall 5/6 unmet. Main, original platform and TOG queue unchanged; full goal active.
+[A32《图用这一张》](studies/a32-image-reuse-study/README.md) is implemented and checked once: 18.3429543 seconds, seven PNGs / 524083 bytes, with no new simulation. The same frozen fire image is cropped and reused in the next notice; all old raster names leave, two continuing names are newly typeset, and the request stays outside the paper. [Actual process](studies/a32-image-reuse-study/PROCESS.md) distinguishes discrete image observation from behavior checks and continuous experience. Creator and the original two reviewers are independently assessing the actual form; no new whole-paper score yet. A25 remains 4/6 and 3/6; A26 remains two 3/6 reviews and is closed. Earlier no-selections/access failures/process decisions stay preserved. Overall 5/6 unmet. Main, original platform and TOG queue unchanged; full goal active.
 
 
 **2026-10-30更新：** [A18及独立决定](studies/a18-context-positioning/DECISION.md)关闭A14《两边的火》作为当前投稿核心，保留其试作价值、总体3/6、准备度6/10、置信度4/5。关闭限于作品与自身主张的缺口，不以读取失败推导领域没有空间，也不要求所有艺术都必须影响他人、真人输入或私人记忆。艺术线继续用原平台探索；[A19单案创作决定](studies/a19-artistic-commitment/BRIEF.md)先选择有明确内容的对象和观看关系，之后才决定制作。暂定主题保留，用户未提供的经历不代写。以下历史brief不重启旧关闭路线；总体5/6目标未达。[复评流程](REVIEW_LOOP.md)继续适用。

@@ -1,0 +1,1643 @@
+{
+  "schema": "a32-form-inspection-1",
+  "createdUTC": "2026-10-30T18:41:37.361Z",
+  "status": "completed_single_presentation_check",
+  "scope": "One authored presentation of an unchanged source still. UI behavior and discrete frames only; no new physics, continuous aesthetic viewing or human response.",
+  "sources": {
+    "tracks/art/studies/a32-image-reuse-study/index.html": {
+      "bytes": 4459,
+      "sha256": "2afabfec0107ebf4da1420079c49b53649814251cb7f4f27f2d6ce54806b3da6"
+    },
+    "tracks/art/studies/a32-image-reuse-study/work.css": {
+      "bytes": 6454,
+      "sha256": "2908dcb7e100a080a46e17f00f30d68946eaf5e7c47e01652c5d24ae4c6f74b5"
+    },
+    "tracks/art/studies/a32-image-reuse-study/work.mjs": {
+      "bytes": 10179,
+      "sha256": "11143ad2c7062402ae3d0b41965dd2e8c20517dc1f92d7666466b5b7f5df2dd4"
+    },
+    "tracks/art/studies/a32-image-reuse-study/WORK_SPEC.md": {
+      "bytes": 6568,
+      "sha256": "30293f776b4a9efc8b43107ecb0e8f3e84a2a881bc7ace715959dbc633431e26"
+    },
+    "tracks/art/studies/a32-image-reuse-study/BRIEF.md": {
+      "bytes": 2801,
+      "sha256": "57e62f868a528cef96aaa0a9949e6e68de3fe619d4d7575813c437043d255a8c"
+    },
+    "tracks/art/studies/a32-image-reuse-study/inspect.mjs": {
+      "bytes": 9217,
+      "sha256": "885a8923ba91f3e54f39051d7611d4372989383628595b3403080e8372dc2bdf"
+    },
+    "tracks/art/studies/a25-public-request/inspection-01/04-request-returned.png": {
+      "bytes": 152741,
+      "sha256": "48d136431b920ba1f0c463a21c9a37b0f293288b1b3d10b1b8dfcc1309142cef"
+    },
+    "tracks/art/studies/a25-public-request/inspection-01/result.json": {
+      "bytes": 456347,
+      "sha256": "865058163c11775dab9343be1e3343bc37c8295c7d1d5ae06bf344b8c95a768d"
+    },
+    "research/lib/runtime.mjs": {
+      "bytes": 5669,
+      "sha256": "cf540ed02429016ab2b8a50a1cd95ac14222247466a56cfbf37444234851b184"
+    }
+  },
+  "images": [
+    {
+      "file": "01-source-ready.png",
+      "bytes": 144029,
+      "sha256": "b0097ead1b9bda9d528002ccc9ec7e9a82785a0d51f1b4112e1e1a6bbacaec71",
+      "before": {
+        "ready": true,
+        "phase": "ready",
+        "elapsedMs": 0,
+        "durationMs": 14000,
+        "running": false,
+        "ended": false,
+        "lastAction": "ready",
+        "error": null,
+        "source": {
+          "path": "../a25-public-request/inspection-01/04-request-returned.png",
+          "loaded": true,
+          "static": true,
+          "materialStep": 122,
+          "pngSize": {
+            "width": 1360,
+            "height": 1100
+          },
+          "canvas": {
+            "x": 47,
+            "y": 296,
+            "width": 944,
+            "height": 471
+          },
+          "visible": true,
+          "screenRect": {
+            "x": 62,
+            "y": 262.59375,
+            "width": 944,
+            "height": 471
+          }
+        },
+        "clip": {
+          "x": 47,
+          "y": 296,
+          "width": 944,
+          "height": 471,
+          "bottom": 767,
+          "progress": 0,
+          "allOldNamesOutside": false,
+          "edgeVisible": false
+        },
+        "notice": {
+          "visible": false,
+          "paperOpacity": 0,
+          "body": "我们同意将小院的周六晚间开放给放映，并在闭场后共同收拾。",
+          "bodyVisible": false,
+          "placementProgress": 0,
+          "imageAlignedWithSlot": false,
+          "signatures": [
+            {
+              "name": "宁岚",
+              "visible": false,
+              "fontSize": "26px",
+              "color": "rgb(38, 40, 32)"
+            },
+            {
+              "name": "沈舟",
+              "visible": false,
+              "fontSize": "26px",
+              "color": "rgb(38, 40, 32)"
+            }
+          ]
+        },
+        "request": {
+          "text": "叶青：下次张贴时，请不要再列我的名字。正文由另两人保留。",
+          "visible": true,
+          "insideNotice": false,
+          "fullyInViewport": true
+        }
+      },
+      "after": {
+        "ready": true,
+        "phase": "ready",
+        "elapsedMs": 0,
+        "durationMs": 14000,
+        "running": false,
+        "ended": false,
+        "lastAction": "ready",
+        "error": null,
+        "source": {
+          "path": "../a25-public-request/inspection-01/04-request-returned.png",
+          "loaded": true,
+          "static": true,
+          "materialStep": 122,
+          "pngSize": {
+            "width": 1360,
+            "height": 1100
+          },
+          "canvas": {
+            "x": 47,
+            "y": 296,
+            "width": 944,
+            "height": 471
+          },
+          "visible": true,
+          "screenRect": {
+            "x": 62,
+            "y": 262.59375,
+            "width": 944,
+            "height": 471
+          }
+        },
+        "clip": {
+          "x": 47,
+          "y": 296,
+          "width": 944,
+          "height": 471,
+          "bottom": 767,
+          "progress": 0,
+          "allOldNamesOutside": false,
+          "edgeVisible": false
+        },
+        "notice": {
+          "visible": false,
+          "paperOpacity": 0,
+          "body": "我们同意将小院的周六晚间开放给放映，并在闭场后共同收拾。",
+          "bodyVisible": false,
+          "placementProgress": 0,
+          "imageAlignedWithSlot": false,
+          "signatures": [
+            {
+              "name": "宁岚",
+              "visible": false,
+              "fontSize": "26px",
+              "color": "rgb(38, 40, 32)"
+            },
+            {
+              "name": "沈舟",
+              "visible": false,
+              "fontSize": "26px",
+              "color": "rgb(38, 40, 32)"
+            }
+          ]
+        },
+        "request": {
+          "text": "叶青：下次张贴时，请不要再列我的名字。正文由另两人保留。",
+          "visible": true,
+          "insideNotice": false,
+          "fullyInViewport": true
+        }
+      },
+      "requestActuallyVisible": true,
+      "elapsedSeconds": 2.6230368000000004
+    },
+    {
+      "file": "02-cropping-paused.png",
+      "bytes": 91879,
+      "sha256": "bb0194270f39c9fdb5e182963e8b0d0e4f1a9108b052423165bb9b68e14e9952",
+      "before": {
+        "ready": true,
+        "phase": "cropping",
+        "elapsedMs": 5048.099999904633,
+        "durationMs": 14000,
+        "running": false,
+        "ended": false,
+        "lastAction": "pause",
+        "error": null,
+        "source": {
+          "path": "../a25-public-request/inspection-01/04-request-returned.png",
+          "loaded": true,
+          "static": true,
+          "materialStep": 122,
+          "pngSize": {
+            "width": 1360,
+            "height": 1100
+          },
+          "canvas": {
+            "x": 47,
+            "y": 296,
+            "width": 944,
+            "height": 471
+          },
+          "visible": true,
+          "screenRect": {
+            "x": 62,
+            "y": 262.59375,
+            "width": 944,
+            "height": 277.1875
+          }
+        },
+        "clip": {
+          "x": 47,
+          "y": 296,
+          "width": 944,
+          "height": 277.2015777801262,
+          "bottom": 573.2015777801262,
+          "progress": 0.5120249999761581,
+          "allOldNamesOutside": false,
+          "edgeVisible": true
+        },
+        "notice": {
+          "visible": false,
+          "paperOpacity": 0,
+          "body": "我们同意将小院的周六晚间开放给放映，并在闭场后共同收拾。",
+          "bodyVisible": false,
+          "placementProgress": 0,
+          "imageAlignedWithSlot": false,
+          "signatures": [
+            {
+              "name": "宁岚",
+              "visible": false,
+              "fontSize": "26px",
+              "color": "rgb(38, 40, 32)"
+            },
+            {
+              "name": "沈舟",
+              "visible": false,
+              "fontSize": "26px",
+              "color": "rgb(38, 40, 32)"
+            }
+          ]
+        },
+        "request": {
+          "text": "叶青：下次张贴时，请不要再列我的名字。正文由另两人保留。",
+          "visible": true,
+          "insideNotice": false,
+          "fullyInViewport": true
+        }
+      },
+      "after": {
+        "ready": true,
+        "phase": "cropping",
+        "elapsedMs": 5048.099999904633,
+        "durationMs": 14000,
+        "running": false,
+        "ended": false,
+        "lastAction": "pause",
+        "error": null,
+        "source": {
+          "path": "../a25-public-request/inspection-01/04-request-returned.png",
+          "loaded": true,
+          "static": true,
+          "materialStep": 122,
+          "pngSize": {
+            "width": 1360,
+            "height": 1100
+          },
+          "canvas": {
+            "x": 47,
+            "y": 296,
+            "width": 944,
+            "height": 471
+          },
+          "visible": true,
+          "screenRect": {
+            "x": 62,
+            "y": 262.59375,
+            "width": 944,
+            "height": 277.1875
+          }
+        },
+        "clip": {
+          "x": 47,
+          "y": 296,
+          "width": 944,
+          "height": 277.2015777801262,
+          "bottom": 573.2015777801262,
+          "progress": 0.5120249999761581,
+          "allOldNamesOutside": false,
+          "edgeVisible": true
+        },
+        "notice": {
+          "visible": false,
+          "paperOpacity": 0,
+          "body": "我们同意将小院的周六晚间开放给放映，并在闭场后共同收拾。",
+          "bodyVisible": false,
+          "placementProgress": 0,
+          "imageAlignedWithSlot": false,
+          "signatures": [
+            {
+              "name": "宁岚",
+              "visible": false,
+              "fontSize": "26px",
+              "color": "rgb(38, 40, 32)"
+            },
+            {
+              "name": "沈舟",
+              "visible": false,
+              "fontSize": "26px",
+              "color": "rgb(38, 40, 32)"
+            }
+          ]
+        },
+        "request": {
+          "text": "叶青：下次张贴时，请不要再列我的名字。正文由另两人保留。",
+          "visible": true,
+          "insideNotice": false,
+          "fullyInViewport": true
+        }
+      },
+      "requestActuallyVisible": true,
+      "elapsedSeconds": 7.7815765
+    },
+    {
+      "file": "03-placing-paused.png",
+      "bytes": 63859,
+      "sha256": "baaac4363aa41e0cf51d61f1cd6c1dfd3f1add418e0d94fed6a1072a1405fd1a",
+      "before": {
+        "ready": true,
+        "phase": "placing",
+        "elapsedMs": 9049.099999904633,
+        "durationMs": 14000,
+        "running": false,
+        "ended": false,
+        "lastAction": "pause",
+        "error": null,
+        "source": {
+          "path": "../a25-public-request/inspection-01/04-request-returned.png",
+          "loaded": true,
+          "static": true,
+          "materialStep": 122,
+          "pngSize": {
+            "width": 1360,
+            "height": 1100
+          },
+          "canvas": {
+            "x": 47,
+            "y": 296,
+            "width": 944,
+            "height": 471
+          },
+          "visible": true,
+          "screenRect": {
+            "x": 189.53125,
+            "y": 260.515625,
+            "width": 688.9375,
+            "height": 156.171875
+          }
+        },
+        "clip": {
+          "x": 47,
+          "y": 296,
+          "width": 944,
+          "height": 214,
+          "bottom": 510,
+          "progress": 1,
+          "allOldNamesOutside": true,
+          "edgeVisible": false
+        },
+        "notice": {
+          "visible": true,
+          "paperOpacity": 1,
+          "body": "我们同意将小院的周六晚间开放给放映，并在闭场后共同收拾。",
+          "bodyVisible": true,
+          "placementProgress": 0.5184088008776649,
+          "imageAlignedWithSlot": false,
+          "signatures": [
+            {
+              "name": "宁岚",
+              "visible": false,
+              "fontSize": "26px",
+              "color": "rgb(38, 40, 32)"
+            },
+            {
+              "name": "沈舟",
+              "visible": false,
+              "fontSize": "26px",
+              "color": "rgb(38, 40, 32)"
+            }
+          ]
+        },
+        "request": {
+          "text": "叶青：下次张贴时，请不要再列我的名字。正文由另两人保留。",
+          "visible": true,
+          "insideNotice": false,
+          "fullyInViewport": true
+        }
+      },
+      "after": {
+        "ready": true,
+        "phase": "placing",
+        "elapsedMs": 9049.099999904633,
+        "durationMs": 14000,
+        "running": false,
+        "ended": false,
+        "lastAction": "pause",
+        "error": null,
+        "source": {
+          "path": "../a25-public-request/inspection-01/04-request-returned.png",
+          "loaded": true,
+          "static": true,
+          "materialStep": 122,
+          "pngSize": {
+            "width": 1360,
+            "height": 1100
+          },
+          "canvas": {
+            "x": 47,
+            "y": 296,
+            "width": 944,
+            "height": 471
+          },
+          "visible": true,
+          "screenRect": {
+            "x": 189.53125,
+            "y": 260.515625,
+            "width": 688.9375,
+            "height": 156.171875
+          }
+        },
+        "clip": {
+          "x": 47,
+          "y": 296,
+          "width": 944,
+          "height": 214,
+          "bottom": 510,
+          "progress": 1,
+          "allOldNamesOutside": true,
+          "edgeVisible": false
+        },
+        "notice": {
+          "visible": true,
+          "paperOpacity": 1,
+          "body": "我们同意将小院的周六晚间开放给放映，并在闭场后共同收拾。",
+          "bodyVisible": true,
+          "placementProgress": 0.5184088008776649,
+          "imageAlignedWithSlot": false,
+          "signatures": [
+            {
+              "name": "宁岚",
+              "visible": false,
+              "fontSize": "26px",
+              "color": "rgb(38, 40, 32)"
+            },
+            {
+              "name": "沈舟",
+              "visible": false,
+              "fontSize": "26px",
+              "color": "rgb(38, 40, 32)"
+            }
+          ]
+        },
+        "request": {
+          "text": "叶青：下次张贴时，请不要再列我的名字。正文由另两人保留。",
+          "visible": true,
+          "insideNotice": false,
+          "fullyInViewport": true
+        }
+      },
+      "requestActuallyVisible": true,
+      "elapsedSeconds": 12.044188900000002
+    },
+    {
+      "file": "04-posted.png",
+      "bytes": 64354,
+      "sha256": "c19eac4cfa31ade4562cd1f6848670ac91656aa1a7712626e2636efbcf3c9022",
+      "before": {
+        "ready": true,
+        "phase": "posted",
+        "elapsedMs": 14000,
+        "durationMs": 14000,
+        "running": false,
+        "ended": false,
+        "lastAction": "resume",
+        "error": null,
+        "source": {
+          "path": "../a25-public-request/inspection-01/04-request-returned.png",
+          "loaded": true,
+          "static": true,
+          "materialStep": 122,
+          "pngSize": {
+            "width": 1360,
+            "height": 1100
+          },
+          "canvas": {
+            "x": 47,
+            "y": 296,
+            "width": 944,
+            "height": 471
+          },
+          "visible": true,
+          "screenRect": {
+            "x": 308,
+            "y": 258.59375,
+            "width": 452,
+            "height": 102.453125
+          }
+        },
+        "clip": {
+          "x": 47,
+          "y": 296,
+          "width": 944,
+          "height": 214,
+          "bottom": 510,
+          "progress": 1,
+          "allOldNamesOutside": true,
+          "edgeVisible": false
+        },
+        "notice": {
+          "visible": true,
+          "paperOpacity": 1,
+          "body": "我们同意将小院的周六晚间开放给放映，并在闭场后共同收拾。",
+          "bodyVisible": true,
+          "placementProgress": 1,
+          "imageAlignedWithSlot": true,
+          "signatures": [
+            {
+              "name": "宁岚",
+              "visible": true,
+              "fontSize": "26px",
+              "color": "rgb(38, 40, 32)"
+            },
+            {
+              "name": "沈舟",
+              "visible": true,
+              "fontSize": "26px",
+              "color": "rgb(38, 40, 32)"
+            }
+          ]
+        },
+        "request": {
+          "text": "叶青：下次张贴时，请不要再列我的名字。正文由另两人保留。",
+          "visible": true,
+          "insideNotice": false,
+          "fullyInViewport": true
+        }
+      },
+      "after": {
+        "ready": true,
+        "phase": "posted",
+        "elapsedMs": 14000,
+        "durationMs": 14000,
+        "running": false,
+        "ended": false,
+        "lastAction": "resume",
+        "error": null,
+        "source": {
+          "path": "../a25-public-request/inspection-01/04-request-returned.png",
+          "loaded": true,
+          "static": true,
+          "materialStep": 122,
+          "pngSize": {
+            "width": 1360,
+            "height": 1100
+          },
+          "canvas": {
+            "x": 47,
+            "y": 296,
+            "width": 944,
+            "height": 471
+          },
+          "visible": true,
+          "screenRect": {
+            "x": 308,
+            "y": 258.59375,
+            "width": 452,
+            "height": 102.453125
+          }
+        },
+        "clip": {
+          "x": 47,
+          "y": 296,
+          "width": 944,
+          "height": 214,
+          "bottom": 510,
+          "progress": 1,
+          "allOldNamesOutside": true,
+          "edgeVisible": false
+        },
+        "notice": {
+          "visible": true,
+          "paperOpacity": 1,
+          "body": "我们同意将小院的周六晚间开放给放映，并在闭场后共同收拾。",
+          "bodyVisible": true,
+          "placementProgress": 1,
+          "imageAlignedWithSlot": true,
+          "signatures": [
+            {
+              "name": "宁岚",
+              "visible": true,
+              "fontSize": "26px",
+              "color": "rgb(38, 40, 32)"
+            },
+            {
+              "name": "沈舟",
+              "visible": true,
+              "fontSize": "26px",
+              "color": "rgb(38, 40, 32)"
+            }
+          ]
+        },
+        "request": {
+          "text": "叶青：下次张贴时，请不要再列我的名字。正文由另两人保留。",
+          "visible": true,
+          "insideNotice": false,
+          "fullyInViewport": true
+        }
+      },
+      "requestActuallyVisible": true,
+      "elapsedSeconds": 17.1357426
+    },
+    {
+      "file": "05-ended.png",
+      "bytes": 65582,
+      "sha256": "9c334418ccb330f6f92646476314eaed404801435057ee5cf51340c89d9dabfe",
+      "before": {
+        "ready": true,
+        "phase": "ended",
+        "elapsedMs": 14000,
+        "durationMs": 14000,
+        "running": false,
+        "ended": true,
+        "lastAction": "finish",
+        "error": null,
+        "source": {
+          "path": "../a25-public-request/inspection-01/04-request-returned.png",
+          "loaded": true,
+          "static": true,
+          "materialStep": 122,
+          "pngSize": {
+            "width": 1360,
+            "height": 1100
+          },
+          "canvas": {
+            "x": 47,
+            "y": 296,
+            "width": 944,
+            "height": 471
+          },
+          "visible": true,
+          "screenRect": {
+            "x": 308,
+            "y": 258.59375,
+            "width": 452,
+            "height": 102.453125
+          }
+        },
+        "clip": {
+          "x": 47,
+          "y": 296,
+          "width": 944,
+          "height": 214,
+          "bottom": 510,
+          "progress": 1,
+          "allOldNamesOutside": true,
+          "edgeVisible": false
+        },
+        "notice": {
+          "visible": true,
+          "paperOpacity": 1,
+          "body": "我们同意将小院的周六晚间开放给放映，并在闭场后共同收拾。",
+          "bodyVisible": true,
+          "placementProgress": 1,
+          "imageAlignedWithSlot": true,
+          "signatures": [
+            {
+              "name": "宁岚",
+              "visible": true,
+              "fontSize": "26px",
+              "color": "rgb(38, 40, 32)"
+            },
+            {
+              "name": "沈舟",
+              "visible": true,
+              "fontSize": "26px",
+              "color": "rgb(38, 40, 32)"
+            }
+          ]
+        },
+        "request": {
+          "text": "叶青：下次张贴时，请不要再列我的名字。正文由另两人保留。",
+          "visible": true,
+          "insideNotice": false,
+          "fullyInViewport": true
+        }
+      },
+      "after": {
+        "ready": true,
+        "phase": "ended",
+        "elapsedMs": 14000,
+        "durationMs": 14000,
+        "running": false,
+        "ended": true,
+        "lastAction": "finish",
+        "error": null,
+        "source": {
+          "path": "../a25-public-request/inspection-01/04-request-returned.png",
+          "loaded": true,
+          "static": true,
+          "materialStep": 122,
+          "pngSize": {
+            "width": 1360,
+            "height": 1100
+          },
+          "canvas": {
+            "x": 47,
+            "y": 296,
+            "width": 944,
+            "height": 471
+          },
+          "visible": true,
+          "screenRect": {
+            "x": 308,
+            "y": 258.59375,
+            "width": 452,
+            "height": 102.453125
+          }
+        },
+        "clip": {
+          "x": 47,
+          "y": 296,
+          "width": 944,
+          "height": 214,
+          "bottom": 510,
+          "progress": 1,
+          "allOldNamesOutside": true,
+          "edgeVisible": false
+        },
+        "notice": {
+          "visible": true,
+          "paperOpacity": 1,
+          "body": "我们同意将小院的周六晚间开放给放映，并在闭场后共同收拾。",
+          "bodyVisible": true,
+          "placementProgress": 1,
+          "imageAlignedWithSlot": true,
+          "signatures": [
+            {
+              "name": "宁岚",
+              "visible": true,
+              "fontSize": "26px",
+              "color": "rgb(38, 40, 32)"
+            },
+            {
+              "name": "沈舟",
+              "visible": true,
+              "fontSize": "26px",
+              "color": "rgb(38, 40, 32)"
+            }
+          ]
+        },
+        "request": {
+          "text": "叶青：下次张贴时，请不要再列我的名字。正文由另两人保留。",
+          "visible": true,
+          "insideNotice": false,
+          "fullyInViewport": true
+        }
+      },
+      "requestActuallyVisible": true,
+      "elapsedSeconds": 17.245073
+    },
+    {
+      "file": "06-mobile-ready.png",
+      "bytes": 46853,
+      "sha256": "34438fd6ed4feaabb338d0d25c82e44c83fa405add53bb73b4d63591cecbb38c",
+      "before": {
+        "ready": true,
+        "phase": "ready",
+        "elapsedMs": 0,
+        "durationMs": 14000,
+        "running": false,
+        "ended": false,
+        "lastAction": "ready",
+        "error": null,
+        "source": {
+          "path": "../a25-public-request/inspection-01/04-request-returned.png",
+          "loaded": true,
+          "static": true,
+          "materialStep": 122,
+          "pngSize": {
+            "width": 1360,
+            "height": 1100
+          },
+          "canvas": {
+            "x": 47,
+            "y": 296,
+            "width": 944,
+            "height": 471
+          },
+          "visible": true,
+          "screenRect": {
+            "x": 18,
+            "y": 345.0625,
+            "width": 354,
+            "height": 176.625
+          }
+        },
+        "clip": {
+          "x": 47,
+          "y": 296,
+          "width": 944,
+          "height": 471,
+          "bottom": 767,
+          "progress": 0,
+          "allOldNamesOutside": false,
+          "edgeVisible": false
+        },
+        "notice": {
+          "visible": false,
+          "paperOpacity": 0,
+          "body": "我们同意将小院的周六晚间开放给放映，并在闭场后共同收拾。",
+          "bodyVisible": false,
+          "placementProgress": 0,
+          "imageAlignedWithSlot": false,
+          "signatures": [
+            {
+              "name": "宁岚",
+              "visible": false,
+              "fontSize": "24px",
+              "color": "rgb(38, 40, 32)"
+            },
+            {
+              "name": "沈舟",
+              "visible": false,
+              "fontSize": "24px",
+              "color": "rgb(38, 40, 32)"
+            }
+          ]
+        },
+        "request": {
+          "text": "叶青：下次张贴时，请不要再列我的名字。正文由另两人保留。",
+          "visible": true,
+          "insideNotice": false,
+          "fullyInViewport": true
+        }
+      },
+      "after": {
+        "ready": true,
+        "phase": "ready",
+        "elapsedMs": 0,
+        "durationMs": 14000,
+        "running": false,
+        "ended": false,
+        "lastAction": "ready",
+        "error": null,
+        "source": {
+          "path": "../a25-public-request/inspection-01/04-request-returned.png",
+          "loaded": true,
+          "static": true,
+          "materialStep": 122,
+          "pngSize": {
+            "width": 1360,
+            "height": 1100
+          },
+          "canvas": {
+            "x": 47,
+            "y": 296,
+            "width": 944,
+            "height": 471
+          },
+          "visible": true,
+          "screenRect": {
+            "x": 18,
+            "y": 345.0625,
+            "width": 354,
+            "height": 176.625
+          }
+        },
+        "clip": {
+          "x": 47,
+          "y": 296,
+          "width": 944,
+          "height": 471,
+          "bottom": 767,
+          "progress": 0,
+          "allOldNamesOutside": false,
+          "edgeVisible": false
+        },
+        "notice": {
+          "visible": false,
+          "paperOpacity": 0,
+          "body": "我们同意将小院的周六晚间开放给放映，并在闭场后共同收拾。",
+          "bodyVisible": false,
+          "placementProgress": 0,
+          "imageAlignedWithSlot": false,
+          "signatures": [
+            {
+              "name": "宁岚",
+              "visible": false,
+              "fontSize": "24px",
+              "color": "rgb(38, 40, 32)"
+            },
+            {
+              "name": "沈舟",
+              "visible": false,
+              "fontSize": "24px",
+              "color": "rgb(38, 40, 32)"
+            }
+          ]
+        },
+        "request": {
+          "text": "叶青：下次张贴时，请不要再列我的名字。正文由另两人保留。",
+          "visible": true,
+          "insideNotice": false,
+          "fullyInViewport": true
+        }
+      },
+      "requestActuallyVisible": true,
+      "elapsedSeconds": 17.760273
+    },
+    {
+      "file": "07-mobile-early-end.png",
+      "bytes": 47527,
+      "sha256": "24621fe9453808f52ccedd94956f5613a0ee778c7bdda90051737d942bdd7cba",
+      "before": {
+        "ready": true,
+        "phase": "ended",
+        "elapsedMs": 0,
+        "durationMs": 14000,
+        "running": false,
+        "ended": true,
+        "lastAction": "finish",
+        "error": null,
+        "source": {
+          "path": "../a25-public-request/inspection-01/04-request-returned.png",
+          "loaded": true,
+          "static": true,
+          "materialStep": 122,
+          "pngSize": {
+            "width": 1360,
+            "height": 1100
+          },
+          "canvas": {
+            "x": 47,
+            "y": 296,
+            "width": 944,
+            "height": 471
+          },
+          "visible": true,
+          "screenRect": {
+            "x": 18,
+            "y": 345.0625,
+            "width": 354,
+            "height": 176.625
+          }
+        },
+        "clip": {
+          "x": 47,
+          "y": 296,
+          "width": 944,
+          "height": 471,
+          "bottom": 767,
+          "progress": 0,
+          "allOldNamesOutside": false,
+          "edgeVisible": false
+        },
+        "notice": {
+          "visible": false,
+          "paperOpacity": 0,
+          "body": "我们同意将小院的周六晚间开放给放映，并在闭场后共同收拾。",
+          "bodyVisible": false,
+          "placementProgress": 0,
+          "imageAlignedWithSlot": false,
+          "signatures": [
+            {
+              "name": "宁岚",
+              "visible": false,
+              "fontSize": "24px",
+              "color": "rgb(38, 40, 32)"
+            },
+            {
+              "name": "沈舟",
+              "visible": false,
+              "fontSize": "24px",
+              "color": "rgb(38, 40, 32)"
+            }
+          ]
+        },
+        "request": {
+          "text": "叶青：下次张贴时，请不要再列我的名字。正文由另两人保留。",
+          "visible": true,
+          "insideNotice": false,
+          "fullyInViewport": true
+        }
+      },
+      "after": {
+        "ready": true,
+        "phase": "ended",
+        "elapsedMs": 0,
+        "durationMs": 14000,
+        "running": false,
+        "ended": true,
+        "lastAction": "finish",
+        "error": null,
+        "source": {
+          "path": "../a25-public-request/inspection-01/04-request-returned.png",
+          "loaded": true,
+          "static": true,
+          "materialStep": 122,
+          "pngSize": {
+            "width": 1360,
+            "height": 1100
+          },
+          "canvas": {
+            "x": 47,
+            "y": 296,
+            "width": 944,
+            "height": 471
+          },
+          "visible": true,
+          "screenRect": {
+            "x": 18,
+            "y": 345.0625,
+            "width": 354,
+            "height": 176.625
+          }
+        },
+        "clip": {
+          "x": 47,
+          "y": 296,
+          "width": 944,
+          "height": 471,
+          "bottom": 767,
+          "progress": 0,
+          "allOldNamesOutside": false,
+          "edgeVisible": false
+        },
+        "notice": {
+          "visible": false,
+          "paperOpacity": 0,
+          "body": "我们同意将小院的周六晚间开放给放映，并在闭场后共同收拾。",
+          "bodyVisible": false,
+          "placementProgress": 0,
+          "imageAlignedWithSlot": false,
+          "signatures": [
+            {
+              "name": "宁岚",
+              "visible": false,
+              "fontSize": "24px",
+              "color": "rgb(38, 40, 32)"
+            },
+            {
+              "name": "沈舟",
+              "visible": false,
+              "fontSize": "24px",
+              "color": "rgb(38, 40, 32)"
+            }
+          ]
+        },
+        "request": {
+          "text": "叶青：下次张贴时，请不要再列我的名字。正文由另两人保留。",
+          "visible": true,
+          "insideNotice": false,
+          "fullyInViewport": true
+        }
+      },
+      "requestActuallyVisible": true,
+      "elapsedSeconds": 17.8392516
+    }
+  ],
+  "imageBytes": 524083,
+  "checks": {
+    "sourceMatchesA25": true,
+    "pauseFreezesTime": true,
+    "placingReached": true,
+    "postedAtFixedEnd": true,
+    "continuingNamesActuallyVisible": true,
+    "statementActuallyVisible": true,
+    "requestOutsidePaper": true,
+    "retypesExactlyContinuingNames": true,
+    "equalNewSignatures": true,
+    "sameSourceNodeAndPath": true,
+    "finalCropAndPlacement": true,
+    "finishStops": true,
+    "mobileNoHorizontalOverflow": true,
+    "mobileEarlyExit": true,
+    "stillsHaveStableTime": true,
+    "requestRemainsVisible": true,
+    "noPageErrors": true,
+    "noExternalRequests": true,
+    "withinBudget": true,
+    "sourcesUnchanged": true
+  },
+  "pageErrors": [],
+  "console": [],
+  "externalRequests": [],
+  "closed": {
+    "context": true,
+    "browser": true,
+    "server": true
+  },
+  "browser": {
+    "module": "C:/Users/seanzjxiao/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright",
+    "launchOptions": {
+      "headless": true,
+      "executablePath": "C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe"
+    },
+    "version": "149.0.4022.52"
+  },
+  "initial": {
+    "ready": true,
+    "phase": "ready",
+    "elapsedMs": 0,
+    "durationMs": 14000,
+    "running": false,
+    "ended": false,
+    "lastAction": "ready",
+    "error": null,
+    "source": {
+      "path": "../a25-public-request/inspection-01/04-request-returned.png",
+      "loaded": true,
+      "static": true,
+      "materialStep": 122,
+      "pngSize": {
+        "width": 1360,
+        "height": 1100
+      },
+      "canvas": {
+        "x": 47,
+        "y": 296,
+        "width": 944,
+        "height": 471
+      },
+      "visible": true,
+      "screenRect": {
+        "x": 62,
+        "y": 262.59375,
+        "width": 944,
+        "height": 471
+      }
+    },
+    "clip": {
+      "x": 47,
+      "y": 296,
+      "width": 944,
+      "height": 471,
+      "bottom": 767,
+      "progress": 0,
+      "allOldNamesOutside": false,
+      "edgeVisible": false
+    },
+    "notice": {
+      "visible": false,
+      "paperOpacity": 0,
+      "body": "我们同意将小院的周六晚间开放给放映，并在闭场后共同收拾。",
+      "bodyVisible": false,
+      "placementProgress": 0,
+      "imageAlignedWithSlot": false,
+      "signatures": [
+        {
+          "name": "宁岚",
+          "visible": false,
+          "fontSize": "26px",
+          "color": "rgb(38, 40, 32)"
+        },
+        {
+          "name": "沈舟",
+          "visible": false,
+          "fontSize": "26px",
+          "color": "rgb(38, 40, 32)"
+        }
+      ]
+    },
+    "request": {
+      "text": "叶青：下次张贴时，请不要再列我的名字。正文由另两人保留。",
+      "visible": true,
+      "insideNotice": false,
+      "fullyInViewport": true
+    }
+  },
+  "cropPause": {
+    "ready": true,
+    "phase": "cropping",
+    "elapsedMs": 5048.099999904633,
+    "durationMs": 14000,
+    "running": false,
+    "ended": false,
+    "lastAction": "pause",
+    "error": null,
+    "source": {
+      "path": "../a25-public-request/inspection-01/04-request-returned.png",
+      "loaded": true,
+      "static": true,
+      "materialStep": 122,
+      "pngSize": {
+        "width": 1360,
+        "height": 1100
+      },
+      "canvas": {
+        "x": 47,
+        "y": 296,
+        "width": 944,
+        "height": 471
+      },
+      "visible": true,
+      "screenRect": {
+        "x": 62,
+        "y": 262.59375,
+        "width": 944,
+        "height": 277.1875
+      }
+    },
+    "clip": {
+      "x": 47,
+      "y": 296,
+      "width": 944,
+      "height": 277.2015777801262,
+      "bottom": 573.2015777801262,
+      "progress": 0.5120249999761581,
+      "allOldNamesOutside": false,
+      "edgeVisible": true
+    },
+    "notice": {
+      "visible": false,
+      "paperOpacity": 0,
+      "body": "我们同意将小院的周六晚间开放给放映，并在闭场后共同收拾。",
+      "bodyVisible": false,
+      "placementProgress": 0,
+      "imageAlignedWithSlot": false,
+      "signatures": [
+        {
+          "name": "宁岚",
+          "visible": false,
+          "fontSize": "26px",
+          "color": "rgb(38, 40, 32)"
+        },
+        {
+          "name": "沈舟",
+          "visible": false,
+          "fontSize": "26px",
+          "color": "rgb(38, 40, 32)"
+        }
+      ]
+    },
+    "request": {
+      "text": "叶青：下次张贴时，请不要再列我的名字。正文由另两人保留。",
+      "visible": true,
+      "insideNotice": false,
+      "fullyInViewport": true
+    }
+  },
+  "cropAfterWait": {
+    "ready": true,
+    "phase": "cropping",
+    "elapsedMs": 5048.099999904633,
+    "durationMs": 14000,
+    "running": false,
+    "ended": false,
+    "lastAction": "pause",
+    "error": null,
+    "source": {
+      "path": "../a25-public-request/inspection-01/04-request-returned.png",
+      "loaded": true,
+      "static": true,
+      "materialStep": 122,
+      "pngSize": {
+        "width": 1360,
+        "height": 1100
+      },
+      "canvas": {
+        "x": 47,
+        "y": 296,
+        "width": 944,
+        "height": 471
+      },
+      "visible": true,
+      "screenRect": {
+        "x": 62,
+        "y": 262.59375,
+        "width": 944,
+        "height": 277.1875
+      }
+    },
+    "clip": {
+      "x": 47,
+      "y": 296,
+      "width": 944,
+      "height": 277.2015777801262,
+      "bottom": 573.2015777801262,
+      "progress": 0.5120249999761581,
+      "allOldNamesOutside": false,
+      "edgeVisible": true
+    },
+    "notice": {
+      "visible": false,
+      "paperOpacity": 0,
+      "body": "我们同意将小院的周六晚间开放给放映，并在闭场后共同收拾。",
+      "bodyVisible": false,
+      "placementProgress": 0,
+      "imageAlignedWithSlot": false,
+      "signatures": [
+        {
+          "name": "宁岚",
+          "visible": false,
+          "fontSize": "26px",
+          "color": "rgb(38, 40, 32)"
+        },
+        {
+          "name": "沈舟",
+          "visible": false,
+          "fontSize": "26px",
+          "color": "rgb(38, 40, 32)"
+        }
+      ]
+    },
+    "request": {
+      "text": "叶青：下次张贴时，请不要再列我的名字。正文由另两人保留。",
+      "visible": true,
+      "insideNotice": false,
+      "fullyInViewport": true
+    }
+  },
+  "placingPause": {
+    "ready": true,
+    "phase": "placing",
+    "elapsedMs": 9049.099999904633,
+    "durationMs": 14000,
+    "running": false,
+    "ended": false,
+    "lastAction": "pause",
+    "error": null,
+    "source": {
+      "path": "../a25-public-request/inspection-01/04-request-returned.png",
+      "loaded": true,
+      "static": true,
+      "materialStep": 122,
+      "pngSize": {
+        "width": 1360,
+        "height": 1100
+      },
+      "canvas": {
+        "x": 47,
+        "y": 296,
+        "width": 944,
+        "height": 471
+      },
+      "visible": true,
+      "screenRect": {
+        "x": 189.53125,
+        "y": 260.515625,
+        "width": 688.9375,
+        "height": 156.171875
+      }
+    },
+    "clip": {
+      "x": 47,
+      "y": 296,
+      "width": 944,
+      "height": 214,
+      "bottom": 510,
+      "progress": 1,
+      "allOldNamesOutside": true,
+      "edgeVisible": false
+    },
+    "notice": {
+      "visible": true,
+      "paperOpacity": 1,
+      "body": "我们同意将小院的周六晚间开放给放映，并在闭场后共同收拾。",
+      "bodyVisible": true,
+      "placementProgress": 0.5184088008776649,
+      "imageAlignedWithSlot": false,
+      "signatures": [
+        {
+          "name": "宁岚",
+          "visible": false,
+          "fontSize": "26px",
+          "color": "rgb(38, 40, 32)"
+        },
+        {
+          "name": "沈舟",
+          "visible": false,
+          "fontSize": "26px",
+          "color": "rgb(38, 40, 32)"
+        }
+      ]
+    },
+    "request": {
+      "text": "叶青：下次张贴时，请不要再列我的名字。正文由另两人保留。",
+      "visible": true,
+      "insideNotice": false,
+      "fullyInViewport": true
+    }
+  },
+  "posted": {
+    "ready": true,
+    "phase": "posted",
+    "elapsedMs": 14000,
+    "durationMs": 14000,
+    "running": false,
+    "ended": false,
+    "lastAction": "resume",
+    "error": null,
+    "source": {
+      "path": "../a25-public-request/inspection-01/04-request-returned.png",
+      "loaded": true,
+      "static": true,
+      "materialStep": 122,
+      "pngSize": {
+        "width": 1360,
+        "height": 1100
+      },
+      "canvas": {
+        "x": 47,
+        "y": 296,
+        "width": 944,
+        "height": 471
+      },
+      "visible": true,
+      "screenRect": {
+        "x": 308,
+        "y": 258.59375,
+        "width": 452,
+        "height": 102.453125
+      }
+    },
+    "clip": {
+      "x": 47,
+      "y": 296,
+      "width": 944,
+      "height": 214,
+      "bottom": 510,
+      "progress": 1,
+      "allOldNamesOutside": true,
+      "edgeVisible": false
+    },
+    "notice": {
+      "visible": true,
+      "paperOpacity": 1,
+      "body": "我们同意将小院的周六晚间开放给放映，并在闭场后共同收拾。",
+      "bodyVisible": true,
+      "placementProgress": 1,
+      "imageAlignedWithSlot": true,
+      "signatures": [
+        {
+          "name": "宁岚",
+          "visible": true,
+          "fontSize": "26px",
+          "color": "rgb(38, 40, 32)"
+        },
+        {
+          "name": "沈舟",
+          "visible": true,
+          "fontSize": "26px",
+          "color": "rgb(38, 40, 32)"
+        }
+      ]
+    },
+    "request": {
+      "text": "叶青：下次张贴时，请不要再列我的名字。正文由另两人保留。",
+      "visible": true,
+      "insideNotice": false,
+      "fullyInViewport": true
+    }
+  },
+  "finalDOM": {
+    "requestInsidePaper": false,
+    "signatures": [
+      {
+        "name": "宁岚",
+        "fontSize": "26px",
+        "color": "rgb(38, 40, 32)"
+      },
+      {
+        "name": "沈舟",
+        "fontSize": "26px",
+        "color": "rgb(38, 40, 32)"
+      }
+    ],
+    "sourceNodes": 1,
+    "sourceHref": "../a25-public-request/inspection-01/04-request-returned.png"
+  },
+  "ended": {
+    "ready": true,
+    "phase": "ended",
+    "elapsedMs": 14000,
+    "durationMs": 14000,
+    "running": false,
+    "ended": true,
+    "lastAction": "finish",
+    "error": null,
+    "source": {
+      "path": "../a25-public-request/inspection-01/04-request-returned.png",
+      "loaded": true,
+      "static": true,
+      "materialStep": 122,
+      "pngSize": {
+        "width": 1360,
+        "height": 1100
+      },
+      "canvas": {
+        "x": 47,
+        "y": 296,
+        "width": 944,
+        "height": 471
+      },
+      "visible": true,
+      "screenRect": {
+        "x": 308,
+        "y": 258.59375,
+        "width": 452,
+        "height": 102.453125
+      }
+    },
+    "clip": {
+      "x": 47,
+      "y": 296,
+      "width": 944,
+      "height": 214,
+      "bottom": 510,
+      "progress": 1,
+      "allOldNamesOutside": true,
+      "edgeVisible": false
+    },
+    "notice": {
+      "visible": true,
+      "paperOpacity": 1,
+      "body": "我们同意将小院的周六晚间开放给放映，并在闭场后共同收拾。",
+      "bodyVisible": true,
+      "placementProgress": 1,
+      "imageAlignedWithSlot": true,
+      "signatures": [
+        {
+          "name": "宁岚",
+          "visible": true,
+          "fontSize": "26px",
+          "color": "rgb(38, 40, 32)"
+        },
+        {
+          "name": "沈舟",
+          "visible": true,
+          "fontSize": "26px",
+          "color": "rgb(38, 40, 32)"
+        }
+      ]
+    },
+    "request": {
+      "text": "叶青：下次张贴时，请不要再列我的名字。正文由另两人保留。",
+      "visible": true,
+      "insideNotice": false,
+      "fullyInViewport": true
+    }
+  },
+  "mobileEnded": {
+    "ready": true,
+    "phase": "ended",
+    "elapsedMs": 0,
+    "durationMs": 14000,
+    "running": false,
+    "ended": true,
+    "lastAction": "finish",
+    "error": null,
+    "source": {
+      "path": "../a25-public-request/inspection-01/04-request-returned.png",
+      "loaded": true,
+      "static": true,
+      "materialStep": 122,
+      "pngSize": {
+        "width": 1360,
+        "height": 1100
+      },
+      "canvas": {
+        "x": 47,
+        "y": 296,
+        "width": 944,
+        "height": 471
+      },
+      "visible": true,
+      "screenRect": {
+        "x": 18,
+        "y": 345.0625,
+        "width": 354,
+        "height": 176.625
+      }
+    },
+    "clip": {
+      "x": 47,
+      "y": 296,
+      "width": 944,
+      "height": 471,
+      "bottom": 767,
+      "progress": 0,
+      "allOldNamesOutside": false,
+      "edgeVisible": false
+    },
+    "notice": {
+      "visible": false,
+      "paperOpacity": 0,
+      "body": "我们同意将小院的周六晚间开放给放映，并在闭场后共同收拾。",
+      "bodyVisible": false,
+      "placementProgress": 0,
+      "imageAlignedWithSlot": false,
+      "signatures": [
+        {
+          "name": "宁岚",
+          "visible": false,
+          "fontSize": "24px",
+          "color": "rgb(38, 40, 32)"
+        },
+        {
+          "name": "沈舟",
+          "visible": false,
+          "fontSize": "24px",
+          "color": "rgb(38, 40, 32)"
+        }
+      ]
+    },
+    "request": {
+      "text": "叶青：下次张贴时，请不要再列我的名字。正文由另两人保留。",
+      "visible": true,
+      "insideNotice": false,
+      "fullyInViewport": true
+    }
+  },
+  "wallSeconds": 18.342954300000002
+}

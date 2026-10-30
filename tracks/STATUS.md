@@ -1,8 +1,8 @@
 # Dual-track status
 
-## 2026-10-31 current: A32 making a finite image-reuse study
+## 2026-10-31 current: A32 actual image-reuse form under review
 
-[A31 creator choice](art/studies/a31-next-posting-choice/CREATOR_CHOICE.md), “图用这一张,” gives the existing statement a specific new editorial relation: crop all old names from a frozen processing image, reuse its fire as the next notice's illustration, and newly typeset the two continuing signatories. The request remains outside the paper throughout. [Root approved](art/studies/a31-next-posting-choice/DECISION.md) one [A32 study](art/studies/a32-image-reuse-study/BRIEF.md), using an unchanged existing PNG through native code viewports, with no new simulation. Implementation is underway; no behavior run or new score yet. A25 remains 4/6 and 3/6; A26 remains two 3/6 reviews and its synthesis is closed. A27 no-selection, A28/A29 access failures and A30 process audit remain preserved. Overall 5/6 unmet. Main, original platform and TOG queue unchanged; full goal active.
+[A32《图用这一张》](art/studies/a32-image-reuse-study/README.md) is implemented and checked once: 18.3429543 seconds, seven PNGs / 524083 bytes, with no new simulation. The same frozen fire image is cropped and reused in the next notice; all old raster names leave, two continuing names are newly typeset, and the request stays outside the paper. [Actual process](art/studies/a32-image-reuse-study/PROCESS.md) distinguishes discrete image observation from behavior checks and continuous experience. Creator and the original two reviewers are independently assessing the actual form; no new whole-paper score yet. A25 remains 4/6 and 3/6; A26 remains two 3/6 reviews and is closed. Earlier no-selections/access failures/process decisions stay preserved. Overall 5/6 unmet. Main, original platform and TOG queue unchanged; full goal active.
 
 
 Updated 30 October 2026. Active exploration authorized by the author. TOG and Art Papers contributions are both unestablished.

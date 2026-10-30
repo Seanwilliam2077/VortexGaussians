@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark light">
+  <title>图用这一张 · A32</title>
+  <link rel="stylesheet" href="work.css">
+  <!-- A classic deferred script also works when this page is opened via file://. -->
+  <script src="work.mjs" defer></script>
+</head>
+<body>
+  <main class="work">
+    <header class="work-header">
+      <div>
+        <p class="eyebrow">一次裁取与重新排版</p>
+        <h1>图用这一张</h1>
+      </div>
+      <p class="fiction">人物与事项均为虚构</p>
+    </header>
+
+    <section class="composition" aria-label="图像的编排与留在纸外的原话">
+      <aside id="request" class="request" aria-labelledby="request-label">
+        <p id="request-label" class="eyebrow">留在纸外的话</p>
+        <blockquote id="request-text">叶青：下次张贴时，请不要再列我的名字。正文由另两人保留。</blockquote>
+      </aside>
+
+      <div class="stage-column">
+        <div id="stage" class="stage">
+          <article id="notice" class="notice" aria-label="作品内的放映告示">
+            <div id="paper-stock" class="paper-stock" aria-hidden="true"></div>
+            <div id="image-slot" class="image-slot" aria-hidden="true"></div>
+            <div id="notice-print" class="notice-print" aria-hidden="true">
+              <p class="notice-location">小院</p>
+              <h2>周六放映</h2>
+              <p id="notice-body" class="notice-body">我们同意将小院的周六晚间开放给放映，并在闭场后共同收拾。</p>
+            </div>
+            <div id="notice-signatures" class="notice-signatures" aria-hidden="true">
+              <span data-signature>宁岚</span>
+              <span data-signature>沈舟</span>
+            </div>
+            <div id="source-window" class="source-window">
+              <svg id="source-art" viewBox="47 296 944 471" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="source-description">
+                <title id="source-description">固定画布：宁岚、叶青、沈舟三个旧名字与上方的火形。</title>
+                <image id="source-image" x="0" y="0" width="1360" height="1100" href="../a25-public-request/inspection-01/04-request-returned.png" />
+              </svg>
+              <div id="crop-edge" class="crop-edge" aria-hidden="true"></div>
+            </div>
+          </article>
+        </div>
+
+        <div class="watching-controls">
+          <div class="buttons">
+            <button id="begin" type="button" disabled>开始编排</button>
+            <button id="pause" type="button" disabled>暂停</button>
+            <button id="finish" type="button">结束观看</button>
+          </div>
+          <p id="status" class="status" role="status" aria-live="polite">正在载入源图。</p>
+        </div>
+      </div>
+    </section>
+
+    <details id="colophon" class="colophon">
+      <summary>关于这次编排</summary>
+      <div class="colophon-content">
+        <p>这里的告示、人物和小院事项均为虚构。告示在这件作品内组成，不代表一次现实张贴。叶青的原话始终留在纸外；配图的选择由本作作者承担，没有替另两人编造同意配图的对白。</p>
+        <p>图像来自 A25《下次张贴之前》保存的<a href="../a25-public-request/inspection-01/04-request-returned.png">第 122 步暂停画面</a>。那一画面正处于姓名处理期间。本作使用同一 PNG 中的画布区域：先裁去包含全部三个旧名字的下部，再将上部火形放入告示图栏；正文与宁岚、沈舟的署名是重新排字。</p>
+        <p>火形本身完全静止。可见的裁框、位移和版面出现是一回约十四秒的作者编辑，不是继续燃烧、自动删名或请求已经充分得到回应。暂停会停住编排；结束会将当前画面留在原处，原话仍可读。若切换到后台，编排也会暂停。返回后可继续。</p>
+        <p class="colophon-note">A32 · 2026<br>HTML / SVG / CSS 视窗与排版。原始位图未修改；没有新的模拟、外部资源或存储。<a href="WORK_SPEC.md">动作与材料规格</a></p>
+      </div>
+    </details>
+    <noscript><p class="no-script">请启用 JavaScript 以观看裁取与排版；原话仍保留在上方。</p></noscript>
+  </main>
+</body>
+</html>
