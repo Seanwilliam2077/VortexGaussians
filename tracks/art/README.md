@@ -1,8 +1,8 @@
 # 可燃的数字记忆（暂定） · 艺术排练入口
 
-## 2026-10-30 active: A20 production
+## 2026-10-30 current: A20 reviewed; A21 cultural decision
 
-[A19](studies/a19-artistic-commitment/COMMITMENT.md) completed; its root decision authorizes one A20 room-gift artwork and bounded primary-source context check. The specific bed, slippers and inward latch now precede the choice of fire; viewpoint-driven burning is dropped. This is a production decision, not evidence of an Art Papers contribution. Independent review follows actual images; historical A14 remains3/6 and overall5/6 target is unmet. No TOG computation or A15/A16 recording repair is queued.
+[A20](studies/a20-room-gift/README.md) is a realized fictional room-gift work with a complete initial essay and nine original stage images. [Independent review](../validation/art-a20-review-round-01.md): overall3/6, readiness6/10, confidence4/5, seven subscores4/2/3/3/4/4/4. Specific objects and door occlusion now support the argument; the cultural position of external fire and the knowledge gained from authored withdrawal remain insufficient. One normal UI inspection completed in13.810165s with150 fire steps, not aesthetic validation or total project cost. [A21](studies/a21-paper-offering-position/BRIEF.md) now permits only a bounded paper-offering context inquiry and one creator decision about external fire; no image revision, rerun, recording or TOG computation follows automatically. A14 historical3/6 and A15/A16 failures remain. Overall5/6 target unmet, research branch only, full goal active.
 
 
 **2026-10-30：A14封存为试作，结束当前投稿核心路线。** [A18有限比较](studies/a18-context-positioning/README.md)与[独立复核](../validation/art-a18-core-decision.md)认为，轮流移动、接续变化和共同退开虽有图像依据，现有形式仍未支持其核心艺术认识。维持第二轮总体3/6、准备度6/10、置信度4/5；不是因录像失败否定作品，也不据来源缺失否定领域。原平台和艺术线继续。[A19](studies/a19-artistic-commitment/BRIEF.md)先完成一页单案创作决定，选择具体对象、观看关系和观者行为/取舍，暂不制作或运行。A15/A16失败与[A17实际33图](studies/a17-saved-sequence-reading/README.md)保留，补录循环关闭；总体5/6目标未达。
