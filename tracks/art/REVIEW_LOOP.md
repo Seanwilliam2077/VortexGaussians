@@ -1,8 +1,8 @@
 # 艺术线：制作与独立复评
 
-## 2026-10-31 current: A36 two-line handover material sample
+## 2026-10-31 current: A36 material finding and A37 initial readability repair
 
-[A35](studies/a35-reading-by-fire/CREATOR_CHOICE.md) selected an original fictional station handover note, 《末班之后》; [root accepted](studies/a35-reading-by-fire/DECISION.md) one material qualification before a full work. [A36](studies/a36-handover-material/BRIEF.md) fixes two lines, nominal 32px type/48px spacing, the original material and legacy budgets, one ignition and 360 steps. Implementation is in progress; no new run, image or score yet. A fixed reviewer's [pre-production consultation](studies/a36-handover-material/REVIEWER_CONSULTATION.md) identifies a reading relation and the decorative-highlighting counterreading without grading unseen work. A32 remains closed at independent 3/6 and 4/6; A33 no-selection, A34 direct-source scope and older results remain. Overall 5/6 unmet; TOG/main unchanged, full goal active.
+[A35](studies/a35-reading-by-fire/CREATOR_CHOICE.md) selected an original fictional station handover note, 《末班之后》; [root accepted](studies/a35-reading-by-fire/DECISION.md) one material qualification before a full work. [A36](studies/a36-handover-material/BRIEF.md) fixes two lines, nominal 32px type/48px spacing, the original material and legacy budgets, one ignition and 360 steps. The sole 13.1660841s check completed (7 PNG, 977069 bytes, 13 behavior checks); initial glyphs visibly merge and wash out, so character-by-character readability is not established. Ignition reached the next line, while 14273 point-step frontier deferrals limit clock interpretation. The creator and original fixed reviewer directly saw three images and both identify initial readability as the next gap. A37 now implements the creator-selected single scale correction, with one initial image and zero ignition/steps; no full work or new score. A fixed reviewer's [pre-production consultation](studies/a36-handover-material/REVIEWER_CONSULTATION.md) identifies a reading relation and the decorative-highlighting counterreading without grading unseen work. A32 remains closed at independent 3/6 and 4/6; A33 no-selection, A34 direct-source scope and older results remain. Overall 5/6 unmet; TOG/main unchanged, full goal active.
 
 
 2026-10-30。用户重新授权持续艺术迭代，并要求与评分 Agent 交流直至至少 5 分。本轮把目标解释为既有内部六档总评中的 **5/6（Accept）**，不是就绪度 5/10，也不是官方录用概率。
@@ -25,4 +25,4 @@
 
 ## 当前有限任务
 
-A35已选完整原创虚构交接条。A36正在实现固定两行材料核查，初态可读性、点火位置与邻行变化尚未观察。仅root静态读回后执行一次检查；不制作完整拖拽或新论文。原固定评分者的制作前咨询已保存，无新评分。原两位正式评分者保持，5/6目标未实现，TOG/main保持，完整研究目标active。
+A35已选完整原创虚构交接条。A36唯一检查已完成：初态字形粘连、泛白，点火后下行实际变化，cap累计延期14273点×步。创作者与原评分者已直接看三图，均确认初态辨读问题。A37按作者单一scale修正实施一次初态检查，0点火0推进；不重跑A36、不制作完整拖拽或新论文。原固定评分者的制作前咨询已保存，无新评分。原两位正式评分者保持，5/6目标未实现，TOG/main保持，完整研究目标active。

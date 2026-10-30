@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <title>末班之后 · A36 两行材料核查</title>
+  <link rel="stylesheet" href="sample.css">
+</head>
+<body>
+  <main class="page">
+    <header>
+      <div><p class="edition">A36 / 两行材料核查</p><h1>末班之后</h1></div>
+      <p class="fiction">原创虚构交接条摘录<br>仅核查第三、第四行</p>
+    </header>
+    <section class="material" aria-label="两行交接事项的材料字">
+      <div class="canvas-frame">
+        <canvas id="view" width="1200" height="600" role="img" aria-label="第三、第四行交接条的高斯材料字，显示当前材料状态"></canvas>
+        <div id="loading" role="status">正在准备两行材料字</div>
+      </div>
+      <div class="readout"><span id="phase-text">准备中</span><span><strong id="sim-time">0.00</strong> / 6.00 模拟秒</span></div>
+      <div class="controls">
+        <button id="ignite" class="primary" disabled>点燃固定位置</button>
+        <button id="advance" class="primary" disabled>推进 2 模拟秒</button>
+        <button id="pause" disabled>暂停</button>
+        <button id="leave" class="quiet" disabled>停止在这里</button>
+      </div>
+      <p id="error" role="alert" hidden></p>
+      <p class="material-note">点火固定在上行“要”字处，仅一次。每段结束后停留；六秒后保留状态，不重燃、不重置。</p>
+    </section>
+    <details class="measurements">
+      <summary>材料记录与范围</summary>
+      <p id="stats-caption">等待初始状态</p>
+      <div class="table-scroll">
+        <table>
+          <thead><tr><th scope="col">范围</th><th scope="col">点数</th><th scope="col">热量均值</th><th scope="col">燃料余量</th><th scope="col">炭化均值</th><th scope="col">state 1 / 2</th></tr></thead>
+          <tbody id="group-rows"></tbody>
+        </table>
+      </div>
+      <p id="counter-readout"></p>
+      <p id="ignition-readout"></p>
+      <p class="stat-note">“不要摘”是第三行的子组，不与两行相加。state 2 只表示代码判定燃料耗尽；frontierDeferred 是累计延期的点×步次数，不是唯一受影响点数。发生延期时，不区分或声称某一点正常耗尽。</p>
+      <p class="stat-note">字形、火与可读性须看原图，不能由表中数值推断。源画布为1200×600；32px字号与48px行距按源像素映射，窄屏仅等比缩放。长句部分点位于流体横向域外，不代表整张纸具有均匀热动力学。</p>
+    </details>
+    <footer>
+      <p>画面正文全部来自原平台的高斯材料字，没有另叠正文、抹字图层或受热字幕。停止观看不表示纸已毁掉或交接完成。</p>
+      <nav><a href="WORK_SPEC.md">本次规格</a><a href="BRIEF.md">材料问题</a></nav>
+    </footer>
+  </main>
+  <iframe id="source" src="../../../../demo/index.html?embed=1" title="原 VortexGaussians 渲染器" tabindex="-1" aria-hidden="true"></iframe>
+  <script type="module" src="sample.mjs"></script>
+</body>
+</html>
