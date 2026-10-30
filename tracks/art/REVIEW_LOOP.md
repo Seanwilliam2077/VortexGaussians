@@ -1,8 +1,8 @@
 # 艺术线：制作与独立复评
 
-## 2026-10-31 current: A26 complete practice paper under independent review
+## 2026-10-31 current: A26 closed at two independent 3/6 reviews; A27 creative decision only
 
-[A26 complete draft](studies/a26-practice-synthesis/PAPER_DRAFT.md) and its [claim/evidence map](studies/a26-practice-synthesis/CLAIM_EVIDENCE.md) now examine the gains and expressive losses of retaining references in A07/A14/A25. Both reviewers qualified one bounded full paper; they now independently assess this new argument using the same six existing images and sources. No submission score is assigned yet. The initial unsuccessful synthesis and source-scope correction remain preserved. A07 omits fire morphology only at its ending; equal A14 panels do not guarantee legible succession or prove its cause; A25 visibility is a reversible choice, not continuous labor. Historical A25 scores remain 4/6 and 3/6, each readiness 7/10 and confidence 3/5. Overall 5/6 unmet; no new artwork run, simulation, video, search or TOG queue. Main and original platform preserved; full goal active.
+[A26 complete practice manuscript](studies/a26-practice-synthesis/PAPER_DRAFT.md) received independent overall **3/6** from [the fixed reviewer](../validation/art-a26-review-round-01.md) and [the other reviewer](../validation/art-a26-fresh-review-round-01.md), each readiness **7/10** and confidence **4/5**. Local analyses stand; the hypothetical cross-case remedy chain does not establish sufficient synthesis contribution. [The final decision](studies/a26-practice-synthesis/DECISION_FINAL.md) closes this configuration under its prior rule, preserving all drafts, evidence and qualifications. A25 historical 4/6 and 3/6 remain distinct. [A27](studies/a27-next-artistic-question/BRIEF.md) permits one creator decision on a substantively different concrete artistic question, not automatic production or a new score. Overall 5/6 unmet; no new artwork run, simulation, video, image, source search or TOG queue. Main and original platform preserved; full goal active.
 
 
 2026-10-30。用户重新授权持续艺术迭代，并要求与评分 Agent 交流直至至少 5 分。本轮把目标解释为既有内部六档总评中的 **5/6（Accept）**，不是就绪度 5/10，也不是官方录用概率。
@@ -25,6 +25,6 @@
 
 ## 当前有限任务
 
-A26完整实践稿与主张证据映射已经完成。原两位评审正以固定六图和既有来源独立正式评分，评价对象是新的完整论证；不追改A25单作4/6与3/6，也不因支持写稿预支接收。
+A26两份正式独立报告均为3/6、准备度7/10、信心4/5。接受具体跨案联系不足的判断，按预定规则关闭当前综合构型；保留所有稿件、证据和不同阶段意见，不第三次换图、扩源或继续润稿。A25单作分数不变。
 
-按第三阶段决定，若全文仍只有一般编辑常识或三篇短评，此综合构型收束，不第三次换图、添加案例或扩来源。评分不求平均、不挑高分覆盖分歧。5/6尚未达到，没有新制作、运行、录影或检索；TOG无新队列，main保持，完整目标active。
+A27只让新的创作者判断一次是否有内容具体、形式关系不同的新艺术问题。没有合格选择即可记录未选中，不为满足持续队列强行制作；评分Agent不替作者设计，不对提案发放5/6。root读完后才决定下一项。当前不运行、不新增媒体/检索，TOG无队列，main保持，完整研究目标active。
