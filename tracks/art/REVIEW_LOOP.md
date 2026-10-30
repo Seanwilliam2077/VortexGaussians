@@ -1,12 +1,12 @@
 # 艺术线：制作与独立复评
 
-## 2026-10-31 current: A39 formally 3/6 from both reviewers; A40 creative choice only
+## 2026-10-31 current: A40 apology reuse selected; A41 scope failure preserved; A42 preparation only
 
-[A39](studies/a39-handover-clock-maintenance/README.md) is a completed fictional six-line work with one actual 23.6109924s inspection, seven PNG, a full manuscript and claim/evidence map. Existing elapsed-clock maintenance restored visible later-contact response; graph/particle/domain limits and A38's failure remain. This is not a contribution inferred from maintenance.
+[A39](studies/a39-handover-clock-maintenance/README.md) remains closed at overall3/6 from both original reviewers, readiness7/10, confidence3/5 and4/5. No factual correction or overlooked counterevidence warranted reassessment; the literary-note-plus-highlighter objection remains. Complete work, manuscript, four main stills and all historical outcomes are preserved. Overall5/6 unmet.
 
-The [original fixed reviewer](../validation/art-a39-review-round-01.md) gives overall3/6, readiness7/10, confidence3/5; the [original second reviewer](../validation/art-a39-second-review-round-01.md) gives overall3/6, readiness7/10, confidence4/5. Both acknowledge the actual form but find the literary-note-plus-highlighter reading stronger than the claimed artistic increment. They independently read the same frozen pack, with prior consultation and no continuous or human viewing disclosed. The [creator response](studies/a39-handover-clock-maintenance/RESPONSE_AND_DECISION.md) identifies no overlooked counterevidence and closes this configuration's submission-core, rewrite and repeat-capture queue. No historical score changes; overall5/6 remains unmet.
+The new creator selected [A40 “Apology Reused”](studies/a40-material-handover-choice/CREATOR_CHOICE.md): the same treated “我来迟了” moves from permission to leave into a request to keep waiting. This is a proposal, not a completed artwork. Its only material question is whether later contact with the new request visibly continues changing the still-readable inherited apology. A fixed golden prefix or numeric-only change is insufficient; changes only in the flame above the text do not count.
 
-[A40](studies/a40-material-handover-choice/BRIEF.md) assigns a new creator one bounded choice about an actually altered digital text passed into a later presentation, allowing no-selection. Nine fixed documents and at most two saved images; no production, run, search, score or new reviewer. New buttons or file transfer are not assumed to be art contributions. TOG/main unchanged; full goal active.
+[A41](studies/a41-inherited-apology-material/STATIC_RESULT.md) ended static_bridge_scope_blocked with zero runs/images/steps: root wrongly assumed private IIFE variables were global. The engineer caught it before implementation. [A42](studies/a42-inherited-apology-local-build/BRIEF.md) now explicitly prepares a local derived renderer with one bridge inserted inside that IIFE; original demo and old artwork stay byte-identical. The generated platform copy is local/ignored, its assembler and hashes reproducible. Static placement is qualified, implementation underway, assembly and the sole <=120s/5-image/360-step material run still pending. Ordinary plumbing does not establish an art or technical contribution. Original scorers, TOG/main and full active goal retained.
 
 
 2026-10-30。用户重新授权持续艺术迭代，并要求与评分 Agent 交流直至至少 5 分。本轮把目标解释为既有内部六档总评中的 **5/6（Accept）**，不是就绪度 5/10，也不是官方录用概率。
@@ -29,4 +29,4 @@ The [original fixed reviewer](../validation/art-a39-review-round-01.md) gives ov
 
 ## 当前有限任务
 
-A39已由原两位独立评为3/6，作者读完整意见后确认没有漏读的现成反证，封存当前投稿核心、润稿及同路径补录。A40仅由新创作Agent写一次实际材料交接的选择，九文/最多两既有图，不制作、不运行、不检索或评分，允许不选。原两位评分者不替换；5/6目标未达，所有旧分保留。
+A40选择《道歉沿用》，只问继承旧句在接触新请求时是否继续可见变化且仍可读。A41外部script桥接因IIFE作用域误判而静态收束，0运行；不改其失败。A42改为明确的本地派生页面装配，保持原demo与旧作不动。实现中，root读回后才一次装配和3+1.5+1.5秒材料检查；任何关键材料条件失败收束，不加时长或路径。尚无新艺术作品、论文资格或评分，原两位不替换，5/6未达。
