@@ -1,0 +1,9 @@
+# A56: a qualified text challenges the paper's object/event split
+
+2026-10-31. Completed. [Initial scope](BRIEF.md) and [disclosed same-page amendment](ACCESS_ADDENDUM.md) remain separate. The initial task exhausted its2-search/4-open cap without reading the located transcript's relevant body; two PDFs failed and a catalogue attribution differed. One further find and one targeted open on the already located page exposed the complete relevant answer. [SOURCE_READING](SOURCE_READING.md) preserves both stages, actual ranges and the total2 searches/5 opens/1 find. No original PDF, publisher-authenticated scan or continuous film was viewed.
+
+The result is qualified third-party transcription content, not resolved bibliographic authenticity. It poses a question about treating objects and events as exclusive classes or a value hierarchy. The [original creator](CREATOR_CONTEXT_DECISION.md) used that challenge to identify a concrete problem in their own paper: the residual fire is not solely an event indication, since it retains position among architectural cues; the changing furniture images are not outside events either. This self-correction has existing artwork evidence and does not require treating the disputed attribution as settled.
+
+Root authorizes [A57](../a57-room-argument-revision/BRIEF.md), one separate complete paper revision correcting the inference. A53 remains frozen, both original4/6 scores remain historical and current until the scorers assess actual revised material. No new film, image, rendering, decoding or user feedback was produced. A54 continuous-viewing evidence remains absent. This is progress in the accuracy of the argument, not a new art contribution or a higher score by itself.
+
+The source path is closed. Do not turn the unresolved attribution into a new retrieval series or count the initial failure as successful access. Current broad goal remains active because the concrete author-led revision can now proceed.
