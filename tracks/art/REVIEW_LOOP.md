@@ -1,6 +1,10 @@
 # 艺术线：制作与独立复评
 
-## 2026-10-31 current: A45 complete and closed at both3/6; A46 access gap closed; A47 layered-paper choice; A48 retained as study, paper core closed; A49 closed without images/new question; A50 rationale corrected, no new score; A51 selects Room Facing Away; A52 fixed full film saved and verified; paper decision pending
+## 2026-10-31 latest: A53 complete draft frozen for two independent reviews
+
+[A53](studies/a53-room-facing-away-paper/README.md) develops the fixed A52 film into a3809-Han-character full working paper with four figures, a bounded first-party Wavelength context reading and explicit claim mapping. The same34-file/13-image package is frozen for the original fixed and second scorers. An additional single frame extracted from the unchanged encoded film at94seconds now supports that central image claim; no artwork revision or continuous viewing occurred. A45 both3/6 remains the latest formal score until the new reviews arrive; target5/6 is unmet. TOG/main unchanged.
+
+## 2026-10-31 preceding record: A45 complete and closed at both3/6; A46 access gap closed; A47 layered-paper choice; A48 retained as study, paper core closed; A49 closed without images/new question; A50 rationale corrected, no new score; A51 selects Room Facing Away; A52 fixed full film saved and verified; paper decision pending
 
 [A45 Hollow](studies/a45-hollow-composition/README.md) completed one27.6441327-second run:150 source steps, one reset/no ignition,22.0223 seconds of normal presentation, six native PNGs/613028 bytes, one855468-byte VP9 WebM.18 behavior checks passed and all resources closed. The video first frame decoded at720square; finite playback duration and continuous viewing remain unverified. The original demo is unchanged. Actual images show repeated bright forms becoming sparse points and an unequal final composition, with the left side brightest.
 
@@ -46,6 +50,4 @@ A52 full film is now saved:120seconds/1280x720/24fps/2880frames,5,138,756bytes. 
 
 ## 当前有限任务
 
-A51独立选择《背向房间》，root批准A52有限制作：同一合成房间、镜面及持续离开路线；一版草稿、最多一次作者具体观察驱动的修订，随后决定保留/停止。正常技术可用，火源沿原demo、网格/反射/灯光如实披露，不伪称真实烧毁。媒体需120秒完整可播放MP4及有效性核验；图证与连续阅读分开。原第二评分者只明确呈交范围，未打新分。A45两位3/6及5/6目标保持；旧案/TOG/main不变。
-
-A52固定120秒MP4已保存且全部2880帧解码通过；原制作的ffprobe JSON失败记录保留，现有文件独立核验没有重渲染或重编码。原作者正据七张编码关键帧及已有实际材料决定是否发展完整论文。连续观看尚未取得；不再调图，不提前提高分数。
+A53完整稿已成，root已全文读正文/主张映射，核对图源、媒体事实及限定引用；34文件/13图PACKAGE固定后交原两评分者独立审阅。未赋新分，不改作品或论文以预设目标；收到原文后区分事实问题、论证问题与核心不足。94秒已补最终编码帧；持续观看仍未知。

@@ -1,6 +1,10 @@
 # Exploration policy
 
-## 2026-10-31 current: A45 complete and closed at both3/6; A46 access gap closed; A47 layered-paper choice; A48 retained as study, paper core closed; A49 closed without images/new question; A50 rationale corrected, no new score; A51 selects Room Facing Away; A52 fixed full film saved and verified; paper decision pending
+## 2026-10-31 latest: A53 complete draft frozen for two independent reviews
+
+[A53](art/studies/a53-room-facing-away-paper/README.md) develops the fixed A52 film into a3809-Han-character full working paper with four figures, a bounded first-party Wavelength context reading and explicit claim mapping. The same34-file/13-image package is frozen for the original fixed and second scorers. An additional single frame extracted from the unchanged encoded film at94seconds now supports that central image claim; no artwork revision or continuous viewing occurred. A45 both3/6 remains the latest formal score until the new reviews arrive; target5/6 is unmet. TOG/main unchanged.
+
+## 2026-10-31 preceding record: A45 complete and closed at both3/6; A46 access gap closed; A47 layered-paper choice; A48 retained as study, paper core closed; A49 closed without images/new question; A50 rationale corrected, no new score; A51 selects Room Facing Away; A52 fixed full film saved and verified; paper decision pending
 
 [A45 Hollow](art/studies/a45-hollow-composition/README.md) completed one27.6441327-second run:150 source steps, one reset/no ignition,22.0223 seconds of normal presentation, six native PNGs/613028 bytes, one855468-byte VP9 WebM.18 behavior checks passed and all resources closed. The video first frame decoded at720square; finite playback duration and continuous viewing remain unverified. The original demo is unchanged. Actual images show repeated bright forms becoming sparse points and an unequal final composition, with the left side brightest.
 

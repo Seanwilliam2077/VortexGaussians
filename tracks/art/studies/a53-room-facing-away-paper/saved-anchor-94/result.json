@@ -1,0 +1,37 @@
+{
+  "createdUTC": "2026-10-31T00:18:26.773Z",
+  "status": "extracted",
+  "encodedFrame": 2256,
+  "seconds": 94,
+  "limitSeconds": 30,
+  "movieSHA256": "635e62d7adc19759be525a2a54508635e6ef9c7dfbe082ec7e1049bafa5f69f3",
+  "originalResultSHA256": "03fb77b73dcec6c7ca1c0482dc1843dbdd1ff8a345f907dea78facb3ae79e66e",
+  "continuousViewing": false,
+  "args": [
+    "-hide_banner",
+    "-v",
+    "error",
+    "-nostdin",
+    "-n",
+    "-i",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\art\\studies\\a52-room-facing-away\\film-01\\room-facing-away.mp4",
+    "-vf",
+    "select=eq(n\\,2256)",
+    "-frames:v",
+    "1",
+    "-fps_mode",
+    "vfr",
+    "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\art\\studies\\a53-room-facing-away-paper\\saved-anchor-94\\94s.png"
+  ],
+  "exitCode": 0,
+  "stdout": "",
+  "image": {
+    "file": "94s.png",
+    "bytes": 119672,
+    "sha256": "fd233f3d8963f2a1c86dba6114a819ce0ea23cd90850c82a525f07bb5408580a",
+    "width": 1280,
+    "height": 720
+  },
+  "sourceUnchanged": true,
+  "wallSeconds": 0.7893591
+}
