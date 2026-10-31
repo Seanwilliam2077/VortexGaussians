@@ -19,7 +19,10 @@ export const SPACE = Object.freeze({
   cup: { base: [.03, .9, -3.09], radius: .115, height: .22, handleToward: [-.76, 0, .65] },
   chair: { center: [-.66, .5, -2.55], facing: [1, 0, 0] },
   mirror: { center: [0, 1.605, 3.5], width: 1.35, height: 2.05, yawDegrees: 12 },
-  fire: { origin: [.18, .9, -2.12], scale: [.62, .70, .62], start: 46, sourceEnd: 58 },
+  fire: {
+    origin: [-1.02, .20, -2.35], scale: [.62, .50, .62], radiusScale: .50,
+    lightPosition: [-1.02, .20 + .50 * (.34 / .70), -2.35], start: 46, sourceEnd: 58,
+  },
   verticalFovDegrees: 48,
 });
 
@@ -250,7 +253,7 @@ void main(){
  float overhead=max(0.0,n.y);
  float ambient=0.37+0.08*clamp(vPosition.y/3.2,0.0,1.0);
  vec3 color=vColor*(ambient+0.40*windowLight+0.13*overhead);
- vec3 light=vec3(0.18,1.24,-2.12)-vPosition;float d=length(light);
+ vec3 light=vec3(${SPACE.fire.lightPosition.join(',')})-vPosition;float d=length(light);
  float nearFire=max(0.0,1.0-d/4.1);nearFire*=nearFire;
  float lambert=max(0.0,dot(n,normalize(light)));
  float pulse=1.0+0.055*sin(uTime*9.7)+0.035*sin(uTime*16.13+0.8);
@@ -336,14 +339,15 @@ export function createScene(canvas) {
   }
   function drawFire(points,vp,view,time,clip) {
     if(time<=46||points.length===0)return;
-    const ordered=points.map(p=>({p,world:[.18+.62*p.x,.9+.70*p.y,-2.12+.62*p.z]}));
+    const {origin,scale,radiusScale}=SPACE.fire;
+    const ordered=points.map(p=>({p,world:[origin[0]+scale[0]*p.x,origin[1]+scale[1]*p.y,origin[2]+scale[2]*p.z]}));
     // Conventional back-to-front transparency, preserving opaque table/chair/door depth.
     ordered.sort((a,b)=>{
       const depth=p=>view[2]*p.world[0]+view[6]*p.world[1]+view[10]*p.world[2]+view[14];
       return depth(a)-depth(b);
     });
     const values=new Float32Array(ordered.length*6);
-    ordered.forEach(({p,world},i)=>values.set([...world,p.temperature,p.density,.70*p.radius],i*6));
+    ordered.forEach(({p,world},i)=>values.set([...world,p.temperature,p.density,radiusScale*p.radius],i*6));
     gl.useProgram(fireProgram);for(const a of allLocations)gl.disableVertexAttribArray(a);
     gl.bindBuffer(gl.ARRAY_BUFFER,fireBuffer);gl.bufferData(gl.ARRAY_BUFFER,values,gl.DYNAMIC_DRAW);
     for(let i=0;i<2;i++){gl.enableVertexAttribArray(fa[i]);gl.vertexAttribPointer(fa[i],3,gl.FLOAT,false,24,i*12);}
