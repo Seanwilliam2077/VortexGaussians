@@ -1,0 +1,9 @@
+# A57: the remaining image still provides spatial relations
+
+2026-10-31. The original creator completed a separate full [revised paper](PAPER.md),3800 Han characters with four existing figures. Its [claim map](CLAIM_MAP.md) and [revision notes](REVISION_NOTES.md) identify what changed: loss of identifiable furniture detail is distinguished from loss of all spatial work; fire and architectural cues remain located, while furniture images also participate in change. The correction removes an exclusionary inference without recasting the120-second film as a static-image project.
+
+A55's directional comparison is integrated where relevant. A56's qualified transcript acts as a challenge, with unresolved authenticity and attribution disclosed. The correction also has the work's own existing evidence; it does not depend on settling that external attribution. The same ordinary-departure interpretation remains a live counter-reading. The creator has not performed continuous viewing or claimed a new artistic achievement from the correction itself.
+
+Root read all three completed documents, then reread the final compressed paper after the creator's last changes and confirmed the clarification that draft-01's94-second fire was not visible. All23 local links resolve. [PACKAGE.json](PACKAGE.json) freezes14 revision/context files totaling75,589bytes, plus the unchanged A53 base manifest and its34 files/7,781,475bytes. Base sizes and SHA-256 values match. No new media, rendering, decoding, encoding or scientific computation occurred.
+
+The two original scorers receive the same [review brief](REVIEW_BRIEF.md) and manifest. Their A53 scores remain4/6 each until they judge the actual revised object; the target5/6 is not a scoring instruction. Independent A57 reports are pending. A54 actual normal-speed complete viewing remains absent, and text correction cannot supply it. No changes to main or the original artwork.
