@@ -1,15 +1,17 @@
 # 《背向房间》· A52
 
-一件尚在制作的120秒合成单镜头作品。先认识房间，再在离开过程中从走廊镜面获得剩余视线。房间/镜面是普通网格与单次平面反射，火形来自原VortexGaussians确定性粒子数据的艺术化映射；家具没有物理燃毁。用户没有提供私人住户故事或观众反馈。
+一件120秒、无声的合成单镜头作品。先认识房间，再在离开过程中从走廊镜面获得剩余视线。房间/镜面是普通网格与单次平面反射，火形来自原VortexGaussians确定性粒子数据的艺术化映射；家具没有物理燃毁。用户没有提供私人住户故事或观众反馈。
 
-[作者提案](../a51-independent-artistic-proposal/CREATOR_PROPOSAL.md) · [空间实现](SPATIAL_PLAN.md) · [火源说明](FIRE_SOURCE.md) · [首轮实际记录](PROCESS_DRAFT01.md)
+[观看完整影片](film-01/room-facing-away.mp4) · [作者提案](../a51-independent-artistic-proposal/CREATOR_PROPOSAL.md) · [初始空间](SPATIAL_PLAN.md) · [唯一空间修订](REVISION_PLAN.md) · [火源说明](FIRE_SOURCE.md) · [媒体与观看记录](MEDIA_RECORD.md)
 
-首轮草稿已取得12张1280×720原图，总耗时7.7084993秒、资源全部关闭。原作者正在独立作形式取舍。完整MP4尚未制作，当前没有连续观看或新论文分数。原图位于draft-01，完整小型执行记录见[result.json](draft-01/result.json)。
+原作者读完两轮各12张原图后保留了唯一修订版：60—84秒火形与椅背重叠，94秒家具退出后仍有一段火形；桌沿遮挡未显著成立。原草稿均保留，见[首轮](PROCESS_DRAFT01.md)、[修订轮](PROCESS_DRAFT02.md)与[作者取舍](CREATOR_REVISION_RESPONSE.md)。
 
-![0秒：房间与远处镜面](draft-01/01-0s.png)
+完整H264 MP4为1280×720、24fps、120秒、5,138,756字节。原制作在编码完成后的元数据JSON解析失败；失败记录保持。对同一现存文件的独立检查确认全部2880帧可解码，并提取七张编码后关键帧，没有重新制作影片。技术有效性已确认；正常速度连续阅读及新论文分数仍未取得。
 
-![60秒：镜中桌杯椅与火形](draft-01/07-60s.png)
+![0秒：房间与远处镜面，最终影片帧](saved-film-check-01/keyframes/01.png)
 
-![84秒：镜边裁去大部桌面，椅子仍可见](draft-01/09-84s.png)
+![60秒：最终影片中火形与椅背重叠](saved-film-check-01/keyframes/04.png)
+
+![94秒：家具退出后的火形，来自修订草稿原图](draft-02/10-94s.png)
 
 素材为本项目合成，无第三方照片、私人扫描或真实火灾。技术有效性、原作者是否保留作品和Art Papers论文分量分别判断。

@@ -1,0 +1,180 @@
+{
+  "schema": "a52-existing-media-check-v1",
+  "createdUTC": "2026-10-31T00:09:25.243Z",
+  "status": "existing_film_verified",
+  "limitSeconds": 90,
+  "originalProductionStatus": "failed",
+  "childRuns": [
+    {
+      "name": "probe",
+      "exe": "ffprobe.exe",
+      "args": [
+        "-v",
+        "error",
+        "-select_streams",
+        "v:0",
+        "-show_entries",
+        "format=duration,size:stream=codec_name,width,height,nb_frames,duration,r_frame_rate",
+        "-of",
+        "default",
+        "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\art\\studies\\a52-room-facing-away\\film-01\\room-facing-away.mp4"
+      ],
+      "code": 0,
+      "signal": null,
+      "wallSeconds": 0.36442930000000007,
+      "stdoutFile": "probe.stdout.txt",
+      "stderrFile": "probe.stderr.txt",
+      "stdout": "[STREAM]\r\ncodec_name=h264\r\nwidth=1280\r\nheight=720\r\nr_frame_rate=24/1\r\nduration=120.000000\r\nnb_frames=2880\r\n[/STREAM]\r\n[FORMAT]\r\nduration=120.000000\r\nsize=5138756\r\n[/FORMAT]\r\n",
+      "stderr": ""
+    },
+    {
+      "name": "decode",
+      "exe": "ffmpeg.exe",
+      "args": [
+        "-hide_banner",
+        "-v",
+        "error",
+        "-nostdin",
+        "-i",
+        "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\art\\studies\\a52-room-facing-away\\film-01\\room-facing-away.mp4",
+        "-map",
+        "0:v:0",
+        "-f",
+        "null",
+        "-",
+        "-progress",
+        "pipe:1",
+        "-nostats"
+      ],
+      "code": 0,
+      "signal": null,
+      "wallSeconds": 0.6706114999999999,
+      "stdoutFile": "decode.stdout.txt",
+      "stderrFile": "decode.stderr.txt",
+      "stdout": "frame=2797\nfps=0.00\nstream_0_0_q=-0.0\nbitrate=N/A\ntotal_size=N/A\nout_time_us=116541667\nout_time_ms=116541667\nout_time=00:01:56.541667\ndup_frames=0\ndrop_frames=0\nspeed= 228x\nprogress=continue\nframe=2880\nfps=0.00\nstream_0_0_q=-0.0\nbitrate=N/A\ntotal_size=N/A\nout_time_us=120000000\nout_time_ms=120000000\nout_time=00:02:00.000000\ndup_frames=0\ndrop_frames=0\nspeed= 224x\nprogress=end\n",
+      "stderr": ""
+    },
+    {
+      "name": "keyframes",
+      "exe": "ffmpeg.exe",
+      "args": [
+        "-hide_banner",
+        "-v",
+        "error",
+        "-nostdin",
+        "-n",
+        "-i",
+        "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\art\\studies\\a52-room-facing-away\\film-01\\room-facing-away.mp4",
+        "-vf",
+        "select=eq(n\\,0)+eq(n\\,576)+eq(n\\,1056)+eq(n\\,1440)+eq(n\\,2016)+eq(n\\,2496)+eq(n\\,2879)",
+        "-fps_mode",
+        "vfr",
+        "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\art\\studies\\a52-room-facing-away\\saved-film-check-01\\keyframes\\%02d.png"
+      ],
+      "code": 0,
+      "signal": null,
+      "wallSeconds": 0.575415,
+      "stdoutFile": "keyframes.stdout.txt",
+      "stderrFile": "keyframes.stderr.txt",
+      "stdout": "",
+      "stderr": ""
+    }
+  ],
+  "images": [
+    {
+      "file": "keyframes/01.png",
+      "encodedFrame": 0,
+      "seconds": 0,
+      "bytes": 173258,
+      "sha256": "16327dcfc56b47ce0cc20f936f7cadbdfb057773a58a44085a86adffabd34397"
+    },
+    {
+      "file": "keyframes/02.png",
+      "encodedFrame": 576,
+      "seconds": 24,
+      "bytes": 183627,
+      "sha256": "379aed1d729468f9ee352cc7b056cb8ece6050942892fc8d4989d1e20be40a09"
+    },
+    {
+      "file": "keyframes/03.png",
+      "encodedFrame": 1056,
+      "seconds": 44,
+      "bytes": 136366,
+      "sha256": "78e6bfa50eb2945d86587479ccfa66482bfb5b4ac6b392fd58af3f53effba69f"
+    },
+    {
+      "file": "keyframes/04.png",
+      "encodedFrame": 1440,
+      "seconds": 60,
+      "bytes": 160803,
+      "sha256": "0660c4c85ab62537807c587e91a576fbc27617c68f37e15e1823d2c4ca0ab74e"
+    },
+    {
+      "file": "keyframes/05.png",
+      "encodedFrame": 2016,
+      "seconds": 84,
+      "bytes": 131290,
+      "sha256": "d139c891954d2453b6ffed209c876b54158c6ffd85973b339b101790f32bfc3c"
+    },
+    {
+      "file": "keyframes/06.png",
+      "encodedFrame": 2496,
+      "seconds": 104,
+      "bytes": 94708,
+      "sha256": "2b58d70f5d4a29b45cfd64c8f73780aaee826e5840ce9d14085c649ab3cec17c"
+    },
+    {
+      "file": "keyframes/07.png",
+      "encodedFrame": 2879,
+      "seconds": 119.95833333333333,
+      "bytes": 85439,
+      "sha256": "dd169ee1c23b922fa692281960263aa8e738e600a14e81f5c8fe7e862531eb0f"
+    }
+  ],
+  "continuousViewing": false,
+  "scope": "Existing MP4 probe, full decode and original seven frame extraction only. Original failed production record remains immutable.",
+  "movieBefore": {
+    "bytes": 5138756,
+    "sha256": "635e62d7adc19759be525a2a54508635e6ef9c7dfbe082ec7e1049bafa5f69f3"
+  },
+  "originalBefore": {
+    "bytes": 24319,
+    "sha256": "03fb77b73dcec6c7ca1c0482dc1843dbdd1ff8a345f907dea78facb3ae79e66e"
+  },
+  "scriptBefore": {
+    "bytes": 6980,
+    "sha256": "a286038e09278f62beb559fd9fabcddafd01e6ad88c82e6cc8a73eb06eabd7ea"
+  },
+  "metadata": {
+    "stream": {
+      "codec_name": "h264",
+      "width": "1280",
+      "height": "720",
+      "r_frame_rate": "24/1",
+      "duration": "120.000000",
+      "nb_frames": "2880"
+    },
+    "format": {
+      "duration": "120.000000",
+      "size": "5138756"
+    }
+  },
+  "allFramesDecoded": true,
+  "decodedFrames": 2880,
+  "movieAfter": {
+    "bytes": 5138756,
+    "sha256": "635e62d7adc19759be525a2a54508635e6ef9c7dfbe082ec7e1049bafa5f69f3"
+  },
+  "originalAfter": {
+    "bytes": 24319,
+    "sha256": "03fb77b73dcec6c7ca1c0482dc1843dbdd1ff8a345f907dea78facb3ae79e66e"
+  },
+  "scriptAfter": {
+    "bytes": 6980,
+    "sha256": "a286038e09278f62beb559fd9fabcddafd01e6ad88c82e6cc8a73eb06eabd7ea"
+  },
+  "remainingChildPIDs": [],
+  "expired": false,
+  "wallSeconds": 1.6354035999999998,
+  "costScope": "Includes identity reads, three subprocesses, source media decoding, seven PNG writes, readback and cleanup; final JSON write excluded."
+}
