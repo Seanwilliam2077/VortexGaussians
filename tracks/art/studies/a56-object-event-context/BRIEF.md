@@ -1,0 +1,17 @@
+# A56: verify one existing interview lead
+
+2026-10-31. The preceding goal turn completed A55 and yielded a limited positioning clarification; it was progress, not a verified wait. The current turn found no new A54 input, live production process or continuous-video perception tool. This is the third recurrence of that specific input gap. However, a read-only audit identified a potentially meaningful independent context question, so root does not declare the whole goal blocked.
+
+The original context reader recalls a previously unadopted search result titled **Ten Questions to Michael Snow**, attributed to Simon Hartog, whose snippet concerned objects and human events. The saved A53 access ledger confirms only that third-party results were unadopted; it does not record this title or URL. Therefore the title, attribution and relevance are an unverified lead, not an established source or a previously read text. This task must first verify them.
+
+The question is specific: does the accessible interview actually discuss how objects and human events relate in Snow's practice, and can that account clarify or challenge the existing Room Facing Away argument about identifiable furniture and the longer-visible fire? Mere agreement with the general framing/events proposition does not count as a new contribution. The same selected artist/work context is retained; no new comparator or artwork is commissioned.
+
+## Fixed access and decision scope
+
+The context reader may issue at most two exact-topic search queries, with at most four combined open/click calls, plus one PDF-page screenshot only if needed to read the relevant scanned passage. No downloads, installations, media playback or new artwork access. One institutional/publisher/catalogue record may be used strictly to verify the same interview's bibliographic identity; do not expand into another interview or practice. Prefer the original publication or an attributable faithful reproduction, and report any authenticity gap rather than treating an unattributed transcription as verified primary evidence.
+
+Read only the bibliographic framing and the relevant question/answer passage, including enough neighboring text to avoid reversing the answer's meaning. Record each actual access and its range. Distinguish interviewer question, Snow's answer, institutional metadata and reader inference. Quote at most25 words and derive at most200 English-word equivalent from any one source; the practical target is fewer than150 words of source paraphrase. If identity, access or relevance cannot be established within this scope, close with the actual gap, without another search batch or replacement source.
+
+The reader writes only SOURCE_READING.md. If useful new primary content is obtained, the original creator makes one written decision about whether it supplies a concrete artistic tension, exposes a weakness or merely restates what is known. Do not presume this licenses a paper rewrite or a higher score. A53's frozen work/paper/34-file package and both4/6 scores remain unchanged. A54's temporal-experience gap remains independent and may not be filled by this textual comparison.
+
+Root will decide from the actual result whether there is a meaningful next action. No new score, source series, production or TOG run is preauthorized by this brief. The broader user authorization remains; the bounded scope prevents speculative work from being mistaken for evidence, rather than defining a smaller success condition.
