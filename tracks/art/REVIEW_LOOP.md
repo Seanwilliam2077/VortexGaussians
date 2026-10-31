@@ -1,8 +1,12 @@
 # 艺术线：制作与独立复评
 
-## 2026-10-31 latest: A53 complete draft frozen for two independent reviews
+## 2026-10-31 latest: A53 both4/6; A54 awaits actual continuous viewing
 
-[A53](studies/a53-room-facing-away-paper/README.md) develops the fixed A52 film into a3809-Han-character full working paper with four figures, a bounded first-party Wavelength context reading and explicit claim mapping. The same34-file/13-image package is frozen for the original fixed and second scorers. An additional single frame extracted from the unchanged encoded film at94seconds now supports that central image claim; no artwork revision or continuous viewing occurred. A45 both3/6 remains the latest formal score until the new reviews arrive; target5/6 is unmet. TOG/main unchanged.
+[A53 complete paper and reviews](studies/a53-room-facing-away-paper/README.md): original fixed and second scorers independently give **overall4/6 (Weak Accept), readiness7/10, confidence3/5** after reading the same frozen34-file/13-image package. The3809-Han-character/four-figure paper supports a concrete artistic form: reflection initially retains the cropped cup, later loses objects while still large, and fire survives recognizable furniture in the remaining view. Both acknowledge this as a limited artistic contribution; neither awards5/6. A45 both3/6 and all earlier judgments remain unchanged.
+
+The fixed120-second MP4 is saved and all2880frames decode; its original production still records the post-encoding metadata failure, independently verified existing media is not relabeled production success. A53 added only one94-second frame from the unchanged movie, not a second artwork revision. Both reviews preserve continuous experience as unknown and identify thin practice positioning. The creator accepts both reports without factual objection and retains the work/paper.
+
+[Next A54](studies/a54-continuous-viewing/BRIEF.md): one genuine normal-speed critical viewing of the existing movie, addressing room continuity, furniture/fire relation and the corridor ending. Current Agent tools only support still-image perception; root has requested actual user viewing input, with no reply yet. Do not fabricate feedback, rerender, add screenshots, rewrite for score, replace scorers or fill the queue with another toy.5/6 remains unmet; no automatic new art/TOG computation, no main change. The broader goal remains active, automation remains deleted; practical next judgment depends on new viewing evidence.
 
 ## 2026-10-31 preceding record: A45 complete and closed at both3/6; A46 access gap closed; A47 layered-paper choice; A48 retained as study, paper core closed; A49 closed without images/new question; A50 rationale corrected, no new score; A51 selects Room Facing Away; A52 fixed full film saved and verified; paper decision pending
 
@@ -50,4 +54,4 @@ A52 full film is now saved:120seconds/1280x720/24fps/2880frames,5,138,756bytes. 
 
 ## 当前有限任务
 
-A53完整稿已成，root已全文读正文/主张映射，核对图源、媒体事实及限定引用；34文件/13图PACKAGE固定后交原两评分者独立审阅。未赋新分，不改作品或论文以预设目标；收到原文后区分事实问题、论证问题与核心不足。94秒已补最终编码帧；持续观看仍未知。
+A53两位原评分者各给4/6、就绪度7/10、置信度3/5，作者接受且无事实异议。保持作品、全文和评语；A54只等待对同一120秒影片的真实正常速度完整观看记录。用户已获影片链接和具体问题，尚未回应。当前工具不能替代连续感知；不加静帧、再解码、同义润稿或另造作品维持迭代。新反馈可能升分、降分或只增加置信度，5/6尚未达。
