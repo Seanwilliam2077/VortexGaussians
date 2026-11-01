@@ -1,0 +1,194 @@
+{
+  "schema": "t76-postrun-scalar-readback-v1",
+  "scope": "Derived only from saved scalar results; no scientific rerun or new acceptance test.",
+  "saved_output_identities": {
+    "result.json": {
+      "bytes": 3986831,
+      "sha256": "c7a55df7bc4121484ac94bac71f3b8fff6ecb21c13a10f85395f2fa83bff273e"
+    },
+    "predictions.json": {
+      "bytes": 490240,
+      "sha256": "d0cb1da9f7239e190ea02d439f9c86bd236da0a8b587607c935cf1caaa3a10b5"
+    },
+    "T71/result.json": {
+      "bytes": 1927519,
+      "sha256": "cf97d25c2fe6d9759a338f2e2890f93569ce8e0f4c4f4aa463fe574c2e6b7e4b"
+    }
+  },
+  "verdict": "ordinary_full_window_joint_pass",
+  "qualification_categories": {
+    "frozen_identity_runtime": true,
+    "rules_and_startup_regression": true,
+    "complete_causal_paths_and_counts": true,
+    "path_and_checkpoint_evaluator": true,
+    "continuous_polishing_and_fallback": true,
+    "reference_eligibility_and_score_integration": true,
+    "time_comparison_integration_and_moments": true,
+    "complete_work_accounting": true,
+    "final_identity_preservation": true
+  },
+  "physical_pass": true,
+  "time_sensitivity_pass": true,
+  "reference_sensitivity_pass": true,
+  "T71_endpoint": [
+    {
+      "h": 0.0625,
+      "reference": "S256",
+      "field_relative_l2": 0.08026183172847268,
+      "axial_centroid_error": 0.014363284599397508,
+      "normalized_covariance_error": 0.056935691858066045,
+      "passed": true
+    },
+    {
+      "h": 0.03125,
+      "reference": "S256",
+      "field_relative_l2": 0.09475414116343878,
+      "axial_centroid_error": 0.0020703978257362587,
+      "normalized_covariance_error": 0.10944814650172537,
+      "passed": false
+    },
+    {
+      "h": 0.0625,
+      "reference": "S128",
+      "field_relative_l2": 0.08041189469492611,
+      "axial_centroid_error": 0.014423951528901247,
+      "normalized_covariance_error": 0.05705483607228038,
+      "passed": true
+    },
+    {
+      "h": 0.03125,
+      "reference": "S128",
+      "field_relative_l2": 0.09494250704452314,
+      "axial_centroid_error": 0.0021310647552399975,
+      "normalized_covariance_error": 0.10978997573949333,
+      "passed": false
+    }
+  ],
+  "T76_endpoint": [
+    {
+      "h": 0.0625,
+      "reference": "S256",
+      "field_relative_l2": 0.048653037308992675,
+      "axial_centroid_error": 0.004387450788733316,
+      "normalized_covariance_error": 0.08096746814836388,
+      "passed": true
+    },
+    {
+      "h": 0.03125,
+      "reference": "S256",
+      "field_relative_l2": 0.04753653321223183,
+      "axial_centroid_error": 0.0036775491932433124,
+      "normalized_covariance_error": 0.07636063787386045,
+      "passed": true
+    },
+    {
+      "h": 0.0625,
+      "reference": "S128",
+      "field_relative_l2": 0.04881906641147373,
+      "axial_centroid_error": 0.004448117718237055,
+      "normalized_covariance_error": 0.08129685096721723,
+      "passed": true
+    },
+    {
+      "h": 0.03125,
+      "reference": "S128",
+      "field_relative_l2": 0.04767307941191514,
+      "axial_centroid_error": 0.003738216122747051,
+      "normalized_covariance_error": 0.07668592936990912,
+      "passed": true
+    }
+  ],
+  "T71_maximum_time_difference": {
+    "field_relative_l2": 0.03238760560159024,
+    "axial_centroid_difference": 0.015534957699803342,
+    "normalized_covariance_difference": 0.07744833110363471
+  },
+  "T76_maximum_time_difference": {
+    "field_relative_l2": 0.004654639959699728,
+    "axial_centroid_difference": 0.0007099015954900034,
+    "normalized_covariance_difference": 0.0049363424801623385
+  },
+  "T76_maximum_reference_score_difference": {
+    "field": 0.0008694101398861978,
+    "centroid": 6.0666929503738753e-05,
+    "covariance": 0.0003293828188533493
+  },
+  "moments": [
+    {
+      "h": 0.0625,
+      "relative_to_own_initial": {
+        "Gamma": {
+          "initial": 3.7599424119465006,
+          "final": 3.784374372068162,
+          "signed_final_change": 0.006497961257075029,
+          "maximum_absolute_change": 0.006497961257075029
+        },
+        "I_z": {
+          "initial": 23.62441491858363,
+          "final": 24.433752000096597,
+          "signed_final_change": 0.034258502667777004,
+          "maximum_absolute_change": 0.034258502667777004
+        }
+      }
+    },
+    {
+      "h": 0.03125,
+      "relative_to_own_initial": {
+        "Gamma": {
+          "initial": 3.7599424119465006,
+          "final": 3.784626403772309,
+          "signed_final_change": 0.006564991992265606,
+          "maximum_absolute_change": 0.006564991992265606
+        },
+        "I_z": {
+          "initial": 23.62441491858363,
+          "final": 24.435782093595478,
+          "signed_final_change": 0.03434443467946396,
+          "maximum_absolute_change": 0.03434443467946396
+        }
+      }
+    }
+  ],
+  "optimizer_stop_reasons": {
+    "no_accepted_line": 48
+  },
+  "stationarity_or_global_optimality_certified": false,
+  "selected_counts": {
+    "search_proposals": 73914,
+    "search_component_evaluations": 11720,
+    "search_pair_evaluations": 71428,
+    "search_weight_attempts": 199449,
+    "search_control_attempts": 48,
+    "polish_linearizations": 292,
+    "polish_svd_calls": 292,
+    "polish_trial_attempts": 630,
+    "polish_model_calls": 726,
+    "polish_accepted_steps": 244,
+    "polish_invalid_trials": 0,
+    "polish_objective_rejections": 386,
+    "polish_truncated_singular_values": 0,
+    "polish_active_bound_exclusions": 0,
+    "root_polish_accepted": 48,
+    "polish_seed_fallbacks": 0,
+    "phys_field_calls": 224,
+    "phys_field_spatial_points": 2736128,
+    "phys_field_heat_integrand_points": 1107296256,
+    "phys_cross_calls": 12104,
+    "phys_cross_integrand_points": 6126592
+  },
+  "execution_cost": {
+    "complete_child_seconds": 31.558652900042944,
+    "supervisor_elapsed_until_receipt_seconds": 31.824738100054674,
+    "nonoverlapping_supervisor_overhead_until_receipt_seconds": 0.2660852000117302,
+    "final_receipt_write_not_timed": true,
+    "peak_observations": {
+      "peak_working_set_bytes": 73129984,
+      "working_set_bytes": 73129984,
+      "private_usage_bytes": 90435584,
+      "peak_pagefile_usage_bytes": 90505216
+    },
+    "tracked_scientific_child_seconds": 2049.958372399793
+  },
+  "new_method_claim": false,
+  "generalization_or_convergence_theorem": false
+}

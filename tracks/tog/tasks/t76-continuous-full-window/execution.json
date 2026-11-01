@@ -1,0 +1,39 @@
+{
+  "status": "completed_ordinary_full_window_joint_pass",
+  "complete_numerical_measurement": true,
+  "worker_verdict": "ordinary_full_window_joint_pass",
+  "full_task_validated": true,
+  "termination": null,
+  "returncode": 0,
+  "complete_child_seconds": 31.558652900042944,
+  "supervisor_elapsed_until_receipt_seconds": 31.824738100054674,
+  "nonoverlapping_supervisor_overhead_until_receipt_seconds": 0.2660852000117302,
+  "final_receipt_write_not_timed": true,
+  "memory_observations": 127,
+  "peak_observations": {
+    "peak_working_set_bytes": 73129984,
+    "working_set_bytes": 73129984,
+    "private_usage_bytes": 90435584,
+    "peak_pagefile_usage_bytes": 90505216
+  },
+  "memory_observation_errors": [],
+  "all_frozen_input_identities_preserved": true,
+  "prior_tracked_scientific_child_seconds": 2018.39971949975,
+  "tracked_scientific_child_seconds": 2049.958372399793,
+  "cost_scope": "Selected complete scientific-child intervals, not project/research cost; no speed claim.",
+  "public_scalar_outputs": {
+    "result.json": {
+      "bytes": 3986831,
+      "sha256": "c7a55df7bc4121484ac94bac71f3b8fff6ecb21c13a10f85395f2fa83bff273e"
+    },
+    "predictions.json": {
+      "bytes": 490240,
+      "sha256": "d0cb1da9f7239e190ea02d439f9c86bd236da0a8b587607c935cf1caaa3a10b5"
+    }
+  },
+  "ignored_local_journal": {
+    "path": "local/journal.jsonl",
+    "bytes": 178721100,
+    "sha256": "77e9230889d2221a99491b41f62ecceaa8fe1a74b03e2cd2a0b1d98571f1c223"
+  }
+}

@@ -1,0 +1,11 @@
+# T76 decision: retain the stronger ordinary baseline; select a mechanism before more simulation
+
+The original development task now has an ordinary full-window joint pass. Close its direct use as evidence that richer representation or special Gaussian birth is necessary. Preserve T71's time-sensitive outcome and T76's distinct success, original gates and all costs. T76 does not establish general capability, optimality, a new algorithm or a new paper score.
+
+The measured circulation/impulse drift is real, but imposing two ordinary moment constraints would not itself be an original method. It is not a new retrospective failure gate or demonstrated practical problem. Do not automatically extend the time horizon, add a scene, raise component count, repair moments or optimize the finite search again merely to continue a queue.
+
+The next finite task is **T77: a bounded primary-source screen of deformation and self-induced evaluation in compact vortex models**. T74's pure material shear preserves some structure but imposes incorrect restrictions; its coupled Hamiltonian lead does not yet give a global admissible flow map or an inexpensive self-induced velocity evaluator. This is a concrete representation/evaluation question worth checking against established methods before implementation. The polisher author independently recommends this screen and discloses participation; this is an author-side decision, not an external endorsement.
+
+Read at most six primary works across deforming Gaussian/elliptic vortex models, structure-preserving compact particle/moment methods, and the already identified DDFKs/VPFM families. Use the separate T77 pre-search budget and record access gaps. Extract actual state, preserved quantities, dimension/domain, self-induced velocity reconstruction, full cost and error evidence. Ordinary comparators may use moment-constrained least squares, shared current-state fields and the same analytic kernels.
+
+End with either a source-supported, falsifiable deformation/evaluation mechanism worth one bounded mathematical task, or no selected candidate. Failure to find a paper is not novelty. No scientific task, implementation, changed acceptance gate or new scene is automatically authorized by this literature screen. Art stays paused. The full research goal remains active and unmet.
