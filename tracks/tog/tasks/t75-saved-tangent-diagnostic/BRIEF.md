@@ -1,0 +1,9 @@
+# T75: separate ordinary local search loss from a local tangent residual
+
+2026-11-01. The previous goal turn made progress: T74 produced a verified local gain and a general pure-shift energy obstruction. The user has reactivated the full research goal, with art still explicitly paused. The research worktree is clean at9ebc21b and no relevant numerical/production process is running at entry.
+
+Follow T74's saved-state decision, not its alternative Hamiltonian lead or T72's extra-neighbor proposal. Use exactly the existing T71 fine-path state at t=5/8 and its already saved next update. This is a selected development diagnosis; both the selection and old trajectory outcomes are known. It is not a new scene, holdout or actual creative-use study.
+
+The question is whether geometric directions already available to an ordinary two-Gaussian model capture substantial additional initial derivative at this state. Compare nested weight-only and complete eight-column tangents by ordinary weighted least squares. A well-resolved positive gap establishes local missed geometric capability, not a complete finite-step search solution or the cause of the whole trajectory's error. A remaining tangent residual is not a family impossibility: nonlinear finite-step changes and nonsmooth splitting paths remain distinct.
+
+Freeze one numerical confirmation and its resource/qualification contract before execution. No future reference arrays, endpoint fit, new trajectory, candidate geometry search, additional saved state or second physical case is permitted. Preserve failures and unresolved rank/integration results without automatic repair. T71's time-sensitive outcome, T73/T74 narrow closures, historical technical2/6 and all art files remain unchanged. No TOG contribution follows solely from this ordinary diagnostic.
