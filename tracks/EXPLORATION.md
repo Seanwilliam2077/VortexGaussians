@@ -1,6 +1,16 @@
 # Exploration policy
 
-## 2026-10-31 latest: A57 revised paper receives both4/6; actual viewing input required
+## 2026-11-01 latest: art paused by user; T74 technical mechanism screen completed
+
+The user explicitly pauses art and prioritizes technical research. Art production, writing and scoring stay stopped; existing artifacts and historical judgments are preserved. This steering supersedes the older operational queue below. The earlier art-viewing dependency is not a blocker for the newly requested technical work. No art file is changed in this cycle; personal feedback is kept outside the public repository.
+
+[T74](tog/tasks/t74-shear-invariant-screen/README.md) completes one concrete material-shear screen. Independent algebra establishes both a local fit gain and a general limitation: for the original Gaussian, every nonconstant pure axial shift with fixed radial sections lowers physical kinetic energy, and its conditional Gaussian cannot express the actual initial skew derivative. The derivative-relative residual norm falls from0.3551693 to0.2504721; this is not finite-time accuracy or a comparison to optimized ordinary two-Gaussian dynamics. The omitted cubic direction is also accessible to an ordinary positive mixture.
+
+Exactly one frozen quadrature confirmation completes33/33 checks, with maximum adjacent field/energy rule discrepancies4.594e-14/2.794e-13. Complete child0.2694689999334514seconds, peak working set39,514,112bytes; tracked scientific-child subtotal2017.942721599713seconds, not project cost. [Derivation](tog/tasks/t74-shear-invariant-screen/DERIVATION.md), source/input identities, raw results and [participation-disclosed review](tog/tasks/t74-shear-invariant-screen/REVIEW.md) are retained. No new evolution solver, scene, historical rerun or acceptance gate.
+
+Close pure-shear full-solver development for now, without denying approximate utility or the wider compact-representation question. [Next bounded evidence](tog/tasks/t74-shear-invariant-screen/DECISION.md) prepares one saved-state full-tangent versus weight-only residual diagnostic before deciding whether ordinary search or richer representation deserves work. No further scientific run has occurred or is running. T71 stays time-sensitive, T73's two narrow closures and the historical TOG2/6 score remain; no new formal rating or established TOG core. Main unchanged, automation remains deleted.
+
+## 2026-10-31 historical checkpoint: A57 revised paper receives both4/6; actual viewing input required
 
 [A57 revised complete paper and original reviews](art/studies/a57-room-argument-revision/README.md) are complete. The3800-Han-character/four-figure manuscript retracts the exclusionary fire-only-as-event inference: identifiable furniture detail exits, but residual fire and architectural cues still provide local spatial relations. Both original scorers independently confirm the correction and give **overall4/6 (Weak Accept), readiness7/10, confidence3/5**.5/6 remains unmet. A53 historical scores and its34-file evidence package remain unchanged; this is an actual new manuscript judgment, not a relabeled old result.
 
