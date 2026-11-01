@@ -3,6 +3,7 @@ import ast
 import datetime
 import hashlib
 import importlib.util
+import importlib.metadata
 import json
 from pathlib import Path
 import subprocess
@@ -57,7 +58,8 @@ def main():
     # The old manifest inherits the original three-way T60/T61 raw identity chain.
     # Rehash its unchanged nonarray evidence; do not parse old reference statistics.
     additions = [OLD] + [HERE / name for name in
-        (".gitignore", "BRIEF.md", "PROTOCOL.md", "polish.py", "measure.py", "prepare.py", "run_once.py")]
+        (".gitignore", "BRIEF.md", "PROTOCOL.md", "polish.py", "measure.py", "prepare.py", "run_once.py",
+         "PREPARATION_RECORD.md", "RUNTIME.json")]
     for path in additions:
         if path.suffix == ".py":
             ast.parse(path.read_text(encoding="utf-8-sig"), filename=str(path))
@@ -72,7 +74,11 @@ def main():
         raw_stats.append({"path": item["path"], "bytes": size, "body_opened": False})
     if len(raw_stats) != 10:
         raise ValueError("expected ten inherited snapshots")
-    executable = dict(previous["executable"])
+    runtime = json.loads((HERE / "RUNTIME.json").read_bytes())
+    if ".".join(map(str, sys.version_info[:3])) != "3.12.14" or \
+       sys.version != runtime["python_build"] or importlib.metadata.version("numpy") != "2.3.5":
+        raise ValueError("current runtime versions differ from frozen protocol")
+    executable = {key: runtime[key] for key in ("path", "bytes", "sha256")}
     if Path(sys.executable).resolve() != Path(executable["path"]).resolve() or \
        identity(Path(executable["path"])) != {key: executable[key] for key in ("bytes", "sha256")}:
         raise ValueError("bundled executable changed")
@@ -87,7 +93,7 @@ def main():
     manifest.pop("parent_preservation", None)
     manifest.update(schema="t76-continuous-full-window-freeze-v1",
         created_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(), parent_commit=head,
-        inputs=[inputs[key] for key in sorted(inputs)], expected_check_names=NAMES,
+        inputs=[inputs[key] for key in sorted(inputs)], expected_check_names=NAMES, executable=executable,
         child_timeout_seconds=180, prior_scientific_child_seconds=2018.39971949975,
         prior_scientific_series_scope=previous["prior_scientific_series_scope"] + ["T71", "T74", "T75"],
         prediction_source_paths=["tracks/tog/tasks/t70-causal-projector-qualification/physics.py",
