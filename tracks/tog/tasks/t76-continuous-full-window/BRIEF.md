@@ -1,0 +1,7 @@
+# T76: full-window qualification of an ordinary continuously polished projector
+
+2026-11-01. T75 is progress: a resolved ordinary geometric tangent gap and same-geometry nonstationarity argument identify a concrete baseline limitation. This task tests an ordinary correction over the original full time window instead of adding another local toy or richer representation. Art remains paused; the full SIGGRAPH research objective stays active and unmet.
+
+Use exactly the old physical model, exact initial state, two time steps, original reference eligibility and scoring gates. Each new path regenerates its original finite-search candidate from its own current state, then tries a bounded conventional nonlinear least-squares improvement of the same Euler target. Preserve every original search record and a qualified seed fallback. Do not change the integrator, introduce conservation repair, alter the number of components, splice historical trajectories or use future-reference information.
+
+All ten reference NPZ paths are present and their filesystem lengths match inherited metadata; preparation has not opened or hashed their bodies. Numerical execution is permitted only after source review, frozen identities and the fixed protocol below. One child, no pilot, no retry or after-the-fact tolerance/budget changes. A stable pass/miss or continued sensitivity is ordinary baseline evidence, not a new method, broad generalization, actual creative demand or TOG readiness.
