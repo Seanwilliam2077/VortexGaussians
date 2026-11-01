@@ -1,0 +1,11 @@
+# T74: screen a concrete material shear, not another baseline repair
+
+2026-11-01, Asia/Shanghai. The user explicitly pauses art and prioritizes technical research. Art production, writing and scoring stay stopped; existing files and historical judgments are preserved. No production/scientific process was running at entry. T73's two narrow closures and the original2/6 technical assessment remain.
+
+The root and two technical analysts re-read the actual T69–T73 mathematical and numerical evidence. T72's small additional search neighborhood would be ordinary maintenance and would not establish a new capability. Instead root proposed a concrete positive deformation of the original q0, using physical-volume coordinates x=r²/2: q=A exp[-x-(z-c-a(x-1))²/2], A=3/2. It starts exactly at q0, preserves physical volume, circulation, axial impulse and all integrable q-Casimirs by a change of variables. These are candidate properties, not a claim of novelty or full Euler correctness.
+
+Before numerical work, independent algebra found both a true local fit gain and a structural limitation. The shear direction adds32/441 of the optimal translation's captured derivative squared norm, but leaves a nonzero conditional third-moment derivative. A stronger positive-kernel proof shows that every nonconstant axial shift with the radial cross-section fixed lowers the initial Gaussian's physical kinetic energy. Thus many preserved quantities cannot be used to claim complete conservative dynamics. Approximate usefulness is not disproved by lack of exact closure.
+
+This finite task documents the derivation and performs one independent quadrature check of the constants and illustrative deficits. It does not create an evolution solver, use future reference snapshots, rerun T71, fit an endpoint, change historical gates, or count added dimensions as a method advantage. The physical benchmark/initial state is unchanged. Finite-time accuracy, practical cost advantage and originality remain unestablished.
+
+The next mechanism would have to explain radial redistribution and axial conditional deformation while paying for induced velocity and ordinary comparator costs. No such implementation is authorized just by this statement. The result will determine what properties a future candidate must address, rather than launch an automatic chain of repairs.
