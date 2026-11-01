@@ -1,0 +1,17 @@
+# T75 decision: qualify a stronger ordinary continuous projector next
+
+The saved weight step matches its weight-only optimum, while ordinary geometry directions remove88.1805% of its derivative residual square. The full normalized tangent condition number is about105, not an unresolved near-singularity. The same-geometry positive successor lets the post-run analysis connect this gap to nonstationarity of the original fixed Euler-target candidate. These facts justify ordinary continuous optimization before increasing representation complexity.
+
+Keep T71's original time-sensitive outcome, T73/T74's narrow closures, original physical gates and historical2/6 review unchanged. T75 is not a new algorithm, full-window pass, graphics contribution or new rating. Its unconstrained projection also has nonzero circulation/impulse rates, which must remain visible in any later trajectory.
+
+## Next bounded task
+
+Prepare and independently check an ordinary continuous two-Gaussian projection baseline over the **original full time window**, with the same two fixed time steps and original physical/reference/time-sensitivity gates. Use the original causal finite-search candidate as a starting point and retained fallback for each Euler target, then apply a bounded conventional nonlinear least-squares polishing step. This preserves the ordinary startup mechanism at the coincident initial state; do not substitute a favorable later state or endpoint-fit seed.
+
+Before any execution, freeze coordinates, positivity/geometry bounds, linear-solve/rank policy, damping or line-search schedule, iteration/candidate caps, acceptance rule, stopping rules and a complete resource budget. The retained baseline candidate may never be replaced by a numerically worse or unqualified candidate. Account for the original search, continuous trials, rejected steps, all current-state velocity evaluations, direct confirmations and final reference scoring. Shared within-target ordinary computations may be reused with explicit accounting; do not claim a new method merely for caching them.
+
+Both paths must start from the exact original q0. The target at each step uses that path's current state only. Preserve the original seal-before-reference-access boundary and all earlier failed/inconclusive evidence. Do not use the T75 rates as a hand-authored trajectory, enforce a future reference moment, silently add conservation correction or introduce a third component. Record circulation/impulse and positivity behavior as well as original task scores.
+
+The next task should test whether a stronger ordinary solver actually removes the time sensitivity while retaining the physical task, rather than expanding an indefinite sequence of toy direction checks. Source qualification and numerical controls belong inside its fixed finite protocol. No full rollout, extra neighbor search, additional scene or new scientific invocation is performed in T75. A failure is retained and diagnosed; it does not automatically authorize larger budgets or changed gates.
+
+Only after that baseline outcome should a method contribution be selected against the remaining gap. A strong ordinary pass would close this particular need for a richer representation; a stable miss would still need a concrete mechanism and fair capability/cost comparison. Neither outcome is itself a TOG contribution. Art production, writing and scoring remain paused, and the full research goal stays active.

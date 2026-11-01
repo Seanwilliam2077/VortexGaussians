@@ -1,0 +1,2436 @@
+{
+  "all_checks_pass": true,
+  "analytic": {
+    "column_order": [
+      "c1",
+      "c2",
+      "log_sr1",
+      "log_sz1",
+      "z1",
+      "log_sr2",
+      "log_sz2",
+      "z2"
+    ],
+    "common_column_norms": [
+      0.9413962637767148,
+      1.1078479849055067,
+      3.602363013625046,
+      2.205987812914012,
+      1.801181506812523,
+      1.6455767105764936,
+      1.0077058183800016,
+      1.1394716911078955
+    ],
+    "gram": [
+      [
+        0.886226925452758,
+        0.8331117137698187,
+        0.0,
+        -1.1989883183213923,
+        0.0,
+        0.11380812514325402,
+        -0.1833330773330096,
+        -0.44226796723138306
+      ],
+      [
+        0.8331117137698187,
+        1.227327157659192,
+        -0.293190783009814,
+        -0.9058341294818767,
+        1.1393640959246878,
+        0.0,
+        -0.6445450995960142,
+        0.0
+      ],
+      [
+        0.0,
+        -0.293190783009814,
+        12.977019281933723,
+        0.0,
+        0.0,
+        4.675317473406384,
+        0.06451904061178072,
+        0.15564406245829648
+      ],
+      [
+        -1.1989883183213923,
+        -0.9058341294818767,
+        0.0,
+        4.866382230725146,
+        0.0,
+        -0.12374244925763604,
+        0.4368838768145982,
+        2.0540328961348058
+      ],
+      [
+        0.0,
+        1.1393640959246878,
+        0.0,
+        0.0,
+        3.2442548204834307,
+        0.15564406245829573,
+        -1.0709682298895775,
+        0.9514186100434844
+      ],
+      [
+        0.11380812514325402,
+        0.0,
+        4.675317473406384,
+        -0.12374244925763604,
+        0.15564406245829573,
+        2.707922710391753,
+        1.0900854953447876e-15,
+        1.0900854953447876e-15
+      ],
+      [
+        -0.1833330773330096,
+        -0.6445450995960142,
+        0.06451904061178072,
+        0.4368838768145982,
+        -1.0709682298895775,
+        1.0900854953447876e-15,
+        1.0154710163969087,
+        1.6010630712876567e-15
+      ],
+      [
+        -0.44226796723138306,
+        0.0,
+        0.15564406245829648,
+        2.0540328961348058,
+        0.9514186100434844,
+        1.0900854953447876e-15,
+        1.6010630712876567e-15,
+        1.2983957348362873
+      ]
+    ],
+    "primitive_gram_values": {
+      "(0, 0)": 0.886226925452758,
+      "(0, 1)": 0.8331117137698187,
+      "(1, 1)": 1.227327157659192
+    }
+  },
+  "checks": {
+    "count_analytic_polynomial_gram_entries": true,
+    "count_analytic_polynomial_moment_products": true,
+    "count_direct_gram_entries": true,
+    "count_direct_reduction_point_visits": true,
+    "count_direct_reductions": true,
+    "count_field_matrix_vector_calls": true,
+    "count_field_matrix_vector_point_columns": true,
+    "count_gram_frobenius_reductions": true,
+    "count_heat_field_comparison_values": true,
+    "count_normal_equation_column_reductions": true,
+    "count_normal_equation_point_columns": true,
+    "count_phys_cross_calls": true,
+    "count_phys_field_calls": true,
+    "count_phys_field_component_points": true,
+    "count_phys_field_heat_integrand_points": true,
+    "count_phys_field_heat_nodes": true,
+    "count_phys_field_ordered_pair_points": true,
+    "count_phys_field_spatial_points": true,
+    "count_phys_gram_calls": true,
+    "count_phys_initial_exact_calls": true,
+    "count_phys_peak_spatial_points": true,
+    "count_phys_rule_nodes_transformed": true,
+    "count_phys_rule_transforms": true,
+    "count_rule_eigh_calls": true,
+    "count_rule_nodes": true,
+    "count_tall_svd_calls": true,
+    "count_tall_svd_input_values": true,
+    "count_tangent_column_values": true,
+    "count_weighted_normalized_matrix_values": true,
+    "domain_raw_norms_3_4": true,
+    "exact_scalar_extraction": true,
+    "fixed_selected_state": true,
+    "frozen_runtime": true,
+    "frozen_source_identity": true,
+    "heat_raw_norms_0_1": true,
+    "heat_raw_norms_2_3": true,
+    "main_frozen_field_0_full": true,
+    "main_frozen_field_0_weight": true,
+    "main_frozen_field_1_full": true,
+    "main_frozen_field_1_weight": true,
+    "main_frozen_field_2_full": true,
+    "main_frozen_field_2_weight": true,
+    "main_frozen_field_3_full": true,
+    "main_frozen_field_3_weight": true,
+    "main_frozen_field_4_full": true,
+    "main_frozen_field_4_weight": true,
+    "main_frozen_residual_0_full": true,
+    "main_frozen_residual_0_weight": true,
+    "main_frozen_residual_1_full": true,
+    "main_frozen_residual_1_weight": true,
+    "main_frozen_residual_2_full": true,
+    "main_frozen_residual_2_weight": true,
+    "main_frozen_residual_3_full": true,
+    "main_frozen_residual_3_weight": true,
+    "main_frozen_residual_4_full": true,
+    "main_frozen_residual_4_weight": true,
+    "paired_heat_fields_0": true,
+    "paired_heat_fields_2": true,
+    "positive_saved_component_masses": true,
+    "preserved_T71_source": true,
+    "preserved_input": true,
+    "preserved_physics": true,
+    "route_0_current_q_norm_analytic": true,
+    "route_0_finite_positive_arrays": true,
+    "route_0_full_complete_rank": true,
+    "route_0_full_conditioning": true,
+    "route_0_full_finite_coefficients_and_nonnegative_norms": true,
+    "route_0_full_gram_perturbation": true,
+    "route_0_full_norm_decomposition": true,
+    "route_0_full_normal_equations": true,
+    "route_0_full_normalized_gram_entries": true,
+    "route_0_geometry_pythagorean_decomposition": true,
+    "route_0_nested_residual_order": true,
+    "route_0_ordered_interaction_sum": true,
+    "route_0_raw_analytic_gram": true,
+    "route_0_saved_current_norm": true,
+    "route_0_saved_derivative_target_identity": true,
+    "route_0_saved_target_residual": true,
+    "route_0_saved_unchanged_residual": true,
+    "route_0_weight_complete_rank": true,
+    "route_0_weight_conditioning": true,
+    "route_0_weight_finite_coefficients_and_nonnegative_norms": true,
+    "route_0_weight_gram_perturbation": true,
+    "route_0_weight_norm_decomposition": true,
+    "route_0_weight_normal_equations": true,
+    "route_0_weight_normalized_gram_entries": true,
+    "route_1_current_q_norm_analytic": true,
+    "route_1_finite_positive_arrays": true,
+    "route_1_full_complete_rank": true,
+    "route_1_full_conditioning": true,
+    "route_1_full_finite_coefficients_and_nonnegative_norms": true,
+    "route_1_full_gram_perturbation": true,
+    "route_1_full_norm_decomposition": true,
+    "route_1_full_normal_equations": true,
+    "route_1_full_normalized_gram_entries": true,
+    "route_1_geometry_pythagorean_decomposition": true,
+    "route_1_nested_residual_order": true,
+    "route_1_ordered_interaction_sum": true,
+    "route_1_raw_analytic_gram": true,
+    "route_1_saved_current_norm": true,
+    "route_1_saved_derivative_target_identity": true,
+    "route_1_saved_target_residual": true,
+    "route_1_saved_unchanged_residual": true,
+    "route_1_weight_complete_rank": true,
+    "route_1_weight_conditioning": true,
+    "route_1_weight_finite_coefficients_and_nonnegative_norms": true,
+    "route_1_weight_gram_perturbation": true,
+    "route_1_weight_norm_decomposition": true,
+    "route_1_weight_normal_equations": true,
+    "route_1_weight_normalized_gram_entries": true,
+    "route_2_current_q_norm_analytic": true,
+    "route_2_finite_positive_arrays": true,
+    "route_2_full_complete_rank": true,
+    "route_2_full_conditioning": true,
+    "route_2_full_finite_coefficients_and_nonnegative_norms": true,
+    "route_2_full_gram_perturbation": true,
+    "route_2_full_norm_decomposition": true,
+    "route_2_full_normal_equations": true,
+    "route_2_full_normalized_gram_entries": true,
+    "route_2_geometry_pythagorean_decomposition": true,
+    "route_2_nested_residual_order": true,
+    "route_2_ordered_interaction_sum": true,
+    "route_2_raw_analytic_gram": true,
+    "route_2_saved_current_norm": true,
+    "route_2_saved_derivative_target_identity": true,
+    "route_2_saved_target_residual": true,
+    "route_2_saved_unchanged_residual": true,
+    "route_2_weight_complete_rank": true,
+    "route_2_weight_conditioning": true,
+    "route_2_weight_finite_coefficients_and_nonnegative_norms": true,
+    "route_2_weight_gram_perturbation": true,
+    "route_2_weight_norm_decomposition": true,
+    "route_2_weight_normal_equations": true,
+    "route_2_weight_normalized_gram_entries": true,
+    "route_3_current_q_norm_analytic": true,
+    "route_3_finite_positive_arrays": true,
+    "route_3_full_complete_rank": true,
+    "route_3_full_conditioning": true,
+    "route_3_full_finite_coefficients_and_nonnegative_norms": true,
+    "route_3_full_gram_perturbation": true,
+    "route_3_full_norm_decomposition": true,
+    "route_3_full_normal_equations": true,
+    "route_3_full_normalized_gram_entries": true,
+    "route_3_geometry_pythagorean_decomposition": true,
+    "route_3_nested_residual_order": true,
+    "route_3_ordered_interaction_sum": true,
+    "route_3_raw_analytic_gram": true,
+    "route_3_saved_current_norm": true,
+    "route_3_saved_derivative_target_identity": true,
+    "route_3_saved_target_residual": true,
+    "route_3_saved_unchanged_residual": true,
+    "route_3_weight_complete_rank": true,
+    "route_3_weight_conditioning": true,
+    "route_3_weight_finite_coefficients_and_nonnegative_norms": true,
+    "route_3_weight_gram_perturbation": true,
+    "route_3_weight_norm_decomposition": true,
+    "route_3_weight_normal_equations": true,
+    "route_3_weight_normalized_gram_entries": true,
+    "route_4_current_q_norm_analytic": true,
+    "route_4_finite_positive_arrays": true,
+    "route_4_full_complete_rank": true,
+    "route_4_full_conditioning": true,
+    "route_4_full_finite_coefficients_and_nonnegative_norms": true,
+    "route_4_full_gram_perturbation": true,
+    "route_4_full_norm_decomposition": true,
+    "route_4_full_normal_equations": true,
+    "route_4_full_normalized_gram_entries": true,
+    "route_4_geometry_pythagorean_decomposition": true,
+    "route_4_nested_residual_order": true,
+    "route_4_ordered_interaction_sum": true,
+    "route_4_raw_analytic_gram": true,
+    "route_4_saved_current_norm": true,
+    "route_4_saved_derivative_target_identity": true,
+    "route_4_saved_target_residual": true,
+    "route_4_saved_unchanged_residual": true,
+    "route_4_weight_complete_rank": true,
+    "route_4_weight_conditioning": true,
+    "route_4_weight_finite_coefficients_and_nonnegative_norms": true,
+    "route_4_weight_gram_perturbation": true,
+    "route_4_weight_norm_decomposition": true,
+    "route_4_weight_normal_equations": true,
+    "route_4_weight_normalized_gram_entries": true,
+    "rule_128": true,
+    "rule_192": true,
+    "rule_256": true,
+    "rule_64": true,
+    "rule_96": true,
+    "scores_against_main_0": true,
+    "scores_against_main_1": true,
+    "scores_against_main_2": true,
+    "scores_against_main_3": true,
+    "scores_against_main_4": true,
+    "single_thread_environment": true,
+    "spatial_raw_norms_0_2": true,
+    "spatial_raw_norms_1_3": true,
+    "unchanged_saved_geometry": true
+  },
+  "claims": {
+    "finite_step_improvement": false,
+    "formal_tail_certificate": false,
+    "full_window_improvement": false,
+    "new_method": false,
+    "ordinary_single_state_diagnostic": true
+  },
+  "counters": {
+    "analytic_polynomial_gram_entries": 64,
+    "analytic_polynomial_moment_products": 256,
+    "direct_gram_entries": 320,
+    "direct_reduction_point_visits": 5806080,
+    "direct_reductions": 405,
+    "field_matrix_vector_calls": 30,
+    "field_matrix_vector_point_columns": 1720320,
+    "gram_frobenius_reductions": 10,
+    "heat_field_comparison_values": 346112,
+    "identity_bytes": 3893712,
+    "identity_reads": 6,
+    "normal_equation_column_reductions": 50,
+    "normal_equation_point_columns": 716800,
+    "phys_array_exp_calls": 2058,
+    "phys_component_setups": 10,
+    "phys_cross_calls": 0,
+    "phys_cross_integrand_points": 0,
+    "phys_cross_ordered_pair_integrals": 0,
+    "phys_erf_evaluations": 0,
+    "phys_exp_evaluations": 30027779,
+    "phys_field_calls": 5,
+    "phys_field_component_points": 143360,
+    "phys_field_heat_integrand_points": 29884416,
+    "phys_field_heat_nodes": 2048,
+    "phys_field_ordered_pair_points": 286720,
+    "phys_field_spatial_points": 71680,
+    "phys_fsum_calls": 0,
+    "phys_fsum_terms": 0,
+    "phys_geometry_validations": 16,
+    "phys_gram_calls": 3,
+    "phys_initial_exact_calls": 0,
+    "phys_initial_exact_points": 0,
+    "phys_initial_origin_points": 0,
+    "phys_initial_series_points": 0,
+    "phys_initial_series_terms": 0,
+    "phys_instances": 1,
+    "phys_moment_calls": 0,
+    "phys_peak_spatial_points": 18432,
+    "phys_rule_nodes_transformed": 448,
+    "phys_rule_transforms": 3,
+    "phys_scalar_exp_calls": 3,
+    "phys_sqrt_evaluations": 2054,
+    "phys_state_validations": 5,
+    "phys_zero_weight_components_skipped": 0,
+    "rule_eigh_calls": 5,
+    "rule_nodes": 736,
+    "tall_svd_calls": 10,
+    "tall_svd_input_values": 716800,
+    "tangent_column_values": 573440,
+    "weighted_normalized_matrix_values": 573440
+  },
+  "diagnostic_verdict": "qualified_local_geometric_capability_gap",
+  "elapsed_before_result_write_seconds": 0.34632150002289563,
+  "expected_counts": {
+    "analytic_polynomial_gram_entries": 64,
+    "analytic_polynomial_moment_products": 256,
+    "direct_gram_entries": 320,
+    "direct_reduction_point_visits": 5806080,
+    "direct_reductions": 405,
+    "field_matrix_vector_calls": 30,
+    "field_matrix_vector_point_columns": 1720320,
+    "gram_frobenius_reductions": 10,
+    "heat_field_comparison_values": 346112,
+    "normal_equation_column_reductions": 50,
+    "normal_equation_point_columns": 716800,
+    "phys_cross_calls": 0,
+    "phys_field_calls": 5,
+    "phys_field_component_points": 143360,
+    "phys_field_heat_integrand_points": 29884416,
+    "phys_field_heat_nodes": 2048,
+    "phys_field_ordered_pair_points": 286720,
+    "phys_field_spatial_points": 71680,
+    "phys_gram_calls": 3,
+    "phys_initial_exact_calls": 0,
+    "phys_peak_spatial_points": 18432,
+    "phys_rule_nodes_transformed": 448,
+    "phys_rule_transforms": 3,
+    "rule_eigh_calls": 5,
+    "rule_nodes": 736,
+    "tall_svd_calls": 10,
+    "tall_svd_input_values": 716800,
+    "tangent_column_values": 573440,
+    "weighted_normalized_matrix_values": 573440
+  },
+  "identities": {
+    "T71_source": {
+      "after": {
+        "bytes": 1927519,
+        "sha256": "cf97d25c2fe6d9759a338f2e2890f93569ce8e0f4c4f4aa463fe574c2e6b7e4b"
+      },
+      "before": {
+        "bytes": 1927519,
+        "sha256": "cf97d25c2fe6d9759a338f2e2890f93569ce8e0f4c4f4aa463fe574c2e6b7e4b"
+      },
+      "path": "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t71-causal-full-window\\result.json"
+    },
+    "input": {
+      "after": {
+        "bytes": 4233,
+        "sha256": "4f3e6cdb75b12a2e1b31672ea071a3282c6570ca62de5410da0d62f3a0316a9e"
+      },
+      "before": {
+        "bytes": 4233,
+        "sha256": "4f3e6cdb75b12a2e1b31672ea071a3282c6570ca62de5410da0d62f3a0316a9e"
+      },
+      "path": "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t75-saved-tangent-diagnostic\\input.json"
+    },
+    "physics": {
+      "after": {
+        "bytes": 15104,
+        "sha256": "7b3788924bf6cd604f1e22c6aa837ae2407fd583445871975b799ba6851f227d"
+      },
+      "before": {
+        "bytes": 15104,
+        "sha256": "7b3788924bf6cd604f1e22c6aa837ae2407fd583445871975b799ba6851f227d"
+      },
+      "path": "C:\\Users\\seanzjxiao\\Documents\\Codex\\2026-10-13\\https-github-com-jiarui-liu-ideascientist\\work\\VortexGaussians\\tracks\\tog\\tasks\\t70-causal-projector-qualification\\physics.py"
+    }
+  },
+  "input": {
+    "h": 0.03125,
+    "masses": [
+      2.7058268799694836,
+      1.0503232093801567
+    ],
+    "next_masses": [
+      2.6504798468280644,
+      1.1017940784507083
+    ],
+    "next_state": {
+      "Gamma": 3.752273925278773,
+      "eta": 0.2936337006283067,
+      "geometry": [
+        [
+          1.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.936952772942467,
+          0.7220788034569413,
+          0.7689570190588
+        ]
+      ]
+    },
+    "source_identity": {
+      "bytes": 1927519,
+      "path": "tracks/tog/tasks/t71-causal-full-window/result.json",
+      "sha256": "cf97d25c2fe6d9759a338f2e2890f93569ce8e0f4c4f4aa463fe574c2e6b7e4b"
+    },
+    "state": {
+      "Gamma": 3.75615008934964,
+      "eta": 0.279627593252541,
+      "geometry": [
+        [
+          1.0,
+          1.0,
+          0.0
+        ],
+        [
+          0.936952772942467,
+          0.7220788034569413,
+          0.7689570190588
+        ]
+      ]
+    },
+    "time": 0.625
+  },
+  "main_outcomes": {
+    "fraction_weight_residual_squared_removed": 0.8818053463227397,
+    "full_relative_residual_squared": 0.014686469414948267,
+    "geometry_gap_over_F_norm_squared": 0.10957016113494797,
+    "saved_relative_residual_squared": 0.12425663054989623,
+    "saved_weight_field_disagreement": 1.5931847852305485e-14,
+    "weight_relative_residual_squared": 0.12425663054989625
+  },
+  "main_route": "D12-96x192-heat256",
+  "quadrature_rules": [
+    {
+      "absolute_errors": {
+        "node_symmetry": 3.885780586188048e-16,
+        "weight_sum": 2.220446049250313e-15,
+        "weight_symmetry": 8.743006318923108e-16
+      },
+      "finite_ordered_interior_positive": true,
+      "order": 64,
+      "pass": true
+    },
+    {
+      "absolute_errors": {
+        "node_symmetry": 3.7470027081099033e-16,
+        "weight_sum": 1.3322676295501878e-15,
+        "weight_symmetry": 1.366962099069724e-15
+      },
+      "finite_ordered_interior_positive": true,
+      "order": 96,
+      "pass": true
+    },
+    {
+      "absolute_errors": {
+        "node_symmetry": 2.7755575615628914e-16,
+        "weight_sum": 2.220446049250313e-15,
+        "weight_symmetry": 8.638922910364499e-16
+      },
+      "finite_ordered_interior_positive": true,
+      "order": 128,
+      "pass": true
+    },
+    {
+      "absolute_errors": {
+        "node_symmetry": 4.440892098500626e-16,
+        "weight_sum": 8.881784197001252e-16,
+        "weight_symmetry": 7.4593109467002705e-16
+      },
+      "finite_ordered_interior_positive": true,
+      "order": 192,
+      "pass": true
+    },
+    {
+      "absolute_errors": {
+        "node_symmetry": 3.3306690738754696e-16,
+        "weight_sum": 2.4424906541753444e-15,
+        "weight_symmetry": 5.707240235963695e-16
+      },
+      "finite_ordered_interior_positive": true,
+      "order": 256,
+      "pass": true
+    }
+  ],
+  "route_comparisons": {
+    "main_frozen_fields": [
+      {
+        "main_frozen_coefficient_residuals": {
+          "full": {
+            "absolute_relative_score_difference_from_main": 3.1624008967057193e-15,
+            "direct_residual_squared": 0.020943919814333217,
+            "relative_residual_squared": 0.014686469414945105
+          },
+          "weight": {
+            "absolute_relative_score_difference_from_main": 3.941291737419306e-15,
+            "direct_residual_squared": 0.17719853785879408,
+            "relative_residual_squared": 0.1242566305498923
+          }
+        },
+        "relative_field_disagreements": {
+          "full": 1.6446793911707424e-15,
+          "weight": 2.2680596250407574e-15
+        },
+        "route": "D12-64x128-heat128"
+      },
+      {
+        "main_frozen_coefficient_residuals": {
+          "full": {
+            "absolute_relative_score_difference_from_main": 3.1693397906096266e-15,
+            "direct_residual_squared": 0.02094391981433321,
+            "relative_residual_squared": 0.014686469414945098
+          },
+          "weight": {
+            "absolute_relative_score_difference_from_main": 3.941291737419306e-15,
+            "direct_residual_squared": 0.1771985378587941,
+            "relative_residual_squared": 0.1242566305498923
+          }
+        },
+        "relative_field_disagreements": {
+          "full": 1.5922780965063355e-15,
+          "weight": 2.2680596250407574e-15
+        },
+        "route": "D12-64x128-heat256"
+      },
+      {
+        "main_frozen_coefficient_residuals": {
+          "full": {
+            "absolute_relative_score_difference_from_main": 1.0408340855860843e-17,
+            "direct_residual_squared": 0.020943919814337693,
+            "relative_residual_squared": 0.014686469414948278
+          },
+          "weight": {
+            "absolute_relative_score_difference_from_main": 0.0,
+            "direct_residual_squared": 0.1771985378587993,
+            "relative_residual_squared": 0.12425663054989625
+          }
+        },
+        "relative_field_disagreements": {
+          "full": 3.681501893302073e-16,
+          "weight": 0.0
+        },
+        "route": "D12-96x192-heat128"
+      },
+      {
+        "main_frozen_coefficient_residuals": {
+          "full": {
+            "absolute_relative_score_difference_from_main": 0.0,
+            "direct_residual_squared": 0.020943919814337672,
+            "relative_residual_squared": 0.014686469414948267
+          },
+          "weight": {
+            "absolute_relative_score_difference_from_main": 0.0,
+            "direct_residual_squared": 0.17719853785879924,
+            "relative_residual_squared": 0.12425663054989625
+          }
+        },
+        "relative_field_disagreements": {
+          "full": 0.0,
+          "weight": 0.0
+        },
+        "route": "D12-96x192-heat256"
+      },
+      {
+        "main_frozen_coefficient_residuals": {
+          "full": {
+            "absolute_relative_score_difference_from_main": 5.204170427930421e-18,
+            "direct_residual_squared": 0.020943919814337728,
+            "relative_residual_squared": 0.014686469414948262
+          },
+          "weight": {
+            "absolute_relative_score_difference_from_main": 4.0245584642661925e-16,
+            "direct_residual_squared": 0.1771985378587992,
+            "relative_residual_squared": 0.12425663054989584
+          }
+        },
+        "relative_field_disagreements": {
+          "full": 8.761880243122011e-16,
+          "weight": 9.754115616205127e-16
+        },
+        "route": "D8-96x192-heat256"
+      }
+    ],
+    "paired_heat_fields": [
+      {
+        "comparisons": {
+          "F": {
+            "max_absolute_error": 1.1102230246251565e-15,
+            "max_error_over_tolerance": 1.1973174331340372e-06,
+            "pass": true
+          },
+          "ordered_F_0": {
+            "max_absolute_error": 5.551115123125783e-16,
+            "max_error_over_tolerance": 1.4020582328473425e-06,
+            "pass": true
+          },
+          "ordered_F_1": {
+            "max_absolute_error": 3.3306690738754696e-16,
+            "max_error_over_tolerance": 1.2096766202694227e-06,
+            "pass": true
+          },
+          "ordered_F_2": {
+            "max_absolute_error": 2.7755575615628914e-16,
+            "max_error_over_tolerance": 1.0365512584941746e-06,
+            "pass": true
+          },
+          "ordered_F_3": {
+            "max_absolute_error": 2.0816681711721685e-16,
+            "max_error_over_tolerance": 9.351049554225816e-07,
+            "pass": true
+          },
+          "phi": {
+            "max_absolute_error": 5.551115123125783e-16,
+            "max_error_over_tolerance": 1.0441659509627381e-06,
+            "pass": true
+          },
+          "phi_r": {
+            "max_absolute_error": 2.220446049250313e-16,
+            "max_error_over_tolerance": 7.333793368484028e-07,
+            "pass": true
+          },
+          "phi_z": {
+            "max_absolute_error": 3.608224830031759e-16,
+            "max_error_over_tolerance": 1.225309535379919e-06,
+            "pass": true
+          },
+          "q": {
+            "max_absolute_error": 0.0,
+            "max_error_over_tolerance": 0.0,
+            "pass": true
+          },
+          "qr": {
+            "max_absolute_error": 0.0,
+            "max_error_over_tolerance": 0.0,
+            "pass": true
+          },
+          "qz": {
+            "max_absolute_error": 0.0,
+            "max_error_over_tolerance": 0.0,
+            "pass": true
+          },
+          "ur": {
+            "max_absolute_error": 2.220446049250313e-16,
+            "max_error_over_tolerance": 9.524910312109549e-07,
+            "pass": true
+          },
+          "uz": {
+            "max_absolute_error": 1.1102230246251565e-15,
+            "max_error_over_tolerance": 4.961119158052402e-06,
+            "pass": true
+          }
+        },
+        "routes": [
+          "D12-64x128-heat128",
+          "D12-64x128-heat256"
+        ]
+      },
+      {
+        "comparisons": {
+          "F": {
+            "max_absolute_error": 9.992007221626409e-16,
+            "max_error_over_tolerance": 1.2449981276093392e-06,
+            "pass": true
+          },
+          "ordered_F_0": {
+            "max_absolute_error": 5.551115123125783e-16,
+            "max_error_over_tolerance": 1.273166159033813e-06,
+            "pass": true
+          },
+          "ordered_F_1": {
+            "max_absolute_error": 6.106226635438361e-16,
+            "max_error_over_tolerance": 1.4370974867099154e-06,
+            "pass": true
+          },
+          "ordered_F_2": {
+            "max_absolute_error": 3.3306690738754696e-16,
+            "max_error_over_tolerance": 1.435763435778121e-06,
+            "pass": true
+          },
+          "ordered_F_3": {
+            "max_absolute_error": 3.0531133177191805e-16,
+            "max_error_over_tolerance": 1.2198384180750414e-06,
+            "pass": true
+          },
+          "phi": {
+            "max_absolute_error": 7.771561172376096e-16,
+            "max_error_over_tolerance": 1.3381713030538481e-06,
+            "pass": true
+          },
+          "phi_r": {
+            "max_absolute_error": 2.7755575615628914e-16,
+            "max_error_over_tolerance": 1.0947862616506874e-06,
+            "pass": true
+          },
+          "phi_z": {
+            "max_absolute_error": 3.885780586188048e-16,
+            "max_error_over_tolerance": 1.267899563599587e-06,
+            "pass": true
+          },
+          "q": {
+            "max_absolute_error": 0.0,
+            "max_error_over_tolerance": 0.0,
+            "pass": true
+          },
+          "qr": {
+            "max_absolute_error": 0.0,
+            "max_error_over_tolerance": 0.0,
+            "pass": true
+          },
+          "qz": {
+            "max_absolute_error": 0.0,
+            "max_error_over_tolerance": 0.0,
+            "pass": true
+          },
+          "ur": {
+            "max_absolute_error": 1.942890293094024e-16,
+            "max_error_over_tolerance": 1.3949849102453061e-06,
+            "pass": true
+          },
+          "uz": {
+            "max_absolute_error": 1.5543122344752192e-15,
+            "max_error_over_tolerance": 4.716175194324638e-06,
+            "pass": true
+          }
+        },
+        "routes": [
+          "D12-96x192-heat128",
+          "D12-96x192-heat256"
+        ]
+      }
+    ],
+    "paired_raw_norms": [
+      {
+        "comparisons": {
+          "F_norm_squared": {
+            "max_absolute_error": 2.220446049250313e-16,
+            "max_error_over_tolerance": 1.455010188932109e-07,
+            "pass": true
+          },
+          "q_norm_squared": {
+            "max_absolute_error": 0.0,
+            "max_error_over_tolerance": 0.0,
+            "pass": true
+          }
+        },
+        "kind": "heat",
+        "routes": [
+          "D12-64x128-heat128",
+          "D12-64x128-heat256"
+        ]
+      },
+      {
+        "comparisons": {
+          "F_norm_squared": {
+            "max_absolute_error": 4.440892098500626e-16,
+            "max_error_over_tolerance": 2.910020377864225e-07,
+            "pass": true
+          },
+          "q_norm_squared": {
+            "max_absolute_error": 0.0,
+            "max_error_over_tolerance": 0.0,
+            "pass": true
+          }
+        },
+        "kind": "heat",
+        "routes": [
+          "D12-96x192-heat128",
+          "D12-96x192-heat256"
+        ]
+      },
+      {
+        "comparisons": {
+          "F_norm_squared": {
+            "max_absolute_error": 3.3306690738754696e-15,
+            "max_error_over_tolerance": 2.182515283398164e-06,
+            "pass": true
+          },
+          "q_norm_squared": {
+            "max_absolute_error": 3.019806626980426e-14,
+            "max_error_over_tolerance": 2.381951854136877e-06,
+            "pass": true
+          }
+        },
+        "kind": "spatial",
+        "routes": [
+          "D12-64x128-heat128",
+          "D12-96x192-heat128"
+        ]
+      },
+      {
+        "comparisons": {
+          "F_norm_squared": {
+            "max_absolute_error": 3.9968028886505635e-15,
+            "max_error_over_tolerance": 2.619018340077796e-06,
+            "pass": true
+          },
+          "q_norm_squared": {
+            "max_absolute_error": 3.019806626980426e-14,
+            "max_error_over_tolerance": 2.381951854136877e-06,
+            "pass": true
+          }
+        },
+        "kind": "spatial",
+        "routes": [
+          "D12-64x128-heat256",
+          "D12-96x192-heat256"
+        ]
+      },
+      {
+        "comparisons": {
+          "F_norm_squared": {
+            "max_absolute_error": 4.218847493575595e-15,
+            "max_error_over_tolerance": 2.764519358971007e-06,
+            "pass": true
+          },
+          "q_norm_squared": {
+            "max_absolute_error": 1.7763568394002505e-15,
+            "max_error_over_tolerance": 1.401148149492284e-07,
+            "pass": true
+          }
+        },
+        "kind": "domain",
+        "routes": [
+          "D12-96x192-heat256",
+          "D8-96x192-heat256"
+        ]
+      }
+    ],
+    "scores_against_main": [
+      {
+        "absolute_dimensionless_score_differences": {
+          "fraction_weight_residual_squared_removed": 2.1760371282653068e-14,
+          "full_relative_capture_squared": 4.440892098500626e-15,
+          "full_relative_residual_squared": 3.1606661732297425e-15,
+          "geometry_gap_over_F_norm_squared": 7.494005416219807e-16,
+          "saved_relative_residual_squared": 3.927413949611491e-15,
+          "weight_relative_capture_squared": 2.220446049250313e-15,
+          "weight_relative_residual_squared": 3.927413949611491e-15
+        },
+        "route": "D12-64x128-heat128"
+      },
+      {
+        "absolute_dimensionless_score_differences": {
+          "fraction_weight_residual_squared_removed": 2.1760371282653068e-14,
+          "full_relative_capture_squared": 4.440892098500626e-15,
+          "full_relative_residual_squared": 3.17280923756158e-15,
+          "geometry_gap_over_F_norm_squared": 7.494005416219807e-16,
+          "saved_relative_residual_squared": 3.927413949611491e-15,
+          "weight_relative_capture_squared": 2.1094237467877974e-15,
+          "weight_relative_residual_squared": 3.927413949611491e-15
+        },
+        "route": "D12-64x128-heat256"
+      },
+      {
+        "absolute_dimensionless_score_differences": {
+          "fraction_weight_residual_squared_removed": 1.1102230246251565e-16,
+          "full_relative_capture_squared": 3.3306690738754696e-16,
+          "full_relative_residual_squared": 1.0408340855860843e-17,
+          "geometry_gap_over_F_norm_squared": 1.3877787807814457e-17,
+          "saved_relative_residual_squared": 1.3877787807814457e-17,
+          "weight_relative_capture_squared": 2.220446049250313e-16,
+          "weight_relative_residual_squared": 0.0
+        },
+        "route": "D12-96x192-heat128"
+      },
+      {
+        "absolute_dimensionless_score_differences": {
+          "fraction_weight_residual_squared_removed": 0.0,
+          "full_relative_capture_squared": 0.0,
+          "full_relative_residual_squared": 0.0,
+          "geometry_gap_over_F_norm_squared": 0.0,
+          "saved_relative_residual_squared": 0.0,
+          "weight_relative_capture_squared": 0.0,
+          "weight_relative_residual_squared": 0.0
+        },
+        "route": "D12-96x192-heat256"
+      },
+      {
+        "absolute_dimensionless_score_differences": {
+          "fraction_weight_residual_squared_removed": 2.220446049250313e-16,
+          "full_relative_capture_squared": 7.771561172376096e-16,
+          "full_relative_residual_squared": 6.938893903907228e-18,
+          "geometry_gap_over_F_norm_squared": 3.7470027081099033e-16,
+          "saved_relative_residual_squared": 3.885780586188048e-16,
+          "weight_relative_capture_squared": 4.440892098500626e-16,
+          "weight_relative_residual_squared": 4.0245584642661925e-16
+        },
+        "route": "D8-96x192-heat256"
+      }
+    ]
+  },
+  "routes": [
+    {
+      "F_norm_squared": 1.4260690723272447,
+      "additional_geometry_field_norm_over_F_norm_squared": 0.10957016113494768,
+      "additional_geometry_field_norm_squared": 0.15625461804446156,
+      "checks": {
+        "current_q_norm_analytic": true,
+        "finite_positive_arrays": true,
+        "geometry_pythagorean_decomposition": true,
+        "nested_residual_order": true,
+        "ordered_interaction_sum": true,
+        "raw_analytic_gram": true,
+        "saved_current_norm": true,
+        "saved_derivative_target_identity": true,
+        "saved_target_residual": true,
+        "saved_unchanged_residual": true
+      },
+      "dimensional_comparisons": {
+        "current_q_norm_analytic": {
+          "max_absolute_error": 5.3290705182007514e-14,
+          "max_error_over_tolerance": 4.203444448476842e-06,
+          "pass": true
+        },
+        "ordered_interaction_sum": {
+          "max_absolute_error": 2.220446049250313e-16,
+          "max_error_over_tolerance": 3.113028659108571e-07,
+          "pass": true
+        },
+        "raw_analytic_gram": {
+          "max_absolute_error": 1.687538997430238e-14,
+          "max_error_over_tolerance": 5.614655861841406e-05,
+          "pass": true
+        },
+        "saved_current_norm": {
+          "max_absolute_error": 5.3290705182007514e-14,
+          "max_error_over_tolerance": 4.203444448476842e-06,
+          "pass": true
+        },
+        "saved_derivative_target_identity": {
+          "max_absolute_error": 8.131516293641283e-20,
+          "max_error_over_tolerance": 8.117469382452961e-10,
+          "pass": true
+        },
+        "saved_target_residual": {
+          "max_absolute_error": 2.710505431213761e-19,
+          "max_error_over_tolerance": 2.70582312748432e-09,
+          "pass": true
+        },
+        "saved_unchanged_residual": {
+          "max_absolute_error": 2.168404344971009e-19,
+          "max_error_over_tolerance": 2.138620935078942e-09,
+          "pass": true
+        }
+      },
+      "direct_F_signed_rates": {
+        "circulation": 4.488432085346817e-15,
+        "impulse": 1.8886802933267173e-14
+      },
+      "direct_gram": [
+        [
+          0.8862269254527604,
+          0.8331117137698231,
+          3.3872621264859317e-15,
+          -1.1989883183213967,
+          5.614655861841721e-15,
+          0.11380812514325653,
+          -0.18333307733301343,
+          -0.44226796723138273
+        ],
+        [
+          0.8331117137698231,
+          1.2273271576591998,
+          -0.293190783009811,
+          -0.9058341294818797,
+          1.1393640959246976,
+          2.7268785327283225e-15,
+          -0.6445450995960218,
+          1.951795962700091e-15
+        ],
+        [
+          3.3872621264859317e-15,
+          -0.293190783009811,
+          12.977019281933718,
+          -4.373731175340935e-15,
+          1.0556265074483706e-16,
+          4.675317473406401,
+          0.06451904061177943,
+          0.15564406245829382
+        ],
+        [
+          -1.1989883183213967,
+          -0.9058341294818797,
+          -4.373731175340935e-15,
+          4.866382230725143,
+          4.739496286068187e-15,
+          -0.12374244925763866,
+          0.4368838768145969,
+          2.0540328961348067
+        ],
+        [
+          5.614655861841721e-15,
+          1.1393640959246976,
+          1.0556265074483706e-16,
+          4.739496286068187e-15,
+          3.2442548204834365,
+          0.15564406245829954,
+          -1.070968229889588,
+          0.951418610043488
+        ],
+        [
+          0.11380812514325653,
+          2.7268785327283225e-15,
+          4.675317473406401,
+          -0.12374244925763866,
+          0.15564406245829954,
+          2.707922710391765,
+          -1.4680085622693858e-15,
+          -2.7161665001843718e-17
+        ],
+        [
+          -0.18333307733301343,
+          -0.6445450995960218,
+          0.06451904061177943,
+          0.4368838768145969,
+          -1.070968229889588,
+          -1.4680085622693858e-15,
+          1.015471016396913,
+          -3.7550097200229814e-15
+        ],
+        [
+          -0.44226796723138273,
+          1.951795962700091e-15,
+          0.15564406245829382,
+          2.0540328961348067,
+          0.951418610043488,
+          -2.7161665001843718e-17,
+          -3.7550097200229814e-15,
+          1.2983957348362885
+        ]
+      ],
+      "domain": 12,
+      "fraction_weight_residual_squared_removed": 0.8818053463227614,
+      "full": {
+        "captured_squared": 1.405125152512917,
+        "checks": {
+          "complete_rank": true,
+          "conditioning": true,
+          "finite_coefficients_and_nonnegative_norms": true,
+          "gram_perturbation": true,
+          "norm_decomposition": true,
+          "normal_equations": true,
+          "normalized_gram_entries": true
+        },
+        "condition_number": 105.01878321159496,
+        "dimension": 8,
+        "gram_perturbation_over_smallest_eigenvalue": 9.018258194816281e-11,
+        "minimum_to_maximum_singular_ratio": 0.009522106135863052,
+        "normal_equation_maximum": 1.9406219328080017e-15,
+        "normal_equation_residual": [
+          7.309441131332188e-16,
+          -4.0168718335025266e-16,
+          6.496100292128282e-16,
+          -1.9406219328080017e-15,
+          -9.793759975409025e-16,
+          8.606034938177168e-16,
+          1.2497254772268653e-15,
+          -1.8069111589522056e-15
+        ],
+        "normalized_coefficients": [
+          -1.0118248219132202,
+          1.2153287396633976,
+          0.4262032349929948,
+          -0.045284979375763756,
+          0.0189586509462768,
+          -0.3485303538223073,
+          -0.154940817231555,
+          0.48312381539214067
+        ],
+        "normalized_gram_frobenius_difference": 2.2282698149671006e-14,
+        "normalized_gram_maximum_absolute_difference": 6.772360450213455e-15,
+        "normalized_gram_spectrum": [
+          2.72507886984333,
+          2.086491210617018,
+          1.7934770688220714,
+          0.758126845978288,
+          0.3880096406755601,
+          0.20969491006841898,
+          0.038874369717325094,
+          0.00024708427800924085
+        ],
+        "normalized_norm_decomposition_error": 3.892599054873795e-15,
+        "rank": 8,
+        "rank_cutoff": 1.6507812907357928e-10,
+        "raw_coefficients": [
+          -1.0748128719503927,
+          1.0970176018933304,
+          0.11831212828384774,
+          -0.02052820922702393,
+          0.01052567488316441,
+          -0.2117983024323472,
+          -0.15375600140985538,
+          0.42398930939864315
+        ],
+        "relative_capture_squared": 0.9853135305850588,
+        "relative_residual_squared": 0.014686469414945107,
+        "residual_squared": 0.02094391981433322,
+        "signed_rates": {
+          "circulation": 0.022204729942937762,
+          "impulse": 0.8665832745333144
+        },
+        "singular_values": [
+          1.6507812907357928,
+          1.4444691795317124,
+          1.339207627226664,
+          0.8707047984123483,
+          0.6229041986337547,
+          0.45792456809874155,
+          0.19716584318112784,
+          0.01571891465748322
+        ]
+      },
+      "geometry_gap_over_F_norm_squared": 0.10957016113494722,
+      "geometry_pythagorean_normalized_error": 4.671118865848554e-16,
+      "heat": 128,
+      "name": "D12-64x128-heat128",
+      "nr": 64,
+      "nz": 128,
+      "q_norm_squared": 12.577865934761649,
+      "saved_update": {
+        "Euler_target_residual_squared": 0.00017304544712772868,
+        "Euler_unchanged_residual_squared": 0.001392645578444575,
+        "field_difference_from_optimal_weights_over_F_norm": 1.4026835591618826e-14,
+        "mass_rates": [
+          -1.7711050605254144,
+          1.6470678102576528
+        ],
+        "relative_residual_squared": 0.1242566305498923,
+        "residual_gap_from_optimal_weights_over_F_norm_squared": -1.9462995274368978e-17,
+        "residual_squared": 0.17719853785879408,
+        "signed_rates": {
+          "circulation": -0.12403725026776158,
+          "impulse": -2.0431432634515905
+        }
+      },
+      "spatial_points": 8192,
+      "weight": {
+        "captured_squared": 1.2488705344684512,
+        "checks": {
+          "complete_rank": true,
+          "conditioning": true,
+          "finite_coefficients_and_nonnegative_norms": true,
+          "gram_perturbation": true,
+          "norm_decomposition": true,
+          "normal_equations": true,
+          "normalized_gram_entries": true
+        },
+        "condition_number": 2.9902337245277977,
+        "dimension": 2,
+        "gram_perturbation_over_smallest_eigenvalue": 4.5097789907265625e-14,
+        "minimum_to_maximum_singular_ratio": 0.334422019187786,
+        "normal_equation_maximum": 8.090304804133217e-16,
+        "normal_equation_residual": [
+          8.090304804133217e-16,
+          6.039030177961894e-16
+        ],
+        "normalized_coefficients": [
+          -1.6673116867346556,
+          1.824700754596648
+        ],
+        "normalized_gram_frobenius_difference": 9.072634957891503e-15,
+        "normalized_gram_maximum_absolute_difference": 6.439293542825908e-15,
+        "normalized_gram_spectrum": [
+          1.798823069233611,
+          0.2011769307663972
+        ],
+        "normalized_norm_decomposition_error": 4.671118865848554e-16,
+        "rank": 2,
+        "rank_cutoff": 1.3412020985793346e-10,
+        "raw_coefficients": [
+          -1.7711050605254124,
+          1.6470678102576364
+        ],
+        "relative_capture_squared": 0.8757433694501081,
+        "relative_residual_squared": 0.12425663054989232,
+        "residual_squared": 0.1771985378587941,
+        "signed_rates": {
+          "circulation": -0.12403725026777601,
+          "impulse": -2.0431432634516686
+        },
+        "singular_values": [
+          1.3412020985793345,
+          0.4485275139457971
+        ]
+      }
+    },
+    {
+      "F_norm_squared": 1.426069072327245,
+      "additional_geometry_field_norm_over_F_norm_squared": 0.10957016113494766,
+      "additional_geometry_field_norm_squared": 0.15625461804446156,
+      "checks": {
+        "current_q_norm_analytic": true,
+        "finite_positive_arrays": true,
+        "geometry_pythagorean_decomposition": true,
+        "nested_residual_order": true,
+        "ordered_interaction_sum": true,
+        "raw_analytic_gram": true,
+        "saved_current_norm": true,
+        "saved_derivative_target_identity": true,
+        "saved_target_residual": true,
+        "saved_unchanged_residual": true
+      },
+      "dimensional_comparisons": {
+        "current_q_norm_analytic": {
+          "max_absolute_error": 5.3290705182007514e-14,
+          "max_error_over_tolerance": 4.203444448476842e-06,
+          "pass": true
+        },
+        "ordered_interaction_sum": {
+          "max_absolute_error": 2.220446049250313e-16,
+          "max_error_over_tolerance": 4.014532499265069e-07,
+          "pass": true
+        },
+        "raw_analytic_gram": {
+          "max_absolute_error": 1.687538997430238e-14,
+          "max_error_over_tolerance": 5.614655861841406e-05,
+          "pass": true
+        },
+        "saved_current_norm": {
+          "max_absolute_error": 5.3290705182007514e-14,
+          "max_error_over_tolerance": 4.203444448476842e-06,
+          "pass": true
+        },
+        "saved_derivative_target_identity": {
+          "max_absolute_error": 5.421010862427522e-20,
+          "max_error_over_tolerance": 5.411646254968641e-10,
+          "pass": true
+        },
+        "saved_target_residual": {
+          "max_absolute_error": 2.710505431213761e-19,
+          "max_error_over_tolerance": 2.70582312748432e-09,
+          "pass": true
+        },
+        "saved_unchanged_residual": {
+          "max_absolute_error": 0.0,
+          "max_error_over_tolerance": 0.0,
+          "pass": true
+        }
+      },
+      "direct_F_signed_rates": {
+        "circulation": 4.4281504444532254e-15,
+        "impulse": 1.8935375180668357e-14
+      },
+      "direct_gram": [
+        [
+          0.8862269254527604,
+          0.8331117137698231,
+          3.3872621264859317e-15,
+          -1.1989883183213967,
+          5.614655861841721e-15,
+          0.11380812514325653,
+          -0.18333307733301343,
+          -0.44226796723138273
+        ],
+        [
+          0.8331117137698231,
+          1.2273271576591998,
+          -0.293190783009811,
+          -0.9058341294818797,
+          1.1393640959246976,
+          2.7268785327283225e-15,
+          -0.6445450995960218,
+          1.951795962700091e-15
+        ],
+        [
+          3.3872621264859317e-15,
+          -0.293190783009811,
+          12.977019281933718,
+          -4.373731175340935e-15,
+          1.0556265074483706e-16,
+          4.675317473406401,
+          0.06451904061177943,
+          0.15564406245829382
+        ],
+        [
+          -1.1989883183213967,
+          -0.9058341294818797,
+          -4.373731175340935e-15,
+          4.866382230725143,
+          4.739496286068187e-15,
+          -0.12374244925763866,
+          0.4368838768145969,
+          2.0540328961348067
+        ],
+        [
+          5.614655861841721e-15,
+          1.1393640959246976,
+          1.0556265074483706e-16,
+          4.739496286068187e-15,
+          3.2442548204834365,
+          0.15564406245829954,
+          -1.070968229889588,
+          0.951418610043488
+        ],
+        [
+          0.11380812514325653,
+          2.7268785327283225e-15,
+          4.675317473406401,
+          -0.12374244925763866,
+          0.15564406245829954,
+          2.707922710391765,
+          -1.4680085622693858e-15,
+          -2.7161665001843718e-17
+        ],
+        [
+          -0.18333307733301343,
+          -0.6445450995960218,
+          0.06451904061177943,
+          0.4368838768145969,
+          -1.070968229889588,
+          -1.4680085622693858e-15,
+          1.015471016396913,
+          -3.7550097200229814e-15
+        ],
+        [
+          -0.44226796723138273,
+          1.951795962700091e-15,
+          0.15564406245829382,
+          2.0540328961348067,
+          0.951418610043488,
+          -2.7161665001843718e-17,
+          -3.7550097200229814e-15,
+          1.2983957348362885
+        ]
+      ],
+      "domain": 12,
+      "fraction_weight_residual_squared_removed": 0.8818053463227614,
+      "full": {
+        "captured_squared": 1.4051251525129171,
+        "checks": {
+          "complete_rank": true,
+          "conditioning": true,
+          "finite_coefficients_and_nonnegative_norms": true,
+          "gram_perturbation": true,
+          "norm_decomposition": true,
+          "normal_equations": true,
+          "normalized_gram_entries": true
+        },
+        "condition_number": 105.01878321159496,
+        "dimension": 8,
+        "gram_perturbation_over_smallest_eigenvalue": 9.018258194816281e-11,
+        "minimum_to_maximum_singular_ratio": 0.009522106135863052,
+        "normal_equation_maximum": 1.8999756136151982e-15,
+        "normal_equation_residual": [
+          6.83392696613436e-16,
+          -4.819970473400513e-16,
+          6.078730818906111e-16,
+          -1.8999756136151982e-15,
+          -1.0483643194300868e-15,
+          7.543421807079929e-16,
+          1.3522515391481901e-15,
+          -1.8078859238663038e-15
+        ],
+        "normalized_coefficients": [
+          -1.0118248219132169,
+          1.2153287396633936,
+          0.4262032349929945,
+          -0.04528497937576342,
+          0.018958650946278466,
+          -0.3485303538223072,
+          -0.15494081723155576,
+          0.48312381539214105
+        ],
+        "normalized_gram_frobenius_difference": 2.2282698149671006e-14,
+        "normalized_gram_maximum_absolute_difference": 6.772360450213455e-15,
+        "normalized_gram_spectrum": [
+          2.72507886984333,
+          2.086491210617018,
+          1.7934770688220714,
+          0.758126845978288,
+          0.3880096406755601,
+          0.20969491006841898,
+          0.038874369717325094,
+          0.00024708427800924085
+        ],
+        "normalized_norm_decomposition_error": 3.8925990548737944e-15,
+        "rank": 8,
+        "rank_cutoff": 1.6507812907357928e-10,
+        "raw_coefficients": [
+          -1.074812871950389,
+          1.0970176018933269,
+          0.11831212828384767,
+          -0.020528209227023777,
+          0.010525674883165335,
+          -0.21179830243234715,
+          -0.15375600140985612,
+          0.42398930939864354
+        ],
+        "relative_capture_squared": 0.9853135305850588,
+        "relative_residual_squared": 0.014686469414945095,
+        "residual_squared": 0.020943919814333207,
+        "signed_rates": {
+          "circulation": 0.022204729942937762,
+          "impulse": 0.8665832745333157
+        },
+        "singular_values": [
+          1.6507812907357928,
+          1.4444691795317124,
+          1.339207627226664,
+          0.8707047984123483,
+          0.6229041986337547,
+          0.45792456809874155,
+          0.19716584318112784,
+          0.01571891465748322
+        ]
+      },
+      "geometry_gap_over_F_norm_squared": 0.10957016113494722,
+      "geometry_pythagorean_normalized_error": 4.476488913104864e-16,
+      "heat": 256,
+      "name": "D12-64x128-heat256",
+      "nr": 64,
+      "nz": 128,
+      "q_norm_squared": 12.577865934761649,
+      "saved_update": {
+        "Euler_target_residual_squared": 0.00017304544712772857,
+        "Euler_unchanged_residual_squared": 0.0013926455784445747,
+        "field_difference_from_optimal_weights_over_F_norm": 1.4026835591618824e-14,
+        "mass_rates": [
+          -1.7711050605254144,
+          1.6470678102576528
+        ],
+        "relative_residual_squared": 0.1242566305498923,
+        "residual_gap_from_optimal_weights_over_F_norm_squared": -1.9462995274368975e-17,
+        "residual_squared": 0.1771985378587941,
+        "signed_rates": {
+          "circulation": -0.12403725026776158,
+          "impulse": -2.0431432634515905
+        }
+      },
+      "spatial_points": 8192,
+      "weight": {
+        "captured_squared": 1.2488705344684512,
+        "checks": {
+          "complete_rank": true,
+          "conditioning": true,
+          "finite_coefficients_and_nonnegative_norms": true,
+          "gram_perturbation": true,
+          "norm_decomposition": true,
+          "normal_equations": true,
+          "normalized_gram_entries": true
+        },
+        "condition_number": 2.9902337245277977,
+        "dimension": 2,
+        "gram_perturbation_over_smallest_eigenvalue": 4.5097789907265625e-14,
+        "minimum_to_maximum_singular_ratio": 0.334422019187786,
+        "normal_equation_maximum": 7.063905043814473e-16,
+        "normal_equation_residual": [
+          7.063905043814473e-16,
+          5.56974174810168e-16
+        ],
+        "normalized_coefficients": [
+          -1.6673116867346556,
+          1.824700754596648
+        ],
+        "normalized_gram_frobenius_difference": 9.072634957891503e-15,
+        "normalized_gram_maximum_absolute_difference": 6.439293542825908e-15,
+        "normalized_gram_spectrum": [
+          1.798823069233611,
+          0.2011769307663972
+        ],
+        "normalized_norm_decomposition_error": 3.114079243899036e-16,
+        "rank": 2,
+        "rank_cutoff": 1.3412020985793346e-10,
+        "raw_coefficients": [
+          -1.7711050605254124,
+          1.6470678102576364
+        ],
+        "relative_capture_squared": 0.875743369450108,
+        "relative_residual_squared": 0.12425663054989232,
+        "residual_squared": 0.17719853785879414,
+        "signed_rates": {
+          "circulation": -0.12403725026777601,
+          "impulse": -2.0431432634516686
+        },
+        "singular_values": [
+          1.3412020985793345,
+          0.4485275139457971
+        ]
+      }
+    },
+    {
+      "F_norm_squared": 1.4260690723272413,
+      "additional_geometry_field_norm_over_F_norm_squared": 0.10957016113494834,
+      "additional_geometry_field_norm_squared": 0.15625461804446214,
+      "checks": {
+        "current_q_norm_analytic": true,
+        "finite_positive_arrays": true,
+        "geometry_pythagorean_decomposition": true,
+        "nested_residual_order": true,
+        "ordered_interaction_sum": true,
+        "raw_analytic_gram": true,
+        "saved_current_norm": true,
+        "saved_derivative_target_identity": true,
+        "saved_target_residual": true,
+        "saved_unchanged_residual": true
+      },
+      "dimensional_comparisons": {
+        "current_q_norm_analytic": {
+          "max_absolute_error": 2.3092638912203256e-14,
+          "max_error_over_tolerance": 1.821492594339969e-06,
+          "pass": true
+        },
+        "ordered_interaction_sum": {
+          "max_absolute_error": 2.220446049250313e-16,
+          "max_error_over_tolerance": 3.4982316137036433e-07,
+          "pass": true
+        },
+        "raw_analytic_gram": {
+          "max_absolute_error": 7.283063041541027e-14,
+          "max_error_over_tolerance": 6.461754871923682e-05,
+          "pass": true
+        },
+        "saved_current_norm": {
+          "max_absolute_error": 2.3092638912203256e-14,
+          "max_error_over_tolerance": 1.821492594339969e-06,
+          "pass": true
+        },
+        "saved_derivative_target_identity": {
+          "max_absolute_error": 4.336808689942018e-19,
+          "max_error_over_tolerance": 4.329317003974913e-09,
+          "pass": true
+        },
+        "saved_target_residual": {
+          "max_absolute_error": 5.719166459861036e-18,
+          "max_error_over_tolerance": 5.7092867989919155e-08,
+          "pass": true
+        },
+        "saved_unchanged_residual": {
+          "max_absolute_error": 3.686287386450715e-18,
+          "max_error_over_tolerance": 3.635655589634201e-08,
+          "pass": true
+        }
+      },
+      "direct_F_signed_rates": {
+        "circulation": -4.492334146363269e-15,
+        "impulse": -1.6919185597773204e-14
+      },
+      "direct_gram": [
+        [
+          0.886226925452761,
+          0.8331117137698199,
+          2.2972020054502202e-15,
+          -1.1989883183214038,
+          -1.7659840617092038e-15,
+          0.11380812514325497,
+          -0.18333307733300752,
+          -0.4422679672313889
+        ],
+        [
+          0.8331117137698199,
+          1.2273271576591895,
+          -0.29319078300981216,
+          -0.9058341294818855,
+          1.1393640959246825,
+          2.7462350352456256e-16,
+          -0.6445450995960099,
+          -6.4617548719241e-15
+        ],
+        [
+          2.2972020054502202e-15,
+          -0.29319078300981216,
+          12.977019281933796,
+          -2.686622200466723e-15,
+          -3.72148646461891e-17,
+          4.675317473406409,
+          0.0645190406117779,
+          0.15564406245829746
+        ],
+        [
+          -1.1989883183214038,
+          -0.9058341294818855,
+          -2.686622200466723e-15,
+          4.866382230725174,
+          3.567843313679885e-15,
+          -0.12374244925763797,
+          0.43688387681459806,
+          2.0540328961348178
+        ],
+        [
+          -1.7659840617092038e-15,
+          1.1393640959246825,
+          -3.72148646461891e-17,
+          3.567843313679885e-15,
+          3.2442548204834196,
+          0.1556440624582959,
+          -1.070968229889573,
+          0.9514186100434817
+        ],
+        [
+          0.11380812514325497,
+          2.7462350352456256e-16,
+          4.675317473406409,
+          -0.12374244925763797,
+          0.1556440624582959,
+          2.7079227103917556,
+          -2.8615193165667867e-16,
+          -1.5759315725994123e-17
+        ],
+        [
+          -0.18333307733300752,
+          -0.6445450995960099,
+          0.0645190406117779,
+          0.43688387681459806,
+          -1.070968229889573,
+          -2.8615193165667867e-16,
+          1.0154710163969052,
+          2.8675417954393045e-15
+        ],
+        [
+          -0.4422679672313889,
+          -6.4617548719241e-15,
+          0.15564406245829746,
+          2.0540328961348178,
+          0.9514186100434817,
+          -1.5759315725994123e-17,
+          2.8675417954393045e-15,
+          1.2983957348362907
+        ]
+      ],
+      "domain": 12,
+      "fraction_weight_residual_squared_removed": 0.8818053463227398,
+      "full": {
+        "captured_squared": 1.4051251525129078,
+        "checks": {
+          "complete_rank": true,
+          "conditioning": true,
+          "finite_coefficients_and_nonnegative_norms": true,
+          "gram_perturbation": true,
+          "norm_decomposition": true,
+          "normal_equations": true,
+          "normalized_gram_entries": true
+        },
+        "condition_number": 105.01878321159394,
+        "dimension": 8,
+        "gram_perturbation_over_smallest_eigenvalue": 8.796618607541783e-11,
+        "minimum_to_maximum_singular_ratio": 0.009522106135863144,
+        "normal_equation_maximum": 1.5900132211186982e-15,
+        "normal_equation_residual": [
+          1.4320917219266228e-15,
+          4.3725693604493525e-16,
+          2.6531719982170176e-16,
+          -1.5900132211186982e-15,
+          -6.854773364597589e-16,
+          6.629242514776671e-16,
+          9.632784763125884e-16,
+          -1.3748822735873613e-15
+        ],
+        "normalized_coefficients": [
+          -1.0118248219132173,
+          1.2153287396633918,
+          0.42620323499299456,
+          -0.04528497937576553,
+          0.01895865094627802,
+          -0.34853035382230646,
+          -0.1549408172315562,
+          0.48312381539214266
+        ],
+        "normalized_gram_frobenius_difference": 2.1735061575671552e-14,
+        "normalized_gram_maximum_absolute_difference": 5.551115123125783e-15,
+        "normalized_gram_spectrum": [
+          2.725078869843328,
+          2.086491210617008,
+          1.7934770688220678,
+          0.7581268459782892,
+          0.3880096406755611,
+          0.20969491006841892,
+          0.038874369717325226,
+          0.0002470842780092454
+        ],
+        "normalized_norm_decomposition_error": 2.9583752817040912e-15,
+        "rank": 8,
+        "rank_cutoff": 1.6507812907357923e-10,
+        "raw_coefficients": [
+          -1.0748128719503895,
+          1.0970176018933253,
+          0.11831212828384768,
+          -0.020528209227024734,
+          0.010525674883165088,
+          -0.2117983024323467,
+          -0.15375600140985657,
+          0.42398930939864493
+        ],
+        "relative_capture_squared": 0.9853135305850547,
+        "relative_residual_squared": 0.014686469414948278,
+        "residual_squared": 0.020943919814337693,
+        "signed_rates": {
+          "circulation": 0.022204729942935764,
+          "impulse": 0.8665832745333091
+        },
+        "singular_values": [
+          1.6507812907357922,
+          1.4444691795317088,
+          1.3392076272266626,
+          0.8707047984123489,
+          0.6229041986337555,
+          0.4579245680987415,
+          0.19716584318112818,
+          0.015718914657483367
+        ]
+      },
+      "geometry_gap_over_F_norm_squared": 0.10957016113494798,
+      "geometry_pythagorean_normalized_error": 3.697969102130114e-16,
+      "heat": 128,
+      "name": "D12-96x192-heat128",
+      "nr": 96,
+      "nz": 192,
+      "q_norm_squared": 12.577865934761618,
+      "saved_update": {
+        "Euler_target_residual_squared": 0.00017304544712773412,
+        "Euler_unchanged_residual_squared": 0.0013926455784445716,
+        "field_difference_from_optimal_weights_over_F_norm": 1.5931847852305482e-14,
+        "mass_rates": [
+          -1.7711050605254144,
+          1.6470678102576528
+        ],
+        "relative_residual_squared": 0.12425663054989625,
+        "residual_gap_from_optimal_weights_over_F_norm_squared": 0.0,
+        "residual_squared": 0.1771985378587993,
+        "signed_rates": {
+          "circulation": -0.12403725026776158,
+          "impulse": -2.0431432634515905
+        }
+      },
+      "spatial_points": 18432,
+      "weight": {
+        "captured_squared": 1.2488705344684448,
+        "checks": {
+          "complete_rank": true,
+          "conditioning": true,
+          "finite_coefficients_and_nonnegative_norms": true,
+          "gram_perturbation": true,
+          "norm_decomposition": true,
+          "normal_equations": true,
+          "normalized_gram_entries": true
+        },
+        "condition_number": 2.990233724527799,
+        "dimension": 2,
+        "gram_perturbation_over_smallest_eigenvalue": 2.0545355808009568e-14,
+        "minimum_to_maximum_singular_ratio": 0.33442201918778586,
+        "normal_equation_maximum": 1.876256614728135e-15,
+        "normal_equation_residual": [
+          1.876256614728135e-15,
+          1.0876108363582652e-15
+        ],
+        "normalized_coefficients": [
+          -1.6673116867346578,
+          1.8247007545966474
+        ],
+        "normalized_gram_frobenius_difference": 4.133251622958919e-15,
+        "normalized_gram_maximum_absolute_difference": 3.3306690738754696e-15,
+        "normalized_gram_spectrum": [
+          1.798823069233605,
+          0.2011769307663963
+        ],
+        "normalized_norm_decomposition_error": 1.868447546339426e-15,
+        "rank": 2,
+        "rank_cutoff": 1.3412020985793323e-10,
+        "raw_coefficients": [
+          -1.7711050605254148,
+          1.647067810257636
+        ],
+        "relative_capture_squared": 0.8757433694501057,
+        "relative_residual_squared": 0.12425663054989625,
+        "residual_squared": 0.1771985378587993,
+        "signed_rates": {
+          "circulation": -0.1240372502677789,
+          "impulse": -2.0431432634516864
+        },
+        "singular_values": [
+          1.3412020985793323,
+          0.4485275139457961
+        ]
+      }
+    },
+    {
+      "F_norm_squared": 1.426069072327241,
+      "additional_geometry_field_norm_over_F_norm_squared": 0.10957016113494829,
+      "additional_geometry_field_norm_squared": 0.156254618044462,
+      "checks": {
+        "current_q_norm_analytic": true,
+        "finite_positive_arrays": true,
+        "geometry_pythagorean_decomposition": true,
+        "nested_residual_order": true,
+        "ordered_interaction_sum": true,
+        "raw_analytic_gram": true,
+        "saved_current_norm": true,
+        "saved_derivative_target_identity": true,
+        "saved_target_residual": true,
+        "saved_unchanged_residual": true
+      },
+      "dimensional_comparisons": {
+        "current_q_norm_analytic": {
+          "max_absolute_error": 2.3092638912203256e-14,
+          "max_error_over_tolerance": 1.821492594339969e-06,
+          "pass": true
+        },
+        "ordered_interaction_sum": {
+          "max_absolute_error": 3.3306690738754696e-16,
+          "max_error_over_tolerance": 4.01605829746478e-07,
+          "pass": true
+        },
+        "raw_analytic_gram": {
+          "max_absolute_error": 7.283063041541027e-14,
+          "max_error_over_tolerance": 6.461754871923682e-05,
+          "pass": true
+        },
+        "saved_current_norm": {
+          "max_absolute_error": 2.3092638912203256e-14,
+          "max_error_over_tolerance": 1.821492594339969e-06,
+          "pass": true
+        },
+        "saved_derivative_target_identity": {
+          "max_absolute_error": 2.981555974335137e-19,
+          "max_error_over_tolerance": 2.976405440232752e-09,
+          "pass": true
+        },
+        "saved_target_residual": {
+          "max_absolute_error": 5.6107462426124854e-18,
+          "max_error_over_tolerance": 5.601053873892543e-08,
+          "pass": true
+        },
+        "saved_unchanged_residual": {
+          "max_absolute_error": 3.903127820947816e-18,
+          "max_error_over_tolerance": 3.849517683142096e-08,
+          "pass": true
+        }
+      },
+      "direct_F_signed_rates": {
+        "circulation": -4.49515307206343e-15,
+        "impulse": -1.7085719048158255e-14
+      },
+      "direct_gram": [
+        [
+          0.886226925452761,
+          0.8331117137698199,
+          2.2972020054502202e-15,
+          -1.1989883183214038,
+          -1.7659840617092038e-15,
+          0.11380812514325497,
+          -0.18333307733300752,
+          -0.4422679672313889
+        ],
+        [
+          0.8331117137698199,
+          1.2273271576591895,
+          -0.29319078300981216,
+          -0.9058341294818855,
+          1.1393640959246825,
+          2.7462350352456256e-16,
+          -0.6445450995960099,
+          -6.4617548719241e-15
+        ],
+        [
+          2.2972020054502202e-15,
+          -0.29319078300981216,
+          12.977019281933796,
+          -2.686622200466723e-15,
+          -3.72148646461891e-17,
+          4.675317473406409,
+          0.0645190406117779,
+          0.15564406245829746
+        ],
+        [
+          -1.1989883183214038,
+          -0.9058341294818855,
+          -2.686622200466723e-15,
+          4.866382230725174,
+          3.567843313679885e-15,
+          -0.12374244925763797,
+          0.43688387681459806,
+          2.0540328961348178
+        ],
+        [
+          -1.7659840617092038e-15,
+          1.1393640959246825,
+          -3.72148646461891e-17,
+          3.567843313679885e-15,
+          3.2442548204834196,
+          0.1556440624582959,
+          -1.070968229889573,
+          0.9514186100434817
+        ],
+        [
+          0.11380812514325497,
+          2.7462350352456256e-16,
+          4.675317473406409,
+          -0.12374244925763797,
+          0.1556440624582959,
+          2.7079227103917556,
+          -2.8615193165667867e-16,
+          -1.5759315725994123e-17
+        ],
+        [
+          -0.18333307733300752,
+          -0.6445450995960099,
+          0.0645190406117779,
+          0.43688387681459806,
+          -1.070968229889573,
+          -2.8615193165667867e-16,
+          1.0154710163969052,
+          2.8675417954393045e-15
+        ],
+        [
+          -0.4422679672313889,
+          -6.4617548719241e-15,
+          0.15564406245829746,
+          2.0540328961348178,
+          0.9514186100434817,
+          -1.5759315725994123e-17,
+          2.8675417954393045e-15,
+          1.2983957348362907
+        ]
+      ],
+      "domain": 12,
+      "fraction_weight_residual_squared_removed": 0.8818053463227397,
+      "full": {
+        "captured_squared": 1.405125152512907,
+        "checks": {
+          "complete_rank": true,
+          "conditioning": true,
+          "finite_coefficients_and_nonnegative_norms": true,
+          "gram_perturbation": true,
+          "norm_decomposition": true,
+          "normal_equations": true,
+          "normalized_gram_entries": true
+        },
+        "condition_number": 105.01878321159394,
+        "dimension": 8,
+        "gram_perturbation_over_smallest_eigenvalue": 8.796618607541783e-11,
+        "minimum_to_maximum_singular_ratio": 0.009522106135863144,
+        "normal_equation_maximum": 1.4700766225209636e-15,
+        "normal_equation_residual": [
+          1.3779359672481382e-15,
+          5.095269709739802e-16,
+          2.871587541007424e-16,
+          -1.4700766225209636e-15,
+          -5.194017538267865e-16,
+          6.541152699717621e-16,
+          8.561110719406845e-16,
+          -1.197952688499761e-15
+        ],
+        "normalized_coefficients": [
+          -1.0118248219132173,
+          1.2153287396633918,
+          0.4262032349929944,
+          -0.045284979375765505,
+          0.01895865094627791,
+          -0.34853035382230624,
+          -0.154940817231556,
+          0.4831238153921424
+        ],
+        "normalized_gram_frobenius_difference": 2.1735061575671552e-14,
+        "normalized_gram_maximum_absolute_difference": 5.551115123125783e-15,
+        "normalized_gram_spectrum": [
+          2.725078869843328,
+          2.086491210617008,
+          1.7934770688220678,
+          0.7581268459782892,
+          0.3880096406755611,
+          0.20969491006841892,
+          0.038874369717325226,
+          0.0002470842780092454
+        ],
+        "normalized_norm_decomposition_error": 2.646967357314188e-15,
+        "rank": 8,
+        "rank_cutoff": 1.6507812907357923e-10,
+        "raw_coefficients": [
+          -1.0748128719503895,
+          1.0970176018933253,
+          0.11831212828384763,
+          -0.02052820922702472,
+          0.010525674883165028,
+          -0.21179830243234657,
+          -0.15375600140985637,
+          0.4239893093986447
+        ],
+        "relative_capture_squared": 0.9853135305850543,
+        "relative_residual_squared": 0.014686469414948267,
+        "residual_squared": 0.020943919814337672,
+        "signed_rates": {
+          "circulation": 0.022204729942935764,
+          "impulse": 0.8665832745333095
+        },
+        "singular_values": [
+          1.6507812907357922,
+          1.4444691795317088,
+          1.3392076272266626,
+          0.8707047984123489,
+          0.6229041986337555,
+          0.4579245680987415,
+          0.19716584318112818,
+          0.015718914657483367
+        ]
+      },
+      "geometry_gap_over_F_norm_squared": 0.10957016113494797,
+      "geometry_pythagorean_normalized_error": 3.1140792438990444e-16,
+      "heat": 256,
+      "name": "D12-96x192-heat256",
+      "nr": 96,
+      "nz": 192,
+      "q_norm_squared": 12.577865934761618,
+      "saved_update": {
+        "Euler_target_residual_squared": 0.0001730454471277339,
+        "Euler_unchanged_residual_squared": 0.0013926455784445708,
+        "field_difference_from_optimal_weights_over_F_norm": 1.5931847852305485e-14,
+        "mass_rates": [
+          -1.7711050605254144,
+          1.6470678102576528
+        ],
+        "relative_residual_squared": 0.12425663054989623,
+        "residual_gap_from_optimal_weights_over_F_norm_squared": -1.9462995274369027e-17,
+        "residual_squared": 0.17719853785879922,
+        "signed_rates": {
+          "circulation": -0.12403725026776158,
+          "impulse": -2.0431432634515905
+        }
+      },
+      "spatial_points": 18432,
+      "weight": {
+        "captured_squared": 1.2488705344684448,
+        "checks": {
+          "complete_rank": true,
+          "conditioning": true,
+          "finite_coefficients_and_nonnegative_norms": true,
+          "gram_perturbation": true,
+          "norm_decomposition": true,
+          "normal_equations": true,
+          "normalized_gram_entries": true
+        },
+        "condition_number": 2.990233724527799,
+        "dimension": 2,
+        "gram_perturbation_over_smallest_eigenvalue": 2.0545355808009568e-14,
+        "minimum_to_maximum_singular_ratio": 0.33442201918778586,
+        "normal_equation_maximum": 1.8450514872563647e-15,
+        "normal_equation_residual": [
+          1.8450514872563647e-15,
+          9.969652042797647e-16
+        ],
+        "normalized_coefficients": [
+          -1.6673116867346578,
+          1.8247007545966474
+        ],
+        "normalized_gram_frobenius_difference": 4.133251622958919e-15,
+        "normalized_gram_maximum_absolute_difference": 3.3306690738754696e-15,
+        "normalized_gram_spectrum": [
+          1.798823069233605,
+          0.2011769307663963
+        ],
+        "normalized_norm_decomposition_error": 2.179855470729331e-15,
+        "rank": 2,
+        "rank_cutoff": 1.3412020985793323e-10,
+        "raw_coefficients": [
+          -1.7711050605254148,
+          1.647067810257636
+        ],
+        "relative_capture_squared": 0.8757433694501059,
+        "relative_residual_squared": 0.12425663054989625,
+        "residual_squared": 0.17719853785879924,
+        "signed_rates": {
+          "circulation": -0.1240372502677789,
+          "impulse": -2.0431432634516864
+        },
+        "singular_values": [
+          1.3412020985793323,
+          0.4485275139457961
+        ]
+      }
+    },
+    {
+      "F_norm_squared": 1.4260690723272451,
+      "additional_geometry_field_norm_over_F_norm_squared": 0.10957016113494804,
+      "additional_geometry_field_norm_squared": 0.1562546180444621,
+      "checks": {
+        "current_q_norm_analytic": true,
+        "finite_positive_arrays": true,
+        "geometry_pythagorean_decomposition": true,
+        "nested_residual_order": true,
+        "ordered_interaction_sum": true,
+        "raw_analytic_gram": true,
+        "saved_current_norm": true,
+        "saved_derivative_target_identity": true,
+        "saved_target_residual": true,
+        "saved_unchanged_residual": true
+      },
+      "dimensional_comparisons": {
+        "current_q_norm_analytic": {
+          "max_absolute_error": 2.1316282072803006e-14,
+          "max_error_over_tolerance": 1.6813777793907408e-06,
+          "pass": true
+        },
+        "ordered_interaction_sum": {
+          "max_absolute_error": 3.3306690738754696e-16,
+          "max_error_over_tolerance": 3.7750856855157863e-07,
+          "pass": true
+        },
+        "raw_analytic_gram": {
+          "max_absolute_error": 2.6645352591003757e-14,
+          "max_error_over_tolerance": 3.185098722010292e-05,
+          "pass": true
+        },
+        "saved_current_norm": {
+          "max_absolute_error": 2.1316282072803006e-14,
+          "max_error_over_tolerance": 1.6813777793907408e-06,
+          "pass": true
+        },
+        "saved_derivative_target_identity": {
+          "max_absolute_error": 1.6263032587282567e-19,
+          "max_error_over_tolerance": 1.6234938764905922e-09,
+          "pass": true
+        },
+        "saved_target_residual": {
+          "max_absolute_error": 5.44811591673966e-18,
+          "max_error_over_tolerance": 5.4387044862434835e-08,
+          "pass": true
+        },
+        "saved_unchanged_residual": {
+          "max_absolute_error": 8.673617379884035e-19,
+          "max_error_over_tolerance": 8.554483740315768e-09,
+          "pass": true
+        }
+      },
+      "direct_F_signed_rates": {
+        "circulation": -8.451347464195035e-16,
+        "impulse": 9.99607297977323e-15
+      },
+      "direct_gram": [
+        [
+          0.8862269254527602,
+          0.8331117137698202,
+          1.6500743913600013e-15,
+          -1.1989883183213974,
+          -8.197076101190442e-16,
+          0.11380812514325528,
+          -0.18333307733300758,
+          -0.4422679672313857
+        ],
+        [
+          0.8331117137698202,
+          1.2273271576591915,
+          -0.2931907830098119,
+          -0.9058341294818789,
+          1.1393640959246871,
+          1.2906664533787401e-15,
+          -0.6445450995960101,
+          -5.034335452869793e-16
+        ],
+        [
+          1.6500743913600013e-15,
+          -0.2931907830098119,
+          12.977019281933748,
+          -2.121959834407161e-15,
+          -5.519099814792951e-19,
+          4.675317473406395,
+          0.06451904061177782,
+          0.155644062458296
+        ],
+        [
+          -1.1989883183213974,
+          -0.9058341294818789,
+          -2.121959834407161e-15,
+          4.866382230725173,
+          3.1850987220103937e-15,
+          -0.12374244925763744,
+          0.4368838768145959,
+          2.0540328961348195
+        ],
+        [
+          -8.197076101190442e-16,
+          1.1393640959246871,
+          -5.519099814792951e-19,
+          3.1850987220103937e-15,
+          3.244254820483431,
+          0.1556440624582967,
+          -1.0709682298895729,
+          0.9514186100434888
+        ],
+        [
+          0.11380812514325528,
+          1.2906664533787401e-15,
+          4.675317473406395,
+          -0.12374244925763744,
+          0.1556440624582967,
+          2.7079227103917507,
+          -6.320470913952127e-16,
+          2.829308646414657e-17
+        ],
+        [
+          -0.18333307733300758,
+          -0.6445450995960101,
+          0.06451904061177782,
+          0.4368838768145959,
+          -1.0709682298895729,
+          -6.320470913952127e-16,
+          1.0154710163969045,
+          4.04696640698392e-16
+        ],
+        [
+          -0.4422679672313857,
+          -5.034335452869793e-16,
+          0.155644062458296,
+          2.0540328961348195,
+          0.9514186100434888,
+          2.829308646414657e-17,
+          4.04696640698392e-16,
+          1.298395734836295
+        ]
+      ],
+      "domain": 8,
+      "fraction_weight_residual_squared_removed": 0.8818053463227394,
+      "full": {
+        "captured_squared": 1.4051251525129123,
+        "checks": {
+          "complete_rank": true,
+          "conditioning": true,
+          "finite_coefficients_and_nonnegative_norms": true,
+          "gram_perturbation": true,
+          "norm_decomposition": true,
+          "normal_equations": true,
+          "normalized_gram_entries": true
+        },
+        "condition_number": 105.01878321159398,
+        "dimension": 8,
+        "gram_perturbation_over_smallest_eigenvalue": 6.518387857368361e-11,
+        "minimum_to_maximum_singular_ratio": 0.009522106135863139,
+        "normal_equation_maximum": 1.5325848607487683e-15,
+        "normal_equation_residual": [
+          1.2993756288851917e-15,
+          2.2551033950224448e-16,
+          -1.9467813061316897e-16,
+          -1.5325848607487683e-15,
+          -8.545867117236687e-16,
+          3.010074659137953e-16,
+          1.5210769576729089e-15,
+          -1.2927585870558013e-15
+        ],
+        "normalized_coefficients": [
+          -1.0118248219131991,
+          1.2153287396633707,
+          0.42620323499299473,
+          -0.04528497937576331,
+          0.018958650946287403,
+          -0.34853035382230835,
+          -0.15494081723156025,
+          0.48312381539214344
+        ],
+        "normalized_gram_frobenius_difference": 1.6105911575220902e-14,
+        "normalized_gram_maximum_absolute_difference": 5.773159728050814e-15,
+        "normalized_gram_spectrum": [
+          2.7250788698433244,
+          2.086491210617015,
+          1.7934770688220643,
+          0.7581268459782928,
+          0.38800964067556326,
+          0.20969491006841862,
+          0.03887436971732496,
+          0.00024708427800924486
+        ],
+        "normalized_norm_decomposition_error": 3.4254871682889387e-15,
+        "rank": 8,
+        "rank_cutoff": 1.6507812907357912e-10,
+        "raw_coefficients": [
+          -1.0748128719503702,
+          1.0970176018933062,
+          0.11831212828384773,
+          -0.02052820922702373,
+          0.010525674883170298,
+          -0.21179830243234785,
+          -0.1537560014098606,
+          0.4239893093986456
+        ],
+        "relative_capture_squared": 0.9853135305850551,
+        "relative_residual_squared": 0.01468646941494826,
+        "residual_squared": 0.020943919814337724,
+        "signed_rates": {
+          "circulation": 0.022204729942935986,
+          "impulse": 0.8665832745333133
+        },
+        "singular_values": [
+          1.650781290735791,
+          1.4444691795317113,
+          1.3392076272266613,
+          0.870704798412351,
+          0.6229041986337572,
+          0.45792456809874116,
+          0.1971658431811275,
+          0.01571891465748335
+        ]
+      },
+      "geometry_gap_over_F_norm_squared": 0.1095701611349476,
+      "geometry_pythagorean_normalized_error": 4.476488913104863e-16,
+      "heat": 256,
+      "name": "D8-96x192-heat256",
+      "nr": 96,
+      "nz": 192,
+      "q_norm_squared": 12.577865934761617,
+      "saved_update": {
+        "Euler_target_residual_squared": 0.00017304544712773374,
+        "Euler_unchanged_residual_squared": 0.0013926455784445755,
+        "field_difference_from_optimal_weights_over_F_norm": 1.4990559327868674e-14,
+        "mass_rates": [
+          -1.7711050605254144,
+          1.6470678102576528
+        ],
+        "relative_residual_squared": 0.12425663054989584,
+        "residual_gap_from_optimal_weights_over_F_norm_squared": 0.0,
+        "residual_squared": 0.1771985378587992,
+        "signed_rates": {
+          "circulation": -0.12403725026776158,
+          "impulse": -2.0431432634515905
+        }
+      },
+      "spatial_points": 18432,
+      "weight": {
+        "captured_squared": 1.248870534468449,
+        "checks": {
+          "complete_rank": true,
+          "conditioning": true,
+          "finite_coefficients_and_nonnegative_norms": true,
+          "gram_perturbation": true,
+          "norm_decomposition": true,
+          "normal_equations": true,
+          "normalized_gram_entries": true
+        },
+        "condition_number": 2.990233724527797,
+        "dimension": 2,
+        "gram_perturbation_over_smallest_eigenvalue": 1.5422599068301273e-14,
+        "minimum_to_maximum_singular_ratio": 0.33442201918778613,
+        "normal_equation_maximum": 1.8661800823953385e-15,
+        "normal_equation_residual": [
+          1.8661800823953385e-15,
+          1.0481236820377633e-15
+        ],
+        "normalized_coefficients": [
+          -1.6673116867346582,
+          1.824700754596649
+        ],
+        "normalized_gram_frobenius_difference": 3.102671145001539e-15,
+        "normalized_gram_maximum_absolute_difference": 2.4424906541753444e-15,
+        "normalized_gram_spectrum": [
+          1.798823069233605,
+          0.20117693076639667
+        ],
+        "normalized_norm_decomposition_error": 2.1798554707293247e-15,
+        "rank": 2,
+        "rank_cutoff": 1.3412020985793323e-10,
+        "raw_coefficients": [
+          -1.7711050605254153,
+          1.6470678102576373
+        ],
+        "relative_capture_squared": 0.8757433694501063,
+        "relative_residual_squared": 0.12425663054989584,
+        "residual_squared": 0.1771985378587992,
+        "signed_rates": {
+          "circulation": -0.12403725026777801,
+          "impulse": -2.0431432634516824
+        },
+        "singular_values": [
+          1.3412020985793323,
+          0.4485275139457965
+        ]
+      }
+    }
+  ],
+  "runtime": {
+    "numpy": "2.3.5",
+    "python": "3.12.14 (main, Aug 25 2026, 14:01:42) [MSC v.1944 64 bit (AMD64)]",
+    "thread_environment": {
+      "MKL_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1"
+    }
+  },
+  "schema": "t75-saved-tangent-diagnostic-v1"
+}

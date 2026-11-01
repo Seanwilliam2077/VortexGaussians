@@ -1,6 +1,16 @@
 # Dual-track status
 
-## 2026-11-01 latest: art paused by user; T74 technical mechanism screen completed
+## 2026-11-01 latest: T75 identifies ordinary geometric search capability; art remains paused
+
+[T75](tog/tasks/t75-saved-tangent-diagnostic/README.md) completes exactly one saved-state diagnostic,196/196 checks. The old weight-only update matches its optimal subspace to1.5932e-14 relative field difference, but the complete ordinary eight-parameter tangent reduces derivative-relative residual norm0.35250054 to0.12118774, removing88.1805% of the weight residual square. Full rank8 and normalized condition number105.0188 are resolved; no difficult column was discarded. All five fixed heat/spatial/domain routes agree, with nine frozen input/source identities preserved.
+
+[Post-run analysis](tog/tasks/t75-saved-tangent-diagnostic/ANALYSIS.md), independently checked by the participating analyst, connects this to a local descent direction for the same Euler-target candidate: the positive saved successor has identical geometry and the same tangent span. No improved finite candidate, usable step size, hard-box interior claim or full trajectory was measured. The full projection also has nonzero circulation/impulse rates; it is not automatically conservative. T71 remains time-sensitive, and a richer representation is not yet justified by this local residual.
+
+Complete scientific child0.45699790003709495seconds, observed peak68,526,080bytes; tracked scientific-child subtotal2018.39971949975seconds, not project cost. [Protocol](tog/tasks/t75-saved-tangent-diagnostic/PROTOCOL.md), raw records and [participation-disclosed review](tog/tasks/t75-saved-tangent-diagnostic/REVIEW.md) are retained without retry. [Next decision](tog/tasks/t75-saved-tangent-diagnostic/DECISION.md): prepare a bounded ordinary continuous nonlinear polishing baseline over the original full window and both step sizes, retaining causal-search seeds/fallback and original scoring. No next numerical run yet. Do not automatically open a richer representation, extra-neighbor or new-scene queue.
+
+The full research goal is explicitly active again; T74 was progress and T75 adds new evidence. Art production, writing and scoring remain paused by the user, with files preserved. The original TOG2/6 remains historical, no fresh rating or established core contribution. Main unchanged; automation remains deleted.
+
+## 2026-11-01 preceding record: art paused by user; T74 technical mechanism screen completed
 
 The user explicitly pauses art and prioritizes technical research. Art production, writing and scoring stay stopped; existing artifacts and historical judgments are preserved. This steering supersedes the older operational queue below. The earlier art-viewing dependency is not a blocker for the newly requested technical work. No art file is changed in this cycle; personal feedback is kept outside the public repository.
 
