@@ -1,6 +1,16 @@
 # Exploration policy
 
-## 2026-11-01 latest: T75 identifies ordinary geometric search capability; art remains paused
+## 2026-11-02 latest: T76 ordinary baseline passes; T77 selects no new mechanism; art paused
+
+[T76](tog/tasks/t76-continuous-full-window/README.md) completes one 31.5586529000-second scientific child. Both independently started two-Gaussian paths pass the original five-time physical gates against both references, plus all 17 common-time and reference-sensitivity checks. All nine numerical qualification categories pass. Fine-path final S256 field/covariance errors are 0.04753653/0.07636064; maximum inter-path field/covariance differences are 0.00465464/0.00493634. T71 remains the historical time-sensitive result. The ordinary continuous optimizer resolves this development task without a new representation.
+
+All 48 fresh seeds improve after polishing, with 292 linearizations/SVDs and 630 trials. Every polish stops at no_accepted_line; stationarity/global optimality is not certified. Fine-path circulation/impulse increase 0.6565%/3.4344%; these observations are not new failure gates or an established practical deficiency. Observed peak working set73,129,984bytes; selected scientific-child subtotal2049.958372399793seconds, not project cost. The failed metadata-only preparation and explicit executable refreeze are preserved; all52 frozen identities remain. [Scalar readback](tog/tasks/t76-continuous-full-window/SUMMARY.json) and [participation-disclosed audits](tog/tasks/t76-continuous-full-window/REVIEW.md) are retained. No rerun.
+
+[T77](tog/tasks/t77-deformation-evaluation-screen/README.md) completes its pre-frozen three-query/six-primary-work/twelve-retrieval screen. Four full texts supplied targeted reading; two works remain access-limited. Established deforming Gaussian and accelerated kernel methods constrain broad novelty claims. No concrete new mechanism is selected. [Decision](tog/tasks/t77-deformation-evaluation-screen/DECISION.md): no new scientific run or solver is queued; renewed development needs a concrete worthwhile operation, accuracy/full-cost limitation and plausible mechanism against a strong ordinary alternative. Do not invent a harder toy, new conservation gate or repeat the same broad search merely to fill the queue.
+
+The full SIGGRAPH research goal remains active and unmet. Historical TOG2/6 is not a fresh rating. Art production/writing/scoring remain paused with files preserved. Main unchanged; automation remains deleted.
+
+## 2026-11-01 preceding record: T75 identifies ordinary geometric search capability; art remains paused
 
 [T75](tog/tasks/t75-saved-tangent-diagnostic/README.md) completes exactly one saved-state diagnostic,196/196 checks. The old weight-only update matches its optimal subspace to1.5932e-14 relative field difference, but the complete ordinary eight-parameter tangent reduces derivative-relative residual norm0.35250054 to0.12118774, removing88.1805% of the weight residual square. Full rank8 and normalized condition number105.0188 are resolved; no difficult column was discarded. All five fixed heat/spatial/domain routes agree, with nine frozen input/source identities preserved.
 
