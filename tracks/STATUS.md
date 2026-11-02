@@ -1,6 +1,14 @@
 # Dual-track status
 
-## 2026-11-02 latest: T78 fixes the VPFM transfer contract; no compression mechanism selected
+## 2026-11-02 latest: T79 moving-domain contract clarified; no new method selected
+
+[T79](tog/tasks/t79-moving-domain-circulation/README.md) completes its two-work primary audit with one search/five retrieval attempts, including two retained access failures. The author PDF is locally hashed and key equation/limitation pages visually checked. [Independent local derivation](tog/tasks/t79-moving-domain-circulation/CONTRACT.md) separates material and geometric loops, period data and basis coefficients; it retains moving-basis and boundary transport terms. Two participation-disclosed static reviews support the contract. No scientific run or new score.
+
+Moving a3D obstacle does not by itself create a nonzero first-homology mode. The VPFM default workload has no verified missing-period deficiency. Full-velocity pressure evolution and period-constrained div-curl reconstruction are ordinary complete mathematical alternatives, with unmeasured implementation accuracy/cost here. No new mechanism is selected. Reopening requires a named relevant workload, actual ordinary-baseline deficiency and a treatment beyond known transport/basis bookkeeping; no automatic new toy, source batch or solver queue.
+
+T78's narrow closures and T76's ordinary success remain. Selected scientific-child subtotal stays2049.958372399793seconds, not project cost. Full SIGGRAPH objective active and unmet; art production/writing/scoring paused, main unchanged, automation deleted.
+
+## 2026-11-02 preceding record: T78 fixes the VPFM transfer contract; no compression mechanism selected
 
 [T78](tog/tasks/t78-vpfm-transfer-audit/README.md) audits four official files at VPFM commit `6acf81ae63df994a0826a90450a0a34c1a28ff5f`. The major transport contractions are already outside the stencil. Exact branch-wise moment aggregation is possible, but an interior scalar numerator map can have rank27 (rank81 for three independent components). The351/162/108-statistic constructions are sufficient representations, not memory minima or speed results. Actual initial placement is one particle per half-cell before masking; later occupancy is unmeasured. [Operator](tog/tasks/t78-vpfm-transfer-audit/OPERATOR.md), [algebra](tog/tasks/t78-vpfm-transfer-audit/ANALYSIS.md), pinned identities and participation-disclosed static review are retained.
 

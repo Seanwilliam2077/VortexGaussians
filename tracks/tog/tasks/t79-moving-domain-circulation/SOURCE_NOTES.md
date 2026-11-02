@@ -1,0 +1,9 @@
+# Targeted primary-source notes
+
+The author-hosted Fluid Cohomology PDF was acquired and hashed after the web reader rejected its57,084,156-byte size and ACM full HTML was inaccessible. Its24-page author version uses provisional article numbering; identify it by DOI and hash, not as a byte-identical publisher edition. Root read relevant text on pages5,7,8,10,13,18 and visually checked complete pages10/18. No supplementary assets or code were retrieved.
+
+**Fluid Cohomology.** Equations28–31 couple vorticity to harmonic coefficients; an orthonormal basis gives coefficient rates by projecting the Lamb vector. Section3.1 distinguishes loop circulation from harmonic coefficients and discusses cross-sectional fluxes. Section2.6 explains why full-velocity pressure projection retains harmonic information. Section4 supplies ordinary implementations. Page18 explicitly restricts the treatment to a fixed oriented manifold, excluding moving obstacles/evolving surfaces and leaving other extensions open. The paper itself relates its coefficient equation to earlier velocity-basis dynamics. These are established methods, not a mechanism introduced by this project. [Author paper](https://yhesper.github.io/fc23/Fluid_Cohomology_Final.pdf), [project](https://yhesper.github.io/fc23/fc23.html), [DOI](https://doi.org/10.1145/3592402).
+
+**VPFM v1.** Sections3.2/5.3 reconstruct velocity using a vector potential plus a single-valued scalar-potential correction for boundary normal velocity. Sections11–12 acknowledge that full harmonic dynamics are omitted and that the earlier fixed-domain treatment does not directly cover its moving/no-slip/viscous setting. This does not establish a field-wide gap or a failure of full-velocity methods. [Fixed text](https://arxiv.org/html/2505.21946v1).
+
+Only these two works were read. Incidental search hits and cited papers were not followed. This is not a current comprehensive novelty survey.

@@ -1,0 +1,64 @@
+{
+  "url": "https://yhesper.github.io/fc23/Fluid_Cohomology_Final.pdf",
+  "bytes": 57084156,
+  "sha256": "44448c4b1b8e3d24380f4b77b71dfc53941e251c8a8b41a0588c872a6937ef19",
+  "purpose": "read-only author primary paper; no source assets",
+  "retrieval_attempt_in_T79": 5,
+  "schema": "t79-primary-reading-v1",
+  "protocol_commit": "180fa65",
+  "doi": "10.1145/3592402",
+  "paper_pages": 24,
+  "printed_pages_read": [
+    5,
+    7,
+    8,
+    10,
+    13,
+    18
+  ],
+  "printed_pages_visually_checked": [
+    10,
+    18
+  ],
+  "public_source_vendoring": false,
+  "search_queries": 1,
+  "search_maximum": 1,
+  "retrieval_attempts": 5,
+  "retrieval_maximum": 6,
+  "scientific_runs": 0,
+  "selected_scientific_subtotal_seconds": 2049.958372399793,
+  "retrieval_log": [
+    {
+      "n": 1,
+      "url": "https://arxiv.org/html/2505.21946v1",
+      "result": "success; targeted on-page finds"
+    },
+    {
+      "n": 2,
+      "url": "https://yhesper.github.io/fc23/fc23.html",
+      "result": "author project success"
+    },
+    {
+      "n": 3,
+      "url": "https://yhesper.github.io/fc23/Fluid_Cohomology_Final.pdf",
+      "result": "web open failed: content length57084156 too large"
+    },
+    {
+      "n": 4,
+      "url": "https://dl.acm.org/doi/full/10.1145/3592402",
+      "result": "web open inaccessible"
+    },
+    {
+      "n": 5,
+      "url": "https://yhesper.github.io/fc23/Fluid_Cohomology_Final.pdf",
+      "result": "direct author PDF download success; same work"
+    }
+  ],
+  "local_preparation": {
+    "extractor": "preinstalled pypdf",
+    "renderer": "preinstalled Poppler pdftoppm",
+    "encoding_failure": "Initial console printing raised GBK UnicodeEncodeError after extraction; retained JSON read back with UTF-8 stdout; no re-download",
+    "scientific_imports": false,
+    "installation": false
+  }
+}
