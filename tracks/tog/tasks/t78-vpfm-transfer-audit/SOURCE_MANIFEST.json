@@ -1,0 +1,80 @@
+{
+  "commit": "6acf81ae63df994a0826a90450a0a34c1a28ff5f",
+  "files": [
+    {
+      "path": "run_vpfm.py",
+      "bytes": 68882,
+      "git_blob_sha1": "709eba0454d3553ea1ce5339437c0d4253101362",
+      "sha256": "8125c244cfa69ebe4e8fe8ff2962b4ba216324214e931a1f18ad894caf4eaa8d",
+      "url": "https://github.com/pfm-gatech/VPFM/blob/6acf81ae63df994a0826a90450a0a34c1a28ff5f/run_vpfm.py"
+    },
+    {
+      "path": "taichi_utils.py",
+      "bytes": 129967,
+      "git_blob_sha1": "9aa6cbd340b2c2b791817d08a26bfbfefb6b48f6",
+      "sha256": "1d72e2b8963acb4062f86a3f683ebac5cfaf41309d1ce0570812d54e6673e337",
+      "url": "https://github.com/pfm-gatech/VPFM/blob/6acf81ae63df994a0826a90450a0a34c1a28ff5f/taichi_utils.py"
+    },
+    {
+      "path": "hyperparameters.py",
+      "bytes": 1177,
+      "git_blob_sha1": "a49dd2f4734a9c335fe138ed8160051e1f64a148",
+      "sha256": "58286a945fe1b0c7dcec7d4f0854c34da2e6199ae101bfd96d73a70c5d0b0d83",
+      "url": "https://github.com/pfm-gatech/VPFM/blob/6acf81ae63df994a0826a90450a0a34c1a28ff5f/hyperparameters.py"
+    },
+    {
+      "path": "init_conditions.py",
+      "bytes": 24067,
+      "git_blob_sha1": "33adc0319053cf057ee37d05f4e01c3dcf0e9374",
+      "sha256": "496d6d2964741613d2c6db780861b4b222012382f89f94a11554a08bad42062d",
+      "url": "https://github.com/pfm-gatech/VPFM/blob/6acf81ae63df994a0826a90450a0a34c1a28ff5f/init_conditions.py"
+    }
+  ],
+  "schema": "t78-read-only-source-manifest-v1",
+  "protocol_commit": "5ece227",
+  "official_project": "https://vpfm.sinanw.com/",
+  "repository": "https://github.com/pfm-gatech/VPFM",
+  "author_link_verified": true,
+  "unique_code_configuration_files": 4,
+  "local_source_bytes": 224093,
+  "source_execution_or_imports": false,
+  "paper_timing_reproduction": false,
+  "sources_vendored_in_public_git": false,
+  "budget": {
+    "search_queries": 1,
+    "maximum_search_queries": 1,
+    "web_open_click_attempts": 4,
+    "maximum_web_open_click_attempts": 8,
+    "repository_attempts_including_metadata_validation_failure_and_author_link": 10,
+    "maximum_repository_attempts": 12,
+    "maximum_code_files": 6
+  },
+  "retrieval_attempts": [
+    "GitHub get_repo metadata",
+    "GitHub fetch root metadata",
+    "GitHub fetch_commit invalid arguments; rejected before retrieval",
+    "GitHub fetch main ref; commit pinned",
+    "GitHub fetch recursive tree at pinned commit",
+    "Web click official project Code link; official repository and README context",
+    "GitHub fetch_file run_vpfm.py at pinned commit",
+    "GitHub fetch_file taichi_utils.py at pinned commit",
+    "GitHub fetch_file hyperparameters.py at pinned commit",
+    "GitHub fetch_file init_conditions.py at pinned commit"
+  ],
+  "local_archive_preparation": {
+    "first_shell_transfer": "Rejected by Windows process creation: command length (os error206); source was not imported or run.",
+    "resolution": "Write tool-returned text bundle to ignored storage via apply_patch, then decode with standard library and verify Git blob hashes."
+  },
+  "primary_texts": [
+    {
+      "url": "https://arxiv.org/html/2505.21946v1",
+      "access": "targeted full-text sections4.4 and9.6/Table6; additional displayed sections11/12",
+      "same_paper_as_T77": true
+    },
+    {
+      "title": "GPU optimization of material point methods (Gao et al.,2018)",
+      "access": "bibliographic reference only; no external full-text URL in inspected VPFM reference, no additional search authorized or attempted"
+    }
+  ],
+  "cost_scope": "No scientific child; selected subtotal stays2049.958372399793s, not total project cost."
+}

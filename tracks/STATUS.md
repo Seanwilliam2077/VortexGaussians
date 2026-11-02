@@ -1,6 +1,14 @@
 # Dual-track status
 
-## 2026-11-02 latest: T76 ordinary baseline passes; T77 selects no new mechanism; art paused
+## 2026-11-02 latest: T78 fixes the VPFM transfer contract; no compression mechanism selected
+
+[T78](tog/tasks/t78-vpfm-transfer-audit/README.md) audits four official files at VPFM commit `6acf81ae63df994a0826a90450a0a34c1a28ff5f`. The major transport contractions are already outside the stencil. Exact branch-wise moment aggregation is possible, but an interior scalar numerator map can have rank27 (rank81 for three independent components). The351/162/108-statistic constructions are sufficient representations, not memory minima or speed results. Actual initial placement is one particle per half-cell before masking; later occupancy is unmeasured. [Operator](tog/tasks/t78-vpfm-transfer-audit/OPERATOR.md), [algebra](tog/tasks/t78-vpfm-transfer-audit/ANALYSIS.md), pinned identities and participation-disclosed static review are retained.
+
+Close only the simple-hoisting and generic-exact-low-rank arguments; do not infer that all P2G optimization is exhausted. Source-to-paper timing correspondence and a primary GPU-MPM comparison remain incomplete. No implementation or scientific run follows this candidate. [Next evidence](tog/tasks/t78-vpfm-transfer-audit/DECISION.md) is a separately bounded reading of the already named Fluid Cohomology and VPFM harmonic-dynamics limitation, before any solver proposal; no broad search or new scene.
+
+T76's ordinary baseline success remains. Selected scientific-child subtotal stays2049.958372399793seconds, not project cost. Full SIGGRAPH goal active and unmet; no fresh TOG score. Art production/writing/scoring remain paused, main unchanged and automation deleted.
+
+## 2026-11-02 preceding record: T76 ordinary baseline passes; T77 selects no new mechanism; art paused
 
 [T76](tog/tasks/t76-continuous-full-window/README.md) completes one 31.5586529000-second scientific child. Both independently started two-Gaussian paths pass the original five-time physical gates against both references, plus all 17 common-time and reference-sensitivity checks. All nine numerical qualification categories pass. Fine-path final S256 field/covariance errors are 0.04753653/0.07636064; maximum inter-path field/covariance differences are 0.00465464/0.00493634. T71 remains the historical time-sensitive result. The ordinary continuous optimizer resolves this development task without a new representation.
 
