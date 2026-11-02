@@ -1,5 +1,7 @@
 # Research evidence carried into this repository
 
+**Latest archival addition:** the [2 November 2026 handoff package](handoff-2026-11-02/README.md) adds 30 compressed data files (about 101 MiB), full numerical logs/reference inputs, T42 material-state projections and a repository-wide research catalog. Read [AGENT_HANDOFF](../AGENT_HANDOFF.md) for the current pause and next finite task. The R19–R22 overview below remains historical.
+
 R19–R22 leave a useful research platform, **not an established TOG contribution or a validated interactive fire editor**. This small directory preserves the decisions, including negative results, without requiring the original workstation or large experiment archives.
 
 | Round | What was established | What remains unestablished |

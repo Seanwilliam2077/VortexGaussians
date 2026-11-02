@@ -1,6 +1,18 @@
 # Exploration policy
 
-## 2026-11-02 latest: T79 moving-domain contract clarified; no new method selected
+## 2026-11-02 latest: research paused; T80 complete, T81 plan only; public data handoff
+
+**The user paused research.** The subsequent request authorizes committing/pushing existing work and substantial research data so another agent can understand and continue later. It does not resume experiments. Art remains separately paused; no art production, writing or scoring is queued. This entry supersedes historical active statuses and next-action lists below. The full TOG/SIGGRAPH objective remains unmet.
+
+Start with [AGENT_HANDOFF](AGENT_HANDOFF.md) and the [public data package](evidence/handoff-2026-11-02/README.md). The package contains 30 gzip files (106,058,754 compressed bytes): the complete T76 journal, ten original reference NPZs and twelve metadata files; six T42 material-state projections totaling 208,122 rows, plus an execution ledger. Byte identities and a read-only verification tool are included. T42 projections exclude third-party geometry and cannot supply gas arrays that the original run never exported. No new scientific execution, score or contribution follows from archiving.
+
+[T80](tog/tasks/t80-anisotropic-evaluator-contract/README.md) completes the bounded anisotropic-evaluator audit and independent algebra. Higher-order approximation, heat integrals and exact special-function evaluation are strong ordinary alternatives. Access limits, printed-source inconsistencies and numerical stability requirements remain disclosed. No new kernel mechanism or speed advantage is established.
+
+[T81](tog/tasks/t81-firewoods-capacity-causality/README.md) has a committed [brief](tog/tasks/t81-firewoods-capacity-causality/BRIEF.md), but no adapter, staging program, runner, executable freeze or results. Its four-arm budget is unconsumed. After explicit resumption, finish/review the implementation before any run. The question is whether original per-layer admission rejects emission despite idle global capacity on the existing T42 workload, at the same total capacity and with full costs; it is not yet a new-method claim.
+
+The T80 process correction is retained: a bounded diagnostic needs a concrete falsifiable question and a fair ordinary comparator; it need not already prove a novel solution before measuring a deficiency. This does not authorize a generic search, new-scene or solver queue. Preserve T76 ordinary success and all historical gates/failures. Selected scientific-child subtotal remains 2049.958372399793 seconds, not total project cost. Repository visibility was verified public; publish on `research/dual-track-exploration`, with main unchanged and automation not restarted.
+
+## 2026-11-02 preceding record: T79 moving-domain contract clarified; no new method selected
 
 [T79](tog/tasks/t79-moving-domain-circulation/README.md) completes its two-work primary audit with one search/five retrieval attempts, including two retained access failures. The author PDF is locally hashed and key equation/limitation pages visually checked. [Independent local derivation](tog/tasks/t79-moving-domain-circulation/CONTRACT.md) separates material and geometric loops, period data and basis coefficients; it retains moving-basis and boundary transport terms. Two participation-disclosed static reviews support the contract. No scientific run or new score.
 

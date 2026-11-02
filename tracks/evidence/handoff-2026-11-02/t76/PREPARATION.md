@@ -1,0 +1,13 @@
+# T76 handoff archive preparation
+
+2 November 2026. This is the user's requested data handoff while research remains paused. All operations below are standard-library byte hashing, gzip compression and round-trip verification. No solver, numerical experiment, NumPy import, array decoding, source modification, commit or push is performed by this archive worker.
+
+The allowlist is exactly the ten T60 S128/S256 snapshot NPZ files in T76's `raw_inputs`, the twelve T60 local JSON metadata inputs in that same frozen manifest, and T76's complete saved journal identified in `execution.json`. All 23 original files were present and matched their frozen byte counts and SHA256 hashes before compression. The ten snapshot metadata records and the two aggregate records also agree with the frozen raw identities.
+
+The first packaging attempt used a **45 MiB maximum per compressed file and 80 MiB total**. It stopped at the total cap while compressing `S256-snapshot-4.npz.gz`. The incomplete temporary file was removed; no oversized file or complete archive manifest was published. Twenty completed files (nine NPZ packages and eleven metadata packages), totaling **72,235,067 bytes**, remained. Every retained file had already passed decompressed byte-count and SHA256 verification. The journal had not yet been compressed. This was an archival preparation stop, not a scientific failure or retry.
+
+Root then explicitly revised only the **archival total cap to 200 MiB**, retaining the **45 MiB per-file cap**, so the substantial handoff can include all requested data. `pack.py` was changed only in its total-cap constant and matching diagnostics. The next invocation verifies and reuses the twenty existing packages without overwriting them, then continues with the remaining three files. It retains all original identities and uses the same deterministic gzip settings: level 9, zero modification time and empty stored filename. It does not split the journal automatically.
+
+The final `manifest.json` records original repository-relative paths and identities, compressed filenames and identities, compression implementation, the current limits, actual totals and verification results. `pack.py --verify` requires only Python's standard library and the tracked T76 input/execution receipts; it does not require the ignored source arrays or journal. Running `pack.py` again with the originals present verifies both originals and existing archives and performs no writes.
+
+The aggregate S128/S256 metadata also names final T60 arrays and T60 step logs that were not T76 raw inputs. Those extra files are outside this bounded allowlist; their references remain unchanged in the byte-preserved metadata. No third-party sources or private notes are included.

@@ -1,0 +1,74 @@
+{
+  "mode": "verified_and_restored_to_new_directory",
+  "restoration": {
+    "all_restored_files_hash_verified": true,
+    "bytes": 277342991,
+    "files": 23,
+    "original_files_overwritten": false,
+    "root_scope": "new verification directory in the outer workspace outputs; outside Git"
+  },
+  "scientific_executions": 0,
+  "status": "verified",
+  "t42": {
+    "checkpoints": 6,
+    "decoded_bytes": 6008891,
+    "files": 7,
+    "geometry_or_appearance_fields_present": false,
+    "material_rows_per_checkpoint": 34687,
+    "material_rows_total": 208122,
+    "packaged_bytes": 775503,
+    "strict_field_allowlists_passed": true,
+    "unique_ids_per_checkpoint": 34687
+  },
+  "t76": {
+    "files": 23,
+    "journal_files": 1,
+    "largest_packaged_file_bytes": 18515614,
+    "original_bytes": 277342991,
+    "packaged_bytes": 105283251,
+    "reference_metadata_files": 12,
+    "reference_npz_files": 10
+  },
+  "total_archive_files": 30,
+  "total_decoded_bytes": 283351882,
+  "total_packaged_bytes": 106058754,
+  "t76_saved_scalar_readback": {
+    "verdict": "ordinary_full_window_joint_pass",
+    "qualification_categories": {
+      "frozen_identity_runtime": true,
+      "rules_and_startup_regression": true,
+      "complete_causal_paths_and_counts": true,
+      "path_and_checkpoint_evaluator": true,
+      "continuous_polishing_and_fallback": true,
+      "reference_eligibility_and_score_integration": true,
+      "time_comparison_integration_and_moments": true,
+      "complete_work_accounting": true,
+      "final_identity_preservation": true
+    },
+    "scientific_execution": false
+  },
+  "handoff_local_links": {
+    "checked": 56,
+    "missing": []
+  },
+  "verified_at_utc": "2026-11-02T07:19:37.914565+00:00",
+  "python_version": "3.12.14",
+  "inputs": [
+    {
+      "path": "tracks/evidence/handoff-2026-11-02/verify.py",
+      "bytes": 26390,
+      "sha256": "126d2c913f8491ed0e0a8d71064776e8a45c56aea2472d5951db370649fc3154"
+    },
+    {
+      "path": "tracks/evidence/handoff-2026-11-02/t76/manifest.json",
+      "bytes": 13125,
+      "sha256": "4391c0a9d10a304891c9eedbbc74d2a2c8a7cdeafb891c71028f95acbbd95100"
+    },
+    {
+      "path": "tracks/evidence/handoff-2026-11-02/t42/MANIFEST.json",
+      "bytes": 4719,
+      "sha256": "76042808554518af3aa7fe18adb1c838033cafd62d66449ff473ab88a6f088ec"
+    }
+  ],
+  "interpretation": "Archive and saved-record verification only; no new solver execution, scientific gate, reviewer score, or contribution claim."
+}

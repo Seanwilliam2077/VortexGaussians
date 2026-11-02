@@ -1,5 +1,7 @@
 # T76 — ordinary continuous projection passes the original full-window task
 
+**Publication addendum, 2 November 2026:** research is paused. The [handoff archive](../../../evidence/handoff-2026-11-02/README.md) now publishes all ten original T76 reference NPZ inputs, twelve companion metadata JSONs and the complete journal as 23 lossless gzip files with original byte identities. Older references below to local-only arrays and an ignored journal describe their location at execution time. Their original paths remain ignored; the archived copies are tracked separately. No experiment was repeated. The original one-shot guard, runtime limits, numerical verdict and reproduction caveats remain unchanged.
+
 Completed 2 November 2026, Asia/Shanghai. Exactly one scientific invocation completes the original two causal paths, all nine numerical qualification categories, both references and the original physical/time/reference-sensitivity gates. **This establishes a stronger ordinary baseline on one development case, not a new method or TOG contribution.** Art remains paused.
 
 ## What changed and what was measured

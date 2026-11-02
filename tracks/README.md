@@ -1,5 +1,7 @@
 # Two research tracks, one VortexGaussians repository
 
+**Current checkpoint, 2 November 2026: research is paused.** The user requested publication of existing work and enough data for a future agent to continue. Begin with [AGENT_HANDOFF](AGENT_HANDOFF.md), [STATUS](STATUS.md) and the [101 MiB data package](evidence/handoff-2026-11-02/README.md). T80 is complete; T81 is a frozen brief with no implementation/run. Art remains paused. The original track descriptions below document the starting questions, not a current execution queue.
+
 Started 27 October 2026. VortexGaussians remains the shared project. Its original browser artwork/tool is retained while two distinct research questions develop alongside it.
 
 | Track | Question | Entry | Current claim |
@@ -33,6 +35,6 @@ The TOG workspace documents its portable Python commands. Planning and task vali
 
 ## Continuous exploration
 
-The author authorized both tracks to continue on 27 October 2026, with the provisional art theme above. Work proceeds in bounded, reviewable tasks and records what changes the next decision. Initial effort is weighted toward the TOG question while preserving a useful art iteration in each cycle. Resource exhaustion or an explicit pause stops execution; it does not convert incomplete work into a successful result.
+The author originally authorized both tracks to continue on 27 October 2026, with the provisional art theme above. Later instructions paused art, prioritized technical research, and then paused research as recorded in the current handoff. That latest pause supersedes the original continuous schedule. Future resumed work proceeds in bounded, reviewable tasks and records what changes the next decision; a pause never converts incomplete work into a successful result.
 
 The research branch carries the new work without automatically replacing the public historical project page. See the task log for actual commits, validations, remaining gaps, and publication status.

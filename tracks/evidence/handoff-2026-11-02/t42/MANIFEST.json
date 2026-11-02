@@ -1,0 +1,126 @@
+{
+  "schema": "t42-public-handoff-data-v1",
+  "purpose": "Evidence inspection and T81 preparation, not a restartable complete simulator checkpoint.",
+  "new_scientific_runs": 0,
+  "historical_visual_verdict": "unqualified",
+  "checkpoint_count": 6,
+  "material_rows_total": 208122,
+  "fields_per_material_row": [
+    "id",
+    "fuelInitial",
+    "fuel",
+    "heat",
+    "char",
+    "glow",
+    "state"
+  ],
+  "omitted": [
+    "third-party geometry/appearance",
+    "rendered scene images",
+    "private notes"
+  ],
+  "unavailable_in_original_records": [
+    "complete gas particle arrays",
+    "per-source emission outcomes",
+    "A-only trajectory"
+  ],
+  "entries": [
+    {
+      "file": "00-initial.dynamic.json.gz",
+      "bytes": 86860,
+      "sha256": "c87a381ad5c50c841b1bb299e708ffe063a5de2d18f573096a3e091486612ba1",
+      "decoded_bytes": 892900,
+      "decoded_sha256": "b744e12ea423e1d14853094ccbb891010f294b6560508c8aa65d47a30d87a0aa",
+      "original_record": {
+        "path": "outputs/t42-firewoods-sequential-workflow/run-01/00-initial.json.gz",
+        "bytes": 1156322,
+        "sha256": "96d8ed0a66267c7fe1837f100cd4197b558d9abe4d2704e050ff9630b7bfb3c1"
+      },
+      "material_rows": 34687,
+      "checkpoint": "00-initial"
+    },
+    {
+      "file": "01-after-A.dynamic.json.gz",
+      "bytes": 87719,
+      "sha256": "3be03aedf355cc01853a1af850a8596940ccb24747a783754b213b663d6ee3f6",
+      "decoded_bytes": 893772,
+      "decoded_sha256": "52b93eb56a5306018be00a18fe94b32d21e2425bb42456e95c5ca5e3a54e288f",
+      "original_record": {
+        "path": "outputs/t42-firewoods-sequential-workflow/run-01/01-after-A.json.gz",
+        "bytes": 1157474,
+        "sha256": "fdbbd66af65a26601be721b968124452a477a25a99a087a568ee85f5fea95569"
+      },
+      "material_rows": 34687,
+      "checkpoint": "01-after-A"
+    },
+    {
+      "file": "02-before-B.dynamic.json.gz",
+      "bytes": 168909,
+      "sha256": "f1f829d87789233c2f02b632702b0d2c4e05431ebd04a3ebbbbb6581cac3f672",
+      "decoded_bytes": 1107722,
+      "decoded_sha256": "59755a2701eeb8c92cc85dd1799d64caa556648e399e7ab605b69339a873a651",
+      "original_record": {
+        "path": "outputs/t42-firewoods-sequential-workflow/run-01/02-before-B.json.gz",
+        "bytes": 1257399,
+        "sha256": "03415fe54d9424b944aba6a79ce4dce3e0efb6d2c6c67115b8ce3cbff0301896"
+      },
+      "material_rows": 34687,
+      "checkpoint": "02-before-B"
+    },
+    {
+      "file": "03-after-B.dynamic.json.gz",
+      "bytes": 170206,
+      "sha256": "3c638025c01a76b0a1bfff04e2fcdf1cb2ba405caf618f41e1371fc41843c53d",
+      "decoded_bytes": 1109372,
+      "decoded_sha256": "bb6736bb34e6489ef4e32f8262365664eb2e3b928c7c5c9f5f4a993a8139b649",
+      "original_record": {
+        "path": "outputs/t42-firewoods-sequential-workflow/run-01/03-after-B.json.gz",
+        "bytes": 1259151,
+        "sha256": "8c4a9f7c8458f63c710cd75e2720b1b0c819289e4c7490d7cb28aba52c02c9ed"
+      },
+      "material_rows": 34687,
+      "checkpoint": "03-after-B"
+    },
+    {
+      "file": "04-endpoint.dynamic.json.gz",
+      "bytes": 170282,
+      "sha256": "5fcab13aa13e53d906542a4a4b79effa1f8e8993ed7d61896d783dc492e34b6c",
+      "decoded_bytes": 1078848,
+      "decoded_sha256": "7b2a4ee56880d87890a37229ab6b5aeba0d80ff6a41907c80d6d45ce5a98516a",
+      "original_record": {
+        "path": "outputs/t42-firewoods-sequential-workflow/run-01/04-endpoint.json.gz",
+        "bytes": 1253813,
+        "sha256": "eed1fc2e5d457d736cc5baa022892e04405b5d215cf32e9e50b0afd7bc8f4cd3"
+      },
+      "material_rows": 34687,
+      "checkpoint": "04-endpoint"
+    },
+    {
+      "file": "05-reset.dynamic.json.gz",
+      "bytes": 86857,
+      "sha256": "73773332f6d3d8b9a8aba6a232b823aa4e03041ca32cf3d5aec1e14831b7a646",
+      "decoded_bytes": 892898,
+      "decoded_sha256": "8ade2b3e71c9c759c05a3010123ebbb54b6b41d245f56adc879d020da831cf46",
+      "original_record": {
+        "path": "outputs/t42-firewoods-sequential-workflow/run-01/05-reset.json.gz",
+        "bytes": 1156322,
+        "sha256": "96d8ed0a66267c7fe1837f100cd4197b558d9abe4d2704e050ff9630b7bfb3c1"
+      },
+      "material_rows": 34687,
+      "checkpoint": "05-reset"
+    },
+    {
+      "file": "execution-ledger.json.gz",
+      "bytes": 4670,
+      "sha256": "66d95f195a019c561d8f3a6b5d4140a9b0f6f4b329542210b247db60f347a1eb",
+      "decoded_bytes": 33379,
+      "decoded_sha256": "e138b19b6cefb3a7597465715d6df7494c2adafbe9e9e7a8517b31888a22fe6b",
+      "original_record": {
+        "path": "outputs/t42-firewoods-sequential-workflow/run-01/result.json",
+        "bytes": 57625,
+        "sha256": "4d086b367da10afe23bf34bdd2a1670edf18501acdfef5091cb892cab4b4ffac"
+      }
+    }
+  ],
+  "total_packaged_bytes": 775503
+}
