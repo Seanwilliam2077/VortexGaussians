@@ -1,0 +1,9 @@
+# Source observations and limits
+
+Rossi2005 was read at the same institutional URL used in T77. A405,845-byte local PDF is hashed; pages9,10,16,17 were rendered and visually inspected despite Poppler font warnings. No source file is committed.
+
+**Rossi.** Eq1.1 uses covariance diag(2 sigma² a²,2 sigma²/a²). Figure2.1 uses aspect a²=2.25, sigma=1/4 and displayed coordinates[-3,3]²; outputs include third streamfunction derivatives, hence velocity curvature. Eq2.15 normalizes error by the reference field supremum. Pages16–17 report mean aspect about2.8 and some values above4. Sixth-order streamfunction approximation already retains fourth-order convergence across the displayed interval. The tail-aware FMM at delta2=16 improves reported cost without a noteworthy displayed quality difference. These old-machine results are not current benchmarks. Printed4.1/4.2 exponents, constant N/sigma0² and one sigma label conflict with decaying/fixed-overlap descriptions. A full reproduction must resolve them; Fig2.1 is independent of these trajectory ambiguities. No complete particle/query sequence was acquired. [Institutional report](https://udspace.udel.edu/bitstreams/26cdff07-6f06-48ba-9ac5-ed07bda39825/download).
+
+**Bassetti–Erskine1980.** The CERN-indexed primary abstract confirms a complex-error-function expression for a two-dimensional Gaussian charge field. Both direct PDF and record opens returned an Anubis challenge; no challenge bypass, full-text access or formula attribution verification followed. The local formula below is independently derived, rather than transcribed from unavailable text. [Primary report location](https://cds.cern.ch/record/122227/files/198005132.pdf).
+
+One exact query and four network retrieval attempts were used, below the six-attempt cap. No other search hits/citations were followed.
