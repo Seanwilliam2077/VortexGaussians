@@ -246,6 +246,11 @@
           <div class="prow"><label>Scene brightness</label><input type="range" id="sceneLight" min="0.1" max="3" step="0.02" value="1.0"><span class="pval" id="sceneLightV"></span></div>
           <div class="prow"><label>Gaussian cap (×10k)</label><input type="range" id="sceneMax" min="2" max="200" step="1" value="80"><span class="pval" id="sceneMaxV"></span></div>
           <div class="crow" id="sceneOn"><span class="cb"></span><span>Show .ply scene</span></div>
+          <div class="crow" id="fireLight"><span class="cb on"></span><span>Fire lights the scene (world-space)</span></div>
+          <div class="prow"><label>Fire light gain</label><input type="range" id="fireLightGain" min="0" max="120" step="1" value="26"><span class="pval" id="fireLightGainV"></span></div>
+          <div class="crow" id="obstOn"><span class="cb"></span><span>Scene deflects the flame</span></div>
+          <div class="hint b"><b>Fire lights the scene</b>: flame particles cluster into six point lights that shade each splat diffusely, using its shortest axis as the normal. No shadows.
+            <b>Scene deflects the flame</b>: opaque splats near the fire become sphere proxies with closed-form boundary terms. Grid-Free solver only; it changes the simulation, so replay hashes differ while it is on.</div>
           <div class="hint b">Parses the standard Inria `.ply` (position · scale=exp · quaternion · opacity=sigmoid · SH DC→color);
             each Gaussian becomes a flat splat from its two major axes. The fire sits inside the scene and occludes it from the front. Use the sliders above to <b>align, scale and level</b> it.</div>
         </div>
@@ -338,6 +343,7 @@ function fbo(t){ const f=gl.createFramebuffer(); gl.bindFramebuffer(gl.FRAMEBUFF
 // ---------------------------------------------------------------------------
 //  Shaders
 // ---------------------------------------------------------------------------
+const FL_K = 6;                            // 火光簇数: 2 列 × 3 段 (见 flAdd)
 const COMMON_NOISE = `
 float hash(vec2 p){ p=fract(p*vec2(123.34,456.21)); p+=dot(p,p+45.32); return fract(p.x*p.y); }
 float vnoise(vec2 p){ vec2 i=floor(p),f=fract(p); f=f*f*(3.0-2.0*f);
@@ -357,16 +363,22 @@ layout(location=6) in float aDens;
 layout(location=7) in float aSeed;
 layout(location=8) in float aType;      // 0 splat · 1 ember · 2 背景高斯
 uniform mat4 uViewProj;
-out vec2 v_uv; out float v_temp, v_dens, v_seed, v_fade, v_type;
+uniform vec4 uFLPos[${FL_K}]; uniform vec3 uFLCol[${FL_K}]; uniform float uFLOn;
+out vec2 v_uv; out float v_temp, v_dens, v_seed, v_fade, v_type; out vec3 v_light;
 void main(){
   vec3 wp = aPos + aCorner.x*aMajor + aCorner.y*aMinor;
   gl_Position = uViewProj * vec4(wp, 1.0);
   v_uv=aCorner; v_temp=aTemp; v_dens=aDens; v_seed=aSeed; v_fade=aFade; v_type=aType;
+  v_light=vec3(0.0);
+  if(uFLOn>0.5 && aType>1.5){                      // 程序化背景没有法线: 按各向同性 (⟨|cos|⟩=1/2) 受光
+    for(int i=0;i<${FL_K};i++){ vec3 L=uFLPos[i].xyz-aPos;
+      v_light+=uFLCol[i]*0.5/(dot(L,L)+uFLPos[i].w); }
+  }
 }`;
 const FS_PARTICLE = `#version 300 es
 precision highp float;
-in vec2 v_uv; in float v_temp, v_dens, v_seed, v_fade, v_type;
-uniform float uTime, uEmis, uMode, uFlick, uFireI;
+in vec2 v_uv; in float v_temp, v_dens, v_seed, v_fade, v_type; in vec3 v_light;
+uniform float uTime, uEmis, uMode, uFlick, uFireI, uFLOn, uBoxLight;
 uniform vec2 uFire, uRes;
 out vec4 o;
 ${COMMON_NOISE}
@@ -396,7 +408,7 @@ void main(){
     vec2 suv=gl_FragCoord.xy/uRes;
     vec2 dd=(suv-uFire); dd.x*=uRes.x/uRes.y;
     float fl=uFireI*exp(-dot(dd,dd)*9.0); fl*=mix(1.0,1.9,smoothstep(0.5,0.04,suv.y));
-    vec3 col=(vec3(0.012,0.015,0.024) + vec3(1.0,0.46,0.16)*fl)*v_temp;
+    vec3 col=(vec3(0.012,0.015,0.024) + (uFLOn>0.5 ? v_light*uBoxLight : vec3(1.0,0.46,0.16)*fl))*v_temp;
     float a=g*clamp(v_dens,0.0,0.9)*1.25;
     o=vec4(col*a, a); return;
   }
@@ -516,11 +528,13 @@ layout(location=8) in vec3 aShR;       // 各通道 1 阶球谐的 3 个系数
 layout(location=9) in vec3 aShG;
 layout(location=10) in vec3 aShB;
 layout(location=11) in float aShIdx;   // 原始下标 -> 高阶球谐纹理
+layout(location=12) in vec3 aNorm;     // 最短主轴 (源坐标系) × 扁平度; 零向量=球形 splat, 无法线
 uniform sampler2D uSH; uniform int uSHW; uniform int uSHDeg; uniform float uPreComp;
 uniform mat4 uViewProj; uniform mat4 uView;
 uniform vec2 uFocal; uniform vec2 uViewport; uniform float uSceneLight;
 uniform mat3 uSceneRotInv; uniform vec3 uEye;
 uniform float uCharDesat, uCharDim, uCharSootMix, uCharOpa; uniform vec3 uCharSoot;
+uniform vec4 uFLPos[${FL_K}]; uniform vec3 uFLCol[${FL_K}]; uniform float uFLOn;
 out vec2 v_uv; out vec3 v_color; out float v_opa; out float v_glow;
 vec4 SHT(int k){ return texelFetch(uSH, ivec2(k % uSHW, k / uSHW), 0); }
 // 显示链的闭式逆: 让重建颜色过完 ACES+伽马后回到训练时的值。
@@ -636,7 +650,20 @@ void main(){
   // 旧行为可精确复现: desat=0, dim=0.12, sootMix=0, opa=0.30 ⇒ mix(base,base*0.12,aChar)。
   vec3 grey   = vec3(dot(base, vec3(0.2126,0.7152,0.0722)));
   vec3 sooted = mix(mix(base, grey, uCharDesat)*uCharDim, uCharSoot, uCharSootMix);
-  v_color = mix(base, sooted, aChar)*uSceneLight;
+  vec3 albedo = mix(base, sooted, aChar);
+  // 火→场景照明 (世界空间): 把火焰粒子聚成 FL_K 个点光 (见 flAdd), 逐 splat 算漫反射。
+  // 3DGS 不存法线; 重建里贴面的 splat 是扁的, 最短主轴就是面法线, 符号未知 → 双面取 |cos|。
+  // 球形 splat 没有方向信息, 扁平度把它平滑退回各向同性 (⟨|cos|⟩=1/2)。
+  // 把重建的颜色当反照率用是近似: f_dc 存的是已被原始光照烘过的辐射度, 不是反照率。
+  // 没有阴影: 点光穿过遮挡物 —— 这是这条路径明确的上限, 不要写成"光传输"。
+  vec3 E = vec3(0.0);
+  if(uFLOn > 0.5){
+    vec3 n = transpose(uSceneRotInv)*aNorm; float flatness = length(n);
+    if(flatness > 1e-4) n /= flatness;
+    for(int i=0;i<${FL_K};i++){ vec3 L = uFLPos[i].xyz - aPos; float q = dot(L,L) + uFLPos[i].w;
+      E += uFLCol[i]*mix(0.5, abs(dot(n,L))/sqrt(q), flatness)/q; }
+  }
+  v_color = albedo*(uSceneLight + E);
   v_opa   = aOpa*(1.0-uCharOpa*aChar);               // 烟炱沉积在表面上, 不该把表面变透明
   v_glow = aGlow;
 }`;
@@ -672,13 +699,15 @@ const pComp = prog(VS_FULL, FS_COMPOSITE);
 const U = (p,n)=>gl.getUniformLocation(p,n);
 const uPart={ VP:U(pPart,'uViewProj'),
               Time:U(pPart,'uTime'),Emis:U(pPart,'uEmis'),Mode:U(pPart,'uMode'),Flick:U(pPart,'uFlick'),
-              Fire:U(pPart,'uFire'),FireI:U(pPart,'uFireI'),Res:U(pPart,'uRes') };
+              Fire:U(pPart,'uFire'),FireI:U(pPart,'uFireI'),Res:U(pPart,'uRes'),
+              FLPos:U(pPart,'uFLPos'),FLCol:U(pPart,'uFLCol'),FLOn:U(pPart,'uFLOn'),BoxLight:U(pPart,'uBoxLight') };
 const uScene={ VP:U(pScene,'uViewProj'), Light:U(pScene,'uSceneLight'), Time:U(pScene,'uTime'),
   V:U(pScene,'uView'), Focal:U(pScene,'uFocal'), Viewport:U(pScene,'uViewport'),
   RotInv:U(pScene,'uSceneRotInv'), Eye:U(pScene,'uEye'), DepthPre:U(pScene,'uDepthPre'),
   SH:U(pScene,'uSH'), SHW:U(pScene,'uSHW'), SHDeg:U(pScene,'uSHDeg'), PreComp:U(pScene,'uPreComp'),
   CharDesat:U(pScene,'uCharDesat'), CharDim:U(pScene,'uCharDim'),
-  CharSootMix:U(pScene,'uCharSootMix'), CharOpa:U(pScene,'uCharOpa'), CharSoot:U(pScene,'uCharSoot') };
+  CharSootMix:U(pScene,'uCharSootMix'), CharOpa:U(pScene,'uCharOpa'), CharSoot:U(pScene,'uCharSoot'),
+  FLPos:U(pScene,'uFLPos'), FLCol:U(pScene,'uFLCol'), FLOn:U(pScene,'uFLOn') };
 const uPre={ Tex:U(pPre,'uTex'),Threshold:U(pPre,'uThreshold') };
 const uBlur={ Tex:U(pBlur,'uTex'),Dir:U(pBlur,'uDir') };
 const uComp={ Scene:U(pComp,'uScene'),Bloom:U(pComp,'uBloom'),Exposure:U(pComp,'uExposure'),BloomAmt:U(pComp,'uBloomAmt'),
@@ -710,12 +739,13 @@ function setupInstanceVAO(vao, vbo){
 const vaoPart=gl.createVertexArray(); setupInstanceVAO(vaoPart, instVBO);
 
 // ---- 场景高斯 VAO (.ply 载入):
-//   pos3 covA3 covB3 color3 opa1 glow1 char1 shR3 shG3 shB3 idx1 = 25 floats
+//   pos3 covA3 covB3 color3 opa1 glow1 char1 shR3 shG3 shB3 idx1 norm3 = 28 floats
 //   shR/G/B = 各通道 1 阶球谐的 3 个系数 (DC 已烘进 color)
 //   idx    = 该 splat 在**原始**数组中的下标。场景缓冲每帧按深度重排, 而 2-3 阶球谐
 //            存在纹理里不跟着重排, 所以必须带着原下标去取 —— gl_InstanceID 是排序后
 //            的位置, 对不上。
-const SC_STRIDE_F=25, SC_STRIDE_B=SC_STRIDE_F*4;
+//   norm   = 最短主轴 × 扁平度 (源坐标系, 火光照明用; 旋转留给着色器, 不逐帧算)
+const SC_STRIDE_F=28, SC_STRIDE_B=SC_STRIDE_F*4;
 const sceneVBO=gl.createBuffer();
 const vaoScene=gl.createVertexArray(); gl.bindVertexArray(vaoScene);
 gl.bindBuffer(gl.ARRAY_BUFFER,quadVBO);
@@ -724,7 +754,7 @@ gl.bindBuffer(gl.ARRAY_BUFFER,sceneVBO);
 (function(){ const ia=(loc,size,off)=>{ gl.enableVertexAttribArray(loc);
   gl.vertexAttribPointer(loc,size,gl.FLOAT,false,SC_STRIDE_B,off*4); gl.vertexAttribDivisor(loc,1); };
   ia(1,3,0); ia(2,3,3); ia(3,3,6); ia(4,3,9); ia(5,1,12); ia(6,1,13); ia(7,1,14);
-  ia(8,3,15); ia(9,3,18); ia(10,3,21); ia(11,1,24); })();
+  ia(8,3,15); ia(9,3,18); ia(10,3,21); ia(11,1,24); ia(12,3,25); })();
 gl.bindVertexArray(null);
 
 // ---- 背景 3DGS: 一组静态暗色高斯 (地面 + 环境), 与火共用同一光栅器 ----
@@ -836,7 +866,11 @@ function parsePLY(buf){
     // 2-3 阶: 每通道系数 3..14 (共 12 个)。属性槽不够, 走纹理。
     const SHhi=(idx,ch,out,o)=>{ const b=ch*nPer;
       for(let k=0;k<12;k++) out[o+k] = (3+k)<nPer ? F(idx,frNames[b+3+k]) : 0; };
+    // 面法线 = 最短主轴 (R 的对应列); 扁平度 1−s_min/s_mid 让球形 splat 的法线长度趋零。
+    const iMin=(s0<=s1&&s0<=s2)?0:(s1<=s2?1:2), sMin=[s0,s1,s2][iMin],
+          sMid=Math.min(iMin===0?s1:s0, iMin===2?s1:s2), flatness=1-sMin/Math.max(1e-9,sMid);
     out.push({ p:[x,y,z], cov:[cv3(0,0),cv3(0,1),cv3(0,2),cv3(1,1),cv3(1,2),cv3(2,2)],
+      n:[R[0][iMin]*flatness, R[1][iMin]*flatness, R[2][iMin]*flatness],
       sh:[SHc(i,0),SHc(i,1),SHc(i,2)],
       // DC 保留符号: 钳位只在着色器里、把所有阶加完之后做一次 (与参考一致)。
       c:[0.5+C0*F(i,'f_dc_0'), 0.5+C0*F(i,'f_dc_1'), 0.5+C0*F(i,'f_dc_2')], o:sg(F(i,'opacity')) });
@@ -957,6 +991,7 @@ function gatherScene(){
     arr[o++]=sh[1][0]; arr[o++]=sh[1][1]; arr[o++]=sh[1][2];
     arr[o++]=sh[2][0]; arr[o++]=sh[2][1]; arr[o++]=sh[2][2];
     arr[o++]=bi;                       // 原始下标 -> 2-3 阶球谐纹理 (缓冲会被深度重排)
+    arr[o++]=g.n[0]; arr[o++]=g.n[1]; arr[o++]=g.n[2];
     bi++;
     const ex=wx-eye[0], ey=wy-eye[1], ez=wz-eye[2];
     const d=ex*fwx + ey*fwy + ez*fwz; sceneKey[gi++]=d;       // 视空间深度, 线性而非平方:
@@ -1228,6 +1263,11 @@ const P = {
   charSootMix:0.0,                  // 再向定值烟炱反照率插值; 1 会压平表面起伏, 默认不用
   charOpa:0.0,                      // 烟炱是表面沉积物, 不降不透明度 (旧版 0.30)
   charSootR:0.0495, charSootG:0.0459, charSootB:0.0428,   // 线性域暖中性烟炱反照率 (~4.5%)
+  // 火→场景照明 (纯渲染, 不进哈希; 见 flAdd)。关掉即回到屏幕空间暖色衰减 (程序化背景) / 无照明 (.ply)。
+  emitN:6,                           // 每步每层发射数 (默认 6 决定 srand 消耗, 改它就换了回放流)
+  fireLight:true, fireLightGain:26,
+  // 几何偏转 (进仿真, 所以默认关: 打开后回放哈希会变; 见 obstPrepare)。
+  obstOn:false, obstShed:1.2,
   orbit:true, stretch:true, flicker:true, paused:false
 };
 
@@ -1384,7 +1424,7 @@ function evolveF(p, Lxx,Lxy,Lyx,Lyy, dt){
 // ===== 路线2: 2D 涡粒子 + Biot–Savart =====
 function emitSim(layer, dt){
   const cap=P.ppl; if(layer.ps.length>=cap) return;
-  const n=Math.min(cap-layer.ps.length, 6+(pointer.active?6:0));
+  const n=Math.min(cap-layer.ps.length, P.emitN+(pointer.active?6:0));   // 稳态粒子数 ≈ emitN·60·寿命: 想超过 ~1500/层必须抬这里
   for(let i=0;i<n;i++){ const r=(srand()*2-1);
     const p={ x:source.x+r*source.w*0.5+(srand()-0.5)*0.02, y:source.y+srand()*0.05,
       G:(srand()-0.5)*0.6+Math.sin(layer.seed+layer.t)*0.1,
@@ -1588,7 +1628,7 @@ function vpmPool(k,n){
       T:new Float32Array(cap),SG:new Float32Array(cap),
       UX:new Float32Array(cap),UY:new Float32Array(cap),
       LX:new Float32Array(cap),LXY:new Float32Array(cap),LYX:new Float32Array(cap),
-      TT:new Float32Array(cap),DTX:new Float32Array(cap),DG:new Float32Array(cap),
+      TT:new Float32Array(cap),DTX:new Float32Array(cap),DG:new Float32Array(cap),WG:new Float32Array(cap),
       code:new Uint32Array(cap),scode:new Uint32Array(cap),ord:new Uint32Array(cap),tmp:new Uint32Array(cap),cnt256:new Uint32Array(256),
       ndF:new Float32Array(nc*11), ndI:new Int32Array(nc*6), stack:new Int32Array(1024) };
   }
@@ -1784,6 +1824,79 @@ function vpmDirVel(px,py,C){
   const inv=1/vpmDirL;
   vpmDirOut.ux=ux*inv; vpmDirOut.uy=uy*inv + P.buoy*(ts/tw);
 }
+// ===========================================================================
+//  几何偏转: 地面镜像的同一思路搬到场景几何上 —— 边界条件用闭式解, 不解方程、不上网格。
+//  场景几何 → 一组球代理 (buildObstacles 由不透明 splat 自动生成, 或 __demo.obstacles 手给);
+//  每层切片截球得到圆 (cx,cy,a), 对每个圆用圆定理 (Milne-Thomson) 的一阶形式:
+//    u_d(r) = −(a²/ρ²)[2(U·r̂)r̂ − U]        U = 该圆上游粒子的平均速度
+//  这是绕圆柱势流的偶极子: 无散无旋, 在 ρ=a 处恰好抵消法向流, 肩部切向流加倍。
+//  偶极子只抵消局部均匀来流, 所以另加两项:
+//   · 壁面层 ρ<1.15a 内投影掉残余的入射法向速度, 位置落进圆内时推回圆周;
+//   · 边界层涡量: 表面滑移 u_t 以 ∂Γ/∂t = obstShed·u_t 进入粒子环量, 尾迹里才有卷起。
+//  第二项是工程替代, 不是无滑移解。VPM 专用; 3D 基线与 VIC 不走这条路径。
+// ===========================================================================
+let obst=[];                             // [{x,y,z,r}] 世界坐标
+const obstCirc=[];                       // 每层: Float32Array [cx,cy,a,Ux,Uy]×m
+const obstN=[];                          // 每层圆数
+function obstPrepare(useSim){
+  const N=layers.length, D=P.sliceDepth, half=(N>1?0.5*D/(N-1):0), va=(P.sliceMode==='view'), bx=cam.bx, fh=cam.fh;
+  for(let k=0;k<N;k++){
+    obstN[k]=0; if(!useSim[k]||!P.obstOn||!obst.length) continue;
+    if(!obstCirc[k]||obstCirc[k].length<obst.length*5) obstCirc[k]=new Float32Array(obst.length*5);
+    const dep=(N>1?(k/(N-1)-0.5):0)*D, C=obstCirc[k], ps=layers[k].ps; let m=0;
+    for(const s of obst){
+      const sx=va?(s.x*bx[0]+s.z*bx[2]):s.x, dc=va?(s.x*fh[0]+s.z*fh[2]):s.z;
+      const dz=Math.max(0,Math.abs(dep-dc)-half);          // 放宽半个层距: 细物件不会从两层之间漏过去
+      if(dz>=s.r) continue;
+      const a=Math.sqrt(s.r*s.r-dz*dz), o=m*5, R2=9*a*a;
+      let ux=0,uy=0,c=0;
+      for(const p of ps){ const dx=p.x-sx, dy=p.y-s.y;     // 上游半环: 羽流向上, 下方粒子代表来流
+        if(dy<0 && dx*dx+dy*dy<R2){ ux+=p.vx; uy+=p.vy; c++; } }
+      C[o]=sx; C[o+1]=s.y; C[o+2]=a; C[o+3]=c?ux/c:0; C[o+4]=c?uy/c:0; m++;
+    }
+    obstN[k]=m;
+  }
+}
+const obstOut={vx:0,vy:0,wg:0};
+function obstVelocity(k,px,py,vx,vy){
+  const C=obstCirc[k], m=obstN[k]; let wg=0;
+  for(let c=0;c<m;c++){ const o=c*5, a=C[o+2], rx=px-C[o], ry=py-C[o+1], q=rx*rx+ry*ry, a2=a*a;
+    if(q>16*a2) continue;
+    const rho2=Math.max(q,a2*0.25), Ux=C[o+3], Uy=C[o+4];
+    const t=Math.min(1,Math.max(0,(4-Math.sqrt(q/a2))/1.5)), win=t*t*(3-2*t);   // ρ∈[2.5a,4a] 平滑收窗
+    const f=win*a2/rho2, un=2*(Ux*rx+Uy*ry)/rho2;
+    vx-=f*(un*rx-Ux); vy-=f*(un*ry-Uy);
+    if(q<1.3225*a2){                                       // ρ<1.15a: 壁面层
+      const rho=Math.sqrt(Math.max(q,1e-8)), nx=rx/rho, ny=ry/rho, vn=vx*nx+vy*ny;
+      if(vn<0){ vx-=vn*nx; vy-=vn*ny; }
+      wg+=P.obstShed*(-ny*vx+nx*vy);                       // 逆时针滑移 → 正涡量
+    }
+  }
+  obstOut.vx=vx; obstOut.vy=vy; obstOut.wg=wg;
+}
+function obstPushOut(k,p){
+  const C=obstCirc[k], m=obstN[k];
+  for(let c=0;c<m;c++){ const o=c*5, a=C[o+2], rx=p.x-C[o], ry=p.y-C[o+1], q=rx*rx+ry*ry;
+    if(q<a*a){ const rho=Math.sqrt(Math.max(q,1e-10)), s=a/rho;
+      if(rho>1e-5){ p.x=C[o]+rx*s; p.y=C[o+1]+ry*s; } else { p.x=C[o]+a; } } }
+}
+// 不透明 splat → 球代理: 世界空间散列分格, 留住够密的格子, 取格内质心为球心。
+// 散列只是分组索引 (与蔓延哈希同类), 结果是一小组球, 求解器从不在格子上存场量。
+function buildObstacles(o){ o=o||{};
+  const cell=o.cell||0.16, minCount=o.minCount||6, alpha=o.alpha||0.35, max=o.max||48,
+        r=o.r||cell*0.8, yMin=o.yMin===undefined?0.12:o.yMin, reach=o.reach||1.3, clear=o.clear||0.24;
+  const map=new Map();
+  for(const g of sceneGauss){ if(g.o<alpha) continue;
+    const w=srcToWorld(g.p); if(w[1]<yMin||w[1]>WY) continue;
+    if(Math.hypot(w[0],w[2])>reach) continue;
+    if(Math.hypot(w[0]-source.x,w[1]-source.y,w[2])<clear) continue;   // 火源根部留空, 否则火一出生就被关在球里
+    const key=Math.floor(w[0]/cell)+','+Math.floor(w[1]/cell)+','+Math.floor(w[2]/cell);
+    let b=map.get(key); if(!b){ b={x:0,y:0,z:0,n:0}; map.set(key,b); }
+    b.x+=w[0]; b.y+=w[1]; b.z+=w[2]; b.n++; }
+  const cand=[]; for(const b of map.values()) if(b.n>=minCount) cand.push({x:b.x/b.n,y:b.y/b.n,z:b.z/b.n,r});
+  cand.sort((a,b)=>Math.hypot(a.x,a.z)-Math.hypot(b.x,b.z));             // 离羽流轴近的优先
+  obst=cand.slice(0,max); return obst.length;
+}
 // ---- 层间涡量耦合 (interZ 的无网格版): 邻层逐对反对称环量交换 (PSE 离散的 ∂²ω/∂z²) ----
 //  δ = dt·kz·η_ij·(G_j−G_i), G_i+=δ, G_j−=δ ⇒ 总环量构造性守恒; 端层自动 Neumann (无邻层)。
 //  η = A_ref·e^(−a)/(2π·σ̄²) 与 VIC 网格版 w 量级对齐, kz 滑条数值沿用。快照语义: 读打包 G。
@@ -1854,6 +1967,7 @@ function vpmPrepare(dt, useSim, doEmit){
     pl.root = n>0 ? vpmNode(pl,0,n,0,VPM_QSIDE,14) : -1;
   }
   vpmBuildDirector(useSim);
+  obstPrepare(useSim);
   if(P.interZ>0 && vpmTick%3===0) vpmExchangeZ(3*dt, useSim);   // 隔 2 帧一次, 步长 3dt (摊销)
 }
 // ---- Phase C: 单层 N-body + 更新 (顺序逐行对齐 VIC 的 G2P 段 L1296–1318) ----
@@ -1863,7 +1977,7 @@ function stepSimVPM(layer, dt){
   if(!pl || pl.n!==n) return;                            // 防御: prepare 未跑/失配
   const C=P.gam*VPM_KGAIN*VPM_AREF/(2*Math.PI);
   const invTheta=1/Math.max(0.15,P.theta);
-  const cpl=P.couple, naive=P.vpmNaive;
+  const cpl=P.couple, naive=P.vpmNaive, hasObst=(obstN[k]>0);
   for(let i=0;i<n;i++){
     const px=pl.X[i], py=pl.Y[i], Ti=pl.T[i], tS2=pl.SG[i]*pl.SG[i];
     if(naive) vpmDirectAll(pl,px,py,Ti,tS2,C,i); else vpmFieldAt(pl,px,py,Ti,tS2,invTheta,C,i);
@@ -1878,6 +1992,8 @@ function stepSimVPM(layer, dt){
       vx += cpl*(vpmDirOut.ux-vx); vy += cpl*(vpmDirOut.uy-vy); }
     if(P.turb>0){ const c=curl(px,py,layer.t,layer.seed); vx+=c[0]*P.turb*0.4; vy+=c[1]*P.turb*0.4; }
     vx += P.wind+source.vx*0.3;
+    pl.WG[i]=0;
+    if(hasObst){ obstVelocity(k,px,py,vx,vy); vx=obstOut.vx; vy=obstOut.vy; pl.WG[i]=obstOut.wg; }
     const sp2=vx*vx+vy*vy; if(sp2>16){ const s=4/Math.sqrt(sp2); vx*=s; vy*=s; }   // 开域护栏 |u|≤4
     pl.UX[i]=vx; pl.UY[i]=vy;
     pl.LX[i]=vpmOut.lxx; pl.LXY[i]=vpmOut.lxy; pl.LYX[i]=vpmOut.lyx;
@@ -1885,10 +2001,11 @@ function stepSimVPM(layer, dt){
   const out=[];
   for(let i=0;i<n;i++){ const p=ps[pl.ord[i]];           // 打包数组是 Morton 序, 经 ord 映回原粒子
     p.vx=pl.UX[i]; p.vy=pl.UY[i];
-    p.G += dt*P.baro*pl.DTX[i]; p.G*=(1-dt*0.1);          // 斜压更新式与 VIC 逐字同 (阻尼 0.1)
+    p.G += dt*(P.baro*pl.DTX[i]+pl.WG[i]); p.G*=(1-dt*0.1);   // 斜压更新式与 VIC 逐字同 (阻尼 0.1); WG=壁面涡量, 无障碍时恒 0
     if(p.G>60)p.G=60; else if(p.G<-60)p.G=-60;
     if(P.covStretch>0) evolveF(p, pl.LX[i], pl.LXY[i], pl.LYX[i], -pl.LX[i], dt);   // 解析 ∇u, 无差分截断
     p.x+=dt*p.vx; p.y+=dt*p.vy; p.life+=dt;
+    if(hasObst) obstPushOut(k,p);
     p.T -= dt*P.cool*p.T*p.T;
     p.d*=(1-dt*0.3);
     if(p.T>0.04 && p.y<WY && Math.abs(p.x)<WX*0.7 && p.d>0.03) out.push(p);   // 剔除与 VIC 同款
@@ -2357,7 +2474,32 @@ let rawData=new Float32Array(0), depths=new Float32Array(0), order=[];
 //   场景流早已按它排序 (见 gatherScene), 两条流对齐到同一个约定。
 let dFw0=0, dFw1=0, dFw2=-1;               // 每帧从 cam.V 取的视前向 (emit3D 用)
 let dynKey=new Float32Array(0);
+// ===========================================================================
+//  火→场景照明: 把火焰粒子聚成 FL_K 个世界空间点光。这里读粒子、不写粒子, 不碰 srand,
+//  所以它和渲染同类 —— 确定性哈希不受影响。分簇是固定网格 (相对火源左右两列、高度三段)
+//  而不是 k-means: 帧间簇号稳定, 光不会因为重新聚类而跳。
+//  强度按预算归一 (÷layers·ppl), 换粒子档不改变受光亮度; 发射率与 FS_PARTICLE 同形。
+// ===========================================================================
+const flAcc=new Float64Array(FL_K*10), flPos=new Float32Array(FL_K*4), flCol=new Float32Array(FL_K*3);
+function flAdd(s,wx,wy,wz,T,d){
+  if(T<0.25) return;                                   // 烟灰冠不发光 (FS_PARTICLE 同一交叉点)
+  const e=d*T*T*(0.25+0.85*T); if(!(e>0)) return;
+  let band=(wy*2)|0; if(band<0)band=0; else if(band>2)band=2;
+  const o=(band*2+(s<source.x?0:1))*10, A=flAcc, g=0.18+0.62*T*T, b=0.03+0.30*T*T*T;
+  A[o]+=e; A[o+1]+=e*wx; A[o+2]+=e*wy; A[o+3]+=e*wz;
+  A[o+4]+=e*(wx*wx+wy*wy+wz*wz); A[o+5]+=e*g; A[o+6]+=e*b;
+}
+function flSolve(){
+  const norm=P.fireLightGain/Math.max(1,P.layers*P.ppl), A=flAcc;
+  for(let c=0;c<FL_K;c++){ const o=c*10, W=A[o], q=c*4, q3=c*3;
+    if(!(W>1e-6)){ flPos[q]=flPos[q+1]=flPos[q+2]=0; flPos[q+3]=1; flCol[q3]=flCol[q3+1]=flCol[q3+2]=0; continue; }
+    const x=A[o+1]/W, y=A[o+2]/W, z=A[o+3]/W, spread=Math.max(0,A[o+4]/W-(x*x+y*y+z*z));
+    flPos[q]=x; flPos[q+1]=y; flPos[q+2]=z;
+    flPos[q+3]=0.02+0.5*spread;                        // 面光源软化: 簇的空间方差进分母, 近处不爆
+    const I=W*norm; flCol[q3]=I; flCol[q3+1]=I*A[o+5]/W; flCol[q3+2]=I*A[o+6]/W; }
+}
 function gather(){
+  flAcc.fill(0);
   const vol=(P.dimMode==='vol'||P.dimMode==='vic3'||P.dimMode==='vpm3');   // 3D 粒子云走同一渲染路径
   let total=0; if(vol) total=cloud.length; else for(const l of layers) total+=l.ps.length;
   const ne=(P.embers&&P.mode==='fire')? embers.length:0;
@@ -2388,6 +2530,7 @@ function gather(){
         mjx=(dx*bx[0]+dy*by[0])*M; mjy=(dx*bx[1]+dy*by[1])*M; mjz=(dx*bx[2]+dy*by[2])*M;
         mnx=(-dy*bx[0]+dx*by[0])*m; mny=(-dy*bx[1]+dx*by[1])*m; mnz=(-dy*bx[2]+dx*by[2])*m;
       }
+      flAdd(p.x,p.x,p.y,p.z,p.T,p.d);
       arr[o++]=p.x;arr[o++]=p.y;arr[o++]=p.z;
       arr[o++]=mjx;arr[o++]=mjy;arr[o++]=mjz;
       arr[o++]=mnx;arr[o++]=mny;arr[o++]=mnz;
@@ -2413,8 +2556,11 @@ function gather(){
         dx=exx; dy=eyy; M=sz*Math.sqrt(Math.max(1e-4,l0)); m=sz*Math.sqrt(Math.max(1e-4,l1));
       } else { dx=0; dy=1; M=sz; m=sz; }
       o=emit3D(arr,o,depths,gi++, p.x,p.y, dx,dy, M, m, dep, va,bx,fh,eye, fade, p.T,p.d,p.seedp||0, 0);
+      if(va) flAdd(p.x, bx[0]*p.x+fh[0]*dep, p.y, bx[2]*p.x+fh[2]*dep, p.T,p.d);
+      else   flAdd(p.x, p.x, p.y, dep, p.T,p.d);
     }
   }
+  flSolve();
   if(ne){ const esz=radW*0.22;
     for(const e of embers){ const sp=Math.hypot(e.vx,e.vy); let dx=0,dy=1; if(sp>1e-4){dx=e.vx/sp;dy=e.vy/sp;}
       const fade=Math.max(0,1-e.life/e.ttl);
@@ -2460,7 +2606,7 @@ function drawSceneRange(start,count){ if(count<=0) return;
   const base=start*SC_STRIDE_B;
   const ia=(loc,size,off)=>gl.vertexAttribPointer(loc,size,gl.FLOAT,false,SC_STRIDE_B,base+off*4);
   ia(1,3,0); ia(2,3,3); ia(3,3,6); ia(4,3,9); ia(5,1,12); ia(6,1,13); ia(7,1,14);
-  ia(8,3,15); ia(9,3,18); ia(10,3,21); ia(11,1,24);   // 这四个以前漏了: 区间起点不为 0 时
+  ia(8,3,15); ia(9,3,18); ia(10,3,21); ia(11,1,24); ia(12,3,25);   // 这些以前漏过: 区间起点不为 0 时
                                                       // 球谐与索引会读到别的 splat 的值
   gl.drawArraysInstanced(gl.TRIANGLE_STRIP,0,4,count);
 }
@@ -2513,6 +2659,10 @@ function render(){
   gl.uniform1f(uPart.Flick,flick); gl.uniform1f(uPart.Mode,P.mode==='fire'?0.0:1.0);
   gl.uniform2f(uPart.Fire,fuv[0],fuv[1]); gl.uniform1f(uPart.FireI,fireI);
   gl.uniform2f(uPart.Res,FBW,FBH);
+  const flGain=(P.mode==='fire'?1.0:0.35)*flick, flUp=new Float32Array(FL_K*3);
+  for(let i=0;i<FL_K*3;i++) flUp[i]=flCol[i]*flGain;
+  gl.uniform4fv(uPart.FLPos,flPos); gl.uniform3fv(uPart.FLCol,flUp);
+  gl.uniform1f(uPart.FLOn,P.fireLight?1.0:0.0); gl.uniform1f(uPart.BoxLight,P.boxLight);
   gl.enable(gl.BLEND);
   gl.blendFunc(gl.ONE_MINUS_DST_ALPHA, gl.ONE);          // front-to-back premultiplied
   if(P.sceneOn && sceneGauss.length){
@@ -2527,6 +2677,8 @@ function render(){
     gl.uniform1f(uScene.CharDesat, P.charDesat); gl.uniform1f(uScene.CharDim, P.charDim);
     gl.uniform1f(uScene.CharSootMix, P.charSootMix); gl.uniform1f(uScene.CharOpa, P.charOpa);
     gl.uniform3f(uScene.CharSoot, P.charSootR, P.charSootG, P.charSootB);
+    gl.uniform4fv(uScene.FLPos,flPos); gl.uniform3fv(uScene.FLCol,flUp);
+    gl.uniform1f(uScene.FLOn,P.fireLight?1.0:0.0);
     { const cyj=Math.cos(P.sceneYaw), syj=Math.sin(P.sceneYaw),
             cpj=Math.cos(P.scenePitch), spj=Math.sin(P.scenePitch);
       // R = Ry(yaw)·Rx(pitch) 的转置 (=逆, 正交); 列主序上传
@@ -2788,6 +2940,10 @@ function bindCheck(id,key){ const row=document.getElementById(id), cb=row.queryS
   row.addEventListener('click',()=>{ P[key]=!P[key]; cb.classList.toggle('on',P[key]); }); }
 bindCheck('orbit','orbit'); bindCheck('stretch','stretch'); bindCheck('flicker','flicker');
 bindCheck('box','box'); bindCheck('embers','embers');
+bindCheck('fireLight','fireLight'); bindSlider('fireLightGain','fireLightGain',x=>x.toFixed(0));
+(function(){ const row=document.getElementById('obstOn'), cb=row.querySelector('.cb');
+  row.addEventListener('click',()=>{ P.obstOn=!P.obstOn; cb.classList.toggle('on',P.obstOn);
+    if(P.obstOn && !obst.length && sceneGauss.length) buildObstacles(); }); })();
 bindSlider('filLen','filLen',x=>x.toFixed(2));
 (function(){ const row=document.getElementById('filament'), cb=row.querySelector('.cb');
   row.addEventListener('click',()=>{ P.filament=!P.filament; cb.classList.toggle('on',P.filament);
@@ -2891,6 +3047,16 @@ window.__demo = {
   setVicRes(nx,ny){ setVicRes(nx,ny); rebuildLayers(); },   // 实验用: VIC 分辨率 (需随后 reset)
   get vicRes(){ return [NX,NY]; },
   ignite(wx,wy,wz,r){ return igniteAt(wx,wy,wz,r); },
+  // 场景几何: 手给球代理, 或由载入的场景自动生成 (opts 见 buildObstacles)
+  obstacles(list){ if(list) obst=list.map(s=>({x:s.x,y:s.y,z:s.z,r:s.r})); return obst.slice(); },
+  buildObstacles(o){ return buildObstacles(o); },
+  lights(){ const out=[]; for(let c=0;c<FL_K;c++) out.push({ p:[flPos[c*4],flPos[c*4+1],flPos[c*4+2]],
+    soft:flPos[c*4+3], rgb:[flCol[c*3],flCol[c*3+1],flCol[c*3+2]] }); return out; },
+  // 全部粒子的世界坐标 + 温度: 偏转度量在页面外算, 这里不做统计
+  particles(){ const N=layers.length, out=[], bx=cam.bx, fh=cam.fh, va=(P.sliceMode==='view');
+    for(let k=0;k<N;k++){ const dep=(N>1?(k/(N-1)-0.5):0)*P.sliceDepth;
+      for(const p of layers[k].ps) out.push([va?bx[0]*p.x+fh[0]*dep:p.x, p.y, va?bx[2]*p.x+fh[2]*dep:dep, p.T]); }
+    return out; },
   spreadInfo(){ const sb=sceneBurnState; if(!sb) return null;
     let burn=0,charred=0,heated=0;
     for(let i=0;i<sb.state.length;i++){ if(sb.state[i]===1)burn++; else if(sb.state[i]===2)charred++; else if(sb.h[i]>0.05)heated++; }

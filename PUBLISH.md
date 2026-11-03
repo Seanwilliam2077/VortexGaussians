@@ -7,9 +7,9 @@
 
 - [x] 仓库转 public（免费账号私有仓库开不了 Pages）。
 - [x] Settings → Pages → Deploy from a branch → `main` / `(root)`。
-- [x] `static/vortex_gaussians_paper.pdf` 与论文同步。**注意生成方式**：站点版由
-      论文源树里的网页版 `.tex` 编译（去掉评审行号选项）。论文一改就要重跑
-      `pdflatex`（跑两遍）再把 PDF 拷进 `static/`。论文源不在本仓库。
+- [x] `static/vortex_gaussians_paper.pdf` 与论文同步。论文源现在在 `paper/`，是从
+      2026-08-31 定稿 PDF 重建的（原始 `.tex` 未找回，详见 `paper/README.md`）。
+      论文一改就按 `paper/README.md` 重新编译，再把 PDF 拷进 `static/`。
 - [x] `static/images/` 与 论文图目录 同步（1600px 宽、JPEG q87；
       重建脚本见下）。README 头图 `teaser.jpg` 由三张 teaser 面板重新拼接。
 - [x] Video 按钮已接上 `static/video/vortex_gaussians_supplemental.mp4`（95 s，1080p 源）。
@@ -20,7 +20,7 @@
       BibTeX 均已填 Zijun Xiao / Georgia Institute of Technology / zxiao316@gatech.edu，
       引用键统一为 `xiao2026vortexgaussians`。
 - [x] **去匿名（论文侧已完成）**。站点 PDF 已重编：`static/vortex_gaussians_paper.pdf`
-      31 页，首页署名 `ZIJUN XIAO, Georgia Institute of Technology, USA`，
+      首页署名 `ZIJUN XIAO, Georgia Institute of Technology, USA`，
       无评审行号、无未解引用、`Anonymous` 零残留。
 - [ ] **arXiv 按钮**仍是 `class="btn disabled" href="#"` 占位；有链接后去掉 `disabled` 并填 href
       （`index.html` 与 README 徽章行同步改）。

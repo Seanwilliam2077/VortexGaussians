@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Vortex Gaussians: Real-Time Simulation-Driven Fire and Smoke as Native Gaussian-Splatting Content</title>
-<meta name="description" content="Project page for Vortex Gaussians: real-time, forward-simulated fire and smoke rendered as native Gaussian-splatting content, depth-interleaved with reconstructed 3DGS scenes.">
+<title>Vortex Gaussians: Simulation-Driven Fire and Smoke as Native Gaussian-Splatting Content</title>
+<meta name="description" content="Project page for Vortex Gaussians: forward-simulated fire and smoke rendered as native Gaussian-splatting content, depth-interleaved with reconstructed 3DGS scenes.">
 <style>
   :root{
     --ink:#1c1e21; --sub:#5b6068; --accent:#d84e12; --accent2:#8a2d05;
@@ -101,7 +101,7 @@
 
 <!-- ======================= header ======================= -->
 <header class="wrap">
-  <h1><span class="flame">Vortex Gaussians</span>: Real-Time Simulation-Driven Fire and Smoke<br>as Native Gaussian-Splatting Content</h1>
+  <h1><span class="flame">Vortex Gaussians</span>: Simulation-Driven Fire and Smoke<br>as Native Gaussian-Splatting Content</h1>
   <div class="venue">Preprint &middot; under review</div>
   <p class="authors"><a href="mailto:zxiao316@gatech.edu">Zijun Xiao</a></p>
   <p class="affil">Georgia Institute of Technology &middot; zxiao316@gatech.edu</p>
@@ -110,6 +110,7 @@
     <a class="btn" href="static/vortex_gaussians_paper.pdf">
       <svg viewBox="0 0 24 24"><path d="M6 2h9l5 5v15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1zm8 1.5V8h4.5L14 3.5zM8 12h8v1.6H8V12zm0 3.4h8V17H8v-1.6zm0-6.8h4v1.6H8V8.6z"/></svg>
       Paper (PDF)</a>
+    <a class="btn" href="static/vortex_gaussians_supplemental.pdf">Supplemental (PDF)</a>
     <a class="btn disabled" href="#">arXiv (soon)</a>
     <a class="btn primary" href="demo/">
       <svg viewBox="0 0 24 24"><path d="M13.5 0.7c0.6 3.6-0.9 5.4-2.6 7.2-1.9 2-4 4.2-4 8.1 0 4.4 3.6 8 8.1 8 4.5 0 8.1-3.6 8.1-8 0-6.6-6.2-8.4-4.4-15.3-2.3 0.9-4.1-0.9-5.2 0zM15 21.4c-2.2 0-4-1.7-4-3.9 0-1.9 1-2.9 2-4 0.9-1 1.8-2 2.2-3.6 1.3 1.8 3.8 3.9 3.8 7.6 0 2.2-1.8 3.9-4 3.9z"/></svg>
@@ -136,11 +137,13 @@
     from Mip-NeRF&nbsp;360 at 729,826 Gaussians &mdash; where flame and scene share one depth order, so
     the loader's arms occlude the fire and the shelf behind is veiled by the plume.
     <b>Right:</b> the identical particle state re-shaded as smoke.
+    The fire alone runs at 58&nbsp;FPS; the middle panel's scene adds 272&nbsp;ms of rasterization,
+    for 3.4&nbsp;FPS.
   </figcaption></figure>
 
   <p class="narrow" style="margin-top:18px">
     Using nothing but a set of Lagrangian vortex particles, <b>Vortex Gaussians</b> generates fire and
-    smoke by forward physical simulation in real time and renders them as native Gaussian-splatting
+    smoke by forward physical simulation and renders them as native Gaussian-splatting
     content: the fire's Gaussians share one global depth order and one emission&ndash;absorption blend
     state with a Gaussian-splat environment, so a foreground scene object correctly occludes the flame
     and the flame occludes the scene behind it.
@@ -152,24 +155,20 @@
   <div class="wrap narrow">
     <h2>Abstract</h2>
     <p class="muted" style="text-align:justify">
-      Fire and smoke remain absent from Gaussian-splatting (GS) scenes: physics-integrated GS handles
-      solids and liquids, GS fire methods only reconstruct observed flames, and the one system that
-      simulates new fire composites ray-marched volumes over an opaque backdrop at seconds per frame.
-      We present the first system that generates fire and smoke by forward physical simulation in real
-      time and renders them as <i>native</i> Gaussian-splatting content. Our key insight is that
-      Lagrangian vortex particles and 3D Gaussians are the same class of point primitive: one particle
-      set serves simultaneously as simulation state and render primitive&mdash;position to Gaussian
-      mean, temperature to emissive blackbody color, density to opacity, velocity gradient to
-      anisotropic covariance&mdash;with no voxelization, meshing, or simulation-to-renderer conversion
-      anywhere. A grid-free Gaussian vortex-particle solver drives them, in which each splat <i>is</i>
-      a Lamb&ndash;Oseen vortex element and velocity, its analytic gradient and temperature are
-      closed-form evaluations of the rendered mixture under a Barnes&ndash;Hut treecode &mdash; no
-      Poisson solve, no grid &mdash; together with a bidirectional inter-slice vorticity-coupling
-      operator that restores the out-of-plane transport stacking drops. One depth-sorted
-      emission&ndash;absorption rasterizer composites flame, smoke, embers, and reconstructed 3DGS
-      scenes with per-primitive mutual occlusion. Our single-file WebGL2 prototype runs in real time on
-      a workstation-class desktop &mdash; 17.1&nbsp;ms per frame (58&nbsp;FPS) at the shipping preset
-      &mdash; with a deterministic-replay harness that makes every reported number bit-reproducible.
+      A vortex particle and a 3D Gaussian are the same object seen from two disciplines. We build a
+      fire and smoke system on that identity: the splats a rasterizer draws are the elements a vortex
+      method integrates, so velocity, its analytic gradient and temperature are closed-form
+      functionals of the population already on screen, with no grid and no linear solve. The identity
+      has a consequence no volume-based compositor can reproduce: flame and reconstruction share one
+      depth-sorted emission&ndash;absorption pass, so fire transmits partially through a
+      semi-transparent foreground. On a benchmark capture with foliage in front of the flame,
+      88.1% of the silhouette is partially transmitted under our composition against 9.1% for the
+      strongest per-pixel depth-tested baseline at matched fire energy; on an opaque occluder the two
+      tie. Combustion state lives on the scene's own Gaussians, so the flame ignites the reconstruction
+      and burning geometry re-seeds the solver. The fire alone runs at 58&nbsp;FPS on a desktop GPU and
+      22&nbsp;FPS on an integrated one (5.4k Gaussians, 1280&times;800). Composited with a
+      729,826-Gaussian reconstruction it runs at 3.4&nbsp;FPS, and the combustion loop on a capture is
+      six to eleven times slower than real time.
     </p>
   </div>
 </section>
@@ -223,6 +222,26 @@
       <div><img src="static/images/fig_kburn_t24.jpg" alt="The toy loader still entirely bright yellow after twenty-four seconds in the flame, with the placemat beside it burning"><span class="lbl">t = 24.4 s &mdash; it catches, 29 splats of 75,443</span></div>
       <div><img src="static/images/fig_kburn_t100.jpg" alt="The toy loader's bucket and front section charred neutral grey, the cab and rear still yellow"><span class="lbl">t = 100 s &mdash; 12.5% charred</span></div>
       <div><img src="static/images/fig_kburn_t250.jpg" alt="The toy loader with its front half charred neutral grey, the cab still yellow, flame rising from it"><span class="lbl">t = 250 s &mdash; 65% charred</span></div>
+    </div>
+
+    <div class="narrow">
+      <h3>The fire lights the scene, and the scene deflects the fire</h3>
+      <p>Flame particles cluster into six world-space point lights that shade each splat diffusely,
+        using its shortest axis as the surface normal. Nearby opaque splats become sphere proxies with
+        a closed-form boundary term, the same idea as the ground mirror, so the plume splits around
+        an obstacle and rolls up behind it. Both are <b>off-screen renders at the Hero preset</b>:
+        9&times;3000 particles, 1920&times;1080, one fixed step per frame. They run in the demo at
+        the shipping preset too, under <i>Real GS Scene</i>. The light casts no shadows.</p>
+      <video class="solo" controls preload="metadata" playsinline loop
+             poster="static/images/fig_hero_scene.jpg">
+        <source src="static/video/vortex_gaussians_hero_scene.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="imgrow">
+      <div><img src="static/images/fig_light_off.jpg" alt="Flame in the synthetic scene with the world-space fire light off; floor and wall stay dark"><span class="lbl">fire light off</span></div>
+      <div><img src="static/images/fig_light_on.jpg" alt="The same frame with the fire light on; floor, wall, post and log take on the flame's colour"><span class="lbl">fire light on</span></div>
+      <div><img src="static/images/fig_deflect_off.jpg" alt="Plume passing straight through a sphere obstacle that has no effect on it"><span class="lbl">obstacle ignored</span></div>
+      <div><img src="static/images/fig_deflect_on.jpg" alt="The same plume splitting around the sphere and rolling up in its wake"><span class="lbl">obstacle deflects (0.00% inside)</span></div>
     </div>
 
     <div class="narrow">
@@ -319,7 +338,9 @@
     <div class="stat"><b>1 : 1</b><span>vortex particle &rarr; Gaussian<br>(no voxelization, no meshing)</span></div>
     <div class="stat"><b>0</b><span>pressure variables<br>(pure vorticity&ndash;streamfunction)</span></div>
     <div class="stat"><b>O(N<sub>p</sub>+G)</b><span>velocity reconstruction<br>(vs O(N<sub>p</sub>&sup2;) Biot&ndash;Savart)</span></div>
-    <div class="stat"><b>17.1 ms</b><span>58 FPS at the shipping preset<br>(RTX 3080, CPU-JS sim)</span></div>
+    <div class="stat"><b>17.1 ms</b><span>58 FPS, fire alone, shipping preset<br>(RTX 3080, CPU-JS sim)</span></div>
+    <div class="stat"><b>44.6 ms</b><span>22 FPS on an integrated GPU<br>(Radeon iGPU, desktop Ryzen)</span></div>
+    <div class="stat"><b>292 ms</b><span>3.4 FPS inside a 729,826-splat capture<br>(the deficit is rasterization)</span></div>
   </div>
 </section>
 
@@ -331,7 +352,7 @@
       depth-interleaved with the scene &mdash; not composited over it.</p>
     <div style="overflow-x:auto">
     <table>
-      <thead><tr><th>Method</th><th>gaseous emissive</th><th>forward physics</th><th>real-time</th><th>GS-native</th><th>scene composed</th></tr></thead>
+      <thead><tr><th>Method</th><th>gaseous emissive</th><th>forward physics</th><th>real-time (phenomenon alone)</th><th>GS-native</th><th>scene composed</th></tr></thead>
       <tbody>
         <tr><td>Horvath &amp; Geiger 2009 (ILM layered fire)</td><td class="ok">&#10003;</td><td class="ok">&#10003;</td><td class="no">&mdash;</td><td class="no">&mdash;</td><td>matte</td></tr>
         <tr><td>PhysGaussian (CVPR 2024)</td><td class="no">&mdash;</td><td class="ok">&#10003;</td><td class="no">&mdash;</td><td class="ok">&#10003;</td><td class="ok">&#10003;</td></tr>
@@ -346,8 +367,9 @@
     <p class="narrow muted" style="font-size:.9rem">For calibration: FieryGS reports 2.37&nbsp;s/frame
       (RTX 4090D); Gaussian Fluids reports 38&ndash;228&nbsp;s per <i>time step</i> (RTX 4090);
       production layered fire required ~20&nbsp;s per slice per frame on a GPU farm. Our prototype runs
-      the full loop at 58&nbsp;FPS (17.1&nbsp;ms/frame, five-seed median) &mdash; in a browser, with the
-      simulation single-threaded in CPU JavaScript.</p>
+      the fire alone at 58&nbsp;FPS (17.1&nbsp;ms/frame, five-seed median) in a browser, with the
+      simulation single-threaded in CPU JavaScript. Inside a 729,826-splat capture the frame is
+      292&nbsp;ms, and the combustion loop on a capture is six to eleven times slower than real time.</p>
   </div>
 </section>
 
@@ -355,7 +377,7 @@
 <section class="wrap narrow">
   <h2>BibTeX</h2>
   <pre class="bibtex">@misc{xiao2026vortexgaussians,
-  title   = {Vortex Gaussians: Real-Time Simulation-Driven Fire and Smoke
+  title   = {Vortex Gaussians: Simulation-Driven Fire and Smoke
              as Native Gaussian-Splatting Content},
   author  = {Zijun Xiao},
   year    = {2026},
@@ -366,7 +388,7 @@
 <footer class="wrap">
   <p>Page design inspired by the <a href="https://nerfies.github.io/" rel="noopener">Nerfies</a> /
      <a href="https://pku-vcl-geometry.github.io/FieryGS/" rel="noopener">FieryGS</a> project pages.
-     Figures are unedited real-time captures from the released prototype.</p>
+     Figures are deterministic renders from the released prototype; offline clips are labelled as such.</p>
 </footer>
 
 <script>
