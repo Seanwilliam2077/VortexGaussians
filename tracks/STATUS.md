@@ -1,6 +1,6 @@
 # Dual-track status
 
-## 2026-11-10 latest: T81 ordinary allocation result; updated papers; T83 static qualification
+## 2026-11-10 latest: T81 ordinary allocation result; current papers; T83 closes drop-in compression
 
 The user explicitly resumes technical work, requests current related papers and asks to pursue a new technical contribution. Art production, writing and scoring remain paused. This supersedes the 2 November technical pause; the historical archive remains intact.
 
@@ -8,7 +8,7 @@ The user explicitly resumes technical work, requests current related papers and 
 
 The second-interval AB step+render mean rises14.119→18.994ms; full worker66.7875725s, supervisor67.2317789s. Single instrumented timing and a larger paired RGB difference do not establish a practical failure or perceptual success. Historical T42 stays visually unqualified. [Public evidence](tog/tasks/t81-firewoods-capacity-causality/public/README.md) adds16 gzip files/7,523,115bytes,1440 step records,416244 material rows and34818 gas records, with portable standard-library verification. Selected scientific-child subtotal2116.745944899793s is not project cost.
 
-[T83](tog/tasks/t83-native-reduction-contract/BRIEF.md) performs one finite static common-weight/operator qualification before any compression proposal. It introduces no new scene, solver run or stricter gate. TOG core contribution, compression necessity and a new rating remain unestablished. No numerical queue is authorized by merely writing the conditional transported-response hypothesis.
+[T83](tog/tasks/t83-native-reduction-contract/README.md) completes a static common-weight/operator qualification, with participation-disclosed review. Affine per-particle vorticity updates, thermal denominators and order-based heating defeat exact drop-in multiplicity through the unchanged fields; the existing P3 optical-depth path is an ordinary alternative, not a new invention. This narrow closure does not rule out approximate reduction or a deliberately weighted model. No new scene, numerical probe, solver run, stricter gate or score. Future-response reduction remains conditional on a worthwhile unresolved operation and fair operator/full-cost contract; no next numerical task is selected. Technical research remains authorized, art paused, and TOG core contribution unestablished.
 
 Local and remote research heads initially match `0cd9c89`. Remote main independently advanced to `a7dfa98` with a reconstructed paper source, lighting/deflection and hardware measurements; it contains no T81 continuation. These changes are not merged into T81's frozen original demo and are not measurements reproduced in this track. No relevant research worker was running at inspection. Continue on the research branch, preserving main and art files.
 

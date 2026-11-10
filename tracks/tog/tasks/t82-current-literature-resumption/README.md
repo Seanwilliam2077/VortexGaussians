@@ -28,3 +28,7 @@ Retain at most one subsequent mechanism question: **when a meaningful capacity/c
 This hypothesis is conditional. The [independent source audit](MECHANISM_AUDIT.md) identifies a missing native weight contract: temperature is intensive, density enters nonlinear rendering, there is no multiplicity field, and flame heating uses index-dependent sampling. A generic shared reweighting changes the operator before any transport effect. Resolve that issue before numerical implementation. If an ordinary method resolves the task, or a fair weighted operator cannot be stated, do not queue a compression run to manufacture progress.
 
 The current evidence supplies a narrower research question and stronger controls. It does not establish novelty, a practical advantage, a TOG core or a new reviewer score.
+
+## Post-T81 disposition
+
+T81 has now completed. The ordinary global pool restores the selected B-source admission (0→304 emissions;700→0 B-source capacity blocks), and both global arms fill only after the observed B-source offers. The measured extra cost is not a frozen useful-task failure. Therefore no numerical transported-response compression experiment is selected from this literature screen. [T83](../t83-native-reduction-contract/README.md) subsequently closes the exact drop-in common-weight route using explicit operator counterexamples, while preserving the possibility of explicitly changed weighted models. The candidate remains conditional, and these ten surfaced works do not constitute an exhaustive novelty clearance.
