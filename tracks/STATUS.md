@@ -1,14 +1,18 @@
 # Dual-track status
 
-## 2026-11-10 latest: technical research resumed; current-paper screen and T81 preparation
+## 2026-11-10 latest: T81 ordinary allocation result; updated papers; T83 static qualification
 
 The user explicitly resumes technical work, requests current related papers and asks to pursue a new technical contribution. Art production, writing and scoring remain paused. This supersedes the 2 November technical pause; the historical archive remains intact.
 
-[T82](tog/tasks/t82-current-literature-resumption/BRIEF.md) updates primary-paper coverage with a bounded search and distinguishes actual publication/version dates from recent indexing. [T81](tog/tasks/t81-firewoods-capacity-causality/README.md) resumes implementation and static qualification; no numerical execution has yet occurred. Its original four-arm budget and interpretation remain fixed. No TOG core contribution or new rating is established.
+[T82](tog/tasks/t82-current-literature-resumption/README.md) records ten relevant works with access/date qualifications, including existing population controls, Gaussian transport and moment/interaction-rate fitting. [T81](tog/tasks/t81-firewoods-capacity-causality/RESULTS.md) completes exactly one1440-step run and passes saved qualification. Original AB has700/700 B-source offers capacity-blocked; ordinary global pooling gives304 B-source emissions and zero B-source blocks. Total emission gain2967 is mostly from other sources. Both global arms fill at frame305, after B-source offers at205–289. The selected B-source admission failure is resolved by an ordinary method.
+
+The second-interval AB step+render mean rises14.119→18.994ms; full worker66.7875725s, supervisor67.2317789s. Single instrumented timing and a larger paired RGB difference do not establish a practical failure or perceptual success. Historical T42 stays visually unqualified. [Public evidence](tog/tasks/t81-firewoods-capacity-causality/public/README.md) adds16 gzip files/7,523,115bytes,1440 step records,416244 material rows and34818 gas records, with portable standard-library verification. Selected scientific-child subtotal2116.745944899793s is not project cost.
+
+[T83](tog/tasks/t83-native-reduction-contract/BRIEF.md) performs one finite static common-weight/operator qualification before any compression proposal. It introduces no new scene, solver run or stricter gate. TOG core contribution, compression necessity and a new rating remain unestablished. No numerical queue is authorized by merely writing the conditional transported-response hypothesis.
 
 Local and remote research heads initially match `0cd9c89`. Remote main independently advanced to `a7dfa98` with a reconstructed paper source, lighting/deflection and hardware measurements; it contains no T81 continuation. These changes are not merged into T81's frozen original demo and are not measurements reproduced in this track. No relevant research worker was running at inspection. Continue on the research branch, preserving main and art files.
 
-## 2026-11-02 latest: research paused; T80 complete, T81 plan only; public data handoff
+## 2026-11-02 preceding record: research paused; T80 complete, T81 plan only; public data handoff
 
 **The user paused research.** The subsequent request authorizes committing/pushing existing work and substantial research data so another agent can understand and continue later. It does not resume experiments. Art remains separately paused; no art production, writing or scoring is queued. This entry supersedes historical active statuses and next-action lists below. The full TOG/SIGGRAPH objective remains unmet.
 

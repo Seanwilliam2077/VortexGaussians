@@ -27,10 +27,15 @@ def save(name, raw):
 
 
 def main():
-    report = json.loads((SOURCE / 'result.json').read_text())
-    summary = json.loads((HERE / 'SUMMARY.json').read_text())
+    report_raw = (SOURCE / 'result.json').read_bytes()
+    summary_raw = (HERE / 'SUMMARY.json').read_bytes()
+    report = json.loads(report_raw)
+    summary = json.loads(summary_raw)
     if report['status'] != 'completed_capture_pending_saved_audit' or not summary['qualification'].startswith('passed_'):
         raise RuntimeError('Require complete capture and successful saved audit')
+    audited_report = [item for item in summary['supervisor']['files'] if item['name'] == 'result.json']
+    if len(audited_report) != 1 or identity(report_raw) != {k: audited_report[0][k] for k in ['bytes', 'sha256']}:
+        raise RuntimeError('Current result is not the report recorded by the passing saved audit')
     manifest = {item['name']: item for item in report['files']}
     DEST.mkdir(exist_ok=True)
     entries = []
@@ -68,7 +73,7 @@ def main():
                 'gas': state['gas'], 'policy': state['policy'],
                 'fixed_B_indices': state['fixedBIndices'], 'newly_B_indices': state['newlyBIndices'],
                 'observation_counters': state['observationCounters'],
-                'scope': 'All recorded material dynamics and generated gas objects; external scene geometry/appearance/camera/images omitted. No restart API.'}
+                'scope': 'All recorded material dynamics and generated gas objects; external scene geometry/appearance/camera/images and nativeAuxiliary continuation state omitted. Not a complete restart state or API.'}
             output = (json.dumps(projected, separators=(',', ':'), allow_nan=False) + '\n').encode()
             packed = gzip.compress(output, compresslevel=9, mtime=0)
             if gzip.decompress(packed) != output:
@@ -82,11 +87,13 @@ def main():
     if len(entries) != 16:
         raise RuntimeError('Expected four logs and twelve checkpoints')
     result = {'schema': 't81-public-evidence-archive-v1', 'files': entries,
+              'audited_summary_identity': identity(summary_raw), 'audited_result_identity': identity(report_raw),
               'files_total': len(entries), 'bytes_total': sum(item['bytes'] for item in entries),
               'third_party_geometry_images_included': False,
               'gas_data': 'Project-generated particles, including their simulated coordinates and native fields.',
               'new_scientific_executions': 0,
               'limitations': ['Generated gas is recorded in full; static external scene geometry is omitted.',
+                              'nativeAuxiliary (including vpmTick, source, pointer and other continuation state) is omitted; no complete restart state/API.',
                               'Native hashes cover selected fields; not a complete-state certificate.',
                               'Observation labels are emitter provenance, not unique heat-propagation ancestry.']}
     save('MANIFEST.json', (json.dumps(result, indent=2) + '\n').encode())

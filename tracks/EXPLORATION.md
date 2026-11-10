@@ -2,11 +2,13 @@
 
 ## 2026-11-10 latest: technical work resumed by the user
 
-The user authorizes an update of current related papers and renewed technical progress. Art remains paused. Read [T82's bounded search record](tog/tasks/t82-current-literature-resumption/BRIEF.md) and [T81's original causal contract](tog/tasks/t81-firewoods-capacity-causality/BRIEF.md). The former informs the next mechanism; it does not turn a global capacity pool into a novel method. The latter still requires implementation review and execution qualification before interpreting results. The 2 November pause and handoff are historical.
+The user authorizes an update of current related papers and renewed technical progress. Art remains paused. Read [T82's bounded search record](tog/tasks/t82-current-literature-resumption/README.md) and [T81's completed causal result](tog/tasks/t81-firewoods-capacity-causality/RESULTS.md). Ordinary global pooling resolves this operation's B-source admission failure; later total saturation and higher instrumented cost do not establish compression necessity. Its sole1440-step attempt is consumed. The 2 November pause and handoff are historical.
 
 Candidate work must specify a falsifiable mechanism and strong ordinary controls. Current literature can invalidate broad claims even when its model differs. Generic Gaussian transport, positive moment fitting and spatially binned reduction are established alternatives. A missing report or code path is not evidence of novelty. No new gate is imposed on T76 or T42.
 
-## 2026-11-02 latest: research paused; T80 complete, T81 plan only; public data handoff
+The immediate finite continuation is [T83](tog/tasks/t83-native-reduction-contract/BRIEF.md): qualify a common particle-weight contract with an explicit compatibility argument or counterexample, using at most six native source units and saved T81 evidence. No search, numerical probe or solver runs. A required model change closes the direct drop-in hypothesis; it does not disprove every weighted method. Do not manufacture a later ignition or tighter timing gate to force a compression advantage. A useful unresolved operation and fair operator/cost contract are prerequisites to the next numerical experiment, not claims already established.
+
+## 2026-11-02 preceding record: research paused; T80 complete, T81 plan only; public data handoff
 
 **The user paused research.** The subsequent request authorizes committing/pushing existing work and substantial research data so another agent can understand and continue later. It does not resume experiments. Art remains separately paused; no art production, writing or scoring is queued. This entry supersedes historical active statuses and next-action lists below. The full TOG/SIGGRAPH objective remains unmet.
 

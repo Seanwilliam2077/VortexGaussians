@@ -1,0 +1,499 @@
+{
+  "schema": "t81-four-arm-causal-capture-v1",
+  "status": "completed_capture_pending_saved_audit",
+  "started_utc": "2026-11-10T09:07:11.057Z",
+  "finished_utc": "2026-11-10T09:08:17.842Z",
+  "phases": [
+    {
+      "name": "frozen_input_check",
+      "ms": 79.38399999999999
+    },
+    {
+      "name": "server_start",
+      "ms": 4.163199999999961
+    },
+    {
+      "name": "browser_launch",
+      "ms": 1726.7387999999999
+    },
+    {
+      "name": "per-layer-AB_page_load",
+      "ms": 422.32479999999987
+    },
+    {
+      "name": "per-layer-AB_load_reset_camera_ignite_A",
+      "ms": 201.70319999999992
+    },
+    {
+      "name": "per-layer-AB_prefix_save",
+      "ms": 108.05109999999877
+    },
+    {
+      "name": "per-layer-AB_zero_time_intervention",
+      "ms": 2233.2253
+    },
+    {
+      "name": "per-layer-AB_endpoint_save",
+      "ms": 117.55849999999919
+    },
+    {
+      "name": "per-layer-AB_step_log_compression_write",
+      "ms": 9.124199999998382
+    },
+    {
+      "name": "per-layer-AB_page_cleanup",
+      "ms": 15.399100000002363
+    },
+    {
+      "name": "per-layer-A_page_load",
+      "ms": 60.57970000000205
+    },
+    {
+      "name": "per-layer-A_load_reset_camera_ignite_A",
+      "ms": 228.98479999999836
+    },
+    {
+      "name": "per-layer-A_prefix_save",
+      "ms": 110.21059999999852
+    },
+    {
+      "name": "per-layer-A_zero_time_intervention",
+      "ms": 2202.9108000000015
+    },
+    {
+      "name": "per-layer-A_endpoint_save",
+      "ms": 117.47280000000319
+    },
+    {
+      "name": "per-layer-A_step_log_compression_write",
+      "ms": 9.151400000002468
+    },
+    {
+      "name": "per-layer-A_page_cleanup",
+      "ms": 16.357399999993504
+    },
+    {
+      "name": "global-AB_page_load",
+      "ms": 65.83520000000135
+    },
+    {
+      "name": "global-AB_load_reset_camera_ignite_A",
+      "ms": 249.58060000000114
+    },
+    {
+      "name": "global-AB_prefix_save",
+      "ms": 110.76180000000022
+    },
+    {
+      "name": "global-AB_zero_time_intervention",
+      "ms": 2201.0386
+    },
+    {
+      "name": "global-AB_endpoint_save",
+      "ms": 137.9748999999938
+    },
+    {
+      "name": "global-AB_step_log_compression_write",
+      "ms": 12.180999999996857
+    },
+    {
+      "name": "global-AB_page_cleanup",
+      "ms": 13.957299999994575
+    },
+    {
+      "name": "global-A_page_load",
+      "ms": 57.48440000000119
+    },
+    {
+      "name": "global-A_load_reset_camera_ignite_A",
+      "ms": 241.64330000000336
+    },
+    {
+      "name": "global-A_prefix_save",
+      "ms": 110.15219999999681
+    },
+    {
+      "name": "global-A_zero_time_intervention",
+      "ms": 2188.7312999999995
+    },
+    {
+      "name": "global-A_endpoint_save",
+      "ms": 136.1128000000026
+    },
+    {
+      "name": "global-A_step_log_compression_write",
+      "ms": 14.235500000009779
+    },
+    {
+      "name": "global-A_page_cleanup",
+      "ms": 14.926999999996042
+    },
+    {
+      "name": "final_frozen_input_check",
+      "ms": 96.90119999999297
+    },
+    {
+      "name": "page_cleanup",
+      "ms": 0.12709999999788124
+    },
+    {
+      "name": "browser_cleanup",
+      "ms": 248.32050000000163
+    },
+    {
+      "name": "server_cleanup",
+      "ms": 0.5198999999993248
+    }
+  ],
+  "checks": [
+    {
+      "label": "Node version",
+      "observed": "v24.16.0",
+      "expected": "v24.16.0",
+      "passed": true
+    },
+    {
+      "label": "Browser version",
+      "observed": "149.0.4022.52",
+      "expected": "149.0.4022.52",
+      "passed": true
+    },
+    {
+      "label": "per-layer-AB prefix post-readback GL",
+      "observed": {
+        "glError": 0,
+        "contextLost": false
+      },
+      "expected": {
+        "glError": 0,
+        "contextLost": false
+      },
+      "passed": true
+    },
+    {
+      "label": "T42 historical prefix",
+      "observed": {
+        "frame": 180,
+        "hash": "24ba7dc9",
+        "count": 2394,
+        "counters": [
+          8640,
+          3826,
+          2394
+        ]
+      },
+      "expected": {
+        "frame": 180,
+        "hash": "24ba7dc9",
+        "count": 2394,
+        "counters": [
+          8640,
+          3826,
+          2394
+        ]
+      },
+      "passed": true
+    },
+    {
+      "label": "per-layer-AB after intervention post-readback GL",
+      "observed": {
+        "glError": 0,
+        "contextLost": false
+      },
+      "expected": {
+        "glError": 0,
+        "contextLost": false
+      },
+      "passed": true
+    },
+    {
+      "label": "T42 zero-time B hash",
+      "observed": "36e624bc",
+      "expected": "36e624bc",
+      "passed": true
+    },
+    {
+      "label": "per-layer-AB endpoint post-readback GL",
+      "observed": {
+        "glError": 0,
+        "contextLost": false
+      },
+      "expected": {
+        "glError": 0,
+        "contextLost": false
+      },
+      "passed": true
+    },
+    {
+      "label": "T42 historical endpoint",
+      "observed": {
+        "frame": 360,
+        "hash": "cb784052",
+        "count": 2433,
+        "counters": [
+          17280,
+          12379,
+          2437
+        ]
+      },
+      "expected": {
+        "frame": 360,
+        "hash": "cb784052",
+        "count": 2433,
+        "counters": [
+          17280,
+          12379,
+          2437
+        ]
+      },
+      "passed": true
+    },
+    {
+      "label": "per-layer-A prefix post-readback GL",
+      "observed": {
+        "glError": 0,
+        "contextLost": false
+      },
+      "expected": {
+        "glError": 0,
+        "contextLost": false
+      },
+      "passed": true
+    },
+    {
+      "label": "T42 historical prefix",
+      "observed": {
+        "frame": 180,
+        "hash": "24ba7dc9",
+        "count": 2394,
+        "counters": [
+          8640,
+          3826,
+          2394
+        ]
+      },
+      "expected": {
+        "frame": 180,
+        "hash": "24ba7dc9",
+        "count": 2394,
+        "counters": [
+          8640,
+          3826,
+          2394
+        ]
+      },
+      "passed": true
+    },
+    {
+      "label": "All-arm full prefix state",
+      "observed": "62e2d72a7a91711dbf9c595ccf7aefa78621eb103062f98e01772eabd75dc1a7",
+      "expected": "62e2d72a7a91711dbf9c595ccf7aefa78621eb103062f98e01772eabd75dc1a7",
+      "passed": true
+    },
+    {
+      "label": "All-arm prefix per-step trace",
+      "observed": "235616b9ffb76de623dc7e0544232ff9da09443954acc63952b4b4cc72c88e97",
+      "expected": "235616b9ffb76de623dc7e0544232ff9da09443954acc63952b4b4cc72c88e97",
+      "passed": true
+    },
+    {
+      "label": "per-layer-A after intervention post-readback GL",
+      "observed": {
+        "glError": 0,
+        "contextLost": false
+      },
+      "expected": {
+        "glError": 0,
+        "contextLost": false
+      },
+      "passed": true
+    },
+    {
+      "label": "per-layer-A endpoint post-readback GL",
+      "observed": {
+        "glError": 0,
+        "contextLost": false
+      },
+      "expected": {
+        "glError": 0,
+        "contextLost": false
+      },
+      "passed": true
+    },
+    {
+      "label": "global-AB prefix post-readback GL",
+      "observed": {
+        "glError": 0,
+        "contextLost": false
+      },
+      "expected": {
+        "glError": 0,
+        "contextLost": false
+      },
+      "passed": true
+    },
+    {
+      "label": "T42 historical prefix",
+      "observed": {
+        "frame": 180,
+        "hash": "24ba7dc9",
+        "count": 2394,
+        "counters": [
+          8640,
+          3826,
+          2394
+        ]
+      },
+      "expected": {
+        "frame": 180,
+        "hash": "24ba7dc9",
+        "count": 2394,
+        "counters": [
+          8640,
+          3826,
+          2394
+        ]
+      },
+      "passed": true
+    },
+    {
+      "label": "All-arm full prefix state",
+      "observed": "62e2d72a7a91711dbf9c595ccf7aefa78621eb103062f98e01772eabd75dc1a7",
+      "expected": "62e2d72a7a91711dbf9c595ccf7aefa78621eb103062f98e01772eabd75dc1a7",
+      "passed": true
+    },
+    {
+      "label": "All-arm prefix per-step trace",
+      "observed": "235616b9ffb76de623dc7e0544232ff9da09443954acc63952b4b4cc72c88e97",
+      "expected": "235616b9ffb76de623dc7e0544232ff9da09443954acc63952b4b4cc72c88e97",
+      "passed": true
+    },
+    {
+      "label": "global-AB after intervention post-readback GL",
+      "observed": {
+        "glError": 0,
+        "contextLost": false
+      },
+      "expected": {
+        "glError": 0,
+        "contextLost": false
+      },
+      "passed": true
+    },
+    {
+      "label": "T42 zero-time B hash",
+      "observed": "36e624bc",
+      "expected": "36e624bc",
+      "passed": true
+    },
+    {
+      "label": "global-AB endpoint post-readback GL",
+      "observed": {
+        "glError": 0,
+        "contextLost": false
+      },
+      "expected": {
+        "glError": 0,
+        "contextLost": false
+      },
+      "passed": true
+    },
+    {
+      "label": "global-A prefix post-readback GL",
+      "observed": {
+        "glError": 0,
+        "contextLost": false
+      },
+      "expected": {
+        "glError": 0,
+        "contextLost": false
+      },
+      "passed": true
+    },
+    {
+      "label": "T42 historical prefix",
+      "observed": {
+        "frame": 180,
+        "hash": "24ba7dc9",
+        "count": 2394,
+        "counters": [
+          8640,
+          3826,
+          2394
+        ]
+      },
+      "expected": {
+        "frame": 180,
+        "hash": "24ba7dc9",
+        "count": 2394,
+        "counters": [
+          8640,
+          3826,
+          2394
+        ]
+      },
+      "passed": true
+    },
+    {
+      "label": "All-arm full prefix state",
+      "observed": "62e2d72a7a91711dbf9c595ccf7aefa78621eb103062f98e01772eabd75dc1a7",
+      "expected": "62e2d72a7a91711dbf9c595ccf7aefa78621eb103062f98e01772eabd75dc1a7",
+      "passed": true
+    },
+    {
+      "label": "All-arm prefix per-step trace",
+      "observed": "235616b9ffb76de623dc7e0544232ff9da09443954acc63952b4b4cc72c88e97",
+      "expected": "235616b9ffb76de623dc7e0544232ff9da09443954acc63952b4b4cc72c88e97",
+      "passed": true
+    },
+    {
+      "label": "global-A after intervention post-readback GL",
+      "observed": {
+        "glError": 0,
+        "contextLost": false
+      },
+      "expected": {
+        "glError": 0,
+        "contextLost": false
+      },
+      "passed": true
+    },
+    {
+      "label": "global-A endpoint post-readback GL",
+      "observed": {
+        "glError": 0,
+        "contextLost": false
+      },
+      "expected": {
+        "glError": 0,
+        "contextLost": false
+      },
+      "passed": true
+    },
+    {
+      "label": "Total native steps",
+      "observed": 1440,
+      "expected": 1440,
+      "passed": true
+    }
+  ],
+  "page_errors": [],
+  "console_errors": [],
+  "blocked_requests": [],
+  "failures": [],
+  "runtime": {
+    "node": "v24.16.0",
+    "browser": "149.0.4022.52",
+    "playwright": "1.62.1"
+  },
+  "completed_native_steps": 1440,
+  "worker_total_ms": 66787.5725,
+  "deadline_expired": false,
+  "output_bytes_before_final_receipts": 22221578,
+  "timing_scope": "worker_total_ms: module start through cleanup, excluding imports and final receipts; external supervisor includes startup. Step includes hooks; GPU finish included in render. Observation, export, bridge, compression and IO retained separately; no optimized FPS claim.",
+  "archive_scope": "Execution metadata only; raw states, rendered images and external geometry omitted. Arm results are in SUMMARY.json.",
+  "original_result_identity": {
+    "bytes": 102250,
+    "sha256": "6103696e166daee876db2dc5e42ddae3175bba36c6e7ecfb7f3ea80830cc6a0f"
+  }
+}

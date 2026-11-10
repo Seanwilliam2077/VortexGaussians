@@ -1,0 +1,2568 @@
+{
+  "schema": "t81-saved-causal-readback-v1",
+  "qualification": "passed_original_identity_prefix_accounting_and_runtime_checks",
+  "saved_verification": {
+    "checks": [
+      {
+        "label": "invocation frozen identity",
+        "observed": "d483f54a7dbb27f7fcd37a05ac5056295c5f8e40efd5d96ce09c4b10c7a7ff0a",
+        "expected": "d483f54a7dbb27f7fcd37a05ac5056295c5f8e40efd5d96ce09c4b10c7a7ff0a",
+        "passed": true
+      },
+      {
+        "label": "one-shot invocation state",
+        "observed": "attempt_consumed",
+        "expected": "attempt_consumed",
+        "passed": true
+      },
+      {
+        "label": "frozen work/VortexGaussians/tracks/tog/tasks/t81-firewoods-capacity-causality/BRIEF.md",
+        "observed": {
+          "bytes": 4229,
+          "sha256": "949bb396c5d92588d90e1751cf7eb1a843474ee47872dd03f207ad70936e7ecd"
+        },
+        "expected": {
+          "bytes": 4229,
+          "sha256": "949bb396c5d92588d90e1751cf7eb1a843474ee47872dd03f207ad70936e7ecd"
+        },
+        "passed": true
+      },
+      {
+        "label": "frozen work/VortexGaussians/tracks/tog/tasks/t81-firewoods-capacity-causality/IMPLEMENTATION.md",
+        "observed": {
+          "bytes": 5541,
+          "sha256": "3617cf18dea208780967a1299aa5ac2babfa41cf1d0762692680b99f186c995f"
+        },
+        "expected": {
+          "bytes": 5541,
+          "sha256": "3617cf18dea208780967a1299aa5ac2babfa41cf1d0762692680b99f186c995f"
+        },
+        "passed": true
+      },
+      {
+        "label": "frozen work/VortexGaussians/tracks/tog/tasks/t81-firewoods-capacity-causality/adapter.js",
+        "observed": {
+          "bytes": 8063,
+          "sha256": "b1dd0d98895b118518d258e88aa299ac6ee414ab0e674570255ff191e23b888e"
+        },
+        "expected": {
+          "bytes": 8063,
+          "sha256": "b1dd0d98895b118518d258e88aa299ac6ee414ab0e674570255ff191e23b888e"
+        },
+        "passed": true
+      },
+      {
+        "label": "frozen work/VortexGaussians/tracks/tog/tasks/t81-firewoods-capacity-causality/stage.mjs",
+        "observed": {
+          "bytes": 3721,
+          "sha256": "3815230d5e49f7159600476cca9da1928baadbce74fe3f7ac652e618e92c3c66"
+        },
+        "expected": {
+          "bytes": 3721,
+          "sha256": "3815230d5e49f7159600476cca9da1928baadbce74fe3f7ac652e618e92c3c66"
+        },
+        "passed": true
+      },
+      {
+        "label": "frozen work/VortexGaussians/tracks/tog/tasks/t81-firewoods-capacity-causality/capture.mjs",
+        "observed": {
+          "bytes": 13169,
+          "sha256": "48c3e99ed7c669ef17fee934a2f26f23c58fe10bb754f5106745dd7c343181eb"
+        },
+        "expected": {
+          "bytes": 13169,
+          "sha256": "48c3e99ed7c669ef17fee934a2f26f23c58fe10bb754f5106745dd7c343181eb"
+        },
+        "passed": true
+      },
+      {
+        "label": "frozen work/VortexGaussians/tracks/tog/tasks/t81-firewoods-capacity-causality/run_once.py",
+        "observed": {
+          "bytes": 4511,
+          "sha256": "a69933410b0ba2a54624cf3338deb91a3f2ba10f28cb19493db12f542594e53b"
+        },
+        "expected": {
+          "bytes": 4511,
+          "sha256": "a69933410b0ba2a54624cf3338deb91a3f2ba10f28cb19493db12f542594e53b"
+        },
+        "passed": true
+      },
+      {
+        "label": "frozen work/VortexGaussians/tracks/tog/tasks/t81-firewoods-capacity-causality/prepare.py",
+        "observed": {
+          "bytes": 4390,
+          "sha256": "3659d581920bd021e7beb9d4f9d44e3e79ff09d6954e4d08daeeacda276307c7"
+        },
+        "expected": {
+          "bytes": 4390,
+          "sha256": "3659d581920bd021e7beb9d4f9d44e3e79ff09d6954e4d08daeeacda276307c7"
+        },
+        "passed": true
+      },
+      {
+        "label": "frozen work/VortexGaussians/tracks/tog/tasks/t81-firewoods-capacity-causality/audit_saved.py",
+        "observed": {
+          "bytes": 11396,
+          "sha256": "d95b180f7f4c31a7e701be243f8f036fe7df53944bae1bc55e57c29fd0ef0f02"
+        },
+        "expected": {
+          "bytes": 11396,
+          "sha256": "d95b180f7f4c31a7e701be243f8f036fe7df53944bae1bc55e57c29fd0ef0f02"
+        },
+        "passed": true
+      },
+      {
+        "label": "frozen work/VortexGaussians/tracks/tog/tasks/t81-firewoods-capacity-causality/staging.json",
+        "observed": {
+          "bytes": 810,
+          "sha256": "292cdebe4b4e236230b278c2d2daad938053eb9fc0dcc9364b71da3c41c2c8df"
+        },
+        "expected": {
+          "bytes": 810,
+          "sha256": "292cdebe4b4e236230b278c2d2daad938053eb9fc0dcc9364b71da3c41c2c8df"
+        },
+        "passed": true
+      },
+      {
+        "label": "frozen work/VortexGaussians/tracks/tog/tasks/t81-firewoods-capacity-causality/local/site/demo/index.html",
+        "observed": {
+          "bytes": 324188,
+          "sha256": "1ba90742f623981a98fbaf9ac639e1925c54f7c3f56fac1a6bdd959548fda6ed"
+        },
+        "expected": {
+          "bytes": 324188,
+          "sha256": "1ba90742f623981a98fbaf9ac639e1925c54f7c3f56fac1a6bdd959548fda6ed"
+        },
+        "passed": true
+      },
+      {
+        "label": "frozen work/VortexGaussians/demo/index.html",
+        "observed": {
+          "bytes": 314044,
+          "sha256": "e9d808c434bdd8ce91482f60502f03f5d08c56b71c082eb704c53275ff9f57d0"
+        },
+        "expected": {
+          "bytes": 314044,
+          "sha256": "e9d808c434bdd8ce91482f60502f03f5d08c56b71c082eb704c53275ff9f57d0"
+        },
+        "passed": true
+      },
+      {
+        "label": "frozen work/VortexGaussians/research/lib/runtime.mjs",
+        "observed": {
+          "bytes": 5669,
+          "sha256": "cf540ed02429016ab2b8a50a1cd95ac14222247466a56cfbf37444234851b184"
+        },
+        "expected": {
+          "bytes": 5669,
+          "sha256": "cf540ed02429016ab2b8a50a1cd95ac14222247466a56cfbf37444234851b184"
+        },
+        "passed": true
+      },
+      {
+        "label": "frozen work/VortexGaussians/tracks/tog/tasks/t42-firewoods-sequential-workflow/recipe.json",
+        "observed": {
+          "bytes": 11926,
+          "sha256": "982c98d3187ab26e95e251de562950adaab9a2101d1f1ff6371c93e7f6383013"
+        },
+        "expected": {
+          "bytes": 11926,
+          "sha256": "982c98d3187ab26e95e251de562950adaab9a2101d1f1ff6371c93e7f6383013"
+        },
+        "passed": true
+      },
+      {
+        "label": "frozen work/VortexGaussians/tracks/tog/tasks/t42-firewoods-sequential-workflow/adapter.js",
+        "observed": {
+          "bytes": 1985,
+          "sha256": "e3c6348a18ae633e963bdf574ceac92b2ce3956ac2b26e06b9b5f88cda7f58da"
+        },
+        "expected": {
+          "bytes": 1985,
+          "sha256": "e3c6348a18ae633e963bdf574ceac92b2ce3956ac2b26e06b9b5f88cda7f58da"
+        },
+        "passed": true
+      },
+      {
+        "label": "frozen work/VortexGaussians/tracks/tog/tasks/t42-firewoods-sequential-workflow/freeze.json",
+        "observed": {
+          "bytes": 5321,
+          "sha256": "2dc93f1b2d0d4bf2edfaac9f6fa3c6bac4d8fa595de35c149c7506c55dd83bb9"
+        },
+        "expected": {
+          "bytes": 5321,
+          "sha256": "2dc93f1b2d0d4bf2edfaac9f6fa3c6bac4d8fa595de35c149c7506c55dd83bb9"
+        },
+        "passed": true
+      },
+      {
+        "label": "frozen work/real-asset-ingest/foreground.ply",
+        "observed": {
+          "bytes": 8603906,
+          "sha256": "906460f162f704b89666b159ae5b4744e53e6dc11baf448a550de581506919b0"
+        },
+        "expected": {
+          "bytes": 8603906,
+          "sha256": "906460f162f704b89666b159ae5b4744e53e6dc11baf448a550de581506919b0"
+        },
+        "passed": true
+      },
+      {
+        "label": "frozen C:/Program Files/nodejs/node.exe",
+        "observed": {
+          "bytes": 92279112,
+          "sha256": "b3094d0b49f9ad602262a9921551737bb97637c05dd357a06ae98188d7290aa3"
+        },
+        "expected": {
+          "bytes": 92279112,
+          "sha256": "b3094d0b49f9ad602262a9921551737bb97637c05dd357a06ae98188d7290aa3"
+        },
+        "passed": true
+      },
+      {
+        "label": "frozen C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe",
+        "observed": {
+          "bytes": 5257584,
+          "sha256": "6c6729d3ade101ad8b97f9812a852a9024b7bb2a8394b5f506219dd635dc330d"
+        },
+        "expected": {
+          "bytes": 5257584,
+          "sha256": "6c6729d3ade101ad8b97f9812a852a9024b7bb2a8394b5f506219dd635dc330d"
+        },
+        "passed": true
+      },
+      {
+        "label": "frozen C:/Users/seanzjxiao/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/package.json",
+        "observed": {
+          "bytes": 1416,
+          "sha256": "ca170ec143a88ed3043ac953eb3b2377b2b97304104f4e1e23316684ce2c35af"
+        },
+        "expected": {
+          "bytes": 1416,
+          "sha256": "ca170ec143a88ed3043ac953eb3b2377b2b97304104f4e1e23316684ce2c35af"
+        },
+        "passed": true
+      },
+      {
+        "label": "frozen C:/Users/seanzjxiao/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright/index.js",
+        "observed": {
+          "bytes": 648,
+          "sha256": "4e98f65f0a9d9bcab8cffc0c5cfdd87fd3f5b0be74fc494ff166a466b204cd44"
+        },
+        "expected": {
+          "bytes": 648,
+          "sha256": "4e98f65f0a9d9bcab8cffc0c5cfdd87fd3f5b0be74fc494ff166a466b204cd44"
+        },
+        "passed": true
+      },
+      {
+        "label": "exact four arms",
+        "observed": [
+          [
+            "per-layer-AB",
+            "per-layer",
+            true
+          ],
+          [
+            "per-layer-A",
+            "per-layer",
+            false
+          ],
+          [
+            "global-AB",
+            "global",
+            true
+          ],
+          [
+            "global-A",
+            "global",
+            false
+          ]
+        ],
+        "expected": [
+          [
+            "per-layer-AB",
+            "per-layer",
+            true
+          ],
+          [
+            "per-layer-A",
+            "per-layer",
+            false
+          ],
+          [
+            "global-AB",
+            "global",
+            true
+          ],
+          [
+            "global-A",
+            "global",
+            false
+          ]
+        ],
+        "passed": true
+      },
+      {
+        "label": "frozen exact four arms",
+        "observed": [
+          [
+            "per-layer-AB",
+            "per-layer",
+            true
+          ],
+          [
+            "per-layer-A",
+            "per-layer",
+            false
+          ],
+          [
+            "global-AB",
+            "global",
+            true
+          ],
+          [
+            "global-A",
+            "global",
+            false
+          ]
+        ],
+        "expected": [
+          [
+            "per-layer-AB",
+            "per-layer",
+            true
+          ],
+          [
+            "per-layer-A",
+            "per-layer",
+            false
+          ],
+          [
+            "global-AB",
+            "global",
+            true
+          ],
+          [
+            "global-A",
+            "global",
+            false
+          ]
+        ],
+        "passed": true
+      },
+      {
+        "label": "four 360-step counts",
+        "observed": [
+          360,
+          360,
+          360,
+          360
+        ],
+        "expected": [
+          360,
+          360,
+          360,
+          360
+        ],
+        "passed": true
+      },
+      {
+        "label": "per-layer-AB prefix GL",
+        "observed": {
+          "glError": 0,
+          "contextLost": false
+        },
+        "expected": {
+          "glError": 0,
+          "contextLost": false
+        },
+        "passed": true
+      },
+      {
+        "label": "per-layer-AB prefix controls",
+        "observed": {
+          "frame": 180,
+          "policy": "per-layer",
+          "layers": 9,
+          "ppl": 600
+        },
+        "expected": {
+          "frame": 180,
+          "policy": "per-layer",
+          "layers": 9,
+          "ppl": 600
+        },
+        "passed": true
+      },
+      {
+        "label": "per-layer-AB prefix material count",
+        "observed": 34687,
+        "expected": 34687,
+        "passed": true
+      },
+      {
+        "label": "per-layer-AB prefix gas count",
+        "observed": {
+          "gas": 2394,
+          "layers": 9
+        },
+        "expected": {
+          "gas": 2394,
+          "layers": 9
+        },
+        "passed": true
+      },
+      {
+        "label": "per-layer-AB historical prefix",
+        "observed": {
+          "frame": 180,
+          "hash": "24ba7dc9",
+          "count": 2394,
+          "counters": [
+            8640,
+            3826,
+            2394
+          ]
+        },
+        "expected": {
+          "frame": 180,
+          "hash": "24ba7dc9",
+          "count": 2394,
+          "counters": [
+            8640,
+            3826,
+            2394
+          ]
+        },
+        "passed": true
+      },
+      {
+        "label": "per-layer-AB endpoint GL",
+        "observed": {
+          "glError": 0,
+          "contextLost": false
+        },
+        "expected": {
+          "glError": 0,
+          "contextLost": false
+        },
+        "passed": true
+      },
+      {
+        "label": "per-layer-AB endpoint controls",
+        "observed": {
+          "frame": 360,
+          "policy": "per-layer",
+          "layers": 9,
+          "ppl": 600
+        },
+        "expected": {
+          "frame": 360,
+          "policy": "per-layer",
+          "layers": 9,
+          "ppl": 600
+        },
+        "passed": true
+      },
+      {
+        "label": "per-layer-AB endpoint material count",
+        "observed": 34687,
+        "expected": 34687,
+        "passed": true
+      },
+      {
+        "label": "per-layer-AB endpoint gas count",
+        "observed": {
+          "gas": 2433,
+          "layers": 9
+        },
+        "expected": {
+          "gas": 2433,
+          "layers": 9
+        },
+        "passed": true
+      },
+      {
+        "label": "per-layer-AB intervention GL",
+        "observed": {
+          "glError": 0,
+          "contextLost": false
+        },
+        "expected": {
+          "glError": 0,
+          "contextLost": false
+        },
+        "passed": true
+      },
+      {
+        "label": "per-layer-AB intervention controls",
+        "observed": {
+          "frame": 180,
+          "policy": "per-layer",
+          "layers": 9,
+          "ppl": 600
+        },
+        "expected": {
+          "frame": 180,
+          "policy": "per-layer",
+          "layers": 9,
+          "ppl": 600
+        },
+        "passed": true
+      },
+      {
+        "label": "per-layer-AB intervention material count",
+        "observed": 34687,
+        "expected": 34687,
+        "passed": true
+      },
+      {
+        "label": "per-layer-AB intervention gas count",
+        "observed": {
+          "gas": 2394,
+          "layers": 9
+        },
+        "expected": {
+          "gas": 2394,
+          "layers": 9
+        },
+        "passed": true
+      },
+      {
+        "label": "per-layer-AB zero-time intervention hash",
+        "observed": "36e624bc",
+        "expected": "36e624bc",
+        "passed": true
+      },
+      {
+        "label": "per-layer-AB zero-time gas count",
+        "observed": 2394,
+        "expected": 2394,
+        "passed": true
+      },
+      {
+        "label": "per-layer-AB zero-time counters",
+        "observed": [
+          8640,
+          3826,
+          2394
+        ],
+        "expected": [
+          8640,
+          3826,
+          2394
+        ],
+        "passed": true
+      },
+      {
+        "label": "per-layer-AB historical endpoint",
+        "observed": {
+          "frame": 360,
+          "hash": "cb784052",
+          "count": 2433,
+          "counters": [
+            17280,
+            12379,
+            2437
+          ]
+        },
+        "expected": {
+          "frame": 360,
+          "hash": "cb784052",
+          "count": 2433,
+          "counters": [
+            17280,
+            12379,
+            2437
+          ]
+        },
+        "passed": true
+      },
+      {
+        "label": "per-layer-A prefix GL",
+        "observed": {
+          "glError": 0,
+          "contextLost": false
+        },
+        "expected": {
+          "glError": 0,
+          "contextLost": false
+        },
+        "passed": true
+      },
+      {
+        "label": "per-layer-A prefix controls",
+        "observed": {
+          "frame": 180,
+          "policy": "per-layer",
+          "layers": 9,
+          "ppl": 600
+        },
+        "expected": {
+          "frame": 180,
+          "policy": "per-layer",
+          "layers": 9,
+          "ppl": 600
+        },
+        "passed": true
+      },
+      {
+        "label": "per-layer-A prefix material count",
+        "observed": 34687,
+        "expected": 34687,
+        "passed": true
+      },
+      {
+        "label": "per-layer-A prefix gas count",
+        "observed": {
+          "gas": 2394,
+          "layers": 9
+        },
+        "expected": {
+          "gas": 2394,
+          "layers": 9
+        },
+        "passed": true
+      },
+      {
+        "label": "per-layer-A historical prefix",
+        "observed": {
+          "frame": 180,
+          "hash": "24ba7dc9",
+          "count": 2394,
+          "counters": [
+            8640,
+            3826,
+            2394
+          ]
+        },
+        "expected": {
+          "frame": 180,
+          "hash": "24ba7dc9",
+          "count": 2394,
+          "counters": [
+            8640,
+            3826,
+            2394
+          ]
+        },
+        "passed": true
+      },
+      {
+        "label": "per-layer-A endpoint GL",
+        "observed": {
+          "glError": 0,
+          "contextLost": false
+        },
+        "expected": {
+          "glError": 0,
+          "contextLost": false
+        },
+        "passed": true
+      },
+      {
+        "label": "per-layer-A endpoint controls",
+        "observed": {
+          "frame": 360,
+          "policy": "per-layer",
+          "layers": 9,
+          "ppl": 600
+        },
+        "expected": {
+          "frame": 360,
+          "policy": "per-layer",
+          "layers": 9,
+          "ppl": 600
+        },
+        "passed": true
+      },
+      {
+        "label": "per-layer-A endpoint material count",
+        "observed": 34687,
+        "expected": 34687,
+        "passed": true
+      },
+      {
+        "label": "per-layer-A endpoint gas count",
+        "observed": {
+          "gas": 2433,
+          "layers": 9
+        },
+        "expected": {
+          "gas": 2433,
+          "layers": 9
+        },
+        "passed": true
+      },
+      {
+        "label": "per-layer-A intervention GL",
+        "observed": {
+          "glError": 0,
+          "contextLost": false
+        },
+        "expected": {
+          "glError": 0,
+          "contextLost": false
+        },
+        "passed": true
+      },
+      {
+        "label": "per-layer-A intervention controls",
+        "observed": {
+          "frame": 180,
+          "policy": "per-layer",
+          "layers": 9,
+          "ppl": 600
+        },
+        "expected": {
+          "frame": 180,
+          "policy": "per-layer",
+          "layers": 9,
+          "ppl": 600
+        },
+        "passed": true
+      },
+      {
+        "label": "per-layer-A intervention material count",
+        "observed": 34687,
+        "expected": 34687,
+        "passed": true
+      },
+      {
+        "label": "per-layer-A intervention gas count",
+        "observed": {
+          "gas": 2394,
+          "layers": 9
+        },
+        "expected": {
+          "gas": 2394,
+          "layers": 9
+        },
+        "passed": true
+      },
+      {
+        "label": "per-layer-A zero-time intervention hash",
+        "observed": "24ba7dc9",
+        "expected": "24ba7dc9",
+        "passed": true
+      },
+      {
+        "label": "per-layer-A zero-time gas count",
+        "observed": 2394,
+        "expected": 2394,
+        "passed": true
+      },
+      {
+        "label": "per-layer-A zero-time counters",
+        "observed": [
+          8640,
+          3826,
+          2394
+        ],
+        "expected": [
+          8640,
+          3826,
+          2394
+        ],
+        "passed": true
+      },
+      {
+        "label": "global-AB prefix GL",
+        "observed": {
+          "glError": 0,
+          "contextLost": false
+        },
+        "expected": {
+          "glError": 0,
+          "contextLost": false
+        },
+        "passed": true
+      },
+      {
+        "label": "global-AB prefix controls",
+        "observed": {
+          "frame": 180,
+          "policy": "per-layer",
+          "layers": 9,
+          "ppl": 600
+        },
+        "expected": {
+          "frame": 180,
+          "policy": "per-layer",
+          "layers": 9,
+          "ppl": 600
+        },
+        "passed": true
+      },
+      {
+        "label": "global-AB prefix material count",
+        "observed": 34687,
+        "expected": 34687,
+        "passed": true
+      },
+      {
+        "label": "global-AB prefix gas count",
+        "observed": {
+          "gas": 2394,
+          "layers": 9
+        },
+        "expected": {
+          "gas": 2394,
+          "layers": 9
+        },
+        "passed": true
+      },
+      {
+        "label": "global-AB historical prefix",
+        "observed": {
+          "frame": 180,
+          "hash": "24ba7dc9",
+          "count": 2394,
+          "counters": [
+            8640,
+            3826,
+            2394
+          ]
+        },
+        "expected": {
+          "frame": 180,
+          "hash": "24ba7dc9",
+          "count": 2394,
+          "counters": [
+            8640,
+            3826,
+            2394
+          ]
+        },
+        "passed": true
+      },
+      {
+        "label": "global-AB endpoint GL",
+        "observed": {
+          "glError": 0,
+          "contextLost": false
+        },
+        "expected": {
+          "glError": 0,
+          "contextLost": false
+        },
+        "passed": true
+      },
+      {
+        "label": "global-AB endpoint controls",
+        "observed": {
+          "frame": 360,
+          "policy": "global",
+          "layers": 9,
+          "ppl": 600
+        },
+        "expected": {
+          "frame": 360,
+          "policy": "global",
+          "layers": 9,
+          "ppl": 600
+        },
+        "passed": true
+      },
+      {
+        "label": "global-AB endpoint material count",
+        "observed": 34687,
+        "expected": 34687,
+        "passed": true
+      },
+      {
+        "label": "global-AB endpoint gas count",
+        "observed": {
+          "gas": 5400,
+          "layers": 9
+        },
+        "expected": {
+          "gas": 5400,
+          "layers": 9
+        },
+        "passed": true
+      },
+      {
+        "label": "global-AB intervention GL",
+        "observed": {
+          "glError": 0,
+          "contextLost": false
+        },
+        "expected": {
+          "glError": 0,
+          "contextLost": false
+        },
+        "passed": true
+      },
+      {
+        "label": "global-AB intervention controls",
+        "observed": {
+          "frame": 180,
+          "policy": "global",
+          "layers": 9,
+          "ppl": 600
+        },
+        "expected": {
+          "frame": 180,
+          "policy": "global",
+          "layers": 9,
+          "ppl": 600
+        },
+        "passed": true
+      },
+      {
+        "label": "global-AB intervention material count",
+        "observed": 34687,
+        "expected": 34687,
+        "passed": true
+      },
+      {
+        "label": "global-AB intervention gas count",
+        "observed": {
+          "gas": 2394,
+          "layers": 9
+        },
+        "expected": {
+          "gas": 2394,
+          "layers": 9
+        },
+        "passed": true
+      },
+      {
+        "label": "global-AB zero-time intervention hash",
+        "observed": "36e624bc",
+        "expected": "36e624bc",
+        "passed": true
+      },
+      {
+        "label": "global-AB zero-time gas count",
+        "observed": 2394,
+        "expected": 2394,
+        "passed": true
+      },
+      {
+        "label": "global-AB zero-time counters",
+        "observed": [
+          8640,
+          3826,
+          2394
+        ],
+        "expected": [
+          8640,
+          3826,
+          2394
+        ],
+        "passed": true
+      },
+      {
+        "label": "global-A prefix GL",
+        "observed": {
+          "glError": 0,
+          "contextLost": false
+        },
+        "expected": {
+          "glError": 0,
+          "contextLost": false
+        },
+        "passed": true
+      },
+      {
+        "label": "global-A prefix controls",
+        "observed": {
+          "frame": 180,
+          "policy": "per-layer",
+          "layers": 9,
+          "ppl": 600
+        },
+        "expected": {
+          "frame": 180,
+          "policy": "per-layer",
+          "layers": 9,
+          "ppl": 600
+        },
+        "passed": true
+      },
+      {
+        "label": "global-A prefix material count",
+        "observed": 34687,
+        "expected": 34687,
+        "passed": true
+      },
+      {
+        "label": "global-A prefix gas count",
+        "observed": {
+          "gas": 2394,
+          "layers": 9
+        },
+        "expected": {
+          "gas": 2394,
+          "layers": 9
+        },
+        "passed": true
+      },
+      {
+        "label": "global-A historical prefix",
+        "observed": {
+          "frame": 180,
+          "hash": "24ba7dc9",
+          "count": 2394,
+          "counters": [
+            8640,
+            3826,
+            2394
+          ]
+        },
+        "expected": {
+          "frame": 180,
+          "hash": "24ba7dc9",
+          "count": 2394,
+          "counters": [
+            8640,
+            3826,
+            2394
+          ]
+        },
+        "passed": true
+      },
+      {
+        "label": "global-A endpoint GL",
+        "observed": {
+          "glError": 0,
+          "contextLost": false
+        },
+        "expected": {
+          "glError": 0,
+          "contextLost": false
+        },
+        "passed": true
+      },
+      {
+        "label": "global-A endpoint controls",
+        "observed": {
+          "frame": 360,
+          "policy": "global",
+          "layers": 9,
+          "ppl": 600
+        },
+        "expected": {
+          "frame": 360,
+          "policy": "global",
+          "layers": 9,
+          "ppl": 600
+        },
+        "passed": true
+      },
+      {
+        "label": "global-A endpoint material count",
+        "observed": 34687,
+        "expected": 34687,
+        "passed": true
+      },
+      {
+        "label": "global-A endpoint gas count",
+        "observed": {
+          "gas": 5400,
+          "layers": 9
+        },
+        "expected": {
+          "gas": 5400,
+          "layers": 9
+        },
+        "passed": true
+      },
+      {
+        "label": "global-A intervention GL",
+        "observed": {
+          "glError": 0,
+          "contextLost": false
+        },
+        "expected": {
+          "glError": 0,
+          "contextLost": false
+        },
+        "passed": true
+      },
+      {
+        "label": "global-A intervention controls",
+        "observed": {
+          "frame": 180,
+          "policy": "global",
+          "layers": 9,
+          "ppl": 600
+        },
+        "expected": {
+          "frame": 180,
+          "policy": "global",
+          "layers": 9,
+          "ppl": 600
+        },
+        "passed": true
+      },
+      {
+        "label": "global-A intervention material count",
+        "observed": 34687,
+        "expected": 34687,
+        "passed": true
+      },
+      {
+        "label": "global-A intervention gas count",
+        "observed": {
+          "gas": 2394,
+          "layers": 9
+        },
+        "expected": {
+          "gas": 2394,
+          "layers": 9
+        },
+        "passed": true
+      },
+      {
+        "label": "global-A zero-time intervention hash",
+        "observed": "24ba7dc9",
+        "expected": "24ba7dc9",
+        "passed": true
+      },
+      {
+        "label": "global-A zero-time gas count",
+        "observed": 2394,
+        "expected": 2394,
+        "passed": true
+      },
+      {
+        "label": "global-A zero-time counters",
+        "observed": [
+          8640,
+          3826,
+          2394
+        ],
+        "expected": [
+          8640,
+          3826,
+          2394
+        ],
+        "passed": true
+      }
+    ],
+    "all_recorded_checks_passed": true,
+    "actual_output_bytes_including_supervisor": 22331459,
+    "frozen_files_rehashed": 20,
+    "native_hash_scope": "Compared saved native selected-field hash values to original T42 receipts; no independent full FNV recomputation or restart certificate."
+  },
+  "arms": {
+    "per-layer-AB": {
+      "second_interval": {
+        "blocked": 8553,
+        "randomRejected": 44,
+        "emitted": 43,
+        "blocked_with_global_free": 8553,
+        "native_attrition": 4
+      },
+      "source_groups": {
+        "fixed_B_region": {
+          "offers": 700,
+          "blocked": 700,
+          "randomRejected": 0,
+          "emitted": 0
+        },
+        "newly_B_ignited": {
+          "offers": 700,
+          "blocked": 700,
+          "randomRejected": 0,
+          "emitted": 0
+        },
+        "other_sources": {
+          "offers": 7940,
+          "blocked": 7853,
+          "randomRejected": 44,
+          "emitted": 43
+        }
+      },
+      "prefix": {
+        "frame": 180,
+        "time": 2.9999999999999942,
+        "hash": "24ba7dc9",
+        "particleStateHash": "95f1dfc4",
+        "randomDraws": 16784,
+        "scene": {
+          "count": 34687,
+          "burning": 3374,
+          "charred": 0,
+          "heated": 3624,
+          "fuelRemaining": 33147.87358772755,
+          "frontier": 3374,
+          "burnHash": "6ae5b770",
+          "representedArea": null,
+          "areaWeightedFuelRemaining": null,
+          "areaWeightedHeat": null,
+          "areaWeightedChar": null
+        },
+        "particles": {
+          "count": 2394,
+          "hotCount": 44,
+          "coldCount": 2222,
+          "smokeCount": 2350,
+          "temperatureSum": 720.6115768712866,
+          "dynamicTemperatureSum": 701.933251608688,
+          "densitySum": 1186.7161659302049,
+          "circulationSum": 925.2122586226811,
+          "absCirculationSum": 1948.128607020639,
+          "smokeProxySum": 805.2666615954163,
+          "layerCounts": [
+            0,
+            0,
+            600,
+            600,
+            600,
+            590,
+            4,
+            0,
+            0
+          ]
+        },
+        "counters": {
+          "flameHeatDeposited": 727.8441082666552,
+          "graphHeatDeposited": 6220.403648140611,
+          "sceneSeedsEmitted": 2394,
+          "frontierProcessed": 246652,
+          "frontierDeferred": 307438,
+          "sceneFeedAttempts": 8640,
+          "sceneFeedCapacityBlocked": 3826,
+          "sceneFeedRandomRejected": 2420,
+          "baseParticlesEmitted": 0,
+          "baseHeatApplied": 0,
+          "flameSamplesProcessed": 12324,
+          "flameSampleCapHits": 0,
+          "clockProcessed": 554090,
+          "clockFuelConsumed": 1539.1264122724533,
+          "sceneSeedsRecycled": 0,
+          "sceneFeedRecycleCandidates": 0,
+          "sceneFeedNoColdSlot": 0,
+          "sceneRecycleSlotsExamined": 0,
+          "recycledDensitySum": 0,
+          "recycledCirculationSum": 0,
+          "recycledAbsCirculationSum": 0,
+          "recycledMaxDensity": 0,
+          "recycledMaxAbsCirculation": 0,
+          "recycledSmokeProxySum": 0,
+          "recycledHotRemoved": 0,
+          "recycledMaxTemperature": 0,
+          "recycledMaxDynamicTemperature": 0,
+          "recycledMinAge": null,
+          "areaWeightedFlameHeatDeposited": 0,
+          "areaWeightedGraphHeatDeposited": 0,
+          "areaWeightedFuelConsumed": 0,
+          "areaFeedCreditsGenerated": 0,
+          "areaFeedAttempts": 0,
+          "areaFeedAdmitted": 0,
+          "areaFeedBlocked": 0,
+          "areaFeedServiceCapDropped": 0,
+          "areaFeedCancelledCredits": 0
+        },
+        "observationCounters": {
+          "offers": 8640,
+          "blocked": 3826,
+          "randomRejected": 2420,
+          "emitted": 2394,
+          "blockedWithGlobalFree": 3826,
+          "nativeAttrition": 0
+        },
+        "newlyBCount": 0,
+        "glError": 0,
+        "contextLost": false,
+        "capture_export_ms": 98.29999995231628,
+        "compression_write_ms": 107.86779999999999
+      },
+      "endpoint": {
+        "frame": 360,
+        "time": 5.999999999999984,
+        "hash": "cb784052",
+        "particleStateHash": "2696c243",
+        "randomDraws": 17086,
+        "scene": {
+          "count": 34687,
+          "burning": 3662,
+          "charred": 0,
+          "heated": 4071,
+          "fuelRemaining": 31316.872790388057,
+          "frontier": 3662,
+          "burnHash": "fed1314a",
+          "representedArea": null,
+          "areaWeightedFuelRemaining": null,
+          "areaWeightedHeat": null,
+          "areaWeightedChar": null
+        },
+        "particles": {
+          "count": 2433,
+          "hotCount": 11,
+          "coldCount": 2420,
+          "smokeCount": 2422,
+          "temperatureSum": 356.2257384437385,
+          "dynamicTemperatureSum": 133.5809173777829,
+          "densitySum": 505.75635160508415,
+          "circulationSum": 23.889672579012025,
+          "absCirculationSum": 2037.8446908124913,
+          "smokeProxySum": 423.0727322679911,
+          "layerCounts": [
+            0,
+            0,
+            600,
+            600,
+            600,
+            600,
+            33,
+            0,
+            0
+          ]
+        },
+        "counters": {
+          "flameHeatDeposited": 896.2315335519345,
+          "graphHeatDeposited": 6222.667428597579,
+          "sceneSeedsEmitted": 2437,
+          "frontierProcessed": 498652,
+          "frontierDeferred": 714598,
+          "sceneFeedAttempts": 17280,
+          "sceneFeedCapacityBlocked": 12379,
+          "sceneFeedRandomRejected": 2464,
+          "baseParticlesEmitted": 0,
+          "baseHeatApplied": 0,
+          "flameSamplesProcessed": 12759,
+          "flameSampleCapHits": 0,
+          "clockProcessed": 1213250,
+          "clockFuelConsumed": 3370.1272096117227,
+          "sceneSeedsRecycled": 0,
+          "sceneFeedRecycleCandidates": 0,
+          "sceneFeedNoColdSlot": 0,
+          "sceneRecycleSlotsExamined": 0,
+          "recycledDensitySum": 0,
+          "recycledCirculationSum": 0,
+          "recycledAbsCirculationSum": 0,
+          "recycledMaxDensity": 0,
+          "recycledMaxAbsCirculation": 0,
+          "recycledSmokeProxySum": 0,
+          "recycledHotRemoved": 0,
+          "recycledMaxTemperature": 0,
+          "recycledMaxDynamicTemperature": 0,
+          "recycledMinAge": null,
+          "areaWeightedFlameHeatDeposited": 0,
+          "areaWeightedGraphHeatDeposited": 0,
+          "areaWeightedFuelConsumed": 0,
+          "areaFeedCreditsGenerated": 0,
+          "areaFeedAttempts": 0,
+          "areaFeedAdmitted": 0,
+          "areaFeedBlocked": 0,
+          "areaFeedServiceCapDropped": 0,
+          "areaFeedCancelledCredits": 0
+        },
+        "observationCounters": {
+          "offers": 17280,
+          "blocked": 12379,
+          "randomRejected": 2464,
+          "emitted": 2437,
+          "blockedWithGlobalFree": 12379,
+          "nativeAttrition": 4
+        },
+        "newlyBCount": 288,
+        "glError": 0,
+        "contextLost": false,
+        "capture_export_ms": 137,
+        "compression_write_ms": 117.46370000000024
+      },
+      "timing": {
+        "step_including_hooks_ms": {
+          "sum": 3332.099999189377,
+          "mean": 9.255833331081602,
+          "max": 16.600000023841858
+        },
+        "observation_hooks_inside_step_ms": {
+          "sum": 9.499999284744263,
+          "mean": 0.026388886902067397,
+          "max": 0.20000004768371582
+        },
+        "render_and_gpu_finish_ms": {
+          "sum": 1759.0000002384186,
+          "mean": 4.886111111773385,
+          "max": 15.600000023841858
+        },
+        "step_plus_render_ms": {
+          "sum": 5091.099999427795,
+          "mean": 14.141944442854987,
+          "max": 25
+        },
+        "observation_before_step_ms": {
+          "sum": 123.99999904632568,
+          "mean": 0.3444444417953491,
+          "max": 0.8999999761581421
+        },
+        "observation_after_render_ms": {
+          "sum": 915.7000017166138,
+          "mean": 2.5436111158794827,
+          "max": 5.600000023841858
+        },
+        "frame_wrapper_ms": {
+          "sum": 6131.000000238419,
+          "mean": 17.03055555621783,
+          "max": 30
+        }
+      },
+      "second_interval_timing": {
+        "step_including_hooks_ms": {
+          "sum": 1673.1000006198883,
+          "mean": 9.295000003443825,
+          "max": 10.100000023841858
+        },
+        "observation_hooks_inside_step_ms": {
+          "sum": 4.299999713897705,
+          "mean": 0.023888887299431696,
+          "max": 0.20000004768371582
+        },
+        "render_and_gpu_finish_ms": {
+          "sum": 868.3999998569489,
+          "mean": 4.824444443649716,
+          "max": 8.600000023841858
+        },
+        "step_plus_render_ms": {
+          "sum": 2541.500000476837,
+          "mean": 14.11944444709354,
+          "max": 18.200000047683716
+        },
+        "observation_before_step_ms": {
+          "sum": 73.09999871253967,
+          "mean": 0.40611110395855377,
+          "max": 0.8999999761581421
+        },
+        "observation_after_render_ms": {
+          "sum": 391.1000006198883,
+          "mean": 2.1727777812216016,
+          "max": 3.299999952316284
+        },
+        "frame_wrapper_ms": {
+          "sum": 3005.699999809265,
+          "mean": 16.698333332273695,
+          "max": 21.399999976158142
+        }
+      },
+      "second_interval_timing_frames": 180,
+      "whole_arm_ms": 15386.8972,
+      "newly_B_count": 288
+    },
+    "per-layer-A": {
+      "second_interval": {
+        "blocked": 8553,
+        "randomRejected": 44,
+        "emitted": 43,
+        "blocked_with_global_free": 8553,
+        "native_attrition": 4
+      },
+      "source_groups": {
+        "fixed_B_region": {
+          "offers": 0,
+          "blocked": 0,
+          "randomRejected": 0,
+          "emitted": 0
+        },
+        "newly_B_ignited": {
+          "offers": 0,
+          "blocked": 0,
+          "randomRejected": 0,
+          "emitted": 0
+        },
+        "other_sources": {
+          "offers": 8640,
+          "blocked": 8553,
+          "randomRejected": 44,
+          "emitted": 43
+        }
+      },
+      "prefix": {
+        "frame": 180,
+        "time": 2.9999999999999942,
+        "hash": "24ba7dc9",
+        "particleStateHash": "95f1dfc4",
+        "randomDraws": 16784,
+        "scene": {
+          "count": 34687,
+          "burning": 3374,
+          "charred": 0,
+          "heated": 3624,
+          "fuelRemaining": 33147.87358772755,
+          "frontier": 3374,
+          "burnHash": "6ae5b770",
+          "representedArea": null,
+          "areaWeightedFuelRemaining": null,
+          "areaWeightedHeat": null,
+          "areaWeightedChar": null
+        },
+        "particles": {
+          "count": 2394,
+          "hotCount": 44,
+          "coldCount": 2222,
+          "smokeCount": 2350,
+          "temperatureSum": 720.6115768712866,
+          "dynamicTemperatureSum": 701.933251608688,
+          "densitySum": 1186.7161659302049,
+          "circulationSum": 925.2122586226811,
+          "absCirculationSum": 1948.128607020639,
+          "smokeProxySum": 805.2666615954163,
+          "layerCounts": [
+            0,
+            0,
+            600,
+            600,
+            600,
+            590,
+            4,
+            0,
+            0
+          ]
+        },
+        "counters": {
+          "flameHeatDeposited": 727.8441082666552,
+          "graphHeatDeposited": 6220.403648140611,
+          "sceneSeedsEmitted": 2394,
+          "frontierProcessed": 246652,
+          "frontierDeferred": 307438,
+          "sceneFeedAttempts": 8640,
+          "sceneFeedCapacityBlocked": 3826,
+          "sceneFeedRandomRejected": 2420,
+          "baseParticlesEmitted": 0,
+          "baseHeatApplied": 0,
+          "flameSamplesProcessed": 12324,
+          "flameSampleCapHits": 0,
+          "clockProcessed": 554090,
+          "clockFuelConsumed": 1539.1264122724533,
+          "sceneSeedsRecycled": 0,
+          "sceneFeedRecycleCandidates": 0,
+          "sceneFeedNoColdSlot": 0,
+          "sceneRecycleSlotsExamined": 0,
+          "recycledDensitySum": 0,
+          "recycledCirculationSum": 0,
+          "recycledAbsCirculationSum": 0,
+          "recycledMaxDensity": 0,
+          "recycledMaxAbsCirculation": 0,
+          "recycledSmokeProxySum": 0,
+          "recycledHotRemoved": 0,
+          "recycledMaxTemperature": 0,
+          "recycledMaxDynamicTemperature": 0,
+          "recycledMinAge": null,
+          "areaWeightedFlameHeatDeposited": 0,
+          "areaWeightedGraphHeatDeposited": 0,
+          "areaWeightedFuelConsumed": 0,
+          "areaFeedCreditsGenerated": 0,
+          "areaFeedAttempts": 0,
+          "areaFeedAdmitted": 0,
+          "areaFeedBlocked": 0,
+          "areaFeedServiceCapDropped": 0,
+          "areaFeedCancelledCredits": 0
+        },
+        "observationCounters": {
+          "offers": 8640,
+          "blocked": 3826,
+          "randomRejected": 2420,
+          "emitted": 2394,
+          "blockedWithGlobalFree": 3826,
+          "nativeAttrition": 0
+        },
+        "newlyBCount": 0,
+        "glError": 0,
+        "contextLost": false,
+        "capture_export_ms": 135.39999997615814,
+        "compression_write_ms": 110.20209999999861
+      },
+      "endpoint": {
+        "frame": 360,
+        "time": 5.999999999999984,
+        "hash": "d3d365ee",
+        "particleStateHash": "b3aeba26",
+        "randomDraws": 17086,
+        "scene": {
+          "count": 34687,
+          "burning": 3374,
+          "charred": 0,
+          "heated": 4069,
+          "fuelRemaining": 31460.871623090687,
+          "frontier": 3374,
+          "burnHash": "baabe6cb",
+          "representedArea": null,
+          "areaWeightedFuelRemaining": null,
+          "areaWeightedHeat": null,
+          "areaWeightedChar": null
+        },
+        "particles": {
+          "count": 2433,
+          "hotCount": 11,
+          "coldCount": 2420,
+          "smokeCount": 2422,
+          "temperatureSum": 354.5155005853993,
+          "dynamicTemperatureSum": 132.29890271914695,
+          "densitySum": 505.057796390937,
+          "circulationSum": 29.4163759870037,
+          "absCirculationSum": 2040.133230913936,
+          "smokeProxySum": 424.22482548388524,
+          "layerCounts": [
+            0,
+            0,
+            600,
+            600,
+            600,
+            600,
+            33,
+            0,
+            0
+          ]
+        },
+        "counters": {
+          "flameHeatDeposited": 908.0600984166042,
+          "graphHeatDeposited": 6222.667428597579,
+          "sceneSeedsEmitted": 2437,
+          "frontierProcessed": 498652,
+          "frontierDeferred": 662758,
+          "sceneFeedAttempts": 17280,
+          "sceneFeedCapacityBlocked": 12379,
+          "sceneFeedRandomRejected": 2464,
+          "baseParticlesEmitted": 0,
+          "baseHeatApplied": 0,
+          "flameSamplesProcessed": 12796,
+          "flameSampleCapHits": 0,
+          "clockProcessed": 1161410,
+          "clockFuelConsumed": 3226.128376909086,
+          "sceneSeedsRecycled": 0,
+          "sceneFeedRecycleCandidates": 0,
+          "sceneFeedNoColdSlot": 0,
+          "sceneRecycleSlotsExamined": 0,
+          "recycledDensitySum": 0,
+          "recycledCirculationSum": 0,
+          "recycledAbsCirculationSum": 0,
+          "recycledMaxDensity": 0,
+          "recycledMaxAbsCirculation": 0,
+          "recycledSmokeProxySum": 0,
+          "recycledHotRemoved": 0,
+          "recycledMaxTemperature": 0,
+          "recycledMaxDynamicTemperature": 0,
+          "recycledMinAge": null,
+          "areaWeightedFlameHeatDeposited": 0,
+          "areaWeightedGraphHeatDeposited": 0,
+          "areaWeightedFuelConsumed": 0,
+          "areaFeedCreditsGenerated": 0,
+          "areaFeedAttempts": 0,
+          "areaFeedAdmitted": 0,
+          "areaFeedBlocked": 0,
+          "areaFeedServiceCapDropped": 0,
+          "areaFeedCancelledCredits": 0
+        },
+        "observationCounters": {
+          "offers": 17280,
+          "blocked": 12379,
+          "randomRejected": 2464,
+          "emitted": 2437,
+          "blockedWithGlobalFree": 12379,
+          "nativeAttrition": 4
+        },
+        "newlyBCount": 0,
+        "glError": 0,
+        "contextLost": false,
+        "capture_export_ms": 97.5,
+        "compression_write_ms": 117.46440000000439
+      },
+      "timing": {
+        "step_including_hooks_ms": {
+          "sum": 3429.0999987125397,
+          "mean": 9.525277774201498,
+          "max": 16.299999952316284
+        },
+        "observation_hooks_inside_step_ms": {
+          "sum": 11.00000011920929,
+          "mean": 0.03055555588669247,
+          "max": 0.20000004768371582
+        },
+        "render_and_gpu_finish_ms": {
+          "sum": 1798.7000011205673,
+          "mean": 4.996388892001576,
+          "max": 13.399999976158142
+        },
+        "step_plus_render_ms": {
+          "sum": 5227.799999833107,
+          "mean": 14.521666666203075,
+          "max": 21.899999976158142
+        },
+        "observation_before_step_ms": {
+          "sum": 128.2000013589859,
+          "mean": 0.35611111488607194,
+          "max": 1
+        },
+        "observation_after_render_ms": {
+          "sum": 932.8999989032745,
+          "mean": 2.5913888858424294,
+          "max": 4.299999952316284
+        },
+        "frame_wrapper_ms": {
+          "sum": 6289.399999976158,
+          "mean": 17.470555555489327,
+          "max": 25.800000071525574
+        }
+      },
+      "second_interval_timing": {
+        "step_including_hooks_ms": {
+          "sum": 1771.399999499321,
+          "mean": 9.84111110832956,
+          "max": 15.399999976158142
+        },
+        "observation_hooks_inside_step_ms": {
+          "sum": 5.700000524520874,
+          "mean": 0.03166666958067152,
+          "max": 0.20000004768371582
+        },
+        "render_and_gpu_finish_ms": {
+          "sum": 911.4999998807907,
+          "mean": 5.063888888226615,
+          "max": 8.5
+        },
+        "step_plus_render_ms": {
+          "sum": 2682.8999993801117,
+          "mean": 14.904999996556176,
+          "max": 21.899999976158142
+        },
+        "observation_before_step_ms": {
+          "sum": 82.5000011920929,
+          "mean": 0.4583333399560716,
+          "max": 1
+        },
+        "observation_after_render_ms": {
+          "sum": 421.19999969005585,
+          "mean": 2.339999998278088,
+          "max": 3.9000000953674316
+        },
+        "frame_wrapper_ms": {
+          "sum": 3186.800000190735,
+          "mean": 17.704444445504084,
+          "max": 25.800000071525574
+        }
+      },
+      "second_interval_timing_frames": 180,
+      "whole_arm_ms": 16177.535999999993,
+      "newly_B_count": 0
+    },
+    "global-AB": {
+      "second_interval": {
+        "blocked": 2681,
+        "randomRejected": 2949,
+        "emitted": 3010,
+        "blocked_with_global_free": 0,
+        "native_attrition": 4
+      },
+      "source_groups": {
+        "fixed_B_region": {
+          "offers": 576,
+          "blocked": 0,
+          "randomRejected": 272,
+          "emitted": 304
+        },
+        "newly_B_ignited": {
+          "offers": 576,
+          "blocked": 0,
+          "randomRejected": 272,
+          "emitted": 304
+        },
+        "other_sources": {
+          "offers": 8064,
+          "blocked": 2681,
+          "randomRejected": 2677,
+          "emitted": 2706
+        }
+      },
+      "prefix": {
+        "frame": 180,
+        "time": 2.9999999999999942,
+        "hash": "24ba7dc9",
+        "particleStateHash": "95f1dfc4",
+        "randomDraws": 16784,
+        "scene": {
+          "count": 34687,
+          "burning": 3374,
+          "charred": 0,
+          "heated": 3624,
+          "fuelRemaining": 33147.87358772755,
+          "frontier": 3374,
+          "burnHash": "6ae5b770",
+          "representedArea": null,
+          "areaWeightedFuelRemaining": null,
+          "areaWeightedHeat": null,
+          "areaWeightedChar": null
+        },
+        "particles": {
+          "count": 2394,
+          "hotCount": 44,
+          "coldCount": 2222,
+          "smokeCount": 2350,
+          "temperatureSum": 720.6115768712866,
+          "dynamicTemperatureSum": 701.933251608688,
+          "densitySum": 1186.7161659302049,
+          "circulationSum": 925.2122586226811,
+          "absCirculationSum": 1948.128607020639,
+          "smokeProxySum": 805.2666615954163,
+          "layerCounts": [
+            0,
+            0,
+            600,
+            600,
+            600,
+            590,
+            4,
+            0,
+            0
+          ]
+        },
+        "counters": {
+          "flameHeatDeposited": 727.8441082666552,
+          "graphHeatDeposited": 6220.403648140611,
+          "sceneSeedsEmitted": 2394,
+          "frontierProcessed": 246652,
+          "frontierDeferred": 307438,
+          "sceneFeedAttempts": 8640,
+          "sceneFeedCapacityBlocked": 3826,
+          "sceneFeedRandomRejected": 2420,
+          "baseParticlesEmitted": 0,
+          "baseHeatApplied": 0,
+          "flameSamplesProcessed": 12324,
+          "flameSampleCapHits": 0,
+          "clockProcessed": 554090,
+          "clockFuelConsumed": 1539.1264122724533,
+          "sceneSeedsRecycled": 0,
+          "sceneFeedRecycleCandidates": 0,
+          "sceneFeedNoColdSlot": 0,
+          "sceneRecycleSlotsExamined": 0,
+          "recycledDensitySum": 0,
+          "recycledCirculationSum": 0,
+          "recycledAbsCirculationSum": 0,
+          "recycledMaxDensity": 0,
+          "recycledMaxAbsCirculation": 0,
+          "recycledSmokeProxySum": 0,
+          "recycledHotRemoved": 0,
+          "recycledMaxTemperature": 0,
+          "recycledMaxDynamicTemperature": 0,
+          "recycledMinAge": null,
+          "areaWeightedFlameHeatDeposited": 0,
+          "areaWeightedGraphHeatDeposited": 0,
+          "areaWeightedFuelConsumed": 0,
+          "areaFeedCreditsGenerated": 0,
+          "areaFeedAttempts": 0,
+          "areaFeedAdmitted": 0,
+          "areaFeedBlocked": 0,
+          "areaFeedServiceCapDropped": 0,
+          "areaFeedCancelledCredits": 0
+        },
+        "observationCounters": {
+          "offers": 8640,
+          "blocked": 3826,
+          "randomRejected": 2420,
+          "emitted": 2394,
+          "blockedWithGlobalFree": 3826,
+          "nativeAttrition": 0
+        },
+        "newlyBCount": 0,
+        "glError": 0,
+        "contextLost": false,
+        "capture_export_ms": 136.70000004768372,
+        "compression_write_ms": 110.75280000000203
+      },
+      "endpoint": {
+        "frame": 360,
+        "time": 5.999999999999984,
+        "hash": "491894ec",
+        "particleStateHash": "2acba20a",
+        "randomDraws": 37793,
+        "scene": {
+          "count": 34687,
+          "burning": 5057,
+          "charred": 0,
+          "heated": 7543,
+          "fuelRemaining": 30912.595512024353,
+          "frontier": 5057,
+          "burnHash": "ef01f9ad",
+          "representedArea": null,
+          "areaWeightedFuelRemaining": null,
+          "areaWeightedHeat": null,
+          "areaWeightedChar": null
+        },
+        "particles": {
+          "count": 5400,
+          "hotCount": 0,
+          "coldCount": 5389,
+          "smokeCount": 5400,
+          "temperatureSum": 1249.1712249643263,
+          "dynamicTemperatureSum": 1024.9889029484334,
+          "densitySum": 2007.2182745503756,
+          "circulationSum": 177.1487796548583,
+          "absCirculationSum": 5663.498156057884,
+          "smokeProxySum": 1456.8900931872315,
+          "layerCounts": [
+            0,
+            0,
+            1734,
+            1288,
+            1033,
+            1274,
+            71,
+            0,
+            0
+          ]
+        },
+        "counters": {
+          "flameHeatDeposited": 3946.2957488519914,
+          "graphHeatDeposited": 6221.9246426348145,
+          "sceneSeedsEmitted": 5404,
+          "frontierProcessed": 498652,
+          "frontierDeferred": 860139,
+          "sceneFeedAttempts": 17280,
+          "sceneFeedCapacityBlocked": 6507,
+          "sceneFeedRandomRejected": 5369,
+          "baseParticlesEmitted": 0,
+          "baseHeatApplied": 0,
+          "flameSamplesProcessed": 28101,
+          "flameSampleCapHits": 0,
+          "clockProcessed": 1358791,
+          "clockFuelConsumed": 3774.4044879754274,
+          "sceneSeedsRecycled": 0,
+          "sceneFeedRecycleCandidates": 0,
+          "sceneFeedNoColdSlot": 0,
+          "sceneRecycleSlotsExamined": 0,
+          "recycledDensitySum": 0,
+          "recycledCirculationSum": 0,
+          "recycledAbsCirculationSum": 0,
+          "recycledMaxDensity": 0,
+          "recycledMaxAbsCirculation": 0,
+          "recycledSmokeProxySum": 0,
+          "recycledHotRemoved": 0,
+          "recycledMaxTemperature": 0,
+          "recycledMaxDynamicTemperature": 0,
+          "recycledMinAge": null,
+          "areaWeightedFlameHeatDeposited": 0,
+          "areaWeightedGraphHeatDeposited": 0,
+          "areaWeightedFuelConsumed": 0,
+          "areaFeedCreditsGenerated": 0,
+          "areaFeedAttempts": 0,
+          "areaFeedAdmitted": 0,
+          "areaFeedBlocked": 0,
+          "areaFeedServiceCapDropped": 0,
+          "areaFeedCancelledCredits": 0
+        },
+        "observationCounters": {
+          "offers": 17280,
+          "blocked": 6507,
+          "randomRejected": 5369,
+          "emitted": 5404,
+          "blockedWithGlobalFree": 3826,
+          "nativeAttrition": 4
+        },
+        "newlyBCount": 288,
+        "glError": 0,
+        "contextLost": false,
+        "capture_export_ms": 104.5,
+        "compression_write_ms": 137.96549999999843
+      },
+      "timing": {
+        "step_including_hooks_ms": {
+          "sum": 4078.599999666214,
+          "mean": 11.32944444351726,
+          "max": 17
+        },
+        "observation_hooks_inside_step_ms": {
+          "sum": 11.999999523162842,
+          "mean": 0.033333332008785674,
+          "max": 0.20000004768371582
+        },
+        "render_and_gpu_finish_ms": {
+          "sum": 1944.7999999523163,
+          "mean": 5.402222222089767,
+          "max": 12
+        },
+        "step_plus_render_ms": {
+          "sum": 6023.39999961853,
+          "mean": 16.73166666560703,
+          "max": 23.09999990463257
+        },
+        "observation_before_step_ms": {
+          "sum": 168.70000004768372,
+          "mean": 0.46861111124356586,
+          "max": 1.5
+        },
+        "observation_after_render_ms": {
+          "sum": 1228.6000000238419,
+          "mean": 3.4127777778440054,
+          "max": 5.899999976158142
+        },
+        "frame_wrapper_ms": {
+          "sum": 7421.199999570847,
+          "mean": 20.614444443252353,
+          "max": 27.799999952316284
+        }
+      },
+      "second_interval_timing": {
+        "step_including_hooks_ms": {
+          "sum": 2369.1000002622604,
+          "mean": 13.161666668123669,
+          "max": 16.100000023841858
+        },
+        "observation_hooks_inside_step_ms": {
+          "sum": 5.899999976158142,
+          "mean": 0.03277777764532301,
+          "max": 0.20000004768371582
+        },
+        "render_and_gpu_finish_ms": {
+          "sum": 1049.799999833107,
+          "mean": 5.832222221295039,
+          "max": 7.899999976158142
+        },
+        "step_plus_render_ms": {
+          "sum": 3418.9000000953674,
+          "mean": 18.99388888941871,
+          "max": 23.09999990463257
+        },
+        "observation_before_step_ms": {
+          "sum": 120.29999923706055,
+          "mean": 0.6683333290947808,
+          "max": 1.5
+        },
+        "observation_after_render_ms": {
+          "sum": 712.1999999284744,
+          "mean": 3.956666666269302,
+          "max": 5.899999976158142
+        },
+        "frame_wrapper_ms": {
+          "sum": 4251.599999189377,
+          "mean": 23.61999999549654,
+          "max": 27.799999952316284
+        }
+      },
+      "second_interval_timing_frames": 180,
+      "whole_arm_ms": 16529.088299999996,
+      "newly_B_count": 288
+    },
+    "global-A": {
+      "second_interval": {
+        "blocked": 2684,
+        "randomRejected": 2948,
+        "emitted": 3008,
+        "blocked_with_global_free": 0,
+        "native_attrition": 2
+      },
+      "source_groups": {
+        "fixed_B_region": {
+          "offers": 0,
+          "blocked": 0,
+          "randomRejected": 0,
+          "emitted": 0
+        },
+        "newly_B_ignited": {
+          "offers": 0,
+          "blocked": 0,
+          "randomRejected": 0,
+          "emitted": 0
+        },
+        "other_sources": {
+          "offers": 8640,
+          "blocked": 2684,
+          "randomRejected": 2948,
+          "emitted": 3008
+        }
+      },
+      "prefix": {
+        "frame": 180,
+        "time": 2.9999999999999942,
+        "hash": "24ba7dc9",
+        "particleStateHash": "95f1dfc4",
+        "randomDraws": 16784,
+        "scene": {
+          "count": 34687,
+          "burning": 3374,
+          "charred": 0,
+          "heated": 3624,
+          "fuelRemaining": 33147.87358772755,
+          "frontier": 3374,
+          "burnHash": "6ae5b770",
+          "representedArea": null,
+          "areaWeightedFuelRemaining": null,
+          "areaWeightedHeat": null,
+          "areaWeightedChar": null
+        },
+        "particles": {
+          "count": 2394,
+          "hotCount": 44,
+          "coldCount": 2222,
+          "smokeCount": 2350,
+          "temperatureSum": 720.6115768712866,
+          "dynamicTemperatureSum": 701.933251608688,
+          "densitySum": 1186.7161659302049,
+          "circulationSum": 925.2122586226811,
+          "absCirculationSum": 1948.128607020639,
+          "smokeProxySum": 805.2666615954163,
+          "layerCounts": [
+            0,
+            0,
+            600,
+            600,
+            600,
+            590,
+            4,
+            0,
+            0
+          ]
+        },
+        "counters": {
+          "flameHeatDeposited": 727.8441082666552,
+          "graphHeatDeposited": 6220.403648140611,
+          "sceneSeedsEmitted": 2394,
+          "frontierProcessed": 246652,
+          "frontierDeferred": 307438,
+          "sceneFeedAttempts": 8640,
+          "sceneFeedCapacityBlocked": 3826,
+          "sceneFeedRandomRejected": 2420,
+          "baseParticlesEmitted": 0,
+          "baseHeatApplied": 0,
+          "flameSamplesProcessed": 12324,
+          "flameSampleCapHits": 0,
+          "clockProcessed": 554090,
+          "clockFuelConsumed": 1539.1264122724533,
+          "sceneSeedsRecycled": 0,
+          "sceneFeedRecycleCandidates": 0,
+          "sceneFeedNoColdSlot": 0,
+          "sceneRecycleSlotsExamined": 0,
+          "recycledDensitySum": 0,
+          "recycledCirculationSum": 0,
+          "recycledAbsCirculationSum": 0,
+          "recycledMaxDensity": 0,
+          "recycledMaxAbsCirculation": 0,
+          "recycledSmokeProxySum": 0,
+          "recycledHotRemoved": 0,
+          "recycledMaxTemperature": 0,
+          "recycledMaxDynamicTemperature": 0,
+          "recycledMinAge": null,
+          "areaWeightedFlameHeatDeposited": 0,
+          "areaWeightedGraphHeatDeposited": 0,
+          "areaWeightedFuelConsumed": 0,
+          "areaFeedCreditsGenerated": 0,
+          "areaFeedAttempts": 0,
+          "areaFeedAdmitted": 0,
+          "areaFeedBlocked": 0,
+          "areaFeedServiceCapDropped": 0,
+          "areaFeedCancelledCredits": 0
+        },
+        "observationCounters": {
+          "offers": 8640,
+          "blocked": 3826,
+          "randomRejected": 2420,
+          "emitted": 2394,
+          "blockedWithGlobalFree": 3826,
+          "nativeAttrition": 0
+        },
+        "newlyBCount": 0,
+        "glError": 0,
+        "contextLost": false,
+        "capture_export_ms": 140.90000009536743,
+        "compression_write_ms": 110.14240000000427
+      },
+      "endpoint": {
+        "frame": 360,
+        "time": 5.999999999999984,
+        "hash": "ce9341c0",
+        "particleStateHash": "3b587712",
+        "randomDraws": 37780,
+        "scene": {
+          "count": 34687,
+          "burning": 3515,
+          "charred": 0,
+          "heated": 4513,
+          "fuelRemaining": 31410.64425247092,
+          "frontier": 3515,
+          "burnHash": "da286797",
+          "representedArea": null,
+          "areaWeightedFuelRemaining": null,
+          "areaWeightedHeat": null,
+          "areaWeightedChar": null
+        },
+        "particles": {
+          "count": 5400,
+          "hotCount": 0,
+          "coldCount": 5389,
+          "smokeCount": 5400,
+          "temperatureSum": 1248.6129168357563,
+          "dynamicTemperatureSum": 1024.1385840673272,
+          "densitySum": 2006.2867442463996,
+          "circulationSum": -646.1580585886661,
+          "absCirculationSum": 5668.629980606397,
+          "smokeProxySum": 1456.4903426694666,
+          "layerCounts": [
+            0,
+            0,
+            1298,
+            1488,
+            1271,
+            1259,
+            84,
+            0,
+            0
+          ]
+        },
+        "counters": {
+          "flameHeatDeposited": 1248.0649270003191,
+          "graphHeatDeposited": 6221.924644097457,
+          "sceneSeedsEmitted": 5402,
+          "frontierProcessed": 498652,
+          "frontierDeferred": 680840,
+          "sceneFeedAttempts": 17280,
+          "sceneFeedCapacityBlocked": 6510,
+          "sceneFeedRandomRejected": 5368,
+          "baseParticlesEmitted": 0,
+          "baseHeatApplied": 0,
+          "flameSamplesProcessed": 28049,
+          "flameSampleCapHits": 0,
+          "clockProcessed": 1179492,
+          "clockFuelConsumed": 3276.35574752886,
+          "sceneSeedsRecycled": 0,
+          "sceneFeedRecycleCandidates": 0,
+          "sceneFeedNoColdSlot": 0,
+          "sceneRecycleSlotsExamined": 0,
+          "recycledDensitySum": 0,
+          "recycledCirculationSum": 0,
+          "recycledAbsCirculationSum": 0,
+          "recycledMaxDensity": 0,
+          "recycledMaxAbsCirculation": 0,
+          "recycledSmokeProxySum": 0,
+          "recycledHotRemoved": 0,
+          "recycledMaxTemperature": 0,
+          "recycledMaxDynamicTemperature": 0,
+          "recycledMinAge": null,
+          "areaWeightedFlameHeatDeposited": 0,
+          "areaWeightedGraphHeatDeposited": 0,
+          "areaWeightedFuelConsumed": 0,
+          "areaFeedCreditsGenerated": 0,
+          "areaFeedAttempts": 0,
+          "areaFeedAdmitted": 0,
+          "areaFeedBlocked": 0,
+          "areaFeedServiceCapDropped": 0,
+          "areaFeedCancelledCredits": 0
+        },
+        "observationCounters": {
+          "offers": 17280,
+          "blocked": 6510,
+          "randomRejected": 5368,
+          "emitted": 5402,
+          "blockedWithGlobalFree": 3826,
+          "nativeAttrition": 2
+        },
+        "newlyBCount": 0,
+        "glError": 0,
+        "contextLost": false,
+        "capture_export_ms": 103.10000002384186,
+        "compression_write_ms": 136.10429999999178
+      },
+      "timing": {
+        "step_including_hooks_ms": {
+          "sum": 3995.5999994277954,
+          "mean": 11.098888887299431,
+          "max": 16.399999976158142
+        },
+        "observation_hooks_inside_step_ms": {
+          "sum": 13.300000309944153,
+          "mean": 0.03694444530540043,
+          "max": 0.20000004768371582
+        },
+        "render_and_gpu_finish_ms": {
+          "sum": 1953.3999996185303,
+          "mean": 5.426111110051473,
+          "max": 13.100000023841858
+        },
+        "step_plus_render_ms": {
+          "sum": 5948.999999046326,
+          "mean": 16.524999997350903,
+          "max": 22
+        },
+        "observation_before_step_ms": {
+          "sum": 178.20000088214874,
+          "mean": 0.4950000024504132,
+          "max": 1.5
+        },
+        "observation_after_render_ms": {
+          "sum": 1142.6999995708466,
+          "mean": 3.1741666654745737,
+          "max": 5.600000023841858
+        },
+        "frame_wrapper_ms": {
+          "sum": 7270.499999523163,
+          "mean": 20.195833332008785,
+          "max": 27.699999928474426
+        }
+      },
+      "second_interval_timing": {
+        "step_including_hooks_ms": {
+          "sum": 2294.5999989509583,
+          "mean": 12.747777771949767,
+          "max": 15.200000047683716
+        },
+        "observation_hooks_inside_step_ms": {
+          "sum": 6.999999761581421,
+          "mean": 0.03888888756434123,
+          "max": 0.20000004768371582
+        },
+        "render_and_gpu_finish_ms": {
+          "sum": 1053.900000333786,
+          "mean": 5.855000001854367,
+          "max": 7.800000071525574
+        },
+        "step_plus_render_ms": {
+          "sum": 3348.4999992847443,
+          "mean": 18.602777773804135,
+          "max": 22
+        },
+        "observation_before_step_ms": {
+          "sum": 125.90000092983246,
+          "mean": 0.6994444496101804,
+          "max": 1.5
+        },
+        "observation_after_render_ms": {
+          "sum": 618.3999989032745,
+          "mean": 3.435555549462636,
+          "max": 5.600000023841858
+        },
+        "frame_wrapper_ms": {
+          "sum": 4092.999999165535,
+          "mean": 22.738888884252972,
+          "max": 27.699999928474426
+        }
+      },
+      "second_interval_timing_frames": 180,
+      "whole_arm_ms": 16330.537099999994,
+      "newly_B_count": 0
+    }
+  },
+  "paired_endpoint_B_minus_noB": {
+    "per-layer": {
+      "rgb_samples": 1488960,
+      "pixels": 496320,
+      "absolute_rgb_mae_u8": 0.2899876423812594,
+      "absolute_rgb_rmse_u8": 5.262807645686414,
+      "max_absolute_channel_u8": 205,
+      "changed_pixel_fraction": 0.02510880077369439,
+      "normalization": "raw RGB8 channel differences; no exposure rescale, threshold or perceptual pass gate"
+    },
+    "global": {
+      "rgb_samples": 1488960,
+      "pixels": 496320,
+      "absolute_rgb_mae_u8": 1.3794756071351817,
+      "absolute_rgb_rmse_u8": 9.788421173589064,
+      "max_absolute_channel_u8": 237,
+      "changed_pixel_fraction": 0.10192617666021922,
+      "normalization": "raw RGB8 channel differences; no exposure rescale, threshold or perceptual pass gate"
+    }
+  },
+  "global_minus_per_layer_emitted": {
+    "A": 2965,
+    "AB": 2967
+  },
+  "worker_total_ms": 66787.5725,
+  "supervisor": {
+    "status": "worker_terminal",
+    "worker_launched": true,
+    "worker_pid": 15896,
+    "exit_code": 0,
+    "worker_still_live": false,
+    "supervisor_seconds_before_inventory": 67.20990990009159,
+    "files": [
+      {
+        "name": "global-A-after-intervention.json.gz",
+        "bytes": 1583437,
+        "sha256": "47c8629061df1fe1c534f3ab1da0d8eda1bcc3e389046b53dce0384c59f9cfb2"
+      },
+      {
+        "name": "global-A-endpoint.json.gz",
+        "bytes": 1998136,
+        "sha256": "c4d82cc437feeeb31e69fe92638252488f08a73442f807d5080e7318577052fb"
+      },
+      {
+        "name": "global-A-endpoint.png",
+        "bytes": 119118,
+        "sha256": "24867289032991d9bbdcdb11f38bc7249ec55fb38fe3cc64f904d4529e02a0db"
+      },
+      {
+        "name": "global-A-endpoint.rgba.gz",
+        "bytes": 111441,
+        "sha256": "2afa0913792599425d904597f67e2771ccd69ef4f40d11b08664277f17fc28d7"
+      },
+      {
+        "name": "global-A-prefix.json.gz",
+        "bytes": 1583441,
+        "sha256": "e50a8255cdc7463e049afb7b881321c606262cfd80713434d5b3fa01d1572957"
+      },
+      {
+        "name": "global-A-prefix.png",
+        "bytes": 95728,
+        "sha256": "fbe88e259f5255228844ea8f47869c86804319d1e01aeb4828f76aca1617326a"
+      },
+      {
+        "name": "global-A-prefix.rgba.gz",
+        "bytes": 91205,
+        "sha256": "dca1c73d8b32933519667f9cd1868cd49b5a54ed227a30b120912db9d3f7b44d"
+      },
+      {
+        "name": "global-A-steps.jsonl.gz",
+        "bytes": 170438,
+        "sha256": "c7c22e81efc900fe2f1ba6c60379dba67e052c5dff49e50c2f0fa2f4c43a9549"
+      },
+      {
+        "name": "global-AB-after-intervention.json.gz",
+        "bytes": 1585223,
+        "sha256": "e69ab3a1c40d741ebf26427a57998a5342ae901f1f0eaec7150ec1b6789e9fa1"
+      },
+      {
+        "name": "global-AB-endpoint.json.gz",
+        "bytes": 2069667,
+        "sha256": "742630a6d4cb77b92671db5240be117e27413c5ac99e62eee5c57d998bb4f22c"
+      },
+      {
+        "name": "global-AB-endpoint.png",
+        "bytes": 120592,
+        "sha256": "017b0db85e53511accb4dd6af196bfe1ca66b0d2334484fc7d27a780262d2a78"
+      },
+      {
+        "name": "global-AB-endpoint.rgba.gz",
+        "bytes": 110219,
+        "sha256": "a6aedf1273cadfa2d7c6826dfdebebe14e9bd36541af4955dcb163ff593d6e1d"
+      },
+      {
+        "name": "global-AB-prefix.json.gz",
+        "bytes": 1583441,
+        "sha256": "e50a8255cdc7463e049afb7b881321c606262cfd80713434d5b3fa01d1572957"
+      },
+      {
+        "name": "global-AB-prefix.png",
+        "bytes": 95728,
+        "sha256": "fbe88e259f5255228844ea8f47869c86804319d1e01aeb4828f76aca1617326a"
+      },
+      {
+        "name": "global-AB-prefix.rgba.gz",
+        "bytes": 91205,
+        "sha256": "dca1c73d8b32933519667f9cd1868cd49b5a54ed227a30b120912db9d3f7b44d"
+      },
+      {
+        "name": "global-AB-steps.jsonl.gz",
+        "bytes": 171564,
+        "sha256": "ee25facf7f924913adddad5f1db8d3c456da30a9852903573fcf2b572b021c11"
+      },
+      {
+        "name": "per-layer-A-after-intervention.json.gz",
+        "bytes": 1583441,
+        "sha256": "e50a8255cdc7463e049afb7b881321c606262cfd80713434d5b3fa01d1572957"
+      },
+      {
+        "name": "per-layer-A-endpoint.json.gz",
+        "bytes": 1582749,
+        "sha256": "dacd148bc353ead468a5cc7656cc1b6942ce9090de37d03c33fed757d2b4398e"
+      },
+      {
+        "name": "per-layer-A-endpoint.png",
+        "bytes": 106942,
+        "sha256": "930c273e916814176605a3b6471d0b8d4e86065a8c7dc29dea536e9bc29586c0"
+      },
+      {
+        "name": "per-layer-A-endpoint.rgba.gz",
+        "bytes": 84826,
+        "sha256": "2090e411de9c2e129ab9409f2a69516b85143c823420241f0cf5c90748bef7b0"
+      },
+      {
+        "name": "per-layer-A-prefix.json.gz",
+        "bytes": 1583441,
+        "sha256": "e50a8255cdc7463e049afb7b881321c606262cfd80713434d5b3fa01d1572957"
+      },
+      {
+        "name": "per-layer-A-prefix.png",
+        "bytes": 95728,
+        "sha256": "fbe88e259f5255228844ea8f47869c86804319d1e01aeb4828f76aca1617326a"
+      },
+      {
+        "name": "per-layer-A-prefix.rgba.gz",
+        "bytes": 91205,
+        "sha256": "dca1c73d8b32933519667f9cd1868cd49b5a54ed227a30b120912db9d3f7b44d"
+      },
+      {
+        "name": "per-layer-A-steps.jsonl.gz",
+        "bytes": 139496,
+        "sha256": "85d21e345ce143d209f57ba83d1bae1d2c185aaa248448974306032db2b80271"
+      },
+      {
+        "name": "per-layer-AB-after-intervention.json.gz",
+        "bytes": 1585227,
+        "sha256": "58a6fa0651776b42d074fd7e33fff8a0020f054a6ed8044c060abf7ba0e11ff8"
+      },
+      {
+        "name": "per-layer-AB-endpoint.json.gz",
+        "bytes": 1586071,
+        "sha256": "105014c2590c3494a9295bd7694ff7d5bc617588ea099dffcfc49be977887304"
+      },
+      {
+        "name": "per-layer-AB-endpoint.png",
+        "bytes": 106647,
+        "sha256": "d59ac92c1796c6246c35908fe7839ddc0b0119e1203a67a16a45dbac3aeddc98"
+      },
+      {
+        "name": "per-layer-AB-endpoint.rgba.gz",
+        "bytes": 84619,
+        "sha256": "97f2085c2dfb5e4458003a11782b0ba02a2ac3e2ef75bda7fe64da2c94dc1c8a"
+      },
+      {
+        "name": "per-layer-AB-prefix.json.gz",
+        "bytes": 1583441,
+        "sha256": "e50a8255cdc7463e049afb7b881321c606262cfd80713434d5b3fa01d1572957"
+      },
+      {
+        "name": "per-layer-AB-prefix.png",
+        "bytes": 95728,
+        "sha256": "fbe88e259f5255228844ea8f47869c86804319d1e01aeb4828f76aca1617326a"
+      },
+      {
+        "name": "per-layer-AB-prefix.rgba.gz",
+        "bytes": 91205,
+        "sha256": "dca1c73d8b32933519667f9cd1868cd49b5a54ed227a30b120912db9d3f7b44d"
+      },
+      {
+        "name": "per-layer-AB-steps.jsonl.gz",
+        "bytes": 138875,
+        "sha256": "ed6b8d7c402a9b02c920c6fa01e30a1ed21cc0970d47e4e23dbea60a154fb109"
+      },
+      {
+        "name": "progress.json",
+        "bytes": 102250,
+        "sha256": "6103696e166daee876db2dc5e42ddae3175bba36c6e7ecfb7f3ea80830cc6a0f"
+      },
+      {
+        "name": "result.json",
+        "bytes": 102250,
+        "sha256": "6103696e166daee876db2dc5e42ddae3175bba36c6e7ecfb7f3ea80830cc6a0f"
+      },
+      {
+        "name": "stderr.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "name": "stdout.txt",
+        "bytes": 124,
+        "sha256": "aa0891ead386650b0044022b624f263fd7323e273921abd33a595fa1ac66de27"
+      },
+      {
+        "name": "worker-start.json",
+        "bytes": 47,
+        "sha256": "c7f3afc75d45e4dc87bf689c0792c0795091b6158dea4a9e6c6e606bc6dff590"
+      }
+    ],
+    "output_bytes": 22324895,
+    "inventory_seconds": 0.02186390000861138,
+    "elapsed_before_receipt_seconds": 67.23177890002262,
+    "within_external_deadline": true,
+    "within_output_budget": true
+  },
+  "new_scientific_executions": 0,
+  "new_method_claim": false,
+  "perceptual_identifiability_established": false,
+  "historical_T42_visual_verdict": "unqualified",
+  "interpretation": "Emission gains diagnose admission under a total deterministic policy intervention; changed conditional RNG, native attrition, source distributions and complete cost remain part of the result."
+}

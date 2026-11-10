@@ -1,8 +1,8 @@
 # VortexGaussians — agent handoff, 2 November2026
 
-**Current override, 10 November 2026:** the user has resumed technical research and requested an update of current related papers. Art remains paused. Read the newest [STATUS](STATUS.md), [T82](tog/tasks/t82-current-literature-resumption/BRIEF.md) and T81 record before acting. The pause and next-step descriptions below preserve the original 2 November handoff; they are superseded by the current technical authorization. Remote main has independently advanced to `a7dfa98`; do not merge its revised demo into T81's frozen source.
+**Current override, 10 November 2026:** technical research resumed; art stays paused. [T82](tog/tasks/t82-current-literature-resumption/README.md) updates current papers. [T81](tog/tasks/t81-firewoods-capacity-causality/RESULTS.md) has now completed its sole1440-step invocation and saved audit. Ordinary global pooling restores B-source emissions0→304; cost rises but compression necessity and perceptual success are unestablished. Do not rerun T81 or follow the obsolete unconsumed-plan description below. Read [STATUS](STATUS.md), T81's [public archive](tog/tasks/t81-firewoods-capacity-causality/public/README.md) and [T83's static contract](tog/tasks/t83-native-reduction-contract/BRIEF.md) next. The historical2 November catalog/data package remains valid as a dated snapshot. Selected scientific-child subtotal is2116.745944899793seconds, not total project cost. Remote main independently advanced to `a7dfa98`; it was not merged into the frozen demo or deployed by this continuation. Automation was not restarted.
 
-## Current authority and immediate action
+## Historical 2 November authority and immediate action
 
 **Research is PAUSED by the user.** The latest request authorizes publishing existing research and a substantial handoff/data package only. Do not launch T81 or resume art/technical iteration until the user resumes research.
 

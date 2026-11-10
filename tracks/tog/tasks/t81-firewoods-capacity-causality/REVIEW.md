@@ -1,0 +1,13 @@
+# T81 saved-result and archive review
+
+10 November 2026. The literature agent also performed pre-execution static review; this participation is disclosed. After the sole run it independently read SUMMARY and three original saved step logs. It did not rerun a solver, change files, search again or assign a new score.
+
+The reviewer agrees that ordinary pooling removes the observed B-source admission failure:700 blocked/0 emitted becomes0 blocked/304 emitted. It independently confirms first total saturation at frame305 in both global arms and B-source offers at205–289. The2967 total emission gain is predominantly from other sources. Global AB versus global A differs by only2 total emissions, which is not evidence that B has no effect. Neither total saturation after B service nor a34.5% instrumented frame-cost increase establishes a remaining useful-task failure or compression necessity. The paired image metric has no perceptual interpretation or new pass gate.
+
+The reviewer recommends exactly one next static qualification: [T83](../t83-native-reduction-contract/BRIEF.md), a common-weight/operator contract before any compression implementation. This does not pre-approve a new trajectory or assert that the native task needs reduction.
+
+A different agent inspected `publish.py` against the native/T81 schema. It requested (1) binding the archive to the exact result report recorded by the passing SUMMARY, and (2) explicit exclusion of nativeAuxiliary continuation state. Root implemented both before the first publication. The source logs are preserved byte-for-byte; dynamic projections remove third-party geometry/appearance/images while retaining full generated gas and material dynamics.
+
+The implementation agent then independently added and ran `verify_public.py`, without touching frozen code or results. All16 files pass compressed/decoded identities,4x360 sequential frames, controls/accounting against SUMMARY,12x34687 unique material rows,34818 gas records and common-prefix consistency. The first script invocation stopped at a syntax error before reading archives; after correction, one full saved-data verification passed. This was a publication check, not a scientific attempt, browser run or result revision. Compressed/decoded totals are7,523,115/35,939,148bytes.
+
+Root inspected the saved per-layer AB/global AB/global A endpoint images and checked numerical conclusions against SUMMARY. [EXECUTION](EXECUTION.json) preserves the original phase/qualification/runtime metadata without scene data. Detailed frozen-input/byte validation remains in the passing saved audit. Engineering review and archive validation do not establish TOG novelty or readiness.

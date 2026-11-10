@@ -1,6 +1,10 @@
-# T81 — capacity causality: implementation resumed
+# T81 — completed: ordinary pooling restores B-source admission
 
-**10 November 2026:** the user resumes technical work. Implementation and static qualification are underway under the original brief; execution has not yet occurred. The pause checkpoint below is retained as history. Current literature is audited separately in [T82](../t82-current-literature-resumption/BRIEF.md).
+**10 November 2026:** one reviewed, guarded1440-step invocation completed; all saved qualification checks pass. Original per-layer AB blocks all700 B-source offers; the ordinary global pool gives304 B-source emissions and zero B-source capacity blocks. Mean second-interval step+render increases14.119→18.994ms. The remaining global saturation occurs after B-source service and does not establish compression necessity. No new method or visual pass is claimed.
+
+Read [RESULTS](RESULTS.md), [SUMMARY](SUMMARY.json), [EXECUTION](EXECUTION.json), [review](REVIEW.md) and the [16-file public evidence package](public/README.md). The invocation is consumed; do not delete its guard or retry. [T82](../t82-current-literature-resumption/README.md) records current literature and [T83](../t83-native-reduction-contract/BRIEF.md) is the next bounded static operator qualification. Art remains paused.
+
+## Historical 2 November preparation record
 
 Checkpoint:2 November2026. The user paused research after the [BRIEF](BRIEF.md) was committed atd1ef60c. No T81 adapter, staging program, runner, scientific freeze, browser launch or result was produced. Its four-arm budget is unconsumed. A later publication/data-packaging request does not resume the experiment.
 
@@ -10,7 +14,7 @@ The preparation agent read the source and verified all24 T42 frozen inputs again
 
 The original admission condition is demo/index.html line1288, L.ps.length>=P.ppl, after the target layer is chosen from the original world-z coordinate. VPM arrays and rendering buffers grow with actual occupancy; their spatial domain is not defined by P.ppl. The T42 recipe disables external emitter/procedural layers, so those other admission paths are inactive. Changing only this predicate can borrow unused global slots without relocating a particle or multiplying the nominal budget. It may increase tree/neighbor work and is not a free optimization.
 
-## Resume contract after explicit user resumption
+## Historical implementation contract, subsequently executed
 
 1. Read this record, the frozen brief, T42 recipe/README/freeze and the central [handoff](../../../AGENT_HANDOFF.md). Recheck processes and input identities; do not rerun T42's spent one-shot supervisor.
 2. Create a new temporary research HTML from the unchanged demo; retain T42's camera adapter. Stage only a reversible predicate alternative and observation hooks. Keep P.ppl=600,9 layers,total5400; do not set ppl=5400. In global mode, the full predicate is sum(layer counts)>=5400: admit only when the pre-emission count is below5400, so the resulting count never exceeds5400. This makes the brief's total-cap wording explicit without adding a slot.
@@ -19,7 +23,7 @@ The original admission condition is demo/index.html line1288, L.ps.length>=P.ppl
 5. Save complete gas arrays in the new experiment: T42 did not. Use an observation-side WeakMap if attaching emitted-source identities, preserving particle fields. Do not assign a unique A/B ancestor to threshold-heated descendants.
 6. Include step, render+GPU completion, observation/export, setup and cleanup costs. Check original block AB against T42 hashes below. Freeze code/runtime/input identities and review static reversal before consuming the one new attempt.
 
-The intended API design, not implemented, was begin({fixedBIndices}), setPolicy('per-layer'|'global'), markNewB(indices), frame(dt) and export(). A frame wrapper must exactly preserve updateCam -> simTime+=dt -> stepAll(dt) -> researchFrame++ before rendering. It must not add random calls or silently alter float expression order.
+The original proposed API was begin({fixedBIndices}), setPolicy('per-layer'|'global'), markNewB(indices), frame(dt) and export(). The implemented adapter uses igniteB for the zero-time intervention; see [IMPLEMENTATION](IMPLEMENTATION.md). Its frame wrapper preserves updateCam -> simTime+=dt -> stepAll(dt) -> researchFrame++ before rendering, without adding random calls or silently altering float expression order.
 
 | Historical checkpoint | Native hash | Gas count | Feed attempts | Capacity blocked | Emitted cumulative |
 | --- | --- | ---: | ---: | ---: | ---: |
