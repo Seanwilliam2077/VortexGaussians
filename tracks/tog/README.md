@@ -1,8 +1,8 @@
 # TOG 研究轨道：从创作需求到可审查任务
 
-**当前进度（2026-11-02）：研究已暂停，本轮只归档和推送。** 下一位 Agent 先读[交接说明](../AGENT_HANDOFF.md)、[当前状态](../STATUS.md)和[数据包](../evidence/handoff-2026-11-02/README.md)。数据包新增 30 个压缩文件，包含 T76 完整日志及参考数组、T42 全部材料动态记录；不包含第三方几何或原实验未记录的完整气体数组。
+**当前进度（2026-11-10）：用户已恢复技术研究，艺术部分继续暂停。** 先读[当前状态](../STATUS.md)、[T82 当前论文与机制核查](tasks/t82-current-literature-resumption/README.md)、[T81 容量因果诊断](tasks/t81-firewoods-capacity-causality/README.md)和[交接说明](../AGENT_HANDOFF.md)。原有[数据包](../evidence/handoff-2026-11-02/README.md)保持可用。
 
-[T80 普通求值器核查](tasks/t80-anisotropic-evaluator-contract/README.md)已完成；[T81 资源分配因果诊断](tasks/t81-firewoods-capacity-causality/README.md)仅有已提交计划，尚无实现或运行，四组预算未消耗。明确恢复研究后再完成实现、复核及冻结。[T76](tasks/t76-continuous-full-window/README.md)的普通基线成功与历史失败保持原判，TOG 核心贡献仍未成立。艺术制作、文章和评分继续暂停。
+[T80 普通求值器核查](tasks/t80-anisotropic-evaluator-contract/README.md)已完成。T81 的原始四组方案恢复实现与独立核查，实际执行状态以任务记录为准；T82 区分已有高斯动力学、粒子裁剪、矩/交互率保持方法与待检验的短时响应问题。[T76](tasks/t76-continuous-full-window/README.md)的普通基线成功与历史失败保持原判，TOG 核心贡献仍未成立。
 
 以下接口、命令及早期下一步描述是历史研究记录，不是当前执行队列。一次有明确问题和预算的诊断不需要预先证明新方法，但贡献主张仍需新机制、强基线和相关证据。
 

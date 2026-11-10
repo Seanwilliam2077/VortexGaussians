@@ -1,5 +1,11 @@
 # Exploration policy
 
+## 2026-11-10 latest: technical work resumed by the user
+
+The user authorizes an update of current related papers and renewed technical progress. Art remains paused. Read [T82's bounded search record](tog/tasks/t82-current-literature-resumption/BRIEF.md) and [T81's original causal contract](tog/tasks/t81-firewoods-capacity-causality/BRIEF.md). The former informs the next mechanism; it does not turn a global capacity pool into a novel method. The latter still requires implementation review and execution qualification before interpreting results. The 2 November pause and handoff are historical.
+
+Candidate work must specify a falsifiable mechanism and strong ordinary controls. Current literature can invalidate broad claims even when its model differs. Generic Gaussian transport, positive moment fitting and spatially binned reduction are established alternatives. A missing report or code path is not evidence of novelty. No new gate is imposed on T76 or T42.
+
 ## 2026-11-02 latest: research paused; T80 complete, T81 plan only; public data handoff
 
 **The user paused research.** The subsequent request authorizes committing/pushing existing work and substantial research data so another agent can understand and continue later. It does not resume experiments. Art remains separately paused; no art production, writing or scoring is queued. This entry supersedes historical active statuses and next-action lists below. The full TOG/SIGGRAPH objective remains unmet.

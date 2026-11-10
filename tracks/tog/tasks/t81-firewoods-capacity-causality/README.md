@@ -1,4 +1,6 @@
-# T81 — paused before implementation and execution
+# T81 — capacity causality: implementation resumed
+
+**10 November 2026:** the user resumes technical work. Implementation and static qualification are underway under the original brief; execution has not yet occurred. The pause checkpoint below is retained as history. Current literature is audited separately in [T82](../t82-current-literature-resumption/BRIEF.md).
 
 Checkpoint:2 November2026. The user paused research after the [BRIEF](BRIEF.md) was committed atd1ef60c. No T81 adapter, staging program, runner, scientific freeze, browser launch or result was produced. Its four-arm budget is unconsumed. A later publication/data-packaging request does not resume the experiment.
 

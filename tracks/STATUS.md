@@ -1,5 +1,13 @@
 # Dual-track status
 
+## 2026-11-10 latest: technical research resumed; current-paper screen and T81 preparation
+
+The user explicitly resumes technical work, requests current related papers and asks to pursue a new technical contribution. Art production, writing and scoring remain paused. This supersedes the 2 November technical pause; the historical archive remains intact.
+
+[T82](tog/tasks/t82-current-literature-resumption/BRIEF.md) updates primary-paper coverage with a bounded search and distinguishes actual publication/version dates from recent indexing. [T81](tog/tasks/t81-firewoods-capacity-causality/README.md) resumes implementation and static qualification; no numerical execution has yet occurred. Its original four-arm budget and interpretation remain fixed. No TOG core contribution or new rating is established.
+
+Local and remote research heads initially match `0cd9c89`. Remote main independently advanced to `a7dfa98` with a reconstructed paper source, lighting/deflection and hardware measurements; it contains no T81 continuation. These changes are not merged into T81's frozen original demo and are not measurements reproduced in this track. No relevant research worker was running at inspection. Continue on the research branch, preserving main and art files.
+
 ## 2026-11-02 latest: research paused; T80 complete, T81 plan only; public data handoff
 
 **The user paused research.** The subsequent request authorizes committing/pushing existing work and substantial research data so another agent can understand and continue later. It does not resume experiments. Art remains separately paused; no art production, writing or scoring is queued. This entry supersedes historical active statuses and next-action lists below. The full TOG/SIGGRAPH objective remains unmet.

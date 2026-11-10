@@ -1,0 +1,48 @@
+{
+  "schema": "t82-current-literature-access-v1",
+  "date": "2026-11-10",
+  "exhaustive": false,
+  "root_queries": [
+    "Gaussian splatting fire smoke fluid simulation 2026 SIGGRAPH FieryGS",
+    "2026 Gaussian particle simulation adaptive fluid vortex rendering paper",
+    "\"GauSmoke\" \"2026\" paper arxiv",
+    "\"Physics-Driven Extraction of Dynamic Fluid Asset\" paper 2026"
+  ],
+  "agent_queries": [
+    "2026 2025 SIGGRAPH vortex particle fluid simulation Gaussian adaptive particles",
+    "2026 Gaussian fluid simulation conservative adaptive particle merging anisotropic",
+    "\"LagrangianSplats\" \"Divergence-Free\"",
+    "2026 \"fluid\" \"Gaussian\" \"particle\" simulation SIGGRAPH October arxiv"
+  ],
+  "query_timing": "Agent budget was assigned before retrieval; four root discovery queries preceded the written brief. No retroactive preregistration claim.",
+  "root_document_attempts": [
+    {"url":"https://arxiv.org/abs/2605.00177","result":"primary version metadata"},
+    {"url":"https://arxiv.org/abs/2608.11100","result":"primary version metadata"},
+    {"url":"https://arxiv.org/html/2605.00177v2","result":"methods and limitations read"},
+    {"url":"https://arxiv.org/html/2608.11100v1","result":"methods and evaluation setup read"},
+    {"url":"https://letianhuang.github.io/","result":"GauSmoke author abstract and venue only"},
+    {"url":"https://www.cs.cmu.edu/~minchenl/","result":"author-linked preprint located"},
+    {"url":"https://www.cs.cmu.edu/~minchenl/","result":"preprint click using URL failed with invalid-arguments error"},
+    {"url":"https://arxiv.org/pdf/2503.00868","result":"retry using page reference resolved link; PDF exceeded tool size limit, 47914113 bytes reported"},
+    {"url":"https://arxiv.org/abs/2503.00868","result":"primary preprint abstract and 2025 version dates read"},
+    {"url":"https://doi.org/10.1109/TVCG.2026.3750350","result":"inaccessible via tool; journal full text not read"},
+    {"url":"https://xjr01.github.io/files/GaussianFluids.pdf","result":"named-source clarification; web tool rejected 14450144-byte PDF size"},
+    {"url":"https://xjr01.github.io/files/GaussianFluids.pdf","result":"ordinary public HTTPS download of same PDF to ignored local/ succeeded; SHA256 5afe91a6df55f6d24e8c2a849803cd3869eddcd6c15efed4a52e342cff950c99; 11 pages; title, sections4-5, performance and limitations read; pages1,4,8 rendered and visually inspected"}
+  ],
+  "agent_document_attempts": [
+    {"url":"https://arxiv.org/abs/2605.09299","result":"version metadata"},
+    {"url":"https://arxiv.org/abs/2608.28069","result":"version metadata"},
+    {"url":"https://arxiv.org/abs/2604.00668","result":"version metadata"},
+    {"url":"https://pure.rug.nl/ws/portalfiles/portal/1401813623/106249534_11045889_GaussFluids_Reconstructing_Lagrangian_Fluid_Dynamics_from_Videos_via_Gaussian_Splatting.pdf","result":"exceeded tool 10 MiB limit; full text unread"},
+    {"url":"https://onlinelibrary.wiley.com/doi/full/10.1002/fld.70002","result":"publisher abstract/introduction read; two later in-page finds timed out"},
+    {"url":"https://arxiv.org/html/2605.09299v1","result":"methods and limitations read"},
+    {"url":"https://arxiv.org/html/2608.28069v1","result":"preprocessing, simulation/rendering, ablations read"},
+    {"url":"https://arxiv.org/html/2604.00668v2","result":"sections 3,4.2.2,4.4 read"}
+  ],
+  "within_document_navigation": "Root located FieryGS non-uniform distribution, WildFireGS particle dynamics and the author-linked preprint; then read FieryGS method and WildFireGS particle dynamics/execution sections. Agent used targeted in-page locators including the two disclosed Wiley timeouts.",
+  "secondary_hits": "Search results from news, social media, bibliographic mirrors and PubMed were discovery leads only. The November journal date was not independently verified from the inaccessible publisher; the linked older preprint dates were verified at arXiv.",
+  "third_party_files_committed": false,
+  "local_pdf_preparation": "Initial fitz import unavailable before download; used installed pypdf/pdfplumber without installation. UTF-8 extraction succeeded; initial stdout encoding failed and was corrected for reading the saved text. These are read-only preparation issues, not scientific attempts.",
+  "numerical_executions": 0,
+  "art_work": false
+}

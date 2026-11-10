@@ -1,6 +1,6 @@
 # Two research tracks, one VortexGaussians repository
 
-**Current checkpoint, 2 November 2026: research is paused.** The user requested publication of existing work and enough data for a future agent to continue. Begin with [AGENT_HANDOFF](AGENT_HANDOFF.md), [STATUS](STATUS.md) and the [101 MiB data package](evidence/handoff-2026-11-02/README.md). T80 is complete; T81 is a frozen brief with no implementation/run. Art remains paused. The original track descriptions below document the starting questions, not a current execution queue.
+**Current checkpoint, 10 November 2026: technical research resumed; art remains paused.** Begin with [STATUS](STATUS.md), [T82 current papers](tog/tasks/t82-current-literature-resumption/README.md), [T81](tog/tasks/t81-firewoods-capacity-causality/README.md), and [AGENT_HANDOFF](AGENT_HANDOFF.md). The [101 MiB data package](evidence/handoff-2026-11-02/README.md) preserves the preceding checkpoint. The original track descriptions below document the starting questions, not a current execution queue.
 
 Started 27 October 2026. VortexGaussians remains the shared project. Its original browser artwork/tool is retained while two distinct research questions develop alongside it.
 
@@ -35,6 +35,6 @@ The TOG workspace documents its portable Python commands. Planning and task vali
 
 ## Continuous exploration
 
-The author originally authorized both tracks to continue on 27 October 2026, with the provisional art theme above. Later instructions paused art, prioritized technical research, and then paused research as recorded in the current handoff. That latest pause supersedes the original continuous schedule. Future resumed work proceeds in bounded, reviewable tasks and records what changes the next decision; a pause never converts incomplete work into a successful result.
+The author originally authorized both tracks to continue on 27 October 2026. Later instructions paused art and then paused research for the 2 November handoff. On 10 November the user resumed technical work and requested current related papers; art remains paused. Work proceeds in bounded, reviewable tasks and records what changes the next decision. Historical schedules and pauses do not supersede this latest scope.
 
 The research branch carries the new work without automatically replacing the public historical project page. See the task log for actual commits, validations, remaining gaps, and publication status.
