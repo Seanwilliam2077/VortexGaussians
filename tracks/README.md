@@ -1,5 +1,7 @@
 # Two research tracks, one VortexGaussians repository
 
+**Latest technical result, 24 November 2026.** [T84](tog/tasks/t84-ignition-edit-footprint/README.md) measures the signed material footprint of editing a cached take and publishes per-ID event times. [T85](tog/tasks/t85-edit-prefix-certificate/README.md) checks exactly how long the original take remains reusable. See [STATUS](STATUS.md) for the current research decision.
+
 **Current checkpoint, 10 November 2026: T81 completed; T82 papers audited; T83 closes direct common-weight encoding; art remains paused.** Begin with [STATUS](STATUS.md), [T82 current papers](tog/tasks/t82-current-literature-resumption/README.md), [T81 results/data](tog/tasks/t81-firewoods-capacity-causality/README.md), [T83 contract](tog/tasks/t83-native-reduction-contract/README.md) and [AGENT_HANDOFF](AGENT_HANDOFF.md). The [101 MiB data package](evidence/handoff-2026-11-02/README.md) preserves the preceding checkpoint; T81 adds7.5MB of complete step logs and dynamic projections. No TOG core is established. The original track descriptions below document starting questions, not a current execution queue.
 
 Started 27 October 2026. VortexGaussians remains the shared project. Its original browser artwork/tool is retained while two distinct research questions develop alongside it.

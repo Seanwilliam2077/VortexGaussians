@@ -1,5 +1,9 @@
 # Exploration policy
 
+## 24 November 2026 · Edit-preview evidence
+
+The cached-take revision in [T84](tog/tasks/t84-ignition-edit-footprint/README.md) has a signed material target, paired reference, observable event times and ordinary spatial/progressive controls. [T85](tog/tasks/t85-edit-prefix-certificate/README.md) supplies a conservative prefix comparator. Where the spatial footprint actually spreads, equivalence of the full gas trajectory ends after 24 steps. The per-site table and time curves can test bounds on individual threshold decisions after that fork. Future comparisons should count uncertain-site fallback, cache construction and the material-only native update. The economical method to beat already recovers the entire observed endpoint at the 150-step cutoff on this development example. External creator validation and independent edits remain open.
+
 ## 2026-11-10 latest: technical work resumed by the user
 
 The user authorizes an update of current related papers and renewed technical progress. Art remains paused. Read [T82's bounded search record](tog/tasks/t82-current-literature-resumption/README.md) and [T81's completed causal result](tog/tasks/t81-firewoods-capacity-causality/RESULTS.md). Ordinary global pooling resolves this operation's B-source admission failure; later total saturation and higher instrumented cost do not establish compression necessity. Its sole1440-step attempt is consumed. The 2 November pause and handoff are historical.

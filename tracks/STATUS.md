@@ -1,5 +1,13 @@
 # Dual-track status
 
+## 24 November 2026 · Signed ignition footprints and exact edit-prefix reuse
+
+[T84](tog/tasks/t84-ignition-edit-footprint/README.md) reconstructs per-site ignition frames on the cached Firewoods shot. Two independent records agree for all 720 suffix frames. With global pooling, the B edit gains 1,266 burning sites outside the stroke and loses 12 by frame 360. The first two losses occur at 207 and the first extra sites appear at 216. An ordinary upward-ray preview reaches 96.9% recall with 37.7% precision. Advancing the actual edited trajectory through 150 of 180 steps reproduces the endpoint active set on this take. The [event table](tog/tasks/t84-ignition-edit-footprint/material_onsets.csv.gz) has 8,731 material-policy rows and records censoring.
+
+[T85](tog/tasks/t85-edit-prefix-certificate/README.md) computes the exact initial interval for reusing material masks using the original take and the instantaneous edit order. Accounting for blocked or rejected offers extends the certified gas prefix from 24 to 91 complete steps on per-layer admission and gives the same 24 on global admission. Independent checks match 117 material masks and 5,590 ordered offer records. The per-layer endpoint is already solved by stroke overlay. On global the first changed birth occurs at 205, two frames before the first off-stroke material discrepancy. The measured results support a benchmark and ordinary controls. TOG novelty and end-to-end speed remain open.
+
+Both diagnostics use archived trajectories. The previous selected native scientific-worker subtotal of 2,116.745944899793 s excludes these offline costs. The active technical question concerns bounding ignition decisions per recipient after gas divergence and comparing the cost with ordinary partial native replay. Art is paused. Research remains on the separate branch.
+
 ## 2026-11-10 latest: T81 ordinary allocation result; current papers; T83 closes drop-in compression
 
 The user explicitly resumes technical work, requests current related papers and asks to pursue a new technical contribution. Art production, writing and scoring remain paused. This supersedes the 2 November technical pause; the historical archive remains intact.

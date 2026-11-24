@@ -1,0 +1,174 @@
+{
+  "predictions_sha256": "1152d0a3100d1a2df52c59d866b2111c25d7687f9c35ed98504574b07f502864",
+  "public_manifest_sha256": "321229c577bf28dec45fc72b9c190bebe7c49dfb0e3f48b2fc21f28d9eaa1965",
+  "input_sha256": {
+    "global-A-after-intervention.dynamic.json.gz": "1199f81a1ddaf83d27d971e7feec8ce74a27cea23ac749a73f8db26bfee1383e",
+    "global-A-endpoint.dynamic.json.gz": "6140f0fe1496c582a4d103287c2ac55c4cc7edf046cc5d3c7a7b3f0b54345e5c",
+    "global-A-steps.jsonl.gz": "c7c22e81efc900fe2f1ba6c60379dba67e052c5dff49e50c2f0fa2f4c43a9549",
+    "global-AB-after-intervention.dynamic.json.gz": "8bf3b9fac40cba73f2aa424a9961559d537c62d0cb6d5eb3bfd84c262657740e",
+    "global-AB-endpoint.dynamic.json.gz": "f239d2f821a5d7e1b51c703b5b6439cd73ded05c4e49c81cef599c9368e2fd70",
+    "global-AB-steps.jsonl.gz": "ee25facf7f924913adddad5f1db8d3c456da30a9852903573fcf2b572b021c11",
+    "per-layer-A-after-intervention.dynamic.json.gz": "c247c7857ecbf8834783041523517bd733ce1fffa99fc9ba26bef5404d7077c2",
+    "per-layer-A-endpoint.dynamic.json.gz": "08a04700854185c6a6ea08e03b7591c2478ec50bba4466b310c231c90fd2e01d",
+    "per-layer-A-steps.jsonl.gz": "85d21e345ce143d209f57ba83d1bae1d2c185aaa248448974306032db2b80271",
+    "per-layer-AB-after-intervention.dynamic.json.gz": "3be481558b8bfa8aa9338f55c3dcfbf5da49bee8d3578f8f14358304687bace8",
+    "per-layer-AB-endpoint.dynamic.json.gz": "2c2210b69c0e9c49be76662b9d64f7a9e41ef3b95bdc65f753e842df9f3fd23c",
+    "per-layer-AB-steps.jsonl.gz": "ed6b8d7c402a9b02c920c6fa01e30a1ed21cc0970d47e4e23dbea60a154fb109"
+  },
+  "qualified_saved_comparisons": true,
+  "policies": {
+    "global": {
+      "complete_steps": 24,
+      "first_unresolved": {
+        "frame": 205,
+        "slot_zero_based": 42,
+        "reason": "accepted birth has a different source ID",
+        "cached_source": 3373,
+        "edited_source": 13601,
+        "cached_outcome": "emitted"
+      },
+      "active_frame_checks": 25,
+      "original_edited_arm_timing": {
+        "guarded_complete": {
+          "steps": 24,
+          "step_including_hooks_ms": 252.59999990463257,
+          "step_plus_render_ms": 374.90000009536743
+        },
+        "strict_complete": {
+          "steps": 24,
+          "step_including_hooks_ms": 252.59999990463257,
+          "step_plus_render_ms": 374.90000009536743
+        }
+      },
+      "ordered_offer_triples_checked": 1194,
+      "mismatches": [],
+      "first_observed_difference": {
+        "offer_source_id": {
+          "frame": 205,
+          "slot_zero_based": 40
+        },
+        "target_layer": {
+          "frame": 205,
+          "slot_zero_based": 40
+        },
+        "outcome": {
+          "frame": 305,
+          "slot_zero_based": 1
+        },
+        "emission_descriptor_at_offer": {
+          "frame": 205,
+          "slot_zero_based": 42
+        },
+        "random_draws_per_frame": {
+          "frame": 305
+        },
+        "layer_counts": {
+          "frame": 205
+        },
+        "total_gas_count": {
+          "frame": 295
+        },
+        "native_removed_ids": {
+          "frame": 295
+        },
+        "material_overlay_outside_direct": {
+          "frame": 207
+        }
+      },
+      "observed_outside_direct_material_overlay_exact_through": 206,
+      "gas_at_captured_boundaries": {
+        "after": {
+          "frame": 180,
+          "native_particle_arrays_and_layer_clocks_equal": true,
+          "A_selected_native_particle_hash": "95f1dfc4",
+          "AB_selected_native_particle_hash": "95f1dfc4",
+          "A_rng_draws": 16784,
+          "AB_rng_draws": 16784
+        },
+        "end": {
+          "frame": 360,
+          "native_particle_arrays_and_layer_clocks_equal": false,
+          "A_selected_native_particle_hash": "3b587712",
+          "AB_selected_native_particle_hash": "2acba20a",
+          "A_rng_draws": 37780,
+          "AB_rng_draws": 37793
+        }
+      }
+    },
+    "per-layer": {
+      "complete_steps": 91,
+      "first_unresolved": {
+        "frame": 272,
+        "slot_zero_based": 28,
+        "reason": "capacity decision changes the random stream",
+        "cached_source": 17160,
+        "edited_source": 5221,
+        "cached_outcome": "emitted"
+      },
+      "active_frame_checks": 92,
+      "original_edited_arm_timing": {
+        "guarded_complete": {
+          "steps": 91,
+          "step_including_hooks_ms": 840.8000000715256,
+          "step_plus_render_ms": 1284.4000002145767
+        },
+        "strict_complete": {
+          "steps": 24,
+          "step_including_hooks_ms": 225.30000019073486,
+          "step_plus_render_ms": 346.60000014305115
+        }
+      },
+      "ordered_offer_triples_checked": 4396,
+      "mismatches": [],
+      "first_observed_difference": {
+        "offer_source_id": {
+          "frame": 205,
+          "slot_zero_based": 40
+        },
+        "target_layer": {
+          "frame": 205,
+          "slot_zero_based": 40
+        },
+        "outcome": {
+          "frame": 272,
+          "slot_zero_based": 28
+        },
+        "emission_descriptor_at_offer": {
+          "frame": 272,
+          "slot_zero_based": 28
+        },
+        "random_draws_per_frame": {
+          "frame": 272
+        },
+        "layer_counts": {
+          "frame": 272
+        },
+        "total_gas_count": {
+          "frame": 272
+        },
+        "native_removed_ids": null,
+        "material_overlay_outside_direct": null
+      },
+      "observed_outside_direct_material_overlay_exact_through": 360,
+      "gas_at_captured_boundaries": {
+        "after": {
+          "frame": 180,
+          "native_particle_arrays_and_layer_clocks_equal": true,
+          "A_selected_native_particle_hash": "95f1dfc4",
+          "AB_selected_native_particle_hash": "95f1dfc4",
+          "A_rng_draws": 16784,
+          "AB_rng_draws": 16784
+        },
+        "end": {
+          "frame": 360,
+          "native_particle_arrays_and_layer_clocks_equal": false,
+          "A_selected_native_particle_hash": "b3aeba26",
+          "AB_selected_native_particle_hash": "2696c243",
+          "A_rng_draws": 17086,
+          "AB_rng_draws": 17086
+        }
+      }
+    }
+  },
+  "limits": "Observed feed descriptors compare source/layer and whether a birth occurred at an ordered slot. Full native gas arrays are available at boundaries. Equal draw counts alone cannot establish equal draw state. Material checks compare burning ID sets, not heat values or the rendered frame."
+}

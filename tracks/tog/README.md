@@ -1,5 +1,7 @@
 # TOG 研究轨道：从创作需求到可审查任务
 
+**2026-11-24 技术进展。** [T84](tasks/t84-ignition-edit-footprint/README.md) 恢复逐材料点的起燃帧。第二笔点火使全局配额下笔画外 1,266 个点额外燃烧，12 个点到终点仍只在原镜头中燃烧。[T85](tasks/t85-edit-prefix-certificate/README.md) 只读取旧镜头和即时点火顺序，逐帧判断能否复用已有结果。分层配额可确认复用 91 个完整步，全局配额仅 24 步。下一项有判别力的问题是在气体轨迹分开后，能否仍低成本判定某些材料点是否会起燃。单场景尚未建立 TOG 核心贡献。
+
 **当前进度（2026-11-10）：用户已恢复技术研究，艺术部分继续暂停。** 先读[当前状态](../STATUS.md)、[T82 当前论文与机制核查](tasks/t82-current-literature-resumption/README.md)、[T81 容量因果诊断](tasks/t81-firewoods-capacity-causality/README.md)和[交接说明](../AGENT_HANDOFF.md)。原有[数据包](../evidence/handoff-2026-11-02/README.md)保持可用。
 
 [T81](tasks/t81-firewoods-capacity-causality/RESULTS.md)完成四组1440步因果实验：普通全局池让 B 源从0发射变为304发射，同时带观测的模拟加渲染均值从14.119增至18.994ms；尚未证明需要压缩。新增[完整数值档案](tasks/t81-firewoods-capacity-causality/public/README.md)可在新机器只读校验。T82 区分已有高斯动力学、粒子裁剪、矩/交互率保持方法与待检验的短时响应问题。[T83](tasks/t83-native-reduction-contract/README.md)用明确反例关闭了直接套用公共粒子权重的方案，保留另行定义加权模型的可能性；未选择下一数值实验。[T76](tasks/t76-continuous-full-window/README.md)的普通基线成功与历史失败保持原判，TOG 核心贡献仍未成立。
