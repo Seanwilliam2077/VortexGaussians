@@ -1,0 +1,180 @@
+{
+  "reference": "Fixed seed 11, frame 360 material state > 0; paired total edit effect within each policy",
+  "prediction": "Union of direct B hits and fixed geometric support, over cached A-only endpoint",
+  "radius_world": 0.14,
+  "direct_B_ids_count": 288,
+  "policies": {
+    "per-layer": {
+      "gained": 288,
+      "lost": 0,
+      "direct_gained": 288,
+      "outside_direct_candidates": 31025,
+      "outside_direct_gain": 0,
+      "outside_direct_lost": 0,
+      "fixed_spill": {
+        "direct_overlay": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "iou": 1.0
+        },
+        "radial": {
+          "tp": 0,
+          "fp": 1278,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": null,
+          "iou": 0.0
+        },
+        "upward_half_line": {
+          "tp": 0,
+          "fp": 3257,
+          "fn": 0,
+          "precision": 0.0,
+          "recall": null,
+          "iou": 0.0
+        }
+      },
+      "fixed_all_gain": {
+        "direct_overlay": {
+          "tp": 288,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1.0,
+          "recall": 1.0,
+          "iou": 1.0
+        },
+        "radial": {
+          "tp": 288,
+          "fp": 1278,
+          "fn": 0,
+          "precision": 0.1839080459770115,
+          "recall": 1.0,
+          "iou": 0.1839080459770115
+        },
+        "upward_half_line": {
+          "tp": 288,
+          "fp": 3257,
+          "fn": 0,
+          "precision": 0.08124118476727786,
+          "recall": 1.0,
+          "iou": 0.08124118476727786
+        }
+      },
+      "retrospective_best_spill_iou": {
+        "radial": {
+          "distance": null,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "iou": 1.0
+        },
+        "upward_half_line": {
+          "distance": null,
+          "tp": 0,
+          "fp": 0,
+          "fn": 0,
+          "precision": null,
+          "recall": null,
+          "iou": 1.0
+        }
+      }
+    },
+    "global": {
+      "gained": 1554,
+      "lost": 12,
+      "direct_gained": 288,
+      "outside_direct_candidates": 30884,
+      "outside_direct_gain": 1266,
+      "outside_direct_lost": 12,
+      "fixed_spill": {
+        "direct_overlay": {
+          "tp": 0,
+          "fp": 0,
+          "fn": 1266,
+          "precision": null,
+          "recall": 0.0,
+          "iou": 0.0
+        },
+        "radial": {
+          "tp": 327,
+          "fp": 951,
+          "fn": 939,
+          "precision": 0.25586854460093894,
+          "recall": 0.25829383886255924,
+          "iou": 0.14749661705006767
+        },
+        "upward_half_line": {
+          "tp": 1227,
+          "fp": 2030,
+          "fn": 39,
+          "precision": 0.37672704943199264,
+          "recall": 0.9691943127962085,
+          "iou": 0.37226941747572817
+        }
+      },
+      "fixed_all_gain": {
+        "direct_overlay": {
+          "tp": 288,
+          "fp": 0,
+          "fn": 1266,
+          "precision": 1.0,
+          "recall": 0.18532818532818532,
+          "iou": 0.18532818532818532
+        },
+        "radial": {
+          "tp": 615,
+          "fp": 951,
+          "fn": 939,
+          "precision": 0.39272030651340994,
+          "recall": 0.39575289575289574,
+          "iou": 0.24550898203592814
+        },
+        "upward_half_line": {
+          "tp": 1515,
+          "fp": 2030,
+          "fn": 39,
+          "precision": 0.42736248236953456,
+          "recall": 0.974903474903475,
+          "iou": 0.42271205357142855
+        }
+      },
+      "retrospective_best_spill_iou": {
+        "radial": {
+          "distance": 0.19722736702500876,
+          "tp": 872,
+          "fp": 1856,
+          "fn": 394,
+          "precision": 0.3196480938416422,
+          "recall": 0.688783570300158,
+          "iou": 0.27930813581037794
+        },
+        "upward_half_line": {
+          "distance": 0.07512816711979167,
+          "tp": 1052,
+          "fp": 1138,
+          "fn": 214,
+          "precision": 0.480365296803653,
+          "recall": 0.8309636650868878,
+          "iou": 0.43760399334442596
+        }
+      }
+    }
+  },
+  "nulls": "Undefined precision/recall is null; empty-empty IoU is one. Null oracle distance selects no additions.",
+  "oracle": "Diagnostic best closed-distance threshold at whole ties for spill only; ties in IoU choose smallest selected set.",
+  "input_sha256": {
+    "recipe.json": "982c98d3187ab26e95e251de562950adaab9a2101d1f1ff6371c93e7f6383013",
+    "MANIFEST.json": "321229c577bf28dec45fc72b9c190bebe7c49dfb0e3f48b2fc21f28d9eaa1965",
+    "foreground.ply": "906460f162f704b89666b159ae5b4744e53e6dc11baf448a550de581506919b0",
+    "global-A-prefix.dynamic.json.gz": "c247c7857ecbf8834783041523517bd733ce1fffa99fc9ba26bef5404d7077c2",
+    "per-layer-A-endpoint.dynamic.json.gz": "08a04700854185c6a6ea08e03b7591c2478ec50bba4466b310c231c90fd2e01d",
+    "global-A-endpoint.dynamic.json.gz": "6140f0fe1496c582a4d103287c2ac55c4cc7edf046cc5d3c7a7b3f0b54345e5c",
+    "per-layer-AB-endpoint.dynamic.json.gz": "2c2210b69c0e9c49be76662b9d64f7a9e41ef3b95bdc65f753e842df9f3fd23c",
+    "global-AB-endpoint.dynamic.json.gz": "f239d2f821a5d7e1b51c703b5b6439cd73ded05c4e49c81cef599c9368e2fd70"
+  }
+}
