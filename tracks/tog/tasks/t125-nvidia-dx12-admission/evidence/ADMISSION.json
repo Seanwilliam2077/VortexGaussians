@@ -1,0 +1,76 @@
+{
+  "status": "admitted",
+  "upstream": "e2ac951dbfabc6060073943e4c344439ac5f4555",
+  "requested": "NVIDIA GeForce RTX 5070 Laptop GPU",
+  "stage": "complete",
+  "elapsed_s": 4.359147799899802,
+  "wgpu": "0.32.0",
+  "native": "29.0.1.1",
+  "adapters": [
+    {
+      "vendor": "32.0.23027.2005",
+      "device": "AMD Radeon(TM) 890M Graphics",
+      "description": "",
+      "adapter_type": "IntegratedGPU",
+      "backend_type": "D3D12"
+    },
+    {
+      "vendor": "32.0.15.9571",
+      "device": "NVIDIA GeForce RTX 5070 Laptop GPU",
+      "description": "",
+      "adapter_type": "DiscreteGPU",
+      "backend_type": "D3D12"
+    },
+    {
+      "vendor": "10.0.26100.8875",
+      "device": "Microsoft Basic Render Driver",
+      "description": "",
+      "adapter_type": "CPU",
+      "backend_type": "D3D12"
+    }
+  ],
+  "device": "NVIDIA GeForce RTX 5070 Laptop GPU",
+  "backend": "D3D12",
+  "limits": {
+    "max-bind-groups": 8,
+    "max-bind-groups-plus-vertex-buffers": 0,
+    "max-binding-array-elements-per-shader-stage": 0,
+    "max-binding-array-sampler-elements-per-shader-stage": 0,
+    "max-bindings-per-bind-group": 1000,
+    "max-buffer-size": 2147483647,
+    "max-color-attachment-bytes-per-sample": 128,
+    "max-color-attachments": 8,
+    "max-compute-invocations-per-workgroup": 1024,
+    "max-compute-workgroup-size-x": 1024,
+    "max-compute-workgroup-size-y": 1024,
+    "max-compute-workgroup-size-z": 64,
+    "max-compute-workgroup-storage-size": 32768,
+    "max-compute-workgroups-per-dimension": 65535,
+    "max-dynamic-storage-buffers-per-pipeline-layout": 4,
+    "max-dynamic-uniform-buffers-per-pipeline-layout": 8,
+    "max-immediate-size": 128,
+    "max-inter-stage-shader-variables": 31,
+    "max-multiview-view-count": 0,
+    "max-non-sampler-bindings": 1000000,
+    "max-sampled-textures-per-shader-stage": 24,
+    "max-samplers-per-shader-stage": 2048,
+    "max-storage-buffer-binding-size": 2147483644,
+    "max-storage-buffers-per-shader-stage": 16,
+    "max-storage-textures-per-shader-stage": 8,
+    "max-texture-array-layers": 2048,
+    "max-texture-dimension-1d": 16384,
+    "max-texture-dimension-2d": 16384,
+    "max-texture-dimension-3d": 2048,
+    "max-uniform-buffer-binding-size": 65536,
+    "max-uniform-buffers-per-shader-stage": 1048576,
+    "max-vertex-attributes": 32,
+    "max-vertex-buffer-array-stride": 2048,
+    "max-vertex-buffers": 16,
+    "min-storage-buffer-offset-alignment": 32,
+    "min-uniform-buffer-offset-alignment": 256
+  },
+  "features": [
+    "float32-filterable",
+    "timestamp-query"
+  ]
+}

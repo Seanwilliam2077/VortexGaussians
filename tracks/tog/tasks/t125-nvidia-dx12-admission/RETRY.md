@@ -1,0 +1,5 @@
+# Accepted adapter, one frozen retry
+
+T125's admission receipt SHA-256 is `b6aee5a0d3597a778b0396b1250502ee179ca63de38aa23e5ae2b7c6aee1caa3`. In 4.36 s the untouched Blackbody GPU selected the requested NVIDIA GeForce RTX 5070 Laptop GPU on D3D12, obtained its native requested limits, and read back its four-byte liveness probe. The integrated and software adapters were excluded. [Admission](evidence/ADMISSION.json) · [Host status](evidence/EXIT.json)
+
+Before any simulation on this admitted device, authorize exactly one L/F attempt under T124's frozen protocol, native observer and 240 seconds per arm. The selected DX12 instance and adapter are the sole intentional changes. Each isolated worker checks this selection before calling the original observer unmodified, including its scene, quality, sampled frames, target and failure policy. Compound timing includes admission; no delivered-latency claim. Persist partial observations, exceptions and failed rows. No extra backend or rendering run. [Original protocol](../t124-external-curtain-observation/PROTOCOL.md) · [Unchanged measurement procedure](../t124-external-curtain-observation/observe.py)
