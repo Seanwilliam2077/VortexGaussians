@@ -1,0 +1,106 @@
+{
+  "identities": {
+    "demo": "e9d808c434bdd8ce91482f60502f03f5d08c56b71c082eb704c53275ff9f57d0",
+    "estimate": "38fb97f0fe2e5b8a8f9a051343f197393f24e4d5dd9999b2f43edeff643b2d41",
+    "recipe": "982c98d3187ab26e95e251de562950adaab9a2101d1f1ff6371c93e7f6383013",
+    "ply": "906460f162f704b89666b159ae5b4744e53e6dc11baf448a550de581506919b0",
+    "AB-210.json.gz": "0b58009e04b2eb08cbb171ebd192ab9aba9582ca6774e5f9ddd7f0aa3d514dee",
+    "AB-240.json.gz": "a7b10ba945247dc41c4e0b5fcf474eaf25af993154de7685f2dd7818edc95e87",
+    "AB-300.json.gz": "971953b8ad58ab423787c3775277e4e7ec7af9629c0b65a5b9a5fd9779b48949",
+    "BA-210.json.gz": "ae7c48ffc7623171a6fc7456efb6a8e90dcc7f3fe1048fcda3105b70591c42d7",
+    "BA-240.json.gz": "1686e93c5d561e41bef04be8c07d250018864d2e468c9ddd233326ed97547a65",
+    "BA-300.json.gz": "fcca59a14660392a36ddf27635ee7e300eb3fb6618f41a55d13a80ea16f78cd9"
+  },
+  "rows": [
+    {
+      "arm": "AB",
+      "cut": 210,
+      "shell_n": 2371,
+      "methods": {
+        "allHot": {
+          "decision": "abstain",
+          "witness": null
+        },
+        "sampled": {
+          "decision": "no",
+          "witness": null
+        }
+      }
+    },
+    {
+      "arm": "AB",
+      "cut": 240,
+      "shell_n": 2371,
+      "methods": {
+        "allHot": {
+          "decision": "no",
+          "witness": null
+        },
+        "sampled": {
+          "decision": "no",
+          "witness": null
+        }
+      }
+    },
+    {
+      "arm": "AB",
+      "cut": 300,
+      "shell_n": 2371,
+      "methods": {
+        "allHot": {
+          "decision": "abstain",
+          "witness": null
+        },
+        "sampled": {
+          "decision": "yes",
+          "witness": 4437
+        }
+      }
+    },
+    {
+      "arm": "BA",
+      "cut": 210,
+      "shell_n": 2477,
+      "methods": {
+        "allHot": {
+          "decision": "abstain",
+          "witness": null
+        },
+        "sampled": {
+          "decision": "no",
+          "witness": null
+        }
+      }
+    },
+    {
+      "arm": "BA",
+      "cut": 240,
+      "shell_n": 2477,
+      "methods": {
+        "allHot": {
+          "decision": "abstain",
+          "witness": null
+        },
+        "sampled": {
+          "decision": "abstain",
+          "witness": null
+        }
+      }
+    },
+    {
+      "arm": "BA",
+      "cut": 300,
+      "shell_n": 2477,
+      "methods": {
+        "allHot": {
+          "decision": "abstain",
+          "witness": null
+        },
+        "sampled": {
+          "decision": "abstain",
+          "witness": null
+        }
+      }
+    }
+  ]
+}
