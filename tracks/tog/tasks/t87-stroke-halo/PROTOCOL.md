@@ -1,0 +1,10 @@
+# Does anything ignite immediately outside the edited brush?
+
+This researcher-defined query uses the original authored second brush's center and radius. It asks whether any **currently unlit, fuel-positive material site** in the adjacent exterior shell ignites in the next H native scans. Both native brushes use Euclidean balls with a 0.12 world-unit radius under the pinned unit scene scale. The native gas interaction radius is 0.14. Thus the fixed shell includes sites with distances strictly above 0.12 and at most 0.26 from B on the AB take or A on BA. Use the original recorded world pick coordinates and stable PLY indices.
+
+Freeze the same T86 cuts at frames 210, 240 and 300 on both takes and H of 1, 4 and 8. Do not search additional shell widths, thresholds, centers or time windows. Only one geometry is present. There is no creator study.
+
+Time the T86 support-only, uniform-count and weighted-temperature bounds on the region's eligible recipients directly, including graph evaluation and query preparation. Retain the T86 unknown-cursor fallback. Each method can return an early exact **no** only if every eligible site is certified through every scan. An empty region is recorded separately. Otherwise defer to the native simulation, which can stop upon the first regional ignition or at H. Persistence always guesses no. No heuristic positive answer is used.
+
+After committing this protocol, compare each regional list against the restriction of the corresponding frozen full-scene certificate. Independently score all three against per-frame native events, including the identity and first frame of any regional ignition. Report shared asset/membership work, causal cut decode, prep, per-method compute, and evidence I/O. Compare full-window and early-stop native times, also adding fallback cost wherever the certificate abstains. These sums combine separate measurements. Report cold file and already-loaded incremental assumptions separately. Keep empty queries and all failures. A correct abstention does not count as an early answer. A complete no without credible time savings is evidence on decision coverage alone.
+
