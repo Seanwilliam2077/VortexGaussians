@@ -1,0 +1,52 @@
+if(stop===180){
+        const pre=await page.evaluate(()=>__t86.marker());assert.deepEqual(pre,ref.pre_edit);
+        if(arm==='AL'){
+          assert.deepEqual(pre,current.shots.AF.pre_edit);
+          report.flow_audits={};report.view_cache={};report.common_parent=pre;
+          for(const camera of [0,124]){
+            const wf=FILES[camera];
+            const readout=JSON.parse(gunzipSync(await input('camera_weights_'+camera,wf)));
+            report.view_cache[camera]=await timed(phase,'install_camera_'+camera,()=>page.evaluate(w=>__t109.install(w.asset_count,w.eligible_weights),readout));
+            for(const sibling of ['AL','AF']){
+              const pick=cfg.picks.find(p=>p.name===sibling[1]),horizon=90;
+              const expected=allTargets.find(r=>r.arm===sibling&&r.camera===camera);
+              const query={arm:sibling,camera,cut:180,horizon,first_frame:expected.first_frame,trials:[]};
+              report.queries.push(query);
+              const fields=['defined','first_frame','total','target','eligible','count','mass'];
+              for(let rep=0;rep<=repeats;rep++)for(let j=0;j<methods.length;j++){
+                const method=methods[(j+rep+report.queries.length-1)%methods.length];
+                await page.evaluate(()=>__t98.resetTrial());
+                const t=performance.now(),result=await page.evaluate(([m,h,dt,p])=>__t109.click(m,h,dt,p),[method,horizon,cfg.dt,pick]);
+                const delivered_ms=performance.now()-t;
+                await page.evaluate(()=>__t98.finishTrial());
+                assert.equal(result.clicked,current.shots[sibling].edit.count);
+                for(const k of fields)assert.equal(result[k],expected[k],sibling+'/'+camera+' '+method+' '+k);
+                query.trials.push({...result,method,rep,delivered_ms});
+              }
+              assert.deepEqual(await page.evaluate(()=>__t86.marker()),pre,'Sibling restored to identical parent');
+              const audits={};let frames=[];
+              for(const method of ['repair','ordinary','restart']){
+                await page.evaluate(()=>__t98.resetTrial());
+                const result=await page.evaluate(([m,h,dt,p,f])=>__t109.click(m,h,dt,p,true,f),
+                  [method,horizon,cfg.dt,pick,method==='ordinary'?frames:[]]);
+                await page.evaluate(()=>__t98.finishTrial());
+                for(const k of fields)assert.equal(result[k],expected[k],sibling+' '+camera+' '+method+' audit '+k);
+                assert.deepEqual(result.curve,expected.curve);
+                if(method==='repair')frames=Object.keys(result.boundaries).map(Number);
+                if(method==='ordinary')assert.deepEqual(result.boundaries,audits.repair.boundaries);
+                audits[method]=result;
+              }
+              assert.deepEqual(await page.evaluate(()=>__t86.marker()),pre,'Audit restored to identical parent');
+              report.flow_audits[sibling+'/'+camera]=audits;
+            }
+          }
+        }
+        const b=await page.evaluate(p=>({edit:__t86.ignite(p,true),post_edit:__t86.marker()}),picks[1]);
+        assert.deepEqual(b.edit,ref.edit);assert.deepEqual(b.post_edit,ref.post_edit);
+      }else if(stop===360){
+        shot.endpoint=await page.evaluate(()=>__t86.marker());assert.deepEqual(shot.endpoint,ref.end);
+      }else{
+        const marker=await page.evaluate(()=>__t86.marker());assert.equal(marker.hash,ref.cuts.find(c=>c.frame===stop).native_hash);
+        shot.cut_hashes[stop]=marker.hash;
+      }
+    }
