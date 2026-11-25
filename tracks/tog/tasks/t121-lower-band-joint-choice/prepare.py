@@ -18,11 +18,14 @@ def load(path):
 
 
 def write(path, value):
+    raw = (json.dumps(value, separators=(",", ":"), allow_nan=False) + "\n").encode()
     if path.exists():
-        if load(path) != value:
+        stored = path.read_bytes()
+        if path.suffix == ".gz":
+            stored = gzip.decompress(stored)
+        if stored != raw:
             raise ValueError(f"Frozen file mismatch: {path.name}")
         return
-    raw = (json.dumps(value, separators=(",", ":"), allow_nan=False) + "\n").encode()
     path.write_bytes(gzip.compress(raw, mtime=0) if path.suffix == ".gz" else raw)
 
 
