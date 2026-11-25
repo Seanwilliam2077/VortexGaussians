@@ -1,0 +1,1428 @@
+{
+  "blocks": [
+    {
+      "scene": "firewoods",
+      "round": 1,
+      "start": "2026-11-25T08:29:53.915Z",
+      "runtime": {
+        "node": "v24.16.0",
+        "node_sha256": "b3094d0b49f9ad602262a9921551737bb97637c05dd357a06ae98188d7290aa3",
+        "browser_executable_sha256": "6c6729d3ade101ad8b97f9812a852a9024b7bb2a8394b5f506219dd635dc330d",
+        "playwright_version": "1.62.1",
+        "browser_version": "149.0.4022.52"
+      },
+      "worker_ms": 85339.0905,
+      "phase_ms": {
+        "preflight": 308.5428,
+        "browser_launch": 1827.9047999999998,
+        "cleanup": 300.72750000000815,
+        "wall_before_receipt": 85339.0905
+      },
+      "arm_setup_ms": {
+        "AL": {
+          "new_page": 268.7070999999996,
+          "load": 498.0466000000001,
+          "load_reset_and_first_brush": 214.0957000000003,
+          "untimed_reference_region": 12.940499999999702,
+          "advance_to_180": 1632.9577,
+          "read_decode_view_0": 1.5961999999999534,
+          "install_view_0": 60.0579000000007,
+          "read_decode_view_124": 1.7608000000000175,
+          "install_view_124": 56.14720000000034,
+          "audit_sibling": 1251.5137000000004,
+          "audit_native_sibling": 911.3031000000001,
+          "audit_cold-sibling": 1043.6058999999996,
+          "audit_native_cold-sibling": 789.1738999999998,
+          "curve_cold-ordinary_L": 447.3237000000008,
+          "curve_cold-ordinary_F": 433.8655999999992,
+          "curve_cold-repair_L": 522.0410000000011,
+          "curve_cold-repair_F": 543.5948000000008,
+          "advance_to_210": 318.6967999999906,
+          "advance_to_240": 370.9707000000053,
+          "advance_to_300": 798.3159999999916,
+          "advance_to_360": 830.2972000000009
+        },
+        "AF": {
+          "new_page": 185.39979999999923,
+          "load": 87.09309999999823,
+          "load_reset_and_first_brush": 209.64820000001055,
+          "untimed_reference_region": 10.902100000006612,
+          "advance_to_180": 1657.681500000006,
+          "advance_to_210": 321.39070000000356,
+          "advance_to_240": 370.63270000000193,
+          "advance_to_300": 814.2029000000039,
+          "advance_to_360": 870.8559999999998
+        }
+      },
+      "ops": [
+        {
+          "cameras": [
+            0
+          ],
+          "choices": {
+            "0": "F"
+          },
+          "raw_warm_ms": {
+            "ordinary": [
+              734.5109999999986,
+              698.9155000000028,
+              690.7131999999983,
+              792.1576000000023,
+              726.6873000000014,
+              729.720699999998
+            ],
+            "repair": [
+              596.5720000000001,
+              595.6885000000002,
+              589.2962999999982,
+              594.1201999999976,
+              611.9650000000001,
+              611.7854000000007
+            ],
+            "sibling": [
+              614.2822999999989,
+              621.3053,
+              613.8456000000006,
+              641.1897000000026,
+              627.1389999999992,
+              626.5714000000007
+            ],
+            "cold-ordinary": [
+              592.8992999999973,
+              595.6056000000026,
+              586.3002000000015,
+              633.7017999999989,
+              613.4242000000013,
+              604.9628000000012
+            ],
+            "cold-repair": [
+              564.663199999999,
+              552.0481,
+              546.5489000000016,
+              568.3193000000028,
+              573.2220000000016,
+              568.4368999999933
+            ],
+            "cold-sibling": [
+              516.1948000000011,
+              513.1195000000007,
+              506.78419999999824,
+              577.6311999999998,
+              550.9879000000001,
+              516.135199999997
+            ]
+          },
+          "cold": {
+            "ordinary": {
+              "total": 699.5202000000008,
+              "anchor_build_ms": 7,
+              "anchor_bytes": 179155,
+              "flame_geom_ms": 0
+            },
+            "repair": {
+              "total": 616.9825000000001,
+              "anchor_build_ms": 10.099999904632568,
+              "anchor_bytes": 179155,
+              "flame_geom_ms": 0
+            },
+            "sibling": {
+              "total": 622.0895,
+              "anchor_build_ms": 6.299999952316284,
+              "anchor_bytes": 179155,
+              "flame_geom_ms": 0
+            },
+            "cold-ordinary": {
+              "total": 617.7139000000006,
+              "anchor_build_ms": 6.299999952316284,
+              "anchor_bytes": 179155,
+              "flame_geom_ms": 2.5999999046325684
+            },
+            "cold-repair": {
+              "total": 572.1923000000006,
+              "anchor_build_ms": 5.299999952316284,
+              "anchor_bytes": 179155,
+              "flame_geom_ms": 1.0999999046325684
+            },
+            "cold-sibling": {
+              "total": 526.3430000000008,
+              "anchor_build_ms": 5.299999952316284,
+              "anchor_bytes": 179155,
+              "flame_geom_ms": 2.4000000953674316
+            }
+          },
+          "median_ms": {
+            "ordinary": 728.2039999999997,
+            "repair": 596.1302500000002,
+            "sibling": 623.9383500000004,
+            "cold-ordinary": 600.2842000000019,
+            "cold-repair": 566.491250000001,
+            "cold-sibling": 516.164999999999
+          },
+          "ratios": {
+            "sibling_over_ordinary": 0.8568180757040618,
+            "sibling_over_repair": 1.0466476915070158,
+            "cold-sibling_over_cold-ordinary": 0.8598677093283439,
+            "cold-sibling_over_cold-repair": 0.9111614698373509,
+            "cold-ordinary_over_ordinary": 0.8243352137587847,
+            "cold-repair_over_repair": 0.9502809998318333
+          },
+          "work": {
+            "sibling": {
+              "steps": 24,
+              "reused_steps": 24,
+              "light_steps": 90,
+              "full_steps": 20,
+              "checkpoint_material_bytes": 589679,
+              "checkpoint_particles": 2974,
+              "prepared_full_sites": 288
+            },
+            "cold-sibling": {
+              "steps": 24,
+              "reused_steps": 24,
+              "light_steps": 90,
+              "full_steps": 20,
+              "checkpoint_material_bytes": 589679,
+              "checkpoint_particles": 2974,
+              "prepared_full_sites": 288
+            }
+          },
+          "sibling_phase_medians_ms": {
+            "sibling": {
+              "prepare_full_ms": 0.9500000476837158,
+              "guard_ms": 0.10000002384185791,
+              "fork_at_boundary_ms": 0.20000004768371582,
+              "restore_at_boundary_ms": 0.0,
+              "transport_ms": 0.09999990463256836
+            },
+            "cold-sibling": {
+              "prepare_full_ms": 0.7000000476837158,
+              "guard_ms": 0.09999990463256836,
+              "fork_at_boundary_ms": 0.20000004768371582,
+              "restore_at_boundary_ms": 0.0,
+              "transport_ms": 0.10000014305114746
+            }
+          }
+        },
+        {
+          "cameras": [
+            0,
+            124
+          ],
+          "choices": {
+            "0": "F",
+            "124": "none"
+          },
+          "raw_warm_ms": {
+            "ordinary": [
+              1009.3934000000008,
+              1022.2055000000037,
+              1038.3878999999943,
+              1062.7816999999995,
+              1018.7770000000019,
+              983.9216999999917
+            ],
+            "repair": [
+              840.0489999999991,
+              847.462099999997,
+              818.4137999999948,
+              1034.3301999999967,
+              865.174800000008,
+              858.2692999999999
+            ],
+            "sibling": [
+              913.7420999999958,
+              937.9060000000027,
+              1039.8042999999961,
+              1036.5130999999965,
+              1067.5325000000012,
+              1056.201700000005
+            ],
+            "cold-ordinary": [
+              869.8860999999961,
+              838.7019999999975,
+              888.7540999999983,
+              869.3080000000045,
+              914.2275000000081,
+              829.0185999999958
+            ],
+            "cold-repair": [
+              765.5199000000066,
+              777.9758000000002,
+              785.6280999999944,
+              799.6487000000052,
+              792.8169000000053,
+              764.0178000000014
+            ],
+            "cold-sibling": [
+              764.1912000000011,
+              771.935000000005,
+              762.337099999997,
+              915.2395000000033,
+              889.0194000000047,
+              749.8568000000087
+            ]
+          },
+          "cold": {
+            "repair": {
+              "total": 833.350099999996,
+              "anchor_build_ms": 5.099999904632568,
+              "anchor_bytes": 179155,
+              "flame_geom_ms": 0
+            },
+            "sibling": {
+              "total": 911.529300000002,
+              "anchor_build_ms": 5.200000047683716,
+              "anchor_bytes": 179155,
+              "flame_geom_ms": 0
+            },
+            "cold-ordinary": {
+              "total": 852.6258000000016,
+              "anchor_build_ms": 5.1000001430511475,
+              "anchor_bytes": 179155,
+              "flame_geom_ms": 2.200000047683716
+            },
+            "cold-repair": {
+              "total": 798.7203999999983,
+              "anchor_build_ms": 5.1000001430511475,
+              "anchor_bytes": 179155,
+              "flame_geom_ms": 1.2999999523162842
+            },
+            "cold-sibling": {
+              "total": 761.3407000000007,
+              "anchor_build_ms": 5.200000047683716,
+              "anchor_bytes": 179155,
+              "flame_geom_ms": 1
+            },
+            "ordinary": {
+              "total": 988.1144000000058,
+              "anchor_build_ms": 5.099999904632568,
+              "anchor_bytes": 179155,
+              "flame_geom_ms": 0
+            }
+          },
+          "median_ms": {
+            "ordinary": 1020.4912500000028,
+            "repair": 852.8656999999985,
+            "sibling": 1038.1586999999963,
+            "cold-ordinary": 869.5970500000003,
+            "cold-repair": 781.8019499999973,
+            "cold-sibling": 768.063100000003
+          },
+          "ratios": {
+            "sibling_over_ordinary": 1.0173126913141033,
+            "sibling_over_repair": 1.217259294165539,
+            "cold-sibling_over_cold-ordinary": 0.8832402317832182,
+            "cold-sibling_over_cold-repair": 0.9824266874750129,
+            "cold-ordinary_over_ordinary": 0.8521357238486836,
+            "cold-repair_over_repair": 0.9166765060430953
+          },
+          "work": {
+            "sibling": {
+              "steps": 24,
+              "reused_steps": 24,
+              "light_steps": 90,
+              "full_steps": 66,
+              "checkpoint_material_bytes": 589679,
+              "checkpoint_particles": 2974,
+              "prepared_full_sites": 288
+            },
+            "cold-sibling": {
+              "steps": 24,
+              "reused_steps": 24,
+              "light_steps": 90,
+              "full_steps": 66,
+              "checkpoint_material_bytes": 589679,
+              "checkpoint_particles": 2974,
+              "prepared_full_sites": 288
+            }
+          },
+          "sibling_phase_medians_ms": {
+            "sibling": {
+              "prepare_full_ms": 0.8999999761581421,
+              "guard_ms": 0.10000002384185791,
+              "fork_at_boundary_ms": 0.34999990463256836,
+              "restore_at_boundary_ms": 0.0,
+              "transport_ms": 0.0
+            },
+            "cold-sibling": {
+              "prepare_full_ms": 0.8000000715255737,
+              "guard_ms": 0.10000002384185791,
+              "fork_at_boundary_ms": 0.19999992847442627,
+              "restore_at_boundary_ms": 0.0,
+              "transport_ms": 0.09999990463256836
+            }
+          }
+        }
+      ],
+      "capture_sha": "d19b94f144e22650d9940cae5ced1aee0404c54a937c96bbf2da6768c0022b3d"
+    },
+    {
+      "scene": "playground",
+      "round": 1,
+      "start": "2026-11-25T08:31:19.679Z",
+      "runtime": {
+        "node": "v24.16.0",
+        "node_sha256": "b3094d0b49f9ad602262a9921551737bb97637c05dd357a06ae98188d7290aa3",
+        "browser_executable_sha256": "6c6729d3ade101ad8b97f9812a852a9024b7bb2a8394b5f506219dd635dc330d",
+        "playwright_version": "1.62.1",
+        "browser_version": "149.0.4022.52"
+      },
+      "worker_ms": 70214.5543,
+      "phase_ms": {
+        "preflight": 284.9389,
+        "browser_launch": 403.8619,
+        "cleanup": 436.10890000000654,
+        "wall_before_receipt": 70214.5543
+      },
+      "arm_setup_ms": {
+        "AL": {
+          "new_page": 253.88189999999997,
+          "load": 517.2598,
+          "load_reset_and_first_brush": 470.15200000000004,
+          "untimed_reference_region": 19.22330000000011,
+          "advance_to_180": 2714.0473999999995,
+          "read_decode_view_0": 1.298399999999674,
+          "install_view_0": 46.73080000000027,
+          "read_decode_view_153": 1.1388000000006286,
+          "install_view_153": 36.86170000000038,
+          "audit_sibling": 1902.2334,
+          "audit_native_sibling": 1483.5874000000003,
+          "audit_cold-sibling": 1623.8968999999997,
+          "audit_native_cold-sibling": 1318.5910000000003,
+          "curve_cold-ordinary_L": 547.6178999999993,
+          "curve_cold-ordinary_F": 555.1280000000006,
+          "curve_cold-repair_L": 1012.0817999999999,
+          "curve_cold-repair_F": 901.9643999999989,
+          "advance_to_210": 514.841800000002,
+          "advance_to_240": 597.1442000000025,
+          "advance_to_300": 1265.084400000007,
+          "advance_to_360": 1387.7878999999957
+        },
+        "AF": {
+          "new_page": 170.9230000000025,
+          "load": 82.14970000000176,
+          "load_reset_and_first_brush": 440.34829999999783,
+          "untimed_reference_region": 30.197999999996682,
+          "advance_to_180": 2669.8315000000002,
+          "advance_to_210": 493.3660999999993,
+          "advance_to_240": 543.6309000000037,
+          "advance_to_300": 1223.0262000000075,
+          "advance_to_360": 1337.2891999999993
+        }
+      },
+      "ops": [
+        {
+          "cameras": [
+            0
+          ],
+          "choices": {
+            "0": "L"
+          },
+          "raw_warm_ms": {
+            "ordinary": [
+              377.3797000000013,
+              364.0532000000021,
+              368.0086999999985,
+              359.0502000000015,
+              365.18369999999777,
+              365.57880000000296
+            ],
+            "repair": [
+              351.8159000000014,
+              346.6101000000017,
+              356.8862000000008,
+              344.3208000000013,
+              346.4398000000001,
+              353.22550000000047
+            ],
+            "sibling": [
+              367.52800000000207,
+              368.3087999999989,
+              369.2498000000014,
+              362.5529999999999,
+              362.300900000002,
+              398.3886999999995
+            ],
+            "cold-ordinary": [
+              303.244200000001,
+              312.6941999999981,
+              289.33650000000125,
+              293.8672000000006,
+              297.3775999999998,
+              297.14440000000104
+            ],
+            "cold-repair": [
+              288.17329999999856,
+              280.1873999999989,
+              274.49199999999837,
+              274.1477999999988,
+              281.47139999999854,
+              279.3104999999996
+            ],
+            "cold-sibling": [
+              297.89730000000054,
+              300.6943999999967,
+              299.0214999999989,
+              289.2453999999998,
+              305.65959999999905,
+              302.26000000000204
+            ]
+          },
+          "cold": {
+            "ordinary": {
+              "total": 396.92739999999867,
+              "anchor_build_ms": 17.700000047683716,
+              "anchor_bytes": 405715,
+              "flame_geom_ms": 0
+            },
+            "repair": {
+              "total": 385.6136999999999,
+              "anchor_build_ms": 21.59999990463257,
+              "anchor_bytes": 405715,
+              "flame_geom_ms": 0
+            },
+            "sibling": {
+              "total": 382.09190000000126,
+              "anchor_build_ms": 17.09999990463257,
+              "anchor_bytes": 405715,
+              "flame_geom_ms": 0
+            },
+            "cold-ordinary": {
+              "total": 322.2525999999998,
+              "anchor_build_ms": 12.400000095367432,
+              "anchor_bytes": 405715,
+              "flame_geom_ms": 5
+            },
+            "cold-repair": {
+              "total": 311.83980000000156,
+              "anchor_build_ms": 12.399999856948853,
+              "anchor_bytes": 405715,
+              "flame_geom_ms": 10.799999952316284
+            },
+            "cold-sibling": {
+              "total": 309.6676000000007,
+              "anchor_build_ms": 12.900000095367432,
+              "anchor_bytes": 405715,
+              "flame_geom_ms": 2.700000047683716
+            }
+          },
+          "median_ms": {
+            "ordinary": 365.38125000000036,
+            "repair": 349.21300000000156,
+            "sibling": 367.9184000000005,
+            "cold-ordinary": 297.2610000000004,
+            "cold-repair": 279.74894999999924,
+            "cold-sibling": 299.8579499999978
+          },
+          "ratios": {
+            "sibling_over_ordinary": 1.0069438429038164,
+            "sibling_over_repair": 1.0535644434771867,
+            "cold-sibling_over_cold-ordinary": 1.0087362620727152,
+            "cold-sibling_over_cold-repair": 1.0718823073330521,
+            "cold-ordinary_over_ordinary": 0.8135639144044752,
+            "cold-repair_over_repair": 0.8010840089000065
+          },
+          "work": {
+            "sibling": {
+              "steps": 16,
+              "reused_steps": 0,
+              "light_steps": 53,
+              "full_steps": 0,
+              "checkpoint_material_bytes": 1360391,
+              "checkpoint_particles": 2273,
+              "prepared_full_sites": 2058
+            },
+            "cold-sibling": {
+              "steps": 16,
+              "reused_steps": 0,
+              "light_steps": 53,
+              "full_steps": 0,
+              "checkpoint_material_bytes": 1360391,
+              "checkpoint_particles": 2273,
+              "prepared_full_sites": 2058
+            }
+          },
+          "sibling_phase_medians_ms": {
+            "sibling": {
+              "prepare_full_ms": 1.3499999046325684,
+              "guard_ms": 0.3999999761581421,
+              "fork_at_boundary_ms": 0.30000007152557373,
+              "restore_at_boundary_ms": 0.0,
+              "transport_ms": 0.0
+            },
+            "cold-sibling": {
+              "prepare_full_ms": 1.3999998569488525,
+              "guard_ms": 0.3999999761581421,
+              "fork_at_boundary_ms": 0.2999999523162842,
+              "restore_at_boundary_ms": 0.0,
+              "transport_ms": 0.0
+            }
+          }
+        },
+        {
+          "cameras": [
+            0,
+            153
+          ],
+          "choices": {
+            "0": "L",
+            "153": "L"
+          },
+          "raw_warm_ms": {
+            "ordinary": [
+              566.4101999999984,
+              563.8277000000016,
+              559.8966,
+              561.6758000000045,
+              568.803899999999,
+              631.7229999999981
+            ],
+            "repair": [
+              565.3359000000055,
+              562.0139000000054,
+              569.7837999999974,
+              567.8194000000003,
+              572.3989000000001,
+              562.7327000000005
+            ],
+            "sibling": [
+              555.2755000000034,
+              556.4841000000015,
+              560.4055999999982,
+              555.7497999999978,
+              560.8438999999998,
+              561.4741999999969
+            ],
+            "cold-ordinary": [
+              459.76400000000285,
+              449.72490000000107,
+              448.0462999999945,
+              437.85459999999875,
+              454.6947,
+              453.7704999999987
+            ],
+            "cold-repair": [
+              442.7765999999974,
+              434.167300000001,
+              436.2733999999982,
+              442.42469999999594,
+              546.2783999999956,
+              431.26059999999416
+            ],
+            "cold-sibling": [
+              458.29759999999806,
+              479.03489999999874,
+              443.9132000000027,
+              449.2971000000034,
+              449.5008000000016,
+              444.16769999999815
+            ]
+          },
+          "cold": {
+            "repair": {
+              "total": 580.6167999999961,
+              "anchor_build_ms": 12.100000143051147,
+              "anchor_bytes": 405715,
+              "flame_geom_ms": 0
+            },
+            "sibling": {
+              "total": 576.2175999999963,
+              "anchor_build_ms": 12.399999856948853,
+              "anchor_bytes": 405715,
+              "flame_geom_ms": 0
+            },
+            "cold-ordinary": {
+              "total": 485.0127999999968,
+              "anchor_build_ms": 12.5,
+              "anchor_bytes": 405715,
+              "flame_geom_ms": 11.799999952316284
+            },
+            "cold-repair": {
+              "total": 455.85949999999866,
+              "anchor_build_ms": 14.600000143051147,
+              "anchor_bytes": 405715,
+              "flame_geom_ms": 3
+            },
+            "cold-sibling": {
+              "total": 463.4572999999946,
+              "anchor_build_ms": 14.100000143051147,
+              "anchor_bytes": 405715,
+              "flame_geom_ms": 3.0999999046325684
+            },
+            "ordinary": {
+              "total": 582.2810000000027,
+              "anchor_build_ms": 12.399999856948853,
+              "anchor_bytes": 405715,
+              "flame_geom_ms": 0
+            }
+          },
+          "median_ms": {
+            "ordinary": 565.11895,
+            "repair": 566.5776500000029,
+            "sibling": 558.4448499999999,
+            "cold-ordinary": 451.7476999999999,
+            "cold-repair": 439.3490499999971,
+            "cold-sibling": 449.3989500000025
+          },
+          "ratios": {
+            "sibling_over_ordinary": 0.9881899200159538,
+            "sibling_over_repair": 0.9856457451154259,
+            "cold-sibling_over_cold-ordinary": 0.9948007482937989,
+            "cold-sibling_over_cold-repair": 1.0228745231155172,
+            "cold-ordinary_over_ordinary": 0.7993851559923798,
+            "cold-repair_over_repair": 0.7754436660182321
+          },
+          "work": {
+            "sibling": {
+              "steps": 16,
+              "reused_steps": 0,
+              "light_steps": 76,
+              "full_steps": 0,
+              "checkpoint_material_bytes": 1360391,
+              "checkpoint_particles": 2273,
+              "prepared_full_sites": 2058
+            },
+            "cold-sibling": {
+              "steps": 16,
+              "reused_steps": 0,
+              "light_steps": 76,
+              "full_steps": 0,
+              "checkpoint_material_bytes": 1360391,
+              "checkpoint_particles": 2273,
+              "prepared_full_sites": 2058
+            }
+          },
+          "sibling_phase_medians_ms": {
+            "sibling": {
+              "prepare_full_ms": 1.2499998807907104,
+              "guard_ms": 0.34999990463256836,
+              "fork_at_boundary_ms": 0.2999999523162842,
+              "restore_at_boundary_ms": 0.0,
+              "transport_ms": 0.0
+            },
+            "cold-sibling": {
+              "prepare_full_ms": 1.25,
+              "guard_ms": 0.39999985694885254,
+              "fork_at_boundary_ms": 0.20000004768371582,
+              "restore_at_boundary_ms": 0.0,
+              "transport_ms": 0.0
+            }
+          }
+        }
+      ],
+      "capture_sha": "a6272ca3e3e5c3957fe26bc2c8ca2f033420188b4c15c60e5ef3ca1457bad84b"
+    },
+    {
+      "scene": "playground",
+      "round": 2,
+      "start": "2026-11-25T08:32:30.486Z",
+      "runtime": {
+        "node": "v24.16.0",
+        "node_sha256": "b3094d0b49f9ad602262a9921551737bb97637c05dd357a06ae98188d7290aa3",
+        "browser_executable_sha256": "6c6729d3ade101ad8b97f9812a852a9024b7bb2a8394b5f506219dd635dc330d",
+        "playwright_version": "1.62.1",
+        "browser_version": "149.0.4022.52"
+      },
+      "worker_ms": 73346.97690000001,
+      "phase_ms": {
+        "preflight": 319.7115,
+        "browser_launch": 464.2302,
+        "cleanup": 301.0317000000068,
+        "wall_before_receipt": 73346.97690000001
+      },
+      "arm_setup_ms": {
+        "AL": {
+          "new_page": 1436.9807,
+          "load": 271.67970000000014,
+          "load_reset_and_first_brush": 457.73600000000033,
+          "untimed_reference_region": 17.71309999999994,
+          "advance_to_180": 2767.5638999999996,
+          "read_decode_view_0": 1.3353000000006432,
+          "install_view_0": 53.582800000000134,
+          "read_decode_view_153": 1.134900000000016,
+          "install_view_153": 39.25160000000051,
+          "audit_sibling": 1940.6552000000001,
+          "audit_native_sibling": 1393.8904000000002,
+          "audit_cold-sibling": 1866.5566,
+          "audit_native_cold-sibling": 1543.6651999999995,
+          "curve_cold-ordinary_L": 584.8161999999993,
+          "curve_cold-ordinary_F": 621.589100000001,
+          "curve_cold-repair_L": 1017.1419000000005,
+          "curve_cold-repair_F": 906.6317999999992,
+          "advance_to_210": 532.613400000002,
+          "advance_to_240": 568.7335999999996,
+          "advance_to_300": 1290.2010999999984,
+          "advance_to_360": 1380.3675000000003
+        },
+        "AF": {
+          "new_page": 184.3481000000029,
+          "load": 89.60680000000139,
+          "load_reset_and_first_brush": 454.2988000000041,
+          "untimed_reference_region": 32.70810000000347,
+          "advance_to_180": 2815.5858000000007,
+          "advance_to_210": 532.6100999999908,
+          "advance_to_240": 556.3012000000017,
+          "advance_to_300": 1298.0994999999966,
+          "advance_to_360": 1444.5841999999975
+        }
+      },
+      "ops": [
+        {
+          "cameras": [
+            0
+          ],
+          "choices": {
+            "0": "L"
+          },
+          "raw_warm_ms": {
+            "cold-sibling": [
+              327.5472000000009,
+              285.6238999999987,
+              297.3133000000016,
+              297.28009999999995,
+              387.85329999999885,
+              300.14110000000073
+            ],
+            "cold-repair": [
+              288.3135000000002,
+              278.6457999999984,
+              277.375799999998,
+              293.2986000000019,
+              292.6663000000008,
+              291.16539999999804
+            ],
+            "cold-ordinary": [
+              295.1432999999997,
+              353.4386000000013,
+              292.21140000000014,
+              284.7066999999988,
+              298.1114000000016,
+              294.02419999999984
+            ],
+            "sibling": [
+              363.6216999999997,
+              386.07340000000113,
+              364.84100000000035,
+              376.119200000001,
+              375.10089999999764,
+              379.15430000000197
+            ],
+            "repair": [
+              402.27839999999924,
+              374.18009999999776,
+              356.02709999999934,
+              350.13950000000114,
+              360.16289999999935,
+              349.2375000000029
+            ],
+            "ordinary": [
+              366.16359999999986,
+              403.98389999999927,
+              359.0509999999995,
+              364.3738999999987,
+              412.41419999999925,
+              365.1731
+            ]
+          },
+          "cold": {
+            "cold-sibling": {
+              "total": 323.9324000000015,
+              "anchor_build_ms": 16.5,
+              "anchor_bytes": 405715,
+              "flame_geom_ms": 4.5
+            },
+            "cold-repair": {
+              "total": 319.21860000000015,
+              "anchor_build_ms": 17.200000047683716,
+              "anchor_bytes": 405715,
+              "flame_geom_ms": 6.699999809265137
+            },
+            "cold-ordinary": {
+              "total": 322.9147000000012,
+              "anchor_build_ms": 16.09999990463257,
+              "anchor_bytes": 405715,
+              "flame_geom_ms": 2.8999998569488525
+            },
+            "sibling": {
+              "total": 409.6512999999977,
+              "anchor_build_ms": 12.400000095367432,
+              "anchor_bytes": 405715,
+              "flame_geom_ms": 0
+            },
+            "repair": {
+              "total": 370.8302999999978,
+              "anchor_build_ms": 14,
+              "anchor_bytes": 405715,
+              "flame_geom_ms": 0
+            },
+            "ordinary": {
+              "total": 375.26450000000114,
+              "anchor_build_ms": 14.5,
+              "anchor_bytes": 405715,
+              "flame_geom_ms": 0
+            }
+          },
+          "median_ms": {
+            "cold-sibling": 298.7272000000012,
+            "cold-repair": 289.7394499999991,
+            "cold-ordinary": 294.5837499999998,
+            "sibling": 375.6100499999993,
+            "repair": 358.09499999999935,
+            "ordinary": 365.6683499999999
+          },
+          "ratios": {
+            "sibling_over_ordinary": 1.0271877508676903,
+            "sibling_over_repair": 1.0489117412977003,
+            "cold-sibling_over_cold-ordinary": 1.0140654397942908,
+            "cold-sibling_over_cold-repair": 1.0310201113448723,
+            "cold-ordinary_over_ordinary": 0.8056036296277757,
+            "cold-repair_over_repair": 0.8091133637721823
+          },
+          "work": {
+            "cold-sibling": {
+              "steps": 16,
+              "reused_steps": 0,
+              "light_steps": 53,
+              "full_steps": 0,
+              "checkpoint_material_bytes": 1360391,
+              "checkpoint_particles": 2273,
+              "prepared_full_sites": 2058
+            },
+            "sibling": {
+              "steps": 16,
+              "reused_steps": 0,
+              "light_steps": 53,
+              "full_steps": 0,
+              "checkpoint_material_bytes": 1360391,
+              "checkpoint_particles": 2273,
+              "prepared_full_sites": 2058
+            }
+          },
+          "sibling_phase_medians_ms": {
+            "sibling": {
+              "prepare_full_ms": 1.399999976158142,
+              "guard_ms": 0.35000014305114746,
+              "fork_at_boundary_ms": 0.2999999523162842,
+              "restore_at_boundary_ms": 0.0,
+              "transport_ms": 0.0
+            },
+            "cold-sibling": {
+              "prepare_full_ms": 1.399999976158142,
+              "guard_ms": 0.3999999761581421,
+              "fork_at_boundary_ms": 0.2999999523162842,
+              "restore_at_boundary_ms": 0.0,
+              "transport_ms": 0.0
+            }
+          }
+        },
+        {
+          "cameras": [
+            0,
+            153
+          ],
+          "choices": {
+            "0": "L",
+            "153": "L"
+          },
+          "raw_warm_ms": {
+            "cold-sibling": [
+              478.0279999999984,
+              498.2919000000038,
+              466.30249999999796,
+              449.44310000000405,
+              452.3873999999996,
+              467.2537000000011
+            ],
+            "cold-repair": [
+              431.93420000000333,
+              440.48480000000563,
+              464.293700000002,
+              447.96370000000024,
+              555.1606000000029,
+              437.811099999999
+            ],
+            "cold-ordinary": [
+              443.50169999999343,
+              593.2459000000017,
+              456.3199999999997,
+              455.47669999999925,
+              437.19020000000455,
+              474.3260999999984
+            ],
+            "sibling": [
+              554.8941999999952,
+              556.3159999999989,
+              563.9817999999941,
+              577.1918000000005,
+              556.7541999999958,
+              611.2171999999991
+            ],
+            "repair": [
+              584.1095999999961,
+              565.7661000000007,
+              572.9259999999995,
+              571.0150999999969,
+              570.8280000000013,
+              586.7355000000025
+            ],
+            "ordinary": [
+              666.8080000000045,
+              591.7415000000037,
+              671.4142000000065,
+              581.1990000000005,
+              548.7600999999995,
+              590.9311000000016
+            ]
+          },
+          "cold": {
+            "cold-repair": {
+              "total": 460.92489999999816,
+              "anchor_build_ms": 12.199999809265137,
+              "anchor_bytes": 405715,
+              "flame_geom_ms": 3
+            },
+            "cold-ordinary": {
+              "total": 463.3142000000007,
+              "anchor_build_ms": 12,
+              "anchor_bytes": 405715,
+              "flame_geom_ms": 2.700000047683716
+            },
+            "sibling": {
+              "total": 571.5771999999997,
+              "anchor_build_ms": 12.200000047683716,
+              "anchor_bytes": 405715,
+              "flame_geom_ms": 0
+            },
+            "repair": {
+              "total": 576.3695999999982,
+              "anchor_build_ms": 14.600000143051147,
+              "anchor_bytes": 405715,
+              "flame_geom_ms": 0
+            },
+            "ordinary": {
+              "total": 573.3457000000053,
+              "anchor_build_ms": 13.5,
+              "anchor_bytes": 405715,
+              "flame_geom_ms": 0
+            },
+            "cold-sibling": {
+              "total": 499.57250000000204,
+              "anchor_build_ms": 12.399999856948853,
+              "anchor_bytes": 405715,
+              "flame_geom_ms": 2.9000000953674316
+            }
+          },
+          "median_ms": {
+            "cold-sibling": 466.77809999999954,
+            "cold-repair": 444.22425000000294,
+            "cold-ordinary": 455.8983499999995,
+            "sibling": 560.3679999999949,
+            "repair": 571.9705499999982,
+            "ordinary": 591.3363000000027
+          },
+          "ratios": {
+            "sibling_over_ordinary": 0.9476299696128792,
+            "sibling_over_repair": 0.9797147772730549,
+            "cold-sibling_over_cold-ordinary": 1.0238644206542973,
+            "cold-sibling_over_cold-repair": 1.0507713165141175,
+            "cold-ordinary_over_ordinary": 0.7709629021590547,
+            "cold-repair_over_repair": 0.7766558085901527
+          },
+          "work": {
+            "sibling": {
+              "steps": 16,
+              "reused_steps": 0,
+              "light_steps": 76,
+              "full_steps": 0,
+              "checkpoint_material_bytes": 1360391,
+              "checkpoint_particles": 2273,
+              "prepared_full_sites": 2058
+            },
+            "cold-sibling": {
+              "steps": 16,
+              "reused_steps": 0,
+              "light_steps": 76,
+              "full_steps": 0,
+              "checkpoint_material_bytes": 1360391,
+              "checkpoint_particles": 2273,
+              "prepared_full_sites": 2058
+            }
+          },
+          "sibling_phase_medians_ms": {
+            "sibling": {
+              "prepare_full_ms": 1.3500001430511475,
+              "guard_ms": 0.3999999761581421,
+              "fork_at_boundary_ms": 0.30000007152557373,
+              "restore_at_boundary_ms": 0.0,
+              "transport_ms": 0.0
+            },
+            "cold-sibling": {
+              "prepare_full_ms": 1.2999999523162842,
+              "guard_ms": 0.40000009536743164,
+              "fork_at_boundary_ms": 0.2999999523162842,
+              "restore_at_boundary_ms": 0.0,
+              "transport_ms": 0.0
+            }
+          }
+        }
+      ],
+      "capture_sha": "182a77d88ac6121b8c9cc1a260613e58f88a3698a20495e049ac0ff9aed0ff4e"
+    },
+    {
+      "scene": "firewoods",
+      "round": 2,
+      "start": "2026-11-25T08:33:44.282Z",
+      "runtime": {
+        "node": "v24.16.0",
+        "node_sha256": "b3094d0b49f9ad602262a9921551737bb97637c05dd357a06ae98188d7290aa3",
+        "browser_executable_sha256": "6c6729d3ade101ad8b97f9812a852a9024b7bb2a8394b5f506219dd635dc330d",
+        "playwright_version": "1.62.1",
+        "browser_version": "149.0.4022.52"
+      },
+      "worker_ms": 127866.7947,
+      "phase_ms": {
+        "preflight": 303.0502,
+        "browser_launch": 450.75780000000003,
+        "cleanup": 459.4686999999976,
+        "wall_before_receipt": 127866.7947
+      },
+      "arm_setup_ms": {
+        "AL": {
+          "new_page": 276.0176,
+          "load": 443.1015,
+          "load_reset_and_first_brush": 216.64900000000011,
+          "untimed_reference_region": 10.914399999999887,
+          "advance_to_180": 1720.155,
+          "read_decode_view_0": 1.6673000000000684,
+          "install_view_0": 61.466499999999996,
+          "read_decode_view_124": 1.6898000000001048,
+          "install_view_124": 58.77980000000025,
+          "audit_sibling": 1282.9010999999996,
+          "audit_native_sibling": 936.1009999999997,
+          "audit_cold-sibling": 1119.8335000000006,
+          "audit_native_cold-sibling": 815.6063999999997,
+          "curve_cold-ordinary_L": 438.7581999999993,
+          "curve_cold-ordinary_F": 446.4253000000008,
+          "curve_cold-repair_L": 567.3353999999999,
+          "curve_cold-repair_F": 611.8765999999996,
+          "advance_to_210": 496.47889999998733,
+          "advance_to_240": 564.1114999999991,
+          "advance_to_300": 1235.7593000000052,
+          "advance_to_360": 1420.0037000000011
+        },
+        "AF": {
+          "new_page": 242.3536000000022,
+          "load": 96.79390000000421,
+          "load_reset_and_first_brush": 262.79349999999977,
+          "untimed_reference_region": 30.656400000007125,
+          "advance_to_180": 1558.654899999994,
+          "advance_to_210": 318.48739999999816,
+          "advance_to_240": 341.8920999999973,
+          "advance_to_300": 1369.094100000002,
+          "advance_to_360": 1589.2851999999984
+        }
+      },
+      "ops": [
+        {
+          "cameras": [
+            0
+          ],
+          "choices": {
+            "0": "F"
+          },
+          "raw_warm_ms": {
+            "cold-sibling": [
+              521.992199999997,
+              636.1748000000007,
+              579.3737000000001,
+              836.0822000000007,
+              847.644100000005,
+              1080.0806999999986
+            ],
+            "cold-repair": [
+              585.1784000000007,
+              793.2671999999984,
+              630.372000000003,
+              926.061099999999,
+              959.2589000000007,
+              1277.8956999999937
+            ],
+            "cold-ordinary": [
+              622.1100000000006,
+              652.9359999999979,
+              661.2687000000005,
+              966.5996999999988,
+              1320.0815999999977,
+              1340.0539999999964
+            ],
+            "sibling": [
+              604.318299999999,
+              628.2618000000002,
+              778.9123999999974,
+              1473.1077000000005,
+              1393.1261000000013,
+              1003.2433999999994
+            ],
+            "repair": [
+              621.9074,
+              626.8415999999997,
+              735.735099999998,
+              883.4856999999975,
+              1303.6040000000066,
+              1190.1390000000029
+            ],
+            "ordinary": [
+              737.2214999999997,
+              904.454099999999,
+              818.9870999999985,
+              1227.3319999999985,
+              1522.9179999999978,
+              1502.026300000005
+            ]
+          },
+          "cold": {
+            "cold-sibling": {
+              "total": 578.2773000000016,
+              "anchor_build_ms": 7.3999998569488525,
+              "anchor_bytes": 179155,
+              "flame_geom_ms": 2.200000047683716
+            },
+            "cold-repair": {
+              "total": 741.3661999999986,
+              "anchor_build_ms": 15.200000047683716,
+              "anchor_bytes": 179155,
+              "flame_geom_ms": 1.5999999046325684
+            },
+            "cold-ordinary": {
+              "total": 657.1461999999992,
+              "anchor_build_ms": 6.6000001430511475,
+              "anchor_bytes": 179155,
+              "flame_geom_ms": 2.299999952316284
+            },
+            "sibling": {
+              "total": 701.1721000000016,
+              "anchor_build_ms": 6.6000001430511475,
+              "anchor_bytes": 179155,
+              "flame_geom_ms": 0
+            },
+            "repair": {
+              "total": 645.9210999999996,
+              "anchor_build_ms": 9.5,
+              "anchor_bytes": 179155,
+              "flame_geom_ms": 0
+            },
+            "ordinary": {
+              "total": 775.2384000000002,
+              "anchor_build_ms": 5.400000095367432,
+              "anchor_bytes": 179155,
+              "flame_geom_ms": 0
+            }
+          },
+          "median_ms": {
+            "cold-sibling": 736.1285000000007,
+            "cold-repair": 859.6641499999987,
+            "cold-ordinary": 813.9341999999997,
+            "sibling": 891.0778999999984,
+            "repair": 809.6103999999978,
+            "ordinary": 1065.8930499999988
+          },
+          "ratios": {
+            "sibling_over_ordinary": 0.8359918473996987,
+            "sibling_over_repair": 1.1006255601459676,
+            "cold-sibling_over_cold-ordinary": 0.9044078747397529,
+            "cold-sibling_over_cold-repair": 0.8562977762885678,
+            "cold-ordinary_over_ordinary": 0.7636171377606793,
+            "cold-repair_over_repair": 1.061824489902799
+          },
+          "work": {
+            "cold-sibling": {
+              "steps": 24,
+              "reused_steps": 24,
+              "light_steps": 90,
+              "full_steps": 20,
+              "checkpoint_material_bytes": 589679,
+              "checkpoint_particles": 2974,
+              "prepared_full_sites": 288
+            },
+            "sibling": {
+              "steps": 24,
+              "reused_steps": 24,
+              "light_steps": 90,
+              "full_steps": 20,
+              "checkpoint_material_bytes": 589679,
+              "checkpoint_particles": 2974,
+              "prepared_full_sites": 288
+            }
+          },
+          "sibling_phase_medians_ms": {
+            "sibling": {
+              "prepare_full_ms": 1.0,
+              "guard_ms": 0.19999992847442627,
+              "fork_at_boundary_ms": 0.30000007152557373,
+              "restore_at_boundary_ms": 0.0,
+              "transport_ms": 0.20000004768371582
+            },
+            "cold-sibling": {
+              "prepare_full_ms": 0.8500001430511475,
+              "guard_ms": 0.19999992847442627,
+              "fork_at_boundary_ms": 0.3500000238418579,
+              "restore_at_boundary_ms": 0.0,
+              "transport_ms": 0.09999990463256836
+            }
+          }
+        },
+        {
+          "cameras": [
+            0,
+            124
+          ],
+          "choices": {
+            "0": "F",
+            "124": "none"
+          },
+          "raw_warm_ms": {
+            "cold-sibling": [
+              1194.6799000000028,
+              1169.5209000000032,
+              1408.6543000000092,
+              1256.4760000000097,
+              1650.3088000000134,
+              1521.9372000000003
+            ],
+            "cold-repair": [
+              1546.5038000000059,
+              1286.5060999999987,
+              1247.6005000000005,
+              1323.3267999999953,
+              1703.5042000000103,
+              1184.1120000000083
+            ],
+            "cold-ordinary": [
+              1355.4974000000002,
+              1641.2237000000023,
+              1300.6662999999971,
+              1479.6271000000124,
+              1928.4213000000018,
+              1511.5730999999942
+            ],
+            "sibling": [
+              1721.3372999999992,
+              2062.5734000000084,
+              1452.0889000000025,
+              1666.9631999999983,
+              2018.5282000000007,
+              1443.9061999999976
+            ],
+            "repair": [
+              1556.4872000000032,
+              1828.8181999999942,
+              1433.5862999999954,
+              1312.430199999988,
+              1333.4332999999897,
+              1301.2127999999939
+            ],
+            "ordinary": [
+              1999.0139999999956,
+              2270.2486999999965,
+              1598.4686999999976,
+              1678.540399999998,
+              1733.0056999999942,
+              1837.7378000000026
+            ]
+          },
+          "cold": {
+            "cold-repair": {
+              "total": 1217.908500000005,
+              "anchor_build_ms": 10.100000143051147,
+              "anchor_bytes": 179155,
+              "flame_geom_ms": 1.7999999523162842
+            },
+            "cold-ordinary": {
+              "total": 1407.8201000000045,
+              "anchor_build_ms": 7.8999998569488525,
+              "anchor_bytes": 179155,
+              "flame_geom_ms": 1.2000000476837158
+            },
+            "sibling": {
+              "total": 1811.7015000000029,
+              "anchor_build_ms": 7.700000047683716,
+              "anchor_bytes": 179155,
+              "flame_geom_ms": 0
+            },
+            "repair": {
+              "total": 1328.3462999999974,
+              "anchor_build_ms": 7.6000001430511475,
+              "anchor_bytes": 179155,
+              "flame_geom_ms": 0
+            },
+            "ordinary": {
+              "total": 1600.3191000000006,
+              "anchor_build_ms": 7.599999904632568,
+              "anchor_bytes": 179155,
+              "flame_geom_ms": 0
+            },
+            "cold-sibling": {
+              "total": 1248.2087000000029,
+              "anchor_build_ms": 7.6000001430511475,
+              "anchor_bytes": 179155,
+              "flame_geom_ms": 1.0999999046325684
+            }
+          },
+          "median_ms": {
+            "cold-sibling": 1332.5651500000095,
+            "cold-repair": 1304.916449999997,
+            "cold-ordinary": 1495.6001000000033,
+            "sibling": 1694.1502499999988,
+            "repair": 1383.5097999999925,
+            "ordinary": 1785.3717499999984
+          },
+          "ratios": {
+            "sibling_over_ordinary": 0.948906159179454,
+            "sibling_over_repair": 1.2245307189005874,
+            "cold-sibling_over_cold-ordinary": 0.8909902787516573,
+            "cold-sibling_over_cold-repair": 1.0211880998205,
+            "cold-ordinary_over_ordinary": 0.8376967429892428,
+            "cold-repair_over_repair": 0.9431927768057762
+          },
+          "work": {
+            "sibling": {
+              "steps": 24,
+              "reused_steps": 24,
+              "light_steps": 90,
+              "full_steps": 66,
+              "checkpoint_material_bytes": 589679,
+              "checkpoint_particles": 2974,
+              "prepared_full_sites": 288
+            },
+            "cold-sibling": {
+              "steps": 24,
+              "reused_steps": 24,
+              "light_steps": 90,
+              "full_steps": 66,
+              "checkpoint_material_bytes": 589679,
+              "checkpoint_particles": 2974,
+              "prepared_full_sites": 288
+            }
+          },
+          "sibling_phase_medians_ms": {
+            "sibling": {
+              "prepare_full_ms": 1.1499998569488525,
+              "guard_ms": 0.20000004768371582,
+              "fork_at_boundary_ms": 0.5,
+              "restore_at_boundary_ms": 0.0,
+              "transport_ms": 0.05000007152557373
+            },
+            "cold-sibling": {
+              "prepare_full_ms": 1.0499999523162842,
+              "guard_ms": 0.10000002384185791,
+              "fork_at_boundary_ms": 0.2999999523162842,
+              "restore_at_boundary_ms": 0.0,
+              "transport_ms": 0.09999990463256836
+            }
+          }
+        }
+      ],
+      "capture_sha": "67738888d0fb4f39102aad90346756595a7d3e7d16427cf8507ccad710043a90"
+    }
+  ]
+}
