@@ -1,0 +1,183 @@
+{
+  "schema": "t127-visible-gas-v1",
+  "source_sha256": {
+    "foreground.ply": "906460f162f704b89666b159ae5b4744e53e6dc11baf448a550de581506919b0",
+    "cameras.json": "5cdd4605b0bf11970357c26e66ce3affb6c25ab2823171488fa41288ceb4a5c5",
+    "REFERENCE.json": "1931f2697447bae9fd0b5a55c7dfeab1815638e33ccb8b46bbb582dfaa6a010b",
+    "shell.json.gz": "8afe54bbced4d77023c047d72a781b718af3a9a2cde8f8070473d0952ac40cc2",
+    "capture-report.json": "ef8a583a7a20fc57441e3b04f00c212a27d46eddc5ad022ca5392ac6703a5542",
+    "AL-trace.json.gz": "31bcdd178c0e12de763f71cbf0561bc39522a38178c33d39d1995209f36daeed",
+    "AF-trace.json.gz": "9a6412c708494f6fb00f038472ca0bb1ba1c7d9e01dbd97da0be5eff840bf488"
+  },
+  "reference_checks": {
+    "0": {
+      "eligible_sites": 2371,
+      "world_sites": 34687,
+      "integer_total": 282825750,
+      "raster_total": 282.8257552025043,
+      "weight_archive_sha256": "08aade341633cada213895141ae6bbfe0b36ebaa2e729b9227b9fb668caaf432"
+    },
+    "124": {
+      "eligible_sites": 2371,
+      "world_sites": 34687,
+      "integer_total": 829199132,
+      "raster_total": 829.199137691656,
+      "weight_archive_sha256": "2324ff5d06ba40eb1c04380e83d45dd55dd01fe21cd1645c85822096391efc32"
+    }
+  },
+  "projection_source_sha256": {
+    "project.py": "efd00020dda98c6e488ba60d9505baa47b7134cc30c510d3eb3ff3d21c8c3869",
+    "validation.json": "9061ce9a2129d0499f0b09ebfa14ece0797b356142a88913627ba194a64e1bf4",
+    "measure.py": "4b2cb6c84849d485e82b98c920f8b302290f228d796bd041a1e1c154e1222ca0"
+  },
+  "readout": "top-left RGB bytes; 2x2 block means; max channel change >=16; shell fraction >=0.25",
+  "comparisons": [
+    {
+      "camera": 0,
+      "brush": "light",
+      "horizon": 44,
+      "changed_pixels": 8124,
+      "max_display_channel_difference": 255.0,
+      "changed_shell_mass": 104.60595985395791,
+      "shell_mass": 282.8257552025043,
+      "fraction": 0.36986009205229436,
+      "passes_quarter": true,
+      "sha256": {
+        "light-c0-h44-full.png": "b7ce6e34bac08bd4edcd58e9db1d3d50270891c1c47af8995758b5c6fb58c01e",
+        "light-c0-h44-wood.png": "1146eb586bafd8676bd8e291c2be8fa389b2daa336bb6237e047bd143e22cc8c"
+      }
+    },
+    {
+      "camera": 0,
+      "brush": "full",
+      "horizon": 44,
+      "changed_pixels": 8357,
+      "max_display_channel_difference": 255.0,
+      "changed_shell_mass": 193.67688772568178,
+      "shell_mass": 282.8257552025043,
+      "fraction": 0.684792258707162,
+      "passes_quarter": true,
+      "sha256": {
+        "full-c0-h44-full.png": "11ac36fa25e3f0d719fd2363ee14c9e4bf1d54710346548201df5bd5d4146745",
+        "full-c0-h44-wood.png": "d2587f04b774886057c91df5cfe5699844d7a79de28639c0fce96eba461c1539"
+      }
+    },
+    {
+      "camera": 0,
+      "brush": "light",
+      "horizon": 90,
+      "changed_pixels": 8630,
+      "max_display_channel_difference": 255.0,
+      "changed_shell_mass": 112.05573490883046,
+      "shell_mass": 282.8257552025043,
+      "fraction": 0.39620060354333053,
+      "passes_quarter": true,
+      "sha256": {
+        "light-c0-h90-full.png": "9f8246f19b7df9232950afd52d4b856f6af1d5c2249a6f0128e5758f1007badb",
+        "light-c0-h90-wood.png": "5d2a82d289969a52ea1ad4895de3947f8ae19da88cdd3e44dfafb04835894eb7"
+      }
+    },
+    {
+      "camera": 0,
+      "brush": "full",
+      "horizon": 90,
+      "changed_pixels": 8678,
+      "max_display_channel_difference": 255.0,
+      "changed_shell_mass": 120.40449359675078,
+      "shell_mass": 282.8257552025043,
+      "fraction": 0.42571969271518684,
+      "passes_quarter": true,
+      "sha256": {
+        "full-c0-h90-full.png": "f608b2d15b8ccd188c5e2bbead497477d601d140a1e2c27f89beba06064359aa",
+        "full-c0-h90-wood.png": "d5f4227156955c6a81aabd33f9fb7261df69da8273aed649d0752b2e452611fd"
+      }
+    },
+    {
+      "camera": 124,
+      "brush": "light",
+      "horizon": 44,
+      "changed_pixels": 8842,
+      "max_display_channel_difference": 255.0,
+      "changed_shell_mass": 0.0,
+      "shell_mass": 829.199137691656,
+      "fraction": 0.0,
+      "passes_quarter": false,
+      "sha256": {
+        "light-c124-h44-full.png": "e3567ca41f6df32c098fe0540ca7456bfaa2e5907985634057b191d1804fe07d",
+        "light-c124-h44-wood.png": "b222e955cfb1e000ee2b77281ddf94b87fa710312cb2892d2dc9a153f0f53784"
+      }
+    },
+    {
+      "camera": 124,
+      "brush": "full",
+      "horizon": 44,
+      "changed_pixels": 9129,
+      "max_display_channel_difference": 255.0,
+      "changed_shell_mass": 37.230566178753094,
+      "shell_mass": 829.199137691656,
+      "fraction": 0.04489942703316892,
+      "passes_quarter": false,
+      "sha256": {
+        "full-c124-h44-full.png": "f32caa096c3b04ccf6fc3f7bbf9badad99e9f2b3f671819ceec9a31b6cf6035d",
+        "full-c124-h44-wood.png": "01d7a1b6b714b7798e2db6062f4397bad79dc9f952967259c93a883e240910f5"
+      }
+    },
+    {
+      "camera": 124,
+      "brush": "light",
+      "horizon": 90,
+      "changed_pixels": 9188,
+      "max_display_channel_difference": 255.0,
+      "changed_shell_mass": 0.048874727762805055,
+      "shell_mass": 829.199137691656,
+      "fraction": 5.894208705868131e-05,
+      "passes_quarter": false,
+      "sha256": {
+        "light-c124-h90-full.png": "9e5cd48b1e15c7237906efc4f354b5a55bada4fbf0ea9944801794c7f82821d7",
+        "light-c124-h90-wood.png": "68c8da6b4c2406b7886adf6a708df04e9b9232c721a8e895b04468bf0b07d314"
+      }
+    },
+    {
+      "camera": 124,
+      "brush": "full",
+      "horizon": 90,
+      "changed_pixels": 9285,
+      "max_display_channel_difference": 255.0,
+      "changed_shell_mass": 0.02025018376171983,
+      "shell_mass": 829.199137691656,
+      "fraction": 2.4421375808581722e-05,
+      "passes_quarter": false,
+      "sha256": {
+        "full-c124-h90-full.png": "cdf61e3f448cea2280e96185050d2579d0b27c3ae597bcb4c7089829dcf94ae4",
+        "full-c124-h90-wood.png": "a52e30eb32ce531258d04ef7b97de88372b72722e37c7ce6c299a64bb2e3a3aa"
+      }
+    }
+  ],
+  "endpoint_choices": {
+    "0": {
+      "at_90": {
+        "light": true,
+        "full": true
+      },
+      "preferred": "light",
+      "prediction": {
+        "light": false,
+        "full": true
+      },
+      "matches_both_predictions": false
+    },
+    "124": {
+      "at_90": {
+        "light": false,
+        "full": false
+      },
+      "preferred": "neither",
+      "prediction": {
+        "light": false,
+        "full": false
+      },
+      "matches_both_predictions": true
+    }
+  },
+  "all_four_predictions_match": false
+}

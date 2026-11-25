@@ -1,0 +1,19 @@
+# T127 · Visible gas changes the woodpile brush decision
+
+On camera 0 at the +90 deadline, the lighter brush visibly changed the displayed gas composite over **39.62%** of the projected target shell. The full brush changed **42.57%**. Both clear the registered 25% threshold, so the native displayed-gas criterion selects the **light brush**. The earlier material-ignition criterion selected **full** because only that brush ignited a quarter of the shell's projected material mass. The second camera selects **neither** with both criteria. Three of the four predicted per-brush Booleans agree. Of the two actual camera choices, one agrees and one differs. [Preregistered observation](observer-contract.md) · [Numerical scores, hashes and denominators](evidence/SCORE.json)
+
+| Camera | Steps after brush | Gas, light brush | Gas, full brush |
+| --- | ---: | ---: | ---: |
+| 0 | 44 | 36.9860% | 68.4792% |
+| 0 | 90 | 39.6201% | 42.5720% |
+| 124 | 44 | 0.0000% | 4.4899% |
+| 124 | 90 | 0.0059% | 0.0024% |
+
+Each percentage is the original eligible shell's projected opacity under pixels for which displaying the gas alters a channel by at least 16 levels in the opaque 8-bit composite, after exact 2×2 downsampling. The full image and its matched control use identical wood appearance, char and glow. Only gas instance draws are suppressed in the control. Gas can cover the target from a different part of the scene. A lit region of wood and visible gas over that region serve different editing intentions. Two snapshots and an investigator-defined criterion provide no timing of first visible flame or human preference. In particular the earlier cost comparison for the material decision requiring a second brush cannot be claimed for this displayed-gas decision.
+
+The complete capture took 14.32 s on the host, including 1.59 s browser launch, 1.05 s across scene loads and resets, 5.45 s stepping and checking 540 native trace rows, and 4.85 s for 28 draws with diagnostic state fingerprints and image export. These are capture phases. One native process evaluated two alternatives in fresh pages; this experiment compares no acceleration methods. At all four observation states the two calibrated views share the same physical future within the stroke. Every draw preserved its physical fingerprint, clock and RNG, and the native image reproduced byte-for-byte after returning from the wood-only draw and again after restoring camera 0. Both heavy-brush states match the independent T119 field fingerprints. [Full capture receipt](evidence/CAPTURE.json) · [Fixed input, budget and stop rules](PROTOCOL.md)
+
+## Reproduce
+
+Run `python verify.py` from this directory for a standard-library check of the public trace identities, physical markers, image hashes and score arithmetic. To regenerate the capture from the registered fitted foreground and camera records, provide an asset directory containing the original `foreground.ply` and `cameras.json`, and the browser/runtime described in T81 (or set `BROWSER_EXECUTABLE` and `PLAYWRIGHT_MODULE`). From this directory run `node capture.mjs ASSET_DIRECTORY FRESH_PRIVATE_IMAGE_DIRECTORY FRESH_CAPTURE_JSON`, followed by `python score.py --source ASSET_DIRECTORY --frames FRESH_PRIVATE_IMAGE_DIRECTORY`. The pixel scorer uses NumPy and Pillow. Source fitted appearance images remain private pending redistribution clearance. The public repository includes all 16 image hashes, eight numerical comparisons, calibration, source hashes and exact regeneration scripts. [Capture](capture.mjs) · [Draw and state instrumentation](observer.js) · [Pixel calculation](score.py)
+
