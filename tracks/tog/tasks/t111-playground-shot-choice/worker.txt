@@ -1,0 +1,66 @@
+if(stop===180){
+        const pre=await page.evaluate(()=>__t86.marker());assert.deepEqual(pre,ref.pre_edit);
+        if(arm==='AL'){
+          assert.deepEqual(pre,current.shots.AF.pre_edit);report.common_parent=pre;
+          report.view_cache={};report.full_audits={};
+          const weights={};
+          for(const camera of [0,153]){
+            const w=await timed(phase,'read_decode_view_'+camera,async()=>JSON.parse(gunzipSync(await input('weights_'+camera,FILES[camera]))));
+            weights[camera]=new Map(w.eligible_weights.map(([i,x])=>[i,Math.round(x*1e6)]));
+            report.view_cache[camera]=await timed(phase,'install_view_'+camera,()=>page.evaluate(([c,w])=>__t111.install(c,w.asset_count,w.eligible_weights),[camera,w]));
+          }
+          const picksLF=['L','F'].map(a=>cfg.picks.find(p=>p.name===a));
+          const fields=['defined','first_frame','total','target','eligible','count','mass'];
+          function expectedRow(a,c){return allTargets.find(e=>e.arm==='A'+a && e.camera===c);}
+          function validRow(r,pick){
+            const e=expectedRow(pick,r.camera);assert(e);
+            for(const k of fields)assert.equal(r[k],e[k],pick+' view '+r.camera+' '+k);
+            if(e.first_frame===null)assert.equal(r.witness,null);
+            else{
+              const hits=traces['A'+pick][e.first_frame-1].new_ids.filter(i=>idSet.has(i) && weights[r.camera].get(i)>0);
+              assert(hits.length>0 && r.witness===Math.min(...hits),'Stable opacity contributor at crossing');
+            }
+          }
+          for(const cams of [[0],[153],[0,153]]){
+            const query={cameras:cams,trials:[]};report.queries.push(query);
+            for(let rep=0;rep<=repeats;rep++)for(let j=0;j<methods.length;j++){
+              const method=methods[(j+rep+report.queries.length-1)%methods.length];
+              if(rep===0)await page.evaluate(()=>__t111.cold());
+              const t=performance.now();
+              const result=await page.evaluate(([m,dt,p,c])=>__t111.action(m,dt,p,c),[method,cfg.dt,picksLF,cams]);
+              const delivered_ms=performance.now()-t;
+              assert.deepEqual(await page.evaluate(()=>__t86.marker()),pre,'Restored shared parent after timed action');
+              const expectedChoice={},needed=cams.filter(c=>expectedRow('L',c).defined && expectedRow('L',c).first_frame===null);
+              for(const c of cams){
+                const l=expectedRow('L',c), f=expectedRow('F',c);
+                expectedChoice[c]=!l.defined?'undefined':l.first_frame!==null?'L':!f.defined?'undefined':f.first_frame!==null?'F':'none';
+              }
+              assert.deepEqual(result.choices,expectedChoice);
+              assert.deepEqual(result.tried.map(x=>x.pick),needed.length?['L','F']:['L']);
+              for(const x of result.tried){
+                assert.equal(x.clicked,current.shots['A'+x.pick].edit.count);
+                assert.deepEqual(x.views.map(v=>v.camera),x.pick==='L'?cams:needed);
+                for(const v of x.views)validRow(v,x.pick);
+              }
+              query.trials.push({...result,rep,method,delivered_ms});
+            }
+          }
+          for(const pick of picksLF){
+            const reports={};let frames=[];
+            for(const m of ['repair','ordinary','restart']){
+              const r=await timed(phase,'audit_'+pick.name+'_'+m,()=>page.evaluate(([m,dt,p,check])=>
+                __t111.sibling(m,dt,p,[0,153],true,check),[m,cfg.dt,pick,m==='ordinary'?frames:[]]));
+              assert.deepEqual(await page.evaluate(()=>__t86.marker()),pre);
+              for(const v of r.views){validRow(v,pick.name);assert.deepEqual(v.curve,expectedRow(pick.name,v.camera).curve);}
+              if(m==='repair')frames=Object.keys(r.boundaries).map(Number);
+              if(m==='ordinary')assert.deepEqual(r.boundaries,reports.repair.boundaries,'Physical material repair state');
+              reports[m]=r;
+            }
+            report.full_audits[pick.name]=reports;
+          }
+        }
+        const b=await page.evaluate(p=>({edit:__t86.ignite(p,true),post_edit:__t86.marker()}),picks[1]);
+        assert.deepEqual(b.edit,ref.edit);assert.deepEqual(b.post_edit,ref.post_edit);
+      }else if(stop===360){shot.endpoint=await page.evaluate(()=>__t86.marker());assert.deepEqual(shot.endpoint,ref.end);}
+      else{const marker=await page.evaluate(()=>__t86.marker());assert.equal(marker.hash,ref.cuts.find(c=>c.frame===stop).native_hash);shot.cut_hashes[stop]=marker.hash;}
+    }
