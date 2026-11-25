@@ -11,7 +11,7 @@
 \author{Anonymous}
 \begin{document}
 \begin{abstract}
-An animator choosing between two ignition strokes needs to know how far the resulting burn will spread by a shot deadline. We give an exact regional simulation method for monotone ignition events in a coupled particle fire model. A certificate identifies intervals in which the ordered gas-emitter offers and graph-heat donors all come from the initial burning frontier. The gas itself continues to evolve and heat new sites. Other material updates can wait. At expiry, ordered gas deposits recover the complete material without rerunning gas. We apply the method to first ignition and to the frame when newly ignited sites account for a requested fraction of a calibrated camera's foreground opacity. In a prospectively specified woodpile edit, a light stroke missed a quarter-coverage target by a 90-frame deadline while a full stroke reached it at frame 44. Neither sufficed from a second camera. We also transport the later state of a light stroke to a larger nested alternative when the common parent still determines gas service. The woodpile needs both strokes. Transport skipped 24 updates and reduced primary-view selection time by 9.6--14.0\% against complete replay and 8.9--14.4\% against regional repair in two fresh processes with matched cold-site indices. On another edit a complete-horizon certificate made the second physical trajectory unnecessary. Regional evaluation of the one required trajectory saved 27--30\% against ordinary replay with the same equivalence test. An edit which accepted its first stroke gave sibling transport no work to save.
+A shot brief can specify how much visible wood must catch fire by a deadline. We study how to choose between nested ignition strokes under this constraint. We give an exact regional simulation method for monotone ignition events in a coupled particle fire model. A certificate identifies intervals in which the ordered gas-emitter offers and graph-heat donors all come from the initial burning frontier. The gas itself continues to evolve and heat new sites. Other material updates can wait. At expiry, ordered gas deposits recover the complete material without rerunning gas. We apply the method to first ignition and to the frame when newly ignited sites account for a requested fraction of a calibrated camera's foreground opacity. In a prospectively specified woodpile edit, a light stroke missed a quarter-coverage target by a 90-frame deadline while a full stroke reached it at frame 44. Neither sufficed from a second camera. A separate test of the native rendered gas gave a different primary-view choice: the light stroke already affected enough of the target image. We also transport the later state of a light stroke to a larger nested alternative when the common parent still determines gas service. The woodpile needs both strokes. Transport skipped 24 updates and reduced primary-view selection time by 9.6--14.0\% against complete replay and 8.9--14.4\% against regional repair in two fresh processes with matched cold-site indices. On another edit a complete-horizon certificate made the second physical trajectory unnecessary. Regional evaluation of the one required trajectory saved 27--30\% against ordinary replay with the same equivalence test. An edit which accepted its first stroke gave sibling transport no work to save.
 \end{abstract}
 \keywords{physics-based animation, simulation editing, event queries, particle simulation}
 \begin{teaserfigure}
@@ -23,9 +23,9 @@ An animator choosing between two ignition strokes needs to know how far the resu
 \maketitle
 
 \section{An editing decision}
-Consider a shot of fire spreading along a woodpile. The editor has already placed an initial ignition. A light second stroke is preferable if the burn covers enough of the target by the cut. If it falls short, the editor can try a larger stroke or revise the shot. The first newly ignited material site and the first substantial spread of fire can be many frames apart. Two cameras can also see different parts of the same edited trajectory.
+Consider a shot of fire spreading along a woodpile. The editor has already placed an initial ignition. A light second stroke is preferable if the burn covers enough of the target by the cut. If it falls short, the editor can try a larger stroke or revise the shot. The first newly ignited material site and the first substantial spread across the wood can be many frames apart. Two cameras can also see different parts of the same edited trajectory.
 
-Figures~\ref{fig:woodpile} and~\ref{fig:choice} show two candidate strokes from one common starting state, their visible extent at the cut and the temporal curves. We ask when newly ignited sites first account for a quarter of the initially eligible target's opacity mass in a fixed reference view. A site's mass is its accumulated contribution to a reference foreground matte, taking other foreground splats' occlusion into account. It describes the extent of burnt material. The color and density of the flame are separate outputs. We also test the simpler question of when a single exterior site catches. Each query returns an exact discrete event or reaches a stated deadline.
+Figures~\ref{fig:woodpile} and~\ref{fig:choice} show two candidate strokes from one common starting state, their visible extent at the cut and the temporal curves. We ask when newly ignited sites first account for a quarter of the initially eligible target's opacity mass in a fixed reference view. A site's mass is its accumulated contribution to a reference foreground matte, taking other foreground splats' occlusion into account. It describes the extent of burnt material. We test the rendered contribution of the gas separately. In the primary woodpile view these two measures recommend different strokes. We also test the simpler question of when a single exterior site catches. Each query returns an exact discrete event or reaches a stated deadline.
 
 \begin{figure*}[t]
 \centering\includegraphics[width=.98\textwidth]{brush-choice.pdf}
@@ -82,10 +82,28 @@ On the four development edits the native shell first ignited at $+36$ and $+50$ 
 \input{shot-choice}
 \input{transactions}
 \input{sibling}
+
+\subsection{Ignited wood and rendered gas can give different choices}
+We applied a second, preregistered readout to the known woodpile decisions. At the cut, does the gas visibly affect a quarter of the reference shell in the native image? At steps $+44$ and $+90$ we rendered the two original cameras on each complete native branch. Each image has a matched control from the identical physical state, including wood appearance, char, glow and occlusion. Only the dynamic particle draw is suppressed. We averaged the $940\times528$ display bytes over $2\times2$ blocks, counted pixels whose largest absolute channel change was at least $16/255$, and summed the original shell opacity contribution on those pixels. This numerical contrast threshold was selected before seeing the images. It has no perceptual calibration. The render uses the fitted wood foreground on the native black background.
+
+\begin{table}[t]
+\caption{Percent of eligible foreground opacity at step $+90$. Gas may project onto wood that has yet to ignite. Light is preferred whenever it reaches 25\%.}
+\label{tab:render}
+\centering\small
+\begin{tabular}{lrrl}\toprule
+Camera and readout & Light & Full & Choice\\\midrule
+0, ignited material & 11.692 & 34.831 & Full\\
+0, rendered gas impact & 39.620 & 42.572 & Light\\
+124, ignited material & 0.011 & 0.073 & Neither\\
+124, rendered gas impact & 0.00589 & 0.00244 & Neither\\\bottomrule
+\end{tabular}
+\end{table}
+
+The registered prediction was full in camera 0 and neither in camera 124. Only the second choice agreed (Table~\ref{tab:render}). The smaller stroke already exceeded the display threshold at the earlier sample in the primary camera. The 540 native step records matched the original edits, the heavy branch matched independently recorded full-state fingerprints at both times, and all camera/control draws preserved the measured physical state. These two samples provide no first-crossing time for gas appearance.
 \input{service}
 
 \section{Limitations}
-Our guarantees concern discrete material events under the tested solver. The camera observer omits visible flame emission itself. The proof needs ordered service and regular clocks. It also assumes bounded feed and monotone fuel. The authors specified the brushes, deadlines and preference for a lighter stroke. Whether animators would make better shot decisions with this observable remains an open question. All timings come from one browser and host. Occlusion by smoke, animated material appearance, camera motion and physical fidelity require separate evaluation.
+Our exact event query measures wood ignition under ordered service, regular clocks, bounded feed and monotone fuel. In the main camera the displayed gas already covers the target under the light stroke. Its coverage for the full stroke drops from 68.48\% at $+44$ to 42.57\% at $+90$. A material event cannot determine the time course of that image measure. We specified the brushes, deadlines and preference for the lighter stroke. The value of these choices for working animators remains untested. All timings come from one browser and host. The rendered readout includes this solver's soot and glow on static calibrated views. Moving cameras, complete photographic backgrounds, perceptual thresholds and the fidelity of fire appearance require separate evaluation.
 
 \paragraph{Use of generative tools.}
 OpenAI Codex agents contributed to research design, code, analysis, manuscript preparation and internal review. Numerical observations are scored against the recorded native solver.

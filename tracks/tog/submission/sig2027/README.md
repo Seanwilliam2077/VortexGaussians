@@ -4,6 +4,8 @@
 
 **Working recommendation.** Two independent internal AI reviewers agree that the native event and state results are credible and disagree on conference readiness. One recommends conference **4/6**, TOG journal **3/6**. The cold reader recommends conference **3/6**, journal **2/6**, citing limited applicability outside this scheduler and the absence of final-flame editing evidence. Their scores and reasons are preserved separately. The woodpile primary-view decision with matched cold-site indices saved 9.6–14.0% versus full ordinary replay in two processes. Playground's earlier edit stopped after the light stroke and saved no steps by preparing a sibling checkpoint. [Independent recommendations](INDEPENDENT_REVIEW.md) · [Study history](../../tasks/t96-prior-art-review/README.md)
 
+A separate registered readout on the original camera images reversed the woodpile's primary choice. At the 90-step cut, gas affected 39.62% of the target under the lighter stroke and 42.57% under the heavier. Both clear the specified 25% image cutoff. For ignited material the shares were 11.69% and 34.83%. Both cameras and all eight paired image observations are preserved. After reviewing the reversal both readers retained their scores for the restricted material claim. [Native paired image comparison](../../tasks/t127-woodpile-native-camera/README.md)
+
 | Evidence | What was tested | Result or limitation |
 | --- | --- | --- |
 | [T84–85](../../tasks/t85-edit-prefix-certificate/README.md) | Whole-gas reuse for a second stroke | In the global-pool edit 1,266 off-stroke gains and 12 losses by the endpoint. The original gas trajectory diverges after 24 complete steps. |
