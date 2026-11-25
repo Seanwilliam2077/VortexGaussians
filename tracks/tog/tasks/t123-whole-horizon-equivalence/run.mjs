@@ -23,12 +23,14 @@ if (!args.length) {
   }
 } else {
   const [scene,index,check]=args, round=Number(index);
-  assert(Object.hasOwn(config,scene)&&[1,2].includes(round)&&[undefined,'--check'].includes(check));
+  assert(Object.hasOwn(config,scene)&&[1,2].includes(round)&&[undefined,'--check','--selection'].includes(check));
   const [folder,views]=config[scene],study=path.join(tasks,folder);
   const local=path.join(here,'local',scene+'-'+round);
-  const out=path.join(here,'evidence',scene+'-'+round);
-  const groups=scene==='lower'?['cold-ordinary','cold-repair','cold-sibling','equiv-ordinary','equiv-repair']:['equiv-ordinary','equiv-repair'];
-  const order=round===1?groups:groups.slice().reverse(), repetitions=scene==='lower'?5:1;
+  const selection=check==='--selection';
+  if(selection)assert(scene==='lower');
+  const out=path.join(here,'evidence',selection?'selection-restoration':scene+'-'+round);
+  const groups=scene==='lower' && !selection?['cold-ordinary','cold-repair','cold-sibling','equiv-ordinary','equiv-repair']:['equiv-ordinary','equiv-repair'];
+  const order=round===1?groups:groups.slice().reverse(), repetitions=scene==='lower' && !selection?5:1;
   await fs.mkdir(local,{recursive:true});await fs.mkdir(path.dirname(out),{recursive:true});
   const plugin=await build(path.join(tasks,'t119-cross-sibling-actions'),local);
   assert.equal(sha(await fs.readFile(plugin)),'1505050a662c4d4d2561346eeff98d9a0d099485d78614a706cfb7a10a3ac0f1');
@@ -45,7 +47,7 @@ if (!args.length) {
   worker=patch(worker,'for(const camera of [0,153])','for(const camera of '+JSON.stringify(views)+')');
   worker=patch(worker,'[[0],[153],[0,153]]',JSON.stringify([views]));
   worker=patch(worker,'__t111.cold()','__t119.cold()');
-  worker=patch(worker,'__t111.action','__t123');
+  worker=patch(worker,'__t111.action',selection?'__t123CheckSelection':'__t123');
   change('const here=path.dirname(fileURLToPath(import.meta.url)),prior=', 'const here='+JSON.stringify(study)+',prior=');
   change(",local=path.join(here,'local');",",local="+JSON.stringify(local)+";");
   change("const specs=['ordinary','restart','repair'];","const specs=['"+order.join("','")+"'];");
@@ -59,11 +61,12 @@ if (!args.length) {
     change("path.join(here,'../t101-playground-holdout/local/scene.ply')","(process.env.T86_PLY||path.resolve(here,'../../../../../real-asset-ingest/foreground.ply'))");
   }
   const prior=path.join(tasks,'t98-edit-to-answer'), eq=path.join(here,'equivalence.js');
-  const extras=[plugin,eq].map(f=>JSON.stringify(path.relative(prior,f).split(path.sep).join('/')));
+  const auditFiles=selection?[path.join(here,'selection-audit.js')]:[];
+  const extras=[plugin,eq,...auditFiles].map(f=>JSON.stringify(path.relative(prior,f).split(path.sep).join('/')));
   change("'../t111-playground-shot-choice/local/action.js'];","'../t111-playground-shot-choice/local/action.js',"+extras.join(',')+"];");
   change('JSON.stringify(portable(fileURLToPath(import.meta.url)))','JSON.stringify('+JSON.stringify(self.split(path.sep).join('/'))+')');
   const staged=path.join(local,'run.mjs');
   await fs.writeFile(staged,main);
-  process.argv=process.argv.slice(0,2).concat(check?['--check']:['--out',out]);
+  process.argv=process.argv.slice(0,2).concat(check==='--check'?['--check']:['--out',out]);
   await import(pathToFileURL(staged));
 }

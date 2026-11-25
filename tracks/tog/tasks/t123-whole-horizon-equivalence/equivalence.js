@@ -14,8 +14,13 @@ window.__t123 = function (method, dt, picks, cameras) {
       finally { __t98.finishTrial(); }
     };
     const full=footprint(picks[1]), light=footprint(picks[0]);
-    __t90.configure({...picks[1],radius:.12});
-    nfull=full.length;certified=t119Guard(parent,light,full,dt);
+    const previousShell=t90Shell;
+    try {
+      __t90.configure({...picks[1],radius:.12});
+      nfull=full.length;certified=t119Guard(parent,light,full,dt);
+    } finally {
+      t90Shell=previousShell;
+    }
   }
   const proof_ms=performance.now()-start;
   if (certified<deadline) {

@@ -1,0 +1,17 @@
+# When one brush determines the answer to both
+
+The new Playground edit from T121 has a shared exterior trajectory for the full 90-step deadline. A light-first editor can evaluate the light stroke once. For every view still unresolved, the full stroke has the same exterior counts, opacity mass, first-crossing time and contributor. Its result can be returned directly. No assumption about how many exterior ignition events will occur is required. Zero available opacity stays undefined. This covers a disposable question about the exterior. A system that commits the full stroke for playback still needs its full physical state. [Pre-measurement contract](PROTOCOL.md) · [Exact guard and observer](equivalence.js) · [Held-out input registration](../t120-next-release-registration/PROTOCOL.md)
+
+| Joint two-camera operation, ms | Fresh process 1 | Fresh process 2 |
+| --- | ---: | ---: |
+| Cold-indexed ordinary, both trajectories | 1,126.9 | 1,113.6 |
+| Cold-indexed regional repair, both trajectories | 825.2 | 815.2 |
+| Whole physical sibling state | 574.2 | 579.8 |
+| One ordinary trajectory with the equivalence test | 567.8 | 576.7 |
+| One regional trajectory with the equivalence test | **414.1** | **403.1** |
+
+Cells are medians of five balanced warm host requests after an excluded cold run for each method in each new process. Applying the newly registered equivalence rule to ordinary replay was competitive with constructing a whole physical sibling. Applying it to regional evaluation reduced this same-output ordinary time by 27.1% and 30.1%. This partitions the advantage of T121 into avoiding a second physical evaluation and evaluating the remaining trajectory regionally. The two-camera target in this edit never ignites even though 3,830 other points ignite along each branch. The shot was held out for T121 and known when this new comparator was designed. [Sample timings and cold actions](SCORE.json) · [Full receipts](evidence/)
+
+All 60 timed-study calls, including warmups, checked both branch outputs and the restored common physical parent. Eight further calls at the two earlier woodpile and Playground starts checked the fallback using real native trajectories. Their common-prefix bounds are 24 and 16, both below 90. The implementation charges the prerequisite checks and uses the matched original implementation when exclusivity cannot be established. These control calls supply correctness evidence only.
+
+Run `python score.py` for offline verification. With the same staged inputs as [T121](../t121-lower-band-joint-choice/README.md), run `node run.mjs` in a fresh checkout or one without existing evidence destinations (the runner refuses to overwrite them). The original two-process timings used the implementation in `b45149c` with the prescribed preconfigured geometric selection. Independent code review found the guard replaced the selected shell object while preserving the selection used by these actions. The current guard preserves the previous selection in a try/finally block. The separate `node run.mjs lower 1 --selection` native check uses a deliberately different prior selection and tests exact object restoration on success and an injected guard exception. The separate native receipt confirms that all four checks restored the same 2,266-site selection object after both the injected exception and successful query. Its timings do not enter the table. [Selection audit receipt](evidence/selection-restoration/CAPTURE.json)
