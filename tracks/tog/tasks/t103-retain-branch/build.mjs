@@ -1,0 +1,21 @@
+import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import {fileURLToPath} from 'node:url';
+import {Script} from 'node:vm';
+const here=path.dirname(fileURLToPath(import.meta.url));
+const source=await fs.readFile(path.join(here,'../t102-active-recipients/local/plugin.js'),'utf8');
+const sha=s=>createHash('sha256').update(s).digest('hex');
+assert.equal(sha(source),'3311852d29e7c1ee2b6f9b615235174ece6550c79b0c889e6e7b3b7f4c1e8474');
+const start=source.indexOf('  const decay=1-dt*.35;'), tail=source.indexOf('  t102MaterialTail(sb,dt);',start);
+const feed=source.indexOf('let M=P.spreadSceneFeed?',tail), end=source.indexOf('\n}\n',feed);
+assert(start>=0 && tail>start && feed>tail && end>feed);
+const complete='function t103FinishScan(sb,dt,start){\nconst q=null;\n'+source.slice(start,tail).replace('let i=0','let i=start')
+  +'  t102MaterialTail(sb,dt); t103Feed(sb,dt);\n}\n';
+const emit='function t103Feed(sb,dt){\nconst areaMode=false,N=layers.length;\n'+source.slice(feed,end)+'\n}\n';
+const plugin=emit+complete+await fs.readFile(path.join(here,'branch.js'),'utf8');
+new Script(plugin);
+const output=path.join(here,'local/plugin.js');
+await fs.mkdir(path.dirname(output),{recursive:true});await fs.writeFile(output,plugin);
+console.log(sha(plugin)+'  plugin.js');
