@@ -1,0 +1,3111 @@
+{
+  "schema": "t86-event-score-v1",
+  "predictions_sha256": "97fa87340da5baad0f61cc32400e0f259dca7f3c03810951208b952336b77c6e",
+  "units": "Repeated material-site queries. Timing medians are per window. Hybrid costs add separately measured components and exclude preparation, packing and I/O.",
+  "summary": {
+    "AB": {
+      "windows": 9,
+      "native_ms_median": 52.19999980926514,
+      "methods": {
+        "global": {
+          "strata": {
+            "all": {
+              "eligible": 273339,
+              "ignited": 404,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 273339,
+              "ignitions_among_abstentions": 404
+            },
+            "positive": {
+              "eligible": 39498,
+              "ignited": 404,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 39498,
+              "ignitions_among_abstentions": 404
+            },
+            "half_threshold": {
+              "eligible": 4923,
+              "ignited": 368,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 4923,
+              "ignitions_among_abstentions": 368
+            }
+          },
+          "fallback_windows": 9,
+          "compute_ms_median": 0.9038997814059258,
+          "compute_plus_fallback_ms_median": 53.10659996047616,
+          "paired_cost_ratio_median": 1.0173678190521775
+        },
+        "support": {
+          "strata": {
+            "all": {
+              "eligible": 273339,
+              "ignited": 404,
+              "certified": 126802,
+              "false_certificates": 0,
+              "abstentions": 146537,
+              "ignitions_among_abstentions": 404
+            },
+            "positive": {
+              "eligible": 39498,
+              "ignited": 404,
+              "certified": 4420,
+              "false_certificates": 0,
+              "abstentions": 35078,
+              "ignitions_among_abstentions": 404
+            },
+            "half_threshold": {
+              "eligible": 4923,
+              "ignited": 368,
+              "certified": 279,
+              "false_certificates": 0,
+              "abstentions": 4644,
+              "ignitions_among_abstentions": 368
+            }
+          },
+          "fallback_windows": 9,
+          "compute_ms_median": 37.430400028824806,
+          "compute_plus_fallback_ms_median": 90.85479961521924,
+          "paired_cost_ratio_median": 1.6859999992845078
+        },
+        "uniform": {
+          "strata": {
+            "all": {
+              "eligible": 273339,
+              "ignited": 404,
+              "certified": 161125,
+              "false_certificates": 0,
+              "abstentions": 112214,
+              "ignitions_among_abstentions": 404
+            },
+            "positive": {
+              "eligible": 39498,
+              "ignited": 404,
+              "certified": 8294,
+              "false_certificates": 0,
+              "abstentions": 31204,
+              "ignitions_among_abstentions": 404
+            },
+            "half_threshold": {
+              "eligible": 4923,
+              "ignited": 368,
+              "certified": 319,
+              "false_certificates": 0,
+              "abstentions": 4604,
+              "ignitions_among_abstentions": 368
+            }
+          },
+          "fallback_windows": 9,
+          "compute_ms_median": 37.17280016280711,
+          "compute_plus_fallback_ms_median": 90.13779974356294,
+          "paired_cost_ratio_median": 1.6788042153314107
+        },
+        "weighted": {
+          "strata": {
+            "all": {
+              "eligible": 273339,
+              "ignited": 404,
+              "certified": 184044,
+              "false_certificates": 0,
+              "abstentions": 89295,
+              "ignitions_among_abstentions": 404
+            },
+            "positive": {
+              "eligible": 39498,
+              "ignited": 404,
+              "certified": 12748,
+              "false_certificates": 0,
+              "abstentions": 26750,
+              "ignitions_among_abstentions": 404
+            },
+            "half_threshold": {
+              "eligible": 4923,
+              "ignited": 368,
+              "certified": 485,
+              "false_certificates": 0,
+              "abstentions": 4438,
+              "ignitions_among_abstentions": 368
+            }
+          },
+          "fallback_windows": 9,
+          "compute_ms_median": 40.51019996404648,
+          "compute_plus_fallback_ms_median": 92.80460011027753,
+          "paired_cost_ratio_median": 1.722618567504374
+        }
+      }
+    },
+    "BA": {
+      "windows": 9,
+      "native_ms_median": 65.30000019073486,
+      "methods": {
+        "global": {
+          "strata": {
+            "all": {
+              "eligible": 262098,
+              "ignited": 704,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 262098,
+              "ignitions_among_abstentions": 704
+            },
+            "positive": {
+              "eligible": 35082,
+              "ignited": 704,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 35082,
+              "ignitions_among_abstentions": 704
+            },
+            "half_threshold": {
+              "eligible": 3762,
+              "ignited": 560,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 3762,
+              "ignitions_among_abstentions": 560
+            }
+          },
+          "fallback_windows": 9,
+          "compute_ms_median": 0.8688000962138176,
+          "compute_plus_fallback_ms_median": 66.16880028694868,
+          "paired_cost_ratio_median": 1.0149835609644116
+        },
+        "support": {
+          "strata": {
+            "all": {
+              "eligible": 262098,
+              "ignited": 704,
+              "certified": 148072,
+              "false_certificates": 0,
+              "abstentions": 114026,
+              "ignitions_among_abstentions": 704
+            },
+            "positive": {
+              "eligible": 35082,
+              "ignited": 704,
+              "certified": 7171,
+              "false_certificates": 0,
+              "abstentions": 27911,
+              "ignitions_among_abstentions": 704
+            },
+            "half_threshold": {
+              "eligible": 3762,
+              "ignited": 560,
+              "certified": 463,
+              "false_certificates": 0,
+              "abstentions": 3299,
+              "ignitions_among_abstentions": 560
+            }
+          },
+          "fallback_windows": 9,
+          "compute_ms_median": 27.183299884200096,
+          "compute_plus_fallback_ms_median": 92.48330007493496,
+          "paired_cost_ratio_median": 1.5086492799570828
+        },
+        "uniform": {
+          "strata": {
+            "all": {
+              "eligible": 262098,
+              "ignited": 704,
+              "certified": 167501,
+              "false_certificates": 0,
+              "abstentions": 94597,
+              "ignitions_among_abstentions": 704
+            },
+            "positive": {
+              "eligible": 35082,
+              "ignited": 704,
+              "certified": 11050,
+              "false_certificates": 0,
+              "abstentions": 24032,
+              "ignitions_among_abstentions": 704
+            },
+            "half_threshold": {
+              "eligible": 3762,
+              "ignited": 560,
+              "certified": 586,
+              "false_certificates": 0,
+              "abstentions": 3176,
+              "ignitions_among_abstentions": 560
+            }
+          },
+          "fallback_windows": 9,
+          "compute_ms_median": 25.809799786657095,
+          "compute_plus_fallback_ms_median": 91.10979997739196,
+          "paired_cost_ratio_median": 1.472590907632299
+        },
+        "weighted": {
+          "strata": {
+            "all": {
+              "eligible": 262098,
+              "ignited": 704,
+              "certified": 189869,
+              "false_certificates": 0,
+              "abstentions": 72229,
+              "ignitions_among_abstentions": 704
+            },
+            "positive": {
+              "eligible": 35082,
+              "ignited": 704,
+              "certified": 14373,
+              "false_certificates": 0,
+              "abstentions": 20709,
+              "ignitions_among_abstentions": 704
+            },
+            "half_threshold": {
+              "eligible": 3762,
+              "ignited": 560,
+              "certified": 714,
+              "false_certificates": 0,
+              "abstentions": 3048,
+              "ignitions_among_abstentions": 560
+            }
+          },
+          "fallback_windows": 9,
+          "compute_ms_median": 26.35759999975562,
+          "compute_plus_fallback_ms_median": 91.65760019049048,
+          "paired_cost_ratio_median": 1.4947499819853993
+        }
+      }
+    },
+    "both": {
+      "windows": 18,
+      "native_ms_median": 59.69999980926514,
+      "methods": {
+        "global": {
+          "strata": {
+            "all": {
+              "eligible": 535437,
+              "ignited": 1108,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 535437,
+              "ignitions_among_abstentions": 1108
+            },
+            "positive": {
+              "eligible": 74580,
+              "ignited": 1108,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 74580,
+              "ignitions_among_abstentions": 1108
+            },
+            "half_threshold": {
+              "eligible": 8685,
+              "ignited": 928,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 8685,
+              "ignitions_among_abstentions": 928
+            }
+          },
+          "fallback_windows": 18,
+          "compute_ms_median": 0.8863499388098717,
+          "compute_plus_fallback_ms_median": 60.525399807840586,
+          "paired_cost_ratio_median": 1.0153297196698379
+        },
+        "support": {
+          "strata": {
+            "all": {
+              "eligible": 535437,
+              "ignited": 1108,
+              "certified": 274874,
+              "false_certificates": 0,
+              "abstentions": 260563,
+              "ignitions_among_abstentions": 1108
+            },
+            "positive": {
+              "eligible": 74580,
+              "ignited": 1108,
+              "certified": 11591,
+              "false_certificates": 0,
+              "abstentions": 62989,
+              "ignitions_among_abstentions": 1108
+            },
+            "half_threshold": {
+              "eligible": 8685,
+              "ignited": 928,
+              "certified": 742,
+              "false_certificates": 0,
+              "abstentions": 7943,
+              "ignitions_among_abstentions": 928
+            }
+          },
+          "fallback_windows": 18,
+          "compute_ms_median": 35.5026499601081,
+          "compute_plus_fallback_ms_median": 91.6690498450771,
+          "paired_cost_ratio_median": 1.6532147839981293
+        },
+        "uniform": {
+          "strata": {
+            "all": {
+              "eligible": 535437,
+              "ignited": 1108,
+              "certified": 328626,
+              "false_certificates": 0,
+              "abstentions": 206811,
+              "ignitions_among_abstentions": 1108
+            },
+            "positive": {
+              "eligible": 74580,
+              "ignited": 1108,
+              "certified": 19344,
+              "false_certificates": 0,
+              "abstentions": 55236,
+              "ignitions_among_abstentions": 1108
+            },
+            "half_threshold": {
+              "eligible": 8685,
+              "ignited": 928,
+              "certified": 905,
+              "false_certificates": 0,
+              "abstentions": 7780,
+              "ignitions_among_abstentions": 928
+            }
+          },
+          "fallback_windows": 18,
+          "compute_ms_median": 35.08389997296035,
+          "compute_plus_fallback_ms_median": 90.62379986047745,
+          "paired_cost_ratio_median": 1.5564827241676689
+        },
+        "weighted": {
+          "strata": {
+            "all": {
+              "eligible": 535437,
+              "ignited": 1108,
+              "certified": 373913,
+              "false_certificates": 0,
+              "abstentions": 161524,
+              "ignitions_among_abstentions": 1108
+            },
+            "positive": {
+              "eligible": 74580,
+              "ignited": 1108,
+              "certified": 27121,
+              "false_certificates": 0,
+              "abstentions": 47459,
+              "ignitions_among_abstentions": 1108
+            },
+            "half_threshold": {
+              "eligible": 8685,
+              "ignited": 928,
+              "certified": 1199,
+              "false_certificates": 0,
+              "abstentions": 7486,
+              "ignitions_among_abstentions": 928
+            }
+          },
+          "fallback_windows": 18,
+          "compute_ms_median": 37.46755013708025,
+          "compute_plus_fallback_ms_median": 92.75739994179457,
+          "paired_cost_ratio_median": 1.597532989896104
+        }
+      }
+    }
+  },
+  "windows": [
+    {
+      "arm": "AB",
+      "cut": 210,
+      "horizon": 1,
+      "native_ms": 12.599999904632568,
+      "native_to_cut_ms": 1891.9999997615814,
+      "persistence_false": 0,
+      "methods": {
+        "global": {
+          "strata": {
+            "all": {
+              "eligible": 30947,
+              "ignited": 0,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 30947,
+              "ignitions_among_abstentions": 0
+            },
+            "positive": {
+              "eligible": 3615,
+              "ignited": 0,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 3615,
+              "ignitions_among_abstentions": 0
+            },
+            "half_threshold": {
+              "eligible": 64,
+              "ignited": 0,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 64,
+              "ignitions_among_abstentions": 0
+            }
+          },
+          "extra_over_support": 0,
+          "lost_vs_support": 24748,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 27906,
+          "compute_ms": 0.42319996282458305,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 13.023199867457151
+        },
+        "support": {
+          "strata": {
+            "all": {
+              "eligible": 30947,
+              "ignited": 0,
+              "certified": 24748,
+              "false_certificates": 0,
+              "abstentions": 6199,
+              "ignitions_among_abstentions": 0
+            },
+            "positive": {
+              "eligible": 3615,
+              "ignited": 0,
+              "certified": 60,
+              "false_certificates": 0,
+              "abstentions": 3555,
+              "ignitions_among_abstentions": 0
+            },
+            "half_threshold": {
+              "eligible": 64,
+              "ignited": 0,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 64,
+              "ignitions_among_abstentions": 0
+            }
+          },
+          "extra_over_support": 0,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 3158,
+          "compute_ms": 8.64359992556274,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 21.243599830195308
+        },
+        "uniform": {
+          "strata": {
+            "all": {
+              "eligible": 30947,
+              "ignited": 0,
+              "certified": 27906,
+              "false_certificates": 0,
+              "abstentions": 3041,
+              "ignitions_among_abstentions": 0
+            },
+            "positive": {
+              "eligible": 3615,
+              "ignited": 0,
+              "certified": 1545,
+              "false_certificates": 0,
+              "abstentions": 2070,
+              "ignitions_among_abstentions": 0
+            },
+            "half_threshold": {
+              "eligible": 64,
+              "ignited": 0,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 64,
+              "ignitions_among_abstentions": 0
+            }
+          },
+          "extra_over_support": 3158,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 0,
+          "compute_ms": 8.356800070032477,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 20.956799974665046
+        },
+        "weighted": {
+          "strata": {
+            "all": {
+              "eligible": 30947,
+              "ignited": 0,
+              "certified": 29446,
+              "false_certificates": 0,
+              "abstentions": 1501,
+              "ignitions_among_abstentions": 0
+            },
+            "positive": {
+              "eligible": 3615,
+              "ignited": 0,
+              "certified": 2228,
+              "false_certificates": 0,
+              "abstentions": 1387,
+              "ignitions_among_abstentions": 0
+            },
+            "half_threshold": {
+              "eligible": 64,
+              "ignited": 0,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 64,
+              "ignitions_among_abstentions": 0
+            }
+          },
+          "extra_over_support": 4698,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 1540,
+          "lost_vs_uniform": 0,
+          "compute_ms": 8.933400036767125,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 21.533399941399693
+        }
+      }
+    },
+    {
+      "arm": "AB",
+      "cut": 210,
+      "horizon": 4,
+      "native_ms": 52.0,
+      "native_to_cut_ms": 1891.9999997615814,
+      "persistence_false": 4,
+      "methods": {
+        "global": {
+          "strata": {
+            "all": {
+              "eligible": 30947,
+              "ignited": 4,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 30947,
+              "ignitions_among_abstentions": 4
+            },
+            "positive": {
+              "eligible": 3615,
+              "ignited": 4,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 3615,
+              "ignitions_among_abstentions": 4
+            },
+            "half_threshold": {
+              "eligible": 64,
+              "ignited": 4,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 64,
+              "ignitions_among_abstentions": 4
+            }
+          },
+          "extra_over_support": 0,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 15159,
+          "compute_ms": 0.9038997814059258,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 52.903899781405926
+        },
+        "support": {
+          "strata": {
+            "all": {
+              "eligible": 30947,
+              "ignited": 4,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 30947,
+              "ignitions_among_abstentions": 4
+            },
+            "positive": {
+              "eligible": 3615,
+              "ignited": 4,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 3615,
+              "ignitions_among_abstentions": 4
+            },
+            "half_threshold": {
+              "eligible": 64,
+              "ignited": 4,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 64,
+              "ignitions_among_abstentions": 4
+            }
+          },
+          "extra_over_support": 0,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 15159,
+          "compute_ms": 37.430400028824806,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 89.4304000288248
+        },
+        "uniform": {
+          "strata": {
+            "all": {
+              "eligible": 30947,
+              "ignited": 4,
+              "certified": 15159,
+              "false_certificates": 0,
+              "abstentions": 15788,
+              "ignitions_among_abstentions": 4
+            },
+            "positive": {
+              "eligible": 3615,
+              "ignited": 4,
+              "certified": 15,
+              "false_certificates": 0,
+              "abstentions": 3600,
+              "ignitions_among_abstentions": 4
+            },
+            "half_threshold": {
+              "eligible": 64,
+              "ignited": 4,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 64,
+              "ignitions_among_abstentions": 4
+            }
+          },
+          "extra_over_support": 15159,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 0,
+          "compute_ms": 37.17280016280711,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 89.1728001628071
+        },
+        "weighted": {
+          "strata": {
+            "all": {
+              "eligible": 30947,
+              "ignited": 4,
+              "certified": 16461,
+              "false_certificates": 0,
+              "abstentions": 14486,
+              "ignitions_among_abstentions": 4
+            },
+            "positive": {
+              "eligible": 3615,
+              "ignited": 4,
+              "certified": 16,
+              "false_certificates": 0,
+              "abstentions": 3599,
+              "ignitions_among_abstentions": 4
+            },
+            "half_threshold": {
+              "eligible": 64,
+              "ignited": 4,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 64,
+              "ignitions_among_abstentions": 4
+            }
+          },
+          "extra_over_support": 16461,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 1302,
+          "lost_vs_uniform": 0,
+          "compute_ms": 40.80460011027753,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 92.80460011027753
+        }
+      }
+    },
+    {
+      "arm": "AB",
+      "cut": 210,
+      "horizon": 8,
+      "native_ms": 99.10000038146973,
+      "native_to_cut_ms": 1891.9999997615814,
+      "persistence_false": 32,
+      "methods": {
+        "global": {
+          "strata": {
+            "all": {
+              "eligible": 30947,
+              "ignited": 32,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 30947,
+              "ignitions_among_abstentions": 32
+            },
+            "positive": {
+              "eligible": 3615,
+              "ignited": 32,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 3615,
+              "ignitions_among_abstentions": 32
+            },
+            "half_threshold": {
+              "eligible": 64,
+              "ignited": 11,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 64,
+              "ignitions_among_abstentions": 11
+            }
+          },
+          "extra_over_support": 0,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 0,
+          "compute_ms": 1.484499778598547,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 100.58450016006827
+        },
+        "support": {
+          "strata": {
+            "all": {
+              "eligible": 30947,
+              "ignited": 32,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 30947,
+              "ignitions_among_abstentions": 32
+            },
+            "positive": {
+              "eligible": 3615,
+              "ignited": 32,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 3615,
+              "ignitions_among_abstentions": 32
+            },
+            "half_threshold": {
+              "eligible": 64,
+              "ignited": 11,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 64,
+              "ignitions_among_abstentions": 11
+            }
+          },
+          "extra_over_support": 0,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 0,
+          "compute_ms": 95.5209000967443,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 194.62090047821403
+        },
+        "uniform": {
+          "strata": {
+            "all": {
+              "eligible": 30947,
+              "ignited": 32,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 30947,
+              "ignitions_among_abstentions": 32
+            },
+            "positive": {
+              "eligible": 3615,
+              "ignited": 32,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 3615,
+              "ignitions_among_abstentions": 32
+            },
+            "half_threshold": {
+              "eligible": 64,
+              "ignited": 11,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 64,
+              "ignitions_among_abstentions": 11
+            }
+          },
+          "extra_over_support": 0,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 0,
+          "compute_ms": 94.16710026562214,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 193.26710064709187
+        },
+        "weighted": {
+          "strata": {
+            "all": {
+              "eligible": 30947,
+              "ignited": 32,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 30947,
+              "ignitions_among_abstentions": 32
+            },
+            "positive": {
+              "eligible": 3615,
+              "ignited": 32,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 3615,
+              "ignitions_among_abstentions": 32
+            },
+            "half_threshold": {
+              "eligible": 64,
+              "ignited": 11,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 64,
+              "ignitions_among_abstentions": 11
+            }
+          },
+          "extra_over_support": 0,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 0,
+          "compute_ms": 104.20620022341609,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 203.30620060488582
+        }
+      }
+    },
+    {
+      "arm": "AB",
+      "cut": 240,
+      "horizon": 1,
+      "native_ms": 12.900000095367432,
+      "native_to_cut_ms": 2262.5999999046326,
+      "persistence_false": 2,
+      "methods": {
+        "global": {
+          "strata": {
+            "all": {
+              "eligible": 30258,
+              "ignited": 2,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 30258,
+              "ignitions_among_abstentions": 2
+            },
+            "positive": {
+              "eligible": 4736,
+              "ignited": 2,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 4736,
+              "ignitions_among_abstentions": 2
+            },
+            "half_threshold": {
+              "eligible": 540,
+              "ignited": 2,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 540,
+              "ignitions_among_abstentions": 2
+            }
+          },
+          "extra_over_support": 0,
+          "lost_vs_support": 29079,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 29681,
+          "compute_ms": 0.41310000233352184,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 13.313100097700953
+        },
+        "support": {
+          "strata": {
+            "all": {
+              "eligible": 30258,
+              "ignited": 2,
+              "certified": 29079,
+              "false_certificates": 0,
+              "abstentions": 1179,
+              "ignitions_among_abstentions": 2
+            },
+            "positive": {
+              "eligible": 4736,
+              "ignited": 2,
+              "certified": 3714,
+              "false_certificates": 0,
+              "abstentions": 1022,
+              "ignitions_among_abstentions": 2
+            },
+            "half_threshold": {
+              "eligible": 540,
+              "ignited": 2,
+              "certified": 279,
+              "false_certificates": 0,
+              "abstentions": 261,
+              "ignitions_among_abstentions": 2
+            }
+          },
+          "extra_over_support": 0,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 602,
+          "compute_ms": 8.39029997587204,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 21.29030007123947
+        },
+        "uniform": {
+          "strata": {
+            "all": {
+              "eligible": 30258,
+              "ignited": 2,
+              "certified": 29681,
+              "false_certificates": 0,
+              "abstentions": 577,
+              "ignitions_among_abstentions": 2
+            },
+            "positive": {
+              "eligible": 4736,
+              "ignited": 2,
+              "certified": 4229,
+              "false_certificates": 0,
+              "abstentions": 507,
+              "ignitions_among_abstentions": 2
+            },
+            "half_threshold": {
+              "eligible": 540,
+              "ignited": 2,
+              "certified": 318,
+              "false_certificates": 0,
+              "abstentions": 222,
+              "ignitions_among_abstentions": 2
+            }
+          },
+          "extra_over_support": 602,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 0,
+          "compute_ms": 8.377199992537498,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 21.27720008790493
+        },
+        "weighted": {
+          "strata": {
+            "all": {
+              "eligible": 30258,
+              "ignited": 2,
+              "certified": 30136,
+              "false_certificates": 0,
+              "abstentions": 122,
+              "ignitions_among_abstentions": 2
+            },
+            "positive": {
+              "eligible": 4736,
+              "ignited": 2,
+              "certified": 4614,
+              "false_certificates": 0,
+              "abstentions": 122,
+              "ignitions_among_abstentions": 2
+            },
+            "half_threshold": {
+              "eligible": 540,
+              "ignited": 2,
+              "certified": 450,
+              "false_certificates": 0,
+              "abstentions": 90,
+              "ignitions_among_abstentions": 2
+            }
+          },
+          "extra_over_support": 1057,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 455,
+          "lost_vs_uniform": 0,
+          "compute_ms": 8.73270002193749,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 21.63270011730492
+        }
+      }
+    },
+    {
+      "arm": "AB",
+      "cut": 240,
+      "horizon": 4,
+      "native_ms": 52.19999980926514,
+      "native_to_cut_ms": 2262.5999999046326,
+      "persistence_false": 5,
+      "methods": {
+        "global": {
+          "strata": {
+            "all": {
+              "eligible": 30258,
+              "ignited": 5,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 30258,
+              "ignitions_among_abstentions": 5
+            },
+            "positive": {
+              "eligible": 4736,
+              "ignited": 5,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 4736,
+              "ignitions_among_abstentions": 5
+            },
+            "half_threshold": {
+              "eligible": 540,
+              "ignited": 5,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 540,
+              "ignitions_among_abstentions": 5
+            }
+          },
+          "extra_over_support": 0,
+          "lost_vs_support": 19744,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 22331,
+          "compute_ms": 0.9066001512110233,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 53.10659996047616
+        },
+        "support": {
+          "strata": {
+            "all": {
+              "eligible": 30258,
+              "ignited": 5,
+              "certified": 19744,
+              "false_certificates": 0,
+              "abstentions": 10514,
+              "ignitions_among_abstentions": 5
+            },
+            "positive": {
+              "eligible": 4736,
+              "ignited": 5,
+              "certified": 89,
+              "false_certificates": 0,
+              "abstentions": 4647,
+              "ignitions_among_abstentions": 5
+            },
+            "half_threshold": {
+              "eligible": 540,
+              "ignited": 5,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 540,
+              "ignitions_among_abstentions": 5
+            }
+          },
+          "extra_over_support": 0,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 2587,
+          "compute_ms": 38.6547998059541,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 90.85479961521924
+        },
+        "uniform": {
+          "strata": {
+            "all": {
+              "eligible": 30258,
+              "ignited": 5,
+              "certified": 22331,
+              "false_certificates": 0,
+              "abstentions": 7927,
+              "ignitions_among_abstentions": 5
+            },
+            "positive": {
+              "eligible": 4736,
+              "ignited": 5,
+              "certified": 399,
+              "false_certificates": 0,
+              "abstentions": 4337,
+              "ignitions_among_abstentions": 5
+            },
+            "half_threshold": {
+              "eligible": 540,
+              "ignited": 5,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 540,
+              "ignitions_among_abstentions": 5
+            }
+          },
+          "extra_over_support": 2587,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 0,
+          "compute_ms": 37.9377999342978,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 90.13779974356294
+        },
+        "weighted": {
+          "strata": {
+            "all": {
+              "eligible": 30258,
+              "ignited": 5,
+              "certified": 26218,
+              "false_certificates": 0,
+              "abstentions": 4040,
+              "ignitions_among_abstentions": 5
+            },
+            "positive": {
+              "eligible": 4736,
+              "ignited": 5,
+              "certified": 2242,
+              "false_certificates": 0,
+              "abstentions": 2494,
+              "ignitions_among_abstentions": 5
+            },
+            "half_threshold": {
+              "eligible": 540,
+              "ignited": 5,
+              "certified": 7,
+              "false_certificates": 0,
+              "abstentions": 533,
+              "ignitions_among_abstentions": 5
+            }
+          },
+          "extra_over_support": 6474,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 3887,
+          "lost_vs_uniform": 0,
+          "compute_ms": 40.51019996404648,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 92.71019977331161
+        }
+      }
+    },
+    {
+      "arm": "AB",
+      "cut": 240,
+      "horizon": 8,
+      "native_ms": 102.29999995231628,
+      "native_to_cut_ms": 2262.5999999046326,
+      "persistence_false": 5,
+      "methods": {
+        "global": {
+          "strata": {
+            "all": {
+              "eligible": 30258,
+              "ignited": 5,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 30258,
+              "ignitions_among_abstentions": 5
+            },
+            "positive": {
+              "eligible": 4736,
+              "ignited": 5,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 4736,
+              "ignitions_among_abstentions": 5
+            },
+            "half_threshold": {
+              "eligible": 540,
+              "ignited": 5,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 540,
+              "ignitions_among_abstentions": 5
+            }
+          },
+          "extra_over_support": 0,
+          "lost_vs_support": 6317,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 10368,
+          "compute_ms": 1.483200117945671,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 103.78320007026196
+        },
+        "support": {
+          "strata": {
+            "all": {
+              "eligible": 30258,
+              "ignited": 5,
+              "certified": 6317,
+              "false_certificates": 0,
+              "abstentions": 23941,
+              "ignitions_among_abstentions": 5
+            },
+            "positive": {
+              "eligible": 4736,
+              "ignited": 5,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 4736,
+              "ignitions_among_abstentions": 5
+            },
+            "half_threshold": {
+              "eligible": 540,
+              "ignited": 5,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 540,
+              "ignitions_among_abstentions": 5
+            }
+          },
+          "extra_over_support": 0,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 4051,
+          "compute_ms": 113.46079967916012,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 215.7607996314764
+        },
+        "uniform": {
+          "strata": {
+            "all": {
+              "eligible": 30258,
+              "ignited": 5,
+              "certified": 10368,
+              "false_certificates": 0,
+              "abstentions": 19890,
+              "ignitions_among_abstentions": 5
+            },
+            "positive": {
+              "eligible": 4736,
+              "ignited": 5,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 4736,
+              "ignitions_among_abstentions": 5
+            },
+            "half_threshold": {
+              "eligible": 540,
+              "ignited": 5,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 540,
+              "ignitions_among_abstentions": 5
+            }
+          },
+          "extra_over_support": 4051,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 0,
+          "compute_ms": 112.53409995697439,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 214.83409990929067
+        },
+        "weighted": {
+          "strata": {
+            "all": {
+              "eligible": 30258,
+              "ignited": 5,
+              "certified": 16794,
+              "false_certificates": 0,
+              "abstentions": 13464,
+              "ignitions_among_abstentions": 5
+            },
+            "positive": {
+              "eligible": 4736,
+              "ignited": 5,
+              "certified": 13,
+              "false_certificates": 0,
+              "abstentions": 4723,
+              "ignitions_among_abstentions": 5
+            },
+            "half_threshold": {
+              "eligible": 540,
+              "ignited": 5,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 540,
+              "ignitions_among_abstentions": 5
+            }
+          },
+          "extra_over_support": 10477,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 6426,
+          "lost_vs_uniform": 0,
+          "compute_ms": 119.72160008735955,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 222.02160003967583
+        }
+      }
+    },
+    {
+      "arm": "AB",
+      "cut": 300,
+      "horizon": 1,
+      "native_ms": 16.59999990463257,
+      "native_to_cut_ms": 3089.400000333786,
+      "persistence_false": 20,
+      "methods": {
+        "global": {
+          "strata": {
+            "all": {
+              "eligible": 29908,
+              "ignited": 20,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 29908,
+              "ignitions_among_abstentions": 20
+            },
+            "positive": {
+              "eligible": 4815,
+              "ignited": 20,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 4815,
+              "ignitions_among_abstentions": 20
+            },
+            "half_threshold": {
+              "eligible": 1037,
+              "ignited": 20,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 1037,
+              "ignitions_among_abstentions": 20
+            }
+          },
+          "extra_over_support": 0,
+          "lost_vs_support": 25386,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 27151,
+          "compute_ms": 0.32519991509616375,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 16.925199819728732
+        },
+        "support": {
+          "strata": {
+            "all": {
+              "eligible": 29908,
+              "ignited": 20,
+              "certified": 25386,
+              "false_certificates": 0,
+              "abstentions": 4522,
+              "ignitions_among_abstentions": 20
+            },
+            "positive": {
+              "eligible": 4815,
+              "ignited": 20,
+              "certified": 557,
+              "false_certificates": 0,
+              "abstentions": 4258,
+              "ignitions_among_abstentions": 20
+            },
+            "half_threshold": {
+              "eligible": 1037,
+              "ignited": 20,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 1037,
+              "ignitions_among_abstentions": 20
+            }
+          },
+          "extra_over_support": 0,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 1765,
+          "compute_ms": 8.987999986857176,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 25.587999891489744
+        },
+        "uniform": {
+          "strata": {
+            "all": {
+              "eligible": 29908,
+              "ignited": 20,
+              "certified": 27151,
+              "false_certificates": 0,
+              "abstentions": 2757,
+              "ignitions_among_abstentions": 20
+            },
+            "positive": {
+              "eligible": 4815,
+              "ignited": 20,
+              "certified": 2074,
+              "false_certificates": 0,
+              "abstentions": 2741,
+              "ignitions_among_abstentions": 20
+            },
+            "half_threshold": {
+              "eligible": 1037,
+              "ignited": 20,
+              "certified": 1,
+              "false_certificates": 0,
+              "abstentions": 1036,
+              "ignitions_among_abstentions": 20
+            }
+          },
+          "extra_over_support": 1765,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 0,
+          "compute_ms": 9.035400114953518,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 25.635400019586086
+        },
+        "weighted": {
+          "strata": {
+            "all": {
+              "eligible": 29908,
+              "ignited": 20,
+              "certified": 28197,
+              "false_certificates": 0,
+              "abstentions": 1711,
+              "ignitions_among_abstentions": 20
+            },
+            "positive": {
+              "eligible": 4815,
+              "ignited": 20,
+              "certified": 3106,
+              "false_certificates": 0,
+              "abstentions": 1709,
+              "ignitions_among_abstentions": 20
+            },
+            "half_threshold": {
+              "eligible": 1037,
+              "ignited": 20,
+              "certified": 28,
+              "false_certificates": 0,
+              "abstentions": 1009,
+              "ignitions_among_abstentions": 20
+            }
+          },
+          "extra_over_support": 2811,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 1046,
+          "lost_vs_uniform": 0,
+          "compute_ms": 9.466700023040175,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 26.066699927672744
+        }
+      }
+    },
+    {
+      "arm": "AB",
+      "cut": 300,
+      "horizon": 4,
+      "native_ms": 65.09999966621399,
+      "native_to_cut_ms": 3089.400000333786,
+      "persistence_false": 114,
+      "methods": {
+        "global": {
+          "strata": {
+            "all": {
+              "eligible": 29908,
+              "ignited": 114,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 29908,
+              "ignitions_among_abstentions": 114
+            },
+            "positive": {
+              "eligible": 4815,
+              "ignited": 114,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 4815,
+              "ignitions_among_abstentions": 114
+            },
+            "half_threshold": {
+              "eligible": 1037,
+              "ignited": 114,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 1037,
+              "ignitions_among_abstentions": 114
+            }
+          },
+          "extra_over_support": 0,
+          "lost_vs_support": 16610,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 20560,
+          "compute_ms": 0.79959980212152,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 65.89959946833551
+        },
+        "support": {
+          "strata": {
+            "all": {
+              "eligible": 29908,
+              "ignited": 114,
+              "certified": 16610,
+              "false_certificates": 0,
+              "abstentions": 13298,
+              "ignitions_among_abstentions": 114
+            },
+            "positive": {
+              "eligible": 4815,
+              "ignited": 114,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 4815,
+              "ignitions_among_abstentions": 114
+            },
+            "half_threshold": {
+              "eligible": 1037,
+              "ignited": 114,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 1037,
+              "ignitions_among_abstentions": 114
+            }
+          },
+          "extra_over_support": 0,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 3950,
+          "compute_ms": 33.5748998913914,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 98.67489955760539
+        },
+        "uniform": {
+          "strata": {
+            "all": {
+              "eligible": 29908,
+              "ignited": 114,
+              "certified": 20560,
+              "false_certificates": 0,
+              "abstentions": 9348,
+              "ignitions_among_abstentions": 114
+            },
+            "positive": {
+              "eligible": 4815,
+              "ignited": 114,
+              "certified": 32,
+              "false_certificates": 0,
+              "abstentions": 4783,
+              "ignitions_among_abstentions": 114
+            },
+            "half_threshold": {
+              "eligible": 1037,
+              "ignited": 114,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 1037,
+              "ignitions_among_abstentions": 114
+            }
+          },
+          "extra_over_support": 3950,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 0,
+          "compute_ms": 34.02379993349314,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 99.12379959970713
+        },
+        "weighted": {
+          "strata": {
+            "all": {
+              "eligible": 29908,
+              "ignited": 114,
+              "certified": 24078,
+              "false_certificates": 0,
+              "abstentions": 5830,
+              "ignitions_among_abstentions": 114
+            },
+            "positive": {
+              "eligible": 4815,
+              "ignited": 114,
+              "certified": 502,
+              "false_certificates": 0,
+              "abstentions": 4313,
+              "ignitions_among_abstentions": 114
+            },
+            "half_threshold": {
+              "eligible": 1037,
+              "ignited": 114,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 1037,
+              "ignitions_among_abstentions": 114
+            }
+          },
+          "extra_over_support": 7468,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 3518,
+          "lost_vs_uniform": 0,
+          "compute_ms": 35.923700081184506,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 101.0236997473985
+        }
+      }
+    },
+    {
+      "arm": "AB",
+      "cut": 300,
+      "horizon": 8,
+      "native_ms": 128.19999957084656,
+      "native_to_cut_ms": 3089.400000333786,
+      "persistence_false": 222,
+      "methods": {
+        "global": {
+          "strata": {
+            "all": {
+              "eligible": 29908,
+              "ignited": 222,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 29908,
+              "ignitions_among_abstentions": 222
+            },
+            "positive": {
+              "eligible": 4815,
+              "ignited": 222,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 4815,
+              "ignitions_among_abstentions": 222
+            },
+            "half_threshold": {
+              "eligible": 1037,
+              "ignited": 207,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 1037,
+              "ignitions_among_abstentions": 207
+            }
+          },
+          "extra_over_support": 0,
+          "lost_vs_support": 4918,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 7969,
+          "compute_ms": 1.362399896606803,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 129.56239946745336
+        },
+        "support": {
+          "strata": {
+            "all": {
+              "eligible": 29908,
+              "ignited": 222,
+              "certified": 4918,
+              "false_certificates": 0,
+              "abstentions": 24990,
+              "ignitions_among_abstentions": 222
+            },
+            "positive": {
+              "eligible": 4815,
+              "ignited": 222,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 4815,
+              "ignitions_among_abstentions": 222
+            },
+            "half_threshold": {
+              "eligible": 1037,
+              "ignited": 207,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 1037,
+              "ignitions_among_abstentions": 207
+            }
+          },
+          "extra_over_support": 0,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 3051,
+          "compute_ms": 84.10159987397492,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 212.30159944482148
+        },
+        "uniform": {
+          "strata": {
+            "all": {
+              "eligible": 29908,
+              "ignited": 222,
+              "certified": 7969,
+              "false_certificates": 0,
+              "abstentions": 21939,
+              "ignitions_among_abstentions": 222
+            },
+            "positive": {
+              "eligible": 4815,
+              "ignited": 222,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 4815,
+              "ignitions_among_abstentions": 222
+            },
+            "half_threshold": {
+              "eligible": 1037,
+              "ignited": 207,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 1037,
+              "ignitions_among_abstentions": 207
+            }
+          },
+          "extra_over_support": 3051,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 0,
+          "compute_ms": 87.02270011417568,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 215.22269968502223
+        },
+        "weighted": {
+          "strata": {
+            "all": {
+              "eligible": 29908,
+              "ignited": 222,
+              "certified": 12714,
+              "false_certificates": 0,
+              "abstentions": 17194,
+              "ignitions_among_abstentions": 222
+            },
+            "positive": {
+              "eligible": 4815,
+              "ignited": 222,
+              "certified": 27,
+              "false_certificates": 0,
+              "abstentions": 4788,
+              "ignitions_among_abstentions": 222
+            },
+            "half_threshold": {
+              "eligible": 1037,
+              "ignited": 207,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 1037,
+              "ignitions_among_abstentions": 207
+            }
+          },
+          "extra_over_support": 7796,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 4745,
+          "lost_vs_uniform": 0,
+          "compute_ms": 92.6397000439465,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 220.83969961479306
+        }
+      }
+    },
+    {
+      "arm": "BA",
+      "cut": 210,
+      "horizon": 1,
+      "native_ms": 13.200000047683716,
+      "native_to_cut_ms": 2357.5,
+      "persistence_false": 0,
+      "methods": {
+        "global": {
+          "strata": {
+            "all": {
+              "eligible": 30284,
+              "ignited": 0,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 30284,
+              "ignitions_among_abstentions": 0
+            },
+            "positive": {
+              "eligible": 3086,
+              "ignited": 0,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 3086,
+              "ignitions_among_abstentions": 0
+            },
+            "half_threshold": {
+              "eligible": 272,
+              "ignited": 0,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 272,
+              "ignitions_among_abstentions": 0
+            }
+          },
+          "extra_over_support": 0,
+          "lost_vs_support": 26632,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 28854,
+          "compute_ms": 0.35830005072057247,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 13.558300098404288
+        },
+        "support": {
+          "strata": {
+            "all": {
+              "eligible": 30284,
+              "ignited": 0,
+              "certified": 26632,
+              "false_certificates": 0,
+              "abstentions": 3652,
+              "ignitions_among_abstentions": 0
+            },
+            "positive": {
+              "eligible": 3086,
+              "ignited": 0,
+              "certified": 1047,
+              "false_certificates": 0,
+              "abstentions": 2039,
+              "ignitions_among_abstentions": 0
+            },
+            "half_threshold": {
+              "eligible": 272,
+              "ignited": 0,
+              "certified": 104,
+              "false_certificates": 0,
+              "abstentions": 168,
+              "ignitions_among_abstentions": 0
+            }
+          },
+          "extra_over_support": 0,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 2222,
+          "compute_ms": 6.027299910783768,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 19.227299958467484
+        },
+        "uniform": {
+          "strata": {
+            "all": {
+              "eligible": 30284,
+              "ignited": 0,
+              "certified": 28854,
+              "false_certificates": 0,
+              "abstentions": 1430,
+              "ignitions_among_abstentions": 0
+            },
+            "positive": {
+              "eligible": 3086,
+              "ignited": 0,
+              "certified": 2076,
+              "false_certificates": 0,
+              "abstentions": 1010,
+              "ignitions_among_abstentions": 0
+            },
+            "half_threshold": {
+              "eligible": 272,
+              "ignited": 0,
+              "certified": 108,
+              "false_certificates": 0,
+              "abstentions": 164,
+              "ignitions_among_abstentions": 0
+            }
+          },
+          "extra_over_support": 2222,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 0,
+          "compute_ms": 6.238200003281236,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 19.43820005096495
+        },
+        "weighted": {
+          "strata": {
+            "all": {
+              "eligible": 30284,
+              "ignited": 0,
+              "certified": 29405,
+              "false_certificates": 0,
+              "abstentions": 879,
+              "ignitions_among_abstentions": 0
+            },
+            "positive": {
+              "eligible": 3086,
+              "ignited": 0,
+              "certified": 2493,
+              "false_certificates": 0,
+              "abstentions": 593,
+              "ignitions_among_abstentions": 0
+            },
+            "half_threshold": {
+              "eligible": 272,
+              "ignited": 0,
+              "certified": 126,
+              "false_certificates": 0,
+              "abstentions": 146,
+              "ignitions_among_abstentions": 0
+            }
+          },
+          "extra_over_support": 2773,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 551,
+          "lost_vs_uniform": 0,
+          "compute_ms": 6.530699785798788,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 19.730699833482504
+        }
+      }
+    },
+    {
+      "arm": "BA",
+      "cut": 210,
+      "horizon": 4,
+      "native_ms": 54.299999952316284,
+      "native_to_cut_ms": 2357.5,
+      "persistence_false": 0,
+      "methods": {
+        "global": {
+          "strata": {
+            "all": {
+              "eligible": 30284,
+              "ignited": 0,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 30284,
+              "ignitions_among_abstentions": 0
+            },
+            "positive": {
+              "eligible": 3086,
+              "ignited": 0,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 3086,
+              "ignitions_among_abstentions": 0
+            },
+            "half_threshold": {
+              "eligible": 272,
+              "ignited": 0,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 272,
+              "ignitions_among_abstentions": 0
+            }
+          },
+          "extra_over_support": 0,
+          "lost_vs_support": 21930,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 23787,
+          "compute_ms": 0.8512001950293779,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 55.15120014734566
+        },
+        "support": {
+          "strata": {
+            "all": {
+              "eligible": 30284,
+              "ignited": 0,
+              "certified": 21930,
+              "false_certificates": 0,
+              "abstentions": 8354,
+              "ignitions_among_abstentions": 0
+            },
+            "positive": {
+              "eligible": 3086,
+              "ignited": 0,
+              "certified": 532,
+              "false_certificates": 0,
+              "abstentions": 2554,
+              "ignitions_among_abstentions": 0
+            },
+            "half_threshold": {
+              "eligible": 272,
+              "ignited": 0,
+              "certified": 82,
+              "false_certificates": 0,
+              "abstentions": 190,
+              "ignitions_among_abstentions": 0
+            }
+          },
+          "extra_over_support": 0,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 1857,
+          "compute_ms": 20.331999752670527,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 74.63199970498681
+        },
+        "uniform": {
+          "strata": {
+            "all": {
+              "eligible": 30284,
+              "ignited": 0,
+              "certified": 23787,
+              "false_certificates": 0,
+              "abstentions": 6497,
+              "ignitions_among_abstentions": 0
+            },
+            "positive": {
+              "eligible": 3086,
+              "ignited": 0,
+              "certified": 534,
+              "false_certificates": 0,
+              "abstentions": 2552,
+              "ignitions_among_abstentions": 0
+            },
+            "half_threshold": {
+              "eligible": 272,
+              "ignited": 0,
+              "certified": 82,
+              "false_certificates": 0,
+              "abstentions": 190,
+              "ignitions_among_abstentions": 0
+            }
+          },
+          "extra_over_support": 1857,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 0,
+          "compute_ms": 21.04309992864728,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 75.34309988096356
+        },
+        "weighted": {
+          "strata": {
+            "all": {
+              "eligible": 30284,
+              "ignited": 0,
+              "certified": 25882,
+              "false_certificates": 0,
+              "abstentions": 4402,
+              "ignitions_among_abstentions": 0
+            },
+            "positive": {
+              "eligible": 3086,
+              "ignited": 0,
+              "certified": 813,
+              "false_certificates": 0,
+              "abstentions": 2273,
+              "ignitions_among_abstentions": 0
+            },
+            "half_threshold": {
+              "eligible": 272,
+              "ignited": 0,
+              "certified": 85,
+              "false_certificates": 0,
+              "abstentions": 187,
+              "ignitions_among_abstentions": 0
+            }
+          },
+          "extra_over_support": 3952,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 2095,
+          "lost_vs_uniform": 0,
+          "compute_ms": 22.50189962796867,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 76.80189958028495
+        }
+      }
+    },
+    {
+      "arm": "BA",
+      "cut": 210,
+      "horizon": 8,
+      "native_ms": 109.60000014305115,
+      "native_to_cut_ms": 2357.5,
+      "persistence_false": 32,
+      "methods": {
+        "global": {
+          "strata": {
+            "all": {
+              "eligible": 30284,
+              "ignited": 32,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 30284,
+              "ignitions_among_abstentions": 32
+            },
+            "positive": {
+              "eligible": 3086,
+              "ignited": 32,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 3086,
+              "ignitions_among_abstentions": 32
+            },
+            "half_threshold": {
+              "eligible": 272,
+              "ignited": 32,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 272,
+              "ignitions_among_abstentions": 32
+            }
+          },
+          "extra_over_support": 0,
+          "lost_vs_support": 13139,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 16130,
+          "compute_ms": 1.4068002346903086,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 111.00680037774146
+        },
+        "support": {
+          "strata": {
+            "all": {
+              "eligible": 30284,
+              "ignited": 32,
+              "certified": 13139,
+              "false_certificates": 0,
+              "abstentions": 17145,
+              "ignitions_among_abstentions": 32
+            },
+            "positive": {
+              "eligible": 3086,
+              "ignited": 32,
+              "certified": 531,
+              "false_certificates": 0,
+              "abstentions": 2555,
+              "ignitions_among_abstentions": 32
+            },
+            "half_threshold": {
+              "eligible": 272,
+              "ignited": 32,
+              "certified": 82,
+              "false_certificates": 0,
+              "abstentions": 190,
+              "ignitions_among_abstentions": 32
+            }
+          },
+          "extra_over_support": 0,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 2991,
+          "compute_ms": 61.6523998323828,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 171.25239997543395
+        },
+        "uniform": {
+          "strata": {
+            "all": {
+              "eligible": 30284,
+              "ignited": 32,
+              "certified": 16130,
+              "false_certificates": 0,
+              "abstentions": 14154,
+              "ignitions_among_abstentions": 32
+            },
+            "positive": {
+              "eligible": 3086,
+              "ignited": 32,
+              "certified": 531,
+              "false_certificates": 0,
+              "abstentions": 2555,
+              "ignitions_among_abstentions": 32
+            },
+            "half_threshold": {
+              "eligible": 272,
+              "ignited": 32,
+              "certified": 82,
+              "false_certificates": 0,
+              "abstentions": 190,
+              "ignitions_among_abstentions": 32
+            }
+          },
+          "extra_over_support": 2991,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 0,
+          "compute_ms": 62.32560006901622,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 171.92560021206737
+        },
+        "weighted": {
+          "strata": {
+            "all": {
+              "eligible": 30284,
+              "ignited": 32,
+              "certified": 19432,
+              "false_certificates": 0,
+              "abstentions": 10852,
+              "ignitions_among_abstentions": 32
+            },
+            "positive": {
+              "eligible": 3086,
+              "ignited": 32,
+              "certified": 552,
+              "false_certificates": 0,
+              "abstentions": 2534,
+              "ignitions_among_abstentions": 32
+            },
+            "half_threshold": {
+              "eligible": 272,
+              "ignited": 32,
+              "certified": 83,
+              "false_certificates": 0,
+              "abstentions": 189,
+              "ignitions_among_abstentions": 32
+            }
+          },
+          "extra_over_support": 6293,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 3302,
+          "lost_vs_uniform": 0,
+          "compute_ms": 68.47619963809848,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 178.07619978114963
+        }
+      }
+    },
+    {
+      "arm": "BA",
+      "cut": 240,
+      "horizon": 1,
+      "native_ms": 16.200000047683716,
+      "native_to_cut_ms": 2788.400000333786,
+      "persistence_false": 5,
+      "methods": {
+        "global": {
+          "strata": {
+            "all": {
+              "eligible": 29925,
+              "ignited": 5,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 29925,
+              "ignitions_among_abstentions": 5
+            },
+            "positive": {
+              "eligible": 3618,
+              "ignited": 5,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 3618,
+              "ignitions_among_abstentions": 5
+            },
+            "half_threshold": {
+              "eligible": 384,
+              "ignited": 5,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 384,
+              "ignitions_among_abstentions": 5
+            }
+          },
+          "extra_over_support": 0,
+          "lost_vs_support": 25114,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 26164,
+          "compute_ms": 0.4313001409173012,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 16.631300188601017
+        },
+        "support": {
+          "strata": {
+            "all": {
+              "eligible": 29925,
+              "ignited": 5,
+              "certified": 25114,
+              "false_certificates": 0,
+              "abstentions": 4811,
+              "ignitions_among_abstentions": 5
+            },
+            "positive": {
+              "eligible": 3618,
+              "ignited": 5,
+              "certified": 543,
+              "false_certificates": 0,
+              "abstentions": 3075,
+              "ignitions_among_abstentions": 5
+            },
+            "half_threshold": {
+              "eligible": 384,
+              "ignited": 5,
+              "certified": 1,
+              "false_certificates": 0,
+              "abstentions": 383,
+              "ignitions_among_abstentions": 5
+            }
+          },
+          "extra_over_support": 0,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 1050,
+          "compute_ms": 7.027999963611364,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 23.22800001129508
+        },
+        "uniform": {
+          "strata": {
+            "all": {
+              "eligible": 29925,
+              "ignited": 5,
+              "certified": 26164,
+              "false_certificates": 0,
+              "abstentions": 3761,
+              "ignitions_among_abstentions": 5
+            },
+            "positive": {
+              "eligible": 3618,
+              "ignited": 5,
+              "certified": 1249,
+              "false_certificates": 0,
+              "abstentions": 2369,
+              "ignitions_among_abstentions": 5
+            },
+            "half_threshold": {
+              "eligible": 384,
+              "ignited": 5,
+              "certified": 61,
+              "false_certificates": 0,
+              "abstentions": 323,
+              "ignitions_among_abstentions": 5
+            }
+          },
+          "extra_over_support": 1050,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 0,
+          "compute_ms": 7.612999994307756,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 23.813000041991472
+        },
+        "weighted": {
+          "strata": {
+            "all": {
+              "eligible": 29925,
+              "ignited": 5,
+              "certified": 27940,
+              "false_certificates": 0,
+              "abstentions": 1985,
+              "ignitions_among_abstentions": 5
+            },
+            "positive": {
+              "eligible": 3618,
+              "ignited": 5,
+              "certified": 1758,
+              "false_certificates": 0,
+              "abstentions": 1860,
+              "ignitions_among_abstentions": 5
+            },
+            "half_threshold": {
+              "eligible": 384,
+              "ignited": 5,
+              "certified": 66,
+              "false_certificates": 0,
+              "abstentions": 318,
+              "ignitions_among_abstentions": 5
+            }
+          },
+          "extra_over_support": 2826,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 1776,
+          "lost_vs_uniform": 0,
+          "compute_ms": 7.055499823763967,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 23.255499871447682
+        }
+      }
+    },
+    {
+      "arm": "BA",
+      "cut": 240,
+      "horizon": 4,
+      "native_ms": 65.30000019073486,
+      "native_to_cut_ms": 2788.400000333786,
+      "persistence_false": 64,
+      "methods": {
+        "global": {
+          "strata": {
+            "all": {
+              "eligible": 29925,
+              "ignited": 64,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 29925,
+              "ignitions_among_abstentions": 64
+            },
+            "positive": {
+              "eligible": 3618,
+              "ignited": 64,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 3618,
+              "ignitions_among_abstentions": 64
+            },
+            "half_threshold": {
+              "eligible": 384,
+              "ignited": 64,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 384,
+              "ignitions_among_abstentions": 64
+            }
+          },
+          "extra_over_support": 0,
+          "lost_vs_support": 17163,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 19092,
+          "compute_ms": 0.8688000962138176,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 66.16880028694868
+        },
+        "support": {
+          "strata": {
+            "all": {
+              "eligible": 29925,
+              "ignited": 64,
+              "certified": 17163,
+              "false_certificates": 0,
+              "abstentions": 12762,
+              "ignitions_among_abstentions": 64
+            },
+            "positive": {
+              "eligible": 3618,
+              "ignited": 64,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 3618,
+              "ignitions_among_abstentions": 64
+            },
+            "half_threshold": {
+              "eligible": 384,
+              "ignited": 64,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 384,
+              "ignitions_among_abstentions": 64
+            }
+          },
+          "extra_over_support": 0,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 1929,
+          "compute_ms": 27.183299884200096,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 92.48330007493496
+        },
+        "uniform": {
+          "strata": {
+            "all": {
+              "eligible": 29925,
+              "ignited": 64,
+              "certified": 19092,
+              "false_certificates": 0,
+              "abstentions": 10833,
+              "ignitions_among_abstentions": 64
+            },
+            "positive": {
+              "eligible": 3618,
+              "ignited": 64,
+              "certified": 98,
+              "false_certificates": 0,
+              "abstentions": 3520,
+              "ignitions_among_abstentions": 64
+            },
+            "half_threshold": {
+              "eligible": 384,
+              "ignited": 64,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 384,
+              "ignitions_among_abstentions": 64
+            }
+          },
+          "extra_over_support": 1929,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 0,
+          "compute_ms": 25.809799786657095,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 91.10979997739196
+        },
+        "weighted": {
+          "strata": {
+            "all": {
+              "eligible": 29925,
+              "ignited": 64,
+              "certified": 22545,
+              "false_certificates": 0,
+              "abstentions": 7380,
+              "ignitions_among_abstentions": 64
+            },
+            "positive": {
+              "eligible": 3618,
+              "ignited": 64,
+              "certified": 772,
+              "false_certificates": 0,
+              "abstentions": 2846,
+              "ignitions_among_abstentions": 64
+            },
+            "half_threshold": {
+              "eligible": 384,
+              "ignited": 64,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 384,
+              "ignitions_among_abstentions": 64
+            }
+          },
+          "extra_over_support": 5382,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 3453,
+          "lost_vs_uniform": 0,
+          "compute_ms": 26.35759999975562,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 91.65760019049048
+        }
+      }
+    },
+    {
+      "arm": "BA",
+      "cut": 240,
+      "horizon": 8,
+      "native_ms": 132.30000019073486,
+      "native_to_cut_ms": 2788.400000333786,
+      "persistence_false": 325,
+      "methods": {
+        "global": {
+          "strata": {
+            "all": {
+              "eligible": 29925,
+              "ignited": 325,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 29925,
+              "ignitions_among_abstentions": 325
+            },
+            "positive": {
+              "eligible": 3618,
+              "ignited": 325,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 3618,
+              "ignitions_among_abstentions": 325
+            },
+            "half_threshold": {
+              "eligible": 384,
+              "ignited": 183,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 384,
+              "ignitions_among_abstentions": 183
+            }
+          },
+          "extra_over_support": 0,
+          "lost_vs_support": 4571,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 6074,
+          "compute_ms": 1.4269000384956598,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 133.72690022923052
+        },
+        "support": {
+          "strata": {
+            "all": {
+              "eligible": 29925,
+              "ignited": 325,
+              "certified": 4571,
+              "false_certificates": 0,
+              "abstentions": 25354,
+              "ignitions_among_abstentions": 325
+            },
+            "positive": {
+              "eligible": 3618,
+              "ignited": 325,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 3618,
+              "ignitions_among_abstentions": 325
+            },
+            "half_threshold": {
+              "eligible": 384,
+              "ignited": 183,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 384,
+              "ignitions_among_abstentions": 183
+            }
+          },
+          "extra_over_support": 0,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 1503,
+          "compute_ms": 67.29429983533919,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 199.59430002607405
+        },
+        "uniform": {
+          "strata": {
+            "all": {
+              "eligible": 29925,
+              "ignited": 325,
+              "certified": 6074,
+              "false_certificates": 0,
+              "abstentions": 23851,
+              "ignitions_among_abstentions": 325
+            },
+            "positive": {
+              "eligible": 3618,
+              "ignited": 325,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 3618,
+              "ignitions_among_abstentions": 325
+            },
+            "half_threshold": {
+              "eligible": 384,
+              "ignited": 183,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 384,
+              "ignitions_among_abstentions": 183
+            }
+          },
+          "extra_over_support": 1503,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 0,
+          "compute_ms": 63.97589994594455,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 196.2759001366794
+        },
+        "weighted": {
+          "strata": {
+            "all": {
+              "eligible": 29925,
+              "ignited": 325,
+              "certified": 8905,
+              "false_certificates": 0,
+              "abstentions": 21020,
+              "ignitions_among_abstentions": 325
+            },
+            "positive": {
+              "eligible": 3618,
+              "ignited": 325,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 3618,
+              "ignitions_among_abstentions": 325
+            },
+            "half_threshold": {
+              "eligible": 384,
+              "ignited": 183,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 384,
+              "ignitions_among_abstentions": 183
+            }
+          },
+          "extra_over_support": 4334,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 2831,
+          "lost_vs_uniform": 0,
+          "compute_ms": 71.15170010365546,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 203.45170029439032
+        }
+      }
+    },
+    {
+      "arm": "BA",
+      "cut": 300,
+      "horizon": 1,
+      "native_ms": 18.799999952316284,
+      "native_to_cut_ms": 3884.800000667572,
+      "persistence_false": 16,
+      "methods": {
+        "global": {
+          "strata": {
+            "all": {
+              "eligible": 27157,
+              "ignited": 16,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 27157,
+              "ignitions_among_abstentions": 16
+            },
+            "positive": {
+              "eligible": 4990,
+              "ignited": 16,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 4990,
+              "ignitions_among_abstentions": 16
+            },
+            "half_threshold": {
+              "eligible": 598,
+              "ignited": 16,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 598,
+              "ignitions_among_abstentions": 16
+            }
+          },
+          "extra_over_support": 0,
+          "lost_vs_support": 22921,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 25428,
+          "compute_ms": 0.48349983990192413,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 19.28349979221821
+        },
+        "support": {
+          "strata": {
+            "all": {
+              "eligible": 27157,
+              "ignited": 16,
+              "certified": 22921,
+              "false_certificates": 0,
+              "abstentions": 4236,
+              "ignitions_among_abstentions": 16
+            },
+            "positive": {
+              "eligible": 4990,
+              "ignited": 16,
+              "certified": 2240,
+              "false_certificates": 0,
+              "abstentions": 2750,
+              "ignitions_among_abstentions": 16
+            },
+            "half_threshold": {
+              "eligible": 598,
+              "ignited": 16,
+              "certified": 144,
+              "false_certificates": 0,
+              "abstentions": 454,
+              "ignitions_among_abstentions": 16
+            }
+          },
+          "extra_over_support": 0,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 2507,
+          "compute_ms": 14.046000083908439,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 32.84600003622472
+        },
+        "uniform": {
+          "strata": {
+            "all": {
+              "eligible": 27157,
+              "ignited": 16,
+              "certified": 25428,
+              "false_certificates": 0,
+              "abstentions": 1729,
+              "ignitions_among_abstentions": 16
+            },
+            "positive": {
+              "eligible": 4990,
+              "ignited": 16,
+              "certified": 3631,
+              "false_certificates": 0,
+              "abstentions": 1359,
+              "ignitions_among_abstentions": 16
+            },
+            "half_threshold": {
+              "eligible": 598,
+              "ignited": 16,
+              "certified": 160,
+              "false_certificates": 0,
+              "abstentions": 438,
+              "ignitions_among_abstentions": 16
+            }
+          },
+          "extra_over_support": 2507,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 0,
+          "compute_ms": 8.030700031667948,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 26.830699983984232
+        },
+        "weighted": {
+          "strata": {
+            "all": {
+              "eligible": 27157,
+              "ignited": 16,
+              "certified": 26357,
+              "false_certificates": 0,
+              "abstentions": 800,
+              "ignitions_among_abstentions": 16
+            },
+            "positive": {
+              "eligible": 4990,
+              "ignited": 16,
+              "certified": 4207,
+              "false_certificates": 0,
+              "abstentions": 783,
+              "ignitions_among_abstentions": 16
+            },
+            "half_threshold": {
+              "eligible": 598,
+              "ignited": 16,
+              "certified": 199,
+              "false_certificates": 0,
+              "abstentions": 399,
+              "ignitions_among_abstentions": 16
+            }
+          },
+          "extra_over_support": 3436,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 929,
+          "lost_vs_uniform": 0,
+          "compute_ms": 8.276200154796243,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 27.076200107112527
+        }
+      }
+    },
+    {
+      "arm": "BA",
+      "cut": 300,
+      "horizon": 4,
+      "native_ms": 72.99999976158142,
+      "native_to_cut_ms": 3884.800000667572,
+      "persistence_false": 80,
+      "methods": {
+        "global": {
+          "strata": {
+            "all": {
+              "eligible": 27157,
+              "ignited": 80,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 27157,
+              "ignitions_among_abstentions": 80
+            },
+            "positive": {
+              "eligible": 4990,
+              "ignited": 80,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 4990,
+              "ignitions_among_abstentions": 80
+            },
+            "half_threshold": {
+              "eligible": 598,
+              "ignited": 80,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 598,
+              "ignitions_among_abstentions": 80
+            }
+          },
+          "extra_over_support": 0,
+          "lost_vs_support": 11881,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 15979,
+          "compute_ms": 1.0937999468296766,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 74.0937997084111
+        },
+        "support": {
+          "strata": {
+            "all": {
+              "eligible": 27157,
+              "ignited": 80,
+              "certified": 11881,
+              "false_certificates": 0,
+              "abstentions": 15276,
+              "ignitions_among_abstentions": 80
+            },
+            "positive": {
+              "eligible": 4990,
+              "ignited": 80,
+              "certified": 1462,
+              "false_certificates": 0,
+              "abstentions": 3528,
+              "ignitions_among_abstentions": 80
+            },
+            "half_threshold": {
+              "eligible": 598,
+              "ignited": 80,
+              "certified": 47,
+              "false_certificates": 0,
+              "abstentions": 551,
+              "ignitions_among_abstentions": 80
+            }
+          },
+          "extra_over_support": 0,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 4098,
+          "compute_ms": 54.7887000720948,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 127.78869983367622
+        },
+        "uniform": {
+          "strata": {
+            "all": {
+              "eligible": 27157,
+              "ignited": 80,
+              "certified": 15979,
+              "false_certificates": 0,
+              "abstentions": 11178,
+              "ignitions_among_abstentions": 80
+            },
+            "positive": {
+              "eligible": 4990,
+              "ignited": 80,
+              "certified": 1850,
+              "false_certificates": 0,
+              "abstentions": 3140,
+              "ignitions_among_abstentions": 80
+            },
+            "half_threshold": {
+              "eligible": 598,
+              "ignited": 80,
+              "certified": 84,
+              "false_certificates": 0,
+              "abstentions": 514,
+              "ignitions_among_abstentions": 80
+            }
+          },
+          "extra_over_support": 4098,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 0,
+          "compute_ms": 36.14400001242757,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 109.14399977400899
+        },
+        "weighted": {
+          "strata": {
+            "all": {
+              "eligible": 27157,
+              "ignited": 80,
+              "certified": 21121,
+              "false_certificates": 0,
+              "abstentions": 6036,
+              "ignitions_among_abstentions": 80
+            },
+            "positive": {
+              "eligible": 4990,
+              "ignited": 80,
+              "certified": 2263,
+              "false_certificates": 0,
+              "abstentions": 2727,
+              "ignitions_among_abstentions": 80
+            },
+            "half_threshold": {
+              "eligible": 598,
+              "ignited": 80,
+              "certified": 139,
+              "false_certificates": 0,
+              "abstentions": 459,
+              "ignitions_among_abstentions": 80
+            }
+          },
+          "extra_over_support": 9240,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 5142,
+          "lost_vs_uniform": 0,
+          "compute_ms": 39.011400192976,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 112.01139995455742
+        }
+      }
+    },
+    {
+      "arm": "BA",
+      "cut": 300,
+      "horizon": 8,
+      "native_ms": 146.099999666214,
+      "native_to_cut_ms": 3884.800000667572,
+      "persistence_false": 182,
+      "methods": {
+        "global": {
+          "strata": {
+            "all": {
+              "eligible": 27157,
+              "ignited": 182,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 27157,
+              "ignitions_among_abstentions": 182
+            },
+            "positive": {
+              "eligible": 4990,
+              "ignited": 182,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 4990,
+              "ignitions_among_abstentions": 182
+            },
+            "half_threshold": {
+              "eligible": 598,
+              "ignited": 180,
+              "certified": 0,
+              "false_certificates": 0,
+              "abstentions": 598,
+              "ignitions_among_abstentions": 180
+            }
+          },
+          "extra_over_support": 0,
+          "lost_vs_support": 4721,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 5993,
+          "compute_ms": 1.7546000890433788,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 147.85459975525737
+        },
+        "support": {
+          "strata": {
+            "all": {
+              "eligible": 27157,
+              "ignited": 182,
+              "certified": 4721,
+              "false_certificates": 0,
+              "abstentions": 22436,
+              "ignitions_among_abstentions": 182
+            },
+            "positive": {
+              "eligible": 4990,
+              "ignited": 182,
+              "certified": 816,
+              "false_certificates": 0,
+              "abstentions": 4174,
+              "ignitions_among_abstentions": 182
+            },
+            "half_threshold": {
+              "eligible": 598,
+              "ignited": 180,
+              "certified": 3,
+              "false_certificates": 0,
+              "abstentions": 595,
+              "ignitions_among_abstentions": 180
+            }
+          },
+          "extra_over_support": 0,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 1272,
+          "compute_ms": 137.81370013020933,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 283.9136997964233
+        },
+        "uniform": {
+          "strata": {
+            "all": {
+              "eligible": 27157,
+              "ignited": 182,
+              "certified": 5993,
+              "false_certificates": 0,
+              "abstentions": 21164,
+              "ignitions_among_abstentions": 182
+            },
+            "positive": {
+              "eligible": 4990,
+              "ignited": 182,
+              "certified": 1081,
+              "false_certificates": 0,
+              "abstentions": 3909,
+              "ignitions_among_abstentions": 182
+            },
+            "half_threshold": {
+              "eligible": 598,
+              "ignited": 180,
+              "certified": 9,
+              "false_certificates": 0,
+              "abstentions": 589,
+              "ignitions_among_abstentions": 180
+            }
+          },
+          "extra_over_support": 1272,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 0,
+          "lost_vs_uniform": 0,
+          "compute_ms": 113.19299996830523,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 259.2929996345192
+        },
+        "weighted": {
+          "strata": {
+            "all": {
+              "eligible": 27157,
+              "ignited": 182,
+              "certified": 8282,
+              "false_certificates": 0,
+              "abstentions": 18875,
+              "ignitions_among_abstentions": 182
+            },
+            "positive": {
+              "eligible": 4990,
+              "ignited": 182,
+              "certified": 1515,
+              "false_certificates": 0,
+              "abstentions": 3475,
+              "ignitions_among_abstentions": 182
+            },
+            "half_threshold": {
+              "eligible": 598,
+              "ignited": 180,
+              "certified": 16,
+              "false_certificates": 0,
+              "abstentions": 582,
+              "ignitions_among_abstentions": 180
+            }
+          },
+          "extra_over_support": 3561,
+          "lost_vs_support": 0,
+          "extra_over_uniform": 2289,
+          "lost_vs_uniform": 0,
+          "compute_ms": 122.05320014618337,
+          "fallback_required": true,
+          "compute_plus_fallback_ms": 268.15319981239736
+        }
+      }
+    }
+  ]
+}
