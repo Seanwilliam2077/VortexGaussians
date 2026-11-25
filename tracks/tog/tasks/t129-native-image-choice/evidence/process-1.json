@@ -1,0 +1,2568 @@
+{
+  "schema": "t129-native-final-image-choice-v1",
+  "process": 1,
+  "pid": 30116,
+  "started_utc": "2026-11-25T09:41:11.635Z",
+  "status": "validated",
+  "setup_ms": {
+    "read_matte_tables_ms": 1.708200000000005,
+    "browser_launch_ms": 1562.0344,
+    "load_scene_and_first_brush_ms": 648.9563000000003,
+    "upload_view_0_ms": 19.009700000000066,
+    "upload_view_124_ms": 18.317200000000412,
+    "native_parent_180_ms": 1557.4720000000002,
+    "verify_shell_selection_ms": 12.34270000000015
+  },
+  "sources": {
+    "index.html": "e9d808c434bdd8ce91482f60502f03f5d08c56b71c082eb704c53275ff9f57d0",
+    "native.js": "fcce7bb3dbc0cfb78b7e427572d6a9519e3d93a28eefb1f2b676e347baa6997f",
+    "adapter.js": "e3c6348a18ae633e963bdf574ceac92b2ce3956ac2b26e06b9b5f88cda7f58da",
+    "foreground.ply": "906460f162f704b89666b159ae5b4744e53e6dc11baf448a550de581506919b0",
+    "cameras.json": "5cdd4605b0bf11970357c26e66ce3affb6c25ab2823171488fa41288ceb4a5c5",
+    "T127_capture": "041fb808d5975e661aef7cf5c06648bd74232ba0e244cb1f6d08afce606c5ea2",
+    "T127_score": "a4919813d46c76ef86bd8b3953bfe73f18aa222ded6fdbd29059e9971318b365",
+    "native_kernels": "c959294e5190c7beb70c112348399f7a86d94a659d54146868d3ace663ca02d1",
+    "action": "afb8d18d3924a35965d130257f155fbfdc36da9669e01a5a4d830a0c68e4aa2a",
+    "worker": "a3d72e0eced4150066092486182ac9d07cd9fcf775207b127543087b3dcc29ad",
+    "staged_html": "a86b3d948e8482440067606a5673389bf35af29b7b562d0f32809dd982b1690e",
+    "view_0": "535982ac918ef2ff415e7975dd8f93f0899650b590c9bf5ebdf5ac26f13d7e8a",
+    "view_124": "a97db4ecb791aed0e1b89d016774d5994cb7db337431f77adf5d0365d7689918"
+  },
+  "runtime": {
+    "node": "v24.16.0",
+    "browser": "149.0.4022.52",
+    "graphics": "ANGLE (AMD, AMD Radeon(TM) 890M Graphics (0x0000150E) Direct3D11 vs_5_0 ps_5_0, D3D11)"
+  },
+  "common_parent": {
+    "frame": 180,
+    "hash": "9ec29346",
+    "particle_hash": "8dfc5972",
+    "burn_hash": "f6c3afd4",
+    "burning": 3362,
+    "charred": 0,
+    "gas_count": 2406,
+    "cursor": 2170,
+    "random_draws": 16902
+  },
+  "calibration": {
+    "0": {
+      "camera": 0,
+      "roi_gl": {
+        "x": 436,
+        "y": 166,
+        "width": 76,
+        "height": 80
+      },
+      "positive_pixels": 880,
+      "total": 282.82575520250475
+    },
+    "124": {
+      "camera": 124,
+      "roi_gl": {
+        "x": 264,
+        "y": 18,
+        "width": 146,
+        "height": 162
+      },
+      "positive_pixels": 3786,
+      "total": 829.1991376916565
+    }
+  },
+  "audits": [
+    {
+      "method": "ordinary",
+      "cameras": [
+        0,
+        124
+      ],
+      "choices": {
+        "0": "L",
+        "124": "none"
+      },
+      "strokes": [
+        {
+          "pick": "L",
+          "clicked": 74,
+          "steps": 90,
+          "views": [
+            {
+              "camera": 0,
+              "changed_shell_mass": 112.05573490883037,
+              "shell_mass": 282.82575520250475,
+              "fraction": 0.3962006035433296,
+              "passes_quarter": true,
+              "png_sha256": {
+                "full": "9f8246f19b7df9232950afd52d4b856f6af1d5c2249a6f0128e5758f1007badb",
+                "wood": "5d2a82d289969a52ea1ad4895de3947f8ae19da88cdd3e44dfafb04835894eb7"
+              }
+            },
+            {
+              "camera": 124,
+              "changed_shell_mass": 0.048874727762805055,
+              "shell_mass": 829.1991376916565,
+              "fraction": 0.000058942087058681274,
+              "passes_quarter": false,
+              "png_sha256": {
+                "full": "9e5cd48b1e15c7237906efc4f354b5a55bada4fbf0ea9944801794c7f82821d7",
+                "wood": "68c8da6b4c2406b7886adf6a708df04e9b9232c721a8e895b04468bf0b07d314"
+              }
+            }
+          ],
+          "state": {
+            "length": 2311439,
+            "fnv32": "bc307672",
+            "marker": {
+              "frame": 270,
+              "hash": "4793d7c9",
+              "particle_hash": "2de360d9",
+              "burn_hash": "c114f21a",
+              "burning": 3789,
+              "charred": 0,
+              "gas_count": 4537,
+              "cursor": 2982,
+              "random_draws": 31947
+            }
+          }
+        },
+        {
+          "pick": "F",
+          "clicked": 288,
+          "steps": 90,
+          "views": [
+            {
+              "camera": 0,
+              "changed_shell_mass": 120.40449359675071,
+              "shell_mass": 282.82575520250475,
+              "fraction": 0.4257196927151859,
+              "passes_quarter": true,
+              "png_sha256": {
+                "full": "f608b2d15b8ccd188c5e2bbead497477d601d140a1e2c27f89beba06064359aa",
+                "wood": "d5f4227156955c6a81aabd33f9fb7261df69da8273aed649d0752b2e452611fd"
+              }
+            },
+            {
+              "camera": 124,
+              "changed_shell_mass": 0.020250183761719828,
+              "shell_mass": 829.1991376916565,
+              "fraction": 0.0000244213758085817,
+              "passes_quarter": false,
+              "png_sha256": {
+                "full": "cdf61e3f448cea2280e96185050d2579d0b27c3ae597bcb4c7089829dcf94ae4",
+                "wood": "a52e30eb32ce531258d04ef7b97de88372b72722e37c7ce6c299a64bb2e3a3aa"
+              }
+            }
+          ],
+          "state": {
+            "length": 2364964,
+            "fnv32": "fd627ccf",
+            "marker": {
+              "frame": 270,
+              "hash": "e10b3c60",
+              "particle_hash": "54d92591",
+              "burn_hash": "bb4153ea",
+              "burning": 4407,
+              "charred": 0,
+              "gas_count": 4537,
+              "cursor": 2764,
+              "random_draws": 31947
+            }
+          }
+        }
+      ],
+      "shared_steps": 0,
+      "reused_steps": 0,
+      "index": {
+        "profile": false,
+        "geom_build_ms": 2.5,
+        "geom_bytes": 138748,
+        "build_ms": 1.7999999523162842,
+        "builds": 2,
+        "total_index_bytes": 561152,
+        "peak_index_bytes": 280576,
+        "removals": 1110,
+        "registrations": [
+          {
+            "kind": "full",
+            "members": 31251,
+            "sites": 34687,
+            "bytes": 280576
+          },
+          {
+            "kind": "full",
+            "members": 31037,
+            "sites": 34687,
+            "bytes": 280576
+          }
+        ],
+        "samples": 0,
+        "distance_tests": 0,
+        "within_radius": 0,
+        "initially_noncold_in_bucket": 0
+      },
+      "phases_ms": {
+        "fork_restore_ms": 1.7000000476837158,
+        "pick_ms": 0.39999985694885254,
+        "guard_ms": 0,
+        "physics_ms": 822.8999996185303,
+        "transport_ms": 0,
+        "render_read_ms": 151.40000009536743,
+        "score_ms": 0.7999999523162842
+      },
+      "browser_ms": 1279.2999999523163,
+      "delivered_ms": 1298.4526999999998,
+      "rep": -1
+    },
+    {
+      "method": "sibling",
+      "cameras": [
+        0,
+        124
+      ],
+      "choices": {
+        "0": "L",
+        "124": "none"
+      },
+      "strokes": [
+        {
+          "pick": "L",
+          "clicked": 74,
+          "steps": 90,
+          "views": [
+            {
+              "camera": 0,
+              "changed_shell_mass": 112.05573490883037,
+              "shell_mass": 282.82575520250475,
+              "fraction": 0.3962006035433296,
+              "passes_quarter": true,
+              "png_sha256": {
+                "full": "9f8246f19b7df9232950afd52d4b856f6af1d5c2249a6f0128e5758f1007badb",
+                "wood": "5d2a82d289969a52ea1ad4895de3947f8ae19da88cdd3e44dfafb04835894eb7"
+              }
+            },
+            {
+              "camera": 124,
+              "changed_shell_mass": 0.048874727762805055,
+              "shell_mass": 829.1991376916565,
+              "fraction": 0.000058942087058681274,
+              "passes_quarter": false,
+              "png_sha256": {
+                "full": "9e5cd48b1e15c7237906efc4f354b5a55bada4fbf0ea9944801794c7f82821d7",
+                "wood": "68c8da6b4c2406b7886adf6a708df04e9b9232c721a8e895b04468bf0b07d314"
+              }
+            }
+          ],
+          "state": {
+            "length": 2311439,
+            "fnv32": "bc307672",
+            "marker": {
+              "frame": 270,
+              "hash": "4793d7c9",
+              "particle_hash": "2de360d9",
+              "burn_hash": "c114f21a",
+              "burning": 3789,
+              "charred": 0,
+              "gas_count": 4537,
+              "cursor": 2982,
+              "random_draws": 31947
+            }
+          }
+        },
+        {
+          "pick": "F",
+          "clicked": 288,
+          "steps": 66,
+          "views": [
+            {
+              "camera": 0,
+              "changed_shell_mass": 120.40449359675071,
+              "shell_mass": 282.82575520250475,
+              "fraction": 0.4257196927151859,
+              "passes_quarter": true,
+              "png_sha256": {
+                "full": "f608b2d15b8ccd188c5e2bbead497477d601d140a1e2c27f89beba06064359aa",
+                "wood": "d5f4227156955c6a81aabd33f9fb7261df69da8273aed649d0752b2e452611fd"
+              }
+            },
+            {
+              "camera": 124,
+              "changed_shell_mass": 0.020250183761719828,
+              "shell_mass": 829.1991376916565,
+              "fraction": 0.0000244213758085817,
+              "passes_quarter": false,
+              "png_sha256": {
+                "full": "cdf61e3f448cea2280e96185050d2579d0b27c3ae597bcb4c7089829dcf94ae4",
+                "wood": "a52e30eb32ce531258d04ef7b97de88372b72722e37c7ce6c299a64bb2e3a3aa"
+              }
+            }
+          ],
+          "state": {
+            "length": 2364964,
+            "fnv32": "fd627ccf",
+            "marker": {
+              "frame": 270,
+              "hash": "e10b3c60",
+              "particle_hash": "54d92591",
+              "burn_hash": "bb4153ea",
+              "burning": 4407,
+              "charred": 0,
+              "gas_count": 4537,
+              "cursor": 2764,
+              "random_draws": 31947
+            }
+          }
+        }
+      ],
+      "shared_steps": 24,
+      "reused_steps": 24,
+      "index": {
+        "profile": false,
+        "geom_build_ms": 0,
+        "geom_bytes": 138748,
+        "build_ms": 1.5,
+        "builds": 3,
+        "total_index_bytes": 841728,
+        "peak_index_bytes": 280576,
+        "removals": 1075,
+        "registrations": [
+          {
+            "kind": "full",
+            "members": 31251,
+            "sites": 34687,
+            "bytes": 280576
+          },
+          {
+            "kind": "full",
+            "members": 31216,
+            "sites": 34687,
+            "bytes": 280576
+          },
+          {
+            "kind": "full",
+            "members": 31002,
+            "sites": 34687,
+            "bytes": 280576
+          }
+        ],
+        "samples": 0,
+        "distance_tests": 0,
+        "within_radius": 0,
+        "initially_noncold_in_bucket": 0
+      },
+      "phases_ms": {
+        "fork_restore_ms": 1.3999998569488525,
+        "pick_ms": 1.000000238418579,
+        "guard_ms": 0.2999999523162842,
+        "physics_ms": 758.3000001907349,
+        "transport_ms": 0.5999999046325684,
+        "render_read_ms": 122.49999976158142,
+        "score_ms": 1.0000004768371582
+      },
+      "browser_ms": 1300,
+      "delivered_ms": 1314.9186,
+      "rep": -1
+    }
+  ],
+  "trials": [
+    {
+      "method": "ordinary",
+      "cameras": [
+        0
+      ],
+      "choices": {
+        "0": "L"
+      },
+      "strokes": [
+        {
+          "pick": "L",
+          "clicked": 74,
+          "steps": 90,
+          "views": [
+            {
+              "camera": 0,
+              "changed_shell_mass": 112.05573490883037,
+              "shell_mass": 282.82575520250475,
+              "fraction": 0.3962006035433296,
+              "passes_quarter": true
+            }
+          ]
+        }
+      ],
+      "shared_steps": 0,
+      "reused_steps": 0,
+      "index": {
+        "profile": false,
+        "geom_build_ms": 6.200000047683716,
+        "geom_bytes": 138748,
+        "build_ms": 1.0999999046325684,
+        "builds": 1,
+        "total_index_bytes": 280576,
+        "peak_index_bytes": 280576,
+        "removals": 353,
+        "registrations": [
+          {
+            "kind": "full",
+            "members": 31251,
+            "sites": 34687,
+            "bytes": 280576
+          }
+        ],
+        "samples": 0,
+        "distance_tests": 0,
+        "within_radius": 0,
+        "initially_noncold_in_bucket": 0
+      },
+      "phases_ms": {
+        "fork_restore_ms": 0.39999985694885254,
+        "pick_ms": 0.09999990463256836,
+        "guard_ms": 0,
+        "physics_ms": 423.60000014305115,
+        "transport_ms": 0,
+        "render_read_ms": 24,
+        "score_ms": 0
+      },
+      "browser_ms": 448.40000009536743,
+      "delivered_ms": 450.83690000000024,
+      "rep": 0
+    },
+    {
+      "method": "sibling",
+      "cameras": [
+        0
+      ],
+      "choices": {
+        "0": "L"
+      },
+      "strokes": [
+        {
+          "pick": "L",
+          "clicked": 74,
+          "steps": 90,
+          "views": [
+            {
+              "camera": 0,
+              "changed_shell_mass": 112.05573490883037,
+              "shell_mass": 282.82575520250475,
+              "fraction": 0.3962006035433296,
+              "passes_quarter": true
+            }
+          ]
+        }
+      ],
+      "shared_steps": 24,
+      "reused_steps": 0,
+      "index": {
+        "profile": false,
+        "geom_build_ms": 1.2000000476837158,
+        "geom_bytes": 138748,
+        "build_ms": 0.7999999523162842,
+        "builds": 2,
+        "total_index_bytes": 561152,
+        "peak_index_bytes": 280576,
+        "removals": 353,
+        "registrations": [
+          {
+            "kind": "full",
+            "members": 31251,
+            "sites": 34687,
+            "bytes": 280576
+          },
+          {
+            "kind": "full",
+            "members": 31216,
+            "sites": 34687,
+            "bytes": 280576
+          }
+        ],
+        "samples": 0,
+        "distance_tests": 0,
+        "within_radius": 0,
+        "initially_noncold_in_bucket": 0
+      },
+      "phases_ms": {
+        "fork_restore_ms": 1.1000003814697266,
+        "pick_ms": 0.8999998569488525,
+        "guard_ms": 0.20000004768371582,
+        "physics_ms": 417.69999980926514,
+        "transport_ms": 0,
+        "render_read_ms": 21.5,
+        "score_ms": 0
+      },
+      "browser_ms": 441.7000000476837,
+      "delivered_ms": 444.16060000000016,
+      "rep": 0
+    },
+    {
+      "method": "sibling",
+      "cameras": [
+        0
+      ],
+      "choices": {
+        "0": "L"
+      },
+      "strokes": [
+        {
+          "pick": "L",
+          "clicked": 74,
+          "steps": 90,
+          "views": [
+            {
+              "camera": 0,
+              "changed_shell_mass": 112.05573490883037,
+              "shell_mass": 282.82575520250475,
+              "fraction": 0.3962006035433296,
+              "passes_quarter": true
+            }
+          ]
+        }
+      ],
+      "shared_steps": 24,
+      "reused_steps": 0,
+      "index": {
+        "profile": false,
+        "geom_build_ms": 0,
+        "geom_bytes": 138748,
+        "build_ms": 0.5999999046325684,
+        "builds": 2,
+        "total_index_bytes": 561152,
+        "peak_index_bytes": 280576,
+        "removals": 353,
+        "registrations": [
+          {
+            "kind": "full",
+            "members": 31251,
+            "sites": 34687,
+            "bytes": 280576
+          },
+          {
+            "kind": "full",
+            "members": 31216,
+            "sites": 34687,
+            "bytes": 280576
+          }
+        ],
+        "samples": 0,
+        "distance_tests": 0,
+        "within_radius": 0,
+        "initially_noncold_in_bucket": 0
+      },
+      "phases_ms": {
+        "fork_restore_ms": 1.1000001430511475,
+        "pick_ms": 0.4999997615814209,
+        "guard_ms": 0.20000004768371582,
+        "physics_ms": 410.40000009536743,
+        "transport_ms": 0,
+        "render_read_ms": 20.40000009536743,
+        "score_ms": 0.09999990463256836
+      },
+      "browser_ms": 432.7999999523163,
+      "delivered_ms": 435.58969999999954,
+      "rep": 1
+    },
+    {
+      "method": "ordinary",
+      "cameras": [
+        0
+      ],
+      "choices": {
+        "0": "L"
+      },
+      "strokes": [
+        {
+          "pick": "L",
+          "clicked": 74,
+          "steps": 90,
+          "views": [
+            {
+              "camera": 0,
+              "changed_shell_mass": 112.05573490883037,
+              "shell_mass": 282.82575520250475,
+              "fraction": 0.3962006035433296,
+              "passes_quarter": true
+            }
+          ]
+        }
+      ],
+      "shared_steps": 0,
+      "reused_steps": 0,
+      "index": {
+        "profile": false,
+        "geom_build_ms": 0,
+        "geom_bytes": 138748,
+        "build_ms": 0.2999999523162842,
+        "builds": 1,
+        "total_index_bytes": 280576,
+        "peak_index_bytes": 280576,
+        "removals": 353,
+        "registrations": [
+          {
+            "kind": "full",
+            "members": 31251,
+            "sites": 34687,
+            "bytes": 280576
+          }
+        ],
+        "samples": 0,
+        "distance_tests": 0,
+        "within_radius": 0,
+        "initially_noncold_in_bucket": 0
+      },
+      "phases_ms": {
+        "fork_restore_ms": 0.6000001430511475,
+        "pick_ms": 0.09999990463256836,
+        "guard_ms": 0,
+        "physics_ms": 405.5,
+        "transport_ms": 0,
+        "render_read_ms": 22.100000143051147,
+        "score_ms": 0
+      },
+      "browser_ms": 428.59999990463257,
+      "delivered_ms": 431.29869999999937,
+      "rep": 1
+    },
+    {
+      "method": "ordinary",
+      "cameras": [
+        0
+      ],
+      "choices": {
+        "0": "L"
+      },
+      "strokes": [
+        {
+          "pick": "L",
+          "clicked": 74,
+          "steps": 90,
+          "views": [
+            {
+              "camera": 0,
+              "changed_shell_mass": 112.05573490883037,
+              "shell_mass": 282.82575520250475,
+              "fraction": 0.3962006035433296,
+              "passes_quarter": true
+            }
+          ]
+        }
+      ],
+      "shared_steps": 0,
+      "reused_steps": 0,
+      "index": {
+        "profile": false,
+        "geom_build_ms": 0,
+        "geom_bytes": 138748,
+        "build_ms": 0.3000001907348633,
+        "builds": 1,
+        "total_index_bytes": 280576,
+        "peak_index_bytes": 280576,
+        "removals": 353,
+        "registrations": [
+          {
+            "kind": "full",
+            "members": 31251,
+            "sites": 34687,
+            "bytes": 280576
+          }
+        ],
+        "samples": 0,
+        "distance_tests": 0,
+        "within_radius": 0,
+        "initially_noncold_in_bucket": 0
+      },
+      "phases_ms": {
+        "fork_restore_ms": 0.6000001430511475,
+        "pick_ms": 0,
+        "guard_ms": 0,
+        "physics_ms": 416.5,
+        "transport_ms": 0,
+        "render_read_ms": 22.700000047683716,
+        "score_ms": 0.09999990463256836
+      },
+      "browser_ms": 440.10000014305115,
+      "delivered_ms": 443.79569999999876,
+      "rep": 2
+    },
+    {
+      "method": "sibling",
+      "cameras": [
+        0
+      ],
+      "choices": {
+        "0": "L"
+      },
+      "strokes": [
+        {
+          "pick": "L",
+          "clicked": 74,
+          "steps": 90,
+          "views": [
+            {
+              "camera": 0,
+              "changed_shell_mass": 112.05573490883037,
+              "shell_mass": 282.82575520250475,
+              "fraction": 0.3962006035433296,
+              "passes_quarter": true
+            }
+          ]
+        }
+      ],
+      "shared_steps": 24,
+      "reused_steps": 0,
+      "index": {
+        "profile": false,
+        "geom_build_ms": 0,
+        "geom_bytes": 138748,
+        "build_ms": 1.2999999523162842,
+        "builds": 2,
+        "total_index_bytes": 561152,
+        "peak_index_bytes": 280576,
+        "removals": 353,
+        "registrations": [
+          {
+            "kind": "full",
+            "members": 31251,
+            "sites": 34687,
+            "bytes": 280576
+          },
+          {
+            "kind": "full",
+            "members": 31216,
+            "sites": 34687,
+            "bytes": 280576
+          }
+        ],
+        "samples": 0,
+        "distance_tests": 0,
+        "within_radius": 0,
+        "initially_noncold_in_bucket": 0
+      },
+      "phases_ms": {
+        "fork_restore_ms": 0.9000000953674316,
+        "pick_ms": 0.2999999523162842,
+        "guard_ms": 0.2999999523162842,
+        "physics_ms": 407.7000000476837,
+        "transport_ms": 0,
+        "render_read_ms": 19.90000009536743,
+        "score_ms": 0.09999990463256836
+      },
+      "browser_ms": 429.2999999523163,
+      "delivered_ms": 433.23129999999946,
+      "rep": 2
+    },
+    {
+      "method": "sibling",
+      "cameras": [
+        0
+      ],
+      "choices": {
+        "0": "L"
+      },
+      "strokes": [
+        {
+          "pick": "L",
+          "clicked": 74,
+          "steps": 90,
+          "views": [
+            {
+              "camera": 0,
+              "changed_shell_mass": 112.05573490883037,
+              "shell_mass": 282.82575520250475,
+              "fraction": 0.3962006035433296,
+              "passes_quarter": true
+            }
+          ]
+        }
+      ],
+      "shared_steps": 24,
+      "reused_steps": 0,
+      "index": {
+        "profile": false,
+        "geom_build_ms": 0,
+        "geom_bytes": 138748,
+        "build_ms": 0.6000001430511475,
+        "builds": 2,
+        "total_index_bytes": 561152,
+        "peak_index_bytes": 280576,
+        "removals": 353,
+        "registrations": [
+          {
+            "kind": "full",
+            "members": 31251,
+            "sites": 34687,
+            "bytes": 280576
+          },
+          {
+            "kind": "full",
+            "members": 31216,
+            "sites": 34687,
+            "bytes": 280576
+          }
+        ],
+        "samples": 0,
+        "distance_tests": 0,
+        "within_radius": 0,
+        "initially_noncold_in_bucket": 0
+      },
+      "phases_ms": {
+        "fork_restore_ms": 1.1000003814697266,
+        "pick_ms": 0.2999999523162842,
+        "guard_ms": 0.09999990463256836,
+        "physics_ms": 406.5,
+        "transport_ms": 0,
+        "render_read_ms": 20.399999856948853,
+        "score_ms": 0
+      },
+      "browser_ms": 428.5,
+      "delivered_ms": 431.6872000000003,
+      "rep": 3
+    },
+    {
+      "method": "ordinary",
+      "cameras": [
+        0
+      ],
+      "choices": {
+        "0": "L"
+      },
+      "strokes": [
+        {
+          "pick": "L",
+          "clicked": 74,
+          "steps": 90,
+          "views": [
+            {
+              "camera": 0,
+              "changed_shell_mass": 112.05573490883037,
+              "shell_mass": 282.82575520250475,
+              "fraction": 0.3962006035433296,
+              "passes_quarter": true
+            }
+          ]
+        }
+      ],
+      "shared_steps": 0,
+      "reused_steps": 0,
+      "index": {
+        "profile": false,
+        "geom_build_ms": 0,
+        "geom_bytes": 138748,
+        "build_ms": 0.40000009536743164,
+        "builds": 1,
+        "total_index_bytes": 280576,
+        "peak_index_bytes": 280576,
+        "removals": 353,
+        "registrations": [
+          {
+            "kind": "full",
+            "members": 31251,
+            "sites": 34687,
+            "bytes": 280576
+          }
+        ],
+        "samples": 0,
+        "distance_tests": 0,
+        "within_radius": 0,
+        "initially_noncold_in_bucket": 0
+      },
+      "phases_ms": {
+        "fork_restore_ms": 0.6000001430511475,
+        "pick_ms": 0.19999980926513672,
+        "guard_ms": 0,
+        "physics_ms": 406.80000019073486,
+        "transport_ms": 0,
+        "render_read_ms": 21.299999952316284,
+        "score_ms": 0
+      },
+      "browser_ms": 429.10000014305115,
+      "delivered_ms": 432.3837000000003,
+      "rep": 3
+    },
+    {
+      "method": "ordinary",
+      "cameras": [
+        0
+      ],
+      "choices": {
+        "0": "L"
+      },
+      "strokes": [
+        {
+          "pick": "L",
+          "clicked": 74,
+          "steps": 90,
+          "views": [
+            {
+              "camera": 0,
+              "changed_shell_mass": 112.05573490883037,
+              "shell_mass": 282.82575520250475,
+              "fraction": 0.3962006035433296,
+              "passes_quarter": true
+            }
+          ]
+        }
+      ],
+      "shared_steps": 0,
+      "reused_steps": 0,
+      "index": {
+        "profile": false,
+        "geom_build_ms": 0,
+        "geom_bytes": 138748,
+        "build_ms": 0.2999999523162842,
+        "builds": 1,
+        "total_index_bytes": 280576,
+        "peak_index_bytes": 280576,
+        "removals": 353,
+        "registrations": [
+          {
+            "kind": "full",
+            "members": 31251,
+            "sites": 34687,
+            "bytes": 280576
+          }
+        ],
+        "samples": 0,
+        "distance_tests": 0,
+        "within_radius": 0,
+        "initially_noncold_in_bucket": 0
+      },
+      "phases_ms": {
+        "fork_restore_ms": 1,
+        "pick_ms": 0.09999990463256836,
+        "guard_ms": 0,
+        "physics_ms": 405.09999990463257,
+        "transport_ms": 0,
+        "render_read_ms": 20.90000009536743,
+        "score_ms": 0
+      },
+      "browser_ms": 427.09999990463257,
+      "delivered_ms": 431.14480000000003,
+      "rep": 4
+    },
+    {
+      "method": "sibling",
+      "cameras": [
+        0
+      ],
+      "choices": {
+        "0": "L"
+      },
+      "strokes": [
+        {
+          "pick": "L",
+          "clicked": 74,
+          "steps": 90,
+          "views": [
+            {
+              "camera": 0,
+              "changed_shell_mass": 112.05573490883037,
+              "shell_mass": 282.82575520250475,
+              "fraction": 0.3962006035433296,
+              "passes_quarter": true
+            }
+          ]
+        }
+      ],
+      "shared_steps": 24,
+      "reused_steps": 0,
+      "index": {
+        "profile": false,
+        "geom_build_ms": 0,
+        "geom_bytes": 138748,
+        "build_ms": 0.5,
+        "builds": 2,
+        "total_index_bytes": 561152,
+        "peak_index_bytes": 280576,
+        "removals": 353,
+        "registrations": [
+          {
+            "kind": "full",
+            "members": 31251,
+            "sites": 34687,
+            "bytes": 280576
+          },
+          {
+            "kind": "full",
+            "members": 31216,
+            "sites": 34687,
+            "bytes": 280576
+          }
+        ],
+        "samples": 0,
+        "distance_tests": 0,
+        "within_radius": 0,
+        "initially_noncold_in_bucket": 0
+      },
+      "phases_ms": {
+        "fork_restore_ms": 1.1999995708465576,
+        "pick_ms": 0.20000004768371582,
+        "guard_ms": 0.09999990463256836,
+        "physics_ms": 408.7000002861023,
+        "transport_ms": 0,
+        "render_read_ms": 20.5,
+        "score_ms": 0
+      },
+      "browser_ms": 431,
+      "delivered_ms": 433.58780000000115,
+      "rep": 4
+    },
+    {
+      "method": "sibling",
+      "cameras": [
+        0
+      ],
+      "choices": {
+        "0": "L"
+      },
+      "strokes": [
+        {
+          "pick": "L",
+          "clicked": 74,
+          "steps": 90,
+          "views": [
+            {
+              "camera": 0,
+              "changed_shell_mass": 112.05573490883037,
+              "shell_mass": 282.82575520250475,
+              "fraction": 0.3962006035433296,
+              "passes_quarter": true
+            }
+          ]
+        }
+      ],
+      "shared_steps": 24,
+      "reused_steps": 0,
+      "index": {
+        "profile": false,
+        "geom_build_ms": 0,
+        "geom_bytes": 138748,
+        "build_ms": 0.6999998092651367,
+        "builds": 2,
+        "total_index_bytes": 561152,
+        "peak_index_bytes": 280576,
+        "removals": 353,
+        "registrations": [
+          {
+            "kind": "full",
+            "members": 31251,
+            "sites": 34687,
+            "bytes": 280576
+          },
+          {
+            "kind": "full",
+            "members": 31216,
+            "sites": 34687,
+            "bytes": 280576
+          }
+        ],
+        "samples": 0,
+        "distance_tests": 0,
+        "within_radius": 0,
+        "initially_noncold_in_bucket": 0
+      },
+      "phases_ms": {
+        "fork_restore_ms": 1.2999999523162842,
+        "pick_ms": 0.2999999523162842,
+        "guard_ms": 0.09999990463256836,
+        "physics_ms": 412.80000019073486,
+        "transport_ms": 0,
+        "render_read_ms": 21.399999856948853,
+        "score_ms": 0.10000014305114746
+      },
+      "browser_ms": 436,
+      "delivered_ms": 438.5690999999988,
+      "rep": 5
+    },
+    {
+      "method": "ordinary",
+      "cameras": [
+        0
+      ],
+      "choices": {
+        "0": "L"
+      },
+      "strokes": [
+        {
+          "pick": "L",
+          "clicked": 74,
+          "steps": 90,
+          "views": [
+            {
+              "camera": 0,
+              "changed_shell_mass": 112.05573490883037,
+              "shell_mass": 282.82575520250475,
+              "fraction": 0.3962006035433296,
+              "passes_quarter": true
+            }
+          ]
+        }
+      ],
+      "shared_steps": 0,
+      "reused_steps": 0,
+      "index": {
+        "profile": false,
+        "geom_build_ms": 0,
+        "geom_bytes": 138748,
+        "build_ms": 0.39999985694885254,
+        "builds": 1,
+        "total_index_bytes": 280576,
+        "peak_index_bytes": 280576,
+        "removals": 353,
+        "registrations": [
+          {
+            "kind": "full",
+            "members": 31251,
+            "sites": 34687,
+            "bytes": 280576
+          }
+        ],
+        "samples": 0,
+        "distance_tests": 0,
+        "within_radius": 0,
+        "initially_noncold_in_bucket": 0
+      },
+      "phases_ms": {
+        "fork_restore_ms": 0.6000001430511475,
+        "pick_ms": 0.09999990463256836,
+        "guard_ms": 0,
+        "physics_ms": 417.60000014305115,
+        "transport_ms": 0,
+        "render_read_ms": 22.799999952316284,
+        "score_ms": 0
+      },
+      "browser_ms": 441.2000000476837,
+      "delivered_ms": 443.8639999999996,
+      "rep": 5
+    },
+    {
+      "method": "ordinary",
+      "cameras": [
+        0
+      ],
+      "choices": {
+        "0": "L"
+      },
+      "strokes": [
+        {
+          "pick": "L",
+          "clicked": 74,
+          "steps": 90,
+          "views": [
+            {
+              "camera": 0,
+              "changed_shell_mass": 112.05573490883037,
+              "shell_mass": 282.82575520250475,
+              "fraction": 0.3962006035433296,
+              "passes_quarter": true
+            }
+          ]
+        }
+      ],
+      "shared_steps": 0,
+      "reused_steps": 0,
+      "index": {
+        "profile": false,
+        "geom_build_ms": 0,
+        "geom_bytes": 138748,
+        "build_ms": 1.2000000476837158,
+        "builds": 1,
+        "total_index_bytes": 280576,
+        "peak_index_bytes": 280576,
+        "removals": 353,
+        "registrations": [
+          {
+            "kind": "full",
+            "members": 31251,
+            "sites": 34687,
+            "bytes": 280576
+          }
+        ],
+        "samples": 0,
+        "distance_tests": 0,
+        "within_radius": 0,
+        "initially_noncold_in_bucket": 0
+      },
+      "phases_ms": {
+        "fork_restore_ms": 0.5,
+        "pick_ms": 0.09999990463256836,
+        "guard_ms": 0,
+        "physics_ms": 422.2000000476837,
+        "transport_ms": 0,
+        "render_read_ms": 25.700000047683716,
+        "score_ms": 0
+      },
+      "browser_ms": 448.7000000476837,
+      "delivered_ms": 451.6882999999998,
+      "rep": 6
+    },
+    {
+      "method": "sibling",
+      "cameras": [
+        0
+      ],
+      "choices": {
+        "0": "L"
+      },
+      "strokes": [
+        {
+          "pick": "L",
+          "clicked": 74,
+          "steps": 90,
+          "views": [
+            {
+              "camera": 0,
+              "changed_shell_mass": 112.05573490883037,
+              "shell_mass": 282.82575520250475,
+              "fraction": 0.3962006035433296,
+              "passes_quarter": true
+            }
+          ]
+        }
+      ],
+      "shared_steps": 24,
+      "reused_steps": 0,
+      "index": {
+        "profile": false,
+        "geom_build_ms": 0,
+        "geom_bytes": 138748,
+        "build_ms": 0.6999998092651367,
+        "builds": 2,
+        "total_index_bytes": 561152,
+        "peak_index_bytes": 280576,
+        "removals": 353,
+        "registrations": [
+          {
+            "kind": "full",
+            "members": 31251,
+            "sites": 34687,
+            "bytes": 280576
+          },
+          {
+            "kind": "full",
+            "members": 31216,
+            "sites": 34687,
+            "bytes": 280576
+          }
+        ],
+        "samples": 0,
+        "distance_tests": 0,
+        "within_radius": 0,
+        "initially_noncold_in_bucket": 0
+      },
+      "phases_ms": {
+        "fork_restore_ms": 1.0999999046325684,
+        "pick_ms": 0.2999999523162842,
+        "guard_ms": 0,
+        "physics_ms": 412.40000009536743,
+        "transport_ms": 0,
+        "render_read_ms": 21.699999809265137,
+        "score_ms": 0
+      },
+      "browser_ms": 435.7999999523163,
+      "delivered_ms": 438.34360000000015,
+      "rep": 6
+    },
+    {
+      "method": "sibling",
+      "cameras": [
+        0,
+        124
+      ],
+      "choices": {
+        "0": "L",
+        "124": "none"
+      },
+      "strokes": [
+        {
+          "pick": "L",
+          "clicked": 74,
+          "steps": 90,
+          "views": [
+            {
+              "camera": 0,
+              "changed_shell_mass": 112.05573490883037,
+              "shell_mass": 282.82575520250475,
+              "fraction": 0.3962006035433296,
+              "passes_quarter": true
+            },
+            {
+              "camera": 124,
+              "changed_shell_mass": 0.048874727762805055,
+              "shell_mass": 829.1991376916565,
+              "fraction": 0.000058942087058681274,
+              "passes_quarter": false
+            }
+          ]
+        },
+        {
+          "pick": "F",
+          "clicked": 288,
+          "steps": 66,
+          "views": [
+            {
+              "camera": 124,
+              "changed_shell_mass": 0.020250183761719828,
+              "shell_mass": 829.1991376916565,
+              "fraction": 0.0000244213758085817,
+              "passes_quarter": false
+            }
+          ]
+        }
+      ],
+      "shared_steps": 24,
+      "reused_steps": 24,
+      "index": {
+        "profile": false,
+        "geom_build_ms": 1.3999998569488525,
+        "geom_bytes": 138748,
+        "build_ms": 0.8999998569488525,
+        "builds": 3,
+        "total_index_bytes": 841728,
+        "peak_index_bytes": 280576,
+        "removals": 1075,
+        "registrations": [
+          {
+            "kind": "full",
+            "members": 31251,
+            "sites": 34687,
+            "bytes": 280576
+          },
+          {
+            "kind": "full",
+            "members": 31216,
+            "sites": 34687,
+            "bytes": 280576
+          },
+          {
+            "kind": "full",
+            "members": 31002,
+            "sites": 34687,
+            "bytes": 280576
+          }
+        ],
+        "samples": 0,
+        "distance_tests": 0,
+        "within_radius": 0,
+        "initially_noncold_in_bucket": 0
+      },
+      "phases_ms": {
+        "fork_restore_ms": 1,
+        "pick_ms": 0.39999985694885254,
+        "guard_ms": 0.09999990463256836,
+        "physics_ms": 760.2000000476837,
+        "transport_ms": 0.40000009536743164,
+        "render_read_ms": 63.90000009536743,
+        "score_ms": 0.09999990463256836
+      },
+      "browser_ms": 826.3999998569489,
+      "delivered_ms": 828.8606,
+      "rep": 0
+    },
+    {
+      "method": "ordinary",
+      "cameras": [
+        0,
+        124
+      ],
+      "choices": {
+        "0": "L",
+        "124": "none"
+      },
+      "strokes": [
+        {
+          "pick": "L",
+          "clicked": 74,
+          "steps": 90,
+          "views": [
+            {
+              "camera": 0,
+              "changed_shell_mass": 112.05573490883037,
+              "shell_mass": 282.82575520250475,
+              "fraction": 0.3962006035433296,
+              "passes_quarter": true
+            },
+            {
+              "camera": 124,
+              "changed_shell_mass": 0.048874727762805055,
+              "shell_mass": 829.1991376916565,
+              "fraction": 0.000058942087058681274,
+              "passes_quarter": false
+            }
+          ]
+        },
+        {
+          "pick": "F",
+          "clicked": 288,
+          "steps": 90,
+          "views": [
+            {
+              "camera": 124,
+              "changed_shell_mass": 0.020250183761719828,
+              "shell_mass": 829.1991376916565,
+              "fraction": 0.0000244213758085817,
+              "passes_quarter": false
+            }
+          ]
+        }
+      ],
+      "shared_steps": 0,
+      "reused_steps": 0,
+      "index": {
+        "profile": false,
+        "geom_build_ms": 1,
+        "geom_bytes": 138748,
+        "build_ms": 0.6999998092651367,
+        "builds": 2,
+        "total_index_bytes": 561152,
+        "peak_index_bytes": 280576,
+        "removals": 1110,
+        "registrations": [
+          {
+            "kind": "full",
+            "members": 31251,
+            "sites": 34687,
+            "bytes": 280576
+          },
+          {
+            "kind": "full",
+            "members": 31037,
+            "sites": 34687,
+            "bytes": 280576
+          }
+        ],
+        "samples": 0,
+        "distance_tests": 0,
+        "within_radius": 0,
+        "initially_noncold_in_bucket": 0
+      },
+      "phases_ms": {
+        "fork_restore_ms": 1,
+        "pick_ms": 0.39999985694885254,
+        "guard_ms": 0,
+        "physics_ms": 847.9000000953674,
+        "transport_ms": 0,
+        "render_read_ms": 66.20000004768372,
+        "score_ms": 0.2999999523162842
+      },
+      "browser_ms": 915.7999999523163,
+      "delivered_ms": 918.6229000000003,
+      "rep": 0
+    },
+    {
+      "method": "ordinary",
+      "cameras": [
+        0,
+        124
+      ],
+      "choices": {
+        "0": "L",
+        "124": "none"
+      },
+      "strokes": [
+        {
+          "pick": "L",
+          "clicked": 74,
+          "steps": 90,
+          "views": [
+            {
+              "camera": 0,
+              "changed_shell_mass": 112.05573490883037,
+              "shell_mass": 282.82575520250475,
+              "fraction": 0.3962006035433296,
+              "passes_quarter": true
+            },
+            {
+              "camera": 124,
+              "changed_shell_mass": 0.048874727762805055,
+              "shell_mass": 829.1991376916565,
+              "fraction": 0.000058942087058681274,
+              "passes_quarter": false
+            }
+          ]
+        },
+        {
+          "pick": "F",
+          "clicked": 288,
+          "steps": 90,
+          "views": [
+            {
+              "camera": 124,
+              "changed_shell_mass": 0.020250183761719828,
+              "shell_mass": 829.1991376916565,
+              "fraction": 0.0000244213758085817,
+              "passes_quarter": false
+            }
+          ]
+        }
+      ],
+      "shared_steps": 0,
+      "reused_steps": 0,
+      "index": {
+        "profile": false,
+        "geom_build_ms": 0,
+        "geom_bytes": 138748,
+        "build_ms": 0.7999999523162842,
+        "builds": 2,
+        "total_index_bytes": 561152,
+        "peak_index_bytes": 280576,
+        "removals": 1110,
+        "registrations": [
+          {
+            "kind": "full",
+            "members": 31251,
+            "sites": 34687,
+            "bytes": 280576
+          },
+          {
+            "kind": "full",
+            "members": 31037,
+            "sites": 34687,
+            "bytes": 280576
+          }
+        ],
+        "samples": 0,
+        "distance_tests": 0,
+        "within_radius": 0,
+        "initially_noncold_in_bucket": 0
+      },
+      "phases_ms": {
+        "fork_restore_ms": 1.0999999046325684,
+        "pick_ms": 0.5000002384185791,
+        "guard_ms": 0,
+        "physics_ms": 870.099999666214,
+        "transport_ms": 0,
+        "render_read_ms": 67,
+        "score_ms": 0.10000014305114746
+      },
+      "browser_ms": 938.8999998569489,
+      "delivered_ms": 942.9054999999989,
+      "rep": 1
+    },
+    {
+      "method": "sibling",
+      "cameras": [
+        0,
+        124
+      ],
+      "choices": {
+        "0": "L",
+        "124": "none"
+      },
+      "strokes": [
+        {
+          "pick": "L",
+          "clicked": 74,
+          "steps": 90,
+          "views": [
+            {
+              "camera": 0,
+              "changed_shell_mass": 112.05573490883037,
+              "shell_mass": 282.82575520250475,
+              "fraction": 0.3962006035433296,
+              "passes_quarter": true
+            },
+            {
+              "camera": 124,
+              "changed_shell_mass": 0.048874727762805055,
+              "shell_mass": 829.1991376916565,
+              "fraction": 0.000058942087058681274,
+              "passes_quarter": false
+            }
+          ]
+        },
+        {
+          "pick": "F",
+          "clicked": 288,
+          "steps": 66,
+          "views": [
+            {
+              "camera": 124,
+              "changed_shell_mass": 0.020250183761719828,
+              "shell_mass": 829.1991376916565,
+              "fraction": 0.0000244213758085817,
+              "passes_quarter": false
+            }
+          ]
+        }
+      ],
+      "shared_steps": 24,
+      "reused_steps": 24,
+      "index": {
+        "profile": false,
+        "geom_build_ms": 0,
+        "geom_bytes": 138748,
+        "build_ms": 0.9999997615814209,
+        "builds": 3,
+        "total_index_bytes": 841728,
+        "peak_index_bytes": 280576,
+        "removals": 1075,
+        "registrations": [
+          {
+            "kind": "full",
+            "members": 31251,
+            "sites": 34687,
+            "bytes": 280576
+          },
+          {
+            "kind": "full",
+            "members": 31216,
+            "sites": 34687,
+            "bytes": 280576
+          },
+          {
+            "kind": "full",
+            "members": 31002,
+            "sites": 34687,
+            "bytes": 280576
+          }
+        ],
+        "samples": 0,
+        "distance_tests": 0,
+        "within_radius": 0,
+        "initially_noncold_in_bucket": 0
+      },
+      "phases_ms": {
+        "fork_restore_ms": 1.5999996662139893,
+        "pick_ms": 0.3000001907348633,
+        "guard_ms": 0.09999990463256836,
+        "physics_ms": 777.4000000953674,
+        "transport_ms": 0.20000004768371582,
+        "render_read_ms": 64.09999990463257,
+        "score_ms": 0
+      },
+      "browser_ms": 844.0999999046326,
+      "delivered_ms": 848.1572999999989,
+      "rep": 1
+    },
+    {
+      "method": "sibling",
+      "cameras": [
+        0,
+        124
+      ],
+      "choices": {
+        "0": "L",
+        "124": "none"
+      },
+      "strokes": [
+        {
+          "pick": "L",
+          "clicked": 74,
+          "steps": 90,
+          "views": [
+            {
+              "camera": 0,
+              "changed_shell_mass": 112.05573490883037,
+              "shell_mass": 282.82575520250475,
+              "fraction": 0.3962006035433296,
+              "passes_quarter": true
+            },
+            {
+              "camera": 124,
+              "changed_shell_mass": 0.048874727762805055,
+              "shell_mass": 829.1991376916565,
+              "fraction": 0.000058942087058681274,
+              "passes_quarter": false
+            }
+          ]
+        },
+        {
+          "pick": "F",
+          "clicked": 288,
+          "steps": 66,
+          "views": [
+            {
+              "camera": 124,
+              "changed_shell_mass": 0.020250183761719828,
+              "shell_mass": 829.1991376916565,
+              "fraction": 0.0000244213758085817,
+              "passes_quarter": false
+            }
+          ]
+        }
+      ],
+      "shared_steps": 24,
+      "reused_steps": 24,
+      "index": {
+        "profile": false,
+        "geom_build_ms": 0,
+        "geom_bytes": 138748,
+        "build_ms": 0.7999997138977051,
+        "builds": 3,
+        "total_index_bytes": 841728,
+        "peak_index_bytes": 280576,
+        "removals": 1075,
+        "registrations": [
+          {
+            "kind": "full",
+            "members": 31251,
+            "sites": 34687,
+            "bytes": 280576
+          },
+          {
+            "kind": "full",
+            "members": 31216,
+            "sites": 34687,
+            "bytes": 280576
+          },
+          {
+            "kind": "full",
+            "members": 31002,
+            "sites": 34687,
+            "bytes": 280576
+          }
+        ],
+        "samples": 0,
+        "distance_tests": 0,
+        "within_radius": 0,
+        "initially_noncold_in_bucket": 0
+      },
+      "phases_ms": {
+        "fork_restore_ms": 1.0999999046325684,
+        "pick_ms": 0.40000009536743164,
+        "guard_ms": 0,
+        "physics_ms": 763.9999997615814,
+        "transport_ms": 0,
+        "render_read_ms": 67.89999985694885,
+        "score_ms": 0
+      },
+      "browser_ms": 833.7999999523163,
+      "delivered_ms": 837.501400000001,
+      "rep": 2
+    },
+    {
+      "method": "ordinary",
+      "cameras": [
+        0,
+        124
+      ],
+      "choices": {
+        "0": "L",
+        "124": "none"
+      },
+      "strokes": [
+        {
+          "pick": "L",
+          "clicked": 74,
+          "steps": 90,
+          "views": [
+            {
+              "camera": 0,
+              "changed_shell_mass": 112.05573490883037,
+              "shell_mass": 282.82575520250475,
+              "fraction": 0.3962006035433296,
+              "passes_quarter": true
+            },
+            {
+              "camera": 124,
+              "changed_shell_mass": 0.048874727762805055,
+              "shell_mass": 829.1991376916565,
+              "fraction": 0.000058942087058681274,
+              "passes_quarter": false
+            }
+          ]
+        },
+        {
+          "pick": "F",
+          "clicked": 288,
+          "steps": 90,
+          "views": [
+            {
+              "camera": 124,
+              "changed_shell_mass": 0.020250183761719828,
+              "shell_mass": 829.1991376916565,
+              "fraction": 0.0000244213758085817,
+              "passes_quarter": false
+            }
+          ]
+        }
+      ],
+      "shared_steps": 0,
+      "reused_steps": 0,
+      "index": {
+        "profile": false,
+        "geom_build_ms": 0,
+        "geom_bytes": 138748,
+        "build_ms": 0.5999999046325684,
+        "builds": 2,
+        "total_index_bytes": 561152,
+        "peak_index_bytes": 280576,
+        "removals": 1110,
+        "registrations": [
+          {
+            "kind": "full",
+            "members": 31251,
+            "sites": 34687,
+            "bytes": 280576
+          },
+          {
+            "kind": "full",
+            "members": 31037,
+            "sites": 34687,
+            "bytes": 280576
+          }
+        ],
+        "samples": 0,
+        "distance_tests": 0,
+        "within_radius": 0,
+        "initially_noncold_in_bucket": 0
+      },
+      "phases_ms": {
+        "fork_restore_ms": 1.1999998092651367,
+        "pick_ms": 0.3000001907348633,
+        "guard_ms": 0,
+        "physics_ms": 844.1999998092651,
+        "transport_ms": 0,
+        "render_read_ms": 68.5,
+        "score_ms": 0.10000014305114746
+      },
+      "browser_ms": 914.7000000476837,
+      "delivered_ms": 917.8891999999978,
+      "rep": 2
+    },
+    {
+      "method": "ordinary",
+      "cameras": [
+        0,
+        124
+      ],
+      "choices": {
+        "0": "L",
+        "124": "none"
+      },
+      "strokes": [
+        {
+          "pick": "L",
+          "clicked": 74,
+          "steps": 90,
+          "views": [
+            {
+              "camera": 0,
+              "changed_shell_mass": 112.05573490883037,
+              "shell_mass": 282.82575520250475,
+              "fraction": 0.3962006035433296,
+              "passes_quarter": true
+            },
+            {
+              "camera": 124,
+              "changed_shell_mass": 0.048874727762805055,
+              "shell_mass": 829.1991376916565,
+              "fraction": 0.000058942087058681274,
+              "passes_quarter": false
+            }
+          ]
+        },
+        {
+          "pick": "F",
+          "clicked": 288,
+          "steps": 90,
+          "views": [
+            {
+              "camera": 124,
+              "changed_shell_mass": 0.020250183761719828,
+              "shell_mass": 829.1991376916565,
+              "fraction": 0.0000244213758085817,
+              "passes_quarter": false
+            }
+          ]
+        }
+      ],
+      "shared_steps": 0,
+      "reused_steps": 0,
+      "index": {
+        "profile": false,
+        "geom_build_ms": 0,
+        "geom_bytes": 138748,
+        "build_ms": 0.40000009536743164,
+        "builds": 2,
+        "total_index_bytes": 561152,
+        "peak_index_bytes": 280576,
+        "removals": 1110,
+        "registrations": [
+          {
+            "kind": "full",
+            "members": 31251,
+            "sites": 34687,
+            "bytes": 280576
+          },
+          {
+            "kind": "full",
+            "members": 31037,
+            "sites": 34687,
+            "bytes": 280576
+          }
+        ],
+        "samples": 0,
+        "distance_tests": 0,
+        "within_radius": 0,
+        "initially_noncold_in_bucket": 0
+      },
+      "phases_ms": {
+        "fork_restore_ms": 1.2000000476837158,
+        "pick_ms": 0.5,
+        "guard_ms": 0,
+        "physics_ms": 921.5999999046326,
+        "transport_ms": 0,
+        "render_read_ms": 78.60000014305115,
+        "score_ms": 0.19999980926513672
+      },
+      "browser_ms": 1002.2999999523163,
+      "delivered_ms": 1007.1558000000005,
+      "rep": 3
+    },
+    {
+      "method": "sibling",
+      "cameras": [
+        0,
+        124
+      ],
+      "choices": {
+        "0": "L",
+        "124": "none"
+      },
+      "strokes": [
+        {
+          "pick": "L",
+          "clicked": 74,
+          "steps": 90,
+          "views": [
+            {
+              "camera": 0,
+              "changed_shell_mass": 112.05573490883037,
+              "shell_mass": 282.82575520250475,
+              "fraction": 0.3962006035433296,
+              "passes_quarter": true
+            },
+            {
+              "camera": 124,
+              "changed_shell_mass": 0.048874727762805055,
+              "shell_mass": 829.1991376916565,
+              "fraction": 0.000058942087058681274,
+              "passes_quarter": false
+            }
+          ]
+        },
+        {
+          "pick": "F",
+          "clicked": 288,
+          "steps": 66,
+          "views": [
+            {
+              "camera": 124,
+              "changed_shell_mass": 0.020250183761719828,
+              "shell_mass": 829.1991376916565,
+              "fraction": 0.0000244213758085817,
+              "passes_quarter": false
+            }
+          ]
+        }
+      ],
+      "shared_steps": 24,
+      "reused_steps": 24,
+      "index": {
+        "profile": false,
+        "geom_build_ms": 0,
+        "geom_bytes": 138748,
+        "build_ms": 0.7000000476837158,
+        "builds": 3,
+        "total_index_bytes": 841728,
+        "peak_index_bytes": 280576,
+        "removals": 1075,
+        "registrations": [
+          {
+            "kind": "full",
+            "members": 31251,
+            "sites": 34687,
+            "bytes": 280576
+          },
+          {
+            "kind": "full",
+            "members": 31216,
+            "sites": 34687,
+            "bytes": 280576
+          },
+          {
+            "kind": "full",
+            "members": 31002,
+            "sites": 34687,
+            "bytes": 280576
+          }
+        ],
+        "samples": 0,
+        "distance_tests": 0,
+        "within_radius": 0,
+        "initially_noncold_in_bucket": 0
+      },
+      "phases_ms": {
+        "fork_restore_ms": 1.0999999046325684,
+        "pick_ms": 0.5,
+        "guard_ms": 0.09999990463256836,
+        "physics_ms": 839.5999999046326,
+        "transport_ms": 0.10000014305114746,
+        "render_read_ms": 71.90000009536743,
+        "score_ms": 0
+      },
+      "browser_ms": 913.5,
+      "delivered_ms": 917.7232999999978,
+      "rep": 3
+    },
+    {
+      "method": "sibling",
+      "cameras": [
+        0,
+        124
+      ],
+      "choices": {
+        "0": "L",
+        "124": "none"
+      },
+      "strokes": [
+        {
+          "pick": "L",
+          "clicked": 74,
+          "steps": 90,
+          "views": [
+            {
+              "camera": 0,
+              "changed_shell_mass": 112.05573490883037,
+              "shell_mass": 282.82575520250475,
+              "fraction": 0.3962006035433296,
+              "passes_quarter": true
+            },
+            {
+              "camera": 124,
+              "changed_shell_mass": 0.048874727762805055,
+              "shell_mass": 829.1991376916565,
+              "fraction": 0.000058942087058681274,
+              "passes_quarter": false
+            }
+          ]
+        },
+        {
+          "pick": "F",
+          "clicked": 288,
+          "steps": 66,
+          "views": [
+            {
+              "camera": 124,
+              "changed_shell_mass": 0.020250183761719828,
+              "shell_mass": 829.1991376916565,
+              "fraction": 0.0000244213758085817,
+              "passes_quarter": false
+            }
+          ]
+        }
+      ],
+      "shared_steps": 24,
+      "reused_steps": 24,
+      "index": {
+        "profile": false,
+        "geom_build_ms": 0,
+        "geom_bytes": 138748,
+        "build_ms": 0.6999998092651367,
+        "builds": 3,
+        "total_index_bytes": 841728,
+        "peak_index_bytes": 280576,
+        "removals": 1075,
+        "registrations": [
+          {
+            "kind": "full",
+            "members": 31251,
+            "sites": 34687,
+            "bytes": 280576
+          },
+          {
+            "kind": "full",
+            "members": 31216,
+            "sites": 34687,
+            "bytes": 280576
+          },
+          {
+            "kind": "full",
+            "members": 31002,
+            "sites": 34687,
+            "bytes": 280576
+          }
+        ],
+        "samples": 0,
+        "distance_tests": 0,
+        "within_radius": 0,
+        "initially_noncold_in_bucket": 0
+      },
+      "phases_ms": {
+        "fork_restore_ms": 1.0999999046325684,
+        "pick_ms": 0.2999999523162842,
+        "guard_ms": 0.09999990463256836,
+        "physics_ms": 749.400000333786,
+        "transport_ms": 0.09999990463256836,
+        "render_read_ms": 65.49999976158142,
+        "score_ms": 0
+      },
+      "browser_ms": 816.7000000476837,
+      "delivered_ms": 819.9246999999996,
+      "rep": 4
+    },
+    {
+      "method": "ordinary",
+      "cameras": [
+        0,
+        124
+      ],
+      "choices": {
+        "0": "L",
+        "124": "none"
+      },
+      "strokes": [
+        {
+          "pick": "L",
+          "clicked": 74,
+          "steps": 90,
+          "views": [
+            {
+              "camera": 0,
+              "changed_shell_mass": 112.05573490883037,
+              "shell_mass": 282.82575520250475,
+              "fraction": 0.3962006035433296,
+              "passes_quarter": true
+            },
+            {
+              "camera": 124,
+              "changed_shell_mass": 0.048874727762805055,
+              "shell_mass": 829.1991376916565,
+              "fraction": 0.000058942087058681274,
+              "passes_quarter": false
+            }
+          ]
+        },
+        {
+          "pick": "F",
+          "clicked": 288,
+          "steps": 90,
+          "views": [
+            {
+              "camera": 124,
+              "changed_shell_mass": 0.020250183761719828,
+              "shell_mass": 829.1991376916565,
+              "fraction": 0.0000244213758085817,
+              "passes_quarter": false
+            }
+          ]
+        }
+      ],
+      "shared_steps": 0,
+      "reused_steps": 0,
+      "index": {
+        "profile": false,
+        "geom_build_ms": 0,
+        "geom_bytes": 138748,
+        "build_ms": 0.40000009536743164,
+        "builds": 2,
+        "total_index_bytes": 561152,
+        "peak_index_bytes": 280576,
+        "removals": 1110,
+        "registrations": [
+          {
+            "kind": "full",
+            "members": 31251,
+            "sites": 34687,
+            "bytes": 280576
+          },
+          {
+            "kind": "full",
+            "members": 31037,
+            "sites": 34687,
+            "bytes": 280576
+          }
+        ],
+        "samples": 0,
+        "distance_tests": 0,
+        "within_radius": 0,
+        "initially_noncold_in_bucket": 0
+      },
+      "phases_ms": {
+        "fork_restore_ms": 1.2999999523162842,
+        "pick_ms": 0.5,
+        "guard_ms": 0,
+        "physics_ms": 828.1999998092651,
+        "transport_ms": 0,
+        "render_read_ms": 67.19999980926514,
+        "score_ms": 0.10000014305114746
+      },
+      "browser_ms": 897.5,
+      "delivered_ms": 900.779300000002,
+      "rep": 4
+    },
+    {
+      "method": "ordinary",
+      "cameras": [
+        0,
+        124
+      ],
+      "choices": {
+        "0": "L",
+        "124": "none"
+      },
+      "strokes": [
+        {
+          "pick": "L",
+          "clicked": 74,
+          "steps": 90,
+          "views": [
+            {
+              "camera": 0,
+              "changed_shell_mass": 112.05573490883037,
+              "shell_mass": 282.82575520250475,
+              "fraction": 0.3962006035433296,
+              "passes_quarter": true
+            },
+            {
+              "camera": 124,
+              "changed_shell_mass": 0.048874727762805055,
+              "shell_mass": 829.1991376916565,
+              "fraction": 0.000058942087058681274,
+              "passes_quarter": false
+            }
+          ]
+        },
+        {
+          "pick": "F",
+          "clicked": 288,
+          "steps": 90,
+          "views": [
+            {
+              "camera": 124,
+              "changed_shell_mass": 0.020250183761719828,
+              "shell_mass": 829.1991376916565,
+              "fraction": 0.0000244213758085817,
+              "passes_quarter": false
+            }
+          ]
+        }
+      ],
+      "shared_steps": 0,
+      "reused_steps": 0,
+      "index": {
+        "profile": false,
+        "geom_build_ms": 0,
+        "geom_bytes": 138748,
+        "build_ms": 0.6000001430511475,
+        "builds": 2,
+        "total_index_bytes": 561152,
+        "peak_index_bytes": 280576,
+        "removals": 1110,
+        "registrations": [
+          {
+            "kind": "full",
+            "members": 31251,
+            "sites": 34687,
+            "bytes": 280576
+          },
+          {
+            "kind": "full",
+            "members": 31037,
+            "sites": 34687,
+            "bytes": 280576
+          }
+        ],
+        "samples": 0,
+        "distance_tests": 0,
+        "within_radius": 0,
+        "initially_noncold_in_bucket": 0
+      },
+      "phases_ms": {
+        "fork_restore_ms": 1.0999999046325684,
+        "pick_ms": 0.40000009536743164,
+        "guard_ms": 0,
+        "physics_ms": 828.3999998569489,
+        "transport_ms": 0,
+        "render_read_ms": 67.30000019073486,
+        "score_ms": 0
+      },
+      "browser_ms": 897.3999998569489,
+      "delivered_ms": 900.536799999998,
+      "rep": 5
+    },
+    {
+      "method": "sibling",
+      "cameras": [
+        0,
+        124
+      ],
+      "choices": {
+        "0": "L",
+        "124": "none"
+      },
+      "strokes": [
+        {
+          "pick": "L",
+          "clicked": 74,
+          "steps": 90,
+          "views": [
+            {
+              "camera": 0,
+              "changed_shell_mass": 112.05573490883037,
+              "shell_mass": 282.82575520250475,
+              "fraction": 0.3962006035433296,
+              "passes_quarter": true
+            },
+            {
+              "camera": 124,
+              "changed_shell_mass": 0.048874727762805055,
+              "shell_mass": 829.1991376916565,
+              "fraction": 0.000058942087058681274,
+              "passes_quarter": false
+            }
+          ]
+        },
+        {
+          "pick": "F",
+          "clicked": 288,
+          "steps": 66,
+          "views": [
+            {
+              "camera": 124,
+              "changed_shell_mass": 0.020250183761719828,
+              "shell_mass": 829.1991376916565,
+              "fraction": 0.0000244213758085817,
+              "passes_quarter": false
+            }
+          ]
+        }
+      ],
+      "shared_steps": 24,
+      "reused_steps": 24,
+      "index": {
+        "profile": false,
+        "geom_build_ms": 0,
+        "geom_bytes": 138748,
+        "build_ms": 0.7999999523162842,
+        "builds": 3,
+        "total_index_bytes": 841728,
+        "peak_index_bytes": 280576,
+        "removals": 1075,
+        "registrations": [
+          {
+            "kind": "full",
+            "members": 31251,
+            "sites": 34687,
+            "bytes": 280576
+          },
+          {
+            "kind": "full",
+            "members": 31216,
+            "sites": 34687,
+            "bytes": 280576
+          },
+          {
+            "kind": "full",
+            "members": 31002,
+            "sites": 34687,
+            "bytes": 280576
+          }
+        ],
+        "samples": 0,
+        "distance_tests": 0,
+        "within_radius": 0,
+        "initially_noncold_in_bucket": 0
+      },
+      "phases_ms": {
+        "fork_restore_ms": 1.2000000476837158,
+        "pick_ms": 0.2999999523162842,
+        "guard_ms": 0.09999990463256836,
+        "physics_ms": 752.9999997615814,
+        "transport_ms": 0.10000014305114746,
+        "render_read_ms": 65.90000009536743,
+        "score_ms": 0.20000004768371582
+      },
+      "browser_ms": 821.2000000476837,
+      "delivered_ms": 824.2723000000005,
+      "rep": 5
+    },
+    {
+      "method": "sibling",
+      "cameras": [
+        0,
+        124
+      ],
+      "choices": {
+        "0": "L",
+        "124": "none"
+      },
+      "strokes": [
+        {
+          "pick": "L",
+          "clicked": 74,
+          "steps": 90,
+          "views": [
+            {
+              "camera": 0,
+              "changed_shell_mass": 112.05573490883037,
+              "shell_mass": 282.82575520250475,
+              "fraction": 0.3962006035433296,
+              "passes_quarter": true
+            },
+            {
+              "camera": 124,
+              "changed_shell_mass": 0.048874727762805055,
+              "shell_mass": 829.1991376916565,
+              "fraction": 0.000058942087058681274,
+              "passes_quarter": false
+            }
+          ]
+        },
+        {
+          "pick": "F",
+          "clicked": 288,
+          "steps": 66,
+          "views": [
+            {
+              "camera": 124,
+              "changed_shell_mass": 0.020250183761719828,
+              "shell_mass": 829.1991376916565,
+              "fraction": 0.0000244213758085817,
+              "passes_quarter": false
+            }
+          ]
+        }
+      ],
+      "shared_steps": 24,
+      "reused_steps": 24,
+      "index": {
+        "profile": false,
+        "geom_build_ms": 0,
+        "geom_bytes": 138748,
+        "build_ms": 0.8000001907348633,
+        "builds": 3,
+        "total_index_bytes": 841728,
+        "peak_index_bytes": 280576,
+        "removals": 1075,
+        "registrations": [
+          {
+            "kind": "full",
+            "members": 31251,
+            "sites": 34687,
+            "bytes": 280576
+          },
+          {
+            "kind": "full",
+            "members": 31216,
+            "sites": 34687,
+            "bytes": 280576
+          },
+          {
+            "kind": "full",
+            "members": 31002,
+            "sites": 34687,
+            "bytes": 280576
+          }
+        ],
+        "samples": 0,
+        "distance_tests": 0,
+        "within_radius": 0,
+        "initially_noncold_in_bucket": 0
+      },
+      "phases_ms": {
+        "fork_restore_ms": 1.000000238418579,
+        "pick_ms": 0.39999985694885254,
+        "guard_ms": 0.10000014305114746,
+        "physics_ms": 751.7999997138977,
+        "transport_ms": 0.19999980926513672,
+        "render_read_ms": 67.29999995231628,
+        "score_ms": 0.10000014305114746
+      },
+      "browser_ms": 821.2000000476837,
+      "delivered_ms": 824.4479000000028,
+      "rep": 6
+    },
+    {
+      "method": "ordinary",
+      "cameras": [
+        0,
+        124
+      ],
+      "choices": {
+        "0": "L",
+        "124": "none"
+      },
+      "strokes": [
+        {
+          "pick": "L",
+          "clicked": 74,
+          "steps": 90,
+          "views": [
+            {
+              "camera": 0,
+              "changed_shell_mass": 112.05573490883037,
+              "shell_mass": 282.82575520250475,
+              "fraction": 0.3962006035433296,
+              "passes_quarter": true
+            },
+            {
+              "camera": 124,
+              "changed_shell_mass": 0.048874727762805055,
+              "shell_mass": 829.1991376916565,
+              "fraction": 0.000058942087058681274,
+              "passes_quarter": false
+            }
+          ]
+        },
+        {
+          "pick": "F",
+          "clicked": 288,
+          "steps": 90,
+          "views": [
+            {
+              "camera": 124,
+              "changed_shell_mass": 0.020250183761719828,
+              "shell_mass": 829.1991376916565,
+              "fraction": 0.0000244213758085817,
+              "passes_quarter": false
+            }
+          ]
+        }
+      ],
+      "shared_steps": 0,
+      "reused_steps": 0,
+      "index": {
+        "profile": false,
+        "geom_build_ms": 0,
+        "geom_bytes": 138748,
+        "build_ms": 0.40000009536743164,
+        "builds": 2,
+        "total_index_bytes": 561152,
+        "peak_index_bytes": 280576,
+        "removals": 1110,
+        "registrations": [
+          {
+            "kind": "full",
+            "members": 31251,
+            "sites": 34687,
+            "bytes": 280576
+          },
+          {
+            "kind": "full",
+            "members": 31037,
+            "sites": 34687,
+            "bytes": 280576
+          }
+        ],
+        "samples": 0,
+        "distance_tests": 0,
+        "within_radius": 0,
+        "initially_noncold_in_bucket": 0
+      },
+      "phases_ms": {
+        "fork_restore_ms": 1.2000000476837158,
+        "pick_ms": 0.5,
+        "guard_ms": 0,
+        "physics_ms": 839.2000000476837,
+        "transport_ms": 0,
+        "render_read_ms": 65.30000019073486,
+        "score_ms": 0
+      },
+      "browser_ms": 906.6000001430511,
+      "delivered_ms": 909.5326999999997,
+      "rep": 6
+    }
+  ],
+  "errors": [],
+  "wall_ms": 27085.4892,
+  "finished_utc": "2026-11-25T09:41:38.720Z"
+}

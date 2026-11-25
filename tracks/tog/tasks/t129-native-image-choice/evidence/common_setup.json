@@ -1,0 +1,46 @@
+{
+  "projection_host_ms": 2034.3676999999998,
+  "weights": {
+    "schema": "t129-shell-f64-v1",
+    "started_utc": "2026-11-25T09:41:09.650818+00:00",
+    "encoding": "float64 little-endian, C row-major, top-left origin",
+    "observer_sha256": "80f7f61b3839032cfb7b001f1bd3ceaea365fdb30834e731d6fd88941d7ce622",
+    "source_sha256": {
+      "foreground.ply": "906460f162f704b89666b159ae5b4744e53e6dc11baf448a550de581506919b0",
+      "cameras.json": "5cdd4605b0bf11970357c26e66ce3affb6c25ab2823171488fa41288ceb4a5c5",
+      "REFERENCE.json": "1931f2697447bae9fd0b5a55c7dfeab1815638e33ccb8b46bbb582dfaa6a010b",
+      "shell.json.gz": "8afe54bbced4d77023c047d72a781b718af3a9a2cde8f8070473d0952ac40cc2",
+      "capture-report.json": "ef8a583a7a20fc57441e3b04f00c212a27d46eddc5ad022ca5392ac6703a5542",
+      "AL-trace.json.gz": "31bcdd178c0e12de763f71cbf0561bc39522a38178c33d39d1995209f36daeed",
+      "AF-trace.json.gz": "9a6412c708494f6fb00f038472ca0bb1ba1c7d9e01dbd97da0be5eff840bf488"
+    },
+    "views": {
+      "0": {
+        "eligible_sites": 2371,
+        "world_sites": 34687,
+        "integer_total": 282825750,
+        "raster_total": 282.8257552025043,
+        "weight_archive_sha256": "08aade341633cada213895141ae6bbfe0b36ebaa2e729b9227b9fb668caaf432",
+        "file": "camera-0.f64",
+        "rows": 264,
+        "columns": 470,
+        "bytes": 992640,
+        "sha256": "535982ac918ef2ff415e7975dd8f93f0899650b590c9bf5ebdf5ac26f13d7e8a"
+      },
+      "124": {
+        "eligible_sites": 2371,
+        "world_sites": 34687,
+        "integer_total": 829199132,
+        "raster_total": 829.199137691656,
+        "weight_archive_sha256": "2324ff5d06ba40eb1c04380e83d45dd55dd01fe21cd1645c85822096391efc32",
+        "file": "camera-124.f64",
+        "rows": 264,
+        "columns": 470,
+        "bytes": 992640,
+        "sha256": "a97db4ecb791aed0e1b89d016774d5994cb7db337431f77adf5d0365d7689918"
+      }
+    },
+    "raster_and_verify_ms": 1862.6482000108808,
+    "cold_prepare_ms": 1865.4535000678152
+  }
+}

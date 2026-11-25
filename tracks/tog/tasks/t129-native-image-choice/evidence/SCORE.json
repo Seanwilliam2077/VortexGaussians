@@ -1,0 +1,384 @@
+{
+  "schema": "t129-native-choice-verification-v1",
+  "processes": [
+    {
+      "file": "process-1.json",
+      "sha256": "eae8ac73d6a54e5a113f48df711498efc0bc5410f4f29c498f8dc268b744a66b",
+      "setup_ms": {
+        "read_matte_tables_ms": 1.708200000000005,
+        "browser_launch_ms": 1562.0344,
+        "load_scene_and_first_brush_ms": 648.9563000000003,
+        "upload_view_0_ms": 19.009700000000066,
+        "upload_view_124_ms": 18.317200000000412,
+        "native_parent_180_ms": 1557.4720000000002,
+        "verify_shell_selection_ms": 12.34270000000015
+      },
+      "issued": 28,
+      "scope_order": [
+        [
+          0
+        ],
+        [
+          0,
+          124
+        ]
+      ],
+      "queries": [
+        {
+          "cameras": [
+            0
+          ],
+          "first_call_ms": {
+            "ordinary": 450.83690000000024,
+            "sibling": 444.16060000000016
+          },
+          "measured_ms": {
+            "ordinary": [
+              431.29869999999937,
+              443.79569999999876,
+              432.3837000000003,
+              431.14480000000003,
+              443.8639999999996,
+              451.6882999999998
+            ],
+            "sibling": [
+              435.58969999999954,
+              433.23129999999946,
+              431.6872000000003,
+              433.58780000000115,
+              438.5690999999988,
+              438.34360000000015
+            ]
+          },
+          "median_ms": {
+            "ordinary": 438.08969999999954,
+            "sibling": 434.58875000000035
+          },
+          "phase_median_ms": {
+            "ordinary": {
+              "fork_restore_ms": 0.6000001430511475,
+              "pick_ms": 0.09999990463256836,
+              "guard_ms": 0.0,
+              "physics_ms": 411.65000009536743,
+              "transport_ms": 0.0,
+              "render_read_ms": 22.40000009536743,
+              "score_ms": 0.0
+            },
+            "sibling": {
+              "fork_restore_ms": 1.100000262260437,
+              "pick_ms": 0.2999999523162842,
+              "guard_ms": 0.09999990463256836,
+              "physics_ms": 409.55000019073486,
+              "transport_ms": 0.0,
+              "render_read_ms": 20.450000047683716,
+              "score_ms": 0.04999995231628418
+            }
+          },
+          "first_measured_methods": [
+            "sibling",
+            "ordinary",
+            "sibling",
+            "ordinary",
+            "sibling",
+            "ordinary"
+          ],
+          "paired_sibling_wins": 4,
+          "sibling_over_ordinary": 0.9920086000652396,
+          "paired_sibling_over_ordinary": [
+            1.009949021409061,
+            0.9761953529518215,
+            0.9983891622186497,
+            1.0056663097873408,
+            0.9880708955896383,
+            0.970455953807084
+          ]
+        },
+        {
+          "cameras": [
+            0,
+            124
+          ],
+          "first_call_ms": {
+            "ordinary": 918.6229000000003,
+            "sibling": 828.8606
+          },
+          "measured_ms": {
+            "ordinary": [
+              942.9054999999989,
+              917.8891999999978,
+              1007.1558000000005,
+              900.779300000002,
+              900.536799999998,
+              909.5326999999997
+            ],
+            "sibling": [
+              848.1572999999989,
+              837.501400000001,
+              917.7232999999978,
+              819.9246999999996,
+              824.2723000000005,
+              824.4479000000028
+            ]
+          },
+          "median_ms": {
+            "ordinary": 913.7109499999988,
+            "sibling": 830.9746500000019
+          },
+          "phase_median_ms": {
+            "ordinary": {
+              "fork_restore_ms": 1.1999999284744263,
+              "pick_ms": 0.5,
+              "guard_ms": 0.0,
+              "physics_ms": 841.6999999284744,
+              "transport_ms": 0.0,
+              "render_read_ms": 67.25,
+              "score_ms": 0.10000014305114746
+            },
+            "sibling": {
+              "fork_restore_ms": 1.0999999046325684,
+              "pick_ms": 0.3500000238418579,
+              "guard_ms": 0.09999990463256836,
+              "physics_ms": 758.4999997615814,
+              "transport_ms": 0.10000014305114746,
+              "render_read_ms": 66.60000002384186,
+              "score_ms": 0.0
+            }
+          },
+          "first_measured_methods": [
+            "ordinary",
+            "sibling",
+            "ordinary",
+            "sibling",
+            "ordinary",
+            "sibling"
+          ],
+          "paired_sibling_wins": 6,
+          "sibling_over_ordinary": 0.909450247914839,
+          "paired_sibling_over_ordinary": [
+            0.8995146385295238,
+            0.9124210198790911,
+            0.9112029141866606,
+            0.9102392783670737,
+            0.9153121782474657,
+            0.9064521814333922
+          ]
+        }
+      ],
+      "pid": 30116,
+      "start": "2026-11-25T09:41:11.635Z",
+      "finish": "2026-11-25T09:41:38.720Z",
+      "process_wall_ms": 27085.4892
+    },
+    {
+      "file": "process-2.json",
+      "sha256": "e672d54961685934d20cf79c94c3508c6417794f139403d82485560275e95c45",
+      "setup_ms": {
+        "read_matte_tables_ms": 1.7363,
+        "browser_launch_ms": 1588.2966000000001,
+        "load_scene_and_first_brush_ms": 649.2528000000002,
+        "upload_view_0_ms": 20.16210000000001,
+        "upload_view_124_ms": 17.70119999999997,
+        "native_parent_180_ms": 1578.4642,
+        "verify_shell_selection_ms": 13.372700000000805
+      },
+      "issued": 28,
+      "scope_order": [
+        [
+          0,
+          124
+        ],
+        [
+          0
+        ]
+      ],
+      "queries": [
+        {
+          "cameras": [
+            0
+          ],
+          "first_call_ms": {
+            "ordinary": 461.9392000000007,
+            "sibling": 459.1456999999973
+          },
+          "measured_ms": {
+            "ordinary": [
+              442.59889999999723,
+              437.9991000000009,
+              446.5594999999994,
+              436.72999999999956,
+              439.35189999999784,
+              444.3652000000002
+            ],
+            "sibling": [
+              440.3731000000007,
+              468.7996999999996,
+              493.6860000000015,
+              439.66429999999673,
+              445.79639999999927,
+              437.10039999999935
+            ]
+          },
+          "median_ms": {
+            "ordinary": 440.97539999999753,
+            "sibling": 443.08475
+          },
+          "phase_median_ms": {
+            "ordinary": {
+              "fork_restore_ms": 0.6000000238418579,
+              "pick_ms": 0.09999990463256836,
+              "guard_ms": 0.0,
+              "physics_ms": 415.5,
+              "transport_ms": 0.0,
+              "render_read_ms": 21.300000071525574,
+              "score_ms": 0.0
+            },
+            "sibling": {
+              "fork_restore_ms": 1.0000001192092896,
+              "pick_ms": 0.3000001907348633,
+              "guard_ms": 0.09999990463256836,
+              "physics_ms": 416.9999998807907,
+              "transport_ms": 0.0,
+              "render_read_ms": 20.950000047683716,
+              "score_ms": 0.0
+            }
+          },
+          "first_measured_methods": [
+            "sibling",
+            "ordinary",
+            "sibling",
+            "ordinary",
+            "sibling",
+            "ordinary"
+          ],
+          "paired_sibling_wins": 2,
+          "sibling_over_ordinary": 1.0047833734036014,
+          "paired_sibling_over_ordinary": [
+            0.9949710674834562,
+            1.0703211490617186,
+            1.10553240945496,
+            1.0067187965104234,
+            1.0146681964957964,
+            0.9836512850241179
+          ]
+        },
+        {
+          "cameras": [
+            0,
+            124
+          ],
+          "first_call_ms": {
+            "ordinary": 928.4038,
+            "sibling": 859.3024000000005
+          },
+          "measured_ms": {
+            "ordinary": [
+              936.2955999999995,
+              940.2031000000006,
+              947.4880000000012,
+              939.397500000001,
+              932.6432999999997,
+              951.4760999999999
+            ],
+            "sibling": [
+              843.2968999999994,
+              847.9956000000002,
+              880.1657000000014,
+              864.2615999999998,
+              856.7862999999998,
+              851.6105000000025
+            ]
+          },
+          "median_ms": {
+            "ordinary": 939.8003000000008,
+            "sibling": 854.1984000000011
+          },
+          "phase_median_ms": {
+            "ordinary": {
+              "fork_restore_ms": 1.2000001668930054,
+              "pick_ms": 0.3500000238418579,
+              "guard_ms": 0.0,
+              "physics_ms": 866.2499998807907,
+              "transport_ms": 0.0,
+              "render_read_ms": 66.85000014305115,
+              "score_ms": 0.14999985694885254
+            },
+            "sibling": {
+              "fork_restore_ms": 1.100000023841858,
+              "pick_ms": 0.2999999523162842,
+              "guard_ms": 0.15000009536743164,
+              "physics_ms": 783.3500000238419,
+              "transport_ms": 0.09999990463256836,
+              "render_read_ms": 67.0,
+              "score_ms": 0.19999992847442627
+            }
+          },
+          "first_measured_methods": [
+            "ordinary",
+            "sibling",
+            "ordinary",
+            "sibling",
+            "ordinary",
+            "sibling"
+          ],
+          "paired_sibling_wins": 6,
+          "sibling_over_ordinary": 0.9089147981757405,
+          "paired_sibling_over_ordinary": [
+            0.9006737829377814,
+            0.9019281046829133,
+            0.9289465407477459,
+            0.9200169257422964,
+            0.9186645097863245,
+            0.8950413993583262
+          ]
+        }
+      ],
+      "pid": 56720,
+      "start": "2026-11-25T09:41:39.120Z",
+      "finish": "2026-11-25T09:42:06.549Z",
+      "process_wall_ms": 27429.7724
+    }
+  ],
+  "cold_projection": {
+    "file": "common_setup.json",
+    "sha256": "fc5ba30536fe5a7cabdf4eaf0b91573e237c7da1ef780030206061a4f286255a",
+    "projection_host_ms": 2034.3676999999998,
+    "projection_inner_ms": 1865.4535000678152,
+    "projection_covers_cameras": [
+      0,
+      124
+    ],
+    "weight_bytes": 1985280
+  },
+  "issued": 56,
+  "measured": 48,
+  "warmups": 8,
+  "warm_paired_directions": [
+    {
+      "cameras": [
+        0
+      ],
+      "process_ratios": [
+        0.9920086000652396,
+        1.0047833734036014
+      ],
+      "sibling_faster_both": false,
+      "ordinary_faster_both": false
+    },
+    {
+      "cameras": [
+        0,
+        124
+      ],
+      "process_ratios": [
+        0.909450247914839,
+        0.9089147981757405
+      ],
+      "sibling_faster_both": true,
+      "ordinary_faster_both": false
+    }
+  ],
+  "reference_sha256": {
+    "CAPTURE.json": "041fb808d5975e661aef7cf5c06648bd74232ba0e244cb1f6d08afce606c5ea2",
+    "SCORE.json": "a4919813d46c76ef86bd8b3953bfe73f18aa222ded6fdbd29059e9971318b365"
+  }
+}
