@@ -1,0 +1,545 @@
+{
+  "source_sha256": "a86f182c0d30248c789de0ac6586f31cf55779309c900eac0b8d5c10bac7042f",
+  "arms": {
+    "AB": {
+      "first": 224,
+      "cold_geometry_first": {
+        "method": "ordinary-cold",
+        "rep": 0,
+        "geom_ms": 4.200000047683716,
+        "delivered": 255.54390000000058
+      },
+      "methods": {
+        "ordinary": {
+          "delivered_ms": 246.61149999999998,
+          "min_ms": 224.46380000000136,
+          "max_ms": 285.5568000000003,
+          "waves_ms": [
+            224.46380000000136,
+            240.04579999999987,
+            253.17720000000008,
+            285.5568000000003,
+            238.41949999999997,
+            267.02480000000105
+          ],
+          "warmup_ms": 310.3088000000007,
+          "repair_phase_ms": 0.0
+        },
+        "repair": {
+          "delivered_ms": 226.71169999999984,
+          "min_ms": 221.45900000000074,
+          "max_ms": 301.3252000000002,
+          "waves_ms": [
+            301.3252000000002,
+            273.1151000000009,
+            221.45900000000074,
+            226.3181999999997,
+            227.10519999999997,
+            221.57300000000032
+          ],
+          "warmup_ms": 309.6210000000001,
+          "repair_phase_ms": 43.799999952316284
+        },
+        "sitewise": {
+          "delivered_ms": 229.11089999999967,
+          "min_ms": 217.35780000000068,
+          "max_ms": 264.9215000000004,
+          "waves_ms": [
+            217.35780000000068,
+            220.61470000000008,
+            223.5589999999993,
+            234.66280000000006,
+            253.1820000000007,
+            264.9215000000004
+          ],
+          "warmup_ms": 258.3739999999998,
+          "repair_phase_ms": 41.74999988079071,
+          "timed_blocks_profiled_separately": [
+            {
+              "frames": 30,
+              "sites": 34687,
+              "old_burning": 3662,
+              "graph_edges": 9,
+              "noncached_donor_rows": 0,
+              "typed_scratch_bytes": 416320,
+              "graph_ms": 0.20000004768371582,
+              "samples": 1740,
+              "hit_calls": 621918,
+              "flame_writes": 46137,
+              "graph_writes": 265,
+              "positive_decays": 149195,
+              "site_frames": 149195,
+              "old_positive": 4621,
+              "cold_only_flame_touched": 3663,
+              "clock_sites": 3740,
+              "added_sites": 78,
+              "flame_ms": 36.700000047683716,
+              "finish_ms": 1.5999999046325684,
+              "profile_counts": true
+            },
+            {
+              "frames": 2,
+              "sites": 34687,
+              "old_burning": 3740,
+              "graph_edges": 8,
+              "noncached_donor_rows": 0,
+              "typed_scratch_bytes": 416312,
+              "graph_ms": 0,
+              "samples": 224,
+              "hit_calls": 52662,
+              "flame_writes": 20318,
+              "graph_writes": 16,
+              "positive_decays": 14263,
+              "site_frames": 14263,
+              "old_positive": 6922,
+              "cold_only_flame_touched": 2851,
+              "clock_sites": 3740,
+              "added_sites": 0,
+              "flame_ms": 5.299999952316284,
+              "finish_ms": 0.5999999046325684,
+              "profile_counts": true
+            }
+          ]
+        },
+        "ordinary-cold": {
+          "delivered_ms": 202.54154999999992,
+          "min_ms": 185.3732,
+          "max_ms": 292.726200000001,
+          "waves_ms": [
+            292.726200000001,
+            192.65200000000004,
+            185.3732,
+            196.9948999999997,
+            208.08820000000014,
+            243.386199999999
+          ],
+          "warmup_ms": 255.54390000000058,
+          "repair_phase_ms": 0.0,
+          "grid": {
+            "build_ms": 0.5,
+            "builds": 1.0,
+            "total_index_bytes": 280576.0,
+            "peak_index_bytes": 280576.0,
+            "geom_bytes": 138748.0,
+            "removals": 475.0
+          },
+          "whole_deadline_profile": {
+            "builds": 1,
+            "samples": 15777,
+            "distance_tests": 7344763,
+            "within_radius": 516740,
+            "removals": 1395,
+            "peak_index_bytes": 280576
+          }
+        },
+        "repair-cold": {
+          "delivered_ms": 206.1567500000001,
+          "min_ms": 181.91669999999976,
+          "max_ms": 296.7350999999999,
+          "waves_ms": [
+            212.5648000000001,
+            188.4493999999995,
+            199.7487000000001,
+            181.91669999999976,
+            257.860200000001,
+            296.7350999999999
+          ],
+          "warmup_ms": 273.1805000000004,
+          "repair_phase_ms": 19.699999928474426,
+          "grid": {
+            "build_ms": 0.9499998092651367,
+            "builds": 4.0,
+            "total_index_bytes": 1122304.0,
+            "peak_index_bytes": 561152.0,
+            "geom_bytes": 138748.0,
+            "removals": 461.0
+          },
+          "whole_deadline_profile": {
+            "builds": 8,
+            "samples": 17154,
+            "distance_tests": 9013457,
+            "within_radius": 793623,
+            "removals": 2296,
+            "peak_index_bytes": 561152
+          },
+          "timed_blocks_profiled_separately": [
+            {
+              "frames": 30,
+              "direct_equal": {
+                "frame": 210,
+                "frontier": 3740,
+                "material_bytes": 589679
+              }
+            },
+            {
+              "frames": 2,
+              "direct_equal": {
+                "frame": 212,
+                "frontier": 3740,
+                "material_bytes": 589679
+              }
+            }
+          ]
+        },
+        "sitewise-cold": {
+          "delivered_ms": 193.31085000000076,
+          "min_ms": 184.6904999999988,
+          "max_ms": 231.71519999999873,
+          "waves_ms": [
+            189.01749999999993,
+            184.6904999999988,
+            191.90670000000136,
+            194.71500000000015,
+            209.44920000000093,
+            231.71519999999873
+          ],
+          "warmup_ms": 292.7602000000006,
+          "repair_phase_ms": 19.40000021457672,
+          "grid": {
+            "build_ms": 0.7000000476837158,
+            "builds": 4.0,
+            "total_index_bytes": 1122304.0,
+            "peak_index_bytes": 561152.0,
+            "geom_bytes": 138748.0,
+            "removals": 461.0
+          },
+          "whole_deadline_profile": {
+            "builds": 8,
+            "samples": 17154,
+            "distance_tests": 9022481,
+            "within_radius": 794937,
+            "removals": 2296,
+            "peak_index_bytes": 561152
+          },
+          "timed_blocks_profiled_separately": [
+            {
+              "frames": 30,
+              "sites": 34687,
+              "old_burning": 3662,
+              "graph_edges": 9,
+              "noncached_donor_rows": 0,
+              "typed_scratch_bytes": 416320,
+              "graph_ms": 0.7000000476837158,
+              "samples": 1740,
+              "hit_calls": 46213,
+              "flame_writes": 46137,
+              "graph_writes": 265,
+              "positive_decays": 149195,
+              "site_frames": 149195,
+              "old_positive": 4621,
+              "cold_only_flame_touched": 3663,
+              "clock_sites": 3740,
+              "added_sites": 78,
+              "flame_ms": 15.799999952316284,
+              "finish_ms": 3,
+              "profile_counts": true,
+              "direct_equal": {
+                "frame": 210,
+                "frontier": 3740,
+                "material_bytes": 589679
+              }
+            },
+            {
+              "frames": 2,
+              "sites": 34687,
+              "old_burning": 3740,
+              "graph_edges": 8,
+              "noncached_donor_rows": 0,
+              "typed_scratch_bytes": 416312,
+              "graph_ms": 0.2999999523162842,
+              "samples": 224,
+              "hit_calls": 20318,
+              "flame_writes": 20318,
+              "graph_writes": 16,
+              "positive_decays": 14263,
+              "site_frames": 14263,
+              "old_positive": 6922,
+              "cold_only_flame_touched": 2851,
+              "clock_sites": 3740,
+              "added_sites": 0,
+              "flame_ms": 4.200000047683716,
+              "finish_ms": 0.6000001430511475,
+              "profile_counts": true,
+              "direct_equal": {
+                "frame": 212,
+                "frontier": 3740,
+                "material_bytes": 589679
+              }
+            }
+          ]
+        }
+      },
+      "comparisons": {
+        "repair-cold": {
+          "median_ratio": 1.017849177119461,
+          "paired_wins": 3,
+          "paired_ratios": [
+            0.7261557045457475,
+            0.9781855366152413,
+            1.0775489660857132,
+            0.9234589321855543,
+            1.2391870370352611,
+            1.2191944325520554
+          ],
+          "qualifies": false
+        },
+        "sitewise-cold": {
+          "median_ratio": 0.9544256474782623,
+          "paired_wins": 4,
+          "paired_ratios": [
+            0.6457143228040377,
+            0.9586741897306996,
+            1.0352451163382914,
+            0.9884266039374646,
+            1.0065404958089925,
+            0.9520474044954056
+          ],
+          "qualifies": false
+        }
+      },
+      "direct_equality_boundaries": 6
+    },
+    "BA": {
+      "first": 266,
+      "cold_geometry_first": {
+        "method": "ordinary-cold",
+        "rep": 0,
+        "geom_ms": 3.9000000953674316,
+        "delivered": 551.7476000000024
+      },
+      "methods": {
+        "ordinary": {
+          "delivered_ms": 611.4927500000013,
+          "min_ms": 592.5489999999991,
+          "max_ms": 663.8005000000048,
+          "waves_ms": [
+            663.8005000000048,
+            608.479800000001,
+            595.2533999999941,
+            656.566899999998,
+            592.5489999999991,
+            614.5057000000015
+          ],
+          "warmup_ms": 642.886599999998,
+          "repair_phase_ms": 0.0
+        },
+        "repair": {
+          "delivered_ms": 677.5693499999943,
+          "min_ms": 655.9060000000027,
+          "max_ms": 728.5261000000028,
+          "waves_ms": [
+            728.5261000000028,
+            682.8694999999934,
+            672.0527000000002,
+            672.2691999999952,
+            655.9060000000027,
+            711.7646000000022
+          ],
+          "warmup_ms": 825.1564999999973,
+          "repair_phase_ms": 157.19999992847443
+        },
+        "sitewise": {
+          "delivered_ms": 765.1317000000017,
+          "min_ms": 657.5830999999962,
+          "max_ms": 782.0861000000004,
+          "waves_ms": [
+            766.0593000000008,
+            764.2041000000027,
+            687.6140999999989,
+            657.5830999999962,
+            782.0861000000004,
+            769.9155000000028
+          ],
+          "warmup_ms": 862.5864999999976,
+          "repair_phase_ms": 167.10000002384186,
+          "timed_blocks_profiled_separately": [
+            {
+              "frames": 72,
+              "sites": 34687,
+              "old_burning": 4399,
+              "graph_edges": 89,
+              "noncached_donor_rows": 0,
+              "typed_scratch_bytes": 416960,
+              "graph_ms": 0.09999990463256836,
+              "samples": 6829,
+              "hit_calls": 2824238,
+              "flame_writes": 367383,
+              "graph_writes": 5664,
+              "positive_decays": 547861,
+              "site_frames": 547861,
+              "old_positive": 7048,
+              "cold_only_flame_touched": 6093,
+              "clock_sites": 5355,
+              "added_sites": 956,
+              "flame_ms": 160.90000009536743,
+              "finish_ms": 2.8999998569488525,
+              "profile_counts": true
+            }
+          ]
+        },
+        "ordinary-cold": {
+          "delivered_ms": 493.93905000000086,
+          "min_ms": 462.54099999999744,
+          "max_ms": 556.5439000000042,
+          "waves_ms": [
+            556.5439000000042,
+            555.6501000000062,
+            479.9991999999984,
+            462.54099999999744,
+            482.3519000000015,
+            505.52620000000024
+          ],
+          "warmup_ms": 551.7476000000024,
+          "repair_phase_ms": 0.0,
+          "grid": {
+            "build_ms": 0.39999985694885254,
+            "builds": 1.0,
+            "total_index_bytes": 280576.0,
+            "peak_index_bytes": 280576.0,
+            "geom_bytes": 138748.0,
+            "removals": 1742.0
+          },
+          "whole_deadline_profile": {
+            "builds": 1,
+            "samples": 18564,
+            "distance_tests": 13123502,
+            "within_radius": 1065335,
+            "removals": 4028,
+            "peak_index_bytes": 280576
+          }
+        },
+        "repair-cold": {
+          "delivered_ms": 482.09240000000136,
+          "min_ms": 455.4699999999939,
+          "max_ms": 618.2992999999988,
+          "waves_ms": [
+            487.5454000000027,
+            499.29499999999825,
+            618.2992999999988,
+            455.4699999999939,
+            464.6366000000053,
+            476.6394
+          ],
+          "warmup_ms": 507.4174999999959,
+          "repair_phase_ms": 60.200000047683716,
+          "grid": {
+            "build_ms": 0.6499999761581421,
+            "builds": 3.0,
+            "total_index_bytes": 841728.0,
+            "peak_index_bytes": 561152.0,
+            "geom_bytes": 138748.0,
+            "removals": 1789.0
+          },
+          "whole_deadline_profile": {
+            "builds": 9,
+            "samples": 29272,
+            "distance_tests": 17030991,
+            "within_radius": 1567397,
+            "removals": 6082,
+            "peak_index_bytes": 561152
+          },
+          "timed_blocks_profiled_separately": [
+            {
+              "frames": 72,
+              "direct_equal": {
+                "frame": 252,
+                "frontier": 5355,
+                "material_bytes": 589679
+              }
+            }
+          ]
+        },
+        "sitewise-cold": {
+          "delivered_ms": 473.7086500000005,
+          "min_ms": 462.52300000000105,
+          "max_ms": 574.1098999999958,
+          "waves_ms": [
+            471.5673999999999,
+            475.84990000000107,
+            477.39160000000265,
+            466.2453999999998,
+            574.1098999999958,
+            462.52300000000105
+          ],
+          "warmup_ms": 486.33340000000317,
+          "repair_phase_ms": 57.5,
+          "grid": {
+            "build_ms": 0.6999998092651367,
+            "builds": 3.0,
+            "total_index_bytes": 841728.0,
+            "peak_index_bytes": 561152.0,
+            "geom_bytes": 138748.0,
+            "removals": 1789.0
+          },
+          "whole_deadline_profile": {
+            "builds": 9,
+            "samples": 29272,
+            "distance_tests": 17078518,
+            "within_radius": 1571153,
+            "removals": 6082,
+            "peak_index_bytes": 561152
+          },
+          "timed_blocks_profiled_separately": [
+            {
+              "frames": 72,
+              "sites": 34687,
+              "old_burning": 4399,
+              "graph_edges": 89,
+              "noncached_donor_rows": 0,
+              "typed_scratch_bytes": 416960,
+              "graph_ms": 1.2000000476837158,
+              "samples": 6829,
+              "hit_calls": 368276,
+              "flame_writes": 367383,
+              "graph_writes": 5664,
+              "positive_decays": 547861,
+              "site_frames": 547861,
+              "old_positive": 7048,
+              "cold_only_flame_touched": 6093,
+              "clock_sites": 5355,
+              "added_sites": 956,
+              "flame_ms": 83.60000014305115,
+              "finish_ms": 1.6999998092651367,
+              "profile_counts": true,
+              "direct_equal": {
+                "frame": 252,
+                "frontier": 5355,
+                "material_bytes": 589679
+              }
+            }
+          ]
+        }
+      },
+      "comparisons": {
+        "repair-cold": {
+          "median_ratio": 0.97601596796204,
+          "paired_wins": 5,
+          "paired_ratios": [
+            0.8760232571051431,
+            0.8985780799823354,
+            1.288125688542816,
+            0.9847127065492495,
+            0.9632730792601912,
+            0.9428579567191567
+          ],
+          "qualifies": false
+        },
+        "sitewise-cold": {
+          "median_ratio": 0.9590427199469239,
+          "paired_wins": 4,
+          "paired_ratios": [
+            0.8473139315694527,
+            0.8563840805571632,
+            0.9945674909458271,
+            1.0080088035439072,
+            1.1902304106192887,
+            0.9149337858255434
+          ],
+          "qualifies": false
+        }
+      },
+      "direct_equality_boundaries": 7
+    }
+  },
+  "primary_decision": "stop-development-route"
+}
