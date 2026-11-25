@@ -34,7 +34,7 @@ region='\nconst t105World='+JSON.stringify(selection.world)+';\n'+region+'\nwind
 
 let source=await pinned(path.join(base,'run.mjs'),'2abbd95d84d4e290cfb235402bd80e9c2115319b4626ea9eb3bed8c49fd5cf20');
 source=replaceOnce(source,'const here=path.dirname(fileURLToPath(import.meta.url));','const here='+JSON.stringify(base)+';');
-source=replaceOnce(source,"const local=path.join(here,'local');",'const local='+JSON.stringify(local)+';');
+source=replaceOnce(source,"\nconst local=path.join(here,'local');",'\nconst local='+JSON.stringify(local)+';');
 source=replaceOnce(source,"await fs.writeFile(path.join(local,'click.js'),click);","await fs.writeFile(path.join(local,'click.js'),click+"+JSON.stringify(region)+");");
 source=replaceOnce(source,"for(const horizon of [30,60,180])","for(const horizon of [180])");
 source=replaceOnce(source,"JSON.stringify(portable(fileURLToPath(import.meta.url)))","JSON.stringify("+JSON.stringify(fileURLToPath(import.meta.url).split(path.sep).join('/'))+")");

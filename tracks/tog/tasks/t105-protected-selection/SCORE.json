@@ -1,0 +1,316 @@
+{
+  "capture_sha256": "d46f569160f6361eb62a50ba67d3ec3080f06e86baccc6d917c0bcbabae0893e",
+  "whole_profile_ms": 46594.792799999996,
+  "queries": [
+    {
+      "arm": "AB",
+      "eligible": 1631,
+      "first": 202,
+      "ties": 12,
+      "warm_builds": [
+        {
+          "anchor_build_ms": 27,
+          "anchor_bytes": 405715,
+          "anchor_cells": 274,
+          "anchor_donors": 1400,
+          "anchor_edges": 0,
+          "method": "active-anchor",
+          "rep": 0
+        }
+      ],
+      "methods": {
+        "active-anchor": {
+          "delivered_ms": 274.32564999999977,
+          "click_ms": 0.9500000476837158,
+          "shell_index_ms": 5.25,
+          "fork_ms": 0.5499999523162842,
+          "compute_ms": 255.90000009536743,
+          "restore_ms": 0.0,
+          "total_browser_ms": 264.14999997615814,
+          "delivered_range_ms": [
+            259.2301000000007,
+            298.1792000000005
+          ],
+          "query_step_evaluations": 22,
+          "graph_work": {
+            "fresh_indexed": 0.0,
+            "fresh_index_ms": 0.0,
+            "anchor_validation_ms": 0.2999999523162842,
+            "local_rows_built": 0.0,
+            "local_edges_built": 0.0,
+            "copied_rows": 0.0,
+            "pruned_edges": 0.0,
+            "branch_bytes": 0.0
+          }
+        },
+        "restart-active": {
+          "delivered_ms": 194.9331000000002,
+          "click_ms": 0.8000000715255737,
+          "shell_index_ms": 4.800000071525574,
+          "fork_ms": 0.4500000476837158,
+          "compute_ms": 177.09999990463257,
+          "restore_ms": 0.0,
+          "total_browser_ms": 183.40000009536743,
+          "delivered_range_ms": [
+            190.77059999999983,
+            204.42779999999948
+          ],
+          "query_step_evaluations": 22,
+          "graph_work": {
+            "fresh_indexed": 0.0,
+            "fresh_index_ms": 0.0,
+            "anchor_validation_ms": 0.20000004768371582,
+            "local_rows_built": 0.0,
+            "local_edges_built": 0.0,
+            "copied_rows": 0.0,
+            "pruned_edges": 0.0,
+            "branch_bytes": 0.0
+          },
+          "recovery": {
+            "guards": [
+              {
+                "frame": 180,
+                "length": 59
+              }
+            ],
+            "ordinary_steps": 0,
+            "sliced_steps": 22,
+            "logged_samples": 0,
+            "allocated_log_bytes": 0,
+            "max_live_log_bytes": 0,
+            "repairs": 0,
+            "repair_steps": 0,
+            "restart": false
+          },
+          "repair_ms": 0.0
+        },
+        "repair-active": {
+          "delivered_ms": 206.79915000000074,
+          "click_ms": 0.9000000953674316,
+          "shell_index_ms": 5.849999904632568,
+          "fork_ms": 0.5,
+          "compute_ms": 185.05000007152557,
+          "restore_ms": 0.0,
+          "total_browser_ms": 192.60000002384186,
+          "delivered_range_ms": [
+            185.0064999999995,
+            215.5702000000001
+          ],
+          "query_step_evaluations": 22,
+          "graph_work": {
+            "fresh_indexed": 0.0,
+            "fresh_index_ms": 0.0,
+            "anchor_validation_ms": 0.20000004768371582,
+            "local_rows_built": 0.0,
+            "local_edges_built": 0.0,
+            "copied_rows": 0.0,
+            "pruned_edges": 0.0,
+            "branch_bytes": 0.0
+          },
+          "recovery": {
+            "guards": [
+              {
+                "frame": 180,
+                "length": 59
+              }
+            ],
+            "ordinary_steps": 0,
+            "sliced_steps": 22,
+            "logged_samples": 846,
+            "allocated_log_bytes": 112640,
+            "max_live_log_bytes": 112640,
+            "repairs": 0,
+            "repair_steps": 0,
+            "restart": false
+          },
+          "repair_ms": 0.0
+        },
+        "active-fresh": {
+          "delivered_ms": 318.4607500000002,
+          "click_ms": 0.9500000476837158,
+          "shell_index_ms": 5.800000071525574,
+          "fork_ms": 0.5,
+          "compute_ms": 298.19999980926514,
+          "restore_ms": 0.0,
+          "total_browser_ms": 306.0499999523163,
+          "delivered_range_ms": [
+            287.2982000000011,
+            351.2456000000002
+          ],
+          "query_step_evaluations": 22,
+          "graph_work": {
+            "fresh_indexed": 73256.0,
+            "fresh_index_ms": 12.600000023841858,
+            "anchor_validation_ms": 0.0,
+            "local_rows_built": 1400.0,
+            "local_edges_built": 0.0,
+            "copied_rows": 0.0,
+            "pruned_edges": 0.0,
+            "branch_bytes": 320092.0
+          }
+        }
+      },
+      "paired_delivery_to_ordinary_anchor": {
+        "active-anchor": 1.0,
+        "restart-active": 0.7105901325668976,
+        "repair-active": 0.7538454752590613,
+        "active-fresh": 1.1608857939459925
+      }
+    },
+    {
+      "arm": "BA",
+      "eligible": 30,
+      "first": 183,
+      "ties": 4,
+      "warm_builds": [
+        {
+          "anchor_build_ms": 39.30000019073486,
+          "anchor_bytes": 407047,
+          "anchor_cells": 276,
+          "anchor_donors": 1400,
+          "anchor_edges": 111,
+          "method": "restart-active",
+          "rep": 0
+        }
+      ],
+      "methods": {
+        "active-anchor": {
+          "delivered_ms": 43.90929999999935,
+          "click_ms": 0.9000000953674316,
+          "shell_index_ms": 5.7499998807907104,
+          "fork_ms": 0.44999992847442627,
+          "compute_ms": 25.15000009536743,
+          "restore_ms": 0.0,
+          "total_browser_ms": 32.25,
+          "delivered_range_ms": [
+            38.98019999999815,
+            45.44940000000133
+          ],
+          "query_step_evaluations": 3,
+          "graph_work": {
+            "fresh_indexed": 0.0,
+            "fresh_index_ms": 0.0,
+            "anchor_validation_ms": 0.25000011920928955,
+            "local_rows_built": 0.0,
+            "local_edges_built": 0.0,
+            "copied_rows": 0.0,
+            "pruned_edges": 0.0,
+            "branch_bytes": 0.0
+          }
+        },
+        "restart-active": {
+          "delivered_ms": 37.06500000000051,
+          "click_ms": 0.8999999761581421,
+          "shell_index_ms": 5.400000095367432,
+          "fork_ms": 0.5,
+          "compute_ms": 19.549999952316284,
+          "restore_ms": 0.0,
+          "total_browser_ms": 25.300000071525574,
+          "delivered_range_ms": [
+            32.914700000001176,
+            41.252300000000105
+          ],
+          "query_step_evaluations": 3,
+          "graph_work": {
+            "fresh_indexed": 0.0,
+            "fresh_index_ms": 0.0,
+            "anchor_validation_ms": 0.3999999761581421,
+            "local_rows_built": 0.0,
+            "local_edges_built": 0.0,
+            "copied_rows": 0.0,
+            "pruned_edges": 0.0,
+            "branch_bytes": 0.0
+          },
+          "recovery": {
+            "guards": [
+              {
+                "frame": 180,
+                "length": 41
+              }
+            ],
+            "ordinary_steps": 0,
+            "sliced_steps": 3,
+            "logged_samples": 0,
+            "allocated_log_bytes": 0,
+            "max_live_log_bytes": 0,
+            "repairs": 0,
+            "repair_steps": 0,
+            "restart": false
+          },
+          "repair_ms": 0.0
+        },
+        "repair-active": {
+          "delivered_ms": 41.17794999999933,
+          "click_ms": 0.8999998569488525,
+          "shell_index_ms": 6.800000071525574,
+          "fork_ms": 0.5,
+          "compute_ms": 23.799999952316284,
+          "restore_ms": 0.0,
+          "total_browser_ms": 31.84999990463257,
+          "delivered_range_ms": [
+            38.19860000000335,
+            44.25
+          ],
+          "query_step_evaluations": 3,
+          "graph_work": {
+            "fresh_indexed": 0.0,
+            "fresh_index_ms": 0.0,
+            "anchor_validation_ms": 0.25,
+            "local_rows_built": 0.0,
+            "local_edges_built": 0.0,
+            "copied_rows": 0.0,
+            "pruned_edges": 0.0,
+            "branch_bytes": 0.0
+          },
+          "recovery": {
+            "guards": [
+              {
+                "frame": 180,
+                "length": 41
+              }
+            ],
+            "ordinary_steps": 0,
+            "sliced_steps": 3,
+            "logged_samples": 94,
+            "allocated_log_bytes": 15360,
+            "max_live_log_bytes": 15360,
+            "repairs": 0,
+            "repair_steps": 0,
+            "restart": false
+          },
+          "repair_ms": 0.0
+        },
+        "active-fresh": {
+          "delivered_ms": 68.95150000000285,
+          "click_ms": 0.8999999761581421,
+          "shell_index_ms": 4.950000047683716,
+          "fork_ms": 0.40000009536743164,
+          "compute_ms": 51.64999997615814,
+          "restore_ms": 0.10000002384185791,
+          "total_browser_ms": 58.300000071525574,
+          "delivered_range_ms": [
+            68.23819999999978,
+            75.40199999999822
+          ],
+          "query_step_evaluations": 3,
+          "graph_work": {
+            "fresh_indexed": 73892.0,
+            "fresh_index_ms": 10.400000095367432,
+            "anchor_validation_ms": 0.0,
+            "local_rows_built": 1400.0,
+            "local_edges_built": 111.0,
+            "copied_rows": 0.0,
+            "pruned_edges": 0.0,
+            "branch_bytes": 321424.0
+          }
+        }
+      },
+      "paired_delivery_to_ordinary_anchor": {
+        "active-anchor": 1.0,
+        "restart-active": 0.844126415133037,
+        "repair-active": 0.9377956378261539,
+        "active-fresh": 1.5703165388654312
+      }
+    }
+  ]
+}

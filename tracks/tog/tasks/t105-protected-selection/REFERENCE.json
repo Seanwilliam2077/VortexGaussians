@@ -1,0 +1,47 @@
+{
+  "schema": "t105-protected-patch-first-event-v1",
+  "queries": [
+    {
+      "asset": "protected",
+      "arm": "AB",
+      "cut": 180,
+      "horizon": 180,
+      "shell_size": 1822,
+      "eligible": 1631,
+      "first_frame": 202,
+      "ids": [
+        334,
+        3966,
+        5439,
+        7388,
+        7796,
+        17440,
+        18389,
+        33472,
+        55670,
+        55788,
+        68467,
+        78850
+      ],
+      "last_verified_event_free_frame": 201,
+      "observed_steps": 22
+    },
+    {
+      "asset": "protected",
+      "arm": "BA",
+      "cut": 180,
+      "horizon": 180,
+      "shell_size": 1822,
+      "eligible": 30,
+      "first_frame": 183,
+      "ids": [
+        322,
+        31894,
+        36916,
+        39509
+      ],
+      "last_verified_event_free_frame": 182,
+      "observed_steps": 3
+    }
+  ]
+}
