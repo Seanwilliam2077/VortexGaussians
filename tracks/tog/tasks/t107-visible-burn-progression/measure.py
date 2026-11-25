@@ -29,13 +29,15 @@ def save(path, data):
         path.write_bytes(gzip.compress(raw, mtime=0) if path.suffix == ".gz" else raw)
 
 
-def splats(path):
+def splats(path, expected_hash="906460f162f704b89666b159ae5b4744e53e6dc11baf448a550de581506919b0", expected_count=34687):
     raw = path.read_bytes()
-    if hashlib.sha256(raw).hexdigest() != "906460f162f704b89666b159ae5b4744e53e6dc11baf448a550de581506919b0":
+    if hashlib.sha256(raw).hexdigest() != expected_hash:
         raise ValueError("Unknown foreground PLY")
     end = raw.index(b"end_header\n") + len(b"end_header\n")
     columns = [l.split()[2] for l in raw[:end].decode().splitlines() if l.startswith("property float ")]
-    data = np.frombuffer(raw[end:], dtype="<f4").reshape(34687, len(columns)).astype(float)
+    if f"element vertex {expected_count}" not in raw[:end].decode().splitlines():
+        raise ValueError("Unexpected number of original Gaussian sites")
+    data = np.frombuffer(raw[end:], dtype="<f4").reshape(expected_count, len(columns)).astype(float)
     def cols(fields):
         return data[:, [columns.index(k) for k in fields]]
     pos = cols(("x", "y", "z"))
