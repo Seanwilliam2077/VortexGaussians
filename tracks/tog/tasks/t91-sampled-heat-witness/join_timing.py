@@ -47,4 +47,3 @@ if __name__ == "__main__":
     (HERE / "CALLABLE.json").write_text(json.dumps(rows, indent=2)+"\n")
     for name, result in rows.items():
         print(name,result["groups"])
-
