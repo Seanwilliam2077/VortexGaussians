@@ -1,0 +1,41 @@
+          const expectedParent=report.common_parent_successor;
+          assert.deepEqual(await page.evaluate(dt=>__t121.parent(dt),cfg.dt),expectedParent);
+          const representative=report.queries[0].trials.find(t=>t.method==='cold-sibling');
+          const sibling=representative.work, cameras=[76,230];
+          if(!sibling.fallback){
+            const audit=await timed(phase,'audit_cold_sibling',()=>page.evaluate(([dt,ps,cs])=>
+              __t119.action('cold-sibling',dt,ps,cs,true),[cfg.dt,picksLF,cameras]));
+            const k=180+audit.work.steps;
+            const frames=[...new Set([k,k+1,224,270].filter(f=>f>=k && f<=270))].sort((a,b)=>a-b);
+            const physical=await timed(phase,'native_full_material_check',()=>page.evaluate(([dt,p,f])=>
+              __t121.physical(dt,p,f),[cfg.dt,picksLF[1],frames]));
+            assert.deepEqual(audit.boundaries,physical,'Native full-brush physical state and successor');
+            assert.deepEqual(audit.tried.map(x=>x.pick),['L','F']);
+            for(const x of audit.tried)for(const v of x.views){
+              validRow(v,x.pick);assert.deepEqual(v.curve,expectedRow(x.pick,v.camera).curve);
+            }
+            report.full_audits.sibling={fallback:false,frames,physical,work:audit.work,
+              curves:audit.tried.map(x=>({pick:x.pick,views:x.views}))};
+          }else{
+            const frames=[181,224,270], pick=picksLF[1];
+            const physical=await timed(phase,'native_fallback_physical',()=>page.evaluate(([dt,p,f])=>
+              __t121.physical(dt,p,f),[cfg.dt,pick,frames]));
+            const ordinary=await timed(phase,'compare_fallback_physical',()=>page.evaluate(([dt,p,c,f])=>
+              __t119.one('cold-ordinary',dt,p,c,f),[cfg.dt,pick,cameras,frames]));
+            const evaluated=ordinary.views.some(v=>v.defined);
+            if(evaluated)assert.deepEqual(ordinary.boundaries,physical);
+            report.full_audits.sibling={fallback:true,work:sibling,frames,physical,ordinary_evolved:evaluated};
+          }
+          for(const method of ['cold-ordinary','cold-repair'])for(const pick of picksLF){
+            const direct=await timed(phase,'curve_'+method+'_'+pick.name,()=>page.evaluate(([m,dt,p,c])=>
+              __t119.one(m,dt,p,c,[]),[method,cfg.dt,pick,cameras]));
+            assert.deepEqual(await page.evaluate(()=>__t86.marker()),pre);
+            const anyDefined=direct.views.some(v=>v.defined);
+            for(const v of direct.views){
+              validRow(v,pick.name);
+              if(anyDefined)assert.deepEqual(v.curve,expectedRow(pick.name,v.camera).curve);
+              else assert(v.curve.length===0 || v.curve.length===90,'Undefined branch readout');
+            }
+            report.full_audits[method+'_'+pick.name]={evaluated_frames:direct.views[0].curve.length,curves:direct.views};
+          }
+          assert.deepEqual(await page.evaluate(dt=>__t121.parent(dt),cfg.dt),expectedParent);
