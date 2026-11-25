@@ -85,8 +85,9 @@ try{
     const native=await page.evaluate(([p,dt])=>{
       __t98.resetTrial();
       try{
-        const edit=__t86.ignite(p,true),shell=new Set(__t90.configure(p)),after=__t86.marker(),rows=__t86.frames(240,dt);
-        return {edit,after,end:__t86.marker(),frames:rows.map(r=>({frame:r.frame,ids:r.new_ids.filter(i=>shell.has(i)),
+        const edit=__t86.ignite(p,true),shell=new Set(__t90.configure(p)),after=__t86.marker();
+        const eligible=__t98.eligibleAfterClick().length,rows=__t86.frames(240,dt);
+        return {edit,after,eligible,end:__t86.marker(),frames:rows.map(r=>({frame:r.frame,ids:r.new_ids.filter(i=>shell.has(i)),
           new_sites:r.new_ids.length,active:r.active_count,gas:r.gas_count,draws:r.random_draws}))};
       } finally{__t98.finishTrial();}
     },[picks[1],cfg.dt]);
