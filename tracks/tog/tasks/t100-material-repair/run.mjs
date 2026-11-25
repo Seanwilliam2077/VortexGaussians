@@ -16,6 +16,7 @@ const external=takeArg('--external-targets');
 const externalName=takeArg('--asset-name');
 assert(Boolean(external)===Boolean(externalName),'Use --external-targets and --asset-name together');
 const extra=takeArg('--active-plugin');
+const activeAudit=takeArg('--active-audit');
 const parent=path.resolve(here,'../t98-edit-to-answer'),origin=pathToFileURL(path.join(parent,'run.mjs'));
 const sha=s=>createHash('sha256').update(s).digest('hex');
 let text=await fs.readFile(origin,'utf8');
@@ -33,7 +34,7 @@ await fs.writeFile(path.join(local,'click.js'),click);
 replace("const local=path.join(here,'local');",'const local='+JSON.stringify(local)+';');
 text=text.replaceAll('fileURLToPath(import.meta.url)',JSON.stringify(fileURLToPath(origin)));
 replace("const specs=['regional','rank-only','sweep-spatial','sweep-rank','slice-rank','asset-cache','cold-cache'];",
-        "const specs=['asset-cache','restart-cache','repair-cache','active-anchor','active-fresh'];");
+        "const specs=['asset-cache','restart-cache','repair-cache','active-anchor','active-fresh','restart-active','repair-active'];");
 replace("schema:'t98-delivered-edit-to-answer-v1'","schema:'t100-material-repair-v1'");
 const portable=p=>p.split(path.sep).join('/');
 if(external) {
@@ -45,13 +46,18 @@ if(external) {
 }
 replace("await input('T98_runner',","await input('T100_runner',"+JSON.stringify(portable(fileURLToPath(import.meta.url)))+");await input('T100_protocol',"+JSON.stringify(portable(path.join(here,'PROTOCOL.md')))+");await input('T98_runner',");
 replace("'local/dispatch.js'",JSON.stringify(path.relative(parent,path.join(local,'dispatch.js')).split(path.sep).join('/')));
-const additional=[path.join(local,'plugin.js'),...(extra?[path.resolve(extra)]:[]),path.join(local,'click.js')];
+const additional=[path.join(local,'plugin.js'),...(extra?[path.resolve(extra),path.join(local,'active-repair.js')]:[]),
+  path.join(local,'click.js'),...(activeAudit?[path.resolve(activeAudit)]:[])];
 replace("'click.js'];",additional.map(f=>JSON.stringify(portable(path.relative(parent,f)))).join(',')+"];");
 replace("assert.deepEqual(b.edit,ref.edit);assert.deepEqual(b.post_edit,ref.post_edit);",
         `assert.deepEqual(b.edit,ref.edit);assert.deepEqual(b.post_edit,ref.post_edit);
         shot.repair_audits=[];
         shot.repair_audits.push(await timed(phase,'untimed_click_audit',()=>page.evaluate(dt=>__t100.audit(dt),cfg.dt)));
         assert.deepEqual(await page.evaluate(()=>__t86.marker()),ref.post_edit);`);
+if(activeAudit)replace("        const b=await page.evaluate(p=>({edit:__t86.ignite(p,true)",`        shot.active_audit=await timed(phase,'untimed_preclick_active_audit',
+          ()=>page.evaluate(([p,dt])=>__t102Audit(p,dt),[picks[1],cfg.dt]));
+        assert.deepEqual(await page.evaluate(()=>__t86.marker()),pre);
+        const b=await page.evaluate(p=>({edit:__t86.ignite(p,true)`);
 replace("shot.cut_hashes[stop]=marker.hash;",`shot.cut_hashes[stop]=marker.hash;
         if(asset==='firewoods' && arm==='AB' && stop===210) {
           const audit=await timed(phase,'untimed_development_wrap_check',()=>page.evaluate(dt=>__t100.audit(dt),cfg.dt));
