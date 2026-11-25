@@ -53,6 +53,13 @@ def evaluate(scene,rnd,cap,ref,expected):
     cam=STUDIES[scene][1]
     order=list(METHODS) if rnd in (1,4) else list(reversed(METHODS))
     check(cap["status"]=="validated" and not cap["errors"] and cap["methods"]==order and cap["repeats"]==2,"worker")
+    prior="t113-firewoods-editorial-action" if scene=="firewoods" else "t111-playground-shot-choice"
+    pins=read(HERE.parent/prior/"evidence/timing/CAPTURE.json")["sources"]
+    actual=cap["sources"]
+    altered={k for k in actual.keys()|pins.keys() if actual.get(k)!=pins.get(k)}
+    check(altered=={"T111_timing_protocol","T111_runner"},"previous native inputs, solver and weight identities")
+    for k,f in (("T111_timing_protocol","PROTOCOL.md"),("T111_runner","run.mjs")):
+        check(actual[k]==hashlib.sha256((HERE/f).read_bytes()).hexdigest(),"pinned repeat driver")
     check(cap["common_parent"]==ref["AL"]["pre_edit"]==ref["AF"]["pre_edit"],"common parent")
     for arm,shot in cap["arms"].items():
         check(shot["verified_frames"]==360 and shot["endpoint"]==ref[arm]["end"],"native full continuation")

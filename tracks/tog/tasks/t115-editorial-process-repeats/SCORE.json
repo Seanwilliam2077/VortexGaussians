@@ -1,0 +1,1066 @@
+{
+  "blocks": [
+    {
+      "scene": "firewoods",
+      "round": 1,
+      "start": "2026-11-25T08:14:55.781Z",
+      "runtime": {
+        "node": "v24.16.0",
+        "node_sha256": "b3094d0b49f9ad602262a9921551737bb97637c05dd357a06ae98188d7290aa3",
+        "browser_executable_sha256": "6c6729d3ade101ad8b97f9812a852a9024b7bb2a8394b5f506219dd635dc330d",
+        "playwright_version": "1.62.1",
+        "browser_version": "149.0.4022.52"
+      },
+      "first_order": [
+        "ordinary",
+        "repair"
+      ],
+      "worker_ms": 30841.6132,
+      "browser_launch_ms": 1875.4714999999999,
+      "setup_and_validation_ms": {
+        "AL": {
+          "new_page": 395.11050000000023,
+          "load": 630.4811,
+          "load_reset_and_first_brush": 261.6660999999999,
+          "untimed_reference_region": 14.516599999999926,
+          "advance_to_180": 2123.3002,
+          "read_decode_view_0": 2.4155000000000655,
+          "install_view_0": 74.1234000000004,
+          "read_decode_view_124": 2.0579999999999927,
+          "install_view_124": 57.320700000000215,
+          "advance_to_210": 449.4060000000027,
+          "advance_to_240": 432.0772999999972,
+          "advance_to_300": 1077.1010999999999,
+          "advance_to_360": 1021.3116999999984
+        },
+        "AF": {
+          "new_page": 1736.137200000001,
+          "load": 128.2908000000025,
+          "load_reset_and_first_brush": 262.8266000000003,
+          "untimed_reference_region": 20.126200000002427,
+          "advance_to_180": 2165.9297000000006,
+          "advance_to_210": 496.48239999999714,
+          "advance_to_240": 438.14530000000013,
+          "advance_to_300": 1042.8568000000014,
+          "advance_to_360": 1103.7385000000031
+        }
+      },
+      "operations": [
+        {
+          "cameras": [
+            0
+          ],
+          "first_method": "ordinary",
+          "choices": {
+            "0": "F"
+          },
+          "raw_warm_ms": {
+            "ordinary": [
+              962.033300000001,
+              913.5529000000006
+            ],
+            "repair": [
+              800.153800000001,
+              876.3206000000009
+            ]
+          },
+          "cold": {
+            "ordinary": {
+              "full_action_ms": 855.7034999999996,
+              "build_ms": 8.399999856948853,
+              "typed_bytes": 179155
+            },
+            "repair": {
+              "full_action_ms": 896.4261999999999,
+              "build_ms": 12.399999856948853,
+              "typed_bytes": 179155
+            }
+          },
+          "medians_ms": {
+            "ordinary": 937.7931000000008,
+            "repair": 838.2372000000009
+          },
+          "repair_over_ordinary": 0.8938402297905585
+        },
+        {
+          "cameras": [
+            0,
+            124
+          ],
+          "first_method": "repair",
+          "choices": {
+            "0": "F",
+            "124": "none"
+          },
+          "raw_warm_ms": {
+            "ordinary": [
+              1285.5438000000013,
+              1431.9081000000006
+            ],
+            "repair": [
+              1077.0036000000018,
+              1139.5328000000009
+            ]
+          },
+          "cold": {
+            "repair": {
+              "full_action_ms": 1012.8343000000004,
+              "build_ms": 11.099999904632568,
+              "typed_bytes": 179155
+            },
+            "ordinary": {
+              "full_action_ms": 1387.7374999999993,
+              "build_ms": 8.300000190734863,
+              "typed_bytes": 179155
+            }
+          },
+          "medians_ms": {
+            "ordinary": 1358.725950000001,
+            "repair": 1108.2682000000013
+          },
+          "repair_over_ordinary": 0.8156672064738298
+        }
+      ],
+      "capture_sha256": "abebd5ac60a9aa0eee170b20d5eb7fc71893fb8f936a5b84a3aef2b30fa9c8ab"
+    },
+    {
+      "scene": "playground",
+      "round": 1,
+      "start": "2026-11-25T08:15:27.176Z",
+      "runtime": {
+        "node": "v24.16.0",
+        "node_sha256": "b3094d0b49f9ad602262a9921551737bb97637c05dd357a06ae98188d7290aa3",
+        "browser_executable_sha256": "6c6729d3ade101ad8b97f9812a852a9024b7bb2a8394b5f506219dd635dc330d",
+        "playwright_version": "1.62.1",
+        "browser_version": "149.0.4022.52"
+      },
+      "first_order": [
+        "ordinary",
+        "repair"
+      ],
+      "worker_ms": 28888.1109,
+      "browser_launch_ms": 523.9002,
+      "setup_and_validation_ms": {
+        "AL": {
+          "new_page": 317.97159999999997,
+          "load": 543.8505,
+          "load_reset_and_first_brush": 574.4207999999999,
+          "untimed_reference_region": 21.77469999999994,
+          "advance_to_180": 3732.6353000000004,
+          "read_decode_view_0": 1.8134000000000015,
+          "install_view_0": 58.137299999999414,
+          "read_decode_view_153": 1.7413000000005923,
+          "install_view_153": 53.326200000000426,
+          "advance_to_210": 544.6036000000004,
+          "advance_to_240": 618.4588000000003,
+          "advance_to_300": 1366.7097000000012,
+          "advance_to_360": 1580.1222000000016
+        },
+        "AF": {
+          "new_page": 275.3773000000001,
+          "load": 134.85979999999836,
+          "load_reset_and_first_brush": 547.418099999999,
+          "untimed_reference_region": 27.287499999998545,
+          "advance_to_180": 3166.7762000000002,
+          "advance_to_210": 605.2867000000006,
+          "advance_to_240": 613.0038999999997,
+          "advance_to_300": 1436.1049999999996,
+          "advance_to_360": 1510.196
+        }
+      },
+      "operations": [
+        {
+          "cameras": [
+            0
+          ],
+          "first_method": "ordinary",
+          "choices": {
+            "0": "L"
+          },
+          "raw_warm_ms": {
+            "ordinary": [
+              507.03720000000067,
+              445.9139000000014
+            ],
+            "repair": [
+              427.6156000000001,
+              460.1846999999998
+            ]
+          },
+          "cold": {
+            "ordinary": {
+              "full_action_ms": 493.2335000000003,
+              "build_ms": 26.09999990463257,
+              "typed_bytes": 405715
+            },
+            "repair": {
+              "full_action_ms": 463.5708999999997,
+              "build_ms": 23.299999952316284,
+              "typed_bytes": 405715
+            }
+          },
+          "medians_ms": {
+            "ordinary": 476.475550000001,
+            "repair": 443.90014999999994
+          },
+          "repair_over_ordinary": 0.9316325884927338
+        },
+        {
+          "cameras": [
+            0,
+            153
+          ],
+          "first_method": "repair",
+          "choices": {
+            "0": "L",
+            "153": "L"
+          },
+          "raw_warm_ms": {
+            "ordinary": [
+              598.6872000000003,
+              653.3072000000011
+            ],
+            "repair": [
+              663.9241999999995,
+              678.4246000000003
+            ]
+          },
+          "cold": {
+            "repair": {
+              "full_action_ms": 817.857,
+              "build_ms": 13.600000143051147,
+              "typed_bytes": 405715
+            },
+            "ordinary": {
+              "full_action_ms": 647.8333999999995,
+              "build_ms": 18.100000143051147,
+              "typed_bytes": 405715
+            }
+          },
+          "medians_ms": {
+            "ordinary": 625.9972000000007,
+            "repair": 671.1743999999999
+          },
+          "repair_over_ordinary": 1.0721683739160481
+        }
+      ],
+      "capture_sha256": "86eecce9e0e37b1523bacb6d71b3ffb55985e5087895612557ba338e8c738b4f"
+    },
+    {
+      "scene": "playground",
+      "round": 2,
+      "start": "2026-11-25T08:15:56.207Z",
+      "runtime": {
+        "node": "v24.16.0",
+        "node_sha256": "b3094d0b49f9ad602262a9921551737bb97637c05dd357a06ae98188d7290aa3",
+        "browser_executable_sha256": "6c6729d3ade101ad8b97f9812a852a9024b7bb2a8394b5f506219dd635dc330d",
+        "playwright_version": "1.62.1",
+        "browser_version": "149.0.4022.52"
+      },
+      "first_order": [
+        "repair",
+        "ordinary"
+      ],
+      "worker_ms": 28495.857900000003,
+      "browser_launch_ms": 1630.4728,
+      "setup_and_validation_ms": {
+        "AL": {
+          "new_page": 285.3838000000003,
+          "load": 418.19860000000017,
+          "load_reset_and_first_brush": 538.7181,
+          "untimed_reference_region": 23.9378999999999,
+          "advance_to_180": 3055.4191,
+          "read_decode_view_0": 1.612199999999575,
+          "install_view_0": 50.08140000000003,
+          "read_decode_view_153": 1.3698999999996886,
+          "install_view_153": 42.674699999999575,
+          "advance_to_210": 571.7559999999994,
+          "advance_to_240": 576.1345000000001,
+          "advance_to_300": 1324.3282999999992,
+          "advance_to_360": 1601.3142000000007
+        },
+        "AF": {
+          "new_page": 278.13830000000235,
+          "load": 114.69470000000001,
+          "load_reset_and_first_brush": 481.8935999999994,
+          "untimed_reference_region": 24.98359999999957,
+          "advance_to_180": 3325.4797,
+          "advance_to_210": 572.7389000000003,
+          "advance_to_240": 612.0792000000001,
+          "advance_to_300": 1281.543099999999,
+          "advance_to_360": 1408.172599999998
+        }
+      },
+      "operations": [
+        {
+          "cameras": [
+            0
+          ],
+          "first_method": "repair",
+          "choices": {
+            "0": "L"
+          },
+          "raw_warm_ms": {
+            "ordinary": [
+              434.8711999999996,
+              400.65910000000076
+            ],
+            "repair": [
+              457.77979999999934,
+              378.73289999999906
+            ]
+          },
+          "cold": {
+            "repair": {
+              "full_action_ms": 405.79140000000007,
+              "build_ms": 23.299999952316284,
+              "typed_bytes": 405715
+            },
+            "ordinary": {
+              "full_action_ms": 450.0162999999993,
+              "build_ms": 19.59999990463257,
+              "typed_bytes": 405715
+            }
+          },
+          "medians_ms": {
+            "ordinary": 417.7651500000002,
+            "repair": 418.2563499999992
+          },
+          "repair_over_ordinary": 1.0011757802200567
+        },
+        {
+          "cameras": [
+            0,
+            153
+          ],
+          "first_method": "ordinary",
+          "choices": {
+            "0": "L",
+            "153": "L"
+          },
+          "raw_warm_ms": {
+            "ordinary": [
+              679.4475999999995,
+              703.9485000000004
+            ],
+            "repair": [
+              685.0123999999996,
+              686.4987000000001
+            ]
+          },
+          "cold": {
+            "ordinary": {
+              "full_action_ms": 678.0843000000004,
+              "build_ms": 17,
+              "typed_bytes": 405715
+            },
+            "repair": {
+              "full_action_ms": 776.8315999999995,
+              "build_ms": 14.600000143051147,
+              "typed_bytes": 405715
+            }
+          },
+          "medians_ms": {
+            "ordinary": 691.69805,
+            "repair": 685.7555499999999
+          },
+          "repair_over_ordinary": 0.9914088235466326
+        }
+      ],
+      "capture_sha256": "d6b826b52f62d899d822705c704cdc1279355eefc5479b1e51477f414d29bd14"
+    },
+    {
+      "scene": "firewoods",
+      "round": 2,
+      "start": "2026-11-25T08:16:24.864Z",
+      "runtime": {
+        "node": "v24.16.0",
+        "node_sha256": "b3094d0b49f9ad602262a9921551737bb97637c05dd357a06ae98188d7290aa3",
+        "browser_executable_sha256": "6c6729d3ade101ad8b97f9812a852a9024b7bb2a8394b5f506219dd635dc330d",
+        "playwright_version": "1.62.1",
+        "browser_version": "149.0.4022.52"
+      },
+      "first_order": [
+        "repair",
+        "ordinary"
+      ],
+      "worker_ms": 26668.1078,
+      "browser_launch_ms": 586.8732,
+      "setup_and_validation_ms": {
+        "AL": {
+          "new_page": 1615.6305,
+          "load": 833.5081,
+          "load_reset_and_first_brush": 236.83410000000003,
+          "untimed_reference_region": 14.817900000000009,
+          "advance_to_180": 1851.8716,
+          "read_decode_view_0": 2.396099999999933,
+          "install_view_0": 74.79140000000007,
+          "read_decode_view_124": 2.5212000000001353,
+          "install_view_124": 68.24160000000029,
+          "advance_to_210": 386.34149999999863,
+          "advance_to_240": 415.1395999999986,
+          "advance_to_300": 911.0338999999985,
+          "advance_to_360": 1010.057499999999
+        },
+        "AF": {
+          "new_page": 264.4425999999985,
+          "load": 113.52480000000287,
+          "load_reset_and_first_brush": 233.59399999999732,
+          "untimed_reference_region": 17.864199999999983,
+          "advance_to_180": 1894.7898999999998,
+          "advance_to_210": 360.66170000000056,
+          "advance_to_240": 414.1684000000023,
+          "advance_to_300": 927.4330999999984,
+          "advance_to_360": 1034.7988000000005
+        }
+      },
+      "operations": [
+        {
+          "cameras": [
+            0
+          ],
+          "first_method": "repair",
+          "choices": {
+            "0": "F"
+          },
+          "raw_warm_ms": {
+            "ordinary": [
+              918.0626999999995,
+              861.4341999999997
+            ],
+            "repair": [
+              666.0427,
+              649.1147000000001
+            ]
+          },
+          "cold": {
+            "repair": {
+              "full_action_ms": 918.7889999999998,
+              "build_ms": 12.899999856948853,
+              "typed_bytes": 179155
+            },
+            "ordinary": {
+              "full_action_ms": 1008.9072999999999,
+              "build_ms": 9.899999856948853,
+              "typed_bytes": 179155
+            }
+          },
+          "medians_ms": {
+            "ordinary": 889.7484499999996,
+            "repair": 657.5787
+          },
+          "repair_over_ordinary": 0.7390613605452196
+        },
+        {
+          "cameras": [
+            0,
+            124
+          ],
+          "first_method": "ordinary",
+          "choices": {
+            "0": "F",
+            "124": "none"
+          },
+          "raw_warm_ms": {
+            "ordinary": [
+              1079.9650999999994,
+              1178.519299999998
+            ],
+            "repair": [
+              995.1808000000001,
+              900.6710000000021
+            ]
+          },
+          "cold": {
+            "ordinary": {
+              "full_action_ms": 1111.0372000000007,
+              "build_ms": 11.200000047683716,
+              "typed_bytes": 179155
+            },
+            "repair": {
+              "full_action_ms": 1079.3032000000003,
+              "build_ms": 8.299999952316284,
+              "typed_bytes": 179155
+            }
+          },
+          "medians_ms": {
+            "ordinary": 1129.2421999999988,
+            "repair": 947.9259000000011
+          },
+          "repair_over_ordinary": 0.83943541961149
+        }
+      ],
+      "capture_sha256": "d4551e2d6cee25d3ad7f46b0b688c6c6e1d789094e172c55d8ff4cd3a40fcb9e"
+    },
+    {
+      "scene": "firewoods",
+      "round": 3,
+      "start": "2026-11-25T08:16:52.023Z",
+      "runtime": {
+        "node": "v24.16.0",
+        "node_sha256": "b3094d0b49f9ad602262a9921551737bb97637c05dd357a06ae98188d7290aa3",
+        "browser_executable_sha256": "6c6729d3ade101ad8b97f9812a852a9024b7bb2a8394b5f506219dd635dc330d",
+        "playwright_version": "1.62.1",
+        "browser_version": "149.0.4022.52"
+      },
+      "first_order": [
+        "repair",
+        "ordinary"
+      ],
+      "worker_ms": 28197.247099999997,
+      "browser_launch_ms": 1681.5436999999997,
+      "setup_and_validation_ms": {
+        "AL": {
+          "new_page": 292.2674999999999,
+          "load": 537.2655,
+          "load_reset_and_first_brush": 267.5210000000002,
+          "untimed_reference_region": 17.54449999999997,
+          "advance_to_180": 1977.9341,
+          "read_decode_view_0": 2.2214999999996508,
+          "install_view_0": 75.99159999999938,
+          "read_decode_view_124": 2.093300000000454,
+          "install_view_124": 62.03729999999996,
+          "advance_to_210": 398.42589999999836,
+          "advance_to_240": 429.8028000000013,
+          "advance_to_300": 1102.1182000000008,
+          "advance_to_360": 1289.3861999999972
+        },
+        "AF": {
+          "new_page": 1501.7026000000005,
+          "load": 103.3119000000006,
+          "load_reset_and_first_brush": 239.20240000000194,
+          "untimed_reference_region": 12.72609999999986,
+          "advance_to_180": 1764.1643000000004,
+          "advance_to_210": 359.53289999999834,
+          "advance_to_240": 420.4278999999988,
+          "advance_to_300": 900.8039000000026,
+          "advance_to_360": 967.8631999999998
+        }
+      },
+      "operations": [
+        {
+          "cameras": [
+            0
+          ],
+          "first_method": "repair",
+          "choices": {
+            "0": "F"
+          },
+          "raw_warm_ms": {
+            "ordinary": [
+              865.6543000000001,
+              868.5488000000005
+            ],
+            "repair": [
+              723.4420999999993,
+              762.7808999999997
+            ]
+          },
+          "cold": {
+            "repair": {
+              "full_action_ms": 743.1660000000002,
+              "build_ms": 11,
+              "typed_bytes": 179155
+            },
+            "ordinary": {
+              "full_action_ms": 781.9259999999995,
+              "build_ms": 10,
+              "typed_bytes": 179155
+            }
+          },
+          "medians_ms": {
+            "ordinary": 867.1015500000003,
+            "repair": 743.1114999999995
+          },
+          "repair_over_ordinary": 0.8570063102758833
+        },
+        {
+          "cameras": [
+            0,
+            124
+          ],
+          "first_method": "ordinary",
+          "choices": {
+            "0": "F",
+            "124": "none"
+          },
+          "raw_warm_ms": {
+            "ordinary": [
+              1335.2626999999993,
+              1315.087300000001
+            ],
+            "repair": [
+              1016.7127,
+              1039.6685000000034
+            ]
+          },
+          "cold": {
+            "ordinary": {
+              "full_action_ms": 1170.4138999999996,
+              "build_ms": 8.599999904632568,
+              "typed_bytes": 179155
+            },
+            "repair": {
+              "full_action_ms": 1007.0362000000005,
+              "build_ms": 5.799999952316284,
+              "typed_bytes": 179155
+            }
+          },
+          "medians_ms": {
+            "ordinary": 1325.1750000000002,
+            "repair": 1028.1906000000017
+          },
+          "repair_over_ordinary": 0.7758904295659076
+        }
+      ],
+      "capture_sha256": "25666b29057f94b2a69a8b30111f437c549a7206da8998f5a9d5716783efcbd1"
+    },
+    {
+      "scene": "playground",
+      "round": 3,
+      "start": "2026-11-25T08:17:20.671Z",
+      "runtime": {
+        "node": "v24.16.0",
+        "node_sha256": "b3094d0b49f9ad602262a9921551737bb97637c05dd357a06ae98188d7290aa3",
+        "browser_executable_sha256": "6c6729d3ade101ad8b97f9812a852a9024b7bb2a8394b5f506219dd635dc330d",
+        "playwright_version": "1.62.1",
+        "browser_version": "149.0.4022.52"
+      },
+      "first_order": [
+        "repair",
+        "ordinary"
+      ],
+      "worker_ms": 25902.108999999997,
+      "browser_launch_ms": 514.8992,
+      "setup_and_validation_ms": {
+        "AL": {
+          "new_page": 248.96129999999994,
+          "load": 465.0486000000001,
+          "load_reset_and_first_brush": 455.87879999999996,
+          "untimed_reference_region": 16.89949999999999,
+          "advance_to_180": 3072.4089999999997,
+          "read_decode_view_0": 1.6731999999992695,
+          "install_view_0": 58.3117000000002,
+          "read_decode_view_153": 0.9061999999994441,
+          "install_view_153": 39.09810000000016,
+          "advance_to_210": 512.4161000000004,
+          "advance_to_240": 554.9187000000002,
+          "advance_to_300": 1232.5485000000008,
+          "advance_to_360": 1388.5820999999996
+        },
+        "AF": {
+          "new_page": 1333.0588000000025,
+          "load": 82.67489999999816,
+          "load_reset_and_first_brush": 442.1906999999992,
+          "untimed_reference_region": 21.034299999999348,
+          "advance_to_180": 2749.666699999998,
+          "advance_to_210": 503.15279999999984,
+          "advance_to_240": 543.4832999999999,
+          "advance_to_300": 1261.3379999999997,
+          "advance_to_360": 1395.1434999999983
+        }
+      },
+      "operations": [
+        {
+          "cameras": [
+            0
+          ],
+          "first_method": "repair",
+          "choices": {
+            "0": "L"
+          },
+          "raw_warm_ms": {
+            "ordinary": [
+              378.3000000000002,
+              362.4859000000006
+            ],
+            "repair": [
+              371.4961000000003,
+              350.8310999999994
+            ]
+          },
+          "cold": {
+            "repair": {
+              "full_action_ms": 376.6386999999995,
+              "build_ms": 16.40000009536743,
+              "typed_bytes": 405715
+            },
+            "ordinary": {
+              "full_action_ms": 393.54160000000047,
+              "build_ms": 15.100000143051147,
+              "typed_bytes": 405715
+            }
+          },
+          "medians_ms": {
+            "ordinary": 370.3929500000004,
+            "repair": 361.16359999999986
+          },
+          "repair_over_ordinary": 0.9750822741091576
+        },
+        {
+          "cameras": [
+            0,
+            153
+          ],
+          "first_method": "ordinary",
+          "choices": {
+            "0": "L",
+            "153": "L"
+          },
+          "raw_warm_ms": {
+            "ordinary": [
+              578.3698999999997,
+              572.4827000000005
+            ],
+            "repair": [
+              568.2774000000009,
+              722.335000000001
+            ]
+          },
+          "cold": {
+            "ordinary": {
+              "full_action_ms": 572.5834000000004,
+              "build_ms": 13,
+              "typed_bytes": 405715
+            },
+            "repair": {
+              "full_action_ms": 583.4242000000013,
+              "build_ms": 14.099999904632568,
+              "typed_bytes": 405715
+            }
+          },
+          "medians_ms": {
+            "ordinary": 575.4263000000001,
+            "repair": 645.3062000000009
+          },
+          "repair_over_ordinary": 1.121440226141907
+        }
+      ],
+      "capture_sha256": "55d64f5b4c3f39b7886879f6b0c4fd72380f279f2bce879e7f1acf00e33caef4"
+    },
+    {
+      "scene": "playground",
+      "round": 4,
+      "start": "2026-11-25T08:17:47.007Z",
+      "runtime": {
+        "node": "v24.16.0",
+        "node_sha256": "b3094d0b49f9ad602262a9921551737bb97637c05dd357a06ae98188d7290aa3",
+        "browser_executable_sha256": "6c6729d3ade101ad8b97f9812a852a9024b7bb2a8394b5f506219dd635dc330d",
+        "playwright_version": "1.62.1",
+        "browser_version": "149.0.4022.52"
+      },
+      "first_order": [
+        "ordinary",
+        "repair"
+      ],
+      "worker_ms": 25276.6315,
+      "browser_launch_ms": 476.2725,
+      "setup_and_validation_ms": {
+        "AL": {
+          "new_page": 246.9885999999999,
+          "load": 460.95219999999995,
+          "load_reset_and_first_brush": 494.74419999999986,
+          "untimed_reference_region": 17.938300000000254,
+          "advance_to_180": 2834.8438,
+          "read_decode_view_0": 1.3921999999993204,
+          "install_view_0": 56.819400000000314,
+          "read_decode_view_153": 1.0059000000001106,
+          "install_view_153": 38.95429999999942,
+          "advance_to_210": 496.0634000000009,
+          "advance_to_240": 558.571899999999,
+          "advance_to_300": 1233.4287000000004,
+          "advance_to_360": 1388.2662
+        },
+        "AF": {
+          "new_page": 1364.7065000000002,
+          "load": 89.8089,
+          "load_reset_and_first_brush": 440.5429000000004,
+          "untimed_reference_region": 22.553899999998976,
+          "advance_to_180": 2701.255799999999,
+          "advance_to_210": 494.1759999999995,
+          "advance_to_240": 546.3311999999969,
+          "advance_to_300": 1230.7446999999993,
+          "advance_to_360": 1323.1546000000017
+        }
+      },
+      "operations": [
+        {
+          "cameras": [
+            0
+          ],
+          "first_method": "ordinary",
+          "choices": {
+            "0": "L"
+          },
+          "raw_warm_ms": {
+            "ordinary": [
+              372.35180000000037,
+              369.9163000000008
+            ],
+            "repair": [
+              353.4371999999994,
+              348.1939999999995
+            ]
+          },
+          "cold": {
+            "ordinary": {
+              "full_action_ms": 386.22810000000027,
+              "build_ms": 20,
+              "typed_bytes": 405715
+            },
+            "repair": {
+              "full_action_ms": 379.5704000000005,
+              "build_ms": 16.700000047683716,
+              "typed_bytes": 405715
+            }
+          },
+          "medians_ms": {
+            "ordinary": 371.13405000000057,
+            "repair": 350.81559999999945
+          },
+          "repair_over_ordinary": 0.9452530696119068
+        },
+        {
+          "cameras": [
+            0,
+            153
+          ],
+          "first_method": "repair",
+          "choices": {
+            "0": "L",
+            "153": "L"
+          },
+          "raw_warm_ms": {
+            "ordinary": [
+              547.8805000000011,
+              558.1208000000006
+            ],
+            "repair": [
+              555.7878999999994,
+              575.7852000000003
+            ]
+          },
+          "cold": {
+            "repair": {
+              "full_action_ms": 598.4440999999997,
+              "build_ms": 12.600000143051147,
+              "typed_bytes": 405715
+            },
+            "ordinary": {
+              "full_action_ms": 570.2977999999985,
+              "build_ms": 13.299999952316284,
+              "typed_bytes": 405715
+            }
+          },
+          "medians_ms": {
+            "ordinary": 553.0006500000009,
+            "repair": 565.7865499999998
+          },
+          "repair_over_ordinary": 1.023120949315338
+        }
+      ],
+      "capture_sha256": "7bfe77cb1a30cd3002dc75e92e4b4fa04f702627f48f97f58048bc2c6eede30d"
+    },
+    {
+      "scene": "firewoods",
+      "round": 4,
+      "start": "2026-11-25T08:18:12.704Z",
+      "runtime": {
+        "node": "v24.16.0",
+        "node_sha256": "b3094d0b49f9ad602262a9921551737bb97637c05dd357a06ae98188d7290aa3",
+        "browser_executable_sha256": "6c6729d3ade101ad8b97f9812a852a9024b7bb2a8394b5f506219dd635dc330d",
+        "playwright_version": "1.62.1",
+        "browser_version": "149.0.4022.52"
+      },
+      "first_order": [
+        "ordinary",
+        "repair"
+      ],
+      "worker_ms": 21412.4345,
+      "browser_launch_ms": 437.0707,
+      "setup_and_validation_ms": {
+        "AL": {
+          "new_page": 233.4379,
+          "load": 495.96440000000007,
+          "load_reset_and_first_brush": 210.33359999999993,
+          "untimed_reference_region": 11.165500000000065,
+          "advance_to_180": 1599.0404999999998,
+          "read_decode_view_0": 1.6557999999999993,
+          "install_view_0": 58.20909999999958,
+          "read_decode_view_124": 1.5288000000000466,
+          "install_view_124": 50.146400000000085,
+          "advance_to_210": 312.71329999999944,
+          "advance_to_240": 372.0619999999999,
+          "advance_to_300": 871.1532000000007,
+          "advance_to_360": 901.9910999999993
+        },
+        "AF": {
+          "new_page": 207.9933000000001,
+          "load": 111.98609999999826,
+          "load_reset_and_first_brush": 216.84510000000228,
+          "untimed_reference_region": 22.24330000000191,
+          "advance_to_180": 1664.2104,
+          "advance_to_210": 328.29030000000057,
+          "advance_to_240": 379.3264999999992,
+          "advance_to_300": 820.9889000000003,
+          "advance_to_360": 897.2178999999996
+        }
+      },
+      "operations": [
+        {
+          "cameras": [
+            0
+          ],
+          "first_method": "ordinary",
+          "choices": {
+            "0": "F"
+          },
+          "raw_warm_ms": {
+            "ordinary": [
+              695.0725999999995,
+              697.8967999999995
+            ],
+            "repair": [
+              595.6963000000005,
+              596.5752000000002
+            ]
+          },
+          "cold": {
+            "ordinary": {
+              "full_action_ms": 723.8531000000003,
+              "build_ms": 10.5,
+              "typed_bytes": 179155
+            },
+            "repair": {
+              "full_action_ms": 613.6866,
+              "build_ms": 6.099999904632568,
+              "typed_bytes": 179155
+            }
+          },
+          "medians_ms": {
+            "ordinary": 696.4846999999995,
+            "repair": 596.1357500000004
+          },
+          "repair_over_ordinary": 0.8559208120436828
+        },
+        {
+          "cameras": [
+            0,
+            124
+          ],
+          "first_method": "repair",
+          "choices": {
+            "0": "F",
+            "124": "none"
+          },
+          "raw_warm_ms": {
+            "ordinary": [
+              1005.4946,
+              986.1422999999995
+            ],
+            "repair": [
+              835.643,
+              830.4542000000001
+            ]
+          },
+          "cold": {
+            "repair": {
+              "full_action_ms": 831.1133999999993,
+              "build_ms": 6.299999952316284,
+              "typed_bytes": 179155
+            },
+            "ordinary": {
+              "full_action_ms": 997.6357000000007,
+              "build_ms": 5.299999952316284,
+              "typed_bytes": 179155
+            }
+          },
+          "medians_ms": {
+            "ordinary": 995.8184499999998,
+            "repair": 833.0486000000001
+          },
+          "repair_over_ordinary": 0.8365466616932035
+        }
+      ],
+      "capture_sha256": "fa7d539f48010b70b32217b575992b7166f2d877873d3a567c7c7ab89b1937b5"
+    }
+  ],
+  "summary": {
+    "firewoods": {
+      "camera0": {
+        "rounds": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "paired_ratios": [
+          0.8938402297905585,
+          0.7390613605452196,
+          0.8570063102758833,
+          0.8559208120436828
+        ],
+        "median": 0.8564635611597831,
+        "minimum": 0.7390613605452196,
+        "maximum": 0.8938402297905585,
+        "repair_faster_blocks": 4
+      },
+      "joint": {
+        "rounds": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "paired_ratios": [
+          0.8156672064738298,
+          0.83943541961149,
+          0.7758904295659076,
+          0.8365466616932035
+        ],
+        "median": 0.8261069340835167,
+        "minimum": 0.7758904295659076,
+        "maximum": 0.83943541961149,
+        "repair_faster_blocks": 4
+      }
+    },
+    "playground": {
+      "camera0": {
+        "rounds": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "paired_ratios": [
+          0.9316325884927338,
+          1.0011757802200567,
+          0.9750822741091576,
+          0.9452530696119068
+        ],
+        "median": 0.9601676718605322,
+        "minimum": 0.9316325884927338,
+        "maximum": 1.0011757802200567,
+        "repair_faster_blocks": 3
+      },
+      "joint": {
+        "rounds": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "paired_ratios": [
+          1.0721683739160481,
+          0.9914088235466326,
+          1.121440226141907,
+          1.023120949315338
+        ],
+        "median": 1.047644661615693,
+        "minimum": 0.9914088235466326,
+        "maximum": 1.121440226141907,
+        "repair_faster_blocks": 1
+      }
+    }
+  }
+}
