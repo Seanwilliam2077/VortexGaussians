@@ -1,0 +1,566 @@
+{
+  "operations": [
+    {
+      "cameras": [
+        0
+      ],
+      "methods": {
+        "ordinary": {
+          "warm_median_ms": 426.1170000000002,
+          "range_ms": [
+            410.22969999999987,
+            433.3310999999994
+          ],
+          "cold": {
+            "delivered_ms": 420.1911,
+            "anchor_ms": 23.799999952316284,
+            "anchor_bytes": 405715
+          },
+          "repair_ms": 0.0,
+          "repairs": 0,
+          "repair_steps": 0,
+          "blocks": [],
+          "vs_full": 1.0
+        },
+        "repair": {
+          "warm_median_ms": 379.4533999999994,
+          "range_ms": [
+            374.4874,
+            465.7621999999992
+          ],
+          "cold": {
+            "delivered_ms": 396.0133999999998,
+            "anchor_ms": 18.300000190734863,
+            "anchor_bytes": 405715
+          },
+          "repair_ms": 68.09999990463257,
+          "repairs": 1,
+          "repair_steps": 32,
+          "blocks": [
+            {
+              "frames": 32
+            }
+          ],
+          "vs_full": 0.8904911092493358
+        },
+        "sparse": {
+          "warm_median_ms": 389.78180000000066,
+          "range_ms": [
+            364.8630000000012,
+            419.03129999999874
+          ],
+          "cold": {
+            "delivered_ms": 387.3944999999994,
+            "anchor_ms": 14.899999856948853,
+            "anchor_bytes": 405715
+          },
+          "repair_ms": 67.79999995231628,
+          "repairs": 1,
+          "repair_steps": 32,
+          "blocks": [
+            {
+              "frames": 32,
+              "sparse": {
+                "build_ms": 0.20000004768371582,
+                "builds": 1,
+                "bitmap_bytes": 10004,
+                "initial_positive": [
+                  4425
+                ],
+                "scans": 32,
+                "visited": 220630
+              }
+            }
+          ],
+          "vs_full": 0.9147295226428434
+        },
+        "sitewise": {
+          "warm_median_ms": 378.87024999999994,
+          "range_ms": [
+            353.59889999999905,
+            536.1504999999997
+          ],
+          "cold": {
+            "delivered_ms": 383.4249999999993,
+            "anchor_ms": 12.700000047683716,
+            "anchor_bytes": 405715
+          },
+          "repair_ms": 70.50000011920929,
+          "repairs": 1,
+          "repair_steps": 32,
+          "blocks": [
+            {
+              "frames": 32,
+              "sites": 80023,
+              "old_burning": 5461,
+              "graph_edges": 0,
+              "noncached_donor_rows": 0,
+              "typed_scratch_bytes": 960280,
+              "graph_ms": 0.9000000953674316,
+              "samples": 1848,
+              "hit_calls": 0,
+              "flame_writes": 0,
+              "graph_writes": 0,
+              "positive_decays": 0,
+              "site_frames": 0,
+              "old_positive": 0,
+              "cold_only_flame_touched": 0,
+              "clock_sites": 6597,
+              "added_sites": 1136,
+              "flame_ms": 65.79999995231628,
+              "finish_ms": 3.4000000953674316,
+              "profile_counts": false
+            }
+          ],
+          "vs_full": 0.8891225883970829
+        }
+      },
+      "sitewise_vs_better_chronological": 0.9984631841485687,
+      "sitewise_faster_than_full_and_both_chronological": true
+    },
+    {
+      "cameras": [
+        153
+      ],
+      "methods": {
+        "ordinary": {
+          "warm_median_ms": 777.5655000000006,
+          "range_ms": [
+            654.3876999999993,
+            818.5719000000026
+          ],
+          "cold": {
+            "delivered_ms": 695.5424999999996,
+            "anchor_ms": 17.699999809265137,
+            "anchor_bytes": 405715
+          },
+          "repair_ms": 0.0,
+          "repairs": 0,
+          "repair_steps": 0,
+          "blocks": [],
+          "vs_full": 1.0
+        },
+        "repair": {
+          "warm_median_ms": 766.4028499999986,
+          "range_ms": [
+            741.6313000000009,
+            801.1303000000007
+          ],
+          "cold": {
+            "delivered_ms": 636.024300000001,
+            "anchor_ms": 14.099999904632568,
+            "anchor_bytes": 405715
+          },
+          "repair_ms": 165.64999985694885,
+          "repairs": 2,
+          "repair_steps": 55,
+          "blocks": [
+            {
+              "frames": 32
+            },
+            {
+              "frames": 23
+            }
+          ],
+          "vs_full": 0.9856441032941894
+        },
+        "sparse": {
+          "warm_median_ms": 778.6509499999993,
+          "range_ms": [
+            727.4228000000003,
+            875.8813000000009
+          ],
+          "cold": {
+            "delivered_ms": 584.2963000000018,
+            "anchor_ms": 12.600000143051147,
+            "anchor_bytes": 405715
+          },
+          "repair_ms": 169.7499998807907,
+          "repairs": 2,
+          "repair_steps": 55,
+          "blocks": [
+            {
+              "frames": 32,
+              "sparse": {
+                "build_ms": 0.10000014305114746,
+                "builds": 1,
+                "bitmap_bytes": 10004,
+                "initial_positive": [
+                  4425
+                ],
+                "scans": 32,
+                "visited": 220630
+              }
+            },
+            {
+              "frames": 23,
+              "sparse": {
+                "build_ms": 0.20000004768371582,
+                "builds": 1,
+                "bitmap_bytes": 10004,
+                "initial_positive": [
+                  8739
+                ],
+                "scans": 23,
+                "visited": 207249
+              }
+            }
+          ],
+          "vs_full": 1.0013959595686777
+        },
+        "sitewise": {
+          "warm_median_ms": 740.0353500000019,
+          "range_ms": [
+            682.8080999999984,
+            841.3789999999972
+          ],
+          "cold": {
+            "delivered_ms": 683.9631000000008,
+            "anchor_ms": 18.700000047683716,
+            "anchor_bytes": 405715
+          },
+          "repair_ms": 154.80000007152557,
+          "repairs": 2,
+          "repair_steps": 55,
+          "blocks": [
+            {
+              "frames": 32,
+              "sites": 80023,
+              "old_burning": 5461,
+              "graph_edges": 0,
+              "noncached_donor_rows": 0,
+              "typed_scratch_bytes": 960280,
+              "graph_ms": 1.1000001430511475,
+              "samples": 1848,
+              "hit_calls": 0,
+              "flame_writes": 0,
+              "graph_writes": 0,
+              "positive_decays": 0,
+              "site_frames": 0,
+              "old_positive": 0,
+              "cold_only_flame_touched": 0,
+              "clock_sites": 6597,
+              "added_sites": 1136,
+              "flame_ms": 114.29999995231628,
+              "finish_ms": 3.299999952316284,
+              "profile_counts": false
+            },
+            {
+              "frames": 23,
+              "sites": 80023,
+              "old_burning": 6597,
+              "graph_edges": 0,
+              "noncached_donor_rows": 0,
+              "typed_scratch_bytes": 960280,
+              "graph_ms": 0.5,
+              "samples": 2797,
+              "hit_calls": 0,
+              "flame_writes": 0,
+              "graph_writes": 0,
+              "positive_decays": 0,
+              "site_frames": 0,
+              "old_positive": 0,
+              "cold_only_flame_touched": 0,
+              "clock_sites": 7620,
+              "added_sites": 1023,
+              "flame_ms": 94.20000004768372,
+              "finish_ms": 2.6000001430511475,
+              "profile_counts": false
+            }
+          ],
+          "vs_full": 0.9517337767686469
+        }
+      },
+      "sitewise_vs_better_chronological": 0.9655957699009121,
+      "sitewise_faster_than_full_and_both_chronological": true
+    },
+    {
+      "cameras": [
+        0,
+        153
+      ],
+      "methods": {
+        "ordinary": {
+          "warm_median_ms": 713.1226500000012,
+          "range_ms": [
+            624.2716,
+            816.7629000000015
+          ],
+          "cold": {
+            "delivered_ms": 730.0031000000017,
+            "anchor_ms": 15.600000143051147,
+            "anchor_bytes": 405715
+          },
+          "repair_ms": 0.0,
+          "repairs": 0,
+          "repair_steps": 0,
+          "blocks": [],
+          "vs_full": 1.0
+        },
+        "repair": {
+          "warm_median_ms": 687.3076000000001,
+          "range_ms": [
+            626.3090999999986,
+            690.6623000000036
+          ],
+          "cold": {
+            "delivered_ms": 690.3099000000002,
+            "anchor_ms": 18,
+            "anchor_bytes": 405715
+          },
+          "repair_ms": 142.4999998807907,
+          "repairs": 2,
+          "repair_steps": 55,
+          "blocks": [
+            {
+              "frames": 32
+            },
+            {
+              "frames": 23
+            }
+          ],
+          "vs_full": 0.9637999858790055
+        },
+        "sparse": {
+          "warm_median_ms": 677.5340499999984,
+          "range_ms": [
+            654.6549000000014,
+            724.851999999999
+          ],
+          "cold": {
+            "delivered_ms": 686.7857000000004,
+            "anchor_ms": 13.5,
+            "anchor_bytes": 405715
+          },
+          "repair_ms": 142.7999997138977,
+          "repairs": 2,
+          "repair_steps": 55,
+          "blocks": [
+            {
+              "frames": 32,
+              "sparse": {
+                "build_ms": 0.09999990463256836,
+                "builds": 1,
+                "bitmap_bytes": 10004,
+                "initial_positive": [
+                  4425
+                ],
+                "scans": 32,
+                "visited": 220630
+              }
+            },
+            {
+              "frames": 23,
+              "sparse": {
+                "build_ms": 0.20000004768371582,
+                "builds": 1,
+                "bitmap_bytes": 10004,
+                "initial_positive": [
+                  8739
+                ],
+                "scans": 23,
+                "visited": 207249
+              }
+            }
+          ],
+          "vs_full": 0.9500946996985684
+        },
+        "sitewise": {
+          "warm_median_ms": 668.8582500000011,
+          "range_ms": [
+            622.7221999999965,
+            747.2282999999952
+          ],
+          "cold": {
+            "delivered_ms": 685.1474999999991,
+            "anchor_ms": 14.600000143051147,
+            "anchor_bytes": 405715
+          },
+          "repair_ms": 133.34999990463257,
+          "repairs": 2,
+          "repair_steps": 55,
+          "blocks": [
+            {
+              "frames": 32,
+              "sites": 80023,
+              "old_burning": 5461,
+              "graph_edges": 0,
+              "noncached_donor_rows": 0,
+              "typed_scratch_bytes": 960280,
+              "graph_ms": 0.2999999523162842,
+              "samples": 1848,
+              "hit_calls": 0,
+              "flame_writes": 0,
+              "graph_writes": 0,
+              "positive_decays": 0,
+              "site_frames": 0,
+              "old_positive": 0,
+              "cold_only_flame_touched": 0,
+              "clock_sites": 6597,
+              "added_sites": 1136,
+              "flame_ms": 70.60000014305115,
+              "finish_ms": 1.8999998569488525,
+              "profile_counts": false
+            },
+            {
+              "frames": 23,
+              "sites": 80023,
+              "old_burning": 6597,
+              "graph_edges": 0,
+              "noncached_donor_rows": 0,
+              "typed_scratch_bytes": 960280,
+              "graph_ms": 0.20000004768371582,
+              "samples": 2797,
+              "hit_calls": 0,
+              "flame_writes": 0,
+              "graph_writes": 0,
+              "positive_decays": 0,
+              "site_frames": 0,
+              "old_positive": 0,
+              "cold_only_flame_touched": 0,
+              "clock_sites": 7620,
+              "added_sites": 1023,
+              "flame_ms": 58.09999990463257,
+              "finish_ms": 2,
+              "profile_counts": false
+            }
+          ],
+          "vs_full": 0.9379287700369635
+        }
+      },
+      "sitewise_vs_better_chronological": 0.9871950346997361,
+      "sitewise_faster_than_full_and_both_chronological": true
+    }
+  ],
+  "full_horizon_repair_audits": {
+    "L": {
+      "frames": [
+        212,
+        235,
+        257
+      ],
+      "sitewise": [
+        {
+          "frames": 32,
+          "sites": 80023,
+          "old_burning": 5461,
+          "graph_edges": 0,
+          "noncached_donor_rows": 0,
+          "typed_scratch_bytes": 960280,
+          "graph_ms": 0.2999999523162842,
+          "samples": 1848,
+          "hit_calls": 1806309,
+          "flame_writes": 333237,
+          "graph_writes": 0,
+          "positive_decays": 220630,
+          "site_frames": 220630,
+          "old_positive": 4425,
+          "cold_only_flame_touched": 5580,
+          "clock_sites": 6597,
+          "added_sites": 1136,
+          "flame_ms": 128.29999995231628,
+          "finish_ms": 3.5,
+          "profile_counts": true
+        },
+        {
+          "frames": 23,
+          "sites": 80023,
+          "old_burning": 6597,
+          "graph_edges": 0,
+          "noncached_donor_rows": 0,
+          "typed_scratch_bytes": 960280,
+          "graph_ms": 0.19999980926513672,
+          "samples": 2797,
+          "hit_calls": 1372007,
+          "flame_writes": 261943,
+          "graph_writes": 0,
+          "positive_decays": 207249,
+          "site_frames": 207249,
+          "old_positive": 8739,
+          "cold_only_flame_touched": 4963,
+          "clock_sites": 7620,
+          "added_sites": 1023,
+          "flame_ms": 88.10000014305115,
+          "finish_ms": 6.200000047683716,
+          "profile_counts": true
+        },
+        {
+          "frames": 22,
+          "sites": 80023,
+          "old_burning": 7620,
+          "graph_edges": 0,
+          "noncached_donor_rows": 0,
+          "typed_scratch_bytes": 960280,
+          "graph_ms": 0,
+          "samples": 2633,
+          "hit_calls": 1622636,
+          "flame_writes": 199100,
+          "graph_writes": 0,
+          "positive_decays": 207455,
+          "site_frames": 207455,
+          "old_positive": 9345,
+          "cold_only_flame_touched": 3831,
+          "clock_sites": 9413,
+          "added_sites": 1793,
+          "flame_ms": 58.60000014305115,
+          "finish_ms": 3,
+          "profile_counts": true
+        }
+      ]
+    },
+    "F": {
+      "frames": [
+        239,
+        261
+      ],
+      "sitewise": [
+        {
+          "frames": 59,
+          "sites": 80023,
+          "old_burning": 6778,
+          "graph_edges": 0,
+          "noncached_donor_rows": 0,
+          "typed_scratch_bytes": 960280,
+          "graph_ms": 0.2999999523162842,
+          "samples": 5114,
+          "hit_calls": 3709075,
+          "flame_writes": 369020,
+          "graph_writes": 0,
+          "positive_decays": 440687,
+          "site_frames": 440687,
+          "old_positive": 4425,
+          "cold_only_flame_touched": 5353,
+          "clock_sites": 7825,
+          "added_sites": 1047,
+          "flame_ms": 142.20000004768372,
+          "finish_ms": 4.799999952316284,
+          "profile_counts": true
+        },
+        {
+          "frames": 22,
+          "sites": 80023,
+          "old_burning": 7825,
+          "graph_edges": 0,
+          "noncached_donor_rows": 0,
+          "typed_scratch_bytes": 960280,
+          "graph_ms": 0,
+          "samples": 2630,
+          "hit_calls": 1638268,
+          "flame_writes": 209703,
+          "graph_writes": 0,
+          "positive_decays": 187324,
+          "site_frames": 187324,
+          "old_positive": 8512,
+          "cold_only_flame_touched": 3816,
+          "clock_sites": 8901,
+          "added_sites": 1076,
+          "flame_ms": 57.200000047683716,
+          "finish_ms": 1.6999998092651367,
+          "profile_counts": true
+        }
+      ]
+    }
+  },
+  "capture_sha256": "f781f95bc08d62cfc86116bb987a73d7fda044b1f279ad34f8a5b213a29b0d02",
+  "wall_ms": 78384.9463
+}
