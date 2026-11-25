@@ -34,7 +34,8 @@ const plugins=[
   ['t95','t95-multistep-material-slice/local/plugin.js','5782263e00c896e983614799332480c0abff925c83b1faaf6920b8c827af74c2'],
   ['t97','t97-ordinary-cached-graph/.generated-plugin.js','36a19010dfda87a3c27e2f458a529e14537eda16a5f6055e681c025fdbca3e59'],
   ['t102','t102-active-recipients/local/plugin.js','3311852d29e7c1ee2b6f9b615235174ece6550c79b0c889e6e7b3b7f4c1e8474'],
-  ['t98','t98-edit-to-answer/click.js']
+  ['t98','t98-edit-to-answer/click.js'],
+  ['t102audit','t102-active-recipients/audit.js','8011178b2d71699d05e3d38eaa617cd428bef3e8e440c7133f9b20c4d3d7efbf']
 ];
 let parts=[];
 for(const [name,file,hash] of plugins)parts.push(await source(name,path.join(tasks,file),hash));
@@ -103,6 +104,7 @@ try{
     await page.evaluate(()=>__t98.resetTrial());
     shot.audit=await page.evaluate(([p,dt])=>__t104.audit(p,dt),[picks[1],cfg.dt]);
     await page.evaluate(()=>__t98.finishTrial());
+    shot.ordinary_audit=await page.evaluate(([p,dt])=>__t102Audit(p,dt),[picks[1],cfg.dt]);
     assert.deepEqual(await page.evaluate(()=>__t86.marker()),shot.pre);
     shot.stored_pre_restored=true;
     await page.close();await save();
