@@ -1,0 +1,264 @@
+{
+  "schema": "t112-demand-screen-v1",
+  "sources": {
+    "recipe": "982c98d3187ab26e95e251de562950adaab9a2101d1f1ff6371c93e7f6383013",
+    "native": "9f9e6960493b8a48d93600fc73cbab8d2c9d9a5013f487babd60cf5df60bb5f5",
+    "target": "87c4418658b713de362e824cc359869155c0463a31d3cb5d8045db2b15b89766",
+    "historical_cost": "4cc0ed698fdd0370dab08d52106fb7bfda9565317b38d10801746a06060c5073",
+    "BA_trace": "97cabe8b025be5b6106220d2d99f22961bfcbc2c6fe9dae154e8f6ea70eba9f5",
+    "BA_210": "ae7c48ffc7623171a6fc7456efb6a8e90dcc7f3fe1048fcda3105b70591c42d7",
+    "BA_240": "1686e93c5d561e41bef04be8c07d250018864d2e468c9ddd233326ed97547a65",
+    "AB_trace": "dd526f8092aef0e6764b5b106f0d75d747db13efff49f8226379e9272471e941",
+    "AB_210": "0b58009e04b2eb08cbb171ebd192ab9aba9582ca6774e5f9ddd7f0aa3d514dee"
+  },
+  "arms": {
+    "BA": {
+      "cut": 180,
+      "target": 266,
+      "base_length": 4399,
+      "min_fuel_lower_bound_at_cut": 0.5000040531158447,
+      "min_fuel_lower_bound_at_target": 0.26111453771591187,
+      "old_eager_material_steps": 72,
+      "declared_gate_ratio": 0.9444444444444444,
+      "primary": {
+        "material_steps": 68,
+        "latest_reconstructed": 248,
+        "total_new_ids": 688,
+        "work": [
+          {
+            "at": 253,
+            "oldest_read": 181,
+            "latest_read": 219,
+            "batches": 39,
+            "additional_ids": 67,
+            "known_length": 4466,
+            "begin_cursor": 4395,
+            "end_cursor": 4443
+          },
+          {
+            "at": 254,
+            "oldest_read": 220,
+            "latest_read": 220,
+            "batches": 1,
+            "additional_ids": 31,
+            "known_length": 4497,
+            "begin_cursor": 4443,
+            "end_cursor": 4491
+          },
+          {
+            "at": 255,
+            "oldest_read": 221,
+            "latest_read": 222,
+            "batches": 2,
+            "additional_ids": 74,
+            "known_length": 4571,
+            "begin_cursor": 4491,
+            "end_cursor": 4539
+          },
+          {
+            "at": 256,
+            "oldest_read": 223,
+            "latest_read": 223,
+            "batches": 1,
+            "additional_ids": 32,
+            "known_length": 4603,
+            "begin_cursor": 4539,
+            "end_cursor": 4587
+          },
+          {
+            "at": 257,
+            "oldest_read": 224,
+            "latest_read": 225,
+            "batches": 2,
+            "additional_ids": 39,
+            "known_length": 4642,
+            "begin_cursor": 4587,
+            "end_cursor": 4635
+          },
+          {
+            "at": 258,
+            "oldest_read": 226,
+            "latest_read": 232,
+            "batches": 7,
+            "additional_ids": 44,
+            "known_length": 4686,
+            "begin_cursor": 4635,
+            "end_cursor": 4683
+          },
+          {
+            "at": 259,
+            "oldest_read": 233,
+            "latest_read": 238,
+            "batches": 6,
+            "additional_ids": 50,
+            "known_length": 4736,
+            "begin_cursor": 4683,
+            "end_cursor": 4731
+          },
+          {
+            "at": 260,
+            "oldest_read": 239,
+            "latest_read": 243,
+            "batches": 5,
+            "additional_ids": 59,
+            "known_length": 4795,
+            "begin_cursor": 4731,
+            "end_cursor": 4779
+          },
+          {
+            "at": 261,
+            "oldest_read": 244,
+            "latest_read": 245,
+            "batches": 2,
+            "additional_ids": 87,
+            "known_length": 4882,
+            "begin_cursor": 4779,
+            "end_cursor": 4827
+          },
+          {
+            "at": 263,
+            "oldest_read": 246,
+            "latest_read": 246,
+            "batches": 1,
+            "additional_ids": 60,
+            "known_length": 4942,
+            "begin_cursor": 4875,
+            "end_cursor": 4923
+          },
+          {
+            "at": 264,
+            "oldest_read": 247,
+            "latest_read": 247,
+            "batches": 1,
+            "additional_ids": 74,
+            "known_length": 5016,
+            "begin_cursor": 4923,
+            "end_cursor": 4971
+          },
+          {
+            "at": 265,
+            "oldest_read": 248,
+            "latest_read": 248,
+            "batches": 1,
+            "additional_ids": 71,
+            "known_length": 5087,
+            "begin_cursor": 4971,
+            "end_cursor": 5019
+          }
+        ],
+        "accepted_prefix_material_lower_bound": 67,
+        "accepted_bottleneck": {
+          "feed_frame": 264,
+          "slot": 18,
+          "rank": 4942,
+          "id": 378,
+          "born": 247
+        },
+        "accepted_appended_services": 311,
+        "offers": 4080,
+        "accepted": 2040,
+        "actual_wraps": [],
+        "peak_pending_frames": 73,
+        "peak_buffer_bytes_if_capacity_allocated": 373760,
+        "offered_sha256": "f723f2324fbcaeaa4cc1357c196d86c5e058330477cf538611ea2fc4bf9417cc",
+        "accepted_sha256": "0bdb90527933910ec43dfa021feb5dc01ce2866c10433013bf919c72c86f522e",
+        "final_cursor": 5019
+      },
+      "measured_t108_ms": {
+        "eager_repair_phase": 155,
+        "eager_delivered": 679.6908000000003,
+        "ordinary_delivered": 588.4218999999975
+      },
+      "terminal_feed_sensitivity": {
+        "material_steps": 68,
+        "accepted_only_lower": 68
+      },
+      "verified_native_checkpoints": [
+        210,
+        240
+      ]
+    },
+    "AB": {
+      "cut": 180,
+      "target": 224,
+      "base_length": 3662,
+      "min_fuel_lower_bound_at_cut": 0.5000040531158447,
+      "min_fuel_lower_bound_at_target": 0.3777815103530884,
+      "old_eager_material_steps": 32,
+      "declared_gate_ratio": 1.03125,
+      "primary": {
+        "material_steps": 33,
+        "latest_reconstructed": 213,
+        "total_new_ids": 78,
+        "work": [
+          {
+            "at": 211,
+            "oldest_read": 181,
+            "latest_read": 194,
+            "batches": 14,
+            "additional_ids": 8,
+            "known_length": 3670,
+            "begin_cursor": 3621,
+            "end_cursor": 3669
+          },
+          {
+            "at": 212,
+            "oldest_read": 195,
+            "latest_read": 206,
+            "batches": 12,
+            "additional_ids": 51,
+            "known_length": 3721,
+            "begin_cursor": 3669,
+            "end_cursor": 3717
+          },
+          {
+            "at": 213,
+            "oldest_read": 207,
+            "latest_read": 213,
+            "batches": 7,
+            "additional_ids": 19,
+            "known_length": 3740,
+            "begin_cursor": 3717,
+            "end_cursor": 25
+          }
+        ],
+        "accepted_prefix_material_lower_bound": 30,
+        "accepted_bottleneck": {
+          "feed_frame": 213,
+          "slot": 20,
+          "rank": 3738,
+          "id": 21792,
+          "born": 210
+        },
+        "accepted_appended_services": 40,
+        "offers": 2064,
+        "accepted": 1052,
+        "actual_wraps": [
+          {
+            "frame": 213,
+            "slot": 22,
+            "count": 3740
+          }
+        ],
+        "peak_pending_frames": 31,
+        "peak_buffer_bytes_if_capacity_allocated": 158720,
+        "offered_sha256": "ba6ba30374976b09bec9ed7734dd03c957f1a99408a102b44619c32ee82d2a56",
+        "accepted_sha256": "7c17d2a917ff877b93bbfc8c38a47b23decd23fea8b677c6e3b52e04f8573ec8",
+        "final_cursor": 505
+      },
+      "measured_t108_ms": {
+        "eager_repair_phase": 47.299999952316284,
+        "eager_delivered": 242.52559999999994,
+        "ordinary_delivered": 275.1859000000004
+      },
+      "terminal_feed_sensitivity": {
+        "material_steps": 33,
+        "accepted_only_lower": 30
+      },
+      "verified_native_checkpoints": [
+        210
+      ]
+    }
+  },
+  "decision": "reject-lagging-full-material-replay"
+}
