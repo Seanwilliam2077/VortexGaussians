@@ -61,6 +61,11 @@ source=source.slice(0,first)+`
         }
         const b=await page.evaluate(p=>({edit:__t86.ignite(p,true),post_edit:__t86.marker()}),picks[1]);
         assert.deepEqual(b.edit,ref.edit);assert.deepEqual(b.post_edit,ref.post_edit);
+        const ineligible=new Set([...ref.initial.ids,...ref.edit.ids,...trace.slice(0,180).flatMap(f=>f.new_ids)]);
+        const expectedEligible=ids.filter(i=>!ineligible.has(i));
+        const observed=await page.evaluate(()=>__t98.eligibleAfterClick());
+        assert.deepEqual(observed,expectedEligible,'Fresh post-click eligibility');
+        shot.post_click_eligible={count:observed.length,sha256:sha(JSON.stringify(observed))};
       } else if(stop===360) {
         shot.endpoint=await page.evaluate(()=>__t86.marker());assert.deepEqual(shot.endpoint,ref.end);
       } else {
