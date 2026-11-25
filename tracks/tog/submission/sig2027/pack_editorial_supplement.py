@@ -50,6 +50,10 @@ def main():
             {c:old_w/f"weights-{c}.json.gz" for c in (0,124)},90)
     dataset("geometry-b-prospective",task("t111")/"evidence/native",("AL","AF"),dict(AL=static_b,AF=static_b),
             {c:task("t111")/f"weights-{c}.json.gz" for c in (0,153)},90)
+    unseen=task("t121")
+    shell=read(unseen/"shell.json.gz")
+    dataset("geometry-b-lower-band",unseen/"evidence/native",("AL","AF"),dict(AL=shell,AF=shell),
+            {c:unseen/f"weights-{c}.json.gz" for c in (76,230)},90)
     sessions=[]
     studies=[
         ("development-multi", "geometry-a-development", "single", task("t108")/"evidence/CAPTURE.json"),
@@ -64,6 +68,17 @@ def main():
         for block in range(1,5):
             label=f"{asset}-{block}"
             studies.append((label,geometry,"action",task("t115")/"evidence"/label/"CAPTURE.json"))
+    for asset,geometry in (("firewoods","geometry-a-prospective"),("playground","geometry-b-prospective")):
+        for block in range(1,3):
+            label=f"{asset}-{block}"
+            studies.append(("transport-"+label,geometry,"action",task("t119")/"evidence"/label/"CAPTURE.json"))
+    for block in range(1,5):
+        studies.append((f"heldout-{block}","geometry-b-lower-band","action",
+                        task("t121")/"evidence/corrected"/f"block-{block}"/"CAPTURE.json"))
+    for scene,block,geometry in (("lower",1,"geometry-b-lower-band"),("lower",2,"geometry-b-lower-band"),
+                                 ("firewoods",1,"geometry-a-prospective"),("playground",1,"geometry-b-prospective")):
+        label=f"{scene}-{block}"
+        studies.append(("equivalence-"+label,geometry,"action",task("t123")/"evidence"/label/"CAPTURE.json"))
     for label,dataset_name,operation,path in studies:
         cap=read(path)
         assert cap["status"]=="validated" and not cap["errors"]
@@ -77,7 +92,19 @@ def main():
                 arm,cid=key.split("/")
                 for method,v in methods.items():
                     curves.append(dict(arm=arm,camera=int(cid),method=method,curve=v["curve"],boundaries=v["boundaries"]))
-        else:
+        elif label.startswith(("transport-","heldout-")):
+            for audit,rows in cap["full_audits"].items():
+                if "physical" in rows:
+                    for shot in rows["curves"]:
+                        for v in shot["views"]:
+                            curves.append(dict(arm="A"+shot["pick"],camera=v["camera"],method=audit,
+                                               curve=v["curve"],boundaries=rows["physical"]))
+                else:
+                    method,pick=audit.rsplit("_",1)
+                    for v in rows["curves"]:
+                        curves.append(dict(arm="A"+pick,camera=v["camera"],method=method,
+                                           curve=v["curve"],boundaries={}))
+        elif "full_audits" in cap:
             for pick,methods in cap["full_audits"].items():
                 for method,trial in methods.items():
                     for v in trial["views"]:
@@ -99,7 +126,10 @@ L denotes a light stroke, F the full stroke. The 90-step cases compare both from
 initial target. The 180-step development cases use different first strokes. An event-free deadline is retained.
 One unit of static weight is one millionth of a pixel-equivalent of front-to-back foreground opacity.
 Single-candidate and complete-action sessions have different clocks. Action calls include restoring the initial parent
-and can share one physical evolution across two camera readouts; they return a choice, not a kept simulation.
+and can share one physical evolution across two camera readouts. Equivalence calls can infer the other result
+from a single physical trajectory when its entire observed exterior is certified equal. The original held-out
+physical-precheck session with a clock error in its independent auditing wrapper is excluded. Its failed
+receipt and the corrected native-step audit are preserved separately in the research repository.
 Each session records its own excluded warmup and number of measured rotations on one host. Camera construction and shot loading
 are separate. Full-precision 3D geometry is externally sourced. This bundle verifies event observations and latency
 aggregation, not raster construction, native particle dynamics or independent performance reproduction.

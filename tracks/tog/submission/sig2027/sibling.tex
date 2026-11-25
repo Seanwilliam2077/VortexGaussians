@@ -1,6 +1,26 @@
-\subsection{Transporting a checkpoint between brush alternatives}
-A nested pair of brush edits differs initially on a set $D$ of extra painted sites, disjoint from the measured shell. Apply the service test to the \emph{common pre-click} frontier. Until its first possible wrap, all serviced graph and gas sources come from this parent. In each branch the sources see the same native gas and random draws. At every site outside $D$ all material inputs, thresholds and rounded clocks therefore agree. The light branch's newly ignited IDs, in native order with IDs in $D$ removed, are exactly the full branch's new ignitions.
-
-At the boundary copy the light branch's physical state. For each extra painted site reconstruct the full brush's already-burning state from its pre-click values, using native heat decay and combustion clocks. Set the frontier to the ordered common parent, the full brush additions in their own order, then the light branch's filtered subsequent births. Keep the particle arrays, random position and cursor. This constructs the full branch without its future trajectory.
-
+\subsection{Continuing a different brush from a saved future}
 The shared prefix lasted 24 steps on the woodpile and 16 on Playground, with 214 and 1,317 extra sites. Every physical field matched native replay at the boundary, the next step, $+44$ and $+90$ in both scenes. Neither light branch naturally ignited a site in $D$ before its boundary. All per-frame ignition IDs agreed through the deadlines. The primary woodpile choice used 90 light and 44 full steps, so 24 of 134 physical updates could be shared. Playground skipped the second stroke, making a speculative checkpoint overhead on all three operations. These measurements concern the same two developer-defined actions.
+
+We then timed the entire light-first choice with three algorithms: ordinary full replay, chronological regional repair and full replay with sibling transport. Each used both the earlier gas-to-material lookup and the stronger cold-site grid. The transport method really applied the full brush to obtain its footprint, paid for the light-state checkpoint even when the light stroke qualified and rebuilt material indices on restoration. The six methods ran in balanced rotations, six measured actions after an excluded warmup, in two fresh processes per scene. All 336 calls returned the native choices, crossing frames and positive-mass witness IDs.
+
+\begin{table}[t]
+\caption{Time relative to ordinary full replay using the same cold-site index. Each pair gives the ratios of within-process median full-action times, in separate processes. Both methods pay for every attempted edit.}
+\label{tab:siblings}
+\centering\small
+\begin{tabular}{llrr}\toprule
+Asset & Views & Regional repair & Sibling transport\\\midrule
+Woodpile & Primary & 0.944 / 1.056 & 0.860 / 0.904\\
+ & Joint & 0.899 / 0.873 & 0.883 / 0.891\\
+Playground & Primary & 0.941 / 0.984 & 1.009 / 1.014\\
+ & Joint & 0.973 / 0.974 & 0.995 / 1.024\\\bottomrule
+\end{tabular}
+\end{table}
+
+In the first woodpile primary process cold-indexed full, repair and sibling times were 600, 567 and 516 ms. In the second they were 814, 860 and 736 ms. Sibling transport beat both comparators there (Table~\ref{tab:siblings}). With both woodpile views it beat complete replay twice and split the comparison with repair. On Playground the speculative checkpoint saved no steps. Its median stayed near ordinary, while regional repair was faster than sibling transport in all four paired observations. Both known service prefixes also had zero newly ignited shell sites. A different action can demand, or waste, the checkpoint according to an outcome the editor does not yet know.
+
+\subsection{When two brushes have the same observable for the entire shot}
+We registered a new pair of lower-band brush centers, a new seed and two previously unused calibrated views (76 and 230) on the same fitted Playground geometry. No other fitted scene with matching cameras was available in the checked source release. We fixed the inputs before observing either future. The light stroke directly ignited 920 sites and the full stroke 1,504. The eligible exterior had 8,621 sites with 1,224 and 2,339 pixel equivalents in the two views. Other material continued to burn: each trajectory contained 3,830 further ignitions, with the same IDs and order. No exterior site ignited by the deadline in either view. Both cameras therefore returned neither. No extra painted site ignited naturally in the lighter branch.
+
+Here the common-parent service test admitted \emph{all} 90 steps. In four fresh processes, cold-indexed full replay took 1,100--1,128 ms to evaluate both candidates. Regional repair took 785--811 ms. Full-state transport took 560--572 ms, simulating all 90 light steps and zero extra full steps. An initial verification helper omitted a native clock update. We discarded that session, directly called the native advance for a fresh physical audit, and repeated all four measured processes with the frozen kernels.
+
+For a disposable choice this case admits a simpler comparison. The shell is identical and both edited alternatives share its complete observable through the deadline. One light simulation determines whether either brush qualifies. If light misses, we can return the identical full-brush result without constructing its physical state. The proof alone does not determine the light outcome. We tested this stronger comparator retrospectively on the opened edit. In two fresh processes, full-state transport took 574 and 580 ms. One ordinary trajectory plus the equivalence test took 568 and 577 ms. One regional trajectory plus the same test took 414 and 403 ms (27.1\% and 30.1\% less than one ordinary trajectory). The earlier 24- and 16-step cases do not admit this shortcut. A subsequent live check verifies restoration of an arbitrary prior query selection, separate from the fixed-selection timings.
