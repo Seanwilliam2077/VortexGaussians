@@ -1,6 +1,7 @@
 """Recompute native image choices and summarize balanced, matched-cost T129 trials."""
 import argparse
 from collections import defaultdict
+from datetime import datetime
 import hashlib
 import json
 import math
@@ -118,6 +119,16 @@ def verify_setup(path):
 def process_result(path, reference, capture):
     block = read(path)
     check(block["status"] == "validated" and not block.get("errors"), "Invalid capture in " + path.name)
+    check(path.name == f"process-{block['process']}.json" and block["process"] in (1, 2), "Process identity")
+    sources = block["sources"]
+    actual = {"T127_capture": sha(T127 / "CAPTURE.json"), "T127_score": sha(T127 / "SCORE.json"),
+              "native_kernels": sha(HERE / "native-kernels.js"), "action": sha(HERE / "action.js"),
+              "worker": sha(HERE / "run.mjs"), **{f"view_{c}": h for c, h in SHELL_DIGEST.items()}}
+    check(all(sources.get(k) == h for k, h in actual.items()), "Changed source or installed view bytes")
+    for camera in (0, 124):
+        near(block["calibration"][str(camera)]["total"], reference["light", camera]["shell_mass"], "Installed mass")
+        positive(block["setup_ms"][f"upload_view_{camera}_ms"], "View upload/install time")
+    positive(block["setup_ms"]["read_matte_tables_ms"], "Reading the shared map bytes")
     audits = block["audits"]
     check(len(audits) == 2 and {a["method"] for a in audits} == set(METHODS), "Independent per-method image audits")
     parent = capture["arms"]["AL"]["fork"]["pre"]
@@ -166,7 +177,8 @@ def process_result(path, reference, capture):
                         "paired_sibling_over_ordinary": ratios})
     scope_order = [list(x) for x in dict.fromkeys(tuple(r["cameras"]) for r in trials)]
     return {"file": path.name, "sha256": sha(path), "setup_ms": block["setup_ms"],
-            "issued": len(trials), "scope_order": scope_order, "queries": queries}
+            "issued": len(trials), "scope_order": scope_order, "queries": queries, "pid": block["pid"],
+            "start": block["started_utc"], "finish": block["finished_utc"], "process_wall_ms": block["wall_ms"]}
 
 
 def main():
@@ -176,6 +188,9 @@ def main():
     reference, capture = references()
     cold = verify_setup(args.evidence / "common_setup.json")
     blocks = [process_result(args.evidence / f"process-{n}.json", reference, capture) for n in (1, 2)]
+    check(blocks[0]["pid"] != blocks[1]["pid"], "Two fresh processes")
+    check(datetime.fromisoformat(blocks[0]["finish"].replace("Z", "+00:00"))
+          <= datetime.fromisoformat(blocks[1]["start"].replace("Z", "+00:00")), "Serial process execution")
     check(blocks[0]["scope_order"] == blocks[1]["scope_order"][::-1], "Reversal of camera scope sequence")
     summary = []
     for a, b in zip(blocks[0]["queries"], blocks[1]["queries"]):
