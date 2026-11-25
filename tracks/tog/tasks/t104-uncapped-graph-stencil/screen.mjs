@@ -71,5 +71,6 @@ const most=requests.filter(h=>h.support_fraction>=.75).length;
 const promising=all.filter(a=>a.horizons.some(h=>h.support_fraction<.5 && h.mean_fraction<.5)).length;
 output.gate={requests:requests.length,at_least_75_percent:most,distinct_arms_below_both_50_percent:promising,
   decision:most>requests.length/2 && promising<2?'stop-geometry-only':'review-qualification'};
-await fs.writeFile(path.join(here,'GEOMETRY.json'),JSON.stringify(output,null,2)+'\n',{flag:'wx'});
+const destination=process.argv[2]?path.resolve(process.argv[2]):path.join(here,'GEOMETRY.json');
+await fs.writeFile(destination,JSON.stringify(output,null,2)+'\n',{flag:'wx'});
 console.log(JSON.stringify(output.gate));

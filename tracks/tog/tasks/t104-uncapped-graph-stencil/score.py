@@ -7,8 +7,8 @@ from statistics import median
 HERE = Path(__file__).resolve().parent
 
 
-def verify(asset):
-    folder = HERE / "evidence" / asset
+def verify(asset,folder=None):
+    folder = folder or HERE / "evidence" / asset
     path = folder / "CAPTURE.json"
     raw = json.loads(path.read_bytes())
     geo = json.loads((HERE / "GEOMETRY.json").read_bytes())["assets"][asset]
@@ -79,5 +79,9 @@ def verify(asset):
 
 
 if __name__=="__main__":
-    import sys
-    print(json.dumps(verify(sys.argv[1]),indent=2))
+    import argparse
+    parser=argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("asset",choices=("firewoods","playground"))
+    parser.add_argument("--capture-dir",type=Path)
+    args=parser.parse_args()
+    print(json.dumps(verify(args.asset,args.capture_dir),indent=2))

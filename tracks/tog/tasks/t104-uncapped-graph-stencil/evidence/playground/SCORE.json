@@ -1,0 +1,202 @@
+{
+  "asset": "playground",
+  "source_sha256": "5460f1abb1b5ace7f953dcf4270c8ae0919990639434f6d5f19c6cfcb804484e",
+  "arms": {
+    "AB": {
+      "first": 182,
+      "clicked": 2058,
+      "eligible_after_click": 3654,
+      "initial_burning": 11868,
+      "cold_geometry": {
+        "method": "component-fresh",
+        "rep": 0,
+        "ms": 717.6000001430511,
+        "delivered": 887.7768999999971
+      },
+      "audit": {
+        "frames": 2,
+        "domain": 30459,
+        "length": 8,
+        "particles": 3962,
+        "material_values": 304590,
+        "new_local": 1819,
+        "local_donor_steps": 5935,
+        "old_donors_above_1400": 2058
+      },
+      "methods": {
+        "active-fresh": {
+          "decision": {
+            "domain": null,
+            "scoped_steps": 0,
+            "eligible": 0,
+            "fallback": "ordinary",
+            "new_local": 0,
+            "local_donor_steps": 0
+          },
+          "delivered_ms": 212.13700000000244,
+          "measured_range_ms": [
+            177.75860000000102,
+            252.22720000000845
+          ],
+          "warmup_ms": 258.1667999999918,
+          "membership_ms": 0.0,
+          "guard_ms": 0.0
+        },
+        "active-anchor": {
+          "decision": {
+            "domain": null,
+            "scoped_steps": 0,
+            "eligible": 0,
+            "fallback": "ordinary",
+            "new_local": 0,
+            "local_donor_steps": 0
+          },
+          "delivered_ms": 183.73504999999568,
+          "measured_range_ms": [
+            162.74169999999867,
+            278.01050000000396
+          ],
+          "warmup_ms": 244.58850000001257,
+          "membership_ms": 0.0,
+          "guard_ms": 0.0
+        },
+        "component-fresh": {
+          "decision": {
+            "domain": 30459,
+            "scoped_steps": 2,
+            "eligible": 60,
+            "fallback": null,
+            "new_local": 1,
+            "local_donor_steps": 2058
+          },
+          "delivered_ms": 178.82370000000083,
+          "measured_range_ms": [
+            161.8116000000009,
+            213.3399999999965
+          ],
+          "warmup_ms": 887.7768999999971,
+          "membership_ms": 1.0,
+          "guard_ms": 0.6999999284744263,
+          "ratio_to_complete": 0.8429632737334777
+        },
+        "component-anchor": {
+          "decision": {
+            "domain": 30459,
+            "scoped_steps": 2,
+            "eligible": 60,
+            "fallback": null,
+            "new_local": 1,
+            "local_donor_steps": 2058
+          },
+          "delivered_ms": 191.15810000000056,
+          "measured_range_ms": [
+            171.9484999999986,
+            222.63300000000163
+          ],
+          "warmup_ms": 189.47909999999683,
+          "membership_ms": 0.9000000953674316,
+          "guard_ms": 0.5,
+          "ratio_to_complete": 1.0404008380546066
+        }
+      }
+    },
+    "BA": {
+      "first": 182,
+      "clicked": 1620,
+      "eligible_after_click": 4920,
+      "initial_burning": 32079,
+      "cold_geometry": {
+        "method": "component-fresh",
+        "rep": 0,
+        "ms": 547.5,
+        "delivered": 653.421399999992
+      },
+      "audit": {
+        "frames": 2,
+        "domain": 9810,
+        "length": 8,
+        "particles": 3371,
+        "material_values": 98100,
+        "new_local": 987,
+        "local_donor_steps": 4227,
+        "old_donors_above_1400": 1620
+      },
+      "methods": {
+        "active-fresh": {
+          "decision": {
+            "domain": null,
+            "scoped_steps": 0,
+            "eligible": 0,
+            "fallback": "ordinary",
+            "new_local": 0,
+            "local_donor_steps": 0
+          },
+          "delivered_ms": 198.33294999999634,
+          "measured_range_ms": [
+            176.53939999997965,
+            248.7609999999986
+          ],
+          "warmup_ms": 199.9555999999866,
+          "membership_ms": 0.0,
+          "guard_ms": 0.0
+        },
+        "active-anchor": {
+          "decision": {
+            "domain": null,
+            "scoped_steps": 0,
+            "eligible": 0,
+            "fallback": "ordinary",
+            "new_local": 0,
+            "local_donor_steps": 0
+          },
+          "delivered_ms": 102.25784999997995,
+          "measured_range_ms": [
+            98.99139999999898,
+            147.8912999999884
+          ],
+          "warmup_ms": 208.785200000013,
+          "membership_ms": 0.0,
+          "guard_ms": 0.0
+        },
+        "component-fresh": {
+          "decision": {
+            "domain": 9810,
+            "scoped_steps": 2,
+            "eligible": 60,
+            "fallback": null,
+            "new_local": 1,
+            "local_donor_steps": 1620
+          },
+          "delivered_ms": 93.88014999999723,
+          "measured_range_ms": [
+            87.28600000002189,
+            97.4664000000048
+          ],
+          "warmup_ms": 653.421399999992,
+          "membership_ms": 0.40000009536743164,
+          "guard_ms": 0.75,
+          "ratio_to_complete": 0.4733462089884659
+        },
+        "component-anchor": {
+          "decision": {
+            "domain": 9810,
+            "scoped_steps": 2,
+            "eligible": 60,
+            "fallback": null,
+            "new_local": 1,
+            "local_donor_steps": 1620
+          },
+          "delivered_ms": 115.41795000000275,
+          "measured_range_ms": [
+            94.92259999999078,
+            137.96770000000834
+          ],
+          "warmup_ms": 128.96880000000237,
+          "membership_ms": 0.3500000238418579,
+          "guard_ms": 0.5,
+          "ratio_to_complete": 1.1286952542032263
+        }
+      }
+    }
+  }
+}

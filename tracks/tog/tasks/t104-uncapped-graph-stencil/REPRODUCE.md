@@ -1,0 +1,20 @@
+# Reproducing the full-service transfer
+
+The [static screen](screen.mjs) runs directly in Node's standard library after preparing all three original PLY assets. Sources and recipes are pinned by their previous experiments. Firewoods also accepts `T86_PLY`. Search reads every material site. The public [GEOMETRY.json](GEOMETRY.json) already contains the frozen output. For a fresh static measurement run `node tracks/tog/tasks/t104-uncapped-graph-stencil/screen.mjs ./local-t104-geometry.json` from the repository root. The writer requires a new output file. The dynamic test uses its two selected asset identities and the registered geometry report.
+
+Build the T95, T97 and T102 bundles from their task directories first. The native simulator, observer, camera adapter, platform dependencies and fixture preparation follow T86/T90/T101. The headless Edge executable, Playwright package and Node runtime are checked against archived identities. The native kernel has one experimental setting adjusted from frame zero, the fair graph cap. Pre-edit per-layer and post-edit global particle admission follow T86. Every native reference comes from that changed trajectory. No prior capped curve supplies labels.
+
+```powershell
+$t = 'tracks/tog/tasks/t104-uncapped-graph-stencil'
+node "$t/run.mjs" firewoods ./local-t104-fresh/firewoods --check
+node "$t/run.mjs" firewoods ./local-t104-fresh/firewoods
+node "$t/run.mjs" playground ./local-t104-fresh/playground
+python "$t/score.py" firewoods
+python "$t/score.py" playground
+```
+
+Pass `--capture-dir ./local-t104-fresh/firewoods` or the corresponding Playground directory to validate a new capture. The scorer reads the public evidence by default and verifies native first frames, witness sets, the rotated four-method schedule, state-restoration markers, component routing, full active recipient audits, guard fallback, cold index construction and all per-method measured costs. Each raw capture retains the 60 changed-policy frame records, including every shell witness, material counts and global gas/RNG counts. A 15-minute wall budget applies per native asset. Geometry and per-test browser timers are separate. The first S=1,000,000 Firewoods run stored its full burning count and material population. Observing all sites already burning there prompted a reference-only eligibility counter before the Playground run; its operator and timing were frozen. In Firewoods, the unchanged population and all-burning state imply zero eligible recipients exactly.
+
+A component method maintains the component union's h/fuel/glow/char/state, processes every local donor including newly appended ones in the native relative order and uses the ordinary T102 graph backend. It advances complete gas globally. A certified prefix separately requires that every old burner survive and every feed cursor address stay inside the old frontier. On each admitted step all emitted sources and random decisions are therefore identical. New outside material cannot deposit directly onto the union. The component prefix can use the old global emission list while updating the new component frontier. The measured region returns at the first event. If the predicate becomes uncertain before an event, the ordinary matched backend restarts from the post-click cut and both executions are charged. If the entire scene lies in the union or the prefix is initially empty, it routes to normal complete evaluation. This test only retains query output. Every timed speculative branch restores its live state.
+
+The comparison uses the strongest established full-material active-recipient baselines in fresh-index and reusable-anchor modes. The complete recorded metrics exclude the latter's cold anchor construction from warm medians, but retain it in the recorded first request. The same holds for the additional static component index. Membership selection, query branching and browser dispatch are paid on each call. The persisted component membership labels occupy four bytes/site, with additional temporary queues, positions and hash-bucket storage during construction. Full per-trial cache counters are in the raw receipts.
