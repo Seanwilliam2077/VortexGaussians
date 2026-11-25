@@ -1,0 +1,614 @@
+{
+  "schema": "t88-positive-witness-score-v1",
+  "predictions_sha256": "e3191dfe83e2f3c01d916deaf8802f30c43c30c6694e11975da146bfd4e50f9e",
+  "summary": {
+    "AB": {
+      "queries": 9,
+      "true_yes": 4,
+      "true_no": 5,
+      "native_ms_median": 16.59999990463257,
+      "methods": {
+        "residual": {
+          "issued_yes": 0,
+          "false_yes": 0,
+          "missed_true_yes": 4,
+          "fallen_back": 9,
+          "ms_including_prepare_median": 0.3478000871837139,
+          "loaded_plus_fallback_ms_median": 17.089099787175655,
+          "paired_loaded_ratio_median": 1.019180714767881,
+          "paired_file_ratio_median": 2.8196428583677258
+        },
+        "graph": {
+          "issued_yes": 0,
+          "false_yes": 0,
+          "missed_true_yes": 4,
+          "fallen_back": 9,
+          "ms_including_prepare_median": 2.057699952274561,
+          "loaded_plus_fallback_ms_median": 18.709199899807572,
+          "paired_loaded_ratio_median": 1.0435736409755278,
+          "paired_file_ratio_median": 2.8196746046414423
+        }
+      }
+    },
+    "BA": {
+      "queries": 9,
+      "true_yes": 6,
+      "true_no": 3,
+      "native_ms_median": 18.799999952316284,
+      "methods": {
+        "residual": {
+          "issued_yes": 0,
+          "false_yes": 0,
+          "missed_true_yes": 6,
+          "fallen_back": 9,
+          "ms_including_prepare_median": 0.3573000431060791,
+          "loaded_plus_fallback_ms_median": 18.939199848100543,
+          "paired_loaded_ratio_median": 1.0170212824012277,
+          "paired_file_ratio_median": 2.4015617394198996
+        },
+        "graph": {
+          "issued_yes": 0,
+          "false_yes": 0,
+          "missed_true_yes": 6,
+          "fallen_back": 9,
+          "ms_including_prepare_median": 1.7476999200880527,
+          "loaded_plus_fallback_ms_median": 19.120200062170625,
+          "paired_loaded_ratio_median": 1.0432037091749577,
+          "paired_file_ratio_median": 2.4936419757799104
+        }
+      }
+    },
+    "both": {
+      "queries": 18,
+      "true_yes": 10,
+      "true_no": 8,
+      "native_ms_median": 17.699999928474426,
+      "methods": {
+        "residual": {
+          "issued_yes": 0,
+          "false_yes": 0,
+          "missed_true_yes": 10,
+          "fallen_back": 18,
+          "ms_including_prepare_median": 0.35630003549158573,
+          "loaded_plus_fallback_ms_median": 18.0141498176381,
+          "paired_loaded_ratio_median": 1.0181009985845544,
+          "paired_file_ratio_median": 2.471689954234222
+        },
+        "graph": {
+          "issued_yes": 0,
+          "false_yes": 0,
+          "missed_true_yes": 10,
+          "fallen_back": 18,
+          "ms_including_prepare_median": 1.9181501120328903,
+          "loaded_plus_fallback_ms_median": 18.9146999809891,
+          "paired_loaded_ratio_median": 1.0433886750752428,
+          "paired_file_ratio_median": 2.5177414317274067
+        }
+      }
+    }
+  },
+  "queries": [
+    {
+      "arm": "AB",
+      "cut": 210,
+      "horizon": 1,
+      "eligible": 2371,
+      "first_regional_event": null,
+      "native_first_event_or_end_ms": 12.599999904632568,
+      "cut_read_hash_decode_validate_ms": 22.44909992441535,
+      "methods": {
+        "residual": {
+          "witness": null,
+          "actual_witness_frame": null,
+          "compute_including_prepare_ms": 0.4783999174833298,
+          "exact_fallback_ms": 12.599999904632568,
+          "loaded_plus_fallback_ms": 13.078399822115898,
+          "file_plus_fallback_ms": 35.52749974653125,
+          "cold_including_two_shells_plus_fallback_ms": 47.441499661654234
+        },
+        "graph": {
+          "witness": null,
+          "actual_witness_frame": null,
+          "compute_including_prepare_ms": 0.4787999205291271,
+          "exact_fallback_ms": 12.599999904632568,
+          "loaded_plus_fallback_ms": 13.078799825161695,
+          "file_plus_fallback_ms": 35.527899749577045,
+          "cold_including_two_shells_plus_fallback_ms": 47.44189966470003
+        }
+      }
+    },
+    {
+      "arm": "AB",
+      "cut": 210,
+      "horizon": 4,
+      "eligible": 2371,
+      "first_regional_event": null,
+      "native_first_event_or_end_ms": 52.0,
+      "cut_read_hash_decode_validate_ms": 22.44909992441535,
+      "methods": {
+        "residual": {
+          "witness": null,
+          "actual_witness_frame": null,
+          "compute_including_prepare_ms": 0.34380005672574043,
+          "exact_fallback_ms": 52.0,
+          "loaded_plus_fallback_ms": 52.34380005672574,
+          "file_plus_fallback_ms": 74.79289998114109,
+          "cold_including_two_shells_plus_fallback_ms": 86.70689989626408
+        },
+        "graph": {
+          "witness": null,
+          "actual_witness_frame": null,
+          "compute_including_prepare_ms": 2.654300071299076,
+          "exact_fallback_ms": 52.0,
+          "loaded_plus_fallback_ms": 54.654300071299076,
+          "file_plus_fallback_ms": 77.10339999571443,
+          "cold_including_two_shells_plus_fallback_ms": 89.01739991083741
+        }
+      }
+    },
+    {
+      "arm": "AB",
+      "cut": 210,
+      "horizon": 8,
+      "eligible": 2371,
+      "first_regional_event": 216,
+      "native_first_event_or_end_ms": 75.2000002861023,
+      "cut_read_hash_decode_validate_ms": 22.44909992441535,
+      "methods": {
+        "residual": {
+          "witness": null,
+          "actual_witness_frame": null,
+          "compute_including_prepare_ms": 0.5396001506596804,
+          "exact_fallback_ms": 75.2000002861023,
+          "loaded_plus_fallback_ms": 75.73960043676198,
+          "file_plus_fallback_ms": 98.18870036117733,
+          "cold_including_two_shells_plus_fallback_ms": 110.10270027630031
+        },
+        "graph": {
+          "witness": null,
+          "actual_witness_frame": null,
+          "compute_including_prepare_ms": 3.425300121307373,
+          "exact_fallback_ms": 75.2000002861023,
+          "loaded_plus_fallback_ms": 78.62530040740967,
+          "file_plus_fallback_ms": 101.07440033182502,
+          "cold_including_two_shells_plus_fallback_ms": 112.988400246948
+        }
+      }
+    },
+    {
+      "arm": "AB",
+      "cut": 240,
+      "horizon": 1,
+      "eligible": 1863,
+      "first_regional_event": null,
+      "native_first_event_or_end_ms": 12.900000095367432,
+      "cut_read_hash_decode_validate_ms": 28.185399947687984,
+      "methods": {
+        "residual": {
+          "witness": null,
+          "actual_witness_frame": null,
+          "compute_including_prepare_ms": 0.5614999681711197,
+          "exact_fallback_ms": 12.900000095367432,
+          "loaded_plus_fallback_ms": 13.461500063538551,
+          "file_plus_fallback_ms": 41.646900011226535,
+          "cold_including_two_shells_plus_fallback_ms": 53.56089992634952
+        },
+        "graph": {
+          "witness": null,
+          "actual_witness_frame": null,
+          "compute_including_prepare_ms": 0.5620999727398157,
+          "exact_fallback_ms": 12.900000095367432,
+          "loaded_plus_fallback_ms": 13.462100068107247,
+          "file_plus_fallback_ms": 41.64750001579523,
+          "cold_including_two_shells_plus_fallback_ms": 53.56149993091822
+        }
+      }
+    },
+    {
+      "arm": "AB",
+      "cut": 240,
+      "horizon": 4,
+      "eligible": 1863,
+      "first_regional_event": null,
+      "native_first_event_or_end_ms": 52.19999980926514,
+      "cut_read_hash_decode_validate_ms": 28.185399947687984,
+      "methods": {
+        "residual": {
+          "witness": null,
+          "actual_witness_frame": null,
+          "compute_including_prepare_ms": 0.3478000871837139,
+          "exact_fallback_ms": 52.19999980926514,
+          "loaded_plus_fallback_ms": 52.54779989644885,
+          "file_plus_fallback_ms": 80.73319984413683,
+          "cold_including_two_shells_plus_fallback_ms": 92.64719975925982
+        },
+        "graph": {
+          "witness": null,
+          "actual_witness_frame": null,
+          "compute_including_prepare_ms": 2.2239999379962683,
+          "exact_fallback_ms": 52.19999980926514,
+          "loaded_plus_fallback_ms": 54.423999747261405,
+          "file_plus_fallback_ms": 82.60939969494939,
+          "cold_including_two_shells_plus_fallback_ms": 94.52339961007237
+        }
+      }
+    },
+    {
+      "arm": "AB",
+      "cut": 240,
+      "horizon": 8,
+      "eligible": 1863,
+      "first_regional_event": null,
+      "native_first_event_or_end_ms": 102.29999995231628,
+      "cut_read_hash_decode_validate_ms": 28.185399947687984,
+      "methods": {
+        "residual": {
+          "witness": null,
+          "actual_witness_frame": null,
+          "compute_including_prepare_ms": 0.327700050547719,
+          "exact_fallback_ms": 102.29999995231628,
+          "loaded_plus_fallback_ms": 102.627700002864,
+          "file_plus_fallback_ms": 130.813099950552,
+          "cold_including_two_shells_plus_fallback_ms": 142.72709986567497
+        },
+        "graph": {
+          "witness": null,
+          "actual_witness_frame": null,
+          "compute_including_prepare_ms": 1.9666000735014677,
+          "exact_fallback_ms": 102.29999995231628,
+          "loaded_plus_fallback_ms": 104.26660002581775,
+          "file_plus_fallback_ms": 132.45199997350574,
+          "cold_including_two_shells_plus_fallback_ms": 144.36599988862872
+        }
+      }
+    },
+    {
+      "arm": "AB",
+      "cut": 300,
+      "horizon": 1,
+      "eligible": 1555,
+      "first_regional_event": 301,
+      "native_first_event_or_end_ms": 16.59999990463257,
+      "cut_read_hash_decode_validate_ms": 31.219600001350045,
+      "methods": {
+        "residual": {
+          "witness": null,
+          "actual_witness_frame": null,
+          "compute_including_prepare_ms": 0.489099882543087,
+          "exact_fallback_ms": 16.59999990463257,
+          "loaded_plus_fallback_ms": 17.089099787175655,
+          "file_plus_fallback_ms": 48.3086997885257,
+          "cold_including_two_shells_plus_fallback_ms": 60.222699703648686
+        },
+        "graph": {
+          "witness": null,
+          "actual_witness_frame": null,
+          "compute_including_prepare_ms": 0.48949988558888435,
+          "exact_fallback_ms": 16.59999990463257,
+          "loaded_plus_fallback_ms": 17.089499790221453,
+          "file_plus_fallback_ms": 48.3090997915715,
+          "cold_including_two_shells_plus_fallback_ms": 60.223099706694484
+        }
+      }
+    },
+    {
+      "arm": "AB",
+      "cut": 300,
+      "horizon": 4,
+      "eligible": 1555,
+      "first_regional_event": 301,
+      "native_first_event_or_end_ms": 16.59999990463257,
+      "cut_read_hash_decode_validate_ms": 31.219600001350045,
+      "methods": {
+        "residual": {
+          "witness": null,
+          "actual_witness_frame": null,
+          "compute_including_prepare_ms": 0.31839986331760883,
+          "exact_fallback_ms": 16.59999990463257,
+          "loaded_plus_fallback_ms": 16.918399767950177,
+          "file_plus_fallback_ms": 48.13799976930022,
+          "cold_including_two_shells_plus_fallback_ms": 60.05199968442321
+        },
+        "graph": {
+          "witness": null,
+          "actual_witness_frame": null,
+          "compute_including_prepare_ms": 2.109199995175004,
+          "exact_fallback_ms": 16.59999990463257,
+          "loaded_plus_fallback_ms": 18.709199899807572,
+          "file_plus_fallback_ms": 49.92879990115762,
+          "cold_including_two_shells_plus_fallback_ms": 61.8427998162806
+        }
+      }
+    },
+    {
+      "arm": "AB",
+      "cut": 300,
+      "horizon": 8,
+      "eligible": 1555,
+      "first_regional_event": 301,
+      "native_first_event_or_end_ms": 16.59999990463257,
+      "cut_read_hash_decode_validate_ms": 31.219600001350045,
+      "methods": {
+        "residual": {
+          "witness": null,
+          "actual_witness_frame": null,
+          "compute_including_prepare_ms": 0.32210000790655613,
+          "exact_fallback_ms": 16.59999990463257,
+          "loaded_plus_fallback_ms": 16.922099912539124,
+          "file_plus_fallback_ms": 48.14169991388917,
+          "cold_including_two_shells_plus_fallback_ms": 60.055699829012156
+        },
+        "graph": {
+          "witness": null,
+          "actual_witness_frame": null,
+          "compute_including_prepare_ms": 2.057699952274561,
+          "exact_fallback_ms": 16.59999990463257,
+          "loaded_plus_fallback_ms": 18.65769985690713,
+          "file_plus_fallback_ms": 49.877299858257174,
+          "cold_including_two_shells_plus_fallback_ms": 61.79129977338016
+        }
+      }
+    },
+    {
+      "arm": "BA",
+      "cut": 210,
+      "horizon": 1,
+      "eligible": 2441,
+      "first_regional_event": null,
+      "native_first_event_or_end_ms": 13.200000047683716,
+      "cut_read_hash_decode_validate_ms": 19.820099929347634,
+      "methods": {
+        "residual": {
+          "witness": null,
+          "actual_witness_frame": null,
+          "compute_including_prepare_ms": 0.5318999756127596,
+          "exact_fallback_ms": 13.200000047683716,
+          "loaded_plus_fallback_ms": 13.731900023296475,
+          "file_plus_fallback_ms": 33.55199995264411,
+          "cold_including_two_shells_plus_fallback_ms": 45.465999867767096
+        },
+        "graph": {
+          "witness": null,
+          "actual_witness_frame": null,
+          "compute_including_prepare_ms": 0.5321998614817858,
+          "exact_fallback_ms": 13.200000047683716,
+          "loaded_plus_fallback_ms": 13.732199909165502,
+          "file_plus_fallback_ms": 33.552299838513136,
+          "cold_including_two_shells_plus_fallback_ms": 45.46629975363612
+        }
+      }
+    },
+    {
+      "arm": "BA",
+      "cut": 210,
+      "horizon": 4,
+      "eligible": 2441,
+      "first_regional_event": null,
+      "native_first_event_or_end_ms": 54.299999952316284,
+      "cut_read_hash_decode_validate_ms": 19.820099929347634,
+      "methods": {
+        "residual": {
+          "witness": null,
+          "actual_witness_frame": null,
+          "compute_including_prepare_ms": 0.3752999473363161,
+          "exact_fallback_ms": 54.299999952316284,
+          "loaded_plus_fallback_ms": 54.6752998996526,
+          "file_plus_fallback_ms": 74.49539982900023,
+          "cold_including_two_shells_plus_fallback_ms": 86.40939974412322
+        },
+        "graph": {
+          "witness": null,
+          "actual_witness_frame": null,
+          "compute_including_prepare_ms": 2.0389999262988567,
+          "exact_fallback_ms": 54.299999952316284,
+          "loaded_plus_fallback_ms": 56.33899987861514,
+          "file_plus_fallback_ms": 76.15909980796278,
+          "cold_including_two_shells_plus_fallback_ms": 88.07309972308576
+        }
+      }
+    },
+    {
+      "arm": "BA",
+      "cut": 210,
+      "horizon": 8,
+      "eligible": 2441,
+      "first_regional_event": null,
+      "native_first_event_or_end_ms": 109.60000014305115,
+      "cut_read_hash_decode_validate_ms": 19.820099929347634,
+      "methods": {
+        "residual": {
+          "witness": null,
+          "actual_witness_frame": null,
+          "compute_including_prepare_ms": 0.3581000491976738,
+          "exact_fallback_ms": 109.60000014305115,
+          "loaded_plus_fallback_ms": 109.95810019224882,
+          "file_plus_fallback_ms": 129.77820012159646,
+          "cold_including_two_shells_plus_fallback_ms": 141.69220003671944
+        },
+        "graph": {
+          "witness": null,
+          "actual_witness_frame": null,
+          "compute_including_prepare_ms": 1.8875000532716513,
+          "exact_fallback_ms": 109.60000014305115,
+          "loaded_plus_fallback_ms": 111.4875001963228,
+          "file_plus_fallback_ms": 131.30760012567043,
+          "cold_including_two_shells_plus_fallback_ms": 143.22160004079342
+        }
+      }
+    },
+    {
+      "arm": "BA",
+      "cut": 240,
+      "horizon": 1,
+      "eligible": 2431,
+      "first_regional_event": 241,
+      "native_first_event_or_end_ms": 16.200000047683716,
+      "cut_read_hash_decode_validate_ms": 22.005900042131543,
+      "methods": {
+        "residual": {
+          "witness": null,
+          "actual_witness_frame": null,
+          "compute_including_prepare_ms": 0.6994002033025026,
+          "exact_fallback_ms": 16.200000047683716,
+          "loaded_plus_fallback_ms": 16.89940025098622,
+          "file_plus_fallback_ms": 38.90530029311776,
+          "cold_including_two_shells_plus_fallback_ms": 50.81930020824075
+        },
+        "graph": {
+          "witness": null,
+          "actual_witness_frame": null,
+          "compute_including_prepare_ms": 0.6999000906944275,
+          "exact_fallback_ms": 16.200000047683716,
+          "loaded_plus_fallback_ms": 16.899900138378143,
+          "file_plus_fallback_ms": 38.90580018050969,
+          "cold_including_two_shells_plus_fallback_ms": 50.81980009563267
+        }
+      }
+    },
+    {
+      "arm": "BA",
+      "cut": 240,
+      "horizon": 4,
+      "eligible": 2431,
+      "first_regional_event": 241,
+      "native_first_event_or_end_ms": 16.200000047683716,
+      "cut_read_hash_decode_validate_ms": 22.005900042131543,
+      "methods": {
+        "residual": {
+          "witness": null,
+          "actual_witness_frame": null,
+          "compute_including_prepare_ms": 0.3573000431060791,
+          "exact_fallback_ms": 16.200000047683716,
+          "loaded_plus_fallback_ms": 16.557300090789795,
+          "file_plus_fallback_ms": 38.56320013292134,
+          "cold_including_two_shells_plus_fallback_ms": 50.477200048044324
+        },
+        "graph": {
+          "witness": null,
+          "actual_witness_frame": null,
+          "compute_including_prepare_ms": 2.191100036725402,
+          "exact_fallback_ms": 16.200000047683716,
+          "loaded_plus_fallback_ms": 18.391100084409118,
+          "file_plus_fallback_ms": 40.39700012654066,
+          "cold_including_two_shells_plus_fallback_ms": 52.31100004166365
+        }
+      }
+    },
+    {
+      "arm": "BA",
+      "cut": 240,
+      "horizon": 8,
+      "eligible": 2431,
+      "first_regional_event": 241,
+      "native_first_event_or_end_ms": 16.200000047683716,
+      "cut_read_hash_decode_validate_ms": 22.005900042131543,
+      "methods": {
+        "residual": {
+          "witness": null,
+          "actual_witness_frame": null,
+          "compute_including_prepare_ms": 0.35530002787709236,
+          "exact_fallback_ms": 16.200000047683716,
+          "loaded_plus_fallback_ms": 16.555300075560808,
+          "file_plus_fallback_ms": 38.56120011769235,
+          "cold_including_two_shells_plus_fallback_ms": 50.47520003281534
+        },
+        "graph": {
+          "witness": null,
+          "actual_witness_frame": null,
+          "compute_including_prepare_ms": 1.9488001707941294,
+          "exact_fallback_ms": 16.200000047683716,
+          "loaded_plus_fallback_ms": 18.148800218477845,
+          "file_plus_fallback_ms": 40.15470026060939,
+          "cold_including_two_shells_plus_fallback_ms": 52.068700175732374
+        }
+      }
+    },
+    {
+      "arm": "BA",
+      "cut": 300,
+      "horizon": 1,
+      "eligible": 601,
+      "first_regional_event": 301,
+      "native_first_event_or_end_ms": 18.799999952316284,
+      "cut_read_hash_decode_validate_ms": 31.20699990540743,
+      "methods": {
+        "residual": {
+          "witness": null,
+          "actual_witness_frame": null,
+          "compute_including_prepare_ms": 0.3200001083314419,
+          "exact_fallback_ms": 18.799999952316284,
+          "loaded_plus_fallback_ms": 19.120000060647726,
+          "file_plus_fallback_ms": 50.326999966055155,
+          "cold_including_two_shells_plus_fallback_ms": 62.24099988117814
+        },
+        "graph": {
+          "witness": null,
+          "actual_witness_frame": null,
+          "compute_including_prepare_ms": 0.32020010985434055,
+          "exact_fallback_ms": 18.799999952316284,
+          "loaded_plus_fallback_ms": 19.120200062170625,
+          "file_plus_fallback_ms": 50.32719996757805,
+          "cold_including_two_shells_plus_fallback_ms": 62.24119988270104
+        }
+      }
+    },
+    {
+      "arm": "BA",
+      "cut": 300,
+      "horizon": 4,
+      "eligible": 601,
+      "first_regional_event": 301,
+      "native_first_event_or_end_ms": 18.799999952316284,
+      "cut_read_hash_decode_validate_ms": 31.20699990540743,
+      "methods": {
+        "residual": {
+          "witness": null,
+          "actual_witness_frame": null,
+          "compute_including_prepare_ms": 0.13919989578425884,
+          "exact_fallback_ms": 18.799999952316284,
+          "loaded_plus_fallback_ms": 18.939199848100543,
+          "file_plus_fallback_ms": 50.14619975350797,
+          "cold_including_two_shells_plus_fallback_ms": 62.06019966863096
+        },
+        "graph": {
+          "witness": null,
+          "actual_witness_frame": null,
+          "compute_including_prepare_ms": 1.7476999200880527,
+          "exact_fallback_ms": 18.799999952316284,
+          "loaded_plus_fallback_ms": 20.547699872404337,
+          "file_plus_fallback_ms": 51.754699777811766,
+          "cold_including_two_shells_plus_fallback_ms": 63.66869969293475
+        }
+      }
+    },
+    {
+      "arm": "BA",
+      "cut": 300,
+      "horizon": 8,
+      "eligible": 601,
+      "first_regional_event": 301,
+      "native_first_event_or_end_ms": 18.799999952316284,
+      "cut_read_hash_decode_validate_ms": 31.20699990540743,
+      "methods": {
+        "residual": {
+          "witness": null,
+          "actual_witness_frame": null,
+          "compute_including_prepare_ms": 0.22400007583200932,
+          "exact_fallback_ms": 18.799999952316284,
+          "loaded_plus_fallback_ms": 19.024000028148293,
+          "file_plus_fallback_ms": 50.23099993355572,
+          "cold_including_two_shells_plus_fallback_ms": 62.14499984867871
+        },
+        "graph": {
+          "witness": null,
+          "actual_witness_frame": null,
+          "compute_including_prepare_ms": 1.587600214406848,
+          "exact_fallback_ms": 18.799999952316284,
+          "loaded_plus_fallback_ms": 20.387600166723132,
+          "file_plus_fallback_ms": 51.59460007213056,
+          "cold_including_two_shells_plus_fallback_ms": 63.50859998725355
+        }
+      }
+    }
+  ]
+}
