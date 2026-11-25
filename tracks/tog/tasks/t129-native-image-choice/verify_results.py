@@ -77,8 +77,12 @@ def verify_operation(row, reference, audit=False):
     strokes = row["strokes"]
     picks = ["L", "F"] if (audit or missed) else ["L"]
     check([s["pick"] for s in strokes] == picks, "Unnecessary or missing simulated stroke")
+    shared = 24 if method == "sibling" else 0
+    check(row["shared_steps"] == shared and row["reused_steps"] == (shared if "F" in picks else 0),
+          "Certified or actually reused steps")
     for stroke in strokes:
         pick = stroke["pick"]
+        check(stroke["clicked"] == {"L": 74, "F": 288}[pick], "Direct stroke footprint")
         expected_cameras = list(cameras) if audit or pick == "L" else missed
         check([v["camera"] for v in stroke["views"]] == expected_cameras, "Unnecessary or missing view")
         check(stroke["steps"] == (66 if pick == "F" and method == "sibling" else 90), "Number of solver steps")
@@ -129,6 +133,7 @@ def process_result(path, reference, capture):
     for row in trials:
         verify_operation(row, reference)
         positive(row["delivered_ms"], "Delivered clock")
+        check(0 < row["browser_ms"] <= row["delivered_ms"] + 2, "Browser versus host delivery")
         phases = row["phases_ms"]
         check(isinstance(phases, dict) and bool(phases) and all(isinstance(x, (float, int))
               and math.isfinite(x) and x >= 0 for x in phases.values()), "Completed action phases")
@@ -137,6 +142,7 @@ def process_result(path, reference, capture):
     queries = []
     for cameras in VIEWS:
         times = {method: [] for method in METHODS}
+        phase_samples = {method: defaultdict(list) for method in METHODS}
         first_measured = []
         for repeat in range(7):
             pair = grouped[cameras, repeat]
@@ -145,11 +151,16 @@ def process_result(path, reference, capture):
                 first_measured.append(pair[0]["method"])
             for r in pair:
                 times[r["method"]].append(r["delivered_ms"])
+                if repeat:
+                    for name, ms in r["phases_ms"].items():
+                        phase_samples[r["method"]][name].append(ms)
         check(first_measured.count("ordinary") == first_measured.count("sibling") == 3, "Unbalanced measurement order")
         medians = {m: median(times[m][1:]) for m in METHODS}
         ratios = [s / o for s, o in zip(times["sibling"][1:], times["ordinary"][1:])]
         queries.append({"cameras": list(cameras), "first_call_ms": {m: times[m][0] for m in METHODS},
                         "measured_ms": {m: times[m][1:] for m in METHODS}, "median_ms": medians,
+                        "phase_median_ms": {m: {k: median(v) for k, v in phases.items()}
+                                            for m, phases in phase_samples.items()},
                         "first_measured_methods": first_measured, "paired_sibling_wins": sum(r < 1 for r in ratios),
                         "sibling_over_ordinary": medians["sibling"] / medians["ordinary"],
                         "paired_sibling_over_ordinary": ratios})
