@@ -58,4 +58,3 @@ if __name__=="__main__":
         require(summary["limit_s"]==240 and summary["worker_s"][summary["arm"]]>=240,"wall bound")
     else:require(summary["status"]=="native_failure" and summary["exit"]!=0,"recorded failure")
     print(json.dumps({"summary":summary,"readbacks":out},indent=2))
-
