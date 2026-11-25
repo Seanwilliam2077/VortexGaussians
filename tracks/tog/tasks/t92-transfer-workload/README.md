@@ -25,6 +25,10 @@ The native staged HTML is byte-identical to the T86 reference. We checked every 
 
 ## Reproduce
 
+The seven-method T90 experiment returned 1,008 warmup and measured answers on these 18 windows. We independently matched every Boolean, first frame and returned witness to the registered regional event sets. In the eight windows where ordinary stepping stopped before the final scheduled frame, T93-to-regional median paired delivered cost was 0.995. In the ten windows reaching the scheduled final scan, the ratio was 0.458; for T93 against the rank-only ablation it was 0.732 in this subset. These descriptive groups share frames. [T90 data](../t90-callable-regional-query/evidence/dead-tree/CAPTURE.json)
+
+To repeat this cross-check from this directory, run `python verify_delivered.py ../t90-callable-regional-query/evidence/dead-tree/CAPTURE.json`.
+
 From this directory, with Python 3, verify the complete registered labels, file hashes and cut/event correspondence offline:
 
 ```shell
