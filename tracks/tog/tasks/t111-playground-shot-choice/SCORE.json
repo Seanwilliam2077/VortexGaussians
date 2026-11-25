@@ -1,0 +1,438 @@
+{
+  "operations": [
+    {
+      "cameras": [
+        0
+      ],
+      "choices": {
+        "0": "L"
+      },
+      "methods": {
+        "ordinary": {
+          "delivered_ms": 401.1345000000001,
+          "range_ms": [
+            399.3953999999994,
+            420.7652999999991
+          ],
+          "cold": {
+            "delivered_ms": 546.3484000000008,
+            "build_ms": 18.700000047683716,
+            "typed_bytes": 405715
+          },
+          "physical_branches": 1,
+          "outer_fork_restore_ms": 0.9000000953674316,
+          "input_dependent_ms": 3.5999999046325684,
+          "repairs_per_action": 0,
+          "repaired_steps": 0,
+          "ordinary_steps": 53,
+          "projected_steps": 0,
+          "restarts": 0,
+          "submitted_strokes": [
+            {
+              "pick": "L",
+              "views": [
+                {
+                  "camera": 0,
+                  "defined": true,
+                  "first_frame": 233,
+                  "count": 492,
+                  "mass": 185380780,
+                  "total": 715955134,
+                  "target": 178988784,
+                  "eligible": 3654,
+                  "witness": 2081
+                }
+              ]
+            }
+          ],
+          "relative_to_ordinary": 1.0
+        },
+        "restart": {
+          "delivered_ms": 643.9399000000012,
+          "range_ms": [
+            558.2642000000014,
+            675.7746000000006
+          ],
+          "cold": {
+            "delivered_ms": 629.4966999999997,
+            "build_ms": 15,
+            "typed_bytes": 405715
+          },
+          "physical_branches": 1,
+          "outer_fork_restore_ms": 0.7000000476837158,
+          "input_dependent_ms": 4.0,
+          "repairs_per_action": 0,
+          "repaired_steps": 0,
+          "ordinary_steps": 53,
+          "projected_steps": 32,
+          "restarts": 1,
+          "submitted_strokes": [
+            {
+              "pick": "L",
+              "views": [
+                {
+                  "camera": 0,
+                  "defined": true,
+                  "first_frame": 233,
+                  "count": 492,
+                  "mass": 185380780,
+                  "total": 715955134,
+                  "target": 178988784,
+                  "eligible": 3654,
+                  "witness": 2081
+                }
+              ]
+            }
+          ],
+          "relative_to_ordinary": 1.6052967271576017
+        },
+        "repair": {
+          "delivered_ms": 458.98099999999977,
+          "range_ms": [
+            389.6754999999994,
+            492.5572000000011
+          ],
+          "cold": {
+            "delivered_ms": 416.46450000000004,
+            "build_ms": 16.699999809265137,
+            "typed_bytes": 405715
+          },
+          "physical_branches": 1,
+          "outer_fork_restore_ms": 0.6000001430511475,
+          "input_dependent_ms": 3.799999952316284,
+          "repairs_per_action": 1,
+          "repaired_steps": 32,
+          "ordinary_steps": 0,
+          "projected_steps": 53,
+          "restarts": 0,
+          "submitted_strokes": [
+            {
+              "pick": "L",
+              "views": [
+                {
+                  "camera": 0,
+                  "defined": true,
+                  "first_frame": 233,
+                  "count": 492,
+                  "mass": 185380780,
+                  "total": 715955134,
+                  "target": 178988784,
+                  "eligible": 3654,
+                  "witness": 2081
+                }
+              ]
+            }
+          ],
+          "relative_to_ordinary": 1.144207242209283
+        }
+      }
+    },
+    {
+      "cameras": [
+        153
+      ],
+      "choices": {
+        "153": "L"
+      },
+      "methods": {
+        "ordinary": {
+          "delivered_ms": 667.251400000001,
+          "range_ms": [
+            618.2991000000002,
+            672.9412000000011
+          ],
+          "cold": {
+            "delivered_ms": 631.8639000000003,
+            "build_ms": 20.59999990463257,
+            "typed_bytes": 405715
+          },
+          "physical_branches": 1,
+          "outer_fork_restore_ms": 0.7000000476837158,
+          "input_dependent_ms": 4.3999998569488525,
+          "repairs_per_action": 0,
+          "repaired_steps": 0,
+          "ordinary_steps": 76,
+          "projected_steps": 0,
+          "restarts": 0,
+          "submitted_strokes": [
+            {
+              "pick": "L",
+              "views": [
+                {
+                  "camera": 153,
+                  "defined": true,
+                  "first_frame": 256,
+                  "count": 1416,
+                  "mass": 6504956,
+                  "total": 17383507,
+                  "target": 4345877,
+                  "eligible": 3654,
+                  "witness": 3160
+                }
+              ]
+            }
+          ],
+          "relative_to_ordinary": 1.0
+        },
+        "restart": {
+          "delivered_ms": 824.644400000001,
+          "range_ms": [
+            770.9945000000007,
+            853.5024999999987
+          ],
+          "cold": {
+            "delivered_ms": 887.0859,
+            "build_ms": 16.40000009536743,
+            "typed_bytes": 405715
+          },
+          "physical_branches": 1,
+          "outer_fork_restore_ms": 0.7000000476837158,
+          "input_dependent_ms": 3.8999998569488525,
+          "repairs_per_action": 0,
+          "repaired_steps": 0,
+          "ordinary_steps": 76,
+          "projected_steps": 32,
+          "restarts": 1,
+          "submitted_strokes": [
+            {
+              "pick": "L",
+              "views": [
+                {
+                  "camera": 153,
+                  "defined": true,
+                  "first_frame": 256,
+                  "count": 1416,
+                  "mass": 6504956,
+                  "total": 17383507,
+                  "target": 4345877,
+                  "eligible": 3654,
+                  "witness": 3160
+                }
+              ]
+            }
+          ],
+          "relative_to_ordinary": 1.2358826073650797
+        },
+        "repair": {
+          "delivered_ms": 721.446100000001,
+          "range_ms": [
+            711.0333000000028,
+            742.4519
+          ],
+          "cold": {
+            "delivered_ms": 693.3037000000004,
+            "build_ms": 18.700000047683716,
+            "typed_bytes": 405715
+          },
+          "physical_branches": 1,
+          "outer_fork_restore_ms": 0.7999999523162842,
+          "input_dependent_ms": 4.3999998569488525,
+          "repairs_per_action": 2,
+          "repaired_steps": 55,
+          "ordinary_steps": 0,
+          "projected_steps": 76,
+          "restarts": 0,
+          "submitted_strokes": [
+            {
+              "pick": "L",
+              "views": [
+                {
+                  "camera": 153,
+                  "defined": true,
+                  "first_frame": 256,
+                  "count": 1416,
+                  "mass": 6504956,
+                  "total": 17383507,
+                  "target": 4345877,
+                  "eligible": 3654,
+                  "witness": 3160
+                }
+              ]
+            }
+          ],
+          "relative_to_ordinary": 1.0812208112264732
+        }
+      }
+    },
+    {
+      "cameras": [
+        0,
+        153
+      ],
+      "choices": {
+        "0": "L",
+        "153": "L"
+      },
+      "methods": {
+        "ordinary": {
+          "delivered_ms": 622.8129000000044,
+          "range_ms": [
+            616.4324000000015,
+            643.8986000000004
+          ],
+          "cold": {
+            "delivered_ms": 669.267200000002,
+            "build_ms": 20.200000047683716,
+            "typed_bytes": 405715
+          },
+          "physical_branches": 1,
+          "outer_fork_restore_ms": 0.6999998092651367,
+          "input_dependent_ms": 4.0,
+          "repairs_per_action": 0,
+          "repaired_steps": 0,
+          "ordinary_steps": 76,
+          "projected_steps": 0,
+          "restarts": 0,
+          "submitted_strokes": [
+            {
+              "pick": "L",
+              "views": [
+                {
+                  "camera": 0,
+                  "defined": true,
+                  "first_frame": 233,
+                  "count": 492,
+                  "mass": 185380780,
+                  "total": 715955134,
+                  "target": 178988784,
+                  "eligible": 3654,
+                  "witness": 2081
+                },
+                {
+                  "camera": 153,
+                  "defined": true,
+                  "first_frame": 256,
+                  "count": 1416,
+                  "mass": 6504956,
+                  "total": 17383507,
+                  "target": 4345877,
+                  "eligible": 3654,
+                  "witness": 3160
+                }
+              ]
+            }
+          ],
+          "relative_to_ordinary": 1.0
+        },
+        "restart": {
+          "delivered_ms": 778.0059000000001,
+          "range_ms": [
+            773.0577000000012,
+            848.7025999999969
+          ],
+          "cold": {
+            "delivered_ms": 885.3221999999987,
+            "build_ms": 13,
+            "typed_bytes": 405715
+          },
+          "physical_branches": 1,
+          "outer_fork_restore_ms": 0.5999999046325684,
+          "input_dependent_ms": 3.8999998569488525,
+          "repairs_per_action": 0,
+          "repaired_steps": 0,
+          "ordinary_steps": 76,
+          "projected_steps": 32,
+          "restarts": 1,
+          "submitted_strokes": [
+            {
+              "pick": "L",
+              "views": [
+                {
+                  "camera": 0,
+                  "defined": true,
+                  "first_frame": 233,
+                  "count": 492,
+                  "mass": 185380780,
+                  "total": 715955134,
+                  "target": 178988784,
+                  "eligible": 3654,
+                  "witness": 2081
+                },
+                {
+                  "camera": 153,
+                  "defined": true,
+                  "first_frame": 256,
+                  "count": 1416,
+                  "mass": 6504956,
+                  "total": 17383507,
+                  "target": 4345877,
+                  "eligible": 3654,
+                  "witness": 3160
+                }
+              ]
+            }
+          ],
+          "relative_to_ordinary": 1.2491807732306035
+        },
+        "repair": {
+          "delivered_ms": 634.1432999999997,
+          "range_ms": [
+            627.8967000000011,
+            646.2214999999997
+          ],
+          "cold": {
+            "delivered_ms": 694.9323000000004,
+            "build_ms": 16.40000009536743,
+            "typed_bytes": 405715
+          },
+          "physical_branches": 1,
+          "outer_fork_restore_ms": 0.6000001430511475,
+          "input_dependent_ms": 3.700000047683716,
+          "repairs_per_action": 2,
+          "repaired_steps": 55,
+          "ordinary_steps": 0,
+          "projected_steps": 76,
+          "restarts": 0,
+          "submitted_strokes": [
+            {
+              "pick": "L",
+              "views": [
+                {
+                  "camera": 0,
+                  "defined": true,
+                  "first_frame": 233,
+                  "count": 492,
+                  "mass": 185380780,
+                  "total": 715955134,
+                  "target": 178988784,
+                  "eligible": 3654,
+                  "witness": 2081
+                },
+                {
+                  "camera": 153,
+                  "defined": true,
+                  "first_frame": 256,
+                  "count": 1416,
+                  "mass": 6504956,
+                  "total": 17383507,
+                  "target": 4345877,
+                  "eligible": 3654,
+                  "witness": 3160
+                }
+              ]
+            }
+          ],
+          "relative_to_ordinary": 1.018192301411861
+        }
+      }
+    }
+  ],
+  "capture_sha256": "cacec7603cfda06e8552aa0ba13819770f879559378034e1df5705160b312bfa",
+  "complete_worker_ms": 55219.4977,
+  "view_caches": {
+    "0": {
+      "bytes": 640184,
+      "records": 3654
+    },
+    "153": {
+      "bytes": 640184,
+      "records": 3654
+    }
+  },
+  "view_phases_ms": {
+    "read_decode_view_0": 1.6616000000003623,
+    "install_view_0": 49.032500000000255,
+    "read_decode_view_153": 1.1693999999997686,
+    "install_view_153": 45.83680000000004
+  }
+}
