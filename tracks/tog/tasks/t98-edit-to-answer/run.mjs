@@ -79,6 +79,13 @@ change("report.errors.push(String(error.stack||error))","report.errors.push(Stri
 const paths=['../t93-exact-terminal-gas/local/plugin.js','../t94-resumable-gas-query/local/plugin.js',
   '../t95-multistep-material-slice/local/plugin.js','local/dispatch.js',
   '../t97-ordinary-cached-graph/.generated-plugin.js','click.js'];
+const expectedHashes={
+  [paths[0]]:'568ad31b48d449ea07eab9f6bcee93315ded72893fe47b4559ec8745f2a3e638',
+  [paths[1]]:'51184fc640c22aa0ab30ceb4c5ae26f3a4dda66ffef20a33fff3bddc7b54b608',
+  [paths[2]]:'5782263e00c896e983614799332480c0abff925c83b1faaf6920b8c827af74c2',
+  [paths[4]]:'36a19010dfda87a3c27e2f458a529e14537eda16a5f6055e681c025fdbca3e59'};
+for(const [name,expected] of Object.entries(expectedHashes))
+  assert.equal(sha(await fs.readFile(path.join(here,name))),expected,name);
 for(const name of paths)process.argv.push('--plugin',path.join(here,name));
 try {await import('data:text/javascript;base64,'+Buffer.from(source).toString('base64'));}
 catch(e){console.error(String(e));process.exitCode=1;}
