@@ -34,7 +34,7 @@ def main():
                "F" if refs["F",c]["first_frame"] is not None else "none" for c in CAMS}
     blocks = []
     for idx,order in enumerate(ORDERS, 1):
-        path = HERE/"evidence"/f"block-{idx}"/"CAPTURE.json"
+        path = HERE/"evidence/corrected"/f"block-{idx}"/"CAPTURE.json"
         cap = load(path)
         assert cap["status"] == "validated" and not cap["errors"]
         assert cap["methods"] == list(order) and cap["repeats"] == 6

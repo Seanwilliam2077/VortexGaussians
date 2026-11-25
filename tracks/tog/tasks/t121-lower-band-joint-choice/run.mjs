@@ -57,7 +57,7 @@ if(args.length===0) {
   const dest=path.join(local,'run.mjs');await fs.writeFile(dest,main);
   console.log('T121',round,orders[round-1].join(','),sha(block),sha(await fs.readFile(plugin)));
   if(args[0]==='--block'){
-    process.argv=process.argv.slice(0,2).concat('--out',path.join(here,'evidence','block-'+round));
+    process.argv=process.argv.slice(0,2).concat('--out',path.join(here,'evidence','corrected','block-'+round));
     await import(pathToFileURL(dest));
   }
 }
