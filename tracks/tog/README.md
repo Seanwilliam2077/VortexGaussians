@@ -1,5 +1,9 @@
 # TOG 研究轨道：从创作需求到可审查任务
 
+## 2026 年 11 月 25 日 · SIGGRAPH 技术稿
+
+[匿名英文稿、补充包与投稿判断](submission/sig2027/README.md) 已整理。加权热量上界比普通等权计数多排除 45,287 次材料点查询；换成“第二笔点火的边缘会不会继续烧”的问题，18 次都需要原生回放。两种正向判据也没有提前证实任何一次起燃。原生回放在最后一次所需点火判定处即可读到答案。以上是同一场景、一个种子、两种笔序的结果。内部评审为 2/6，建议暂缓正式投稿。[逐点实验](tasks/t86-ignition-margin/README.md) · [区域问题](tasks/t87-stroke-halo/README.md) · [正向判据](tasks/t88-positive-ignition-witness/README.md) · [原生对照](tasks/t89-terminal-scan/README.md)
+
 **2026-11-24 技术进展。** [T84](tasks/t84-ignition-edit-footprint/README.md) 恢复逐材料点的起燃帧。第二笔点火使全局配额下笔画外 1,266 个点额外燃烧，12 个点到终点仍只在原镜头中燃烧。[T85](tasks/t85-edit-prefix-certificate/README.md) 只读取旧镜头和即时点火顺序，逐帧判断能否复用已有结果。分层配额可确认复用 91 个完整步，全局配额仅 24 步。下一项有判别力的问题是在气体轨迹分开后，能否仍低成本判定某些材料点是否会起燃。单场景尚未建立 TOG 核心贡献。
 
 **当前进度（2026-11-10）：用户已恢复技术研究，艺术部分继续暂停。** 先读[当前状态](../STATUS.md)、[T82 当前论文与机制核查](tasks/t82-current-literature-resumption/README.md)、[T81 容量因果诊断](tasks/t81-firewoods-capacity-causality/README.md)和[交接说明](../AGENT_HANDOFF.md)。原有[数据包](../evidence/handoff-2026-11-02/README.md)保持可用。

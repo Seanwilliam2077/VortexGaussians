@@ -1,5 +1,9 @@
 # Exploration policy
 
+## 25 November 2026 · Decision-level latency determines whether this line advances
+
+The [post-fork bound](tog/tasks/t86-ignition-margin/README.md) added correct per-site classifications over unit-weight reachability. The [actual regional question](tog/tasks/t87-stroke-halo/README.md) never completed without replay; [cheap positive witnesses](tog/tasks/t88-positive-ignition-witness/README.md) also abstained. Preserve these results, particularly the eight true no answers. The [ordinary terminal-scan profile](tog/tasks/t89-terminal-scan/README.md) supplies a stronger baseline. The next mechanism should have a reason to cheaply decide a remaining recipient that determines the editor's answer. Use a callable early-stop native baseline, include the cost to obtain and deliver the result, and use new independently chosen edits for generalization. Avoid selecting an empty or distant shell after inspecting these labels. [Current paper and decision](tog/submission/sig2027/README.md)
+
 ## 24 November 2026 · Edit-preview evidence
 
 The cached-take revision in [T84](tog/tasks/t84-ignition-edit-footprint/README.md) has a signed material target, paired reference, observable event times and ordinary spatial/progressive controls. [T85](tog/tasks/t85-edit-prefix-certificate/README.md) supplies a conservative prefix comparator. Where the spatial footprint actually spreads, equivalence of the full gas trajectory ends after 24 steps. The per-site table and time curves can test bounds on individual threshold decisions after that fork. Future comparisons should count uncertain-site fallback, cache construction and the material-only native update. The economical method to beat already recovers the entire observed endpoint at the 150-step cutoff on this development example. External creator validation and independent edits remain open.

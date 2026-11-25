@@ -1,5 +1,13 @@
 # Dual-track status
 
+## 25 November 2026 · Per-site gains, unresolved brush decisions
+
+[T86](tog/tasks/t86-ignition-margin/README.md) tested post-edit heat bounds across two native Firewoods takes, six checkpoints and three horizons. Weighted reachability certified 373,913/535,437 repeated site queries, versus 328,626 with uniform weights, with zero false certificates in these traces. Complete information still cost 1.60× native in the median paired comparison before setup. The public branch now has six full dynamic inputs, native event ledgers, masks and independent checks.
+
+[T87](tog/tasks/t87-stroke-halo/README.md) queried the shell one flame radius outside the second stroke. All 18 regional questions needed replay, including eight with no ignition. [T88](tog/tasks/t88-positive-ignition-witness/README.md) tested two cheap positive witnesses retrospectively. They captured none of the ten real positives. [T89](tog/tasks/t89-terminal-scan/README.md) timed the ordinary solver through its last needed ignition scan. The corresponding within-run regional median was 11.85 ms versus 18.60 ms including the terminal tail. These are single-host prefix timings.
+
+The [anonymous manuscript, supplement and submission decision](tog/submission/sig2027/README.md) are current. Internal technical review recommends Reject (2/6). Hold formal submission. To advance an acceleration claim, demonstrate an entire useful decision faster than an integrated native first-event query with result delivery, followed by transfer to an independent edit/asset. Art remains paused.
+
 ## 24 November 2026 · Signed ignition footprints and exact edit-prefix reuse
 
 [T84](tog/tasks/t84-ignition-edit-footprint/README.md) reconstructs per-site ignition frames on the cached Firewoods shot. Two independent records agree for all 720 suffix frames. With global pooling, the B edit gains 1,266 burning sites outside the stroke and loses 12 by frame 360. The first two losses occur at 207 and the first extra sites appear at 216. An ordinary upward-ray preview reaches 96.9% recall with 37.7% precision. Advancing the actual edited trajectory through 150 of 180 steps reproduces the endpoint active set on this take. The [event table](tog/tasks/t84-ignition-edit-footprint/material_onsets.csv.gz) has 8,731 material-policy rows and records censoring.
