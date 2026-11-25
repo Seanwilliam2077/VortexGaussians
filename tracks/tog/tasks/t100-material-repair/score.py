@@ -21,8 +21,8 @@ def read(path):
     return json.loads(path.read_bytes())
 
 
-def score(asset,targets=None,native_path=None):
-    folder=HERE/"evidence"/asset
+def score(asset,targets=None,native_path=None,capture_dir=None):
+    folder=capture_dir or HERE/"evidence"/asset
     f=folder/"CAPTURE.json"
     cap=read(f)
     check(cap["status"]=="validated" and not cap["errors"],"invalid capture")
@@ -119,9 +119,11 @@ if __name__=="__main__":
     p.add_argument("asset")
     p.add_argument("--targets",type=Path)
     p.add_argument("--native-dir",type=Path)
+    p.add_argument("--capture-dir",type=Path,help="Fresh native output directory; the score is saved alongside its capture.")
     args=p.parse_args()
     if args.asset not in ("firewoods","dead-tree") and not(args.targets and args.native_dir):
         p.error("external assets require --targets and --native-dir")
-    out=score(args.asset,args.targets,args.native_dir)
-    (HERE/"evidence"/args.asset/"SCORE.json").write_text(json.dumps(out,indent=2)+"\n",encoding="utf8")
+    out=score(args.asset,args.targets,args.native_dir,args.capture_dir)
+    folder=args.capture_dir or HERE/"evidence"/args.asset
+    (folder/"SCORE.json").write_text(json.dumps(out,indent=2)+"\n",encoding="utf8")
     print(json.dumps(out["summary"],indent=2))

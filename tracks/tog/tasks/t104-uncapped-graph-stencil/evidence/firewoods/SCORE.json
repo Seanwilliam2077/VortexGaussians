@@ -1,0 +1,192 @@
+{
+  "asset": "firewoods",
+  "source_sha256": "031cd795bc608cfa452df752fd7570e19a1941a42e1c96530565fcdc16f6b487",
+  "arms": {
+    "AB": {
+      "first": null,
+      "clicked": 0,
+      "eligible_after_click": 0,
+      "initial_burning": 34687,
+      "cold_geometry": {
+        "method": "component-fresh",
+        "rep": 0,
+        "ms": 140.09999990463257,
+        "delivered": 1211.3108000000066
+      },
+      "audit": {
+        "frames": 0,
+        "domain": 34687,
+        "length": 8
+      },
+      "methods": {
+        "active-fresh": {
+          "decision": {
+            "domain": null,
+            "scoped_steps": 0,
+            "eligible": 0,
+            "fallback": "ordinary",
+            "new_local": 0,
+            "local_donor_steps": 0
+          },
+          "delivered_ms": 1140.374950000005,
+          "measured_range_ms": [
+            1082.6420999999973,
+            1284.0908000000054
+          ],
+          "warmup_ms": 1326.2891999999993,
+          "membership_ms": 0.0,
+          "guard_ms": 0.0
+        },
+        "active-anchor": {
+          "decision": {
+            "domain": null,
+            "scoped_steps": 0,
+            "eligible": 0,
+            "fallback": "ordinary",
+            "new_local": 0,
+            "local_donor_steps": 0
+          },
+          "delivered_ms": 1015.7678000000014,
+          "measured_range_ms": [
+            949.5157000000036,
+            1132.076299999986
+          ],
+          "warmup_ms": 1063.7779999999912,
+          "membership_ms": 0.0,
+          "guard_ms": 0.0
+        },
+        "component-fresh": {
+          "decision": {
+            "domain": 34687,
+            "scoped_steps": 0,
+            "eligible": 0,
+            "fallback": "whole-component",
+            "new_local": 0,
+            "local_donor_steps": 0
+          },
+          "delivered_ms": 1059.8062999999966,
+          "measured_range_ms": [
+            1012.4717999999993,
+            1149.6656999999977
+          ],
+          "warmup_ms": 1211.3108000000066,
+          "membership_ms": 0.2999999523162842,
+          "guard_ms": 0.0,
+          "ratio_to_complete": 0.9293489829814238
+        },
+        "component-anchor": {
+          "decision": {
+            "domain": 34687,
+            "scoped_steps": 0,
+            "eligible": 0,
+            "fallback": "whole-component",
+            "new_local": 0,
+            "local_donor_steps": 0
+          },
+          "delivered_ms": 965.5062999999936,
+          "measured_range_ms": [
+            929.474000000002,
+            1145.6524000000063
+          ],
+          "warmup_ms": 979.3861000000034,
+          "membership_ms": 0.2999999523162842,
+          "guard_ms": 0.0,
+          "ratio_to_complete": 0.9505187110676202
+        }
+      }
+    },
+    "BA": {
+      "first": null,
+      "clicked": 0,
+      "eligible_after_click": 0,
+      "initial_burning": 34687,
+      "cold_geometry": {
+        "method": "component-fresh",
+        "rep": 0,
+        "ms": 131.90000009536743,
+        "delivered": 1323.2964999999967
+      },
+      "audit": {
+        "frames": 0,
+        "domain": 34687,
+        "length": 8
+      },
+      "methods": {
+        "active-fresh": {
+          "decision": {
+            "domain": null,
+            "scoped_steps": 0,
+            "eligible": 0,
+            "fallback": "ordinary",
+            "new_local": 0,
+            "local_donor_steps": 0
+          },
+          "delivered_ms": 1073.6206999999995,
+          "measured_range_ms": [
+            980.9642999999924,
+            1207.8059000000067
+          ],
+          "warmup_ms": 1092.998099999997,
+          "membership_ms": 0.0,
+          "guard_ms": 0.0
+        },
+        "active-anchor": {
+          "decision": {
+            "domain": null,
+            "scoped_steps": 0,
+            "eligible": 0,
+            "fallback": "ordinary",
+            "new_local": 0,
+            "local_donor_steps": 0
+          },
+          "delivered_ms": 1136.6882500000065,
+          "measured_range_ms": [
+            1032.3104999999923,
+            1492.7351999999955
+          ],
+          "warmup_ms": 1095.3479999999981,
+          "membership_ms": 0.0,
+          "guard_ms": 0.0
+        },
+        "component-fresh": {
+          "decision": {
+            "domain": 34687,
+            "scoped_steps": 0,
+            "eligible": 0,
+            "fallback": "whole-component",
+            "new_local": 0,
+            "local_donor_steps": 0
+          },
+          "delivered_ms": 1122.6912000000011,
+          "measured_range_ms": [
+            1021.1872000000149,
+            1248.905700000003
+          ],
+          "warmup_ms": 1323.2964999999967,
+          "membership_ms": 0.20000004768371582,
+          "guard_ms": 0.0,
+          "ratio_to_complete": 1.0457056202437245
+        },
+        "component-anchor": {
+          "decision": {
+            "domain": 34687,
+            "scoped_steps": 0,
+            "eligible": 0,
+            "fallback": "whole-component",
+            "new_local": 0,
+            "local_donor_steps": 0
+          },
+          "delivered_ms": 1024.6921500000026,
+          "measured_range_ms": [
+            899.7317999999796,
+            1180.3089000000036
+          ],
+          "warmup_ms": 1163.0260999999882,
+          "membership_ms": 0.20000004768371582,
+          "guard_ms": 0.0,
+          "ratio_to_complete": 0.9014715776291315
+        }
+      }
+    }
+  }
+}
