@@ -1,0 +1,636 @@
+{
+  "asset": "dead-tree",
+  "windows": [
+    {
+      "arm": "AB",
+      "horizon": 60,
+      "steps": 50,
+      "eligible": 5697,
+      "first_frame": 230,
+      "methods": {
+        "regional": {
+          "click_ms": 0.34999990463256836,
+          "shell_index_ms": 1.8499999046325684,
+          "fork_ms": 0.20000004768371582,
+          "compute_ms": 1830.6000000238419,
+          "restore_ms": 0.0,
+          "total_browser_ms": 1833.0,
+          "delivered_ms": 1836.9938999999995,
+          "delivery_range_ms": [
+            1830.1287999999986,
+            1877.6903999999995
+          ],
+          "witness_ids": [
+            3505
+          ],
+          "plan_active": null
+        },
+        "rank-only": {
+          "click_ms": 0.35000014305114746,
+          "shell_index_ms": 1.7999999523162842,
+          "fork_ms": 0.20000004768371582,
+          "compute_ms": 1856.5500000715256,
+          "restore_ms": 0.0,
+          "total_browser_ms": 1858.9500000476837,
+          "delivered_ms": 1862.903199999997,
+          "delivery_range_ms": [
+            1828.6443999999974,
+            1939.112799999999
+          ],
+          "witness_ids": [
+            3505
+          ],
+          "plan_active": null
+        },
+        "sweep-spatial": {
+          "click_ms": 0.40000009536743164,
+          "shell_index_ms": 1.9499999284744263,
+          "fork_ms": 0.25,
+          "compute_ms": 1861.3999999761581,
+          "restore_ms": 0.0,
+          "total_browser_ms": 1864.0,
+          "delivered_ms": 1868.1608500000002,
+          "delivery_range_ms": [
+            1818.8352000000014,
+            2156.1287999999986
+          ],
+          "witness_ids": [
+            3505
+          ],
+          "plan_active": null
+        },
+        "slice-rank": {
+          "click_ms": 0.39999985694885254,
+          "shell_index_ms": 1.8000000715255737,
+          "fork_ms": 0.2999999523162842,
+          "compute_ms": 139.5,
+          "restore_ms": 0.0,
+          "total_browser_ms": 142.04999995231628,
+          "delivered_ms": 147.15970000000198,
+          "delivery_range_ms": [
+            144.2173999999941,
+            150.45000000000073
+          ],
+          "witness_ids": [
+            3505
+          ],
+          "plan_active": true
+        },
+        "cold-cache": {
+          "click_ms": 0.35000014305114746,
+          "shell_index_ms": 2.0999999046325684,
+          "fork_ms": 0.2999999523162842,
+          "compute_ms": 540.3500000238419,
+          "restore_ms": 0.0,
+          "total_browser_ms": 542.75,
+          "delivered_ms": 547.8613499999992,
+          "delivery_range_ms": [
+            530.2232000000004,
+            596.9319999999971
+          ],
+          "witness_ids": [
+            3505
+          ],
+          "plan_active": null,
+          "cache_build_ms_median": 129.80000007152557,
+          "cache_bytes_built_max": 23269452
+        },
+        "asset-cache": {
+          "click_ms": 0.5,
+          "shell_index_ms": 2.25,
+          "fork_ms": 0.2999999523162842,
+          "compute_ms": 413.4499999284744,
+          "restore_ms": 0.0,
+          "total_browser_ms": 416.4500000476837,
+          "delivered_ms": 422.1220499999945,
+          "delivery_range_ms": [
+            399.94110000000364,
+            456.65849999999773
+          ],
+          "witness_ids": [
+            3505
+          ],
+          "plan_active": null,
+          "cache_build_ms_median": 0.0,
+          "cache_bytes_built_max": 0
+        }
+      },
+      "warmups": {
+        "regional": {
+          "delivered_ms": 2259.2208999999984,
+          "cache_build": null
+        },
+        "rank-only": {
+          "delivered_ms": 2024.6362000000008,
+          "cache_build": null
+        },
+        "sweep-spatial": {
+          "delivered_ms": 2005.7286999999997,
+          "cache_build": null
+        },
+        "slice-rank": {
+          "delivered_ms": 185.9277000000002,
+          "cache_build": null
+        },
+        "cold-cache": {
+          "delivered_ms": 857.9365999999991,
+          "cache_build": {
+            "ms": 169.5,
+            "entries": 1400,
+            "bytes": 23269452
+          }
+        },
+        "asset-cache": {
+          "delivered_ms": 704.596599999999,
+          "cache_build": {
+            "ms": 171.09999918937683,
+            "entries": 1400,
+            "bytes": 23269452
+          }
+        }
+      }
+    },
+    {
+      "arm": "AB",
+      "horizon": 180,
+      "steps": 50,
+      "eligible": 5697,
+      "first_frame": 230,
+      "methods": {
+        "regional": {
+          "click_ms": 0.39999985694885254,
+          "shell_index_ms": 1.8000000715255737,
+          "fork_ms": 0.20000004768371582,
+          "compute_ms": 1815.6499999761581,
+          "restore_ms": 0.0,
+          "total_browser_ms": 1818.3999999761581,
+          "delivered_ms": 1822.717850000001,
+          "delivery_range_ms": [
+            1793.0340000000142,
+            1834.6463999999978
+          ],
+          "witness_ids": [
+            3505
+          ],
+          "plan_active": null
+        },
+        "rank-only": {
+          "click_ms": 0.3999999761581421,
+          "shell_index_ms": 1.9000000953674316,
+          "fork_ms": 0.25,
+          "compute_ms": 1824.5999999046326,
+          "restore_ms": 0.0,
+          "total_browser_ms": 1827.2499998807907,
+          "delivered_ms": 1831.3896499999973,
+          "delivery_range_ms": [
+            1790.5622000000003,
+            1838.8359000000055
+          ],
+          "witness_ids": [
+            3505
+          ],
+          "plan_active": null
+        },
+        "sweep-spatial": {
+          "click_ms": 0.44999992847442627,
+          "shell_index_ms": 1.8000001907348633,
+          "fork_ms": 0.25,
+          "compute_ms": 1832.5000001192093,
+          "restore_ms": 0.0,
+          "total_browser_ms": 1835.3500001430511,
+          "delivered_ms": 1839.6759999999922,
+          "delivery_range_ms": [
+            1818.2289000000019,
+            1849.9763999999996
+          ],
+          "witness_ids": [
+            3505
+          ],
+          "plan_active": null
+        },
+        "slice-rank": {
+          "click_ms": 0.30000007152557373,
+          "shell_index_ms": 1.7999999523162842,
+          "fork_ms": 0.20000004768371582,
+          "compute_ms": 1816.8500000238419,
+          "restore_ms": 0.0,
+          "total_browser_ms": 1819.4500000476837,
+          "delivered_ms": 1823.49525,
+          "delivery_range_ms": [
+            1786.3460999999952,
+            1839.4272000000055
+          ],
+          "witness_ids": [
+            3505
+          ],
+          "plan_active": false
+        },
+        "cold-cache": {
+          "click_ms": 0.40000009536743164,
+          "shell_index_ms": 2.0500000715255737,
+          "fork_ms": 0.19999992847442627,
+          "compute_ms": 523.0999999046326,
+          "restore_ms": 0.0,
+          "total_browser_ms": 526.0,
+          "delivered_ms": 530.7518500000006,
+          "delivery_range_ms": [
+            527.9910999999993,
+            588.6895999999979
+          ],
+          "witness_ids": [
+            3505
+          ],
+          "plan_active": null,
+          "cache_build_ms_median": 128.70000004768372,
+          "cache_bytes_built_max": 23269452
+        },
+        "asset-cache": {
+          "click_ms": 0.5,
+          "shell_index_ms": 2.0500000715255737,
+          "fork_ms": 0.3999999761581421,
+          "compute_ms": 399.0,
+          "restore_ms": 0.0,
+          "total_browser_ms": 401.75,
+          "delivered_ms": 406.17139999999927,
+          "delivery_range_ms": [
+            402.75449999999546,
+            411.5622000000003
+          ],
+          "witness_ids": [
+            3505
+          ],
+          "plan_active": null,
+          "cache_build_ms_median": 0.0,
+          "cache_bytes_built_max": 0
+        }
+      },
+      "warmups": {
+        "rank-only": {
+          "delivered_ms": 1805.0430999999953,
+          "cache_build": null
+        },
+        "sweep-spatial": {
+          "delivered_ms": 1825.8987999999954,
+          "cache_build": null
+        },
+        "slice-rank": {
+          "delivered_ms": 1886.0787000000055,
+          "cache_build": null
+        },
+        "cold-cache": {
+          "delivered_ms": 532.3485000000001,
+          "cache_build": {
+            "ms": 130.099999666214,
+            "entries": 1400,
+            "bytes": 23269452
+          }
+        },
+        "asset-cache": {
+          "delivered_ms": 400.7476000000024,
+          "cache_build": {
+            "ms": 0,
+            "entries": 0,
+            "bytes": 0
+          }
+        },
+        "regional": {
+          "delivered_ms": 1840.3701999999976,
+          "cache_build": null
+        }
+      }
+    },
+    {
+      "arm": "BA",
+      "horizon": 60,
+      "steps": 51,
+      "eligible": 6979,
+      "first_frame": 231,
+      "methods": {
+        "regional": {
+          "click_ms": 0.5,
+          "shell_index_ms": 1.8000000715255737,
+          "fork_ms": 0.2999999523162842,
+          "compute_ms": 1239.1999999284744,
+          "restore_ms": 0.0,
+          "total_browser_ms": 1241.7499998807907,
+          "delivered_ms": 1246.0031000000017,
+          "delivery_range_ms": [
+            1215.6291000000201,
+            1261.0293999999994
+          ],
+          "witness_ids": [
+            12016
+          ],
+          "plan_active": null
+        },
+        "rank-only": {
+          "click_ms": 0.7000000476837158,
+          "shell_index_ms": 1.8499999046325684,
+          "fork_ms": 0.25,
+          "compute_ms": 1223.9500000476837,
+          "restore_ms": 0.0,
+          "total_browser_ms": 1226.8500001430511,
+          "delivered_ms": 1232.1893500000006,
+          "delivery_range_ms": [
+            1210.8935000000056,
+            1266.4361000000208
+          ],
+          "witness_ids": [
+            12016
+          ],
+          "plan_active": null
+        },
+        "sweep-spatial": {
+          "click_ms": 0.6000000238418579,
+          "shell_index_ms": 1.8500001430511475,
+          "fork_ms": 0.2999999523162842,
+          "compute_ms": 1235.25,
+          "restore_ms": 0.0,
+          "total_browser_ms": 1238.2000000476837,
+          "delivered_ms": 1242.6450500000064,
+          "delivery_range_ms": [
+            1220.8833999999915,
+            1276.9951
+          ],
+          "witness_ids": [
+            12016
+          ],
+          "plan_active": null
+        },
+        "slice-rank": {
+          "click_ms": 0.6000000238418579,
+          "shell_index_ms": 1.75,
+          "fork_ms": 0.20000004768371582,
+          "compute_ms": 192.60000002384186,
+          "restore_ms": 0.0,
+          "total_browser_ms": 195.70000004768372,
+          "delivered_ms": 200.59880000000703,
+          "delivery_range_ms": [
+            193.08420000001206,
+            203.57740000000922
+          ],
+          "witness_ids": [
+            12016
+          ],
+          "plan_active": true
+        },
+        "cold-cache": {
+          "click_ms": 0.6000000238418579,
+          "shell_index_ms": 1.8000000715255737,
+          "fork_ms": 0.2999999523162842,
+          "compute_ms": 494.25,
+          "restore_ms": 0.0,
+          "total_browser_ms": 497.0,
+          "delivered_ms": 501.70785000000615,
+          "delivery_range_ms": [
+            493.17190000001574,
+            517.7761000000173
+          ],
+          "witness_ids": [
+            12016
+          ],
+          "plan_active": null,
+          "cache_build_ms_median": 95.25000023841858,
+          "cache_bytes_built_max": 18187056
+        },
+        "asset-cache": {
+          "click_ms": 0.6499999761581421,
+          "shell_index_ms": 1.75,
+          "fork_ms": 0.30000007152557373,
+          "compute_ms": 399.4500000476837,
+          "restore_ms": 0.0,
+          "total_browser_ms": 402.1999999284744,
+          "delivered_ms": 407.01299999999173,
+          "delivery_range_ms": [
+            397.1310999999987,
+            425.25760000001173
+          ],
+          "witness_ids": [
+            12016
+          ],
+          "plan_active": null,
+          "cache_build_ms_median": 0.0,
+          "cache_bytes_built_max": 0
+        }
+      },
+      "warmups": {
+        "sweep-spatial": {
+          "delivered_ms": 1278.294000000009,
+          "cache_build": null
+        },
+        "slice-rank": {
+          "delivered_ms": 196.31639999999607,
+          "cache_build": null
+        },
+        "cold-cache": {
+          "delivered_ms": 507.64749999999185,
+          "cache_build": {
+            "ms": 94.1000006198883,
+            "entries": 1400,
+            "bytes": 18187056
+          }
+        },
+        "asset-cache": {
+          "delivered_ms": 510.3040000000037,
+          "cache_build": {
+            "ms": 95.40000033378601,
+            "entries": 1400,
+            "bytes": 18187056
+          }
+        },
+        "regional": {
+          "delivered_ms": 1211.136599999998,
+          "cache_build": null
+        },
+        "rank-only": {
+          "delivered_ms": 1296.1281000000163,
+          "cache_build": null
+        }
+      }
+    },
+    {
+      "arm": "BA",
+      "horizon": 180,
+      "steps": 51,
+      "eligible": 6979,
+      "first_frame": 231,
+      "methods": {
+        "regional": {
+          "click_ms": 0.6000000238418579,
+          "shell_index_ms": 1.7999999523162842,
+          "fork_ms": 0.2999999523162842,
+          "compute_ms": 1233.8999999761581,
+          "restore_ms": 0.0,
+          "total_browser_ms": 1236.6000000238419,
+          "delivered_ms": 1241.0064500000008,
+          "delivery_range_ms": [
+            1216.4756000000052,
+            1299.3606000000145
+          ],
+          "witness_ids": [
+            12016
+          ],
+          "plan_active": null
+        },
+        "rank-only": {
+          "click_ms": 0.5499999523162842,
+          "shell_index_ms": 1.7999999523162842,
+          "fork_ms": 0.2999999523162842,
+          "compute_ms": 1262.75,
+          "restore_ms": 0.0,
+          "total_browser_ms": 1265.3500000238419,
+          "delivered_ms": 1270.2236999999877,
+          "delivery_range_ms": [
+            1202.9390999999887,
+            1333.8377000000037
+          ],
+          "witness_ids": [
+            12016
+          ],
+          "plan_active": null
+        },
+        "sweep-spatial": {
+          "click_ms": 0.5500000715255737,
+          "shell_index_ms": 1.8499999046325684,
+          "fork_ms": 0.20000004768371582,
+          "compute_ms": 1266.5,
+          "restore_ms": 0.0,
+          "total_browser_ms": 1269.0500000715256,
+          "delivered_ms": 1273.4758000000002,
+          "delivery_range_ms": [
+            1232.0108999999939,
+            1316.3983000000007
+          ],
+          "witness_ids": [
+            12016
+          ],
+          "plan_active": null
+        },
+        "slice-rank": {
+          "click_ms": 0.5499999523162842,
+          "shell_index_ms": 1.8499999046325684,
+          "fork_ms": 0.25,
+          "compute_ms": 1251.8999999761581,
+          "restore_ms": 0.0,
+          "total_browser_ms": 1254.5499999523163,
+          "delivered_ms": 1259.1675499999837,
+          "delivery_range_ms": [
+            1225.978299999988,
+            1318.8748000000196
+          ],
+          "witness_ids": [
+            12016
+          ],
+          "plan_active": false
+        },
+        "cold-cache": {
+          "click_ms": 0.44999992847442627,
+          "shell_index_ms": 1.850000023841858,
+          "fork_ms": 0.2999999523162842,
+          "compute_ms": 514.8499999046326,
+          "restore_ms": 0.0,
+          "total_browser_ms": 517.4500000476837,
+          "delivered_ms": 521.9288000000088,
+          "delivery_range_ms": [
+            487.38999999998487,
+            548.9995000000054
+          ],
+          "witness_ids": [
+            12016
+          ],
+          "plan_active": null,
+          "cache_build_ms_median": 94.30000042915344,
+          "cache_bytes_built_max": 18187056
+        },
+        "asset-cache": {
+          "click_ms": 0.7000000476837158,
+          "shell_index_ms": 2.049999952316284,
+          "fork_ms": 0.40000009536743164,
+          "compute_ms": 413.8000000715256,
+          "restore_ms": 0.0,
+          "total_browser_ms": 417.10000014305115,
+          "delivered_ms": 423.6563000000024,
+          "delivery_range_ms": [
+            404.6331000000064,
+            462.5182999999961
+          ],
+          "witness_ids": [
+            12016
+          ],
+          "plan_active": null,
+          "cache_build_ms_median": 0.0,
+          "cache_bytes_built_max": 0
+        }
+      },
+      "warmups": {
+        "slice-rank": {
+          "delivered_ms": 1220.0207999999984,
+          "cache_build": null
+        },
+        "cold-cache": {
+          "delivered_ms": 526.9474000000046,
+          "cache_build": {
+            "ms": 94.60000014305115,
+            "entries": 1400,
+            "bytes": 18187056
+          }
+        },
+        "asset-cache": {
+          "delivered_ms": 441.7035999999789,
+          "cache_build": {
+            "ms": 0,
+            "entries": 0,
+            "bytes": 0
+          }
+        },
+        "regional": {
+          "delivered_ms": 1304.9845999999961,
+          "cache_build": null
+        },
+        "rank-only": {
+          "delivered_ms": 1250.78330000001,
+          "cache_build": null
+        },
+        "sweep-spatial": {
+          "delivered_ms": 1295.2549,
+          "cache_build": null
+        }
+      }
+    }
+  ],
+  "median_paired_delivery_ratios": {
+    "regional": {
+      "regional": 1.0,
+      "rank-only": 1.009430902309918,
+      "sweep-spatial": 1.0131350248642894,
+      "slice-rank": 0.580710163453956,
+      "cold-cache": 0.3504458767446479,
+      "asset-cache": 0.2782222309292959
+    },
+    "rank-only": {
+      "regional": 0.9906784422334356,
+      "rank-only": 1.0,
+      "sweep-spatial": 1.0036734562944978,
+      "slice-rank": 0.5770472917424813,
+      "cold-cache": 0.3506289491041606,
+      "asset-cache": 0.2784552925150138
+    },
+    "cold-cache": {
+      "regional": 2.918275115941419,
+      "rank-only": 2.928154243873763,
+      "sweep-spatial": 2.9433726918557013,
+      "slice-rank": 1.4061796654457182,
+      "cold-cache": 1.0,
+      "asset-cache": 0.790872825279729
+    },
+    "asset-cache": {
+      "regional": 3.706571194290263,
+      "rank-only": 3.72029087431073,
+      "sweep-spatial": 3.7393629463229767,
+      "slice-rank": 1.7325000245487268,
+      "cold-cache": 1.2652661618562613,
+      "asset-cache": 1.0
+    }
+  },
+  "capture_sha256": "1d28ca0cf5ccd845b619cd8ea5a1c94e14e42ef8e20e338197f24862677fa5a1"
+}

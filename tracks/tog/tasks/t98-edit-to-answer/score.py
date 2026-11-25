@@ -13,7 +13,8 @@ def read(path):
 def require(ok, what):
     if not ok: raise ValueError(what)
 
-def evaluate(ref, data, asset):
+def evaluate(ref, capture, asset):
+    data=read(capture)
     require(data["status"]=="validated", "Native capture status")
     methods=data["methods"]; rep_count=data["repeats"]
     require(len(methods)==len(set(methods)) and rep_count==len(methods), "Unbalanced schedule")
@@ -57,13 +58,14 @@ def evaluate(ref, data, asset):
         summary[ref_method]={m:median(w["methods"][m]["delivered_ms"]/w["methods"][ref_method]["delivered_ms"]
                                       for w in windows) for m in methods}
     return dict(asset=asset, windows=windows, median_paired_delivery_ratios=summary,
-                capture_sha256=hashlib.sha256((HERE/"evidence"/asset/"CAPTURE.json").read_bytes()).hexdigest())
+                capture_sha256=hashlib.sha256(capture.read_bytes()).hexdigest())
 
 if __name__=="__main__":
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument("asset",choices=("firewoods","dead-tree"))
+    parser.add_argument("--capture-dir",type=Path,help="Directory containing the captured CAPTURE.json")
     args=parser.parse_args()
-    dest=HERE/"evidence"/args.asset
-    result=evaluate(read(HERE/"REFERENCE.json"),read(dest/"CAPTURE.json"),args.asset)
+    dest=args.capture_dir or HERE/"evidence"/args.asset
+    result=evaluate(read(HERE/"REFERENCE.json"),dest/"CAPTURE.json",args.asset)
     (dest/"SCORE.json").write_text(json.dumps(result,indent=2)+"\n",encoding="utf8")
     print(json.dumps(result["median_paired_delivery_ratios"],indent=2))
