@@ -1,0 +1,20 @@
+\subsection{Maximal prefixes and deferred material}
+Table~\ref{tab:prefix} gives one three-second request per physical edit. Seven methods, one warmup and seven timed rotations returned the reference answer on all 784 calls over 14 requested windows. The two development assets use one- and three-second deadlines; the prospective playground also includes half a second. The median paired repair-to-ordinary ratios were 0.881, 0.522 and 0.656 by asset. Each retained playground index took 15--20 ms and about 0.41 MB to build. Warm queries include validating it.
+
+\begin{table}[t]
+\caption{Delivered milliseconds per physical edit at the three-second deadline. Full replay uses the active-recipient anchor, or a fresh grid. Restart and repair use maximal certified prefixes with the same active backend. The last two rows were held out until both development runs were verified.}
+\label{tab:prefix}
+\centering\small
+\begin{tabular}{lrrrrr}\toprule
+Asset, order & First step & Fresh & Full & Restart & Repair\\ \midrule
+Woodpile A/B & 36 & 175 & 168 & 256 & 164\\
+Woodpile B/A & 50 & 315 & 272 & 213 & 214\\
+Trunk A/B & 50 & 335 & 316 & 145 & 146\\
+Trunk B/A & 51 & 342 & 331 & 195 & 198\\ \midrule
+Playground A/B & 24 & 163 & 148 & 103 & 103\\
+Playground B/A & 15 & 90 & 74 & 44 & 46\\ \bottomrule
+\end{tabular}
+\end{table}
+
+The woodpile A/B edit needs two repairs before its first crossing. At the first expiry, 30 frames after the stroke, the log contains 1,740 ordered heat samples. The recovered material, frontier, cursor, gas and random state, and one further complete native step matched an independently replayed branch. Recovery saved the gas rerun compared with restart, but complete ordinary stepping already delivered the answer in comparable time. On five other edits the event occurred before expiry, so restart and repair execute nearly the same work. In particular, both independent playground trajectories support acceleration of the certified prefix; neither exercises recovery. All six actual clicks reached the shell before their shortest requested deadline. Fifteen shorter checkpoint queries were negative across the two development assets.
+\input{branch-results}

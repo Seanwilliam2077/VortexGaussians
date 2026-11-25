@@ -1,5 +1,14 @@
 # TOG 研究轨道：从创作需求到可审查任务
 
+**最新技术判断。** 同一组点火笔画可在一个机位达到镜头需要的燃烧范围，在另一个机位达不到。区域算法能在有界反馈下精确累计已起燃材料对画面的贡献，并在必要时恢复全场材料。木堆主机位的整次选笔从 719 ms 降到 605 ms。独立游乐场场景的两轮计时胜负反转，速度收益还不能按场景外推。独立模拟评审在复核反转后维持会议 **4/6 弱接收**、TOG 期刊 **3/6 弱拒**。[技术稿](submission/sig2027/paper.pdf) · [独立评审](submission/sig2027/INDEPENDENT_REVIEW.md) · [最新实验与复现资料](../STATUS.md)
+
+以下各节按研究阶段保留当时的评分与判断。
+
+## 2026 年 11 月 25 日 · 从第二笔点火到可以使用的预览
+
+六次不同的编辑里，算法在一段可证明安全的时间内只推进选区材料，同时保留完整气体运动。第三个场景 Playground 的两个起燃时刻在测试前封存。开封后，预览用时 45–107 ms，完整普通回放用时 74–148 ms。唯一需要在中途恢复全场材料的木堆编辑，与优化后的普通方法耗时接近。保留镜头继续播放时，恢复成本也可能吃掉预览收益。内部技术评审为 **3/6，Weak Reject**。[核心方法](tasks/t100-material-repair/README.md) · [强普通基线](tasks/t102-active-recipients/README.md) · [继续播放](tasks/t103-retain-branch/README.md) · [评审](tasks/t96-prior-art-review/README.md) · [英文稿和补充包](submission/sig2027/README.md)
+
+
 ## 2026 年 11 月 25 日 · SIGGRAPH 技术稿
 
 [匿名英文稿、补充包与投稿判断](submission/sig2027/README.md) 已整理。加权热量上界比普通等权计数多排除 45,287 次材料点查询；换成“第二笔点火的边缘会不会继续烧”的问题，18 次都需要原生回放。两种正向判据也没有提前证实任何一次起燃。原生回放在最后一次所需点火判定处即可读到答案。以上是同一场景、一个种子、两种笔序的结果。内部评审为 2/6，建议暂缓正式投稿。[逐点实验](tasks/t86-ignition-margin/README.md) · [区域问题](tasks/t87-stroke-halo/README.md) · [正向判据](tasks/t88-positive-ignition-witness/README.md) · [原生对照](tasks/t89-terminal-scan/README.md)

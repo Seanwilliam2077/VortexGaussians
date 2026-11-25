@@ -1,0 +1,29 @@
+\subsection{Timing a complete one- or two-view editing decision}
+We implemented a single call starting from the unedited common parent at frame 180. For each still-unresolved view it tests the light stroke and returns it immediately if it suffices. Only an unresolved view demands the full stroke. Every method forks and restores the outer pre-click state inside the call, in addition to the inner simulation branch. For two requested cameras, each attempted stroke runs once and supplies its ignition trace to both views. The methods receive the same stopping rights. The timer includes returning the choices to the host. It measures selecting a stroke and restoring the parent. Committing the selected future has the separate cost studied above.
+
+We prospectively registered this test on a second fitted asset, Playground, with seed 59, the same relative stroke radii, deadline and camera-selection rule. The source release provided 307 calibrated cameras. The original foreground was projected at its capture coordinates, preserving the site IDs of the separately scaled simulation geometry. The primary and second view initially contained 715.96 and 17.38 pixel equivalents of eligible material. The lighter stroke crossed at $+53$ and $+76$. Both views selected it and skipped the full stroke. In the original woodpile case both probes were needed to choose the full brush in the primary view and neither in the secondary. The woodpile transaction was defined after its earlier per-candidate results. It supplies a new timing of the known scene.
+
+\begin{table}[t]
+\caption{Direct parent-to-parent decision time in milliseconds, with the shot and camera matte loaded. Each number is the median of three timed actions. Each asset supplies one common parent. The joint operation shares the physical trajectory between views.}
+\label{tab:choice}
+\centering\small
+\begin{tabular}{llrrr}\toprule
+Asset & Requested views & Full replay & Restart & Repair\\\midrule
+Woodpile & Primary & 719 & 887 & 605\\
+ & Secondary & 1,009 & 1,163 & 871\\
+ & Joint & 1,009 & 1,264 & 860\\\midrule
+Playground & Primary & 401 & 644 & 459\\
+ & Secondary & 667 & 825 & 721\\
+ & Joint & 623 & 778 & 634\\\bottomrule
+\end{tabular}
+\end{table}
+
+All 72 issued action calls across both assets matched the native editing decision and attempt count. All three methods reproduced each 90-step reference curve, including those for the unselected full strokes on Playground. Table~\ref{tab:choice} gives the joint-view times. Repair saved 14.8\% on the woodpile and took 1.8\% longer on Playground. On the prospective primary view its median was 14.4\% slower. The observed ranges overlapped. The opposite ordering persisted in all three measurements of the secondary view. The one- versus two-attempt distinction describes these examples. It cannot be used as an input routing rule because the successful strokes are unknown at query time. A changed or newly calibrated view must also pay to build its matte (0.67--1.75 s on Playground in our offline implementation).
+
+
+A second warm session on the same Playground decisions added two reconstruction controls and used four rotated calls per method. The original chronological repair then took 379, 766 and 687 ms for the primary, secondary and joint views. Complete replay took 426, 778 and 713 ms. The ordering reversed on all three operations. Keeping the original retained material graph and flame-neighbor lookup, we repeated both algorithms in four new processes per asset under a fixed rotation. The primary and joint woodpile repair/ordinary time ratios had medians of 0.856 and 0.826 (ranges 0.739--0.894 and 0.776--0.839). Repair won both actions in all four processes. The Playground ratios had medians of 0.960 and 1.048 (ranges 0.932--1.001 and 0.991--1.121). The scoped Playground operations thus straddle parity over independent process launches on the same host.
+
+Within a certified interval, a fixed ordered donor list and a logged gas trajectory also let us evolve each recipient independently and merge births by frame and native site order. This reconstruction matched complete native state at 13 repaired woodpile and five Playground boundaries, plus one additional native step after each. On the difficult reverse woodpile edit it took 666 ms, versus 662 ms for chronological repair and 601 ms for complete replay. On Playground, all three view requests had both faster and slower paired runs against the better chronological control. The alternate traversal supplied an exact factorization, with no reliable latency advantage in these tests.
+
+
+We gave all methods an evolving grid of cold recipients for flame deposition. On the long reverse woodpile edit it reduced the number of in-support callbacks from 2.82 million to 368,276 while preserving all 367,383 heat writes. Ordinary, chronological and sitewise delivery then took 494, 482 and 474 ms. The shared optimization removed most of the relative advantage available from further repair tuning.

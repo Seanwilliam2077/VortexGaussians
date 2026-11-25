@@ -1,5 +1,20 @@
 # Exploration policy
 
+## 25 November 2026 · Compare complete sibling transport with equally optimized alternatives
+
+The cross-process repeat supports one woodpile timing win and an unstable Playground ordering. A cold-only grid benefited the full solver as well as deferred material. For the sibling checkpoint tested in T117/T118, T119 times complete conditional brush choices with independently optimized ordinary, ordinary-plus-transport and regional repair. All six methods receive matching legacy or cold contact kernels. Include the speculative cost when the second stroke is never tried, single and joint cameras, both real common parents and all process blocks. T120 may freeze a new input without reading its future. Read both protocols and current receipts before additional computing. [Registered transaction](tog/tasks/t119-cross-sibling-actions/) · [Evidence ledger](STATUS.md)
+
+## 25 November 2026 · Does saving deferred material work survive a new process?
+
+The direct Playground results reverse between T111 and T114 under the same physical task. The honest observation is cross-session uncertainty. T114 agrees exactly with full state but its alternate sitewise traversal misses the predeclared long reverse-woodpile cutoff. For T115, fix the direct transactions and the two algorithms, compare paired times within several new browser processes and retain every process outcome on both fitted scenes. For T116, test the identified costly flame-to-material neighbor lookup with the same cold-recipient indexing privilege in ordinary complete replay. Developmental timing, independent scene decisions and production evidence have different provenance. Review awaits the resulting paired blocks. [Full evidence and next tasks](STATUS.md)
+
+## 25 November 2026 · Test whether the coupling proof survives a stronger problem
+
+The [maximal prefix](tog/tasks/t100-material-repair/README.md) brings real gains on the two held-out Playground clicks. Both answers precede guard expiry; recovery itself is supported by one development trajectory. Keeping the branch can consume the headline latency saving. Retain every strong ordinary competitor, notably [cold-receiver replay](tog/tasks/t102-active-recipients/README.md). Keep the older [failed aggregate heat-bound](tog/tasks/t87-stroke-halo/README.md) and [failed whole-horizon requests](tog/tasks/t98-edit-to-answer/README.md) as separate dated hypotheses.
+
+The registered extensions concern a [fair uncapped graph](tog/tasks/t104-uncapped-graph-stencil/DYNAMIC_PROTOCOL.md), a [protected inter-stroke selection](tog/tasks/t105-protected-selection/PROTOCOL.md), a [global sparse heat control](tog/tasks/t106-sparse-heat-scan/PROTOCOL.md) and a [camera-weighted measure of burn progression](tog/tasks/t107-visible-burn-progression/PROTOCOL.md). Each changes one specified question or comparison. Count distinct edits and label history; retain negative or inconclusive outcomes. Record separately whether the answer changes an actual editorial decision. The current independent internal reader recommends Weak Reject. [Full review](tog/tasks/t96-prior-art-review/README.md)
+
+
 ## 25 November 2026 · Decision-level latency determines whether this line advances
 
 The [post-fork bound](tog/tasks/t86-ignition-margin/README.md) added correct per-site classifications over unit-weight reachability. The [actual regional question](tog/tasks/t87-stroke-halo/README.md) never completed without replay; [cheap positive witnesses](tog/tasks/t88-positive-ignition-witness/README.md) also abstained. Preserve these results, particularly the eight true no answers. The [ordinary terminal-scan profile](tog/tasks/t89-terminal-scan/README.md) supplies a stronger baseline. The next mechanism should have a reason to cheaply decide a remaining recipient that determines the editor's answer. Use a callable early-stop native baseline, include the cost to obtain and deliver the result, and use new independently chosen edits for generalization. Avoid selecting an empty or distant shell after inspecting these labels. [Current paper and decision](tog/submission/sig2027/README.md)

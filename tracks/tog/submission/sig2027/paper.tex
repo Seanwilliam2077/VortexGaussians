@@ -1,4 +1,4 @@
-% The reading copy suppresses publisher metadata. A real submission ID selects review output.
+% The anonymous reading copy omits publisher metadata. Define RealSubmissionID for review output.
 \ifdefined\RealSubmissionID\else\PassOptionsToClass{nonacm}{acmart}\fi
 \documentclass[acmtog,anonymous,review]{acmart}
 \ifdefined\RealSubmissionID\acmSubmissionID{\RealSubmissionID}\fi
@@ -7,72 +7,86 @@
 \settopmatter{printacmref=false,printfolios=true}
 \acmDOI{}
 \acmJournal{TOG}
-\title{Which Material Sites Can Stay Unlit After a Fire Edit?}
+\title{Exact View-Dependent Burn Progression in Edited Particle Fire Simulations}
 \author{Anonymous}
 \begin{document}
 \begin{abstract}
-A second ignition stroke can move fire away from sites that burned in the original take as well as light new ones. We study a preview that answers a smaller, discrete question from a checkpoint of the edited simulation. Which currently unlit material sites can we guarantee will remain unlit over the next few frames? We enclose the motion of hot particles and the locations of possible births, then propagate an upper bound on heat through every ignition test. A site whose bound crosses the threshold remains undecided. In two orders of the same edit on a reconstructed woodpile, the weighted bound certifies 373,913 of 535,437 repeated site queries. An ordinary count of reachable carriers certifies 328,626. Both sets agree with native replay on every certified query. All 18 complete-domain queries still require replay. Restricting the query to the material immediately outside the second brush yields the same outcome, even in the eight windows with no ignition in that region. The gap between certifying sites and resolving an editing decision limits the case for interactive use.
+An animator choosing between two ignition strokes needs to know how far the resulting burn will spread by a shot deadline. We give an exact regional simulation method for monotone ignition events in a coupled particle fire model. A certificate identifies intervals in which gas emission and material heat transfer depend only on previously active sources. Other material updates can wait. At expiry, ordered gas deposits recover the complete material without rerunning gas. We apply the method to first ignition and to the frame when newly ignited sites account for a requested fraction of a calibrated camera's foreground opacity. In a prospectively specified woodpile edit, a light stroke missed a quarter-coverage target by a 90-frame deadline while a full stroke reached it at frame 44. Neither sufficed from a second camera. Timing the whole choice from the common parent through restoration gave 605 ms for material repair and 719 ms for optimized complete replay. On a second fitted scene, the lighter stroke sufficed. On this scene the latency ordering reversed between sessions. Across four further fresh processes per scene, repair saved a median 14.4\% on the primary woodpile choice. Both playground operations had runs on either side of parity. Shared two-view execution, a different graph service policy and keeping an edited future further delimit when deferring material pays.
 \end{abstract}
-\keywords{physics-based animation, simulation editing, ignition, conservative bounds}
+\keywords{physics-based animation, simulation editing, event queries, particle simulation}
+\begin{teaserfigure}
+\centering\includegraphics[width=.71\textwidth]{woodpile-mattes.pdf}
+\caption{Two ignition strokes from the same edited woodpile, shown 90 steps later. The gray surface depicts the density of fitted material centers. Orange is the calibrated opacity contribution of newly ignited eligible sites and teal is that of the remaining eligible sites. In the top camera only the full brush reaches the editor's quarter-coverage target. In the bottom camera the entire ignited selection contributes less than one pixel of unit opacity.}
+\Description{Two camera views of a shaded stack of logs. From camera zero the small and full brushes cover 11.69 and 34.83 percent. The other camera sees 0.011 and 0.073 percent.}
+\label{fig:woodpile}
+\end{teaserfigure}
 \maketitle
 
-\section{An edit with a signed footprint}
-Consider a shot of a burning woodpile. After several seconds the editor adds another ignition stroke. Which material points burn differently at the end? An overlay of the stroke on the original take assumes the new fire cannot suppress a previous ignition. A shared gas budget and the order in which burning materials emit particles can break that assumption. On a reconstructed woodpile with 34,687 material splats we compare a single stroke with a second stroke added at frame 180. An ordinary global pool of particle slots allows the second group to emit. At frame 360 the second stroke has ignited 288 sites directly. Outside the stroke, 1,266 sites gain burning status and 12 lose it relative to the single-stroke take. Restricting admission to per-layer quotas eliminates the off-stroke change on this edit.
+\section{An editing decision}
+Consider a shot of fire spreading along a woodpile. The editor has already placed an initial ignition. A light second stroke is preferable if the burn covers enough of the target by the cut. If it falls short, the editor can try a larger stroke or revise the shot. The first newly ignited material site and the first substantial spread of fire can be many frames apart. Two cameras can also see different parts of the same edited trajectory.
 
-The first divergence in emitted gas under the global policy occurs at frame 205. Replaying the edited simulation through 150 of the 180 remaining frames recovers its endpoint burning set on this take. An editor cannot know this cutoff in advance. We investigate a narrower query that remains available after divergence. Given the \emph{current edited state}, report which unlit, fuel-positive sites will stay unlit in each of the next $H$ updates. A useful guarantee must survive the discrete ignition test at every update. A speed claim additionally requires that the guarantee save work for the output an editor requested.
+Figures~\ref{fig:woodpile} and~\ref{fig:choice} show two candidate strokes from one common starting state, their visible extent at the cut and the temporal curves. We ask when newly ignited sites first account for a quarter of the initially eligible target's opacity mass in a fixed reference view. A site's mass is its accumulated contribution to a reference foreground matte, taking other foreground splats' occlusion into account. It describes the extent of burnt material. The color and density of the flame are separate outputs. We also test the simpler question of when a single exterior site catches. Each query returns an exact discrete event or reaches a stated deadline.
 
-\input{figure-block}
-\section{Related work}
-\citet{shen2026} synthesize combustion in Gaussian-splat scenes with volumetric simulation and rendering. Their results motivate the editing domain. We use exact labels from a particular discrete simulator as ground truth. Image realism and combustion fidelity require separate evaluation. \citet{chen2026} restrict fluid control to spacetime windows to revise an existing trajectory. Their optimization returns control forces. Our query returns one-sided decisions about a fixed edited trajectory. \citet{goel2022} support approximate spacetime queries over compressed ensembles of precomputed simulations. Here the future of the edited trajectory is unavailable when its labels are predicted.
+\begin{figure*}[t]
+\centering\includegraphics[width=.98\textwidth]{brush-choice.pdf}
+\caption{Two prospective edits of one woodpile shot share the first stroke, simulation state, target material and 90-step deadline. In camera 0 only the full second stroke reaches the requested quarter mass. In camera 124 both leave nearly all visible target material unburnt. The curves are from the independent full solver; the camera-124 inset uses a magnified scale.}
+\Description{The small and large stroke trajectories end at 11.69 and 34.83 percent in the primary view. Both stay below 0.08 percent in the second view.}
+\label{fig:choice}
+\end{figure*}
 
-\section{A sufficient condition for remaining unlit}
-The material sites are fixed in world space. The solver advects gas particles on nine parallel layers and selects at most 160 hot carriers for material heating per step. Each selected particle of visual temperature $T$ at distance $d$ contributes $\Delta t\, aT(1-d/R)_+$, where $R=0.14$ and $a=2.2$. Material heat then decays and the solver tests for ignition. Heat arriving from the material graph after that test enters the next scan. Turning off intermediate renders preserves the discrete dynamics used here.
+\citet{gladstone2026} describe painting and keyframing fire progression in hero shots for \emph{Hoppers}. For a shot with an authored ignition schedule, that schedule can supply timing directly. Our query concerns propagation whose timing emerges from a coupled simulation after the artist changes a stroke.
 
-Let $u_i$ bound the current stored heat at a cold recipient $i$. For each future update $k$ compute an upper bound $F_{ik}$ on flame heat and $G_{ik}$ on graph heat. With $D=1-0.35\Delta t$, define
-\begin{align}
-  v_{ik} &= \mathrm{up}\bigl(D\,\mathrm{up}(u_i + F_{ik})\bigr),\\
-  u_i &\gets \mathrm{up}(v_{ik}+G_{ik}).
-\end{align}
-Here $\mathrm{up}$ accounts for the number of nonnegative additions and the native binary32 stores. For at most $n$ writes the implementation inflates the sum of the initial value and the positive increments by a factor $1/(1-n2^{-24})$, with a per-write underflow allowance and a guard for binary64 reduction. This overestimate is applied separately at each phase. If every $v_{ik}$ remains below the native threshold of 1, induction over these phases certifies the site through $H$. A failed inequality leaves the site's future open.
+An edit cannot generally be previewed by overlaying new ignitions on the previous take. On a Gaussian reconstruction of a woodpile, adding one stroke at frame 180 directly ignites 288 sites. At frame 360 another 1,266 sites burn outside the stroke that were absent from the original burning set, while 12 previously burning sites disappear. The first different gas birth on this edit is at frame 205. A shared gas pool and the fine ordering of emission offers let a local edit have both signs of effect. A preview that shows the whole altered trajectory would have to preserve those interactions. We ask how much of that computation is necessary for a particular editor query.
 
-For $F_{ik}$, group extant hot carriers by layer and a cell of width $R$. Retain the group's bounding box, particle count and largest visual temperature. Dilate its horizontal extent by the speed limit times elapsed time, with a margin for native velocity storage. Depth stays on the layer. A lower bound $d_{\min}$ on distance from the expanded group and an upper bound on its cooling temperature give an upper weight for each member. Sum the weights over reachable groups and cap by the sampled carrier count. For births we expand source boxes to include the solver's position jitter. A newborn first heats a recipient on a later step. We bound at most 48 offers per step. Where survival and the round-robin cursor establish a source's identity we bound its position directly. Once the cursor can wrap into an uncertain frontier, unlocated offers can heat anywhere. This is a deliberate loss of selectivity. For graph heating we use the serviced donor prefix if its fuel survives the horizon, or bound all possible serviced donations. These conditions limit the argument to the captured controls and native operator.
+\section{Prior work}
+\citet{shen2026} synthesize fire in Gaussian-splat scenes. We use two of their reconstructed foregrounds as inputs to our own discrete animation simulator. The reference for this study is its ordinary solver. \citet{bojsen2016} use boundary conditions to resimulate a local portion of a fluid scene within its previous surrounding flow. Their interface communicates a time-varying environment to the region. Here we advance the entire interacting gas, while proving which feedback from material is required. \citet{chen2026} solve for localized control forces that revise fluid trajectories. \citet{goel2022} support spacetime queries on compressed ensembles of previously computed animations. \citet{twigg2007} reuse unaffected rigid-body trajectories after an edit, reactivating bodies when contacts change. \citet{hybinette2001} share logical-process state across simulation versions until their incoming messages diverge. Our problem is to determine how long ordered material updates can vary without changing one shared gas evolution, and how to recover the edited state at that boundary. Demand-driven incremental computation already defers dependencies until an observer needs them \citep{hammer2014}. Timewarp uses local progress and rollback in rigid-body simulation \citep{mirtich2000}, and asynchronous contact mechanics schedules work using conservative certificates \citep{harmon2012}. Here the specific issue is whether a discrete thermal coupling can remain exact when part of the material system is absent, and whether the omitted work costs less than ordinary cached execution.
 
-\section{Protocol and controls}
-We ran two 360-step takes at 60 Hz with seed 11 on the Firewoods reconstruction distributed with \citet{shen2026}. The first ignites location A then B, the second B then A. The second stroke is applied between steps at frame 180. Both switch from per-layer to global admission at that intervention. The three checkpoints at frames 210, 240 and 300 and the horizons of 1, 4 and 8 steps were fixed before capture. The first take reproduces previously reconstructed ignition labels across every suffix frame. The reversed take produces a different endpoint with 8,427 burning sites, compared with 5,057 in the first. Reversing the strokes tests transfer across an edit order with shared scene, controls and seed. Both edits were defined by the researchers.
+\section{The coupled update}
+At each of 60 updates per simulated second, a vortex particle solver advances gas on nine layers. It sorts by Morton code, advects and culls. In native layer order it considers every seventh surviving particle and keeps at most 160 hot samples. A particle of visual temperature $T$ deposits $\Delta t\,aT(1-d/R)_+$ into cold material sites a distance $d$ away, including sites whose remaining fuel is zero, with $a=2.2$ and $R=0.14$. The solver damps stored heat, tests cold sites with positive fuel for ignition and appends new burners to an ordered frontier. A prefix of at most 1,400 burners transfers heat to nearby cold sites, affecting the \emph{next} ignition scan. Emission services up to 48 cyclically selected entries. Full layers, a shared capacity and random admission can reject offers. New particles can heat material on a subsequent step. The order of additions matters because material heat is stored in binary32. All timings omit intermediate rendering.
 
-We compare four bounds using the same material graph and initial heat. The global bound allows all sampled carriers at every site. The support rule abstains whenever any possibly hot carrier can reach the site. The uniform rule counts reachable hot carriers with unit weight. The weighted rule adds temperature and radial attenuation. A separate evaluator compares the saved site IDs with all native ignition events over each horizon. Windows overlap and multiple queries may count the same site. The denominators below count site--window pairs, without implying independent trials.
+For a brush of radius 0.12 we monitor eligible sites in the concentric shell $(0.12,0.26]$. This excludes the directly painted points. Eligibility is fixed from the cold, fuel-positive material immediately after the edit. An ordinary exact implementation can stop on any in-shell witness at the first event frame. Before the first event, every monitored site stays cold. In contrast, spatially distant sites can ignite, be appended and eventually change the gas emitted into the region.
 
-\section{What the bounds decide}
-\begin{table}[t]
-\caption{Certified unlit site--window pairs. The warm and near-threshold columns are nested subsets, defined by positive initial heat and heat at least 0.5, respectively.}
-\label{tab:mask}
-\begin{tabular}{lrrr}
-\toprule
-Rule & All & Warm & Near threshold\\
-\midrule
-Eligible & 535,437 & 74,580 & 8,685\\
-Global & 0 & 0 & 0\\
-Gas support & 274,874 & 11,591 & 742\\
-Uniform & 328,626 & 19,344 & 905\\
-Weighted & 373,913 & 27,121 & 1,199\\
-\bottomrule
-\end{tabular}
-\end{table}
-The weighted rule gives 45,287 additional correct decisions over the uniform rule, including 294 near threshold (Table~\ref{tab:mask}). Of 1,108 observed ignitions counted across windows, all fell among the abstentions. Simply guessing that every initially cold site stays cold misses those 1,108 events. On the A-then-B cut at frame 210 the weighted rule certifies no sites at eight steps. After a potential cursor wrap, 218 offers have an unknown source across that horizon. Reversing the stroke order at the same frame certifies 19,432 sites at eight steps.
+\section{An exact regional prefix}
+Let $B=(b_0,\ldots,b_{n-1})$ be the ordered old frontier just after the stroke, $c$ its emission cursor, $g$ the graph service cap and $f$ the feed quota. For $k$ complete intermediate updates the implementation checks its native clock and service settings and requires:
+\begin{enumerate}
+\item $n\ge\max(g,f)$, and the minimum old fuel stays positive after $k$ native rounded decrements;
+\item $c+k f<n$, so each of the next ordered feed accesses and its resulting cursor lie in the old frontier.
+\end{enumerate}
+These sufficient inequalities deliberately give up part of the usable interval at the boundary. If an operator changes donors according to heat or uses a feedback force from every material site, the argument must be rederived.
 
-Figure~\ref{fig:coverage} shows how strongly coverage varies by checkpoint and horizon. Even when nearly all cold sites are covered, the remaining sites can determine the answer to an editor's question.
+\paragraph{Agreement up to the first event.}
+Initially the gas, random state and ordered old frontier agree. A gas step with the same starting particles produces the same survivors, ranks, hot samples and positions. Apply each deposit to the monitored material in native order, then perform its native threshold scan. Every old donor survives. The first $g$ donors therefore remain identical after any new burners append, so every monitored recipient gets the same ordered graph increments. By the cursor inequality both systems make identical emission offers. They see the same occupancy, perform the same random draws and create the same gas. Induction gives identical monitored heat at each scan before the first event, then the same first frame or a valid negative through the interval. The state outside the queried region generally differs.
 
-\section{Cost of an exact answer}
-Native timing advances the gas and material without intermediate rendering and excludes recording per-site events. Starting from the in-memory edited cut, the median native time across 18 queries was 59.7 ms. The weighted predictor's median computation took 37.5 ms after preprocessing. All 18 windows contained undecided sites. Adding prediction and full-window native fallback gives a median of 92.8 ms, or a median paired ratio of $1.60$ relative to native replay. These quantities add separate measurements. They omit Python process startup, constructing the edited checkpoint, decoding it (20--43 ms per cut), preprocessing it (71--94 ms), and returning the masks. Shared transformed geometry took 7.4 ms to prepare. A live editor could amortize some of these costs across queries at the same checkpoint. That saving does not alter the need for fallback on the measured masks.
+\paragraph{Continuation when the certificate expires.}
+Compute the longest certified prefix that fits before the terminal scan. If the interval ends without an event, retain its initial complete material state and log each frame's ordered hot positions, temperatures and outgoing cursor. From the retained state reapply those deposits, native decay, full ignition scan and donor-ordered graph updates. Restore the recorded cursor after each material update. In an admitted block the logged gas and cursor already equal native values. Conditional on them, the material transition is deterministic. Induction on the log recovers the complete material state, including the order of new ignitions. The gas and random stream at the block end can continue in place. This second pass pays for the deferred material and log storage. A restart alternative instead rewinds and re-executes both systems. Outside a certified interval we use complete updates. The query returns a disposable answer; keeping an accepted branch for later playback has additional costs.
 
-\input{regional}
+\paragraph{Many ignitions on the same branch.}
+Let $w_i$ denote the projected material mass of initially eligible site $i$. Use integer micro-pixels $m_i=\lfloor 10^6 w_i+0.5\rfloor$ and define $Q=\lceil\sum_i m_i/4\rceil$. On a guarded step, keep an ignition flag and heat for each monitored site. For every transition of an eligible site from cold to burning, increment the achieved mass by $m_i$ exactly once. Process all monitored ignitions on the crossing frame so that the returned mass and count match the complete scan. Newly burning sites append outside the original serviced donor prefix and cannot emit within the guard. Their regional ignition flags therefore suffice for further deposits, graph transfers and counting. Native ordered gas and the remaining cold trajectories stay identical by the same induction as before. When a block is repaired, the material scan reconstructs its complete physical frontier. Its past ignitions have already been counted and the accumulated observer state is carried forward unchanged.
 
-\section{Scope and open problems}
-The evidence supports the feasibility of conservative material labels after gas divergence. Demonstrating an editing tool requires an output for which a partial answer has value, or an exact query the bound can decide more cheaply than native execution. The short windows here cover at most 133 ms of simulated time. They do not recover the full three-second revision from the second click. A single asset, one seed and two staged edits leave performance on other geometries, stochastic runs and creator-selected revisions open. The measurements do not establish a perceptual improvement. The terminal-scan timings supply a cost target for a future editor. A new method would need to return a correct regional answer, including useful positive witnesses near the advancing front, before a comparable native query completes.
+\section{Controls and measurement}
+The strongest ordinary controls retain complete gas and material on intermediate steps. One caches each donor's spatial-neighbor row and increments and rechecks receiver state at use. Another exploits monotonic removal from the set of cold receivers to maintain only still-relevant edges. Both preserve donor order and each native binary32 write. We distinguish a fresh cache from a reusable cache built from the loaded pre-click asset or take. A persistent cache is charged separately for build time and memory. Region construction, applying the actual second stroke, forking and restoring the editor, conditional work and delivery through the browser bridge enter the reported second-stroke latency. Native event logs and complete state checks run outside the timed calls.
+
+The development workloads use a fitted woodpile with 34,687 sites and a trunk mesh sampled at 50,900 vertices. On each asset we used two brush orders at one seed. The second click occurs at frame 180. On a third fitted foreground, a playground with all 80,023 original sites, we froze brushes, seed, horizons and methods before opening its future labels. Repeated timings and deadlines sharing an event do not create independent edits.
+
+\subsection{Why site certificates and terminal shortcuts fall short}
+On the woodpile a weighted heat bound certified 373,913 of 535,437 repeated site queries as unlit, versus 328,626 with uniform weights. All 18 whole-shell questions still needed replay, including eight negatives. A selective terminal gas scan gave median ratios to native of 0.424 on the woodpile and 0.348 on the trunk at one step. By eight steps the ratios reached 1.009 and 0.981. These queries start from a loaded edited state with an indexed region. They chiefly save work at the final scan.
+
+\subsection{From a second stroke to the first crossing}
+The native first crossings occur 36 and 50 steps after the stroke on the woodpile, and 50 and 51 on the trunk. All eight one- and three-second requests have positive answers along four trajectories. Their first-event frames and material witnesses were checked on every one of 288 measured and 48 warmup calls. A retained, conventional neighbor cache reduced the median paired delivery time to 0.491 of regional replay on the woodpile and 0.278 on the trunk. Preparing two order-specific pages per asset cost 157 and 267 ms for a combined 15.9 and 41.5 MB of typed payload.
+
+Requiring a certificate for the entire requested intermediate horizon has a concrete failure mode. On the reverse woodpile edit, one second qualified and took 358 ms versus 515 ms for retained ordinary replay. Asking for three seconds returned the very same event, but the guard failed and the query took 1,177 ms versus 552 ms. Whole-horizon slicing won all three requests its guard admitted; retained ordinary replay won the other five. This motivated the maximal-prefix and continuation comparison.
+\input{repair-results}
+\input{visible-progress}
+\input{shot-choice}
+\input{transactions}
+\input{sibling}
+\input{service}
+
+\section{Limitations}
+Our guarantees concern discrete material events under the tested solver. The proof needs ordered service and regular clocks. It also assumes bounded feed and monotone fuel. The authors specified the brushes, deadlines and preference for a lighter stroke. Whether animators would make better shot decisions with this observable remains an open question. All timings come from one browser and host. Occlusion by smoke, animated material appearance, camera motion and physical fidelity require separate evaluation.
 
 \paragraph{Use of generative tools.}
-OpenAI Codex agents helped design the hypotheses and protocols, implement the tests, analyze the results, review the method and draft the text. The counts come from the recorded simulation and scoring code.
-
+OpenAI Codex agents contributed to research design, code, analysis, manuscript preparation and internal review. Numerical observations are scored against the recorded native solver.
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{references}
 \end{document}
