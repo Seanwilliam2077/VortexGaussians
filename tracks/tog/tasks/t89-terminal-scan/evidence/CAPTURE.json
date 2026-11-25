@@ -1,0 +1,114 @@
+{
+  "schema": "t89-native-terminal-scan-v1",
+  "status": "validated",
+  "started_utc": "2026-11-25T06:28:17.267Z",
+  "sources": {
+    "demo": "e9d808c434bdd8ce91482f60502f03f5d08c56b71c082eb704c53275ff9f57d0",
+    "camera_adapter": "e3c6348a18ae633e963bdf574ceac92b2ce3956ac2b26e06b9b5f88cda7f58da",
+    "T86_observer": "fcce7bb3dbc0cfb78b7e427572d6a9519e3d93a28eefb1f2b676e347baa6997f",
+    "T86_staged": "dcb781dbeb0a7b9ffdd0824f157e33c21f095f8adbc75ba4a57f4513ed081c72",
+    "T89_staged": "119c0aa9dbc264ae03e9999f085363797dcd2106eb018dd17c2321c01103b40d",
+    "recipe": "982c98d3187ab26e95e251de562950adaab9a2101d1f1ff6371c93e7f6383013",
+    "Firewoods": "906460f162f704b89666b159ae5b4744e53e6dc11baf448a550de581506919b0",
+    "T86_reference": "9f9e6960493b8a48d93600fc73cbab8d2c9d9a5013f487babd60cf5df60bb5f5",
+    "T89_protocol": "6ff892e0020ea515f521ad671a83db4976e47380986dc52768bb3c0d0c7d8033",
+    "T89_worker": "1810d071d8e5887f4b69f09cee819686f7398ea22e02e852b680f2ccffcdac77",
+    "AB-trace.json.gz": "dd526f8092aef0e6764b5b106f0d75d747db13efff49f8226379e9272471e941",
+    "BA-trace.json.gz": "97cabe8b025be5b6106220d2d99f22961bfcbc2c6fe9dae154e8f6ea70eba9f5"
+  },
+  "runtime": {
+    "node": "v24.16.0",
+    "node_sha256": "b3094d0b49f9ad602262a9921551737bb97637c05dd357a06ae98188d7290aa3",
+    "browser_executable_sha256": "6c6729d3ade101ad8b97f9812a852a9024b7bb2a8394b5f506219dd635dc330d",
+    "playwright_version": "1.62.1",
+    "browser_version": "149.0.4022.52"
+  },
+  "phases_ms": {
+    "preflight": 400.8854,
+    "browser_launch": 2070.0648,
+    "cleanup": 624.4238999999998,
+    "whole_before_receipt": 15472.2676
+  },
+  "shots": {
+    "AB": {
+      "phases_ms": {
+        "new_page": 308.7040999999999,
+        "load": 538.8971999999999,
+        "setup_reset_ignite": 244.60370000000012,
+        "native_and_observation_to_180": 1953.5551,
+        "fork_and_hash": 101.40290000000005,
+        "native_and_observation_to_210": 394.64400000000023,
+        "native_and_observation_to_240": 434.83629999999994,
+        "native_and_observation_to_300": 941.7456999999995,
+        "native_and_observation_to_360": 1028.9216999999999,
+        "end_hash": 54.08190000000104,
+        "event_timing_compress_and_write": 3.2435000000004948,
+        "close": 21.8716000000004
+      },
+      "markers": {
+        "pre_edit": "24ba7dc9",
+        "post_edit": "36e624bc",
+        "end": {
+          "frame": 360,
+          "hash": "491894ec",
+          "particle_hash": "2acba20a",
+          "burn_hash": "ef01f9ad",
+          "burning": 5057,
+          "charred": 0,
+          "gas_count": 5400,
+          "cursor": 2032,
+          "random_draws": 37793
+        }
+      },
+      "native_ms": 4666.299999713898,
+      "observer_ms": 37.600000858306885,
+      "frames": {
+        "file": "AB-frames.json.gz",
+        "count": 360,
+        "sha256": "a5b8008d3d7043b79f69fcf266185190a6443328b9cd1c0f315c4987f4924d8c",
+        "decoded_sha256": "e341fe9897d4aefe6a034393940cfc52f4fa5664fa6db52592a788fd5fe15cc8"
+      }
+    },
+    "BA": {
+      "phases_ms": {
+        "new_page": 255.59330000000045,
+        "load": 121.1877000000004,
+        "setup_reset_ignite": 256.01060000000143,
+        "native_and_observation_to_180": 2294.3328,
+        "fork_and_hash": 96.1844000000001,
+        "native_and_observation_to_210": 463.5115999999998,
+        "native_and_observation_to_240": 539.5918999999994,
+        "native_and_observation_to_300": 1114.9866999999995,
+        "native_and_observation_to_360": 1106.4033,
+        "end_hash": 49.86830000000009,
+        "event_timing_compress_and_write": 3.176400000000285,
+        "close": 18.38010000000031
+      },
+      "markers": {
+        "pre_edit": "435716aa",
+        "post_edit": "0e89020e",
+        "end": {
+          "frame": 360,
+          "hash": "115a0126",
+          "particle_hash": "d5673792",
+          "burn_hash": "e08390bf",
+          "burning": 8427,
+          "charred": 0,
+          "gas_count": 5400,
+          "cursor": 1163,
+          "random_draws": 38166
+        }
+      },
+      "native_ms": 5421.90000128746,
+      "observer_ms": 41.1999990940094,
+      "frames": {
+        "file": "BA-frames.json.gz",
+        "count": 360,
+        "sha256": "653cceb9f91c7fa1eca3de6a7cbdb0113e22586f3ce525b9b2ab0da7cbbc51e3",
+        "decoded_sha256": "9ab72f78345ab1ba639f21fa6f4eb0eb48847e4d48ea9f8a5794f7dfc152b179"
+      }
+    }
+  },
+  "errors": [],
+  "steps": 720
+}
