@@ -1,0 +1,323 @@
+{
+  "schema": "t104-graph-reach-v1",
+  "self_check": {
+    "nodes": 146,
+    "seeds": 3,
+    "boundary": true
+  },
+  "assets": {
+    "firewoods": {
+      "sha256": "906460f162f704b89666b159ae5b4744e53e6dc11baf448a550de581506919b0",
+      "sites": 34687,
+      "components": [
+        {
+          "representative": 0,
+          "sites": 34687,
+          "eccentricity": 12
+        }
+      ],
+      "arms": {
+        "AB": {
+          "seeds": 2371,
+          "seed_sha256": "1617c343ba996c372f29f71f11976cbbddc9098c65a37e6dc447333b25efe7f6",
+          "component_ids": [
+            0
+          ],
+          "closure_sites": 34687,
+          "max_hops": 9,
+          "exact_hop_counts": [
+            2371,
+            3031,
+            2773,
+            1970,
+            2741,
+            4584,
+            4665,
+            8827,
+            2993,
+            732
+          ],
+          "horizons": [
+            {
+              "H": 60,
+              "support": 34687,
+              "support_fraction": 1,
+              "mean_sites": 31875.633333333335,
+              "mean_fraction": 0.918950423309405
+            },
+            {
+              "H": 180,
+              "support": 34687,
+              "support_fraction": 1,
+              "mean_sites": 33749.87777777778,
+              "mean_fraction": 0.9729834744364684
+            }
+          ]
+        },
+        "BA": {
+          "seeds": 2477,
+          "seed_sha256": "0516323a7fe2d44f667b48a2940fbb2d055871d3115556b9f09c03a9c81ca7b6",
+          "component_ids": [
+            0
+          ],
+          "closure_sites": 34687,
+          "max_hops": 10,
+          "exact_hop_counts": [
+            2477,
+            1933,
+            3929,
+            7879,
+            6560,
+            5244,
+            3939,
+            1226,
+            1007,
+            460,
+            33
+          ],
+          "horizons": [
+            {
+              "H": 60,
+              "support": 34687,
+              "support_fraction": 1,
+              "mean_sites": 32509.833333333332,
+              "mean_fraction": 0.9372339300986922
+            },
+            {
+              "H": 180,
+              "support": 34687,
+              "support_fraction": 1,
+              "mean_sites": 33961.27777777778,
+              "mean_fraction": 0.9790779766995641
+            }
+          ]
+        }
+      },
+      "distance_checks": 27365321,
+      "elapsed_ms": 237.01799999999997
+    },
+    "dead-tree": {
+      "sha256": "e99f4787f4e3d34836cfd80a2841914b6f951c488e5cd0d3b9006aed390a0f9c",
+      "sites": 50900,
+      "components": [
+        {
+          "representative": 0,
+          "sites": 50900,
+          "eccentricity": 21
+        }
+      ],
+      "arms": {
+        "AB": {
+          "seeds": 5697,
+          "seed_sha256": "c31cd685f9f1d9beb185261dc78ac8b2f282ac9bccc59cdb98aedc4c6faa8058",
+          "component_ids": [
+            0
+          ],
+          "closure_sites": 50900,
+          "max_hops": 19,
+          "exact_hop_counts": [
+            5697,
+            4903,
+            3634,
+            3712,
+            3751,
+            3322,
+            1915,
+            1997,
+            1987,
+            2009,
+            2021,
+            2004,
+            2074,
+            2198,
+            2418,
+            2303,
+            1945,
+            1404,
+            966,
+            640
+          ],
+          "horizons": [
+            {
+              "H": 60,
+              "support": 50900,
+              "support_fraction": 1,
+              "mean_sites": 44849.73333333333,
+              "mean_fraction": 0.8811342501637197
+            },
+            {
+              "H": 180,
+              "support": 50900,
+              "support_fraction": 1,
+              "mean_sites": 48883.24444444444,
+              "mean_fraction": 0.9603780833879065
+            }
+          ]
+        },
+        "BA": {
+          "seeds": 6979,
+          "seed_sha256": "7722fb7bcfd93c9c192f8155efc4f012c755bbef458802c80557ed891f7a5441",
+          "component_ids": [
+            0
+          ],
+          "closure_sites": 50900,
+          "max_hops": 19,
+          "exact_hop_counts": [
+            6979,
+            6132,
+            4189,
+            3384,
+            3057,
+            2254,
+            1950,
+            1894,
+            1832,
+            1801,
+            1747,
+            1715,
+            1695,
+            1731,
+            1777,
+            1757,
+            1709,
+            1758,
+            1743,
+            1796
+          ],
+          "horizons": [
+            {
+              "H": 60,
+              "support": 50900,
+              "support_fraction": 1,
+              "mean_sites": 44947.96666666667,
+              "mean_fraction": 0.8830641781270465
+            },
+            {
+              "H": 180,
+              "support": 50900,
+              "support_fraction": 1,
+              "mean_sites": 48915.98888888889,
+              "mean_fraction": 0.9610213927090155
+            }
+          ]
+        }
+      },
+      "distance_checks": 97668152,
+      "elapsed_ms": 623.3062
+    },
+    "playground": {
+      "sha256": "cb048992c117078016d5554b8205ec33e0d8e19d4d0196c0affd529fd20c0914",
+      "sites": 80023,
+      "components": [
+        {
+          "representative": 0,
+          "sites": 30459,
+          "eccentricity": 8
+        },
+        {
+          "representative": 1,
+          "sites": 39736,
+          "eccentricity": 13
+        },
+        {
+          "representative": 12,
+          "sites": 9810,
+          "eccentricity": 5
+        },
+        {
+          "representative": 1792,
+          "sites": 18,
+          "eccentricity": 1
+        }
+      ],
+      "arms": {
+        "AB": {
+          "seeds": 3654,
+          "seed_sha256": "7e87db93b74b7ed34df228e0ff2f08450b7fb2ae11db08d9eb4a74698b360284",
+          "component_ids": [
+            0
+          ],
+          "closure_sites": 30459,
+          "max_hops": 6,
+          "exact_hop_counts": [
+            3654,
+            5073,
+            5919,
+            6769,
+            6170,
+            2726,
+            148
+          ],
+          "horizons": [
+            {
+              "H": 30,
+              "support": 30459,
+              "support_fraction": 0.38062806943003885,
+              "mean_sites": 27911.8,
+              "mean_fraction": 0.34879722079902026
+            },
+            {
+              "H": 60,
+              "support": 30459,
+              "support_fraction": 0.38062806943003885,
+              "mean_sites": 29185.4,
+              "mean_fraction": 0.36471264511452955
+            },
+            {
+              "H": 180,
+              "support": 30459,
+              "support_fraction": 0.38062806943003885,
+              "mean_sites": 30034.466666666667,
+              "mean_fraction": 0.37532292799153577
+            }
+          ]
+        },
+        "BA": {
+          "seeds": 4920,
+          "seed_sha256": "2f6bab94d1ab979fc8a5e60dc5628f536f04edbe0a65823fb2a9967b423197bb",
+          "component_ids": [
+            2
+          ],
+          "closure_sites": 9810,
+          "max_hops": 2,
+          "exact_hop_counts": [
+            4920,
+            3896,
+            994
+          ],
+          "horizons": [
+            {
+              "H": 30,
+              "support": 9810,
+              "support_fraction": 0.12258975544530948,
+              "mean_sites": 9613.866666666667,
+              "mean_fraction": 0.12013879343022214
+            },
+            {
+              "H": 60,
+              "support": 9810,
+              "support_fraction": 0.12258975544530948,
+              "mean_sites": 9711.933333333332,
+              "mean_fraction": 0.1213642744377658
+            },
+            {
+              "H": 180,
+              "support": 9810,
+              "support_fraction": 0.12258975544530948,
+              "mean_sites": 9777.31111111111,
+              "mean_fraction": 0.12218126177612826
+            }
+          ]
+        }
+      },
+      "distance_checks": 78639842,
+      "elapsed_ms": 570.0292000000001
+    }
+  },
+  "gate": {
+    "requests": 14,
+    "at_least_75_percent": 8,
+    "distinct_arms_below_both_50_percent": 2,
+    "decision": "review-qualification"
+  }
+}
