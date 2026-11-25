@@ -1,0 +1,21 @@
+# Can bounded heat certify recipient decisions after a gas fork?
+
+25 November 2026. We ask for a partial preview at the present state of an edited take. For each currently unlit, fuel-positive material site, mark it safe to display as unlit for the next H frames, or abstain. Truth is the native model's first ignition by stable material ID. The current state of the edited simulation is an input. Obtaining it requires stepping to the query time. The preview target differs from rendering a complete future frame or providing an edited endpoint from the original click.
+
+## Design fixed before capture and scoring
+
+Use one Firewoods reconstruction, seed 11, native recipe and world placement. Both takes use per-layer admission through frame 180 and global admission afterwards. The development take uses the original A then B. The transfer take reverses the two picks. Reversing the staging order changes the burning history and transfer region while preserving the camera, controls and geometry. It is an independently specified edit on the same development asset. Use the identical rules at frames 210, 240 and 300 and horizons 1, 4 and 8. Here an H-frame certificate must hold at **every** scan from cut+1 to cut+H.
+
+Capture two 360-step native material-only runs without intermediate renders. Keep existing T81 untouched. Record native stepping times excluding snapshot transport, end-to-end capture costs, first ignition frames, source/runtime identities and the prepared inputs. Check the development run against T84 pointwise. Verify the transfer take's initialization and discrete intervention, and check its event/endpoint consistency. Future edited events are available only to the scorer. Checkpoint features may be projected to compact local inputs with no scene appearance. Publish derived evidence and appropriate dynamic inputs for reproduction, while keeping the third-party geometry external.
+
+## Methods and validation
+
+Compare a global no-geometry heat bound, a geometry-only support exclusion rule, and a local bound on reachable flame heating with the same native graph donors, using causal position/speed, layer, birth and temperature information. The local method can relax native ordering or capacity constraints only in the direction that increases the upper bound. For each candidate include additive heat before thresholding, decay, per-write binary32 rounding, and graph input after the threshold test. Handle possible future births and uncertain donor service conservatively. A timing-free record must identify guaranteed IDs for each rule and query before the separate reference comparison. Include initially burning sites outside scoring.
+
+Report certified/eligible IDs, false certificates and abstentions, including true ignitions among abstentions for all windows. Break down by positive initial heat and by initial heat at least half the threshold. Retain empty groups as empty. For context score a persistence guess on the same target. Count sites as discrete elements and repeated windows as repeated queries. A false certificate invalidates its guarantee on that run. Evaluate a baseline with the same candidate geometry and no weighting by temperature or heat margins where the implementation supports it.
+
+Time ordinary no-render native steps for the exact same horizons. Report preprocessing, prediction, output and evidence/IO separately and account for whether preprocessing can be shared. For a complete exact result every mixed window still needs a fallback. Use the full native window for a conservative fallback cost; identify whether costs are actually timed together or only added. Do not count each certified point as a proportional saving in solver work.
+
+## Submission decision
+
+If this only classifies easy points, the simpler support test matches it, loading and prediction dominate, or fallback needs the full solver in all windows, retain the result as a measured limitation. Advancement to a SIGGRAPH method claim requires both a useful decision-quality improvement and evidence of a credible cost advantage. One reconstruction cannot establish broad applicability. Update the English paper draft and review decision according to the measured outcome.
