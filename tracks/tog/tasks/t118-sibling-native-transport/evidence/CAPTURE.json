@@ -1,0 +1,143 @@
+{
+  "schema": "sibling-native-transport-v1",
+  "status": "validated",
+  "sources": {
+    "native": "e9d808c434bdd8ce91482f60502f03f5d08c56b71c082eb704c53275ff9f57d0",
+    "camera": "e3c6348a18ae633e963bdf574ceac92b2ce3956ac2b26e06b9b5f88cda7f58da",
+    "observer": "fcce7bb3dbc0cfb78b7e427572d6a9519e3d93a28eefb1f2b676e347baa6997f",
+    "fork": "0e0cd4cecba197fb109e61cdd522f591bfc4d22722f3ff43a0923d35b3f27036",
+    "physical": "941b4158868850ab59ffea796e8d9a15a2ee5fb609dbb4b6ae6df4d71b9e544f",
+    "operator": "0466f994b4ebc8de786f1e3c0fb071279c30453a3ab1c316a54d07ab5e15575b",
+    "staged_html": "1d8c0a3ab8a6b77ec17c75fe672de92b53e278177ce4fd2091f6fa967cec57dd"
+  },
+  "scenes": {
+    "woodpile": {
+      "parent": {
+        "frame": 180,
+        "hash": "9ec29346",
+        "particle_hash": "8dfc5972",
+        "burn_hash": "f6c3afd4",
+        "burning": 3362,
+        "charred": 0,
+        "gas_count": 2406,
+        "cursor": 2170,
+        "random_draws": 16902
+      },
+      "steps": 24,
+      "light_sites": 74,
+      "full_sites": 288,
+      "extra_sites": 214,
+      "checks": [
+        {
+          "frame": 204,
+          "material_bytes": 589679,
+          "frontier": 3685,
+          "particles": 2974,
+          "draws": 20894,
+          "particle_hash": "ce92e44b",
+          "burn_hash": "602d2f7e",
+          "field_count": 13
+        },
+        {
+          "frame": 205,
+          "material_bytes": 589679,
+          "frontier": 3693,
+          "particles": 2995,
+          "draws": 21047,
+          "particle_hash": "98f5fc87",
+          "burn_hash": "783cea73",
+          "field_count": 13
+        },
+        {
+          "frame": 224,
+          "material_bytes": 589679,
+          "frontier": 4095,
+          "particles": 3440,
+          "draws": 24184,
+          "particle_hash": "d8d403f8",
+          "burn_hash": "b218dc7d",
+          "field_count": 13
+        },
+        {
+          "frame": 270,
+          "material_bytes": 589679,
+          "frontier": 4407,
+          "particles": 4537,
+          "draws": 31947,
+          "particle_hash": "54d92591",
+          "burn_hash": "bb4153ea",
+          "field_count": 13
+        }
+      ],
+      "onsets_sha256": "a9b3a563b29f58d1d916731e89f058190b57bdb7ad3f44d49416aa59a6729e0d",
+      "verified_onset_frames": 90
+    },
+    "playground": {
+      "parent": {
+        "frame": 180,
+        "hash": "330babe2",
+        "particle_hash": "7317571b",
+        "burn_hash": "756e257f",
+        "burning": 4720,
+        "charred": 0,
+        "gas_count": 1965,
+        "cursor": 3920,
+        "random_draws": 13732
+      },
+      "steps": 16,
+      "light_sites": 741,
+      "full_sites": 2058,
+      "extra_sites": 1317,
+      "checks": [
+        {
+          "frame": 196,
+          "material_bytes": 1360391,
+          "frontier": 6826,
+          "particles": 2273,
+          "draws": 16490,
+          "particle_hash": "ffccce58",
+          "burn_hash": "d2c84426",
+          "field_count": 13
+        },
+        {
+          "frame": 197,
+          "material_bytes": 1360391,
+          "frontier": 6838,
+          "particles": 2285,
+          "draws": 16663,
+          "particle_hash": "39c1629e",
+          "burn_hash": "92d4b78f",
+          "field_count": 13
+        },
+        {
+          "frame": 224,
+          "material_bytes": 1360391,
+          "frontier": 7823,
+          "particles": 2832,
+          "draws": 21114,
+          "particle_hash": "2ec1128a",
+          "burn_hash": "a67306d0",
+          "field_count": 13
+        },
+        {
+          "frame": 270,
+          "material_bytes": 1360391,
+          "frontier": 9678,
+          "particles": 3849,
+          "draws": 28807,
+          "particle_hash": "cfe9adb3",
+          "burn_hash": "3c145d09",
+          "field_count": 13
+        }
+      ],
+      "onsets_sha256": "0231d30cc81e1dc4e7da7eb39ca12ddfe59f7b54aa82eaa54d155975a1a7eb89",
+      "verified_onset_frames": 90
+    }
+  },
+  "errors": [],
+  "runtime": {
+    "node": "v24.16.0",
+    "browser": "149.0.4022.52",
+    "playwright": "1.62.1"
+  }
+}
