@@ -1,0 +1,24 @@
+          for(const backend of ['sibling','cold-sibling']){
+            const r=await timed(phase,'audit_'+backend,()=>page.evaluate(([m,dt,p,c])=>__t119.action(m,dt,p,c,true),[backend,cfg.dt,picksLF,[0,SECOND]]));
+            assert.deepEqual(await page.evaluate(()=>__t86.marker()),pre);
+            assert.equal(r.work.fallback,false);
+            const frames=Object.keys(r.boundaries).map(Number);
+            assert.deepEqual(frames,[180+r.work.steps,181+r.work.steps,224,270].sort((a,b)=>a-b));
+            assert.deepEqual(r.tried.map(x=>x.pick),['L','F']);
+            for(const x of r.tried)for(const v of x.views){
+              validRow(v,x.pick);assert.deepEqual(v.curve,expectedRow(x.pick,v.camera).curve);
+            }
+            const native=await timed(phase,'audit_native_'+backend,()=>page.evaluate(([dt,p,c,f])=>
+              __t119.one('ordinary',dt,p,c,f),[cfg.dt,picksLF[1],[0,SECOND],frames]));
+            assert.deepEqual(await page.evaluate(()=>__t86.marker()),pre);
+            assert.deepEqual(r.boundaries,native.boundaries,'Full sibling physical state at boundary, successor, +44, +90');
+            report.full_audits[backend]={frames,physical:r.boundaries,work:r.work,curves:r.tried.map(x=>({pick:x.pick,views:x.views}))};
+          }
+          for(const method of ['cold-ordinary','cold-repair'])for(const pick of picksLF){
+            const direct=await timed(phase,'curve_'+method+'_'+pick.name,()=>page.evaluate(([m,dt,p,c])=>
+              __t119.one(m,dt,p,c,[]),[method,cfg.dt,pick,[0,SECOND]]));
+            assert.deepEqual(await page.evaluate(()=>__t86.marker()),pre);
+            for(const v of direct.views){validRow(v,pick.name);assert.deepEqual(v.curve,expectedRow(pick.name,v.camera).curve);}
+            report.full_audits[method+'_'+pick.name]={curves:direct.views};
+          }
+
