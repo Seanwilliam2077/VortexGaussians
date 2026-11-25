@@ -1,0 +1,223 @@
+{
+  "capture_sha256": "45cdd2b1c9a3313e9e605ebf1c4c929a28bcefbbe091ecc06d67a5fa947a0577",
+  "strict_direct": false,
+  "arms": {
+    "AB": {
+      "first": 224,
+      "methods": {
+        "ordinary": {
+          "delivered_ms": 270.63984999999957,
+          "range_ms": [
+            238.1215999999995,
+            318.5475999999999
+          ],
+          "delivered_waves_ms": [
+            238.1215999999995,
+            284.5522000000001,
+            318.5475999999999,
+            256.72749999999905
+          ],
+          "phase_ms": 0.0,
+          "repaired_steps": 0
+        },
+        "repair": {
+          "delivered_ms": 250.92165000000023,
+          "range_ms": [
+            225.02989999999954,
+            285.3770999999997
+          ],
+          "delivered_waves_ms": [
+            225.02989999999954,
+            261.6123000000007,
+            285.3770999999997,
+            240.23099999999977
+          ],
+          "phase_ms": 47.14999997615814,
+          "repaired_steps": 32
+        },
+        "sparse": {
+          "delivered_ms": 225.0,
+          "range_ms": [
+            206.86279999999988,
+            253.4346000000005
+          ],
+          "delivered_waves_ms": [
+            222.17849999999999,
+            206.86279999999988,
+            253.4346000000005,
+            227.82150000000001
+          ],
+          "phase_ms": 45.950000047683716,
+          "repaired_steps": 32
+        },
+        "sitewise": {
+          "delivered_ms": 228.7293499999996,
+          "range_ms": [
+            201.65620000000035,
+            243.2593999999999
+          ],
+          "delivered_waves_ms": [
+            243.2593999999999,
+            201.65620000000035,
+            243.0519000000004,
+            214.40679999999884
+          ],
+          "phase_ms": 39.950000166893005,
+          "repaired_steps": 32
+        }
+      },
+      "timed_blocks_profiled_separately": [
+        {
+          "frames": 30,
+          "sites": 34687,
+          "old_burning": 3662,
+          "graph_edges": 9,
+          "noncached_donor_rows": 0,
+          "typed_scratch_bytes": 416320,
+          "graph_ms": 0.20000004768371582,
+          "samples": 1740,
+          "hit_calls": 621918,
+          "flame_writes": 46137,
+          "graph_writes": 265,
+          "positive_decays": 149195,
+          "site_frames": 149195,
+          "old_positive": 4621,
+          "cold_only_flame_touched": 3663,
+          "clock_sites": 3740,
+          "added_sites": 78,
+          "flame_ms": 50,
+          "finish_ms": 1.7000000476837158,
+          "profile_counts": true
+        },
+        {
+          "frames": 2,
+          "sites": 34687,
+          "old_burning": 3740,
+          "graph_edges": 8,
+          "noncached_donor_rows": 0,
+          "typed_scratch_bytes": 416312,
+          "graph_ms": 0.09999990463256836,
+          "samples": 224,
+          "hit_calls": 52662,
+          "flame_writes": 20318,
+          "graph_writes": 16,
+          "positive_decays": 14263,
+          "site_frames": 14263,
+          "old_positive": 6922,
+          "cold_only_flame_touched": 2851,
+          "clock_sites": 3740,
+          "added_sites": 0,
+          "flame_ms": 5.200000047683716,
+          "finish_ms": 0.6000001430511475,
+          "profile_counts": true
+        }
+      ],
+      "audit_boundaries": [
+        210,
+        212,
+        290,
+        306,
+        315,
+        317
+      ]
+    },
+    "BA": {
+      "first": 266,
+      "methods": {
+        "ordinary": {
+          "delivered_ms": 600.8391499999962,
+          "range_ms": [
+            584.2503999999972,
+            606.0522999999957
+          ],
+          "delivered_waves_ms": [
+            602.6970999999976,
+            584.2503999999972,
+            606.0522999999957,
+            598.9811999999947
+          ],
+          "phase_ms": 0.0,
+          "repaired_steps": 0
+        },
+        "repair": {
+          "delivered_ms": 661.8599000000013,
+          "range_ms": [
+            652.9271000000008,
+            688.1391000000003
+          ],
+          "delivered_waves_ms": [
+            659.041699999998,
+            652.9271000000008,
+            664.6781000000046,
+            688.1391000000003
+          ],
+          "phase_ms": 150.7499998807907,
+          "repaired_steps": 72
+        },
+        "sparse": {
+          "delivered_ms": 677.2133500000018,
+          "range_ms": [
+            651.925299999999,
+            689.4897999999957
+          ],
+          "delivered_waves_ms": [
+            651.925299999999,
+            671.2724000000017,
+            683.154300000002,
+            689.4897999999957
+          ],
+          "phase_ms": 150.89999997615814,
+          "repaired_steps": 72
+        },
+        "sitewise": {
+          "delivered_ms": 666.1311000000023,
+          "range_ms": [
+            652.4323000000004,
+            693.8084000000017
+          ],
+          "delivered_waves_ms": [
+            652.4323000000004,
+            654.4169000000038,
+            693.8084000000017,
+            677.8453000000009
+          ],
+          "phase_ms": 146.14999985694885,
+          "repaired_steps": 72
+        }
+      },
+      "timed_blocks_profiled_separately": [
+        {
+          "frames": 72,
+          "sites": 34687,
+          "old_burning": 4399,
+          "graph_edges": 89,
+          "noncached_donor_rows": 0,
+          "typed_scratch_bytes": 416960,
+          "graph_ms": 0.20000004768371582,
+          "samples": 6829,
+          "hit_calls": 2824238,
+          "flame_writes": 367383,
+          "graph_writes": 5664,
+          "positive_decays": 547861,
+          "site_frames": 547861,
+          "old_positive": 7048,
+          "cold_only_flame_touched": 6093,
+          "clock_sites": 5355,
+          "added_sites": 956,
+          "flame_ms": 169.29999995231628,
+          "finish_ms": 3.4000000953674316,
+          "profile_counts": true
+        }
+      ],
+      "audit_boundaries": [
+        252,
+        271,
+        297,
+        315,
+        328,
+        334,
+        335
+      ]
+    }
+  }
+}
