@@ -58,7 +58,10 @@ def score():
         candidates={q["arm"]:q for q in summaries if q["camera"]==c}
         l,f=(candidates[a] for a in ("AL","AF"))
         assert l["total"]==f["total"] and l["target"]==f["target"] and l["eligible"]==f["eligible"]
+        search=[l] if l["first_frame"] is not None else [l,f]
         choices[str(c)]={"selection":next((a for a in ("AL","AF") if candidates[a]["first_frame"] is not None),"none"),
+                         "sequential_queried_arms":[q["arm"] for q in search],
+                         "sequential_additive_window_medians_ms":{m:sum(q["methods"][m]["delivered_ms"] for q in search) for m in METHODS},
                          "joint_review_sum_of_two_window_medians_ms":{m:sum(q["methods"][m]["delivered_ms"] for q in candidates.values()) for m in METHODS}}
     return {"choices":choices,"queries":summaries,"captured_anchor_builds":cold,"view_cache":cap["view_cache"],
             "view_install_ms":{str(c):cap["arms"]["AL"]["phases_ms"][f"install_camera_{c}"] for c in (0,124)},
