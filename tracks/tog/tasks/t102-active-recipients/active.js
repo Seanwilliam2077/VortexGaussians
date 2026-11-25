@@ -69,7 +69,7 @@ function t102Start(mode,dt) {
   const stats={ms:0,entries:0,bytes:0,anchor_built:false,anchor_validation_ms:0,anchor_build_ms:0,
     anchor_bytes:0,anchor_donors:0,anchor_edges:0,anchor_cells:0,anchor_indexed:0,
     fresh_index_ms:0,fresh_cells:0,fresh_indexed:0,local_rows_built:0,local_edges_built:0,
-    copied_rows:0,pruned_edges:0,branch_bytes:0};
+    copied_rows:0,pruned_edges:0,branch_bytes:0,branch_resets:0};
   const base=typeof t98Original!=='undefined' && t98Original ? t98Original.live.sceneBurnState : sceneBurnState;
   const anchor=mode==='active-anchor'?t102Prepare(base,dt,stats):null;
   t102Context={mode,anchor,grid:anchor?.grid??null,rows:new Map(),stats};
@@ -120,6 +120,11 @@ function t102Stop(){
   st.ms+=st.anchor_build_ms;st.branch_rows=c.rows.size;
   t102Context=null;t97Graph=null;
   return st;
+}
+
+function t102ResetBranch(){
+  const c=t102Context;if(!c)throw Error('No T102 session');
+  c.rows=new Map();c.grid=c.anchor?.grid??null;c.stats.branch_resets++;
 }
 
 const t102Previous=window.__t90.query;

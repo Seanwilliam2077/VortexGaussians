@@ -14,10 +14,14 @@ let spread=text.slice(i,j).replace('function t97Spread(dt)','function t102Spread
 const first=spread.indexOf('    if(t97Graph) {'), last=spread.indexOf('\n  }\n  for(const i of sb.burning)',first);
 assert(first>=0&&last>first);
 spread=spread.slice(0,first)+'    t102Apply(i,radius,dt,sb);'+spread.slice(last);
+const termStart=spread.indexOf('  const radius=P.spreadR;'), termEnd=spread.indexOf('  /* NATIVE_EMISSION */',termStart);
+assert(termStart>=0 && termEnd>termStart);
+const materialTail='function t102MaterialTail(sb,dt){\n'+spread.slice(termStart,termEnd)+'}\n';
+spread=spread.slice(0,termStart)+'  t102MaterialTail(sb,dt);\n'+spread.slice(termEnd);
 const a=demo.indexOf('  let M=P.spreadSceneFeed?'), b=demo.indexOf('\n}\n',a);
 assert(a>=0 && b>a && spread.includes('/* NATIVE_EMISSION */'));
 const tail=demo.slice(a,b).replace('const full=L.ps.length>=P.ppl;','const full=t86Global ? layers.reduce((n,l)=>n+l.ps.length,0)>=P.layers*P.ppl : L.ps.length>=P.ppl;');
-const source=spread.replace('/* NATIVE_EMISSION */',()=>tail)+(await readFile(path.join(here,'active.js'),'utf8'));
+const source=materialTail+spread.replace('/* NATIVE_EMISSION */',()=>tail)+(await readFile(path.join(here,'active.js'),'utf8'));
 new Script(source);
 const destination=path.join(here,'local/plugin.js');
 await mkdir(path.dirname(destination),{recursive:true});await writeFile(destination,source);
