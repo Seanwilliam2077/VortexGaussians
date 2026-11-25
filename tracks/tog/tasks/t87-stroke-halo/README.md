@@ -14,7 +14,7 @@ The researcher-defined query monitors the exterior shell from 0.12 to 0.26 world
 
 For example, at frame 240 on AB the next scan ignites no shell site. The weighted bound certifies 1,842 of 1,863 eligible IDs. The remaining 21 force replay. At frame 300 on BA the shell lights at frame 301, so even an eight-frame question costs ordinary replay only one step. Persistence, which simply predicts no ignition, gets 8/18 answers right.
 
-The regional implementation builds the eligible list before computing graph deposits and flame bounds. It retains all potential gas carriers and serviced donors because either can affect recipients across the shell boundary. A separate scorer matched all 54 saved masks exactly to the corresponding full-scene masks restricted to the shell. It used the frozen native events to identify every ignition through each window. A second internal check independently parsed the source PLY and reproduced both membership lists and the first-positive frames and timings. [Causal regional implementation](regional.py) · [Exact ID lists](PREDICTIONS.json.gz) · [Reference scorer](score.py)
+The regional implementation builds the eligible list before computing graph deposits and flame bounds. It retains all potential gas carriers and serviced donors because either can affect recipients across the shell boundary. A separate scorer matched all 54 saved masks exactly to the corresponding full-scene masks restricted to the shell. It used the frozen native events to identify every ignition through each window. A second internal check independently parsed the source PLY and reproduced both membership lists and the exact native event IDs, first-positive frames and fallback cost in every query. [Causal regional implementation](regional.py) · [Exact ID lists](PREDICTIONS.json.gz) · [Reference scorer](score.py)
 
 ## Cost interpretation
 
@@ -32,4 +32,3 @@ The regional predictor uses the pinned T42 recipe, its external foreground PLY, 
 python -B tracks/tog/tasks/t87-stroke-halo/regional.py --asset /path/to/foreground.ply
 python -B tracks/tog/tasks/t87-stroke-halo/score.py
 ~~~
-
