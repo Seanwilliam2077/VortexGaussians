@@ -1,0 +1,14 @@
+# First ignition on a prospectively selected fitted scene
+
+Neither development scene was replaced during method design. Playground adds an independently fitted foreground from the FieryGS release, with 80,023 material sites and distinct seed 37. The two brush locations were chosen from its bounding box before any future labels were available. The maximal-prefix operator, both graph backends, restart variants and seven-way measurement schedule were frozen in `f7d59df`. We opened the native references after both development captures passed all 448 measured and warmup calls. [Protocol](PROTOCOL.md) · [Geometry recipe](recipe.json) · [Frozen comparison](../t100-material-repair/FINAL_SCHEDULE.md)
+
+| Second-click trajectory | Geometric shell | Still eligible | First crossing relative to click | Simultaneous witnesses | Deadlines |
+| --- | ---: | ---: | ---: | ---: | --- |
+| A then B | 3,654 | 3,654 | +24 frames | 77 | 30, 60, 180 |
+| B then A | 4,920 | 4,920 | +15 frames | 1 | 30, 60, 180 |
+
+The second click directly lit 2,058 and 1,620 sites respectively. Both trajectories reached the shell within half a second, so all three deadlines returned the same first frame in each order. There are two distinct prospective events and zero censored ones. Across the three assets there are now six different second-click trajectories. The short checkpoint benchmark also contains true negatives, but starts at a different editing state. [Reference frame and all witness IDs](REFERENCE.json) · [Complete native receipts and per-frame event logs](evidence/)
+
+The original Playground burnable foreground came from the pinned upstream release at commit `f70fbe26d22431c7acd93a745861dd47ba4307d7`. Fetching it required a 17,965,855-byte compressed ZIP member. The decoded input SHA256 is `3f27f88a647d26fa1b1fd6624eb44ba6e6f0e9c2574ab51b5d3e806aa8fee749`, and the staged input SHA256 is `cb048992c117078016d5554b8205ec33e0d8e19d4d0196c0affd529fd20c0914`. The geometry is locally staged. Site ordering and Gaussian appearance parameters were preserved, with positions and log-scales adjusted by the registered similarity transform. The two 360-frame full native trajectories took 26.35 s including capture setup. [FieryGS upstream](https://github.com/PKU-VCL-Geometry/FieryGS/tree/f70fbe26d22431c7acd93a745861dd47ba4307d7)
+
+From this directory, `python reference.py` verifies the six queries from the public ledgers without a browser, geometry download or dependencies. For full reproduction run `python fetch.py`, `python prepare.py` (requires NumPy), then `node capture.mjs local/your-new-reference` using the [pinned browser runtime](../t90-callable-regional-query/README.md). The two large input files stay under local/. Compare the generated receipts and first events with the public captures. [Matched candidate and control measurements](../t100-material-repair/evidence/playground/)
