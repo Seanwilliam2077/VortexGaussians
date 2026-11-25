@@ -1,0 +1,52 @@
+{
+  "schema": "t109-calibrated-clip-v1",
+  "probe": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1120,
+        "height": 768,
+        "pix_fmt": "yuv420p",
+        "avg_frame_rate": "12/1",
+        "nb_read_frames": "150"
+      }
+    ],
+    "format": {
+      "duration": "12.500000"
+    }
+  },
+  "bytes": 158099,
+  "sha256": "3b3c7b9453880e038f8520bc57b96c94fdbea29e8517d0b52e9fdc9e328fbc15",
+  "native_frame_range": [
+    181,
+    270
+  ],
+  "fixed_dt": 0.016666666666666666,
+  "distinct_progress_frames": 90,
+  "exact_curve_rows_checked": 360,
+  "checked_initial_rows": 4,
+  "panel_units": "per-site rounded micro-pixels",
+  "verified_floating_matte": "full-frame and fixed displayed crop on every step, rtol 3e-13 atol 1e-12",
+  "frame_table_sha256": "e9ce0102bb15643a1a71e02326eb451af29208d09acf32ffed3f44f7af9e7c62",
+  "source_sha256": {
+    "t109-common-parent-choice/recipe.json": "221d92f20fec0c6b5bba3b730d054948dc55cd2226e9ed4df02a1be695209eb4",
+    "t109-common-parent-choice/REFERENCE.json": "1931f2697447bae9fd0b5a55c7dfeab1815638e33ccb8b46bbb582dfaa6a010b",
+    "t109-common-parent-choice/shell.json.gz": "8afe54bbced4d77023c047d72a781b718af3a9a2cde8f8070473d0952ac40cc2",
+    "t109-common-parent-choice/evidence/native/capture-report.json": "ef8a583a7a20fc57441e3b04f00c212a27d46eddc5ad022ca5392ac6703a5542",
+    "t109-common-parent-choice/evidence/native/AL-trace.json.gz": "31bcdd178c0e12de763f71cbf0561bc39522a38178c33d39d1995209f36daeed",
+    "t109-common-parent-choice/evidence/native/AF-trace.json.gz": "9a6412c708494f6fb00f038472ca0bb1ba1c7d9e01dbd97da0be5eff840bf488",
+    "t107-visible-burn-progression/evidence/weights-0.json.gz": "08aade341633cada213895141ae6bbfe0b36ebaa2e729b9227b9fb668caaf432",
+    "t107-visible-burn-progression/evidence/weights-124.json.gz": "2324ff5d06ba40eb1c04380e83d45dd55dd01fe21cd1645c85822096391efc32",
+    "t109-common-parent-choice/figure/figure.py": "f3a1115ef4cb124dcc7cf5a4e8ae01d051be7618355241a36823b6fe88e68554",
+    "t109-common-parent-choice/figure/project.py": "efd00020dda98c6e488ba60d9505baa47b7134cc30c510d3eb3ff3d21c8c3869",
+    "t107-visible-burn-progression/measure.py": "4b2cb6c84849d485e82b98c920f8b302290f228d796bd041a1e1c154e1222ca0"
+  },
+  "external_inputs_sha256": {
+    "cameras.json": "5cdd4605b0bf11970357c26e66ce3affb6c25ab2823171488fa41288ceb4a5c5",
+    "foreground.ply": "906460f162f704b89666b159ae5b4744e53e6dc11baf448a550de581506919b0"
+  },
+  "generator_sha256": "2fc836a23b7a019d1c39d6955155ba5bb59145af0db26952aebf530bb61eeb10",
+  "encoder": "ffmpeg version 9.0.2-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers"
+}
