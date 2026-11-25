@@ -1,0 +1,16 @@
+# The first ignition and the camera-visible extent answer different editing questions
+
+For the same second stroke on the Firewoods take A→B, the first shell site caught at +36 frames, when only 0.009% of the queried matte's opacity mass had ignited in the original camera. At +44 frames its ignited sites contributed at least a quarter. A second real camera looking at that very same trajectory reached only 13.96% through three seconds. Counting equally weighted sites would have predicted +111 frames from either view. An exact first-event preview answers a narrower question than the extent of burning seen from a camera. [Registered camera and measurement rule](PROTOCOL.md) · [Publication figure](../../submission/sig2027/burn-progression.pdf)
+
+| Camera, order | Initially eligible sites | Eligible opacity mass (pixel equivalents) | First site | Quarter of sites | Quarter of projected opacity | Projected fraction at +180 |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| 0, A→B | 2,371 | 282.83 | +36 | +111 | +44 | 58.42% |
+| 124, A→B | 2,371 | 829.20 | +36 | +111 | No by +180 | 13.96% |
+| 0, B→A | 2,441 | 673.58 | +50 | +81 | +86 | 83.74% |
+| 124, B→A | 2,441 | 4.16 | +50 | +81 | +109 | 87.26% |
+
+Camera 124 sees little initially eligible B→A material. Its 87.26% refers to roughly four pixel equivalents at this resolution. Each camera uses a 470×264 foreground-only matte with fixed projected covariances and transmittance. The question describes burn-state attribution on that fixed material matte. Gas, smoke, animated shading, moving occluders and artist impressions have different observables. The researcher selected the question after earlier first-event results were known. All four rows reuse two native takes. No participant supplied these events or views.
+
+[Camera 0 results](evidence/camera-0.json.gz) and [camera 124 results](evidence/camera-124.json.gz) contain camera parameters, unrounded per-site contributions, first events, eligible mass, all 180 cumulative mass and count values, and checked pixel coordinates. Separate weights-only files allow a new query implementation to ingest the static geometry without future outcomes. The two projected mass calculations and their numerical checks took about 0.78 and 0.80 seconds in a single-threaded offline Python run. Cost excludes asset loading, writing evidence and an interactive host interface. Reuse is plausible for a locked shot; a changed camera needs new weights.
+
+Run `python verify.py` to reconstruct every cumulative curve from the native onset ledgers, archived shell IDs and public weights using the standard library. Run `python measure.py --source PATH_TO_FIREWOODS_FILES --out NEW_DIRECTORY` with NumPy and Pillow for a new projection of the original PLY and cameras.json. It checks quaternion scales and a 90-degree rotation, conservation of total composited opacity and the per-splat contributions at six pixels per camera against a separate all-splats method. Asset SHA is pinned. The [Hoppers production account](https://research.pixar.com/docs/2026.SiggraphTalks.GGL.pdf) motivates shot-specific timing and visible extent. Its artists used procedural and keyframed growth signals; no production validation of this particular metric was conducted.
