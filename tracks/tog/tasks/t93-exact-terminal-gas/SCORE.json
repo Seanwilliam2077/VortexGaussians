@@ -1,0 +1,836 @@
+{
+  "firewoods": {
+    "summary": {
+      "all": {
+        "windows": 18,
+        "median_delivered_ms": {
+          "regional": 19.174299999998766,
+          "all-carriers": 19.064750000005006,
+          "rank-only": 17.0609000000004,
+          "t93": 17.4059999999954
+        },
+        "t93_over_regional": 0.9175816851120555,
+        "t93_over_rank": 1.0011552369718053
+      },
+      "reached": {
+        "windows": 11,
+        "median_delivered_ms": {
+          "regional": 23.472499999996217,
+          "all-carriers": 21.658300000002782,
+          "rank-only": 8.941599999998289,
+          "t93": 9.90110000000277
+        },
+        "t93_over_regional": 0.6209454882975172,
+        "t93_over_rank": 0.9867353031813839
+      },
+      "earlier_hit": {
+        "windows": 7,
+        "median_delivered_ms": {
+          "regional": 19.0083999999988,
+          "all-carriers": 17.795600000004924,
+          "rank-only": 17.066500000000815,
+          "t93": 18.058099999994738
+        },
+        "t93_over_regional": 1.010153447287993,
+        "t93_over_rank": 1.0296731900129978
+      },
+      "H1": {
+        "windows": 6,
+        "median_delivered_ms": {
+          "regional": 14.70850000000246,
+          "all-carriers": 17.777500000002874,
+          "rank-only": 7.710799999998926,
+          "t93": 6.976399999999558
+        },
+        "t93_over_regional": 0.423698203563465,
+        "t93_over_rank": 0.9174720061687787
+      },
+      "H4": {
+        "windows": 6,
+        "median_delivered_ms": {
+          "regional": 42.304699999999684,
+          "all-carriers": 42.60905000000275,
+          "rank-only": 38.80370000000039,
+          "t93": 40.71164999999746
+        },
+        "t93_over_regional": 0.9448693912731083,
+        "t93_over_rank": 1.019410092860578
+      },
+      "H8": {
+        "windows": 6,
+        "median_delivered_ms": {
+          "regional": 60.76640000000134,
+          "all-carriers": 61.30405000000246,
+          "rank-only": 62.853399999999056,
+          "t93": 65.54425000000083
+        },
+        "t93_over_regional": 1.0092786870672288,
+        "t93_over_rank": 1.0069736755854484
+      }
+    },
+    "terminal_work": {
+      "eligible": 22241,
+      "available": 39383,
+      "field_calls": 867,
+      "uncertain_boundary": 289,
+      "selected_hot": 1320,
+      "spatially_excluded": 742,
+      "heat_queries": 578
+    },
+    "rows": [
+      {
+        "arm": "AB",
+        "cut": 210,
+        "horizon": 1,
+        "terminal": true,
+        "yes": false,
+        "delivered_ms": {
+          "regional": 13.382200000000012,
+          "all-carriers": 15.971700000000055,
+          "rank-only": 7.734599999999773,
+          "t93": 4.944999999999709
+        },
+        "counts": {
+          "eligible": 2371,
+          "available": 3139,
+          "field_calls": 19,
+          "uncertain_boundary": 0,
+          "selected_hot": 110,
+          "spatially_excluded": 91,
+          "heat_queries": 19
+        }
+      },
+      {
+        "arm": "AB",
+        "cut": 210,
+        "horizon": 4,
+        "terminal": true,
+        "yes": false,
+        "delivered_ms": {
+          "regional": 65.60100000000057,
+          "all-carriers": 71.1234000000004,
+          "rank-only": 63.376000000000204,
+          "t93": 63.955700000000434
+        },
+        "counts": {
+          "eligible": 2371,
+          "available": 3209,
+          "field_calls": 22,
+          "uncertain_boundary": 0,
+          "selected_hot": 119,
+          "spatially_excluded": 97,
+          "heat_queries": 22
+        }
+      },
+      {
+        "arm": "AB",
+        "cut": 210,
+        "horizon": 8,
+        "terminal": false,
+        "yes": true,
+        "delivered_ms": {
+          "regional": 101.79470000000038,
+          "all-carriers": 104.0619000000006,
+          "rank-only": 105.01059999999961,
+          "t93": 109.928100000001
+        },
+        "counts": null
+      },
+      {
+        "arm": "AB",
+        "cut": 240,
+        "horizon": 1,
+        "terminal": true,
+        "yes": false,
+        "delivered_ms": {
+          "regional": 13.471800000002986,
+          "all-carriers": 13.266199999998207,
+          "rank-only": 6.7916000000004715,
+          "t93": 4.573599999999715
+        },
+        "counts": {
+          "eligible": 1863,
+          "available": 3844,
+          "field_calls": 22,
+          "uncertain_boundary": 0,
+          "selected_hot": 125,
+          "spatially_excluded": 103,
+          "heat_queries": 22
+        }
+      },
+      {
+        "arm": "AB",
+        "cut": 240,
+        "horizon": 4,
+        "terminal": true,
+        "yes": false,
+        "delivered_ms": {
+          "regional": 69.88969999999972,
+          "all-carriers": 67.42250000000058,
+          "rank-only": 60.540899999999965,
+          "t93": 63.365200000000186
+        },
+        "counts": {
+          "eligible": 1863,
+          "available": 3922,
+          "field_calls": 19,
+          "uncertain_boundary": 0,
+          "selected_hot": 127,
+          "spatially_excluded": 108,
+          "heat_queries": 19
+        }
+      },
+      {
+        "arm": "AB",
+        "cut": 240,
+        "horizon": 8,
+        "terminal": true,
+        "yes": false,
+        "delivered_ms": {
+          "regional": 156.66249999999854,
+          "all-carriers": 145.54190000000017,
+          "rank-only": 140.50830000000133,
+          "t93": 138.64450000000215
+        },
+        "counts": {
+          "eligible": 1863,
+          "available": 4023,
+          "field_calls": 7,
+          "uncertain_boundary": 0,
+          "selected_hot": 124,
+          "spatially_excluded": 117,
+          "heat_queries": 7
+        }
+      },
+      {
+        "arm": "AB",
+        "cut": 300,
+        "horizon": 1,
+        "terminal": true,
+        "yes": true,
+        "delivered_ms": {
+          "regional": 23.472499999996217,
+          "all-carriers": 21.658300000002782,
+          "rank-only": 8.138200000001234,
+          "t93": 7.870900000001711
+        },
+        "counts": {
+          "eligible": 1555,
+          "available": 5312,
+          "field_calls": 75,
+          "uncertain_boundary": 20,
+          "selected_hot": 124,
+          "spatially_excluded": 69,
+          "heat_queries": 55
+        }
+      },
+      {
+        "arm": "AB",
+        "cut": 300,
+        "horizon": 4,
+        "terminal": false,
+        "yes": true,
+        "delivered_ms": {
+          "regional": 16.585500000001048,
+          "all-carriers": 17.795600000004924,
+          "rank-only": 17.066500000000815,
+          "t93": 16.753899999996065
+        },
+        "counts": null
+      },
+      {
+        "arm": "AB",
+        "cut": 300,
+        "horizon": 8,
+        "terminal": false,
+        "yes": true,
+        "delivered_ms": {
+          "regional": 19.738100000002305,
+          "all-carriers": 18.54620000000432,
+          "rank-only": 20.6961999999985,
+          "t93": 21.160400000000664
+        },
+        "counts": null
+      },
+      {
+        "arm": "BA",
+        "cut": 210,
+        "horizon": 1,
+        "terminal": true,
+        "yes": false,
+        "delivered_ms": {
+          "regional": 12.3550999999934,
+          "all-carriers": 12.603800000004412,
+          "rank-only": 7.008499999996275,
+          "t93": 6.081899999997404
+        },
+        "counts": {
+          "eligible": 2441,
+          "available": 2562,
+          "field_calls": 132,
+          "uncertain_boundary": 71,
+          "selected_hot": 105,
+          "spatially_excluded": 44,
+          "heat_queries": 61
+        }
+      },
+      {
+        "arm": "BA",
+        "cut": 210,
+        "horizon": 4,
+        "terminal": true,
+        "yes": false,
+        "delivered_ms": {
+          "regional": 72.42540000000008,
+          "all-carriers": 73.2635999999984,
+          "rank-only": 68.52900000000227,
+          "t93": 68.06049999999959
+        },
+        "counts": {
+          "eligible": 2441,
+          "available": 2627,
+          "field_calls": 141,
+          "uncertain_boundary": 72,
+          "selected_hot": 112,
+          "spatially_excluded": 43,
+          "heat_queries": 69
+        }
+      },
+      {
+        "arm": "BA",
+        "cut": 210,
+        "horizon": 8,
+        "terminal": true,
+        "yes": false,
+        "delivered_ms": {
+          "regional": 172.99299999999494,
+          "all-carriers": 155.1747999999934,
+          "rank-only": 146.78459999999905,
+          "t93": 144.37079999999696
+        },
+        "counts": {
+          "eligible": 2441,
+          "available": 2731,
+          "field_calls": 153,
+          "uncertain_boundary": 68,
+          "selected_hot": 123,
+          "spatially_excluded": 38,
+          "heat_queries": 85
+        }
+      },
+      {
+        "arm": "BA",
+        "cut": 240,
+        "horizon": 1,
+        "terminal": true,
+        "yes": true,
+        "delivered_ms": {
+          "regional": 15.945200000001932,
+          "all-carriers": 21.484599999996135,
+          "rank-only": 8.941599999998289,
+          "t93": 9.90110000000277
+        },
+        "counts": {
+          "eligible": 2431,
+          "available": 3283,
+          "field_calls": 157,
+          "uncertain_boundary": 44,
+          "selected_hot": 125,
+          "spatially_excluded": 12,
+          "heat_queries": 113
+        }
+      },
+      {
+        "arm": "BA",
+        "cut": 240,
+        "horizon": 4,
+        "terminal": false,
+        "yes": true,
+        "delivered_ms": {
+          "regional": 17.25460000000021,
+          "all-carriers": 15.599900000001071,
+          "rank-only": 15.55949999999575,
+          "t93": 16.021200000002864
+        },
+        "counts": null
+      },
+      {
+        "arm": "BA",
+        "cut": 240,
+        "horizon": 8,
+        "terminal": false,
+        "yes": true,
+        "delivered_ms": {
+          "regional": 15.670600000004924,
+          "all-carriers": 15.907599999998638,
+          "rank-only": 15.880899999996473,
+          "t93": 15.746199999994133
+        },
+        "counts": null
+      },
+      {
+        "arm": "BA",
+        "cut": 300,
+        "horizon": 1,
+        "terminal": true,
+        "yes": true,
+        "delivered_ms": {
+          "regional": 17.45140000000538,
+          "all-carriers": 19.583300000005693,
+          "rank-only": 7.686999999998079,
+          "t93": 8.339599999999336
+        },
+        "counts": {
+          "eligible": 601,
+          "available": 4731,
+          "field_calls": 120,
+          "uncertain_boundary": 14,
+          "selected_hot": 126,
+          "spatially_excluded": 20,
+          "heat_queries": 106
+        }
+      },
+      {
+        "arm": "BA",
+        "cut": 300,
+        "horizon": 4,
+        "terminal": false,
+        "yes": true,
+        "delivered_ms": {
+          "regional": 19.0083999999988,
+          "all-carriers": 17.144899999999325,
+          "rank-only": 17.05529999999999,
+          "t93": 18.058099999994738
+        },
+        "counts": null
+      },
+      {
+        "arm": "BA",
+        "cut": 300,
+        "horizon": 8,
+        "terminal": false,
+        "yes": true,
+        "delivered_ms": {
+          "regional": 19.34019999999873,
+          "all-carriers": 18.102599999998347,
+          "rank-only": 18.28809999999794,
+          "t93": 19.605799999997544
+        },
+        "counts": null
+      }
+    ]
+  },
+  "dead-tree": {
+    "summary": {
+      "all": {
+        "windows": 18,
+        "median_delivered_ms": {
+          "regional": 14.05344999999943,
+          "all-carriers": 14.138449999998556,
+          "rank-only": 13.695349999998143,
+          "t93": 13.636650000000373
+        },
+        "t93_over_regional": 0.9467554881300819,
+        "t93_over_rank": 0.9701532433135696
+      },
+      "reached": {
+        "windows": 10,
+        "median_delivered_ms": {
+          "regional": 14.199400000001333,
+          "all-carriers": 14.344149999997171,
+          "rank-only": 8.651949999999488,
+          "t93": 5.413300000000163
+        },
+        "t93_over_regional": 0.45831784215516935,
+        "t93_over_rank": 0.7324446999371306
+      },
+      "earlier_hit": {
+        "windows": 8,
+        "median_delivered_ms": {
+          "regional": 13.886700000002747,
+          "all-carriers": 14.06760000000213,
+          "rank-only": 13.963700000000244,
+          "t93": 13.774799999995594
+        },
+        "t93_over_regional": 0.9946674696803623,
+        "t93_over_rank": 0.9905501721272241
+      },
+      "H1": {
+        "windows": 6,
+        "median_delivered_ms": {
+          "regional": 10.314050000000861,
+          "all-carriers": 10.1750499999971,
+          "rank-only": 6.606749999994463,
+          "t93": 4.237049999999726
+        },
+        "t93_over_regional": 0.3475435923613075,
+        "t93_over_rank": 0.5774846414592041
+      },
+      "H4": {
+        "windows": 6,
+        "median_delivered_ms": {
+          "regional": 46.206499999996595,
+          "all-carriers": 46.38579999999638,
+          "rank-only": 46.09414999999353,
+          "t93": 45.487249999994674
+        },
+        "t93_over_regional": 0.9884907361365187,
+        "t93_over_rank": 0.9858869936857382
+      },
+      "H8": {
+        "windows": 6,
+        "median_delivered_ms": {
+          "regional": 46.080800000003364,
+          "all-carriers": 45.797999999998865,
+          "rank-only": 46.22729999999865,
+          "t93": 45.85304999999789
+        },
+        "t93_over_regional": 0.9810894016809366,
+        "t93_over_rank": 0.9854593277663951
+      }
+    },
+    "terminal_work": {
+      "eligible": 60595,
+      "available": 31185,
+      "field_calls": 378,
+      "uncertain_boundary": 185,
+      "selected_hot": 1184,
+      "spatially_excluded": 991,
+      "heat_queries": 193
+    },
+    "rows": [
+      {
+        "arm": "AB",
+        "cut": 210,
+        "horizon": 1,
+        "terminal": true,
+        "yes": false,
+        "delivered_ms": {
+          "regional": 9.378300000000309,
+          "all-carriers": 9.51260000000002,
+          "rank-only": 6.611699999999473,
+          "t93": 1.9955000000009022
+        },
+        "counts": {
+          "eligible": 5697,
+          "available": 2519,
+          "field_calls": 0,
+          "uncertain_boundary": 0,
+          "selected_hot": 105,
+          "spatially_excluded": 105,
+          "heat_queries": 0
+        }
+      },
+      {
+        "arm": "AB",
+        "cut": 210,
+        "horizon": 4,
+        "terminal": true,
+        "yes": false,
+        "delivered_ms": {
+          "regional": 118.09709999999905,
+          "all-carriers": 118.66350000000239,
+          "rank-only": 117.21500000000015,
+          "t93": 111.73879999999917
+        },
+        "counts": {
+          "eligible": 5697,
+          "available": 2582,
+          "field_calls": 0,
+          "uncertain_boundary": 0,
+          "selected_hot": 112,
+          "spatially_excluded": 112,
+          "heat_queries": 0
+        }
+      },
+      {
+        "arm": "AB",
+        "cut": 210,
+        "horizon": 8,
+        "terminal": true,
+        "yes": false,
+        "delivered_ms": {
+          "regional": 271.854800000001,
+          "all-carriers": 261.0070000000014,
+          "rank-only": 263.6851999999999,
+          "t93": 257.54179999999906
+        },
+        "counts": {
+          "eligible": 5697,
+          "available": 2680,
+          "field_calls": 0,
+          "uncertain_boundary": 0,
+          "selected_hot": 123,
+          "spatially_excluded": 123,
+          "heat_queries": 0
+        }
+      },
+      {
+        "arm": "AB",
+        "cut": 240,
+        "horizon": 1,
+        "terminal": true,
+        "yes": false,
+        "delivered_ms": {
+          "regional": 9.466300000000047,
+          "all-carriers": 9.345200000003388,
+          "rank-only": 6.268900000002759,
+          "t93": 4.505099999994854
+        },
+        "counts": {
+          "eligible": 5551,
+          "available": 3262,
+          "field_calls": 58,
+          "uncertain_boundary": 0,
+          "selected_hot": 130,
+          "spatially_excluded": 72,
+          "heat_queries": 58
+        }
+      },
+      {
+        "arm": "AB",
+        "cut": 240,
+        "horizon": 4,
+        "terminal": false,
+        "yes": true,
+        "delivered_ms": {
+          "regional": 78.27339999999822,
+          "all-carriers": 78.29839999999967,
+          "rank-only": 77.90090000000055,
+          "t93": 78.55419999999867
+        },
+        "counts": null
+      },
+      {
+        "arm": "AB",
+        "cut": 240,
+        "horizon": 8,
+        "terminal": false,
+        "yes": true,
+        "delivered_ms": {
+          "regional": 78.19430000000284,
+          "all-carriers": 77.43179999999847,
+          "rank-only": 78.3978999999963,
+          "t93": 77.82110000000102
+        },
+        "counts": null
+      },
+      {
+        "arm": "AB",
+        "cut": 300,
+        "horizon": 1,
+        "terminal": true,
+        "yes": true,
+        "delivered_ms": {
+          "regional": 14.151099999995495,
+          "all-carriers": 14.575599999996484,
+          "rank-only": 9.096399999994901,
+          "t93": 3.9690000000045984
+        },
+        "counts": {
+          "eligible": 5012,
+          "available": 4625,
+          "field_calls": 118,
+          "uncertain_boundary": 94,
+          "selected_hot": 123,
+          "spatially_excluded": 99,
+          "heat_queries": 24
+        }
+      },
+      {
+        "arm": "AB",
+        "cut": 300,
+        "horizon": 4,
+        "terminal": false,
+        "yes": true,
+        "delivered_ms": {
+          "regional": 13.586600000002363,
+          "all-carriers": 13.971000000005006,
+          "rank-only": 13.519999999996799,
+          "t93": 13.562700000002224
+        },
+        "counts": null
+      },
+      {
+        "arm": "AB",
+        "cut": 300,
+        "horizon": 8,
+        "terminal": false,
+        "yes": true,
+        "delivered_ms": {
+          "regional": 13.806100000001607,
+          "all-carriers": 13.463499999998021,
+          "rank-only": 13.870699999999488,
+          "t93": 13.710599999998522
+        },
+        "counts": null
+      },
+      {
+        "arm": "BA",
+        "cut": 210,
+        "horizon": 1,
+        "terminal": true,
+        "yes": false,
+        "delivered_ms": {
+          "regional": 8.592100000001665,
+          "all-carriers": 8.54320000000007,
+          "rank-only": 5.356500000001688,
+          "t93": 1.8729999999995925
+        },
+        "counts": {
+          "eligible": 6979,
+          "available": 2519,
+          "field_calls": 0,
+          "uncertain_boundary": 0,
+          "selected_hot": 103,
+          "spatially_excluded": 103,
+          "heat_queries": 0
+        }
+      },
+      {
+        "arm": "BA",
+        "cut": 210,
+        "horizon": 4,
+        "terminal": true,
+        "yes": false,
+        "delivered_ms": {
+          "regional": 83.58999999999651,
+          "all-carriers": 84.21499999999651,
+          "rank-only": 81.0804000000062,
+          "t93": 77.13549999999668
+        },
+        "counts": {
+          "eligible": 6979,
+          "available": 2582,
+          "field_calls": 0,
+          "uncertain_boundary": 0,
+          "selected_hot": 111,
+          "spatially_excluded": 111,
+          "heat_queries": 0
+        }
+      },
+      {
+        "arm": "BA",
+        "cut": 210,
+        "horizon": 8,
+        "terminal": true,
+        "yes": false,
+        "delivered_ms": {
+          "regional": 181.30359999999928,
+          "all-carriers": 185.2798999999941,
+          "rank-only": 178.7149000000063,
+          "t93": 175.70060000001104
+        },
+        "counts": {
+          "eligible": 6979,
+          "available": 2680,
+          "field_calls": 0,
+          "uncertain_boundary": 0,
+          "selected_hot": 124,
+          "spatially_excluded": 124,
+          "heat_queries": 0
+        }
+      },
+      {
+        "arm": "BA",
+        "cut": 240,
+        "horizon": 1,
+        "terminal": true,
+        "yes": true,
+        "delivered_ms": {
+          "regional": 11.161800000001676,
+          "all-carriers": 10.83749999999418,
+          "rank-only": 6.601799999989453,
+          "t93": 4.919299999994109
+        },
+        "counts": {
+          "eligible": 6592,
+          "available": 3262,
+          "field_calls": 56,
+          "uncertain_boundary": 0,
+          "selected_hot": 129,
+          "spatially_excluded": 73,
+          "heat_queries": 56
+        }
+      },
+      {
+        "arm": "BA",
+        "cut": 240,
+        "horizon": 4,
+        "terminal": false,
+        "yes": true,
+        "delivered_ms": {
+          "regional": 10.728900000001886,
+          "all-carriers": 10.305200000002515,
+          "rank-only": 10.67269999999553,
+          "t93": 10.715800000005402
+        },
+        "counts": null
+      },
+      {
+        "arm": "BA",
+        "cut": 240,
+        "horizon": 8,
+        "terminal": false,
+        "yes": true,
+        "delivered_ms": {
+          "regional": 11.291699999987031,
+          "all-carriers": 10.627899999992223,
+          "rank-only": 10.939899999997579,
+          "t93": 10.630199999999604
+        },
+        "counts": null
+      },
+      {
+        "arm": "BA",
+        "cut": 300,
+        "horizon": 1,
+        "terminal": true,
+        "yes": true,
+        "delivered_ms": {
+          "regional": 14.247700000007171,
+          "all-carriers": 14.112699999997858,
+          "rank-only": 8.207500000004075,
+          "t93": 5.907300000006217
+        },
+        "counts": {
+          "eligible": 5412,
+          "available": 4474,
+          "field_calls": 146,
+          "uncertain_boundary": 91,
+          "selected_hot": 124,
+          "spatially_excluded": 69,
+          "heat_queries": 55
+        }
+      },
+      {
+        "arm": "BA",
+        "cut": 300,
+        "horizon": 4,
+        "terminal": false,
+        "yes": true,
+        "delivered_ms": {
+          "regional": 14.13959999999497,
+          "all-carriers": 14.473199999993085,
+          "rank-only": 14.287399999986519,
+          "t93": 13.838999999992666
+        },
+        "counts": null
+      },
+      {
+        "arm": "BA",
+        "cut": 300,
+        "horizon": 8,
+        "terminal": false,
+        "yes": true,
+        "delivered_ms": {
+          "regional": 13.967300000003888,
+          "all-carriers": 14.164199999999255,
+          "rank-only": 14.056700000001001,
+          "t93": 13.884999999994761
+        },
+        "counts": null
+      }
+    ]
+  }
+}
