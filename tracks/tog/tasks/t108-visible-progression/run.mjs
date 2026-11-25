@@ -28,7 +28,9 @@ const extras=['../t100-material-repair/local/plugin.js','../t102-active-recipien
 change("'click.js'];",extras.map(s=>JSON.stringify(s)).join(',')+'];');
 change("await input('T98_runner',","await input('T108_runner',"+JSON.stringify(portable(fileURLToPath(import.meta.url)))+");await input('T108_protocol',"+JSON.stringify(portable(path.join(here,'PROTOCOL.md')))+");await input('T98_runner',");
 const flags=process.argv.slice(2);
-assert(flags.length===0 || (flags.length===2 && flags[0]==='--out'),'Optional --out NEW_DIR');
+const preflight=flags.length===1 && flags[0]==='--check';
+assert(preflight || flags.length===0 || (flags.length===2 && flags[0]==='--out'),'Optional --out NEW_DIR or --check');
 process.argv=process.argv.slice(0,2).concat('--methods','ordinary,restart,repair','--repeats','3','--out',flags[1]||path.join(here,'evidence'));
+if(preflight)process.argv.push('--check');
 try{await import('data:text/javascript;base64,'+Buffer.from(text).toString('base64'));}
 catch(error){console.error(String(error));process.exitCode=1;}
