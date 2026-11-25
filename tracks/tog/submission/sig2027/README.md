@@ -25,6 +25,8 @@
 | [T120–121](../../tasks/t121-lower-band-joint-choice/README.md) | A prospective new edit and cameras on an existing fit | Both real brush treatments miss two nonempty-mass targets. Whole-horizon physical transport halves time versus simulating both, but the same target trajectory permits a simpler baseline. |
 | [T123](../../tasks/t123-whole-horizon-equivalence/README.md) | Single-trajectory query equivalence with either ordinary or regional stepping | In two fresh processes a single regional run takes 414/403 ms, versus 568/577 for a single full run with the identical certificate. |
 
+The independent [Blackbody curtain experiment](../../tasks/t126-external-curtain-runtime/README.md) separately reached the fixed six-second deadline and recorded gas and cloth from 15 selected frames. The final emission measurement timed out on the first lighter. This experiment currently establishes ordinary simulation access and contributes no comparison of edited images or algorithms.
+
 ## Rebuild or verify
 
 The central [editorial evidence bundle](editorial-supplement.zip) contains 912 issued multi-event and direct editing-operation calls, including every T115 process block, native onset ledgers, integer projected weights, per-call profiles and complete progression curves. Extract the archive and run `python verify.py`. It independently reconstructs each threshold and choice, checks branch short-circuiting, and computes paired operating times for four fresh processes per asset. SHA256 `7714901d9bd4992e2f5e5cac222f54ac1842b9a6be4f99281abfce9cdde95c07`, 604,817 bytes. [Packager](pack_editorial_supplement.py) · [Standalone verifier](verify_editorial.py)
