@@ -11,6 +11,37 @@ def read(name):
     raw=(ROOT/name).read_bytes()
     return json.loads(gzip.decompress(raw) if name.endswith(".gz") else raw)
 
+def verify_camera_observations():
+    from math import fsum, isclose
+    data = read("native-camera-contrast.json.gz")
+    assert data["schema"] == "t127-contrast-histogram-v1" and data["cutoff_sum"] == 64
+    assert data["pixel_count"] == 470 * 264
+    arms = ("light", "full")
+    seen, endpoints = set(), {}
+    for pair in data["comparisons"]:
+        key = pair["camera"], pair["horizon"], pair["brush"]
+        assert key not in seen
+        seen.add(key)
+        counts, weights = pair["counts"], pair["shell_weights"]
+        assert len(counts) == len(weights) == 1021
+        assert all(type(n) is int and n >= 0 for n in counts)
+        assert all(w >= 0 for w in weights) and sum(counts) == data["pixel_count"]
+        cut = data["cutoff_sum"]
+        num, den = fsum(weights[cut:]), fsum(weights)
+        ref = pair["reference"]
+        assert sum(counts[cut:]) == ref["changed_pixels"]
+        assert isclose(num, ref["changed_shell_mass"], rel_tol=3e-12, abs_tol=1e-12)
+        assert isclose(den, ref["shell_mass"], rel_tol=3e-12, abs_tol=1e-12)
+        passed = 4 * num >= den
+        assert passed == ref["passes_quarter"]
+        if pair["horizon"] == 90:
+            endpoints[pair["camera"], pair["brush"]] = passed
+    assert seen == {(c,h,b) for c in (0,124) for h in (44,90) for b in arms}
+    choices = {str(c):next((b for b in arms if endpoints[c,b]), "neither") for c in (0,124)}
+    assert choices == data["endpoint_choices"] == {"0":"light", "124":"neither"}
+    print("Verified eight final-image gas comparisons and both camera choices:", choices)
+
+
 def truth(data,arm,camera):
     shot=data["arms"][arm]
     common=set(shot["initial"]) | set(shot["stroke"])
@@ -125,6 +156,7 @@ def main():
     assert len(heldout)==4 and len(one_trace)==2
     print("Held-out transport ratios to full and regional", [[round(x,3) for x in row] for row in heldout])
     print("Retrospective complete-equivalence test times", [[round(x,1) for x in row] for row in one_trace])
+    verify_camera_observations()
     print("Verified",total_calls,"issued calls and all included native progression curves.")
 
 if __name__=="__main__":

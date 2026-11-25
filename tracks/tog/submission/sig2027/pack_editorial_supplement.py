@@ -115,6 +115,7 @@ def main():
                       queries=cap["queries"],curves=curves))
         sessions.append(dict(label=label,dataset=dataset_name+".json.gz",operation=operation,calls=name))
     add("sessions.json",sessions)
+    add("native-camera-contrast.json.gz",read(task("t127")/"evidence/CONTRAST.json.gz"))
     files["verify.py"]=(HERE/"verify_editorial.py").read_bytes().replace(b"\r\n",b"\n")
     files["README.txt"]=("""Exact burn-progression editing queries
 
@@ -130,6 +131,8 @@ and can share one physical evolution across two camera readouts. Equivalence cal
 from a single physical trajectory when its entire observed exterior is certified equal. The original held-out
 physical-precheck session with a clock error in its independent auditing wrapper is excluded. Its failed
 receipt and the corrected native-step audit are preserved separately in the research repository.
+Eight source-image-free histograms record final native RGB contrast against drawing the same wood without gas.
+The verifier reconstructs the fixed display cutoff, target mass and two light-first camera choices from the bins.
 Each session records its own excluded warmup and number of measured rotations on one host. Camera construction and shot loading
 are separate. Full-precision 3D geometry is externally sourced. This bundle verifies event observations and latency
 aggregation, not raster construction, native particle dynamics or independent performance reproduction.
