@@ -16,6 +16,8 @@ VIEWS = ((0,), (0, 124))
 PICKS = {"L": "light", "F": "full"}
 SHELL_DIGEST = {0: "535982ac918ef2ff415e7975dd8f93f0899650b590c9bf5ebdf5ac26f13d7e8a",
                 124: "a97db4ecb791aed0e1b89d016774d5994cb7db337431f77adf5d0365d7689918"}
+# Count and exact lower-left GL bounds from the registered nonzero top-left shell projection.
+SHELL_SUPPORT = {0: (880, 436, 166, 76, 80), 124: (3786, 264, 18, 146, 162)}
 
 
 def check(condition, message):
@@ -126,7 +128,11 @@ def process_result(path, reference, capture):
               "worker": sha(HERE / "run.mjs"), **{f"view_{c}": h for c, h in SHELL_DIGEST.items()}}
     check(all(sources.get(k) == h for k, h in actual.items()), "Changed source or installed view bytes")
     for camera in (0, 124):
-        near(block["calibration"][str(camera)]["total"], reference["light", camera]["shell_mass"], "Installed mass")
+        calibration = block["calibration"][str(camera)]
+        near(calibration["total"], reference["light", camera]["shell_mass"], "Installed mass")
+        roi = calibration["roi_gl"]
+        check((calibration["positive_pixels"], roi["x"], roi["y"], roi["width"], roi["height"])
+              == SHELL_SUPPORT[camera], "GL readback must exactly bound the registered visible shell")
         positive(block["setup_ms"][f"upload_view_{camera}_ms"], "View upload/install time")
     positive(block["setup_ms"]["read_matte_tables_ms"], "Reading the shared map bytes")
     audits = block["audits"]
