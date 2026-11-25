@@ -1,0 +1,298 @@
+{
+  "windows": [
+    {
+      "arm": "AB",
+      "defined": true,
+      "eligible": 2371,
+      "first_frame": 224,
+      "float_frame": 224,
+      "count": 383,
+      "mass": 80522136,
+      "total": 282825750,
+      "target": 70706438,
+      "float_total": 282.82575520250435,
+      "full_deadline_repair_frames": [
+        210,
+        212,
+        290,
+        306,
+        315,
+        317
+      ],
+      "warm_builds": [
+        {
+          "anchor_build_ms": 9,
+          "anchor_bytes": 179143,
+          "method": "ordinary",
+          "rep": 0
+        }
+      ],
+      "view_load_ms": 72.6275999999998,
+      "view_cache": {
+        "bytes": 277496,
+        "records": 4812
+      },
+      "methods": {
+        "ordinary": {
+          "cost": {
+            "delivered_ms": 275.1859000000004,
+            "total_browser_ms": 270.80000019073486,
+            "click_ms": 0.20000004768371582,
+            "shell_index_ms": 1.7000000476837158,
+            "denominator_ms": 0.09999990463256836,
+            "delivery_range_ms": [
+              274.3255999999992,
+              330.53539999999975
+            ],
+            "fork_ms": 0.2999999523162842,
+            "restore_ms": 0,
+            "guard_ms": 0,
+            "repair_ms": 0
+          },
+          "work": {
+            "ordinary_steps": 44,
+            "sliced_steps": 0,
+            "repair_steps": 0,
+            "repairs": 0,
+            "restarts": 0,
+            "log_bytes": 0,
+            "peak_log_bytes": 0,
+            "projected_material_bytes": 0,
+            "logged_samples": 0,
+            "guards": []
+          }
+        },
+        "restart": {
+          "cost": {
+            "delivered_ms": 395.90860000000066,
+            "total_browser_ms": 392.2999999523163,
+            "click_ms": 0.20000004768371582,
+            "shell_index_ms": 2,
+            "denominator_ms": 0.09999990463256836,
+            "delivery_range_ms": [
+              381.02080000000024,
+              407.0485000000008
+            ],
+            "fork_ms": 0.7000000476837158,
+            "restore_ms": 0,
+            "guard_ms": 0.19999980926513672,
+            "repair_ms": 0
+          },
+          "work": {
+            "ordinary_steps": 44,
+            "sliced_steps": 30,
+            "repair_steps": 0,
+            "repairs": 0,
+            "restarts": 1,
+            "log_bytes": 0,
+            "peak_log_bytes": 0,
+            "projected_material_bytes": 173435,
+            "logged_samples": 0,
+            "guards": [
+              [
+                180,
+                30
+              ]
+            ]
+          }
+        },
+        "repair": {
+          "cost": {
+            "delivered_ms": 242.52559999999994,
+            "total_browser_ms": 238.70000004768372,
+            "click_ms": 0.20000004768371582,
+            "shell_index_ms": 1.9000000953674316,
+            "denominator_ms": 0.10000014305114746,
+            "delivery_range_ms": [
+              236.47609999999986,
+              242.88960000000043
+            ],
+            "fork_ms": 0.20000004768371582,
+            "restore_ms": 0,
+            "guard_ms": 0.5999999046325684,
+            "repair_ms": 47.299999952316284
+          },
+          "work": {
+            "ordinary_steps": 1,
+            "sliced_steps": 43,
+            "repair_steps": 32,
+            "repairs": 2,
+            "restarts": 0,
+            "log_bytes": 220160,
+            "peak_log_bytes": 153600,
+            "projected_material_bytes": 520305,
+            "logged_samples": 3325,
+            "guards": [
+              [
+                180,
+                30
+              ],
+              [
+                210,
+                2
+              ],
+              [
+                212,
+                0
+              ],
+              [
+                213,
+                77
+              ]
+            ]
+          }
+        }
+      },
+      "ratios": {
+        "ordinary": 1.0,
+        "restart": 1.438695078490577,
+        "repair": 0.8813155034469411
+      }
+    },
+    {
+      "arm": "BA",
+      "defined": true,
+      "eligible": 2441,
+      "first_frame": 266,
+      "float_frame": 266,
+      "count": 833,
+      "mass": 174351476,
+      "total": 673582824,
+      "target": 168395706,
+      "float_total": 673.5828265000234,
+      "full_deadline_repair_frames": [
+        252,
+        271,
+        297,
+        315,
+        328,
+        334,
+        335
+      ],
+      "warm_builds": [
+        {
+          "anchor_build_ms": 12.299999952316284,
+          "anchor_bytes": 180103,
+          "method": "restart",
+          "rep": 0
+        }
+      ],
+      "view_load_ms": 64.68349999999919,
+      "view_cache": {
+        "bytes": 277496,
+        "records": 4812
+      },
+      "methods": {
+        "ordinary": {
+          "cost": {
+            "delivered_ms": 588.4218999999975,
+            "total_browser_ms": 586.5,
+            "click_ms": 0.09999990463256836,
+            "shell_index_ms": 1.6000001430511475,
+            "denominator_ms": 0,
+            "delivery_range_ms": [
+              587.5064999999995,
+              599.3148000000001
+            ],
+            "fork_ms": 0.2999999523162842,
+            "restore_ms": 0,
+            "guard_ms": 0,
+            "repair_ms": 0
+          },
+          "work": {
+            "ordinary_steps": 86,
+            "sliced_steps": 0,
+            "repair_steps": 0,
+            "repairs": 0,
+            "restarts": 0,
+            "log_bytes": 0,
+            "peak_log_bytes": 0,
+            "projected_material_bytes": 0,
+            "logged_samples": 0,
+            "guards": []
+          }
+        },
+        "restart": {
+          "cost": {
+            "delivered_ms": 981.5528000000013,
+            "total_browser_ms": 979.5,
+            "click_ms": 0.20000004768371582,
+            "shell_index_ms": 1.6000001430511475,
+            "denominator_ms": 0,
+            "delivery_range_ms": [
+              956.3351000000002,
+              988.7392
+            ],
+            "fork_ms": 0.5999999046325684,
+            "restore_ms": 0,
+            "guard_ms": 0.10000014305114746,
+            "repair_ms": 0
+          },
+          "work": {
+            "ordinary_steps": 86,
+            "sliced_steps": 72,
+            "repair_steps": 0,
+            "repairs": 0,
+            "restarts": 1,
+            "log_bytes": 0,
+            "peak_log_bytes": 0,
+            "projected_material_bytes": 173435,
+            "logged_samples": 0,
+            "guards": [
+              [
+                180,
+                72
+              ]
+            ]
+          }
+        },
+        "repair": {
+          "cost": {
+            "delivered_ms": 679.6908000000003,
+            "total_browser_ms": 677.2999999523163,
+            "click_ms": 0.20000004768371582,
+            "shell_index_ms": 1.5,
+            "denominator_ms": 0.09999990463256836,
+            "delivery_range_ms": [
+              669.7227999999996,
+              682.6633000000002
+            ],
+            "fork_ms": 0.20000004768371582,
+            "restore_ms": 0,
+            "guard_ms": 0.20000004768371582,
+            "repair_ms": 155
+          },
+          "work": {
+            "ordinary_steps": 0,
+            "sliced_steps": 86,
+            "repair_steps": 72,
+            "repairs": 1,
+            "restarts": 0,
+            "log_bytes": 440320,
+            "peak_log_bytes": 368640,
+            "projected_material_bytes": 346870,
+            "logged_samples": 8578,
+            "guards": [
+              [
+                180,
+                72
+              ],
+              [
+                252,
+                19
+              ]
+            ]
+          }
+        }
+      },
+      "ratios": {
+        "ordinary": 1.0,
+        "restart": 1.668110585279041,
+        "repair": 1.1551079251129217
+      }
+    }
+  ],
+  "capture_sha256": "4cc0ed698fdd0370dab08d52106fb7bfda9565317b38d10801746a06060c5073",
+  "input_raster_seconds": 0.7846610001288354,
+  "full_worker_ms": 41959.097
+}
