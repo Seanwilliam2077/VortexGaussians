@@ -1,0 +1,190 @@
+{
+  "asset": "dead-tree",
+  "capture_sha256": "223e0f5f3a82ed564d8d677d7e0e533b6ac39c9a746d2e3a3622ab80681ca8c2",
+  "queries": [
+    {
+      "arm": "AB",
+      "first": 230,
+      "state_audit": {
+        "matched_frames": 9,
+        "native_hashes": [
+          "91860d71",
+          "56f9641b",
+          "b13804d7",
+          "a6b7d83f",
+          "ffb313a2",
+          "5d916c7b",
+          "465b326b",
+          "32c20604",
+          "6340dd15"
+        ]
+      },
+      "repair_audit": null,
+      "methods": {
+        "active-anchor": {
+          "delivered_ms": 807.808100000002,
+          "compute_ms": 793.5
+        },
+        "sparse-active": {
+          "delivered_ms": 746.7827500000003,
+          "compute_ms": 733.5,
+          "sparse": {
+            "builds": 1,
+            "bitmap_bytes": 6364,
+            "initial_positive": [
+              8341
+            ],
+            "scans": 50,
+            "visited": 475818,
+            "build_ms": 0.2999999523162842
+          }
+        },
+        "repair-active": {
+          "delivered_ms": 284.8686499999985,
+          "compute_ms": 270.5000001192093
+        },
+        "sparse-repair": {
+          "delivered_ms": 298.16349999999875,
+          "compute_ms": 283.9500000476837,
+          "sparse": {
+            "builds": 0,
+            "bitmap_bytes": 0,
+            "initial_positive": [],
+            "scans": 0,
+            "visited": 0,
+            "build_ms": 0.0
+          }
+        }
+      },
+      "ratios": {
+        "sparse-active/active-anchor": {
+          "estimate": 0.924455634945971,
+          "matched_wave_range": [
+            0.6826373603972588,
+            1.032787939659398
+          ]
+        },
+        "sparse-repair/repair-active": {
+          "estimate": 1.0466701056785304,
+          "matched_wave_range": [
+            0.9786395807444858,
+            1.1939130663736919
+          ]
+        },
+        "repair-active/active-anchor": {
+          "estimate": 0.3526439633373295,
+          "matched_wave_range": [
+            0.25265955268516294,
+            0.4010381372708344
+          ]
+        },
+        "sparse-repair/sparse-active": {
+          "estimate": 0.39926404298974316,
+          "matched_wave_range": [
+            0.3455531988380817,
+            0.4623240127463705
+          ]
+        },
+        "repair-active/sparse-active": {
+          "estimate": 0.38146120809565887,
+          "matched_wave_range": [
+            0.3453737206059921,
+            0.3883063713961381
+          ]
+        }
+      }
+    },
+    {
+      "arm": "BA",
+      "first": 231,
+      "state_audit": {
+        "matched_frames": 9,
+        "native_hashes": [
+          "677d729c",
+          "d221fe68",
+          "9d0750c7",
+          "b515acea",
+          "36e8b2a3",
+          "6573efbd",
+          "7a400ebe",
+          "9c1929ae",
+          "e5980452"
+        ]
+      },
+      "repair_audit": null,
+      "methods": {
+        "active-anchor": {
+          "delivered_ms": 718.4350499999964,
+          "compute_ms": 704.1000000238419
+        },
+        "sparse-active": {
+          "delivered_ms": 708.5446000000011,
+          "compute_ms": 692.6499999761581,
+          "sparse": {
+            "builds": 1,
+            "bitmap_bytes": 6364,
+            "initial_positive": [
+              7637
+            ],
+            "scans": 51,
+            "visited": 451913,
+            "build_ms": 0.25000011920928955
+          }
+        },
+        "repair-active": {
+          "delivered_ms": 395.98239999999714,
+          "compute_ms": 381.299999833107
+        },
+        "sparse-repair": {
+          "delivered_ms": 373.9296000000031,
+          "compute_ms": 359.0500000715256,
+          "sparse": {
+            "builds": 0,
+            "bitmap_bytes": 0,
+            "initial_positive": [],
+            "scans": 0,
+            "visited": 0,
+            "build_ms": 0.0
+          }
+        }
+      },
+      "ratios": {
+        "sparse-active/active-anchor": {
+          "estimate": 0.9862333414829978,
+          "matched_wave_range": [
+            0.9068254372932595,
+            1.0746432034043314
+          ]
+        },
+        "sparse-repair/repair-active": {
+          "estimate": 0.9443086359393897,
+          "matched_wave_range": [
+            0.9272634583424588,
+            1.0721649890638363
+          ]
+        },
+        "repair-active/active-anchor": {
+          "estimate": 0.5511735542412625,
+          "matched_wave_range": [
+            0.4687345505339157,
+            0.6092896723550288
+          ]
+        },
+        "sparse-repair/sparse-active": {
+          "estimate": 0.5277432076964563,
+          "matched_wave_range": [
+            0.4592382169521001,
+            0.5681888321407667
+          ]
+        },
+        "repair-active/sparse-active": {
+          "estimate": 0.5588672893703467,
+          "matched_wave_range": [
+            0.4361769088093843,
+            0.5922275690670338
+          ]
+        }
+      }
+    }
+  ]
+}

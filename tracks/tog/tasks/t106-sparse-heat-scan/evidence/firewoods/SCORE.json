@@ -1,0 +1,200 @@
+{
+  "asset": "firewoods",
+  "capture_sha256": "9b218a2c62f2bda4de321470596fbb4c1ed622c33fd5d45eeecf1d5ba23a51da",
+  "queries": [
+    {
+      "arm": "AB",
+      "first": 216,
+      "state_audit": {
+        "matched_frames": 9,
+        "native_hashes": [
+          "336c8b14",
+          "5019210a",
+          "a4cbf6f1",
+          "d1fcf285",
+          "5ffc6f52",
+          "a5e78514",
+          "e387fa46",
+          "5cf2e98d",
+          "4f6eae28"
+        ]
+      },
+      "repair_audit": {
+        "cut": 210,
+        "length": 2,
+        "status": "matched_expiry_and_continuation",
+        "sample_count": 224,
+        "repair_frame": 212,
+        "repair_hash": "99ed6f0b",
+        "next_hash": "a40fb6c4"
+      },
+      "methods": {
+        "active-anchor": {
+          "delivered_ms": 365.7733999999996,
+          "compute_ms": 357.85000002384186
+        },
+        "sparse-active": {
+          "delivered_ms": 351.6302000000005,
+          "compute_ms": 343.7000000476837,
+          "sparse": {
+            "builds": 1,
+            "bitmap_bytes": 4336,
+            "initial_positive": [
+              4621
+            ],
+            "scans": 36,
+            "visited": 190743,
+            "build_ms": 0.10000002384185791
+          }
+        },
+        "repair-active": {
+          "delivered_ms": 343.34615000000076,
+          "compute_ms": 335.7999999523163
+        },
+        "sparse-repair": {
+          "delivered_ms": 335.88310000000047,
+          "compute_ms": 327.7000000476837,
+          "sparse": {
+            "builds": 1,
+            "bitmap_bytes": 4336,
+            "initial_positive": [
+              4621
+            ],
+            "scans": 33,
+            "visited": 171226,
+            "build_ms": 0.10000014305114746
+          }
+        }
+      },
+      "ratios": {
+        "sparse-active/active-anchor": {
+          "estimate": 0.9613334375873175,
+          "matched_wave_range": [
+            0.8131713471857774,
+            1.3638401988055349
+          ]
+        },
+        "sparse-repair/repair-active": {
+          "estimate": 0.9782637725805277,
+          "matched_wave_range": [
+            0.819312041340354,
+            1.007686078971025
+          ]
+        },
+        "repair-active/active-anchor": {
+          "estimate": 0.9386853992116462,
+          "matched_wave_range": [
+            0.8901457763324886,
+            1.1713963575694601
+          ]
+        },
+        "sparse-repair/sparse-active": {
+          "estimate": 0.9552168727259489,
+          "matched_wave_range": [
+            0.8654971480631793,
+            1.0567865452974436
+          ]
+        },
+        "repair-active/sparse-active": {
+          "estimate": 0.9764410167272329,
+          "matched_wave_range": [
+            0.8588956085877076,
+            1.2236909090843067
+          ]
+        }
+      }
+    },
+    {
+      "arm": "BA",
+      "first": 230,
+      "state_audit": {
+        "matched_frames": 9,
+        "native_hashes": [
+          "f405a609",
+          "3727c637",
+          "54e8bc95",
+          "c01de291",
+          "26e4318f",
+          "b4da6ec6",
+          "e9fb4659",
+          "f170f487",
+          "45b50edd"
+        ]
+      },
+      "repair_audit": null,
+      "methods": {
+        "active-anchor": {
+          "delivered_ms": 504.0219500000021,
+          "compute_ms": 497.85000002384186
+        },
+        "sparse-active": {
+          "delivered_ms": 561.0086499999998,
+          "compute_ms": 552.3000000715256,
+          "sparse": {
+            "builds": 1,
+            "bitmap_bytes": 4336,
+            "initial_positive": [
+              7048
+            ],
+            "scans": 50,
+            "visited": 354445,
+            "build_ms": 0.25
+          }
+        },
+        "repair-active": {
+          "delivered_ms": 392.6053499999998,
+          "compute_ms": 385.39999997615814
+        },
+        "sparse-repair": {
+          "delivered_ms": 391.1354999999985,
+          "compute_ms": 384.7000000476837,
+          "sparse": {
+            "builds": 0,
+            "bitmap_bytes": 0,
+            "initial_positive": [],
+            "scans": 0,
+            "visited": 0,
+            "build_ms": 0.0
+          }
+        }
+      },
+      "ratios": {
+        "sparse-active/active-anchor": {
+          "estimate": 1.1130639250929397,
+          "matched_wave_range": [
+            1.0174036408505398,
+            1.3662096503722525
+          ]
+        },
+        "sparse-repair/repair-active": {
+          "estimate": 0.9962561641098336,
+          "matched_wave_range": [
+            0.8858030971879378,
+            1.2351056557917675
+          ]
+        },
+        "repair-active/active-anchor": {
+          "estimate": 0.7789449447588507,
+          "matched_wave_range": [
+            0.7123415337289021,
+            0.8580478076826517
+          ]
+        },
+        "sparse-repair/sparse-active": {
+          "estimate": 0.6972004798856465,
+          "matched_wave_range": [
+            0.5119928652721483,
+            0.8647669635115816
+          ]
+        },
+        "repair-active/sparse-active": {
+          "estimate": 0.6998204929638785,
+          "matched_wave_range": [
+            0.5332522080081454,
+            0.7672170674553955
+          ]
+        }
+      }
+    }
+  ]
+}
