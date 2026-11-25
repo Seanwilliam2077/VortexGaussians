@@ -1,0 +1,310 @@
+{
+  "summary": {
+    "allHot": {
+      "yes": 0,
+      "no": 1,
+      "abstain": 17
+    },
+    "sampled": {
+      "yes": 3,
+      "no": 3,
+      "abstain": 12
+    }
+  },
+  "queries": [
+    {
+      "arm": "AB",
+      "cut": 210,
+      "horizon": 1,
+      "actual": false,
+      "immediate_ids": [],
+      "decisions": {
+        "allHot": "abstain",
+        "sampled": "no"
+      }
+    },
+    {
+      "arm": "AB",
+      "cut": 210,
+      "horizon": 4,
+      "actual": false,
+      "immediate_ids": [],
+      "decisions": {
+        "allHot": "abstain",
+        "sampled": "abstain"
+      }
+    },
+    {
+      "arm": "AB",
+      "cut": 210,
+      "horizon": 8,
+      "actual": true,
+      "immediate_ids": [],
+      "decisions": {
+        "allHot": "abstain",
+        "sampled": "abstain"
+      }
+    },
+    {
+      "arm": "AB",
+      "cut": 240,
+      "horizon": 1,
+      "actual": false,
+      "immediate_ids": [],
+      "decisions": {
+        "allHot": "no",
+        "sampled": "no"
+      }
+    },
+    {
+      "arm": "AB",
+      "cut": 240,
+      "horizon": 4,
+      "actual": false,
+      "immediate_ids": [],
+      "decisions": {
+        "allHot": "abstain",
+        "sampled": "abstain"
+      }
+    },
+    {
+      "arm": "AB",
+      "cut": 240,
+      "horizon": 8,
+      "actual": false,
+      "immediate_ids": [],
+      "decisions": {
+        "allHot": "abstain",
+        "sampled": "abstain"
+      }
+    },
+    {
+      "arm": "AB",
+      "cut": 300,
+      "horizon": 1,
+      "actual": true,
+      "immediate_ids": [
+        4437,
+        9331,
+        10559,
+        10595,
+        11987,
+        12450,
+        13114,
+        13618,
+        14064,
+        14170,
+        14615,
+        16631,
+        18726,
+        18904,
+        21330,
+        22707,
+        26142,
+        28786,
+        31755,
+        34472
+      ],
+      "decisions": {
+        "allHot": "abstain",
+        "sampled": "yes"
+      }
+    },
+    {
+      "arm": "AB",
+      "cut": 300,
+      "horizon": 4,
+      "actual": true,
+      "immediate_ids": [
+        4437,
+        9331,
+        10559,
+        10595,
+        11987,
+        12450,
+        13114,
+        13618,
+        14064,
+        14170,
+        14615,
+        16631,
+        18726,
+        18904,
+        21330,
+        22707,
+        26142,
+        28786,
+        31755,
+        34472
+      ],
+      "decisions": {
+        "allHot": "abstain",
+        "sampled": "yes"
+      }
+    },
+    {
+      "arm": "AB",
+      "cut": 300,
+      "horizon": 8,
+      "actual": true,
+      "immediate_ids": [
+        4437,
+        9331,
+        10559,
+        10595,
+        11987,
+        12450,
+        13114,
+        13618,
+        14064,
+        14170,
+        14615,
+        16631,
+        18726,
+        18904,
+        21330,
+        22707,
+        26142,
+        28786,
+        31755,
+        34472
+      ],
+      "decisions": {
+        "allHot": "abstain",
+        "sampled": "yes"
+      }
+    },
+    {
+      "arm": "BA",
+      "cut": 210,
+      "horizon": 1,
+      "actual": false,
+      "immediate_ids": [],
+      "decisions": {
+        "allHot": "abstain",
+        "sampled": "no"
+      }
+    },
+    {
+      "arm": "BA",
+      "cut": 210,
+      "horizon": 4,
+      "actual": false,
+      "immediate_ids": [],
+      "decisions": {
+        "allHot": "abstain",
+        "sampled": "abstain"
+      }
+    },
+    {
+      "arm": "BA",
+      "cut": 210,
+      "horizon": 8,
+      "actual": false,
+      "immediate_ids": [],
+      "decisions": {
+        "allHot": "abstain",
+        "sampled": "abstain"
+      }
+    },
+    {
+      "arm": "BA",
+      "cut": 240,
+      "horizon": 1,
+      "actual": true,
+      "immediate_ids": [
+        15515
+      ],
+      "decisions": {
+        "allHot": "abstain",
+        "sampled": "abstain"
+      }
+    },
+    {
+      "arm": "BA",
+      "cut": 240,
+      "horizon": 4,
+      "actual": true,
+      "immediate_ids": [
+        15515
+      ],
+      "decisions": {
+        "allHot": "abstain",
+        "sampled": "abstain"
+      }
+    },
+    {
+      "arm": "BA",
+      "cut": 240,
+      "horizon": 8,
+      "actual": true,
+      "immediate_ids": [
+        15515
+      ],
+      "decisions": {
+        "allHot": "abstain",
+        "sampled": "abstain"
+      }
+    },
+    {
+      "arm": "BA",
+      "cut": 300,
+      "horizon": 1,
+      "actual": true,
+      "immediate_ids": [
+        1631,
+        4926,
+        5924,
+        6167,
+        6224,
+        8886,
+        20923,
+        21895
+      ],
+      "decisions": {
+        "allHot": "abstain",
+        "sampled": "abstain"
+      }
+    },
+    {
+      "arm": "BA",
+      "cut": 300,
+      "horizon": 4,
+      "actual": true,
+      "immediate_ids": [
+        1631,
+        4926,
+        5924,
+        6167,
+        6224,
+        8886,
+        20923,
+        21895
+      ],
+      "decisions": {
+        "allHot": "abstain",
+        "sampled": "abstain"
+      }
+    },
+    {
+      "arm": "BA",
+      "cut": 300,
+      "horizon": 8,
+      "actual": true,
+      "immediate_ids": [
+        1631,
+        4926,
+        5924,
+        6167,
+        6224,
+        8886,
+        20923,
+        21895
+      ],
+      "decisions": {
+        "allHot": "abstain",
+        "sampled": "abstain"
+      }
+    }
+  ]
+}

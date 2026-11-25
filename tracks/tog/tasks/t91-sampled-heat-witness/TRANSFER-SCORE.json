@@ -1,0 +1,430 @@
+{
+  "summary": {
+    "allHot": {
+      "yes": 0,
+      "no": 2,
+      "abstain": 16
+    },
+    "sampled": {
+      "yes": 3,
+      "no": 2,
+      "abstain": 13
+    }
+  },
+  "queries": [
+    {
+      "arm": "AB",
+      "cut": 210,
+      "horizon": 1,
+      "actual": false,
+      "immediate_ids": [],
+      "decisions": {
+        "allHot": "no",
+        "sampled": "no"
+      }
+    },
+    {
+      "arm": "AB",
+      "cut": 210,
+      "horizon": 4,
+      "actual": false,
+      "immediate_ids": [],
+      "decisions": {
+        "allHot": "abstain",
+        "sampled": "abstain"
+      }
+    },
+    {
+      "arm": "AB",
+      "cut": 210,
+      "horizon": 8,
+      "actual": false,
+      "immediate_ids": [],
+      "decisions": {
+        "allHot": "abstain",
+        "sampled": "abstain"
+      }
+    },
+    {
+      "arm": "AB",
+      "cut": 240,
+      "horizon": 1,
+      "actual": false,
+      "immediate_ids": [],
+      "decisions": {
+        "allHot": "abstain",
+        "sampled": "abstain"
+      }
+    },
+    {
+      "arm": "AB",
+      "cut": 240,
+      "horizon": 4,
+      "actual": true,
+      "immediate_ids": [],
+      "decisions": {
+        "allHot": "abstain",
+        "sampled": "abstain"
+      }
+    },
+    {
+      "arm": "AB",
+      "cut": 240,
+      "horizon": 8,
+      "actual": true,
+      "immediate_ids": [],
+      "decisions": {
+        "allHot": "abstain",
+        "sampled": "abstain"
+      }
+    },
+    {
+      "arm": "AB",
+      "cut": 300,
+      "horizon": 1,
+      "actual": true,
+      "immediate_ids": [
+        1679,
+        1946,
+        2107,
+        2148,
+        2627,
+        19491,
+        48397,
+        50279
+      ],
+      "decisions": {
+        "allHot": "abstain",
+        "sampled": "abstain"
+      }
+    },
+    {
+      "arm": "AB",
+      "cut": 300,
+      "horizon": 4,
+      "actual": true,
+      "immediate_ids": [
+        1679,
+        1946,
+        2107,
+        2148,
+        2627,
+        19491,
+        48397,
+        50279
+      ],
+      "decisions": {
+        "allHot": "abstain",
+        "sampled": "abstain"
+      }
+    },
+    {
+      "arm": "AB",
+      "cut": 300,
+      "horizon": 8,
+      "actual": true,
+      "immediate_ids": [
+        1679,
+        1946,
+        2107,
+        2148,
+        2627,
+        19491,
+        48397,
+        50279
+      ],
+      "decisions": {
+        "allHot": "abstain",
+        "sampled": "abstain"
+      }
+    },
+    {
+      "arm": "BA",
+      "cut": 210,
+      "horizon": 1,
+      "actual": false,
+      "immediate_ids": [],
+      "decisions": {
+        "allHot": "no",
+        "sampled": "no"
+      }
+    },
+    {
+      "arm": "BA",
+      "cut": 210,
+      "horizon": 4,
+      "actual": false,
+      "immediate_ids": [],
+      "decisions": {
+        "allHot": "abstain",
+        "sampled": "abstain"
+      }
+    },
+    {
+      "arm": "BA",
+      "cut": 210,
+      "horizon": 8,
+      "actual": false,
+      "immediate_ids": [],
+      "decisions": {
+        "allHot": "abstain",
+        "sampled": "abstain"
+      }
+    },
+    {
+      "arm": "BA",
+      "cut": 240,
+      "horizon": 1,
+      "actual": true,
+      "immediate_ids": [
+        11160,
+        34831,
+        35541,
+        47033
+      ],
+      "decisions": {
+        "allHot": "abstain",
+        "sampled": "abstain"
+      }
+    },
+    {
+      "arm": "BA",
+      "cut": 240,
+      "horizon": 4,
+      "actual": true,
+      "immediate_ids": [
+        11160,
+        34831,
+        35541,
+        47033
+      ],
+      "decisions": {
+        "allHot": "abstain",
+        "sampled": "abstain"
+      }
+    },
+    {
+      "arm": "BA",
+      "cut": 240,
+      "horizon": 8,
+      "actual": true,
+      "immediate_ids": [
+        11160,
+        34831,
+        35541,
+        47033
+      ],
+      "decisions": {
+        "allHot": "abstain",
+        "sampled": "abstain"
+      }
+    },
+    {
+      "arm": "BA",
+      "cut": 300,
+      "horizon": 1,
+      "actual": true,
+      "immediate_ids": [
+        8486,
+        8489,
+        9654,
+        9770,
+        10320,
+        10556,
+        10557,
+        10658,
+        10924,
+        11047,
+        11282,
+        11544,
+        14873,
+        15015,
+        18277,
+        22665,
+        22789,
+        22808,
+        22813,
+        22818,
+        22833,
+        31412,
+        32545,
+        32651,
+        32661,
+        32849,
+        33490,
+        33538,
+        33968,
+        33972,
+        34145,
+        34239,
+        34654,
+        35510,
+        35533,
+        35602,
+        36144,
+        38065,
+        38070,
+        38071,
+        38182,
+        38304,
+        40705,
+        41972,
+        42076,
+        42149,
+        42200,
+        42258,
+        42958,
+        43056,
+        43849,
+        45675,
+        45914,
+        46042,
+        48033,
+        48363,
+        48855
+      ],
+      "decisions": {
+        "allHot": "abstain",
+        "sampled": "yes"
+      }
+    },
+    {
+      "arm": "BA",
+      "cut": 300,
+      "horizon": 4,
+      "actual": true,
+      "immediate_ids": [
+        8486,
+        8489,
+        9654,
+        9770,
+        10320,
+        10556,
+        10557,
+        10658,
+        10924,
+        11047,
+        11282,
+        11544,
+        14873,
+        15015,
+        18277,
+        22665,
+        22789,
+        22808,
+        22813,
+        22818,
+        22833,
+        31412,
+        32545,
+        32651,
+        32661,
+        32849,
+        33490,
+        33538,
+        33968,
+        33972,
+        34145,
+        34239,
+        34654,
+        35510,
+        35533,
+        35602,
+        36144,
+        38065,
+        38070,
+        38071,
+        38182,
+        38304,
+        40705,
+        41972,
+        42076,
+        42149,
+        42200,
+        42258,
+        42958,
+        43056,
+        43849,
+        45675,
+        45914,
+        46042,
+        48033,
+        48363,
+        48855
+      ],
+      "decisions": {
+        "allHot": "abstain",
+        "sampled": "yes"
+      }
+    },
+    {
+      "arm": "BA",
+      "cut": 300,
+      "horizon": 8,
+      "actual": true,
+      "immediate_ids": [
+        8486,
+        8489,
+        9654,
+        9770,
+        10320,
+        10556,
+        10557,
+        10658,
+        10924,
+        11047,
+        11282,
+        11544,
+        14873,
+        15015,
+        18277,
+        22665,
+        22789,
+        22808,
+        22813,
+        22818,
+        22833,
+        31412,
+        32545,
+        32651,
+        32661,
+        32849,
+        33490,
+        33538,
+        33968,
+        33972,
+        34145,
+        34239,
+        34654,
+        35510,
+        35533,
+        35602,
+        36144,
+        38065,
+        38070,
+        38071,
+        38182,
+        38304,
+        40705,
+        41972,
+        42076,
+        42149,
+        42200,
+        42258,
+        42958,
+        43056,
+        43849,
+        45675,
+        45914,
+        46042,
+        48033,
+        48363,
+        48855
+      ],
+      "decisions": {
+        "allHot": "abstain",
+        "sampled": "yes"
+      }
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "identities": {
+    "demo": "e9d808c434bdd8ce91482f60502f03f5d08c56b71c082eb704c53275ff9f57d0",
+    "estimate": "38fb97f0fe2e5b8a8f9a051343f197393f24e4d5dd9999b2f43edeff643b2d41",
+    "recipe": "09536b8ecd2b35483a49fd49e3d5b68951a148ce464b3e8f27a71c8819d0aefa",
+    "ply": "e99f4787f4e3d34836cfd80a2841914b6f951c488e5cd0d3b9006aed390a0f9c",
+    "AB-210.json.gz": "b4b2123ceb3e6b6f8df09419fbb38865828ba2ca988ef8356f3c3eeddbe73a14",
+    "AB-240.json.gz": "a2a696cba50c26a5cfdb22c7e649b80a54ddd4febed23a15a32fdcf725308423",
+    "AB-300.json.gz": "666ea28a9db2fc8fdc52d17d318da7d77122b1dd0db1cc2bb67894ebab7ad2f1",
+    "BA-210.json.gz": "7836309b2772d3f741d68bb0e12488db6d13c0e9d02fb8cf50ea986fa6e643bb",
+    "BA-240.json.gz": "aef0fd6f0e40a4bc158258a004475ab5eee76aa22c17f47ea19beadb52d85af2",
+    "BA-300.json.gz": "3b3cb6de5a411e3ccb9940e122d1703b85d379802000e59527780ff9cd09a5e9"
+  },
+  "rows": [
+    {
+      "arm": "AB",
+      "cut": 210,
+      "shell_n": 5697,
+      "methods": {
+        "allHot": {
+          "decision": "no",
+          "witness": null
+        },
+        "sampled": {
+          "decision": "no",
+          "witness": null
+        }
+      }
+    },
+    {
+      "arm": "AB",
+      "cut": 240,
+      "shell_n": 5697,
+      "methods": {
+        "allHot": {
+          "decision": "abstain",
+          "witness": null
+        },
+        "sampled": {
+          "decision": "abstain",
+          "witness": null
+        }
+      }
+    },
+    {
+      "arm": "AB",
+      "cut": 300,
+      "shell_n": 5697,
+      "methods": {
+        "allHot": {
+          "decision": "abstain",
+          "witness": null
+        },
+        "sampled": {
+          "decision": "abstain",
+          "witness": null
+        }
+      }
+    },
+    {
+      "arm": "BA",
+      "cut": 210,
+      "shell_n": 6979,
+      "methods": {
+        "allHot": {
+          "decision": "no",
+          "witness": null
+        },
+        "sampled": {
+          "decision": "no",
+          "witness": null
+        }
+      }
+    },
+    {
+      "arm": "BA",
+      "cut": 240,
+      "shell_n": 6979,
+      "methods": {
+        "allHot": {
+          "decision": "abstain",
+          "witness": null
+        },
+        "sampled": {
+          "decision": "abstain",
+          "witness": null
+        }
+      }
+    },
+    {
+      "arm": "BA",
+      "cut": 300,
+      "shell_n": 6979,
+      "methods": {
+        "allHot": {
+          "decision": "abstain",
+          "witness": null
+        },
+        "sampled": {
+          "decision": "yes",
+          "witness": 9654
+        }
+      }
+    }
+  ]
+}

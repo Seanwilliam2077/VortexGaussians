@@ -8,17 +8,21 @@ import {gunzipSync} from 'node:zlib';
 
 const here=path.dirname(fileURLToPath(import.meta.url)), root=path.resolve(here,'../../../..');
 const t86=path.join(here,'../t86-ignition-margin');
+const transfer=process.argv.includes('--transfer');
+const t92=path.join(here,'../t92-transfer-workload');
+const evidence=transfer?path.join(t92,'evidence'):t86;
+const prefix=transfer?'TRANSFER-':'';
 const sha=b=>createHash('sha256').update(b).digest('hex');
 const start=performance.now(), identities={};
 const bytes=(file,name)=>{const b=readFileSync(file); identities[name]=sha(b);return b;};
 const demo=bytes(path.join(root,'demo/index.html'),'demo').toString();
 const plugin=bytes(path.join(here,'estimate.js'),'estimate').toString();
-const cfg=JSON.parse(bytes(path.join(here,'../t42-firewoods-sequential-workflow/recipe.json'),'recipe'));
-const capture=JSON.parse(readFileSync(path.join(t86,'public/capture-report.json')));
+const cfg=JSON.parse(bytes(transfer?path.join(t92,'recipe.json'):path.join(here,'../t42-firewoods-sequential-workflow/recipe.json'),'recipe'));
+const capture=JSON.parse(readFileSync(path.join(evidence,transfer?'capture-report.json':'public/capture-report.json')));
 assert.equal(identities.demo,capture.sources.demo.sha256);
 assert.equal(identities.recipe,capture.sources.recipe.sha256);
-const ply=bytes(process.env.T86_PLY || path.resolve(root,'../real-asset-ingest/foreground.ply'),'ply');
-assert.equal(identities.ply,capture.sources.Firewoods_foreground.sha256);
+const ply=bytes(transfer?path.join(t92,'local/scene.ply'):(process.env.T86_PLY || path.resolve(root,'../real-asset-ingest/foreground.ply')),'ply');
+assert.equal(identities.ply,(capture.sources.Firewoods_foreground || capture.sources.asset).sha256);
 const terminator=Buffer.from('end_header\n'), offset=ply.indexOf(terminator)+terminator.length;
 const header=ply.toString('ascii',0,offset).trimEnd().split(/\r?\n/);
 const fields=header.filter(x=>x.startsWith('property ')).map(x=>x.split(' '));
@@ -53,8 +57,8 @@ const cutRows=[];
 for(const arm of ['AB','BA']) for(const cut of [210,240,300]){
   const cutStart=performance.now();
   const file=arm+'-'+cut+'.json.gz';
-  const raw=bytes(path.join(t86,'checkpoints',file),file);
-  const rec=capture.files.find(x=>x.name===file); assert.equal(sha(raw),rec.sha256);
+  const raw=bytes(path.join(evidence,'checkpoints',file),file);
+  const rec=capture.files.find(x=>path.basename(x.name)===file); assert.equal(sha(raw),rec.sha256);
   const snapshot=JSON.parse(gunzipSync(raw));
   const pred=factory(scene,{center:snapshot.scene_center},snapshot.params,
     {h:snapshot.heat,state:snapshot.state,fuel:snapshot.fuel},
@@ -66,9 +70,9 @@ for(const arm of ['AB','BA']) for(const cut of [210,240,300]){
   }
   cutRows.push(row);
 }
-writeFileSync(path.join(here,'PREDICTIONS.json'),JSON.stringify({identities,rows:cutRows.map(r=>({
+writeFileSync(path.join(here,prefix+'PREDICTIONS.json'),JSON.stringify({identities,rows:cutRows.map(r=>({
   arm:r.arm,cut:r.cut,shell_n:r.shell_n,methods:Object.fromEntries(Object.entries(r.methods).map(([k,v])=>[k,v.answer]))}))},null,2)+'\n');
-writeFileSync(path.join(here,'COSTS.json'),JSON.stringify({node:process.version,preparation_ms,
+writeFileSync(path.join(here,prefix+'COSTS.json'),JSON.stringify({node:process.version,preparation_ms,
   rows:cutRows.map(r=>({arm:r.arm,cut:r.cut,decode_setup_ms:r.decode_setup_ms,
     methods_ms:Object.fromEntries(Object.entries(r.methods).map(([k,v])=>[k,v.wall_ms]))})),
   total_ms:performance.now()-start},null,2)+'\n');
