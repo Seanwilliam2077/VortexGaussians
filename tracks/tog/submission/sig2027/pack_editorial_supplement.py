@@ -116,6 +116,27 @@ def main():
         sessions.append(dict(label=label,dataset=dataset_name+".json.gz",operation=operation,calls=name))
     add("sessions.json",sessions)
     add("native-camera-contrast.json.gz",read(task("t127")/"evidence/CONTRAST.json.gz"))
+    direct=task("t129")/"evidence"
+    native_camera=read(task("t127")/"evidence/CAPTURE.json")
+    scored=read(direct/"SCORE.json")
+    setup=read(direct/"common_setup.json")
+    assert scored["issued"]==56 and scored["measured"]==48 and scored["warmups"]==8
+    processes=[]
+    for index,summary in enumerate(scored["processes"],1):
+        raw=direct/f"process-{index}.json"
+        cap=read(raw)
+        assert cap["status"]=="validated" and not cap["errors"] and cap["process"]==index
+        assert hashlib.sha256(raw.read_bytes()).hexdigest()==summary["sha256"]
+        process={k:cap[k] for k in ("process","runtime","setup_ms","calibration","audits","trials","wall_ms","common_parent")}
+        process["installed_map_sha256"]={str(c):cap["sources"][f"view_{c}"] for c in (0,124)}
+        process["record_sha256"]=summary["sha256"]
+        # Keep an independent index of the originally verified timings, without host paths or process IDs.
+        process["verified_timings"]=[{k:q[k] for k in ("cameras","first_call_ms","measured_ms")} for q in summary["queries"]]
+        processes.append(process)
+    add("t129-native-image-choice.json.gz",dict(schema="native-image-delivery-v1",processes=processes,
+        projection_host_ms=setup["projection_host_ms"],projection_inner_ms=setup["weights"]["cold_prepare_ms"],
+        mapped_views=setup["weights"]["views"],parent=native_camera["arms"]["AL"]["fork"]["pre"],
+        endpoints={arm[-1]:shot["frames"]["270"] for arm,shot in native_camera["arms"].items()}))
     files["verify.py"]=(HERE/"verify_editorial.py").read_bytes().replace(b"\r\n",b"\n")
     files["README.txt"]=("""Exact burn-progression editing queries
 
@@ -133,6 +154,10 @@ physical-precheck session with a clock error in its independent auditing wrapper
 receipt and the corrected native-step audit are preserved separately in the research repository.
 Eight source-image-free histograms record final native RGB contrast against drawing the same wood without gas.
 The verifier reconstructs the fixed display cutoff, target mass and two light-first camera choices from the bins.
+The T129 record, t129-native-image-choice.json.gz, contains 56 delivered native image decisions (48 measured and
+8 warmups). Its two processes report each method's per-action and phase times, short-circuited views, cold setup,
+the independent endpoint and PNG audit, and the original timing index. These calls reuse the known woodpile and the
+same comparison from the eight paired display observations. The 912 material decisions use material onset records.
 Each session records its own excluded warmup and number of measured rotations on one host. Camera construction and shot loading
 are separate. Full-precision 3D geometry is externally sourced. This bundle verifies event observations and latency
 aggregation, not raster construction, native particle dynamics or independent performance reproduction.

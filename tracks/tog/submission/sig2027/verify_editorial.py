@@ -2,6 +2,7 @@
 import gzip
 import hashlib
 import json
+import math
 from pathlib import Path
 from statistics import median
 
@@ -17,7 +18,7 @@ def verify_camera_observations():
     assert data["schema"] == "t127-contrast-histogram-v1" and data["cutoff_sum"] == 64
     assert data["pixel_count"] == 470 * 264
     arms = ("light", "full")
-    seen, endpoints = set(), {}
+    seen, endpoints, references = set(), {}, {}
     for pair in data["comparisons"]:
         key = pair["camera"], pair["horizon"], pair["brush"]
         assert key not in seen
@@ -36,10 +37,84 @@ def verify_camera_observations():
         assert passed == ref["passes_quarter"]
         if pair["horizon"] == 90:
             endpoints[pair["camera"], pair["brush"]] = passed
+            stem = f"{pair['brush']}-c{pair['camera']}-h90-"
+            references[pair["camera"], pair["brush"]] = dict(mass=num, total=den, passed=passed,
+                png={mode:pair["sha256"][stem + mode + ".png"] for mode in ("full","wood")})
     assert seen == {(c,h,b) for c in (0,124) for h in (44,90) for b in arms}
     choices = {str(c):next((b for b in arms if endpoints[c,b]), "neither") for c in (0,124)}
     assert choices == data["endpoint_choices"] == {"0":"light", "124":"neither"}
     print("Verified eight final-image gas comparisons and both camera choices:", choices)
+    return references
+
+
+def verify_image_delivery(references):
+    data=read("t129-native-image-choice.json.gz")
+    assert data["schema"]=="native-image-delivery-v1" and len(data["processes"])==2
+    assert 0<data["projection_inner_ms"]<=data["projection_host_ms"]
+    original=read("geometry-a-prospective.json.gz")
+    assert data["parent"]["hash"]==original["arms"]["AL"]["parent"]==original["arms"]["AF"]["parent"]
+    assert set(data["endpoints"])=={"L","F"}
+    print("Shared cold projection for both cameras (ms)",round(data["projection_host_ms"],2))
+    methods=["ordinary","sibling"]
+    scopes=[[0],[0,124]]
+    def verify_row(row,audit):
+        method=row["method"];cams=row["cameras"]
+        assert method in methods and cams in scopes and 0<row["browser_ms"]<=row["delivered_ms"]+2
+        phases=row["phases_ms"]
+        assert set(phases)=={"fork_restore_ms","pick_ms","guard_ms","physics_ms","transport_ms","render_read_ms","score_ms"}
+        assert all(math.isfinite(t) and t>=0 for t in phases.values())
+        assert phases["physics_ms"]>0 and phases["render_read_ms"]>0
+        missed=[c for c in cams if not references[c,"light"]["passed"]]
+        choices={str(c):("L" if c not in missed else "F" if references[c,"full"]["passed"] else "none") for c in cams}
+        assert row["choices"]==choices
+        expected=["L","F"] if audit or missed else ["L"]
+        shared=24 if method=="sibling" else 0
+        assert row["shared_steps"]==shared and row["reused_steps"]==(shared if "F" in expected else 0)
+        assert [s["pick"] for s in row["strokes"]]==expected
+        for stroke in row["strokes"]:
+            pick=stroke["pick"]
+            assert stroke["clicked"]==len(original["arms"]["A"+pick]["stroke"])
+            assert stroke["steps"]==(90-shared if pick=="F" else 90)
+            assert [v["camera"] for v in stroke["views"]]==(cams if pick=="L" or audit else missed)
+            if audit: assert stroke["state"]==data["endpoints"][pick]
+            for v in stroke["views"]:
+                ref=references[v["camera"],"light" if pick=="L" else "full"]
+                assert v["passes_quarter"] is ref["passed"]
+                for key,want in (("shell_mass",ref["total"]),("changed_shell_mass",ref["mass"]),("fraction",ref["mass"]/ref["total"])):
+                    assert math.isclose(v[key],want,rel_tol=3e-12,abs_tol=1e-9)
+                if audit: assert v["png_sha256"]==ref["png"]
+    total=0
+    for index,block in enumerate(data["processes"],1):
+        assert block["process"]==index and block["common_parent"]==data["parent"]
+        for c in (0,124):
+            view=data["mapped_views"][str(c)]
+            assert (view["rows"],view["columns"],view["bytes"])==(264,470,992640)
+            assert block["installed_map_sha256"][str(c)]==view["sha256"]
+            assert math.isclose(block["calibration"][str(c)]["total"],references[c,"light"]["total"],rel_tol=3e-12)
+        assert [a["method"] for a in block["audits"]]==methods
+        for a in block["audits"]:
+            assert a["cameras"]==[0,124] and a["rep"]==-1
+            verify_row(a,True)
+        assert len(block["trials"])==28
+        scope_order=scopes if index==1 else list(reversed(scopes))
+        for slot,cams in enumerate(scope_order):
+            times={m:[] for m in methods}
+            for rep in range(7):
+                order=methods if (rep+index-1+slot)%2==0 else methods[::-1]
+                for j,m in enumerate(order):
+                    row=block["trials"][14*slot+2*rep+j]
+                    assert row["method"]==m and row["cameras"]==cams and row["rep"]==rep
+                    verify_row(row,False)
+                    times[m].append(row["delivered_ms"])
+                    total+=1
+            published=next(q for q in block["verified_timings"] if q["cameras"]==cams)
+            for m in methods:
+                assert times[m]==[published["first_call_ms"][m]]+published["measured_ms"][m]
+            medians={m:round(median(times[m][1:]),2) for m in methods}
+            wins=sum(s<o for o,s in zip(times["ordinary"][1:],times["sibling"][1:]))
+            print("T129 native image choice, process",index,"cameras",cams,"median ms",medians,"paired sibling wins",wins,"/ 6")
+    assert total==56
+    return total
 
 
 def truth(data,arm,camera):
@@ -156,8 +231,10 @@ def main():
     assert len(heldout)==4 and len(one_trace)==2
     print("Held-out transport ratios to full and regional", [[round(x,3) for x in row] for row in heldout])
     print("Retrospective complete-equivalence test times", [[round(x,1) for x in row] for row in one_trace])
-    verify_camera_observations()
-    print("Verified",total_calls,"issued calls and all included native progression curves.")
+    assert total_calls==912
+    direct_calls=verify_image_delivery(verify_camera_observations())
+    print("Verified",total_calls,"material calls and all included native progression curves,",
+          direct_calls,"direct image calls (48 measured and 8 warmups), and 8 paired display observations.")
 
 if __name__=="__main__":
     main()
