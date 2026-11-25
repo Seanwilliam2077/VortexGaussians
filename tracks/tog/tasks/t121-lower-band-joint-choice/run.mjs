@@ -23,7 +23,8 @@ if(args.length===0) {
     if(status!==0)throw Error('Failed process block '+round);
   }
 } else {
-  assert(['--block','--stage'].includes(args[0]) && /^[1-4]$/.test(args[1]) && args.length===2);
+  assert(['--block','--stage','--verify'].includes(args[0]) && /^[1-4]$/.test(args[1]) && args.length===2);
+  const verifying=args[0]==='--verify';
   const round=Number(args[1]), local=path.join(here,'local','block-'+round);
   await fs.mkdir(local,{recursive:true});
   const plugin=await build(path.join(here,'../t119-cross-sibling-actions'),local);
@@ -45,8 +46,8 @@ if(args.length===0) {
   change('const here=path.dirname(fileURLToPath(import.meta.url)),prior=', 'const here='+JSON.stringify(here)+',prior=');
   change(",local=path.join(here,'local');",",local="+JSON.stringify(local)+";");
   change("const specs=['ordinary','restart','repair'];","const specs=['"+methods.join("','")+"'];");
-  change("'ordinary,restart,repair','--repeats','3'",JSON.stringify(orders[round-1].join(','))+",'--repeats','6'");
-  change("schema:'t111-end-to-end-editorial-choice-v1'","schema:'t121-new-lower-band-playground-v1'");
+  change("'ordinary,restart,repair','--repeats','3'",JSON.stringify(orders[round-1].join(','))+",'--repeats','"+(verifying?1:6)+"'");
+  change("schema:'t111-end-to-end-editorial-choice-v1'",verifying?"schema:'t121-physical-precheck-v1'":"schema:'t121-new-lower-band-playground-v1'");
   change('for(const camera of [0,153])','for(const camera of [76,230])');
   change("await fs.readFile(path.join(here,'worker.txt'),'utf8')",JSON.stringify(block));
   change("path.join(here,'TIMING_PROTOCOL.md')",JSON.stringify(path.join(here,'PROTOCOL.md')));
@@ -56,8 +57,9 @@ if(args.length===0) {
   change('JSON.stringify(portable(fileURLToPath(import.meta.url)))','JSON.stringify('+JSON.stringify(self.split(path.sep).join('/'))+')');
   const dest=path.join(local,'run.mjs');await fs.writeFile(dest,main);
   console.log('T121',round,orders[round-1].join(','),sha(block),sha(await fs.readFile(plugin)));
-  if(args[0]==='--block'){
-    process.argv=process.argv.slice(0,2).concat('--out',path.join(here,'evidence','corrected','block-'+round));
+  if(args[0]==='--block'||verifying){
+    const destination=verifying?path.join(here,'evidence','physical-precheck'):path.join(here,'evidence','corrected','block-'+round);
+    process.argv=process.argv.slice(0,2).concat('--out',destination);
     await import(pathToFileURL(dest));
   }
 }
