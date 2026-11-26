@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src 'unsafe-inline'; script-src 'unsafe-inline'; base-uri 'none'; form-action 'none'">
+<title>镜头编辑简报</title>
+<style>
+* { box-sizing: border-box; }
+body { margin: 0; background: #f6f5ef; color: #172c29; font: 1rem/1.65 system-ui, "Microsoft YaHei", sans-serif; }
+main { max-width: 45rem; margin: 0 auto; padding: 2.4rem 1.25rem 4rem; }
+h1 { margin: 0 0 .7rem; font-size: clamp(2rem, 6vw, 3rem); letter-spacing: -.04em; }
+h2 { margin: 1.7rem 0 .6rem; font-size: 1.25rem; }
+p { margin: .5rem 0 1rem; }
+label { display: block; margin: 1rem 0 .25rem; font-weight: 600; }
+fieldset { margin: 1.3rem 0 0; padding: 0; border: 0; }
+legend { font-weight: 700; }
+.choice { display: inline-flex; align-items: center; gap: .4rem; margin: .45rem 1.2rem .2rem 0; font-weight: 500; }
+select, textarea { display: block; width: 100%; border: 1px solid #899a90; background: #fff; color: inherit; border-radius: .35rem; padding: .55rem .7rem; font: inherit; }
+textarea { min-height: 4.5rem; resize: vertical; }
+input { accent-color: #126355; }
+button { margin: 1rem 0 .3rem; border: 0; border-radius: .35rem; padding: .65rem 1.2rem; background: #126355; color: white; font: inherit; font-weight: 650; cursor: pointer; }
+:focus-visible { outline: 3px solid #b46b16; outline-offset: 3px; }
+.hint { color: #4c6258; font-size: .94rem; }
+#status { min-height: 1.6rem; }
+[hidden] { display: none; }
+</style>
+</head>
+<body>
+<main>
+<h1>镜头编辑简报</h1>
+<p>请用自己的话描述一个值得比较不同版本的特效镜头。请在观看候选版本之前填写。可以参考随附的初始取景图，也可以描述自己熟悉的镜头。</p>
+<p class="hint">无需提供姓名、单位或未公开的项目名称。下载后可自行决定是否把文件交给研究联系人。此页离线运行，关闭后不会保留草稿。</p>
+<form id="brief" autocomplete="off">
+  <fieldset>
+    <legend>这次是否愿意提供一个镜头？</legend>
+    <label class="choice"><input type="radio" name="response" value="brief" required> 提供简报</label>
+    <label class="choice"><input type="radio" name="response" value="declined"> 这次跳过</label>
+  </fieldset>
+  <fieldset id="details" hidden disabled>
+    <legend>镜头与决定</legend>
+    <label for="intent">这是个什么镜头？这次编辑要解决哪个具体问题？</label>
+    <textarea id="intent" name="intent" required></textarea>
+    <label for="target">你会关注哪里？有哪些值得比较的编辑或版本？</label>
+    <textarea id="target" name="target" required></textarea>
+    <label for="view_time">从哪个机位、在什么时刻或时间段判断？</label>
+    <textarea id="view_time" name="view_time" required></textarea>
+    <label for="acceptance">看到什么，你会愿意保留一个版本？</label>
+    <textarea id="acceptance" name="acceptance" required></textarea>
+    <label for="tie_none">如果多个版本都符合，或者全都不符合，你会怎样选？</label>
+    <textarea id="tie_none" name="tie_none" required></textarea>
+    <label for="next_action">选完需要拿到什么？下一步准备怎样使用或继续播放它？</label>
+    <textarea id="next_action" name="next_action" required></textarea>
+    <h2>填写情况</h2>
+    <label for="role">你与这次研究的关系</label>
+    <select id="role" name="role" required>
+      <option value="">请选择</option>
+      <option value="independent_fx">我有特效动画创作经验，且未参与这项方法的开发</option>
+      <option value="involved">我参与了这项方法的开发</option>
+      <option value="other_or_unsure">其他或不确定</option>
+    </select>
+    <label for="exposure">填写前，你看过这个镜头所提候选版本的模拟或渲染结果吗？</label>
+    <select id="exposure" name="exposure" required>
+      <option value="">请选择</option>
+      <option value="unseen">没有看过</option>
+      <option value="seen">已经看过</option>
+      <option value="unsure">不确定</option>
+    </select>
+    <label class="choice"><input type="checkbox" id="endorsed" name="endorsed" required> 我已核对这些文字，它们表达了我自己的创作意图。</label>
+  </fieldset>
+  <button type="submit" id="download">下载本地回复</button>
+  <p id="status" class="hint" role="status" aria-live="polite"></p>
+</form>
+<noscript>导出本地 JSON 需要启用浏览器的 JavaScript。也可以另存或抄下这些问题，以文字回复。</noscript>
+</main>
+<script>
+"use strict";
+const form = document.getElementById("brief");
+const details = document.getElementById("details");
+const status = document.getElementById("status");
+const prose = ["intent", "target", "view_time", "acceptance", "tie_none", "next_action"];
+function selectResponse() {
+  const active = form.elements.response.value === "brief";
+  details.hidden = !active;
+  details.disabled = !active;
+  status.textContent = form.elements.response.value === "declined" ? "下载的文件只记录本次跳过。" : "";
+}
+form.addEventListener("change", event => {
+  if (event.target.name === "response") selectResponse();
+});
+form.addEventListener("input", event => {
+  if (prose.includes(event.target.name)) event.target.setCustomValidity("");
+});
+form.addEventListener("submit", event => {
+  event.preventDefault();
+  const output = {schema: "fx-brief-v1", response: form.elements.response.value};
+  if (output.response === "brief") {
+    output.brief = {};
+    for (const key of prose) {
+      const field = form.elements[key];
+      if (!field.value.trim()) {
+        field.setCustomValidity("请写下你的判断，也可以说明目前尚未确定。");
+        field.reportValidity();
+        return;
+      }
+      output.brief[key] = field.value;
+    }
+    output.role = form.elements.role.value;
+    output.exposure = form.elements.exposure.value;
+    output.endorsed = form.elements.endorsed.checked;
+  }
+  const bytes = new Blob([JSON.stringify(output, null, 2) + "\n"], {type: "application/json;charset=utf-8"});
+  const url = URL.createObjectURL(bytes);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "镜头简报.json";
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  window.setTimeout(() => URL.revokeObjectURL(url), 30000);
+  status.textContent = "已生成本地下载文件。可以先打开核对，再决定是否分享。";
+});
+selectResponse();
+</script>
+</body>
+</html>
