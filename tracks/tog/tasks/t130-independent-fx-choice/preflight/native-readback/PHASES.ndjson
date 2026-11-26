@@ -1,0 +1,136 @@
+{"phase": "adapter", "event": "start", "elapsed_s": 3.8000289350748062e-06}
+{"phase": "adapter", "event": "returned", "elapsed_s": 3.2598310001194477}
+{"phase": "open_native_device", "event": "start", "elapsed_s": 3.3290125001221895}
+{"phase": "open_native_device", "event": "returned", "elapsed_s": 4.181846400024369}
+{"phase": "construct_engine", "event": "start", "elapsed_s": 4.183624000055715}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 4.380888000130653, "shader": "light_emit.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 4.474266099976376, "shader": "blur3.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 4.4855376000050455, "shader": "light_shadow.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 4.500508600147441, "shader": "cloth_occlude.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 4.594114999985322, "shader": "cloth_l1.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 4.6000723000615835, "shader": "raymarch.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 12.69897980010137, "shader": "lights.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 12.729581899940968, "shader": "lamps.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 12.767500200076029, "shader": "bloom_down.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 12.783157600089908, "shader": "bloom_up.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 12.791119900066406, "shader": "composite.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 12.974966400070116, "shader": "defocus.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 13.000025500077754, "shader": "copy2d.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 13.004369500093162, "shader": "haze_opl.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 13.037638700101525, "shader": "embers.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 14.731864700093865, "shader": "cloth_predict.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 14.803267300128937, "shader": "cloth_liquid.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 14.820711200125515, "shader": "cloth_liquid.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 14.848352800123394, "shader": "cloth_stretch.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 14.861883000005037, "shader": "cloth_bend.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 14.88763380004093, "shader": "cloth_wick.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 14.915045199915767, "shader": "cloth_drip.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 14.943354699993506, "shader": "cloth_drops.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 15.09376720013097, "shader": "cloth_steam.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 15.110849400050938, "shader": "cloth_rad.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 15.127035700017586, "shader": "cloth_radiant.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 15.14207910001278, "shader": "cloth_tether.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 15.151819000020623, "shader": "cloth_hash.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 15.155838000122458, "shader": "cloth_hash.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 15.161085800034925, "shader": "cloth_self.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 15.993499200092629, "shader": "cloth_collide.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 21.747336700093, "shader": "cloth_tear.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 21.759007800137624, "shader": "cloth_tear.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 21.768326099961996, "shader": "cloth_tear.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 21.774446700001135, "shader": "cloth_finish.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 21.806512400042266, "shader": "cloth_normals.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 21.819388800067827, "shader": "cloth_splat.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 21.82349570002407, "shader": "cloth_splat.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 21.85186760011129, "shader": "cloth_air.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 21.885947100119665, "shader": "cloth_feed.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 21.90667470009066, "shader": "cloth_mg_wet.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 21.91254230006598, "shader": "cloth_occ.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 21.916959499940276, "shader": "cloth_occ.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 21.9299403000623, "shader": "accum.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 21.936266399919987, "shader": "copy2d.wgsl"}
+{"phase": "construct_engine", "event": "returned", "elapsed_s": 21.937896500108764}
+{"phase": "prepare", "event": "start", "elapsed_s": 21.93837930005975}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 21.94287779997103, "shader": "adv_scalar.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 21.988952500047162, "shader": "adv_scalar.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 22.07955990009941, "shader": "adv_vel.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 22.10383339994587, "shader": "adv_vel.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 22.16123490012251, "shader": "react.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 23.90852940012701, "shader": "stain_obj.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 24.025762500008568, "shader": "fuel_sum.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 24.03611780004576, "shader": "fuel_sum.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 24.048599499976262, "shader": "burn.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 24.34082469996065, "shader": "burn_init.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 24.529217100003734, "shader": "burn_obj.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 24.93933750013821, "shader": "burn_obj.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 25.155138000147417, "shader": "upres.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 25.50262639997527, "shader": "upres.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 26.40086860000156, "shader": "upres.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 26.484207200119272, "shader": "rhs_mean.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 26.49999939999543, "shader": "rhs_mean.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 26.518337999936193, "shader": "rhs_mean.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 26.524643999990076, "shader": "curl.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 26.535052600083873, "shader": "force.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 26.764031999977306, "shader": "apply.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 66.36810280010104, "shader": "divergence.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 66.37526400014758, "shader": "mg_smooth.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 66.38891660002992, "shader": "mg_residual.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 66.39979920000769, "shader": "mg_restrict.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 66.40802500001155, "shader": "mg_prolong.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 66.41766940010712, "shader": "project.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 66.43700439995155, "shader": "sdf.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 66.53111850004643, "shader": "sweep.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 66.59682100010104, "shader": "stats.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 66.62191649992019, "shader": "fill.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 66.62588579999283, "shader": "fill.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 66.62725080014206, "shader": "fill.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 66.76732460013591, "shader": "cloth_mg.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 66.7738890000619, "shader": "cloth_mg.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 66.79520820011385, "shader": "cloth_mg.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 66.81648349994794, "shader": "cloth_mgc.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 66.82447730004787, "shader": "cloth_mgc_solve.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 66.83487050002441, "shader": "cloth_mgc_solve.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 66.84357589995489, "shader": "cloth_mg_prolong0.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 66.85150320013054, "shader": "cloth_mg_prolongc.wgsl"}
+{"phase": "prepare", "event": "returned", "elapsed_s": 67.11395739996806}
+{"phase": "frame_1_with_checkpoint", "event": "start", "elapsed_s": 67.11460829991847}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 67.11981429997832, "shader": "rad_build.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 67.16246269992553, "shader": "rad_build.wgsl"}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 67.18589670001529, "shader": "rad_build.wgsl"}
+{"phase": "frame_1_with_checkpoint", "event": "returned", "elapsed_s": 67.27432990004309}
+{"phase": "flush_disk_checkpoint", "event": "start", "elapsed_s": 67.27827870007604}
+{"phase": "flush_disk_checkpoint", "event": "returned", "elapsed_s": 67.27908580005169}
+{"phase": "ordinary_successor", "event": "start", "elapsed_s": 67.2799265999347}
+{"phase": "ordinary_successor", "event": "returned", "elapsed_s": 67.30918340012431}
+{"phase": "ordinary_successor_digest", "event": "start", "elapsed_s": 67.31062350003049}
+{"phase": "ordinary_successor_digest", "event": "returned", "elapsed_s": 67.3170598000288}
+{"phase": "native_reset", "event": "start", "elapsed_s": 67.31797720002942}
+{"phase": "native_reset", "event": "returned", "elapsed_s": 67.31915839994326}
+{"phase": "restore_and_resume_successor", "event": "start", "elapsed_s": 67.31977599998936}
+{"phase": "restore_and_resume_successor", "event": "returned", "elapsed_s": 67.36189920012839}
+{"phase": "resumed_successor_digest", "event": "start", "elapsed_s": 67.36360940011218}
+{"phase": "resumed_successor_digest", "event": "returned", "elapsed_s": 67.3698837000411}
+{"phase": "fire_render", "event": "start", "elapsed_s": 67.37167070014402}
+{"phase": "volume_for", "event": "start", "elapsed_s": 67.37223069998436}
+{"phase": "volume_for", "event": "returned", "elapsed_s": 67.3726997000631}
+{"phase": "prepare_light", "event": "start", "elapsed_s": 67.37354280008003}
+{"phase": "prepare_light", "event": "returned", "elapsed_s": 67.37415930000134}
+{"phase": "light", "event": "start", "elapsed_s": 67.37467180006206}
+{"phase": "light", "event": "returned", "elapsed_s": 67.39359560003504}
+{"phase": "_draw_raster", "event": "start", "elapsed_s": 67.39529559994116}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 67.39585190010257, "shader": "cloth_merge.wgsl"}
+{"phase": "_draw_raster", "event": "returned", "elapsed_s": 68.20837670005858}
+{"phase": "march", "event": "start", "elapsed_s": 68.20929439994507}
+{"phase": "march", "event": "returned", "elapsed_s": 68.21103999996558}
+{"phase": "composite", "event": "start", "elapsed_s": 68.21218889998272}
+{"phase": "composite", "event": "returned", "elapsed_s": 68.21394450007938}
+{"phase": "fire_render", "event": "returned", "elapsed_s": 68.21921060001478}
+{"phase": "emission_readback", "event": "start", "elapsed_s": 68.21981630008668}
+{"phase": "emission_readback", "event": "returned", "elapsed_s": 68.2211144999601}
+{"phase": "composite_render", "event": "start", "elapsed_s": 68.2268246000167}
+{"phase": "volume_for", "event": "start", "elapsed_s": 68.22735340008512}
+{"phase": "volume_for", "event": "returned", "elapsed_s": 68.22783330013044}
+{"phase": "prepare_light", "event": "start", "elapsed_s": 68.22866040002555}
+{"phase": "prepare_light", "event": "returned", "elapsed_s": 68.2295164000243}
+{"phase": "light", "event": "start", "elapsed_s": 68.23074680007994}
+{"phase": "light", "event": "returned", "elapsed_s": 68.23225850006565}
+{"phase": "native_compute_pipeline", "event": "cache_miss", "elapsed_s": 68.23366850009188, "shader": "stage.wgsl"}
