@@ -18,10 +18,11 @@ from admit import save, select
 LIMIT = 360
 
 
-def observe(source, output, cache):
+def observe(source, output, cache, native_read_fence=False):
     import numpy as np
     started = time.perf_counter()
-    result = {"status": "started", "fixture": "empty gas and one default unheated fabric patch"}
+    result = {"status": "started", "fixture": "empty gas and one default unheated fabric patch",
+              "fence": "native texture read" if native_read_fence else "explicit queue completion"}
 
     def log(phase, event, **fields):
         row = dict(phase=phase, event=event, elapsed_s=time.perf_counter()-started, **fields)
@@ -47,6 +48,13 @@ def observe(source, output, cache):
         if isinstance(value, (list,tuple)):
             return [freeze(v) for v in value]
         return value
+
+    def feedback(engine):
+        data = {"ready": bool(getattr(engine.cloth, "_couple_filled", False))}
+        if getattr(engine.cloth, "G", None) is not None:
+            words = np.frombuffer(engine.gpu.read_buffer(engine.cloth.G), dtype=np.uint32)
+            data.update(array=freeze(words),nonzero_words=int(np.count_nonzero(words)))
+        return data
 
     def state(engine):
         data = dict(frame=engine.sim_frame, gas=engine.solver.save_state(), cloth=engine.cloth.save_state(),
@@ -82,6 +90,11 @@ def observe(source, output, cache):
         phase("prepare",eng.prepare,probe,final=True)
         result["scene"] = dict(grid=list(eng.solver.dims),cloth_vertices=int(eng.cloth.built.n),preroll_frames=eng.preroll_frames(probe))
         phase("frame_1_with_checkpoint",eng.simulate_to,probe,1,cache=True)
+        if native_read_fence:
+            cloth=eng.cloth.state()
+            result["checkpoint_observation"]=dict(feedback=feedback(eng),temperature_k=[float(cloth[:,0].min()),float(cloth[:,0].max())],
+                                                 burning_vertices=int((cloth[:,2]>.5).sum()))
+            write_result()
         disk=eng.cache.disk
         if disk is None:
             raise RuntimeError("Native disk cache was not mounted")
@@ -112,7 +125,8 @@ def observe(source, output, cache):
             for mode in ("fire","composite"):
                 frame_steps=eng.solver.steps
                 phase(mode+"_render",eng.render,probe,2,(320,180),mode=mode,**settings)
-                phase(mode+"_queue_fence",gpu.queue.on_submitted_work_done_sync)
+                if not native_read_fence:
+                    phase(mode+"_queue_fence",gpu.queue.on_submitted_work_done_sync)
                 pixels=(phase("emission_readback",gpu.read,eng.renderer.emit) if mode=="fire" else
                         phase("linear_composite_readback",eng.linear_comp))
                 if pixels.shape!=(180,320,4) or not np.isfinite(pixels).all():
@@ -122,6 +136,8 @@ def observe(source, output, cache):
                 rgb=pixels[...,:3]
                 result[mode]=dict(array=freeze(pixels),rgb_min=float(rgb.min()),rgb_max=float(rgb.max()),
                                   nonzero_rgb_pixels=int((rgb!=0).any(axis=2).sum()))
+                if native_read_fence:
+                    np.savez_compressed(output/(mode+".npz"),pixels=pixels)
                 write_result()
         result["status"]="outputs_returned"
         write_result()
@@ -140,13 +156,16 @@ if __name__ == "__main__":
     ap.add_argument("--source",type=Path,required=True)
     ap.add_argument("--out",type=Path,required=True)
     ap.add_argument("--cache-worker",type=Path)
+    ap.add_argument("--native-read-fence",action="store_true")
     a=ap.parse_args()
     if a.cache_worker:
-        sys.exit(observe(a.source.resolve(),a.out.resolve(),a.cache_worker.resolve()))
+        sys.exit(observe(a.source.resolve(),a.out.resolve(),a.cache_worker.resolve(),a.native_read_fence))
     a.out.mkdir(parents=True,exist_ok=False)
     start=time.perf_counter()
     with tempfile.TemporaryDirectory(prefix="t130-neutral-") as tmp:
         argv=[sys.executable,__file__,"--source",str(a.source),"--out",str(a.out),"--cache-worker",tmp]
+        if a.native_read_fence:
+            argv.append("--native-read-fence")
         try:
             child=subprocess.run(argv,timeout=LIMIT)
             code=child.returncode

@@ -1,0 +1,5 @@
+# One normal native readback after explicit queue fence failure
+
+The first neutral preflight returned from the native fire renderer and passed the one-step checkpoint comparison. Its extra queue synchronization raised a wgpu Python callback-signature TypeError before reading either camera output. The earlier artist-shot attempt did not use this added synchronization.
+
+Allow exactly one separate worker, with the same 360 s ceiling, same scene settings, two simulated frames, physical checks, two camera passes and device. Omit only the explicit queue-completion call. Blackbody's original synchronous GPU texture read returns the bytes to CPU and provides the required completion boundary. Before the comparison also retain neutral cloth temperature range, burning vertex count, feedback-ready flag and number of nonzero words in its coupling buffer at the checkpoint. Retain both unheated diagnostic pixel arrays losslessly for independent shape, finite-value and digest verification. No candidate or artist shot may be opened. Stop after this recovery and keep both outcomes.
