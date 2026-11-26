@@ -1,5 +1,9 @@
 # Exploration policy
 
+## 26 November 2026 · A single external-solver test tied to an independent FX brief
+
+Freeze what an independent animator wants to decide before opening either treatment. Equal starting conditions allow ordinary prefix caching. Test additional gas reuse only after the evolving material states have diverged, charge for checking all effective feedback and other gas inputs, and require accurate continuation of the kept take. Preserve zero windows, cases ordinary replay can already answer, and rejection of either take. A source-only guard and an unedited infrastructure trial can be qualified before the brief arrives. Candidate images and timing comparisons remain unopened. [Study protocol](tog/tasks/t130-independent-fx-choice/PROTOCOL.md) · [Current disposition](tog/tasks/t130-independent-fx-choice/README.md)
+
 ## 25 November 2026 · Close the rendered-choice test at T129
 
 The author's pause takes effect with T129 complete. Both cameras together needed the light stroke and the heavier follow-up. Reusing the first 24 steps beat matched ordinary replay in all 12 measured pairs, with run medians falling from 914/940 ms to 831/854 ms. Camera 0 alone accepted the light stroke and the timing order reversed between runs. The choice criterion, camera geometry, returned numbers, short-circuit rules and render cost were matched. T126 separately recorded native cloth/fire physics in Blackbody. Its time budget expired during rendering before a paired camera result was available. Technical and art work are paused at this handoff. [Final-image study](tog/tasks/t129-native-image-choice/README.md) · [External evidence](tog/tasks/t126-external-curtain-runtime/README.md) · [Chinese progress video](tog/submission/sig2027/progress-film/tech-progress-zh.mp4) · [Paper](tog/submission/sig2027/paper.pdf) · [Status and independent assessments](STATUS.md)

@@ -1,5 +1,9 @@
 # VortexGaussians — research handoff
 
+## Current handoff · One external FX study awaits an independent brief
+
+The author authorized the prospective T130 study. The earlier stop at T129 remains the end of broad automatic iteration. No independent FX artist is currently available. For the exact technical state, failed and corrected neutral checks, option for an unopened shot, and restart conditions, read [T130](tog/tasks/t130-independent-fx-choice/README.md). A person joining the study should receive only the [neutral packet](tog/tasks/t130-independent-fx-choice/artist/artist-packet.zip) before supplying their own criterion. The study has zero accepted briefs, zero candidate runs and zero creator decisions. Do not promote prior researcher-edited shots or neutral preflight receipts to evidence of artist use.
+
 ## Current handoff · Technical and art research paused on 25 November 2026
 
 T129 is complete. The user's stop after this round overrides older research queues below. The research heartbeat is paused. For the current result, start with the [Chinese progress video](tog/submission/sig2027/progress-film/tech-progress-zh.mp4), [paper](tog/submission/sig2027/paper.pdf), [status](STATUS.md) and [review record](tog/submission/sig2027/INDEPENDENT_REVIEW.md).
