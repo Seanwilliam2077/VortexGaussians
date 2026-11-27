@@ -1,0 +1,72 @@
+Native image choices on a fitted room and woodpile
+
+Extract the ZIP into an empty directory. With Python 3.10 or later, run
+
+    python -I -B -S verify.py
+
+The verifier checks each data file against manifest.json, then independently
+recomputes paired timings, contrast statistics and the light-first decision
+over all positive representable contrast cutoffs. It requires only the Python
+standard library. The ZIP contains numerical receipts and no fitted images.
+
+Room action and exactness
+
+The Bonsai room has 1,244,819 fitted sites. At frame 180 either a light brush
+or a full brush can be applied. The camera-0 still at frame 270 has 2,996
+positive-weight cells in the target. Its total tagged opacity is 411.094150.
+The display is 1,560 by 1,040. A cell qualifies when the gas-on and gas-off
+images differ by at least 16 RGB levels in any unrounded 2 by 2 channel mean.
+Prefer light when it qualifies on a quarter of the opacity, then full, then
+neither. The target in camera 146 lies behind the camera. The client requests
+the changed opacity mass, denominator and branch decision. These timings do
+not include returning an animation.
+
+room/reference.json contains the independent native state at the edit point
+and the reference terminal/successor receipts for both branches. Ordered gas,
+frontier, clocks and RNG have one digest. Material has five buffer digests.
+The two native images per branch also have digests. Both branches miss the
+target. Each reported reuse call shares 35 of 90 physical updates.
+
+Each room process file includes all issued actions in sequence, host/physics/
+image/cache costs as recorded, warm-up labels, wave ordering, phase times and
+the terminal status. Initial load and rest/parent, target and available crop
+configuration are separate. Timings include setup charged to the action. To
+read a paired wave, find its ordinary-indexed and transport host_ms. A ratio of
+process medians and a median of the six within-wave ratios are reported
+separately. Rendering, synchronization and scoring are included for each.
+
+The full-viewport process 1 finished six pairs. Process 2 stopped on a
+Windows EPERM when replacing its progress receipt, with zero measured calls.
+The latter file preserves the diagnosed operation and final phase. Paths,
+stack traces and host timestamps were omitted when packaging.
+
+An initial target-crop trial obtained four full-viewport reference crops and
+stopped before its first cropped draw on an inapplicable UI pause check.
+Correcting the guard for the explicitly stepped embedded renderer kept the
+two-branch oracle, deadline, six paired waves and byte checks in each of two
+new processes. Both methods use the same target scissor with a one-pixel halo
+and share the sorted scene upload across their consecutive gas-on/off draws.
+The native 156 by 164 RGBA crop has 102,336 bytes. The browser compared each
+byte to its process-local full-viewport reference in the audits. The offline
+verifier compares all four distinct recorded crop digests and physical state
+receipts. Root restoration was checked by the capture runner. The per-action
+restored parent arrays are not exported. Repeating pixels or state acquisition
+requires the original scene and graphics runtime.
+
+Native contrast distributions
+
+The full-viewport room reference records contrast histograms on the whole
+display and within the positive-weight target. The native-pixel bin is the
+maximum absolute RGB byte difference. The 2 by 2 cell bin is the maximum
+absolute difference of four-pixel channel sums. Dividing a cell bin by four
+gives the registered difference of the unrounded means. Each cell bin also
+stores its summed native tagged weight. The verifier recovers changed and
+qualifying counts, maximum change, and weighted target mass. Bounding boxes
+are capture summaries. Pixel locations cannot be reconstructed from the bins.
+
+woodpile/cut-histograms.json holds four original nonspatial distributions at
+the same 90-step cut in two cameras. For each view and brush, sum weights
+from bin k through 1020, divide by the total, and compare to one quarter.
+The verifier repeats this for all 1,020 positive cutoffs and reconstructs the
+contiguous choice intervals. Each uses the same image pair at different
+cutoffs. There is no perceptual calibration or participant rating.
