@@ -59,12 +59,17 @@ def measure_call(method):
     return verdict, perf_counter_ns() - start
 
 
-def check_cases(gpu, guard):
+def check_cases(gpu, guard, *, verify_upload=False):
     records = []
     for name, a, b in controls():
         gold = expected(a, b)
         first, second = resident(gpu, a, name), resident(gpu, b, name)
         try:
+            if verify_upload:
+                for source, target in ((a, first), (b, second)):
+                    received = np.frombuffer(gpu.read_buffer(target), "<i4").reshape(source.shape)
+                    if digest(source) != digest(received):
+                        raise ValueError(f"{name}: resident input differs from uploaded words")
             full = guard.compare(first, second)
             raw = guard.compare(first, second, raw_only=True)
             if full != gold or cpu_classify(a, b) != gold or (raw == "raw") != (gold == "raw"):
@@ -172,30 +177,30 @@ def worker(source, out):
         return 2
 
 
-def main():
+def launch(*, worker_fn=worker, limit_s=LIMIT_S, entry=__file__):
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--source", required=True, type=Path)
     p.add_argument("--out", required=True, type=Path)
     p.add_argument("--worker", action="store_true")
     args = p.parse_args()
     if args.worker:
-        return worker(args.source.resolve(), args.out.resolve())
+        return worker_fn(args.source.resolve(), args.out.resolve())
     args.out.mkdir(parents=True, exist_ok=False)
     start = perf_counter()
-    argv = [sys.executable, "-B", __file__, "--source", str(args.source), "--out", str(args.out), "--worker"]
+    argv = [sys.executable, "-B", entry, "--source", str(args.source), "--out", str(args.out), "--worker"]
     proc = subprocess.Popen(argv)
     try:
-        while proc.poll() is None and perf_counter() - start < LIMIT_S:
+        while proc.poll() is None and perf_counter() - start < limit_s:
             sleep(.20)
         timed_out = proc.poll() is None
     finally:
         if proc.poll() is None:
             proc.kill()
         proc.wait()
-    save(args.out / "exit.json", dict(limit_s=LIMIT_S, elapsed_s=perf_counter()-start,
+    save(args.out / "exit.json", dict(limit_s=limit_s, elapsed_s=perf_counter()-start,
                                      timeout=timed_out, returncode=proc.returncode))
     return 2 if timed_out else proc.returncode
 
 
 if __name__ == "__main__":
-    sys.exit(main())
+    sys.exit(launch())

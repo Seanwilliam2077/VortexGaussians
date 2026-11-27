@@ -15,9 +15,9 @@ def require(condition, message):
         raise ValueError(message)
 
 
-def verify(folder):
+def verify(folder, limit_s=LIMIT_S):
     terminal = json.loads((folder / "exit.json").read_bytes())
-    require(terminal["limit_s"] == LIMIT_S and terminal["elapsed_s"] > 0, "Supervisor identity")
+    require(terminal["limit_s"] == limit_s and terminal["elapsed_s"] > 0, "Supervisor identity")
     row = json.loads((folder / "measurements.json").read_bytes())
     require(row["revision"] == PIN and row["shader_sha256"] ==
             hashlib.sha256(SHADER.read_text(encoding="utf-8").encode()).hexdigest(), "Source identity")
