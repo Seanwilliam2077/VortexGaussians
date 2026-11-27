@@ -1,0 +1,297 @@
+{
+  "completed_processes": 1,
+  "processes": [
+    {
+      "number": 1,
+      "status": "replication_complete",
+      "wall_s": 45.186984800035134,
+      "final_phase": "ordinary-indexed-requested-choice",
+      "histograms": {
+        "L": {
+          "pixel": {
+            "all": {
+              "changed": 10286,
+              "at_threshold": 6809,
+              "maximum": 206
+            },
+            "target": {
+              "changed": 45,
+              "at_threshold": 0,
+              "maximum": 1
+            },
+            "bounds": {
+              "changed": [
+                600,
+                466,
+                841,
+                691
+              ],
+              "above": [
+                603,
+                468,
+                745,
+                602
+              ],
+              "targetChanged": [
+                820,
+                558,
+                841,
+                576
+              ],
+              "targetAbove": null
+            }
+          },
+          "block": {
+            "all": {
+              "changed": 2795,
+              "at_threshold": 1698,
+              "maximum": 823
+            },
+            "target": {
+              "changed": 24,
+              "at_threshold": 0,
+              "maximum": 4
+            },
+            "bounds": {
+              "changed": [
+                300,
+                233,
+                420,
+                345
+              ],
+              "above": [
+                302,
+                234,
+                372,
+                300
+              ],
+              "targetChanged": [
+                410,
+                279,
+                420,
+                288
+              ],
+              "targetAbove": null
+            }
+          },
+          "target_mass_any_change": 0.002687409520149231,
+          "target_mass_at_threshold": 0
+        },
+        "F": {
+          "pixel": {
+            "all": {
+              "changed": 9992,
+              "at_threshold": 6651,
+              "maximum": 205
+            },
+            "target": {
+              "changed": 183,
+              "at_threshold": 0,
+              "maximum": 2
+            },
+            "bounds": {
+              "changed": [
+                598,
+                467,
+                861,
+                693
+              ],
+              "above": [
+                601,
+                469,
+                746,
+                600
+              ],
+              "targetChanged": [
+                786,
+                544,
+                861,
+                577
+              ],
+              "targetAbove": null
+            }
+          },
+          "block": {
+            "all": {
+              "changed": 2776,
+              "at_threshold": 1657,
+              "maximum": 814
+            },
+            "target": {
+              "changed": 95,
+              "at_threshold": 0,
+              "maximum": 6
+            },
+            "bounds": {
+              "changed": [
+                299,
+                233,
+                430,
+                346
+              ],
+              "above": [
+                301,
+                235,
+                373,
+                299
+              ],
+              "targetChanged": [
+                393,
+                272,
+                430,
+                288
+              ],
+              "targetAbove": null
+            }
+          },
+          "target_mass_any_change": 0.012570187449455261,
+          "target_mass_at_threshold": 0
+        }
+      },
+      "medians_ms": {
+        "ordinary-indexed": 1888.2847999999994,
+        "transport": 1831.0697
+      },
+      "ratio_of_medians": 0.9696999626327557,
+      "median_paired_ratio": 0.9754447479696315,
+      "transport_wins": 4,
+      "paired_mean_delta_ms": {
+        "host": 45.07806666666814,
+        "physics": 46.51666669050852,
+        "image": 2.3833332856496177
+      },
+      "pairs": [
+        {
+          "wave": 1,
+          "order": [
+            "ordinary-indexed",
+            "transport"
+          ],
+          "ratio": 1.016439434365693,
+          "by_method": {
+            "ordinary-indexed": {
+              "host": 1909.5730000000003,
+              "physics": 936.7000000476837,
+              "image": 966
+            },
+            "transport": {
+              "host": 1940.9652999999998,
+              "physics": 955.3000001907349,
+              "image": 971.2999999523163
+            }
+          }
+        },
+        {
+          "wave": 2,
+          "order": [
+            "transport",
+            "ordinary-indexed"
+          ],
+          "ratio": 0.982639596504673,
+          "by_method": {
+            "transport": {
+              "host": 1902.1784999999982,
+              "physics": 911.6000003814697,
+              "image": 981.4999997615814
+            },
+            "ordinary-indexed": {
+              "host": 1935.784499999998,
+              "physics": 963.9000000953674,
+              "image": 964.3999996185303
+            }
+          }
+        },
+        {
+          "wave": 3,
+          "order": [
+            "ordinary-indexed",
+            "transport"
+          ],
+          "ratio": 0.9341998829547359,
+          "by_method": {
+            "ordinary-indexed": {
+              "host": 1942.154599999998,
+              "physics": 980.3999998569489,
+              "image": 953.8000001907349
+            },
+            "transport": {
+              "host": 1814.3606,
+              "physics": 874.2000000476837,
+              "image": 929.2999999523163
+            }
+          }
+        },
+        {
+          "wave": 4,
+          "order": [
+            "transport",
+            "ordinary-indexed"
+          ],
+          "ratio": 0.9552918843023086,
+          "by_method": {
+            "transport": {
+              "host": 1783.5267000000022,
+              "physics": 843.7999997138977,
+              "image": 929.8000001907349
+            },
+            "ordinary-indexed": {
+              "host": 1866.9965999999986,
+              "physics": 923.9000000953674,
+              "image": 936
+            }
+          }
+        },
+        {
+          "wave": 5,
+          "order": [
+            "ordinary-indexed",
+            "transport"
+          ],
+          "ratio": 1.0003139889436885,
+          "by_method": {
+            "ordinary-indexed": {
+              "host": 1847.1988000000056,
+              "physics": 899.2999999523163,
+              "image": 940.7999999523163
+            },
+            "transport": {
+              "host": 1847.7788,
+              "physics": 899.3999998569489,
+              "image": 935.9000000953674
+            }
+          }
+        },
+        {
+          "wave": 6,
+          "order": [
+            "transport",
+            "ordinary-indexed"
+          ],
+          "ratio": 0.96824989943459,
+          "by_method": {
+            "transport": {
+              "host": 1755.676999999996,
+              "physics": 829.8999998569489,
+              "image": 916.2999999523163
+            },
+            "ordinary-indexed": {
+              "host": 1813.2478000000046,
+              "physics": 889.1000001430511,
+              "image": 917.3999998569489
+            }
+          }
+        }
+      ]
+    },
+    {
+      "number": 2,
+      "status": "failed",
+      "wall_s": 9.651436500018463,
+      "final_phase": "full_scene_rest_native_matte_then_restore",
+      "last_completed_phase": "native_eligible_shell",
+      "measured_calls": 0,
+      "error": "Error: EPERM: operation not permitted, rename '<repo>\\tracks\\tog\\tasks\\t144-bonsai-repeated-cost\\evidence\\process-2\\RUN.json.tmp' -> '<repo>\\tracks\\tog\\tasks\\t144-bonsai-repeated-cost\\evidence\\process-2\\RUN.json'"
+    }
+  ],
+  "replicated_order_assessable": false
+}
