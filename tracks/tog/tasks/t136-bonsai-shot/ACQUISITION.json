@@ -1,0 +1,35 @@
+{
+  "url": "https://repo-sam.inria.fr/fungraph/3d-gaussian-splatting/datasets/pretrained/models.zip",
+  "archive_bytes": 14660630999,
+  "tail_sha256": "3d535f59621f16992a0faf99b0f793c92f9f0f4bddf31dcdc64644d3e199e5f5",
+  "members": [
+    {
+      "member": "bonsai/cameras.json",
+      "local_filename": "cameras.json",
+      "data_offset": 2143065745,
+      "compressed": 37076,
+      "decoded": 116695,
+      "crc32": "f963b75c",
+      "sha256": "41e623748141d5b1a292c2bcafbf9e897a3876f90c11a14618e9ac6190b05af3",
+      "elapsed_s": 1.2494475999847054
+    },
+    {
+      "member": "bonsai/point_cloud/iteration_30000/point_cloud.ply",
+      "local_filename": "scene.ply",
+      "data_offset": 2146082410,
+      "compressed": 260603022,
+      "decoded": 308716644,
+      "crc32": "3088ffa4",
+      "sha256": "a16af6d8815498ffbf9eb5d5ee93f5bcc9dca34c4e3eb6f7a796ef9e97c0d273",
+      "elapsed_s": 99.17913369997405
+    }
+  ],
+  "status": "complete",
+  "elapsed_s": 105.70066559989937,
+  "transfer": {
+    "normal_bytes": 260771299,
+    "retry_bytes": 0,
+    "requests": 69,
+    "errors": []
+  }
+}

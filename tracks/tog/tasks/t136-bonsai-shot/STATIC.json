@@ -1,0 +1,111 @@
+{
+  "schema": "t136-rest-input-v1",
+  "status": "closed_coincident_primitive",
+  "material_count": 1244819,
+  "n_float32_fields": 62,
+  "hashes": {
+    "cameras.json": "41e623748141d5b1a292c2bcafbf9e897a3876f90c11a14618e9ac6190b05af3",
+    "scene.ply": "a16af6d8815498ffbf9eb5d5ee93f5bcc9dca34c4e3eb6f7a796ef9e97c0d273"
+  },
+  "all_camera_count": 292,
+  "camera_ids": [
+    0,
+    146
+  ],
+  "camera_rows_sha256": [
+    "53d2832682a4d3de244291cbc65b9e1c2e54d0c52620af1b56d3c9dabd0fc524",
+    "9fe209f801452924acd2db4bcf2a169b2a88fe7d0c16477577b6fd8f4ba900b0"
+  ],
+  "rays": [
+    {
+      "id": 867267,
+      "depth": 0.0001712388944189241,
+      "contributors": 1893,
+      "prior_opacity": 0.41271693590817693,
+      "crossing_opacity": 0.9941271693590817,
+      "front_to_back_rank": 5
+    },
+    {
+      "id": 867267,
+      "depth": 0.0001712388944189241,
+      "contributors": 1958,
+      "prior_opacity": 0.41271636153088453,
+      "crossing_opacity": 0.9941271636153088,
+      "front_to_back_rank": 5
+    }
+  ],
+  "diagnosis": {
+    "source_center_xyz": [
+      5.679474830627441,
+      15.764440536499023,
+      -12.85642147064209
+    ],
+    "source_axis_scales": [
+      0.06738006653513073,
+      0.016733125974124838,
+      0.013078491476570293
+    ],
+    "intrinsic_opacity": 0.9993158354972221,
+    "camera_xyz": [
+      20.875287198688106,
+      0.5757923249487403,
+      0.0001712388944189241
+    ],
+    "camera_rotation_det": 0.9999999999999998,
+    "quarter_view_size": [
+      780,
+      520
+    ],
+    "screen_points": [
+      [
+        334.96999999999997,
+        259.5
+      ],
+      [
+        389.5,
+        259.5
+      ]
+    ],
+    "quarter_projected_mean": [
+      98281161.75738145,
+      2711957.2541240226
+    ],
+    "uncapped_quarter_covariance": [
+      [
+        1.2950124665131104e+21,
+        3.5733171526648103e+19
+      ],
+      [
+        3.5733171526648103e+19,
+        9.85982440697315e+17
+      ]
+    ],
+    "uncapped_quarter_3sigma_radii": [
+      188436.51009292228,
+      107999935372.8916
+    ],
+    "quarter_native_radius_cap": 390.0,
+    "any_quad_vertex_horizontal_displacement_upper_bound": 551.5432893255071,
+    "center_horizontal_distance_outside_viewport": 98280382.25738145,
+    "outside_even_native_bounding_quad": true,
+    "source_points_on_the_two_rays_at_shared_depth": [
+      [
+        -3.7210871411831197,
+        1.9830409946179264,
+        -0.29409297297537856
+      ],
+      [
+        -3.7210818489365276,
+        1.9830483988945833,
+        -0.2941001368653949
+      ]
+    ],
+    "source_distance_between_these_points": 1.1582422327353378e-05,
+    "reprojection_max_abs_px": 3.767013367905747e-10,
+    "implied_world_scale_if_staged": 30179.46265225142,
+    "implied_world_depth_if_staged": 5.167897818728744
+  },
+  "native_simulations": 0,
+  "native_renders": 0,
+  "performance_trials": 0
+}
