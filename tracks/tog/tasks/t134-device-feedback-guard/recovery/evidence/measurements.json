@@ -1,0 +1,1001 @@
+{
+  "status": "complete",
+  "revision": "e2ac951dbfabc6060073943e4c344439ac5f4555",
+  "shader_sha256": "d5641fe00679c3e916b2f804ea63620c7d86a21e7d0c8fc63e23637bd00c4cfb",
+  "recovery_shaders": {
+    "partial.wgsl": "5ef19a415e0eeb44f2026a72ccae6f77447e1f5e4d2315a71812e4a4adac6a75",
+    "finish.wgsl": "a69259d796ac0ea3c1aebc7d0b879d33a78b5eb4f8a3c391d5df5e456ce752bb"
+  },
+  "phase": "done",
+  "elapsed_s": 3.254156499868259,
+  "adapter": {
+    "vendor": "32.0.15.9571",
+    "device": "NVIDIA GeForce RTX 5070 Laptop GPU",
+    "description": "",
+    "adapter_type": "DiscreteGPU",
+    "backend_type": "D3D12"
+  },
+  "admission_s": 2.6374220999423414,
+  "diagnostic": {
+    "cases": [
+      {
+        "name": "frame_1_to_2",
+        "expected": "axis",
+        "full": {
+          "returned": "axis",
+          "direct_storage_word": 19072
+        },
+        "raw": {
+          "returned": "split",
+          "direct_storage_word": 19073
+        },
+        "input_sha256": [
+          "c7650445bf9d3a2f0d99d73a6526a2bffb98350821d1ff91a967deb2c3bc7db1",
+          "0dd553e141e52c248ba92f528232ba48845d2d225f621490350f0756e23ac735"
+        ],
+        "inputs_match": true
+      },
+      {
+        "name": "frame_2_identical",
+        "expected": "raw",
+        "full": {
+          "returned": "split",
+          "direct_storage_word": 19073
+        },
+        "raw": {
+          "returned": "split",
+          "direct_storage_word": 19073
+        },
+        "input_sha256": [
+          "0dd553e141e52c248ba92f528232ba48845d2d225f621490350f0756e23ac735",
+          "0dd553e141e52c248ba92f528232ba48845d2d225f621490350f0756e23ac735"
+        ],
+        "inputs_match": true
+      }
+    ],
+    "standalone_clear": [
+      4294967295,
+      0
+    ]
+  },
+  "build_s": 0.09210280003026128,
+  "kernels": {
+    "axis": {
+      "key": "3749943891d1321d3bafec09",
+      "compile_s": 0.03581929998472333
+    },
+    "raw": {
+      "key": "c4f01a4042490eb41f9dc458",
+      "compile_s": 0.029088800074532628
+    },
+    "finish": {
+      "key": "ddbd1c71b37c20684a13bbc7",
+      "compile_s": 0.021962299942970276
+    }
+  },
+  "controls": [
+    {
+      "case": "frame_1_to_2",
+      "cells": 1024,
+      "first": "c7650445bf9d3a2f0d99d73a6526a2bffb98350821d1ff91a967deb2c3bc7db1",
+      "second": "0dd553e141e52c248ba92f528232ba48845d2d225f621490350f0756e23ac735",
+      "expected": "axis",
+      "device_full": "axis",
+      "device_raw": "split"
+    },
+    {
+      "case": "frame_2_identical",
+      "cells": 1024,
+      "first": "0dd553e141e52c248ba92f528232ba48845d2d225f621490350f0756e23ac735",
+      "second": "0dd553e141e52c248ba92f528232ba48845d2d225f621490350f0756e23ac735",
+      "expected": "raw",
+      "device_full": "raw",
+      "device_raw": "raw"
+    },
+    {
+      "case": "single_negative_identical",
+      "cells": 1,
+      "first": "d75a7146e13df473b7b8ada568c4068bd5c30f6a9fba4f0472c770c61a5536e2",
+      "second": "d75a7146e13df473b7b8ada568c4068bd5c30f6a9fba4f0472c770c61a5536e2",
+      "expected": "raw",
+      "device_full": "raw",
+      "device_raw": "raw"
+    },
+    {
+      "case": "single_negative_unequal",
+      "cells": 1,
+      "first": "d75a7146e13df473b7b8ada568c4068bd5c30f6a9fba4f0472c770c61a5536e2",
+      "second": "d365ded3955a756814bd8b5a7c02f5fd7faea4553186280bfea7c041a552d742",
+      "expected": "split",
+      "device_full": "split",
+      "device_raw": "split"
+    },
+    {
+      "case": "source_6_last",
+      "cells": 129,
+      "first": "13acfbfd49023c56a3bfe3e732515c9b29b7038537df3e76bc7243633efba2ac",
+      "second": "131b7a101d56add85432322c7d7542e28a6076c8f0ef3ef71eded221a355af93",
+      "expected": "split",
+      "device_full": "split",
+      "device_raw": "split"
+    },
+    {
+      "case": "source_7_last",
+      "cells": 129,
+      "first": "13acfbfd49023c56a3bfe3e732515c9b29b7038537df3e76bc7243633efba2ac",
+      "second": "bc8aeb72e508a165af09fe6b195042226cce6394156c0082009cc7f77e743d76",
+      "expected": "split",
+      "device_full": "split",
+      "device_raw": "split"
+    },
+    {
+      "case": "source_8_last",
+      "cells": 129,
+      "first": "13acfbfd49023c56a3bfe3e732515c9b29b7038537df3e76bc7243633efba2ac",
+      "second": "ba93fdbf7b8bae345dc6e584e3135dc1199fde9d5fce6089aa34f5c9b013b905",
+      "expected": "split",
+      "device_full": "split",
+      "device_raw": "split"
+    },
+    {
+      "case": "source_12_last",
+      "cells": 129,
+      "first": "13acfbfd49023c56a3bfe3e732515c9b29b7038537df3e76bc7243633efba2ac",
+      "second": "fb88e2a84caf743c0d5f3521de4411b6d3937f937bedcaf85baf57ac56e6994e",
+      "expected": "split",
+      "device_full": "split",
+      "device_raw": "split"
+    },
+    {
+      "case": "support_0_tail",
+      "cells": 65,
+      "first": "c472c00c548d6581a1becdd38950c680ddee194e5e2a88dcd7248e07deaaaca1",
+      "second": "d1ddce254eabc5a5454bd4419bc29382346a965db6e2a15b9b7e5f9d4ca4ceaa",
+      "expected": "split",
+      "device_full": "split",
+      "device_raw": "split"
+    },
+    {
+      "case": "cross_group_veto_0",
+      "cells": 65,
+      "first": "c472c00c548d6581a1becdd38950c680ddee194e5e2a88dcd7248e07deaaaca1",
+      "second": "271cbe002f1d280056a776ca97f7fbd37b5aca25bdf2c8e5db1482b4503d5081",
+      "expected": "split",
+      "device_full": "split",
+      "device_raw": "split"
+    },
+    {
+      "case": "globally_absent_0",
+      "cells": 65,
+      "first": "d1ddce254eabc5a5454bd4419bc29382346a965db6e2a15b9b7e5f9d4ca4ceaa",
+      "second": "7e47d9a913b5d4c7ffa5d8e4ab14db5ecf4592a1ac0b0f119a7940eea94ce2d5",
+      "expected": "axis",
+      "device_full": "axis",
+      "device_raw": "split"
+    },
+    {
+      "case": "support_1_tail",
+      "cells": 65,
+      "first": "3f2b9a4ec2cf8a1234c66b9ca9ee2ffc92d6943bf37803b90a73e46067c1f1cc",
+      "second": "d1ddce254eabc5a5454bd4419bc29382346a965db6e2a15b9b7e5f9d4ca4ceaa",
+      "expected": "split",
+      "device_full": "split",
+      "device_raw": "split"
+    },
+    {
+      "case": "cross_group_veto_1",
+      "cells": 65,
+      "first": "3f2b9a4ec2cf8a1234c66b9ca9ee2ffc92d6943bf37803b90a73e46067c1f1cc",
+      "second": "d347816a1b9bc1ffd7fc85a8c9e3d3794ec1fcfa626321845b6674ed8081148c",
+      "expected": "split",
+      "device_full": "split",
+      "device_raw": "split"
+    },
+    {
+      "case": "globally_absent_1",
+      "cells": 65,
+      "first": "d1ddce254eabc5a5454bd4419bc29382346a965db6e2a15b9b7e5f9d4ca4ceaa",
+      "second": "4a23332044fbd8583244a5b114eb1360b3a18929c8adb13cd415ef512880bb05",
+      "expected": "axis",
+      "device_full": "axis",
+      "device_raw": "split"
+    },
+    {
+      "case": "support_2_tail",
+      "cells": 65,
+      "first": "f68763ad88b03d6cebcca9b5282f65a94cde73e4fcdbb608ef71c91df8c38651",
+      "second": "d1ddce254eabc5a5454bd4419bc29382346a965db6e2a15b9b7e5f9d4ca4ceaa",
+      "expected": "split",
+      "device_full": "split",
+      "device_raw": "split"
+    },
+    {
+      "case": "cross_group_veto_2",
+      "cells": 65,
+      "first": "f68763ad88b03d6cebcca9b5282f65a94cde73e4fcdbb608ef71c91df8c38651",
+      "second": "62c9eec9c6c4097177f4a17011ceae7917a5af8e1ab01702e4e04542c8337bef",
+      "expected": "split",
+      "device_full": "split",
+      "device_raw": "split"
+    },
+    {
+      "case": "globally_absent_2",
+      "cells": 65,
+      "first": "d1ddce254eabc5a5454bd4419bc29382346a965db6e2a15b9b7e5f9d4ca4ceaa",
+      "second": "8fa1836cc6a18147efe0dee6c4104fc81d0563e8251dbad89e3886f4352347c1",
+      "expected": "axis",
+      "device_full": "axis",
+      "device_raw": "split"
+    },
+    {
+      "case": "different_mode_each_axis",
+      "cells": 129,
+      "first": "24453cb27dee046a61c4bad65189cb4309a57b509c0ffcdcc122ac1e9d04a868",
+      "second": "a10c4e24b36851318cab409523e397e1e69fce237cc3bde829dd4f79f9819726",
+      "expected": "axis",
+      "device_full": "axis",
+      "device_raw": "split"
+    },
+    {
+      "case": "different_mode_then_fail",
+      "cells": 129,
+      "first": "24453cb27dee046a61c4bad65189cb4309a57b509c0ffcdcc122ac1e9d04a868",
+      "second": "7566a5e469bb45aa2777b80e6b7053596b48468e3d41f81c8a0e465653519974",
+      "expected": "split",
+      "device_full": "split",
+      "device_raw": "split"
+    }
+  ],
+  "workloads": [
+    {
+      "name": "1024_identical",
+      "cells": 1024,
+      "source_sha256": [
+        "c7650445bf9d3a2f0d99d73a6526a2bffb98350821d1ff91a967deb2c3bc7db1",
+        "c7650445bf9d3a2f0d99d73a6526a2bffb98350821d1ff91a967deb2c3bc7db1"
+      ],
+      "expected": "raw",
+      "setup_s": 0.0005093000363558531,
+      "read_bytes_per_call": {
+        "device": 4,
+        "cpu": 106496
+      },
+      "first_method_call_ns": {
+        "device_raw": 753900,
+        "device_full": 350100,
+        "batched_cpu_raw": 292000,
+        "batched_cpu_full": 214500,
+        "two_reads_cpu_full": 471600
+      },
+      "samples_ns": {
+        "device_raw": [
+          258700,
+          313000,
+          185900,
+          407900,
+          243700,
+          208700,
+          196300,
+          238800,
+          210200,
+          189300,
+          184900,
+          190400,
+          183900,
+          186500,
+          287800
+        ],
+        "device_full": [
+          344000,
+          287900,
+          210800,
+          437400,
+          192700,
+          186900,
+          222600,
+          270000,
+          184400,
+          183600,
+          178300,
+          190500,
+          180400,
+          178900,
+          632700
+        ],
+        "batched_cpu_raw": [
+          204100,
+          219600,
+          142300,
+          201100,
+          138400,
+          133400,
+          137800,
+          135400,
+          129800,
+          128300,
+          146500,
+          127700,
+          130100,
+          225300,
+          196100
+        ],
+        "batched_cpu_full": [
+          175200,
+          189200,
+          132600,
+          121700,
+          131100,
+          222700,
+          137800,
+          130900,
+          185900,
+          124500,
+          139600,
+          127800,
+          124000,
+          129500,
+          213400
+        ],
+        "two_reads_cpu_full": [
+          391600,
+          378800,
+          299500,
+          312200,
+          463400,
+          373900,
+          280000,
+          274600,
+          339500,
+          357000,
+          288200,
+          296300,
+          275700,
+          264900,
+          392100
+        ]
+      },
+      "observed_decisions": {
+        "device_raw": {
+          "raw": 16
+        },
+        "device_full": {
+          "raw": 16
+        },
+        "batched_cpu_raw": {
+          "raw": 16
+        },
+        "batched_cpu_full": {
+          "raw": 16
+        },
+        "two_reads_cpu_full": {
+          "raw": 16
+        }
+      }
+    },
+    {
+      "name": "1024_different_axis",
+      "cells": 1024,
+      "source_sha256": [
+        "c7650445bf9d3a2f0d99d73a6526a2bffb98350821d1ff91a967deb2c3bc7db1",
+        "0dd553e141e52c248ba92f528232ba48845d2d225f621490350f0756e23ac735"
+      ],
+      "expected": "axis",
+      "setup_s": 0.00039330008439719677,
+      "read_bytes_per_call": {
+        "device": 4,
+        "cpu": 106496
+      },
+      "first_method_call_ns": {
+        "device_raw": 296100,
+        "device_full": 233600,
+        "batched_cpu_raw": 134600,
+        "batched_cpu_full": 198100,
+        "two_reads_cpu_full": 372100
+      },
+      "samples_ns": {
+        "device_raw": [
+          211000,
+          213400,
+          274100,
+          224500,
+          214100,
+          219000,
+          209900,
+          203800,
+          207200,
+          207400,
+          199200,
+          337000,
+          280100,
+          244200,
+          207300
+        ],
+        "device_full": [
+          219600,
+          218500,
+          218800,
+          189700,
+          185900,
+          182100,
+          209800,
+          182200,
+          179600,
+          183400,
+          180100,
+          247700,
+          230800,
+          186900,
+          186900
+        ],
+        "batched_cpu_raw": [
+          137900,
+          128400,
+          127700,
+          153100,
+          152600,
+          128600,
+          126200,
+          128700,
+          128600,
+          127600,
+          131400,
+          132800,
+          211200,
+          135800,
+          124800
+        ],
+        "batched_cpu_full": [
+          214500,
+          192500,
+          168500,
+          201400,
+          208200,
+          181500,
+          169600,
+          171700,
+          176700,
+          198400,
+          263000,
+          174500,
+          262600,
+          244000,
+          173000
+        ],
+        "two_reads_cpu_full": [
+          407600,
+          338600,
+          496300,
+          349100,
+          420400,
+          330000,
+          338600,
+          336200,
+          326500,
+          318800,
+          422200,
+          379300,
+          502000,
+          487200,
+          533800
+        ]
+      },
+      "observed_decisions": {
+        "device_raw": {
+          "split": 16
+        },
+        "device_full": {
+          "axis": 16
+        },
+        "batched_cpu_raw": {
+          "split": 16
+        },
+        "batched_cpu_full": {
+          "axis": 16
+        },
+        "two_reads_cpu_full": {
+          "axis": 16
+        }
+      }
+    },
+    {
+      "name": "1024_different_source",
+      "cells": 1024,
+      "source_sha256": [
+        "c7650445bf9d3a2f0d99d73a6526a2bffb98350821d1ff91a967deb2c3bc7db1",
+        "e5c459815a87a6bf1eecca8047f350be6fbc0158e10f9461f1d7e2e47381d6af"
+      ],
+      "expected": "split",
+      "setup_s": 0.0003956998698413372,
+      "read_bytes_per_call": {
+        "device": 4,
+        "cpu": 106496
+      },
+      "first_method_call_ns": {
+        "device_raw": 376500,
+        "device_full": 313000,
+        "batched_cpu_raw": 168400,
+        "batched_cpu_full": 211200,
+        "two_reads_cpu_full": 340000
+      },
+      "samples_ns": {
+        "device_raw": [
+          227600,
+          237500,
+          216900,
+          198600,
+          199200,
+          219300,
+          224100,
+          424100,
+          389300,
+          207900,
+          208400,
+          317800,
+          255600,
+          184600,
+          217100
+        ],
+        "device_full": [
+          188300,
+          207300,
+          183000,
+          183300,
+          222700,
+          180000,
+          203900,
+          307900,
+          222400,
+          186600,
+          184200,
+          203900,
+          187000,
+          188300,
+          192700
+        ],
+        "batched_cpu_raw": [
+          129800,
+          128300,
+          189700,
+          129800,
+          157600,
+          128900,
+          129300,
+          227100,
+          136900,
+          140400,
+          126400,
+          126800,
+          177800,
+          118100,
+          133900
+        ],
+        "batched_cpu_full": [
+          144700,
+          141500,
+          157600,
+          148600,
+          185800,
+          144900,
+          141900,
+          213000,
+          227100,
+          149600,
+          141900,
+          140000,
+          175700,
+          163900,
+          169000
+        ],
+        "two_reads_cpu_full": [
+          309200,
+          295600,
+          304400,
+          298300,
+          284100,
+          320700,
+          328800,
+          449000,
+          358800,
+          308500,
+          296200,
+          296300,
+          358600,
+          303300,
+          312200
+        ]
+      },
+      "observed_decisions": {
+        "device_raw": {
+          "split": 16
+        },
+        "device_full": {
+          "split": 16
+        },
+        "batched_cpu_raw": {
+          "split": 16
+        },
+        "batched_cpu_full": {
+          "split": 16
+        },
+        "two_reads_cpu_full": {
+          "split": 16
+        }
+      }
+    },
+    {
+      "name": "65536_identical",
+      "cells": 65536,
+      "source_sha256": [
+        "90ce78e48b010afabcdf98ae7d14579eccb2a53d7edf879f9a5b708c144284a0",
+        "90ce78e48b010afabcdf98ae7d14579eccb2a53d7edf879f9a5b708c144284a0"
+      ],
+      "expected": "raw",
+      "setup_s": 0.0010216999799013138,
+      "read_bytes_per_call": {
+        "device": 4,
+        "cpu": 6815744
+      },
+      "first_method_call_ns": {
+        "device_raw": 491600,
+        "device_full": 315000,
+        "batched_cpu_raw": 870400,
+        "batched_cpu_full": 817800,
+        "two_reads_cpu_full": 1913500
+      },
+      "samples_ns": {
+        "device_raw": [
+          386300,
+          353900,
+          347800,
+          317700,
+          482800,
+          436700,
+          302900,
+          322800,
+          352100,
+          299100,
+          251100,
+          285600,
+          331300,
+          336400,
+          288300
+        ],
+        "device_full": [
+          232600,
+          370200,
+          224000,
+          223800,
+          532200,
+          287900,
+          256900,
+          238100,
+          411300,
+          204700,
+          197000,
+          250800,
+          213700,
+          208300,
+          209000
+        ],
+        "batched_cpu_raw": [
+          801700,
+          753400,
+          750600,
+          793700,
+          824000,
+          786400,
+          765600,
+          741700,
+          886900,
+          746900,
+          739600,
+          751000,
+          778200,
+          741700,
+          740200
+        ],
+        "batched_cpu_full": [
+          857600,
+          756500,
+          772000,
+          741600,
+          864100,
+          761800,
+          764700,
+          742300,
+          779000,
+          743400,
+          743800,
+          782500,
+          746900,
+          837300,
+          741300
+        ],
+        "two_reads_cpu_full": [
+          1912400,
+          1636200,
+          1691200,
+          1978400,
+          1670800,
+          1572600,
+          1531400,
+          1513700,
+          1690800,
+          1618800,
+          1531400,
+          1633500,
+          1551100,
+          1699500,
+          1532200
+        ]
+      },
+      "observed_decisions": {
+        "device_raw": {
+          "raw": 16
+        },
+        "device_full": {
+          "raw": 16
+        },
+        "batched_cpu_raw": {
+          "raw": 16
+        },
+        "batched_cpu_full": {
+          "raw": 16
+        },
+        "two_reads_cpu_full": {
+          "raw": 16
+        }
+      }
+    },
+    {
+      "name": "65536_different_axis",
+      "cells": 65536,
+      "source_sha256": [
+        "90ce78e48b010afabcdf98ae7d14579eccb2a53d7edf879f9a5b708c144284a0",
+        "d7cbf3296139048cb710575d156ef3c1f5b16d56444454ac9a4014e2a2fdc771"
+      ],
+      "expected": "axis",
+      "setup_s": 0.0012341998517513275,
+      "read_bytes_per_call": {
+        "device": 4,
+        "cpu": 6815744
+      },
+      "first_method_call_ns": {
+        "device_raw": 1140800,
+        "device_full": 419800,
+        "batched_cpu_raw": 706000,
+        "batched_cpu_full": 1780100,
+        "two_reads_cpu_full": 2675100
+      },
+      "samples_ns": {
+        "device_raw": [
+          489500,
+          676600,
+          632500,
+          518500,
+          432200,
+          639500,
+          454900,
+          557400,
+          418600,
+          317000,
+          334000,
+          549700,
+          658500,
+          509700,
+          372600
+        ],
+        "device_full": [
+          337500,
+          386200,
+          280900,
+          229700,
+          241700,
+          352600,
+          540000,
+          337500,
+          304800,
+          252000,
+          315700,
+          545700,
+          351500,
+          329400,
+          245100
+        ],
+        "batched_cpu_raw": [
+          633600,
+          611700,
+          760700,
+          609100,
+          677300,
+          736100,
+          708500,
+          692300,
+          628900,
+          776800,
+          611400,
+          649800,
+          709700,
+          683400,
+          622500
+        ],
+        "batched_cpu_full": [
+          1447600,
+          1451600,
+          1757800,
+          1520800,
+          2313300,
+          1518200,
+          1473700,
+          1449200,
+          1534400,
+          1599300,
+          1559400,
+          1478800,
+          1567200,
+          1531400,
+          1468500
+        ],
+        "two_reads_cpu_full": [
+          2411900,
+          2493700,
+          3059800,
+          2458000,
+          2482800,
+          2508800,
+          2432300,
+          2776800,
+          2443000,
+          2273400,
+          2641900,
+          2442100,
+          2737900,
+          2524500,
+          2397700
+        ]
+      },
+      "observed_decisions": {
+        "device_raw": {
+          "split": 16
+        },
+        "device_full": {
+          "axis": 16
+        },
+        "batched_cpu_raw": {
+          "split": 16
+        },
+        "batched_cpu_full": {
+          "axis": 16
+        },
+        "two_reads_cpu_full": {
+          "axis": 16
+        }
+      }
+    },
+    {
+      "name": "65536_different_source",
+      "cells": 65536,
+      "source_sha256": [
+        "90ce78e48b010afabcdf98ae7d14579eccb2a53d7edf879f9a5b708c144284a0",
+        "5a413e5c550a79e9a843bc166290173be2001033b29f5308507d18949d121ae7"
+      ],
+      "expected": "split",
+      "setup_s": 0.0012799999676644802,
+      "read_bytes_per_call": {
+        "device": 4,
+        "cpu": 6815744
+      },
+      "first_method_call_ns": {
+        "device_raw": 633900,
+        "device_full": 885200,
+        "batched_cpu_raw": 938500,
+        "batched_cpu_full": 1338400,
+        "two_reads_cpu_full": 2362800
+      },
+      "samples_ns": {
+        "device_raw": [
+          523800,
+          428700,
+          547300,
+          420000,
+          377300,
+          272000,
+          669100,
+          449400,
+          647600,
+          389300,
+          340900,
+          428100,
+          499400,
+          493900,
+          356500
+        ],
+        "device_full": [
+          240200,
+          470500,
+          343200,
+          300700,
+          269700,
+          210700,
+          526400,
+          357500,
+          334400,
+          327400,
+          289000,
+          412400,
+          321500,
+          313100,
+          227400
+        ],
+        "batched_cpu_raw": [
+          758300,
+          793000,
+          748700,
+          912300,
+          758200,
+          743400,
+          825900,
+          837900,
+          781700,
+          764500,
+          765600,
+          755000,
+          769800,
+          885200,
+          751300
+        ],
+        "batched_cpu_full": [
+          1136600,
+          1130700,
+          1629400,
+          1189800,
+          1139300,
+          1152800,
+          1147400,
+          1167000,
+          1152500,
+          1160000,
+          1143300,
+          1130500,
+          1203700,
+          1153300,
+          1124800
+        ],
+        "two_reads_cpu_full": [
+          2155600,
+          2036200,
+          2462600,
+          2133500,
+          2141100,
+          3021100,
+          2203800,
+          2070700,
+          2025200,
+          2172000,
+          2183200,
+          2039400,
+          2738000,
+          2361000,
+          2003700
+        ]
+      },
+      "observed_decisions": {
+        "device_raw": {
+          "split": 16
+        },
+        "device_full": {
+          "split": 16
+        },
+        "batched_cpu_raw": {
+          "split": 16
+        },
+        "batched_cpu_full": {
+          "split": 16
+        },
+        "two_reads_cpu_full": {
+          "split": 16
+        }
+      }
+    }
+  ]
+}

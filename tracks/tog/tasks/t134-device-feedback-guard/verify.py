@@ -47,7 +47,9 @@ def verify(folder, limit_s=LIMIT_S):
                     result["first_method_call_ns"][key] > 0, "Incomplete timing blocks")
         us = {key: median(samples[key]) / 1000 for key in METHODS}
         faster = us["device_full"] < min(us["batched_cpu_full"], us["two_reads_cpu_full"])
-        summaries.append(dict(name=name, expected=result["expected"], median_us=us, device_full_faster=faster))
+        wins = sum(gpu < cpu for gpu, cpu in zip(samples["device_full"], samples["batched_cpu_full"]))
+        summaries.append(dict(name=name, expected=result["expected"], median_us=us, device_full_faster=faster,
+                              blocks_faster_than_batched_cpu=wins))
     return dict(status="complete", controls=len(row["controls"]), measured_calls=BLOCKS*len(METHODS)*len(summaries),
                 results=summaries)
 

@@ -1,0 +1,85 @@
+{
+  "status": "complete",
+  "controls": 19,
+  "measured_calls": 450,
+  "results": [
+    {
+      "name": "1024_identical",
+      "expected": "raw",
+      "median_us": {
+        "device_raw": 208.7,
+        "device_full": 192.7,
+        "batched_cpu_raw": 138.4,
+        "batched_cpu_full": 132.6,
+        "two_reads_cpu_full": 312.2
+      },
+      "device_full_faster": false,
+      "blocks_faster_than_batched_cpu": 2
+    },
+    {
+      "name": "1024_different_axis",
+      "expected": "axis",
+      "median_us": {
+        "device_raw": 213.4,
+        "device_full": 186.9,
+        "batched_cpu_raw": 128.7,
+        "batched_cpu_full": 192.5,
+        "two_reads_cpu_full": 379.3
+      },
+      "device_full_faster": true,
+      "blocks_faster_than_batched_cpu": 6
+    },
+    {
+      "name": "1024_different_source",
+      "expected": "split",
+      "median_us": {
+        "device_raw": 219.3,
+        "device_full": 188.3,
+        "batched_cpu_raw": 129.8,
+        "batched_cpu_full": 149.6,
+        "two_reads_cpu_full": 308.5
+      },
+      "device_full_faster": false,
+      "blocks_faster_than_batched_cpu": 1
+    },
+    {
+      "name": "65536_identical",
+      "expected": "raw",
+      "median_us": {
+        "device_raw": 331.3,
+        "device_full": 232.6,
+        "batched_cpu_raw": 753.4,
+        "batched_cpu_full": 761.8,
+        "two_reads_cpu_full": 1633.5
+      },
+      "device_full_faster": true,
+      "blocks_faster_than_batched_cpu": 15
+    },
+    {
+      "name": "65536_different_axis",
+      "expected": "axis",
+      "median_us": {
+        "device_raw": 509.7,
+        "device_full": 329.4,
+        "batched_cpu_raw": 677.3,
+        "batched_cpu_full": 1520.8,
+        "two_reads_cpu_full": 2482.8
+      },
+      "device_full_faster": true,
+      "blocks_faster_than_batched_cpu": 15
+    },
+    {
+      "name": "65536_different_source",
+      "expected": "split",
+      "median_us": {
+        "device_raw": 428.7,
+        "device_full": 321.5,
+        "batched_cpu_raw": 765.6,
+        "batched_cpu_full": 1152.5,
+        "two_reads_cpu_full": 2155.6
+      },
+      "device_full_faster": true,
+      "blocks_faster_than_batched_cpu": 15
+    }
+  ]
+}
