@@ -28,6 +28,11 @@ def read_arm(folder, name):
     rows = [json.loads(line) for line in paths[0].read_bytes().splitlines()]
     updates = [row for row in rows if row["kind"] == "update"]
     assert [row["index"] for row in updates] == list(range(meta["updates"]))
+    if name == "extended":
+        bound = [row for row in rows if row["kind"] == "burn_uniform"]
+        assert len(bound) == len(updates)
+        for upload, planned in zip(bound, updates):
+            assert all(upload[k] == planned[k] for k in ("index", "frame", "substep", "dt_f32", "rate_f32"))
     states = {}
     state_rows = {}
     previous = None
