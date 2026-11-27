@@ -11,12 +11,12 @@ def require(ok, message):
         raise ValueError(message)
 
 
-def verify(folder):
+def verify(folder, *, limit=LIMIT):
     outer = json.loads((folder / "EXIT.json").read_bytes())
     result = json.loads((folder / "RESULT.json").read_bytes())
     trace = [json.loads(line) for line in (folder / "PHASES.ndjson").read_bytes().splitlines()]
     require(result["source_revision"] == PIN and result["stage_keys_expected"] == KEYS, "Source or stage identity")
-    require(outer["limit_s"] == LIMIT and outer["windows_awake_s"] >= 0, "Supervisor clock")
+    require(outer["limit_s"] == limit and outer["windows_awake_s"] >= 0, "Supervisor clock")
     active = []
     native = {}
     previous = 0
@@ -35,7 +35,7 @@ def verify(folder):
             if row["event"] == "return" and "key" in row:
                 native.setdefault(row["entry"], []).append(row["phase"])
     if outer["status"] == "time_limit":
-        require(outer["exit"] != 0 and max(outer["elapsed_wall_s"], outer["monotonic_s"]) >= LIMIT, "Deadline")
+        require(outer["exit"] != 0 and max(outer["elapsed_wall_s"], outer["monotonic_s"]) >= limit, "Deadline")
     elif outer["exit"] != 0:
         require(result["status"] == "error" and outer["status"] == "returned", "Recorded worker failure")
     else:

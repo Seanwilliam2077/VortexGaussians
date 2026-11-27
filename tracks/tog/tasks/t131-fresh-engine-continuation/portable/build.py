@@ -23,16 +23,17 @@ def digest(data):
     return hashlib.sha256(data).hexdigest()
 
 
-def parent_data(ref):
+def checkpoint_data(frame, archive):
     state = {}
-    with np.load(EVIDENCE / "reference-parent.npz", allow_pickle=False) as arrays:
+    with np.load(archive, allow_pickle=False) as arrays:
         for group in ("gas", "cloth", "embers"):
             state[group] = {}
-            for name, spec in ref["native_parent"][group].items():
+            for name, spec in frame[group].items():
                 key = "state." + group + "." + name
                 state[group][name] = arrays[key] if key in arrays else spec
-            require(freeze(state[group], group, {}) == ref["native_parent"][group], "Parent receipt mismatch")
+            require(freeze(state[group], group, {}) == frame[group], "Checkpoint receipt mismatch")
         feedback = arrays["state.feedback.grid"].tobytes()
+        require(digest(feedback) == frame["feedback"]["grid"]["sha256"], "Feedback digest mismatch")
     gas, cloth = state["gas"], state["cloth"]
     entry = {
         "scal": gas["scal"], "time": gas["time"], "upres": gas["upres"], "dims": gas["dims"],
@@ -42,6 +43,10 @@ def parent_data(ref):
         "state": gas, "ember_state": state["embers"], "cloth_state": cloth,
     }
     return entry, feedback
+
+
+def parent_data(ref):
+    return checkpoint_data(ref["native_parent"], EVIDENCE / "reference-parent.npz")
 
 
 def sidecar_metadata(ref):

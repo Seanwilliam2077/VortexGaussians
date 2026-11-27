@@ -31,7 +31,7 @@ def awake_seconds():
     return ticks.value / 10_000_000
 
 
-def worker(root, out, cache):
+def worker(root, out, cache, *, select_device=select, check_device=None, restore_frame=None):
     import numpy as np
     start = time.perf_counter()
     awake_start = awake_seconds()
@@ -70,13 +70,15 @@ def worker(root, out, cache):
 
     try:
         with phase("device admission"):
-            card = select(root)
+            card = select_device(root)
             from blackbody.engine.engine import Engine
             from blackbody.engine.gpu import GPU, shader_key
             from blackbody.scene.model import Scene
             gpu = GPU(adapter_name=card["device"],backend=card["backend_type"])
             if gpu.name != card["device"] or gpu.backend != card["backend_type"]:
                 raise RuntimeError("Unexpected native adapter")
+            if check_device is not None:
+                check_device(gpu, out)
             result["adapter"] = card
             save(out/"RESULT.json", result)
         with phase("engine construction"):
@@ -144,11 +146,15 @@ def worker(root, out, cache):
                                    preroll_frames=eng.preroll_frames(probe))
             if result["scene"]!=json.loads(REFERENCE.read_bytes())["scene"]:
                 raise ValueError("Native scene dimensions differ from T130")
-        with phase("ordinary neutral frame 1"):
-            eng.simulate_to(probe,1,cache=True)
-            eng.cache.disk.flush()
-        with phase("ordinary neutral frame 2"):
-            eng.simulate_to(probe,2,cache=False)
+        if restore_frame is None:
+            with phase("ordinary neutral frame 1"):
+                eng.simulate_to(probe,1,cache=True)
+                eng.cache.disk.flush()
+            with phase("ordinary neutral frame 2"):
+                eng.simulate_to(probe,2,cache=False)
+        else:
+            with phase("restore recorded neutral frame 2"):
+                restore_frame(eng, probe, cache, out)
         with phase("frame 2 native reference check"):
             receipt = digest(dict(frame=eng.sim_frame, gas=eng.solver.save_state(), cloth=eng.cloth.save_state(),
                                   feedback_grid=np.frombuffer(gpu.read_buffer(eng.cloth.G),dtype=np.uint32),
@@ -182,7 +188,7 @@ def worker(root, out, cache):
         return 2
 
 
-def supervise(source,out):
+def supervise(source,out, *, limit=LIMIT, worker_script=__file__):
     out.mkdir(parents=True,exist_ok=False)
     start=time.time()
     perf=time.perf_counter()
@@ -190,14 +196,14 @@ def supervise(source,out):
     last=start
     largest_gap=0.
     with tempfile.TemporaryDirectory(prefix="t132-neutral-") as cache:
-        argv=[sys.executable,__file__,"--source",str(source),"--out",str(out),"--worker-cache",cache]
+        argv=[sys.executable,str(worker_script),"--source",str(source),"--out",str(out),"--worker-cache",cache]
         proc=subprocess.Popen(argv)
         try:
             while True:
                 now=time.time()
                 largest_gap=max(largest_gap,now-last)
                 last=now
-                if max(now-start,time.perf_counter()-perf)>=LIMIT:
+                if max(now-start,time.perf_counter()-perf)>=limit:
                     if proc.poll() is None:
                         proc.kill()
                     proc.wait()
@@ -212,7 +218,7 @@ def supervise(source,out):
                 proc.kill()
                 proc.wait()
     end=time.time()
-    row=dict(status=status,exit=code,worker_exit=proc.returncode,limit_s=LIMIT,
+    row=dict(status=status,exit=code,worker_exit=proc.returncode,limit_s=limit,
              start_utc=datetime.fromtimestamp(start,timezone.utc).isoformat(),end_utc=datetime.fromtimestamp(end,timezone.utc).isoformat(),
              elapsed_wall_s=end-start,monotonic_s=time.perf_counter()-perf,windows_awake_s=awake_seconds()-awake,
              largest_poll_gap_s=largest_gap)

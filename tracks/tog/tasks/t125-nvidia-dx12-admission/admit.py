@@ -19,7 +19,7 @@ def save(path,row):
     target.replace(path)
 
 
-def select(source,note=lambda **v:None):
+def select(source,note=lambda **v:None, *, compiler_options=None):
     assert subprocess.check_output(["git","-C",str(source),"rev-parse","HEAD"],text=True).strip()==PIN
     assert not subprocess.check_output(["git","-C",str(source),"diff","--name-only","HEAD","--","blackbody"],text=True).strip()
     sys.path.insert(0,str(source))
@@ -27,7 +27,7 @@ def select(source,note=lambda **v:None):
     import wgpu
     from wgpu.backends.wgpu_native import extras, __version__ as native_version
     assert native_version=="29.0.1.1"
-    extras.set_instance_extras(backends=["DX12"])
+    extras.set_instance_extras(backends=["DX12"], **(compiler_options or {}))
     note(stage="enumerating",wgpu="0.32.0",native=native_version)
     cards=[{k:str(v) for k,v in a.info.items() if k in ("vendor","device","backend_type","adapter_type","description")}
            for a in wgpu.gpu.enumerate_adapters_sync()]
