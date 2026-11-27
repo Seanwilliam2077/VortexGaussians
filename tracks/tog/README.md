@@ -1,5 +1,9 @@
 # TOG 研究轨道：从创作需求到可审查任务
 
+## Independent surface-fire result · 27 November 2026
+
+The first positive cross-solver test now has a real native fork. Changing a curtain's catch time altered its material before its emissions reached the gas. Ten post-divergence updates could be certified, and both retained native states resumed exactly in a fresh process. A strong one-atlas ordinary alternative also worked on this particular ratio. Readers now give conference 4/6 and 5/6, and journal 3/6 from both. [Experiment](tasks/t151-surface-preignition/) · [Full-state fork](tasks/t154-native-surface-fork/) · [Ordinary method](tasks/t157-ordinary-half-cell-guard/) · [Review and manuscript](submission/sig2027/)
+
 ## 2026 年 11 月 27 日 · 新场景与独立求解器
 
 在完整的 Bonsai 房间中，两笔编辑的前 35 步可以精确复用。主机位看得见选区，两笔都未让选区出现达到阈值的气体变化。外部 Blackbody 旗帜实验给出了另一种结果。布料轨迹一旦分开，气体至多再相同一步；这一例无法从更快的判据获得更长的整场复用。原木堆换用原生渲染选区后，按画面气体选轻笔、按木材点燃选重笔的结论保持。技术稿和交接材料收录了这三项证据。独立动画师简报仍待取得，艺术线继续暂停。[Bonsai 原始实验](tasks/t141-bonsai-action/README.md) · [外部旗帜对照](tasks/t137-flag-fine-gas/README.md) · [原生木堆选区](tasks/t140-native-shell-sensitivity/README.md) · [技术稿和复核材料](submission/sig2027/README.md)
