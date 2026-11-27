@@ -11,7 +11,7 @@ def require(ok, message):
         raise ValueError(message)
 
 
-def verify(folder, *, limit=LIMIT):
+def verify(folder, *, limit=LIMIT, compiled_on_construction=("main","caustics")):
     outer = json.loads((folder / "EXIT.json").read_bytes())
     result = json.loads((folder / "RESULT.json").read_bytes())
     trace = [json.loads(line) for line in (folder / "PHASES.ndjson").read_bytes().splitlines()]
@@ -42,7 +42,8 @@ def verify(folder, *, limit=LIMIT):
         import numpy as np
         require(result["status"] == "complete" and not active and outer["status"] == "returned", "Completion")
         require(result["stage_keys"] == KEYS and result["neutral_frame2_matches_t130"], "Fixture identity")
-        for entry in KEYS:
+        require(set(native)==set(compiled_on_construction),"Unexpected eagerly constructed stage entries")
+        for entry in compiled_on_construction:
             require(native[entry] == ["create_shader_module","create_bind_group_layout","create_pipeline_layout",
                                       "create_compute_pipeline"], "Native stage sequence")
         with np.load(folder / "composite.npz", allow_pickle=False) as container:

@@ -18,8 +18,9 @@ def verifier(path):
     return module
 
 
-def verify(folder):
-    stage = verifier(TASKS / "t132-native-composite-warmup/verify.py").verify(folder, limit=LIMIT)
+def verify(folder, *, limit=LIMIT, compiled_on_construction=("main","caustics")):
+    stage = verifier(TASKS / "t132-native-composite-warmup/verify.py").verify(
+        folder, limit=limit, compiled_on_construction=compiled_on_construction)
     compiler = read_record(folder / "COMPILER.json")
     require(compiler["requested"] == "Dxc" and compiler["dll_sha256"] == DLLS,
             "Wrong compiler request or file identity")
