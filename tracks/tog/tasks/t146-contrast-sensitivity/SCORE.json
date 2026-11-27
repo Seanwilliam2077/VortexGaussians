@@ -1,0 +1,86 @@
+{
+  "sha256": {
+    "t140-native-shell-sensitivity/evidence/CONTRAST.json.gz": "02e6729b5c6d836a3bfe2cc408de04c5246850ef3875a013865f05ff57163ee7",
+    "t140-native-shell-sensitivity/evidence/SCORE.json": "8c547b4f6a1016fbb68621f5b846e5ff5231a6d630f457c9e1b22f060ee524c0",
+    "t144-bonsai-repeated-cost/evidence/process-1/RUN.json.gz": "9a8f2b5c8efeb736f246542fd1ccf2694f2fd494b47ce6b123a0e336d92eb1b8"
+  },
+  "cutoff_count": 1020,
+  "threshold_scale": 4,
+  "required_fraction": 0.25,
+  "views": {
+    "woodpile_0": {
+      "denominator": 271.7638439685106,
+      "choices": [
+        {
+          "first": 0.25,
+          "last": 75.0,
+          "choice": "light"
+        },
+        {
+          "first": 75.25,
+          "last": 255.0,
+          "choice": "neither"
+        }
+      ],
+      "highest_passing_cutoff": [
+        75.0,
+        74.75
+      ],
+      "fraction_at_smallest": [
+        0.776911299725808,
+        0.8011952552615836
+      ],
+      "fraction_at_16": [
+        0.468410653247531,
+        0.5085204897015426
+      ]
+    },
+    "woodpile_124": {
+      "denominator": 847.8786786943674,
+      "choices": [
+        {
+          "first": 0.25,
+          "last": 255.0,
+          "choice": "neither"
+        }
+      ],
+      "highest_passing_cutoff": [
+        null,
+        null
+      ],
+      "fraction_at_smallest": [
+        0.00031541180707916883,
+        0.00031472514838184036
+      ],
+      "fraction_at_16": [
+        2.588399774922822e-05,
+        9.253539212892982e-06
+      ]
+    },
+    "bonsai_0": {
+      "denominator": 411.0941503196955,
+      "choices": [
+        {
+          "first": 0.25,
+          "last": 255.0,
+          "choice": "neither"
+        }
+      ],
+      "highest_passing_cutoff": [
+        null,
+        null
+      ],
+      "fraction_at_smallest": [
+        6.537211775111161e-06,
+        3.0577393134102755e-05
+      ],
+      "fraction_at_16": [
+        0.0,
+        0.0
+      ]
+    }
+  },
+  "undefined": [
+    "bonsai_146"
+  ]
+}
