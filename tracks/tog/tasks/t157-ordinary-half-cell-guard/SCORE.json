@@ -1,0 +1,276 @@
+{
+  "cells": {
+    "finite_signed_words": 63488,
+    "midpoints_checked": 63488,
+    "unique_signed_words": 61440,
+    "ambiguous_signed_words": 2048,
+    "excluded_nonfinite_words": 2048,
+    "positive_sign_examples": [
+      {
+        "fast": "0x0000",
+        "low_input": 0.0,
+        "high_input": 2.9802322387695312e-08,
+        "slow_from_low": "0x0000",
+        "slow_from_high": "0x0000",
+        "certified": true
+      },
+      {
+        "fast": "0x0001",
+        "low_input": 2.980232594040899e-08,
+        "high_input": 8.940696005765858e-08,
+        "slow_from_low": "0x0000",
+        "slow_from_high": "0x0001",
+        "certified": false
+      },
+      {
+        "fast": "0x0002",
+        "low_input": 8.940696716308594e-08,
+        "high_input": 1.4901161193847656e-07,
+        "slow_from_low": "0x0001",
+        "slow_from_high": "0x0001",
+        "certified": true
+      },
+      {
+        "fast": "0x02fe",
+        "low_input": 4.5627355575561523e-05,
+        "high_input": 4.5686960220336914e-05,
+        "slow_from_low": "0x017f",
+        "slow_from_high": "0x017f",
+        "certified": true
+      },
+      {
+        "fast": "0x03ff",
+        "low_input": 6.094575292081572e-05,
+        "high_input": 6.10053502896335e-05,
+        "slow_from_low": "0x01ff",
+        "slow_from_high": "0x0200",
+        "certified": false
+      },
+      {
+        "fast": "0x0400",
+        "low_input": 6.1005353927612305e-05,
+        "high_input": 6.10649585723877e-05,
+        "slow_from_low": "0x0200",
+        "slow_from_high": "0x0200",
+        "certified": true
+      },
+      {
+        "fast": "0x0401",
+        "low_input": 6.106496584834531e-05,
+        "high_input": 6.112455594120547e-05,
+        "slow_from_low": "0x0200",
+        "slow_from_high": "0x0201",
+        "certified": false
+      },
+      {
+        "fast": "0x07ff",
+        "low_input": 0.00012198091280879453,
+        "high_input": 0.00012204050290165469,
+        "slow_from_low": "0x03ff",
+        "slow_from_high": "0x0400",
+        "certified": false
+      },
+      {
+        "fast": "0x0800",
+        "low_input": 0.0001220405101776123,
+        "high_input": 0.0001221299171447754,
+        "slow_from_low": "0x0400",
+        "slow_from_high": "0x0400",
+        "certified": true
+      },
+      {
+        "fast": "0x0801",
+        "low_input": 0.00012212993169669062,
+        "high_input": 0.00012224911188241094,
+        "slow_from_low": "0x0401",
+        "slow_from_high": "0x0401",
+        "certified": true
+      },
+      {
+        "fast": "0x7bff",
+        "low_input": 65488.00390625,
+        "high_input": 65519.99609375,
+        "slow_from_low": "0x77ff",
+        "slow_from_high": "0x77ff",
+        "certified": true
+      }
+    ]
+  },
+  "native_replay": {
+    "registered_gas_updates": 12,
+    "first_ambiguous": null,
+    "history_admitted_updates": 12,
+    "exact_boundaries": 13,
+    "boundaries": [
+      {
+        "index": 0,
+        "ambiguous_words": 0,
+        "first_witness": null,
+        "history_admits": true,
+        "changed_by_channel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "additional_even_low_nonzero": 0
+      },
+      {
+        "index": 1,
+        "ambiguous_words": 0,
+        "first_witness": null,
+        "history_admits": true,
+        "changed_by_channel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "additional_even_low_nonzero": 0
+      },
+      {
+        "index": 2,
+        "ambiguous_words": 0,
+        "first_witness": null,
+        "history_admits": true,
+        "changed_by_channel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "additional_even_low_nonzero": 0
+      },
+      {
+        "index": 3,
+        "ambiguous_words": 0,
+        "first_witness": null,
+        "history_admits": true,
+        "changed_by_channel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "additional_even_low_nonzero": 0
+      },
+      {
+        "index": 4,
+        "ambiguous_words": 0,
+        "first_witness": null,
+        "history_admits": true,
+        "changed_by_channel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "additional_even_low_nonzero": 0
+      },
+      {
+        "index": 5,
+        "ambiguous_words": 0,
+        "first_witness": null,
+        "history_admits": true,
+        "changed_by_channel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "additional_even_low_nonzero": 0
+      },
+      {
+        "index": 6,
+        "ambiguous_words": 0,
+        "first_witness": null,
+        "history_admits": true,
+        "changed_by_channel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "additional_even_low_nonzero": 0
+      },
+      {
+        "index": 7,
+        "ambiguous_words": 0,
+        "first_witness": null,
+        "history_admits": true,
+        "changed_by_channel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "additional_even_low_nonzero": 0
+      },
+      {
+        "index": 8,
+        "ambiguous_words": 0,
+        "first_witness": null,
+        "history_admits": true,
+        "changed_by_channel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "additional_even_low_nonzero": 1
+      },
+      {
+        "index": 9,
+        "ambiguous_words": 0,
+        "first_witness": null,
+        "history_admits": true,
+        "changed_by_channel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "additional_even_low_nonzero": 0
+      },
+      {
+        "index": 10,
+        "ambiguous_words": 0,
+        "first_witness": null,
+        "history_admits": true,
+        "changed_by_channel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "additional_even_low_nonzero": 0
+      },
+      {
+        "index": 11,
+        "ambiguous_words": 0,
+        "first_witness": null,
+        "history_admits": true,
+        "changed_by_channel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "additional_even_low_nonzero": 0
+      },
+      {
+        "index": 12,
+        "ambiguous_words": 0,
+        "first_witness": null,
+        "history_admits": true,
+        "changed_by_channel": [
+          0,
+          0,
+          0,
+          0
+        ],
+        "additional_even_low_nonzero": 0
+      }
+    ]
+  }
+}
