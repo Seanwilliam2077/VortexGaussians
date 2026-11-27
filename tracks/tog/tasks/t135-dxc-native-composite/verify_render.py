@@ -26,9 +26,9 @@ def verify(folder):
     require(not compiler["compiler_loaded_before_admission"], "Unexpected prior module")
     phase_rows = [json.loads(line) for line in (folder / "PHASES.ndjson").read_bytes().splitlines()]
     if any(r["phase"] == "cold stage on admitted device" for r in phase_rows):
-        require(compiler["expected_compiler_loaded"] and not compiler["compiler_warnings"],
-                "Compiler identity or fallback warning")
+        require(compiler["expected_compiler_loaded"], "Requested compiler did not load")
     if stage["worker_status"] == "complete":
+        require(not compiler["compiler_warnings"], "Unexpected compiler diagnostics on a successful image")
         require(stage["terminal"] == "returned", "Image was not delivered in time")
         measured = read_record(COLD / "evidence/reference.json")["successor"]
         require(read_record(folder / "RESTORED.json") == measured, "Recorded physical fields differ")
