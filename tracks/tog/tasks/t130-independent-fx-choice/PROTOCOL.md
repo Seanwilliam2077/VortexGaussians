@@ -1,5 +1,7 @@
 # One independent FX shot with two candidate edits
 
+The [27 November feedback test](FEEDBACK_TEST.md) freezes an additional sufficient condition for the unopened pair. Its motivating example comes from two already observed unedited frames. The study and enrollment conditions below were registered on 26 November.
+
 Registered 26 November 2026, before a participant brief or any candidate execution. The question is whether sharing a gas trajectory after two material states diverge can help an artist make an actual shot decision and continue the kept take in a second, naturally coupled solver. One artist and one chosen edit pair constitute one case.
 
 ## Before opening either candidate
