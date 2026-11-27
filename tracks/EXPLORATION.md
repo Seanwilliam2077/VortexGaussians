@@ -1,5 +1,11 @@
 # Exploration policy
 
+## 27 November 2026 · A missing checkpoint input can be invisible in its successor
+
+T131 separated the native disk hit, the immediately restored input and the next state. The ordinary path missed the pending feedback before the first step; its successor matched uninterrupted replay on every captured field. Carry this ordinary result into any future cost comparison. The prospective grid test was inconclusive on frames 1 and 2, and the subsequent axis analysis explains their common-input equivalence. An artist-defined edit pair would give the latter rule its first prospective cross-edit test. Lock both comparison rules before opening either alternative, time the comparisons and give ordinary replay its admissible shared prefix. [Registered test](tog/tasks/t131-fresh-engine-continuation/effective/PROTOCOL.md) · [Data and limits](tog/tasks/t131-fresh-engine-continuation/README.md) · [Post-hoc result](tog/tasks/t131-fresh-engine-continuation/axis-audit/README.md)
+
+The [frozen addendum](tog/tasks/t130-independent-fx-choice/FEEDBACK_TEST.md) specifies the axis-wise rule, what the ordinary path may share, how to attribute any additional steps and which costs to include. T132 consumed its sole 720 s native rendering attempt. A future playback qualification needs a concrete change to the conditions of pipeline creation, such as a known working rendering host. Preserve the scene, settings and native scene-linear output contract. [Final native renderer phases](tog/tasks/t132-native-composite-warmup/README.md)
+
 ## 26 November 2026 · A single external-solver test tied to an independent FX brief
 
 Freeze what an independent animator wants to decide before opening either treatment. Equal starting conditions allow ordinary prefix caching. Test additional gas reuse only after the evolving material states have diverged, charge for checking all effective feedback and other gas inputs, and require accurate continuation of the kept take. Preserve zero windows, cases ordinary replay can already answer, and rejection of either take. A source-only guard and an unedited infrastructure trial can be qualified before the brief arrives. Candidate images and timing comparisons remain unopened. [Study protocol](tog/tasks/t130-independent-fx-choice/PROTOCOL.md) · [Current disposition](tog/tasks/t130-independent-fx-choice/README.md)

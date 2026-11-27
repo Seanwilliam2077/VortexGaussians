@@ -1,5 +1,9 @@
 # T130 · Can an independent FX artist keep and continue a take in Blackbody?
 
+**27 November follow-up.** Three fresh processes tested the native disk cache on the unedited fixture. Both ordinary restore and restore with saved feedback matched the measured uninterrupted successor. Only the augmented restore also matched all observed pre-step inputs. The artist study still has zero briefs and zero treatment runs. [T131 cold restores and raw numerical data](../t131-fresh-engine-continuation/README.md)
+
+The additional feedback criterion was frozen before either treatment. The neutral playback attempt exhausted its twelve-minute budget in creation of the classic stage compute pipeline, before rendering. [Test for future edits](FEEDBACK_TEST.md) · [T132 native rendering diagnosis](../t132-native-composite-warmup/README.md)
+
 **Awaiting an independent artist and a qualified native playback path.** On 26 November 2026 the author confirmed that no suitable participant was available. No independent brief has been received, no candidate edit has run, and no take has been judged. The scores in the manuscript remain those from T129. This is the only prospective external case opened in this round.
 
 **Artist handoff.** The [standalone Chinese packet](artist/artist-packet.zip) contains an offline free-text form and an optional neutral reference image, 45,549 bytes, SHA-256 `9ebffc1f954927877b79b4cccff375fca59b2fab636ca964d60876483b0b2e80`. The reference is a projection of the original rest meshes under the released camera of a two-panel shot with no numerical edit receipts in this project. It reveals neither candidate and includes no default acceptance criterion. Another unopened edit can be used if it better matches the artist's shot. [Intake and private receipt procedure](artist/README.md) · [Reference provenance](artist/reference/README.md)
