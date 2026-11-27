@@ -1,0 +1,167 @@
+{
+  "frame_range": [
+    225,
+    254
+  ],
+  "nominal_fps": 60,
+  "processes": [
+    {
+      "process": 1,
+      "wall_s": 167.51500000013039,
+      "medians": {
+        "ordinary": {
+          "host_ms": 7346.945199999998,
+          "selection_ms": 962.0500000715256,
+          "advance_ms": 274.5999997854233,
+          "draw_read_ms": 440.35000014305115,
+          "upload_ms": 2886.399999976158
+        },
+        "repair": {
+          "host_ms": 7424.90165,
+          "selection_ms": 1202.1999999284744,
+          "advance_ms": 268.350000500679,
+          "draw_read_ms": 428.69999945163727,
+          "upload_ms": 2753.149999856949
+        },
+        "hybrid": {
+          "host_ms": 7517.057100000013,
+          "selection_ms": 998.25,
+          "advance_ms": 284.35000014305115,
+          "draw_read_ms": 439.8000000715256,
+          "upload_ms": 2886.299999833107
+        },
+        "sibling": {
+          "host_ms": 7471.775199999996,
+          "selection_ms": 939.5,
+          "advance_ms": 297.60000014305115,
+          "draw_read_ms": 458.84999990463257,
+          "upload_ms": 2802.600000023842
+        }
+      },
+      "sibling_vs": {
+        "ordinary": {
+          "host_ms": {
+            "wins": 1,
+            "median_paired_ratio": 1.017455466162718,
+            "ratio_of_medians": 1.0169907351425458
+          },
+          "selection_ms": {
+            "wins": 2,
+            "median_paired_ratio": 0.9960946305546876,
+            "ratio_of_medians": 0.976560469757446
+          }
+        },
+        "repair": {
+          "host_ms": {
+            "wins": 2,
+            "median_paired_ratio": 1.009782843287113,
+            "ratio_of_medians": 1.006313019647876
+          },
+          "selection_ms": {
+            "wins": 4,
+            "median_paired_ratio": 0.7937761093721426,
+            "ratio_of_medians": 0.7814839461453137
+          }
+        },
+        "hybrid": {
+          "host_ms": {
+            "wins": 1,
+            "median_paired_ratio": 1.015190188678588,
+            "ratio_of_medians": 0.9939761133382882
+          },
+          "selection_ms": {
+            "wins": 3,
+            "median_paired_ratio": 0.9587583638689772,
+            "ratio_of_medians": 0.9411470072627097
+          }
+        }
+      },
+      "setup_ms": {
+        "browser_launch": 1563.2383,
+        "navigate": 448.6030999999998,
+        "load_and_first_stroke": 184.51600000000008,
+        "native_parent": 1578.9261999999999,
+        "target_install": 107.97819999999956
+      }
+    },
+    {
+      "process": 2,
+      "wall_s": 163.51599999982864,
+      "medians": {
+        "ordinary": {
+          "host_ms": 7273.714000000004,
+          "selection_ms": 984.1000000238419,
+          "advance_ms": 275.4999997615814,
+          "draw_read_ms": 427.85000026226044,
+          "upload_ms": 2863.5499999523163
+        },
+        "repair": {
+          "host_ms": 7735.40860000001,
+          "selection_ms": 1250.5499999523163,
+          "advance_ms": 279.94999980926514,
+          "draw_read_ms": 439.000000834465,
+          "upload_ms": 2922.0
+        },
+        "hybrid": {
+          "host_ms": 7131.670400000003,
+          "selection_ms": 914.1499999761581,
+          "advance_ms": 280.7999997138977,
+          "draw_read_ms": 428.299999833107,
+          "upload_ms": 2756.9499999284744
+        },
+        "sibling": {
+          "host_ms": 7188.591950000002,
+          "selection_ms": 893.1000000238419,
+          "advance_ms": 270.450000166893,
+          "draw_read_ms": 428.0499999523163,
+          "upload_ms": 2788.2000000476837
+        }
+      },
+      "sibling_vs": {
+        "ordinary": {
+          "host_ms": {
+            "wins": 2,
+            "median_paired_ratio": 0.9886434844484262,
+            "ratio_of_medians": 0.9882973058880234
+          },
+          "selection_ms": {
+            "wins": 3,
+            "median_paired_ratio": 0.8701944114240894,
+            "ratio_of_medians": 0.9075297225914081
+          }
+        },
+        "repair": {
+          "host_ms": {
+            "wins": 4,
+            "median_paired_ratio": 0.9359339712350918,
+            "ratio_of_medians": 0.9293099203576645
+          },
+          "selection_ms": {
+            "wins": 4,
+            "median_paired_ratio": 0.7176161748326364,
+            "ratio_of_medians": 0.7141657671087889
+          }
+        },
+        "hybrid": {
+          "host_ms": {
+            "wins": 2,
+            "median_paired_ratio": 1.008019367440999,
+            "ratio_of_medians": 1.0079815172052817
+          },
+          "selection_ms": {
+            "wins": 2,
+            "median_paired_ratio": 0.9665149714933319,
+            "ratio_of_medians": 0.9769731445026907
+          }
+        }
+      },
+      "setup_ms": {
+        "browser_launch": 374.5312,
+        "navigate": 615.2165,
+        "load_and_first_stroke": 160.27289999999994,
+        "native_parent": 1581.9554999999998,
+        "target_install": 107.09880000000021
+      }
+    }
+  ]
+}
