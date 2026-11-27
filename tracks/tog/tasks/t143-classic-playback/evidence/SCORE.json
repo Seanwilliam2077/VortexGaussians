@@ -1,0 +1,38 @@
+{
+  "underlying": {
+    "measurement": {
+      "stage": {
+        "terminal": "returned",
+        "worker_status": "complete",
+        "last": {
+          "phase": "persist pixels",
+          "event": "return",
+          "elapsed_s": 215.86671440000646,
+          "awake_s": 215.8663137999829
+        },
+        "open_phases": []
+      },
+      "restored_arrays": 11,
+      "pixels": {
+        "dtype": "float16",
+        "shape": [
+          180,
+          320,
+          4
+        ],
+        "sha256": "d8a43bc1270ac6f1a9ae671aa4ed0b078e0020535950139a20bc11554b624816"
+      }
+    },
+    "translated_module_labels": 90
+  },
+  "returned_stage_pipelines": [
+    "main"
+  ],
+  "deferred_descriptors": [
+    "caustics"
+  ],
+  "completed_native_batch_calls": {
+    "main": 1
+  },
+  "classic_only_observation": true
+}

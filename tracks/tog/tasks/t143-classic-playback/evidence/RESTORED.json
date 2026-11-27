@@ -1,0 +1,131 @@
+{
+  "frame": 2,
+  "gas": {
+    "dims": [
+      16,
+      32,
+      16
+    ],
+    "h": 0.1,
+    "origin": [
+      -0.8,
+      0.0,
+      -0.8
+    ],
+    "time": 0.08333333333333333,
+    "steps": 2,
+    "max_speed": 0.0,
+    "upres": 1,
+    "vel": {
+      "dtype": "float32",
+      "shape": [
+        17,
+        33,
+        17,
+        4
+      ],
+      "sha256": "1d034fcb55f46739ca08af2c67ebbc090197d8eb606e42550de3eb52ff1a7db0"
+    },
+    "scal": {
+      "dtype": "float16",
+      "shape": [
+        16,
+        32,
+        16,
+        4
+      ],
+      "sha256": "de2f256064a0af797747c2b97505dc0b9f3df0de4f489eac731c23ae9ca9cc31"
+    },
+    "p": {
+      "dtype": "float32",
+      "shape": [
+        16,
+        32,
+        16,
+        1
+      ],
+      "sha256": "c35020473aed1b4642cd726cad727b63fff2824ad68cedd7ffb73c7cbd890479"
+    }
+  },
+  "cloth": {
+    "key": "(('panel', '', 1.2, 2.0, 1.0, 48, 'hanging', 'top', 1, 'cotton', 1.0, 1.0, 1.0),)",
+    "X": {
+      "dtype": "float32",
+      "shape": [
+        1470,
+        4
+      ],
+      "sha256": "5573f23a1169a097d586a362f110c495ba64b61f40fb15edb816e40ba7d4fd8a"
+    },
+    "P": {
+      "dtype": "float32",
+      "shape": [
+        1470,
+        4
+      ],
+      "sha256": "59f7b391a1e7fb27921e01990940e2055bdc8a6ebab4158709ee13056087226a"
+    },
+    "V": {
+      "dtype": "float32",
+      "shape": [
+        1470,
+        4
+      ],
+      "sha256": "1e00f879b79881657c3fc3e1ae7bc1984dabddbf40aa2169cde34333cddd7c8a"
+    },
+    "S": {
+      "dtype": "float32",
+      "shape": [
+        1470,
+        4
+      ],
+      "sha256": "7982615066d799a7a750b532f188a490e549eada1def2d4d31c455600c7c818d"
+    },
+    "N": {
+      "dtype": "float32",
+      "shape": [
+        1470,
+        4
+      ],
+      "sha256": "79d6a856074aedfb65c06227b6cf5941a8b62b12ca48fc2043c6e8ffa99aa8b7"
+    },
+    "W": {
+      "dtype": "float32",
+      "shape": [
+        2940,
+        4
+      ],
+      "sha256": "bbc9857af176a03424e3a077242af400cbd8f6a566fdd0c363e8c30671b07e65"
+    },
+    "MP": {
+      "dtype": "float32",
+      "shape": [
+        1470,
+        4
+      ],
+      "sha256": "4c3b636836c85a4b7e00a397ec03e4789fb64e812a8313d3a051e8173afa3300"
+    },
+    "steps": 50
+  },
+  "embers": {
+    "count": 0
+  },
+  "feedback": {
+    "dims": [
+      8,
+      16,
+      8
+    ],
+    "ready": true,
+    "wet": false,
+    "placed": true,
+    "active": true,
+    "grid": {
+      "dtype": "uint32",
+      "shape": [
+        13312
+      ],
+      "sha256": "0dd553e141e52c248ba92f528232ba48845d2d225f621490350f0756e23ac735"
+    }
+  }
+}

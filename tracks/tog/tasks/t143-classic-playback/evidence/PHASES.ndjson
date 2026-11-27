@@ -1,0 +1,30 @@
+{"phase": "device admission", "event": "start", "elapsed_s": 0.0014359001070261002, "awake_s": 0.0010012999991886318}
+{"phase": "device admission", "event": "return", "elapsed_s": 2.722563900053501, "awake_s": 2.722246300021652}
+{"phase": "engine construction", "event": "start", "elapsed_s": 2.7234479000326246, "awake_s": 2.7232577999820933}
+{"phase": "engine construction", "event": "return", "elapsed_s": 4.904716900084168, "awake_s": 4.9037438000086695}
+{"phase": "cold stage on admitted device", "event": "start", "elapsed_s": 4.907030000118539, "awake_s": 4.906748800014611}
+{"phase": "stage kernel", "event": "start", "elapsed_s": 4.9077678001485765, "awake_s": 4.907753199979197, "entry": "main", "expected_key": "8227724b41a7cd3a076abb47"}
+{"phase": "create_shader_module", "event": "start", "elapsed_s": 4.912981800036505, "awake_s": 4.91275429999223, "entry": "main", "source_sha256": "5cc9e2d4d340bc8dda0fd8f9d0f58b2582b9c01e5ca5c0af13c8ed73f2fcfbb2", "key": "8227724b41a7cd3a076abb47"}
+{"phase": "create_shader_module", "event": "return", "elapsed_s": 4.935185800073668, "awake_s": 4.934221000003163, "entry": "main", "source_sha256": "5cc9e2d4d340bc8dda0fd8f9d0f58b2582b9c01e5ca5c0af13c8ed73f2fcfbb2", "key": "8227724b41a7cd3a076abb47"}
+{"phase": "create_bind_group_layout", "event": "start", "elapsed_s": 4.93619680008851, "awake_s": 4.935217799968086, "entry": "main", "key": "8227724b41a7cd3a076abb47"}
+{"phase": "create_bind_group_layout", "event": "return", "elapsed_s": 4.937361300224438, "awake_s": 4.937218000006396, "entry": "main", "key": "8227724b41a7cd3a076abb47"}
+{"phase": "create_pipeline_layout", "event": "start", "elapsed_s": 4.9379430001135916, "awake_s": 4.937218000006396, "entry": "main", "key": "8227724b41a7cd3a076abb47"}
+{"phase": "create_pipeline_layout", "event": "return", "elapsed_s": 4.938639200059697, "awake_s": 4.938219000003301, "entry": "main", "key": "8227724b41a7cd3a076abb47"}
+{"phase": "create_compute_pipeline", "event": "start", "elapsed_s": 4.939187400043011, "awake_s": 4.938969400012866, "entry": "main", "key": "8227724b41a7cd3a076abb47"}
+{"phase": "create_compute_pipeline", "event": "return", "elapsed_s": 210.25146850012243, "awake_s": 210.25086500000907, "entry": "main", "key": "8227724b41a7cd3a076abb47"}
+{"phase": "stage kernel", "event": "return", "elapsed_s": 210.2551050002221, "awake_s": 210.2543730000034, "entry": "main", "expected_key": "8227724b41a7cd3a076abb47"}
+{"phase": "stage kernel", "event": "start", "elapsed_s": 210.25560860009864, "awake_s": 210.25537410000106, "entry": "caustics", "expected_key": "c9eb1db2b37f2aeed7c82c9c"}
+{"phase": "stage kernel", "event": "return", "elapsed_s": 210.2617004001513, "awake_s": 210.26087850000476, "entry": "caustics", "expected_key": "c9eb1db2b37f2aeed7c82c9c"}
+{"phase": "cold stage on admitted device", "event": "return", "elapsed_s": 210.34350570011884, "awake_s": 210.34347129997332}
+{"phase": "prepare neutral fixture", "event": "start", "elapsed_s": 210.34497160022147, "awake_s": 210.34447319997707}
+{"phase": "prepare neutral fixture", "event": "return", "elapsed_s": 215.26198830013163, "awake_s": 215.26183289999608}
+{"phase": "restore recorded neutral frame 2", "event": "start", "elapsed_s": 215.26327490014955, "awake_s": 215.26283249998232}
+{"phase": "restore recorded neutral frame 2", "event": "return", "elapsed_s": 215.32244510017335, "awake_s": 215.32154779997654}
+{"phase": "frame 2 native reference check", "event": "start", "elapsed_s": 215.32307480019517, "awake_s": 215.32254799996736}
+{"phase": "frame 2 native reference check", "event": "return", "elapsed_s": 215.33045270014554, "awake_s": 215.32954629999585}
+{"phase": "native composite with prepared stage", "event": "start", "elapsed_s": 215.33105820021592, "awake_s": 215.3305476999958}
+{"phase": "native composite with prepared stage", "event": "return", "elapsed_s": 215.84540400002152, "awake_s": 215.84480050002458}
+{"phase": "synchronous linear composite read", "event": "start", "elapsed_s": 215.84751230012625, "awake_s": 215.8467990999925}
+{"phase": "synchronous linear composite read", "event": "return", "elapsed_s": 215.8492925001774, "awake_s": 215.84879889996955}
+{"phase": "persist pixels", "event": "start", "elapsed_s": 215.85034280014224, "awake_s": 215.84979970002314}
+{"phase": "persist pixels", "event": "return", "elapsed_s": 215.86671440000646, "awake_s": 215.8663137999829}

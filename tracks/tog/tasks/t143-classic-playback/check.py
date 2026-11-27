@@ -14,6 +14,7 @@ def verify(folder):
     compiled=[]
     requested=[]
     dispatched=[]
+    pending=[]
     for r in rows:
         e,a=r["entry"],r["action"]
         render.require(render.observe.KEYS[e]==r["key"],"Unexpected dispatched kernel")
@@ -29,14 +30,25 @@ def verify(folder):
         elif a in ("batch_run_started","batch_run_returned"):
             render.require(e in compiled and min(r["groups"])>0 and r["resources"]==39,
                            "Missing live native pipeline or dispatch")
-            if a=="batch_run_returned":
+            if a=="batch_run_started":
+                pending.append((e,r["groups"]))
+            else:
+                render.require(pending and pending.pop()==(e,r["groups"]), "Unmatched native dispatch")
                 dispatched.append(e)
         else:
             raise ValueError(a)
     success=base["measurement"]["stage"]["worker_status"]=="complete"
     if success:
         native=json.loads((folder/"RESULT.json").read_bytes())
-        render.require(requested==["caustics"] and "main" in compiled and "main" in dispatched and
+        restored=json.loads((folder/"RESTORED.json").read_bytes())
+        previous=json.loads(render.observe.REFERENCE.read_bytes())["ordinary_successor"]
+        comparable=dict(frame=restored["frame"],gas=restored["gas"],cloth=restored["cloth"],
+                        feedback_ready=restored["feedback"]["ready"],feedback_grid=restored["feedback"]["grid"])
+        render.require(comparable==previous, "Restored native arrays disagree with independent T130 capture")
+        modules=[json.loads(v)["original"] for v in (folder/"MODULES.ndjson").read_bytes().splitlines()]
+        observed_entries={m.split(":",1)[1] for m in modules if m.startswith("stage.wgsl:")}
+        render.require(observed_entries==set(compiled), "Stage module and compiled descriptor receipts disagree")
+        render.require(not pending and requested==["caustics"] and "main" in compiled and "main" in dispatched and
                        native["neutral_frame2_matches_t130"] and native["stage_keys"]==render.observe.KEYS,
                        "Image without the required scene, keys and main dispatch")
     return dict(underlying=base,returned_stage_pipelines=compiled,deferred_descriptors=requested,

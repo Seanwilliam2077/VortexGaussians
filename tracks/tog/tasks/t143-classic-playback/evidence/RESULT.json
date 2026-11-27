@@ -1,0 +1,45 @@
+{
+  "status": "complete",
+  "source_revision": "e2ac951dbfabc6060073943e4c344439ac5f4555",
+  "stage_keys_expected": {
+    "main": "8227724b41a7cd3a076abb47",
+    "caustics": "c9eb1db2b37f2aeed7c82c9c"
+  },
+  "adapter": {
+    "vendor": "32.0.15.9571",
+    "device": "NVIDIA GeForce RTX 5070 Laptop GPU",
+    "description": "",
+    "adapter_type": "DiscreteGPU",
+    "backend_type": "D3D12"
+  },
+  "stage_keys": {
+    "main": "8227724b41a7cd3a076abb47",
+    "caustics": "c9eb1db2b37f2aeed7c82c9c"
+  },
+  "scene": {
+    "grid": [
+      16,
+      32,
+      16
+    ],
+    "cloth_vertices": 1470,
+    "preroll_frames": 0
+  },
+  "neutral_frame2_matches_t130": true,
+  "native_pixels": {
+    "dtype": "float16",
+    "shape": [
+      180,
+      320,
+      4
+    ],
+    "sha256": "d8a43bc1270ac6f1a9ae671aa4ed0b078e0020535950139a20bc11554b624816"
+  },
+  "rgb_range": [
+    0.004634857177734375,
+    0.173095703125
+  ],
+  "nonzero_rgb_pixels": 57600,
+  "frame": 2,
+  "steps": 2
+}
