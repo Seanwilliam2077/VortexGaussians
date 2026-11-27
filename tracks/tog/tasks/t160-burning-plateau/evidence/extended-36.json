@@ -1,0 +1,127 @@
+{
+  "state": {
+    "dims": [
+      152,
+      176,
+      80
+    ],
+    "h": 0.019318181818181818,
+    "origin": [
+      -1.4681818181818183,
+      0.0,
+      -0.7727272727272727
+    ],
+    "time": 1.4999999999999987,
+    "steps": 112,
+    "max_speed": 2.7162060737609863,
+    "upres": 3,
+    "vel": {
+      "shape": [
+        81,
+        177,
+        153,
+        4
+      ],
+      "dtype": "<f4",
+      "sha256": "0aa194401faf095e00034f57e2006b6d1b8681866e31ee033285a44edd99bc29"
+    },
+    "scal": {
+      "shape": [
+        80,
+        176,
+        152,
+        4
+      ],
+      "dtype": "<f2",
+      "sha256": "e4c842875db4cf8f730563676b73923217747224baadfeeadfdabd13e75a8c70"
+    },
+    "p": {
+      "shape": [
+        80,
+        176,
+        152,
+        1
+      ],
+      "dtype": "<f4",
+      "sha256": "288634f49e88fd13aa8144ee9337eed23aa9d8e7636cc884b7b520c1fece39e0"
+    },
+    "burn": {
+      "shape": [
+        80,
+        176,
+        152,
+        4
+      ],
+      "dtype": "<f2",
+      "sha256": "af4305dcf8d9e43c84daf441795c34f0ecf3c9c75e657a7664b42233c2028599"
+    },
+    "burn_obj": {
+      "shape": [
+        7,
+        129,
+        72,
+        4
+      ],
+      "dtype": "<f2",
+      "sha256": "3e4ad02b548f5e69765cbf8219d48503fa019c381823fb22bb8a85fbedf7edca"
+    },
+    "scal_fine": {
+      "shape": [
+        240,
+        528,
+        456,
+        4
+      ],
+      "dtype": "<f2",
+      "sha256": "24199d02375b400217cbf205ab5a1fa664b301218b5657d237d74bbf9a1b3cb5"
+    }
+  },
+  "ember_state": {
+    "count": 0
+  },
+  "thermal": {
+    "temperatures": {
+      "shape": [
+        2,
+        3
+      ],
+      "dtype": "<f8",
+      "sha256": "8f9ab1ebf6684b4bd8f45afc169cb2cb6489f51872c2f4a4f86b1795a6c3037d"
+    },
+    "contacts": [
+      [],
+      []
+    ],
+    "radiant_counts": {
+      "shape": [
+        4
+      ],
+      "dtype": "<u4",
+      "sha256": "5b92741c4b224bf9572149777739485071c4eddc50f149767e019b9fdfda4754"
+    },
+    "live_radiant": {
+      "shape": [
+        2304
+      ],
+      "dtype": "|u1",
+      "sha256": "6e9ddbec537934eb8ff89ca3f78019ef0120e83ac151912dfdf2377a44171d0e"
+    },
+    "grid": [
+      [
+        -1.4681818181818183,
+        0.0,
+        -0.7727272727272727
+      ],
+      0.17386363636363636,
+      [
+        17,
+        20,
+        9
+      ],
+      9,
+      0.019318181818181818
+    ],
+    "cleared": true,
+    "built": true
+  }
+}

@@ -1,0 +1,26 @@
+# Different burning fuel, the same nonzero gas source
+
+Changing the curtain's burn duration from 5 to 10 seconds changed how much fuel remained on its surface while it was actively feeding the fire. Both native trajectories took 112 steps through frame 36 and used the same adaptive times and all non-edit forcing. At their 49 independently captured common boundaries, every saved gas field matched, including pressure, velocity, coarse and fine scalars. Both frame-36 states also matched in the two bodies' thermal state, contact clocks, ordered radiant sources, ember state and remaining checkpoint inventory. Only the object-material atlas differed. This is a researcher-selected edit from one scene and device. [Prospective decision and budgets](PROTOCOL.md) · [All scored boundaries](evidence/SCORE.json) · [Independent original arm](../t151-surface-preignition/evidence/) · [Original augmented checkpoint](../t154-native-surface-fork/evidence/generate.json)
+
+| Native observation | Registered result |
+| --- | --- |
+| First alight material | Boundary 17, frame 10. Both arms had 13 alight texels and identical material. |
+| First unequal fuel after ignition | Boundary 18, 0.4167 s. Fuel differed on 13 texels. Both arms had 16 alight texels and identical other channels. |
+| Prospective plateau bound | All 112 steps admitted. Starting at 0.75, the lower bound ended at 0.340518, above the 0.15 threshold of the emission plateau. |
+| Shared steps with directly checked, already different and already alight inputs | 30. The original arm was sampled at every substep up to frame 12, then at frame ends. The CPU fuel replay lost exactness, so no count was extrapolated to the intervening steps. |
+| Frame 36, 1.5 s | Both arms had 416 alight texels. Fuel differed at 410 texels; catch progress, flags and smoulder matched throughout. The shader's derived charring scalar differed at 298 texels. Fuel minima on eligible sites were 0.689941 and 0.793457. |
+
+The fixed native shader releases the same (9, 0.5, 1) fuel, heat and smoke parameters at any alight texel with fuel at least 0.15. We checked whether that source actually reached the gas. On the first substep of frame 36 the unmodified coarse and fine reaction kernels each received their real inputs twice. An extra control dispatch substituted a zero object atlas, preserving the lighter, floor, gas state, geometry and uniforms. The ordinary dispatch overwrote the same destination before any later operation consumed it. In the preselected lower-curtain crop the object changed **404 of 38,272** coarse gas cells and **10,908 of 1,033,344** fine gas cells. The largest absolute change over their stored reaction output channels was 0.14404 and 0.49024 respectively. These comparisons establish actual gas uptake on that one substep. Per-texel plateau equality was checked at the paired material boundaries. [Coarse native control and ordinary outputs](evidence/coarse-react.npz) · [Fine native outputs](evidence/fine-react.npz) · [Control binding and accounting](evidence/extended.json)
+
+The registered one-channel CPU recurrence failed. It first missed the observed 10 s fuel at boundary 30 by one word under a one-step comparison. Projecting the faster fuel from the slower branch first differed from the known original at common boundary 34, where 52 stored words differed. At frame 36, 279 fast fuel words differed from that projection. The checkpoint and nonzero gas results above compare independent native data directly. An ordinary native fused material pass advancing one extra fuel scalar remains a competing method. This study did not execute a fused pass or charge its precision handling, extra channel storage, materialization and future continuation. The independent lazy reconstruction test records its own failures. [Independent reconstruction](../t161-late-burn-duration/)
+
+The only new GPU process exited successfully in 235.505 s within its 420 s cap. Setup took 169.270 s. Sampling the dense material stream and selected native checkpoints used 35.576 s; frame-end reads and recording used 26.128 s. The two object-off controls and their ordinary draws, readback and archival took 0.017 and 0.247 s inside the process. These observer timings cannot establish a production speedup. No new branch was cold-restored or rendered in this experiment.
+
+Use Python with NumPy from the repository root.
+
+```sh
+python -B tracks/tog/tasks/t160-burning-plateau/preflight.py
+python -B tracks/tog/tasks/t160-burning-plateau/verify.py
+```
+
+The JSONL stores each native dt, the actual material uniform digest and float32 rate, per-frame ember inventory and native gas field digests. The XOR/zlib stream retains every complete 10 s native atlas from initialization through step 112, including the alpha/smoulder and fuel channels. In the verifier, `decode` yields arrays ordered (z, y, x, channel) and `load_arm` returns the update and boundary ledgers. A texel's first decrement consumes the previous stored state; its first stored alight value therefore precedes its first consumed decrement. The separate full terminal receipt covers the thermal and radiant fields outside the basic gas checkpoint. [Step ledger](evidence/extended.jsonl) · [Complete compressed native material](evidence/extended-atlas.zlib) · [Terminal physical state receipt](evidence/extended-36.json)

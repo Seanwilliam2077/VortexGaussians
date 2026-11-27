@@ -1,0 +1,83 @@
+{
+  "status": "complete",
+  "pin": "e2ac951dbfabc6060073943e4c344439ac5f4555",
+  "phase": "complete",
+  "adapter": {
+    "vendor": "32.0.15.9571",
+    "device": "NVIDIA GeForce RTX 5070 Laptop GPU",
+    "description": "",
+    "adapter_type": "DiscreteGPU",
+    "backend_type": "D3D12"
+  },
+  "base_scene": "84314af9a4d75bc4b84dfadd9641b13c04674ac82955dabe91a189173e6c262a",
+  "edited_scene": "348bafb3b189f196c7dd20508f96acda60d02e1976fd45a771b320981762d86c",
+  "dims": [
+    152,
+    176,
+    80
+  ],
+  "fine_upres": 3,
+  "features": {
+    "oxygen": false,
+    "vapour": false,
+    "chem": false,
+    "burn": true,
+    "aux": false,
+    "water": false,
+    "stain": false
+  },
+  "preparation_s": 169.27005250006914,
+  "frames": 36,
+  "updates": 112,
+  "controls": {
+    "coarse": {
+      "origin": [
+        54,
+        0,
+        11
+      ],
+      "size": [
+        46,
+        64,
+        13
+      ],
+      "grid": [
+        152,
+        176,
+        80
+      ],
+      "dt_f32": 0.013888888992369175,
+      "uniforms_sha256": "f491dff599050d0969b9cca91c1ab55cb69a49a4e75a9a79c89bc03b466a2d66",
+      "off_sha256": "ac2c2e804cf306f75fece38e606bb1379cf82e8c33292afa26615338f9e471cd",
+      "on_sha256": "783110d953c323776217f3751e821073dca86a1e3e0e2ffd2a5e752437eedf0e",
+      "seconds": 0.0172475001309067
+    },
+    "fine": {
+      "origin": [
+        162,
+        0,
+        33
+      ],
+      "size": [
+        138,
+        192,
+        39
+      ],
+      "grid": [
+        456,
+        528,
+        240
+      ],
+      "dt_f32": 0.013888888992369175,
+      "uniforms_sha256": "02bde819670e6d39f45e1ab968bac32f3ac0e63d8556d5611115f77ad8c0113f",
+      "off_sha256": "59194bb7570f41931ba0ce16033a1309ce4ed23da51a843030a48ffe9197b646",
+      "on_sha256": "46e94396c8591bf7179725e0072bd61e67cfba190f2de1ab7cc3d797922cdfe6",
+      "seconds": 0.24724049982614815
+    }
+  },
+  "observer": {
+    "atlas_and_checkpoint_s": 35.57598479883745,
+    "frame_end_embers_s": 26.127783799776807
+  },
+  "elapsed_s": 234.8937049000524
+}
