@@ -1,0 +1,16 @@
+# The late 5 s curtain request failed the CPU half-word reconstruction
+
+The registered CPU recurrence recovered 27 of 49 independent full material boundaries. The first target mismatch occurred at boundary 34. At the final frame, 279 of 260,064 half words differed. The 10 s source trajectory also rejected the same conversion rule when predicted from its own stored inputs. Its first disagreement was at boundary 30, texel 47,271. The CPU predicted word 15,364; the native store held 15,363. Every common schedule and the lower-bound test aligned for all 112 updates. No inspected step had a fused-versus-separate ambiguity after candidate half conversion. The native fallback is required for downstream delivery. [Frozen test](PROTOCOL.md) · [All complete-atlas digests and first word witnesses](evidence/SCORE.json) · [Independent post-ignition gas measurements](../t160-burning-plateau/evidence/SCORE.json)
+
+| Method using the late 5 s rate | Exact common boundaries | First mismatching boundary | Wrong words at frame 36 |
+|---|---:|---:|---:|
+| Repeat each native float32 step and round each output to nearest binary16 | 27/49 | 34 | 279 |
+| Subtract rate times total burning duration, round once, binary64 time | 19/49 | 19 | 397 |
+| Same single-round subtraction with a binary32 time accumulator | 19/49 | 19 | 397 |
+| Double the depletion measured in the current 10 s atlas | 26/49 | 30 | 372 |
+
+The slow arm supplied 410 first-debit events in 3,280 bytes. Each event is little-endian (4-byte flat atlas index, 2-byte first update, 2-byte original fuel word). The 112 native float32 step durations occupy 448 bytes. Their combined payload is **3,728 bytes**, in addition to the ordinary 520,128-byte primary material at the requested boundary. A separate full output atlas takes another 520,128 bytes. At frame 36, grouping identical starting words and first-update indices gives 402 cohorts. It reduces 17,645 individual fuel debits to 17,253 scalar updates plus 410 texel writes. If all 49 outputs are independently demanded, totals are 167,445 ungrouped or 163,609 grouped updates and 5,242 writes. These are work counts for a candidate that failed exactness. [Event packet](evidence/first-debit.bin) · [Native float32 dt packet](evidence/dt-f32.bin)
+
+The CPU audit inspected 7,281,792 source texel inputs from 58,774,464 decoded historical atlas bytes. A production implementation could emit the first-debit events during the ordinary surface pass, but would still pay for their detection, allocation and write. To reconstruct a historical instant it also needs that instant's common channels, either stored or recomputed. The packet alone does not recreate the gas or full simulation. The registration simulated a rate arriving after authoring; no human interactive request or end-to-end latency was measured.
+
+Run `python -B recover.py` with NumPy and the public T151 and T160 evidence to reproduce the score. `candidate_atlas` retains the failed numeric implementation for inspection. The downstream `reconstruct_atlas` entry rejects delivery because the bit-exact admission failed. T163 separately tests the positive-value store conversion suggested by the recorded counterexample. [CPU worker receipt](evidence/EXIT.json) · [Separate diagnostic registration](../t163-device-fuel-conversion/PROTOCOL.md)

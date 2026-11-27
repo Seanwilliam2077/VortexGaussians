@@ -1,0 +1,2122 @@
+{
+  "status": "not_qualified",
+  "shape": [
+    7,
+    129,
+    72,
+    4
+  ],
+  "source_rate": 0.10000000149011612,
+  "demanded_rate": 0.20000000298023224,
+  "source_pin": "e2ac951dbfabc6060073943e4c344439ac5f4555",
+  "input_sha256": {
+    "extended.jsonl": "3efc85b275b6f3d91d22d5f5d5cd39a8336d2e63733940ee6d36d0f0bc2434f1",
+    "extended-atlas.zlib": "f0a07324b8442fb5fdb93af0121d74ef676bb84ea62332c5c0c9624160b50614",
+    "extended.json": "0e12152dd231cd29ed7e9e2fa243c3449e051b2d686bc4778749f3764c863b67",
+    "extended-scene.json": "edde86ca1d16bf9f1ca4fa41a187bbefff1bead5abb0900674b52fadaed34176",
+    "default.jsonl": "70667ab9a8cb1baae2ee5903f34561dcd45318cca03a3376904f6e993faf117e",
+    "default-atlas.zlib": "fda6cca845441c1926896f22cab96ef9329750ad8985ebf940267587a13408c0",
+    "default.json": "cd4c2f97adfbeae66b186bb6c64b1b9ccf31f2b7098ed05451a3b474a36c887f",
+    "default-scene.json": "6129d88745a14db29c95c3700754df9380cefda6a782046c485ba2973a949f5b"
+  },
+  "source_updates": 112,
+  "oracle_updates": 112,
+  "first_unaligned_input": null,
+  "aligned_updates": 112,
+  "available_oracle_boundaries": 49,
+  "comparable_boundaries": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    27,
+    30,
+    34,
+    38,
+    42,
+    46,
+    50,
+    54,
+    59,
+    63,
+    67,
+    71,
+    75,
+    79,
+    83,
+    87,
+    91,
+    94,
+    97,
+    100,
+    103,
+    106,
+    109,
+    112
+  ],
+  "positive_divergent_boundary_indices": [
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    27,
+    30,
+    34,
+    38,
+    42,
+    46,
+    50,
+    54,
+    59,
+    63,
+    67,
+    71,
+    75,
+    79,
+    83,
+    87,
+    91,
+    94,
+    97,
+    100,
+    103,
+    106,
+    109,
+    112
+  ],
+  "standalone_first_implementation_error": null,
+  "source_audit": {
+    "guard_first_rejected_input": null,
+    "final_lower_bound": 0.3405181773006802,
+    "slow_transition_count": 17645,
+    "slow_fma_ambiguous": 0,
+    "first_slow_native_mismatch": {
+      "boundary": 30,
+      "texel": 47271,
+      "cpu": 15364,
+      "native": 15363
+    }
+  },
+  "packet": {
+    "events": 410,
+    "event_bytes": 3280,
+    "event_sha256": "280c0289f6fbb453f8abcb15e9f39dc11a18ff4a24d66dc078b68ca332106294",
+    "dt_bytes": 448,
+    "dt_sha256": "5135c4607114af854977b0ace1112e34c1401be93da99133ce138a4cb9a350c4",
+    "total_bytes": 3728,
+    "source_endpoint_bytes": 520128,
+    "sibling_materialization_bytes": 520128,
+    "source_history_full_atlas_decoded_bytes": 58774464,
+    "offline_event_scan_texels": 7281792
+  },
+  "all_separate_request_work": {
+    "scalar_updates_ungrouped": 167445,
+    "scalar_updates_grouped": 163609,
+    "scatter_writes": 5242,
+    "fma_ambiguous_group_transitions": 0
+  },
+  "last_request_work": {
+    "lit_texels": 410,
+    "cohorts": 402,
+    "scalar_updates_ungrouped": 17645,
+    "scalar_updates_grouped": 17253,
+    "scatter_writes": 410,
+    "fma_ambiguous_group_transitions": 0,
+    "first_fma_ambiguity": null
+  },
+  "summary": {
+    "step_replay": {
+      "exact_boundaries": 27,
+      "total_mismatching_words": 4502,
+      "first_failure": {
+        "boundary": 34,
+        "texel": 46624,
+        "channel": "x",
+        "native_word": 15214,
+        "predicted_word": 15218,
+        "primary_word": 15234,
+        "first_native_debit": 26,
+        "initial_fuel_word": 15258
+      }
+    },
+    "elapsed64": {
+      "exact_boundaries": 19,
+      "total_mismatching_words": 5104,
+      "first_failure": {
+        "boundary": 19,
+        "texel": 46696,
+        "channel": "x",
+        "native_word": 15271,
+        "predicted_word": 15272,
+        "primary_word": 15277,
+        "first_native_debit": 17,
+        "initial_fuel_word": 15283
+      }
+    },
+    "elapsed32": {
+      "exact_boundaries": 19,
+      "total_mismatching_words": 5104,
+      "first_failure": {
+        "boundary": 19,
+        "texel": 46696,
+        "channel": "x",
+        "native_word": 15271,
+        "predicted_word": 15272,
+        "primary_word": 15277,
+        "first_native_debit": 17,
+        "initial_fuel_word": 15283
+      }
+    },
+    "single_frame_ratio": {
+      "exact_boundaries": 26,
+      "total_mismatching_words": 4857,
+      "first_failure": {
+        "boundary": 30,
+        "texel": 47271,
+        "channel": "x",
+        "native_word": 15362,
+        "predicted_word": 15361,
+        "primary_word": 15363,
+        "first_native_debit": 29,
+        "initial_fuel_word": 15365
+      }
+    }
+  },
+  "boundaries": [
+    {
+      "index": 0,
+      "frame": 1,
+      "substep": 0,
+      "native_scalar_difference": 0,
+      "primary_positive_plateau_texels": 0,
+      "work": {
+        "lit_texels": 0,
+        "cohorts": 0,
+        "scalar_updates_ungrouped": 0,
+        "scalar_updates_grouped": 0,
+        "scatter_writes": 0,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "f1b1f3161c28f54454028986a722b8f31a56b2e8943f889cab85fbb9f080d393"
+        },
+        "elapsed64": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "f1b1f3161c28f54454028986a722b8f31a56b2e8943f889cab85fbb9f080d393"
+        },
+        "elapsed32": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "f1b1f3161c28f54454028986a722b8f31a56b2e8943f889cab85fbb9f080d393"
+        },
+        "single_frame_ratio": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "f1b1f3161c28f54454028986a722b8f31a56b2e8943f889cab85fbb9f080d393"
+        }
+      },
+      "oracle_sha256": "f1b1f3161c28f54454028986a722b8f31a56b2e8943f889cab85fbb9f080d393"
+    },
+    {
+      "index": 1,
+      "frame": 1,
+      "substep": 1,
+      "native_scalar_difference": 0,
+      "primary_positive_plateau_texels": 0,
+      "work": {
+        "lit_texels": 0,
+        "cohorts": 0,
+        "scalar_updates_ungrouped": 0,
+        "scalar_updates_grouped": 0,
+        "scatter_writes": 0,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "f1b1f3161c28f54454028986a722b8f31a56b2e8943f889cab85fbb9f080d393"
+        },
+        "elapsed64": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "f1b1f3161c28f54454028986a722b8f31a56b2e8943f889cab85fbb9f080d393"
+        },
+        "elapsed32": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "f1b1f3161c28f54454028986a722b8f31a56b2e8943f889cab85fbb9f080d393"
+        },
+        "single_frame_ratio": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "f1b1f3161c28f54454028986a722b8f31a56b2e8943f889cab85fbb9f080d393"
+        }
+      },
+      "oracle_sha256": "f1b1f3161c28f54454028986a722b8f31a56b2e8943f889cab85fbb9f080d393"
+    },
+    {
+      "index": 2,
+      "frame": 2,
+      "substep": 1,
+      "native_scalar_difference": 0,
+      "primary_positive_plateau_texels": 0,
+      "work": {
+        "lit_texels": 0,
+        "cohorts": 0,
+        "scalar_updates_ungrouped": 0,
+        "scalar_updates_grouped": 0,
+        "scatter_writes": 0,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "887059040119a8e0bf2f4210f5d48bb7a1e838d2a821d677a9e6b888493ab186"
+        },
+        "elapsed64": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "887059040119a8e0bf2f4210f5d48bb7a1e838d2a821d677a9e6b888493ab186"
+        },
+        "elapsed32": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "887059040119a8e0bf2f4210f5d48bb7a1e838d2a821d677a9e6b888493ab186"
+        },
+        "single_frame_ratio": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "887059040119a8e0bf2f4210f5d48bb7a1e838d2a821d677a9e6b888493ab186"
+        }
+      },
+      "oracle_sha256": "887059040119a8e0bf2f4210f5d48bb7a1e838d2a821d677a9e6b888493ab186"
+    },
+    {
+      "index": 3,
+      "frame": 3,
+      "substep": 1,
+      "native_scalar_difference": 0,
+      "primary_positive_plateau_texels": 0,
+      "work": {
+        "lit_texels": 0,
+        "cohorts": 0,
+        "scalar_updates_ungrouped": 0,
+        "scalar_updates_grouped": 0,
+        "scatter_writes": 0,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "28d15e19100cb9405bafb6590e6a9a46e23e2a0885db5efdb2702d57fe9ff443"
+        },
+        "elapsed64": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "28d15e19100cb9405bafb6590e6a9a46e23e2a0885db5efdb2702d57fe9ff443"
+        },
+        "elapsed32": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "28d15e19100cb9405bafb6590e6a9a46e23e2a0885db5efdb2702d57fe9ff443"
+        },
+        "single_frame_ratio": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "28d15e19100cb9405bafb6590e6a9a46e23e2a0885db5efdb2702d57fe9ff443"
+        }
+      },
+      "oracle_sha256": "28d15e19100cb9405bafb6590e6a9a46e23e2a0885db5efdb2702d57fe9ff443"
+    },
+    {
+      "index": 4,
+      "frame": 4,
+      "substep": 1,
+      "native_scalar_difference": 0,
+      "primary_positive_plateau_texels": 0,
+      "work": {
+        "lit_texels": 0,
+        "cohorts": 0,
+        "scalar_updates_ungrouped": 0,
+        "scalar_updates_grouped": 0,
+        "scatter_writes": 0,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "56238437aab6a0eccd9c87c3df6c352f8a3728a7a532d1d9f70c3274b2e1fb65"
+        },
+        "elapsed64": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "56238437aab6a0eccd9c87c3df6c352f8a3728a7a532d1d9f70c3274b2e1fb65"
+        },
+        "elapsed32": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "56238437aab6a0eccd9c87c3df6c352f8a3728a7a532d1d9f70c3274b2e1fb65"
+        },
+        "single_frame_ratio": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "56238437aab6a0eccd9c87c3df6c352f8a3728a7a532d1d9f70c3274b2e1fb65"
+        }
+      },
+      "oracle_sha256": "56238437aab6a0eccd9c87c3df6c352f8a3728a7a532d1d9f70c3274b2e1fb65"
+    },
+    {
+      "index": 5,
+      "frame": 5,
+      "substep": 1,
+      "native_scalar_difference": 0,
+      "primary_positive_plateau_texels": 0,
+      "work": {
+        "lit_texels": 0,
+        "cohorts": 0,
+        "scalar_updates_ungrouped": 0,
+        "scalar_updates_grouped": 0,
+        "scatter_writes": 0,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "e47a3617178674c27e519077f5cc9044762ac069be8e5dc49a498ea473a94942"
+        },
+        "elapsed64": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "e47a3617178674c27e519077f5cc9044762ac069be8e5dc49a498ea473a94942"
+        },
+        "elapsed32": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "e47a3617178674c27e519077f5cc9044762ac069be8e5dc49a498ea473a94942"
+        },
+        "single_frame_ratio": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "e47a3617178674c27e519077f5cc9044762ac069be8e5dc49a498ea473a94942"
+        }
+      },
+      "oracle_sha256": "e47a3617178674c27e519077f5cc9044762ac069be8e5dc49a498ea473a94942"
+    },
+    {
+      "index": 6,
+      "frame": 5,
+      "substep": 2,
+      "native_scalar_difference": 0,
+      "primary_positive_plateau_texels": 0,
+      "work": {
+        "lit_texels": 0,
+        "cohorts": 0,
+        "scalar_updates_ungrouped": 0,
+        "scalar_updates_grouped": 0,
+        "scatter_writes": 0,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "0f2721b0226a7a53aaf6126d9cf95f9909da567cb5fee6cb1c4ff7f1a367799d"
+        },
+        "elapsed64": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "0f2721b0226a7a53aaf6126d9cf95f9909da567cb5fee6cb1c4ff7f1a367799d"
+        },
+        "elapsed32": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "0f2721b0226a7a53aaf6126d9cf95f9909da567cb5fee6cb1c4ff7f1a367799d"
+        },
+        "single_frame_ratio": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "0f2721b0226a7a53aaf6126d9cf95f9909da567cb5fee6cb1c4ff7f1a367799d"
+        }
+      },
+      "oracle_sha256": "0f2721b0226a7a53aaf6126d9cf95f9909da567cb5fee6cb1c4ff7f1a367799d"
+    },
+    {
+      "index": 7,
+      "frame": 6,
+      "substep": 1,
+      "native_scalar_difference": 0,
+      "primary_positive_plateau_texels": 0,
+      "work": {
+        "lit_texels": 0,
+        "cohorts": 0,
+        "scalar_updates_ungrouped": 0,
+        "scalar_updates_grouped": 0,
+        "scatter_writes": 0,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "570bf691979e7728ab46f639a5bda33d488443f886abae703428715cb162c41c"
+        },
+        "elapsed64": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "570bf691979e7728ab46f639a5bda33d488443f886abae703428715cb162c41c"
+        },
+        "elapsed32": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "570bf691979e7728ab46f639a5bda33d488443f886abae703428715cb162c41c"
+        },
+        "single_frame_ratio": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "570bf691979e7728ab46f639a5bda33d488443f886abae703428715cb162c41c"
+        }
+      },
+      "oracle_sha256": "570bf691979e7728ab46f639a5bda33d488443f886abae703428715cb162c41c"
+    },
+    {
+      "index": 8,
+      "frame": 6,
+      "substep": 2,
+      "native_scalar_difference": 0,
+      "primary_positive_plateau_texels": 0,
+      "work": {
+        "lit_texels": 0,
+        "cohorts": 0,
+        "scalar_updates_ungrouped": 0,
+        "scalar_updates_grouped": 0,
+        "scatter_writes": 0,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "636fa0d048c5098d9eaca12c1b21f89f16a377043bc35119f1579c1efc063bb9"
+        },
+        "elapsed64": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "636fa0d048c5098d9eaca12c1b21f89f16a377043bc35119f1579c1efc063bb9"
+        },
+        "elapsed32": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "636fa0d048c5098d9eaca12c1b21f89f16a377043bc35119f1579c1efc063bb9"
+        },
+        "single_frame_ratio": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "636fa0d048c5098d9eaca12c1b21f89f16a377043bc35119f1579c1efc063bb9"
+        }
+      },
+      "oracle_sha256": "636fa0d048c5098d9eaca12c1b21f89f16a377043bc35119f1579c1efc063bb9"
+    },
+    {
+      "index": 9,
+      "frame": 7,
+      "substep": 1,
+      "native_scalar_difference": 0,
+      "primary_positive_plateau_texels": 0,
+      "work": {
+        "lit_texels": 0,
+        "cohorts": 0,
+        "scalar_updates_ungrouped": 0,
+        "scalar_updates_grouped": 0,
+        "scatter_writes": 0,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "a81bf5c66c64f3e9c007e55cd10f8a2e9451a7b49fdbb7a5de19a591dde36f81"
+        },
+        "elapsed64": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "a81bf5c66c64f3e9c007e55cd10f8a2e9451a7b49fdbb7a5de19a591dde36f81"
+        },
+        "elapsed32": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "a81bf5c66c64f3e9c007e55cd10f8a2e9451a7b49fdbb7a5de19a591dde36f81"
+        },
+        "single_frame_ratio": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "a81bf5c66c64f3e9c007e55cd10f8a2e9451a7b49fdbb7a5de19a591dde36f81"
+        }
+      },
+      "oracle_sha256": "a81bf5c66c64f3e9c007e55cd10f8a2e9451a7b49fdbb7a5de19a591dde36f81"
+    },
+    {
+      "index": 10,
+      "frame": 7,
+      "substep": 2,
+      "native_scalar_difference": 0,
+      "primary_positive_plateau_texels": 0,
+      "work": {
+        "lit_texels": 0,
+        "cohorts": 0,
+        "scalar_updates_ungrouped": 0,
+        "scalar_updates_grouped": 0,
+        "scatter_writes": 0,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "9a0e5f7d7d2287f83e5a8e08edcd65ee847c612906c834a50f1adbba0627d6b7"
+        },
+        "elapsed64": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "9a0e5f7d7d2287f83e5a8e08edcd65ee847c612906c834a50f1adbba0627d6b7"
+        },
+        "elapsed32": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "9a0e5f7d7d2287f83e5a8e08edcd65ee847c612906c834a50f1adbba0627d6b7"
+        },
+        "single_frame_ratio": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "9a0e5f7d7d2287f83e5a8e08edcd65ee847c612906c834a50f1adbba0627d6b7"
+        }
+      },
+      "oracle_sha256": "9a0e5f7d7d2287f83e5a8e08edcd65ee847c612906c834a50f1adbba0627d6b7"
+    },
+    {
+      "index": 11,
+      "frame": 8,
+      "substep": 1,
+      "native_scalar_difference": 0,
+      "primary_positive_plateau_texels": 0,
+      "work": {
+        "lit_texels": 0,
+        "cohorts": 0,
+        "scalar_updates_ungrouped": 0,
+        "scalar_updates_grouped": 0,
+        "scatter_writes": 0,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "464b3a70905b12dac3afdae228a62a49c7a06cead591a4cb0c7114a99876d18f"
+        },
+        "elapsed64": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "464b3a70905b12dac3afdae228a62a49c7a06cead591a4cb0c7114a99876d18f"
+        },
+        "elapsed32": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "464b3a70905b12dac3afdae228a62a49c7a06cead591a4cb0c7114a99876d18f"
+        },
+        "single_frame_ratio": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "464b3a70905b12dac3afdae228a62a49c7a06cead591a4cb0c7114a99876d18f"
+        }
+      },
+      "oracle_sha256": "464b3a70905b12dac3afdae228a62a49c7a06cead591a4cb0c7114a99876d18f"
+    },
+    {
+      "index": 12,
+      "frame": 8,
+      "substep": 2,
+      "native_scalar_difference": 0,
+      "primary_positive_plateau_texels": 0,
+      "work": {
+        "lit_texels": 0,
+        "cohorts": 0,
+        "scalar_updates_ungrouped": 0,
+        "scalar_updates_grouped": 0,
+        "scatter_writes": 0,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "973ee0b464b4479fd624cc23a9b1881a53e2317cc4158292b88ee5d3ee8dd26b"
+        },
+        "elapsed64": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "973ee0b464b4479fd624cc23a9b1881a53e2317cc4158292b88ee5d3ee8dd26b"
+        },
+        "elapsed32": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "973ee0b464b4479fd624cc23a9b1881a53e2317cc4158292b88ee5d3ee8dd26b"
+        },
+        "single_frame_ratio": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "973ee0b464b4479fd624cc23a9b1881a53e2317cc4158292b88ee5d3ee8dd26b"
+        }
+      },
+      "oracle_sha256": "973ee0b464b4479fd624cc23a9b1881a53e2317cc4158292b88ee5d3ee8dd26b"
+    },
+    {
+      "index": 13,
+      "frame": 9,
+      "substep": 1,
+      "native_scalar_difference": 0,
+      "primary_positive_plateau_texels": 0,
+      "work": {
+        "lit_texels": 0,
+        "cohorts": 0,
+        "scalar_updates_ungrouped": 0,
+        "scalar_updates_grouped": 0,
+        "scatter_writes": 0,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "59aebcc938b821692cc09776f38ad7908d46cdf91d4695f5a2a992b692aff50e"
+        },
+        "elapsed64": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "59aebcc938b821692cc09776f38ad7908d46cdf91d4695f5a2a992b692aff50e"
+        },
+        "elapsed32": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "59aebcc938b821692cc09776f38ad7908d46cdf91d4695f5a2a992b692aff50e"
+        },
+        "single_frame_ratio": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "59aebcc938b821692cc09776f38ad7908d46cdf91d4695f5a2a992b692aff50e"
+        }
+      },
+      "oracle_sha256": "59aebcc938b821692cc09776f38ad7908d46cdf91d4695f5a2a992b692aff50e"
+    },
+    {
+      "index": 14,
+      "frame": 9,
+      "substep": 2,
+      "native_scalar_difference": 0,
+      "primary_positive_plateau_texels": 0,
+      "work": {
+        "lit_texels": 0,
+        "cohorts": 0,
+        "scalar_updates_ungrouped": 0,
+        "scalar_updates_grouped": 0,
+        "scatter_writes": 0,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "fe9c6caed65823faf69822fa16e30764adad572342212793ad61c805cf0253a2"
+        },
+        "elapsed64": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "fe9c6caed65823faf69822fa16e30764adad572342212793ad61c805cf0253a2"
+        },
+        "elapsed32": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "fe9c6caed65823faf69822fa16e30764adad572342212793ad61c805cf0253a2"
+        },
+        "single_frame_ratio": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "fe9c6caed65823faf69822fa16e30764adad572342212793ad61c805cf0253a2"
+        }
+      },
+      "oracle_sha256": "fe9c6caed65823faf69822fa16e30764adad572342212793ad61c805cf0253a2"
+    },
+    {
+      "index": 15,
+      "frame": 9,
+      "substep": 3,
+      "native_scalar_difference": 0,
+      "primary_positive_plateau_texels": 0,
+      "work": {
+        "lit_texels": 0,
+        "cohorts": 0,
+        "scalar_updates_ungrouped": 0,
+        "scalar_updates_grouped": 0,
+        "scatter_writes": 0,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "5222f5c762a4d254e2040d71f253aa1cb367a48ebe2d8519d7b3508550d91900"
+        },
+        "elapsed64": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "5222f5c762a4d254e2040d71f253aa1cb367a48ebe2d8519d7b3508550d91900"
+        },
+        "elapsed32": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "5222f5c762a4d254e2040d71f253aa1cb367a48ebe2d8519d7b3508550d91900"
+        },
+        "single_frame_ratio": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "5222f5c762a4d254e2040d71f253aa1cb367a48ebe2d8519d7b3508550d91900"
+        }
+      },
+      "oracle_sha256": "5222f5c762a4d254e2040d71f253aa1cb367a48ebe2d8519d7b3508550d91900"
+    },
+    {
+      "index": 16,
+      "frame": 10,
+      "substep": 1,
+      "native_scalar_difference": 0,
+      "primary_positive_plateau_texels": 0,
+      "work": {
+        "lit_texels": 0,
+        "cohorts": 0,
+        "scalar_updates_ungrouped": 0,
+        "scalar_updates_grouped": 0,
+        "scatter_writes": 0,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "49b260b8c283cd9e1b50fdf015b69420d1446c80fbf04e12de1b9cae2f7f706b"
+        },
+        "elapsed64": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "49b260b8c283cd9e1b50fdf015b69420d1446c80fbf04e12de1b9cae2f7f706b"
+        },
+        "elapsed32": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "49b260b8c283cd9e1b50fdf015b69420d1446c80fbf04e12de1b9cae2f7f706b"
+        },
+        "single_frame_ratio": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "49b260b8c283cd9e1b50fdf015b69420d1446c80fbf04e12de1b9cae2f7f706b"
+        }
+      },
+      "oracle_sha256": "49b260b8c283cd9e1b50fdf015b69420d1446c80fbf04e12de1b9cae2f7f706b"
+    },
+    {
+      "index": 17,
+      "frame": 10,
+      "substep": 2,
+      "native_scalar_difference": 0,
+      "primary_positive_plateau_texels": 13,
+      "work": {
+        "lit_texels": 0,
+        "cohorts": 0,
+        "scalar_updates_ungrouped": 0,
+        "scalar_updates_grouped": 0,
+        "scatter_writes": 0,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "8d47065b4e5dda9dd818ab0ab424e071e45890f90ba12dd12122beefd953efff"
+        },
+        "elapsed64": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "8d47065b4e5dda9dd818ab0ab424e071e45890f90ba12dd12122beefd953efff"
+        },
+        "elapsed32": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "8d47065b4e5dda9dd818ab0ab424e071e45890f90ba12dd12122beefd953efff"
+        },
+        "single_frame_ratio": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "8d47065b4e5dda9dd818ab0ab424e071e45890f90ba12dd12122beefd953efff"
+        }
+      },
+      "oracle_sha256": "8d47065b4e5dda9dd818ab0ab424e071e45890f90ba12dd12122beefd953efff"
+    },
+    {
+      "index": 18,
+      "frame": 10,
+      "substep": 3,
+      "native_scalar_difference": 13,
+      "primary_positive_plateau_texels": 16,
+      "work": {
+        "lit_texels": 13,
+        "cohorts": 12,
+        "scalar_updates_ungrouped": 13,
+        "scalar_updates_grouped": 12,
+        "scatter_writes": 13,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "16cf3d050e6e31cd8e35113e07a61cbc0e78c80ff1e26426cdc8dc6b651db8d0"
+        },
+        "elapsed64": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "16cf3d050e6e31cd8e35113e07a61cbc0e78c80ff1e26426cdc8dc6b651db8d0"
+        },
+        "elapsed32": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "16cf3d050e6e31cd8e35113e07a61cbc0e78c80ff1e26426cdc8dc6b651db8d0"
+        },
+        "single_frame_ratio": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "16cf3d050e6e31cd8e35113e07a61cbc0e78c80ff1e26426cdc8dc6b651db8d0"
+        }
+      },
+      "oracle_sha256": "16cf3d050e6e31cd8e35113e07a61cbc0e78c80ff1e26426cdc8dc6b651db8d0"
+    },
+    {
+      "index": 19,
+      "frame": 11,
+      "substep": 1,
+      "native_scalar_difference": 16,
+      "primary_positive_plateau_texels": 18,
+      "work": {
+        "lit_texels": 16,
+        "cohorts": 15,
+        "scalar_updates_ungrouped": 29,
+        "scalar_updates_grouped": 27,
+        "scatter_writes": 16,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "9068c38709525de3353739faae662da849eb5f630fa00ef24c5eaf21efda32db"
+        },
+        "elapsed64": {
+          "different_words": 13,
+          "different_texels": 13,
+          "atlas_sha256": "289ad54e35238e09aa9fca2c2cb04d134080e921c075bb810bf105fcd29bbbb1"
+        },
+        "elapsed32": {
+          "different_words": 13,
+          "different_texels": 13,
+          "atlas_sha256": "289ad54e35238e09aa9fca2c2cb04d134080e921c075bb810bf105fcd29bbbb1"
+        },
+        "single_frame_ratio": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "9068c38709525de3353739faae662da849eb5f630fa00ef24c5eaf21efda32db"
+        }
+      },
+      "oracle_sha256": "9068c38709525de3353739faae662da849eb5f630fa00ef24c5eaf21efda32db"
+    },
+    {
+      "index": 20,
+      "frame": 11,
+      "substep": 2,
+      "native_scalar_difference": 18,
+      "primary_positive_plateau_texels": 19,
+      "work": {
+        "lit_texels": 18,
+        "cohorts": 17,
+        "scalar_updates_ungrouped": 47,
+        "scalar_updates_grouped": 44,
+        "scatter_writes": 18,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "65dab9a7322f34738ed068e0fc441a8341bbda8d369098bc2086cb710a5a19ac"
+        },
+        "elapsed64": {
+          "different_words": 16,
+          "different_texels": 16,
+          "atlas_sha256": "563b4c1a49a2cec0e66b45b41fa6cd7fe526b7cd98cdfb7783b660ecc0f5804e"
+        },
+        "elapsed32": {
+          "different_words": 16,
+          "different_texels": 16,
+          "atlas_sha256": "563b4c1a49a2cec0e66b45b41fa6cd7fe526b7cd98cdfb7783b660ecc0f5804e"
+        },
+        "single_frame_ratio": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "65dab9a7322f34738ed068e0fc441a8341bbda8d369098bc2086cb710a5a19ac"
+        }
+      },
+      "oracle_sha256": "65dab9a7322f34738ed068e0fc441a8341bbda8d369098bc2086cb710a5a19ac"
+    },
+    {
+      "index": 21,
+      "frame": 11,
+      "substep": 3,
+      "native_scalar_difference": 19,
+      "primary_positive_plateau_texels": 23,
+      "work": {
+        "lit_texels": 19,
+        "cohorts": 18,
+        "scalar_updates_ungrouped": 66,
+        "scalar_updates_grouped": 62,
+        "scatter_writes": 19,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "f8a200f5fb2195d153dc04475dad7f344b6ea979baa28daa37c59bb6de74f970"
+        },
+        "elapsed64": {
+          "different_words": 18,
+          "different_texels": 18,
+          "atlas_sha256": "f0e2590864d56b3f079fc862b04e07d89265b5fd410c63601f8095d6ffd3eb4d"
+        },
+        "elapsed32": {
+          "different_words": 18,
+          "different_texels": 18,
+          "atlas_sha256": "f0e2590864d56b3f079fc862b04e07d89265b5fd410c63601f8095d6ffd3eb4d"
+        },
+        "single_frame_ratio": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "f8a200f5fb2195d153dc04475dad7f344b6ea979baa28daa37c59bb6de74f970"
+        }
+      },
+      "oracle_sha256": "f8a200f5fb2195d153dc04475dad7f344b6ea979baa28daa37c59bb6de74f970"
+    },
+    {
+      "index": 22,
+      "frame": 12,
+      "substep": 1,
+      "native_scalar_difference": 23,
+      "primary_positive_plateau_texels": 23,
+      "work": {
+        "lit_texels": 23,
+        "cohorts": 22,
+        "scalar_updates_ungrouped": 89,
+        "scalar_updates_grouped": 84,
+        "scatter_writes": 23,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "d9b005724df583e1244ab4e2e17105a99c57c0044230458e097122f0ed02249b"
+        },
+        "elapsed64": {
+          "different_words": 19,
+          "different_texels": 19,
+          "atlas_sha256": "f26e58006848c049a272b78b104f31372c64fc5f84cf07c7fef58cfbcca966be"
+        },
+        "elapsed32": {
+          "different_words": 19,
+          "different_texels": 19,
+          "atlas_sha256": "f26e58006848c049a272b78b104f31372c64fc5f84cf07c7fef58cfbcca966be"
+        },
+        "single_frame_ratio": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "d9b005724df583e1244ab4e2e17105a99c57c0044230458e097122f0ed02249b"
+        }
+      },
+      "oracle_sha256": "d9b005724df583e1244ab4e2e17105a99c57c0044230458e097122f0ed02249b"
+    },
+    {
+      "index": 23,
+      "frame": 12,
+      "substep": 2,
+      "native_scalar_difference": 23,
+      "primary_positive_plateau_texels": 23,
+      "work": {
+        "lit_texels": 23,
+        "cohorts": 22,
+        "scalar_updates_ungrouped": 112,
+        "scalar_updates_grouped": 106,
+        "scatter_writes": 23,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "07e735a89cb74e45fdc84724983309736b322dbf94c342f6233b14693ab9f022"
+        },
+        "elapsed64": {
+          "different_words": 23,
+          "different_texels": 23,
+          "atlas_sha256": "4153552a533a622a474bb9c73fe83e125f5a3b8fe652e8eaeac83bdabc102b7e"
+        },
+        "elapsed32": {
+          "different_words": 23,
+          "different_texels": 23,
+          "atlas_sha256": "4153552a533a622a474bb9c73fe83e125f5a3b8fe652e8eaeac83bdabc102b7e"
+        },
+        "single_frame_ratio": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "07e735a89cb74e45fdc84724983309736b322dbf94c342f6233b14693ab9f022"
+        }
+      },
+      "oracle_sha256": "07e735a89cb74e45fdc84724983309736b322dbf94c342f6233b14693ab9f022"
+    },
+    {
+      "index": 24,
+      "frame": 12,
+      "substep": 3,
+      "native_scalar_difference": 23,
+      "primary_positive_plateau_texels": 27,
+      "work": {
+        "lit_texels": 23,
+        "cohorts": 22,
+        "scalar_updates_ungrouped": 135,
+        "scalar_updates_grouped": 128,
+        "scatter_writes": 23,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "2dfcaf505ed7533ddfdf95f24552319b8ee26c1517de9c2de5841cd248bbdbd1"
+        },
+        "elapsed64": {
+          "different_words": 23,
+          "different_texels": 23,
+          "atlas_sha256": "0f2194e44a114c491baa1d93d1e8d8ff95608e292237d5a1050831ddef04e2b3"
+        },
+        "elapsed32": {
+          "different_words": 23,
+          "different_texels": 23,
+          "atlas_sha256": "0f2194e44a114c491baa1d93d1e8d8ff95608e292237d5a1050831ddef04e2b3"
+        },
+        "single_frame_ratio": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "2dfcaf505ed7533ddfdf95f24552319b8ee26c1517de9c2de5841cd248bbdbd1"
+        }
+      },
+      "oracle_sha256": "2dfcaf505ed7533ddfdf95f24552319b8ee26c1517de9c2de5841cd248bbdbd1"
+    },
+    {
+      "index": 27,
+      "frame": 13,
+      "substep": 3,
+      "native_scalar_difference": 30,
+      "primary_positive_plateau_texels": 32,
+      "work": {
+        "lit_texels": 30,
+        "cohorts": 29,
+        "scalar_updates_ungrouped": 219,
+        "scalar_updates_grouped": 209,
+        "scatter_writes": 30,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "7a3f03022d25e05f0342f3ee3cfae8cccac712f6bade3d25fb8f4fa614d06b99"
+        },
+        "elapsed64": {
+          "different_words": 27,
+          "different_texels": 27,
+          "atlas_sha256": "217b17fe2385cf2b6374383b7230426410bca0997f13ed2000992801759a40a3"
+        },
+        "elapsed32": {
+          "different_words": 27,
+          "different_texels": 27,
+          "atlas_sha256": "217b17fe2385cf2b6374383b7230426410bca0997f13ed2000992801759a40a3"
+        },
+        "single_frame_ratio": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "7a3f03022d25e05f0342f3ee3cfae8cccac712f6bade3d25fb8f4fa614d06b99"
+        }
+      },
+      "oracle_sha256": "7a3f03022d25e05f0342f3ee3cfae8cccac712f6bade3d25fb8f4fa614d06b99"
+    },
+    {
+      "index": 30,
+      "frame": 14,
+      "substep": 3,
+      "native_scalar_difference": 38,
+      "primary_positive_plateau_texels": 41,
+      "work": {
+        "lit_texels": 38,
+        "cohorts": 37,
+        "scalar_updates_ungrouped": 324,
+        "scalar_updates_grouped": 311,
+        "scatter_writes": 38,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 0,
+          "different_texels": 0,
+          "atlas_sha256": "9dc5b018b2200dc772c4a6bd857e50b534094b40e181197ca991f1a9d5f9193d"
+        },
+        "elapsed64": {
+          "different_words": 35,
+          "different_texels": 35,
+          "atlas_sha256": "52795b3aa018cbbc0eda4ba96f894a831cdb4aa026cbcc37912d2c2bcef13441"
+        },
+        "elapsed32": {
+          "different_words": 35,
+          "different_texels": 35,
+          "atlas_sha256": "52795b3aa018cbbc0eda4ba96f894a831cdb4aa026cbcc37912d2c2bcef13441"
+        },
+        "single_frame_ratio": {
+          "different_words": 1,
+          "different_texels": 1,
+          "atlas_sha256": "c89b18f7a590f68dc4159e233679a991bf32e896d65283e97055d9fb24bb03b8"
+        }
+      },
+      "oracle_sha256": "9dc5b018b2200dc772c4a6bd857e50b534094b40e181197ca991f1a9d5f9193d"
+    },
+    {
+      "index": 34,
+      "frame": 15,
+      "substep": 4,
+      "native_scalar_difference": 52,
+      "primary_positive_plateau_texels": 55,
+      "work": {
+        "lit_texels": 52,
+        "cohorts": 51,
+        "scalar_updates_ungrouped": 507,
+        "scalar_updates_grouped": 490,
+        "scatter_writes": 52,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 52,
+          "different_texels": 52,
+          "atlas_sha256": "ad78004a8b11a897bfaa0bd915f507f4e744e28a7487a1ae62069354e11b7a9b"
+        },
+        "elapsed64": {
+          "different_words": 52,
+          "different_texels": 52,
+          "atlas_sha256": "311b5438471a5b2f22e6299de253c5e473d8bdc1096f246992f8709d727f37f3"
+        },
+        "elapsed32": {
+          "different_words": 52,
+          "different_texels": 52,
+          "atlas_sha256": "311b5438471a5b2f22e6299de253c5e473d8bdc1096f246992f8709d727f37f3"
+        },
+        "single_frame_ratio": {
+          "different_words": 52,
+          "different_texels": 52,
+          "atlas_sha256": "310573e8ea875be26da966eef11c3162d42c7087129e2411c5d9514290cb8b14"
+        }
+      },
+      "oracle_sha256": "cbeb6b44cc64a676385c98f2da7aa0b115d22a506d58e9b948027d90250a1fa9"
+    },
+    {
+      "index": 38,
+      "frame": 16,
+      "substep": 4,
+      "native_scalar_difference": 70,
+      "primary_positive_plateau_texels": 72,
+      "work": {
+        "lit_texels": 70,
+        "cohorts": 69,
+        "scalar_updates_ungrouped": 758,
+        "scalar_updates_grouped": 737,
+        "scatter_writes": 70,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 70,
+          "different_texels": 70,
+          "atlas_sha256": "96285a130681faf57fedd6d7fb92745d8b1c0bd43eef88c5e0583f20146dd959"
+        },
+        "elapsed64": {
+          "different_words": 70,
+          "different_texels": 70,
+          "atlas_sha256": "5d2b6a317a402179cbfac48c0cd25749650a9d6a12ab4bf981fb2ffb4cc8e298"
+        },
+        "elapsed32": {
+          "different_words": 70,
+          "different_texels": 70,
+          "atlas_sha256": "5d2b6a317a402179cbfac48c0cd25749650a9d6a12ab4bf981fb2ffb4cc8e298"
+        },
+        "single_frame_ratio": {
+          "different_words": 70,
+          "different_texels": 70,
+          "atlas_sha256": "6715dd1272c3f68504499e024d139ee8df23e4c8aff5c000dd4b26503389a75b"
+        }
+      },
+      "oracle_sha256": "11eaeb31fe148d45cbecb389c7cda2f7849552357843fc9b0c4a91a8cafcaaa7"
+    },
+    {
+      "index": 42,
+      "frame": 17,
+      "substep": 4,
+      "native_scalar_difference": 84,
+      "primary_positive_plateau_texels": 88,
+      "work": {
+        "lit_texels": 84,
+        "cohorts": 82,
+        "scalar_updates_ungrouped": 1071,
+        "scalar_updates_grouped": 1045,
+        "scatter_writes": 84,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 84,
+          "different_texels": 84,
+          "atlas_sha256": "e18eb206276e0aa58fc7788c93e30e62c5e40ab6bda74f0c0685bc2e379ac51c"
+        },
+        "elapsed64": {
+          "different_words": 84,
+          "different_texels": 84,
+          "atlas_sha256": "5dc4be6aaf3ef0630d04188586da963f22932609039b75e827e8311ecf303265"
+        },
+        "elapsed32": {
+          "different_words": 84,
+          "different_texels": 84,
+          "atlas_sha256": "5dc4be6aaf3ef0630d04188586da963f22932609039b75e827e8311ecf303265"
+        },
+        "single_frame_ratio": {
+          "different_words": 84,
+          "different_texels": 84,
+          "atlas_sha256": "b5c57c913fa4b2bba81eed2a83954f30d95253352647b7a9b980694e0a2754ec"
+        }
+      },
+      "oracle_sha256": "50158830432f1de5d9e28e193179c5d037a84644974ff08ab60aac65ab438517"
+    },
+    {
+      "index": 46,
+      "frame": 18,
+      "substep": 4,
+      "native_scalar_difference": 101,
+      "primary_positive_plateau_texels": 107,
+      "work": {
+        "lit_texels": 101,
+        "cohorts": 99,
+        "scalar_updates_ungrouped": 1450,
+        "scalar_updates_grouped": 1416,
+        "scatter_writes": 101,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 101,
+          "different_texels": 101,
+          "atlas_sha256": "3541786c69837b4abb37108638b0fb32152a790a6827c2be5f4cd3353adfc9c6"
+        },
+        "elapsed64": {
+          "different_words": 101,
+          "different_texels": 101,
+          "atlas_sha256": "4fead0c21fa51aeda6ef2984a049a33ff6a909b0b554d73066f9fc433dacc326"
+        },
+        "elapsed32": {
+          "different_words": 101,
+          "different_texels": 101,
+          "atlas_sha256": "4fead0c21fa51aeda6ef2984a049a33ff6a909b0b554d73066f9fc433dacc326"
+        },
+        "single_frame_ratio": {
+          "different_words": 101,
+          "different_texels": 101,
+          "atlas_sha256": "70981b62341aaba720ac3c71bea80b1598302439523d96a34e02bb7d3e663084"
+        }
+      },
+      "oracle_sha256": "1ae33338bbdf0443984cbc5e4113d5b684ebbf004b820e396f06e7d4321eae0a"
+    },
+    {
+      "index": 50,
+      "frame": 19,
+      "substep": 4,
+      "native_scalar_difference": 117,
+      "primary_positive_plateau_texels": 124,
+      "work": {
+        "lit_texels": 117,
+        "cohorts": 115,
+        "scalar_updates_ungrouped": 1900,
+        "scalar_updates_grouped": 1858,
+        "scatter_writes": 117,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 117,
+          "different_texels": 117,
+          "atlas_sha256": "1696e4cd4fad3c4055cf5e7436f4d141810ae51f9cff04c8de8b25b2d0de51bc"
+        },
+        "elapsed64": {
+          "different_words": 117,
+          "different_texels": 117,
+          "atlas_sha256": "d91f4f0961d897f0d90d07a9eeaa3408b767482e99c0f20de2cf63fe57682dd8"
+        },
+        "elapsed32": {
+          "different_words": 117,
+          "different_texels": 117,
+          "atlas_sha256": "d91f4f0961d897f0d90d07a9eeaa3408b767482e99c0f20de2cf63fe57682dd8"
+        },
+        "single_frame_ratio": {
+          "different_words": 117,
+          "different_texels": 117,
+          "atlas_sha256": "d6bb9f3bb0bba399b3cf8ba70b2d69f637885a5163a63b363fd6daed61e795e4"
+        }
+      },
+      "oracle_sha256": "cd5b5ea00314ecbe3fe3cb38bd95ac000c97d3a5f146324cbf1a062012b7755d"
+    },
+    {
+      "index": 54,
+      "frame": 20,
+      "substep": 4,
+      "native_scalar_difference": 134,
+      "primary_positive_plateau_texels": 139,
+      "work": {
+        "lit_texels": 134,
+        "cohorts": 132,
+        "scalar_updates_ungrouped": 2416,
+        "scalar_updates_grouped": 2366,
+        "scatter_writes": 134,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 134,
+          "different_texels": 134,
+          "atlas_sha256": "92ddcbab5794960267807d17f54d6fa4d8dc1f4a864574b0c4a870e82cb6b5b1"
+        },
+        "elapsed64": {
+          "different_words": 134,
+          "different_texels": 134,
+          "atlas_sha256": "83a25448439fd109f6c494fdb7544aef157f8fe0bf7e5fee1fdc6c2578243b0b"
+        },
+        "elapsed32": {
+          "different_words": 134,
+          "different_texels": 134,
+          "atlas_sha256": "83a25448439fd109f6c494fdb7544aef157f8fe0bf7e5fee1fdc6c2578243b0b"
+        },
+        "single_frame_ratio": {
+          "different_words": 134,
+          "different_texels": 134,
+          "atlas_sha256": "bc568930c25fa12d9edfdf8fd5cc56a83e95f9c76a2a889b29935e90c2c6413d"
+        }
+      },
+      "oracle_sha256": "693b4d5af6a008b6edb37c8722afe5d330061e935ff3273090d8c3747f985897"
+    },
+    {
+      "index": 59,
+      "frame": 21,
+      "substep": 5,
+      "native_scalar_difference": 152,
+      "primary_positive_plateau_texels": 155,
+      "work": {
+        "lit_texels": 152,
+        "cohorts": 148,
+        "scalar_updates_ungrouped": 3143,
+        "scalar_updates_grouped": 3078,
+        "scatter_writes": 152,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 137,
+          "different_texels": 137,
+          "atlas_sha256": "dbb8e713a82ed0073050feb4080195cc79baeddf59ccd093268beb61ae7f8bf6"
+        },
+        "elapsed64": {
+          "different_words": 148,
+          "different_texels": 148,
+          "atlas_sha256": "6878706eaecce516d6c33d27e3fe7384b04d4e443f5f5c4c36c023050edaa1e7"
+        },
+        "elapsed32": {
+          "different_words": 148,
+          "different_texels": 148,
+          "atlas_sha256": "6878706eaecce516d6c33d27e3fe7384b04d4e443f5f5c4c36c023050edaa1e7"
+        },
+        "single_frame_ratio": {
+          "different_words": 134,
+          "different_texels": 134,
+          "atlas_sha256": "e5489935fbda949dd890ac4ea755447dd0a70395bf8bb173f25cb637e9df9c0d"
+        }
+      },
+      "oracle_sha256": "2af8aff00bfcb91fc800541e32778f460996aa8b58147975d2be847f8f5b7c48"
+    },
+    {
+      "index": 63,
+      "frame": 22,
+      "substep": 4,
+      "native_scalar_difference": 179,
+      "primary_positive_plateau_texels": 182,
+      "work": {
+        "lit_texels": 179,
+        "cohorts": 174,
+        "scalar_updates_ungrouped": 3813,
+        "scalar_updates_grouped": 3729,
+        "scatter_writes": 179,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 179,
+          "different_texels": 179,
+          "atlas_sha256": "6f25dc736447514b4953eb954e1fcdc20fd16cd00052cd1143ea91e9552455c9"
+        },
+        "elapsed64": {
+          "different_words": 179,
+          "different_texels": 179,
+          "atlas_sha256": "0f2a94ce6a748bfd6ea70a14b7c97b4b297049c65d40c845005667a9831b6f7d"
+        },
+        "elapsed32": {
+          "different_words": 179,
+          "different_texels": 179,
+          "atlas_sha256": "0f2a94ce6a748bfd6ea70a14b7c97b4b297049c65d40c845005667a9831b6f7d"
+        },
+        "single_frame_ratio": {
+          "different_words": 179,
+          "different_texels": 179,
+          "atlas_sha256": "79d1114b87b2159ae8d4baa7360fd275d31011c13c52070aa5a58b61a222e1b5"
+        }
+      },
+      "oracle_sha256": "3792693d4e16a7f9a0e31473f4310f9126971e2b3425ce88fb04d5d336e3d95c"
+    },
+    {
+      "index": 67,
+      "frame": 23,
+      "substep": 4,
+      "native_scalar_difference": 197,
+      "primary_positive_plateau_texels": 200,
+      "work": {
+        "lit_texels": 197,
+        "cohorts": 192,
+        "scalar_updates_ungrouped": 4572,
+        "scalar_updates_grouped": 4468,
+        "scatter_writes": 197,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 197,
+          "different_texels": 197,
+          "atlas_sha256": "001698e27277bc7ef18aa20b96ec88c1e15f7a46dc36f39831b302444ca15b2f"
+        },
+        "elapsed64": {
+          "different_words": 197,
+          "different_texels": 197,
+          "atlas_sha256": "96a127ff8650d9011f35cc346758895b99b0ca68229bcd3c411f239f9fc5cc96"
+        },
+        "elapsed32": {
+          "different_words": 197,
+          "different_texels": 197,
+          "atlas_sha256": "96a127ff8650d9011f35cc346758895b99b0ca68229bcd3c411f239f9fc5cc96"
+        },
+        "single_frame_ratio": {
+          "different_words": 197,
+          "different_texels": 197,
+          "atlas_sha256": "44097e9f1d2f3ee5f0a722c39d834057eac1db513ff97fa078b1d928459f1792"
+        }
+      },
+      "oracle_sha256": "10fe061cf95d54dad8ebbe83c090dafed487743241b3641ecd9c61562c62d885"
+    },
+    {
+      "index": 71,
+      "frame": 24,
+      "substep": 4,
+      "native_scalar_difference": 213,
+      "primary_positive_plateau_texels": 217,
+      "work": {
+        "lit_texels": 213,
+        "cohorts": 208,
+        "scalar_updates_ungrouped": 5403,
+        "scalar_updates_grouped": 5279,
+        "scatter_writes": 213,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 213,
+          "different_texels": 213,
+          "atlas_sha256": "4d009c7067f6ae3bb7d315affeed112ffc846d38e8cf8266265dc0b9d0ad9487"
+        },
+        "elapsed64": {
+          "different_words": 213,
+          "different_texels": 213,
+          "atlas_sha256": "db5d57fe1af2e84fa840bdd580f7adec511eef92baa27b37a01dd880f49c1409"
+        },
+        "elapsed32": {
+          "different_words": 213,
+          "different_texels": 213,
+          "atlas_sha256": "db5d57fe1af2e84fa840bdd580f7adec511eef92baa27b37a01dd880f49c1409"
+        },
+        "single_frame_ratio": {
+          "different_words": 213,
+          "different_texels": 213,
+          "atlas_sha256": "6dd0f48aa245894825fdd58e7840bf008ed26d0705a60e46d1ebcdb18f4223e8"
+        }
+      },
+      "oracle_sha256": "2d7713d3d5cfaf93a3be15e2b3f4fa92e2266d0a7e2987e1637d5fceff9f64e1"
+    },
+    {
+      "index": 75,
+      "frame": 25,
+      "substep": 4,
+      "native_scalar_difference": 227,
+      "primary_positive_plateau_texels": 231,
+      "work": {
+        "lit_texels": 227,
+        "cohorts": 222,
+        "scalar_updates_ungrouped": 6291,
+        "scalar_updates_grouped": 6147,
+        "scatter_writes": 227,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 227,
+          "different_texels": 227,
+          "atlas_sha256": "e2b9e3134ec38baa4da3954aa82624ef2642e12ed12d61d9f9c147a8084914a3"
+        },
+        "elapsed64": {
+          "different_words": 227,
+          "different_texels": 227,
+          "atlas_sha256": "e6a5ec10c0bfead9dd12146c60a83d6233efd6701395357f6b72df45c3f01196"
+        },
+        "elapsed32": {
+          "different_words": 227,
+          "different_texels": 227,
+          "atlas_sha256": "e6a5ec10c0bfead9dd12146c60a83d6233efd6701395357f6b72df45c3f01196"
+        },
+        "single_frame_ratio": {
+          "different_words": 227,
+          "different_texels": 227,
+          "atlas_sha256": "2cade9d8437c1f42d6e405ca430b8304b0fd5bd5e820ea819fcbd21ad83ebccc"
+        }
+      },
+      "oracle_sha256": "c074ba4418a3e5e53232917d9c369b928f0f68c7e3a52a41ddcae2891cae9c1b"
+    },
+    {
+      "index": 79,
+      "frame": 26,
+      "substep": 4,
+      "native_scalar_difference": 243,
+      "primary_positive_plateau_texels": 245,
+      "work": {
+        "lit_texels": 243,
+        "cohorts": 237,
+        "scalar_updates_ungrouped": 7237,
+        "scalar_updates_grouped": 7070,
+        "scatter_writes": 243,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 243,
+          "different_texels": 243,
+          "atlas_sha256": "68cec8f8701ec65670a3263d57a597be21c53c9dc118bcff75b8eb073f8a45a2"
+        },
+        "elapsed64": {
+          "different_words": 243,
+          "different_texels": 243,
+          "atlas_sha256": "feea3f35fb8f5d6e6ba9b25838837228e1b70fe50fbdeca84b60c820b4ddb6e1"
+        },
+        "elapsed32": {
+          "different_words": 243,
+          "different_texels": 243,
+          "atlas_sha256": "feea3f35fb8f5d6e6ba9b25838837228e1b70fe50fbdeca84b60c820b4ddb6e1"
+        },
+        "single_frame_ratio": {
+          "different_words": 243,
+          "different_texels": 243,
+          "atlas_sha256": "9bfc590321d35113e67ba3e6867f2b0271c5edfd1c6c95e2942588c4b4e032bc"
+        }
+      },
+      "oracle_sha256": "ffc9f08557520de683d20fd4a7df09244860c2ba22528fba6845159079e408e4"
+    },
+    {
+      "index": 83,
+      "frame": 27,
+      "substep": 4,
+      "native_scalar_difference": 252,
+      "primary_positive_plateau_texels": 255,
+      "work": {
+        "lit_texels": 252,
+        "cohorts": 246,
+        "scalar_updates_ungrouped": 8230,
+        "scalar_updates_grouped": 8039,
+        "scatter_writes": 252,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 252,
+          "different_texels": 252,
+          "atlas_sha256": "31138c32484ca1c775aa16877c047c0f4567b70e108d29ea064ddc92a8e429e0"
+        },
+        "elapsed64": {
+          "different_words": 252,
+          "different_texels": 252,
+          "atlas_sha256": "045bbb1cfca7c2147116bc3729c53d61f1aae179d613b27f98bf6e9776259b77"
+        },
+        "elapsed32": {
+          "different_words": 252,
+          "different_texels": 252,
+          "atlas_sha256": "045bbb1cfca7c2147116bc3729c53d61f1aae179d613b27f98bf6e9776259b77"
+        },
+        "single_frame_ratio": {
+          "different_words": 252,
+          "different_texels": 252,
+          "atlas_sha256": "e9c78de469ef91f19648adf78c184f088c3671cf655b4f1a40a5afbc2e23c4a6"
+        }
+      },
+      "oracle_sha256": "796144bb704714a854be99871064f487ccdfe69ac6bd16b3f62c0c99542f1c2e"
+    },
+    {
+      "index": 87,
+      "frame": 28,
+      "substep": 4,
+      "native_scalar_difference": 264,
+      "primary_positive_plateau_texels": 270,
+      "work": {
+        "lit_texels": 264,
+        "cohorts": 258,
+        "scalar_updates_ungrouped": 9268,
+        "scalar_updates_grouped": 9053,
+        "scatter_writes": 264,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 264,
+          "different_texels": 264,
+          "atlas_sha256": "66285dfdd3970d7ccc65c783fe5083f117826099d935103676b87964901a4ee6"
+        },
+        "elapsed64": {
+          "different_words": 264,
+          "different_texels": 264,
+          "atlas_sha256": "1ec5228f71a212e76c0207506840eaca2a21b1964c80abcf8ba1888f129d2f8e"
+        },
+        "elapsed32": {
+          "different_words": 264,
+          "different_texels": 264,
+          "atlas_sha256": "1ec5228f71a212e76c0207506840eaca2a21b1964c80abcf8ba1888f129d2f8e"
+        },
+        "single_frame_ratio": {
+          "different_words": 264,
+          "different_texels": 264,
+          "atlas_sha256": "9ecc6a81a97b138e59a5c09c31cea687e0155a2a43c0807fccb578d100addff3"
+        }
+      },
+      "oracle_sha256": "7cf73cdb0686881ed715d4018bbfd0be0891b217fa07398fe933dd8b1faf95b4"
+    },
+    {
+      "index": 91,
+      "frame": 29,
+      "substep": 4,
+      "native_scalar_difference": 279,
+      "primary_positive_plateau_texels": 281,
+      "work": {
+        "lit_texels": 279,
+        "cohorts": 273,
+        "scalar_updates_ungrouped": 10365,
+        "scalar_updates_grouped": 10126,
+        "scatter_writes": 279,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 279,
+          "different_texels": 279,
+          "atlas_sha256": "f42e71fd2ff960e20aff15faa91005063d3bddfe7a2acc7e01849c5a02bdaa3f"
+        },
+        "elapsed64": {
+          "different_words": 279,
+          "different_texels": 279,
+          "atlas_sha256": "47bd700e4b12e96e688a11f823fb9e2eaaee4a8ba0e6ac5434d8ed3e8e1d4600"
+        },
+        "elapsed32": {
+          "different_words": 279,
+          "different_texels": 279,
+          "atlas_sha256": "47bd700e4b12e96e688a11f823fb9e2eaaee4a8ba0e6ac5434d8ed3e8e1d4600"
+        },
+        "single_frame_ratio": {
+          "different_words": 279,
+          "different_texels": 279,
+          "atlas_sha256": "40b34dd85e1e687d5470d9c7f293dd324eb0b4f2edc7a45d598611522227275b"
+        }
+      },
+      "oracle_sha256": "38cd8b25991653f6eb88e8ae97e3eca77b9ab89dd09c89b1e2ad1e90050c8a37"
+    },
+    {
+      "index": 94,
+      "frame": 30,
+      "substep": 3,
+      "native_scalar_difference": 297,
+      "primary_positive_plateau_texels": 300,
+      "work": {
+        "lit_texels": 297,
+        "cohorts": 290,
+        "scalar_updates_ungrouped": 11231,
+        "scalar_updates_grouped": 10973,
+        "scatter_writes": 297,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 279,
+          "different_texels": 279,
+          "atlas_sha256": "cb90c33111b78e995319c41fbe3684f36788468ff5bac21d024d40f835738017"
+        },
+        "elapsed64": {
+          "different_words": 283,
+          "different_texels": 283,
+          "atlas_sha256": "d93bf12146b010a5be81402def142c69979c0cc1b0002612587d706bd27d7ece"
+        },
+        "elapsed32": {
+          "different_words": 283,
+          "different_texels": 283,
+          "atlas_sha256": "d93bf12146b010a5be81402def142c69979c0cc1b0002612587d706bd27d7ece"
+        },
+        "single_frame_ratio": {
+          "different_words": 289,
+          "different_texels": 289,
+          "atlas_sha256": "2f016f949e542dec762ed7ead045baf12c978315db410108ab2a57335448802a"
+        }
+      },
+      "oracle_sha256": "49b1415b4a19b78765d5f3369f3765a9a28846c7a1111d2c8eac6be25df7f9b8"
+    },
+    {
+      "index": 97,
+      "frame": 31,
+      "substep": 3,
+      "native_scalar_difference": 310,
+      "primary_positive_plateau_texels": 314,
+      "work": {
+        "lit_texels": 310,
+        "cohorts": 303,
+        "scalar_updates_ungrouped": 12145,
+        "scalar_updates_grouped": 11866,
+        "scatter_writes": 310,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 279,
+          "different_texels": 279,
+          "atlas_sha256": "76e4375b335de198676f67be1e4b17ba797dcbe1e1706ce6f470d1231aabc692"
+        },
+        "elapsed64": {
+          "different_words": 298,
+          "different_texels": 298,
+          "atlas_sha256": "bd32d304ce856026f99c5715cd74a162556564bdabd493175ac1dce6392b4ba5"
+        },
+        "elapsed32": {
+          "different_words": 298,
+          "different_texels": 298,
+          "atlas_sha256": "bd32d304ce856026f99c5715cd74a162556564bdabd493175ac1dce6392b4ba5"
+        },
+        "single_frame_ratio": {
+          "different_words": 300,
+          "different_texels": 300,
+          "atlas_sha256": "44befe6469f2d36f2bfedcfed3977307b76dd7ebb11dd778ca1c58aaee40af6d"
+        }
+      },
+      "oracle_sha256": "adeee7935239902db09dcd08c7d59003ff38c5402888603becbecabe6f009b1a"
+    },
+    {
+      "index": 100,
+      "frame": 32,
+      "substep": 3,
+      "native_scalar_difference": 332,
+      "primary_positive_plateau_texels": 339,
+      "work": {
+        "lit_texels": 332,
+        "cohorts": 325,
+        "scalar_updates_ungrouped": 13114,
+        "scalar_updates_grouped": 12814,
+        "scatter_writes": 332,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 279,
+          "different_texels": 279,
+          "atlas_sha256": "2d1d6a7863114cf64fb048b07c3f646744004590060d6aeff67af133c1dbad6b"
+        },
+        "elapsed64": {
+          "different_words": 313,
+          "different_texels": 313,
+          "atlas_sha256": "e992e6d06339f56cbbde9c63d1f2f17c961fa0d4be86c18ddc86e7bad6e19d70"
+        },
+        "elapsed32": {
+          "different_words": 313,
+          "different_texels": 313,
+          "atlas_sha256": "e992e6d06339f56cbbde9c63d1f2f17c961fa0d4be86c18ddc86e7bad6e19d70"
+        },
+        "single_frame_ratio": {
+          "different_words": 315,
+          "different_texels": 315,
+          "atlas_sha256": "2e50366f290423bd584798e971f9da9cc6065cc2eede172625a7d63dcbb72fc1"
+        }
+      },
+      "oracle_sha256": "e99df38f4af00e621745b483d2b81ed64385b1798a7b3a5ca9f35e69d51dc600"
+    },
+    {
+      "index": 103,
+      "frame": 33,
+      "substep": 3,
+      "native_scalar_difference": 354,
+      "primary_positive_plateau_texels": 362,
+      "work": {
+        "lit_texels": 354,
+        "cohorts": 347,
+        "scalar_updates_ungrouped": 14155,
+        "scalar_updates_grouped": 13834,
+        "scatter_writes": 354,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 279,
+          "different_texels": 279,
+          "atlas_sha256": "876eeef157ede4714de65e9cd087aa543575783551c147d71e751349425db2a5"
+        },
+        "elapsed64": {
+          "different_words": 337,
+          "different_texels": 337,
+          "atlas_sha256": "6c85d86737094b4aa29c31ef67d5b9e30944dc84be74df0061ac933bd937803a"
+        },
+        "elapsed32": {
+          "different_words": 337,
+          "different_texels": 337,
+          "atlas_sha256": "6c85d86737094b4aa29c31ef67d5b9e30944dc84be74df0061ac933bd937803a"
+        },
+        "single_frame_ratio": {
+          "different_words": 331,
+          "different_texels": 331,
+          "atlas_sha256": "99b30382d7c0bede172e2c5fdf873351ccd1fb32a8fec30b25184f8f78071220"
+        }
+      },
+      "oracle_sha256": "228cb73fd5e3b0d74adf56da678fd085fbbab7b9a4412402d6b4994249b10324"
+    },
+    {
+      "index": 106,
+      "frame": 34,
+      "substep": 3,
+      "native_scalar_difference": 376,
+      "primary_positive_plateau_texels": 380,
+      "work": {
+        "lit_texels": 376,
+        "cohorts": 368,
+        "scalar_updates_ungrouped": 15266,
+        "scalar_updates_grouped": 14922,
+        "scatter_writes": 376,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 279,
+          "different_texels": 279,
+          "atlas_sha256": "dae5fdb3ec182fad1639f3867de8efaa338b7fb33f79dbc40a0d6dac2d2dd21c"
+        },
+        "elapsed64": {
+          "different_words": 363,
+          "different_texels": 363,
+          "atlas_sha256": "ff4a5fea28a6f7bc51cc4f30df7c1412b0b53391bdc3f14e97483e4fab9bed2d"
+        },
+        "elapsed32": {
+          "different_words": 363,
+          "different_texels": 363,
+          "atlas_sha256": "ff4a5fea28a6f7bc51cc4f30df7c1412b0b53391bdc3f14e97483e4fab9bed2d"
+        },
+        "single_frame_ratio": {
+          "different_words": 344,
+          "different_texels": 344,
+          "atlas_sha256": "72164b7dfcc6110c291e356343803c3bc2b1d8f2b407397c2223659493b50ab0"
+        }
+      },
+      "oracle_sha256": "d513a88b96396269e1cc20981368c9c31b1b46ae6722c580877a1244fb65d2bb"
+    },
+    {
+      "index": 109,
+      "frame": 35,
+      "substep": 3,
+      "native_scalar_difference": 396,
+      "primary_positive_plateau_texels": 400,
+      "work": {
+        "lit_texels": 396,
+        "cohorts": 388,
+        "scalar_updates_ungrouped": 16431,
+        "scalar_updates_grouped": 16063,
+        "scatter_writes": 396,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 279,
+          "different_texels": 279,
+          "atlas_sha256": "bf1067e11cf06173744823051cf9e5b7a31e06036c5553cff93a69132b6893e1"
+        },
+        "elapsed64": {
+          "different_words": 379,
+          "different_texels": 379,
+          "atlas_sha256": "131e6c73bc7c7348aa00590483871c538060358326dc21df2df1d66b5e9e7b20"
+        },
+        "elapsed32": {
+          "different_words": 379,
+          "different_texels": 379,
+          "atlas_sha256": "131e6c73bc7c7348aa00590483871c538060358326dc21df2df1d66b5e9e7b20"
+        },
+        "single_frame_ratio": {
+          "different_words": 359,
+          "different_texels": 359,
+          "atlas_sha256": "5b1b51466852c98bacff144de836c3ac8cc1211c30e1b4c2df85750b756893b4"
+        }
+      },
+      "oracle_sha256": "df52babd4b899d92984feb5fc8629dd27f3a46656d9598ba6ed8e49977b74c46"
+    },
+    {
+      "index": 112,
+      "frame": 36,
+      "substep": 3,
+      "native_scalar_difference": 410,
+      "primary_positive_plateau_texels": 416,
+      "work": {
+        "lit_texels": 410,
+        "cohorts": 402,
+        "scalar_updates_ungrouped": 17645,
+        "scalar_updates_grouped": 17253,
+        "scatter_writes": 410,
+        "fma_ambiguous_group_transitions": 0,
+        "first_fma_ambiguity": null
+      },
+      "comparisons": {
+        "step_replay": {
+          "different_words": 279,
+          "different_texels": 279,
+          "atlas_sha256": "9311574d128fbb48db577a54edaf1aa5153fbaa05360500b3ff0fb98588f2b76"
+        },
+        "elapsed64": {
+          "different_words": 397,
+          "different_texels": 397,
+          "atlas_sha256": "c7247b88bb9456b992b6c258315f7c537df76a58b8110725ef8fa440df0550f9"
+        },
+        "elapsed32": {
+          "different_words": 397,
+          "different_texels": 397,
+          "atlas_sha256": "c7247b88bb9456b992b6c258315f7c537df76a58b8110725ef8fa440df0550f9"
+        },
+        "single_frame_ratio": {
+          "different_words": 372,
+          "different_texels": 372,
+          "atlas_sha256": "0c7641cc704677f9a98b8bbe694300af94bff352e6f1f7687a61c76891915731"
+        }
+      },
+      "oracle_sha256": "316a85af4ce337272d2bc0ad2fbbbd7d50140c9dab4a1c9e86324611ea3ccfdb"
+    }
+  ]
+}

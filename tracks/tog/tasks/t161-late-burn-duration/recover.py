@@ -172,8 +172,8 @@ def witness(n, idx, channel, predicted, expected, source, events):
     return value
 
 
-def reconstruct_atlas(primary_atlas, event_path, dt_path, boundary):
-    """Construct a 5 s atlas using only a 10 s endpoint, first-debit events and dt."""
+def candidate_atlas(primary_atlas, event_path, dt_path, boundary):
+    """Return the registered CPU half-rounding candidate for scientific comparison."""
     if primary_atlas.dtype != np.dtype("<f2") or primary_atlas.shape[-1] != 4:
         raise ValueError("Expected the native binary16 RGBA atlas")
     if Path(event_path).stat().st_size % EVENT.itemsize or Path(dt_path).stat().st_size % 4:
@@ -214,6 +214,11 @@ def reconstruct_atlas(primary_atlas, event_path, dt_path, boundary):
         fuel[mask] = changed
     target[active["texel"], 0] = fuel[members]
     return values
+
+
+def reconstruct_atlas(primary_atlas, event_path, dt_path, boundary):
+    """Admission gate for downstream delivery of a native-exact complete atlas."""
+    raise ValueError("T161 CPU binary16 conversion failed its independent native admission. Use native replay for delivery.")
 
 
 def score(out, write):
@@ -271,7 +276,7 @@ def score(out, write):
         # Verify the standalone endpoint consumer as used by T162.
         raw_shape = primary_rows[n]["atlas"]["shape"]
         try:
-            public = reconstruct_atlas(source.view("<f2").reshape(raw_shape), event_path, dt_path, n)
+            public = candidate_atlas(source.view("<f2").reshape(raw_shape), event_path, dt_path, n)
             if sha(public) != row["comparisons"]["step_replay"]["atlas_sha256"] and public_mismatch is None:
                 public_mismatch = dict(boundary=n, stage="differs_from_scalar_recovery")
         except ValueError as exc:
