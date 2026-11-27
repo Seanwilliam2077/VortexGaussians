@@ -379,4 +379,3 @@ if __name__ == "__main__":
     evidence, private = args.out.resolve(), args.private.resolve()
     sys.exit(run_worker(args.source.resolve(), args.mode, evidence, private) if args.mode
              else supervise(args.source.resolve(), evidence, private))
-

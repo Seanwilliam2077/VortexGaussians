@@ -79,4 +79,3 @@ if __name__ == "__main__":
     p.add_argument("--out", type=Path, default=HERE/"evidence")
     args = p.parse_args()
     print(json.dumps(verify(args.out, args.private), indent=2))
-
