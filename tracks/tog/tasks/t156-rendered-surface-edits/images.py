@@ -47,11 +47,27 @@ def archive(path, pixels):
     return hashlib.sha256(pixels.tobytes()).hexdigest()
 
 
-def native(source, out, cache):
+def restore_catch(engine, arm, generation):
+    from blackbody.io.simcache import read_entry
+    scene = fork.settings(arm)
+    path = FORK / "private" / (arm + "-36.bbc")
+    with path.open("rb") as f:
+        packet_hash = hashlib.file_digest(f, "sha256").hexdigest()
+    fork.require(packet_hash == generation["packets"][arm]["sha256"], "Packet identity")
+    packet = read_entry(path)
+    fork.require((packet["frame"], packet["arm"], packet["pin"], packet["signature"]) ==
+                 (36, arm, fork.PIN, scene.sim_signature(True)), "Wrong restored scene")
+    fork.prepare(engine, scene)
+    fork.restore(engine, scene, 36, packet)
+    del packet
+    reference = generation["ordinary"][arm]["36"]
+    return scene, reference, {"packet_sha256": packet_hash}
+
+
+def native(source, out, cache, *, arms=("default", "slow"), restore_state=restore_catch):
     import wgpu
     from blackbody.engine.engine import Engine
     from blackbody.engine.gpu import GPU
-    from blackbody.io.simcache import read_entry
 
     started = time.perf_counter()
     generation = json.loads((FORK / "evidence/generate.json").read_bytes())
@@ -79,22 +95,11 @@ def native(source, out, cache):
             engine = Engine(gpu)
             # A restored state must be sufficient by itself.
             with patch.object(engine, "step_frame", side_effect=RuntimeError("Unexpected physics update")):
-                for arm in ("default", "slow"):
+                for arm in arms:
                     stage(arm + "/restore")
-                    scene = fork.settings(arm)
-                    path = FORK / "private" / (arm + "-36.bbc")
-                    with path.open("rb") as f:
-                        packet_hash = hashlib.file_digest(f, "sha256").hexdigest()
-                    fork.require(packet_hash == generation["packets"][arm]["sha256"], "Packet identity")
-                    packet = read_entry(path)
-                    fork.require((packet["frame"], packet["arm"], packet["pin"], packet["signature"]) ==
-                                 (36, arm, fork.PIN, scene.sim_signature(True)), "Wrong restored scene")
-                    fork.prepare(engine, scene)
-                    fork.restore(engine, scene, 36, packet)
-                    del packet
-                    reference = generation["ordinary"][arm]["36"]
+                    scene, reference, provenance = restore_state(engine, arm, generation)
                     fork.check_equal(fork.summary(fork.state(engine)), reference, arm + " input")
-                    item = receipt["arms"][arm] = {"packet_sha256": packet_hash}
+                    item = receipt["arms"][arm] = provenance
                     for mode, name in (("fire", "emission"), ("composite", "composite")):
                         stage(arm + "/" + name)
                         previous = len(records(out))
@@ -119,7 +124,7 @@ def native(source, out, cache):
     return 0
 
 
-if __name__ == "__main__":
+def main(worker, script):
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--source", type=Path, required=True)
     parser.add_argument("--out", type=Path, required=True)
@@ -127,7 +132,11 @@ if __name__ == "__main__":
     args = parser.parse_args()
     source, out = args.source.resolve(), args.out.resolve()
     if args.worker_cache is None:
-        sys.exit(render.observe.supervise(source, out, limit=660, worker_script=__file__))
+        sys.exit(render.observe.supervise(source, out, limit=660, worker_script=script))
     # Reuse the pinned T138 label adaptation and T143 lazy stage instrumentation.
-    with patch.object(render, "run_worker", native):
+    with patch.object(render, "run_worker", worker):
         sys.exit(classic.worker(source, out, args.worker_cache))
+
+
+if __name__ == "__main__":
+    main(native, __file__)
