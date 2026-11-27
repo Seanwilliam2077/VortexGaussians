@@ -1,0 +1,92 @@
+Supplement: exact branch reuse and native visible decisions
+
+Extract the archive to a fresh directory. Run "python -I verify.py" there with
+Python 3.10 or later. Python reads and checks the included SHA-256 manifest,
+reconstructs all coupled feedback grids and prints the three results. No
+network, renderer, third-party package or graphics device is required.
+
+Flag | an independent coupled simulator
+
+One ordinary simulation used a nonburnable 1,148-vertex nylon flag and a
+separate upwind emitter. The second doubled bending stiffness. The otherwise
+identical input scenes, independent ordinary repeat, and 120 aligned native
+substeps per run are included. There are 42 preroll and 78 displayed substeps,
+plus a final checkpoint. Each line in the three ledgers is a pre-update record,
+a completed-frame record or the final state. State hashes, dimensions, types,
+forcing, dt and cloth-feedback latches are indexed by substep.
+
+The two sparse binary files contain exact 32-bit signed integer feedback words.
+For each of 121 records, read two little-endian uint32 values (total cells,
+occupied cells), then for each occupied cell one uint32 native linear index
+and thirteen little-endian int32 words. Fill all other cells with zeros.
+The verifier independently hashes each reconstructed 5,930,496-byte grid.
+The original ledgers also record offsets and sizes in the acquisition stream's
+zlib container. The files here use a different lossless container. The
+independent repeat records and its acquisition-stream checksum are included;
+the original byte-identical grids are represented once for the two ordinary
+runs. At input 1 the complete position and velocity buffers of both flags
+are included as little-endian float32 (1,148 rows by four words). The verifier
+rehashes them and recomputes changed counts and magnitudes for X, Y and Z.
+At input 3 the package also retains first-difference and maximum-difference
+word pairs for the pressure and three stored velocity components. Each triple
+is a flattened array index followed by two raw float32 bit patterns written
+as uint32. These show actual native gas differences. The other coarse/fine
+arrays are represented by acquisition hashes and early statistics. Their
+complete physical fields cannot be reconstructed from those hashes.
+
+With identical incoming gas, force and schedule, a step may share gas work if
+the native feedback hook is inactive or its full effective input is identical.
+For unequal grids the sufficient test first checks source words 6, 7, 8, 12.
+Each axis needs nonnegative area and either zero area in both grids, zero
+impulse and equal positive-area support, or identical area, area-weighted
+velocity and impulse words. A rejection closes the contiguous prefix.
+The verifier also compares both incoming AND succeeding complete ordinary gas
+states to give a retrospective upper bound. The first divergent cloth state
+is at input 1. One additional equal gas update at that boundary still leaves
+zero exact updates past the one-step lag. The repeat controls for observed
+same-treatment nondeterminism on this device. No rendered flag or accelerated
+coupled solver was measured.
+
+Woodpile | sensitivity of an existing editing choice
+
+The native shader renders a tagged-opacity matte while retaining all
+34,687 original splats as possible occluders. Each of the eight histograms in
+woodpile/contrast.json covers 470 x 264 cells. Bin k is the maximum absolute
+RGB channel difference between gas-on and material-only images after summing
+four 8-bit pixels per channel. Each bin stores its cell count and the sum of
+eligible native rest opacity over those cells. Sum weights in bins 64..1020
+and divide by total weight. At +90, try the light brush first and accept when
+coverage reaches one quarter; also evaluate the full brush. Material coverage
+uses the deposited target opacity of sites reached by each brush at +90.
+The files retain both cameras, +44 and +90 gas observations, previous
+projection scores, seven native tag draws including a repeat, and all four
+material endpoints. The primary camera chooses light for gas, full for
+material. The second camera returns neither. These binned measurements
+support changing the contrast threshold but cannot recover spatial layout.
+
+Bonsai | a second partial window and a missed visual target
+
+A point brush first ignites a common parent. At frame 180 the 179-site light
+and 405-site full brushes give two continuations to frame 270. The eligible
+1,041-site exterior shell has native rest opacity 411.094150 across 2,996
+primary-view cells. The secondary-view shell lies behind its camera and its
+fraction is undefined. The native RGB diagnostic records zero above-threshold
+target mass for each primary-view brush. Native gas-on and gas-suppressed
+images have different digests. These observations do not identify where the
+contrasting gas appeared or why both alternatives missed the shell.
+
+The fixed spread-feed cap and common parent show that 35 of 90 steps qualify
+for exact gas reuse. For each brush the archive includes ordinary native,
+ordinary indexed and transported records at frames 270 and 271. Compare five
+material buffer digests, ordered particles/frontier/clocks/RNG digest, scalar
+counters and paired native display digests. The two additional requested
+actions have decision receipts. Raw display images, third-party scene
+appearance and original state buffers are absent. This checks equality of the
+recorded digests and scoring arithmetic; acquisition of fresh digests requires
+the native scene and renderer. At physical pixel (779,519) the offline
+prediction 340163 ends below half opacity. The native first crossing is
+437231. The audit includes both measured discrete pixels; it does not sample
+the exact continuous brush rays.
+
+All three tasks were defined for research. None supplies a creator judgment,
+a general estimate of transfer frequency, or a repeated timing comparison.
