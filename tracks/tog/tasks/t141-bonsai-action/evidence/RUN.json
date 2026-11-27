@@ -1,0 +1,1416 @@
+{
+  "schema": "t141-bonsai-native-action-v1",
+  "status": "correctness_complete",
+  "sources": {
+    "../../../../demo/index.html": "e9d808c434bdd8ce91482f60502f03f5d08c56b71c082eb704c53275ff9f57d0",
+    "../t42-firewoods-sequential-workflow/adapter.js": "e3c6348a18ae633e963bdf574ceac92b2ce3956ac2b26e06b9b5f88cda7f58da",
+    "../t86-ignition-margin/native.js": "fcce7bb3dbc0cfb78b7e427572d6a9519e3d93a28eefb1f2b676e347baa6997f",
+    "../t129-native-image-choice/native-kernels.js": "c959294e5190c7beb70c112348399f7a86d94a659d54146868d3ace663ca02d1",
+    "action.js": "666862e815ed9461c65a95b819acf993e4ae40ce207c08874a8c3a427fabcea2"
+  },
+  "staged_html_sha256": "9f958dd9ec82a947026f4bb9974678db63cc89f2f316d61eea89b0eb45df8e3d",
+  "phase": "transport-requested-choice",
+  "phases": [
+    {
+      "name": "launch",
+      "ms": 1498.8998000000001
+    },
+    {
+      "name": "open",
+      "ms": 454.87339999999995
+    },
+    {
+      "name": "load_and_check_all_splats",
+      "ms": 4434.831
+    },
+    {
+      "name": "rest_physical",
+      "ms": 15.467499999999745
+    },
+    {
+      "name": "native_prefix_pixel_audit",
+      "ms": 513.8977000000004
+    },
+    {
+      "name": "native_A",
+      "ms": 3.572400000000016
+    },
+    {
+      "name": "ordinary_common_parent_30",
+      "ms": 295.1385
+    },
+    {
+      "name": "ordinary_common_parent_60",
+      "ms": 276.8693999999996
+    },
+    {
+      "name": "ordinary_common_parent_90",
+      "ms": 228.28620000000046
+    },
+    {
+      "name": "ordinary_common_parent_120",
+      "ms": 223.88789999999972
+    },
+    {
+      "name": "ordinary_common_parent_150",
+      "ms": 224.9935000000005
+    },
+    {
+      "name": "ordinary_common_parent_180",
+      "ms": 214.63810000000012
+    },
+    {
+      "name": "common_parent_digest",
+      "ms": 18.055200000000696
+    },
+    {
+      "name": "native_eligible_shell",
+      "ms": 286.2577999999994
+    },
+    {
+      "name": "full_scene_rest_native_matte_then_restore",
+      "ms": 347.39640000000145
+    },
+    {
+      "name": "ordinary-native-audit",
+      "ms": 3376.8122000000003
+    },
+    {
+      "name": "ordinary-indexed-audit",
+      "ms": 2499.6136000000006
+    },
+    {
+      "name": "transport-audit",
+      "ms": 2414.285100000001
+    },
+    {
+      "name": "ordinary-indexed-requested-choice",
+      "ms": 1957.295299999998
+    },
+    {
+      "name": "transport-requested-choice",
+      "ms": 1790.8755999999994
+    }
+  ],
+  "actions": [
+    {
+      "method": "ordinary-native",
+      "audit": true,
+      "choice": "none",
+      "secondary": "undefined",
+      "shared_steps": 0,
+      "reused_steps": 0,
+      "elapsed_ms": 3374.2999999523163,
+      "phases": {
+        "fork_restore_ms": 5.900000095367432,
+        "click_ms": 0.8999998569488525,
+        "physics_ms": 2127.2000000476837,
+        "image_ms": 1040.4000000953674
+      },
+      "branches": [
+        {
+          "name": "L",
+          "clicked": 179,
+          "result": {
+            "mass": 0,
+            "denominator": 411.0941503196955,
+            "fraction": 0,
+            "passes": false,
+            "hashes": [
+              {
+                "full_display_rgba_sha256": "e384ade621e042c9a39c25c94a87ff4e1c4152abb5f5ce9dc43f2814c7bedb4d",
+                "dynamic_instances": 2789
+              },
+              {
+                "full_display_rgba_sha256": "bd5d16094e37564b4a53db5321dd9182e91eb4e90164ead883d92949868750c9",
+                "dynamic_instances": 2789
+              }
+            ]
+          },
+          "successor": {
+            "frame": 271,
+            "draws": 19689,
+            "time": 4.516666666666656,
+            "cursor": 2443,
+            "particles": 2817,
+            "active": 3197,
+            "gas_clocks_rng_frontier": "ce4617d762ded396061af0b48a1a54e7ebf3533984a50b4c94b389afe63c5b1f",
+            "material": [
+              "f248b01e96d7c7a2032f658d7ba09f004b801ee002924b0f015bfcd0b397ca07",
+              "1f0fb24e386f4875b5edcec0103c40784e34bab22a3a27b499c7e198bfc77d0d",
+              "f6bc13b3203bca63e8f58c54c6cfefe6e4697d69f49b80b77c1126eb0ec1891d",
+              "23ed82f44a970d4cea147fd7213dc51fd4c7dbeb05892f7afb2e337b6aa3ec51",
+              "f11ce6e26fc4ca6f3669d92eb8f3735e1eb6e0105f59f33b43d3cc040b116a25"
+            ]
+          },
+          "endpoint": {
+            "frame": 270,
+            "draws": 19501,
+            "time": 4.499999999999989,
+            "cursor": 2395,
+            "particles": 2789,
+            "active": 3197,
+            "gas_clocks_rng_frontier": "8d91ff2795f704eea92f89252f9416d78e685558b640a3b0fa54c539b1fae0d0",
+            "material": [
+              "ad70073f825c309b176b12627d5828926d336909db9b49751968bd270ce79710",
+              "1f56e544fadcf1a70ea6a2392904913cea472424432d9e968c3596da1a8db2fe",
+              "eb9a6e222a7f19f279c44c86ea04d56d2b1e61bf9614f2b1345a8c1b44346b17",
+              "4d1d2c0880a54e87bbd85b869a58f118ce547950190ca6c779b74b83011cd5e2",
+              "f11ce6e26fc4ca6f3669d92eb8f3735e1eb6e0105f59f33b43d3cc040b116a25"
+            ]
+          }
+        },
+        {
+          "name": "F",
+          "clicked": 405,
+          "result": {
+            "mass": 0,
+            "denominator": 411.0941503196955,
+            "fraction": 0,
+            "passes": false,
+            "hashes": [
+              {
+                "full_display_rgba_sha256": "6c9e0e9f106a0ea5a37f75f98c8eb04b48b2e1b48d9eb12a4d7f26051943d5d7",
+                "dynamic_instances": 2789
+              },
+              {
+                "full_display_rgba_sha256": "3316bacc2585991ea658282699fdf94a5a9d90813720ceeb7a1bfc4756b80d40",
+                "dynamic_instances": 2789
+              }
+            ]
+          },
+          "successor": {
+            "frame": 271,
+            "draws": 19689,
+            "time": 4.516666666666656,
+            "cursor": 2166,
+            "particles": 2817,
+            "active": 3436,
+            "gas_clocks_rng_frontier": "a33142aed615a23888112d08718069a07ab741931e3299063f743c0c45a2ef65",
+            "material": [
+              "da769ab348bc96ba9b1e69f22524bbbfe19af88ffdef091664ab5307d1535449",
+              "e6e663fd3cc846264918f2437cbe5636d6a7bd4b4dd54e1fc1af4d3f1fa2ca18",
+              "1b51d2116fec7d362818b7e50e84c58f030d89183fcaba31fe0b2a168673979d",
+              "f2dd828d0f6749e4eeb2795ec2617e6573e888f634d5222f9154b2932f5a63a3",
+              "416b03cecaacb1740e471beb0081c89dd36806b78edf79f37a7d288dd3295874"
+            ]
+          },
+          "endpoint": {
+            "frame": 270,
+            "draws": 19501,
+            "time": 4.499999999999989,
+            "cursor": 2118,
+            "particles": 2789,
+            "active": 3436,
+            "gas_clocks_rng_frontier": "182b63f5536921ee2a44dddcac67c64be23fa7ce2550efc09f3cfced674a8568",
+            "material": [
+              "dd63233e92eab4db4a7d40d10896947596bdf002afe1fd0a380808bc8e57266f",
+              "ebca50f5affd8699bf5148fcda2318079d89556ae918b16b2d4cd4eec0c6a6cf",
+              "53532a37ab5f806b8677bf7ea91cc3483788f36cbca9588b0db29ec523df9d40",
+              "7395d1219c54e795c93309c59fc152a9bcd596320aaeb7482d95a5b0a09af7de",
+              "416b03cecaacb1740e471beb0081c89dd36806b78edf79f37a7d288dd3295874"
+            ]
+          }
+        }
+      ],
+      "cold_index": null,
+      "host_ms": 3376.754500000001
+    },
+    {
+      "method": "ordinary-indexed",
+      "audit": true,
+      "choice": "none",
+      "secondary": "undefined",
+      "shared_steps": 0,
+      "reused_steps": 0,
+      "elapsed_ms": 2496.899999856949,
+      "phases": {
+        "fork_restore_ms": 6.3999998569488525,
+        "click_ms": 0.5000002384185791,
+        "physics_ms": 1280.8999998569489,
+        "image_ms": 1016.3999998569489
+      },
+      "branches": [
+        {
+          "name": "L",
+          "clicked": 179,
+          "result": {
+            "mass": 0,
+            "denominator": 411.0941503196955,
+            "fraction": 0,
+            "passes": false,
+            "hashes": [
+              {
+                "full_display_rgba_sha256": "e384ade621e042c9a39c25c94a87ff4e1c4152abb5f5ce9dc43f2814c7bedb4d",
+                "dynamic_instances": 2789
+              },
+              {
+                "full_display_rgba_sha256": "bd5d16094e37564b4a53db5321dd9182e91eb4e90164ead883d92949868750c9",
+                "dynamic_instances": 2789
+              }
+            ]
+          },
+          "successor": {
+            "frame": 271,
+            "draws": 19689,
+            "time": 4.516666666666656,
+            "cursor": 2443,
+            "particles": 2817,
+            "active": 3197,
+            "gas_clocks_rng_frontier": "ce4617d762ded396061af0b48a1a54e7ebf3533984a50b4c94b389afe63c5b1f",
+            "material": [
+              "f248b01e96d7c7a2032f658d7ba09f004b801ee002924b0f015bfcd0b397ca07",
+              "1f0fb24e386f4875b5edcec0103c40784e34bab22a3a27b499c7e198bfc77d0d",
+              "f6bc13b3203bca63e8f58c54c6cfefe6e4697d69f49b80b77c1126eb0ec1891d",
+              "23ed82f44a970d4cea147fd7213dc51fd4c7dbeb05892f7afb2e337b6aa3ec51",
+              "f11ce6e26fc4ca6f3669d92eb8f3735e1eb6e0105f59f33b43d3cc040b116a25"
+            ]
+          },
+          "endpoint": {
+            "frame": 270,
+            "draws": 19501,
+            "time": 4.499999999999989,
+            "cursor": 2395,
+            "particles": 2789,
+            "active": 3197,
+            "gas_clocks_rng_frontier": "8d91ff2795f704eea92f89252f9416d78e685558b640a3b0fa54c539b1fae0d0",
+            "material": [
+              "ad70073f825c309b176b12627d5828926d336909db9b49751968bd270ce79710",
+              "1f56e544fadcf1a70ea6a2392904913cea472424432d9e968c3596da1a8db2fe",
+              "eb9a6e222a7f19f279c44c86ea04d56d2b1e61bf9614f2b1345a8c1b44346b17",
+              "4d1d2c0880a54e87bbd85b869a58f118ce547950190ca6c779b74b83011cd5e2",
+              "f11ce6e26fc4ca6f3669d92eb8f3735e1eb6e0105f59f33b43d3cc040b116a25"
+            ]
+          }
+        },
+        {
+          "name": "F",
+          "clicked": 405,
+          "result": {
+            "mass": 0,
+            "denominator": 411.0941503196955,
+            "fraction": 0,
+            "passes": false,
+            "hashes": [
+              {
+                "full_display_rgba_sha256": "6c9e0e9f106a0ea5a37f75f98c8eb04b48b2e1b48d9eb12a4d7f26051943d5d7",
+                "dynamic_instances": 2789
+              },
+              {
+                "full_display_rgba_sha256": "3316bacc2585991ea658282699fdf94a5a9d90813720ceeb7a1bfc4756b80d40",
+                "dynamic_instances": 2789
+              }
+            ]
+          },
+          "successor": {
+            "frame": 271,
+            "draws": 19689,
+            "time": 4.516666666666656,
+            "cursor": 2166,
+            "particles": 2817,
+            "active": 3436,
+            "gas_clocks_rng_frontier": "a33142aed615a23888112d08718069a07ab741931e3299063f743c0c45a2ef65",
+            "material": [
+              "da769ab348bc96ba9b1e69f22524bbbfe19af88ffdef091664ab5307d1535449",
+              "e6e663fd3cc846264918f2437cbe5636d6a7bd4b4dd54e1fc1af4d3f1fa2ca18",
+              "1b51d2116fec7d362818b7e50e84c58f030d89183fcaba31fe0b2a168673979d",
+              "f2dd828d0f6749e4eeb2795ec2617e6573e888f634d5222f9154b2932f5a63a3",
+              "416b03cecaacb1740e471beb0081c89dd36806b78edf79f37a7d288dd3295874"
+            ]
+          },
+          "endpoint": {
+            "frame": 270,
+            "draws": 19501,
+            "time": 4.499999999999989,
+            "cursor": 2118,
+            "particles": 2789,
+            "active": 3436,
+            "gas_clocks_rng_frontier": "182b63f5536921ee2a44dddcac67c64be23fa7ce2550efc09f3cfced674a8568",
+            "material": [
+              "dd63233e92eab4db4a7d40d10896947596bdf002afe1fd0a380808bc8e57266f",
+              "ebca50f5affd8699bf5148fcda2318079d89556ae918b16b2d4cd4eec0c6a6cf",
+              "53532a37ab5f806b8677bf7ea91cc3483788f36cbca9588b0db29ec523df9d40",
+              "7395d1219c54e795c93309c59fc152a9bcd596320aaeb7482d95a5b0a09af7de",
+              "416b03cecaacb1740e471beb0081c89dd36806b78edf79f37a7d288dd3295874"
+            ]
+          }
+        }
+      ],
+      "cold_index": {
+        "profile": false,
+        "geom_build_ms": 67.30000019073486,
+        "geom_bytes": 4979276,
+        "build_ms": 40.39999985694885,
+        "builds": 2,
+        "total_index_bytes": 124317104,
+        "peak_index_bytes": 62158552,
+        "removals": 833,
+        "registrations": [
+          {
+            "kind": "full",
+            "members": 1242032,
+            "sites": 1244819,
+            "bytes": 62158552
+          },
+          {
+            "kind": "full",
+            "members": 1241806,
+            "sites": 1244819,
+            "bytes": 62158552
+          }
+        ],
+        "samples": 0,
+        "distance_tests": 0,
+        "within_radius": 0,
+        "initially_noncold_in_bucket": 0
+      },
+      "host_ms": 2499.607400000001
+    },
+    {
+      "method": "transport",
+      "audit": true,
+      "choice": "none",
+      "secondary": "undefined",
+      "shared_steps": 35,
+      "reused_steps": 35,
+      "elapsed_ms": 2411.2999999523163,
+      "phases": {
+        "fork_restore_ms": 6.900000095367432,
+        "click_ms": 0.5,
+        "guard_ms": 0.7999999523162842,
+        "physics_ms": 1207.6000001430511,
+        "checkpoint_ms": 1.9000000953674316,
+        "image_ms": 999.5999999046326,
+        "transport_ms": 0.7999999523162842
+      },
+      "branches": [
+        {
+          "name": "L",
+          "clicked": 179,
+          "result": {
+            "mass": 0,
+            "denominator": 411.0941503196955,
+            "fraction": 0,
+            "passes": false,
+            "hashes": [
+              {
+                "full_display_rgba_sha256": "e384ade621e042c9a39c25c94a87ff4e1c4152abb5f5ce9dc43f2814c7bedb4d",
+                "dynamic_instances": 2789
+              },
+              {
+                "full_display_rgba_sha256": "bd5d16094e37564b4a53db5321dd9182e91eb4e90164ead883d92949868750c9",
+                "dynamic_instances": 2789
+              }
+            ]
+          },
+          "successor": {
+            "frame": 271,
+            "draws": 19689,
+            "time": 4.516666666666656,
+            "cursor": 2443,
+            "particles": 2817,
+            "active": 3197,
+            "gas_clocks_rng_frontier": "ce4617d762ded396061af0b48a1a54e7ebf3533984a50b4c94b389afe63c5b1f",
+            "material": [
+              "f248b01e96d7c7a2032f658d7ba09f004b801ee002924b0f015bfcd0b397ca07",
+              "1f0fb24e386f4875b5edcec0103c40784e34bab22a3a27b499c7e198bfc77d0d",
+              "f6bc13b3203bca63e8f58c54c6cfefe6e4697d69f49b80b77c1126eb0ec1891d",
+              "23ed82f44a970d4cea147fd7213dc51fd4c7dbeb05892f7afb2e337b6aa3ec51",
+              "f11ce6e26fc4ca6f3669d92eb8f3735e1eb6e0105f59f33b43d3cc040b116a25"
+            ]
+          },
+          "endpoint": {
+            "frame": 270,
+            "draws": 19501,
+            "time": 4.499999999999989,
+            "cursor": 2395,
+            "particles": 2789,
+            "active": 3197,
+            "gas_clocks_rng_frontier": "8d91ff2795f704eea92f89252f9416d78e685558b640a3b0fa54c539b1fae0d0",
+            "material": [
+              "ad70073f825c309b176b12627d5828926d336909db9b49751968bd270ce79710",
+              "1f56e544fadcf1a70ea6a2392904913cea472424432d9e968c3596da1a8db2fe",
+              "eb9a6e222a7f19f279c44c86ea04d56d2b1e61bf9614f2b1345a8c1b44346b17",
+              "4d1d2c0880a54e87bbd85b869a58f118ce547950190ca6c779b74b83011cd5e2",
+              "f11ce6e26fc4ca6f3669d92eb8f3735e1eb6e0105f59f33b43d3cc040b116a25"
+            ]
+          }
+        },
+        {
+          "name": "F",
+          "clicked": 405,
+          "result": {
+            "mass": 0,
+            "denominator": 411.0941503196955,
+            "fraction": 0,
+            "passes": false,
+            "hashes": [
+              {
+                "full_display_rgba_sha256": "6c9e0e9f106a0ea5a37f75f98c8eb04b48b2e1b48d9eb12a4d7f26051943d5d7",
+                "dynamic_instances": 2789
+              },
+              {
+                "full_display_rgba_sha256": "3316bacc2585991ea658282699fdf94a5a9d90813720ceeb7a1bfc4756b80d40",
+                "dynamic_instances": 2789
+              }
+            ]
+          },
+          "successor": {
+            "frame": 271,
+            "draws": 19689,
+            "time": 4.516666666666656,
+            "cursor": 2166,
+            "particles": 2817,
+            "active": 3436,
+            "gas_clocks_rng_frontier": "a33142aed615a23888112d08718069a07ab741931e3299063f743c0c45a2ef65",
+            "material": [
+              "da769ab348bc96ba9b1e69f22524bbbfe19af88ffdef091664ab5307d1535449",
+              "e6e663fd3cc846264918f2437cbe5636d6a7bd4b4dd54e1fc1af4d3f1fa2ca18",
+              "1b51d2116fec7d362818b7e50e84c58f030d89183fcaba31fe0b2a168673979d",
+              "f2dd828d0f6749e4eeb2795ec2617e6573e888f634d5222f9154b2932f5a63a3",
+              "416b03cecaacb1740e471beb0081c89dd36806b78edf79f37a7d288dd3295874"
+            ]
+          },
+          "endpoint": {
+            "frame": 270,
+            "draws": 19501,
+            "time": 4.499999999999989,
+            "cursor": 2118,
+            "particles": 2789,
+            "active": 3436,
+            "gas_clocks_rng_frontier": "182b63f5536921ee2a44dddcac67c64be23fa7ce2550efc09f3cfced674a8568",
+            "material": [
+              "dd63233e92eab4db4a7d40d10896947596bdf002afe1fd0a380808bc8e57266f",
+              "ebca50f5affd8699bf5148fcda2318079d89556ae918b16b2d4cd4eec0c6a6cf",
+              "53532a37ab5f806b8677bf7ea91cc3483788f36cbca9588b0db29ec523df9d40",
+              "7395d1219c54e795c93309c59fc152a9bcd596320aaeb7482d95a5b0a09af7de",
+              "416b03cecaacb1740e471beb0081c89dd36806b78edf79f37a7d288dd3295874"
+            ]
+          }
+        }
+      ],
+      "cold_index": {
+        "profile": false,
+        "geom_build_ms": 68,
+        "geom_bytes": 4979276,
+        "build_ms": 64.79999995231628,
+        "builds": 3,
+        "total_index_bytes": 186475656,
+        "peak_index_bytes": 62158552,
+        "removals": 823,
+        "registrations": [
+          {
+            "kind": "full",
+            "members": 1242032,
+            "sites": 1244819,
+            "bytes": 62158552
+          },
+          {
+            "kind": "full",
+            "members": 1242022,
+            "sites": 1244819,
+            "bytes": 62158552
+          },
+          {
+            "kind": "full",
+            "members": 1241796,
+            "sites": 1244819,
+            "bytes": 62158552
+          }
+        ],
+        "samples": 0,
+        "distance_tests": 0,
+        "within_radius": 0,
+        "initially_noncold_in_bucket": 0
+      },
+      "host_ms": 2414.268299999998
+    },
+    {
+      "method": "ordinary-indexed",
+      "audit": false,
+      "choice": "none",
+      "secondary": "undefined",
+      "shared_steps": 0,
+      "reused_steps": 0,
+      "elapsed_ms": 1954.7000000476837,
+      "phases": {
+        "fork_restore_ms": 5.900000095367432,
+        "click_ms": 0.39999985694885254,
+        "physics_ms": 911.8000001907349,
+        "image_ms": 1036.5999999046326
+      },
+      "branches": [
+        {
+          "name": "L",
+          "clicked": 179,
+          "result": {
+            "mass": 0,
+            "denominator": 411.0941503196955,
+            "fraction": 0,
+            "passes": false,
+            "hashes": []
+          }
+        },
+        {
+          "name": "F",
+          "clicked": 405,
+          "result": {
+            "mass": 0,
+            "denominator": 411.0941503196955,
+            "fraction": 0,
+            "passes": false,
+            "hashes": []
+          }
+        }
+      ],
+      "cold_index": {
+        "profile": false,
+        "geom_build_ms": 0,
+        "geom_bytes": 4979276,
+        "build_ms": 36.60000014305115,
+        "builds": 2,
+        "total_index_bytes": 124317104,
+        "peak_index_bytes": 62158552,
+        "removals": 833,
+        "registrations": [
+          {
+            "kind": "full",
+            "members": 1242032,
+            "sites": 1244819,
+            "bytes": 62158552
+          },
+          {
+            "kind": "full",
+            "members": 1241806,
+            "sites": 1244819,
+            "bytes": 62158552
+          }
+        ],
+        "samples": 0,
+        "distance_tests": 0,
+        "within_radius": 0,
+        "initially_noncold_in_bucket": 0
+      },
+      "host_ms": 1957.2831000000006
+    },
+    {
+      "method": "transport",
+      "audit": false,
+      "choice": "none",
+      "secondary": "undefined",
+      "shared_steps": 35,
+      "reused_steps": 35,
+      "elapsed_ms": 1788.5999999046326,
+      "phases": {
+        "fork_restore_ms": 4.099999904632568,
+        "click_ms": 0.40000009536743164,
+        "guard_ms": 0.39999985694885254,
+        "physics_ms": 827.900000333786,
+        "checkpoint_ms": 1.7999999523162842,
+        "image_ms": 953.5,
+        "transport_ms": 0.2999999523162842
+      },
+      "branches": [
+        {
+          "name": "L",
+          "clicked": 179,
+          "result": {
+            "mass": 0,
+            "denominator": 411.0941503196955,
+            "fraction": 0,
+            "passes": false,
+            "hashes": []
+          }
+        },
+        {
+          "name": "F",
+          "clicked": 405,
+          "result": {
+            "mass": 0,
+            "denominator": 411.0941503196955,
+            "fraction": 0,
+            "passes": false,
+            "hashes": []
+          }
+        }
+      ],
+      "cold_index": {
+        "profile": false,
+        "geom_build_ms": 0,
+        "geom_bytes": 4979276,
+        "build_ms": 58.80000042915344,
+        "builds": 3,
+        "total_index_bytes": 186475656,
+        "peak_index_bytes": 62158552,
+        "removals": 823,
+        "registrations": [
+          {
+            "kind": "full",
+            "members": 1242032,
+            "sites": 1244819,
+            "bytes": 62158552
+          },
+          {
+            "kind": "full",
+            "members": 1242022,
+            "sites": 1244819,
+            "bytes": 62158552
+          },
+          {
+            "kind": "full",
+            "members": 1241796,
+            "sites": 1244819,
+            "bytes": 62158552
+          }
+        ],
+        "samples": 0,
+        "distance_tests": 0,
+        "within_radius": 0,
+        "initially_noncold_in_bucket": 0
+      },
+      "host_ms": 1790.8639000000003
+    }
+  ],
+  "finished_audit_branches": [
+    {
+      "method": "ordinary-native",
+      "branch": {
+        "name": "L",
+        "clicked": 179,
+        "result": {
+          "mass": 0,
+          "denominator": 411.0941503196955,
+          "fraction": 0,
+          "passes": false,
+          "hashes": [
+            {
+              "full_display_rgba_sha256": "e384ade621e042c9a39c25c94a87ff4e1c4152abb5f5ce9dc43f2814c7bedb4d",
+              "dynamic_instances": 2789
+            },
+            {
+              "full_display_rgba_sha256": "bd5d16094e37564b4a53db5321dd9182e91eb4e90164ead883d92949868750c9",
+              "dynamic_instances": 2789
+            }
+          ]
+        },
+        "successor": {
+          "frame": 271,
+          "draws": 19689,
+          "time": 4.516666666666656,
+          "cursor": 2443,
+          "particles": 2817,
+          "active": 3197,
+          "gas_clocks_rng_frontier": "ce4617d762ded396061af0b48a1a54e7ebf3533984a50b4c94b389afe63c5b1f",
+          "material": [
+            "f248b01e96d7c7a2032f658d7ba09f004b801ee002924b0f015bfcd0b397ca07",
+            "1f0fb24e386f4875b5edcec0103c40784e34bab22a3a27b499c7e198bfc77d0d",
+            "f6bc13b3203bca63e8f58c54c6cfefe6e4697d69f49b80b77c1126eb0ec1891d",
+            "23ed82f44a970d4cea147fd7213dc51fd4c7dbeb05892f7afb2e337b6aa3ec51",
+            "f11ce6e26fc4ca6f3669d92eb8f3735e1eb6e0105f59f33b43d3cc040b116a25"
+          ]
+        },
+        "endpoint": {
+          "frame": 270,
+          "draws": 19501,
+          "time": 4.499999999999989,
+          "cursor": 2395,
+          "particles": 2789,
+          "active": 3197,
+          "gas_clocks_rng_frontier": "8d91ff2795f704eea92f89252f9416d78e685558b640a3b0fa54c539b1fae0d0",
+          "material": [
+            "ad70073f825c309b176b12627d5828926d336909db9b49751968bd270ce79710",
+            "1f56e544fadcf1a70ea6a2392904913cea472424432d9e968c3596da1a8db2fe",
+            "eb9a6e222a7f19f279c44c86ea04d56d2b1e61bf9614f2b1345a8c1b44346b17",
+            "4d1d2c0880a54e87bbd85b869a58f118ce547950190ca6c779b74b83011cd5e2",
+            "f11ce6e26fc4ca6f3669d92eb8f3735e1eb6e0105f59f33b43d3cc040b116a25"
+          ]
+        }
+      }
+    },
+    {
+      "method": "ordinary-native",
+      "branch": {
+        "name": "F",
+        "clicked": 405,
+        "result": {
+          "mass": 0,
+          "denominator": 411.0941503196955,
+          "fraction": 0,
+          "passes": false,
+          "hashes": [
+            {
+              "full_display_rgba_sha256": "6c9e0e9f106a0ea5a37f75f98c8eb04b48b2e1b48d9eb12a4d7f26051943d5d7",
+              "dynamic_instances": 2789
+            },
+            {
+              "full_display_rgba_sha256": "3316bacc2585991ea658282699fdf94a5a9d90813720ceeb7a1bfc4756b80d40",
+              "dynamic_instances": 2789
+            }
+          ]
+        },
+        "successor": {
+          "frame": 271,
+          "draws": 19689,
+          "time": 4.516666666666656,
+          "cursor": 2166,
+          "particles": 2817,
+          "active": 3436,
+          "gas_clocks_rng_frontier": "a33142aed615a23888112d08718069a07ab741931e3299063f743c0c45a2ef65",
+          "material": [
+            "da769ab348bc96ba9b1e69f22524bbbfe19af88ffdef091664ab5307d1535449",
+            "e6e663fd3cc846264918f2437cbe5636d6a7bd4b4dd54e1fc1af4d3f1fa2ca18",
+            "1b51d2116fec7d362818b7e50e84c58f030d89183fcaba31fe0b2a168673979d",
+            "f2dd828d0f6749e4eeb2795ec2617e6573e888f634d5222f9154b2932f5a63a3",
+            "416b03cecaacb1740e471beb0081c89dd36806b78edf79f37a7d288dd3295874"
+          ]
+        },
+        "endpoint": {
+          "frame": 270,
+          "draws": 19501,
+          "time": 4.499999999999989,
+          "cursor": 2118,
+          "particles": 2789,
+          "active": 3436,
+          "gas_clocks_rng_frontier": "182b63f5536921ee2a44dddcac67c64be23fa7ce2550efc09f3cfced674a8568",
+          "material": [
+            "dd63233e92eab4db4a7d40d10896947596bdf002afe1fd0a380808bc8e57266f",
+            "ebca50f5affd8699bf5148fcda2318079d89556ae918b16b2d4cd4eec0c6a6cf",
+            "53532a37ab5f806b8677bf7ea91cc3483788f36cbca9588b0db29ec523df9d40",
+            "7395d1219c54e795c93309c59fc152a9bcd596320aaeb7482d95a5b0a09af7de",
+            "416b03cecaacb1740e471beb0081c89dd36806b78edf79f37a7d288dd3295874"
+          ]
+        }
+      }
+    },
+    {
+      "method": "ordinary-indexed",
+      "branch": {
+        "name": "L",
+        "clicked": 179,
+        "result": {
+          "mass": 0,
+          "denominator": 411.0941503196955,
+          "fraction": 0,
+          "passes": false,
+          "hashes": [
+            {
+              "full_display_rgba_sha256": "e384ade621e042c9a39c25c94a87ff4e1c4152abb5f5ce9dc43f2814c7bedb4d",
+              "dynamic_instances": 2789
+            },
+            {
+              "full_display_rgba_sha256": "bd5d16094e37564b4a53db5321dd9182e91eb4e90164ead883d92949868750c9",
+              "dynamic_instances": 2789
+            }
+          ]
+        },
+        "successor": {
+          "frame": 271,
+          "draws": 19689,
+          "time": 4.516666666666656,
+          "cursor": 2443,
+          "particles": 2817,
+          "active": 3197,
+          "gas_clocks_rng_frontier": "ce4617d762ded396061af0b48a1a54e7ebf3533984a50b4c94b389afe63c5b1f",
+          "material": [
+            "f248b01e96d7c7a2032f658d7ba09f004b801ee002924b0f015bfcd0b397ca07",
+            "1f0fb24e386f4875b5edcec0103c40784e34bab22a3a27b499c7e198bfc77d0d",
+            "f6bc13b3203bca63e8f58c54c6cfefe6e4697d69f49b80b77c1126eb0ec1891d",
+            "23ed82f44a970d4cea147fd7213dc51fd4c7dbeb05892f7afb2e337b6aa3ec51",
+            "f11ce6e26fc4ca6f3669d92eb8f3735e1eb6e0105f59f33b43d3cc040b116a25"
+          ]
+        },
+        "endpoint": {
+          "frame": 270,
+          "draws": 19501,
+          "time": 4.499999999999989,
+          "cursor": 2395,
+          "particles": 2789,
+          "active": 3197,
+          "gas_clocks_rng_frontier": "8d91ff2795f704eea92f89252f9416d78e685558b640a3b0fa54c539b1fae0d0",
+          "material": [
+            "ad70073f825c309b176b12627d5828926d336909db9b49751968bd270ce79710",
+            "1f56e544fadcf1a70ea6a2392904913cea472424432d9e968c3596da1a8db2fe",
+            "eb9a6e222a7f19f279c44c86ea04d56d2b1e61bf9614f2b1345a8c1b44346b17",
+            "4d1d2c0880a54e87bbd85b869a58f118ce547950190ca6c779b74b83011cd5e2",
+            "f11ce6e26fc4ca6f3669d92eb8f3735e1eb6e0105f59f33b43d3cc040b116a25"
+          ]
+        }
+      }
+    },
+    {
+      "method": "ordinary-indexed",
+      "branch": {
+        "name": "F",
+        "clicked": 405,
+        "result": {
+          "mass": 0,
+          "denominator": 411.0941503196955,
+          "fraction": 0,
+          "passes": false,
+          "hashes": [
+            {
+              "full_display_rgba_sha256": "6c9e0e9f106a0ea5a37f75f98c8eb04b48b2e1b48d9eb12a4d7f26051943d5d7",
+              "dynamic_instances": 2789
+            },
+            {
+              "full_display_rgba_sha256": "3316bacc2585991ea658282699fdf94a5a9d90813720ceeb7a1bfc4756b80d40",
+              "dynamic_instances": 2789
+            }
+          ]
+        },
+        "successor": {
+          "frame": 271,
+          "draws": 19689,
+          "time": 4.516666666666656,
+          "cursor": 2166,
+          "particles": 2817,
+          "active": 3436,
+          "gas_clocks_rng_frontier": "a33142aed615a23888112d08718069a07ab741931e3299063f743c0c45a2ef65",
+          "material": [
+            "da769ab348bc96ba9b1e69f22524bbbfe19af88ffdef091664ab5307d1535449",
+            "e6e663fd3cc846264918f2437cbe5636d6a7bd4b4dd54e1fc1af4d3f1fa2ca18",
+            "1b51d2116fec7d362818b7e50e84c58f030d89183fcaba31fe0b2a168673979d",
+            "f2dd828d0f6749e4eeb2795ec2617e6573e888f634d5222f9154b2932f5a63a3",
+            "416b03cecaacb1740e471beb0081c89dd36806b78edf79f37a7d288dd3295874"
+          ]
+        },
+        "endpoint": {
+          "frame": 270,
+          "draws": 19501,
+          "time": 4.499999999999989,
+          "cursor": 2118,
+          "particles": 2789,
+          "active": 3436,
+          "gas_clocks_rng_frontier": "182b63f5536921ee2a44dddcac67c64be23fa7ce2550efc09f3cfced674a8568",
+          "material": [
+            "dd63233e92eab4db4a7d40d10896947596bdf002afe1fd0a380808bc8e57266f",
+            "ebca50f5affd8699bf5148fcda2318079d89556ae918b16b2d4cd4eec0c6a6cf",
+            "53532a37ab5f806b8677bf7ea91cc3483788f36cbca9588b0db29ec523df9d40",
+            "7395d1219c54e795c93309c59fc152a9bcd596320aaeb7482d95a5b0a09af7de",
+            "416b03cecaacb1740e471beb0081c89dd36806b78edf79f37a7d288dd3295874"
+          ]
+        }
+      }
+    },
+    {
+      "method": "transport",
+      "branch": {
+        "name": "L",
+        "clicked": 179,
+        "result": {
+          "mass": 0,
+          "denominator": 411.0941503196955,
+          "fraction": 0,
+          "passes": false,
+          "hashes": [
+            {
+              "full_display_rgba_sha256": "e384ade621e042c9a39c25c94a87ff4e1c4152abb5f5ce9dc43f2814c7bedb4d",
+              "dynamic_instances": 2789
+            },
+            {
+              "full_display_rgba_sha256": "bd5d16094e37564b4a53db5321dd9182e91eb4e90164ead883d92949868750c9",
+              "dynamic_instances": 2789
+            }
+          ]
+        },
+        "successor": {
+          "frame": 271,
+          "draws": 19689,
+          "time": 4.516666666666656,
+          "cursor": 2443,
+          "particles": 2817,
+          "active": 3197,
+          "gas_clocks_rng_frontier": "ce4617d762ded396061af0b48a1a54e7ebf3533984a50b4c94b389afe63c5b1f",
+          "material": [
+            "f248b01e96d7c7a2032f658d7ba09f004b801ee002924b0f015bfcd0b397ca07",
+            "1f0fb24e386f4875b5edcec0103c40784e34bab22a3a27b499c7e198bfc77d0d",
+            "f6bc13b3203bca63e8f58c54c6cfefe6e4697d69f49b80b77c1126eb0ec1891d",
+            "23ed82f44a970d4cea147fd7213dc51fd4c7dbeb05892f7afb2e337b6aa3ec51",
+            "f11ce6e26fc4ca6f3669d92eb8f3735e1eb6e0105f59f33b43d3cc040b116a25"
+          ]
+        },
+        "endpoint": {
+          "frame": 270,
+          "draws": 19501,
+          "time": 4.499999999999989,
+          "cursor": 2395,
+          "particles": 2789,
+          "active": 3197,
+          "gas_clocks_rng_frontier": "8d91ff2795f704eea92f89252f9416d78e685558b640a3b0fa54c539b1fae0d0",
+          "material": [
+            "ad70073f825c309b176b12627d5828926d336909db9b49751968bd270ce79710",
+            "1f56e544fadcf1a70ea6a2392904913cea472424432d9e968c3596da1a8db2fe",
+            "eb9a6e222a7f19f279c44c86ea04d56d2b1e61bf9614f2b1345a8c1b44346b17",
+            "4d1d2c0880a54e87bbd85b869a58f118ce547950190ca6c779b74b83011cd5e2",
+            "f11ce6e26fc4ca6f3669d92eb8f3735e1eb6e0105f59f33b43d3cc040b116a25"
+          ]
+        }
+      }
+    },
+    {
+      "method": "transport",
+      "branch": {
+        "name": "F",
+        "clicked": 405,
+        "result": {
+          "mass": 0,
+          "denominator": 411.0941503196955,
+          "fraction": 0,
+          "passes": false,
+          "hashes": [
+            {
+              "full_display_rgba_sha256": "6c9e0e9f106a0ea5a37f75f98c8eb04b48b2e1b48d9eb12a4d7f26051943d5d7",
+              "dynamic_instances": 2789
+            },
+            {
+              "full_display_rgba_sha256": "3316bacc2585991ea658282699fdf94a5a9d90813720ceeb7a1bfc4756b80d40",
+              "dynamic_instances": 2789
+            }
+          ]
+        },
+        "successor": {
+          "frame": 271,
+          "draws": 19689,
+          "time": 4.516666666666656,
+          "cursor": 2166,
+          "particles": 2817,
+          "active": 3436,
+          "gas_clocks_rng_frontier": "a33142aed615a23888112d08718069a07ab741931e3299063f743c0c45a2ef65",
+          "material": [
+            "da769ab348bc96ba9b1e69f22524bbbfe19af88ffdef091664ab5307d1535449",
+            "e6e663fd3cc846264918f2437cbe5636d6a7bd4b4dd54e1fc1af4d3f1fa2ca18",
+            "1b51d2116fec7d362818b7e50e84c58f030d89183fcaba31fe0b2a168673979d",
+            "f2dd828d0f6749e4eeb2795ec2617e6573e888f634d5222f9154b2932f5a63a3",
+            "416b03cecaacb1740e471beb0081c89dd36806b78edf79f37a7d288dd3295874"
+          ]
+        },
+        "endpoint": {
+          "frame": 270,
+          "draws": 19501,
+          "time": 4.499999999999989,
+          "cursor": 2118,
+          "particles": 2789,
+          "active": 3436,
+          "gas_clocks_rng_frontier": "182b63f5536921ee2a44dddcac67c64be23fa7ce2550efc09f3cfced674a8568",
+          "material": [
+            "dd63233e92eab4db4a7d40d10896947596bdf002afe1fd0a380808bc8e57266f",
+            "ebca50f5affd8699bf5148fcda2318079d89556ae918b16b2d4cd4eec0c6a6cf",
+            "53532a37ab5f806b8677bf7ea91cc3483788f36cbca9588b0db29ec523df9d40",
+            "7395d1219c54e795c93309c59fc152a9bcd596320aaeb7482d95a5b0a09af7de",
+            "416b03cecaacb1740e471beb0081c89dd36806b78edf79f37a7d288dd3295874"
+          ]
+        }
+      }
+    }
+  ],
+  "warnings": [],
+  "errors": [],
+  "start_utc": "2026-11-27T08:07:01.524Z",
+  "load": {
+    "sha256": "a16af6d8815498ffbf9eb5d5ee93f5bcc9dca34c4e3eb6f7a796ef9e97c0d273",
+    "parse_ms": 996.2000000476837,
+    "kept": 1244819,
+    "total": 1244819,
+    "renderer": "ANGLE (AMD, AMD Radeon(TM) 890M Graphics (0x0000150E) Direct3D11 vs_5_0 ps_5_0, D3D11)",
+    "float_color": true,
+    "sh_degree": 3,
+    "width": 1560,
+    "height": 1040,
+    "scene_n": 1244819,
+    "depth_buckets": 1536,
+    "sh_texture_width": 16384,
+    "texture_limit": 16384,
+    "load_gl_error": 0,
+    "context_lost": false,
+    "center": [
+      -1.9890530851788595,
+      1.916928040470554,
+      4.318825713925333
+    ]
+  },
+  "rest": {
+    "frame": 0,
+    "draws": 0,
+    "time": 0,
+    "cursor": 0,
+    "particles": 0,
+    "active": 0,
+    "gas_clocks_rng_frontier": "12b0c9c0ccc58e8372f28a770af56adf797a2d5a346db76b8baabdb33c8e2283",
+    "material": [
+      "9a9e81c9e3ab513002cf24038c3b1160981d177b65bbd5709c2df23b0e322d1b",
+      "efc6dbeed423f2b29ed30de53edb748af6c6ac521cc2cb8862185aa65c972956",
+      "9a9e81c9e3ab513002cf24038c3b1160981d177b65bbd5709c2df23b0e322d1b",
+      "9a9e81c9e3ab513002cf24038c3b1160981d177b65bbd5709c2df23b0e322d1b",
+      "3e396dc92f3c777ce9d8f04272d9a5070427c7e23b999711c4b55f64b389ef34"
+    ]
+  },
+  "pick_audit": {
+    "sites": 1244819,
+    "width": 1560,
+    "height": 1040,
+    "nativeBuckets": 1536,
+    "format": "RGBA16F",
+    "threshold": 0.5,
+    "sourceCameraId": 0,
+    "clock": 0,
+    "dynamicInstancesInNormalDraw": 0,
+    "elapsedMs": 493.80000019073486,
+    "samples": [
+      {
+        "displayPixel": [
+          670,
+          519
+        ],
+        "glPixel": [
+          670,
+          520
+        ],
+        "expectedSourceId": 205385,
+        "expectedSortedIndex": 1157533,
+        "expectedBefore": 0.4658203125,
+        "expectedThrough": 0.51611328125,
+        "actual": {
+          "id": 205385,
+          "sortedIndex": 1157533,
+          "before": 0.4658203125,
+          "through": 0.51611328125
+        },
+        "matched": true,
+        "fullStaticAlpha": 0.98095703125,
+        "originalSceneAlpha": 0.98095703125,
+        "fullMatches": true,
+        "searchReads": 0
+      },
+      {
+        "displayPixel": [
+          779,
+          519
+        ],
+        "glPixel": [
+          779,
+          520
+        ],
+        "expectedSourceId": 340163,
+        "expectedSortedIndex": 1138820,
+        "expectedBefore": 0.440673828125,
+        "expectedThrough": 0.492431640625,
+        "actual": {
+          "id": 437231,
+          "sortedIndex": 1138903,
+          "before": 0.492431640625,
+          "through": 0.513671875
+        },
+        "matched": false,
+        "fullStaticAlpha": 0.99951171875,
+        "originalSceneAlpha": 0.99951171875,
+        "fullMatches": true,
+        "searchReads": 17
+      }
+    ]
+  },
+  "first": {
+    "name": "A",
+    "frame": 0,
+    "count": 217,
+    "ids": [
+      203217,
+      566090,
+      637107,
+      105511,
+      106049,
+      107364,
+      129621,
+      130950,
+      147272,
+      151240,
+      170902,
+      182153,
+      183841,
+      200409,
+      223113,
+      223516,
+      224408,
+      227042,
+      236649,
+      240013,
+      241387,
+      241837,
+      254608,
+      263192,
+      272215,
+      274300,
+      275003,
+      277057,
+      287997,
+      288396,
+      289157,
+      290207,
+      292775,
+      308004,
+      309390,
+      322100,
+      322120,
+      339490,
+      362567,
+      364865,
+      365625,
+      367525,
+      378972,
+      382515,
+      388242,
+      390408,
+      390880,
+      391387,
+      400867,
+      412796,
+      414372,
+      414844,
+      416351,
+      416399,
+      422963,
+      424137,
+      424490,
+      424881,
+      426063,
+      437206,
+      438458,
+      438751,
+      440675,
+      464427,
+      482302,
+      512417,
+      542942,
+      560309,
+      568593,
+      591686,
+      606623,
+      611679,
+      616037,
+      632964,
+      636021,
+      636024,
+      637106,
+      643084,
+      646061,
+      651989,
+      677092,
+      685645,
+      693084,
+      700009,
+      713507,
+      722728,
+      738850,
+      739004,
+      762452,
+      825915,
+      831529,
+      831661,
+      834542,
+      834780,
+      836914,
+      860203,
+      875586,
+      879685,
+      879697,
+      879766,
+      880358,
+      895809,
+      898061,
+      907407,
+      914922,
+      914947,
+      915002,
+      916151,
+      916221,
+      940457,
+      945296,
+      958366,
+      983357,
+      994391,
+      1000351,
+      1006472,
+      1006992,
+      1026133,
+      1052781,
+      1055844,
+      1173748,
+      1204108,
+      1214001,
+      1215013,
+      163611,
+      240607,
+      276474,
+      293021,
+      365101,
+      379599,
+      416453,
+      425021,
+      438399,
+      454477,
+      554894,
+      557879,
+      568089,
+      570428,
+      580747,
+      617113,
+      635512,
+      669032,
+      707226,
+      790865,
+      817680,
+      824979,
+      845109,
+      860484,
+      890712,
+      899767,
+      900528,
+      907261,
+      908049,
+      914456,
+      919559,
+      936438,
+      976083,
+      984734,
+      997401,
+      1001565,
+      1001579,
+      1003397,
+      1010941,
+      1016769,
+      1017732,
+      1021600,
+      1026467,
+      1029025,
+      1039204,
+      1045689,
+      1128576,
+      170604,
+      184606,
+      224301,
+      239558,
+      257571,
+      274098,
+      325757,
+      352089,
+      355865,
+      356905,
+      364254,
+      366608,
+      381994,
+      416972,
+      425410,
+      528494,
+      568312,
+      622471,
+      647051,
+      713566,
+      722734,
+      735629,
+      806407,
+      832386,
+      853180,
+      860268,
+      1229296,
+      463496,
+      135897,
+      205385,
+      271819,
+      370299,
+      376682,
+      413637,
+      458388,
+      459503,
+      847241,
+      857667,
+      884655,
+      953166,
+      986306,
+      1011033,
+      1015909,
+      1107026,
+      209148,
+      321529
+    ]
+  },
+  "parent_progress": [
+    {
+      "frame": 30,
+      "burning": 2321,
+      "gas": 601
+    },
+    {
+      "frame": 60,
+      "burning": 2560,
+      "gas": 603
+    },
+    {
+      "frame": 90,
+      "burning": 2588,
+      "gas": 603
+    },
+    {
+      "frame": 120,
+      "burning": 2597,
+      "gas": 607
+    },
+    {
+      "frame": 150,
+      "burning": 2605,
+      "gas": 607
+    },
+    {
+      "frame": 180,
+      "burning": 2608,
+      "gas": 608
+    }
+  ],
+  "parent": {
+    "frame": 180,
+    "draws": 4276,
+    "time": 2.9999999999999942,
+    "cursor": 888,
+    "particles": 608,
+    "active": 2608,
+    "gas_clocks_rng_frontier": "205062702bf847d87c271bbedf7fb2e51b11ec3a6bb6c5b5bb7a1a163d7551de",
+    "material": [
+      "9a99573f567b0d8f48e8e4e3814bec7a1bf747af7f6f4839e2c2e6bff95baca6",
+      "95e98ec6dfe0927476468f5e3ff52e8e2cf2ec0369e461fe199afeaffb2fc2fe",
+      "5ee96f406fae60489bb61fef17e3b58b737cec556572f9751bd2ac553b4667c9",
+      "440d5566a1e367d7ed0779b96aeae0a24d9b9511af2b1cd9a321c034e12b0584",
+      "d193bfc5ad81fdeaea18039769988d73604b0e267713c99ca29aeb3c32af8808"
+    ]
+  },
+  "shell": {
+    "geometric": 1041,
+    "eligible": 1041,
+    "geometric_hash": "9376445418ff928b1939368c7e03a2a19adce0574d019217f56f1255c059e4c5",
+    "eligible_hash": "9376445418ff928b1939368c7e03a2a19adce0574d019217f56f1255c059e4c5"
+  },
+  "matte": {
+    "nonzero_cells": 2996,
+    "total": 411.0941503196955,
+    "box": {
+      "x": 714,
+      "y": 418,
+      "w": 156,
+      "h": 164
+    },
+    "stats": {
+      "sites": 1244819,
+      "tagCount": 1041,
+      "dynamic": 0,
+      "suppressed": 0,
+      "sourceWidth": 1560,
+      "sourceHeight": 1040,
+      "greenAlpha": 0,
+      "complementError": 0.012115478515625,
+      "exceed": 0,
+      "total": 382752.8175201416,
+      "tagged": 411.0941503196955,
+      "clock": 0
+    },
+    "native_weight_sha256": "b6b177549eff8c9d11ef16f7be1fdf28180543dfe978bc8bae5a9f3abe6c17a0"
+  },
+  "final_phase": "transport-requested-choice",
+  "elapsed_ms": 21729.747000000003
+}

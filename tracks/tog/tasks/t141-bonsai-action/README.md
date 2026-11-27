@@ -1,0 +1,34 @@
+# Both Bonsai edits miss a visible gas target
+
+On the complete Bonsai fit, neither registered brush put visibly contrasting gas over the requested target at frame 270. Camera 0 had a measurable target with 411.094150 units of tagged opacity across 2,996 half-resolution cells. Both edits scored exactly zero under the registered criterion. In camera 146 the entire shell lies behind the source camera, so the target fraction is undefined. Both operators skipped that view. Bonsai adds a second fitted room with audited physical transfer and a negative graphics outcome. The shot was researcher-defined. The original picker failed and its replacement was registered before this physical experiment. [Protocol](PROTOCOL.md) · [Original failure](../t136-bonsai-shot/README.md) · [Corrected projection](../t139-native-brush-projection/README.md)
+
+| Frame-270 outcome, camera 0 | Light brush | Full brush |
+| --- | ---: | ---: |
+| Newly ignited by brush at frame 180 | 179 | 405 |
+| Burning at frame 270 | 3,197 | 3,436 |
+| Simulated gas particles at frame 270 | 2,789 | 2,789 |
+| Weighted target mass reaching the gas-contrast threshold | 0 / 411.094150 | 0 / 411.094150 |
+| Reaches the requested quarter of target | No | No |
+
+The complete 1,244,819-splat SH3 model ran at 1560 × 1040 on an AMD Radeon 890M. The native first brush ignited exactly the 217 preregistered original IDs. At the common parent, 2,608 splats were burning and 608 gas particles were live. All 1,041 sites in the geometric shell were still eligible. A direct native render tagged the eligible sites in the untreated room with every scene splat present. The total-opacity channel agreed with alpha at every pixel. The maximum absolute red-plus-blue versus green residual under half-precision blending was 0.01212. The scorer uses the red tagged-opacity channel directly. [Native capture and phase receipts](evidence/RUN.json)
+
+The timed operators rendered the full viewport twice per candidate, gas on and gas suppressed, with the same edited material. They read a 156 × 164 crop and compared unrounded 2 × 2 channel means. A cell qualified when at least one displayed channel changed by 16 levels. All 2,996 target cells have positive weights. Summing those that qualified gave exactly zero for each arm, so none crossed the threshold. The full-frame on/off hashes differ in both arms and the display shader returns constant alpha. At least one RGB byte therefore changed somewhere in each full frame. Only hashes were retained for those images. The number and positions of changed pixels, the largest below-threshold target difference, and the relative roles of projection, occlusion and gas placement cannot be recovered from this receipt. The audits compared the five full material buffers, ordered particles, frontier, cursor, clocks and RNG digest to ordinary native replay at frame 270 and after one native continuation step to frame 271. They also matched both paired full-display SHA-256 digests for each branch. [Live scoring and state digest](action.js) · [Raw evidence](evidence/RUN.json)
+
+A pre-edit geometric bound proves that camera 146 has zero denominator. In camera 0 the rest view gives strictly positive target opacity, and the first edit has already generated 608 gas particles at the parent. The experiment establishes no pre-edit bound on the resulting gas contrast in that target. A stronger ordinary solver could in principle prove such a bound; this experiment evaluated ordinary simulation and native rendering. Because the input is now public and deterministic, a literal repetition can also reuse its known answer immediately.
+
+The exact sibling guard admitted 35 shared steps, leaving 55 steps for the full brush after transfer. Both actual requested actions evaluated both brushes. The optimized ordinary call took 1,957.3 ms at the host and the transported call took 1,790.9 ms. The measured browser image phases were 1,036.6 and 953.5 ms respectively, though image work was identical. The single pair was warm and ran ordinary first. Its ordering provides no replicated estimate of a speed advantage. Both used the same donor and cold-receiver indexing optimizations. Cache-cold audit registrations allocated 62,158,552 bytes per cold index build, twice for ordinary and three times with transfer, in addition to the shared 4,979,276-byte geometry table. Peak process memory was not measured. Common cold browser load/fit checks took 4.43 s, the initial 180 steps 1.46 s, and shell selection and matte preparation another 0.63 s combined. The whole preregistered process finished in 22.30 s. [Complete phase and action costs](evidence/RUN.json) · [Worker exit](evidence/EXIT.json)
+
+## A camera pixel exposed an error in the offline ID prediction
+
+| Top-left physical pixel | T139 offline predicted ID | Measured first ID crossing 0.5 in native RGBA16F | Native opacity before → through that ID |
+| --- | ---: | ---: | ---: |
+| (670, 519) | 205385 | 205385 | 0.46582 → 0.51611 |
+| (779, 519) | 340163 | 437231 | 0.49243 → 0.51367 |
+
+At the central physical pixel, drawing through the offline candidate 340163 only reached 0.49243. A binary search over the native sorted VBO located the actual crossing 83 sorted slots later. The full prefix draw reproduced original scene alpha for both pixels. The two T139 continuous-ray estimates happened to match the two measured discrete picks. The brush stayed at the precommitted site 437231. The precise cause of the CPU-versus-GPU difference at this pixel remains undetermined. [Direct native prefix diagnostic](pick-audit.mjs) · [Predictions and camera calibration](../t139-native-brush-projection/RESULTS.json)
+
+## Reproduce
+
+Run `python verify.py` from this directory for a standard-library check of the published source identities, branch states, native versus optimized image hashes, original-ID membership, scores, and actual pixel crossings. The public receipt stores changed masses and hashes. Independent recomputation from pixel data requires rerunning the native capture.
+
+To repeat the capture in a new directory, stage the two [T136 source files](../t136-bonsai-shot/README.md) in the ignored local cache and run [T139 projection](../t139-native-brush-projection/project.py) with `--check` to derive the camera table. Use the browser and Playwright module specified by [the runtime freeze](../t81-firewoods-capacity-causality/freeze.json), or set `BROWSER_EXECUTABLE` and `PLAYWRIGHT_MODULE` for another machine. First run `node run.mjs --check-staging`, then `python supervise.py --out FRESH_OUTPUT_DIRECTORY`. Finish with `python verify.py --evidence FRESH_OUTPUT_DIRECTORY` on the reference device. Other graphics backends can differ in low-order alpha or in the pick ID and displayed hashes. Keep their original receipts. [Native runner](run.mjs) · [Worker deadline](supervise.py) · [Offline verifier](verify.py)
