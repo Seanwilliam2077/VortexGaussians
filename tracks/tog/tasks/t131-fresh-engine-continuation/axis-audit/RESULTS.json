@@ -1,0 +1,90 @@
+{
+  "scope": "post-hoc, two already opened grids, common finite gas inputs",
+  "frame_sha256": [
+    "c7650445bf9d3a2f0d99d73a6526a2bffb98350821d1ff91a967deb2c3bc7db1",
+    "0dd553e141e52c248ba92f528232ba48845d2d225f621490350f0756e23ac735"
+  ],
+  "changed_words_by_channel": [
+    0,
+    0,
+    170,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    132,
+    0,
+    0
+  ],
+  "registered_guard_passed": false,
+  "post_hoc": {
+    "modes_xyz": [
+      "no_projected_area",
+      "no_projected_area",
+      "shared_zero_impulse_and_area_support"
+    ],
+    "scalar_and_steam_equal": true,
+    "certified": true
+  },
+  "texels_per_axis": 9537,
+  "texels_on_at_least_one_high_face": 1345,
+  "axes": [
+    {
+      "axis": "x",
+      "frame_1": {
+        "skip": 9537,
+        "add_zero": 0,
+        "unresolved_nonzero_impulse_stencil": 0,
+        "skipped_with_nonzero_impulse_in_stencil": 0
+      },
+      "frame_2": {
+        "skip": 9537,
+        "add_zero": 0,
+        "unresolved_nonzero_impulse_stencil": 0,
+        "skipped_with_nonzero_impulse_in_stencil": 0
+      },
+      "different_branch_faces": 0
+    },
+    {
+      "axis": "y",
+      "frame_1": {
+        "skip": 9537,
+        "add_zero": 0,
+        "unresolved_nonzero_impulse_stencil": 0,
+        "skipped_with_nonzero_impulse_in_stencil": 1525
+      },
+      "frame_2": {
+        "skip": 9537,
+        "add_zero": 0,
+        "unresolved_nonzero_impulse_stencil": 0,
+        "skipped_with_nonzero_impulse_in_stencil": 0
+      },
+      "different_branch_faces": 0
+    },
+    {
+      "axis": "z",
+      "frame_1": {
+        "skip": 7412,
+        "add_zero": 2125,
+        "unresolved_nonzero_impulse_stencil": 0,
+        "skipped_with_nonzero_impulse_in_stencil": 0
+      },
+      "frame_2": {
+        "skip": 7412,
+        "add_zero": 2125,
+        "unresolved_nonzero_impulse_stencil": 0,
+        "skipped_with_nonzero_impulse_in_stencil": 0
+      },
+      "different_branch_faces": 0
+    }
+  ],
+  "in_memory_controls_certified": {
+    "add_scalar_source": false,
+    "add_y_area": false,
+    "add_z_impulse_in_occupied_cell": false,
+    "change_y_impulse_with_absent_area": true
+  }
+}
