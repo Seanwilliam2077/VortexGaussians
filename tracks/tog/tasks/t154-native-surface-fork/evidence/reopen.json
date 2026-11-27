@@ -1,0 +1,576 @@
+{
+  "mode": "reopen",
+  "pin": "e2ac951dbfabc6060073943e4c344439ac5f4555",
+  "status": "complete",
+  "phase": "complete",
+  "paths": {
+    "cold": 40.19382850010879,
+    "cold_prepare": 119.54335819999687,
+    "cold_continue_default": 3.515049000037834,
+    "cold_continue_slow": 3.2884591999463737
+  },
+  "costs": [
+    {
+      "path": "cold",
+      "phase": "admit_and_device",
+      "s": 40.190752800088376
+    },
+    {
+      "path": "cold_prepare",
+      "phase": "native_final_prepare",
+      "s": 119.53698219987564
+    },
+    {
+      "path": "cold_continue_default",
+      "phase": "decode_validate_reset_restore",
+      "s": 1.0018913999665529
+    },
+    {
+      "path": "cold_continue_default",
+      "phase": "read_36",
+      "s": 1.0548316999338567
+    },
+    {
+      "path": "cold_continue_default",
+      "phase": "step_and_read_37",
+      "s": 1.4438532998319715
+    },
+    {
+      "path": "cold_continue_slow",
+      "phase": "decode_validate_reset_restore",
+      "s": 0.931317700073123
+    },
+    {
+      "path": "cold_continue_slow",
+      "phase": "read_36",
+      "s": 1.06186530017294
+    },
+    {
+      "path": "cold_continue_slow",
+      "phase": "step_and_read_37",
+      "s": 1.2753302999772131
+    }
+  ],
+  "states": {
+    "default": {
+      "36": {
+        "state": {
+          "dims": [
+            152,
+            176,
+            80
+          ],
+          "h": 0.019318181818181818,
+          "origin": [
+            -1.4681818181818183,
+            0.0,
+            -0.7727272727272727
+          ],
+          "time": 1.4999999999999987,
+          "steps": 112,
+          "max_speed": 2.7162060737609863,
+          "upres": 3,
+          "vel": {
+            "shape": [
+              81,
+              177,
+              153,
+              4
+            ],
+            "dtype": "<f4",
+            "sha256": "0aa194401faf095e00034f57e2006b6d1b8681866e31ee033285a44edd99bc29"
+          },
+          "scal": {
+            "shape": [
+              80,
+              176,
+              152,
+              4
+            ],
+            "dtype": "<f2",
+            "sha256": "e4c842875db4cf8f730563676b73923217747224baadfeeadfdabd13e75a8c70"
+          },
+          "p": {
+            "shape": [
+              80,
+              176,
+              152,
+              1
+            ],
+            "dtype": "<f4",
+            "sha256": "288634f49e88fd13aa8144ee9337eed23aa9d8e7636cc884b7b520c1fece39e0"
+          },
+          "burn": {
+            "shape": [
+              80,
+              176,
+              152,
+              4
+            ],
+            "dtype": "<f2",
+            "sha256": "af4305dcf8d9e43c84daf441795c34f0ecf3c9c75e657a7664b42233c2028599"
+          },
+          "burn_obj": {
+            "shape": [
+              7,
+              129,
+              72,
+              4
+            ],
+            "dtype": "<f2",
+            "sha256": "316a85af4ce337272d2bc0ad2fbbbd7d50140c9dab4a1c9e86324611ea3ccfdb"
+          },
+          "scal_fine": {
+            "shape": [
+              240,
+              528,
+              456,
+              4
+            ],
+            "dtype": "<f2",
+            "sha256": "24199d02375b400217cbf205ab5a1fa664b301218b5657d237d74bbf9a1b3cb5"
+          }
+        },
+        "ember_state": {
+          "count": 0
+        },
+        "thermal": {
+          "temperatures": {
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f8",
+            "sha256": "8f9ab1ebf6684b4bd8f45afc169cb2cb6489f51872c2f4a4f86b1795a6c3037d"
+          },
+          "contacts": [
+            [],
+            []
+          ],
+          "radiant_counts": {
+            "shape": [
+              4
+            ],
+            "dtype": "<u4",
+            "sha256": "5b92741c4b224bf9572149777739485071c4eddc50f149767e019b9fdfda4754"
+          },
+          "live_radiant": {
+            "shape": [
+              2304
+            ],
+            "dtype": "|u1",
+            "sha256": "6e9ddbec537934eb8ff89ca3f78019ef0120e83ac151912dfdf2377a44171d0e"
+          },
+          "grid": [
+            [
+              -1.4681818181818183,
+              0.0,
+              -0.7727272727272727
+            ],
+            0.17386363636363636,
+            [
+              17,
+              20,
+              9
+            ],
+            9,
+            0.019318181818181818
+          ],
+          "cleared": true,
+          "built": true
+        }
+      },
+      "37": {
+        "state": {
+          "dims": [
+            152,
+            176,
+            80
+          ],
+          "h": 0.019318181818181818,
+          "origin": [
+            -1.4681818181818183,
+            0.0,
+            -0.7727272727272727
+          ],
+          "time": 1.5416666666666652,
+          "steps": 115,
+          "max_speed": 2.806594133377075,
+          "upres": 3,
+          "vel": {
+            "shape": [
+              81,
+              177,
+              153,
+              4
+            ],
+            "dtype": "<f4",
+            "sha256": "f2fd52e55b6d6cedc3fa6172208f93c13a9cfa06cc77a3c3f43dc8469bc47f87"
+          },
+          "scal": {
+            "shape": [
+              80,
+              176,
+              152,
+              4
+            ],
+            "dtype": "<f2",
+            "sha256": "efb3a2a25b96d139243e06f37b3e8b11d64e7277a45bbc75dfd2d6f6909e77c2"
+          },
+          "p": {
+            "shape": [
+              80,
+              176,
+              152,
+              1
+            ],
+            "dtype": "<f4",
+            "sha256": "840c66f7e379077fba3d67548a3d5bc1793fa83b153f44b69e0ec6fac454bc42"
+          },
+          "burn": {
+            "shape": [
+              80,
+              176,
+              152,
+              4
+            ],
+            "dtype": "<f2",
+            "sha256": "af4305dcf8d9e43c84daf441795c34f0ecf3c9c75e657a7664b42233c2028599"
+          },
+          "burn_obj": {
+            "shape": [
+              7,
+              129,
+              72,
+              4
+            ],
+            "dtype": "<f2",
+            "sha256": "979a8431ab46dcea373c93d62333784bb0b77d07a0a5be8e3e52450c8349a952"
+          },
+          "scal_fine": {
+            "shape": [
+              240,
+              528,
+              456,
+              4
+            ],
+            "dtype": "<f2",
+            "sha256": "9ab253fe8ab6e90fb7dc32bbb661cb6b879db976a61d864655ab976cf859c485"
+          }
+        },
+        "ember_state": {
+          "count": 0
+        },
+        "thermal": {
+          "temperatures": {
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f8",
+            "sha256": "d24fc999d899d212934427510e57c7fa1a8b32add6d1591d56462f355fd1eec0"
+          },
+          "contacts": [
+            [],
+            []
+          ],
+          "radiant_counts": {
+            "shape": [
+              4
+            ],
+            "dtype": "<u4",
+            "sha256": "7511170bad06420551846073fed925401dbbc9a4da54d2c9a0c3cb118cdd2c10"
+          },
+          "live_radiant": {
+            "shape": [
+              2256
+            ],
+            "dtype": "|u1",
+            "sha256": "0d0634f48e4f31fda75f0a446a948b5871185acde4fdfa1f9a630a7217b8cb76"
+          },
+          "grid": [
+            [
+              -1.4681818181818183,
+              0.0,
+              -0.7727272727272727
+            ],
+            0.17386363636363636,
+            [
+              17,
+              20,
+              9
+            ],
+            9,
+            0.019318181818181818
+          ],
+          "cleared": true,
+          "built": true
+        }
+      }
+    },
+    "slow": {
+      "36": {
+        "state": {
+          "dims": [
+            152,
+            176,
+            80
+          ],
+          "h": 0.019318181818181818,
+          "origin": [
+            -1.4681818181818183,
+            0.0,
+            -0.7727272727272727
+          ],
+          "time": 1.4999999999999978,
+          "steps": 109,
+          "max_speed": 2.58497953414917,
+          "upres": 3,
+          "vel": {
+            "shape": [
+              81,
+              177,
+              153,
+              4
+            ],
+            "dtype": "<f4",
+            "sha256": "bae2b2642ebc5c6d67359590c53312dcca0881ee8236dc59be55cec87ee59c14"
+          },
+          "scal": {
+            "shape": [
+              80,
+              176,
+              152,
+              4
+            ],
+            "dtype": "<f2",
+            "sha256": "4bcad88f570c8e97f2d8243e1c275cccbd3250acea82d73ae3538b74a68e76c6"
+          },
+          "p": {
+            "shape": [
+              80,
+              176,
+              152,
+              1
+            ],
+            "dtype": "<f4",
+            "sha256": "7828bbc74b169dd1d6c94ed90601e588c635f09749a64a3e196d318c13af06ef"
+          },
+          "burn": {
+            "shape": [
+              80,
+              176,
+              152,
+              4
+            ],
+            "dtype": "<f2",
+            "sha256": "af4305dcf8d9e43c84daf441795c34f0ecf3c9c75e657a7664b42233c2028599"
+          },
+          "burn_obj": {
+            "shape": [
+              7,
+              129,
+              72,
+              4
+            ],
+            "dtype": "<f2",
+            "sha256": "1321b975fcd1c94154fa5de39b80052d49ed001021848a04e3b3970e14df02df"
+          },
+          "scal_fine": {
+            "shape": [
+              240,
+              528,
+              456,
+              4
+            ],
+            "dtype": "<f2",
+            "sha256": "c47aa765011340f4134d16af5a9cc2fa72cdcdd521a67396d42a9ead5c85c287"
+          }
+        },
+        "ember_state": {
+          "count": 0
+        },
+        "thermal": {
+          "temperatures": {
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f8",
+            "sha256": "4f55d9b82a680367d3d2c607685be3db2617e942d6788a64bd0933b857233e9c"
+          },
+          "contacts": [
+            [],
+            []
+          ],
+          "radiant_counts": {
+            "shape": [
+              4
+            ],
+            "dtype": "<u4",
+            "sha256": "ae1e910a8bee707a8ba090d5494341f342cd29490dab21c252e2a96d73b7e0b8"
+          },
+          "live_radiant": {
+            "shape": [
+              1824
+            ],
+            "dtype": "|u1",
+            "sha256": "ca8f89c24256750257c55fae2795a673d64e43e0ded05d8385f8a7d3fcb51494"
+          },
+          "grid": [
+            [
+              -1.4681818181818183,
+              0.0,
+              -0.7727272727272727
+            ],
+            0.17386363636363636,
+            [
+              17,
+              20,
+              9
+            ],
+            9,
+            0.019318181818181818
+          ],
+          "cleared": true,
+          "built": true
+        }
+      },
+      "37": {
+        "state": {
+          "dims": [
+            152,
+            176,
+            80
+          ],
+          "h": 0.019318181818181818,
+          "origin": [
+            -1.4681818181818183,
+            0.0,
+            -0.7727272727272727
+          ],
+          "time": 1.5416666666666643,
+          "steps": 112,
+          "max_speed": 2.5771713256835938,
+          "upres": 3,
+          "vel": {
+            "shape": [
+              81,
+              177,
+              153,
+              4
+            ],
+            "dtype": "<f4",
+            "sha256": "cbb350f354312a53ec83c32f88ccd0ff601fcb4402f89d575ce8f695beef7287"
+          },
+          "scal": {
+            "shape": [
+              80,
+              176,
+              152,
+              4
+            ],
+            "dtype": "<f2",
+            "sha256": "4a14ca57b00c7a708239847fe0d699e631fe321e1874779d00aa6c9e9070c361"
+          },
+          "p": {
+            "shape": [
+              80,
+              176,
+              152,
+              1
+            ],
+            "dtype": "<f4",
+            "sha256": "8dfa2cd10f9c43263ac3f1a7b49d63c1183e2e6c6c7eab613b5204a930582009"
+          },
+          "burn": {
+            "shape": [
+              80,
+              176,
+              152,
+              4
+            ],
+            "dtype": "<f2",
+            "sha256": "af4305dcf8d9e43c84daf441795c34f0ecf3c9c75e657a7664b42233c2028599"
+          },
+          "burn_obj": {
+            "shape": [
+              7,
+              129,
+              72,
+              4
+            ],
+            "dtype": "<f2",
+            "sha256": "fa3f3d30b392625e24815eb857666ff3f312827c0901e8b359b683cc09cfdabd"
+          },
+          "scal_fine": {
+            "shape": [
+              240,
+              528,
+              456,
+              4
+            ],
+            "dtype": "<f2",
+            "sha256": "66972b1dcb3d5bec0439c188f526d63f6082c2ba5e8ba2634d33e38d7e00d499"
+          }
+        },
+        "ember_state": {
+          "count": 0
+        },
+        "thermal": {
+          "temperatures": {
+            "shape": [
+              2,
+              3
+            ],
+            "dtype": "<f8",
+            "sha256": "c416ed3936217883f18350797078cdff703adf8f452a54f5378d6de2e8a3c7ca"
+          },
+          "contacts": [
+            [],
+            []
+          ],
+          "radiant_counts": {
+            "shape": [
+              4
+            ],
+            "dtype": "<u4",
+            "sha256": "ae1e910a8bee707a8ba090d5494341f342cd29490dab21c252e2a96d73b7e0b8"
+          },
+          "live_radiant": {
+            "shape": [
+              1824
+            ],
+            "dtype": "|u1",
+            "sha256": "2a7e15a99d74de537ddc36ae3f3b7602014e29ca10f5c3270a959d44bd17bb73"
+          },
+          "grid": [
+            [
+              -1.4681818181818183,
+              0.0,
+              -0.7727272727272727
+            ],
+            0.17386363636363636,
+            [
+              17,
+              20,
+              9
+            ],
+            9,
+            0.019318181818181818
+          ],
+          "cleared": true,
+          "built": true
+        }
+      }
+    }
+  },
+  "adapter": {
+    "vendor": "32.0.15.9571",
+    "device": "NVIDIA GeForce RTX 5070 Laptop GPU",
+    "description": "",
+    "adapter_type": "DiscreteGPU",
+    "backend_type": "D3D12"
+  },
+  "elapsed_s": 166.55410029995255
+}

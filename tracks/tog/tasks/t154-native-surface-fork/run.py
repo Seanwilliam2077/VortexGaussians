@@ -357,7 +357,8 @@ def supervise(source, evidence, private):
         t = time.perf_counter()
         with (evidence/(mode+".log")).open("x", encoding="utf8") as log:
             try:
-                cmd = [sys.executable, "-B", __file__, "--source", str(source), "--mode", mode]
+                cmd = [sys.executable, "-B", __file__, "--source", str(source), "--mode", mode,
+                       "--out", str(evidence), "--private", str(private)]
                 result = subprocess.run(cmd, stdout=log, stderr=log, timeout=budget)
                 code, expired = result.returncode, False
             except subprocess.TimeoutExpired:
@@ -372,8 +373,10 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--source", type=Path, required=True)
     parser.add_argument("--mode", choices=LIMITS)
+    parser.add_argument("--out", type=Path, default=HERE/"evidence")
+    parser.add_argument("--private", type=Path, default=HERE/"private")
     args = parser.parse_args()
-    evidence, private = HERE/"evidence", HERE/"private"
+    evidence, private = args.out.resolve(), args.private.resolve()
     sys.exit(run_worker(args.source.resolve(), args.mode, evidence, private) if args.mode
              else supervise(args.source.resolve(), evidence, private))
 
