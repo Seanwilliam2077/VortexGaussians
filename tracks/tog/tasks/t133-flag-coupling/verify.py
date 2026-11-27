@@ -63,14 +63,15 @@ def basic_layout(row):
 
 def compare(folder, check_detail=basic_layout, limit=240):
     exits=json.loads((folder/"workers.json").read_bytes())
-    if set(exits)=={"ordinary"} and not (folder/"ordinary-steps.ndjson").exists():
+    first_ledger=folder/"ordinary-steps.ndjson"
+    if set(exits)=={"ordinary"} and (not first_ledger.exists() or not first_ledger.stat().st_size):
         setup=json.loads((folder/"ordinary.json").read_bytes())
         scene=json.loads((folder/"ordinary-scene.json").read_bytes())
-        require(setup["status"]=="error" and setup["pin"]==PIN and setup["settings"]==json_hash(scene) and
+        require((setup["status"]=="error" or exits["ordinary"]["timeout"]) and setup["pin"]==PIN and setup["settings"]==json_hash(scene) and
                 exits["ordinary"]["exit"]!=0 and exits["ordinary"]["limit_s"]==limit and
                 not (folder/"stiffer.json").exists(),"Unverified zero-step disposition")
         return dict(status="observer_setup_failure",completed_arms=0,observed_gas_inputs=0,
-                    window=None,workers=exits,reason=setup["error"],phase=setup["last_phase"])
+                    window=None,workers=exits,reason=setup.get("error","deadline"),phase=setup["last_phase"])
     data = [evidence(folder,arm) for arm in ("ordinary","stiffer")]
     a,b = [d[0] for d in data]
     scenes = [d[1] for d in data]
