@@ -1,0 +1,5 @@
+# Native admission after a Python import failure
+
+The 0.511 s initial worker stopped on an assertion during admission. Its FXC and DXC compilers were never invoked. Reproducing the exception using only Python imports located it at wgpu 0.32.0's assertion that its logger has class `WGPULogger`. Our wrapper created a standard logger with the same name before importing wgpu. Correct the wrapper to import wgpu first, then attach the warning observer to its own logger. The original process and its four receipts are preserved in [evidence](evidence/).
+
+An independent CPU interception of the outgoing wgpu instance descriptor confirmed DXC compiler enum 2 and shader-model enum 0 (6.0) for the public function's requested model 6.5. Keep the official binding, shader sources and originally requested settings and report this mapping. Register one corrected 300 s process, with the original fixture and gates. Write to a new directory `native-evidence`. Any native failure closes this attempt. The correction and budget are fixed before admission or stage observation.

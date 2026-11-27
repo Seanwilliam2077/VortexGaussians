@@ -89,14 +89,17 @@ def restore_frame(engine, scene, cache, out):
 
 
 def run_worker(source, out, cache):
+    import wgpu  # wgpu installs its own logger class on first import
+
     sdk = Path(os.environ["ProgramFiles(x86)"]) / "Windows Kits/10/bin/10.0.26100.0/x64"
     hashes = {name: hashlib.sha256((sdk / name).read_bytes()).hexdigest() for name in DLLS}
-    receipt = {"requested": "Dxc", "max_shader_model": 6.5, "sdk": "10.0.26100.0/x64",
+    receipt = {"requested": "Dxc", "requested_max_shader_model": 6.5, "descriptor_max_shader_model": "6.0",
+               "sdk": "10.0.26100.0/x64",
                "dll_sha256": hashes, "compiler_loaded_before_admission": module_path("dxcompiler.dll") is not None}
     save(out / "COMPILER.json", receipt)
     require(hashes == DLLS and not receipt["compiler_loaded_before_admission"], "Fresh SDK compiler required")
     warnings = CompilerWarnings()
-    logging.getLogger("wgpu").addHandler(warnings)
+    wgpu.logger.addHandler(warnings)
     compiler = {"dx12_compiler": "Dxc", "dxc_path": str(sdk / "dxcompiler.dll"), "dxc_max_shader_model": 6.5}
     with os.add_dll_directory(str(sdk)):
         code = observe.worker(source, out, cache, select_device=partial(select, compiler_options=compiler),
