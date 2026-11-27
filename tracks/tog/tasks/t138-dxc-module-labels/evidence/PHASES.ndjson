@@ -1,0 +1,23 @@
+{"phase": "device admission", "event": "start", "elapsed_s": 0.0009694001637399197, "awake_s": 0.0}
+{"phase": "device admission", "event": "return", "elapsed_s": 2.0912925000302494, "awake_s": 2.090936699998565}
+{"phase": "engine construction", "event": "start", "elapsed_s": 2.092135700164363, "awake_s": 2.091887599963229}
+{"phase": "engine construction", "event": "return", "elapsed_s": 6.188878400018439, "awake_s": 6.188807200000156}
+{"phase": "cold stage on admitted device", "event": "start", "elapsed_s": 6.191174700157717, "awake_s": 6.190808299987111}
+{"phase": "stage kernel", "event": "start", "elapsed_s": 6.191894800169393, "awake_s": 6.1918063999619335, "entry": "main", "expected_key": "8227724b41a7cd3a076abb47"}
+{"phase": "create_shader_module", "event": "start", "elapsed_s": 6.1971317999996245, "awake_s": 6.196805799962021, "entry": "main", "source_sha256": "5cc9e2d4d340bc8dda0fd8f9d0f58b2582b9c01e5ca5c0af13c8ed73f2fcfbb2", "key": "8227724b41a7cd3a076abb47"}
+{"phase": "create_shader_module", "event": "return", "elapsed_s": 6.219263199949637, "awake_s": 6.218487499980256, "entry": "main", "source_sha256": "5cc9e2d4d340bc8dda0fd8f9d0f58b2582b9c01e5ca5c0af13c8ed73f2fcfbb2", "key": "8227724b41a7cd3a076abb47"}
+{"phase": "create_bind_group_layout", "event": "start", "elapsed_s": 6.22092380002141, "awake_s": 6.220487400016282, "entry": "main", "key": "8227724b41a7cd3a076abb47"}
+{"phase": "create_bind_group_layout", "event": "return", "elapsed_s": 6.222259300062433, "awake_s": 6.221491399977822, "entry": "main", "key": "8227724b41a7cd3a076abb47"}
+{"phase": "create_pipeline_layout", "event": "start", "elapsed_s": 6.2228683000430465, "awake_s": 6.2225986999692395, "entry": "main", "key": "8227724b41a7cd3a076abb47"}
+{"phase": "create_pipeline_layout", "event": "return", "elapsed_s": 6.223596600117162, "awake_s": 6.2236002999707125, "entry": "main", "key": "8227724b41a7cd3a076abb47"}
+{"phase": "create_compute_pipeline", "event": "start", "elapsed_s": 6.2241025001276284, "awake_s": 6.2236002999707125, "entry": "main", "key": "8227724b41a7cd3a076abb47"}
+{"phase": "create_compute_pipeline", "event": "return", "elapsed_s": 248.75860780011863, "awake_s": 248.75816859997576, "entry": "main", "key": "8227724b41a7cd3a076abb47"}
+{"phase": "stage kernel", "event": "return", "elapsed_s": 248.7622877000831, "awake_s": 248.7614509999985, "entry": "main", "expected_key": "8227724b41a7cd3a076abb47"}
+{"phase": "stage kernel", "event": "start", "elapsed_s": 248.76307650003582, "awake_s": 248.76245099998778, "entry": "caustics", "expected_key": "c9eb1db2b37f2aeed7c82c9c"}
+{"phase": "create_shader_module", "event": "start", "elapsed_s": 248.7687856000848, "awake_s": 248.7684502999764, "entry": "caustics", "source_sha256": "5cc9e2d4d340bc8dda0fd8f9d0f58b2582b9c01e5ca5c0af13c8ed73f2fcfbb2", "key": "c9eb1db2b37f2aeed7c82c9c"}
+{"phase": "create_shader_module", "event": "return", "elapsed_s": 248.79118339996785, "awake_s": 248.790453900001, "entry": "caustics", "source_sha256": "5cc9e2d4d340bc8dda0fd8f9d0f58b2582b9c01e5ca5c0af13c8ed73f2fcfbb2", "key": "c9eb1db2b37f2aeed7c82c9c"}
+{"phase": "create_bind_group_layout", "event": "start", "elapsed_s": 248.79272240004502, "awake_s": 248.792455399991, "entry": "caustics", "key": "c9eb1db2b37f2aeed7c82c9c"}
+{"phase": "create_bind_group_layout", "event": "return", "elapsed_s": 248.79383410001174, "awake_s": 248.7935774999787, "entry": "caustics", "key": "c9eb1db2b37f2aeed7c82c9c"}
+{"phase": "create_pipeline_layout", "event": "start", "elapsed_s": 248.79437680006959, "awake_s": 248.79419579997193, "entry": "caustics", "key": "c9eb1db2b37f2aeed7c82c9c"}
+{"phase": "create_pipeline_layout", "event": "return", "elapsed_s": 248.79503590008244, "awake_s": 248.79419579997193, "entry": "caustics", "key": "c9eb1db2b37f2aeed7c82c9c"}
+{"phase": "create_compute_pipeline", "event": "start", "elapsed_s": 248.7955269999802, "awake_s": 248.795458699984, "entry": "caustics", "key": "c9eb1db2b37f2aeed7c82c9c"}

@@ -1,0 +1,7 @@
+# The original classic stage pipeline compiles with filename-safe DXC labels
+
+Replacing colons only in optional WebGPU module labels let DXC complete the native classic stage `main` on the original RTX 5070 Laptop adapter. The compute-pipeline call returned in **242.535 seconds** (worker +6.224 to +248.759 s). The constructor then requested the distinct `caustics` pipeline. Its compute-pipeline call had not returned when the registered 300 s worker limit expired. Overall elapsed time was 300.339 s, including cleanup. Neither a neutral image nor a draw-time comparison was available. [Preregistered change](PROTOCOL.md) · [Recorded native calls](evidence/PHASES.ndjson) · [Deadline and awake time](evidence/EXIT.json)
+
+Across 47 module-label substitutions, the wrapper retained the WGSL bytes. The classic and caustics module source hashes and keys match the originals. Only the classic compute pipeline returned. On this fixture the classic draw dispatches main and returns before the Lume caustics branch. Deferring creation of that unused pipeline is now testable, since the main pipeline can be constructed. [Changed labels and unchanged source digests](evidence/MODULES.ndjson) · [Native draw](https://github.com/gjnail/blackbody/blob/e2ac951dbfabc6060073943e4c344439ac5f4555/blackbody/engine/stage.py#L795-L806)
+
+Verify these receipts with `python verify_labels.py evidence`. The native operator needs the pinned T135 SDK and T130 Python runtime.
