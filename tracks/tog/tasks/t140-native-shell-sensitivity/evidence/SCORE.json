@@ -1,0 +1,178 @@
+{
+  "schema": "t140-rest-native-projection",
+  "capture_sha256": "5d0ffa332bfcb5af60f067ca30822d4c7488d67ce509f833759c9654c68706e1",
+  "inputs_sha256": {
+    "foreground.ply": "906460f162f704b89666b159ae5b4744e53e6dc11baf448a550de581506919b0",
+    "cameras.json": "5cdd4605b0bf11970357c26e66ce3affb6c25ab2823171488fa41288ceb4a5c5",
+    "REFERENCE.json": "1931f2697447bae9fd0b5a55c7dfeab1815638e33ccb8b46bbb582dfaa6a010b",
+    "shell.json.gz": "8afe54bbced4d77023c047d72a781b718af3a9a2cde8f8070473d0952ac40cc2",
+    "capture-report.json": "ef8a583a7a20fc57441e3b04f00c212a27d46eddc5ad022ca5392ac6703a5542",
+    "AL-trace.json.gz": "31bcdd178c0e12de763f71cbf0561bc39522a38178c33d39d1995209f36daeed",
+    "AF-trace.json.gz": "9a6412c708494f6fb00f038472ca0bb1ba1c7d9e01dbd97da0be5eff840bf488"
+  },
+  "tag_counts": {
+    "eligible": 2371,
+    "light": 190,
+    "full": 493
+  },
+  "views": {
+    "0": {
+      "native_total": 271.7638439685106,
+      "previous_total": 282.8257552025043,
+      "total_ratio": 0.9608878928792277,
+      "all_opacity": 3311.66474352777
+    },
+    "124": {
+      "native_total": 847.8786786943674,
+      "previous_total": 829.199137691656,
+      "total_ratio": 1.0225272074627476,
+      "all_opacity": 14069.372488588095
+    }
+  },
+  "gas": [
+    {
+      "camera": 0,
+      "horizon": 44,
+      "brush": "light",
+      "changed_cells": 8124,
+      "changed_mass": 108.13326232135296,
+      "fraction": 0.39789421853292006,
+      "previous_fraction": 0.36986009205229436,
+      "passes": true
+    },
+    {
+      "camera": 0,
+      "horizon": 44,
+      "brush": "full",
+      "changed_cells": 8357,
+      "changed_mass": 201.0469985306263,
+      "fraction": 0.7397856741896898,
+      "previous_fraction": 0.684792258707162,
+      "passes": true
+    },
+    {
+      "camera": 0,
+      "horizon": 90,
+      "brush": "light",
+      "changed_cells": 8630,
+      "changed_mass": 127.29707968235016,
+      "fraction": 0.468410653247531,
+      "previous_fraction": 0.39620060354333053,
+      "passes": true
+    },
+    {
+      "camera": 0,
+      "horizon": 90,
+      "brush": "full",
+      "changed_cells": 8678,
+      "changed_mass": 138.19748301804066,
+      "fraction": 0.5085204897015426,
+      "previous_fraction": 0.42571969271518684,
+      "passes": true
+    },
+    {
+      "camera": 124,
+      "horizon": 44,
+      "brush": "light",
+      "changed_cells": 8842,
+      "changed_mass": 0.0,
+      "fraction": 0.0,
+      "previous_fraction": 0.0,
+      "passes": false
+    },
+    {
+      "camera": 124,
+      "horizon": 44,
+      "brush": "full",
+      "changed_cells": 9129,
+      "changed_mass": 27.54540829360485,
+      "fraction": 0.03248744069849888,
+      "previous_fraction": 0.04489942703316892,
+      "passes": false
+    },
+    {
+      "camera": 124,
+      "horizon": 90,
+      "brush": "light",
+      "changed_cells": 9188,
+      "changed_mass": 0.021946489810943604,
+      "fraction": 2.588399774922822e-05,
+      "previous_fraction": 5.894208705868131e-05,
+      "passes": false
+    },
+    {
+      "camera": 124,
+      "horizon": 90,
+      "brush": "full",
+      "changed_cells": 9285,
+      "changed_mass": 0.007845878601074219,
+      "fraction": 9.253539212892982e-06,
+      "previous_fraction": 2.4421375808581722e-05,
+      "passes": false
+    }
+  ],
+  "material": [
+    {
+      "camera": 0,
+      "brush": "light",
+      "hit_sites": 190,
+      "native_hit_mass": 33.37276338040829,
+      "fraction": 0.12280060104049456,
+      "previous_fraction": 0.11691958034231324,
+      "passes": false
+    },
+    {
+      "camera": 0,
+      "brush": "full",
+      "hit_sites": 493,
+      "native_hit_mass": 98.777956828475,
+      "fraction": 0.3634698250732737,
+      "previous_fraction": 0.34830684971223447,
+      "passes": true
+    },
+    {
+      "camera": 124,
+      "brush": "light",
+      "hit_sites": 190,
+      "native_hit_mass": 0.5513633340597153,
+      "fraction": 0.0006502856457114235,
+      "previous_fraction": 0.0001096226424896933,
+      "passes": false
+    },
+    {
+      "camera": 124,
+      "brush": "full",
+      "hit_sites": 493,
+      "native_hit_mass": 2.7177534103393555,
+      "fraction": 0.0032053564721362887,
+      "previous_fraction": 0.0007342458240778766,
+      "passes": false
+    }
+  ],
+  "endpoint": {
+    "0": {
+      "gas": "light",
+      "material": "full",
+      "gas_votes": {
+        "light": true,
+        "full": true
+      },
+      "material_votes": {
+        "light": false,
+        "full": true
+      }
+    },
+    "124": {
+      "gas": "neither",
+      "material": "neither",
+      "gas_votes": {
+        "light": false,
+        "full": false
+      },
+      "material_votes": {
+        "light": false,
+        "full": false
+      }
+    }
+  }
+}
