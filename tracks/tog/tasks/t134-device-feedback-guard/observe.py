@@ -59,7 +59,7 @@ def measure_call(method):
     return verdict, perf_counter_ns() - start
 
 
-def check_cases(gpu, guard, *, verify_upload=False):
+def check_cases(gpu, guard, *, verify_upload=False, audit_result=None):
     records = []
     for name, a, b in controls():
         gold = expected(a, b)
@@ -71,7 +71,11 @@ def check_cases(gpu, guard, *, verify_upload=False):
                     if digest(source) != digest(received):
                         raise ValueError(f"{name}: resident input differs from uploaded words")
             full = guard.compare(first, second)
+            if audit_result:
+                audit_result(name, a, b, False, full)
             raw = guard.compare(first, second, raw_only=True)
+            if audit_result:
+                audit_result(name, a, b, True, raw)
             if full != gold or cpu_classify(a, b) != gold or (raw == "raw") != (gold == "raw"):
                 raise ValueError(f"{name}: observed {full}, {raw}, expected {gold}")
             records.append(dict(case=name, cells=len(a), first=digest(a), second=digest(b),

@@ -46,6 +46,20 @@ def diagnose(gpu):
     return dict(cases=rows, standalone_clear=[before, after])
 
 
+def host_facts(a, b):
+    flags = int(any(not np.array_equal(a[:, k], b[:, k]) for k in (6, 7, 8, 12))) << 15
+    for axis in range(3):
+        x, y = a[:, axis], b[:, axis]
+        p, q = a[:, 9 + axis], b[:, 9 + axis]
+        facts = int((x < 0).any() or (y < 0).any())
+        facts |= int(x.any() or y.any()) << 1
+        facts |= int(p.any() or q.any()) << 2
+        facts |= int(not np.array_equal(x > 0, y > 0)) << 3
+        facts |= int(any(not np.array_equal(a[:, k], b[:, k]) for k in (axis, axis + 3, axis + 9))) << 4
+        flags |= facts << (5 * axis)
+    return flags
+
+
 def worker(source, out):
     start = perf_counter()
     row = dict(status="running", revision=PIN, shader_sha256=hashlib.sha256(SHADER.read_text().encode()).hexdigest(),
@@ -71,7 +85,22 @@ def worker(source, out):
         row["kernels"] = {name: {"key": k.key, "compile_s": k.seconds} for name, k in
                           (("axis", guard.axis), ("raw", guard.raw), ("finish", guard.finish))}
         phase("correctness")
-        row["controls"] = check_cases(gpu, guard, verify_upload=True)
+        def audit_result(name, a, b, raw, decision):
+            cells = len(a)
+            if raw:
+                av, bv = a.ravel(), b.ravel()
+                partial = [int(not np.array_equal(av[i:i+64], bv[i:i+64])) for i in range(0, len(av), 64)]
+            else:
+                partial = [host_facts(a[i:i+64], b[i:i+64]) for i in range(0, cells, 64)]
+            observed = np.frombuffer(gpu.read_buffer(guard.partials, size=4*len(partial)), "<u4")
+            flags, = struct.unpack("<I", gpu.read_buffer(guard.result))
+            expected_flags = int(np.bitwise_or.reduce(partial))
+            if not np.array_equal(partial, observed) or flags != expected_flags:
+                row["failed_reduction"] = dict(name=name, raw_only=raw, decision=decision, result=flags,
+                                               expected_result=expected_flags, partials=observed.tolist(),
+                                               expected_partials=partial)
+                raise ValueError(f"{name}: direct native reduction differs from the input words")
+        row["controls"] = check_cases(gpu, guard, verify_upload=True, audit_result=audit_result)
         row["workloads"] = []
         for name, a, b in workloads():
             phase(name)
