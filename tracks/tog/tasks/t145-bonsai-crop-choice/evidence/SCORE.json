@@ -1,0 +1,45 @@
+{
+  "processes": [
+    {
+      "process": 1,
+      "status": "failed",
+      "wall_s": 13.94750909996219,
+      "crop_sha256": {
+        "L": [
+          "84c3ac3e7589efba6841faa18e30cc586df667168ceff7a9ced8fb3d81915981",
+          "44ffc5240f98707c9be3a1caf861ffa5aba64b9a401bfe6991f68af5a9898427"
+        ],
+        "F": [
+          "cab6d9c95b48fe8e26cf663af564945de8f23bb7cd9d17ed589747e781482e4e",
+          "2efce4f111f83cf3f3f927df64097928d0312fbcd3af1a79067882be4348a34c"
+        ]
+      },
+      "roi": {
+        "crop": {
+          "x": 714,
+          "y": 418,
+          "w": 156,
+          "h": 164
+        },
+        "sceneScissor": [
+          713,
+          417,
+          158,
+          166
+        ],
+        "targetCells": 2996,
+        "total": 411.0941503196955,
+        "viewport": [
+          1560,
+          1040
+        ]
+      },
+      "roi_setup_ms": 2.29529999999977,
+      "measured_calls": 0,
+      "final_phase": "ordinary-indexed-audit",
+      "error": "page.evaluate: Error: ROI preconditions changed"
+    }
+  ],
+  "completed_processes": 0,
+  "paired_process_direction_assessable": false
+}

@@ -1,0 +1,456 @@
+{
+  "processes": [
+    {
+      "process": 1,
+      "status": "replication_complete",
+      "wall_s": 38.38167140004225,
+      "crop_sha256": {
+        "L": [
+          "84c3ac3e7589efba6841faa18e30cc586df667168ceff7a9ced8fb3d81915981",
+          "44ffc5240f98707c9be3a1caf861ffa5aba64b9a401bfe6991f68af5a9898427"
+        ],
+        "F": [
+          "cab6d9c95b48fe8e26cf663af564945de8f23bb7cd9d17ed589747e781482e4e",
+          "2efce4f111f83cf3f3f927df64097928d0312fbcd3af1a79067882be4348a34c"
+        ]
+      },
+      "roi": {
+        "crop": {
+          "x": 714,
+          "y": 418,
+          "w": 156,
+          "h": 164
+        },
+        "sceneScissor": [
+          713,
+          417,
+          158,
+          166
+        ],
+        "targetCells": 2996,
+        "total": 411.0941503196955,
+        "viewport": [
+          1560,
+          1040
+        ]
+      },
+      "roi_setup_ms": 3.39089999999851,
+      "measured_calls": 12,
+      "medians": {
+        "ordinary-indexed": {
+          "host_ms": 1479.9640500000005,
+          "physics_ms": 950.7500001192093,
+          "image_ms": 509.65000009536743,
+          "fork_restore_ms": 4.199999928474426
+        },
+        "transport": {
+          "host_ms": 1397.1320500000002,
+          "physics_ms": 878.5999999046326,
+          "image_ms": 513.25,
+          "fork_restore_ms": 3.950000047683716
+        }
+      },
+      "median_paired_ratio": 0.9448030057138396,
+      "ratio_of_medians": 0.9440310729169399,
+      "median_paired_saving_ms": 84.91079999999965,
+      "transport_wins": 5,
+      "pairs": [
+        {
+          "wave": 1,
+          "order": [
+            "ordinary-indexed",
+            "transport"
+          ],
+          "by_method": {
+            "ordinary-indexed": {
+              "host_ms": 1413.935300000001,
+              "fork_restore_ms": 4.199999809265137,
+              "click_ms": 0.5000002384185791,
+              "physics_ms": 904.5,
+              "image_ms": 502.099999666214
+            },
+            "transport": {
+              "host_ms": 1536.372199999998,
+              "fork_restore_ms": 3.6000001430511475,
+              "click_ms": 0.4999997615814209,
+              "guard_ms": 0.5,
+              "physics_ms": 967.5,
+              "checkpoint_ms": 10.200000047683716,
+              "image_ms": 550.1000001430511,
+              "transport_ms": 1.2000000476837158
+            }
+          },
+          "ordinary_minus_transport_ms": -122.43689999999697,
+          "transport_over_ordinary": 1.0865930004010769
+        },
+        {
+          "wave": 2,
+          "order": [
+            "transport",
+            "ordinary-indexed"
+          ],
+          "by_method": {
+            "transport": {
+              "host_ms": 1510.6697999999997,
+              "fork_restore_ms": 4.1000001430511475,
+              "click_ms": 0.7000000476837158,
+              "guard_ms": 0.5999999046325684,
+              "physics_ms": 942.2000000476837,
+              "checkpoint_ms": 2.299999952316284,
+              "image_ms": 557.9000000953674,
+              "transport_ms": 0.19999980926513672
+            },
+            "ordinary-indexed": {
+              "host_ms": 1581.0334000000003,
+              "fork_restore_ms": 4.300000190734863,
+              "click_ms": 0.8999998569488525,
+              "physics_ms": 1020.7000000476837,
+              "image_ms": 552.7000000476837
+            }
+          },
+          "ordinary_minus_transport_ms": 70.36360000000059,
+          "transport_over_ordinary": 0.9554951843522088
+        },
+        {
+          "wave": 3,
+          "order": [
+            "ordinary-indexed",
+            "transport"
+          ],
+          "by_method": {
+            "ordinary-indexed": {
+              "host_ms": 1509.4740999999995,
+              "fork_restore_ms": 4.699999809265137,
+              "click_ms": 0.7999999523162842,
+              "physics_ms": 969.3000001907349,
+              "image_ms": 532.0999999046326
+            },
+            "transport": {
+              "host_ms": 1410.0161000000007,
+              "fork_restore_ms": 4,
+              "click_ms": 0.7000000476837158,
+              "guard_ms": 0,
+              "physics_ms": 895.5999999046326,
+              "checkpoint_ms": 2,
+              "image_ms": 505.2000000476837,
+              "transport_ms": 0
+            }
+          },
+          "ordinary_minus_transport_ms": 99.45799999999872,
+          "transport_over_ordinary": 0.9341108270754703
+        },
+        {
+          "wave": 4,
+          "order": [
+            "transport",
+            "ordinary-indexed"
+          ],
+          "by_method": {
+            "transport": {
+              "host_ms": 1373.8438999999998,
+              "fork_restore_ms": 3.799999952316284,
+              "click_ms": 0.7000000476837158,
+              "guard_ms": 0.09999990463256836,
+              "physics_ms": 851.8000004291534,
+              "checkpoint_ms": 1.8999998569488525,
+              "image_ms": 512.8999998569489,
+              "transport_ms": 0.09999990463256836
+            },
+            "ordinary-indexed": {
+              "host_ms": 1619.0280999999995,
+              "fork_restore_ms": 4.200000047683716,
+              "click_ms": 0.7999999523162842,
+              "physics_ms": 1103.5,
+              "image_ms": 508.40000009536743
+            }
+          },
+          "ordinary_minus_transport_ms": 245.1841999999997,
+          "transport_over_ordinary": 0.8485608742677166
+        },
+        {
+          "wave": 5,
+          "order": [
+            "ordinary-indexed",
+            "transport"
+          ],
+          "by_method": {
+            "ordinary-indexed": {
+              "host_ms": 1450.4540000000015,
+              "fork_restore_ms": 4,
+              "click_ms": 0.7999999523162842,
+              "physics_ms": 932.2000000476837,
+              "image_ms": 510.90000009536743
+            },
+            "transport": {
+              "host_ms": 1339.8826999999947,
+              "fork_restore_ms": 4.8999998569488525,
+              "click_ms": 0.9000000953674316,
+              "guard_ms": 0.19999980926513672,
+              "physics_ms": 830.3000001907349,
+              "checkpoint_ms": 2,
+              "image_ms": 498.5,
+              "transport_ms": 0.09999990463256836
+            }
+          },
+          "ordinary_minus_transport_ms": 110.57130000000689,
+          "transport_over_ordinary": 0.9237677995992932
+        },
+        {
+          "wave": 6,
+          "order": [
+            "transport",
+            "ordinary-indexed"
+          ],
+          "by_method": {
+            "transport": {
+              "host_ms": 1384.2479999999996,
+              "fork_restore_ms": 3.9000000953674316,
+              "click_ms": 0.5999999046325684,
+              "guard_ms": 0.09999990463256836,
+              "physics_ms": 861.5999999046326,
+              "checkpoint_ms": 2,
+              "image_ms": 513.6000001430511,
+              "transport_ms": 0.20000004768371582
+            },
+            "ordinary-indexed": {
+              "host_ms": 1416.3718000000008,
+              "fork_restore_ms": 3.799999713897705,
+              "click_ms": 0.7999999523162842,
+              "physics_ms": 907.0000002384186,
+              "image_ms": 502.2999999523163
+            }
+          },
+          "ordinary_minus_transport_ms": 32.12380000000121,
+          "transport_over_ordinary": 0.9773196557570539
+        }
+      ]
+    },
+    {
+      "process": 2,
+      "status": "replication_complete",
+      "wall_s": 38.50135559984483,
+      "crop_sha256": {
+        "L": [
+          "84c3ac3e7589efba6841faa18e30cc586df667168ceff7a9ced8fb3d81915981",
+          "44ffc5240f98707c9be3a1caf861ffa5aba64b9a401bfe6991f68af5a9898427"
+        ],
+        "F": [
+          "cab6d9c95b48fe8e26cf663af564945de8f23bb7cd9d17ed589747e781482e4e",
+          "2efce4f111f83cf3f3f927df64097928d0312fbcd3af1a79067882be4348a34c"
+        ]
+      },
+      "roi": {
+        "crop": {
+          "x": 714,
+          "y": 418,
+          "w": 156,
+          "h": 164
+        },
+        "sceneScissor": [
+          713,
+          417,
+          158,
+          166
+        ],
+        "targetCells": 2996,
+        "total": 411.0941503196955,
+        "viewport": [
+          1560,
+          1040
+        ]
+      },
+      "roi_setup_ms": 2.091200000000754,
+      "measured_calls": 12,
+      "medians": {
+        "ordinary-indexed": {
+          "host_ms": 1443.7850500000022,
+          "physics_ms": 923.5,
+          "image_ms": 516.7000000476837,
+          "fork_restore_ms": 4.0000001192092896
+        },
+        "transport": {
+          "host_ms": 1398.0360500000006,
+          "physics_ms": 870.0,
+          "image_ms": 520.8999999761581,
+          "fork_restore_ms": 3.899999976158142
+        }
+      },
+      "median_paired_ratio": 0.9823257487190964,
+      "ratio_of_medians": 0.9683131502158153,
+      "median_paired_saving_ms": 25.12384999999813,
+      "transport_wins": 4,
+      "pairs": [
+        {
+          "wave": 1,
+          "order": [
+            "transport",
+            "ordinary-indexed"
+          ],
+          "by_method": {
+            "transport": {
+              "host_ms": 1621.6676999999981,
+              "fork_restore_ms": 4,
+              "click_ms": 0.40000009536743164,
+              "guard_ms": 0.2999999523162842,
+              "physics_ms": 996.7999999523163,
+              "checkpoint_ms": 4.5,
+              "image_ms": 612.6000001430511,
+              "transport_ms": 0.7999999523162842
+            },
+            "ordinary-indexed": {
+              "host_ms": 1540.5595999999969,
+              "fork_restore_ms": 4.200000047683716,
+              "click_ms": 0.8999998569488525,
+              "physics_ms": 988.5,
+              "image_ms": 544.6000001430511
+            }
+          },
+          "ordinary_minus_transport_ms": -81.10810000000129,
+          "transport_over_ordinary": 1.0526484661807316
+        },
+        {
+          "wave": 2,
+          "order": [
+            "ordinary-indexed",
+            "transport"
+          ],
+          "by_method": {
+            "ordinary-indexed": {
+              "host_ms": 1445.0434999999998,
+              "fork_restore_ms": 4,
+              "click_ms": 0.7999999523162842,
+              "physics_ms": 923.3999998569489,
+              "image_ms": 514.7000000476837
+            },
+            "transport": {
+              "host_ms": 1391.7410999999993,
+              "fork_restore_ms": 3.8999998569488525,
+              "click_ms": 0.7000000476837158,
+              "guard_ms": 0.40000009536743164,
+              "physics_ms": 859.2999999523163,
+              "checkpoint_ms": 2,
+              "image_ms": 522.7999999523163,
+              "transport_ms": 0.10000014305114746
+            }
+          },
+          "ordinary_minus_transport_ms": 53.30240000000049,
+          "transport_over_ordinary": 0.9631136363714999
+        },
+        {
+          "wave": 3,
+          "order": [
+            "transport",
+            "ordinary-indexed"
+          ],
+          "by_method": {
+            "transport": {
+              "host_ms": 1404.331000000002,
+              "fork_restore_ms": 3.799999952316284,
+              "click_ms": 0.7000000476837158,
+              "guard_ms": 0.19999980926513672,
+              "physics_ms": 874.4000000953674,
+              "checkpoint_ms": 2,
+              "image_ms": 520.5,
+              "transport_ms": 0.20000004768371582
+            },
+            "ordinary-indexed": {
+              "host_ms": 1423.291799999999,
+              "fork_restore_ms": 4.000000238418579,
+              "click_ms": 0.7000000476837158,
+              "physics_ms": 897.1999998092651,
+              "image_ms": 518.7000000476837
+            }
+          },
+          "ordinary_minus_transport_ms": 18.960799999997107,
+          "transport_over_ordinary": 0.9866782061134638
+        },
+        {
+          "wave": 4,
+          "order": [
+            "ordinary-indexed",
+            "transport"
+          ],
+          "by_method": {
+            "ordinary-indexed": {
+              "host_ms": 1420.4074,
+              "fork_restore_ms": 3.8999998569488525,
+              "click_ms": 0.8999998569488525,
+              "physics_ms": 905,
+              "image_ms": 508
+            },
+            "transport": {
+              "host_ms": 1389.120500000001,
+              "fork_restore_ms": 3.9000000953674316,
+              "click_ms": 0.5999999046325684,
+              "guard_ms": 0.20000004768371582,
+              "physics_ms": 865.5999999046326,
+              "checkpoint_ms": 2,
+              "image_ms": 514.5,
+              "transport_ms": 0.20000004768371582
+            }
+          },
+          "ordinary_minus_transport_ms": 31.28689999999915,
+          "transport_over_ordinary": 0.977973291324729
+        },
+        {
+          "wave": 5,
+          "order": [
+            "transport",
+            "ordinary-indexed"
+          ],
+          "by_method": {
+            "transport": {
+              "host_ms": 1456.237000000001,
+              "fork_restore_ms": 3.6000001430511475,
+              "click_ms": 0.5999999046325684,
+              "guard_ms": 0.20000004768371582,
+              "physics_ms": 925.5999999046326,
+              "checkpoint_ms": 2,
+              "image_ms": 521.2999999523163,
+              "transport_ms": 0.10000014305114746
+            },
+            "ordinary-indexed": {
+              "host_ms": 1442.5266000000047,
+              "fork_restore_ms": 3.799999952316284,
+              "click_ms": 0.8999998569488525,
+              "physics_ms": 923.6000001430511,
+              "image_ms": 512.2000000476837
+            }
+          },
+          "ordinary_minus_transport_ms": -13.710399999996298,
+          "transport_over_ordinary": 1.0095044347882363
+        },
+        {
+          "wave": 6,
+          "order": [
+            "ordinary-indexed",
+            "transport"
+          ],
+          "by_method": {
+            "ordinary-indexed": {
+              "host_ms": 1554.5890999999974,
+              "fork_restore_ms": 4.000000238418579,
+              "click_ms": 0.7999999523162842,
+              "physics_ms": 1010.9000000953674,
+              "image_ms": 536.3999998569489
+            },
+            "transport": {
+              "host_ms": 1387.5057000000015,
+              "fork_restore_ms": 4.400000095367432,
+              "click_ms": 0.5999999046325684,
+              "guard_ms": 0.10000014305114746,
+              "physics_ms": 862.5000002384186,
+              "checkpoint_ms": 2.0999999046325684,
+              "image_ms": 515,
+              "transport_ms": 0.19999980926513672
+            }
+          },
+          "ordinary_minus_transport_ms": 167.0833999999959,
+          "transport_over_ordinary": 0.8925224678341073
+        }
+      ]
+    }
+  ],
+  "completed_processes": 2,
+  "paired_process_direction_assessable": true
+}
