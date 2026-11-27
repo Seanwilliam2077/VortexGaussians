@@ -1,0 +1,414 @@
+{
+  "worker": 1,
+  "pin": "e2ac951dbfabc6060073943e4c344439ac5f4555",
+  "status": "complete",
+  "cells": [
+    {
+      "method": "S",
+      "files": {
+        "default": {
+          "sha256": "84abadf01aeadb2a1a37a400e7c30a60476725d83ba9b63ea7f18c6afae27164",
+          "bytes": 36713480,
+          "raw_state_bytes": 540697232,
+          "steps": 112
+        },
+        "slow": {
+          "sha256": "19a760b3511c3245ac9e8b4e8ce831b6de3282e6a0413f1d8654b5921a058263",
+          "bytes": 36200037,
+          "raw_state_bytes": 540696752,
+          "steps": 109
+        }
+      },
+      "fork": {
+        "split": 8,
+        "common_steps": 12,
+        "guard_dispatches": 13,
+        "native_slow_dispatches": 0,
+        "upper": 0.9640997023809524,
+        "ambiguous_or_invalid_words": 0,
+        "fallback": false,
+        "device_shadow_bytes": 541012320,
+        "material_temporary_bytes": 520128,
+        "guard_history_bytes": 4
+      },
+      "seconds": 20.74833279987797,
+      "block": 0,
+      "position": 0,
+      "phases": {
+        "prepare_default": 0.003575699869543314,
+        "common_prefix": 0.8546959001105279,
+        "history_decision_and_fork": 0.028784999856725335,
+        "step_default": 6.987407400039956,
+        "read_default": 0.30785179999656975,
+        "encode_and_write_default": 2.5846749001648277,
+        "validate_file_default": 0.029248799895867705,
+        "prepare_or_restore_slow": 0.009046999970450997,
+        "step_slow": 6.921491199871525,
+        "read_slow": 0.29959810012951493,
+        "encode_and_write_slow": 2.649687600089237,
+        "validate_file_slow": 0.02999329986050725
+      }
+    },
+    {
+      "method": "D",
+      "files": {
+        "default": {
+          "sha256": "84abadf01aeadb2a1a37a400e7c30a60476725d83ba9b63ea7f18c6afae27164",
+          "bytes": 36713480,
+          "raw_state_bytes": 540697232,
+          "steps": 112
+        },
+        "slow": {
+          "sha256": "19a760b3511c3245ac9e8b4e8ce831b6de3282e6a0413f1d8654b5921a058263",
+          "bytes": 36200037,
+          "raw_state_bytes": 540696752,
+          "steps": 109
+        }
+      },
+      "fork": {
+        "split": 8,
+        "common_steps": 12,
+        "guard_dispatches": 0,
+        "native_slow_dispatches": 12,
+        "upper": 0.9640997023809524,
+        "fallback": false,
+        "device_shadow_bytes": 541012320,
+        "material_temporary_bytes": 1040256,
+        "guard_history_bytes": 0
+      },
+      "seconds": 21.219780100043863,
+      "block": 0,
+      "position": 1,
+      "phases": {
+        "prepare_default": 0.005413900129497051,
+        "common_prefix": 0.8515520999208093,
+        "history_decision_and_fork": 0.018648900091648102,
+        "step_default": 7.292701300000772,
+        "read_default": 0.2910849000327289,
+        "encode_and_write_default": 2.6190916001796722,
+        "validate_file_default": 0.030713000101968646,
+        "prepare_or_restore_slow": 0.0067795999348163605,
+        "step_slow": 6.976117099868134,
+        "read_slow": 0.29640430002473295,
+        "encode_and_write_slow": 2.7596785998903215,
+        "validate_file_slow": 0.02967670001089573
+      }
+    },
+    {
+      "method": "I",
+      "files": {
+        "default": {
+          "sha256": "84abadf01aeadb2a1a37a400e7c30a60476725d83ba9b63ea7f18c6afae27164",
+          "bytes": 36713480,
+          "raw_state_bytes": 540697232,
+          "steps": 112
+        },
+        "slow": {
+          "sha256": "19a760b3511c3245ac9e8b4e8ce831b6de3282e6a0413f1d8654b5921a058263",
+          "bytes": 36200037,
+          "raw_state_bytes": 540696752,
+          "steps": 109
+        }
+      },
+      "fork": {},
+      "seconds": 22.282567500136793,
+      "block": 0,
+      "position": 2,
+      "phases": {
+        "prepare_default": 0.005518000107258558,
+        "step_default": 8.39102330012247,
+        "read_default": 0.31845469982363284,
+        "encode_and_write_default": 2.6437945999205112,
+        "validate_file_default": 0.02955029997974634,
+        "prepare_or_restore_slow": 0.004453500034287572,
+        "step_slow": 7.905787099851295,
+        "read_slow": 0.2973690000362694,
+        "encode_and_write_slow": 2.616048200055957,
+        "validate_file_slow": 0.02835809998214245
+      }
+    },
+    {
+      "method": "D",
+      "files": {
+        "default": {
+          "sha256": "84abadf01aeadb2a1a37a400e7c30a60476725d83ba9b63ea7f18c6afae27164",
+          "bytes": 36713480,
+          "raw_state_bytes": 540697232,
+          "steps": 112
+        },
+        "slow": {
+          "sha256": "19a760b3511c3245ac9e8b4e8ce831b6de3282e6a0413f1d8654b5921a058263",
+          "bytes": 36200037,
+          "raw_state_bytes": 540696752,
+          "steps": 109
+        }
+      },
+      "fork": {
+        "split": 8,
+        "common_steps": 12,
+        "guard_dispatches": 0,
+        "native_slow_dispatches": 12,
+        "upper": 0.9640997023809524,
+        "fallback": false,
+        "device_shadow_bytes": 541012320,
+        "material_temporary_bytes": 1040256,
+        "guard_history_bytes": 0
+      },
+      "seconds": 21.143671999918297,
+      "block": 1,
+      "position": 0,
+      "phases": {
+        "prepare_default": 0.004389999900013208,
+        "common_prefix": 0.8975478000938892,
+        "history_decision_and_fork": 0.01953950012102723,
+        "step_default": 7.299149499973282,
+        "read_default": 0.31474770000204444,
+        "encode_and_write_default": 2.548700600164011,
+        "validate_file_default": 0.02890620008111,
+        "prepare_or_restore_slow": 0.0075060001108795404,
+        "step_slow": 6.97885480010882,
+        "read_slow": 0.31848410004749894,
+        "encode_and_write_slow": 2.654896999942139,
+        "validate_file_slow": 0.02951329993084073
+      }
+    },
+    {
+      "method": "I",
+      "files": {
+        "default": {
+          "sha256": "84abadf01aeadb2a1a37a400e7c30a60476725d83ba9b63ea7f18c6afae27164",
+          "bytes": 36713480,
+          "raw_state_bytes": 540697232,
+          "steps": 112
+        },
+        "slow": {
+          "sha256": "19a760b3511c3245ac9e8b4e8ce831b6de3282e6a0413f1d8654b5921a058263",
+          "bytes": 36200037,
+          "raw_state_bytes": 540696752,
+          "steps": 109
+        }
+      },
+      "fork": {},
+      "seconds": 21.97112930007279,
+      "block": 1,
+      "position": 1,
+      "phases": {
+        "prepare_default": 0.004415299976244569,
+        "step_default": 8.0312759000808,
+        "read_default": 0.2944210998248309,
+        "encode_and_write_default": 2.579355899943039,
+        "validate_file_default": 0.029505799990147352,
+        "prepare_or_restore_slow": 0.004287099931389093,
+        "step_slow": 8.0081164999865,
+        "read_slow": 0.29294069996103644,
+        "encode_and_write_slow": 2.6530372998677194,
+        "validate_file_slow": 0.030734699917957187
+      }
+    },
+    {
+      "method": "S",
+      "files": {
+        "default": {
+          "sha256": "84abadf01aeadb2a1a37a400e7c30a60476725d83ba9b63ea7f18c6afae27164",
+          "bytes": 36713480,
+          "raw_state_bytes": 540697232,
+          "steps": 112
+        },
+        "slow": {
+          "sha256": "19a760b3511c3245ac9e8b4e8ce831b6de3282e6a0413f1d8654b5921a058263",
+          "bytes": 36200037,
+          "raw_state_bytes": 540696752,
+          "steps": 109
+        }
+      },
+      "fork": {
+        "split": 8,
+        "common_steps": 12,
+        "guard_dispatches": 13,
+        "native_slow_dispatches": 0,
+        "upper": 0.9640997023809524,
+        "ambiguous_or_invalid_words": 0,
+        "fallback": false,
+        "device_shadow_bytes": 541012320,
+        "material_temporary_bytes": 520128,
+        "guard_history_bytes": 4
+      },
+      "seconds": 21.560732299927622,
+      "block": 1,
+      "position": 2,
+      "phases": {
+        "prepare_default": 0.004304100060835481,
+        "common_prefix": 0.8840202998835593,
+        "history_decision_and_fork": 0.025505299912765622,
+        "step_default": 7.554765299893916,
+        "read_default": 0.2981093998532742,
+        "encode_and_write_default": 2.7162665999494493,
+        "validate_file_default": 0.030289399903267622,
+        "prepare_or_restore_slow": 0.006777100032195449,
+        "step_slow": 7.029973800061271,
+        "read_slow": 0.32543230010196567,
+        "encode_and_write_slow": 2.61325790011324,
+        "validate_file_slow": 0.030434800079092383
+      }
+    },
+    {
+      "method": "I",
+      "files": {
+        "default": {
+          "sha256": "84abadf01aeadb2a1a37a400e7c30a60476725d83ba9b63ea7f18c6afae27164",
+          "bytes": 36713480,
+          "raw_state_bytes": 540697232,
+          "steps": 112
+        },
+        "slow": {
+          "sha256": "19a760b3511c3245ac9e8b4e8ce831b6de3282e6a0413f1d8654b5921a058263",
+          "bytes": 36200037,
+          "raw_state_bytes": 540696752,
+          "steps": 109
+        }
+      },
+      "fork": {},
+      "seconds": 22.28044110001065,
+      "block": 2,
+      "position": 0,
+      "phases": {
+        "prepare_default": 0.004233899991959333,
+        "step_default": 8.27752530016005,
+        "read_default": 0.33005860005505383,
+        "encode_and_write_default": 2.6461954000405967,
+        "validate_file_default": 0.028998800087720156,
+        "prepare_or_restore_slow": 0.004854900063946843,
+        "step_slow": 8.004535699961707,
+        "read_slow": 0.29143889993429184,
+        "encode_and_write_slow": 2.6137898999731988,
+        "validate_file_slow": 0.03184449998661876
+      }
+    },
+    {
+      "method": "S",
+      "files": {
+        "default": {
+          "sha256": "84abadf01aeadb2a1a37a400e7c30a60476725d83ba9b63ea7f18c6afae27164",
+          "bytes": 36713480,
+          "raw_state_bytes": 540697232,
+          "steps": 112
+        },
+        "slow": {
+          "sha256": "19a760b3511c3245ac9e8b4e8ce831b6de3282e6a0413f1d8654b5921a058263",
+          "bytes": 36200037,
+          "raw_state_bytes": 540696752,
+          "steps": 109
+        }
+      },
+      "fork": {
+        "split": 8,
+        "common_steps": 12,
+        "guard_dispatches": 13,
+        "native_slow_dispatches": 0,
+        "upper": 0.9640997023809524,
+        "ambiguous_or_invalid_words": 0,
+        "fallback": false,
+        "device_shadow_bytes": 541012320,
+        "material_temporary_bytes": 520128,
+        "guard_history_bytes": 4
+      },
+      "seconds": 21.83582239993848,
+      "block": 2,
+      "position": 1,
+      "phases": {
+        "prepare_default": 0.005350499879568815,
+        "common_prefix": 0.8820108999498188,
+        "history_decision_and_fork": 0.019368999870494008,
+        "step_default": 7.385236600181088,
+        "read_default": 0.29581280006095767,
+        "encode_and_write_default": 2.7214862001128495,
+        "validate_file_default": 0.030184500152245164,
+        "prepare_or_restore_slow": 0.00645840005017817,
+        "step_slow": 7.116545900003985,
+        "read_slow": 0.31262790015898645,
+        "encode_and_write_slow": 2.983155000023544,
+        "validate_file_slow": 0.03043090016581118
+      }
+    },
+    {
+      "method": "D",
+      "files": {
+        "default": {
+          "sha256": "84abadf01aeadb2a1a37a400e7c30a60476725d83ba9b63ea7f18c6afae27164",
+          "bytes": 36713480,
+          "raw_state_bytes": 540697232,
+          "steps": 112
+        },
+        "slow": {
+          "sha256": "19a760b3511c3245ac9e8b4e8ce831b6de3282e6a0413f1d8654b5921a058263",
+          "bytes": 36200037,
+          "raw_state_bytes": 540696752,
+          "steps": 109
+        }
+      },
+      "fork": {
+        "split": 8,
+        "common_steps": 12,
+        "guard_dispatches": 0,
+        "native_slow_dispatches": 12,
+        "upper": 0.9640997023809524,
+        "fallback": false,
+        "device_shadow_bytes": 541012320,
+        "material_temporary_bytes": 1040256,
+        "guard_history_bytes": 0
+      },
+      "seconds": 21.24363200017251,
+      "block": 2,
+      "position": 2,
+      "phases": {
+        "prepare_default": 0.004250900121405721,
+        "common_prefix": 0.9059844999574125,
+        "history_decision_and_fork": 0.01871099998243153,
+        "step_default": 7.275433400180191,
+        "read_default": 0.31214680010452867,
+        "encode_and_write_default": 2.5786206000484526,
+        "validate_file_default": 0.029574699932709336,
+        "prepare_or_restore_slow": 0.00908349989913404,
+        "step_slow": 7.113476999802515,
+        "read_slow": 0.3062954000197351,
+        "encode_and_write_slow": 2.600576200056821,
+        "validate_file_slow": 0.028661000076681376
+      }
+    }
+  ],
+  "setup": {
+    "device_and_engine_s": 47.23805220006034,
+    "native_prepare_and_one_warm_frame_s": 116.4657631998416,
+    "single_atlas_compile_and_test_s": 0.02567350002937019
+  },
+  "free_bytes_start": 52772974592,
+  "adapter": {
+    "vendor": "32.0.15.9571",
+    "device": "NVIDIA GeForce RTX 5070 Laptop GPU",
+    "description": "",
+    "adapter_type": "DiscreteGPU",
+    "backend_type": "D3D12"
+  },
+  "phase": "complete",
+  "backend_test": {
+    "all_flagged": 51200,
+    "certified_flagged": 0,
+    "signed_words": 65536,
+    "supported_words": 14336
+  },
+  "latest_phase_times": {
+    "prepare_default": 0.004250900121405721,
+    "common_prefix": 0.9059844999574125,
+    "history_decision_and_fork": 0.01871099998243153,
+    "step_default": 7.275433400180191,
+    "read_default": 0.31214680010452867,
+    "encode_and_write_default": 2.5786206000484526,
+    "validate_file_default": 0.029574699932709336,
+    "prepare_or_restore_slow": 0.00908349989913404,
+    "step_slow": 7.113476999802515,
+    "read_slow": 0.3062954000197351,
+    "encode_and_write_slow": 2.600576200056821,
+    "validate_file_slow": 0.028661000076681376
+  },
+  "elapsed_s": 358.07172909984365
+}
