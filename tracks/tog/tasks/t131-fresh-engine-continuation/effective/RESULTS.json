@@ -1,0 +1,99 @@
+{
+  "schema": "t131-pending-feedback-effect-v1",
+  "zlib_runtime": "1.3.2",
+  "gas_dims_xyz": [
+    16,
+    32,
+    16
+  ],
+  "coupling_dims_xyz": [
+    8,
+    16,
+    8
+  ],
+  "simulation_cell_size_m": 0.1,
+  "frame_1": {
+    "native_sha256": "c7650445bf9d3a2f0d99d73a6526a2bffb98350821d1ff91a967deb2c3bc7db1",
+    "nonzero_by_channel": [
+      0,
+      0,
+      192,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      132,
+      0,
+      0
+    ],
+    "full_raw_bytes": 53248,
+    "full_zlib6_bytes": 622,
+    "history_raw_bytes": 16384,
+    "history_zlib6_bytes": 201
+  },
+  "frame_2": {
+    "native_sha256": "0dd553e141e52c248ba92f528232ba48845d2d225f621490350f0756e23ac735",
+    "nonzero_by_channel": [
+      0,
+      0,
+      192,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "full_raw_bytes": 53248,
+    "full_zlib6_bytes": 458,
+    "history_raw_bytes": 16384,
+    "history_zlib6_bytes": 39
+  },
+  "comparison": {
+    "changed_words_by_channel": [
+      0,
+      0,
+      170,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      132,
+      0,
+      0
+    ],
+    "raw_equal": false,
+    "nonnegative_areas": true,
+    "axes": [
+      {
+        "axis": "x",
+        "impulse_cells_either": 0,
+        "area_support_changes": 0,
+        "near_impulse_area_or_velocity_changes": 0
+      },
+      {
+        "axis": "y",
+        "impulse_cells_either": 132,
+        "area_support_changes": 0,
+        "near_impulse_area_or_velocity_changes": 0
+      },
+      {
+        "axis": "z",
+        "impulse_cells_either": 0,
+        "area_support_changes": 0,
+        "near_impulse_area_or_velocity_changes": 0
+      }
+    ],
+    "operator_certified": false
+  }
+}
