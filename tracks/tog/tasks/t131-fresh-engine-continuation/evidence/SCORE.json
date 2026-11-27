@@ -1,0 +1,105 @@
+{
+  "verified_arrays": {
+    "reference": 22,
+    "ordinary": 21,
+    "supplemented": 43
+  },
+  "feedback_bytes": 53248,
+  "native_checkpoint": {
+    "bytes": 52025,
+    "sha256": "6e86fe6be5306899123bcba7366fe724f6e7b1c1ef74eb12f70d6ea486f5ce28"
+  },
+  "workers": {
+    "reference": {
+      "pid": 61660,
+      "returncode": 0,
+      "timeout": false,
+      "limit_s": 180,
+      "elapsed_s": 94.15942210005596
+    },
+    "ordinary": {
+      "pid": 61580,
+      "returncode": 0,
+      "timeout": false,
+      "limit_s": 180,
+      "elapsed_s": 67.60584699991159
+    },
+    "supplemented": {
+      "pid": 63780,
+      "returncode": 0,
+      "timeout": false,
+      "limit_s": 180,
+      "elapsed_s": 78.37242710008286
+    }
+  },
+  "comparisons": {
+    "reference": {
+      "status": "complete",
+      "native_parent_mismatches": [],
+      "successor_mismatches": []
+    },
+    "ordinary": {
+      "status": "complete",
+      "native_parent_mismatches": [
+        "feedback.dims",
+        "feedback.grid",
+        "feedback.ready"
+      ],
+      "successor_mismatches": []
+    },
+    "supplemented": {
+      "status": "complete",
+      "native_parent_mismatches": [
+        "feedback.dims",
+        "feedback.grid",
+        "feedback.ready"
+      ],
+      "successor_mismatches": [],
+      "corrected_parent_mismatches": []
+    },
+    "reference_grid_change": {
+      "words": 13312,
+      "nonzero_reference_words": 324,
+      "nonidentical_words": 302,
+      "nonidentical_per_channel": [
+        0,
+        0,
+        170,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        132,
+        0,
+        0
+      ]
+    },
+    "rebuild_status": "complete",
+    "rebuild_grid_difference": {
+      "words": 13312,
+      "nonzero_reference_words": 324,
+      "nonidentical_words": 132,
+      "nonidentical_per_channel": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        132,
+        0,
+        0
+      ]
+    },
+    "rebuild_feedback_mismatches": [
+      "grid"
+    ]
+  }
+}

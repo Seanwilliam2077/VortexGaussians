@@ -1,0 +1,328 @@
+{
+  "arm": "reference",
+  "revision": "e2ac951dbfabc6060073943e4c344439ac5f4555",
+  "pid": 61660,
+  "status": "complete",
+  "timings_s": {
+    "device_and_scene": 2.6673548999242485,
+    "construct_and_prepare": 90.80168050015345,
+    "create_native_checkpoint": 0.1566296999808401,
+    "audit_parent": 0.008964499924331903,
+    "save_supplement": 0.00396190001629293,
+    "advance_one_native_frame": 0.030019599944353104,
+    "audit_successor": 0.011162699898704886
+  },
+  "last_phase": "audit_successor",
+  "adapter": {
+    "vendor": "32.0.15.9571",
+    "device": "NVIDIA GeForce RTX 5070 Laptop GPU",
+    "description": "",
+    "adapter_type": "DiscreteGPU",
+    "backend_type": "D3D12"
+  },
+  "scene": "ce4eeec10ec82219",
+  "wall_s": 93.69344009994529,
+  "native_checkpoint": {
+    "bytes": 52025,
+    "sha256": "6e86fe6be5306899123bcba7366fe724f6e7b1c1ef74eb12f70d6ea486f5ce28"
+  },
+  "native_parent": {
+    "frame": 1,
+    "gas": {
+      "dims": [
+        16,
+        32,
+        16
+      ],
+      "h": 0.1,
+      "origin": [
+        -0.8,
+        0.0,
+        -0.8
+      ],
+      "time": 0.041666666666666664,
+      "steps": 1,
+      "max_speed": 0.0,
+      "upres": 1,
+      "vel": {
+        "dtype": "float32",
+        "shape": [
+          17,
+          33,
+          17,
+          4
+        ],
+        "sha256": "1d034fcb55f46739ca08af2c67ebbc090197d8eb606e42550de3eb52ff1a7db0"
+      },
+      "scal": {
+        "dtype": "float16",
+        "shape": [
+          16,
+          32,
+          16,
+          4
+        ],
+        "sha256": "de2f256064a0af797747c2b97505dc0b9f3df0de4f489eac731c23ae9ca9cc31"
+      },
+      "p": {
+        "dtype": "float32",
+        "shape": [
+          16,
+          32,
+          16,
+          1
+        ],
+        "sha256": "c35020473aed1b4642cd726cad727b63fff2824ad68cedd7ffb73c7cbd890479"
+      }
+    },
+    "cloth": {
+      "key": "(('panel', '', 1.2, 2.0, 1.0, 48, 'hanging', 'top', 1, 'cotton', 1.0, 1.0, 1.0),)",
+      "X": {
+        "dtype": "float32",
+        "shape": [
+          1470,
+          4
+        ],
+        "sha256": "b9d083d0619f487f934cccb24f31d5eab637fb71f42d2b20938cfebf08f692b0"
+      },
+      "P": {
+        "dtype": "float32",
+        "shape": [
+          1470,
+          4
+        ],
+        "sha256": "352dc93316d22d1b311330efa819d3a8010e1addd5e3d568855bd411fb8082c7"
+      },
+      "V": {
+        "dtype": "float32",
+        "shape": [
+          1470,
+          4
+        ],
+        "sha256": "e77a1467c6fb8d4ad9a4deee93449f224f7f257d3af9edd01259b66bc3a31dff"
+      },
+      "S": {
+        "dtype": "float32",
+        "shape": [
+          1470,
+          4
+        ],
+        "sha256": "7982615066d799a7a750b532f188a490e549eada1def2d4d31c455600c7c818d"
+      },
+      "N": {
+        "dtype": "float32",
+        "shape": [
+          1470,
+          4
+        ],
+        "sha256": "7f90cdef97fd471f111b5fa8676054de4cdbe8fff9a9bf993576eba3a6ea94ae"
+      },
+      "W": {
+        "dtype": "float32",
+        "shape": [
+          2940,
+          4
+        ],
+        "sha256": "bbc9857af176a03424e3a077242af400cbd8f6a566fdd0c363e8c30671b07e65"
+      },
+      "MP": {
+        "dtype": "float32",
+        "shape": [
+          1470,
+          4
+        ],
+        "sha256": "4c3b636836c85a4b7e00a397ec03e4789fb64e812a8313d3a051e8173afa3300"
+      },
+      "steps": 25
+    },
+    "embers": {
+      "count": 0
+    },
+    "feedback": {
+      "dims": [
+        8,
+        16,
+        8
+      ],
+      "ready": true,
+      "wet": false,
+      "placed": true,
+      "active": true,
+      "grid": {
+        "dtype": "uint32",
+        "shape": [
+          13312
+        ],
+        "sha256": "c7650445bf9d3a2f0d99d73a6526a2bffb98350821d1ff91a967deb2c3bc7db1"
+      }
+    }
+  },
+  "supplement": {
+    "metadata": {
+      "frame": 1,
+      "scene": "ce4eeec10ec82219",
+      "gas_layout": {
+        "dims": [
+          16,
+          32,
+          16
+        ],
+        "origin": [
+          -0.8,
+          0.0,
+          -0.8
+        ],
+        "cell": 0.1
+      },
+      "format": "uint32",
+      "channels": 13,
+      "feedback": {
+        "dims": [
+          8,
+          16,
+          8
+        ],
+        "ready": true,
+        "wet": false,
+        "placed": true,
+        "active": true
+      },
+      "bytes": 53248,
+      "sha256": "c7650445bf9d3a2f0d99d73a6526a2bffb98350821d1ff91a967deb2c3bc7db1"
+    },
+    "metadata_bytes": 311,
+    "read_s": 0.0008708999957889318,
+    "write_s": 0.0007156000938266516
+  },
+  "successor": {
+    "frame": 2,
+    "gas": {
+      "dims": [
+        16,
+        32,
+        16
+      ],
+      "h": 0.1,
+      "origin": [
+        -0.8,
+        0.0,
+        -0.8
+      ],
+      "time": 0.08333333333333333,
+      "steps": 2,
+      "max_speed": 0.0,
+      "upres": 1,
+      "vel": {
+        "dtype": "float32",
+        "shape": [
+          17,
+          33,
+          17,
+          4
+        ],
+        "sha256": "1d034fcb55f46739ca08af2c67ebbc090197d8eb606e42550de3eb52ff1a7db0"
+      },
+      "scal": {
+        "dtype": "float16",
+        "shape": [
+          16,
+          32,
+          16,
+          4
+        ],
+        "sha256": "de2f256064a0af797747c2b97505dc0b9f3df0de4f489eac731c23ae9ca9cc31"
+      },
+      "p": {
+        "dtype": "float32",
+        "shape": [
+          16,
+          32,
+          16,
+          1
+        ],
+        "sha256": "c35020473aed1b4642cd726cad727b63fff2824ad68cedd7ffb73c7cbd890479"
+      }
+    },
+    "cloth": {
+      "key": "(('panel', '', 1.2, 2.0, 1.0, 48, 'hanging', 'top', 1, 'cotton', 1.0, 1.0, 1.0),)",
+      "X": {
+        "dtype": "float32",
+        "shape": [
+          1470,
+          4
+        ],
+        "sha256": "5573f23a1169a097d586a362f110c495ba64b61f40fb15edb816e40ba7d4fd8a"
+      },
+      "P": {
+        "dtype": "float32",
+        "shape": [
+          1470,
+          4
+        ],
+        "sha256": "59f7b391a1e7fb27921e01990940e2055bdc8a6ebab4158709ee13056087226a"
+      },
+      "V": {
+        "dtype": "float32",
+        "shape": [
+          1470,
+          4
+        ],
+        "sha256": "1e00f879b79881657c3fc3e1ae7bc1984dabddbf40aa2169cde34333cddd7c8a"
+      },
+      "S": {
+        "dtype": "float32",
+        "shape": [
+          1470,
+          4
+        ],
+        "sha256": "7982615066d799a7a750b532f188a490e549eada1def2d4d31c455600c7c818d"
+      },
+      "N": {
+        "dtype": "float32",
+        "shape": [
+          1470,
+          4
+        ],
+        "sha256": "79d6a856074aedfb65c06227b6cf5941a8b62b12ca48fc2043c6e8ffa99aa8b7"
+      },
+      "W": {
+        "dtype": "float32",
+        "shape": [
+          2940,
+          4
+        ],
+        "sha256": "bbc9857af176a03424e3a077242af400cbd8f6a566fdd0c363e8c30671b07e65"
+      },
+      "MP": {
+        "dtype": "float32",
+        "shape": [
+          1470,
+          4
+        ],
+        "sha256": "4c3b636836c85a4b7e00a397ec03e4789fb64e812a8313d3a051e8173afa3300"
+      },
+      "steps": 50
+    },
+    "embers": {
+      "count": 0
+    },
+    "feedback": {
+      "dims": [
+        8,
+        16,
+        8
+      ],
+      "ready": true,
+      "wet": false,
+      "placed": true,
+      "active": true,
+      "grid": {
+        "dtype": "uint32",
+        "shape": [
+          13312
+        ],
+        "sha256": "0dd553e141e52c248ba92f528232ba48845d2d225f621490350f0756e23ac735"
+      }
+    }
+  }
+}
