@@ -1,0 +1,5 @@
+# T155 model transfer recovery
+
+The first acquisition hit its registered 420 s wall deadline with 21 verified ranges. Its last receipt covered the header and 251,658,630 compressed payload bytes. The partial native file on disk contains 279,869,241 decoded bytes. The CPU qualification has not started. Keep the original receipt and partial file. No numerical admission or geometric conclusion follows from this access failure.
+
+Recover the same single member with one additional 420 s wall budget. Fetch the remaining three ranges first in the queue and re-read the earlier ranges with up to six concurrent requests. The original downloader retained their SHA-256 digests and decoded bytes, but the uncompleted DEFLATE dictionary was in memory. Validate the same range boundaries, every previously observed digest, the local header, full DEFLATE stream, member CRC/length and exact equality to the previously decoded prefix. No new members or sites qualify. Save each compressed range privately before assembly, with at most two transient retries across the batch. The geometry worker keeps its original 120 s budget and checks both gas seeds before any dynamics.
