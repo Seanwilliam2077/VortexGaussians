@@ -1,0 +1,331 @@
+{
+  "schema": "t139-native-style-bonsai-picking-v1",
+  "prior_status": "closed_coincident_primitive",
+  "fit_sha256": "a16af6d8815498ffbf9eb5d5ee93f5bcc9dca34c4e3eb6f7a796ef9e97c0d273",
+  "source_camera_ids": [
+    0,
+    146
+  ],
+  "source_rows": 1244819,
+  "median_camera_baseline": 5.546039828232442,
+  "scale": 0.7212353542139681,
+  "view_size": [
+    1560,
+    1040
+  ],
+  "depth_summary": {
+    "clipped_in": 891386,
+    "full_min_depth": -18.241342872455217,
+    "full_max_depth": 17.30457395241748
+  },
+  "nominal": [
+    {
+      "display_pixel_center_xy": [
+        670.4399999999999,
+        519.5
+      ],
+      "contributors": 91,
+      "source_ids_sha256": "2f40c6b960bee753c74fc9962da197494f0d62435de108b20cca9f640ae8c5bf",
+      "alpha_sha256": "ac72d848d5ddfb61d6f0c11f431507401a7ce471dbfea778d5094f777a0ffa3a",
+      "full": {
+        "id": 205385,
+        "rank": 50,
+        "before": 0.4659047872299423,
+        "after": 0.5159568421001539
+      },
+      "fp16": {
+        "id": 205385,
+        "rank": 50,
+        "before": 0.4658203125,
+        "after": 0.51611328125
+      },
+      "old_primitive_alpha": 0.0
+    },
+    {
+      "display_pixel_center_xy": [
+        779.5,
+        519.5
+      ],
+      "contributors": 246,
+      "source_ids_sha256": "d68404488307bc87ce419f43da5df279f1ab01fdd29bca47f857d349750b5c32",
+      "alpha_sha256": "eee9e77be4d73d97698294da30ba09a87e4d65b6fce3135013d2bf5b11783523",
+      "full": {
+        "id": 437231,
+        "rank": 129,
+        "before": 0.4894577243158923,
+        "after": 0.509319880065901
+      },
+      "fp16": {
+        "id": 437231,
+        "rank": 129,
+        "before": 0.488525390625,
+        "after": 0.50830078125
+      },
+      "old_primitive_alpha": 0.0
+    }
+  ],
+  "nearest_pixel_diagnostic": [
+    {
+      "display_pixel_center_xy": [
+        670.0,
+        519.0
+      ],
+      "contributors": 90,
+      "source_ids_sha256": "087e87791a174bb9ff9fcb84d8a7df952194d8343c4d4d2598850915b0a9cda6",
+      "alpha_sha256": "08629ecc2aaf4c396632fb55abf5884b312171bb61810b1b60f9f8319df32d02",
+      "full": {
+        "id": 205385,
+        "rank": 50,
+        "before": 0.46858694658852634,
+        "after": 0.519106689393104
+      },
+      "fp16": {
+        "id": 205385,
+        "rank": 50,
+        "before": 0.46875,
+        "after": 0.51904296875
+      },
+      "old_primitive_alpha": 0.0
+    },
+    {
+      "display_pixel_center_xy": [
+        779.0,
+        519.0
+      ],
+      "contributors": 248,
+      "source_ids_sha256": "7bfb46b1cfe76480076ae723773042ea7656ac16435494e122ba38b59d723c0a",
+      "alpha_sha256": "1f54f80d324f9803e72d1732b65b1b6f57f434627912e1e40315bf51806898a5",
+      "full": {
+        "id": 340163,
+        "rank": 126,
+        "before": 0.44970288251427737,
+        "after": 0.5008379614112817
+      },
+      "fp16": {
+        "id": 340163,
+        "rank": 126,
+        "before": 0.44873046875,
+        "after": 0.5
+      },
+      "old_primitive_alpha": 0.0
+    }
+  ],
+  "status": "admitted_for_native_validation",
+  "native_input": {
+    "width": 1560,
+    "height": 1040,
+    "decode_cap": 2000000,
+    "material_count": 1244819,
+    "camera_ids": [
+      0,
+      146
+    ],
+    "source_center": [
+      -1.9890530851788595,
+      1.916928040470554,
+      4.318825713925333
+    ],
+    "seed": 73,
+    "dt": 0.016666666666666666,
+    "params": {
+      "mode": "fire",
+      "simLayers": 9,
+      "riseV": 1.15,
+      "sway": 0.9,
+      "rate": 1500,
+      "coolP": 0.8,
+      "spread": 0.7,
+      "buoy": 0.9,
+      "baro": 1.4,
+      "eps": 0.07,
+      "cool": 1.2,
+      "gam": 1,
+      "turb": 0.55,
+      "couple": 0.5,
+      "interZ": 0,
+      "solver": "vpm",
+      "theta": 0.9,
+      "vpmVisc": 0,
+      "vpmNaive": false,
+      "showTiming": false,
+      "layers": 9,
+      "yaw": 0,
+      "rad": 42,
+      "ppl": 600,
+      "wind": 0,
+      "camDist": 4.4,
+      "camElev": 0.12,
+      "fov": 0.85,
+      "sliceMode": "world",
+      "sliceDepth": 1.2,
+      "covStretch": 1.3,
+      "covMax": 3.6,
+      "covRelax": 1,
+      "dimMode": "layer",
+      "vol3DTurb": 0.6,
+      "vol3DScale": 2.4,
+      "stretch3": 1,
+      "filament": false,
+      "filLen": 0.5,
+      "filGain": 3,
+      "exposure": 1,
+      "emis": 2.2,
+      "bloom": 0,
+      "thresh": 0.4,
+      "blurIters": 5,
+      "look": "cinematic",
+      "box": false,
+      "boxLight": 0.1,
+      "embers": false,
+      "reflect": 0,
+      "haze": 0,
+      "emberRate": 16,
+      "emberMax": 160,
+      "sceneOn": true,
+      "sceneScale": 0.7212353542139681,
+      "sceneYaw": 0,
+      "scenePitch": 0,
+      "sceneLift": 1.9868918224629217,
+      "sceneOffX": -7.1643519319113,
+      "sceneOffZ": -1.5813918289493374,
+      "faithful": true,
+      "scenePreComp": false,
+      "sceneSH": 3,
+      "sceneLight": 1,
+      "sceneSorted": true,
+      "sceneBackdrop": false,
+      "sceneDepthTest": false,
+      "depthTestAlpha": 0.5,
+      "spreadOn": true,
+      "spreadIgnR": 0.14,
+      "spreadHeat": 2.2,
+      "spreadIgnH": 1,
+      "spreadR": 0.11,
+      "spreadRate": 3,
+      "spreadBurnT": 6,
+      "spreadFeed": 5,
+      "spreadFlameHeat": true,
+      "spreadSceneFeed": true,
+      "emitterOn": false,
+      "spreadFrontierCap": 1400,
+      "spreadSampleCap": 160,
+      "spreadFeedCap": 48,
+      "spreadClockMode": "elapsed",
+      "spreadParticlePolicy": "block",
+      "spreadRecycleMinAge": 0.5,
+      "spreadMeasureMode": "legacy",
+      "spreadReferenceArea": 0.0016,
+      "spreadAreaFeedRate": 30,
+      "charDesat": 0.85,
+      "charDim": 0.12,
+      "charSootMix": 0,
+      "charOpa": 0,
+      "charSootR": 0.0495,
+      "charSootG": 0.0459,
+      "charSootB": 0.0428,
+      "orbit": false,
+      "stretch": true,
+      "flicker": true,
+      "paused": true
+    },
+    "picks": [
+      {
+        "name": "A",
+        "site": 205385,
+        "radius": 0.12,
+        "world": [
+          -0.11727496122981318,
+          0.2710038776103467,
+          0.5279606962591064
+        ],
+        "source": [
+          7.781789302825928,
+          -0.4621676802635193,
+          7.24346399307251
+        ],
+        "initial_geometric_count": 217,
+        "member_sha256": "8286e6cc3cf18d1f22c51a4fbcd2a82d2b978cfe6ddb44a8529066b716621e5c"
+      },
+      {
+        "name": "L",
+        "site": 437231,
+        "radius": 0.06,
+        "world": [
+          0.0,
+          0.75,
+          0.0
+        ],
+        "source": [
+          7.944392204284668,
+          0.20196521282196045,
+          6.511441230773926
+        ],
+        "initial_geometric_count": 179,
+        "member_sha256": "218181b68a59eaff26cfa89536136d35fae4bed41317bb08a5e115bb0e51fe1a"
+      },
+      {
+        "name": "F",
+        "site": 437231,
+        "radius": 0.12,
+        "world": [
+          0.0,
+          0.75,
+          0.0
+        ],
+        "source": [
+          7.944392204284668,
+          0.20196521282196045,
+          6.511441230773926
+        ],
+        "initial_geometric_count": 405,
+        "member_sha256": "7fb4e14079e70ad90dfe7c277430b80df43f3a672e41ed98be9c1ef1e2f919fa"
+      }
+    ],
+    "geometric_shell_count": 1041,
+    "geometric_shell_sha256": "9376445418ff928b1939368c7e03a2a19adce0574d019217f56f1255c059e4c5",
+    "view_geometry": [
+      {
+        "id": 0,
+        "world_depth_A_B": [
+          10.050151254750428,
+          9.825097869872387
+        ],
+        "fitted_center_uv_A_B": [
+          [
+            667.3371364610109,
+            515.6524810681464
+          ],
+          [
+            777.4028812242641,
+            517.9813934979194
+          ]
+        ],
+        "centers_in_view_A_B": [
+          true,
+          true
+        ]
+      },
+      {
+        "id": 146,
+        "world_depth_A_B": [
+          -2.068093745651491,
+          -2.069145250136498
+        ],
+        "fitted_center_uv_A_B": [
+          [
+            -1854.2504560018224,
+            -1854.694054901794
+          ],
+          [
+            -1290.4723661305843,
+            -1877.9043583165112
+          ]
+        ],
+        "centers_in_view_A_B": [
+          false,
+          false
+        ]
+      }
+    ]
+  }
+}
