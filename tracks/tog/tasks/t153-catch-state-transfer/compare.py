@@ -40,6 +40,12 @@ def compare_atlas(fast, slow):
     in_range = zeros | ((p >= 2 * MIN_NORMAL) & (p < 1))
     finite = bool(np.isfinite(fast).all() and np.isfinite(slow).all() and np.isfinite(replica).all())
     violators = int(np.count_nonzero(~in_range))
+    range_witness = None
+    if violators:
+        zyx = np.unravel_index(np.argmax(~in_range), in_range.shape)
+        pos = (*zyx, 1)
+        range_witness = dict(zyx=[int(v) for v in zyx], fast=word(original_bits[pos]),
+                             reconstructed=word(reconstructed_bits[pos]), slow=word(actual_bits[pos]))
     witness = None
     max_abs = 0.0
     if any(counts):
@@ -51,7 +57,8 @@ def compare_atlas(fast, slow):
         else:
             max_abs = None
     return dict(words=int(fast.size), changed_by_channel=counts, changed_words=sum(counts),
-                max_abs=max_abs, first_witness=witness, fast_outside_range=violators, finite=finite,
+                max_abs=max_abs, first_witness=witness, fast_outside_range=violators,
+                first_outside_witness=range_witness, finite=finite,
                 fast_nonzero_progress=int(np.count_nonzero(p)),
                 reconstructed_sha256=hashlib.sha256(replica.tobytes()).hexdigest(),
                 slow_sha256=hashlib.sha256(slow.tobytes()).hexdigest())
