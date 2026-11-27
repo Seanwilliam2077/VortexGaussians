@@ -171,12 +171,27 @@ def reconstruct_atlas(primary_atlas, event_path, dt_path, boundary):
     """Construct a 5 s atlas using only a 10 s endpoint, first-debit events and dt."""
     if primary_atlas.dtype != np.dtype("<f2") or primary_atlas.shape[-1] != 4:
         raise ValueError("Expected the native binary16 RGBA atlas")
+    if Path(event_path).stat().st_size % EVENT.itemsize or Path(dt_path).stat().st_size % 4:
+        raise ValueError("Truncated native event or step packet")
     events = np.fromfile(event_path, dtype=EVENT)
     dts = np.fromfile(dt_path, dtype="<f4")
     if not 0 <= boundary <= len(dts):
         raise ValueError("Invalid native update boundary")
     values = np.ascontiguousarray(primary_atlas).copy()
     target = values.view("<u2").reshape(-1, 4)
+    if len(events) and (events['texel'].max() >= len(target) or events['first'].max() >= len(dts)
+                        or len(np.unique(events['texel'])) != len(events)):
+        raise ValueError("Incompatible event indices")
+    initial = events['fuel'].view('<f2')
+    if not np.isfinite(initial).all() or np.any((initial < 0.75) | (initial > 1.25)):
+        raise ValueError("Unexpected initial curtain fuel")
+    lower = 0.75
+    for dt in dts[:boundary]:
+        if not 0 < dt <= np.float32(1/24):
+            raise ValueError("Unsupported native substep")
+        lower = np.nextafter(lower - float(FAST_RATE)*float(dt) - 2**-10 - 2**-20, -np.inf)
+        if lower <= np.float32(.15):
+            raise ValueError("Burning plateau no longer certified")
     active = events[events["first"] < boundary]
     if not len(active):
         return values
