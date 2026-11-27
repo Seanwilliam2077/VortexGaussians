@@ -1,0 +1,114 @@
+{
+  "surface": {
+    "float32": {
+      "graph_distance": 0,
+      "wood_cells": 729,
+      "exposed_cells": 386,
+      "seed_gas_changed_cells": 1,
+      "alpha": 5.859375e-06,
+      "diffusion_substeps_per_step": 1,
+      "ratio": 3.0517578125e-05,
+      "conditional_equal_gas_steps": 0,
+      "first_surface_difference": 0,
+      "largest_surface_delta_K": 480.0,
+      "final_center_K": 697.1647338867188
+    },
+    "float64": {
+      "graph_distance": 0,
+      "wood_cells": 729,
+      "exposed_cells": 386,
+      "seed_gas_changed_cells": 1,
+      "alpha": 5.859375e-06,
+      "diffusion_substeps_per_step": 1,
+      "ratio": 3.0517578125e-05,
+      "conditional_equal_gas_steps": 0,
+      "first_surface_difference": 0,
+      "largest_surface_delta_K": 480.0,
+      "final_center_K": 697.1657389482125
+    }
+  },
+  "shallow": {
+    "float32": {
+      "graph_distance": 2,
+      "wood_cells": 729,
+      "exposed_cells": 386,
+      "seed_gas_changed_cells": 0,
+      "alpha": 5.859375e-06,
+      "diffusion_substeps_per_step": 1,
+      "ratio": 3.0517578125e-05,
+      "conditional_equal_gas_steps": 1,
+      "first_surface_difference": 36,
+      "largest_surface_delta_K": 0.362152099609375,
+      "final_center_K": 680.8802490234375
+    },
+    "float64": {
+      "graph_distance": 2,
+      "wood_cells": 729,
+      "exposed_cells": 386,
+      "seed_gas_changed_cells": 0,
+      "alpha": 5.859375e-06,
+      "diffusion_substeps_per_step": 1,
+      "ratio": 3.0517578125e-05,
+      "conditional_equal_gas_steps": 1,
+      "first_surface_difference": 2,
+      "largest_surface_delta_K": 0.36276806238015524,
+      "final_center_K": 680.8801352173434
+    }
+  },
+  "buried": {
+    "float32": {
+      "graph_distance": 4,
+      "wood_cells": 729,
+      "exposed_cells": 386,
+      "seed_gas_changed_cells": 0,
+      "alpha": 5.859375e-06,
+      "diffusion_substeps_per_step": 1,
+      "ratio": 3.0517578125e-05,
+      "conditional_equal_gas_steps": 3,
+      "first_surface_difference": null,
+      "largest_surface_delta_K": 0.0,
+      "final_center_K": 680.8802490234375
+    },
+    "float64": {
+      "graph_distance": 4,
+      "wood_cells": 729,
+      "exposed_cells": 386,
+      "seed_gas_changed_cells": 0,
+      "alpha": 5.859375e-06,
+      "diffusion_substeps_per_step": 1,
+      "ratio": 3.0517578125e-05,
+      "conditional_equal_gas_steps": 3,
+      "first_surface_difference": 10,
+      "largest_surface_delta_K": 5.784813362197383e-05,
+      "final_center_K": 680.8801347146751
+    }
+  },
+  "no_conduction": {
+    "float32": {
+      "graph_distance": 4,
+      "wood_cells": 729,
+      "exposed_cells": 386,
+      "seed_gas_changed_cells": 0,
+      "alpha": 0.0,
+      "diffusion_substeps_per_step": 0,
+      "ratio": 0,
+      "conditional_equal_gas_steps": 1440,
+      "first_surface_difference": null,
+      "largest_surface_delta_K": 0.0,
+      "final_center_K": 790.0
+    },
+    "float64": {
+      "graph_distance": 4,
+      "wood_cells": 729,
+      "exposed_cells": 386,
+      "seed_gas_changed_cells": 0,
+      "alpha": 0.0,
+      "diffusion_substeps_per_step": 0,
+      "ratio": 0,
+      "conditional_equal_gas_steps": 1440,
+      "first_surface_difference": null,
+      "largest_surface_delta_K": 0.0,
+      "final_center_K": 790.0
+    }
+  }
+}
