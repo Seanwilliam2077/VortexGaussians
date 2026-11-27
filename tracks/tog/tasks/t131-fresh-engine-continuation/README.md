@@ -26,4 +26,6 @@ The native disk blob and supplemental transfer files lived in a temporary direct
 
 ## Reproduce
 
+To resume from a ready-to-extract copy of the original neutral frame, use the CPU-verified package. Its reconstructed native payload matches the original 52,025-byte file by SHA-256. [Portable checkpoint and extraction instructions](portable/README.md)
+
 Run `python verify.py` here in a Python environment with NumPy to compare all numerical archives, including the reconstruction when available, without a GPU. `python verify.py --output OUTPUT.json` writes the same summary. For a new device run use `python run.py --source BLACKBODY_CHECKOUT --out NEW_DIRECTORY` with the T130 runtime, exact Blackbody revision `e2ac951dbfabc6060073943e4c344439ac5f4555` and the admitted NVIDIA RTX 5070 Laptop GPU. The operator requires a new output directory, uses one temporary native cache, and schedules workers serially. Rebuilding on the already initialized third device starts only after all three primary outcomes are stored. [Operator](run.py) · [Offline verifier](verify.py) · [Native allocation and re-splat](https://github.com/gjnail/blackbody/blob/e2ac951dbfabc6060073943e4c344439ac5f4555/blackbody/engine/cloth.py#L1052-L1085)
