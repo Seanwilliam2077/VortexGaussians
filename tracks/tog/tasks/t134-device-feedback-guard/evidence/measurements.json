@@ -1,0 +1,27 @@
+{
+  "status": "error",
+  "revision": "e2ac951dbfabc6060073943e4c344439ac5f4555",
+  "shader_sha256": "d5641fe00679c3e916b2f804ea63620c7d86a21e7d0c8fc63e23637bd00c4cfb",
+  "phase": "correctness",
+  "elapsed_s": 3.422341600060463,
+  "adapter": {
+    "vendor": "32.0.15.9571",
+    "device": "NVIDIA GeForce RTX 5070 Laptop GPU",
+    "description": "",
+    "adapter_type": "DiscreteGPU",
+    "backend_type": "D3D12"
+  },
+  "admission_s": 3.2144433001521975,
+  "build_s": 0.12040349980816245,
+  "kernels": {
+    "axis": {
+      "key": "a4627a96068a9ccbff51a086",
+      "compile_s": 0.09560190001502633
+    },
+    "raw": {
+      "key": "f3869e565e81d60d9d7174f3",
+      "compile_s": 0.01683699991554022
+    }
+  },
+  "error": "ValueError: frame_2_identical: observed split, split, expected raw"
+}
