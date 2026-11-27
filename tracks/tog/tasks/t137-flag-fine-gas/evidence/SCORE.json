@@ -1,0 +1,140 @@
+{
+  "scene": "flag_wind",
+  "arms": {
+    "ordinary": {
+      "status": "complete",
+      "observed_inputs": 120,
+      "final_observed": true,
+      "settings": "78fc0c616658ff868798af330cdab5250868dede97e5436cb77896ae9d9da420"
+    },
+    "stiffer": {
+      "status": "complete",
+      "observed_inputs": 120,
+      "final_observed": true,
+      "settings": "6472682e015dca63fa4917632fe5abee552b609d636da3646f8328229ea169b4"
+    }
+  },
+  "workers": {
+    "ordinary": {
+      "pid": 68704,
+      "exit": 0,
+      "timeout": false,
+      "limit_s": 360,
+      "wall_s": 130.62742169992998
+    },
+    "stiffer": {
+      "pid": 58020,
+      "exit": 0,
+      "timeout": false,
+      "limit_s": 360,
+      "wall_s": 139.84603420016356
+    }
+  },
+  "matched_gas_inputs": 120,
+  "alignment_failures": {
+    "ordinary_only": 0,
+    "stiffer_only": 0
+  },
+  "first": {
+    "cloth_difference": {
+      "index": 1,
+      "frame": -22,
+      "substep": 0
+    },
+    "raw_difference": {
+      "index": 1,
+      "frame": -22,
+      "substep": 0
+    },
+    "failed_axis_rule": {
+      "index": 1,
+      "frame": -22,
+      "substep": 0,
+      "axes": [
+        "no_projected_area",
+        "no_projected_area",
+        "unqualified"
+      ],
+      "changed_words": [
+        0,
+        0,
+        8,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        1,
+        0,
+        0
+      ]
+    },
+    "failed_joint_check": {
+      "index": 1,
+      "frame": -22,
+      "substep": 0,
+      "rule": "fails",
+      "layout": true,
+      "gas_equal": true,
+      "forcing_equal": true,
+      "schedule_equal": true
+    },
+    "gas_difference": {
+      "index": 3,
+      "frame": -20,
+      "substep": 0,
+      "fields": [
+        "max_speed",
+        "p",
+        "vel"
+      ]
+    }
+  },
+  "shared_prefix_steps": 1,
+  "prefix_admissions": {
+    "inactive": 1
+  },
+  "divergence_boundary_lag": 0,
+  "additional_steps_beyond_lag": 0,
+  "useful_by_rule": {},
+  "matched_inputs_with_different_gas": 117,
+  "diagnostic_rule_counts": {
+    "inactive": 1,
+    "fails": 119
+  },
+  "final_gas_equal": false,
+  "retrospective_gas_limit": {
+    "observed_matching_input_and_successor_prefix": 2,
+    "matching_at_observed_cloth_divergence": true,
+    "matching_steps_beyond_one_lag": 0,
+    "first_observed_difference_by_gas_field": {
+      "max_speed": {
+        "index": 3,
+        "frame": -20,
+        "substep": 0
+      },
+      "vel": {
+        "index": 3,
+        "frame": -20,
+        "substep": 0
+      },
+      "p": {
+        "index": 3,
+        "frame": -20,
+        "substep": 0
+      },
+      "scal_fine": {
+        "index": 4,
+        "frame": -19,
+        "substep": 0
+      },
+      "scal": {
+        "index": 6,
+        "frame": -17,
+        "substep": 0
+      }
+    }
+  }
+}

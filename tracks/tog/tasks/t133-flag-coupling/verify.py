@@ -16,7 +16,14 @@ from audit import qualify
 FLAGS = ("dims", "ready", "wet", "placed", "active", "layout_ok", "steam_smothers")
 
 
-def evidence(folder, arm):
+def verify_raw_fields(folder, arm, row):
+    expected = {f"{group}.{name}":desc for group in ("gas","cloth") for name,desc in row[group].items()
+                if isinstance(desc,dict) and "sha256" in desc}
+    with np.load(folder/f"{arm}-{row['index']:03d}-fields.npz",allow_pickle=False) as file:
+        require(arrays_and_values(dict(file))==expected, "Unverified initial gas/cloth samples")
+
+
+def evidence(folder, arm, check_fields=verify_raw_fields):
     read = lambda suffix: json.loads((folder/f"{arm}{suffix}.json").read_bytes())
     summary = read("")
     scene = read("-scene")
@@ -37,10 +44,7 @@ def evidence(folder, arm):
                 final[0]["frame"]==24 and final[0]["index"]==len(inputs) and summary["gas_updates"]==len(inputs),
                 "Truncated complete trajectory")
     for row in inputs[:4]:
-        expected = {f"{group}.{name}":desc for group in ("gas","cloth") for name,desc in row[group].items()
-                    if isinstance(desc,dict) and "sha256" in desc}
-        with np.load(folder/f"{arm}-{row['index']:03d}-fields.npz",allow_pickle=False) as file:
-            require(arrays_and_values(dict(file))==expected, "Unverified initial gas/cloth samples")
+        check_fields(folder,arm,row)
     return summary, scene, inputs, final
 
 
@@ -61,7 +65,7 @@ def basic_layout(row):
     return row["gas"]["upres"]==1
 
 
-def compare(folder, check_detail=basic_layout, limit=240):
+def compare(folder, check_detail=basic_layout, limit=240, check_fields=verify_raw_fields):
     exits=json.loads((folder/"workers.json").read_bytes())
     first_ledger=folder/"ordinary-steps.ndjson"
     if set(exits)=={"ordinary"} and (not first_ledger.exists() or not first_ledger.stat().st_size):
@@ -72,7 +76,7 @@ def compare(folder, check_detail=basic_layout, limit=240):
                 not (folder/"stiffer.json").exists(),"Unverified zero-step disposition")
         return dict(status="observer_setup_failure",completed_arms=0,observed_gas_inputs=0,
                     window=None,workers=exits,reason=setup.get("error","deadline"),phase=setup["last_phase"])
-    data = [evidence(folder,arm) for arm in ("ordinary","stiffer")]
+    data = [evidence(folder,arm,check_fields) for arm in ("ordinary","stiffer")]
     a,b = [d[0] for d in data]
     scenes = [d[1] for d in data]
     require(scenes[0]["fabrics"][0]["bend"]==1 and scenes[1]["fabrics"][0]["bend"]==2,"Wrong treatments")
