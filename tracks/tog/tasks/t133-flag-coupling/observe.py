@@ -56,7 +56,12 @@ def require(condition, msg):
         raise ValueError(msg)
 
 
-def worker(source, out, arm):
+def check_base_layout(engine, scene):
+    require(engine.cloth.active and not engine.solids.active and not engine.strands_on and not scene.colliders_animated()
+            and engine.solver.upres==1 and not scene.data["domain"]["grow"], "Unsupported coupling configuration")
+
+
+def worker(source, out, arm, check_layout=check_base_layout):
     start = time.perf_counter()
     summary = {"arm":arm, "pin":PIN, "status":"started", "last_phase":"admission"}
     summary_path = out / f"{arm}.json"
@@ -83,10 +88,9 @@ def worker(source, out, arm):
         eng = Engine(gpu)
         eng.prepare(scene, final=True)
         solver, cloth = eng.solver, eng.cloth
-        require(cloth.active and not eng.solids.active and not eng.strands_on and not scene.colliders_animated()
-                and solver.upres==1 and not scene.data["domain"]["grow"], "Unsupported coupling configuration")
+        check_layout(eng, scene)
         summary.update(last_phase="native trajectories", preparation_wall_s=time.perf_counter()-start,
-                       gas_dims=list(solver.dims), h=solver.h, cloth_vertices=cloth.built.n,
+                       gas_dims=list(solver.dims), h=solver.h, detail_upres=solver.upres, cloth_vertices=cloth.built.n,
                        features=solver.features, scene_signature=scene.sim_signature(True))
         save(summary_path, summary)
         step = solver.step
@@ -147,16 +151,16 @@ def worker(source, out, arm):
         raise
 
 
-def supervise(source, out):
+def supervise(source, out, worker_program=__file__, limit=LIMIT):
     out.mkdir(parents=True, exist_ok=False)
     exits = {}
     for arm in ("ordinary","stiffer"):
         start = time.perf_counter()
-        deadline = time.time()+LIMIT
-        args = [sys.executable,"-B",__file__,"--source",str(source),"--out",str(out),"--worker",arm]
+        deadline = time.time()+limit
+        args = [sys.executable,"-B",str(worker_program),"--source",str(source),"--out",str(out),"--worker",arm]
         p = subprocess.Popen(args)
         try:
-            while p.poll() is None and time.time()<deadline and time.perf_counter()-start<LIMIT:
+            while p.poll() is None and time.time()<deadline and time.perf_counter()-start<limit:
                 time.sleep(0.2)
             timed_out = p.poll() is None
             if timed_out:
@@ -166,7 +170,7 @@ def supervise(source, out):
             if p.poll() is None:
                 p.kill()
                 p.wait()
-        exits[arm] = dict(pid=p.pid, exit=code, timeout=timed_out, limit_s=LIMIT, wall_s=time.perf_counter()-start)
+        exits[arm] = dict(pid=p.pid, exit=code, timeout=timed_out, limit_s=limit, wall_s=time.perf_counter()-start)
         save(out/"workers.json",exits)
         first = out/"ordinary-steps.ndjson"
         if arm=="ordinary" and (not first.is_file() or first.stat().st_size==0):
