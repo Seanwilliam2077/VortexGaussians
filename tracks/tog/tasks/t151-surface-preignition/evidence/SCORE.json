@@ -1,0 +1,1714 @@
+{
+  "edit": [
+    [
+      "/sections/spread/catch_time",
+      0.35,
+      0.7
+    ]
+  ],
+  "dims": [
+    152,
+    176,
+    80
+  ],
+  "upres": 3,
+  "updates": [
+    112,
+    109
+  ],
+  "first_unaligned_update": 54,
+  "guaranteed_prefix_updates": 12,
+  "first_unequal_material_boundary": 2,
+  "guaranteed_updates_starting_with_different_material": 10,
+  "extra_after_one_lag": 9,
+  "first_sampled_gas_difference": {
+    "index": 17,
+    "frame": 10,
+    "substep": 2,
+    "time": 0.40277777777777773,
+    "material_equal": false,
+    "lit": [
+      13,
+      0
+    ],
+    "changed_checkpoint_fields": [
+      "p",
+      "scal",
+      "scal_fine",
+      "vel"
+    ]
+  },
+  "aligned_observations": [
+    {
+      "index": 0,
+      "frame": 1,
+      "substep": 0,
+      "time": 0.0,
+      "material_equal": true,
+      "lit": [
+        0,
+        0
+      ],
+      "changed_checkpoint_fields": []
+    },
+    {
+      "index": 1,
+      "frame": 1,
+      "substep": 1,
+      "time": 0.041666666666666664,
+      "material_equal": true,
+      "lit": [
+        0,
+        0
+      ],
+      "changed_checkpoint_fields": []
+    },
+    {
+      "index": 2,
+      "frame": 2,
+      "substep": 1,
+      "time": 0.08333333333333333,
+      "material_equal": false,
+      "lit": [
+        0,
+        0
+      ],
+      "changed_checkpoint_fields": []
+    },
+    {
+      "index": 3,
+      "frame": 3,
+      "substep": 1,
+      "time": 0.125,
+      "material_equal": false,
+      "lit": [
+        0,
+        0
+      ],
+      "changed_checkpoint_fields": []
+    },
+    {
+      "index": 4,
+      "frame": 4,
+      "substep": 1,
+      "time": 0.16666666666666666,
+      "material_equal": false,
+      "lit": [
+        0,
+        0
+      ],
+      "changed_checkpoint_fields": []
+    },
+    {
+      "index": 5,
+      "frame": 5,
+      "substep": 1,
+      "time": 0.1875,
+      "material_equal": false,
+      "lit": [
+        0,
+        0
+      ],
+      "changed_checkpoint_fields": []
+    },
+    {
+      "index": 6,
+      "frame": 5,
+      "substep": 2,
+      "time": 0.20833333333333334,
+      "material_equal": false,
+      "lit": [
+        0,
+        0
+      ],
+      "changed_checkpoint_fields": []
+    },
+    {
+      "index": 7,
+      "frame": 6,
+      "substep": 1,
+      "time": 0.22916666666666669,
+      "material_equal": false,
+      "lit": [
+        0,
+        0
+      ],
+      "changed_checkpoint_fields": []
+    },
+    {
+      "index": 8,
+      "frame": 6,
+      "substep": 2,
+      "time": 0.25,
+      "material_equal": false,
+      "lit": [
+        0,
+        0
+      ],
+      "changed_checkpoint_fields": []
+    },
+    {
+      "index": 9,
+      "frame": 7,
+      "substep": 1,
+      "time": 0.2708333333333333,
+      "material_equal": false,
+      "lit": [
+        0,
+        0
+      ],
+      "changed_checkpoint_fields": []
+    },
+    {
+      "index": 10,
+      "frame": 7,
+      "substep": 2,
+      "time": 0.29166666666666663,
+      "material_equal": false,
+      "lit": [
+        0,
+        0
+      ],
+      "changed_checkpoint_fields": []
+    },
+    {
+      "index": 11,
+      "frame": 8,
+      "substep": 1,
+      "time": 0.31249999999999994,
+      "material_equal": false,
+      "lit": [
+        0,
+        0
+      ],
+      "changed_checkpoint_fields": []
+    },
+    {
+      "index": 12,
+      "frame": 8,
+      "substep": 2,
+      "time": 0.33333333333333326,
+      "material_equal": false,
+      "lit": [
+        0,
+        0
+      ],
+      "changed_checkpoint_fields": []
+    },
+    {
+      "index": 13,
+      "frame": 9,
+      "substep": 1,
+      "time": 0.34722222222222215,
+      "material_equal": false,
+      "lit": [
+        0,
+        0
+      ],
+      "changed_checkpoint_fields": []
+    },
+    {
+      "index": 14,
+      "frame": 9,
+      "substep": 2,
+      "time": 0.36111111111111105,
+      "material_equal": false,
+      "lit": [
+        0,
+        0
+      ],
+      "changed_checkpoint_fields": []
+    },
+    {
+      "index": 15,
+      "frame": 9,
+      "substep": 3,
+      "time": 0.37499999999999994,
+      "material_equal": false,
+      "lit": [
+        0,
+        0
+      ],
+      "changed_checkpoint_fields": []
+    },
+    {
+      "index": 16,
+      "frame": 10,
+      "substep": 1,
+      "time": 0.38888888888888884,
+      "material_equal": false,
+      "lit": [
+        0,
+        0
+      ],
+      "changed_checkpoint_fields": []
+    },
+    {
+      "index": 17,
+      "frame": 10,
+      "substep": 2,
+      "time": 0.40277777777777773,
+      "material_equal": false,
+      "lit": [
+        13,
+        0
+      ],
+      "changed_checkpoint_fields": [
+        "p",
+        "scal",
+        "scal_fine",
+        "vel"
+      ]
+    },
+    {
+      "index": 18,
+      "frame": 10,
+      "substep": 3,
+      "time": 0.41666666666666663,
+      "material_equal": false,
+      "lit": [
+        16,
+        0
+      ],
+      "changed_checkpoint_fields": [
+        "p",
+        "scal",
+        "scal_fine",
+        "vel"
+      ]
+    },
+    {
+      "index": 19,
+      "frame": 11,
+      "substep": 1,
+      "time": 0.4305555555555555,
+      "material_equal": false,
+      "lit": [
+        18,
+        0
+      ],
+      "changed_checkpoint_fields": [
+        "max_speed",
+        "p",
+        "scal",
+        "scal_fine",
+        "vel"
+      ]
+    },
+    {
+      "index": 20,
+      "frame": 11,
+      "substep": 2,
+      "time": 0.4444444444444444,
+      "material_equal": false,
+      "lit": [
+        19,
+        0
+      ],
+      "changed_checkpoint_fields": [
+        "max_speed",
+        "p",
+        "scal",
+        "scal_fine",
+        "vel"
+      ]
+    },
+    {
+      "index": 21,
+      "frame": 11,
+      "substep": 3,
+      "time": 0.4583333333333333,
+      "material_equal": false,
+      "lit": [
+        23,
+        0
+      ],
+      "changed_checkpoint_fields": [
+        "max_speed",
+        "p",
+        "scal",
+        "scal_fine",
+        "vel"
+      ]
+    },
+    {
+      "index": 22,
+      "frame": 12,
+      "substep": 1,
+      "time": 0.4722222222222222,
+      "material_equal": false,
+      "lit": [
+        23,
+        0
+      ],
+      "changed_checkpoint_fields": [
+        "max_speed",
+        "p",
+        "scal",
+        "scal_fine",
+        "vel"
+      ]
+    },
+    {
+      "index": 23,
+      "frame": 12,
+      "substep": 2,
+      "time": 0.4861111111111111,
+      "material_equal": false,
+      "lit": [
+        23,
+        0
+      ],
+      "changed_checkpoint_fields": [
+        "max_speed",
+        "p",
+        "scal",
+        "scal_fine",
+        "vel"
+      ]
+    },
+    {
+      "index": 24,
+      "frame": 12,
+      "substep": 3,
+      "time": 0.5,
+      "material_equal": false,
+      "lit": [
+        27,
+        0
+      ],
+      "changed_checkpoint_fields": [
+        "max_speed",
+        "p",
+        "scal",
+        "scal_fine",
+        "vel"
+      ]
+    },
+    {
+      "index": 27,
+      "frame": 13,
+      "substep": 3,
+      "time": 0.5416666666666665,
+      "material_equal": false,
+      "lit": [
+        32,
+        0
+      ],
+      "changed_checkpoint_fields": [
+        "max_speed",
+        "p",
+        "scal",
+        "scal_fine",
+        "vel"
+      ]
+    },
+    {
+      "index": 30,
+      "frame": 14,
+      "substep": 3,
+      "time": 0.583333333333333,
+      "material_equal": false,
+      "lit": [
+        41,
+        0
+      ],
+      "changed_checkpoint_fields": [
+        "max_speed",
+        "p",
+        "scal",
+        "scal_fine",
+        "vel"
+      ]
+    },
+    {
+      "index": 34,
+      "frame": 15,
+      "substep": 4,
+      "time": 0.6249999999999996,
+      "material_equal": false,
+      "lit": [
+        55,
+        0
+      ],
+      "changed_checkpoint_fields": [
+        "max_speed",
+        "p",
+        "scal",
+        "scal_fine",
+        "vel"
+      ]
+    },
+    {
+      "index": 38,
+      "frame": 16,
+      "substep": 4,
+      "time": 0.6666666666666661,
+      "material_equal": false,
+      "lit": [
+        72,
+        0
+      ],
+      "changed_checkpoint_fields": [
+        "max_speed",
+        "p",
+        "scal",
+        "scal_fine",
+        "vel"
+      ]
+    },
+    {
+      "index": 42,
+      "frame": 17,
+      "substep": 4,
+      "time": 0.7083333333333326,
+      "material_equal": false,
+      "lit": [
+        88,
+        0
+      ],
+      "changed_checkpoint_fields": [
+        "max_speed",
+        "p",
+        "scal",
+        "scal_fine",
+        "vel"
+      ]
+    },
+    {
+      "index": 46,
+      "frame": 18,
+      "substep": 4,
+      "time": 0.7499999999999991,
+      "material_equal": false,
+      "lit": [
+        107,
+        8
+      ],
+      "changed_checkpoint_fields": [
+        "max_speed",
+        "p",
+        "scal",
+        "scal_fine",
+        "vel"
+      ]
+    },
+    {
+      "index": 50,
+      "frame": 19,
+      "substep": 4,
+      "time": 0.7916666666666656,
+      "material_equal": false,
+      "lit": [
+        124,
+        14
+      ],
+      "changed_checkpoint_fields": [
+        "max_speed",
+        "p",
+        "scal",
+        "scal_fine",
+        "vel"
+      ]
+    },
+    {
+      "index": 54,
+      "frame": 20,
+      "substep": 4,
+      "time": 0.8333333333333321,
+      "material_equal": false,
+      "lit": [
+        139,
+        18
+      ],
+      "changed_checkpoint_fields": [
+        "max_speed",
+        "p",
+        "scal",
+        "scal_fine",
+        "vel"
+      ]
+    }
+  ],
+  "frame_endpoints": [
+    {
+      "frame": 1,
+      "updates": [
+        1,
+        1
+      ],
+      "lit": [
+        0,
+        0
+      ],
+      "catching": [
+        0,
+        0
+      ],
+      "max_progress": [
+        0.0,
+        0.0
+      ],
+      "gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "unequal_gas_fields": [],
+      "gas_equal": true,
+      "full_checkpoint_except_atlas_equal": true,
+      "embers_equal": true
+    },
+    {
+      "frame": 2,
+      "updates": [
+        2,
+        2
+      ],
+      "lit": [
+        0,
+        0
+      ],
+      "catching": [
+        20,
+        20
+      ],
+      "max_progress": [
+        0.1190185546875,
+        0.05950927734375
+      ],
+      "gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "unequal_gas_fields": [],
+      "gas_equal": true,
+      "full_checkpoint_except_atlas_equal": true,
+      "embers_equal": true
+    },
+    {
+      "frame": 3,
+      "updates": [
+        3,
+        3
+      ],
+      "lit": [
+        0,
+        0
+      ],
+      "catching": [
+        24,
+        24
+      ],
+      "max_progress": [
+        0.238037109375,
+        0.1190185546875
+      ],
+      "gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "unequal_gas_fields": [],
+      "gas_equal": true,
+      "full_checkpoint_except_atlas_equal": true,
+      "embers_equal": true
+    },
+    {
+      "frame": 4,
+      "updates": [
+        4,
+        4
+      ],
+      "lit": [
+        0,
+        0
+      ],
+      "catching": [
+        33,
+        33
+      ],
+      "max_progress": [
+        0.35693359375,
+        0.178466796875
+      ],
+      "gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "unequal_gas_fields": [],
+      "gas_equal": true,
+      "full_checkpoint_except_atlas_equal": true,
+      "embers_equal": true
+    },
+    {
+      "frame": 5,
+      "updates": [
+        6,
+        6
+      ],
+      "lit": [
+        0,
+        0
+      ],
+      "catching": [
+        42,
+        42
+      ],
+      "max_progress": [
+        0.4755859375,
+        0.23779296875
+      ],
+      "gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "unequal_gas_fields": [],
+      "gas_equal": true,
+      "full_checkpoint_except_atlas_equal": true,
+      "embers_equal": true
+    },
+    {
+      "frame": 6,
+      "updates": [
+        8,
+        8
+      ],
+      "lit": [
+        0,
+        0
+      ],
+      "catching": [
+        58,
+        58
+      ],
+      "max_progress": [
+        0.59375,
+        0.296875
+      ],
+      "gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "unequal_gas_fields": [],
+      "gas_equal": true,
+      "full_checkpoint_except_atlas_equal": true,
+      "embers_equal": true
+    },
+    {
+      "frame": 7,
+      "updates": [
+        10,
+        10
+      ],
+      "lit": [
+        0,
+        0
+      ],
+      "catching": [
+        77,
+        77
+      ],
+      "max_progress": [
+        0.7119140625,
+        0.35595703125
+      ],
+      "gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "unequal_gas_fields": [],
+      "gas_equal": true,
+      "full_checkpoint_except_atlas_equal": true,
+      "embers_equal": true
+    },
+    {
+      "frame": 8,
+      "updates": [
+        12,
+        12
+      ],
+      "lit": [
+        0,
+        0
+      ],
+      "catching": [
+        95,
+        95
+      ],
+      "max_progress": [
+        0.830078125,
+        0.4150390625
+      ],
+      "gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "unequal_gas_fields": [],
+      "gas_equal": true,
+      "full_checkpoint_except_atlas_equal": true,
+      "embers_equal": true
+    },
+    {
+      "frame": 9,
+      "updates": [
+        15,
+        15
+      ],
+      "lit": [
+        0,
+        0
+      ],
+      "catching": [
+        126,
+        126
+      ],
+      "max_progress": [
+        0.94873046875,
+        0.474365234375
+      ],
+      "gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "unequal_gas_fields": [],
+      "gas_equal": true,
+      "full_checkpoint_except_atlas_equal": true,
+      "embers_equal": true
+    },
+    {
+      "frame": 10,
+      "updates": [
+        18,
+        18
+      ],
+      "lit": [
+        16,
+        0
+      ],
+      "catching": [
+        137,
+        147
+      ],
+      "max_progress": [
+        1.0,
+        0.533203125
+      ],
+      "gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "unequal_gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "gas_equal": false,
+      "full_checkpoint_except_atlas_equal": false,
+      "embers_equal": true
+    },
+    {
+      "frame": 11,
+      "updates": [
+        21,
+        21
+      ],
+      "lit": [
+        23,
+        0
+      ],
+      "catching": [
+        157,
+        173
+      ],
+      "max_progress": [
+        1.0,
+        0.591796875
+      ],
+      "gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "unequal_gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "gas_equal": false,
+      "full_checkpoint_except_atlas_equal": false,
+      "embers_equal": true
+    },
+    {
+      "frame": 12,
+      "updates": [
+        24,
+        24
+      ],
+      "lit": [
+        27,
+        0
+      ],
+      "catching": [
+        176,
+        196
+      ],
+      "max_progress": [
+        1.0,
+        0.650390625
+      ],
+      "gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "unequal_gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "gas_equal": false,
+      "full_checkpoint_except_atlas_equal": false,
+      "embers_equal": true
+    },
+    {
+      "frame": 13,
+      "updates": [
+        27,
+        27
+      ],
+      "lit": [
+        32,
+        0
+      ],
+      "catching": [
+        202,
+        221
+      ],
+      "max_progress": [
+        1.0,
+        0.708984375
+      ],
+      "gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "unequal_gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "gas_equal": false,
+      "full_checkpoint_except_atlas_equal": false,
+      "embers_equal": true
+    },
+    {
+      "frame": 14,
+      "updates": [
+        30,
+        30
+      ],
+      "lit": [
+        41,
+        0
+      ],
+      "catching": [
+        219,
+        245
+      ],
+      "max_progress": [
+        1.0,
+        0.767578125
+      ],
+      "gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "unequal_gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "gas_equal": false,
+      "full_checkpoint_except_atlas_equal": false,
+      "embers_equal": true
+    },
+    {
+      "frame": 15,
+      "updates": [
+        34,
+        34
+      ],
+      "lit": [
+        55,
+        0
+      ],
+      "catching": [
+        226,
+        264
+      ],
+      "max_progress": [
+        1.0,
+        0.826171875
+      ],
+      "gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "unequal_gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "gas_equal": false,
+      "full_checkpoint_except_atlas_equal": false,
+      "embers_equal": true
+    },
+    {
+      "frame": 16,
+      "updates": [
+        38,
+        38
+      ],
+      "lit": [
+        72,
+        0
+      ],
+      "catching": [
+        226,
+        276
+      ],
+      "max_progress": [
+        1.0,
+        0.884765625
+      ],
+      "gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "unequal_gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "gas_equal": false,
+      "full_checkpoint_except_atlas_equal": false,
+      "embers_equal": true
+    },
+    {
+      "frame": 17,
+      "updates": [
+        42,
+        42
+      ],
+      "lit": [
+        88,
+        0
+      ],
+      "catching": [
+        226,
+        289
+      ],
+      "max_progress": [
+        1.0,
+        0.943359375
+      ],
+      "gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "unequal_gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "gas_equal": false,
+      "full_checkpoint_except_atlas_equal": false,
+      "embers_equal": true
+    },
+    {
+      "frame": 18,
+      "updates": [
+        46,
+        46
+      ],
+      "lit": [
+        107,
+        8
+      ],
+      "catching": [
+        214,
+        286
+      ],
+      "max_progress": [
+        1.0,
+        1.0
+      ],
+      "gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "unequal_gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "gas_equal": false,
+      "full_checkpoint_except_atlas_equal": false,
+      "embers_equal": true
+    },
+    {
+      "frame": 19,
+      "updates": [
+        50,
+        50
+      ],
+      "lit": [
+        124,
+        14
+      ],
+      "catching": [
+        194,
+        278
+      ],
+      "max_progress": [
+        1.0,
+        1.0
+      ],
+      "gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "unequal_gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "gas_equal": false,
+      "full_checkpoint_except_atlas_equal": false,
+      "embers_equal": true
+    },
+    {
+      "frame": 20,
+      "updates": [
+        54,
+        54
+      ],
+      "lit": [
+        139,
+        18
+      ],
+      "catching": [
+        198,
+        282
+      ],
+      "max_progress": [
+        1.0,
+        1.0
+      ],
+      "gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "unequal_gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "gas_equal": false,
+      "full_checkpoint_except_atlas_equal": false,
+      "embers_equal": true
+    },
+    {
+      "frame": 21,
+      "updates": [
+        59,
+        58
+      ],
+      "lit": [
+        155,
+        24
+      ],
+      "catching": [
+        201,
+        292
+      ],
+      "max_progress": [
+        1.0,
+        1.0
+      ],
+      "gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "unequal_gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "gas_equal": false,
+      "full_checkpoint_except_atlas_equal": false,
+      "embers_equal": true
+    },
+    {
+      "frame": 22,
+      "updates": [
+        63,
+        62
+      ],
+      "lit": [
+        182,
+        30
+      ],
+      "catching": [
+        207,
+        294
+      ],
+      "max_progress": [
+        1.0,
+        1.0
+      ],
+      "gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "unequal_gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "gas_equal": false,
+      "full_checkpoint_except_atlas_equal": false,
+      "embers_equal": true
+    },
+    {
+      "frame": 23,
+      "updates": [
+        67,
+        66
+      ],
+      "lit": [
+        200,
+        37
+      ],
+      "catching": [
+        217,
+        304
+      ],
+      "max_progress": [
+        1.0,
+        1.0
+      ],
+      "gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "unequal_gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "gas_equal": false,
+      "full_checkpoint_except_atlas_equal": false,
+      "embers_equal": true
+    },
+    {
+      "frame": 24,
+      "updates": [
+        71,
+        70
+      ],
+      "lit": [
+        217,
+        43
+      ],
+      "catching": [
+        224,
+        302
+      ],
+      "max_progress": [
+        1.0,
+        1.0
+      ],
+      "gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "unequal_gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "gas_equal": false,
+      "full_checkpoint_except_atlas_equal": false,
+      "embers_equal": true
+    },
+    {
+      "frame": 25,
+      "updates": [
+        75,
+        74
+      ],
+      "lit": [
+        231,
+        49
+      ],
+      "catching": [
+        231,
+        296
+      ],
+      "max_progress": [
+        1.0,
+        1.0
+      ],
+      "gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "unequal_gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "gas_equal": false,
+      "full_checkpoint_except_atlas_equal": false,
+      "embers_equal": true
+    },
+    {
+      "frame": 26,
+      "updates": [
+        79,
+        78
+      ],
+      "lit": [
+        245,
+        53
+      ],
+      "catching": [
+        236,
+        289
+      ],
+      "max_progress": [
+        1.0,
+        1.0
+      ],
+      "gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "unequal_gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "gas_equal": false,
+      "full_checkpoint_except_atlas_equal": false,
+      "embers_equal": true
+    },
+    {
+      "frame": 27,
+      "updates": [
+        83,
+        82
+      ],
+      "lit": [
+        255,
+        57
+      ],
+      "catching": [
+        238,
+        279
+      ],
+      "max_progress": [
+        1.0,
+        1.0
+      ],
+      "gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "unequal_gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "gas_equal": false,
+      "full_checkpoint_except_atlas_equal": false,
+      "embers_equal": true
+    },
+    {
+      "frame": 28,
+      "updates": [
+        87,
+        85
+      ],
+      "lit": [
+        270,
+        64
+      ],
+      "catching": [
+        237,
+        265
+      ],
+      "max_progress": [
+        1.0,
+        1.0
+      ],
+      "gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "unequal_gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "gas_equal": false,
+      "full_checkpoint_except_atlas_equal": false,
+      "embers_equal": true
+    },
+    {
+      "frame": 29,
+      "updates": [
+        91,
+        88
+      ],
+      "lit": [
+        281,
+        70
+      ],
+      "catching": [
+        234,
+        253
+      ],
+      "max_progress": [
+        1.0,
+        1.0
+      ],
+      "gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "unequal_gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "gas_equal": false,
+      "full_checkpoint_except_atlas_equal": false,
+      "embers_equal": true
+    },
+    {
+      "frame": 30,
+      "updates": [
+        94,
+        91
+      ],
+      "lit": [
+        300,
+        80
+      ],
+      "catching": [
+        233,
+        236
+      ],
+      "max_progress": [
+        1.0,
+        1.0
+      ],
+      "gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "unequal_gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "gas_equal": false,
+      "full_checkpoint_except_atlas_equal": false,
+      "embers_equal": true
+    },
+    {
+      "frame": 31,
+      "updates": [
+        97,
+        94
+      ],
+      "lit": [
+        314,
+        86
+      ],
+      "catching": [
+        242,
+        235
+      ],
+      "max_progress": [
+        1.0,
+        1.0
+      ],
+      "gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "unequal_gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "gas_equal": false,
+      "full_checkpoint_except_atlas_equal": false,
+      "embers_equal": true
+    },
+    {
+      "frame": 32,
+      "updates": [
+        100,
+        97
+      ],
+      "lit": [
+        339,
+        96
+      ],
+      "catching": [
+        246,
+        231
+      ],
+      "max_progress": [
+        1.0,
+        1.0
+      ],
+      "gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "unequal_gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "gas_equal": false,
+      "full_checkpoint_except_atlas_equal": false,
+      "embers_equal": true
+    },
+    {
+      "frame": 33,
+      "updates": [
+        103,
+        100
+      ],
+      "lit": [
+        362,
+        105
+      ],
+      "catching": [
+        243,
+        224
+      ],
+      "max_progress": [
+        1.0,
+        1.0
+      ],
+      "gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "unequal_gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "gas_equal": false,
+      "full_checkpoint_except_atlas_equal": false,
+      "embers_equal": true
+    },
+    {
+      "frame": 34,
+      "updates": [
+        106,
+        103
+      ],
+      "lit": [
+        380,
+        110
+      ],
+      "catching": [
+        243,
+        227
+      ],
+      "max_progress": [
+        1.0,
+        1.0
+      ],
+      "gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "unequal_gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "gas_equal": false,
+      "full_checkpoint_except_atlas_equal": false,
+      "embers_equal": true
+    },
+    {
+      "frame": 35,
+      "updates": [
+        109,
+        106
+      ],
+      "lit": [
+        400,
+        117
+      ],
+      "catching": [
+        262,
+        222
+      ],
+      "max_progress": [
+        1.0,
+        1.0
+      ],
+      "gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "unequal_gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "gas_equal": false,
+      "full_checkpoint_except_atlas_equal": false,
+      "embers_equal": true
+    },
+    {
+      "frame": 36,
+      "updates": [
+        112,
+        109
+      ],
+      "lit": [
+        416,
+        122
+      ],
+      "catching": [
+        296,
+        227
+      ],
+      "max_progress": [
+        1.0,
+        1.0
+      ],
+      "gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "unequal_gas_fields": [
+        "vel",
+        "scal",
+        "p",
+        "scal_fine"
+      ],
+      "gas_equal": false,
+      "full_checkpoint_except_atlas_equal": false,
+      "embers_equal": true
+    }
+  ]
+}

@@ -2,7 +2,6 @@
 import argparse
 import hashlib
 import json
-import math
 from pathlib import Path
 import zlib
 
@@ -110,10 +109,14 @@ def score(directory):
     frame_rows = []
     for ar,br in zip(af,bf,strict=True):
         a,b = ast[ar["index"]],bst[br["index"]]
+        gas_fields = [k for k in ("vel","scal","p","aux","chem","scal_fine") if k in a["state"]]
+        unequal_gas = [k for k in gas_fields if a["state"][k] != b["state"][k]]
+        if ar["index"] == br["index"] <= qualified:
+            assert ar["embers"] == br["embers"]
         frame_rows.append(dict(frame=ar["frame"],updates=[ar["index"],br["index"]],
             lit=[a["atlas"]["lit"],b["atlas"]["lit"]],catching=[a["atlas"]["catching"],b["atlas"]["catching"]],
             max_progress=[a["atlas"]["max_progress"],b["atlas"]["max_progress"]],
-            gas_equal=all(a["state"][k]==b["state"][k] for k in ("vel","scal","p")),
+            gas_fields=gas_fields,unequal_gas_fields=unequal_gas,gas_equal=not unequal_gas,
             full_checkpoint_except_atlas_equal=a["state"]==b["state"],embers_equal=ar["embers"]==br["embers"]))
     return dict(edit=edit, dims=ai["dims"], upres=ai["fine_upres"], updates=[len(au),len(bu)],
         first_unaligned_update=first_unaligned if first_unaligned < max(len(au),len(bu)) else None,
